@@ -1,0 +1,19 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "agent": {
+      "path": "./main.py:agent"
+    },
+    "web_agent": {
+      "path": "./main.py:web_agent"
+    },
+    "playwright_agent": {
+      "path": "./main.py:playwright_agent"
+    },
+    "chrome_agent": {
+      "path": "./main.py:chrome_agent"
+    }
+  },
+  "env": ".env",
+  "image_distro": "wolfi"
+}

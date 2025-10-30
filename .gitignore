@@ -1,0 +1,92 @@
+# IDE 配置
+.idea/
+.vscode/
+*.iws
+*.iml
+*.ipr
+
+# Python 虚拟环境
+_venv/
+venv/
+.venv/
+env/
+ENV/
+
+# 环境变量文件（敏感信息）
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# 注意：.env.example 应该被提交到仓库，作为配置模板
+
+# Node.js 依赖
+node_modules/
+pnpm-lock.yaml
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js
+.next/
+next-env.d.ts
+
+# 构建输出
+dist/
+build/
+*.tgz
+*.tar.gz
+
+# Vite
+web/.vite
+web/.vite-cache
+web/.pnpm-store
+
+# 文档和日志
+Log.md
+# documents/  # 如果不需要上传文档数据，取消注释
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 备份文件
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+
+# LangGraph API
+.langgraph_api/
+
+**/node_modules
+**/dist
+**/.venv
+
+
+# Git 子项目（使用 submodule 管理）
+# 如果需要作为 submodule，先忽略，然后使用 git submodule add
+markdownify-mcp/
+jmeter/

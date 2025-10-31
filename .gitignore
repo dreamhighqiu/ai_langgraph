@@ -87,6 +87,6 @@ Thumbs.db
 
 
 # Git 子项目（使用 submodule 管理）
-# 如果需要作为 submodule，先忽略，然后使用 git submodule add
-#markdownify-mcp/
-#jmeter/
+ 如果需要作为 submodule，先忽略，然后使用 git submodule add
+markdownify-mcp/
+jmeter/

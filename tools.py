@@ -89,6 +89,23 @@ def chart_mcp_tools() -> List[BaseTool]:
     )
 
 
+# def filesystem_mcp_tools() -> List[BaseTool]:
+#     """获取文件系统 MCP 工具"""
+#     return _safe_get_mcp_tools(
+#         {
+#             "filesystem": {
+#                 "args": [
+#                     "-y",
+#                     "@modelcontextprotocol/server-filesystem",
+#                     "data/"
+#                 ],
+#                 "command": "npx",
+#                 "transport": "stdio"
+#             }
+#         },
+#         "Filesystem"
+#     )
+
 def filesystem_mcp_tools() -> List[BaseTool]:
     """获取文件系统 MCP 工具"""
     return _safe_get_mcp_tools(
@@ -97,7 +114,8 @@ def filesystem_mcp_tools() -> List[BaseTool]:
                 "args": [
                     "-y",
                     "@modelcontextprotocol/server-filesystem",
-                    "/Users/qiuyunxia/code/ai_langGraph/data"
+                    "data/"
+                    "."
                 ],
                 "command": "npx",
                 "transport": "stdio"
@@ -105,7 +123,6 @@ def filesystem_mcp_tools() -> List[BaseTool]:
         },
         "Filesystem"
     )
-
 
 def excel_mcp_tools() -> List[BaseTool]:
     """获取 Excel MCP 工具"""
@@ -151,9 +168,11 @@ if __name__ == "__main__":
     print("测试工具加载...")
     print("\n1. 测试 Tavily Search:")
     get_tavily_search_mcp_tools()
-    
+
     print("\n2. 测试 Chart:")
     chart_mcp_tools()
-    
+
     print("\n3. 测试 Filesystem:")
     filesystem_mcp_tools()
+
+# print(filesystem_mcp_tools())

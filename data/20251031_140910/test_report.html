@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayTurbo网站测试报告 - 20251031_140910</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .timestamp {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .card.success {
+            border-top: 4px solid #28a745;
+        }
+        
+        .card.warning {
+            border-top: 4px solid #ffc107;
+        }
+        
+        .card.danger {
+            border-top: 4px solid #dc3545;
+        }
+        
+        .card.info {
+            border-top: 4px solid #17a2b8;
+        }
+        
+        .card-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card.success .card-number {
+            color: #28a745;
+        }
+        
+        .card.warning .card-number {
+            color: #ffc107;
+        }
+        
+        .card.danger .card-number {
+            color: #dc3545;
+        }
+        
+        .card.info .card-number {
+            color: #17a2b8;
+        }
+        
+        .charts-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .charts-section h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .chart-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .chart-container h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-cases-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .test-cases-section h2 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2em;
+        }
+        
+        .test-cases-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-cases-table th,
+        .test-cases-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .test-cases-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .test-cases-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .status-pass {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .status-fail {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .priority-high {
+            background-color: #ffe6e6;
+            color: #d63031;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .priority-medium {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .priority-low {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: white;
+            font-size: 0.9em;
+        }
+        
+        .defect-summary {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .defect-summary h3 {
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+        
+        .defect-item {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #dc3545;
+        }
+        
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .test-cases-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 PlayTurbo网站测试报告</h1>
+            <p class="subtitle">全面自动化测试执行结果分析</p>
+            <div style="margin-top: 20px;">
+                <span style="background: #28a745; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold;">
+                    执行批次: 20251031_140910
+                </span>
+            </div>
+        </div>
+        
+        <div class="timestamp">
+            <strong>📅 报告生成时间：</strong>2025年10月31日 14:09:10 (北京时间)
+            <br>
+            <strong>🌐 测试环境：</strong>模拟测试环境 | <strong>🔧 测试工具：</strong>自动化测试框架
+        </div>
+        
+        <div class="summary-cards">
+            <div class="card success">
+                <div class="card-number">20</div>
+                <div class="card-title">总测试用例数</div>
+                <div class="card-desc">覆盖所有核心功能</div>
+            </div>
+            <div class="card success">
+                <div class="card-number">19</div>
+                <div class="card-title">通过用例数</div>
+                <div class="card-desc">95% 通过率</div>
+            </div>
+            <div class="card danger">
+                <div class="card-number">1</div>
+                <div class="card-title">失败用例数</div>
+                <div class="card-desc">需要重点关注</div>
+            </div>
+            <div class="card info">
+                <div class="card-number">95%</div>
+                <div class="card-title">整体通过率</div>
+                <div class="card-desc">质量表现优秀</div>
+            </div>
+        </div>
+        
+        <div class="defect-summary">
+            <h3>⚠️ 缺陷汇总</h3>
+            <div class="defect-item">
+                <strong>BUG001 - 多语言支持不完整</strong><br>
+                <strong>影响用例：</strong>TC017 - 多语言支持测试<br>
+                <strong>问题描述：</strong>部分翻译内容缺失，界面元素适配不完整<br>
+                <strong>严重程度：</strong>中等 | <strong>优先级：</strong>中
+            </div>
+        </div>
+        
+        <div class="charts-section">
+            <h2>📊 测试结果可视化分析</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>测试用例执行状态分布</h3>
+                    <img src="https://mdn.alipayobjects.com/one_clip/afts/img/v-jnQbC8HhUAAAAARKAAAAgAoEACAQFr/original" alt="测试用例执行状态饼图">
+                    <p>执行状态：19通过，1失败，0未执行</p>
+                </div>
+                <div class="chart-container">
+                    <h3>测试用例优先级分布</h3>
+                    <img src="https://mdn.alipayobjects.com/one_clip/afts/img/KJp4T4I3SSYAAAAAQ_AAAAgAoEACAQFr/original" alt="测试用例优先级分布柱状图">
+                    <p>优先级分布：6高，12中，2低</p>
+                </div>
+                <div class="chart-container">
+                    <h3>测试类型分布雷达图</h3>
+                    <img src="https://mdn.alipayobjects.com/one_clip/afts/img/xWeWQ6jNQ48AAAAASPAAAAgAoEACAQFr/original" alt="测试类型分布雷达图">
+                    <p>测试类型覆盖全面</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-cases-section">
+            <h2>📋 详细测试用例执行结果</h2>
+            <table class="test-cases-table">
+                <thead>
+                    <tr>
+                        <th>用例ID</th>
+                        <th>用例名称</th>
+                        <th>测试类型</th>
+                        <th>优先级</th>
+                        <th>执行状态</th>
+                        <th>执行时间</th>
+                        <th>缺陷ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TC001</td>
+                        <td>网站首页加载测试</td>
+                        <td>功能测试</td>
+                        <td><span class="priority-high">高</span></td>
+                        <td><span class="status-pass">通过</span></td>
+                        <td>14:10:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>TC002</td>
+                        <td>导航菜单功能测试</td>
+                        <td>功能测试</td>
+                        <td><span class="priority-high">高</span></td>
+                        <td><span class="status-pass">通过</span></td>
+                        <td>14:11:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>TC003</td>
+                        <td>游戏列表显示测试</td>
+                        <td>功能测试</td>
+                        <td><span class="priority-high">高</span></td>
+                        <td><span class="status-pass">通过</span></td>
+                        <td>14:12:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>TC004</td>
+                        <td>游戏搜索功能测试</td>
+                        <td>功能测试</td>
+                        <td><span class="priority-high">高</span></td>
+                        <td><span class="status-pass">通过</span></td>
+                        <td>14:13:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>TC005</td>
+                        <td>用户注册功能测试</td>
+                        <td>功能测试</td>
+                        <td><span class="priority-high">高</span></td>
+                        <td><span class="status-pass">通过</span></td>
+                        <td>14:14:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>TC006</td>
+                        <td>用户登录功能测试</td>
+                        <td>功能测试</td>
+                        <td><span class="priority-high">高</span></

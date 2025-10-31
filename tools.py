@@ -88,24 +88,6 @@ def chart_mcp_tools() -> List[BaseTool]:
         "Chart"
     )
 
-
-# def filesystem_mcp_tools() -> List[BaseTool]:
-#     """获取文件系统 MCP 工具"""
-#     return _safe_get_mcp_tools(
-#         {
-#             "filesystem": {
-#                 "args": [
-#                     "-y",
-#                     "@modelcontextprotocol/server-filesystem",
-#                     "data/"
-#                 ],
-#                 "command": "npx",
-#                 "transport": "stdio"
-#             }
-#         },
-#         "Filesystem"
-#     )
-
 def filesystem_mcp_tools() -> List[BaseTool]:
     """获取文件系统 MCP 工具"""
     return _safe_get_mcp_tools(
@@ -144,6 +126,7 @@ def excel_mcp_tools() -> List[BaseTool]:
     )
 
 
+
 def markdown_mcp_tools() -> List[BaseTool]:
     """获取 Markdown MCP 工具"""
     return _safe_get_mcp_tools(
@@ -162,6 +145,24 @@ def markdown_mcp_tools() -> List[BaseTool]:
         "Markdown"
     )
 
+def time_mcp_tools() -> List[BaseTool]:
+    """<UNK> Time MCP <UNK>"""
+    return _safe_get_mcp_tools(
+        {
+            "time_mcp": {
+                "args": [
+                    "mcp-server-time"
+                ],
+                "command": "uvx",
+                "transport": "stdio",
+    }
+
+        },
+        "Time"
+    )
+
+
+
 
 # 测试代码（取消注释以测试）
 if __name__ == "__main__":
@@ -176,3 +177,5 @@ if __name__ == "__main__":
     filesystem_mcp_tools()
 
 # print(filesystem_mcp_tools())
+
+# print(time_mcp_tools())

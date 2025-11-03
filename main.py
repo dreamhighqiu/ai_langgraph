@@ -12,6 +12,7 @@ from tools import (
     # excel_mcp_tools,
     filesystem_mcp_tools,
     time_mcp_tools,
+    EdgeOne_mcp_tools
 )
 from langchain.agents import create_agent
 
@@ -40,10 +41,9 @@ playwright_agent = create_agent(
     tools=(
         chrome_mcp_local_tools() +
         chart_mcp_tools() +
-        # excel_mcp_tools() +
         filesystem_mcp_tools()+
-        time_mcp_tools()
-        # markdown_mcp_tools()
+        time_mcp_tools()+
+        EdgeOne_mcp_tools()
     ),
     system_prompt="你是一个有用的助手，可以进行浏览器自动化操作、处理文件和生成图表。"
 )

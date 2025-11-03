@@ -161,6 +161,22 @@ def time_mcp_tools() -> List[BaseTool]:
         "Time"
     )
 
+def EdgeOne_mcp_tools() -> List[BaseTool]:
+    return _safe_get_mcp_tools(
+
+        {
+            "edgeone_mcp": {
+              "args": [
+                "edgeone-pages-mcp"
+              ],
+            "command": "npx",
+            "transport": "stdio",
+    },
+
+        },
+        "EdgeOne"
+    )
+
 
 
 
@@ -179,3 +195,5 @@ if __name__ == "__main__":
 # print(filesystem_mcp_tools())
 
 # print(time_mcp_tools())
+
+print(EdgeOne_mcp_tools())

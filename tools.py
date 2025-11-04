@@ -178,6 +178,43 @@ def EdgeOne_mcp_tools() -> List[BaseTool]:
     )
 
 
+# ============================================================================
+# 测试用例生成器专用工具组合
+# ============================================================================
+
+def get_test_case_generator_tools() -> List[BaseTool]:
+    """
+    获取测试用例生成器所需的 MCP 工具组合
+
+    包含：
+    - Excel MCP: 用于创建和编辑 Excel 文件
+    - Filesystem MCP: 用于文件系统操作
+    - Chart MCP: 用于绘制测试用例统计图表
+
+    Returns:
+        List[BaseTool]: 工具列表
+    """
+    tools = []
+
+    # 添加 Excel 工具
+    excel_tools = excel_mcp_tools()
+    if excel_tools:
+        tools.extend(excel_tools)
+        print(f"✓ 已加载 Excel MCP 工具")
+
+    # 添加文件系统工具
+    fs_tools = filesystem_mcp_tools()
+    if fs_tools:
+        tools.extend(fs_tools)
+        print(f"✓ 已加载 Filesystem MCP 工具")
+
+    # 添加图表工具
+    chart_tools = chart_mcp_tools()
+    if chart_tools:
+        tools.extend(chart_tools)
+        print(f"✓ 已加载 Chart MCP 工具")
+
+    return tools
 
 
 # 测试代码（取消注释以测试）
@@ -192,8 +229,8 @@ if __name__ == "__main__":
     print("\n3. 测试 Filesystem:")
     filesystem_mcp_tools()
 
-# print(filesystem_mcp_tools())
+    print("\n4. 测试 Excel:")
+    excel_mcp_tools()
 
-# print(time_mcp_tools())
-
-print(EdgeOne_mcp_tools())
+    print("\n5. 测试用例生成器工具组合:")
+    get_test_case_generator_tools()

@@ -3,3 +3,10 @@ langchain[openai]
 langchain-deepseek
 langchain-mcp-adapters
 langgraph-cli[inmem]
+langchain-community
+pymysql
+python-dotenv
+pandas
+openpyxl
+fastapi
+uvicorn[standard]

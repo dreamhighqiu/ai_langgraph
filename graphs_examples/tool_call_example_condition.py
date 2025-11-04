@@ -64,18 +64,23 @@ def divide(a: int, b: int) -> float:
 # Augment the LLM with tools
 tools = [add, multiply, divide]
 
-# # 将工具绑定到大模型对象
-# model_with_tools = model.bind_tools(tools)
-#
-# # 将大模型绑定的工具对应的参数描述以及用户问题一起发送给大模型，由大模型觉得调用哪些工具，同时生成工具的参数
-# # 结果：应该调用哪个工具，以及工具参数是什么？
-# result = model_with_tools.invoke("what is 2+2?")
-# print(result)
-#
-# # 执行工具
-# t = ToolNode(tools)
-# s = t.invoke([result])
-# print(s)
+# 定义工具信息
+# tools_by_name = { tool.name:tool for tool in tools }
+# print(tools_by_name)
+
+# 将工具绑定到大模型对象
+model_with_tools = model.bind_tools(tools)
+
+
+# 将大模型绑定的工具对应的参数描述以及用户问题一起发送给大模型，由大模型觉得调用哪些工具，同时生成工具的参数
+# 结果：应该调用哪个工具，以及工具参数是什么？
+result = model_with_tools.invoke("what is 2+2?")
+print(result)
+
+# 执行工具
+t = ToolNode(tools)
+s = t.invoke([result])
+print(s)
 
 
 # -------------------------------------
@@ -97,7 +102,19 @@ def call_llm_node_2(state: MessagesState):
     result = model.invoke(state["messages"])
     return {"messages": result}
 
+def condition_edge(state: MessagesState):
+    """根据 LLM 是否调用了工具来决定下一步"""
+    # 获取最后一条消息
+    last_message = state["messages"][-1]
+    # 检查最后一条消息是否包含工具调用
+    if hasattr(last_message, 'tool_calls') and last_message.tool_calls:
+        return "tool_node"
+    else:
+        return "call_llm_node_2"
+
+
 tool_node = ToolNode(tools)
+
 # Build workflow
 agent_builder = StateGraph(MessagesState)
 
@@ -108,17 +125,20 @@ agent_builder.add_node("call_llm_node_2", call_llm_node_2)
 
 # Add edges to connect nodes
 agent_builder.add_edge(START, "llm_call")
-agent_builder.add_edge("llm_call", "tool_node")
-# agent_builder.add_edge("tool_node",END)
-agent_builder.add_edge("tool_node", "call_llm_node_2")
-agent_builder.add_edge("call_llm_node_2", END)
+agent_builder.add_conditional_edges("llm_call", condition_edge)
+# agent_builder.add_edge("llm_call", "tool_node")
+# agent_builder.add_edge("tool_node", "call_llm_node_2")
+
 # Compile the agent
 graph = agent_builder.compile()
 
+
+
+
 # Invoke
-# from langchain.messages import HumanMessage
-# messages = [HumanMessage(content="add 10 and 4.")]
-# messages = graph.invoke({"messages": messages})
-# for m in messages["messages"]:
-#     m.pretty_print()
+from langchain.messages import HumanMessage
+messages = [HumanMessage(content="Add 3 and 4.")]
+messages = graph.invoke({"messages": messages})
+for m in messages["messages"]:
+    m.pretty_print()
 

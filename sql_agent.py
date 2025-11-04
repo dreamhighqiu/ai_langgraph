@@ -111,9 +111,9 @@ except Exception as e:
 toolkit = SQLDatabaseToolkit(db=db, llm=llm)
 
 # 获取所有的工具
-tools = toolkit.get_tools()
+sql_tools = toolkit.get_tools()
 
-for tool in tools:
+for tool in sql_tools:
     print(f"{tool.name}: {tool.description}\n")
 
 # os.environ["DEEPSEEK_API_KEY"] = "sk-7443d4458d1444d2ac620964e4f58767"
@@ -160,7 +160,7 @@ mcp_client = MultiServerMCPClient(
 mcp_tools = asyncio.run(mcp_client.get_tools())
 agent = create_agent(
     llm,
-    tools + mcp_tools,
+    sql_tools + mcp_tools,
     system_prompt=system_prompt,
 )
 

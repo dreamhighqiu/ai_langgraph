@@ -75,12 +75,18 @@ def generate_test_cases_node(state: TestCaseState) -> dict:
     # 安全地获取状态字段，使用默认值
     review_count = state.get('review_count', 0)
 
+    # 判断是否是重新生成（从评审节点返回）
+    is_regenerate = review_count > 0
+
     print("\n" + "=" * 80)
-    print(f"📝 节点1：生成测试用例 (第 {review_count + 1} 次)")
+    if is_regenerate:
+        print(f"📝 节点1：重新生成测试用例 (第 {review_count} 次评审后重新生成)")
+    else:
+        print(f"📝 节点1：生成测试用例 (第 1 次生成)")
     print("=" * 80)
 
     # 构建提示词
-    if review_count == 0:
+    if not is_regenerate:
         # 第一次生成
         system_prompt = """你是一个专业的测试工程师，负责生成高质量的功能测试用例。
 
@@ -132,7 +138,8 @@ def generate_test_cases_node(state: TestCaseState) -> dict:
 
     return {
         "messages": [response],
-        "test_cases": test_cases_content
+        "test_cases": test_cases_content,
+        "review_count": 0  # 重置评审计数为 0，因为这是新一轮的生成
     }
 
 
@@ -158,7 +165,6 @@ def review_test_cases_node(state: TestCaseState) -> dict:
 4. 是否覆盖了正常场景、边界场景、异常场景
 5. 优先级划分是否合理
 6. JSON 格式是否正确
-7. 测试用例数量是否充分（8-15条）
 
 请给出评审结果：
 - 如果通过，返回 JSON: {"passed": true, "feedback": "评审通过，测试用例质量良好"}
@@ -225,6 +231,9 @@ def save_to_excel_node(state: TestCaseState) -> dict:
 
         # 解析测试用例 JSON
         test_cases_list = []
+        print(f"\n🔍 开始解析测试用例数据...")
+        print(f"   原始数据长度: {len(test_cases)} 字符")
+
         try:
             # 尝试直接解析
             test_cases_data = json.loads(test_cases)
@@ -234,14 +243,18 @@ def save_to_excel_node(state: TestCaseState) -> dict:
                 test_cases_list = test_cases_data
             else:
                 test_cases_list = [test_cases_data]
-        except json.JSONDecodeError:
+            print(f"   ✅ 直接解析成功，获得 {len(test_cases_list)} 条用例")
+        except json.JSONDecodeError as e:
             # 如果直接解析失败，尝试从文本中提取 JSON
+            print(f"   ⚠️ 直接解析失败: {str(e)[:100]}")
+            print(f"   🔄 尝试从文本中提取 JSON...")
             try:
                 # 查找 JSON 块（从 { 或 [ 开始）
                 import re
                 json_match = re.search(r'(\{[\s\S]*\}|\[[\s\S]*\])', test_cases)
                 if json_match:
                     json_str = json_match.group(1)
+                    print(f"   📍 找到 JSON 块，长度: {len(json_str)} 字符")
                     test_cases_data = json.loads(json_str)
                     if isinstance(test_cases_data, dict) and 'test_cases' in test_cases_data:
                         test_cases_list = test_cases_data['test_cases']
@@ -249,10 +262,13 @@ def save_to_excel_node(state: TestCaseState) -> dict:
                         test_cases_list = test_cases_data
                     else:
                         test_cases_list = [test_cases_data]
-            except (json.JSONDecodeError, AttributeError):
+                    print(f"   ✅ 提取解析成功，获得 {len(test_cases_list)} 条用例")
+                else:
+                    print(f"   ❌ 未找到 JSON 块")
+            except (json.JSONDecodeError, AttributeError) as e:
                 test_cases_list = []
-                print(f"⚠️ 警告：无法解析测试用例数据")
-                print(f"原始数据: {test_cases[:200]}...")
+                print(f"   ❌ 提取解析失败: {str(e)[:100]}")
+                print(f"   原始数据: {test_cases[:300]}...")
 
         # 生成统计数据用于图表
         chart_data = {
@@ -325,6 +341,9 @@ def save_to_filesystem_node(state: TestCaseState) -> dict:
 
         # 解析测试用例数据
         test_cases_list = []
+        print(f"\n🔍 开始解析测试用例数据...")
+        print(f"   原始数据长度: {len(test_cases)} 字符")
+
         try:
             # 尝试直接解析
             test_cases_data = json.loads(test_cases)
@@ -334,12 +353,16 @@ def save_to_filesystem_node(state: TestCaseState) -> dict:
                 test_cases_list = test_cases_data
             else:
                 test_cases_list = [test_cases_data]
-        except json.JSONDecodeError:
+            print(f"   ✅ 直接解析成功，获得 {len(test_cases_list)} 条用例")
+        except json.JSONDecodeError as e:
             # 如果直接解析失败，尝试从文本中提取 JSON
+            print(f"   ⚠️ 直接解析失败: {str(e)[:100]}")
+            print(f"   🔄 尝试从文本中提取 JSON...")
             try:
                 json_match = re.search(r'(\{[\s\S]*\}|\[[\s\S]*\])', test_cases)
                 if json_match:
                     json_str = json_match.group(1)
+                    print(f"   📍 找到 JSON 块，长度: {len(json_str)} 字符")
                     test_cases_data = json.loads(json_str)
                     if isinstance(test_cases_data, dict) and 'test_cases' in test_cases_data:
                         test_cases_list = test_cases_data['test_cases']
@@ -347,8 +370,12 @@ def save_to_filesystem_node(state: TestCaseState) -> dict:
                         test_cases_list = test_cases_data
                     else:
                         test_cases_list = [test_cases_data]
-            except (json.JSONDecodeError, AttributeError):
+                    print(f"   ✅ 提取解析成功，获得 {len(test_cases_list)} 条用例")
+                else:
+                    print(f"   ❌ 未找到 JSON 块")
+            except (json.JSONDecodeError, AttributeError) as e:
                 test_cases_list = []
+                print(f"   ❌ 提取解析失败: {str(e)[:100]}")
 
         # 构建结构化的 Excel 数据
         excel_data_for_mcp = []
@@ -363,26 +390,39 @@ def save_to_filesystem_node(state: TestCaseState) -> dict:
                 "分类": case.get('category', '')
             })
 
+        # 数据验证
+        print(f"\n📊 数据验证:")
+        print(f"   - 测试用例总数: {len(test_cases_list)}")
+        print(f"   - Excel 数据行数: {len(excel_data_for_mcp)}")
+        if excel_data_for_mcp:
+            print(f"   - 第一条数据: {excel_data_for_mcp[0]}")
+        else:
+            print("   ⚠️ 警告：没有测试用例数据，Excel 将为空")
+
         # 构建文件系统操作提示词 - 分别处理 Excel 和 JSON
         excel_prompt = f"""请使用 Filesystem MCP 工具创建一个 Excel 文件。
 
 文件路径: {excel_file_path}
 
+数据信息:
+- 总数据行数: {len(test_cases_list)}
+- 表头: 用例ID | 用例名称 | 优先级 | 前置条件 | 测试步骤 | 预期结果 | 分类
+
+数据内容（JSON 格式）:
+{json.dumps(excel_data_for_mcp, ensure_ascii=False, indent=2)}
+
 要求:
 1. 创建一个 .xlsx 格式的 Excel 文件
 2. 第一行为表头，包含以下列（按顺序）：用例ID、用例名称、优先级、前置条件、测试步骤、预期结果、分类
-3. 从第二行开始，按照以下数据填充每一行（共 {len(test_cases_list)} 行数据）：
-
-{json.dumps(excel_data_for_mcp, ensure_ascii=False, indent=2)}
-
-4. 格式要求：
+3. 从第二行开始，按照上述 JSON 数据填充每一行（共 {len(test_cases_list)} 行数据）
+4. 确保每一行都有数据，不要遗漏任何数据行
+5. 格式要求：
    - 使用 UTF-8 编码
    - 表头行加粗、背景色为蓝色、文字颜色为白色
    - 设置列宽：用例ID(12)、用例名称(20)、优先级(10)、前置条件(20)、测试步骤(30)、预期结果(30)、分类(15)
    - 数据行启用自动换行
    - 所有中文字符必须正确显示
-
-5. 使用 Filesystem MCP 工具完成所有操作"""
+6. 使用 Filesystem MCP 工具完成所有操作"""
 
         json_prompt = f"""请使用 Filesystem MCP 工具创建一个 JSON 文件。
 
@@ -436,14 +476,29 @@ def save_to_filesystem_node(state: TestCaseState) -> dict:
 
         result_msg = f"Excel: {excel_result_msg}\n\nJSON: {json_result_msg}"
 
-        # 获取图表数据（从状态中传递）
-        chart_data = state.get('chart_data', '')
+        # 构建图表数据
+        review_count = state.get('review_count', 0)
+        review_passed = state.get('review_passed', False)
+
+        chart_data = {
+            "total_cases": len(test_cases_list),
+            "review_count": review_count,
+            "passed": review_passed,
+            "timestamp": timestamp,
+            "categories": _count_test_case_categories(test_cases_list)
+        }
+
+        print(f"\n📊 图表数据已构建:")
+        print(f"   - 总用例数: {chart_data['total_cases']}")
+        print(f"   - 评审次数: {chart_data['review_count']}")
+        print(f"   - 评审状态: {'通过' if chart_data['passed'] else '未通过'}")
+        print(f"   - 分类统计: {chart_data['categories']}")
 
         return {
             "messages": [AIMessage(content=f"✅ 文件已保存到 data 目录\n{result_msg}")],
             "excel_file_path": excel_file_path,
             "json_file_path": json_file_path,
-            "chart_data": chart_data
+            "chart_data": json.dumps(chart_data, ensure_ascii=False)
         }
 
     except Exception as e:
@@ -531,7 +586,8 @@ def condition_edge(state: TestCaseState) -> Literal["generate_node", "save_node"
     条件边（节点4）：判断流程走向
 
     逻辑：
-    - 如果评审通过 OR 评审次数 >= 3，进入节点3（保存）
+    - 如果评审通过，进入节点3（保存）
+    - 如果评审次数 >= 3（达到最大次数），进入节点3（保存）
     - 否则，返回节点1（重新生成）
     """
     # 安全地获取状态字段
@@ -542,11 +598,14 @@ def condition_edge(state: TestCaseState) -> Literal["generate_node", "save_node"
     print(f"🔀 条件判断：评审次数={review_count}, 是否通过={review_passed}")
     print("=" * 80)
 
-    if review_passed or review_count >= 1:
-        print("✅ 决策：进入节点3（保存到Excel）")
+    if review_passed:
+        print("✅ 决策：评审通过 → 进入节点3（保存到Excel）")
+        return "save_node"
+    elif review_count >= 3:
+        print("⚠️ 决策：已达到最大评审次数（3次） → 进入节点3（保存到Excel）")
         return "save_node"
     else:
-        print("🔄 决策：返回节点1（重新生成测试用例）")
+        print(f"🔄 决策：评审不通过，返回节点1（重新生成测试用例，已评审 {review_count} 次）")
         return "generate_node"
 
 

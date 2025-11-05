@@ -22,6 +22,8 @@ import { SyntaxHighlighter } from "@/components/thread/syntax-highlighter";
 
 import { TooltipIconButton } from "@/components/thread/tooltip-icon-button";
 import { cn } from "@/lib/utils";
+import { TestCaseTable } from "@/components/thread/test-case-table";
+import { ReviewFeedback } from "@/components/thread/review-feedback";
 // eslint-disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VUZSSFVnPT06N2M5ZmNlNmM=
 
 import "katex/dist/katex.min.css";
@@ -271,7 +273,88 @@ const defaultComponents: any = {
   ),
 };
 
+/**
+ * 检测内容是否为 JSON 格式的测试用例
+ */
+function isTestCaseJson(content: string): boolean {
+  try {
+    const data = JSON.parse(content);
+    if (data && typeof data === 'object' && 'test_cases' in data) {
+      return true;
+    }
+    if (Array.isArray(data) && data.length > 0) {
+      const firstItem = data[0];
+      return (
+        firstItem &&
+        typeof firstItem === 'object' &&
+        'case_id' in firstItem &&
+        'case_name' in firstItem
+      );
+    }
+    return false;
+  } catch {
+    // 尝试从文本中提取 JSON
+    const jsonMatch = content.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      try {
+        const data = JSON.parse(jsonMatch[0]);
+        return data && typeof data === 'object' && 'test_cases' in data;
+      } catch {
+        return false;
+      }
+    }
+    return false;
+  }
+}
+
+/**
+ * 检测内容是否为 JSON 格式的评审反馈
+ */
+function isReviewFeedbackJson(content: string): boolean {
+  try {
+    const data = JSON.parse(content);
+    if (data && typeof data === 'object' && ('passed' in data || 'feedback' in data)) {
+      return true;
+    }
+    return false;
+  } catch {
+    // 尝试从文本中提取 JSON
+    const jsonMatch = content.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      try {
+        const data = JSON.parse(jsonMatch[0]);
+        return data && typeof data === 'object' && ('passed' in data || 'feedback' in data);
+      } catch {
+        return false;
+      }
+    }
+    return false;
+  }
+}
+
 const MarkdownTextImpl: FC<{ children: string }> = ({ children }) => {
+  // 检测是否为测试用例 JSON
+  const isTestCaseContent = isTestCaseJson(children);
+
+  // 检测是否为评审反馈 JSON
+  const isReviewFeedbackContent = isReviewFeedbackJson(children);
+
+  if (isTestCaseContent) {
+    return (
+      <div className="space-y-4">
+        <TestCaseTable content={children} />
+      </div>
+    );
+  }
+
+  if (isReviewFeedbackContent) {
+    return (
+      <div className="space-y-4">
+        <ReviewFeedback content={children} />
+      </div>
+    );
+  }
+
   return (
     <div className="markdown-content">
       <ReactMarkdown

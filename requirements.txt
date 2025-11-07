@@ -4,9 +4,11 @@ langchain-deepseek
 langchain-mcp-adapters
 langgraph-cli[inmem]
 langchain-community
+langchain-pymupdf4llm
 pymysql
 python-dotenv
 pandas
 openpyxl
 fastapi
 uvicorn[standard]
+reportlab

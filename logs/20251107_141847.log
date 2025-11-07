@@ -1,0 +1,73 @@
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:28 ============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:29 测试 1: 文件类型检测器
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:30 ============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:45 ✓ MIME 类型 image/png: image
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:45 ✓ MIME 类型 image/jpeg: image
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:45 ✓ MIME 类型 application/pdf: pdf
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:45 ✓ MIME 类型 text/plain: text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:45 ✓ MIME 类型 text/markdown: text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:45 ✓ MIME 类型 application/json: text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:48 
+文件扩展名检测:
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:59 ✓ 文件名 image.png: image
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:59 ✓ 文件名 document.pdf: pdf
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:59 ✓ 文件名 readme.md: text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:59 ✓ 文件名 data.json: text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:64 
+============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:65 测试 2: 普通文本对话
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:66 ============================================================
+INFO     chat_agent:chat_agent.py:57 多模态对话智能体初始化完成
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:76 发送消息: 你好，请介绍一下自己
+INFO     chat_agent:chat_agent.py:221 开始对话，消息数: 1
+INFO     chat_agent:chat_agent.py:105 执行节点: 文件类型检测
+INFO     chat_agent:chat_agent.py:110 检测到文件类型: unknown
+INFO     chat_agent:chat_agent.py:196 执行节点: 普通文本对话处理
+INFO     httpx:_client.py:1025 HTTP Request: POST http://47.253.63.85:3000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO     chat_agent:chat_agent.py:204 普通文本对话处理完成
+INFO     chat_agent:chat_agent.py:232 对话完成，使用节点: process_text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:79 使用节点: process_text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:80 文件类型: unknown
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:81 响应: 你好！很高兴认识你！😊
+
+我是DeepSeek，由深度求索公司创造的AI助手。让我简单介绍一下自己：
+
+**我的特点：**
+- 📚 知识截止到2024年7月，是DeepSeek的最新版本模型
+- 💬 ...
+ERROR    test_multimodal_chat_system:test_multimodal_chat_system.py:88 ✗ 普通文本对话测试失败: 应该检测为文本类型
+assert <FileType.UNKNOWN: 'unknown'> == <FileType.TEXT: 'text'>
+  
+  - text
+  + unknown
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:93 
+============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:94 测试 3: 包含文本内容的消息
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:95 ============================================================
+INFO     chat_agent:chat_agent.py:57 多模态对话智能体初始化完成
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:107 发送消息: 包含文本块的消息
+INFO     chat_agent:chat_agent.py:221 开始对话，消息数: 1
+INFO     chat_agent:chat_agent.py:105 执行节点: 文件类型检测
+INFO     chat_agent:chat_agent.py:110 检测到文件类型: unknown
+INFO     chat_agent:chat_agent.py:196 执行节点: 普通文本对话处理
+INFO     httpx:_client.py:1025 HTTP Request: POST http://47.253.63.85:3000/v1/chat/completions "HTTP/1.1 200 OK"
+INFO     chat_agent:chat_agent.py:204 普通文本对话处理完成
+INFO     chat_agent:chat_agent.py:232 对话完成，使用节点: process_text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:110 使用节点: process_text
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:111 文件类型: unknown
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:112 ✓ 文本内容消息测试通过
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:120 
+============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:121 测试 4: 从消息检测文件类型
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:122 ============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:137 图片消息检测结果: image
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:139 ✓ 图片消息检测通过
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:153 PDF 消息检测结果: pdf
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:155 ✓ PDF 消息检测通过
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:163 
+============================================================
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:164 测试 5: 对话智能体初始化
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:165 ============================================================
+INFO     chat_agent:chat_agent.py:57 多模态对话智能体初始化完成
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:169 ✓ 对话智能体初始化成功
+INFO     test_multimodal_chat_system:test_multimodal_chat_system.py:173 ✓ 图编译成功

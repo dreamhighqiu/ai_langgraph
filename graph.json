@@ -7,11 +7,8 @@
     "agent_image": {
       "path": "./example/image_agent.py:agent_image"
     },
-    "agent_multimodal": {
-      "path": "./chatsystem/core.py:agent_multimodal"
-    },
     "agent_multimodal_new": {
-      "path": "./chatsystem_new/core_new.py:agent_multimodal_new"
+      "path": "./src/file_rag/main.py:agent"
     }
   },
   "env": ".env",

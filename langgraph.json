@@ -8,9 +8,10 @@
       "path": "./example/image_agent.py:agent_image"
     },
     "agent_multimodal": {
-      "path": "./chatsystem/core.py:agent_multimodal"
+      "path": "./chatsystem_new/core_new.py:agent_multimodal_new"
     }
   },
   "env": ".env",
   "image_distro": "wolfi"
 }
+

@@ -23,8 +23,9 @@ def text_processing_node(state: ConversationState) -> ConversationState:
 
     # 过滤消息：只保留 human 和 ai 类型的消息
     # 移除 tool 类型的消息，因为 DeepSeek API 不支持
-    filtered_messages = []
+    filtered_messages = []  
     for msg in messages:
+        print(f"[DEBUG] msg处理消息: {msg}")
         # 处理 LangChain 消息对象
         if hasattr(msg, 'type'):
             if msg.type in ['human', 'ai', 'system']:
@@ -34,6 +35,7 @@ def text_processing_node(state: ConversationState) -> ConversationState:
             msg_type = msg.get('type', '')
             if msg_type in ['human', 'ai', 'system']:
                 filtered_messages.append(msg)
+               
 
     print(f"[DEBUG] 原始消息数: {len(messages)}, 过滤后消息数: {len(filtered_messages)}")
 

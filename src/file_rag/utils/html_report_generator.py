@@ -355,23 +355,29 @@ class HTMLReportGenerator:
     def generate_html_report(markdown_content: str, output_path: str = None) -> str:
         """
         生成HTML格式的测试报告
-        
+
         Args:
             markdown_content: Markdown格式的测试报告内容
             output_path: 输出文件路径（可选）
-            
+
         Returns:
             生成的HTML文件路径
         """
         # 解析报告内容
         report_data = HTMLReportGenerator.parse_markdown_report(markdown_content)
-        
+
         # 如果没有提供输出路径，自动生成
         if not output_path:
-            # 创建 test_reports 目录
-            reports_dir = Path("../src/test_reports")
+            # 获取项目根目录（相对于此文件的位置）
+            # 此文件位置: src/file_rag/utils/html_report_generator.py
+            # 项目根目录: ../../
+            current_file = Path(__file__).resolve()
+            project_root = current_file.parent.parent.parent.parent  # 回到项目根目录
+
+            # 创建 test_reports 目录（在项目根目录下）
+            reports_dir = project_root / "test_reports"
             reports_dir.mkdir(parents=True, exist_ok=True)
-            
+
             # 生成规范的文件名：测试报告_YYYYMMDD_HHMMSS.html
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             filename = f"测试报告_{timestamp}.html"

@@ -5,6 +5,52 @@
 from langchain_core.messages import HumanMessage
 
 
+def get_last_user_message(messages: list) -> str:
+    """
+    提取最后一条用户消息的文本内容
+
+    这个函数只关注最后一条用户消息，避免被前面的消息历史影响
+
+    Args:
+        messages: 消息列表
+
+    Returns:
+        最后一条用户消息的文本内容
+    """
+    # 从后往前遍历，找到最后一条用户消息
+    for msg in reversed(messages):
+        if isinstance(msg, dict):
+            role = msg.get('role', '')
+            msg_type = msg.get('type', '')
+            # 检查是否是用户消息
+            # 注意：LangGraph Server 可能传递 role='' 但 type='human'
+            if role == 'user' or role == 'human' or msg_type == 'human':
+                content = msg.get('content', '')
+                if isinstance(content, str):
+                    return content
+                elif isinstance(content, list):
+                    # 提取列表中的文本内容
+                    text_parts = []
+                    for item in content:
+                        if isinstance(item, dict) and item.get('type') == 'text':
+                            text_parts.append(item.get('text', ''))
+                    if text_parts:
+                        return ' '.join(text_parts)
+        elif isinstance(msg, HumanMessage):
+            if isinstance(msg.content, str):
+                return msg.content
+            elif isinstance(msg.content, list):
+                # 提取列表中的文本内容
+                text_parts = []
+                for item in msg.content:
+                    if isinstance(item, dict) and item.get('type') == 'text':
+                        text_parts.append(item.get('text', ''))
+                if text_parts:
+                    return ' '.join(text_parts)
+
+    return ""
+
+
 def detect_test_case_generation_task(messages: list) -> bool:
     """
     检测用户消息是否是测试用例生成任务（不包含自动化执行）
@@ -13,6 +59,8 @@ def detect_test_case_generation_task(messages: list) -> bool:
     - 包含"编写"、"生成"、"创建"等关键词
     - 包含"测试用例"、"用例"等关键词
     - 不包含"执行"、"运行"等自动化执行关键词
+
+    重要：只检查最后一条用户消息，避免被前面的消息历史影响
 
     Args:
         messages: 消息列表
@@ -24,21 +72,8 @@ def detect_test_case_generation_task(messages: list) -> bool:
     testcase_keywords = ['测试用例', '用例', 'test case', 'testcase']
     execution_keywords = ['执行', '运行', 'run', 'execute', '测试报告', '报告']
 
-    # 提取所有文本内容
-    text_content = ""
-    for msg in messages:
-        if isinstance(msg, dict):
-            content = msg.get('content', '')
-            if isinstance(content, str):
-                text_content += content + " "
-            elif isinstance(content, list):
-                for item in content:
-                    if isinstance(item, dict) and item.get('type') == 'text':
-                        text_content += item.get('text', '') + " "
-        elif isinstance(msg, HumanMessage):
-            if isinstance(msg.content, str):
-                text_content += msg.content + " "
-
+    # 只提取最后一条用户消息的文本内容
+    text_content = get_last_user_message(messages)
     text_lower = text_content.lower()
 
     # 检查是否包含生成关键词
@@ -80,6 +115,8 @@ def detect_browser_operation_task(messages: list) -> bool:
     - "访问https://www.google.com" → True（浏览器操作）
     - "打开网站并执行测试" → False（这是自动化测试，不是普通浏览器操作）
 
+    重要：只检查最后一条用户消息，避免被前面的消息历史影响
+
     Args:
         messages: 消息列表
 
@@ -93,21 +130,8 @@ def detect_browser_operation_task(messages: list) -> bool:
     # 测试关键词（如果包含这些，应该走自动化测试流程）
     test_keywords = ['测试', 'test', '自动化', '测试报告', '执行测试', '运行测试']
 
-    # 提取所有文本内容
-    text_content = ""
-    for msg in messages:
-        if isinstance(msg, dict):
-            content = msg.get('content', '')
-            if isinstance(content, str):
-                text_content += content + " "
-            elif isinstance(content, list):
-                for item in content:
-                    if isinstance(item, dict) and item.get('type') == 'text':
-                        text_content += item.get('text', '') + " "
-        elif isinstance(msg, HumanMessage):
-            if isinstance(msg.content, str):
-                text_content += msg.content + " "
-
+    # 只提取最后一条用户消息的文本内容
+    text_content = get_last_user_message(messages)
     text_lower = text_content.lower()
 
     # 检查是否包含操作关键词
@@ -141,6 +165,8 @@ def detect_automated_test_task(messages: list) -> bool:
     注意：只有明确提到"测试"相关词汇时才视为自动化测试任务
     普通的"打开网站"请求会被视为浏览器操作任务
 
+    重要：只检查最后一条用户消息，避免被前面的消息历史影响
+
     Args:
         messages: 消息列表
 
@@ -154,21 +180,8 @@ def detect_automated_test_task(messages: list) -> bool:
     # URL 模式
     url_patterns = ['www.', 'http://', 'https://', '.com', '.cn', '.net', '.org']
 
-    # 提取所有文本内容
-    text_content = ""
-    for msg in messages:
-        if isinstance(msg, dict):
-            content = msg.get('content', '')
-            if isinstance(content, str):
-                text_content += content + " "
-            elif isinstance(content, list):
-                for item in content:
-                    if isinstance(item, dict) and item.get('type') == 'text':
-                        text_content += item.get('text', '') + " "
-        elif isinstance(msg, HumanMessage):
-            if isinstance(msg.content, str):
-                text_content += msg.content + " "
-
+    # 只提取最后一条用户消息的文本内容
+    text_content = get_last_user_message(messages)
     text_lower = text_content.lower()
 
     # 检查是否包含测试关键词（必须）
@@ -256,20 +269,19 @@ def detect_file_type(messages: list) -> str:
                             print(f"[DEBUG] ✅ 检测到图片（通过 image 类型）")
                             has_file = True
                             file_type = "image"
-            # 如果content是字符串，继续查找
+            # 如果content是字符串，不需要 continue，继续处理下面的逻辑
             elif isinstance(content, str):
                 print(f"[DEBUG] 内容是字符串: {content[:100] if len(content) > 100 else content}")
-                continue
+                # 继续处理，不要 continue
 
         # 处理 BaseMessage 对象格式
         elif isinstance(msg, HumanMessage):
             content = msg.content
             print(f"[DEBUG] HumanMessage - 内容类型: {type(content).__name__}")
 
-            # 如果content是字符串，继续查找
+            # 如果content是字符串，不需要 continue，继续处理下面的逻辑
             if isinstance(content, str):
                 print(f"[DEBUG] 内容是字符串: {content[:100] if len(content) > 100 else content}")
-                continue
 
             # 如果content是列表，检查是否包含文件
             if isinstance(content, list):
@@ -314,16 +326,19 @@ def detect_file_type(messages: list) -> str:
             return file_type
 
     # 第三步：没有文件上传，检查是否是测试用例生成任务
+    # 注意：这里必须检查，因为纯文本消息也可能是测试用例生成请求
     if detect_test_case_generation_task(messages):
         print(f"[DEBUG] 🎯 路由决策: 纯文本 + 测试用例生成 → testcase_generation")
         return "testcase_generation"
 
     # 第四步：检查是否是自动化测试任务（包含"测试"关键词）
+    # 注意：这里必须检查，因为纯文本消息也可能是自动化测试请求
     if detect_automated_test_task(messages):
         print(f"[DEBUG] 🎯 路由决策: 自动化测试任务 → automated_test")
         return "automated_test"
 
     # 第五步：检查是否是浏览器操作任务（不包含"测试"关键词）
+    # 注意：这里必须检查，因为纯文本消息也可能是浏览器操作请求
     if detect_browser_operation_task(messages):
         print(f"[DEBUG] 🎯 路由决策: 浏览器操作任务 → browser_operation")
         return "browser_operation"

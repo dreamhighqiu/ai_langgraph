@@ -15,7 +15,7 @@ from langchain.chat_models import init_chat_model
 from langchain_core.messages import AnyMessage
 from langgraph.constants import START, END
 from langgraph.graph import MessagesState, StateGraph, add_messages
-from langgraph.prebuilt import ToolNode
+from langgraph.prebuilt import ToolNode,tools_condition
 from llm import create_llm
 model = create_llm()
 
@@ -111,6 +111,8 @@ agent_builder.add_edge(START, "llm_call")
 agent_builder.add_edge("llm_call", "tool_node")
 # agent_builder.add_edge("tool_node",END)
 agent_builder.add_edge("tool_node", "call_llm_node_2")
+
+# agent_builder.add_conditional_edges("call_llm_node_2", tools_condition)
 agent_builder.add_edge("call_llm_node_2", END)
 # Compile the agent
 graph = agent_builder.compile()

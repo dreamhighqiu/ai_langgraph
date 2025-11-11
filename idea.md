@@ -57,8 +57,6 @@ html报告要求：
 
     将base64位的数据转换成正常的pdf文件，然后 借助 langchain-pymupdf4llm实现文字内容的提取，langchain-pymupdf4llm的参考地址：https://docs.langchain.com/oss/python/integrations/document_loaders/pymupdf4llm，使用多模态提取图片，多模态代码在 llm_gpt**@pdf_agent.py**
 
-
-
 作业5:
 
     1、实现图片对话
@@ -86,3 +84,24 @@ html报告要求：
     节点4：正常对话
 
     条件边：选择合适的节点进行处理
+
+
+作业6：
+
+
+前端发起对话：后端从目录下读取文件内容+用户问题一起发送给大模型
+	目前的实现逻辑
+		前端上传base64位的数据
+		后端：将base64位的pdf转换成正常的pdf文件，借助pdf文档加载器解析文字内容，将用户问题及解析后的内容发送给大模型
+
+代码生成参考提示词：
+		以下代码请在当前文件中的log_before_model 函数中实现：
+
+    前端state["messages"]中接收的上传的pdf文件内容格式如下：
+		[HumanMessage(content=[{'type': 'text', 'text': '总结一下'}, {'type': 'file', 'source_type': 'base64', 'mime_type': 'application/pdf', 'data': 'JVBERi0xLjcNCiWhs8XXDQoxIDAgb2JqDQo8PC9QYWdlcyAyIDAgUiAvU3RydWN0V
+		......
+		BEOTBDMTIyMzJDOEFDMUYxRkUxMDY+XT4+DQpzdGFydHhyZWYNCjQ5Mjc3Mg0KJSVFT0YNCg==', 'metadata': {'filename': 'llm_course.pdf'}}], additional_kwargs={}, response_metadata={}, id='da159614-312d-4490-9e30-3acff9e6330b')]
+
+    将base64位的数据转换成正常的pdf文件，然后 借助 langchain-pymupdf4llm实现文字内容的提取，langchain-pymupdf4llm的参考地址：https://docs.langchain.com/oss/python/integrations/document_loaders/pymupdf4llm，使用多模态提取图片，多模态代码在 @llms.py文件中的get_doubao_seed_model函数
+
+    把解析出的pdf内容作为AImessage 添加到state["messages"]中

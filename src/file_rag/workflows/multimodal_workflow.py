@@ -3,16 +3,58 @@
 """
 from typing import Literal
 from langgraph.graph import StateGraph, START, END
-from file_rag.models import ConversationState
+from file_rag.models import ConversationState, TestCaseState
 from file_rag.nodes import (
     route_node,
     image_processing_node,
     pdf_processing_node,
     text_processing_node,
     automated_test_node,
-    browser_operation_node,
-    testcase_generation_bridge_node
+    browser_operation_node
 )
+from file_rag.workflows.testcase_workflow import build_testcase_workflow
+
+
+def testcase_generation_node(state: ConversationState) -> ConversationState:
+    """
+    测试用例生成节点适配器
+
+    将 ConversationState 转换为 TestCaseState，调用测试用例工作流，
+    然后将结果转换回 ConversationState
+
+    Args:
+        state: 通用对话状态
+
+    Returns:
+        更新后的通用对话状态
+    """
+    # 构建测试用例工作流
+    testcase_app = build_testcase_workflow()
+
+    # 将 ConversationState 转换为 TestCaseState
+    testcase_state: TestCaseState = {
+        "messages": state.get("messages", []),
+        "file_type": state.get("file_type", "text"),
+        "extracted_content": state.get("extracted_content", ""),
+        "test_requirement": state.get("test_requirement", ""),
+        "test_cases": "",
+        "test_cases_list": [],
+        "test_review_count": 0,
+        "review_passed": False,
+        "review_score": 0,
+    }
+
+    # 调用测试用例工作流
+    result = testcase_app.invoke(testcase_state)
+
+    # 将结果转换回 ConversationState
+    return {
+        **state,
+        "messages": result.get("messages", state.get("messages", [])),
+        "test_cases": result.get("test_cases", ""),
+        "test_cases_list": result.get("test_cases_list", []),
+        "file_path": result.get("file_path", ""),
+    }
 
 
 def route_by_file_type(state: ConversationState) -> Literal["image_processing", "pdf_processing", "text_processing", "automated_test", "browser_operation", "testcase_generation"]:
@@ -105,8 +147,8 @@ def build_multimodal_workflow(enable_mcp: bool = True):
     workflow.add_node("pdf_processing", pdf_processing_node)  # 节点3：PDF处理
     workflow.add_node("text_processing", text_processing_node)  # 节点4：文本处理
     workflow.add_node("automated_test", automated_test_node)  # 节点5：自动化测试
-    workflow.add_node("browser_operation", browser_operation_node)  # 节点6：浏览器操作（新增）
-    workflow.add_node("testcase_generation", testcase_generation_bridge_node)  # 节点7：测试用例生成
+    workflow.add_node("browser_operation", browser_operation_node)  # 节点6：浏览器操作
+    workflow.add_node("testcase_generation", testcase_generation_node)  # 节点7：测试用例生成
 
     # 添加边
     print("添加边...")
@@ -127,12 +169,13 @@ def build_multimodal_workflow(enable_mcp: bool = True):
         }
     )
 
-    # 各处理节点 → END
+    # 各处理节点 → END（所有节点并列，直接连接到END）
+    # 这确保了所有处理节点在同一层级，没有层级关系
     workflow.add_edge("image_processing", END)
     workflow.add_edge("pdf_processing", END)
     workflow.add_edge("text_processing", END)
     workflow.add_edge("automated_test", END)
-    workflow.add_edge("browser_operation", END)  # 新增
+    workflow.add_edge("browser_operation", END)
     workflow.add_edge("testcase_generation", END)
 
     # 编译工作流

@@ -7,8 +7,11 @@
     "agent_image": {
       "path": "./example/image_agent.py:agent_image"
     },
-    "agent_multimodal_new": {
+    "agent_multimodal": {
       "path": "./src/file_rag/main.py:agent"
+    },
+    "testcase_workflow": {
+      "path": "./src/file_rag/workflows/testcase_workflow.py:build_testcase_workflow"
     }
   },
   "env": ".env",

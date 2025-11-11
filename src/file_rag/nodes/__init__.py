@@ -8,11 +8,10 @@ from .text_node import text_processing_node
 from .automated_test_node import automated_test_node
 from .browser_node import browser_operation_node
 from .testcase_nodes import (
-    testcase_generation_bridge_node,
-    generate_test_case_node,
-    wait_for_user_review_node,
-    save_test_case_to_excel_node,
-    review_decision_edge
+    write_test_case_node,
+    review_test_case_node,
+    save_to_excel_node,
+    review_decision_edge_new
 )
 
 __all__ = [
@@ -22,10 +21,9 @@ __all__ = [
     'text_processing_node',
     'automated_test_node',
     'browser_operation_node',
-    'testcase_generation_bridge_node',
-    'generate_test_case_node',
-    'wait_for_user_review_node',
-    'save_test_case_to_excel_node',
-    'review_decision_edge',
+    'write_test_case_node',
+    'review_test_case_node',
+    'save_to_excel_node',
+    'review_decision_edge_new',
 ]
 

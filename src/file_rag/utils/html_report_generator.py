@@ -368,8 +368,8 @@ class HTMLReportGenerator:
         
         # 如果没有提供输出路径，自动生成
         if not output_path:
-            # 在 E:\huitest004\src\ 下创建 test_reports 目录
-            reports_dir = Path("E:/huitest004/src/test_reports")
+            # 创建 test_reports 目录
+            reports_dir = Path("../src/test_reports")
             reports_dir.mkdir(parents=True, exist_ok=True)
             
             # 生成规范的文件名：测试报告_YYYYMMDD_HHMMSS.html

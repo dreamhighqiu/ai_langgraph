@@ -6,7 +6,7 @@
 
 import json
 import os
-from typing import TypedDict, Annotated, List, Dict, Any
+from typing import TypedDict, Annotated, List, Dict, Any, Literal
 from datetime import datetime
 
 from langchain_core.messages import AnyMessage, HumanMessage, AIMessage
@@ -40,7 +40,7 @@ PRIORITY_LEVELS = ["高", "中", "低"]
 TEST_CASE_TYPES = ["功能测试", "性能测试", "安全测试", "兼容性测试", "集成测试", "回归测试"]
 
 # 最大评审次数
-MAX_REVIEW_COUNT = 3
+MAX_REVIEW_COUNT = 2
 
 
 # ============================================================================
@@ -371,7 +371,7 @@ def save_test_case_node(state: TestCaseState) -> TestCaseState:
 # 条件边定义
 # ============================================================================
 
-def review_condition_edge(state: TestCaseState) -> str:
+def review_condition_edge(state: TestCaseState) -> Literal["save_node", "write_node"]:
     """
     条件边：根据评审结果决定下一步
 

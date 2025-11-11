@@ -1,6 +1,11 @@
 """
 工具模块 - 提供各种 MCP 工具的封装
 添加了错误处理和延迟初始化机制
+
+典型的mcp获取地址
+https://mcp.so/server/playwright-mcp/microsoft
+https://mcpservers.org/
+https://modelscope.cn/mcp
 """
 
 import asyncio

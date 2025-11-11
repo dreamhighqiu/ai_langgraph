@@ -54,7 +54,16 @@ def create_agent_graph(config: Optional[RunnableConfig] = None):
         tools=[],
         middleware=[add_messages_middleware],
     )
+
+    # for chunk in agent.stream(
+    #     {"messages": [{"role": "user", "content": "Hello world"}]},
+    #     stream_mode="values",
+    # ):
+    #     for step,data in chunk.items():
+    #         print("step:", step, "content:", data)
+
     return agent
+    
 
 agent_image = create_agent(
         model=llm_gpt,

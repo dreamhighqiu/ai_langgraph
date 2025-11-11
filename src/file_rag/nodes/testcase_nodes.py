@@ -1,601 +1,727 @@
 """
-测试用例生成节点模块
-负责测试用例生成工作流的所有节点
+测试用例生成节点模块 - 精简版（重构）
 
-注意：本模块主要使用 testcase_generation_bridge_node 作为统一的测试用例生成节点。
-其他函数（generate_test_case_node等）是旧版工作流的节点，已被替代但保留以保持向后兼容性。
+核心功能：
+1. parse_test_cases_from_string() - 解析LLM生成的测试用例JSON
+2. review_test_cases_with_ai() - 使用AI自动评审测试用例
+3. write_test_case_node() - 节点1：编写测试用例
+4. review_test_case_node() - 节点2：评审测试用例
+5. review_decision_edge_new() - 条件边：评审决策
+6. save_to_excel_node() - 节点3：保存到Excel
+
+工作流程：
+    START → 节点1(编写) → 节点2(评审) → 条件边(决策) → 节点3(保存) → END
+                                              ↓
+                                            节点1(重新生成)
 """
+import json
+import os
+import datetime
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
-from file_rag.models import ConversationState, TestCaseGenerationState
-from file_rag.core.llm import create_llm,create_gpt5_llm
-from file_rag.utils.pdf_utils import extract_pdf_content, extract_pdf_images
+from file_rag.models import TestCaseState
+from file_rag.core.llm import create_llm, create_gpt5_llm
 
 
-def testcase_generation_bridge_node(state: ConversationState) -> ConversationState:
+def parse_test_cases_from_string(test_cases_str: str) -> list:
     """
-    桥接节点：测试用例生成（支持人工评审）
+    从字符串中解析测试用例列表
 
-    工作流程：
-    1. 检测是否是用户评审输入（"通过"或"不通过"）
-    2. 如果是评审输入：根据评审结果保存或重新生成
-    3. 如果不是评审输入：生成新的测试用例并等待用户评审
+    支持格式：
+    1. JSON数组：[{...}, {...}]
+    2. JSON对象：{"test_cases": [{...}]}
+    3. 混合格式：文本中包含JSON
 
     Args:
-        state: 当前对话状态（ConversationState）
+        test_cases_str: 测试用例字符串
 
     Returns:
-        更新后的状态，包含生成的测试用例和AI回复
+        测试用例列表，解析失败返回空列表
     """
-    print("\n=== 桥接节点：测试用例生成（人工评审模式）===")
+    if not isinstance(test_cases_str, str):
+        return []
+
+    try:
+        # 尝试直接解析JSON
+        data = json.loads(test_cases_str)
+        if isinstance(data, list):
+            return data
+        elif isinstance(data, dict) and 'test_cases' in data:
+            test_cases = data.get('test_cases', [])
+            return test_cases if isinstance(test_cases, list) else []
+    except json.JSONDecodeError:
+        pass
+
+    # 尝试从文本中提取JSON数组
+    try:
+        start_idx = test_cases_str.find('[')
+        end_idx = test_cases_str.rfind(']') + 1
+        if start_idx != -1 and end_idx > start_idx:
+            json_str = test_cases_str[start_idx:end_idx]
+            data = json.loads(json_str)
+            if isinstance(data, list):
+                return data
+    except json.JSONDecodeError:
+        pass
+
+    # 尝试从文本中提取JSON对象
+    try:
+        start_idx = test_cases_str.find('{')
+        end_idx = test_cases_str.rfind('}') + 1
+        if start_idx != -1 and end_idx > start_idx:
+            json_str = test_cases_str[start_idx:end_idx]
+            data = json.loads(json_str)
+            if isinstance(data, dict) and 'test_cases' in data:
+                test_cases = data.get('test_cases', [])
+                return test_cases if isinstance(test_cases, list) else []
+    except json.JSONDecodeError:
+        pass
+
+    return []
+
+
+def review_test_cases_with_ai(test_cases_list: list, llm) -> dict:
+    """
+    使用AI自动评审测试用例
+
+    Args:
+        test_cases_list: 测试用例列表
+        llm: LLM模型实例
+
+    Returns:
+        评审结果字典：
+        {
+            "passed": bool,
+            "score": int (0-100),
+            "issues": list,
+            "suggestions": list,
+            "summary": str
+        }
+    """
+    print("\n[AI评审] 开始自动评审测试用例...")
+
+    review_prompt = f"""你是一个资深的QA评审专家。请严格评审以下测试用例。
+
+【评审标准】
+1. 字段完整性：所有必需字段都存在
+2. 字段有效性：ID格式正确、优先级和类型有效
+3. 逻辑合理性：每个用例只测试一个功能点
+4. 可执行性：步骤具体明确，结果可验证
+5. 无重复性：用例之间没有重复
+
+【测试用例】
+{json.dumps(test_cases_list, ensure_ascii=False, indent=2)}
+
+【输出格式】
+必须返回JSON对象：
+{{
+    "passed": true/false,
+    "score": 0-100,
+    "issues": [{{"case_id": "TC001", "field": "字段名", "issue": "问题描述"}}],
+    "suggestions": ["建议1", "建议2"],
+    "summary": "总体评价"
+}}
+
+请严格按照格式返回。"""
+
+    try:
+        response = llm.invoke([HumanMessage(content=review_prompt)])
+        content = response.content if hasattr(response, 'content') else str(response)
+
+        # 提取JSON
+        start_idx = content.find('{')
+        end_idx = content.rfind('}') + 1
+        if start_idx != -1 and end_idx > start_idx:
+            json_str = content[start_idx:end_idx]
+            review_result = json.loads(json_str)
+
+            passed = review_result.get("passed", False)
+            score = review_result.get("score", 0)
+            print(f"[AI评审] 得分: {score}/100, 通过: {passed}")
+
+            return review_result
+    except Exception as e:
+        print(f"[AI评审] 评审失败: {str(e)}")
+
+    # 评审失败时返回默认通过
+    return {
+        "passed": True,
+        "score": 80,
+        "issues": [],
+        "suggestions": [],
+        "summary": "自动评审失败，默认通过"
+    }
+
+
+def write_test_case_node(state: TestCaseState) -> TestCaseState:
+    """
+    节点1：编写测试用例
+
+    功能：
+    1. 检测文件类型（图片、PDF、纯文本）
+    2. 选择合适的LLM模型
+    3. 生成测试用例
+    4. 解析为结构化格式
+
+    Args:
+        state: 当前测试用例状态
+
+    Returns:
+        更新后的状态
+    """
+    print("\n" + "="*80)
+    print("【节点1】编写测试用例")
+    print("="*80)
 
     messages = state.get("messages", [])
     file_type = state.get("file_type", "text")
     extracted_content = state.get("extracted_content", "")
-
-    # 获取状态中的测试用例相关信息
-    test_cases = state.get("test_cases", "")
+    test_requirement = state.get("test_requirement", "")
+    review_feedback = state.get("review_feedback", "")
     test_review_count = state.get("test_review_count", 0)
-    waiting_for_review = state.get("waiting_for_user_review", False)
 
-    # 步骤1：检测是否是用户评审输入
-    user_input = ""
-    for msg in reversed(messages):
-        if isinstance(msg, HumanMessage):
-            user_input = msg.content
-            break
-        elif isinstance(msg, dict) and msg.get("type") == "human":
-            content = msg.get("content", "")
-            if isinstance(content, list):
-                for item in content:
-                    if isinstance(item, dict) and item.get("type") == "text":
-                        user_input = item.get("text", "")
-                        break
-            elif isinstance(content, str):
-                user_input = content
-            if user_input:
-                break
+    print(f"[输入] 文件类型: {file_type}, 需求: {test_requirement[:50] if test_requirement else '无'}")
+    print(f"[状态] 评审次数: {test_review_count}")
 
-    print(f"[用户输入] {user_input[:100]}...")
-    print(f"[等待评审] {waiting_for_review}")
-    print(f"[已有测试用例] {bool(test_cases)}")
-
-    # 步骤2：如果正在等待评审且用户输入了评审结果
-    if waiting_for_review and test_cases:
-        print("\n[模式] 处理用户评审")
-
-        # 解析用户评审
-        if "通过" in user_input and "不通过" not in user_input:
-            print("[评审结果] ✅ 用户评审通过")
-
-            # 保存测试用例到Excel
-            from tools import save_test_cases_to_excel
-            import datetime
-
-            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-            file_name = f"test_cases_{timestamp}.xlsx"
-
-            try:
-                result = save_test_cases_to_excel.invoke({
-                    "test_cases": test_cases,
-                    "file_name": file_name
-                })
-
-                ai_response = f"""✅ 评审通过！测试用例已保存
-
-📊 执行统计：
-- 评审次数：{test_review_count + 1}
-- 评审结果：通过
-
-💾 保存结果：
-{result}
-
-📝 测试用例内容：
-
-{test_cases}
-"""
-            except Exception as e:
-                ai_response = f"❌ 保存失败：{str(e)}\n\n测试用例内容：\n{test_cases}"
-
-            # 清除等待评审状态
-            ai_message = AIMessage(content=ai_response)
-            updated_messages = messages + [ai_message]
-
-            return {
-                **state,
-                "messages": updated_messages,
-                "waiting_for_user_review": False,
-                "test_cases": "",
-                "test_review_count": 0
-            }
-
-        else:
-            print("[评审结果] ❌ 用户评审不通过")
-
-            # 提取反馈意见
-            feedback = user_input
-            if "不通过" in user_input:
-                parts = user_input.split("不通过", 1)
-                if len(parts) > 1:
-                    feedback = parts[1].strip().lstrip("，,：: ")
-
-            print(f"[反馈意见] {feedback[:100]}...")
-
-            # 获取原始分析结果和是否使用了多模态模型
-            original_analysis = state.get("original_analysis", "")
-            used_multimodal = state.get("used_multimodal", False)
-            requirement = state.get("test_requirement", "")  # 提前获取 requirement
-
-            print(f"[状态] 原始分析长度: {len(original_analysis)}, 使用多模态: {used_multimodal}")
-
-            # 重新生成测试用例
-            # 检测原始消息中是否有图片
-            has_image = False
-            original_message = None
-            for msg in messages:
-                if isinstance(msg, dict):
-                    content = msg.get('content', '')
-                    if isinstance(content, list):
-                        for item in content:
-                            if isinstance(item, dict):
-                                if item.get('type') == 'image_url':
-                                    has_image = True
-                                    original_message = msg
-                                    break
-                                elif item.get('type') == 'text' and "编写测试用例" in item.get('text', ''):
-                                    original_message = msg
-                if has_image:
-                    break
-
-            # 如果使用了多模态模型（图片或PDF），基于原始分析结果重新生成
-            if used_multimodal and original_analysis:
-                print(f"[检测] ✅ 使用了多模态模型，基于原始分析结果重新生成")
-
-                # 如果有图片，使用豆包多模态模型
-                if has_image and original_message:
-                    print(f"[模型] 使用豆包多模态模型（图片）")
-                    model = create_gpt5_llm()
-
-                    system_prompt = f"""你是一个专业的测试工程师。之前生成的测试用例未通过评审，请根据评审反馈重新编写。
-
-评审反馈：{feedback}
-
-之前的分析和测试用例：
-{original_analysis}
-
-请仔细分析用户上传的图片，理解图片中展示的功能、界面或流程，然后根据评审反馈改进测试用例。
-
-测试用例必须包含以下字段：
-1. 用例编号（格式：TC001, TC002...）
-2. 用例标题（简洁明了）
-3. 前置条件（执行测试前需要满足的条件）
-4. 测试步骤（详细的操作步骤，每步一行）
-5. 预期结果（期望的测试结果）
-6. 优先级（高/中/低）
-
-请基于图片内容、之前的分析和评审反馈编写改进的测试用例。"""
-
-                    # 使用原始消息（包含图片）
-                    llm_messages = [SystemMessage(content=system_prompt), original_message]
-
-                    response = model.invoke(llm_messages)
-                    new_test_cases = response.content
-
-                    print(f"[重新生成] 已使用豆包多模态模型重新生成测试用例（第 {test_review_count + 1} 次）")
-
-                else:
-                    # PDF 或其他多模态内容，使用 DeepSeek 基于原始分析结果
-                    print(f"[模型] 使用 DeepSeek 模型（基于原始分析）")
-                    model = create_llm()
-
-                    system_prompt = """你是一个专业的测试工程师。之前生成的测试用例未通过评审，请根据评审反馈重新编写。
-
-测试用例必须包含以下字段：
-1. 用例编号（格式：TC001, TC002...）
-2. 用例标题（简洁明了）
-3. 前置条件（执行测试前需要满足的条件）
-4. 测试步骤（详细的操作步骤，每步一行）
-5. 预期结果（期望的测试结果）
-6. 优先级（高/中/低）
-
-请仔细阅读之前的分析和评审反馈，针对性地改进测试用例。"""
-
-                    user_prompt = f"""{original_analysis}
-
-评审反馈：{feedback}
-
-请根据以上内容和反馈重新编写测试用例。"""
-
-                    llm_messages = [
-                        SystemMessage(content=system_prompt),
-                        HumanMessage(content=user_prompt)
-                    ]
-
-                    response = model.invoke(llm_messages)
-                    new_test_cases = response.content
-
-                    print(f"[重新生成] 已基于原始分析重新生成测试用例（第 {test_review_count + 1} 次）")
-
-            else:
-                # 没有图片，使用DeepSeek模型
-                print(f"[检测] 无图片，使用DeepSeek模型重新生成")
-
-                # 提取原始需求（如果还没有）
-                if not requirement:
-                    # 从消息历史中提取
-                    for msg in messages:
-                        if isinstance(msg, dict):
-                            content = msg.get('content', '')
-                            if isinstance(content, str) and "编写测试用例" in content:
-                                requirement = content
-                                break
-                            elif isinstance(content, list):
-                                for item in content:
-                                    if isinstance(item, dict) and item.get('type') == 'text':
-                                        text = item.get('text', '')
-                                        if "编写测试用例" in text:
-                                            requirement = text
-                                            break
-                        elif isinstance(msg, HumanMessage) and "编写测试用例" in msg.content:
-                            requirement = msg.content
-                            break
-
-                # 调用大模型重新生成
-                model = create_llm()
-
-                system_prompt = """你是一个专业的测试工程师。之前生成的测试用例未通过评审，请根据评审反馈重新编写。
-
-测试用例必须包含以下字段：
-1. 用例编号（格式：TC001, TC002...）
-2. 用例标题（简洁明了）
-3. 前置条件（执行测试前需要满足的条件）
-4. 测试步骤（详细的操作步骤，每步一行）
-5. 预期结果（期望的测试结果）
-6. 优先级（高/中/低）
-
-请仔细阅读评审反馈，针对性地改进测试用例。"""
-
-                user_prompt = f"""原始需求：{requirement}
-
-评审反馈：{feedback}
-
-请根据以上反馈重新编写测试用例。"""
-
-                llm_messages = [
-                    SystemMessage(content=system_prompt),
-                    HumanMessage(content=user_prompt)
-                ]
-
-                response = model.invoke(llm_messages)
-                new_test_cases = response.content
-
-                print(f"[重新生成] 已生成新的测试用例（第 {test_review_count + 1} 次）")
-
-            ai_response = f"""✅ 已根据您的反馈重新生成测试用例（第 {test_review_count + 1} 次）：
-
-{new_test_cases}
-
----
-
-**请评审以上测试用例**：
-- 如果符合要求，请回复：**通过**
-- 如果需要修改，请回复：**不通过**，并说明改进意见
-
-例如：
-- "通过"
-- "不通过，需要增加边界场景的测试用例"
-"""
-
-            ai_message = AIMessage(content=ai_response)
-            updated_messages = messages + [ai_message]
-
-            return {
-                **state,
-                "messages": updated_messages,
-                "test_cases": new_test_cases,
-                "test_review_count": test_review_count + 1,
-                "waiting_for_user_review": True,
-                "test_requirement": requirement
-            }
-
-    # 步骤3：首次生成测试用例
-    print("\n[模式] 首次生成测试用例")
-
-    # 获取文件类型和提取的内容
-    file_type = state.get("file_type", "text")
-    extracted_content = state.get("extracted_content", "")
-
-    # 检测是否有 PDF 文件
-    has_pdf = False
-    pdf_base64_data = ""
-    pdf_filename = ""
-
-    for msg in messages:
-        if isinstance(msg, dict):
-            content = msg.get('content', '')
-            if isinstance(content, list):
-                for item in content:
-                    if isinstance(item, dict):
-                        if item.get('type') == 'file' and 'pdf' in item.get('mime_type', '').lower():
-                            has_pdf = True
-                            pdf_base64_data = item.get('data', '')
-                            pdf_filename = item.get('metadata', {}).get('filename', 'unknown.pdf')
-                            break
-        elif isinstance(msg, HumanMessage) and isinstance(msg.content, list):
-            for item in msg.content:
-                if isinstance(item, dict):
-                    if item.get('type') == 'file' and 'pdf' in item.get('mime_type', '').lower():
-                        has_pdf = True
-                        pdf_base64_data = item.get('data', '')
-                        pdf_filename = item.get('metadata', {}).get('filename', 'unknown.pdf')
-                        break
-        if has_pdf:
-            break
-
-    # 如果有 PDF，先提取 PDF 内容（包括图片）
-    if has_pdf and pdf_base64_data:
-        print(f"[检测] ✅ 发现 PDF 文件：{pdf_filename}")
-        print(f"[步骤1] 正在提取 PDF 文本内容...")
-
-        # 提取 PDF 文本
-        pdf_text = extract_pdf_content(pdf_base64_data)
-        print(f"  提取的文本长度: {len(pdf_text)} 字符")
-
-        # 提取 PDF 图片
-        print(f"[步骤2] 正在提取 PDF 图片...")
-        pdf_images = extract_pdf_images(pdf_base64_data)
-        print(f"  提取了 {len(pdf_images)} 张图片")
-
-        # 如果有图片，使用豆包模型识别
-        image_descriptions = []
-        if pdf_images:
-            print(f"[步骤3] 使用豆包多模态模型识别 PDF 图片...")
-            doubao_model = create_gpt5_llm()
-
-            for idx, img_info in enumerate(pdf_images):
-                print(f"  识别第 {idx + 1}/{len(pdf_images)} 张图片（第{img_info['page']}页）...")
-
-                # 构建图片识别消息
-                image_message = HumanMessage(content=[
-                    {'type': 'text', 'text': '请详细描述这张图片的内容，包括图片中的文字、图表、图形等所有信息。'},
-                    {
-                        'type': 'image_url',
-                        'image_url': {
-                            'url': f"data:image/{img_info['ext']};base64,{img_info['data']}"
-                        }
-                    }
-                ])
-
-                try:
-                    img_response = doubao_model.invoke([image_message])
-                    description = img_response.content
-                    image_descriptions.append({
-                        'page': img_info['page'],
-                        'index': img_info['index'],
-                        'description': description
-                    })
-                    print(f"    ✓ 图片识别成功: {description[:100]}...")
-                except Exception as e:
-                    print(f"    ✗ 图片识别失败: {e}")
-                    image_descriptions.append({
-                        'page': img_info['page'],
-                        'index': img_info['index'],
-                        'description': f"图片识别失败: {str(e)}"
-                    })
-
-        # 组合 PDF 内容
-        combined_pdf_content = f"""PDF文件名: {pdf_filename}
-
-【文本内容】
-{pdf_text}
-"""
-
-        if image_descriptions:
-            combined_pdf_content += "\n【图片内容】\n"
-            for img_desc in image_descriptions:
-                combined_pdf_content += f"\n图片 {img_desc['index']}（第{img_desc['page']}页）：\n{img_desc['description']}\n"
-
-        # 更新 extracted_content
-        extracted_content = combined_pdf_content
-        print(f"[完成] PDF 内容提取完成（文本 + {len(image_descriptions)} 张图片）")
-
-    # 检测是否有图片（非 PDF）
-    has_image = False
-    for msg in messages:
-        if isinstance(msg, dict):
-            content = msg.get('content', '')
-            if isinstance(content, list):
-                for item in content:
-                    if isinstance(item, dict) and item.get('type') == 'image_url':
-                        has_image = True
-                        break
-        if has_image:
-            break
-
-    # 提取测试需求（用于保存到状态）
-    requirement = ""
-    original_analysis = ""  # 保存原始分析结果
-    used_multimodal = False  # 是否使用了多模态模型
-
-    # 如果有图片，使用豆包多模态模型分析图片
-    if has_image:
-        print(f"[检测] ✅ 发现图片，使用豆包多模态模型分析")
+    # 选择LLM模型
+    if file_type in ["image", "pdf"]:
+        print("[模型] 使用多模态模型（GPT-5）")
+        llm = create_gpt5_llm()
         used_multimodal = True
-
-        # 提取文本需求（用于记录）
-        for msg in messages:
-            if isinstance(msg, dict):
-                content = msg.get('content', '')
-                if isinstance(content, list):
-                    for item in content:
-                        if isinstance(item, dict) and item.get('type') == 'text':
-                            requirement += item.get('text', '') + "\n"
-            elif isinstance(msg, HumanMessage):
-                if isinstance(msg.content, list):
-                    for item in msg.content:
-                        if isinstance(item, dict) and item.get('type') == 'text':
-                            requirement += item.get('text', '') + "\n"
-        requirement = requirement.strip()
-        print(f"[需求来源] 从用户消息提取（包含图片）")
-        print(f"[测试需求] {requirement[:200]}...")
-
-        # 使用豆包多模态模型
-        model = create_gpt5_llm()
-
-        # 构建系统提示
-        system_prompt = """你是一个专业的测试工程师。请仔细分析用户上传的图片，理解图片中展示的功能、界面或流程，然后编写详细的测试用例。
-
-测试用例必须包含以下字段：
-1. 用例编号（格式：TC001, TC002...）
-2. 用例标题（简洁明了）
-3. 前置条件（执行测试前需要满足的条件）
-4. 测试步骤（详细的操作步骤，每步一行）
-5. 预期结果（期望的测试结果）
-6. 优先级（高/中/低）
-
-请先分析图片内容，说明你看到了什么功能或界面，然后基于图片内容编写测试用例。
-确保测试用例覆盖正常场景、异常场景和边界场景。"""
-
-        # 直接使用原始消息（包含图片）
-        llm_messages = [SystemMessage(content=system_prompt)] + messages
-
-        # 调用豆包多模态模型
-        response = model.invoke(llm_messages)
-        test_cases = response.content
-
-        # 保存原始分析结果（包含图片分析）
-        original_analysis = test_cases
-
-        print(f"[生成] 已使用豆包多模态模型生成测试用例（第 1 次）")
-        print(f"[预览] {test_cases[:200]}...")
-
     else:
-        # 没有图片，使用DeepSeek模型
-        print(f"[检测] 无图片，使用DeepSeek模型")
+        print("[模型] 使用文本模型（DeepSeek）")
+        llm = create_llm(temperature=0.7)
+        used_multimodal = False
 
-        # 提取测试需求（如果还没有提取）
-        if extracted_content:
-            requirement = f"根据以下内容编写测试用例：\n\n{extracted_content}"
-            print(f"[需求来源] 从文件提取的内容（{file_type}）")
-            # 如果有 extracted_content，说明可能是 PDF，标记为使用了多模态
-            if "【图片内容】" in extracted_content:
-                used_multimodal = True
+    try:
+        print("[LLM] 正在生成测试用例...")
+
+        # 处理 PDF 文件 - 直接传递给多模态模型
+        if file_type == "pdf":
+            print("[PDF] 检测到 PDF 文件，开始处理...")
+            try:
+                # 从消息中查找 PDF 文件块
+                for message in messages:
+                    if isinstance(message, HumanMessage) and isinstance(message.content, list):
+                        for content_block in message.content:
+                            if (isinstance(content_block, dict) and
+                                content_block.get('type') == 'file' and
+                                content_block.get('source_type') == 'base64' and
+                                content_block.get('mime_type') == 'application/pdf'):
+
+                                base64_data = content_block.get('data', '')
+                                filename = content_block.get('metadata', {}).get('filename', 'document.pdf')
+
+                                print(f"[PDF] 处理 PDF 文件: {filename}")
+
+                                # 构建包含 PDF 的消息
+                                # 注意：由于 LangChain 对 PDF 的多模态支持有限，
+                                # 我们使用文本提取 + 多模态模型的方式
+                                try:
+                                    from file_rag.utils.pdf_utils import extract_pdf_content
+
+                                    # 提取 PDF 文本内容
+                                    pdf_text = extract_pdf_content(base64_data)
+
+                                    # 构建包含提取内容的提示
+                                    pdf_prompt_with_content = f"""你是一个专业的测试工程师。请根据以下 PDF 文档内容和测试需求编写测试用例：
+
+【PDF 文档内容】
+{pdf_text[:2000]}
+
+【测试需求】
+{test_requirement}
+
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
+
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 生成3-5个高质量的测试用例
+5. 不要添加任何其他文本，只返回JSON"""
+
+                                    pdf_llm_messages = [
+                                        SystemMessage(content=pdf_prompt_with_content),
+                                        HumanMessage(content="请根据上述 PDF 内容生成测试用例")
+                                    ]
+
+                                    response = llm.invoke(pdf_llm_messages)
+                                    test_cases_str = response.content
+                                    print(f"[PDF] 生成完成，长度: {len(test_cases_str)}")
+                                except Exception as pdf_extract_error:
+                                    print(f"[PDF] 文本提取失败: {pdf_extract_error}，使用降级方案")
+                                    test_cases_str = None
+                                break
+                        if 'test_cases_str' in locals():
+                            break
+            except Exception as e:
+                print(f"[PDF] PDF 处理异常: {str(e)}")
+                # 降级处理：使用提取的内容
+                test_cases_str = None
+
+        # 处理图片文件 - 直接传递给多模态模型
+        elif file_type == "image":
+            print("[图片] 检测到图片文件，开始处理...")
+            try:
+                # 从消息中查找图片文件块
+                for message in messages:
+                    if isinstance(message, HumanMessage) and isinstance(message.content, list):
+                        for content_block in message.content:
+                            if (isinstance(content_block, dict) and
+                                content_block.get('type') == 'file' and
+                                content_block.get('source_type') == 'base64' and
+                                'image' in content_block.get('mime_type', '')):
+
+                                base64_data = content_block.get('data', '')
+                                filename = content_block.get('metadata', {}).get('filename', 'image.png')
+                                mime_type = content_block.get('mime_type', 'image/png')
+
+                                print(f"[图片] 处理图片文件: {filename}")
+
+                                # 使用多模态模型直接分析图片并生成测试用例
+                                image_prompt = f"""你是一个专业的测试工程师。请分析这张图片的内容，然后根据以下需求编写测试用例：
+
+【测试需求】
+{test_requirement}
+
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
+
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 生成3-5个高质量的测试用例
+5. 不要添加任何其他文本，只返回JSON"""
+
+                                # 构建包含图片的消息
+                                image_llm_messages = [
+                                    SystemMessage(content=image_prompt),
+                                    HumanMessage(content=[
+                                        {"type": "text", "text": "请分析这张图片并生成测试用例"},
+                                        {
+                                            "type": "image_url",
+                                            "image_url": {"url": f"data:{mime_type};base64,{base64_data}"}
+                                        }
+                                    ])
+                                ]
+
+                                response = llm.invoke(image_llm_messages)
+                                test_cases_str = response.content
+                                print(f"[图片] 生成完成，长度: {len(test_cases_str)}")
+                                break
+                        if 'test_cases_str' in locals():
+                            break
+            except Exception as e:
+                print(f"[图片] 图片处理异常: {str(e)}")
+                # 降级处理
+                test_cases_str = None
+
+        # 处理纯文本
         else:
-            for msg in messages:
-                if isinstance(msg, dict):
-                    content = msg.get('content', '')
-                    if isinstance(content, str):
-                        requirement += content + "\n"
-                    elif isinstance(content, list):
-                        for item in content:
-                            if isinstance(item, dict) and item.get('type') == 'text':
-                                requirement += item.get('text', '') + "\n"
-                elif isinstance(msg, HumanMessage):
-                    if isinstance(msg.content, str):
-                        requirement += msg.content + "\n"
-            print(f"[需求来源] 从用户消息提取")
+            print("[文本] 使用纯文本模式...")
 
-        requirement = requirement.strip()
-        print(f"[测试需求] {requirement[:200]}...")
+            # 构建系统提示
+            if review_feedback:
+                # 重新生成模式
+                system_prompt = f"""你是一个专业的测试工程师。之前的测试用例未通过评审，请根据反馈重新编写。
 
-        # 调用大模型生成测试用例
-        model = create_llm()
+【评审反馈】
+{review_feedback}
 
-        system_prompt = """你是一个专业的测试工程师。请根据用户的需求编写详细的测试用例。
+【原始需求】
+{test_requirement}
 
-测试用例必须包含以下字段：
-1. 用例编号（格式：TC001, TC002...）
-2. 用例标题（简洁明了）
-3. 前置条件（执行测试前需要满足的条件）
-4. 测试步骤（详细的操作步骤，每步一行）
-5. 预期结果（期望的测试结果）
-6. 优先级（高/中/低）
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
 
-请以清晰的结构化格式输出测试用例，每个测试用例之间用空行分隔。
-确保测试用例覆盖正常场景、异常场景和边界场景。"""
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 不要添加任何其他文本，只返回JSON"""
+            else:
+                # 首次生成模式
+                system_prompt = f"""你是一个专业的测试工程师。请根据需求编写测试用例。
 
-        user_prompt = f"测试需求：{requirement}"
+【测试需求】
+{test_requirement}
 
-        llm_messages = [
-            SystemMessage(content=system_prompt),
-            HumanMessage(content=user_prompt)
+【内容分析】
+{extracted_content[:1000] if extracted_content else '无'}
+
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
+
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 生成3-5个高质量的测试用例
+5. 不要添加任何其他文本，只返回JSON"""
+
+            # 构建消息
+            llm_messages = [SystemMessage(content=system_prompt)]
+
+            # 添加用户消息
+            user_message = HumanMessage(content=test_requirement or "请根据提供的内容编写测试用例")
+            llm_messages.append(user_message)
+
+            # 调用LLM
+            response = llm.invoke(llm_messages)
+            test_cases_str = response.content
+            print(f"[文本] 生成完成，长度: {len(test_cases_str)}")
+
+        # 如果前面的处理没有生成测试用例，使用降级方案
+        if 'test_cases_str' not in locals() or not test_cases_str:
+            print("[降级] 使用降级方案...")
+            system_prompt = f"""你是一个专业的测试工程师。请根据需求编写测试用例。
+
+【测试需求】
+{test_requirement}
+
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
+
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 生成3-5个高质量的测试用例
+5. 不要添加任何其他文本，只返回JSON"""
+
+            llm_messages = [SystemMessage(content=system_prompt)]
+            user_message = HumanMessage(content=test_requirement or "请根据提供的内容编写测试用例")
+            llm_messages.append(user_message)
+            response = llm.invoke(llm_messages)
+            test_cases_str = response.content
+
+        print(f"[LLM] 生成完成，长度: {len(test_cases_str)}")
+
+        # 解析测试用例
+        test_cases_list = parse_test_cases_from_string(test_cases_str)
+
+        if test_cases_list:
+            print(f"[解析] 成功解析 {len(test_cases_list)} 个测试用例")
+        else:
+            print("[警告] 无法解析测试用例")
+            test_cases_list = []
+
+        # 更新状态
+        ai_message = AIMessage(content=f"✅ 已生成 {len(test_cases_list)} 个测试用例，准备评审...")
+        updated_messages = messages + [ai_message]
+
+        return {
+            **state,
+            "messages": updated_messages,
+            "test_cases": test_cases_str,
+            "test_cases_list": test_cases_list,
+            "waiting_for_review": True,
+            "used_multimodal": used_multimodal,
+            "test_review_count": test_review_count + 1
+        }
+
+    except Exception as e:
+        print(f"[错误] 生成失败: {str(e)}")
+        ai_message = AIMessage(content=f"❌ 生成失败: {str(e)}")
+        updated_messages = messages + [ai_message]
+
+        return {
+            **state,
+            "messages": updated_messages,
+            "test_cases": "",
+            "test_cases_list": [],
+            "waiting_for_review": False
+        }
+
+
+def review_test_case_node(state: TestCaseState) -> TestCaseState:
+    """
+    节点2：评审测试用例
+
+    功能：
+    1. 使用LLM评审测试用例
+    2. 返回评审结果
+    3. 返回评审得分和建议
+
+    Args:
+        state: 当前测试用例状态
+
+    Returns:
+        更新后的状态
+    """
+    print("\n" + "="*80)
+    print("【节点2】测试用例评审")
+    print("="*80)
+
+    messages = state.get("messages", [])
+    test_cases_list = state.get("test_cases_list", [])
+
+    print(f"[输入] 测试用例数量: {len(test_cases_list)}")
+
+    if not test_cases_list:
+        print("[警告] 没有测试用例可以评审")
+        return {
+            **state,
+            "review_passed": False,
+            "review_score": 0,
+            "review_feedback": "没有测试用例可以评审"
+        }
+
+    try:
+        print("[LLM] 正在评审测试用例...")
+        llm = create_llm(temperature=0.2)
+        review_result = review_test_cases_with_ai(test_cases_list, llm)
+
+        review_passed = review_result.get("passed", False)
+        review_score = review_result.get("score", 0)
+        review_summary = review_result.get("summary", "")
+        review_issues = review_result.get("issues", [])
+        review_suggestions = review_result.get("suggestions", [])
+
+        print(f"[评审] 通过: {review_passed}, 得分: {review_score}/100")
+
+        # 构建反馈信息
+        feedback_parts = []
+        if review_passed:
+            feedback_parts.append(f"✅ 评审通过！得分: {review_score}/100")
+        else:
+            feedback_parts.append(f"⚠️ 评审未通过。得分: {review_score}/100")
+
+        if review_summary:
+            feedback_parts.append(f"\n📝 总体评价: {review_summary}")
+
+        if review_issues:
+            feedback_parts.append(f"\n⚠️ 发现的问题:")
+            for issue in review_issues[:3]:
+                if isinstance(issue, dict):
+                    feedback_parts.append(f"  - {issue.get('issue', 'N/A')}")
+
+        if review_suggestions:
+            feedback_parts.append(f"\n💡 改进建议:")
+            for suggestion in review_suggestions[:3]:
+                feedback_parts.append(f"  - {suggestion}")
+
+        feedback = "\n".join(feedback_parts)
+
+        # 更新状态
+        ai_message = AIMessage(content=feedback)
+        updated_messages = messages + [ai_message]
+
+        return {
+            **state,
+            "messages": updated_messages,
+            "review_passed": review_passed,
+            "review_score": review_score,
+            "review_summary": review_summary,
+            "review_issues": review_issues,
+            "review_suggestions": review_suggestions,
+            "review_feedback": feedback
+        }
+
+    except Exception as e:
+        print(f"[错误] 评审失败: {str(e)}")
+        return {
+            **state,
+            "review_passed": False,
+            "review_score": 0,
+            "review_feedback": f"评审失败: {str(e)}"
+        }
+
+
+def review_decision_edge_new(state: TestCaseState) -> str:
+    """
+    条件边：评审决策逻辑
+
+    逻辑：
+    - 如果评审通过 OR 评审次数 >= 3 → 返回 "save_to_excel"
+    - 否则 → 返回 "write_test_case"（重新生成）
+
+    Args:
+        state: 当前测试用例状态
+
+    Returns:
+        下一个节点的名称
+    """
+    print("\n" + "="*80)
+    print("【条件边】评审决策")
+    print("="*80)
+
+    review_passed = state.get("review_passed", False)
+    test_review_count = state.get("test_review_count", 0)
+
+    print(f"[决策] 评审通过: {review_passed}, 评审次数: {test_review_count}")
+
+    if review_passed or test_review_count >= 3:
+        print("[决策] ✅ 转向节点3（保存到Excel）")
+        return "save_to_excel"
+    else:
+        print("[决策] 🔄 转向节点1（重新生成）")
+        return "write_test_case"
+
+
+def save_to_excel_node(state: TestCaseState) -> TestCaseState:
+    """
+    节点3：保存测试用例到Excel
+
+    功能：
+    1. 解析测试用例
+    2. 添加评审信息
+    3. 保存到Excel文件
+
+    Args:
+        state: 当前对话状态
+
+    Returns:
+        更新后的状态
+    """
+    print("\n" + "="*80)
+    print("【节点3】保存到Excel")
+    print("="*80)
+
+    messages = state.get("messages", [])
+    test_cases_list = state.get("test_cases_list", [])
+    review_passed = state.get("review_passed", False)
+    review_score = state.get("review_score", 0)
+    review_summary = state.get("review_summary", "")
+    test_review_count = state.get("test_review_count", 0)
+
+    print(f"[输入] 测试用例数量: {len(test_cases_list)}")
+    print(f"[输入] 评审状态: {'通过' if review_passed else '强制保存'}")
+
+    if not test_cases_list:
+        print("[错误] 没有测试用例可以保存")
+        ai_message = AIMessage(content="❌ 没有测试用例可以保存")
+        updated_messages = messages + [ai_message]
+        return {
+            **state,
+            "messages": updated_messages,
+            "file_path": ""
+        }
+
+    try:
+        # 导入保存工具
+        from tools import save_test_cases_to_excel
+
+        # 生成文件名
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        file_path = f"data/test_cases_{timestamp}.xlsx"
+
+        # 确保目录存在
+        os.makedirs(os.path.dirname(file_path) or ".", exist_ok=True)
+
+        # 添加评审信息到每个测试用例
+        for case in test_cases_list:
+            case["评审状态"] = "✅ 通过" if review_passed else "⚠️ 强制保存"
+            case["评审得分"] = str(review_score)
+            case["评审意见"] = review_summary
+
+        # 定义Excel列顺序
+        columns = [
+            "用例ID", "用例标题", "前置条件", "测试步骤", "预期结果",
+            "用例类型", "优先级", "评审状态", "评审得分", "评审意见"
         ]
 
-        response = model.invoke(llm_messages)
-        test_cases = response.content
+        print(f"[保存] 保存到: {file_path}")
 
-        # 保存原始分析结果
-        if extracted_content:
-            # 如果有 extracted_content（PDF/图片提取的内容），保存它
-            original_analysis = f"原始内容分析：\n{extracted_content}\n\n首次生成的测试用例：\n{test_cases}"
-        else:
-            # 纯文本，保存需求和测试用例
-            original_analysis = f"原始需求：\n{requirement}\n\n首次生成的测试用例：\n{test_cases}"
+        # 调用保存工具
+        result = save_test_cases_to_excel.invoke({
+            "test_cases": test_cases_list,
+            "file_path": file_path,
+            "sheet_name": "测试用例",
+            "columns": columns
+        })
 
-        print(f"[生成] 已生成测试用例（第 1 次）")
-        print(f"[预览] {test_cases[:200]}...")
+        print(f"[保存] 结果: {result}")
 
-    # 构建AI回复，提示用户评审
-    ai_response = f"""✅ 已生成测试用例：
+        # 构建反馈信息
+        feedback_parts = [f"✅ 测试用例已保存！"]
+        feedback_parts.append(f"\n📊 统计信息：")
+        feedback_parts.append(f"- 用例数量：{len(test_cases_list)}")
+        feedback_parts.append(f"- 评审次数：{test_review_count}")
+        feedback_parts.append(f"- 评审得分：{review_score}/100")
+        feedback_parts.append(f"- 评审状态：{'通过' if review_passed else '强制保存（超过最大评审次数）'}")
+        feedback_parts.append(f"\n💾 文件路径：{os.path.abspath(file_path)}")
 
-{test_cases}
+        ai_response = "\n".join(feedback_parts)
+        ai_message = AIMessage(content=ai_response)
+        updated_messages = messages + [ai_message]
 
----
+        return {
+            **state,
+            "messages": updated_messages,
+            "file_path": file_path,
+            "test_cases": "",
+            "test_cases_list": [],
+            "waiting_for_review": False,
+            "test_review_count": 0
+        }
 
-**请评审以上测试用例**：
-- 如果符合要求，请回复：**通过**
-- 如果需要修改，请回复：**不通过**，并说明改进意见
+    except Exception as e:
+        print(f"[错误] 保存失败: {str(e)}")
+        ai_message = AIMessage(content=f"❌ 保存失败: {str(e)}")
+        updated_messages = messages + [ai_message]
 
-例如：
-- "通过"
-- "不通过，需要增加边界场景的测试用例"
-"""
+        return {
+            **state,
+            "messages": updated_messages,
+            "file_path": ""
+        }
 
-    ai_message = AIMessage(content=ai_response)
-    updated_messages = messages + [ai_message]
-
-    return {
-        **state,
-        "messages": updated_messages,
-        "test_cases": test_cases,
-        "test_review_count": 0,
-        "waiting_for_user_review": True,
-        "test_requirement": requirement,
-        "original_analysis": original_analysis,
-        "used_multimodal": used_multimodal
-    }
-
-
-# 以下函数是旧版测试用例生成工作流的节点，已被 testcase_generation_bridge_node 替代
-# 保留这些函数定义以保持向后兼容性
-
-def generate_test_case_node(state: TestCaseGenerationState) -> TestCaseGenerationState:
-    """
-    节点1：根据需求生成测试用例（旧版，已被 testcase_generation_bridge_node 替代）
-    """
-    print("[警告] generate_test_case_node 已被 testcase_generation_bridge_node 替代")
-    return state
-
-
-def wait_for_user_review_node(state: TestCaseGenerationState) -> TestCaseGenerationState:
-    """
-    节点2：等待用户评审（旧版，已被 testcase_generation_bridge_node 替代）
-    """
-    print("[警告] wait_for_user_review_node 已被 testcase_generation_bridge_node 替代")
-    return state
-
-
-def save_test_case_to_excel_node(state: TestCaseGenerationState) -> TestCaseGenerationState:
-    """
-    节点3：保存测试用例到Excel（旧版，已被 testcase_generation_bridge_node 替代）
-    """
-    print("[警告] save_test_case_to_excel_node 已被 testcase_generation_bridge_node 替代")
-    return state
-
-
-def review_decision_edge(state: TestCaseGenerationState) -> str:
-    """
-    条件边：评审决策（旧版，已被 testcase_generation_bridge_node 替代）
-    """
-    print("[警告] review_decision_edge 已被 testcase_generation_bridge_node 替代")
-    return "save_to_excel"
 

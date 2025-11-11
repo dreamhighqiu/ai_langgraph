@@ -10,6 +10,14 @@ from .detection import (
     detect_automated_test_task,
     detect_file_type
 )
+from .resource_extractor import (
+    extract_image_from_messages,
+    extract_pdf_from_messages,
+    extract_image_from_extracted_content,
+    extract_image_metadata,
+    extract_pdf_metadata,
+    get_resource_summary
+)
 
 __all__ = [
     'get_mcp_tools_from_config',
@@ -22,5 +30,11 @@ __all__ = [
     'detect_browser_operation_task',
     'detect_automated_test_task',
     'detect_file_type',
+    'extract_image_from_messages',
+    'extract_pdf_from_messages',
+    'extract_image_from_extracted_content',
+    'extract_image_metadata',
+    'extract_pdf_metadata',
+    'get_resource_summary',
 ]
 

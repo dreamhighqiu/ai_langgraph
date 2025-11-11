@@ -281,8 +281,8 @@ def create_fast_llm(**kwargs) -> BaseChatModel:
 
 def create_gpt5_llm(**kwargs) -> BaseChatModel:
     """
-    创建快速响应模型(使用 GPT-4.1-mini)
-    适用于简单任务、快速响应场景
+    创建多模态模型(使用 GPT-5)
+    适用于图片分析、PDF分析等多模态场景
 
     Args:
         **kwargs: 其他参数
@@ -292,7 +292,7 @@ def create_gpt5_llm(**kwargs) -> BaseChatModel:
     """
     return LLMFactory.create_llm(
         model=ModelType.GPT_5,
-        max_tokens=1000,  # 限制输出长度以提高速度
+        max_tokens=2000,  # 增加输出长度以支持详细的图片分析和测试用例生成
         **kwargs
     )
 

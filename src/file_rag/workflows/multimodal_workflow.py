@@ -31,12 +31,47 @@ def testcase_generation_node(state: ConversationState) -> ConversationState:
     # 构建测试用例工作流
     testcase_app = build_testcase_workflow()
 
+    messages = state.get("messages", [])
+
+    # 直接检测实际的文件类型（图片、PDF、文本）
+    # 不依赖 detect_file_type()，因为它返回的是任务类型而不是文件类型
+    actual_file_type = _detect_actual_file_type(messages)
+
+    print(f"[testcase_generation_node] 检测到的实际文件类型: {actual_file_type}")
+
+    # 从消息中提取测试需求
+    test_requirement = state.get("test_requirement", "")
+    if not test_requirement and messages:
+        # 从最后一条用户消息中提取测试需求
+        for msg in reversed(messages):
+            if isinstance(msg, dict):
+                msg_type = msg.get("type", "")
+                if msg_type == "human":
+                    content = msg.get("content", "")
+                    if isinstance(content, str):
+                        test_requirement = content
+                        break
+                    elif isinstance(content, list):
+                        # 从content列表中提取文本
+                        for item in content:
+                            if isinstance(item, dict) and item.get("type") == "text":
+                                test_requirement = item.get("text", "")
+                                break
+                        if test_requirement:
+                            break
+            elif hasattr(msg, 'type') and msg.type == "human":
+                if isinstance(msg.content, str):
+                    test_requirement = msg.content
+                    break
+
+    print(f"[testcase_generation_node] 提取的测试需求: {test_requirement[:50] if test_requirement else '无'}")
+
     # 将 ConversationState 转换为 TestCaseState
     testcase_state: TestCaseState = {
-        "messages": state.get("messages", []),
-        "file_type": state.get("file_type", "text"),
+        "messages": messages,
+        "file_type": actual_file_type,  # 使用检测到的实际文件类型
         "extracted_content": state.get("extracted_content", ""),
-        "test_requirement": state.get("test_requirement", ""),
+        "test_requirement": test_requirement,  # 使用提取的测试需求
         "test_cases": "",
         "test_cases_list": [],
         "test_review_count": 0,
@@ -55,6 +90,81 @@ def testcase_generation_node(state: ConversationState) -> ConversationState:
         "test_cases_list": result.get("test_cases_list", []),
         "file_path": result.get("file_path", ""),
     }
+
+
+def _detect_actual_file_type(messages: list) -> str:
+    """
+    检测实际的文件类型（图片、PDF、文本）
+
+    这个函数只关心文件类型，不关心任务类型。
+
+    Args:
+        messages: 消息列表
+
+    Returns:
+        文件类型: "image", "pdf", "text"
+    """
+    # 遍历所有消息，查找文件
+    for msg in messages:
+        # 处理 dict 格式的消息
+        if isinstance(msg, dict):
+            content = msg.get('content', '')
+            if isinstance(content, list):
+                for item in content:
+                    if isinstance(item, dict):
+                        item_type = item.get('type', '')
+
+                        # 检查文件类型
+                        if item_type == 'file':
+                            mime_type = item.get('mime_type', '')
+                            if 'pdf' in mime_type.lower():
+                                print(f"[_detect_actual_file_type] ✅ 检测到PDF文件")
+                                return "pdf"
+                            elif 'image' in mime_type.lower():
+                                print(f"[_detect_actual_file_type] ✅ 检测到图片文件")
+                                return "image"
+
+                        # 检查图片URL
+                        elif item_type == 'image_url':
+                            print(f"[_detect_actual_file_type] ✅ 检测到图片URL")
+                            return "image"
+
+                        # 检查image类型
+                        elif item_type == 'image':
+                            print(f"[_detect_actual_file_type] ✅ 检测到image类型")
+                            return "image"
+
+        # 处理 BaseMessage 对象格式
+        elif hasattr(msg, 'content'):
+            content = msg.content
+            if isinstance(content, list):
+                for item in content:
+                    if isinstance(item, dict):
+                        item_type = item.get('type', '')
+
+                        # 检查文件类型
+                        if item_type == 'file':
+                            mime_type = item.get('mime_type', '')
+                            if 'pdf' in mime_type.lower():
+                                print(f"[_detect_actual_file_type] ✅ 检测到PDF文件")
+                                return "pdf"
+                            elif 'image' in mime_type.lower():
+                                print(f"[_detect_actual_file_type] ✅ 检测到图片文件")
+                                return "image"
+
+                        # 检查图片URL
+                        elif item_type == 'image_url':
+                            print(f"[_detect_actual_file_type] ✅ 检测到图片URL")
+                            return "image"
+
+                        # 检查image类型
+                        elif item_type == 'image':
+                            print(f"[_detect_actual_file_type] ✅ 检测到image类型")
+                            return "image"
+
+    # 默认为文本
+    print(f"[_detect_actual_file_type] 默认为文本类型")
+    return "text"
 
 
 def route_by_file_type(state: ConversationState) -> Literal["image_processing", "pdf_processing", "text_processing", "automated_test", "browser_operation", "testcase_generation"]:

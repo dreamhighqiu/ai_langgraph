@@ -19,7 +19,12 @@ import os
 import datetime
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from file_rag.models import TestCaseState
-from file_rag.core.llm import create_llm, create_gpt5_llm
+from file_rag.core.llm import create_llm
+from file_rag.utils.resource_extractor import (
+    extract_image_from_messages,
+    extract_pdf_from_messages,
+    extract_image_from_extracted_content
+)
 
 
 def parse_test_cases_from_string(test_cases_str: str) -> list:
@@ -181,11 +186,14 @@ def write_test_case_node(state: TestCaseState) -> TestCaseState:
 
     print(f"[输入] 文件类型: {file_type}, 需求: {test_requirement[:50] if test_requirement else '无'}")
     print(f"[状态] 评审次数: {test_review_count}")
+    print(f"[DEBUG] 消息数: {len(messages)}, 消息类型: {[type(m).__name__ for m in messages]}")
 
     # 选择LLM模型
     if file_type in ["image", "pdf"]:
-        print("[模型] 使用多模态模型（GPT-5）")
-        llm = create_gpt5_llm()
+        print("[模型] 使用多模态模型（GPT-4O）")
+        # 使用 GPT-4O 而不是 GPT-5，因为 GPT-4O 对图片分析支持更好
+        from file_rag.core.llm import create_chat_llm
+        llm = create_chat_llm()
         used_multimodal = True
     else:
         print("[模型] 使用文本模型（DeepSeek）")
@@ -195,149 +203,305 @@ def write_test_case_node(state: TestCaseState) -> TestCaseState:
     try:
         print("[LLM] 正在生成测试用例...")
 
-        # 处理 PDF 文件 - 直接传递给多模态模型
+        # 处理 PDF 文件 - 提取文本和图片，使用多模态模型分析
         if file_type == "pdf":
             print("[PDF] 检测到 PDF 文件，开始处理...")
-            try:
-                # 从消息中查找 PDF 文件块
-                for message in messages:
-                    if isinstance(message, HumanMessage) and isinstance(message.content, list):
-                        for content_block in message.content:
-                            if (isinstance(content_block, dict) and
-                                content_block.get('type') == 'file' and
-                                content_block.get('source_type') == 'base64' and
-                                content_block.get('mime_type') == 'application/pdf'):
+            print(f"[DEBUG] 消息详情: {len(messages)} 条消息")
+            for i, msg in enumerate(messages):
+                print(f"[DEBUG]   消息 {i}: 类型={type(msg).__name__}")
+                if isinstance(msg, HumanMessage):
+                    print(f"[DEBUG]     content 类型: {type(msg.content).__name__}")
+                    if isinstance(msg.content, list):
+                        print(f"[DEBUG]     content 长度: {len(msg.content)}")
+                        for j, item in enumerate(msg.content):
+                            print(f"[DEBUG]       项目 {j}: {type(item).__name__}")
 
-                                base64_data = content_block.get('data', '')
-                                filename = content_block.get('metadata', {}).get('filename', 'document.pdf')
+            # 使用资源提取器获取PDF数据
+            pdf_resource = extract_pdf_from_messages(messages)
 
-                                print(f"[PDF] 处理 PDF 文件: {filename}")
-
-                                # 构建包含 PDF 的消息
-                                # 注意：由于 LangChain 对 PDF 的多模态支持有限，
-                                # 我们使用文本提取 + 多模态模型的方式
-                                try:
-                                    from file_rag.utils.pdf_utils import extract_pdf_content
-
-                                    # 提取 PDF 文本内容
-                                    pdf_text = extract_pdf_content(base64_data)
-
-                                    # 构建包含提取内容的提示
-                                    pdf_prompt_with_content = f"""你是一个专业的测试工程师。请根据以下 PDF 文档内容和测试需求编写测试用例：
-
-【PDF 文档内容】
-{pdf_text[:2000]}
-
-【测试需求】
-{test_requirement}
-
-【输出格式】
-必须返回JSON数组，每个元素是一个测试用例：
-[
-    {{
-        "用例ID": "TC001",
-        "用例标题": "功能描述",
-        "前置条件": "前置条件",
-        "测试步骤": "1. 步骤一\\n2. 步骤二",
-        "预期结果": "期望结果",
-        "优先级": "高",
-        "用例类型": "功能测试"
-    }}
-]
-
-【要求】
-1. 必须返回有效的JSON数组
-2. 优先级：高/中/低
-3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
-4. 生成3-5个高质量的测试用例
-5. 不要添加任何其他文本，只返回JSON"""
-
-                                    pdf_llm_messages = [
-                                        SystemMessage(content=pdf_prompt_with_content),
-                                        HumanMessage(content="请根据上述 PDF 内容生成测试用例")
-                                    ]
-
-                                    response = llm.invoke(pdf_llm_messages)
-                                    test_cases_str = response.content
-                                    print(f"[PDF] 生成完成，长度: {len(test_cases_str)}")
-                                except Exception as pdf_extract_error:
-                                    print(f"[PDF] 文本提取失败: {pdf_extract_error}，使用降级方案")
-                                    test_cases_str = None
-                                break
-                        if 'test_cases_str' in locals():
-                            break
-            except Exception as e:
-                print(f"[PDF] PDF 处理异常: {str(e)}")
-                # 降级处理：使用提取的内容
+            if not pdf_resource:
+                print("[PDF] 未找到PDF文件数据")
                 test_cases_str = None
+            else:
+                base64_data = pdf_resource.get('base64', '')
+                filename = pdf_resource.get('filename', 'document.pdf')
 
-        # 处理图片文件 - 直接传递给多模态模型
-        elif file_type == "image":
-            print("[图片] 检测到图片文件，开始处理...")
-            try:
-                # 从消息中查找图片文件块
-                for message in messages:
-                    if isinstance(message, HumanMessage) and isinstance(message.content, list):
-                        for content_block in message.content:
-                            if (isinstance(content_block, dict) and
-                                content_block.get('type') == 'file' and
-                                content_block.get('source_type') == 'base64' and
-                                'image' in content_block.get('mime_type', '')):
+                print(f"[PDF] 检测到PDF文件: {filename}")
+                print(f"[PDF] 资源来源: {pdf_resource.get('source', 'unknown')}")
 
-                                base64_data = content_block.get('data', '')
-                                filename = content_block.get('metadata', {}).get('filename', 'image.png')
-                                mime_type = content_block.get('mime_type', 'image/png')
+                try:
+                    from file_rag.utils.pdf_utils import extract_pdf_content, extract_pdf_images
 
-                                print(f"[图片] 处理图片文件: {filename}")
+                    # 步骤1：提取 PDF 文本内容
+                    print("[PDF] 步骤1：提取文本内容...")
+                    pdf_text = extract_pdf_content(base64_data)
+                    print(f"[PDF] 文本提取完成，长度: {len(pdf_text)}")
 
-                                # 使用多模态模型直接分析图片并生成测试用例
-                                image_prompt = f"""你是一个专业的测试工程师。请分析这张图片的内容，然后根据以下需求编写测试用例：
+                    # 步骤2：提取 PDF 中的图片
+                    print("[PDF] 步骤2：提取图片...")
+                    pdf_images_data = extract_pdf_images(base64_data)
+                    print(f"[PDF] 提取到 {len(pdf_images_data)} 张图片")
 
-【测试需求】
-{test_requirement}
+                    # 步骤3：使用多模态模型分析图片
+                    image_analysis_results = []
+                    if pdf_images_data:
+                        print("[PDF] 步骤3：使用GPT-4O分析图片...")
+                        for img_info in pdf_images_data:
+                            try:
+                                # 获取图片数据
+                                img_base64 = img_info.get('data', '')
+                                img_ext = img_info.get('ext', 'png')
+                                img_page = img_info.get('page', 1)
+                                img_index = img_info.get('index', 1)
 
-【输出格式】
-必须返回JSON数组，每个元素是一个测试用例：
-[
-    {{
-        "用例ID": "TC001",
-        "用例标题": "功能描述",
-        "前置条件": "前置条件",
-        "测试步骤": "1. 步骤一\\n2. 步骤二",
-        "预期结果": "期望结果",
-        "优先级": "高",
-        "用例类型": "功能测试"
-    }}
-]
+                                # 确定MIME类型
+                                mime_type_map = {
+                                    'png': 'image/png',
+                                    'jpg': 'image/jpeg',
+                                    'jpeg': 'image/jpeg',
+                                    'gif': 'image/gif',
+                                    'webp': 'image/webp'
+                                }
+                                mime_type = mime_type_map.get(img_ext, 'image/png')
 
-【要求】
-1. 必须返回有效的JSON数组
-2. 优先级：高/中/低
-3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
-4. 生成3-5个高质量的测试用例
-5. 不要添加任何其他文本，只返回JSON"""
-
-                                # 构建包含图片的消息
-                                image_llm_messages = [
-                                    SystemMessage(content=image_prompt),
-                                    HumanMessage(content=[
-                                        {"type": "text", "text": "请分析这张图片并生成测试用例"},
+                                # 构建多模态消息
+                                image_message = HumanMessage(
+                                    content=[
+                                        {
+                                            "type": "text",
+                                            "text": "请详细分析这张图片的内容，包括界面元素、功能、交互等。"
+                                        },
                                         {
                                             "type": "image_url",
-                                            "image_url": {"url": f"data:{mime_type};base64,{base64_data}"}
+                                            "image_url": {
+                                                "url": f"data:{mime_type};base64,{img_base64}"
+                                            }
                                         }
-                                    ])
-                                ]
+                                    ]
+                                )
 
-                                response = llm.invoke(image_llm_messages)
-                                test_cases_str = response.content
-                                print(f"[图片] 生成完成，长度: {len(test_cases_str)}")
-                                break
-                        if 'test_cases_str' in locals():
-                            break
+                                # 调用 GPT-4O 进行分析
+                                response = llm.invoke([image_message])
+                                analysis_text = response.content
+
+                                image_analysis_results.append({
+                                    "page": img_page,
+                                    "index": img_index,
+                                    "analysis": analysis_text
+                                })
+
+                                print(f"[PDF] 第 {img_page} 页图片 {img_index} 分析完成")
+
+                            except Exception as e:
+                                print(f"[PDF] 图片分析失败: {e}")
+                                continue
+
+                    # 步骤4：构建完整的PDF内容摘要
+                    pdf_summary = f"[PDF 文件: {filename}]\n\n"
+                    pdf_summary += f"【文本内容】\n{pdf_text}\n\n"
+
+                    if image_analysis_results:
+                        pdf_summary += f"【图片分析结果】（共 {len(image_analysis_results)} 张图片）\n"
+                        for result in image_analysis_results:
+                            pdf_summary += f"\n第 {result['page']} 页图片 {result['index']}:\n{result['analysis']}\n"
+
+                    # 步骤5：使用完整内容生成测试用例
+                    print("[PDF] 步骤4：生成测试用例...")
+                    pdf_prompt = f"""你是一个专业的测试工程师。请根据以下 PDF 文档内容（包括文本和图片分析）编写测试用例：
+
+【PDF 完整内容】
+{pdf_summary}
+
+【测试需求】
+{test_requirement}
+
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
+
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 根据PDF的文本和图片内容，生成3-5个高质量的测试用例
+5. 不要添加任何其他文本，只返回JSON"""
+
+                    pdf_llm_messages = [
+                        SystemMessage(content=pdf_prompt),
+                        HumanMessage(content="请根据上述 PDF 内容生成测试用例")
+                    ]
+
+                    response = llm.invoke(pdf_llm_messages)
+                    test_cases_str = response.content
+                    print(f"[PDF] 生成完成，长度: {len(test_cases_str)}")
+
+                except Exception as pdf_extract_error:
+                    print(f"[PDF] PDF处理失败: {pdf_extract_error}")
+                    import traceback
+                    traceback.print_exc()
+                    test_cases_str = None
+
+        # 处理图片文件 - 使用多模态模型分析图片并生成测试用例
+        elif file_type == "image":
+            print("[图片] 检测到图片文件，开始处理...")
+
+            # 使用资源提取器获取图片数据
+            image_resource = extract_image_from_messages(messages)
+            image_analysis_resource = None
+            base64_data = None
+            filename = 'image.png'
+            mime_type = 'image/png'
+            test_cases_str = None
+
+            try:
+                # 方案1：从消息中提取图片
+                if image_resource:
+                    print(f"[图片] 方案1：从消息中找到图片")
+                    print(f"[图片] 资源来源: {image_resource.get('source', 'unknown')}")
+                    base64_data = image_resource.get('base64', '')
+                    filename = image_resource.get('filename', 'image.png')
+                    mime_type = image_resource.get('mime_type', 'image/png')
+                else:
+                    # 方案2：从extracted_content中提取图片
+                    print("[图片] 方案1未找到，尝试方案2：从extracted_content中获取...")
+                    image_analysis_resource = extract_image_from_extracted_content(extracted_content)
+
+                    if image_analysis_resource:
+                        if image_analysis_resource.get('is_analysis'):
+                            print(f"[图片] 方案2：找到图片分析结果，长度: {len(image_analysis_resource.get('analysis', ''))}")
+                            base64_data = None
+                        else:
+                            print(f"[图片] 方案2：找到图片base64数据")
+                            base64_data = image_analysis_resource.get('base64', '')
+                            filename = image_analysis_resource.get('filename', 'image.png')
+                            mime_type = image_analysis_resource.get('mime_type', 'image/png')
+                    else:
+                        print("[图片] 方案2未找到，尝试方案3：直接从消息中提取图片内容...")
+                        # 方案3：直接从消息中查找任何图片内容
+                        for msg in messages:
+                            if isinstance(msg, HumanMessage) and isinstance(msg.content, list):
+                                for content_block in msg.content:
+                                    if isinstance(content_block, dict):
+                                        # 检查是否有image_url
+                                        if content_block.get('type') == 'image_url':
+                                            image_url = content_block.get('image_url', {}).get('url', '')
+                                            if 'base64,' in image_url:
+                                                base64_data = image_url.split('base64,')[1]
+                                                mime_type = image_url.split(';')[0].replace('data:', '')
+                                                print(f"[图片] 方案3：从消息中找到图片URL")
+                                                break
+                                if base64_data:
+                                    break
+
+                # 处理图片数据或分析结果
+                if base64_data or image_analysis_resource:
+                    try:
+                        # 获取图片分析结果
+                        if image_analysis_resource and image_analysis_resource.get('is_analysis'):
+                            # 直接使用已有的分析结果
+                            print("[图片] 使用已有的图片分析结果")
+                            image_analysis = image_analysis_resource.get('analysis', '')
+                        elif base64_data:
+                            # 需要分析图片
+                            print(f"[图片] 处理图片文件: {filename}")
+                            print("[图片] 步骤1：分析图片内容...")
+                            analysis_message = HumanMessage(
+                                content=[
+                                    {
+                                        "type": "text",
+                                        "text": "请详细分析这张图片的内容，包括界面元素、功能、交互、布局等所有细节。"
+                                    },
+                                    {
+                                        "type": "image_url",
+                                        "image_url": {"url": f"data:{mime_type};base64,{base64_data}"}
+                                    }
+                                ]
+                            )
+
+                            analysis_response = llm.invoke([analysis_message])
+                            image_analysis = analysis_response.content
+                            print(f"[图片] 图片分析完成，长度: {len(image_analysis)}")
+                            print(f"[图片] 分析结果类型: {type(image_analysis)}")
+                            if not image_analysis:
+                                print(f"[图片] ⚠️ 警告：LLM返回空响应")
+                                print(f"[图片] 完整响应: {analysis_response}")
+                            else:
+                                print(f"[图片] 分析结果预览: {image_analysis[:200]}")
+                        else:
+                            print("[图片] 无法获取图片数据或分析结果")
+                            image_analysis = None
+
+                        # 基于图片分析和测试需求生成测试用例
+                        if image_analysis:
+                            print("[图片] 步骤2：生成测试用例...")
+                            testcase_prompt = f"""你是一个专业的测试工程师。请根据以下图片分析结果和测试需求编写测试用例：
+
+【图片分析结果】
+{image_analysis}
+
+【测试需求】
+{test_requirement}
+
+【输出格式】
+必须返回JSON数组，每个元素是一个测试用例：
+[
+    {{
+        "用例ID": "TC001",
+        "用例标题": "功能描述",
+        "前置条件": "前置条件",
+        "测试步骤": "1. 步骤一\\n2. 步骤二",
+        "预期结果": "期望结果",
+        "优先级": "高",
+        "用例类型": "功能测试"
+    }}
+]
+
+【要求】
+1. 必须返回有效的JSON数组
+2. 优先级：高/中/低
+3. 用例类型：功能测试/性能测试/安全测试/兼容性测试/集成测试/回归测试
+4. 根据图片内容，生成3-5个高质量的测试用例
+5. 测试用例应该覆盖图片中展示的主要功能和交互
+6. 不要添加任何其他文本，只返回JSON"""
+
+                            testcase_messages = [
+                                SystemMessage(content=testcase_prompt),
+                                HumanMessage(content="请根据上述图片分析生成测试用例")
+                            ]
+
+                            response = llm.invoke(testcase_messages)
+                            test_cases_str = response.content
+                            print(f"[图片] 生成完成，长度: {len(test_cases_str)}")
+                            print(f"[图片] 生成结果类型: {type(test_cases_str)}")
+                            if not test_cases_str:
+                                print(f"[图片] ⚠️ 警告：LLM返回空响应")
+                                print(f"[图片] 完整响应: {response}")
+                            else:
+                                print(f"[图片] 生成结果预览: {test_cases_str[:200]}")
+
+                    except Exception as img_error:
+                        print(f"[图片] 图片处理失败: {img_error}")
+                        import traceback
+                        traceback.print_exc()
+                        test_cases_str = None
+                else:
+                    print("[图片] 未找到任何图片数据或分析结果")
+                    test_cases_str = None
+
             except Exception as e:
                 print(f"[图片] 图片处理异常: {str(e)}")
-                # 降级处理
+                import traceback
+                traceback.print_exc()
                 test_cases_str = None
 
         # 处理纯文本

@@ -75,7 +75,7 @@ def pdf_processing_node(state: ConversationState) -> ConversationState:
         # 如果有图片，使用豆包模型识别
         image_descriptions = []
         if extracted_images:
-            print("\n[步骤3] 使用豆包多模态模型识别图片...")
+            print("\n[步骤3] 使用GPT-5 多模态模型识别图片...")
             doubao_model = create_gpt5_llm()
 
             for idx, img_info in enumerate(extracted_images):

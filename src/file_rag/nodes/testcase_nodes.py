@@ -188,6 +188,24 @@ def write_test_case_node(state: TestCaseState) -> TestCaseState:
     print(f"[状态] 评审次数: {test_review_count}")
     print(f"[DEBUG] 消息数: {len(messages)}, 消息类型: {[type(m).__name__ for m in messages]}")
 
+    # 详细的消息结构调试
+    for i, msg in enumerate(messages):
+        print(f"[DEBUG] 消息 {i}: 类型={type(msg).__name__}")
+        if isinstance(msg, HumanMessage):
+            print(f"[DEBUG]   content 类型: {type(msg.content).__name__}")
+            if isinstance(msg.content, list):
+                print(f"[DEBUG]   content 长度: {len(msg.content)}")
+                for j, item in enumerate(msg.content):
+                    if isinstance(item, dict):
+                        print(f"[DEBUG]     项目 {j}: type={item.get('type', 'unknown')}, mime_type={item.get('mime_type', 'N/A')}")
+            elif isinstance(msg.content, str):
+                print(f"[DEBUG]   content 是字符串，长度: {len(msg.content)}")
+                # 检查是否有其他属性
+                if hasattr(msg, '_content_blocks'):
+                    print(f"[DEBUG]   有 _content_blocks 属性")
+                if hasattr(msg, 'content_blocks'):
+                    print(f"[DEBUG]   有 content_blocks 属性")
+
     # 选择LLM模型
     if file_type in ["image", "pdf"]:
         print("[模型] 使用多模态模型（GPT-4O）")
@@ -206,15 +224,6 @@ def write_test_case_node(state: TestCaseState) -> TestCaseState:
         # 处理 PDF 文件 - 提取文本和图片，使用多模态模型分析
         if file_type == "pdf":
             print("[PDF] 检测到 PDF 文件，开始处理...")
-            print(f"[DEBUG] 消息详情: {len(messages)} 条消息")
-            for i, msg in enumerate(messages):
-                print(f"[DEBUG]   消息 {i}: 类型={type(msg).__name__}")
-                if isinstance(msg, HumanMessage):
-                    print(f"[DEBUG]     content 类型: {type(msg.content).__name__}")
-                    if isinstance(msg.content, list):
-                        print(f"[DEBUG]     content 长度: {len(msg.content)}")
-                        for j, item in enumerate(msg.content):
-                            print(f"[DEBUG]       项目 {j}: {type(item).__name__}")
 
             # 使用资源提取器获取PDF数据
             pdf_resource = extract_pdf_from_messages(messages)

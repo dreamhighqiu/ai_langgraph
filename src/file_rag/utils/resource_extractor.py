@@ -25,19 +25,29 @@ def extract_image_from_messages(messages: list) -> Optional[Dict[str, Any]]:
     }
 
     支持多种格式：
-    1. HumanMessage 对象
-    2. 字典格式的消息（来自LangGraph Server）
-    3. file类型的图片
-    4. image_url类型的图片
-    5. image类型的图片
+    1. HumanMessage 对象（content 为列表）
+    2. HumanMessage 对象（content 为字符串，尝试从其他属性获取）
+    3. 字典格式的消息（来自LangGraph Server）
+    4. file类型的图片
+    5. image_url类型的图片
+    6. image类型的图片
     """
-    for message in messages:
+    for msg_idx, message in enumerate(messages):
         # 获取消息内容
         content = None
 
         # 处理 HumanMessage 对象
         if isinstance(message, HumanMessage):
             content = message.content
+            # 如果 content 是字符串，尝试从其他属性获取
+            if isinstance(content, str):
+                if hasattr(message, '_content_blocks'):
+                    content = message._content_blocks
+                elif hasattr(message, 'content_blocks'):
+                    content = message.content_blocks
+                else:
+                    continue
+
         # 处理字典格式的消息
         elif isinstance(message, dict) and message.get('type') == 'human':
             content = message.get('content', [])

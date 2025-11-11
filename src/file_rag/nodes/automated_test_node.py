@@ -113,6 +113,7 @@ async def automated_test_node(state: ConversationState) -> ConversationState:
 {user_request}
 
 **必须使用工具执行以下步骤：**
+例如:
 
 测试用例1：成功登录测试
 1. 使用 chrome_navigate 打开 https://www.saucedemo.com/

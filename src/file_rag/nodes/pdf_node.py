@@ -4,7 +4,7 @@ PDF处理节点模块
 """
 from langchain_core.messages import HumanMessage
 from file_rag.models import ConversationState
-from file_rag.core.llm import create_llm,create_gpt5_llm
+from file_rag.core.llm import create_llm,create_chat_llm
 from file_rag.utils.pdf_utils import extract_pdf_content, extract_pdf_images
 
 
@@ -76,7 +76,7 @@ def pdf_processing_node(state: ConversationState) -> ConversationState:
         image_descriptions = []
         if extracted_images:
             print("\n[步骤3] 使用GPT-5 多模态模型识别图片...")
-            doubao_model = create_gpt5_llm()
+            doubao_model = create_chat_llm()
 
             for idx, img_info in enumerate(extracted_images):
                 print(f"  识别第 {idx + 1}/{len(extracted_images)} 张图片（第{img_info['page']}页）...")

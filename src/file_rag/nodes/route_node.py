@@ -33,12 +33,13 @@ def route_node(state: ConversationState) -> ConversationState:
         if isinstance(msg, dict):
             # 只打印前1000个字符，避免日志过长
             msg_str = json.dumps(msg, ensure_ascii=False)
-            if len(msg_str) > 1000:
-                print(f"  消息 {idx}: {msg_str[:1000]}... (总长度: {len(msg_str)})")
-            else:
-                print(f"  消息 {idx}: {msg_str}")
-        else:
             print(f"  消息 {idx}: {type(msg).__name__}")
+            if len(msg_str) > 1000:
+                print(f"  消息{idx}: {msg_str[:1000]}... (总长度: {len(msg_str)})")
+            else:
+                print(f"  消息{idx}: {msg_str}")
+        else:
+            print(f"  消息{idx}: {type(msg).__name__}")
 
     # 如果正在等待用户评审，检查用户输入是否是评审反馈还是新任务
     if waiting_for_review and test_cases:

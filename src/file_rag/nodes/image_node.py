@@ -3,7 +3,7 @@
 负责使用豆包多模态模型处理图片对话
 """
 from file_rag.models import ConversationState
-from file_rag.core.llm import create_gpt5_llm
+from file_rag.core.llm import create_chat_llm
 
 
 def image_processing_node(state: ConversationState) -> ConversationState:
@@ -38,7 +38,7 @@ def image_processing_node(state: ConversationState) -> ConversationState:
     print(f"[DEBUG] 原始消息数: {len(messages)}, 过滤后消息数: {len(filtered_messages)}")
 
     # 使用豆包多模态模型
-    model = create_gpt5_llm()
+    model = create_chat_llm()
     response = model.invoke(filtered_messages)
 
     print(f"豆包模型回复: {response.content[:100]}...")

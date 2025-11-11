@@ -251,6 +251,7 @@ def detect_file_type(messages: list) -> str:
                         if item_type == 'file':
                             mime_type = item.get('mime_type', '')
                             print(f"[DEBUG] 文件 MIME 类型: {mime_type}")
+                            print(f"[DEBUG]  source_type: {item.get('source_type', '')}")
                             if 'pdf' in mime_type.lower():
                                 print(f"[DEBUG] ✅ 检测到 PDF 文件")
                                 has_file = True

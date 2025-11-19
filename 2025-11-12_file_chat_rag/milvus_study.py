@@ -52,6 +52,7 @@ embeddings = OllamaEmbeddings(
 
 
 # 使用milvus数据库
+# pip install -qU langchain-milvus
 
 from langchain_milvus import Milvus
 

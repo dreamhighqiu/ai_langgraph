@@ -33,7 +33,7 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=2048, chunk_overlap=20
 
 docs = text_splitter.split_documents(documents)
 
-embeddings = OllamaEmbeddings(model="qwen3-embedding:0.6b", base_url="http://207.246.94.177:11434")
+embeddings = OllamaEmbeddings(model="qwen3-embedding:0.6b", base_url="http://54.179.103.192:11434")
 vectorstore = Milvus.from_documents(
     documents=docs,
     embedding=embeddings,
@@ -41,7 +41,7 @@ vectorstore = Milvus.from_documents(
     # `dense` is for OpenAI embeddings, `sparse` is the output field of BM25 function
     vector_field=["dense", "sparse"],
     connection_args={
-        "uri": "http://207.246.94.177:19530",
+        "uri": "http://54.179.103.192:19530",
     },
     consistency_level="Strong",
     collection_name="course_collection",

@@ -91,7 +91,7 @@ def embedding_text_into_vector_store(doc_splits):
 
     from langchain_milvus import Milvus
 
-    URI = "http://207.246.94.177:19530"
+    URI = "http://54.179.103.192:19530"
     # 将texts转换为向量，并保存在向量数据库中
     vector_store = Milvus.from_documents(doc_splits,
                                          embedding=embedding,
@@ -153,7 +153,7 @@ def retrieve_tool():
         base_url="http://35.235.113.151:11434",
         temperature=0
     )
-    URI = "http://207.246.94.177:19530"
+    URI = "http://54.179.103.192:19530"
     vector_store = Milvus(
         embedding_function=embedding,
         connection_args={"uri": URI},

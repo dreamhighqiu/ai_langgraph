@@ -24,22 +24,22 @@ embeddings = OllamaEmbeddings(
     base_url="http://54.179.103.192:11434/"
 )
 
-# s = embeddings.embed_query(text)
-# print(s)
+s = embeddings.embed_query(text)
+print(s)
 
 
-# # 使用embeddings 嵌入对象将 text 转换为向量，然后存入向量数据库
-vectorstore = InMemoryVectorStore.from_texts(
-    [text],
-    embedding=embeddings,
-)
-#
-# # Use the vectorstore as a retriever
-retriever = vectorstore.as_retriever()
-#
-# # Retrieve the most similar text
-retrieved_documents = retriever.invoke("What is LangChain?")
-# type: ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WjBoSlF3PT06NTI1NGFiYmE=
+# # # 使用embeddings 嵌入对象将 text 转换为向量，然后存入向量数据库
+# vectorstore = InMemoryVectorStore.from_texts(
+#     [text],
+#     embedding=embeddings,
+# )
+# #
+# # # Use the vectorstore as a retriever
+# retriever = vectorstore.as_retriever()
+# #
+# # # Retrieve the most similar text
+# retrieved_documents = retriever.invoke("What is LangChain?")
+# # type: ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WjBoSlF3PT06NTI1NGFiYmE=
 
-# Show the retrieved document's content
-print(retrieved_documents[0].page_content)
+# # Show the retrieved document's content
+# print(retrieved_documents[0].page_content)

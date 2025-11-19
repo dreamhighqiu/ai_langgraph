@@ -16,29 +16,29 @@ from langchain_ollama import OllamaEmbeddings
 
 from langchain_pymupdf4llm import PyMuPDF4LLMLoader
 
-loader = PyMuPDF4LLMLoader(
-    "llm_course.pdf",
-                mode="page",  # 作为单个文档处理  page
-                table_strategy="lines"  # 提取表格
+# loader = PyMuPDF4LLMLoader(
+#     "llm_course.pdf",
+#                 mode="page",  # 作为单个文档处理  page
+#                 table_strategy="lines"  # 提取表格
    
-        )
-
-
-
-# loader = WebBaseLoader(
-#     web_paths=(
-#         "https://lilianweng.github.io/posts/2023-06-23-agent/",
-#         "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/",
-#     ),
-#     bs_kwargs=dict(
-#         parse_only=bs4.SoupStrainer(
-#             class_=("post-content", "post-title", "post-header")
 #         )
-#     ),
-# )
+
+
+
+loader = WebBaseLoader(
+    web_paths=(
+        "https://lilianweng.github.io/posts/2023-06-23-agent/",
+        "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/",
+    ),
+    bs_kwargs=dict(
+        parse_only=bs4.SoupStrainer(
+            class_=("post-content", "post-title", "post-header")
+        )
+    ),
+)
 document = loader.load()
 
-print(len(document))
+# print(len(document))
 
 
 
@@ -72,30 +72,34 @@ embeddings = OllamaEmbeddings(
 from langchain_milvus import Milvus
 
 URI = "http://54.179.103.192:19530"
+
+# 第一次将数据存入向量数据库
 # 将texts转换为向量，并保存在向量数据库中
 vector_store = Milvus.from_documents(documents,
                                      embedding=embeddings,
-                                     collection_name="langchainweb",
+                                     collection_name="langchainwebnew",
                                      connection_args={"uri": URI})
 
 
 
 
-# # Use the vectorstore as a retriever
-# # retriever：检索器
-# retriever = vector_store.as_retriever(search_kwargs={"k": 2})
-# #
-# # # Retrieve the most similar text  相似性召回
-# retrieved_documents = retriever.invoke("私有化部署与云服务的区别")
-# #
-# #
-# print(len(retrieved_documents))
-# print(retrieved_documents)
-# # Show the retrieved document's content
-# print(retrieved_documents[0].page_content)
+# Use the vectorstore as a retriever
+# retriever：检索器
+retriever = vector_store.as_retriever(search_kwargs={"k": 2})
+#
+# # Retrieve the most similar text  相似性召回
+retrieved_documents = retriever.invoke("私有化部署与云服务的区别")
+#
+#
+print(len(retrieved_documents))
+print(retrieved_documents)
+# Show the retrieved document's content
+print(retrieved_documents[0].page_content)
 
 
 
+
+# # 从向量数据库获取内容
 # vector_store = Milvus(
 #     embedding_function=embeddings,
 #     connection_args={"uri": URI},

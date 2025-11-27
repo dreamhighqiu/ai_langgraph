@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 # type: ignore
 """
 Generic Document Parser Utility
@@ -18,7 +20,7 @@ For Office documents (.doc, .docx, .ppt, .pptx), please convert them to PDF form
 """
 
 
-from __future__ import annotations
+
 
 
 import json

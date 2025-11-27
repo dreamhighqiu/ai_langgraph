@@ -1,0 +1,49 @@
+# Core dependencies from [project] section
+aiofiles>=25.1.0
+aiohttp
+configparser
+docling>=2.61.2
+fastapi>=0.120.2
+future
+google-api-core>=2.0.0,<3.0.0
+google-genai>=1.0.0,<2.0.0
+json_repair
+nano-vectordb
+networkx
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0,<2.4.0
+pipmaster
+pydantic
+pyjwt>=2.8.0
+pypinyin
+python-dotenv
+setuptools
+tenacity
+tiktoken
+uvicorn>=0.38.0
+xlsxwriter>=3.1.0
+
+# API-specific dependencies from [project.optional-dependencies] api section
+ascii_colors
+asyncpg
+distro
+httpcore
+httpx
+jiter
+passlib[bcrypt]
+psutil
+PyJWT>=2.8.0,<3.0.0
+python-jose[cryptography]
+python-multipart
+pytz
+gunicorn
+
+# Document processing dependencies
+openpyxl>=3.0.0,<4.0.0
+pycryptodome>=3.0.0,<4.0.0
+pypdf>=6.1.0
+python-docx>=0.8.11,<2.0.0
+python-pptx>=0.6.21,<2.0.0
+
+# Optional: Docling for advanced document processing (commented out for macOS)
+# docling>=2.0.0,<3.0.0; sys_platform != 'darwin'

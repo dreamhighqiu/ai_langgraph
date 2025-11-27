@@ -1,0 +1,3612 @@
+{
+  "fd5cbb96ca184c18db892ad42c05709b": {
+    "content_list": [
+      {
+        "type": "text",
+        "text": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "合规专员以及对LLM应用感兴趣的相关人员。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "培训目标:",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "· 全面了解主流大型语言模型的特点、能力边界与选型策略。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "•",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "· 精通提示词工程的核心原理、结构与高级技巧。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "提示词。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "· 理解LLM使用的最佳实践、伦理考量与未来趋势。 先决条件: 对人工智能和 金融业务有基本了解。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "模块一：大型语言模型（LLM）概览与选型",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "· 1.1  主流 LLM 产品深度解析",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "核心模型介绍:",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "▪ 国际代表:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ DeepSeek (特点:  开源、代码能力)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ ChatGPT (特点:  综合能力、插件生态)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ Claude (特点:  长文本处理、安全与伦理)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "Gemini (特点:  多模态、Google 生态集成)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 国内代表:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 文心一言 (特点: 中文理解、百度生态)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 通义千问 (特点: 综合能力、阿里生态)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 讯飞星火 (特点: 语音交互、跨领域知识)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "(实时更新) 其他值得关注的新兴模型。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 对比不同模型对同一通用任务的响应（如摘要、翻译） 。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "o 开源 vs.  闭源  LLM:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 定义与代表模型。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 核心差异: 成本、定制化潜力、数据隐私控制、更新频率、社区 支持。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例讨论: 为何某金融科技公司选择基于开源模型微调，而另一 家大型银行选择使用闭源模型的API？",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "· 1.2 LLM 核心能力维度对比",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "o 语言理解与生成:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 文本摘要、内容创作、翻译、情感分析等能力对比。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例: 使用不同模型生成同一主题的营销文案，对比风格和效 果。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "o 多模态能力:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "图像理解 (OCR,  图表解读, 图像描述)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 图像生成 (根据描述创作)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 音频处理 (语音识别、语音合成)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例: 使用多模态模型解读财报截图中的图表，或根据语音指令 生成会议纪要。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "o 工具使用与代码能力:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ Function Calling / Tool Use  机制介绍。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 代码生成、解释、调试能力。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 如何让 LLM 调用外部 API（如实时股价查询）或生成一段 Python 数据分析脚本。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "o 安全性与合规性:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 偏见与歧视风险。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据泄露风险。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ '幻觉'现象与事实核查。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 不同模型的安全防护机制对比。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: 金融场景下，哪些安全合规问题最为关键？",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "· 1.3  如何为您的业务选择合适的LLM",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "o 选型核心考量因素:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 任务匹配度 (特定能力强项)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 性能指标 (准确率、响应速度)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 集成复杂度 (API 友好度、文档支持)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 供应商可靠性与技术支持。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 社区生态与未来发展。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "成本效益分析:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ API 调用成本 (Token 计费)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 私有化部署成本 (硬件、人力)。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 订阅费用。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 提供一个简单的成本效益分析框架供学员参考。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "隐私保护与数据安全:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "数据处理协议 (Data Processing Agreements)。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据是否用于模型再训练？",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据传输与存储加密。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 满足金融监管要求（如GDPR, CCPA, 国内相关法规） 。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例分析: 对比不同云服务商提供的LLM在数据隐私保护条款 上的差异。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "模块二：LLM使用方式与企业级集成",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "· 2.1  多样化的 LLM 使用方式",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o Web/移动端交互:",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 官方界面、第三方应用。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 优点：易上手、快速验证。缺点：自动化程度低、难以集成。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 实操: 学员现场体验不同模型的官方Web界面。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o API 调用:",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ RESTful API  基础。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 关键参数 (模型、温度、最大Token数等) 解释。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 代码示例: Python 调用主流 LLM API 的基本代码框架。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "大型云平台服务 (LLM as a Service):",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ AWS Bedrock, Azure OpenAI Service, Google Vertex AI  等。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 优点：托管服务、易扩展、集成生态。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 介绍: 各大云平台提供的LLM服务特点和优势。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "· 2.2  企业级 LLM 接入与部署策略",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "o 私有化部署 vs. 云服务:",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 对比维度: 数据控制权、安全性、成本、维护复杂度、性能、合 规性。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 决策树: 提供一个简单的决策框架，帮助企业根据自身情况选 择。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例研究: 分析某证券公司选择私有化部署的动因和挑战。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "安全访问与身份认证:",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ API 密钥管理最佳实践。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 身份认证与授权 (IAM, OAuth)。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 网络隔离 (VPC, Private Link)。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "o 数据保护与敏感信息处理:",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据脱敏技术 (假名化、匿名化)。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ PII (个人身份信息)  检测与过滤。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 输入/输出内容监控与审计。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: 如何在客服场景中应用LLM，同时确保客户敏感信息不被 泄露或滥用？",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "· 2.3 LLM 应用开发平台与工具",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "o 低代码/无代码平台:",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 介绍集成LLM能力的平台 (如 Zapier, Make, Coze  等)。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 如何通过无代码平台快速搭建一个'邮件内容摘要'应用。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 应用开发框架:",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "LangChain, LlamaIndex  等核心概念与用途。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 简介:",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "如何使用框架构建更复杂的LLM应用 (如 RAG)。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "知识库与LLM结合 (Retrieval-Augmented Generation - RAG):",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 原理：解决LLM'幻觉'和知识更新问题。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 构建流程：数据准备、向量化、检索、生成。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例: 如何构建一个基于内部合规文档库的智能问答系统。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "模块三：提示词工程（Prompt Engineering）核心原理与技巧",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "· 3.1  提示词工程导论",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 定义: 什么是提示词 (Prompt)？它为何如此重要？(Garbage In, Garbage Out)。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 类比: 提示词如同与'非常聪明但不了解具体任务的实习生'沟通的指 令。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 基本原则: 清晰性  (Clarity)、具体性  (Specificity)、上下文  (Context)、 简洁性 (Conciseness)。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 好/坏提示词对比:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例: 对比模糊指令与清晰指令产生的巨大差异。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 差: \"总结一下市场情况。\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 好: \"请扮演一位资深金融分析师，根据过去24小时[指 定信息源]的主要新闻，为我总结全球股票市场的三个关 键动态，并指出每个动态对科技板块可能的影响。使用 项目符号列表格式。\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "· 3.2  高效提示词的结构化设计 (CRISP/RCIOS 等框架)",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 核心要素拆解:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "角色 (Role/Persona): \"你是一位经验丰富的财富顾问...\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 指令 (Instruction/Task): \"请分析这份财报...\" / \"生成一封安抚邮 件...\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 背景 (Context/Input Data): \"这是客户过去一年的交易记录...\" /",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "\"以下是相关的市场新闻...\"",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "\"请以 JSON 格式返回结果...\" / \"使",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 输出格式 (Output Format): 用专业的商业信函格式...\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 补充要素: 语气  (Tone),  目标受众  (Audience),  约束条件 (Constraints)。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "模板化: 提供几种常用场景的提示词模板结构。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 练习: 学员分组，针对给定场景，设计结构化的提示词。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "· 3.3  实用提示词技巧与高级模式",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 任务分解 (Decomposition / Chain of Thought - CoT):",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 引导模型'思考步骤'。将复杂任务拆解为子任务。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "实例: 如何让模型先分析原因，再提出解决方案。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 思维链提示 (Chain-of-Thought Prompting):",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 提供包含推理过程的示例，引导模型模仿。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 对比标准提示和CoT提示在解决逻辑推理问题上的效 果。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 少量示例学习 (Few-Shot Learning):",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 在提示词中提供1-5个输入/输出范例。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "如何通过示例让模型学会特定风格的文本生成或信息提 取。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 零示例学习 (Zero-Shot Learning): 务。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 迭代优化:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 测试 -> 分析输出 -> 修改提示词 -> 再测试 的循环过程。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 如何根据不理想的输出反推提示词的问题所在。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 技巧:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "尝试不同措辞、调整结构、增减上下文、改变温度参数 等。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 实战演练:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "提供一个不完美的提示词和输出，引导学员进行分析和优 化。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "依靠模型的泛化能力直接执行任",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "模块四：金融场景提示词工程实战应用",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "· 4.1  金融分析与研究报告类应用",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "市场动态分析:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 设计用于总结宏观经济指标、行业新闻、竞品动态的提示 词。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例: 从大量财经新闻中自动提取关键信息，生成每日市场摘 要。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 财务报告解读:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 提取关键财务指标 (营收、利润、增长率)、分析变化原",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "因、识别潜在风险。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "案例: 快速解读上市公司季度财报PDF，生成关键要点摘要。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 投资研究与建议:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 结构化生成投资逻辑、风险评估、估值分析框架。 (注意:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "强调LLM仅为辅助，不能替代专业判断和合规审查)",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: 如何设计提示词以生成初步的、平衡风险与收益的投资思 路？",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "· 4.2  客户服务与沟通咨询类应用",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 金融产品智能问答:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 结合 RAG，基于产品说明书和FAQ，回答客户关于利",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "率、费用、申请条件的咨询。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "构建虚拟客服助手，处理常见的银行业务咨询。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 客户意图识别与问题分类:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 分析客户消息，判断其意图（咨询、投诉、建议）并分配 给相应处理流程。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 沟通文案生成与润色:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "模板: 生成标准化的客户通知、营销邮件、投诉回复初稿。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "案例: 辅助客户经理撰写个性化的客户关怀邮件。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 角色扮演练习: 学员扮演客服，使用LLM辅助回答模拟的客户刁钻问 题。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "· 4.3  风险管理与合规审查类应用",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "文档合规性检查:",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 对比合同条款、营销材料与内部合规规则库，识别潜在违 规点。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例: 初步审查贷款申请材料是否符合银行政策要求。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 风险事件识别与预警:",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 从新闻、社交媒体、监管公告中监测与特定公司或行业相 关的负面信息或风险信号。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 反洗钱(AML)与欺诈检测辅助:",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 总结可疑交易模式描述、辅助生成可疑活动报告(SAR)的",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "文本内容 (强调：仅为辅助，需严格遵守法规)。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: LLM 在风控合规中的应用边界和潜在风险。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "· 4.4  综合实战演练与优化工作坊",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 场景设定: 提供 1-2 个贴近学员工作的金融业务场景 (如: \"为某基金撰 写营销亮点\", \"分析某股票的近期风险\")。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 分组任务: 学员分组，针对指定场景，合作设计、测试并迭代优化提示",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "词。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 成果展示与分享: 各组展示其最佳提示词和生成结果。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 专家点评与最佳实践总结: 讲师对各组进行点评，总结该场景下的最佳 实践和常见陷阱。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "模块五：总结、最佳实践与未来展望",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "· 5.1  核心要点回顾",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o LLM 选型关键因素。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 企业级应用考量。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "高效提示词设计的核心原则 (角色、指令、上下文、格式)。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 关键提示词技巧 (CoT, Few-shot,  迭代)。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "· 5.2 LLM  使用最佳实践与伦理考量",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 建立提示词库与版本控制。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 持续监控与评估模型输出质量。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 人机协同 (Human-in-the-loop)  的重要性。",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "负责任的AI：识别与缓解偏见、保护隐私、透明度、可解释性。",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "o 讨论: 在金融领域推动LLM 应用时，最重要的伦理原则是什么？",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "· 5.3  未来趋势与展望",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 更强的多模态能力。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o AI Agents  与自主任务执行。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 领域专用模型 (Domain-Specific Models)  的发展。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 个性化与自适应学习。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "· 5.4  互动问答  (Q&A)",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 解答学员疑问，深入探讨特定问题。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "· 5.5  培训评估与后续资源",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 收集反馈。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 提供延伸阅读材料、工具链接、社区资源。",
+        "page_idx": 9
+      }
+    ],
+    "doc_id": "doc-88b93e772890662b37fff9510ff982e1",
+    "mtime": 1764224054.330558,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764224079.463666,
+    "cache_version": "1.0",
+    "create_time": 1764224079,
+    "update_time": 1764224079,
+    "_id": "fd5cbb96ca184c18db892ad42c05709b"
+  },
+  "dc03419c89ec95f9cfc674b7ebd5fcd2": {
+    "content_list": [
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-f5ede7909f4fcd606987dab3703636e6",
+    "mtime": 1764224054.2930672,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764224090.250923,
+    "cache_version": "1.0",
+    "create_time": 1764224090,
+    "update_time": 1764224090,
+    "_id": "dc03419c89ec95f9cfc674b7ebd5fcd2"
+  },
+  "64738e87c63860c6aa5878f8476166e0": {
+    "content_list": [
+      {
+        "type": "text",
+        "text": "表结构",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Student(S#,Sname,Sage,Ssex) 学生表 Course(C#,Cname,T#) 课程表 SC(S#,C#,score) 成绩表 Teacher(T#,Tname) 教师表",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "试题：",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "1 、查询' C001 '课程比' C002",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "'课程成绩高的所有学生的学号；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2 、查询平均成绩大于 60 分的同学的学号和平均成绩；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "3 、查询所有同学的学号、姓名、选课数、总成绩；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "4 、查询姓'李'的老师的个数；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "5 、查询没学过'叶平'老师课的同学的学号、姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "6 、查询学过' 001 '并且也学过编号' 002 '课程的同学的学号、姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "7 、查询学过'叶平'老师所教的所有课的同学的学号、姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "8 、查询课程编号' 001 '的成绩比课程编号' 002 '课程低的所有同学的学号、姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "9 、查询所有课程成绩小于 60 分的同学的学号、姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "10 、查询没有学全所有课的同学的学号、姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "11 、查询至少有一门课与学号为' 1001 '的同学所学相同的同学的学号和姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "12 、查询至少学过学号为' 001 '同学所有一门课的其他同学学号和姓名；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "13 、把' SC '表中'叶平'老师教的课的成绩都更改为此课程的平均成绩；",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "14 、查询和' 1002 '号的同学学习的课程完全相同的其他同学学号和姓名；",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "15 、删除学习'叶平'老师课的 SC 表记录；",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "16 、向 SC 表中插入一些记录，这些记录要求符合以下条件：没有上过编号' 002 '课程的同学学号、 、",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "号课的平均成绩；",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "17 、按平均成绩从高到低显示所有学生的'数据库' 、 '企业管理' 、 '英语'三门的课程成绩，按如下形式显示：学 生 ID,, 数据库 , 企业管理 , 英语 , 有效课程数 , 有效平均分",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "18 、查询各科成绩最高和最低的分：以如下形式显示：课程 ID ，最高分，最低分",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "19 、按各科平均成绩从低到高和及格率的百分数从高到低顺序",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "SQL",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "题库练习",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "20 、查询如下课程平均成绩和及格率的百分数 ( 用 \"1 行 \" 显示 ): 企业管理（） ，马克思（） ， OO&UML （） ，数据库（）",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "21 、查询不同老师所教不同课程平均分从高到低显示",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "22 、查询如下课程成绩第 3 名到第 6 名的学生成绩单：企业管理（） ，马克思（） ， UML （） ，数据库（） [ 学生 ID],[ 学生姓名 ], 企业管理 , 马克思 ,UML, 数据库 , 平均成绩",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "23 、统计列印各科成绩 , 各分数段人数 : 课程 ID, 课程名称 ,[100-85],[85-70],[70-60],[ <60]",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "24 、查询学生平均成绩及其名次",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "25 、查询各科成绩前三名的记录考虑成绩并列情况 )",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "26 、查询每门课程被选修的学生数",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "27 、查询出只选修了一门课程的全部学生的学号和姓名",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28 、查询男生、女生人数",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "29 、查询姓'张'的学生名单",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "30 、查询同名同性学生名单，并统计同名人数",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "31 、年出生的学生名单 ( 注： Student 表中 Sage 列的类型是 datetime)",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "32 、查询每门课程的平均成绩，结果按平均成绩升序排列，平均成绩相同时，按课程号降序排列",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "33 、查询平均成绩大于的所有学生的学号、姓名和平均成绩",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "34 、查询课程名称为'数据库' ，且分数低于的学生姓名和分数",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "35 、查询所有学生的选课情况；",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "36 、查询任何一门课程成绩在分以上的姓名、课程名称和分数；",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "37 、查询不及格的课程，并按课程号从大到小排列",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "38 、查询课程编号为且课程成绩在分以上的学生的学号和姓名；",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "39 、求选了课程的学生人数",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "40 、查询选修'叶平'老师所授课程的学生中，成绩最高的学生姓名及其成绩",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "41 、查询各个课程及相应的选修人数",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "42 、查询不同课程成绩相同的学生的学号、课程号、学生成绩",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "43 、查询每门功成绩最好的前两名",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "44 、统计每门课程的学生选修人数（超过人的课程才统计） 。要求输出课程号和选修人数，查询结果按人数降序排 列，查询结果按人数降序排列，若人数相同，按课程号升序排列",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "45 、检索至少选修两门课程的学生学号",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "46 、查询全部学生都选修的课程的课程号和课程名",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "47 、查询没学过'叶平'老师讲授的任一门课程的学生姓名",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "48 、查询两门以上不及格课程的同学的学号及其平均成绩",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "49 、检索''课程分数小于，按分数降序排列的同学学号",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "50 、删除' 001 '同学的' 001 '课程的成绩",
+        "page_idx": 3
+      }
+    ],
+    "doc_id": "doc-735024aa90690fbb761b4701027b5df0",
+    "mtime": 1764224000.7294729,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764224259.5816479,
+    "cache_version": "1.0",
+    "create_time": 1764224259,
+    "update_time": 1764224259,
+    "_id": "64738e87c63860c6aa5878f8476166e0"
+  },
+  "c39e4f464dfdfa17f28d1b32ba0ccbc1": {
+    "content_list": [
+      {
+        "type": "text",
+        "text": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "合规专员以及对LLM应用感兴趣的相关人员。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "培训目标:",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "· 全面了解主流大型语言模型的特点、能力边界与选型策略。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "•",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "· 精通提示词工程的核心原理、结构与高级技巧。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "提示词。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "· 理解LLM使用的最佳实践、伦理考量与未来趋势。 先决条件: 对人工智能和 金融业务有基本了解。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "模块一：大型语言模型（LLM）概览与选型",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "· 1.1  主流 LLM 产品深度解析",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "核心模型介绍:",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "▪ 国际代表:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ DeepSeek (特点:  开源、代码能力)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ ChatGPT (特点:  综合能力、插件生态)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ Claude (特点:  长文本处理、安全与伦理)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "Gemini (特点:  多模态、Google 生态集成)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 国内代表:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 文心一言 (特点: 中文理解、百度生态)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 通义千问 (特点: 综合能力、阿里生态)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 讯飞星火 (特点: 语音交互、跨领域知识)",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "(实时更新) 其他值得关注的新兴模型。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 对比不同模型对同一通用任务的响应（如摘要、翻译） 。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "o 开源 vs.  闭源  LLM:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 定义与代表模型。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 核心差异: 成本、定制化潜力、数据隐私控制、更新频率、社区 支持。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例讨论: 为何某金融科技公司选择基于开源模型微调，而另一 家大型银行选择使用闭源模型的API？",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "· 1.2 LLM 核心能力维度对比",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "o 语言理解与生成:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 文本摘要、内容创作、翻译、情感分析等能力对比。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例: 使用不同模型生成同一主题的营销文案，对比风格和效 果。",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "o 多模态能力:",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "图像理解 (OCR,  图表解读, 图像描述)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 图像生成 (根据描述创作)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 音频处理 (语音识别、语音合成)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例: 使用多模态模型解读财报截图中的图表，或根据语音指令 生成会议纪要。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "o 工具使用与代码能力:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ Function Calling / Tool Use  机制介绍。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 代码生成、解释、调试能力。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 如何让 LLM 调用外部 API（如实时股价查询）或生成一段 Python 数据分析脚本。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "o 安全性与合规性:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 偏见与歧视风险。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据泄露风险。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ '幻觉'现象与事实核查。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 不同模型的安全防护机制对比。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: 金融场景下，哪些安全合规问题最为关键？",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "· 1.3  如何为您的业务选择合适的LLM",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "o 选型核心考量因素:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 任务匹配度 (特定能力强项)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 性能指标 (准确率、响应速度)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 集成复杂度 (API 友好度、文档支持)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 供应商可靠性与技术支持。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 社区生态与未来发展。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "成本效益分析:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ API 调用成本 (Token 计费)。",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪ 私有化部署成本 (硬件、人力)。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 订阅费用。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 提供一个简单的成本效益分析框架供学员参考。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "隐私保护与数据安全:",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "数据处理协议 (Data Processing Agreements)。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据是否用于模型再训练？",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据传输与存储加密。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 满足金融监管要求（如GDPR, CCPA, 国内相关法规） 。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例分析: 对比不同云服务商提供的LLM在数据隐私保护条款 上的差异。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "模块二：LLM使用方式与企业级集成",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "· 2.1  多样化的 LLM 使用方式",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o Web/移动端交互:",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 官方界面、第三方应用。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 优点：易上手、快速验证。缺点：自动化程度低、难以集成。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ 实操: 学员现场体验不同模型的官方Web界面。",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o API 调用:",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "▪ RESTful API  基础。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 关键参数 (模型、温度、最大Token数等) 解释。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 代码示例: Python 调用主流 LLM API 的基本代码框架。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "大型云平台服务 (LLM as a Service):",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ AWS Bedrock, Azure OpenAI Service, Google Vertex AI  等。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 优点：托管服务、易扩展、集成生态。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 介绍: 各大云平台提供的LLM服务特点和优势。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "· 2.2  企业级 LLM 接入与部署策略",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "o 私有化部署 vs. 云服务:",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 对比维度: 数据控制权、安全性、成本、维护复杂度、性能、合 规性。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 决策树: 提供一个简单的决策框架，帮助企业根据自身情况选 择。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例研究: 分析某证券公司选择私有化部署的动因和挑战。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "安全访问与身份认证:",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ API 密钥管理最佳实践。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 身份认证与授权 (IAM, OAuth)。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 网络隔离 (VPC, Private Link)。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "o 数据保护与敏感信息处理:",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ 数据脱敏技术 (假名化、匿名化)。",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "▪ PII (个人身份信息)  检测与过滤。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 输入/输出内容监控与审计。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: 如何在客服场景中应用LLM，同时确保客户敏感信息不被 泄露或滥用？",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "· 2.3 LLM 应用开发平台与工具",
+        "page_idx": 4
+      },
+      {
+        "type": "text",
+        "text": "o 低代码/无代码平台:",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 介绍集成LLM能力的平台 (如 Zapier, Make, Coze  等)。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 如何通过无代码平台快速搭建一个'邮件内容摘要'应用。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 应用开发框架:",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "LangChain, LlamaIndex  等核心概念与用途。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 简介:",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "如何使用框架构建更复杂的LLM应用 (如 RAG)。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "知识库与LLM结合 (Retrieval-Augmented Generation - RAG):",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 原理：解决LLM'幻觉'和知识更新问题。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 构建流程：数据准备、向量化、检索、生成。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例: 如何构建一个基于内部合规文档库的智能问答系统。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "模块三：提示词工程（Prompt Engineering）核心原理与技巧",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "· 3.1  提示词工程导论",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 定义: 什么是提示词 (Prompt)？它为何如此重要？(Garbage In, Garbage Out)。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 类比: 提示词如同与'非常聪明但不了解具体任务的实习生'沟通的指 令。",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 基本原则: 清晰性  (Clarity)、具体性  (Specificity)、上下文  (Context)、 简洁性 (Conciseness)。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 好/坏提示词对比:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例: 对比模糊指令与清晰指令产生的巨大差异。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 差: \"总结一下市场情况。\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 好: \"请扮演一位资深金融分析师，根据过去24小时[指 定信息源]的主要新闻，为我总结全球股票市场的三个关 键动态，并指出每个动态对科技板块可能的影响。使用 项目符号列表格式。\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "· 3.2  高效提示词的结构化设计 (CRISP/RCIOS 等框架)",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 核心要素拆解:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "角色 (Role/Persona): \"你是一位经验丰富的财富顾问...\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 指令 (Instruction/Task): \"请分析这份财报...\" / \"生成一封安抚邮 件...\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 背景 (Context/Input Data): \"这是客户过去一年的交易记录...\" /",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "\"以下是相关的市场新闻...\"",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "\"请以 JSON 格式返回结果...\" / \"使",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "▪ 输出格式 (Output Format): 用专业的商业信函格式...\"",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 补充要素: 语气  (Tone),  目标受众  (Audience),  约束条件 (Constraints)。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "模板化: 提供几种常用场景的提示词模板结构。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 练习: 学员分组，针对给定场景，设计结构化的提示词。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "· 3.3  实用提示词技巧与高级模式",
+        "page_idx": 5
+      },
+      {
+        "type": "text",
+        "text": "o 任务分解 (Decomposition / Chain of Thought - CoT):",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 引导模型'思考步骤'。将复杂任务拆解为子任务。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "实例: 如何让模型先分析原因，再提出解决方案。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 思维链提示 (Chain-of-Thought Prompting):",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 提供包含推理过程的示例，引导模型模仿。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 演示: 对比标准提示和CoT提示在解决逻辑推理问题上的效 果。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 少量示例学习 (Few-Shot Learning):",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 在提示词中提供1-5个输入/输出范例。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 实例:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "如何通过示例让模型学会特定风格的文本生成或信息提 取。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 零示例学习 (Zero-Shot Learning): 务。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 迭代优化:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 测试 -> 分析输出 -> 修改提示词 -> 再测试 的循环过程。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 如何根据不理想的输出反推提示词的问题所在。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 技巧:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "尝试不同措辞、调整结构、增减上下文、改变温度参数 等。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 实战演练:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "提供一个不完美的提示词和输出，引导学员进行分析和优 化。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "依靠模型的泛化能力直接执行任",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "模块四：金融场景提示词工程实战应用",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "· 4.1  金融分析与研究报告类应用",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "市场动态分析:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 设计用于总结宏观经济指标、行业新闻、竞品动态的提示 词。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例: 从大量财经新闻中自动提取关键信息，生成每日市场摘 要。",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "o 财务报告解读:",
+        "page_idx": 6
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 提取关键财务指标 (营收、利润、增长率)、分析变化原",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "因、识别潜在风险。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "案例: 快速解读上市公司季度财报PDF，生成关键要点摘要。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 投资研究与建议:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 结构化生成投资逻辑、风险评估、估值分析框架。 (注意:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "强调LLM仅为辅助，不能替代专业判断和合规审查)",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: 如何设计提示词以生成初步的、平衡风险与收益的投资思 路？",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "· 4.2  客户服务与沟通咨询类应用",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 金融产品智能问答:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 结合 RAG，基于产品说明书和FAQ，回答客户关于利",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "率、费用、申请条件的咨询。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "构建虚拟客服助手，处理常见的银行业务咨询。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 客户意图识别与问题分类:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 分析客户消息，判断其意图（咨询、投诉、建议）并分配 给相应处理流程。",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o 沟通文案生成与润色:",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "模板: 生成标准化的客户通知、营销邮件、投诉回复初稿。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "案例: 辅助客户经理撰写个性化的客户关怀邮件。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 角色扮演练习: 学员扮演客服，使用LLM辅助回答模拟的客户刁钻问 题。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "· 4.3  风险管理与合规审查类应用",
+        "page_idx": 7
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "文档合规性检查:",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 对比合同条款、营销材料与内部合规规则库，识别潜在违 规点。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 案例: 初步审查贷款申请材料是否符合银行政策要求。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 风险事件识别与预警:",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 从新闻、社交媒体、监管公告中监测与特定公司或行业相 关的负面信息或风险信号。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 反洗钱(AML)与欺诈检测辅助:",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 模板: 总结可疑交易模式描述、辅助生成可疑活动报告(SAR)的",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "文本内容 (强调：仅为辅助，需严格遵守法规)。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "▪ 讨论: LLM 在风控合规中的应用边界和潜在风险。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "· 4.4  综合实战演练与优化工作坊",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 场景设定: 提供 1-2 个贴近学员工作的金融业务场景 (如: \"为某基金撰 写营销亮点\", \"分析某股票的近期风险\")。",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "o 分组任务: 学员分组，针对指定场景，合作设计、测试并迭代优化提示",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "词。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 成果展示与分享: 各组展示其最佳提示词和生成结果。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 专家点评与最佳实践总结: 讲师对各组进行点评，总结该场景下的最佳 实践和常见陷阱。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "模块五：总结、最佳实践与未来展望",
+        "page_idx": 8
+      },
+      {
+        "type": "text",
+        "text": "· 5.1  核心要点回顾",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o LLM 选型关键因素。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 企业级应用考量。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "高效提示词设计的核心原则 (角色、指令、上下文、格式)。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 关键提示词技巧 (CoT, Few-shot,  迭代)。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "· 5.2 LLM  使用最佳实践与伦理考量",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 建立提示词库与版本控制。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 持续监控与评估模型输出质量。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 人机协同 (Human-in-the-loop)  的重要性。",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "o",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "负责任的AI：识别与缓解偏见、保护隐私、透明度、可解释性。",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "o 讨论: 在金融领域推动LLM 应用时，最重要的伦理原则是什么？",
+        "page_idx": 10
+      },
+      {
+        "type": "text",
+        "text": "· 5.3  未来趋势与展望",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 更强的多模态能力。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o AI Agents  与自主任务执行。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 领域专用模型 (Domain-Specific Models)  的发展。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 个性化与自适应学习。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "· 5.4  互动问答  (Q&A)",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 解答学员疑问，深入探讨特定问题。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "· 5.5  培训评估与后续资源",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 收集反馈。",
+        "page_idx": 9
+      },
+      {
+        "type": "text",
+        "text": "o 提供延伸阅读材料、工具链接、社区资源。",
+        "page_idx": 9
+      }
+    ],
+    "doc_id": "doc-88b93e772890662b37fff9510ff982e1",
+    "mtime": 1764224725.0308297,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764224749.826879,
+    "cache_version": "1.0",
+    "create_time": 1764224749,
+    "update_time": 1764224749,
+    "_id": "c39e4f464dfdfa17f28d1b32ba0ccbc1"
+  },
+  "7b24ce0b18ee98d207148c9da3b4598b": {
+    "content_list": [
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-f5ede7909f4fcd606987dab3703636e6",
+    "mtime": 1764224725.008674,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764224750.474499,
+    "cache_version": "1.0",
+    "create_time": 1764224750,
+    "update_time": 1764224750,
+    "_id": "7b24ce0b18ee98d207148c9da3b4598b"
+  },
+  "1f9767b880a33dee4f58a59b87f9a26e": {
+    "content_list": [
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-f5ede7909f4fcd606987dab3703636e6",
+    "mtime": 1764228713.0297987,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764230463.393569,
+    "cache_version": "1.0",
+    "create_time": 1764230463,
+    "update_time": 1764230463,
+    "_id": "1f9767b880a33dee4f58a59b87f9a26e"
+  },
+  "9d63fdaad5d6923ade67a76e4958ce5c": {
+    "content_list": [
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-f5ede7909f4fcd606987dab3703636e6",
+    "mtime": 1764231647.9288905,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764232374.879414,
+    "cache_version": "1.0",
+    "create_time": 1764232374,
+    "update_time": 1764232374,
+    "_id": "9d63fdaad5d6923ade67a76e4958ce5c"
+  },
+  "3fce776294b70a8f208c69cf93f12dce": {
+    "content_list": [
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/parser_output/旅行日记2/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-f5ede7909f4fcd606987dab3703636e6",
+    "mtime": 1764232642.2767634,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1764232666.137175,
+    "cache_version": "1.0",
+    "create_time": 1764232666,
+    "update_time": 1764232666,
+    "_id": "3fce776294b70a8f208c69cf93f12dce"
+  }
+}

@@ -1,3 +1,8 @@
+from __future__ import annotations
+# 其他导入语句...
+from typing import Any, Dict, List, Optional
+# 其余代码...
+
 """
 Prompt templates for multimodal content processing
 
@@ -13,9 +18,6 @@ different types of content (images, tables, equations, etc.)
 授权商业应用请联系微信：huice666
 """
 
-
-from __future__ import annotations
-from typing import Any
 
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UmpOSVdRPT06MGM4ZTQ1ZmM=
 

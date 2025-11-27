@@ -21,6 +21,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
+    "aiofiles>=25.1.0",
     "aiohttp",
     "configparser",
     "docling>=2.61.2",
@@ -32,14 +33,17 @@ dependencies = [
     "nano-vectordb",
     "networkx",
     "numpy>=1.24.0,<2.0.0",
+    "ollama>=0.6.0",
     "pandas>=2.0.0,<2.4.0",
     "pipmaster",
     "pydantic",
+    "pyjwt>=2.8.0",
     "pypinyin",
     "python-dotenv",
     "setuptools",
     "tenacity",
     "tiktoken",
+    "uvicorn>=0.38.0",
     "xlsxwriter>=3.1.0",
 ]
 

@@ -1,0 +1,812 @@
+{
+  "大型语言模型(LLM)<SEP>提示词工程": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232940,
+    "update_time": 1764232940,
+    "_id": "大型语言模型(LLM)<SEP>提示词工程"
+  },
+  "DeepSeek<SEP>开源LLM": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232940,
+    "update_time": 1764232940,
+    "_id": "DeepSeek<SEP>开源LLM"
+  },
+  "ChatGPT<SEP>闭源LLM": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232940,
+    "update_time": 1764232940,
+    "_id": "ChatGPT<SEP>闭源LLM"
+  },
+  "Claude<SEP>安全性": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232940,
+    "update_time": 1764232940,
+    "_id": "Claude<SEP>安全性"
+  },
+  "Gemini<SEP>多模态能力": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232940,
+    "update_time": 1764232940,
+    "_id": "Gemini<SEP>多模态能力"
+  },
+  "文心一言<SEP>金融行业": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232940,
+    "update_time": 1764232940,
+    "_id": "文心一言<SEP>金融行业"
+  },
+  "Function Calling<SEP>工具使用": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232941,
+    "update_time": 1764232941,
+    "_id": "Function Calling<SEP>工具使用"
+  },
+  "云服务<SEP>私有化部署": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232942,
+    "update_time": 1764232942,
+    "_id": "云服务<SEP>私有化部署"
+  },
+  "大型语言模型(LLM)<SEP>金融行业": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232943,
+    "update_time": 1764232943,
+    "_id": "大型语言模型(LLM)<SEP>金融行业"
+  },
+  "《大型语言模型(LLM)系列产品工具及提示词工程》专业培训大纲<SEP>模块一：大型语言模型(LLM)概览与选型": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232944,
+    "update_time": 1764232944,
+    "_id": "《大型语言模型(LLM)系列产品工具及提示词工程》专业培训大纲<SEP>模块一：大型语言模型(LLM)概览与选型"
+  },
+  "AWS Bedrock<SEP>云服务": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232944,
+    "update_time": 1764232944,
+    "_id": "AWS Bedrock<SEP>云服务"
+  },
+  "大型语言模型(LLM)<SEP>工具使用": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232945,
+    "update_time": 1764232945,
+    "_id": "大型语言模型(LLM)<SEP>工具使用"
+  },
+  "《大型语言模型(LLM)系列产品工具及提示词工程》专业培训大纲<SEP>模块二：LLM使用方式与企业级集成": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232946,
+    "update_time": 1764232946,
+    "_id": "《大型语言模型(LLM)系列产品工具及提示词工程》专业培训大纲<SEP>模块二：LLM使用方式与企业级集成"
+  },
+  "Azure OpenAI Service<SEP>云服务": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232946,
+    "update_time": 1764232946,
+    "_id": "Azure OpenAI Service<SEP>云服务"
+  },
+  "API调用<SEP>大型语言模型(LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232947,
+    "update_time": 1764232947,
+    "_id": "API调用<SEP>大型语言模型(LLM)"
+  },
+  "GDPR<SEP>合规性": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232947,
+    "update_time": 1764232947,
+    "_id": "GDPR<SEP>合规性"
+  },
+  "《大型语言模型(LLM)系列产品工具及提示词工程》专业培训大纲<SEP>产品经理": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232948,
+    "update_time": 1764232948,
+    "_id": "《大型语言模型(LLM)系列产品工具及提示词工程》专业培训大纲<SEP>产品经理"
+  },
+  "Google Vertex AI<SEP>云服务": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232949,
+    "update_time": 1764232949,
+    "_id": "Google Vertex AI<SEP>云服务"
+  },
+  "CCPA<SEP>合规性": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232949,
+    "update_time": 1764232949,
+    "_id": "CCPA<SEP>合规性"
+  },
+  "AWS Bedrock<SEP>LLM as a Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232949,
+    "update_time": 1764232949,
+    "_id": "AWS Bedrock<SEP>LLM as a Service"
+  },
+  "API调用<SEP>RESTful API": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232950,
+    "update_time": 1764232950,
+    "_id": "API调用<SEP>RESTful API"
+  },
+  "企业级LLM接入与部署策略<SEP>私有化部署": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232951,
+    "update_time": 1764232951,
+    "_id": "企业级LLM接入与部署策略<SEP>私有化部署"
+  },
+  "Azure OpenAI Service<SEP>LLM as a Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232952,
+    "update_time": 1764232952,
+    "_id": "Azure OpenAI Service<SEP>LLM as a Service"
+  },
+  "API调用<SEP>Token计费": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232953,
+    "update_time": 1764232953,
+    "_id": "API调用<SEP>Token计费"
+  },
+  "云服务<SEP>企业级LLM接入与部署策略": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232953,
+    "update_time": 1764232953,
+    "_id": "云服务<SEP>企业级LLM接入与部署策略"
+  },
+  "API密钥管理<SEP>安全访问与身份认证": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232953,
+    "update_time": 1764232953,
+    "_id": "API密钥管理<SEP>安全访问与身份认证"
+  },
+  "Google Vertex AI<SEP>LLM as a Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232954,
+    "update_time": 1764232954,
+    "_id": "Google Vertex AI<SEP>LLM as a Service"
+  },
+  "API调用<SEP>Web/移动端交互": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764232954,
+    "update_time": 1764232954,
+    "_id": "API调用<SEP>Web/移动端交互"
+  },
+  "企业级LLM接入与部署策略<SEP>决策树": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232955,
+    "update_time": 1764232955,
+    "_id": "企业级LLM接入与部署策略<SEP>决策树"
+  },
+  "数据保护与敏感信息处理<SEP>数据脱敏技术": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232955,
+    "update_time": 1764232955,
+    "_id": "数据保护与敏感信息处理<SEP>数据脱敏技术"
+  },
+  "安全访问与身份认证<SEP>身份认证与授权": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232956,
+    "update_time": 1764232956,
+    "_id": "安全访问与身份认证<SEP>身份认证与授权"
+  },
+  "LLM应用开发平台与工具<SEP>低代码/无代码平台": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232957,
+    "update_time": 1764232957,
+    "_id": "LLM应用开发平台与工具<SEP>低代码/无代码平台"
+  },
+  "PII (个人身份信息)<SEP>数据保护与敏感信息处理": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232958,
+    "update_time": 1764232958,
+    "_id": "PII (个人身份信息)<SEP>数据保护与敏感信息处理"
+  },
+  "企业级LLM接入与部署策略<SEP>案例研究": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232958,
+    "update_time": 1764232958,
+    "_id": "企业级LLM接入与部署策略<SEP>案例研究"
+  },
+  "安全访问与身份认证<SEP>网络隔离": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232959,
+    "update_time": 1764232959,
+    "_id": "安全访问与身份认证<SEP>网络隔离"
+  },
+  "Zapier<SEP>低代码/无代码平台": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232960,
+    "update_time": 1764232960,
+    "_id": "Zapier<SEP>低代码/无代码平台"
+  },
+  "LLM应用开发平台与工具<SEP>应用开发框架": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232960,
+    "update_time": 1764232960,
+    "_id": "LLM应用开发平台与工具<SEP>应用开发框架"
+  },
+  "数据保护与敏感信息处理<SEP>输入/输出内容监控与审计": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232960,
+    "update_time": 1764232960,
+    "_id": "数据保护与敏感信息处理<SEP>输入/输出内容监控与审计"
+  },
+  "Make<SEP>低代码/无代码平台": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232962,
+    "update_time": 1764232962,
+    "_id": "Make<SEP>低代码/无代码平台"
+  },
+  "提示词(Prompt)<SEP>提示词工程(Prompt Engineering)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232962,
+    "update_time": 1764232962,
+    "_id": "提示词(Prompt)<SEP>提示词工程(Prompt Engineering)"
+  },
+  "LangChain<SEP>应用开发框架": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232963,
+    "update_time": 1764232963,
+    "_id": "LangChain<SEP>应用开发框架"
+  },
+  "Coze<SEP>低代码/无代码平台": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232964,
+    "update_time": 1764232964,
+    "_id": "Coze<SEP>低代码/无代码平台"
+  },
+  "CRISP/RCIOS框架<SEP>提示词工程(Prompt Engineering)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232965,
+    "update_time": 1764232965,
+    "_id": "CRISP/RCIOS框架<SEP>提示词工程(Prompt Engineering)"
+  },
+  "LlamaIndex<SEP>应用开发框架": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232965,
+    "update_time": 1764232965,
+    "_id": "LlamaIndex<SEP>应用开发框架"
+  },
+  "任务分解(Decomposition)<SEP>提示词工程(Prompt Engineering)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232966,
+    "update_time": 1764232966,
+    "_id": "任务分解(Decomposition)<SEP>提示词工程(Prompt Engineering)"
+  },
+  "低代码/无代码平台<SEP>邮件内容摘要应用": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232966,
+    "update_time": 1764232966,
+    "_id": "低代码/无代码平台<SEP>邮件内容摘要应用"
+  },
+  "Retrieval-Augmented Generation (RAG)<SEP>应用开发框架": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232967,
+    "update_time": 1764232967,
+    "_id": "Retrieval-Augmented Generation (RAG)<SEP>应用开发框架"
+  },
+  "内部合规文档库<SEP>智能问答系统": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232967,
+    "update_time": 1764232967,
+    "_id": "内部合规文档库<SEP>智能问答系统"
+  },
+  "思维链提示(Chain-of-Thought Prompting)<SEP>提示词工程(Prompt Engineering)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232968,
+    "update_time": 1764232968,
+    "_id": "思维链提示(Chain-of-Thought Prompting)<SEP>提示词工程(Prompt Engineering)"
+  },
+  "CRISP/RCIOS框架<SEP>角色(Role/Persona)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232969,
+    "update_time": 1764232969,
+    "_id": "CRISP/RCIOS框架<SEP>角色(Role/Persona)"
+  },
+  "Retrieval-Augmented Generation (RAG)<SEP>智能问答系统": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232969,
+    "update_time": 1764232969,
+    "_id": "Retrieval-Augmented Generation (RAG)<SEP>智能问答系统"
+  },
+  "少量示例学习(Few-Shot Learning)<SEP>提示词工程(Prompt Engineering)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232970,
+    "update_time": 1764232970,
+    "_id": "少量示例学习(Few-Shot Learning)<SEP>提示词工程(Prompt Engineering)"
+  },
+  "CRISP/RCIOS框架<SEP>指令(Instruction/Task)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232971,
+    "update_time": 1764232971,
+    "_id": "CRISP/RCIOS框架<SEP>指令(Instruction/Task)"
+  },
+  "提示词工程(Prompt Engineering)<SEP>零示例学习(Zero-Shot Learning)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232972,
+    "update_time": 1764232972,
+    "_id": "提示词工程(Prompt Engineering)<SEP>零示例学习(Zero-Shot Learning)"
+  },
+  "CRISP/RCIOS框架<SEP>背景(Context/Input Data)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232973,
+    "update_time": 1764232973,
+    "_id": "CRISP/RCIOS框架<SEP>背景(Context/Input Data)"
+  },
+  "提示词工程(Prompt Engineering)<SEP>迭代优化": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232973,
+    "update_time": 1764232973,
+    "_id": "提示词工程(Prompt Engineering)<SEP>迭代优化"
+  },
+  "CRISP/RCIOS框架<SEP>输出格式(Output Format)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232974,
+    "update_time": 1764232974,
+    "_id": "CRISP/RCIOS框架<SEP>输出格式(Output Format)"
+  },
+  "温度参数<SEP>迭代优化": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232975,
+    "update_time": 1764232975,
+    "_id": "温度参数<SEP>迭代优化"
+  },
+  "Garbage In, Garbage Out<SEP>提示词工程(Prompt Engineering)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232975,
+    "update_time": 1764232975,
+    "_id": "Garbage In, Garbage Out<SEP>提示词工程(Prompt Engineering)"
+  },
+  "提示词工程<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232975,
+    "update_time": 1764232975,
+    "_id": "提示词工程<SEP>金融场景提示词工程"
+  },
+  "CRISP/RCIOS框架<SEP>语气(Tone)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232975,
+    "update_time": 1764232975,
+    "_id": "CRISP/RCIOS框架<SEP>语气(Tone)"
+  },
+  "提示词工程(Prompt Engineering)<SEP>金融分析与研究报告类": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232976,
+    "update_time": 1764232976,
+    "_id": "提示词工程(Prompt Engineering)<SEP>金融分析与研究报告类"
+  },
+  "市场动态分析<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232977,
+    "update_time": 1764232977,
+    "_id": "市场动态分析<SEP>金融场景提示词工程"
+  },
+  "CRISP/RCIOS框架<SEP>目标受众(Audience)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232978,
+    "update_time": 1764232978,
+    "_id": "CRISP/RCIOS框架<SEP>目标受众(Audience)"
+  },
+  "财务报告解读<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232979,
+    "update_time": 1764232979,
+    "_id": "财务报告解读<SEP>金融场景提示词工程"
+  },
+  "CRISP/RCIOS框架<SEP>约束条件(Constraints)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764232980,
+    "update_time": 1764232980,
+    "_id": "CRISP/RCIOS框架<SEP>约束条件(Constraints)"
+  },
+  "投资研究与建议<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232981,
+    "update_time": 1764232981,
+    "_id": "投资研究与建议<SEP>金融场景提示词工程"
+  },
+  "金融产品智能问答<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232982,
+    "update_time": 1764232982,
+    "_id": "金融产品智能问答<SEP>金融场景提示词工程"
+  },
+  "LLM<SEP>投资研究与建议": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232982,
+    "update_time": 1764232982,
+    "_id": "LLM<SEP>投资研究与建议"
+  },
+  "客户意图识别与问题分类<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232983,
+    "update_time": 1764232983,
+    "_id": "客户意图识别与问题分类<SEP>金融场景提示词工程"
+  },
+  "RAG<SEP>金融产品智能问答": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232983,
+    "update_time": 1764232983,
+    "_id": "RAG<SEP>金融产品智能问答"
+  },
+  "沟通文案生成与润色<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232985,
+    "update_time": 1764232985,
+    "_id": "沟通文案生成与润色<SEP>金融场景提示词工程"
+  },
+  "文档合规性检查<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232986,
+    "update_time": 1764232986,
+    "_id": "文档合规性检查<SEP>金融场景提示词工程"
+  },
+  "CoT<SEP>提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232986,
+    "update_time": 1764232986,
+    "_id": "CoT<SEP>提示词工程"
+  },
+  "Few-shot<SEP>提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232987,
+    "update_time": 1764232987,
+    "_id": "Few-shot<SEP>提示词工程"
+  },
+  "金融场景提示词工程<SEP>风险事件识别与预警": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232988,
+    "update_time": 1764232988,
+    "_id": "金融场景提示词工程<SEP>风险事件识别与预警"
+  },
+  "AI Agents<SEP>模块五：总结、最佳实践与未来展望": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232988,
+    "update_time": 1764232988,
+    "_id": "AI Agents<SEP>模块五：总结、最佳实践与未来展望"
+  },
+  "反洗钱与欺诈检测辅助<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232989,
+    "update_time": 1764232989,
+    "_id": "反洗钱与欺诈检测辅助<SEP>金融场景提示词工程"
+  },
+  "Domain-Specific Models<SEP>模块五：总结、最佳实践与未来展望": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232990,
+    "update_time": 1764232990,
+    "_id": "Domain-Specific Models<SEP>模块五：总结、最佳实践与未来展望"
+  },
+  "模块四：金融场景提示词工程实战应用<SEP>金融场景提示词工程": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232990,
+    "update_time": 1764232990,
+    "_id": "模块四：金融场景提示词工程实战应用<SEP>金融场景提示词工程"
+  },
+  "LLM<SEP>反洗钱与欺诈检测辅助": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232990,
+    "update_time": 1764232990,
+    "_id": "LLM<SEP>反洗钱与欺诈检测辅助"
+  },
+  "估与后续资源<SEP>收集反馈": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764232990,
+    "update_time": 1764232990,
+    "_id": "估与后续资源<SEP>收集反馈"
+  },
+  "Q&A<SEP>模块五：总结、最佳实践与未来展望": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232991,
+    "update_time": 1764232991,
+    "_id": "Q&A<SEP>模块五：总结、最佳实践与未来展望"
+  },
+  "估与后续资源<SEP>提供延伸阅读材料": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764232992,
+    "update_time": 1764232992,
+    "_id": "估与后续资源<SEP>提供延伸阅读材料"
+  },
+  "Human-in-the-loop<SEP>LLM": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232993,
+    "update_time": 1764232993,
+    "_id": "Human-in-the-loop<SEP>LLM"
+  },
+  "估与后续资源<SEP>提供工具链接": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764232994,
+    "update_time": 1764232994,
+    "_id": "估与后续资源<SEP>提供工具链接"
+  },
+  "LLM<SEP>模块五：总结、最佳实践与未来展望": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232995,
+    "update_time": 1764232995,
+    "_id": "LLM<SEP>模块五：总结、最佳实践与未来展望"
+  },
+  "估与后续资源<SEP>提供社区资源": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764232995,
+    "update_time": 1764232995,
+    "_id": "估与后续资源<SEP>提供社区资源"
+  },
+  "Human-in-the-loop<SEP>模块五：总结、最佳实践与未来展望": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764232996,
+    "update_time": 1764232996,
+    "_id": "Human-in-the-loop<SEP>模块五：总结、最佳实践与未来展望"
+  },
+  "CENTRAL GOVERNMENT<SEP>RESERVE BANK OF INDIA": {
+    "chunk_ids": [
+      "chunk-7882298873876029b066fe9c2191776c"
+    ],
+    "count": 1,
+    "create_time": 1764233038,
+    "update_time": 1764233038,
+    "_id": "CENTRAL GOVERNMENT<SEP>RESERVE BANK OF INDIA"
+  }
+}

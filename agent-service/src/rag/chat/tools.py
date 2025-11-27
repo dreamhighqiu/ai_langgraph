@@ -54,3 +54,5 @@ def get_mcp_rag_tools():
             )
     tools = asyncio.run(client.get_tools())
     return tools
+
+# print(get_mcp_rag_tools())

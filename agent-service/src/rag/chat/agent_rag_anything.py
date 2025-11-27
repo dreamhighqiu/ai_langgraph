@@ -18,4 +18,4 @@ agent = create_agent(model=deepseek_model,
                      system_prompt="根据用户的问题从合适的集合中查询相关知识。"
                                    "如果不确定当前使用的collection_name，可以使用 get_available_collections 工具获取所有可用的集合信息，"
                                    "然后根据集合的描述和用户的问题选择最合适的 collection_name。"
-                     )
+                     ) 

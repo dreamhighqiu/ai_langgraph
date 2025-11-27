@@ -5,7 +5,7 @@
   "_buildId": "id_MC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VmpsVk1RPT06ZGYyNzkyODM=",
   "graphs": {
     "agent": {
-      "path": "./src/rag/chat/agent_rag.py:agent"
+      "path": "./src/rag/chat/agent_rag_anything.py:agent"
     }
   },
   "_deployId": "id_MS81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VmpsVk1RPT06ZGYyNzkyODM=",

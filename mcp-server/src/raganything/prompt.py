@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Prompt templates for multimodal content processing
 
@@ -13,8 +15,6 @@ different types of content (images, tables, equations, etc.)
 授权商业应用请联系微信：huice666
 """
 
-
-from __future__ import annotations
 from typing import Any
 # pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WlRNMGNnPT06YzAyMDdkYzE=
 

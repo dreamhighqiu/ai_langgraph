@@ -1,0 +1,68 @@
+"""
+LightRAG meets Amazon Bedrock ⛰️
+"""
+"""
+版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+
+本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+
+授权商业应用请联系微信：huice666
+"""
+
+
+import os
+import logging
+
+from lightrag import LightRAG, QueryParam
+from lightrag.llm.bedrock import bedrock_complete, bedrock_embed
+from lightrag.utils import EmbeddingFunc
+
+import asyncio
+import nest_asyncio
+# pragma: no cover  MC8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdVemNnPT06MTg3NjkyZWM=
+
+nest_asyncio.apply()
+
+logging.getLogger("aiobotocore").setLevel(logging.WARNING)
+
+WORKING_DIR = "./dickens"
+if not os.path.exists(WORKING_DIR):
+    os.mkdir(WORKING_DIR)
+# fmt: off  MS8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdVemNnPT06MTg3NjkyZWM=
+
+
+async def initialize_rag():
+    rag = LightRAG(
+        working_dir=WORKING_DIR,
+        llm_model_func=bedrock_complete,
+        llm_model_name="Anthropic Claude 3 Haiku // Amazon Bedrock",
+        embedding_func=EmbeddingFunc(
+            embedding_dim=1024, max_token_size=8192, func=bedrock_embed
+        ),
+    )
+
+    await rag.initialize_storages()  # Auto-initializes pipeline_status
+    return rag
+
+
+def main():
+    rag = asyncio.run(initialize_rag())
+
+    with open("./book.txt", "r", encoding="utf-8") as f:
+        rag.insert(f.read())
+# pragma: no cover  Mi8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdVemNnPT06MTg3NjkyZWM=
+
+    for mode in ["naive", "local", "global", "hybrid"]:
+        print("\n+-" + "-" * len(mode) + "-+")
+        print(f"| {mode.capitalize()} |")
+        print("+-" + "-" * len(mode) + "-+\n")
+        print(
+            rag.query(
+                "What are the top themes in this story?", param=QueryParam(mode=mode)
+            )
+        )
+
+
+if __name__ == "__main__":
+    main()

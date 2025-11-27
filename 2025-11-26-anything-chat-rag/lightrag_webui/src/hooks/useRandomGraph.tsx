@@ -1,0 +1,88 @@
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
+// NOTE  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YjNVMmRnPT06NzYxNzhhYmY=
+
+import { Faker, en, faker as fak } from '@faker-js/faker'
+import Graph, { UndirectedGraph } from 'graphology'
+import erdosRenyi from 'graphology-generators/random/erdos-renyi'
+import { useCallback, useEffect, useState } from 'react'
+import seedrandom from 'seedrandom'
+import { randomColor } from '@/lib/utils'
+import * as Constants from '@/lib/constants'
+import { useGraphStore } from '@/stores/graph'
+// eslint-disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YjNVMmRnPT06NzYxNzhhYmY=
+
+export type NodeType = {
+  x: number
+  y: number
+  label: string
+  size: number
+  color: string
+  highlighted?: boolean
+}
+export type EdgeType = { label: string }
+// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YjNVMmRnPT06NzYxNzhhYmY=
+
+/**
+ * The goal of this file is to seed random generators if the query params 'seed' is present.
+ */
+const useRandomGraph = () => {
+  const [faker, setFaker] = useState<Faker>(fak)
+
+  useEffect(() => {
+    // Globally seed the Math.random
+    const params = new URLSearchParams(document.location.search)
+    const seed = params.get('seed') // is the string "Jonathan"
+    if (seed) {
+      seedrandom(seed, { global: true })
+      // seed faker with the random function
+      const f = new Faker({ locale: en })
+      f.seed(Math.random())
+      setFaker(f)
+    }
+  }, [])
+
+  const randomGraph = useCallback(() => {
+    useGraphStore.getState().reset()
+
+    // Create the graph
+    const graph = erdosRenyi(UndirectedGraph, { order: 100, probability: 0.1 })
+    graph.nodes().forEach((node: string) => {
+      graph.mergeNodeAttributes(node, {
+        label: faker.person.fullName(),
+        size: faker.number.int({ min: Constants.minNodeSize, max: Constants.maxNodeSize }),
+        color: randomColor(),
+        x: Math.random(),
+        y: Math.random(),
+        // for node-border
+        borderColor: randomColor(),
+        borderSize: faker.number.float({ min: 0, max: 1, multipleOf: 0.1 }),
+        // for node-image
+        pictoColor: randomColor(),
+        image: faker.image.urlLoremFlickr()
+      })
+    })
+
+    // Add edge attributes
+    graph.edges().forEach((edge: string) => {
+      graph.mergeEdgeAttributes(edge, {
+        label: faker.lorem.words(faker.number.int({ min: 1, max: 3 })),
+        size: faker.number.float({ min: 1, max: 5 }),
+        color: randomColor()
+      })
+    })
+
+    return graph as Graph<NodeType, EdgeType>
+  }, [faker])
+
+  return { faker, randomColor, randomGraph }
+}
+// TODO  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YjNVMmRnPT06NzYxNzhhYmY=
+
+export default useRandomGraph

@@ -1,0 +1,144 @@
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
+// NOTE  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YzIwNVlnPT06ZDAzMGMyZDY=
+
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import { forwardRef, useCallback, useEffect, useState } from 'react'
+import { NumericFormat, NumericFormatProps } from 'react-number-format'
+import Button from '@/components/ui/Button'
+import Input from '@/components/ui/Input'
+import { cn } from '@/lib/utils'
+
+export interface NumberInputProps extends Omit<NumericFormatProps, 'value' | 'onValueChange'> {
+  stepper?: number
+  thousandSeparator?: string
+  placeholder?: string
+  defaultValue?: number
+  min?: number
+  max?: number
+  value?: number // Controlled value
+  suffix?: string
+  prefix?: string
+  onValueChange?: (value: number | undefined) => void
+  fixedDecimalScale?: boolean
+  decimalScale?: number
+}
+// FIXME  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YzIwNVlnPT06ZDAzMGMyZDY=
+
+const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
+  (
+    {
+      stepper,
+      thousandSeparator,
+      placeholder,
+      defaultValue,
+      min = -Infinity,
+      max = Infinity,
+      onValueChange,
+      fixedDecimalScale = false,
+      decimalScale = 0,
+      className = undefined,
+      suffix,
+      prefix,
+      value: controlledValue,
+      ...props
+    },
+    ref
+  ) => {
+    const [value, setValue] = useState<number | undefined>(controlledValue ?? defaultValue)
+
+    const handleIncrement = useCallback(() => {
+      setValue((prev) =>
+        prev === undefined ? (stepper ?? 1) : Math.min(prev + (stepper ?? 1), max)
+      )
+    }, [stepper, max])
+
+    const handleDecrement = useCallback(() => {
+      setValue((prev) =>
+        prev === undefined ? -(stepper ?? 1) : Math.max(prev - (stepper ?? 1), min)
+      )
+    }, [stepper, min])
+
+    useEffect(() => {
+      if (controlledValue !== undefined) {
+        setValue(controlledValue)
+      }
+    }, [controlledValue])
+
+    const handleChange = (values: { value: string; floatValue: number | undefined }) => {
+      const newValue = values.floatValue === undefined ? undefined : values.floatValue
+      setValue(newValue)
+      if (onValueChange) {
+        onValueChange(newValue)
+      }
+    }
+
+    const handleBlur = () => {
+      if (value !== undefined) {
+        if (value < min) {
+          setValue(min)
+          ;(ref as React.RefObject<HTMLInputElement>).current!.value = String(min)
+        } else if (value > max) {
+          setValue(max)
+          ;(ref as React.RefObject<HTMLInputElement>).current!.value = String(max)
+        }
+      }
+    }
+
+    return (
+      <div className="relative flex">
+        <NumericFormat
+          value={value}
+          onValueChange={handleChange}
+          thousandSeparator={thousandSeparator}
+          decimalScale={decimalScale}
+          fixedDecimalScale={fixedDecimalScale}
+          allowNegative={min < 0}
+          valueIsNumericString
+          onBlur={handleBlur}
+          max={max}
+          min={min}
+          suffix={suffix}
+          prefix={prefix}
+          customInput={(props) => <Input {...props} className={cn('w-full', className)} />}
+          placeholder={placeholder}
+          className="[appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          getInputRef={ref}
+          {...props}
+        />
+        <div className="absolute top-0 right-0 bottom-0 flex flex-col">
+          <Button
+            aria-label="Increase value"
+            className="border-input h-1/2 rounded-l-none rounded-br-none border-b border-l px-2 focus-visible:relative"
+            variant="outline"
+            onClick={handleIncrement}
+            disabled={value === max}
+          >
+            <ChevronUp size={15} />
+          </Button>
+          <Button
+            aria-label="Decrease value"
+            className="border-input h-1/2 rounded-l-none rounded-tr-none border-b border-l px-2 focus-visible:relative"
+            variant="outline"
+            onClick={handleDecrement}
+            disabled={value === min}
+          >
+            <ChevronDown size={15} />
+          </Button>
+        </div>
+      </div>
+    )
+  }
+)
+// NOTE  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YzIwNVlnPT06ZDAzMGMyZDY=
+
+NumberInput.displayName = 'NumberInput'
+// FIXME  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YzIwNVlnPT06ZDAzMGMyZDY=
+
+export default NumberInput

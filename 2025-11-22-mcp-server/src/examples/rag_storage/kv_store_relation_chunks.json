@@ -1,0 +1,831 @@
+{
+  "Large Language Models (LLM)<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211159,
+    "update_time": 1764211159,
+    "_id": "Large Language Models (LLM)<SEP>Professional Training Course"
+  },
+  "Financial Industry<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211161,
+    "update_time": 1764211161,
+    "_id": "Financial Industry<SEP>Professional Training Course"
+  },
+  "DeepSeek<SEP>Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211161,
+    "update_time": 1764211161,
+    "_id": "DeepSeek<SEP>Large Language Models (LLM)"
+  },
+  "ChatGPT<SEP>Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211162,
+    "update_time": 1764211162,
+    "_id": "ChatGPT<SEP>Large Language Models (LLM)"
+  },
+  "Professional Training Course<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211162,
+    "update_time": 1764211162,
+    "_id": "Professional Training Course<SEP>Prompt Engineering"
+  },
+  "Claude<SEP>Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211163,
+    "update_time": 1764211163,
+    "_id": "Claude<SEP>Large Language Models (LLM)"
+  },
+  "Gemini<SEP>Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211164,
+    "update_time": 1764211164,
+    "_id": "Gemini<SEP>Large Language Models (LLM)"
+  },
+  "Large Language Models (LLM)<SEP>文心一言(ERNIE Bot)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211165,
+    "update_time": 1764211165,
+    "_id": "Large Language Models (LLM)<SEP>文心一言(ERNIE Bot)"
+  },
+  "Closed Source LLM<SEP>Open Source LLM": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211165,
+    "update_time": 1764211165,
+    "_id": "Closed Source LLM<SEP>Open Source LLM"
+  },
+  "Large Language Models (LLM)<SEP>通义千问(Tongyi Qianwen)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211166,
+    "update_time": 1764211166,
+    "_id": "Large Language Models (LLM)<SEP>通义千问(Tongyi Qianwen)"
+  },
+  "Large Language Models (LLM)<SEP>讯飞星火(iFlytek Spark)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211168,
+    "update_time": 1764211168,
+    "_id": "Large Language Models (LLM)<SEP>讯飞星火(iFlytek Spark)"
+  },
+  "Large Language Models (LLM)<SEP>Multimodal Capabilities": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211169,
+    "update_time": 1764211169,
+    "_id": "Large Language Models (LLM)<SEP>Multimodal Capabilities"
+  },
+  "Large Language Models (LLM)<SEP>Tool Use": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211170,
+    "update_time": 1764211170,
+    "_id": "Large Language Models (LLM)<SEP>Tool Use"
+  },
+  "Large Language Models (LLM)<SEP>Safety and Compliance": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211171,
+    "update_time": 1764211171,
+    "_id": "Large Language Models (LLM)<SEP>Safety and Compliance"
+  },
+  "Cloud Service<SEP>On-Premises Deployment": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211171,
+    "update_time": 1764211171,
+    "_id": "Cloud Service<SEP>On-Premises Deployment"
+  },
+  "API Calling<SEP>Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211172,
+    "update_time": 1764211172,
+    "_id": "API Calling<SEP>Large Language Models (LLM)"
+  },
+  "Product Managers<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211172,
+    "update_time": 1764211172,
+    "_id": "Product Managers<SEP>Professional Training Course"
+  },
+  "Large Cloud Platform Services<SEP>Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211173,
+    "update_time": 1764211173,
+    "_id": "Large Cloud Platform Services<SEP>Large Language Models (LLM)"
+  },
+  "Operations Staff<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211174,
+    "update_time": 1764211174,
+    "_id": "Operations Staff<SEP>Professional Training Course"
+  },
+  "Professional Training Course<SEP>Technical Developers": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211175,
+    "update_time": 1764211175,
+    "_id": "Professional Training Course<SEP>Technical Developers"
+  },
+  "Data Analysts<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211176,
+    "update_time": 1764211176,
+    "_id": "Data Analysts<SEP>Professional Training Course"
+  },
+  "Financial Analysis<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211176,
+    "update_time": 1764211176,
+    "_id": "Financial Analysis<SEP>Prompt Engineering"
+  },
+  "Professional Training Course<SEP>Risk Management Personnel": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211177,
+    "update_time": 1764211177,
+    "_id": "Professional Training Course<SEP>Risk Management Personnel"
+  },
+  "Customer Service<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211177,
+    "update_time": 1764211177,
+    "_id": "Customer Service<SEP>Prompt Engineering"
+  },
+  "Compliance Specialists<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211178,
+    "update_time": 1764211178,
+    "_id": "Compliance Specialists<SEP>Professional Training Course"
+  },
+  "Prompt Engineering<SEP>Risk Control": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211178,
+    "update_time": 1764211178,
+    "_id": "Prompt Engineering<SEP>Risk Control"
+  },
+  "Artificial Intelligence<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211179,
+    "update_time": 1764211179,
+    "_id": "Artificial Intelligence<SEP>Professional Training Course"
+  },
+  "Large Language Models (LLM)<SEP>Web/Mobile Interaction": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211179,
+    "update_time": 1764211179,
+    "_id": "Large Language Models (LLM)<SEP>Web/Mobile Interaction"
+  },
+  "API Calling<SEP>RESTful API": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211179,
+    "update_time": 1764211179,
+    "_id": "API Calling<SEP>RESTful API"
+  },
+  "Financial Business<SEP>Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211180,
+    "update_time": 1764211180,
+    "_id": "Financial Business<SEP>Professional Training Course"
+  },
+  "AWS Bedrock<SEP>Large Cloud Platform Services": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211180,
+    "update_time": 1764211180,
+    "_id": "AWS Bedrock<SEP>Large Cloud Platform Services"
+  },
+  "Azure OpenAI Service<SEP>Large Cloud Platform Services": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211182,
+    "update_time": 1764211182,
+    "_id": "Azure OpenAI Service<SEP>Large Cloud Platform Services"
+  },
+  "AWS Bedrock<SEP>LLM As A Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211182,
+    "update_time": 1764211182,
+    "_id": "AWS Bedrock<SEP>LLM As A Service"
+  },
+  "Google Vertex AI<SEP>Large Cloud Platform Services": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211184,
+    "update_time": 1764211184,
+    "_id": "Google Vertex AI<SEP>Large Cloud Platform Services"
+  },
+  "Azure OpenAI Service<SEP>LLM As A Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211184,
+    "update_time": 1764211184,
+    "_id": "Azure OpenAI Service<SEP>LLM As A Service"
+  },
+  "Enterprise LLM Access And Deployment Strategy<SEP>Private Deployment": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211184,
+    "update_time": 1764211184,
+    "_id": "Enterprise LLM Access And Deployment Strategy<SEP>Private Deployment"
+  },
+  "Cloud Service<SEP>Enterprise LLM Access And Deployment Strategy": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211186,
+    "update_time": 1764211186,
+    "_id": "Cloud Service<SEP>Enterprise LLM Access And Deployment Strategy"
+  },
+  "Google Vertex AI<SEP>LLM As A Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211186,
+    "update_time": 1764211186,
+    "_id": "Google Vertex AI<SEP>LLM As A Service"
+  },
+  "Decision Tree<SEP>Enterprise LLM Access And Deployment Strategy": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211187,
+    "update_time": 1764211187,
+    "_id": "Decision Tree<SEP>Enterprise LLM Access And Deployment Strategy"
+  },
+  "API Key Management<SEP>Secure Access And Identity Authentication": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211187,
+    "update_time": 1764211187,
+    "_id": "API Key Management<SEP>Secure Access And Identity Authentication"
+  },
+  "Case Study<SEP>Enterprise LLM Access And Deployment Strategy": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211188,
+    "update_time": 1764211188,
+    "_id": "Case Study<SEP>Enterprise LLM Access And Deployment Strategy"
+  },
+  "Identity Authentication And Authorization<SEP>Secure Access And Identity Authentication": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211189,
+    "update_time": 1764211189,
+    "_id": "Identity Authentication And Authorization<SEP>Secure Access And Identity Authentication"
+  },
+  "Data Desensitization<SEP>Data Protection And Sensitive Information Handling": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211189,
+    "update_time": 1764211189,
+    "_id": "Data Desensitization<SEP>Data Protection And Sensitive Information Handling"
+  },
+  "Data Protection And Sensitive Information Handling<SEP>PII": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211191,
+    "update_time": 1764211191,
+    "_id": "Data Protection And Sensitive Information Handling<SEP>PII"
+  },
+  "Network Isolation<SEP>Secure Access And Identity Authentication": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211191,
+    "update_time": 1764211191,
+    "_id": "Network Isolation<SEP>Secure Access And Identity Authentication"
+  },
+  "LLM Application Development Platforms And Tools<SEP>Low-Code/No-Code Platforms": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211191,
+    "update_time": 1764211191,
+    "_id": "LLM Application Development Platforms And Tools<SEP>Low-Code/No-Code Platforms"
+  },
+  "Data Protection And Sensitive Information Handling<SEP>Input/Output Content Monitoring And Auditing": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211192,
+    "update_time": 1764211192,
+    "_id": "Data Protection And Sensitive Information Handling<SEP>Input/Output Content Monitoring And Auditing"
+  },
+  "Application Development Frameworks<SEP>LLM Application Development Platforms And Tools": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211193,
+    "update_time": 1764211193,
+    "_id": "Application Development Frameworks<SEP>LLM Application Development Platforms And Tools"
+  },
+  "Knowledge Base<SEP>Retrieval-Augmented Generation (RAG)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211193,
+    "update_time": 1764211193,
+    "_id": "Knowledge Base<SEP>Retrieval-Augmented Generation (RAG)"
+  },
+  "Prompt<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211194,
+    "update_time": 1764211194,
+    "_id": "Prompt<SEP>Prompt Engineering"
+  },
+  "Application Development Frameworks<SEP>Retrieval-Augmented Generation (RAG)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211196,
+    "update_time": 1764211196,
+    "_id": "Application Development Frameworks<SEP>Retrieval-Augmented Generation (RAG)"
+  },
+  "CRISP/RCIOS Framework<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211196,
+    "update_time": 1764211196,
+    "_id": "CRISP/RCIOS Framework<SEP>Prompt Engineering"
+  },
+  "CRISP/RCIOS Framework<SEP>Role": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211197,
+    "update_time": 1764211197,
+    "_id": "CRISP/RCIOS Framework<SEP>Role"
+  },
+  "CRISP/RCIOS Framework<SEP>Instruction": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211198,
+    "update_time": 1764211198,
+    "_id": "CRISP/RCIOS Framework<SEP>Instruction"
+  },
+  "Prompt Engineering<SEP>Task Decomposition": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211198,
+    "update_time": 1764211198,
+    "_id": "Prompt Engineering<SEP>Task Decomposition"
+  },
+  "CRISP/RCIOS Framework<SEP>Context": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211199,
+    "update_time": 1764211199,
+    "_id": "CRISP/RCIOS Framework<SEP>Context"
+  },
+  "Chain Of Thought (CoT)<SEP>Task Decomposition": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211200,
+    "update_time": 1764211200,
+    "_id": "Chain Of Thought (CoT)<SEP>Task Decomposition"
+  },
+  "Few-Shot Learning<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f",
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 2,
+    "create_time": 1764211200,
+    "update_time": 1764211200,
+    "_id": "Few-Shot Learning<SEP>Prompt Engineering"
+  },
+  "CRISP/RCIOS Framework<SEP>Output Format": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211201,
+    "update_time": 1764211201,
+    "_id": "CRISP/RCIOS Framework<SEP>Output Format"
+  },
+  "Prompt Engineering<SEP>Zero-Shot Learning": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211202,
+    "update_time": 1764211202,
+    "_id": "Prompt Engineering<SEP>Zero-Shot Learning"
+  },
+  "Low-Code/No-Code Platforms<SEP>Zapier": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211202,
+    "update_time": 1764211202,
+    "_id": "Low-Code/No-Code Platforms<SEP>Zapier"
+  },
+  "Iterative Optimization<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211203,
+    "update_time": 1764211203,
+    "_id": "Iterative Optimization<SEP>Prompt Engineering"
+  },
+  "Low-Code/No-Code Platforms<SEP>Make": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211204,
+    "update_time": 1764211204,
+    "_id": "Low-Code/No-Code Platforms<SEP>Make"
+  },
+  "Application Development Frameworks<SEP>LangChain": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211204,
+    "update_time": 1764211204,
+    "_id": "Application Development Frameworks<SEP>LangChain"
+  },
+  "Coze<SEP>Low-Code/No-Code Platforms": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211205,
+    "update_time": 1764211205,
+    "_id": "Coze<SEP>Low-Code/No-Code Platforms"
+  },
+  "Case Study<SEP>Securities Company": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211205,
+    "update_time": 1764211205,
+    "_id": "Case Study<SEP>Securities Company"
+  },
+  "Application Development Frameworks<SEP>LlamaIndex": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211206,
+    "update_time": 1764211206,
+    "_id": "Application Development Frameworks<SEP>LlamaIndex"
+  },
+  "IAM<SEP>Identity Authentication And Authorization": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211206,
+    "update_time": 1764211206,
+    "_id": "IAM<SEP>Identity Authentication And Authorization"
+  },
+  "Network Isolation<SEP>VPC": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211207,
+    "update_time": 1764211207,
+    "_id": "Network Isolation<SEP>VPC"
+  },
+  "Identity Authentication And Authorization<SEP>OAuth": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211208,
+    "update_time": 1764211208,
+    "_id": "Identity Authentication And Authorization<SEP>OAuth"
+  },
+  "Customer Service Scenario<SEP>Data Protection And Sensitive Information Handling": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211208,
+    "update_time": 1764211208,
+    "_id": "Customer Service Scenario<SEP>Data Protection And Sensitive Information Handling"
+  },
+  "Network Isolation<SEP>Private Link": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211209,
+    "update_time": 1764211209,
+    "_id": "Network Isolation<SEP>Private Link"
+  },
+  "Financial Analysis And Research Report<SEP>Market Dynamics Analysis": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211209,
+    "update_time": 1764211209,
+    "_id": "Financial Analysis And Research Report<SEP>Market Dynamics Analysis"
+  },
+  "Customer Service And Communication Consulting<SEP>Financial Product Intelligent Q&A": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211210,
+    "update_time": 1764211210,
+    "_id": "Customer Service And Communication Consulting<SEP>Financial Product Intelligent Q&A"
+  },
+  "Financial Analysis And Research Report<SEP>Financial Report Interpretation": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211211,
+    "update_time": 1764211211,
+    "_id": "Financial Analysis And Research Report<SEP>Financial Report Interpretation"
+  },
+  "Customer Intent Recognition And Problem Classification<SEP>Customer Service And Communication Consulting": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211212,
+    "update_time": 1764211212,
+    "_id": "Customer Intent Recognition And Problem Classification<SEP>Customer Service And Communication Consulting"
+  },
+  "Financial Analysis And Research Report<SEP>Investment Research And Advice": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211212,
+    "update_time": 1764211212,
+    "_id": "Financial Analysis And Research Report<SEP>Investment Research And Advice"
+  },
+  "Document Compliance Check<SEP>Risk Management And Compliance Review": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211212,
+    "update_time": 1764211212,
+    "_id": "Document Compliance Check<SEP>Risk Management And Compliance Review"
+  },
+  "Communication Copy Generation And Polishing<SEP>Customer Service And Communication Consulting": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211213,
+    "update_time": 1764211213,
+    "_id": "Communication Copy Generation And Polishing<SEP>Customer Service And Communication Consulting"
+  },
+  "Risk Event Identification And Early Warning<SEP>Risk Management And Compliance Review": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211214,
+    "update_time": 1764211214,
+    "_id": "Risk Event Identification And Early Warning<SEP>Risk Management And Compliance Review"
+  },
+  "Financial Product Intelligent Q&A<SEP>RAG": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211214,
+    "update_time": 1764211214,
+    "_id": "Financial Product Intelligent Q&A<SEP>RAG"
+  },
+  "Chain-Of-Thought<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211215,
+    "update_time": 1764211215,
+    "_id": "Chain-Of-Thought<SEP>Prompt Engineering"
+  },
+  "Anti-Money Laundering And Fraud Detection Assistance<SEP>Risk Management And Compliance Review": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211216,
+    "update_time": 1764211216,
+    "_id": "Anti-Money Laundering And Fraud Detection Assistance<SEP>Risk Management And Compliance Review"
+  },
+  "Large Language Model<SEP>Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211217,
+    "update_time": 1764211217,
+    "_id": "Large Language Model<SEP>Prompt Engineering"
+  },
+  "Anti-Money Laundering And Fraud Detection Assistance<SEP>SAR": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211218,
+    "update_time": 1764211218,
+    "_id": "Anti-Money Laundering And Fraud Detection Assistance<SEP>SAR"
+  },
+  "Human-In-The-Loop<SEP>Large Language Model": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211218,
+    "update_time": 1764211218,
+    "_id": "Human-In-The-Loop<SEP>Large Language Model"
+  },
+  "AML<SEP>Anti-Money Laundering And Fraud Detection Assistance": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211219,
+    "update_time": 1764211219,
+    "_id": "AML<SEP>Anti-Money Laundering And Fraud Detection Assistance"
+  },
+  "AI Agents<SEP>Large Language Model": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211220,
+    "update_time": 1764211220,
+    "_id": "AI Agents<SEP>Large Language Model"
+  },
+  "Financial Analysis And Research Report<SEP>Module Four": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211220,
+    "update_time": 1764211220,
+    "_id": "Financial Analysis And Research Report<SEP>Module Four"
+  },
+  "Domain-Specific Models<SEP>Large Language Model": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211221,
+    "update_time": 1764211221,
+    "_id": "Domain-Specific Models<SEP>Large Language Model"
+  },
+  "Customer Service And Communication Consulting<SEP>Module Four": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211222,
+    "update_time": 1764211222,
+    "_id": "Customer Service And Communication Consulting<SEP>Module Four"
+  },
+  "Module Four<SEP>Risk Management And Compliance Review": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211223,
+    "update_time": 1764211223,
+    "_id": "Module Four<SEP>Risk Management And Compliance Review"
+  }
+}

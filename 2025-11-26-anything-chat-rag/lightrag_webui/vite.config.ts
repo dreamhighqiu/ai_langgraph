@@ -1,0 +1,60 @@
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
+// TODO  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdWV1ZnPT06NzA1NWRmZDQ=
+
+import { defineConfig } from 'vite'
+import path from 'path'
+import { webuiPrefix } from '@/lib/constants'
+import react from '@vitejs/plugin-react-swc'
+import tailwindcss from '@tailwindcss/vite'
+// TODO  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdWV1ZnPT06NzA1NWRmZDQ=
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    }
+  },
+  // base: import.meta.env.VITE_BASE_URL || '/webui/',
+  base: webuiPrefix,
+  build: {
+    outDir: path.resolve(__dirname, '../lightrag/api/webui'),
+    emptyOutDir: true,
+    chunkSizeWarningLimit: 3800,
+    rollupOptions: {
+      // Let Vite handle chunking automatically to avoid circular dependency issues
+      output: {
+        // Ensure consistent chunk naming format
+        chunkFileNames: 'assets/[name]-[hash].js',
+        // Entry file naming format
+        entryFileNames: 'assets/[name]-[hash].js',
+        // Asset file naming format
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
+  },
+  server: {
+    proxy: import.meta.env.VITE_API_PROXY === 'true' && import.meta.env.VITE_API_ENDPOINTS ?
+      Object.fromEntries(
+        import.meta.env.VITE_API_ENDPOINTS.split(',').map(endpoint => [
+          endpoint,
+          {
+            target: import.meta.env.VITE_BACKEND_URL || 'http://localhost:9621',
+            changeOrigin: true,
+            rewrite: endpoint === '/api' ?
+              (path) => path.replace(/^\/api/, '') :
+              endpoint === '/docs' || endpoint === '/redoc' || endpoint === '/openapi.json' || endpoint === '/static' ?
+                (path) => path : undefined
+          }
+        ])
+      ) : {}
+  }
+})

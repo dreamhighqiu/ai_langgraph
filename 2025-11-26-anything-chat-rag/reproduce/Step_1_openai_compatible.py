@@ -1,0 +1,96 @@
+"""
+版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+
+本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+
+授权商业应用请联系微信：huice666
+"""
+
+import os
+import json
+import time
+import asyncio
+import numpy as np
+
+from lightrag import LightRAG
+from lightrag.utils import EmbeddingFunc
+from lightrag.llm.openai import openai_complete_if_cache, openai_embed
+
+# noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjFOSFJ3PT06ZDEwNDE4M2Y=
+
+## For Upstage API
+# please check if embedding_dim=4096 in lightrag.py and llm.py in lightrag direcotry
+async def llm_model_func(
+    prompt, system_prompt=None, history_messages=[], **kwargs
+) -> str:
+    return await openai_complete_if_cache(
+        "solar-mini",
+        prompt,
+        system_prompt=system_prompt,
+        history_messages=history_messages,
+        api_key=os.getenv("UPSTAGE_API_KEY"),
+        base_url="https://api.upstage.ai/v1/solar",
+        **kwargs,
+    )
+
+
+async def embedding_func(texts: list[str]) -> np.ndarray:
+    return await openai_embed(
+        texts,
+        model="solar-embedding-1-large-query",
+        api_key=os.getenv("UPSTAGE_API_KEY"),
+        base_url="https://api.upstage.ai/v1/solar",
+    )
+
+# type: ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjFOSFJ3PT06ZDEwNDE4M2Y=
+
+## /For Upstage API
+
+
+def insert_text(rag, file_path):
+    with open(file_path, mode="r") as f:
+        unique_contexts = json.load(f)
+
+    retries = 0
+    max_retries = 3
+    while retries < max_retries:
+        try:
+            rag.insert(unique_contexts)
+            break
+        except Exception as e:
+            retries += 1
+            print(f"Insertion failed, retrying ({retries}/{max_retries}), error: {e}")
+            time.sleep(10)
+    if retries == max_retries:
+        print("Insertion failed after exceeding the maximum number of retries")
+
+# pragma: no cover  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjFOSFJ3PT06ZDEwNDE4M2Y=
+
+cls = "mix"
+WORKING_DIR = f"../{cls}"
+
+if not os.path.exists(WORKING_DIR):
+    os.mkdir(WORKING_DIR)
+
+
+async def initialize_rag():
+    rag = LightRAG(
+        working_dir=WORKING_DIR,
+        llm_model_func=llm_model_func,
+        embedding_func=EmbeddingFunc(embedding_dim=4096, func=embedding_func),
+    )
+
+    await rag.initialize_storages()  # Auto-initializes pipeline_status
+    return rag
+
+
+def main():
+    # Initialize RAG instance
+    rag = asyncio.run(initialize_rag())
+    insert_text(rag, f"../datasets/unique_contexts/{cls}_unique_contexts.json")
+
+# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjFOSFJ3PT06ZDEwNDE4M2Y=
+
+if __name__ == "__main__":
+    main()

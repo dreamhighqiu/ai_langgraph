@@ -1,0 +1,23 @@
+{
+  "doc-88b93e772890662b37fff9510ff982e1": {
+    "status": "processed",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912",
+      "chunk-8de86e7884d97659893db8de682eec5f",
+      "chunk-3b3b538833d00a6409a59248e6b395ee",
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "content_summary": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲\n\n目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、\n\n合规专员以及对LLM应用感兴趣的相关人员。\n\n培训目标:\n\n· 全面了解主流大型语言模型的特点、能力边界与选型策略。\n\n•\n\n掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。\n\n· 精通提示词工程的核心原理、结构与高级技巧。\n\n· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效\n\n提示词。\n\n· 理解LLM使用的最佳实...",
+    "content_length": 5436,
+    "created_at": "2025-11-27T02:33:25.481172+00:00",
+    "updated_at": "2025-11-27T10:47:42+00:00",
+    "file_path": "llm_course.pdf",
+    "track_id": "insert_20251127_103325_0b1540bf",
+    "metadata": {
+      "processing_start_time": 1764210805,
+      "processing_end_time": 1764211224
+    },
+    "multimodal_processed": true
+  }
+}

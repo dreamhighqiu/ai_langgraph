@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "_buildId": "id_MC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1zeGJ3PT06N2QzYTUwOGU=",
+  "semi": false,
+  "_deployId": "id_MS81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1zeGJ3PT06N2QzYTUwOGU=",
+  "tabWidth": 2,
+  "_releaseId": "id_Mi81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1zeGJ3PT06N2QzYTUwOGU=",
+  "singleQuote": true,
+  "_versionId": "id_My81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1zeGJ3PT06N2QzYTUwOGU=",
+  "printWidth": 100,
+  "_buildHash": "NC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1zeGJ3PT06N2QzYTUwOGU=",
+  "trailingComma": "none",
+  "endOfLine": "crlf",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
+}

@@ -1,0 +1,936 @@
+{
+  "Feedback Collection": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764211111,
+    "update_time": 1764211111,
+    "_id": "Feedback Collection"
+  },
+  "Extended Reading Materials": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764211111,
+    "update_time": 1764211111,
+    "_id": "Extended Reading Materials"
+  },
+  "Tool Links": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764211111,
+    "update_time": 1764211111,
+    "_id": "Tool Links"
+  },
+  "Community Resources": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764211111,
+    "update_time": 1764211111,
+    "_id": "Community Resources"
+  },
+  "Resource Estimation": {
+    "chunk_ids": [
+      "chunk-8a4fcca1341ad25245ecd6923d4ddf16"
+    ],
+    "count": 1,
+    "create_time": 1764211112,
+    "update_time": 1764211112,
+    "_id": "Resource Estimation"
+  },
+  "Large Language Models (LLM)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211112,
+    "update_time": 1764211112,
+    "_id": "Large Language Models (LLM)"
+  },
+  "Professional Training Course": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211112,
+    "update_time": 1764211112,
+    "_id": "Professional Training Course"
+  },
+  "Financial Industry": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211112,
+    "update_time": 1764211112,
+    "_id": "Financial Industry"
+  },
+  "Prompt Engineering": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912",
+      "chunk-8de86e7884d97659893db8de682eec5f",
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 3,
+    "create_time": 1764211113,
+    "update_time": 1764211113,
+    "_id": "Prompt Engineering"
+  },
+  "DeepSeek": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211113,
+    "update_time": 1764211113,
+    "_id": "DeepSeek"
+  },
+  "ChatGPT": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211114,
+    "update_time": 1764211114,
+    "_id": "ChatGPT"
+  },
+  "Claude": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211115,
+    "update_time": 1764211115,
+    "_id": "Claude"
+  },
+  "Gemini": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211116,
+    "update_time": 1764211116,
+    "_id": "Gemini"
+  },
+  "文心一言(ERNIE Bot)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211117,
+    "update_time": 1764211117,
+    "_id": "文心一言(ERNIE Bot)"
+  },
+  "通义千问(Tongyi Qianwen)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211117,
+    "update_time": 1764211117,
+    "_id": "通义千问(Tongyi Qianwen)"
+  },
+  "讯飞星火(iFlytek Spark)": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211118,
+    "update_time": 1764211118,
+    "_id": "讯飞星火(iFlytek Spark)"
+  },
+  "Open Source LLM": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211118,
+    "update_time": 1764211118,
+    "_id": "Open Source LLM"
+  },
+  "Closed Source LLM": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211119,
+    "update_time": 1764211119,
+    "_id": "Closed Source LLM"
+  },
+  "Multimodal Capabilities": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211119,
+    "update_time": 1764211119,
+    "_id": "Multimodal Capabilities"
+  },
+  "Tool Use": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211120,
+    "update_time": 1764211120,
+    "_id": "Tool Use"
+  },
+  "Safety and Compliance": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211121,
+    "update_time": 1764211121,
+    "_id": "Safety and Compliance"
+  },
+  "API Calling": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211122,
+    "update_time": 1764211122,
+    "_id": "API Calling"
+  },
+  "Large Cloud Platform Services": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211122,
+    "update_time": 1764211122,
+    "_id": "Large Cloud Platform Services"
+  },
+  "On-Premises Deployment": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211123,
+    "update_time": 1764211123,
+    "_id": "On-Premises Deployment"
+  },
+  "Cloud Service": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912",
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 2,
+    "create_time": 1764211123,
+    "update_time": 1764211123,
+    "_id": "Cloud Service"
+  },
+  "Product Managers": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211124,
+    "update_time": 1764211124,
+    "_id": "Product Managers"
+  },
+  "Operations Staff": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211125,
+    "update_time": 1764211125,
+    "_id": "Operations Staff"
+  },
+  "Technical Developers": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211125,
+    "update_time": 1764211125,
+    "_id": "Technical Developers"
+  },
+  "Data Analysts": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211126,
+    "update_time": 1764211126,
+    "_id": "Data Analysts"
+  },
+  "Risk Management Personnel": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211127,
+    "update_time": 1764211127,
+    "_id": "Risk Management Personnel"
+  },
+  "Compliance Specialists": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211127,
+    "update_time": 1764211127,
+    "_id": "Compliance Specialists"
+  },
+  "Financial Analysis": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211127,
+    "update_time": 1764211127,
+    "_id": "Financial Analysis"
+  },
+  "Customer Service": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211128,
+    "update_time": 1764211128,
+    "_id": "Customer Service"
+  },
+  "Risk Control": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211128,
+    "update_time": 1764211128,
+    "_id": "Risk Control"
+  },
+  "Artificial Intelligence": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211129,
+    "update_time": 1764211129,
+    "_id": "Artificial Intelligence"
+  },
+  "Financial Business": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211129,
+    "update_time": 1764211129,
+    "_id": "Financial Business"
+  },
+  "Web/Mobile Interaction": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211129,
+    "update_time": 1764211129,
+    "_id": "Web/Mobile Interaction"
+  },
+  "RESTful API": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912"
+    ],
+    "count": 1,
+    "create_time": 1764211130,
+    "update_time": 1764211130,
+    "_id": "RESTful API"
+  },
+  "AWS Bedrock": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912",
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 2,
+    "create_time": 1764211130,
+    "update_time": 1764211130,
+    "_id": "AWS Bedrock"
+  },
+  "Azure OpenAI Service": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912",
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 2,
+    "create_time": 1764211131,
+    "update_time": 1764211131,
+    "_id": "Azure OpenAI Service"
+  },
+  "Google Vertex AI": {
+    "chunk_ids": [
+      "chunk-6c9699f6be450b7bab348fd80cc8c912",
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 2,
+    "create_time": 1764211131,
+    "update_time": 1764211131,
+    "_id": "Google Vertex AI"
+  },
+  "LLM As A Service": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211132,
+    "update_time": 1764211132,
+    "_id": "LLM As A Service"
+  },
+  "Enterprise LLM Access And Deployment Strategy": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211132,
+    "update_time": 1764211132,
+    "_id": "Enterprise LLM Access And Deployment Strategy"
+  },
+  "Private Deployment": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211133,
+    "update_time": 1764211133,
+    "_id": "Private Deployment"
+  },
+  "Decision Tree": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211133,
+    "update_time": 1764211133,
+    "_id": "Decision Tree"
+  },
+  "Case Study": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211134,
+    "update_time": 1764211134,
+    "_id": "Case Study"
+  },
+  "Secure Access And Identity Authentication": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211134,
+    "update_time": 1764211134,
+    "_id": "Secure Access And Identity Authentication"
+  },
+  "API Key Management": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211135,
+    "update_time": 1764211135,
+    "_id": "API Key Management"
+  },
+  "Identity Authentication And Authorization": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211135,
+    "update_time": 1764211135,
+    "_id": "Identity Authentication And Authorization"
+  },
+  "Network Isolation": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211136,
+    "update_time": 1764211136,
+    "_id": "Network Isolation"
+  },
+  "Data Protection And Sensitive Information Handling": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211136,
+    "update_time": 1764211136,
+    "_id": "Data Protection And Sensitive Information Handling"
+  },
+  "Data Desensitization": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211136,
+    "update_time": 1764211136,
+    "_id": "Data Desensitization"
+  },
+  "PII": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211137,
+    "update_time": 1764211137,
+    "_id": "PII"
+  },
+  "Input/Output Content Monitoring And Auditing": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211137,
+    "update_time": 1764211137,
+    "_id": "Input/Output Content Monitoring And Auditing"
+  },
+  "LLM Application Development Platforms And Tools": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211138,
+    "update_time": 1764211138,
+    "_id": "LLM Application Development Platforms And Tools"
+  },
+  "Low-Code/No-Code Platforms": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211138,
+    "update_time": 1764211138,
+    "_id": "Low-Code/No-Code Platforms"
+  },
+  "Application Development Frameworks": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211138,
+    "update_time": 1764211138,
+    "_id": "Application Development Frameworks"
+  },
+  "Retrieval-Augmented Generation (RAG)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211139,
+    "update_time": 1764211139,
+    "_id": "Retrieval-Augmented Generation (RAG)"
+  },
+  "Prompt": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211139,
+    "update_time": 1764211139,
+    "_id": "Prompt"
+  },
+  "CRISP/RCIOS Framework": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211140,
+    "update_time": 1764211140,
+    "_id": "CRISP/RCIOS Framework"
+  },
+  "Role": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211141,
+    "update_time": 1764211141,
+    "_id": "Role"
+  },
+  "Instruction": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211141,
+    "update_time": 1764211141,
+    "_id": "Instruction"
+  },
+  "Context": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211141,
+    "update_time": 1764211141,
+    "_id": "Context"
+  },
+  "Output Format": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211142,
+    "update_time": 1764211142,
+    "_id": "Output Format"
+  },
+  "Task Decomposition": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211142,
+    "update_time": 1764211142,
+    "_id": "Task Decomposition"
+  },
+  "Chain Of Thought (CoT)": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211142,
+    "update_time": 1764211142,
+    "_id": "Chain Of Thought (CoT)"
+  },
+  "Few-Shot Learning": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f",
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 2,
+    "create_time": 1764211143,
+    "update_time": 1764211143,
+    "_id": "Few-Shot Learning"
+  },
+  "Zero-Shot Learning": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211143,
+    "update_time": 1764211143,
+    "_id": "Zero-Shot Learning"
+  },
+  "Iterative Optimization": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211144,
+    "update_time": 1764211144,
+    "_id": "Iterative Optimization"
+  },
+  "Zapier": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211144,
+    "update_time": 1764211144,
+    "_id": "Zapier"
+  },
+  "Make": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211145,
+    "update_time": 1764211145,
+    "_id": "Make"
+  },
+  "Coze": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211145,
+    "update_time": 1764211145,
+    "_id": "Coze"
+  },
+  "LangChain": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211146,
+    "update_time": 1764211146,
+    "_id": "LangChain"
+  },
+  "LlamaIndex": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211146,
+    "update_time": 1764211146,
+    "_id": "LlamaIndex"
+  },
+  "Knowledge Base": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211146,
+    "update_time": 1764211146,
+    "_id": "Knowledge Base"
+  },
+  "Securities Company": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211146,
+    "update_time": 1764211146,
+    "_id": "Securities Company"
+  },
+  "IAM": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211147,
+    "update_time": 1764211147,
+    "_id": "IAM"
+  },
+  "OAuth": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211147,
+    "update_time": 1764211147,
+    "_id": "OAuth"
+  },
+  "VPC": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211148,
+    "update_time": 1764211148,
+    "_id": "VPC"
+  },
+  "Private Link": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211148,
+    "update_time": 1764211148,
+    "_id": "Private Link"
+  },
+  "Customer Service Scenario": {
+    "chunk_ids": [
+      "chunk-8de86e7884d97659893db8de682eec5f"
+    ],
+    "count": 1,
+    "create_time": 1764211148,
+    "update_time": 1764211148,
+    "_id": "Customer Service Scenario"
+  },
+  "Financial Analysis And Research Report": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211148,
+    "update_time": 1764211148,
+    "_id": "Financial Analysis And Research Report"
+  },
+  "Market Dynamics Analysis": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211149,
+    "update_time": 1764211149,
+    "_id": "Market Dynamics Analysis"
+  },
+  "Financial Report Interpretation": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211149,
+    "update_time": 1764211149,
+    "_id": "Financial Report Interpretation"
+  },
+  "Investment Research And Advice": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211150,
+    "update_time": 1764211150,
+    "_id": "Investment Research And Advice"
+  },
+  "Customer Service And Communication Consulting": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211150,
+    "update_time": 1764211150,
+    "_id": "Customer Service And Communication Consulting"
+  },
+  "Financial Product Intelligent Q&A": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211151,
+    "update_time": 1764211151,
+    "_id": "Financial Product Intelligent Q&A"
+  },
+  "Customer Intent Recognition And Problem Classification": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211151,
+    "update_time": 1764211151,
+    "_id": "Customer Intent Recognition And Problem Classification"
+  },
+  "Communication Copy Generation And Polishing": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211152,
+    "update_time": 1764211152,
+    "_id": "Communication Copy Generation And Polishing"
+  },
+  "Risk Management And Compliance Review": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211152,
+    "update_time": 1764211152,
+    "_id": "Risk Management And Compliance Review"
+  },
+  "Document Compliance Check": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211153,
+    "update_time": 1764211153,
+    "_id": "Document Compliance Check"
+  },
+  "Risk Event Identification And Early Warning": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211153,
+    "update_time": 1764211153,
+    "_id": "Risk Event Identification And Early Warning"
+  },
+  "Anti-Money Laundering And Fraud Detection Assistance": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211154,
+    "update_time": 1764211154,
+    "_id": "Anti-Money Laundering And Fraud Detection Assistance"
+  },
+  "Large Language Model": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211154,
+    "update_time": 1764211154,
+    "_id": "Large Language Model"
+  },
+  "RAG": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211154,
+    "update_time": 1764211154,
+    "_id": "RAG"
+  },
+  "Chain-Of-Thought": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211155,
+    "update_time": 1764211155,
+    "_id": "Chain-Of-Thought"
+  },
+  "Module Four": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211156,
+    "update_time": 1764211156,
+    "_id": "Module Four"
+  },
+  "Module Five": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211156,
+    "update_time": 1764211156,
+    "_id": "Module Five"
+  },
+  "AML": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211156,
+    "update_time": 1764211156,
+    "_id": "AML"
+  },
+  "SAR": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211157,
+    "update_time": 1764211157,
+    "_id": "SAR"
+  },
+  "Human-In-The-Loop": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211157,
+    "update_time": 1764211157,
+    "_id": "Human-In-The-Loop"
+  },
+  "AI Agents": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211158,
+    "update_time": 1764211158,
+    "_id": "AI Agents"
+  },
+  "Domain-Specific Models": {
+    "chunk_ids": [
+      "chunk-3b3b538833d00a6409a59248e6b395ee"
+    ],
+    "count": 1,
+    "create_time": 1764211158,
+    "update_time": 1764211158,
+    "_id": "Domain-Specific Models"
+  }
+}

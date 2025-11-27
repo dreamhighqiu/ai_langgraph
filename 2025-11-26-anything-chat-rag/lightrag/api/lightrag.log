@@ -1,0 +1,136 @@
+2025-11-26 18:36:26,842 - lightrag - INFO - Ollama LLM Options: {}
+2025-11-26 18:36:26,842 - lightrag - INFO - Ollama Embedding Options: {}
+2025-11-26 18:36:27,256 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-11-26 18:36:27,256 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-11-26 18:36:27,256 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-11-26 18:36:27,256 - lightrag - INFO - Reranking is disabled
+2025-11-26 18:36:27,256 - lightrag - INFO - Vision model initialized: mistral-nemo:latest using ollama provider
+2025-11-26 18:36:27,753 - lightrag - INFO - [] Created new empty graph file: C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\api\rag_storage\graph_chunk_entity_relation.graphml
+2025-11-26 18:36:27,765 - lightrag - INFO - RAG-Anything processor created successfully
+2025-11-26 18:36:27,765 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model mistral-nemo:latest
+2025-11-26 18:36:27,881 - uvicorn.error - INFO - Started server process [12800]
+2025-11-26 18:36:27,881 - uvicorn.error - INFO - Waiting for application startup.
+2025-11-26 18:36:27,882 - lightrag - INFO - [] Process 12800 KV load full_docs with 0 records
+2025-11-26 18:36:27,882 - lightrag - INFO - [] Process 12800 KV load text_chunks with 0 records
+2025-11-26 18:36:27,882 - lightrag - INFO - [] Process 12800 KV load full_entities with 0 records
+2025-11-26 18:36:27,883 - lightrag - INFO - [] Process 12800 KV load full_relations with 0 records
+2025-11-26 18:36:27,883 - lightrag - INFO - [] Process 12800 KV load entity_chunks with 0 records
+2025-11-26 18:36:27,883 - lightrag - INFO - [] Process 12800 KV load relation_chunks with 0 records
+2025-11-26 18:36:27,884 - lightrag - INFO - [] Process 12800 KV load llm_response_cache with 0 records
+2025-11-26 18:36:27,884 - lightrag - INFO - [] Process 12800 doc status load doc_status with 0 records
+2025-11-26 18:36:27,884 - uvicorn.error - INFO - Application startup complete.
+2025-11-26 18:36:27,884 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-11-26 18:36:48,224 - uvicorn.access - INFO - 127.0.0.1:55730 - "GET /docs HTTP/1.1" 200
+2025-11-26 18:36:48,349 - lightrag - WARNING - [] Node 旅行 not found in the graph
+2025-11-26 18:36:48,350 - uvicorn.access - INFO - 127.0.0.1:55738 - "GET /graphs?label=%E6%97%85%E8%A1%8C&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-11-26 18:36:48,913 - uvicorn.access - INFO - 127.0.0.1:55752 - "GET /openapi.json HTTP/1.1" 200
+2025-11-26 18:37:05,610 - uvicorn.access - INFO - 127.0.0.1:55793 - "POST /documents/upload HTTP/1.1" 200
+2025-11-26 18:37:05,610 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记2.pdf
+2025-11-26 18:37:05,611 - lightrag - ERROR - Error in RAG-Anything processing for 旅行日记2.pdf: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\kg\shared_storage.py), falling back to standard processing
+2025-11-26 18:37:05,721 - lightrag - INFO - Successfully extracted and enqueued file: 旅行日记2.pdf
+2025-11-26 18:37:05,724 - lightrag - INFO - Processing 1 document(s)
+2025-11-26 18:37:05,724 - lightrag - INFO - Extracting stage 1/1: 旅行日记2.pdf
+2025-11-26 18:37:05,724 - lightrag - INFO - Processing d-id: doc-88ead37a15ef08c8b04848ce41143c0d
+2025-11-26 18:37:05,734 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-11-26 18:37:08,434 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-11-26 18:37:08,434 - lightrag - ERROR - Embedding func: Error in decorated function for task 2197991241904_4625.4909915: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-11-26 18:37:08,441 - lightrag - ERROR - Traceback (most recent call last):
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\lightrag.py", line 1886, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\kg\nano_vector_db_impl.py", line 123, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\utils.py", line 962, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\utils.py", line 666, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+        func(*args, **kwargs), timeout=max_execution_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\86134\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\utils.py", line 449, in __call__
+    result = await self.func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\api\lightrag_server.py", line 745, in optimized_embedding_function
+    return await actual_func(
+           ^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\llm\ollama.py", line 208, in ollama_embed
+    raise e
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\llm\ollama.py", line 195, in ollama_embed
+    data = await ollama_client.embed(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=embed_model, input=texts, options=options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\.venv\Lib\site-packages\ollama\_client.py", line 1011, in embed
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\.venv\Lib\site-packages\ollama\_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86134\Desktop\workspace\production\anything-chat-rag\.venv\Lib\site-packages\ollama\_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-11-26 18:37:08,441 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记2.pdf
+2025-11-26 18:37:08,444 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-11-26 18:37:31,982 - uvicorn.error - INFO - Shutting down
+2025-11-26 18:37:32,091 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-11-26 18:37:32,091 - lightrag - INFO - Successfully finalized 12 storages
+2025-11-26 18:37:32,092 - uvicorn.error - INFO - Application shutdown complete.
+2025-11-26 18:37:32,092 - uvicorn.error - INFO - Finished server process [12800]
+2025-11-26 18:39:02,445 - lightrag - INFO - Ollama LLM Options: {}
+2025-11-26 18:39:02,446 - lightrag - INFO - Ollama Embedding Options: {}
+2025-11-26 18:39:03,873 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-11-26 18:39:03,873 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-11-26 18:39:03,873 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-11-26 18:39:03,874 - lightrag - INFO - Reranking is disabled
+2025-11-26 18:39:03,874 - lightrag - INFO - Vision model initialized: mistral-nemo:latest using ollama provider
+2025-11-26 18:39:06,111 - lightrag - INFO - [] Created new empty graph file: C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\api\rag_storage\graph_chunk_entity_relation.graphml
+2025-11-26 18:39:06,113 - lightrag - INFO - RAG-Anything processor created successfully
+2025-11-26 18:39:06,113 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model mistral-nemo:latest
+2025-11-26 18:40:26,125 - lightrag - INFO - Ollama LLM Options: {}
+2025-11-26 18:40:26,125 - lightrag - INFO - Ollama Embedding Options: {}
+2025-11-26 18:40:27,296 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-11-26 18:40:27,296 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-11-26 18:40:27,297 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-11-26 18:40:27,297 - lightrag - INFO - Reranking is disabled
+2025-11-26 18:40:27,297 - lightrag - INFO - Vision model initialized: mistral-nemo:latest using ollama provider
+2025-11-26 18:40:28,485 - lightrag - INFO - [] Created new empty graph file: C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\api\rag_storage\graph_chunk_entity_relation.graphml
+2025-11-26 18:40:28,487 - lightrag - INFO - RAG-Anything processor created successfully
+2025-11-26 18:40:28,487 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model mistral-nemo:latest
+2025-11-26 18:40:43,358 - lightrag - INFO - Ollama LLM Options: {}
+2025-11-26 18:40:43,359 - lightrag - INFO - Ollama Embedding Options: {}
+2025-11-26 18:40:43,728 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-11-26 18:40:43,728 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-11-26 18:40:43,728 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-11-26 18:40:43,728 - lightrag - INFO - Reranking is disabled
+2025-11-26 18:40:43,728 - lightrag - INFO - Vision model initialized: mistral-nemo:latest using ollama provider
+2025-11-26 18:40:44,187 - lightrag - INFO - [] Created new empty graph file: C:\Users\86134\Desktop\workspace\production\anything-chat-rag\lightrag\api\rag_storage\graph_chunk_entity_relation.graphml
+2025-11-26 18:40:44,188 - lightrag - INFO - RAG-Anything processor created successfully
+2025-11-26 18:40:44,188 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model mistral-nemo:latest
+2025-11-26 18:40:44,288 - uvicorn.error - INFO - Started server process [16020]
+2025-11-26 18:40:44,288 - uvicorn.error - INFO - Waiting for application startup.
+2025-11-26 18:40:44,289 - lightrag - INFO - [] Process 16020 KV load full_docs with 1 records
+2025-11-26 18:40:44,289 - lightrag - INFO - [] Process 16020 KV load text_chunks with 0 records
+2025-11-26 18:40:44,289 - lightrag - INFO - [] Process 16020 KV load full_entities with 0 records
+2025-11-26 18:40:44,289 - lightrag - INFO - [] Process 16020 KV load full_relations with 0 records
+2025-11-26 18:40:44,289 - lightrag - INFO - [] Process 16020 KV load entity_chunks with 0 records
+2025-11-26 18:40:44,289 - lightrag - INFO - [] Process 16020 KV load relation_chunks with 0 records
+2025-11-26 18:40:44,290 - lightrag - INFO - [] Process 16020 KV load llm_response_cache with 0 records
+2025-11-26 18:40:44,290 - lightrag - INFO - [] Process 16020 doc status load doc_status with 1 records
+2025-11-26 18:40:44,290 - uvicorn.error - INFO - Application startup complete.
+2025-11-26 18:40:44,290 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-11-26 18:40:57,336 - uvicorn.error - INFO - Shutting down

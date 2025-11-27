@@ -1,0 +1,1771 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d13" for="edge" attr.name="truncate" attr.type="string"/>
+<key id="d12" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d11" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d10" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d9" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d8" for="edge" attr.name="description" attr.type="string"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="node" attr.name="truncate" attr.type="string"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="Feedback Collection">
+  <data key="d0">Feedback Collection</data>
+  <data key="d1">method</data>
+  <data key="d2">A process of gathering responses or opinions.</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211111</data>
+  <data key="d6"></data>
+</node>
+<node id="Extended Reading Materials">
+  <data key="d0">Extended Reading Materials</data>
+  <data key="d1">content</data>
+  <data key="d2">Additional resources provided for further learning.</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211111</data>
+  <data key="d6"></data>
+</node>
+<node id="Tool Links">
+  <data key="d0">Tool Links</data>
+  <data key="d1">content</data>
+  <data key="d2">References to software or utility resources.</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211111</data>
+  <data key="d6"></data>
+</node>
+<node id="Community Resources">
+  <data key="d0">Community Resources</data>
+  <data key="d1">content</data>
+  <data key="d2">Support and networking materials from groups or forums.</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211111</data>
+  <data key="d6"></data>
+</node>
+<node id="Resource Estimation">
+  <data key="d0">Resource Estimation</data>
+  <data key="d1">method</data>
+  <data key="d2">The process of evaluating and planning for future resource needs.</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211112</data>
+  <data key="d6"></data>
+</node>
+<node id="Large Language Models (LLM)">
+  <data key="d0">Large Language Models (LLM)</data>
+  <data key="d1">concept</data>
+  <data key="d2">Large Language Models are AI models that are the core subject of a professional training course, with various characteristics, capabilities, and selection strategies discussed.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211112</data>
+  <data key="d6"></data>
+</node>
+<node id="Professional Training Course">
+  <data key="d0">Professional Training Course</data>
+  <data key="d1">event</data>
+  <data key="d2">A professional training course focused on Large Language Models (LLM) series products, tools, and prompt engineering, targeting professionals in the financial industry.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211112</data>
+  <data key="d6"></data>
+</node>
+<node id="Financial Industry">
+  <data key="d0">Financial Industry</data>
+  <data key="d1">organization</data>
+  <data key="d2">The financial industry is the target sector for the training course, with roles including product managers, operations staff, technical developers, data analysts, and risk management personnel.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211112</data>
+  <data key="d6"></data>
+</node>
+<node id="Prompt Engineering">
+  <data key="d0">Prompt Engineering</data>
+  <data key="d1">method</data>
+  <data key="d2">Prompt engineering is a core topic of the training, involving the design, optimization, and application of efficient prompts for specific financial scenarios.&lt;SEP&gt;The practice of designing effective prompts (instructions) for Large Language Models.&lt;SEP&gt;A method involving designing, testing, and optimizing prompts for large language models, including techniques like Chain-of-Thought and Few-shot learning.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f&lt;SEP&gt;chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211113</data>
+  <data key="d6"></data>
+</node>
+<node id="DeepSeek">
+  <data key="d0">DeepSeek</data>
+  <data key="d1">organization</data>
+  <data key="d2">DeepSeek is an international representative LLM noted for being open-source and having strong code capabilities.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211113</data>
+  <data key="d6"></data>
+</node>
+<node id="ChatGPT">
+  <data key="d0">ChatGPT</data>
+  <data key="d1">organization</data>
+  <data key="d2">ChatGPT is an international representative LLM noted for its comprehensive capabilities and plugin ecosystem.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211114</data>
+  <data key="d6"></data>
+</node>
+<node id="Claude">
+  <data key="d0">Claude</data>
+  <data key="d1">organization</data>
+  <data key="d2">Claude is an international representative LLM noted for its long-text processing and focus on safety and ethics.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211115</data>
+  <data key="d6"></data>
+</node>
+<node id="Gemini">
+  <data key="d0">Gemini</data>
+  <data key="d1">organization</data>
+  <data key="d2">Gemini is an international representative LLM noted for its multimodal capabilities and integration with the Google ecosystem.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211116</data>
+  <data key="d6"></data>
+</node>
+<node id="文心一言(ERNIE Bot)">
+  <data key="d0">文心一言(ERNIE Bot)</data>
+  <data key="d1">organization</data>
+  <data key="d2">文心一言is a domestic Chinese representative LLM noted for its Chinese language understanding and integration with the Baidu ecosystem.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211117</data>
+  <data key="d6"></data>
+</node>
+<node id="通义千问(Tongyi Qianwen)">
+  <data key="d0">通义千问(Tongyi Qianwen)</data>
+  <data key="d1">organization</data>
+  <data key="d2">通义千问is a domestic Chinese representative LLM noted for its comprehensive capabilities and integration with the Alibaba ecosystem.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211117</data>
+  <data key="d6"></data>
+</node>
+<node id="讯飞星火(iFlytek Spark)">
+  <data key="d0">讯飞星火(iFlytek Spark)</data>
+  <data key="d1">organization</data>
+  <data key="d2">讯飞星火is a domestic Chinese representative LLM noted for its voice interaction and cross-domain knowledge.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211118</data>
+  <data key="d6"></data>
+</node>
+<node id="Open Source LLM">
+  <data key="d0">Open Source LLM</data>
+  <data key="d1">concept</data>
+  <data key="d2">Open Source LLMs are defined and contrasted with closed-source models, with considerations for cost, customization, data privacy, and community support.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211118</data>
+  <data key="d6"></data>
+</node>
+<node id="Closed Source LLM">
+  <data key="d0">Closed Source LLM</data>
+  <data key="d1">concept</data>
+  <data key="d2">Closed Source LLMs are defined and contrasted with open-source models, with considerations for cost, customization, data privacy, and update frequency.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211119</data>
+  <data key="d6"></data>
+</node>
+<node id="Multimodal Capabilities">
+  <data key="d0">Multimodal Capabilities</data>
+  <data key="d1">concept</data>
+  <data key="d2">Multimodal capabilities of LLMs include image understanding, image generation, and audio processing, demonstrated through tasks like interpreting financial report charts.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211119</data>
+  <data key="d6"></data>
+</node>
+<node id="Tool Use">
+  <data key="d0">Tool Use</data>
+  <data key="d1">concept</data>
+  <data key="d2">Tool Use, or Function Calling, is a mechanism for LLMs to call external APIs or generate code, such as for real-time stock price queries.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211120</data>
+  <data key="d6"></data>
+</node>
+<node id="Safety and Compliance">
+  <data key="d0">Safety and Compliance</data>
+  <data key="d1">concept</data>
+  <data key="d2">Safety and compliance issues for LLMs include bias, data leakage risks, hallucination, and fact-checking, with particular importance in financial scenarios.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211121</data>
+  <data key="d6"></data>
+</node>
+<node id="API Calling">
+  <data key="d0">API Calling</data>
+  <data key="d1">method</data>
+  <data key="d2">API Calling is a method for using LLMs, involving RESTful APIs and parameters like model, temperature, and maximum token count.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211122</data>
+  <data key="d6"></data>
+</node>
+<node id="Large Cloud Platform Services">
+  <data key="d0">Large Cloud Platform Services</data>
+  <data key="d1">organization</data>
+  <data key="d2">Large Cloud Platform Services like AWS Bedrock, Azure OpenAI Service, and Google Vertex AI offer LLM as a Service with managed, scalable solutions.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211122</data>
+  <data key="d6"></data>
+</node>
+<node id="On-Premises Deployment">
+  <data key="d0">On-Premises Deployment</data>
+  <data key="d1">method</data>
+  <data key="d2">On-Premises Deployment is an enterprise-level LLM deployment strategy contrasted with cloud services, focusing on data control, security, cost, and maintenance.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211123</data>
+  <data key="d6"></data>
+</node>
+<node id="Cloud Service">
+  <data key="d0">Cloud Service</data>
+  <data key="d1">method</data>
+  <data key="d2">Cloud Service is an enterprise-level LLM deployment strategy contrasted with on-premises deployment, focusing on data control, security, cost, and maintenance complexity.&lt;SEP&gt;An LLM deployment method where the model is accessed via a public cloud provider.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211123</data>
+  <data key="d6"></data>
+</node>
+<node id="Product Managers">
+  <data key="d0">Product Managers</data>
+  <data key="d1">person</data>
+  <data key="d2">Product Managers in the financial industry are target audience members for the professional training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211124</data>
+  <data key="d6"></data>
+</node>
+<node id="Operations Staff">
+  <data key="d0">Operations Staff</data>
+  <data key="d1">person</data>
+  <data key="d2">Operations staff in the financial industry are target audience members for the professional training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211125</data>
+  <data key="d6"></data>
+</node>
+<node id="Technical Developers">
+  <data key="d0">Technical Developers</data>
+  <data key="d1">person</data>
+  <data key="d2">Technical developers in the financial industry are target audience members for the professional training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211125</data>
+  <data key="d6"></data>
+</node>
+<node id="Data Analysts">
+  <data key="d0">Data Analysts</data>
+  <data key="d1">person</data>
+  <data key="d2">Data analysts in the financial industry are target audience members for the professional training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211126</data>
+  <data key="d6"></data>
+</node>
+<node id="Risk Management Personnel">
+  <data key="d0">Risk Management Personnel</data>
+  <data key="d1">person</data>
+  <data key="d2">Risk management personnel in the financial industry are target audience members for the professional training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211127</data>
+  <data key="d6"></data>
+</node>
+<node id="Compliance Specialists">
+  <data key="d0">Compliance Specialists</data>
+  <data key="d1">person</data>
+  <data key="d2">Compliance specialists in the financial industry are target audience members for the professional training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211127</data>
+  <data key="d6"></data>
+</node>
+<node id="Financial Analysis">
+  <data key="d0">Financial Analysis</data>
+  <data key="d1">concept</data>
+  <data key="d2">Financial analysis is a specific financial scenario mentioned as an application area for prompt engineering.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211127</data>
+  <data key="d6"></data>
+</node>
+<node id="Customer Service">
+  <data key="d0">Customer Service</data>
+  <data key="d1">concept</data>
+  <data key="d2">Customer service is a specific financial scenario mentioned as an application area for prompt engineering.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211128</data>
+  <data key="d6"></data>
+</node>
+<node id="Risk Control">
+  <data key="d0">Risk Control</data>
+  <data key="d1">concept</data>
+  <data key="d2">Risk control is a specific financial scenario mentioned as an application area for prompt engineering.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211128</data>
+  <data key="d6"></data>
+</node>
+<node id="Artificial Intelligence">
+  <data key="d0">Artificial Intelligence</data>
+  <data key="d1">concept</data>
+  <data key="d2">Artificial intelligence is mentioned as a prerequisite basic knowledge area for the training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211129</data>
+  <data key="d6"></data>
+</node>
+<node id="Financial Business">
+  <data key="d0">Financial Business</data>
+  <data key="d1">concept</data>
+  <data key="d2">Financial business is mentioned as a prerequisite basic knowledge area for the training course.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211129</data>
+  <data key="d6"></data>
+</node>
+<node id="Web/Mobile Interaction">
+  <data key="d0">Web/Mobile Interaction</data>
+  <data key="d1">method</data>
+  <data key="d2">Web and mobile interaction is a method for using LLMs through official interfaces and third-party applications.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211129</data>
+  <data key="d6"></data>
+</node>
+<node id="RESTful API">
+  <data key="d0">RESTful API</data>
+  <data key="d1">method</data>
+  <data key="d2">RESTful API is the foundation for API calling method of using LLMs.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211130</data>
+  <data key="d6"></data>
+</node>
+<node id="AWS Bedrock">
+  <data key="d0">AWS Bedrock</data>
+  <data key="d1">organization</data>
+  <data key="d2">A cloud platform service providing managed LLM capabilities.&lt;SEP&gt;AWS Bedrock is a large cloud platform service offering LLM as a Service.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211130</data>
+  <data key="d6"></data>
+</node>
+<node id="Azure OpenAI Service">
+  <data key="d0">Azure OpenAI Service</data>
+  <data key="d1">organization</data>
+  <data key="d2">A cloud platform service providing managed LLM capabilities.&lt;SEP&gt;Azure OpenAI Service is a large cloud platform service offering LLM as a Service.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211131</data>
+  <data key="d6"></data>
+</node>
+<node id="Google Vertex AI">
+  <data key="d0">Google Vertex AI</data>
+  <data key="d1">organization</data>
+  <data key="d2">A cloud platform service providing managed LLM capabilities.&lt;SEP&gt;Google Vertex AI is a large cloud platform service offering LLM as a Service.</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211131</data>
+  <data key="d6"></data>
+</node>
+<node id="LLM As A Service">
+  <data key="d0">LLM As A Service</data>
+  <data key="d1">concept</data>
+  <data key="d2">A service model where Large Language Models are provided as a managed service by cloud platforms.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211132</data>
+  <data key="d6"></data>
+</node>
+<node id="Enterprise LLM Access And Deployment Strategy">
+  <data key="d0">Enterprise LLM Access And Deployment Strategy</data>
+  <data key="d1">concept</data>
+  <data key="d2">A strategic framework for how enterprises integrate and deploy LLMs.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211132</data>
+  <data key="d6"></data>
+</node>
+<node id="Private Deployment">
+  <data key="d0">Private Deployment</data>
+  <data key="d1">method</data>
+  <data key="d2">An LLM deployment method where the model is hosted on-premises or in a private cloud.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211133</data>
+  <data key="d6"></data>
+</node>
+<node id="Decision Tree">
+  <data key="d0">Decision Tree</data>
+  <data key="d1">method</data>
+  <data key="d2">A framework to help enterprises choose between private deployment and cloud services.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211133</data>
+  <data key="d6"></data>
+</node>
+<node id="Case Study">
+  <data key="d0">Case Study</data>
+  <data key="d1">content</data>
+  <data key="d2">An analysis of a securities company's motivations and challenges in choosing private deployment.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211134</data>
+  <data key="d6"></data>
+</node>
+<node id="Secure Access And Identity Authentication">
+  <data key="d0">Secure Access And Identity Authentication</data>
+  <data key="d1">concept</data>
+  <data key="d2">Practices for securely accessing LLM services, including API key management and authentication.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211134</data>
+  <data key="d6"></data>
+</node>
+<node id="API Key Management">
+  <data key="d0">API Key Management</data>
+  <data key="d1">method</data>
+  <data key="d2">Best practices for managing API keys used to access LLM services.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211135</data>
+  <data key="d6"></data>
+</node>
+<node id="Identity Authentication And Authorization">
+  <data key="d0">Identity Authentication And Authorization</data>
+  <data key="d1">method</data>
+  <data key="d2">Methods for verifying user identity and permissions, such as IAM and OAuth.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211135</data>
+  <data key="d6"></data>
+</node>
+<node id="Network Isolation">
+  <data key="d0">Network Isolation</data>
+  <data key="d1">method</data>
+  <data key="d2">Techniques like VPC and Private Link to secure network access to LLMs.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211136</data>
+  <data key="d6"></data>
+</node>
+<node id="Data Protection And Sensitive Information Handling">
+  <data key="d0">Data Protection And Sensitive Information Handling</data>
+  <data key="d1">concept</data>
+  <data key="d2">Strategies for protecting data used with and generated by LLMs.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211136</data>
+  <data key="d6"></data>
+</node>
+<node id="Data Desensitization">
+  <data key="d0">Data Desensitization</data>
+  <data key="d1">method</data>
+  <data key="d2">Techniques like pseudonymization and anonymization to protect sensitive data.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211136</data>
+  <data key="d6"></data>
+</node>
+<node id="PII">
+  <data key="d0">PII</data>
+  <data key="d1">concept</data>
+  <data key="d2">Personally Identifiable Information that requires detection and filtering.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211137</data>
+  <data key="d6"></data>
+</node>
+<node id="Input/Output Content Monitoring And Auditing">
+  <data key="d0">Input/Output Content Monitoring And Auditing</data>
+  <data key="d1">method</data>
+  <data key="d2">Processes for monitoring and auditing the data sent to and received from LLMs.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211137</data>
+  <data key="d6"></data>
+</node>
+<node id="LLM Application Development Platforms And Tools">
+  <data key="d0">LLM Application Development Platforms And Tools</data>
+  <data key="d1">concept</data>
+  <data key="d2">Platforms and frameworks used to build applications with LLM capabilities.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211138</data>
+  <data key="d6"></data>
+</node>
+<node id="Low-Code/No-Code Platforms">
+  <data key="d0">Low-Code/No-Code Platforms</data>
+  <data key="d1">method</data>
+  <data key="d2">Platforms like Zapier, Make, and Coze that enable building LLM applications with minimal coding.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211138</data>
+  <data key="d6"></data>
+</node>
+<node id="Application Development Frameworks">
+  <data key="d0">Application Development Frameworks</data>
+  <data key="d1">method</data>
+  <data key="d2">Frameworks like LangChain and LlamaIndex for building complex LLM applications.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211138</data>
+  <data key="d6"></data>
+</node>
+<node id="Retrieval-Augmented Generation (RAG)">
+  <data key="d0">Retrieval-Augmented Generation (RAG)</data>
+  <data key="d1">method</data>
+  <data key="d2">A technique that combines a knowledge base with an LLM to reduce hallucinations and keep knowledge updated.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211139</data>
+  <data key="d6"></data>
+</node>
+<node id="Prompt">
+  <data key="d0">Prompt</data>
+  <data key="d1">concept</data>
+  <data key="d2">The input instruction given to an LLM, crucial for obtaining desired outputs.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211139</data>
+  <data key="d6"></data>
+</node>
+<node id="CRISP/RCIOS Framework">
+  <data key="d0">CRISP/RCIOS Framework</data>
+  <data key="d1">method</data>
+  <data key="d2">A structured framework for designing effective prompts.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211140</data>
+  <data key="d6"></data>
+</node>
+<node id="Role">
+  <data key="d0">Role</data>
+  <data key="d1">concept</data>
+  <data key="d2">A prompt element that defines the persona the LLM should adopt.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211141</data>
+  <data key="d6"></data>
+</node>
+<node id="Instruction">
+  <data key="d0">Instruction</data>
+  <data key="d1">concept</data>
+  <data key="d2">A prompt element that specifies the task for the LLM to perform.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211141</data>
+  <data key="d6"></data>
+</node>
+<node id="Context">
+  <data key="d0">Context</data>
+  <data key="d1">concept</data>
+  <data key="d2">A prompt element that provides background information or input data for the LLM.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211141</data>
+  <data key="d6"></data>
+</node>
+<node id="Output Format">
+  <data key="d0">Output Format</data>
+  <data key="d1">concept</data>
+  <data key="d2">A prompt element that specifies the desired structure of the LLM's response.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211142</data>
+  <data key="d6"></data>
+</node>
+<node id="Task Decomposition">
+  <data key="d0">Task Decomposition</data>
+  <data key="d1">method</data>
+  <data key="d2">A prompt technique that breaks a complex task into smaller sub-tasks.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211142</data>
+  <data key="d6"></data>
+</node>
+<node id="Chain Of Thought (CoT)">
+  <data key="d0">Chain Of Thought (CoT)</data>
+  <data key="d1">method</data>
+  <data key="d2">A prompting technique that guides the LLM through a step-by-step reasoning process.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211142</data>
+  <data key="d6"></data>
+</node>
+<node id="Few-Shot Learning">
+  <data key="d0">Few-Shot Learning</data>
+  <data key="d1">method</data>
+  <data key="d2">A prompting technique that provides the LLM with a few examples of input-output pairs.&lt;SEP&gt;A prompting technique that provides the model with a few examples to guide its response.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f&lt;SEP&gt;chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211143</data>
+  <data key="d6"></data>
+</node>
+<node id="Zero-Shot Learning">
+  <data key="d0">Zero-Shot Learning</data>
+  <data key="d1">method</data>
+  <data key="d2">A prompting technique that relies on the LLM's general capabilities without providing examples.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211143</data>
+  <data key="d6"></data>
+</node>
+<node id="Iterative Optimization">
+  <data key="d0">Iterative Optimization</data>
+  <data key="d1">method</data>
+  <data key="d2">The process of testing, analyzing output, and modifying prompts to improve results.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211144</data>
+  <data key="d6"></data>
+</node>
+<node id="Zapier">
+  <data key="d0">Zapier</data>
+  <data key="d1">organization</data>
+  <data key="d2">A low-code/no-code platform that integrates LLM capabilities.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211144</data>
+  <data key="d6"></data>
+</node>
+<node id="Make">
+  <data key="d0">Make</data>
+  <data key="d1">organization</data>
+  <data key="d2">A low-code/no-code platform that integrates LLM capabilities.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211145</data>
+  <data key="d6"></data>
+</node>
+<node id="Coze">
+  <data key="d0">Coze</data>
+  <data key="d1">organization</data>
+  <data key="d2">A low-code/no-code platform that integrates LLM capabilities.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211145</data>
+  <data key="d6"></data>
+</node>
+<node id="LangChain">
+  <data key="d0">LangChain</data>
+  <data key="d1">organization</data>
+  <data key="d2">An application development framework for building complex LLM applications.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211146</data>
+  <data key="d6"></data>
+</node>
+<node id="LlamaIndex">
+  <data key="d0">LlamaIndex</data>
+  <data key="d1">organization</data>
+  <data key="d2">An application development framework for building complex LLM applications.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211146</data>
+  <data key="d6"></data>
+</node>
+<node id="Knowledge Base">
+  <data key="d0">Knowledge Base</data>
+  <data key="d1">concept</data>
+  <data key="d2">A repository of information used in Retrieval-Augmented Generation (RAG) systems.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211146</data>
+  <data key="d6"></data>
+</node>
+<node id="Securities Company">
+  <data key="d0">Securities Company</data>
+  <data key="d1">organization</data>
+  <data key="d2">A financial institution used as a case study for private LLM deployment.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211146</data>
+  <data key="d6"></data>
+</node>
+<node id="IAM">
+  <data key="d0">IAM</data>
+  <data key="d1">method</data>
+  <data key="d2">Identity and Access Management, a method for authentication and authorization.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211147</data>
+  <data key="d6"></data>
+</node>
+<node id="OAuth">
+  <data key="d0">OAuth</data>
+  <data key="d1">method</data>
+  <data key="d2">An open standard for access delegation, used for authentication.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211147</data>
+  <data key="d6"></data>
+</node>
+<node id="VPC">
+  <data key="d0">VPC</data>
+  <data key="d1">method</data>
+  <data key="d2">Virtual Private Cloud, a method for network isolation.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211148</data>
+  <data key="d6"></data>
+</node>
+<node id="Private Link">
+  <data key="d0">Private Link</data>
+  <data key="d1">method</data>
+  <data key="d2">A method for private network connectivity to services.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211148</data>
+  <data key="d6"></data>
+</node>
+<node id="Customer Service Scenario">
+  <data key="d0">Customer Service Scenario</data>
+  <data key="d1">concept</data>
+  <data key="d2">A use case where LLMs are applied while ensuring protection of customer sensitive information.</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211148</data>
+  <data key="d6"></data>
+</node>
+<node id="Financial Analysis And Research Report">
+  <data key="d0">Financial Analysis And Research Report</data>
+  <data key="d1">concept</data>
+  <data key="d2">An application area of prompt engineering for summarizing market dynamics, interpreting financial reports, and generating investment research.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211148</data>
+  <data key="d6"></data>
+</node>
+<node id="Market Dynamics Analysis">
+  <data key="d0">Market Dynamics Analysis</data>
+  <data key="d1">method</data>
+  <data key="d2">A method using prompts to summarize macroeconomic indicators, industry news, and competitor dynamics from financial news.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211149</data>
+  <data key="d6"></data>
+</node>
+<node id="Financial Report Interpretation">
+  <data key="d0">Financial Report Interpretation</data>
+  <data key="d1">method</data>
+  <data key="d2">A method using prompts to extract key financial indicators, analyze reasons for changes, and identify potential risks from company reports.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211149</data>
+  <data key="d6"></data>
+</node>
+<node id="Investment Research And Advice">
+  <data key="d0">Investment Research And Advice</data>
+  <data key="d1">concept</data>
+  <data key="d2">An application area for generating structured investment logic, risk assessments, and valuation analysis frameworks using prompts.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211150</data>
+  <data key="d6"></data>
+</node>
+<node id="Customer Service And Communication Consulting">
+  <data key="d0">Customer Service And Communication Consulting</data>
+  <data key="d1">concept</data>
+  <data key="d2">An application area for financial product Q&amp;A, customer intent recognition, and generating communication copy.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211150</data>
+  <data key="d6"></data>
+</node>
+<node id="Financial Product Intelligent Q&amp;A">
+  <data key="d0">Financial Product Intelligent Q&amp;A</data>
+  <data key="d1">method</data>
+  <data key="d2">A method using RAG and prompts based on product manuals and FAQs to answer customer queries about financial products.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211151</data>
+  <data key="d6"></data>
+</node>
+<node id="Customer Intent Recognition And Problem Classification">
+  <data key="d0">Customer Intent Recognition And Problem Classification</data>
+  <data key="d1">method</data>
+  <data key="d2">A method to analyze customer messages, determine their intent, and assign them to appropriate processing workflows.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211151</data>
+  <data key="d6"></data>
+</node>
+<node id="Communication Copy Generation And Polishing">
+  <data key="d0">Communication Copy Generation And Polishing</data>
+  <data key="d1">method</data>
+  <data key="d2">A method for generating standardized customer notifications, marketing emails, and complaint response drafts.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211152</data>
+  <data key="d6"></data>
+</node>
+<node id="Risk Management And Compliance Review">
+  <data key="d0">Risk Management And Compliance Review</data>
+  <data key="d1">concept</data>
+  <data key="d2">An application area for document compliance checks, risk event identification, and anti-money laundering assistance.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211152</data>
+  <data key="d6"></data>
+</node>
+<node id="Document Compliance Check">
+  <data key="d0">Document Compliance Check</data>
+  <data key="d1">method</data>
+  <data key="d2">A method comparing contract terms and marketing materials against internal compliance rules to identify potential violations.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211153</data>
+  <data key="d6"></data>
+</node>
+<node id="Risk Event Identification And Early Warning">
+  <data key="d0">Risk Event Identification And Early Warning</data>
+  <data key="d1">method</data>
+  <data key="d2">A method for monitoring negative information or risk signals related to specific companies or industries from various sources.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211153</data>
+  <data key="d6"></data>
+</node>
+<node id="Anti-Money Laundering And Fraud Detection Assistance">
+  <data key="d0">Anti-Money Laundering And Fraud Detection Assistance</data>
+  <data key="d1">method</data>
+  <data key="d2">A method for summarizing suspicious transaction patterns and assisting in generating suspicious activity reports.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211154</data>
+  <data key="d6"></data>
+</node>
+<node id="Large Language Model">
+  <data key="d0">Large Language Model</data>
+  <data key="d1">concept</data>
+  <data key="d2">A type of AI model used for various financial applications, with considerations for model selection, enterprise use, and ethical implications.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211154</data>
+  <data key="d6"></data>
+</node>
+<node id="RAG">
+  <data key="d0">RAG</data>
+  <data key="d1">method</data>
+  <data key="d2">Retrieval-Augmented Generation, a technique used in financial product intelligent Q&amp;A to ground responses in factual sources.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211154</data>
+  <data key="d6"></data>
+</node>
+<node id="Chain-Of-Thought">
+  <data key="d0">Chain-Of-Thought</data>
+  <data key="d1">method</data>
+  <data key="d2">A prompting technique that encourages the model to explain its reasoning step-by-step.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211155</data>
+  <data key="d6"></data>
+</node>
+<node id="Module Four">
+  <data key="d0">Module Four</data>
+  <data key="d1">content</data>
+  <data key="d2">A training module focused on practical applications of prompt engineering in financial scenarios.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211156</data>
+  <data key="d6"></data>
+</node>
+<node id="Module Five">
+  <data key="d0">Module Five</data>
+  <data key="d1">content</data>
+  <data key="d2">A training module covering a summary, best practices, and future outlook for LLM usage.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211156</data>
+  <data key="d6"></data>
+</node>
+<node id="AML">
+  <data key="d0">AML</data>
+  <data key="d1">concept</data>
+  <data key="d2">Anti-Money Laundering, a regulatory concept and application area for risk management.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211156</data>
+  <data key="d6"></data>
+</node>
+<node id="SAR">
+  <data key="d0">SAR</data>
+  <data key="d1">data</data>
+  <data key="d2">Suspicious Activity Report, a type of document generated in anti-money laundering processes.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211157</data>
+  <data key="d6"></data>
+</node>
+<node id="Human-In-The-Loop">
+  <data key="d0">Human-In-The-Loop</data>
+  <data key="d1">method</data>
+  <data key="d2">An approach emphasizing human oversight and collaboration with AI systems.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211157</data>
+  <data key="d6"></data>
+</node>
+<node id="AI Agents">
+  <data key="d0">AI Agents</data>
+  <data key="d1">concept</data>
+  <data key="d2">AI systems capable of autonomous task execution, mentioned as a future trend.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211158</data>
+  <data key="d6"></data>
+</node>
+<node id="Domain-Specific Models">
+  <data key="d0">Domain-Specific Models</data>
+  <data key="d1">concept</data>
+  <data key="d2">AI models tailored for specific industries or domains, mentioned as a future development.</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764211158</data>
+  <data key="d6"></data>
+</node>
+<edge source="Large Language Models (LLM)" target="Professional Training Course">
+  <data key="d7">1.0</data>
+  <data key="d8">The professional training course is designed to provide comprehensive knowledge about Large Language Models (LLM).</data>
+  <data key="d9">education,technology focus</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211159</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="DeepSeek">
+  <data key="d7">1.0</data>
+  <data key="d8">DeepSeek is presented as an international representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211161</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="ChatGPT">
+  <data key="d7">1.0</data>
+  <data key="d8">ChatGPT is presented as an international representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211162</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Claude">
+  <data key="d7">1.0</data>
+  <data key="d8">Claude is presented as an international representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211163</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Gemini">
+  <data key="d7">1.0</data>
+  <data key="d8">Gemini is presented as an international representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211164</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="文心一言(ERNIE Bot)">
+  <data key="d7">1.0</data>
+  <data key="d8">文心一言is presented as a domestic Chinese representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211165</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="通义千问(Tongyi Qianwen)">
+  <data key="d7">1.0</data>
+  <data key="d8">通义千问is presented as a domestic Chinese representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211166</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="讯飞星火(iFlytek Spark)">
+  <data key="d7">1.0</data>
+  <data key="d8">讯飞星火is presented as a domestic Chinese representative example of a Large Language Model.</data>
+  <data key="d9">capability representation,model type</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211168</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Multimodal Capabilities">
+  <data key="d7">1.0</data>
+  <data key="d8">Multimodal capabilities are a core dimension of ability discussed for Large Language Models.</data>
+  <data key="d9">feature,technological ability</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211169</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Tool Use">
+  <data key="d7">1.0</data>
+  <data key="d8">Tool Use, or Function Calling, is a core dimension of ability discussed for Large Language Models.</data>
+  <data key="d9">feature,technological ability</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211170</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Safety and Compliance">
+  <data key="d7">1.0</data>
+  <data key="d8">Safety and compliance are core dimensions of concern discussed for Large Language Models.</data>
+  <data key="d9">feature,risk management</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211171</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="API Calling">
+  <data key="d7">1.0</data>
+  <data key="d8">API Calling is one of the diverse usage methods described for interacting with Large Language Models.</data>
+  <data key="d9">integration,usage method</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211172</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Large Cloud Platform Services">
+  <data key="d7">1.0</data>
+  <data key="d8">Large Cloud Platform Services offer LLM as a Service, representing a key enterprise integration method.</data>
+  <data key="d9">deployment option,service provision</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211173</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Models (LLM)" target="Web/Mobile Interaction">
+  <data key="d7">1.0</data>
+  <data key="d8">Web and mobile interaction is one of the diverse usage methods described for interacting with Large Language Models.</data>
+  <data key="d9">usage method,user interface</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211179</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Financial Industry">
+  <data key="d7">1.0</data>
+  <data key="d8">The professional training course targets professionals within the financial industry.</data>
+  <data key="d9">sector application,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211161</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Prompt Engineering">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt engineering is a central component of the professional training course curriculum.</data>
+  <data key="d9">core topic,skill development</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211162</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Product Managers">
+  <data key="d7">1.0</data>
+  <data key="d8">Product managers are specifically mentioned as target audience members for the professional training course.</data>
+  <data key="d9">professional development,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211172</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Operations Staff">
+  <data key="d7">1.0</data>
+  <data key="d8">Operations staff are specifically mentioned as target audience members for the professional training course.</data>
+  <data key="d9">professional development,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211174</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Technical Developers">
+  <data key="d7">1.0</data>
+  <data key="d8">Technical developers are specifically mentioned as target audience members for the professional training course.</data>
+  <data key="d9">professional development,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211175</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Data Analysts">
+  <data key="d7">1.0</data>
+  <data key="d8">Data analysts are specifically mentioned as target audience members for the professional training course.</data>
+  <data key="d9">professional development,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211176</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Risk Management Personnel">
+  <data key="d7">1.0</data>
+  <data key="d8">Risk management personnel are specifically mentioned as target audience members for the professional training course.</data>
+  <data key="d9">professional development,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211177</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Compliance Specialists">
+  <data key="d7">1.0</data>
+  <data key="d8">Compliance specialists are specifically mentioned as target audience members for the professional training course.</data>
+  <data key="d9">professional development,target audience</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211178</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Artificial Intelligence">
+  <data key="d7">1.0</data>
+  <data key="d8">Basic knowledge of artificial intelligence is a prerequisite for the professional training course.</data>
+  <data key="d9">foundational knowledge,prerequisite</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211179</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Professional Training Course" target="Financial Business">
+  <data key="d7">1.0</data>
+  <data key="d8">Basic knowledge of financial business is a prerequisite for the professional training course.</data>
+  <data key="d9">foundational knowledge,prerequisite</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211180</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Financial Analysis">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt engineering can be applied to financial analysis scenarios as part of the training.</data>
+  <data key="d9">application,scenario optimization</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211176</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Customer Service">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt engineering can be applied to customer service scenarios as part of the training.</data>
+  <data key="d9">application,scenario optimization</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211177</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Risk Control">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt engineering can be applied to risk control scenarios as part of the training.</data>
+  <data key="d9">application,scenario optimization</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211178</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Prompt">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt Engineering is the practice of designing the Prompt.</data>
+  <data key="d9">core concept,subject</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211194</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="CRISP/RCIOS Framework">
+  <data key="d7">1.0</data>
+  <data key="d8">The CRISP/RCIOS Framework is a methodology used in Prompt Engineering for structured prompt design.</data>
+  <data key="d9">methodology,structured design</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211196</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Task Decomposition">
+  <data key="d7">1.0</data>
+  <data key="d8">Task Decomposition is a practical technique used in Prompt Engineering.</data>
+  <data key="d9">complexity management,technique</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211198</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Few-Shot Learning">
+  <data key="d7">2.0</data>
+  <data key="d8">Few-Shot Learning is a practical technique used in Prompt Engineering.&lt;SEP&gt;Few-Shot Learning is a key technique used in Prompt Engineering.</data>
+  <data key="d9">example-based learning,methodology,technique</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f&lt;SEP&gt;chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211200</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Zero-Shot Learning">
+  <data key="d7">1.0</data>
+  <data key="d8">Zero-Shot Learning is a practical technique used in Prompt Engineering.</data>
+  <data key="d9">generalization,technique</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211202</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Iterative Optimization">
+  <data key="d7">1.0</data>
+  <data key="d8">Iterative Optimization is a key process in Prompt Engineering for refining prompts.</data>
+  <data key="d9">improvement cycle,process</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211203</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Chain-Of-Thought">
+  <data key="d7">1.0</data>
+  <data key="d8">Chain-Of-Thought is a key technique used in Prompt Engineering.</data>
+  <data key="d9">methodology,technique</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211215</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Prompt Engineering" target="Large Language Model">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt Engineering is the methodology used to optimize interactions with Large Language Models.</data>
+  <data key="d9">interaction,optimization</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211217</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Open Source LLM" target="Closed Source LLM">
+  <data key="d7">1.0</data>
+  <data key="d8">Open Source LLMs and Closed Source LLMs are compared across factors like cost, customization, and data privacy.</data>
+  <data key="d9">comparison,deployment strategy</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211165</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API Calling" target="RESTful API">
+  <data key="d7">1.0</data>
+  <data key="d8">RESTful API serves as the technical foundation for the API calling method of using LLMs.</data>
+  <data key="d9">implementation,technical foundation</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211179</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Cloud Platform Services" target="AWS Bedrock">
+  <data key="d7">1.0</data>
+  <data key="d8">AWS Bedrock is one of the large cloud platform services mentioned that offers LLM as a Service.</data>
+  <data key="d9">platform offering,service inclusion</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211180</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Cloud Platform Services" target="Azure OpenAI Service">
+  <data key="d7">1.0</data>
+  <data key="d8">Azure OpenAI Service is one of the large cloud platform services mentioned that offers LLM as a Service.</data>
+  <data key="d9">platform offering,service inclusion</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211182</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Cloud Platform Services" target="Google Vertex AI">
+  <data key="d7">1.0</data>
+  <data key="d8">Google Vertex AI is one of the large cloud platform services mentioned that offers LLM as a Service.</data>
+  <data key="d9">platform offering,service inclusion</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211184</data>
+  <data key="d13"></data>
+</edge>
+<edge source="On-Premises Deployment" target="Cloud Service">
+  <data key="d7">1.0</data>
+  <data key="d8">On-Premises Deployment and Cloud Service are contrasted as enterprise-level LLM deployment strategies.</data>
+  <data key="d9">comparison,enterprise strategy</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211171</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Cloud Service" target="Enterprise LLM Access And Deployment Strategy">
+  <data key="d7">1.0</data>
+  <data key="d8">Cloud Service is a key consideration within the Enterprise LLM Access and Deployment Strategy.</data>
+  <data key="d9">deployment option,strategy component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211186</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AWS Bedrock" target="LLM As A Service">
+  <data key="d7">1.0</data>
+  <data key="d8">LLM as a Service is a model exemplified by platforms like AWS Bedrock.</data>
+  <data key="d9">cloud platform,service provision</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211182</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Azure OpenAI Service" target="LLM As A Service">
+  <data key="d7">1.0</data>
+  <data key="d8">LLM as a Service is a model exemplified by platforms like Azure OpenAI Service.</data>
+  <data key="d9">cloud platform,service provision</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211184</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Google Vertex AI" target="LLM As A Service">
+  <data key="d7">1.0</data>
+  <data key="d8">LLM as a Service is a model exemplified by platforms like Google Vertex AI.</data>
+  <data key="d9">cloud platform,service provision</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211186</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Enterprise LLM Access And Deployment Strategy" target="Private Deployment">
+  <data key="d7">1.0</data>
+  <data key="d8">Private Deployment is a key consideration within the Enterprise LLM Access and Deployment Strategy.</data>
+  <data key="d9">deployment option,strategy component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211184</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Enterprise LLM Access And Deployment Strategy" target="Decision Tree">
+  <data key="d7">1.0</data>
+  <data key="d8">The Decision Tree is a tool provided within the Enterprise LLM Access and Deployment Strategy.</data>
+  <data key="d9">decision framework,strategy component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211187</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Enterprise LLM Access And Deployment Strategy" target="Case Study">
+  <data key="d7">1.0</data>
+  <data key="d8">A Case Study is used to illustrate aspects of the Enterprise LLM Access and Deployment Strategy.</data>
+  <data key="d9">practical example,strategy component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211188</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Case Study" target="Securities Company">
+  <data key="d7">1.0</data>
+  <data key="d8">The case study analyzes a securities company's experience with private LLM deployment.</data>
+  <data key="d9">analysis subject,practical example</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211205</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Secure Access And Identity Authentication" target="API Key Management">
+  <data key="d7">1.0</data>
+  <data key="d8">API Key Management is a best practice under Secure Access and Identity Authentication.</data>
+  <data key="d9">access control,security practice</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211187</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Secure Access And Identity Authentication" target="Identity Authentication And Authorization">
+  <data key="d7">1.0</data>
+  <data key="d8">Identity Authentication and Authorization are methods under Secure Access and Identity Authentication.</data>
+  <data key="d9">access control,security practice</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211189</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Secure Access And Identity Authentication" target="Network Isolation">
+  <data key="d7">1.0</data>
+  <data key="d8">Network Isolation is a technique discussed under Secure Access and Identity Authentication.</data>
+  <data key="d9">network security,security practice</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211191</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Identity Authentication And Authorization" target="IAM">
+  <data key="d7">1.0</data>
+  <data key="d8">IAM is a method used for identity authentication and authorization.</data>
+  <data key="d9">implementation method,security protocol</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211206</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Identity Authentication And Authorization" target="OAuth">
+  <data key="d7">1.0</data>
+  <data key="d8">OAuth is a method used for identity authentication and authorization.</data>
+  <data key="d9">implementation method,security protocol</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211208</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Network Isolation" target="VPC">
+  <data key="d7">1.0</data>
+  <data key="d8">VPC is a technique used for network isolation.</data>
+  <data key="d9">implementation method,network security</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211207</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Network Isolation" target="Private Link">
+  <data key="d7">1.0</data>
+  <data key="d8">Private Link is a technique used for network isolation.</data>
+  <data key="d9">implementation method,network security</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211209</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Data Protection And Sensitive Information Handling" target="Data Desensitization">
+  <data key="d7">1.0</data>
+  <data key="d8">Data Desensitization is a technique used for Data Protection and Sensitive Information Handling.</data>
+  <data key="d9">data security,privacy technique</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211189</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Data Protection And Sensitive Information Handling" target="PII">
+  <data key="d7">1.0</data>
+  <data key="d8">PII is a type of sensitive information addressed by Data Protection and Sensitive Information Handling.</data>
+  <data key="d9">data security,information type</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211191</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Data Protection And Sensitive Information Handling" target="Input/Output Content Monitoring And Auditing">
+  <data key="d7">1.0</data>
+  <data key="d8">Input/Output Content Monitoring and Auditing is a process for Data Protection and Sensitive Information Handling.</data>
+  <data key="d9">data security,oversight</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211192</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Data Protection And Sensitive Information Handling" target="Customer Service Scenario">
+  <data key="d7">1.0</data>
+  <data key="d8">Data protection strategies are discussed in the context of applying LLMs in customer service scenarios.</data>
+  <data key="d9">application context,use case</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211208</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LLM Application Development Platforms And Tools" target="Low-Code/No-Code Platforms">
+  <data key="d7">1.0</data>
+  <data key="d8">Low-Code/No-Code Platforms are a category of tools under LLM Application Development Platforms and Tools.</data>
+  <data key="d9">development tool,platform type</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211191</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LLM Application Development Platforms And Tools" target="Application Development Frameworks">
+  <data key="d7">1.0</data>
+  <data key="d8">Application Development Frameworks are a category of tools under LLM Application Development Platforms and Tools.</data>
+  <data key="d9">development tool,framework type</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211193</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Low-Code/No-Code Platforms" target="Zapier">
+  <data key="d7">1.0</data>
+  <data key="d8">Zapier is an example of a low-code/no-code platform that integrates LLM capabilities.</data>
+  <data key="d9">platform example,tool category</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211202</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Low-Code/No-Code Platforms" target="Make">
+  <data key="d7">1.0</data>
+  <data key="d8">Make is an example of a low-code/no-code platform that integrates LLM capabilities.</data>
+  <data key="d9">platform example,tool category</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211204</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Low-Code/No-Code Platforms" target="Coze">
+  <data key="d7">1.0</data>
+  <data key="d8">Coze is an example of a low-code/no-code platform that integrates LLM capabilities.</data>
+  <data key="d9">platform example,tool category</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211205</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Application Development Frameworks" target="Retrieval-Augmented Generation (RAG)">
+  <data key="d7">1.0</data>
+  <data key="d8">Application Development Frameworks are used to build complex applications like those using Retrieval-Augmented Generation (RAG).</data>
+  <data key="d9">application type,framework capability</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211196</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Application Development Frameworks" target="LangChain">
+  <data key="d7">1.0</data>
+  <data key="d8">LangChain is an example of an application development framework for LLMs.</data>
+  <data key="d9">framework example,tool category</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211204</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Application Development Frameworks" target="LlamaIndex">
+  <data key="d7">1.0</data>
+  <data key="d8">LlamaIndex is an example of an application development framework for LLMs.</data>
+  <data key="d9">framework example,tool category</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211206</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Retrieval-Augmented Generation (RAG)" target="Knowledge Base">
+  <data key="d7">1.0</data>
+  <data key="d8">Retrieval-Augmented Generation (RAG) combines a knowledge base with an LLM.</data>
+  <data key="d9">component,data source</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211193</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP/RCIOS Framework" target="Role">
+  <data key="d7">1.0</data>
+  <data key="d8">Role is a core element defined within the CRISP/RCIOS Framework.</data>
+  <data key="d9">framework element,prompt component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211197</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP/RCIOS Framework" target="Instruction">
+  <data key="d7">1.0</data>
+  <data key="d8">Instruction is a core element defined within the CRISP/RCIOS Framework.</data>
+  <data key="d9">framework element,prompt component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211198</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP/RCIOS Framework" target="Context">
+  <data key="d7">1.0</data>
+  <data key="d8">Context is a core element defined within the CRISP/RCIOS Framework.</data>
+  <data key="d9">framework element,prompt component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211199</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP/RCIOS Framework" target="Output Format">
+  <data key="d7">1.0</data>
+  <data key="d8">Output Format is a core element defined within the CRISP/RCIOS Framework.</data>
+  <data key="d9">framework element,prompt component</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211201</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Task Decomposition" target="Chain Of Thought (CoT)">
+  <data key="d7">1.0</data>
+  <data key="d8">Chain Of Thought (CoT) is a specific type of Task Decomposition that guides step-by-step reasoning.</data>
+  <data key="d9">reasoning,technique variant</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211200</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Financial Analysis And Research Report" target="Market Dynamics Analysis">
+  <data key="d7">1.0</data>
+  <data key="d8">Market Dynamics Analysis is a specific application within the broader Financial Analysis and Research Report category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211209</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Financial Analysis And Research Report" target="Financial Report Interpretation">
+  <data key="d7">1.0</data>
+  <data key="d8">Financial Report Interpretation is a specific application within the broader Financial Analysis and Research Report category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211211</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Financial Analysis And Research Report" target="Investment Research And Advice">
+  <data key="d7">1.0</data>
+  <data key="d8">Investment Research and Advice is a specific application within the broader Financial Analysis and Research Report category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211212</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Financial Analysis And Research Report" target="Module Four">
+  <data key="d7">1.0</data>
+  <data key="d8">Financial Analysis and Research Report applications are covered in Module Four of the training.</data>
+  <data key="d9">application area,training content</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211220</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Customer Service And Communication Consulting" target="Financial Product Intelligent Q&amp;A">
+  <data key="d7">1.0</data>
+  <data key="d8">Financial Product Intelligent Q&amp;A is a specific application within the broader Customer Service and Communication Consulting category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211210</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Customer Service And Communication Consulting" target="Customer Intent Recognition And Problem Classification">
+  <data key="d7">1.0</data>
+  <data key="d8">Customer Intent Recognition and Problem Classification is a specific application within the broader Customer Service and Communication Consulting category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211212</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Customer Service And Communication Consulting" target="Communication Copy Generation And Polishing">
+  <data key="d7">1.0</data>
+  <data key="d8">Communication Copy Generation and Polishing is a specific application within the broader Customer Service and Communication Consulting category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211213</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Customer Service And Communication Consulting" target="Module Four">
+  <data key="d7">1.0</data>
+  <data key="d8">Customer Service and Communication Consulting applications are covered in Module Four of the training.</data>
+  <data key="d9">application area,training content</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211222</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Financial Product Intelligent Q&amp;A" target="RAG">
+  <data key="d7">1.0</data>
+  <data key="d8">RAG is a technique used to implement Financial Product Intelligent Q&amp;A systems.</data>
+  <data key="d9">implementation,technique</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211214</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Risk Management And Compliance Review" target="Document Compliance Check">
+  <data key="d7">1.0</data>
+  <data key="d8">Document Compliance Check is a specific application within the broader Risk Management and Compliance Review category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211212</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Risk Management And Compliance Review" target="Risk Event Identification And Early Warning">
+  <data key="d7">1.0</data>
+  <data key="d8">Risk Event Identification and Early Warning is a specific application within the broader Risk Management and Compliance Review category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211214</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Risk Management And Compliance Review" target="Anti-Money Laundering And Fraud Detection Assistance">
+  <data key="d7">1.0</data>
+  <data key="d8">Anti-Money Laundering and Fraud Detection Assistance is a specific application within the broader Risk Management and Compliance Review category.</data>
+  <data key="d9">application,methodology</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211216</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Risk Management And Compliance Review" target="Module Four">
+  <data key="d7">1.0</data>
+  <data key="d8">Risk Management and Compliance Review applications are covered in Module Four of the training.</data>
+  <data key="d9">application area,training content</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211223</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Anti-Money Laundering And Fraud Detection Assistance" target="SAR">
+  <data key="d7">1.0</data>
+  <data key="d8">Anti-Money Laundering processes involve the generation of Suspicious Activity Reports (SAR).</data>
+  <data key="d9">documentation,reporting</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211218</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Anti-Money Laundering And Fraud Detection Assistance" target="AML">
+  <data key="d7">1.0</data>
+  <data key="d8">Anti-Money Laundering And Fraud Detection Assistance is an application within the broader AML regulatory framework.</data>
+  <data key="d9">regulatory compliance,risk management</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211219</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Model" target="Human-In-The-Loop">
+  <data key="d7">1.0</data>
+  <data key="d8">Human-In-The-Loop is emphasized as a best practice for using Large Language Models.</data>
+  <data key="d9">collaboration,oversight</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211218</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Model" target="AI Agents">
+  <data key="d7">1.0</data>
+  <data key="d8">AI Agents represent a future trend in the development and application of Large Language Models.</data>
+  <data key="d9">capability,future trend</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211220</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Large Language Model" target="Domain-Specific Models">
+  <data key="d7">1.0</data>
+  <data key="d8">Domain-Specific Models represent a future trend in the specialization of Large Language Models.</data>
+  <data key="d9">future trend,specialization</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764211221</data>
+  <data key="d13"></data>
+</edge>
+</graph></graphml>

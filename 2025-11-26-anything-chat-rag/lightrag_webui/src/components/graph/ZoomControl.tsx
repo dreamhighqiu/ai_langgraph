@@ -1,0 +1,122 @@
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
+// NOTE  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VTJoSE5BPT06ZTM2Nzc1YzI=
+
+import { useCamera, useSigma } from '@react-sigma/core'
+import { useCallback } from 'react'
+import Button from '@/components/ui/Button'
+import { ZoomInIcon, ZoomOutIcon, FullscreenIcon, RotateCwIcon, RotateCcwIcon } from 'lucide-react'
+import { controlButtonVariant } from '@/lib/constants'
+import { useTranslation } from 'react-i18next';
+// @ts-expect-error  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VTJoSE5BPT06ZTM2Nzc1YzI=
+
+/**
+ * Component that provides zoom controls for the graph viewer.
+ */
+const ZoomControl = () => {
+  const { zoomIn, zoomOut, reset } = useCamera({ duration: 200, factor: 1.5 })
+  const sigma = useSigma()
+  const { t } = useTranslation();
+
+  const handleZoomIn = useCallback(() => zoomIn(), [zoomIn])
+  const handleZoomOut = useCallback(() => zoomOut(), [zoomOut])
+  const handleResetZoom = useCallback(() => {
+    if (!sigma) return
+
+    try {
+      // First clear any custom bounding box and refresh
+      sigma.setCustomBBox(null)
+      sigma.refresh()
+
+      // Get graph after refresh
+      const graph = sigma.getGraph()
+
+      // Check if graph has nodes before accessing them
+      if (!graph?.order || graph.nodes().length === 0) {
+        // Use reset() for empty graph case
+        reset()
+        return
+      }
+
+      sigma.getCamera().animate(
+        { x: 0.5, y: 0.5, ratio: 1.1 },
+        { duration: 1000 }
+      )
+    } catch (error) {
+      console.error('Error resetting zoom:', error)
+      // Use reset() as fallback on error
+      reset()
+    }
+  }, [sigma, reset])
+
+  const handleRotate = useCallback(() => {
+    if (!sigma) return
+
+    const camera = sigma.getCamera()
+    const currentAngle = camera.angle
+    const newAngle = currentAngle + Math.PI / 8
+
+    camera.animate(
+      { angle: newAngle },
+      { duration: 200 }
+    )
+  }, [sigma])
+
+  const handleRotateCounterClockwise = useCallback(() => {
+    if (!sigma) return
+
+    const camera = sigma.getCamera()
+    const currentAngle = camera.angle
+    const newAngle = currentAngle - Math.PI / 8
+
+    camera.animate(
+      { angle: newAngle },
+      { duration: 200 }
+    )
+  }, [sigma])
+
+  return (
+    <>
+      <Button
+        variant={controlButtonVariant}
+        onClick={handleRotate}
+        tooltip={t('graphPanel.sideBar.zoomControl.rotateCamera')}
+        size="icon"
+      >
+        <RotateCwIcon />
+      </Button>
+      <Button
+        variant={controlButtonVariant}
+        onClick={handleRotateCounterClockwise}
+        tooltip={t('graphPanel.sideBar.zoomControl.rotateCameraCounterClockwise')}
+        size="icon"
+      >
+        <RotateCcwIcon />
+      </Button>
+      <Button
+        variant={controlButtonVariant}
+        onClick={handleResetZoom}
+        tooltip={t('graphPanel.sideBar.zoomControl.resetZoom')}
+        size="icon"
+      >
+        <FullscreenIcon />
+      </Button>
+      <Button variant={controlButtonVariant} onClick={handleZoomIn} tooltip={t('graphPanel.sideBar.zoomControl.zoomIn')} size="icon">
+        <ZoomInIcon />
+      </Button>
+      <Button variant={controlButtonVariant} onClick={handleZoomOut} tooltip={t('graphPanel.sideBar.zoomControl.zoomOut')} size="icon">
+        <ZoomOutIcon />
+      </Button>
+    </>
+  )
+}
+// NOTE  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VTJoSE5BPT06ZTM2Nzc1YzI=
+
+export default ZoomControl
+// NOTE  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VTJoSE5BPT06ZTM2Nzc1YzI=

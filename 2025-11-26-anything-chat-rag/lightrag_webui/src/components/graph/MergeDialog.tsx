@@ -1,0 +1,83 @@
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
+// eslint-disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0UwNWFnPT06YWVlNzMzNGM=
+
+import { useTranslation } from 'react-i18next'
+import { useSettingsStore } from '@/stores/settings'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle
+} from '@/components/ui/Dialog'
+import Button from '@/components/ui/Button'
+// eslint-disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0UwNWFnPT06YWVlNzMzNGM=
+
+interface MergeDialogProps {
+  mergeDialogOpen: boolean
+  mergeDialogInfo: {
+    targetEntity: string
+    sourceEntity: string
+  } | null
+  onOpenChange: (open: boolean) => void
+  onRefresh: (useMergedStart: boolean) => void
+}
+// FIXME  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0UwNWFnPT06YWVlNzMzNGM=
+
+/**
+ * MergeDialog component that appears after a successful entity merge
+ * Allows user to choose whether to use the merged entity or keep current start point
+ */
+const MergeDialog = ({
+  mergeDialogOpen,
+  mergeDialogInfo,
+  onOpenChange,
+  onRefresh
+}: MergeDialogProps) => {
+  const { t } = useTranslation()
+  const currentQueryLabel = useSettingsStore.use.queryLabel()
+
+  return (
+    <Dialog open={mergeDialogOpen} onOpenChange={onOpenChange}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{t('graphPanel.propertiesView.mergeDialog.title')}</DialogTitle>
+          <DialogDescription>
+            {t('graphPanel.propertiesView.mergeDialog.description', {
+              source: mergeDialogInfo?.sourceEntity ?? '',
+              target: mergeDialogInfo?.targetEntity ?? '',
+            })}
+          </DialogDescription>
+        </DialogHeader>
+        <p className="text-sm text-muted-foreground">
+          {t('graphPanel.propertiesView.mergeDialog.refreshHint')}
+        </p>
+        <DialogFooter className="mt-4 flex-col gap-2 sm:flex-row sm:justify-end">
+          {currentQueryLabel !== mergeDialogInfo?.sourceEntity && (
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => onRefresh(false)}
+            >
+              {t('graphPanel.propertiesView.mergeDialog.keepCurrentStart')}
+            </Button>
+          )}
+          <Button type="button" onClick={() => onRefresh(true)}>
+            {t('graphPanel.propertiesView.mergeDialog.useMergedStart')}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
+}
+// @ts-expect-error  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0UwNWFnPT06YWVlNzMzNGM=
+
+export default MergeDialog

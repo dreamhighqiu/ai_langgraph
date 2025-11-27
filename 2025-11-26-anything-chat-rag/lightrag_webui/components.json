@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "_buildId": "id_MC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZGpWM2NRPT06YjM1MmRjOTA=",
+  "style": "new-york",
+  "_deployId": "id_MS81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZGpWM2NRPT06YjM1MmRjOTA=",
+  "rsc": false,
+  "_releaseId": "id_Mi81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZGpWM2NRPT06YjM1MmRjOTA=",
+  "tsx": true,
+  "_versionId": "id_My81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZGpWM2NRPT06YjM1MmRjOTA=",
+  "tailwind": {
+    "config": "",
+    "css": "src/index.css",
+    "baseColor": "zinc",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "_buildHash": "NC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZGpWM2NRPT06YjM1MmRjOTA=",
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide"
+}

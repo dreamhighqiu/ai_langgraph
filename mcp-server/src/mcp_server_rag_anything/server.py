@@ -318,3 +318,6 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+# 命令行运行：
+# (.venv)  mobvista@qiuyunxia  ~/code/ai_langGraph/mcp-server/src   ai_langgraph ±  python -m mcp_server_rag_anything.server

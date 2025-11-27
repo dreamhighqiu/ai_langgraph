@@ -1,0 +1,35 @@
+{
+  "doc-c73a458050d1082c95e859c85ffb2d8c": {
+    "entity_names": [
+      "Group photo at Sarnath Dhamekh Stupa, India travel Vlog cover (image)",
+      "Hand Holding Spread of 500 Indian Rupee Notes (image)",
+      "AirAsia Boarding Scene at Airport Apron (image)",
+      "airasia_airplane_boarding_scene (image)",
+      "India Study Tour Group at Dhamek Stupa in Sarnath (image)",
+      "Hand-Held Fan of Indian 500 Rupee Banknotes (image)"
+    ],
+    "count": 6,
+    "update_time": 1764238377,
+    "_id": "doc-c73a458050d1082c95e859c85ffb2d8c"
+  },
+  "doc-4baee4a7b7bb9f8fcc14c88dbe758360": {
+    "entity_names": [
+      "creative_asset_management_upload_interface (image)",
+      "table_49bca52ff7fe260cac5bb6ce2b63c083"
+    ],
+    "count": 2,
+    "update_time": 1764238214,
+    "create_time": 1764238214,
+    "_id": "doc-4baee4a7b7bb9f8fcc14c88dbe758360"
+  },
+  "doc-a3d1987ba759a6e7928275affaf22e8a": {
+    "entity_names": [
+      "digital_asset_upload_modal_interface (image)",
+      "table_4189497dc96f676c0ccf668aad7fa6f1"
+    ],
+    "count": 2,
+    "update_time": 1764238216,
+    "create_time": 1764238216,
+    "_id": "doc-a3d1987ba759a6e7928275affaf22e8a"
+  }
+}

@@ -36,7 +36,7 @@ PyJWT>=2.8.0,<3.0.0
 python-jose[cryptography]
 python-multipart
 pytz
-gunicorn
+gunico
 
 # Document processing dependencies
 openpyxl>=3.0.0,<4.0.0

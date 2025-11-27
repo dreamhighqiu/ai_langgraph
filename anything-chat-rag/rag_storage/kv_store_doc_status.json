@@ -1,6 +1,6 @@
 {
   "doc-88b93e772890662b37fff9510ff982e1": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 4,
     "chunks_list": [
       "chunk-6c9699f6be450b7bab348fd80cc8c912",
@@ -11,45 +11,61 @@
     "content_summary": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲\n\n目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、\n\n合规专员以及对LLM应用感兴趣的相关人员。\n\n培训目标:\n\n· 全面了解主流大型语言模型的特点、能力边界与选型策略。\n\n•\n\n掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。\n\n· 精通提示词工程的核心原理、结构与高级技巧。\n\n· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效\n\n提示词。\n\n· 理解LLM使用的最佳实...",
     "content_length": 5436,
     "created_at": "2025-11-27T10:07:53.260788+00:00",
-    "updated_at": "2025-11-27T18:11:19+00:00",
+    "updated_at": "2025-11-27T10:16:05.011750+00:00",
     "file_path": "llm_course.pdf",
     "track_id": "insert_20251127_180753_b1690fce",
     "metadata": {
-      "processing_start_time": 1764238073
-    },
-    "multimodal_processed": true
+      "processing_start_time": 1764238073,
+      "processing_end_time": 1764238565
+    }
   },
   "doc-c73a458050d1082c95e859c85ffb2d8c": {
-    "status": "pending",
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7882298873876029b066fe9c2191776c"
+    ],
     "content_summary": "我们出去旅行了\n\nAir Asia\n\nMAHATMA GANDHI\n\nwear airch\n\nMAHATHA GANOHI\n\n7400\n\nR 500\n\nMAHATNA GANOHI\n\n298169\n\n999\n\nIN CA\n\n28805\n\n005 €\n\n1500\n\n1900\n\nRESERVE BANK OF INDIA\n\nLARANTEED BY THE CENTRAL GOVERNVENTT\n\nDECERVE BANK OF INDIA\n\nMALIK OF INDIA\n\nI nECERVE BA...",
     "content_length": 459,
     "created_at": "2025-11-27T10:07:53.265392+00:00",
-    "updated_at": "2025-11-27T18:13:17+00:00",
+    "updated_at": "2025-11-27T10:16:47.553552+00:00",
     "file_path": "旅行日记2.pdf",
     "track_id": "insert_20251127_180753_28b9db44",
-    "chunks_list": [],
-    "multimodal_processed": true
+    "metadata": {
+      "processing_start_time": 1764238565,
+      "processing_end_time": 1764238607
+    }
   },
   "doc-4baee4a7b7bb9f8fcc14c88dbe758360": {
-    "status": "pending",
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-50866b161d8cee7f71f2cb8f3f08b9d9"
+    ],
     "content_summary": "FATE\n\nQUEARS\n\n3D|#UI* (Beta)\n\nВЕРФІО\n\n191991\n\n111111\n\nEU 37*\n\n₴Л#: mp4/avi/mkv/flv/mov/webm\n\nEH: jpg/ipeg/png/gif\n\n# it: mp3/aac/wav\n\n$/: ttf/otf|\n\n#ft: psd/zip\n\nf#f73|8) 17.56GB / 50.00GB\n\nEX*H\n\nAta.L16\n\n/09/02\n\nID\n\n0001.jpg\n\n1.32MB\n\n2025/09/02\n\n# 1...",
     "content_length": 1341,
     "created_at": "2025-11-27T10:08:10.160441+00:00",
-    "updated_at": "2025-11-27T18:11:36+00:00",
+    "updated_at": "2025-11-27T10:16:05.055087+00:00",
     "file_path": "pdf测试_加水印.pdf",
     "track_id": "insert_20251127_180810_f064debd",
-    "chunks_list": [],
-    "multimodal_processed": true
+    "metadata": {
+      "processing_start_time": 1764238565
+    }
   },
   "doc-a3d1987ba759a6e7928275affaf22e8a": {
-    "status": "pending",
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-50c08d88e2c965fa42050346e657a2de"
+    ],
     "content_summary": "FATE\n\nQUEARS\n\n3D|#UI* (Beta)\n\nВЕРФІО\n\n199991\n\nH1111\n\nEU 37*\n\n₴Л#: mp4/avi/mkv/flv/mov/webm\n\nEH: jpg/ipeg/png/gif\n\n# it: mp3/aac/wav\n\n$/: ttf/otf|\n\n#ft: psd/zip\n\nf#f73|8) 17.56GB / 50.00GB\n\nEX*H\n\nAta.L16\n\n/09/02\n\nID\n\n0001.jpg\n\n1.32MB\n\n2025/09/02\n\n# 10...",
     "content_length": 1371,
     "created_at": "2025-11-27T10:08:10.300875+00:00",
-    "updated_at": "2025-11-27T18:11:35+00:00",
+    "updated_at": "2025-11-27T10:16:47.583406+00:00",
     "file_path": "pdf测试.pdf",
     "track_id": "insert_20251127_180810_da23cf73",
-    "chunks_list": [],
-    "multimodal_processed": true
+    "metadata": {
+      "processing_start_time": 1764238607
+    }
   }
 }

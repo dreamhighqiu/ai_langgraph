@@ -1,0 +1,2978 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d13" for="edge" attr.name="truncate" attr.type="string"/>
+<key id="d12" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d11" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d10" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d9" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d8" for="edge" attr.name="description" attr.type="string"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="node" attr.name="truncate" attr.type="string"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="airasia_airplane_boarding_scene (image)">
+  <data key="d0">airasia_airplane_boarding_scene (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image shows a group of travelers boarding an AirAsia airplane via a portable stairway on the tarmac, under a bright blue sky. The scene marks the start of a journey mentioned in the diary, emphasizing the travel theme and connection to AirAsia.</data>
+  <data key="d3">chunk-275905083998c55789bd8b56aef77919</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238183</data>
+</node>
+<node id="Hand Holding Spread of 500 Indian Rupee Notes (image)">
+  <data key="d0">Hand Holding Spread of 500 Indian Rupee Notes (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">A close-up image of a hand fanning out multiple ₹500 Indian rupee banknotes, highlighting currency details and emphasizing an aspect of travel preparations or documentation of expenses in India.</data>
+  <data key="d3">chunk-6da89fa70c21fe7860b484600d94e4ae</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238183</data>
+</node>
+<node id="India Study Tour Group at Dhamek Stupa in Sarnath (image)">
+  <data key="d0">India Study Tour Group at Dhamek Stupa in Sarnath (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">Photograph of a diverse group visiting the Dhamek Stupa in Sarnath, India, during a travel/study vlog, as indicated by the overlaid Chinese text referencing a journey between key Indian cities from late 2023 to early 2024.</data>
+  <data key="d3">chunk-cdd7a4d9454f132a13be8bd3ad8ab39c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238183</data>
+</node>
+<node id="creative_asset_management_upload_interface (image)">
+  <data key="d0">creative_asset_management_upload_interface (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image depicts a cloud file upload dialog within a creative asset management platform, demonstrating file-type constraints, duplicate upload handling, and a thumbnail-based media organization interface, matching context around file processing and digital resource curation.</data>
+  <data key="d3">chunk-d41595bd59cbfb61ec1168cd90544317</data>
+  <data key="d4">pdf测试_加水印.pdf</data>
+  <data key="d5">1764238196</data>
+</node>
+<node id="table_49bca52ff7fe260cac5bb6ce2b63c083">
+  <data key="d0">table_49bca52ff7fe260cac5bb6ce2b63c083</data>
+  <data key="d1">table</data>
+  <data key="d2">Table content: {'type': 'table', 'img_path': '', 'table_caption': '', 'table_footnote': '', 'table_body': [], 'page</data>
+  <data key="d3">chunk-13560f6ce24524c7a108619466ca06c0</data>
+  <data key="d4">pdf测试_加水印.pdf</data>
+  <data key="d5">1764238292</data>
+</node>
+<node id="digital_asset_upload_modal_interface (image)">
+  <data key="d0">digital_asset_upload_modal_interface (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image shows a file upload modal overlaying a digital asset management dashboard in a Chinese-language web platform. The modal details supported file types and current upload status, while the background grid displays image and audio thumbnails. The interface supports efficient creative asset organization.</data>
+  <data key="d3">chunk-b63b7fe265eacb384e5b0cd9caf225a7</data>
+  <data key="d4">pdf测试.pdf</data>
+  <data key="d5">1764238210</data>
+</node>
+<node id="table_4189497dc96f676c0ccf668aad7fa6f1">
+  <data key="d0">table_4189497dc96f676c0ccf668aad7fa6f1</data>
+  <data key="d1">table</data>
+  <data key="d2">Table content: {'type': 'table', 'img_path': '', 'table_caption': '', 'table_footnote': '', 'table_body': [], 'page</data>
+  <data key="d3">chunk-96a6f1375ef5247abab93aa4b42634f3</data>
+  <data key="d4">pdf测试.pdf</data>
+  <data key="d5">1764238291</data>
+</node>
+<node id="Creative Asset Management Upload Modal (image)">
+  <data key="d0">Creative Asset Management Upload Modal (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">Screenshot of a browser-based creative asset management system. Central upload dialog overlays a media asset grid and navigation panel. The interface displays accepted file types, storage usage, and file upload controls, reflecting context-specific file type enumeration.</data>
+  <data key="d3">chunk-bcdd42c73071c3ad6b8e3839c0ecd638</data>
+  <data key="d4">pdf测试.pdf</data>
+  <data key="d5">1764238238</data>
+</node>
+<node id="digital_asset_upload_modal_asset_manager (image)">
+  <data key="d0">digital_asset_upload_modal_asset_manager (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This is a screenshot of a Chinese digital asset management platform with an upload modal. Users can drag-and-drop media files or select files for upload, managing various projects and assets, with clear categorization and visual file previews displayed in the active interface.</data>
+  <data key="d3">chunk-f474952e64bfc435fd4e193c0769cca1</data>
+  <data key="d4">pdf测试_加水印.pdf</data>
+  <data key="d5">1764238249</data>
+</node>
+<node id="airasia_passenger_boarding_aircraft_clear_sky (image)">
+  <data key="d0">airasia_passenger_boarding_aircraft_clear_sky (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">The image captures passengers boarding an AirAsia Airbus aircraft on the tarmac under a clear blue sky, evoking a theme of travel and anticipation. The composition and context suggest documentation for a travel diary or journey-themed content.</data>
+  <data key="d3">chunk-b3b7d73f144558f38b7ac679328d895d</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238257</data>
+</node>
+<node id="Hand-holding-fanned-Indian-500-rupee-banknotes (image)">
+  <data key="d0">Hand-holding-fanned-Indian-500-rupee-banknotes (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image documents a hand holding a substantial, fanned stack of Indian 500 rupee banknotes. It signifies financial preparation for travel, closely tying to the surrounding context of a travel diary referencing currency and international movement.</data>
+  <data key="d3">chunk-12bc5b49faebb38b93b15c233a29a09c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238310</data>
+</node>
+<node id="大型语言模型(LLM)">
+  <data key="d0">大型语言模型(LLM)</data>
+  <data key="d1">concept</data>
+  <data key="d2">一种人工智能模型，具有强大的语言理解和生成能力，是本次培训的核心主题。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="提示词工程">
+  <data key="d0">提示词工程</data>
+  <data key="d1">method</data>
+  <data key="d2">设计和优化用于引导大型语言模型生成期望输出的文本提示的核心技术与方法。&lt;SEP&gt;设计和优化提示词以有效引导大语言模型输出的技术。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="DeepSeek">
+  <data key="d0">DeepSeek</data>
+  <data key="d1">organization</data>
+  <data key="d2">国际代表LLM产品，特点包括开源和强大的代码能力。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="ChatGPT">
+  <data key="d0">ChatGPT</data>
+  <data key="d1">organization</data>
+  <data key="d2">国际代表LLM产品，特点包括综合能力强和丰富的插件生态系统。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="Claude">
+  <data key="d0">Claude</data>
+  <data key="d1">organization</data>
+  <data key="d2">国际代表LLM产品，特点包括优秀的长文本处理能力和注重安全与伦理。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="Gemini">
+  <data key="d0">Gemini</data>
+  <data key="d1">organization</data>
+  <data key="d2">国际代表LLM产品，特点包括多模态能力和与Google生态系统的深度集成。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="文心一言">
+  <data key="d0">文心一言</data>
+  <data key="d1">organization</data>
+  <data key="d2">国内代表LLM产品，特点包括优秀的中文理解和与百度生态系统的集成。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="通义千问">
+  <data key="d0">通义千问</data>
+  <data key="d1">organization</data>
+  <data key="d2">国内代表LLM产品，特点包括综合能力强和与阿里生态系统的集成。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238315</data>
+  <data key="d6"></data>
+</node>
+<node id="讯飞星火">
+  <data key="d0">讯飞星火</data>
+  <data key="d1">organization</data>
+  <data key="d2">国内代表LLM产品，特点包括语音交互能力和跨领域知识。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238321</data>
+  <data key="d6"></data>
+</node>
+<node id="开源LLM">
+  <data key="d0">开源LLM</data>
+  <data key="d1">concept</data>
+  <data key="d2">源代码公开的大型语言模型，具有成本可控、定制化潜力大、数据隐私控制强等特点。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238321</data>
+  <data key="d6"></data>
+</node>
+<node id="闭源LLM">
+  <data key="d0">闭源LLM</data>
+  <data key="d1">concept</data>
+  <data key="d2">源代码不公开的大型语言模型，通常通过API提供服务，更新频率可能更高。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238322</data>
+  <data key="d6"></data>
+</node>
+<node id="多模态能力">
+  <data key="d0">多模态能力</data>
+  <data key="d1">concept</data>
+  <data key="d2">LLM处理和理解多种类型数据(如图像、音频)的能力。&lt;SEP&gt;处理文本、图像、音频等多种信息的能力。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238322</data>
+  <data key="d6"></data>
+</node>
+<node id="工具使用">
+  <data key="d0">工具使用</data>
+  <data key="d1">concept</data>
+  <data key="d2">LLM调用外部工具或API(如Function Calling机制)来执行特定任务的能力。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238323</data>
+  <data key="d6"></data>
+</node>
+<node id="代码能力">
+  <data key="d0">代码能力</data>
+  <data key="d1">concept</data>
+  <data key="d2">LLM生成、解释和调试代码的能力。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238323</data>
+  <data key="d6"></data>
+</node>
+<node id="安全性">
+  <data key="d0">安全性</data>
+  <data key="d1">concept</data>
+  <data key="d2">LLM使用中涉及的偏见风险、数据泄露风险和事实核查等问题。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238324</data>
+  <data key="d6"></data>
+</node>
+<node id="合规性">
+  <data key="d0">合规性</data>
+  <data key="d1">concept</data>
+  <data key="d2">LLM使用需满足的金融监管要求，如GDPR、CCPA等数据保护法规。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238324</data>
+  <data key="d6"></data>
+</node>
+<node id="API调用">
+  <data key="d0">API调用</data>
+  <data key="d1">method</data>
+  <data key="d2">通过RESTful API接口使用LLM服务的方式，涉及关键参数如模型选择、温度、最大Token数等。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238324</data>
+  <data key="d6"></data>
+</node>
+<node id="AWS Bedrock">
+  <data key="d0">AWS Bedrock</data>
+  <data key="d1">organization</data>
+  <data key="d2">亚马逊云科技提供的大型语言模型服务平台。&lt;SEP&gt;亚马逊云科技提供的大语言模型服务。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238325</data>
+  <data key="d6"></data>
+</node>
+<node id="Azure OpenAI Service">
+  <data key="d0">Azure OpenAI Service</data>
+  <data key="d1">organization</data>
+  <data key="d2">微软Azure云平台提供的OpenAI模型服务。&lt;SEP&gt;微软Azure平台提供的大语言模型服务。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238325</data>
+  <data key="d6"></data>
+</node>
+<node id="Google Vertex AI">
+  <data key="d0">Google Vertex AI</data>
+  <data key="d1">organization</data>
+  <data key="d2">谷歌云平台提供的人工智能服务，包括LLM功能。&lt;SEP&gt;谷歌云平台提供的大语言模型服务。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238326</data>
+  <data key="d6"></data>
+</node>
+<node id="私有化部署">
+  <data key="d0">私有化部署</data>
+  <data key="d1">method</data>
+  <data key="d2">在企业自有基础设施上部署LLM的方案，数据控制权高但维护复杂。&lt;SEP&gt;将大语言模型部署在企业自有基础设施上的方式。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238327</data>
+  <data key="d6"></data>
+</node>
+<node id="云服务">
+  <data key="d0">云服务</data>
+  <data key="d1">method</data>
+  <data key="d2">通过云平台使用LLM的服务模式，易于扩展和集成。&lt;SEP&gt;通过云平台使用大语言模型服务的方式。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238327</data>
+  <data key="d6"></data>
+</node>
+<node id="金融行业">
+  <data key="d0">金融行业</data>
+  <data key="d1">organization</data>
+  <data key="d2">本次培训的目标学员所在行业，包括产品经理、运营人员、技术开发者等岗位。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238328</data>
+  <data key="d6"></data>
+</node>
+<node id="产品经理">
+  <data key="d0">产品经理</data>
+  <data key="d1">person</data>
+  <data key="d2">金融行业中参与本次培训的目标学员角色之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238328</data>
+  <data key="d6"></data>
+</node>
+<node id="运营人员">
+  <data key="d0">运营人员</data>
+  <data key="d1">person</data>
+  <data key="d2">金融行业中参与本次培训的目标学员角色之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238328</data>
+  <data key="d6"></data>
+</node>
+<node id="技术开发者">
+  <data key="d0">技术开发者</data>
+  <data key="d1">person</data>
+  <data key="d2">金融行业中参与本次培训的目标学员角色之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238329</data>
+  <data key="d6"></data>
+</node>
+<node id="数据分析师">
+  <data key="d0">数据分析师</data>
+  <data key="d1">person</data>
+  <data key="d2">金融行业中参与本次培训的目标学员角色之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238329</data>
+  <data key="d6"></data>
+</node>
+<node id="风险管理人员">
+  <data key="d0">风险管理人员</data>
+  <data key="d1">person</data>
+  <data key="d2">金融行业中参与本次培训的目标学员角色之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238330</data>
+  <data key="d6"></data>
+</node>
+<node id="合规专员">
+  <data key="d0">合规专员</data>
+  <data key="d1">person</data>
+  <data key="d2">金融行业中参与本次培训的目标学员角色之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238331</data>
+  <data key="d6"></data>
+</node>
+<node id="金融科技公司">
+  <data key="d0">金融科技公司</data>
+  <data key="d1">organization</data>
+  <data key="d2">在案例讨论中提到的企业类型，可能选择基于开源模型微调LLM。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238331</data>
+  <data key="d6"></data>
+</node>
+<node id="大型银行">
+  <data key="d0">大型银行</data>
+  <data key="d1">organization</data>
+  <data key="d2">在案例讨论中提到的企业类型，可能选择使用闭源模型的API。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238332</data>
+  <data key="d6"></data>
+</node>
+<node id="RESTful API">
+  <data key="d0">RESTful API</data>
+  <data key="d1">method</data>
+  <data key="d2">API调用的技术基础，用于与LLM服务进行交互。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238332</data>
+  <data key="d6"></data>
+</node>
+<node id="AirAsia Boarding Scene at Airport Apron (image)">
+  <data key="d0">AirAsia Boarding Scene at Airport Apron (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image shows a group of travelers boarding a red AirAsia Airbus aircraft via mobile stairs on a sunny airport apron, visually capturing the start of a journey that matches the travel themes and timeframe mentioned in the surrounding content.</data>
+  <data key="d3">chunk-aa0dec80d3d4e561db0e2317709614b7</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238411</data>
+</node>
+<node id="Hand-Held Fan of Indian 500 Rupee Banknotes (image)">
+  <data key="d0">Hand-Held Fan of Indian 500 Rupee Banknotes (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image depicts a hand holding a fan of Indian ₹500 banknotes, symbolizing currency exchange or travel expenditure, directly linking to the diary's travel theme and the mention of Indian currency, Mahatma Gandhi, and Air Asia.</data>
+  <data key="d3">chunk-cfd18ccacacd3e7e702486c6fe821bf2</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238359</data>
+</node>
+<node id="Group photo at Sarnath Dhamekh Stupa, India travel Vlog cover (image)">
+  <data key="d0">Group photo at Sarnath Dhamekh Stupa, India travel Vlog cover (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">A large group poses in front of the Dhamekh Stupa at Sarnath, India. Chinese overlay text introduces a travel vlog covering Bodh Gaya, Varanasi, Agra, and New Delhi, dated late 2023 to early 2024. The photo relates to a travel diary about Indian culture and history.</data>
+  <data key="d3">chunk-07a4aed5abe8330107483fde0b6566dd</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238359</data>
+</node>
+<node id="Function Calling">
+  <data key="d0">Function Calling</data>
+  <data key="d1">method</data>
+  <data key="d2">LLM调用外部工具或API的机制。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238360</data>
+  <data key="d6"></data>
+</node>
+<node id="Tool Use">
+  <data key="d0">Tool Use</data>
+  <data key="d1">method</data>
+  <data key="d2">LLM使用外部工具的功能机制。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238360</data>
+  <data key="d6"></data>
+</node>
+<node id="GDPR">
+  <data key="d0">GDPR</data>
+  <data key="d1">concept</data>
+  <data key="d2">欧洲通用数据保护条例，是金融监管要求之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238360</data>
+  <data key="d6"></data>
+</node>
+<node id="CCPA">
+  <data key="d0">CCPA</data>
+  <data key="d1">concept</data>
+  <data key="d2">加州消费者隐私法案，是金融监管要求之一。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238361</data>
+  <data key="d6"></data>
+</node>
+<node id="数据隐私保护">
+  <data key="d0">数据隐私保护</data>
+  <data key="d1">concept</data>
+  <data key="d2">LLM使用中涉及的数据处理协议、加密传输和存储等隐私保护措施。</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238361</data>
+  <data key="d6"></data>
+</node>
+<node id="提示词">
+  <data key="d0">提示词</data>
+  <data key="d1">concept</data>
+  <data key="d2">指用于引导大型语言模型生成特定输出的指令文本，其质量直接影响输出结果。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238361</data>
+  <data key="d6"></data>
+</node>
+<node id="大型语言模型">
+  <data key="d0">大型语言模型</data>
+  <data key="d1">concept</data>
+  <data key="d2">指能够理解和生成自然语言的人工智能模型，是本课程的核心技术基础。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238362</data>
+  <data key="d6"></data>
+</node>
+<node id="金融分析与研究报告">
+  <data key="d0">金融分析与研究报告</data>
+  <data key="d1">concept</data>
+  <data key="d2">指在金融领域应用提示词工程生成市场动态分析、财务报告解读和投资研究建议等内容的实践。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238362</data>
+  <data key="d6"></data>
+</node>
+<node id="Group photo at Dhamek Stupa - India Travels Vlog (image)">
+  <data key="d0">Group photo at Dhamek Stupa - India Travels Vlog (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image documents a travel study group's visit to a historic site in India, likely the Dhamek Stupa at Sarnath, capturing group interaction and local culture. It illustrates the vlog theme and the trip's time frame, supporting the surrounding travel diary content.</data>
+  <data key="d3">chunk-1b119c5826690f9d13dae79158ef6ab6</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238374</data>
+</node>
+<node id="市场动态分析">
+  <data key="d0">市场动态分析</data>
+  <data key="d1">concept</data>
+  <data key="d2">指通过提示词从财经新闻中自动提取关键信息并生成每日市场摘要的应用场景。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238377</data>
+  <data key="d6"></data>
+</node>
+<node id="财务报告解读">
+  <data key="d0">财务报告解读</data>
+  <data key="d1">concept</data>
+  <data key="d2">指使用提示词提取关键财务指标、分析变化原因和识别潜在风险的金融应用。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238377</data>
+  <data key="d6"></data>
+</node>
+<node id="投资研究与建议">
+  <data key="d0">投资研究与建议</data>
+  <data key="d1">concept</data>
+  <data key="d2">指通过提示词结构化生成投资逻辑、风险评估和估值分析框架的金融应用。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238378</data>
+  <data key="d6"></data>
+</node>
+<node id="客户服务与沟通咨询">
+  <data key="d0">客户服务与沟通咨询</data>
+  <data key="d1">concept</data>
+  <data key="d2">指在金融领域应用提示词工程处理客户问答、意图识别和沟通文案生成等任务。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238378</data>
+  <data key="d6"></data>
+</node>
+<node id="金融产品智能问答">
+  <data key="d0">金融产品智能问答</data>
+  <data key="d1">concept</data>
+  <data key="d2">指结合RAG技术，基于产品资料回答客户关于利率、费用等咨询的提示词应用。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238378</data>
+  <data key="d6"></data>
+</node>
+<node id="风险管理与合规审查">
+  <data key="d0">风险管理与合规审查</data>
+  <data key="d1">concept</data>
+  <data key="d2">指应用提示词工程进行文档合规检查、风险事件识别和反洗钱辅助等金融风控任务。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238379</data>
+  <data key="d6"></data>
+</node>
+<node id="RAG">
+  <data key="d0">RAG</data>
+  <data key="d1">method</data>
+  <data key="d2">指检索增强生成技术，用于结合外部知识库提升模型回答的准确性。&lt;SEP&gt;检索增强生成，一种结合知识库和大语言模型的技术。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee&lt;SEP&gt;chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238379</data>
+  <data key="d6"></data>
+</node>
+<node id="人机协同">
+  <data key="d0">人机协同</data>
+  <data key="d1">concept</data>
+  <data key="d2">强调在LLM应用中保持人类参与和监督的重要性，是负责任AI的关键原则。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238380</data>
+  <data key="d6"></data>
+</node>
+<node id="AI Agents">
+  <data key="d0">AI Agents</data>
+  <data key="d1">concept</data>
+  <data key="d2">指具备自主任务执行能力的智能代理，是LLM技术的未来发展趋势之一。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238382</data>
+  <data key="d6"></data>
+</node>
+<node id="模块四">
+  <data key="d0">模块四</data>
+  <data key="d1">content</data>
+  <data key="d2">金融场景提示词工程实战应用模块，包含金融分析、客户服务、风险管理等应用场景。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238382</data>
+  <data key="d6"></data>
+</node>
+<node id="模块五">
+  <data key="d0">模块五</data>
+  <data key="d1">content</data>
+  <data key="d2">总结、最佳实践与未来展望模块，包含核心要点回顾、伦理考量和未来趋势等内容。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238383</data>
+  <data key="d6"></data>
+</node>
+<node id="宏观经济指标">
+  <data key="d0">宏观经济指标</data>
+  <data key="d1">data</data>
+  <data key="d2">用于市场动态分析的经济数据指标。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238383</data>
+  <data key="d6"></data>
+</node>
+<node id="行业新闻">
+  <data key="d0">行业新闻</data>
+  <data key="d1">content</data>
+  <data key="d2">特定行业的新闻报道和信息。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238384</data>
+  <data key="d6"></data>
+</node>
+<node id="竞品动态">
+  <data key="d0">竞品动态</data>
+  <data key="d1">data</data>
+  <data key="d2">竞争对手的市场活动和表现数据。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238384</data>
+  <data key="d6"></data>
+</node>
+<node id="财经新闻">
+  <data key="d0">财经新闻</data>
+  <data key="d1">content</data>
+  <data key="d2">金融和经济领域的新闻报道。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238385</data>
+  <data key="d6"></data>
+</node>
+<node id="营收">
+  <data key="d0">营收</data>
+  <data key="d1">data</data>
+  <data key="d2">企业通过销售商品或提供服务获得的总收入。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238386</data>
+  <data key="d6"></data>
+</node>
+<node id="利润">
+  <data key="d0">利润</data>
+  <data key="d1">data</data>
+  <data key="d2">企业收入扣除成本费用后的净收益。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238398</data>
+  <data key="d6"></data>
+</node>
+<node id="增长率">
+  <data key="d0">增长率</data>
+  <data key="d1">data</data>
+  <data key="d2">衡量企业或指标增长幅度的百分比数据。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238398</data>
+  <data key="d6"></data>
+</node>
+<node id="季度财报PDF">
+  <data key="d0">季度财报PDF</data>
+  <data key="d1">artifact</data>
+  <data key="d2">上市公司发布的季度财务报告文档。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238399</data>
+  <data key="d6"></data>
+</node>
+<node id="投资逻辑">
+  <data key="d0">投资逻辑</data>
+  <data key="d1">concept</data>
+  <data key="d2">支持投资决策的理论依据和分析框架。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238399</data>
+  <data key="d6"></data>
+</node>
+<node id="风险评估">
+  <data key="d0">风险评估</data>
+  <data key="d1">concept</data>
+  <data key="d2">识别和评估投资过程中可能面临的风险。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238399</data>
+  <data key="d6"></data>
+</node>
+<node id="估值分析">
+  <data key="d0">估值分析</data>
+  <data key="d1">method</data>
+  <data key="d2">评估资产或企业价值的技术方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238399</data>
+  <data key="d6"></data>
+</node>
+<node id="产品说明书">
+  <data key="d0">产品说明书</data>
+  <data key="d1">artifact</data>
+  <data key="d2">详细描述金融产品特性和条款的文档。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238400</data>
+  <data key="d6"></data>
+</node>
+<node id="FAQ">
+  <data key="d0">FAQ</data>
+  <data key="d1">content</data>
+  <data key="d2">常见问题解答文档。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238400</data>
+  <data key="d6"></data>
+</node>
+<node id="虚拟客服助手">
+  <data key="d0">虚拟客服助手</data>
+  <data key="d1">artifact</data>
+  <data key="d2">基于人工智能的自动化客户服务系统。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238412</data>
+  <data key="d6"></data>
+</node>
+<node id="银行业务咨询">
+  <data key="d0">银行业务咨询</data>
+  <data key="d1">concept</data>
+  <data key="d2">涉及银行产品和服务的客户咨询。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238412</data>
+  <data key="d6"></data>
+</node>
+<node id="客户意图识别">
+  <data key="d0">客户意图识别</data>
+  <data key="d1">method</data>
+  <data key="d2">分析客户消息以判断其目的的技术。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238412</data>
+  <data key="d6"></data>
+</node>
+<node id="问题分类">
+  <data key="d0">问题分类</data>
+  <data key="d1">method</data>
+  <data key="d2">将客户问题按类型进行分类的方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238412</data>
+  <data key="d6"></data>
+</node>
+<node id="客户通知">
+  <data key="d0">客户通知</data>
+  <data key="d1">content</data>
+  <data key="d2">向客户发送的正式通告文本。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238413</data>
+  <data key="d6"></data>
+</node>
+<node id="营销邮件">
+  <data key="d0">营销邮件</data>
+  <data key="d1">content</data>
+  <data key="d2">用于产品推广的商业电子邮件。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238413</data>
+  <data key="d6"></data>
+</node>
+<node id="投诉回复">
+  <data key="d0">投诉回复</data>
+  <data key="d1">content</data>
+  <data key="d2">处理客户投诉的正式回复文本。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238413</data>
+  <data key="d6"></data>
+</node>
+<node id="客户关怀邮件">
+  <data key="d0">客户关怀邮件</data>
+  <data key="d1">content</data>
+  <data key="d2">用于维护客户关系的关怀性邮件。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238413</data>
+  <data key="d6"></data>
+</node>
+<node id="合同条款">
+  <data key="d0">合同条款</data>
+  <data key="d1">content</data>
+  <data key="d2">法律合同中规定的各项条件和规定。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238415</data>
+  <data key="d6"></data>
+</node>
+<node id="营销材料">
+  <data key="d0">营销材料</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于产品推广的宣传资料。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238415</data>
+  <data key="d6"></data>
+</node>
+<node id="合规规则库">
+  <data key="d0">合规规则库</data>
+  <data key="d1">data</data>
+  <data key="d2">包含合规要求和标准的知识库。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238416</data>
+  <data key="d6"></data>
+</node>
+<node id="贷款申请材料">
+  <data key="d0">贷款申请材料</data>
+  <data key="d1">artifact</data>
+  <data key="d2">客户申请贷款时提交的相关文件。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238416</data>
+  <data key="d6"></data>
+</node>
+<node id="银行政策">
+  <data key="d0">银行政策</data>
+  <data key="d1">concept</data>
+  <data key="d2">银行制定的业务操作和管理规定。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238416</data>
+  <data key="d6"></data>
+</node>
+<node id="新闻">
+  <data key="d0">新闻</data>
+  <data key="d1">content</data>
+  <data key="d2">各类媒体报道的信息内容。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238416</data>
+  <data key="d6"></data>
+</node>
+<node id="社交媒体">
+  <data key="d0">社交媒体</data>
+  <data key="d1">content</data>
+  <data key="d2">社交平台上的用户生成内容。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238417</data>
+  <data key="d6"></data>
+</node>
+<node id="监管公告">
+  <data key="d0">监管公告</data>
+  <data key="d1">content</data>
+  <data key="d2">监管机构发布的正式通告。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238417</data>
+  <data key="d6"></data>
+</node>
+<node id="负面信息">
+  <data key="d0">负面信息</data>
+  <data key="d1">data</data>
+  <data key="d2">对企业或行业不利的负面报道或信息。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238428</data>
+  <data key="d6"></data>
+</node>
+<node id="风险信号">
+  <data key="d0">风险信号</data>
+  <data key="d1">data</data>
+  <data key="d2">预示潜在风险的警示性信息。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238429</data>
+  <data key="d6"></data>
+</node>
+<node id="可疑交易模式">
+  <data key="d0">可疑交易模式</data>
+  <data key="d1">data</data>
+  <data key="d2">可能涉及洗钱或欺诈的交易行为特征。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238429</data>
+  <data key="d6"></data>
+</node>
+<node id="可疑活动报告">
+  <data key="d0">可疑活动报告</data>
+  <data key="d1">artifact</data>
+  <data key="d2">金融机构向监管机构提交的可疑活动报告文档。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238429</data>
+  <data key="d6"></data>
+</node>
+<node id="反洗钱">
+  <data key="d0">反洗钱</data>
+  <data key="d1">concept</data>
+  <data key="d2">防止通过金融系统进行洗钱活动的合规要求。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238430</data>
+  <data key="d6"></data>
+</node>
+<node id="欺诈检测">
+  <data key="d0">欺诈检测</data>
+  <data key="d1">method</data>
+  <data key="d2">识别和预防欺诈行为的技术方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238430</data>
+  <data key="d6"></data>
+</node>
+<node id="LLM选型">
+  <data key="d0">LLM选型</data>
+  <data key="d1">method</data>
+  <data key="d2">选择适合业务需求的大型语言模型的过程。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238430</data>
+  <data key="d6"></data>
+</node>
+<node id="企业级应用">
+  <data key="d0">企业级应用</data>
+  <data key="d1">concept</data>
+  <data key="d2">在企业环境中部署和使用LLM的应用场景。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238430</data>
+  <data key="d6"></data>
+</node>
+<node id="提示词设计">
+  <data key="d0">提示词设计</data>
+  <data key="d1">method</data>
+  <data key="d2">设计和优化提示词的技术方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238430</data>
+  <data key="d6"></data>
+</node>
+<node id="CoT">
+  <data key="d0">CoT</data>
+  <data key="d1">method</data>
+  <data key="d2">思维链提示技巧，通过分步推理提升模型表现。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238431</data>
+  <data key="d6"></data>
+</node>
+<node id="Few-shot">
+  <data key="d0">Few-shot</data>
+  <data key="d1">method</data>
+  <data key="d2">少样本学习提示技巧，通过提供示例引导模型。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238431</data>
+  <data key="d6"></data>
+</node>
+<node id="提示词库">
+  <data key="d0">提示词库</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储和管理优质提示词的资源库。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238431</data>
+  <data key="d6"></data>
+</node>
+<node id="版本控制">
+  <data key="d0">版本控制</data>
+  <data key="d1">method</data>
+  <data key="d2">管理提示词不同版本的技术方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238432</data>
+  <data key="d6"></data>
+</node>
+<node id="输出质量评估">
+  <data key="d0">输出质量评估</data>
+  <data key="d1">method</data>
+  <data key="d2">评估模型生成内容质量的方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238432</data>
+  <data key="d6"></data>
+</node>
+<node id="负责任的AI">
+  <data key="d0">负责任的AI</data>
+  <data key="d1">concept</data>
+  <data key="d2">确保人工智能应用符合伦理和社会责任的理念。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238432</data>
+  <data key="d6"></data>
+</node>
+<node id="偏见缓解">
+  <data key="d0">偏见缓解</data>
+  <data key="d1">method</data>
+  <data key="d2">减少模型输出中偏见的技术方法。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238433</data>
+  <data key="d6"></data>
+</node>
+<node id="隐私保护">
+  <data key="d0">隐私保护</data>
+  <data key="d1">concept</data>
+  <data key="d2">在AI应用中保护用户隐私数据的原则。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238433</data>
+  <data key="d6"></data>
+</node>
+<node id="透明度">
+  <data key="d0">透明度</data>
+  <data key="d1">concept</data>
+  <data key="d2">AI系统决策过程的可解释性和公开性。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238433</data>
+  <data key="d6"></data>
+</node>
+<node id="可解释性">
+  <data key="d0">可解释性</data>
+  <data key="d1">concept</data>
+  <data key="d2">理解AI模型决策逻辑的能力。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238434</data>
+  <data key="d6"></data>
+</node>
+<node id="领域专用模型">
+  <data key="d0">领域专用模型</data>
+  <data key="d1">concept</data>
+  <data key="d2">针对特定行业领域优化的专业模型。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238434</data>
+  <data key="d6"></data>
+</node>
+<node id="个性化">
+  <data key="d0">个性化</data>
+  <data key="d1">concept</data>
+  <data key="d2">根据用户特征提供定制化服务的能力。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238434</data>
+  <data key="d6"></data>
+</node>
+<node id="自适应学习">
+  <data key="d0">自适应学习</data>
+  <data key="d1">concept</data>
+  <data key="d2">系统根据反馈自动调整和优化的能力。</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238434</data>
+  <data key="d6"></data>
+</node>
+<node id="反馈">
+  <data key="d0">反馈</data>
+  <data key="d1">data</data>
+  <data key="d2">反馈是需要收集的信息，用于评估和改进。</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238435</data>
+  <data key="d6"></data>
+</node>
+<node id="延伸阅读材料">
+  <data key="d0">延伸阅读材料</data>
+  <data key="d1">content</data>
+  <data key="d2">延伸阅读材料是提供给学习者的额外学习资源。</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238435</data>
+  <data key="d6"></data>
+</node>
+<node id="工具链接">
+  <data key="d0">工具链接</data>
+  <data key="d1">artifact</data>
+  <data key="d2">工具链接是指向实用工具的网址或资源。</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238435</data>
+  <data key="d6"></data>
+</node>
+<node id="社区资源">
+  <data key="d0">社区资源</data>
+  <data key="d1">content</data>
+  <data key="d2">社区资源是可供学习者交流和学习的平台或资料。</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238436</data>
+  <data key="d6"></data>
+</node>
+<node id="估与后续资源">
+  <data key="d0">估与后续资源</data>
+  <data key="d1">concept</data>
+  <data key="d2">估与后续资源是一个过程概念，包括评估和提供后续支持。</data>
+  <data key="d3">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238436</data>
+  <data key="d6"></data>
+</node>
+<node id="LLM as a Service">
+  <data key="d0">LLM as a Service</data>
+  <data key="d1">concept</data>
+  <data key="d2">一种服务模式，各大云平台提供托管式大语言模型服务，具有易扩展和集成生态的优点。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238436</data>
+  <data key="d6"></data>
+</node>
+<node id="企业级LLM接入与部署策略">
+  <data key="d0">企业级LLM接入与部署策略</data>
+  <data key="d1">concept</data>
+  <data key="d2">企业选择大语言模型接入和部署方式的策略，涉及私有化部署与云服务的对比。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238436</data>
+  <data key="d6"></data>
+</node>
+<node id="决策树">
+  <data key="d0">决策树</data>
+  <data key="d1">method</data>
+  <data key="d2">一个简单的决策框架，帮助企业根据自身情况选择大语言模型部署方式。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238437</data>
+  <data key="d6"></data>
+</node>
+<node id="案例研究">
+  <data key="d0">案例研究</data>
+  <data key="d1">content</data>
+  <data key="d2">分析某证券公司选择私有化部署的动因和挑战的实际案例。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238437</data>
+  <data key="d6"></data>
+</node>
+<node id="安全访问与身份认证">
+  <data key="d0">安全访问与身份认证</data>
+  <data key="d1">concept</data>
+  <data key="d2">确保大语言模型服务安全访问和身份验证的措施。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238437</data>
+  <data key="d6"></data>
+</node>
+<node id="API密钥管理">
+  <data key="d0">API密钥管理</data>
+  <data key="d1">method</data>
+  <data key="d2">管理API密钥的最佳实践。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238438</data>
+  <data key="d6"></data>
+</node>
+<node id="身份认证与授权">
+  <data key="d0">身份认证与授权</data>
+  <data key="d1">method</data>
+  <data key="d2">使用IAM、OAuth等技术进行身份验证和授权。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238438</data>
+  <data key="d6"></data>
+</node>
+<node id="网络隔离">
+  <data key="d0">网络隔离</data>
+  <data key="d1">method</data>
+  <data key="d2">通过VPC、Private Link等技术实现网络隔离。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238438</data>
+  <data key="d6"></data>
+</node>
+<node id="数据保护与敏感信息处理">
+  <data key="d0">数据保护与敏感信息处理</data>
+  <data key="d1">concept</data>
+  <data key="d2">保护数据和处理敏感信息的技术和方法。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238439</data>
+  <data key="d6"></data>
+</node>
+<node id="数据脱敏技术">
+  <data key="d0">数据脱敏技术</data>
+  <data key="d1">method</data>
+  <data key="d2">包括假名化、匿名化等技术，用于保护敏感数据。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238440</data>
+  <data key="d6"></data>
+</node>
+<node id="PII">
+  <data key="d0">PII</data>
+  <data key="d1">concept</data>
+  <data key="d2">个人身份信息，需要检测与过滤。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238440</data>
+  <data key="d6"></data>
+</node>
+<node id="输入/输出内容监控与审计">
+  <data key="d0">输入/输出内容监控与审计</data>
+  <data key="d1">method</data>
+  <data key="d2">对大语言模型输入和输出内容进行监控和审计。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238440</data>
+  <data key="d6"></data>
+</node>
+<node id="LLM应用开发平台与工具">
+  <data key="d0">LLM应用开发平台与工具</data>
+  <data key="d1">concept</data>
+  <data key="d2">用于开发大语言模型应用的平台和工具。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238441</data>
+  <data key="d6"></data>
+</node>
+<node id="低代码/无代码平台">
+  <data key="d0">低代码/无代码平台</data>
+  <data key="d1">platform</data>
+  <data key="d2">集成大语言模型能力的平台，如Zapier、Make、Coze等。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238441</data>
+  <data key="d6"></data>
+</node>
+<node id="Zapier">
+  <data key="d0">Zapier</data>
+  <data key="d1">platform</data>
+  <data key="d2">一个集成LLM能力的低代码/无代码平台。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238441</data>
+  <data key="d6"></data>
+</node>
+<node id="Make">
+  <data key="d0">Make</data>
+  <data key="d1">platform</data>
+  <data key="d2">一个集成LLM能力的低代码/无代码平台。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238442</data>
+  <data key="d6"></data>
+</node>
+<node id="Hand Holding Fanned-Out 500-rupee Indian Banknotes (image)">
+  <data key="d0">Hand Holding Fanned-Out 500-rupee Indian Banknotes (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image shows multiple 500-rupee Indian banknotes being fanned out in one hand, likely indicating travel or currency preparation. The visual directly connects to the surrounding context of an international journey and references to Indian currency and travel activities.</data>
+  <data key="d3">chunk-f1300e9d16fd6f275d6436c3fd0206fe</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238449</data>
+</node>
+<node id="Coze">
+  <data key="d0">Coze</data>
+  <data key="d1">platform</data>
+  <data key="d2">一个集成LLM能力的低代码/无代码平台。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238449</data>
+  <data key="d6"></data>
+</node>
+<node id="应用开发框架">
+  <data key="d0">应用开发框架</data>
+  <data key="d1">concept</data>
+  <data key="d2">用于构建复杂大语言模型应用的框架。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238450</data>
+  <data key="d6"></data>
+</node>
+<node id="LangChain">
+  <data key="d0">LangChain</data>
+  <data key="d1">framework</data>
+  <data key="d2">一个用于构建大语言模型应用的开源框架。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238450</data>
+  <data key="d6"></data>
+</node>
+<node id="LlamaIndex">
+  <data key="d0">LlamaIndex</data>
+  <data key="d1">framework</data>
+  <data key="d2">一个用于构建大语言模型应用的开源框架。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238451</data>
+  <data key="d6"></data>
+</node>
+<node id="知识库与LLM结合">
+  <data key="d0">知识库与LLM结合</data>
+  <data key="d1">concept</data>
+  <data key="d2">将知识库与大语言模型结合的技术，如RAG。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238451</data>
+  <data key="d6"></data>
+</node>
+<node id="Prompt">
+  <data key="d0">Prompt</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词，用于指导大语言模型执行任务的输入指令。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238451</data>
+  <data key="d6"></data>
+</node>
+<node id="CRISP框架">
+  <data key="d0">CRISP框架</data>
+  <data key="d1">framework</data>
+  <data key="d2">一种结构化提示词设计框架。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238452</data>
+  <data key="d6"></data>
+</node>
+<node id="RCIOS框架">
+  <data key="d0">RCIOS框架</data>
+  <data key="d1">framework</data>
+  <data key="d2">一种结构化提示词设计框架。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238452</data>
+  <data key="d6"></data>
+</node>
+<node id="任务分解">
+  <data key="d0">任务分解</data>
+  <data key="d1">method</data>
+  <data key="d2">将复杂任务拆解为子任务的提示词技巧。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238454</data>
+  <data key="d6"></data>
+</node>
+<node id="思维链提示">
+  <data key="d0">思维链提示</data>
+  <data key="d1">method</data>
+  <data key="d2">通过提供推理过程示例引导大语言模型模仿的提示词技巧。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238454</data>
+  <data key="d6"></data>
+</node>
+<node id="少量示例学习">
+  <data key="d0">少量示例学习</data>
+  <data key="d1">method</data>
+  <data key="d2">在提示词中提供少量输入/输出范例以引导大语言模型学习的方法。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238454</data>
+  <data key="d6"></data>
+</node>
+<node id="零示例学习">
+  <data key="d0">零示例学习</data>
+  <data key="d1">method</data>
+  <data key="d2">依靠大语言模型泛化能力直接执行任务的方法。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238455</data>
+  <data key="d6"></data>
+</node>
+<node id="迭代优化">
+  <data key="d0">迭代优化</data>
+  <data key="d1">method</data>
+  <data key="d2">通过测试、分析输出、修改提示词循环优化提示词的过程。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238455</data>
+  <data key="d6"></data>
+</node>
+<node id="邮件内容摘要应用">
+  <data key="d0">邮件内容摘要应用</data>
+  <data key="d1">artifact</data>
+  <data key="d2">通过无代码平台快速搭建的一个具体应用示例，用于生成邮件内容摘要。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238456</data>
+  <data key="d6"></data>
+</node>
+<node id="内部合规文档库">
+  <data key="d0">内部合规文档库</data>
+  <data key="d1">data</data>
+  <data key="d2">企业内部的合规文档集合，可作为RAG系统的知识库来源。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238456</data>
+  <data key="d6"></data>
+</node>
+<node id="智能问答系统">
+  <data key="d0">智能问答系统</data>
+  <data key="d1">artifact</data>
+  <data key="d2">基于内部合规文档库构建的问答系统，利用RAG技术实现智能问答。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238456</data>
+  <data key="d6"></data>
+</node>
+<node id="模块三：提示词工程核心原理与技巧">
+  <data key="d0">模块三：提示词工程核心原理与技巧</data>
+  <data key="d1">content</data>
+  <data key="d2">培训课程的一个模块，专门讲解提示词工程的核心原理和技巧。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238464</data>
+  <data key="d6"></data>
+</node>
+<node id="模块四：金融场景提示词工程实战应用">
+  <data key="d0">模块四：金融场景提示词工程实战应用</data>
+  <data key="d1">content</data>
+  <data key="d2">培训课程的一个模块，专注于金融场景下提示词工程的实际应用。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238464</data>
+  <data key="d6"></data>
+</node>
+<node id="金融分析与研究报告类">
+  <data key="d0">金融分析与研究报告类</data>
+  <data key="d1">content</data>
+  <data key="d2">金融场景中提示词工程应用的一个具体类别，涉及分析和研究报告的生成。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238464</data>
+  <data key="d6"></data>
+</node>
+<node id="Garbage In, Garbage Out">
+  <data key="d0">Garbage In, Garbage Out</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词工程中的基本原则，强调输入质量对输出结果的重要性。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238465</data>
+  <data key="d6"></data>
+</node>
+<node id="清晰性">
+  <data key="d0">清晰性</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的基本原则之一，要求提示词表达清晰明确。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238465</data>
+  <data key="d6"></data>
+</node>
+<node id="具体性">
+  <data key="d0">具体性</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的基本原则之一，要求提示词内容具体详细。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238465</data>
+  <data key="d6"></data>
+</node>
+<node id="上下文">
+  <data key="d0">上下文</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的基本原则之一，要求提供充分的背景信息。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238466</data>
+  <data key="d6"></data>
+</node>
+<node id="简洁性">
+  <data key="d0">简洁性</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的基本原则之一，要求提示词简洁明了。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238466</data>
+  <data key="d6"></data>
+</node>
+<node id="角色">
+  <data key="d0">角色</data>
+  <data key="d1">concept</data>
+  <data key="d2">结构化提示词设计的核心要素之一，用于定义模型扮演的角色。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238467</data>
+  <data key="d6"></data>
+</node>
+<node id="指令">
+  <data key="d0">指令</data>
+  <data key="d1">concept</data>
+  <data key="d2">结构化提示词设计的核心要素之一，明确要求模型执行的具体任务。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238467</data>
+  <data key="d6"></data>
+</node>
+<node id="背景">
+  <data key="d0">背景</data>
+  <data key="d1">concept</data>
+  <data key="d2">结构化提示词设计的核心要素之一，提供任务执行所需的背景信息。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238468</data>
+  <data key="d6"></data>
+</node>
+<node id="输出格式">
+  <data key="d0">输出格式</data>
+  <data key="d1">concept</data>
+  <data key="d2">结构化提示词设计的核心要素之一，指定模型输出结果的格式要求。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238468</data>
+  <data key="d6"></data>
+</node>
+<node id="语气">
+  <data key="d0">语气</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的补充要素，定义输出内容的语气风格。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238469</data>
+  <data key="d6"></data>
+</node>
+<node id="目标受众">
+  <data key="d0">目标受众</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的补充要素，明确输出内容的目标读者群体。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238469</data>
+  <data key="d6"></data>
+</node>
+<node id="约束条件">
+  <data key="d0">约束条件</data>
+  <data key="d1">concept</data>
+  <data key="d2">提示词设计的补充要素，设定模型输出时的限制条件。</data>
+  <data key="d3">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238469</data>
+  <data key="d6"></data>
+</node>
+<node id="中文理解">
+  <data key="d0">中文理解</data>
+  <data key="d3">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d2">文心一言在中文理解方面具有优势。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238472</data>
+  <data key="d6"></data>
+</node>
+<node id="Group Photo at Dhamek Stupa, Sarnath, India (image)">
+  <data key="d0">Group Photo at Dhamek Stupa, Sarnath, India (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">Group photo taken at Dhamek Stupa in Sarnath, India during a travel/study vlog. Shows vibrant local attire, intercultural engagement, and overlays key cities and dates from an India travel diary (2023.12.27-2024.01.10).</data>
+  <data key="d3">chunk-5673d1496e0ddfd21e1197f3c54ef322</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238486</data>
+</node>
+<node id="沟通文案生成">
+  <data key="d0">沟通文案生成</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d2">沟通文案生成包括生成标准化的客户通知。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238515</data>
+  <data key="d6"></data>
+</node>
+<node id="文档合规性检查">
+  <data key="d0">文档合规性检查</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d2">文档合规性检查需要对比合同条款与合规要求。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238517</data>
+  <data key="d6"></data>
+</node>
+<node id="风险事件识别">
+  <data key="d0">风险事件识别</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d2">风险事件识别需要从新闻中监测风险信号。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238520</data>
+  <data key="d6"></data>
+</node>
+<node id="提示词管理">
+  <data key="d0">提示词管理</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d2">建立提示词库是提示词管理的重要实践。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238525</data>
+  <data key="d6"></data>
+</node>
+<node id="质量保障">
+  <data key="d0">质量保障</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d2">持续监控和评估模型输出质量是重要实践。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238526</data>
+  <data key="d6"></data>
+</node>
+<node id="未来趋势">
+  <data key="d0">未来趋势</data>
+  <data key="d3">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d2">多模态能力是LLM技术的重要发展方向。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">llm_course.pdf</data>
+  <data key="d5">1764238529</data>
+  <data key="d6"></data>
+</node>
+<node id="Air Asia">
+  <data key="d0">Air Asia</data>
+  <data key="d1">organization</data>
+  <data key="d2">航空公司名称</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="MAHATMA GANDHI">
+  <data key="d0">MAHATMA GANDHI</data>
+  <data key="d1">person</data>
+  <data key="d2">人物姓名，可能指圣雄甘地</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="MAHATHA GANOHI">
+  <data key="d0">MAHATHA GANOHI</data>
+  <data key="d1">person</data>
+  <data key="d2">人物姓名，可能是MAHATMA GANDHI的变体拼写</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="MAHATNA GANOHI">
+  <data key="d0">MAHATNA GANOHI</data>
+  <data key="d1">person</data>
+  <data key="d2">人物姓名，可能是MAHATMA GANDHI的变体拼写</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="RESERVE BANK OF INDIA">
+  <data key="d0">RESERVE BANK OF INDIA</data>
+  <data key="d1">organization</data>
+  <data key="d2">印度储备银行，印度的中央银行</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="DECERVE BANK OF INDIA">
+  <data key="d0">DECERVE BANK OF INDIA</data>
+  <data key="d1">organization</data>
+  <data key="d2">可能是RESERVE BANK OF INDIA的拼写错误</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="MALIK OF INDIA">
+  <data key="d0">MALIK OF INDIA</data>
+  <data key="d1">organization</data>
+  <data key="d2">可能是RESERVE BANK OF INDIA的变体</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="CENTRAL GOVERNMENT">
+  <data key="d0">CENTRAL GOVERNMENT</data>
+  <data key="d1">organization</data>
+  <data key="d2">中央政府，文中提到由中央政府担保</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="2023.12.27-2024.01.10">
+  <data key="d0">2023.12.27-2024.01.10</data>
+  <data key="d1">event</data>
+  <data key="d2">时间期间，从2023年12月27日到2024年1月10日</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238599</data>
+  <data key="d6"></data>
+</node>
+<node id="wear airch">
+  <data key="d0">wear airch</data>
+  <data key="d1">other</data>
+  <data key="d2">文本中出现的短语，具体含义不明</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238600</data>
+  <data key="d6"></data>
+</node>
+<node id="7400">
+  <data key="d0">7400</data>
+  <data key="d1">data</data>
+  <data key="d2">数字数据</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238600</data>
+  <data key="d6"></data>
+</node>
+<node id="R 500">
+  <data key="d0">R 500</data>
+  <data key="d1">data</data>
+  <data key="d2">金额数据，可能表示500卢比</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238601</data>
+  <data key="d6"></data>
+</node>
+<node id="298169">
+  <data key="d0">298169</data>
+  <data key="d1">data</data>
+  <data key="d2">数字数据</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238601</data>
+  <data key="d6"></data>
+</node>
+<node id="999">
+  <data key="d0">999</data>
+  <data key="d1">data</data>
+  <data key="d2">数字数据</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238601</data>
+  <data key="d6"></data>
+</node>
+<node id="IN CA">
+  <data key="d0">IN CA</data>
+  <data key="d1">location</data>
+  <data key="d2">地点缩写，可能指印度或加利福尼亚</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238602</data>
+  <data key="d6"></data>
+</node>
+<node id="28805">
+  <data key="d0">28805</data>
+  <data key="d1">data</data>
+  <data key="d2">数字数据</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238602</data>
+  <data key="d6"></data>
+</node>
+<node id="005 €">
+  <data key="d0">005 €</data>
+  <data key="d1">data</data>
+  <data key="d2">金额数据，5欧元</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238603</data>
+  <data key="d6"></data>
+</node>
+<node id="1500">
+  <data key="d0">1500</data>
+  <data key="d1">data</data>
+  <data key="d2">数字数据</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238603</data>
+  <data key="d6"></data>
+</node>
+<node id="1900">
+  <data key="d0">1900</data>
+  <data key="d1">data</data>
+  <data key="d2">数字数据</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238603</data>
+  <data key="d6"></data>
+</node>
+<node id="4УK0128805">
+  <data key="d0">4УK0128805</data>
+  <data key="d1">data</data>
+  <data key="d2">编码或序列号</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238604</data>
+  <data key="d6"></data>
+</node>
+<node id="VAH 855123">
+  <data key="d0">VAH 855123</data>
+  <data key="d1">data</data>
+  <data key="d2">编码或序列号</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238604</data>
+  <data key="d6"></data>
+</node>
+<node id="VlogJ">
+  <data key="d0">VlogJ</data>
+  <data key="d1">content</data>
+  <data key="d2">视频博客相关内容</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238604</data>
+  <data key="d6"></data>
+</node>
+<node id="我们出去旅行了">
+  <data key="d0">我们出去旅行了</data>
+  <data key="d1">event</data>
+  <data key="d2">旅行活动</data>
+  <data key="d3">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d4">旅行日记2.pdf</data>
+  <data key="d5">1764238604</data>
+  <data key="d6"></data>
+</node>
+<edge source="大型语言模型(LLM)" target="提示词工程">
+  <data key="d7">1.0</data>
+  <data key="d8">提示词工程是有效使用大型语言模型的核心技术和方法。</data>
+  <data key="d9">应用方法,核心技术</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238472</data>
+  <data key="d13"></data>
+</edge>
+<edge source="大型语言模型(LLM)" target="工具使用">
+  <data key="d7">1.0</data>
+  <data key="d8">工具使用是LLM的重要能力之一，使其能够调用外部API和执行特定任务。</data>
+  <data key="d9">功能扩展,外部集成</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238474</data>
+  <data key="d13"></data>
+</edge>
+<edge source="大型语言模型(LLM)" target="代码能力">
+  <data key="d7">1.0</data>
+  <data key="d8">代码能力是LLM的核心能力维度之一，包括代码生成、解释和调试。</data>
+  <data key="d9">专业技能,开发支持</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238477</data>
+  <data key="d13"></data>
+</edge>
+<edge source="大型语言模型(LLM)" target="API调用">
+  <data key="d7">1.0</data>
+  <data key="d8">API调用是使用大型语言模型的主要方式之一。</data>
+  <data key="d9">使用方式,技术集成</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238488</data>
+  <data key="d13"></data>
+</edge>
+<edge source="大型语言模型(LLM)" target="金融行业">
+  <data key="d7">1.0</data>
+  <data key="d8">本次培训专门针对金融行业人员开展大型语言模型应用培训。</data>
+  <data key="d9">技术培训,行业应用</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238502</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="Prompt">
+  <data key="d7">1.0</data>
+  <data key="d8">Prompt是提示词工程的核心概念和基础要素。</data>
+  <data key="d9">基础要素,核心概念</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238546</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="CRISP框架">
+  <data key="d7">1.0</data>
+  <data key="d8">CRISP框架是提示词工程中用于结构化设计提示词的方法。</data>
+  <data key="d9">结构化方法,设计框架</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238548</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="RCIOS框架">
+  <data key="d7">1.0</data>
+  <data key="d8">RCIOS框架是提示词工程中用于结构化设计提示词的方法。</data>
+  <data key="d9">结构化方法,设计框架</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238550</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="任务分解">
+  <data key="d7">1.0</data>
+  <data key="d8">任务分解是提示词工程中的一种实用技巧。</data>
+  <data key="d9">实用技巧,方法应用</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238551</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="思维链提示">
+  <data key="d7">1.0</data>
+  <data key="d8">思维链提示是提示词工程中的一种高级提示技巧。</data>
+  <data key="d9">实用技巧,方法应用</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238553</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="少量示例学习">
+  <data key="d7">1.0</data>
+  <data key="d8">少量示例学习是提示词工程中的一种学习方法。</data>
+  <data key="d9">学习方法,技巧应用</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238554</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="零示例学习">
+  <data key="d7">1.0</data>
+  <data key="d8">零示例学习是提示词工程中的一种学习方法。</data>
+  <data key="d9">学习方法,技巧应用</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238555</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="迭代优化">
+  <data key="d7">1.0</data>
+  <data key="d8">迭代优化是提示词工程中优化提示词效果的重要过程。</data>
+  <data key="d9">优化过程,方法应用</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238556</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="模块三：提示词工程核心原理与技巧">
+  <data key="d7">1.0</data>
+  <data key="d8">模块三专门讲解提示词工程的核心原理与技巧。</data>
+  <data key="d9">知识体系,课程内容</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238557</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="模块四：金融场景提示词工程实战应用">
+  <data key="d7">1.0</data>
+  <data key="d8">模块四专注于提示词工程在金融场景的实战应用。</data>
+  <data key="d9">实战应用,课程内容</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238558</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="Garbage In, Garbage Out">
+  <data key="d7">1.0</data>
+  <data key="d8">Garbage In, Garbage Out是提示词工程中的重要基本原则。</data>
+  <data key="d9">基本原则,质量理念</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238559</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="清晰性">
+  <data key="d7">1.0</data>
+  <data key="d8">清晰性是提示词工程设计的基本原则之一。</data>
+  <data key="d9">设计原则,质量要求</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238560</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="具体性">
+  <data key="d7">1.0</data>
+  <data key="d8">具体性是提示词工程设计的基本原则之一。</data>
+  <data key="d9">设计原则,质量要求</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238561</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="上下文">
+  <data key="d7">1.0</data>
+  <data key="d8">上下文是提示词工程设计的基本原则之一。</data>
+  <data key="d9">设计原则,质量要求</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238562</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词工程" target="简洁性">
+  <data key="d7">1.0</data>
+  <data key="d8">简洁性是提示词工程设计的基本原则之一。</data>
+  <data key="d9">设计原则,质量要求</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238563</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DeepSeek" target="开源LLM">
+  <data key="d7">1.0</data>
+  <data key="d8">DeepSeek是开源大型语言模型的代表产品。</data>
+  <data key="d9">产品类型,技术特点</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238472</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ChatGPT" target="闭源LLM">
+  <data key="d7">1.0</data>
+  <data key="d8">ChatGPT是闭源大型语言模型的代表产品。</data>
+  <data key="d9">产品类型,商业模式</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238472</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Gemini" target="多模态能力">
+  <data key="d7">1.0</data>
+  <data key="d8">Gemini具有突出的多模态处理能力。</data>
+  <data key="d9">功能特性,技术优势</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238472</data>
+  <data key="d13"></data>
+</edge>
+<edge source="文心一言" target="中文理解">
+  <data key="d7">1.0</data>
+  <data key="d8">文心一言在中文理解方面具有优势。</data>
+  <data key="d9">区域优势,语言能力</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238475</data>
+  <data key="d13"></data>
+</edge>
+<edge source="开源LLM" target="闭源LLM">
+  <data key="d7">1.0</data>
+  <data key="d8">开源LLM和闭源LLM在成本、定制化、数据隐私等方面存在核心差异。</data>
+  <data key="d9">商业模式,技术对比</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238475</data>
+  <data key="d13"></data>
+</edge>
+<edge source="开源LLM" target="金融科技公司">
+  <data key="d7">1.0</data>
+  <data key="d8">金融科技公司可能选择基于开源模型微调的方案。</data>
+  <data key="d9">企业选择,技术方案</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238487</data>
+  <data key="d13"></data>
+</edge>
+<edge source="闭源LLM" target="大型银行">
+  <data key="d7">1.0</data>
+  <data key="d8">大型银行可能选择使用闭源模型API的方案。</data>
+  <data key="d9">企业选择,技术方案</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238488</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多模态能力" target="未来趋势">
+  <data key="d7">1.0</data>
+  <data key="d8">多模态能力是LLM技术的重要发展方向。</data>
+  <data key="d9">技术发展,能力扩展</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238531</data>
+  <data key="d13"></data>
+</edge>
+<edge source="工具使用" target="Function Calling">
+  <data key="d7">1.0</data>
+  <data key="d8">工具使用通过Function Calling机制实现。</data>
+  <data key="d9">功能支持,机制实现</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238490</data>
+  <data key="d13"></data>
+</edge>
+<edge source="工具使用" target="Tool Use">
+  <data key="d7">1.0</data>
+  <data key="d8">工具使用通过Tool Use机制实现。</data>
+  <data key="d9">功能支持,机制实现</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238503</data>
+  <data key="d13"></data>
+</edge>
+<edge source="合规性" target="GDPR">
+  <data key="d7">1.0</data>
+  <data key="d8">合规性要求包括满足GDPR等数据保护法规。</data>
+  <data key="d9">法律合规,监管要求</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238491</data>
+  <data key="d13"></data>
+</edge>
+<edge source="合规性" target="CCPA">
+  <data key="d7">1.0</data>
+  <data key="d8">合规性要求包括满足CCPA等数据保护法规。</data>
+  <data key="d9">法律合规,监管要求</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238503</data>
+  <data key="d13"></data>
+</edge>
+<edge source="合规性" target="数据隐私保护">
+  <data key="d7">1.0</data>
+  <data key="d8">数据隐私保护是满足合规性要求的重要措施。</data>
+  <data key="d9">安全措施,监管要求</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238506</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API调用" target="RESTful API">
+  <data key="d7">1.0</data>
+  <data key="d8">API调用基于RESTful API技术实现。</data>
+  <data key="d9">协议基础,技术实现</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238492</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AWS Bedrock" target="云服务">
+  <data key="d7">1.0</data>
+  <data key="d8">AWS Bedrock是提供LLM服务的云平台。</data>
+  <data key="d9">服务平台,部署模式</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238474</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AWS Bedrock" target="LLM as a Service">
+  <data key="d7">1.0</data>
+  <data key="d8">AWS Bedrock是LLM as a Service的一种实现，提供托管式大语言模型服务。</data>
+  <data key="d9">云服务,托管服务</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238533</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Azure OpenAI Service" target="云服务">
+  <data key="d7">1.0</data>
+  <data key="d8">Azure OpenAI Service是微软提供的LLM云服务。</data>
+  <data key="d9">服务平台,部署模式</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238477</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Azure OpenAI Service" target="LLM as a Service">
+  <data key="d7">1.0</data>
+  <data key="d8">Azure OpenAI Service是LLM as a Service的一种实现，提供托管式大语言模型服务。</data>
+  <data key="d9">云服务,托管服务</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238536</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Google Vertex AI" target="云服务">
+  <data key="d7">1.0</data>
+  <data key="d8">Google Vertex AI是谷歌提供的AI云服务平台，包含LLM服务。</data>
+  <data key="d9">服务平台,部署模式</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238487</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Google Vertex AI" target="LLM as a Service">
+  <data key="d7">1.0</data>
+  <data key="d8">Google Vertex AI是LLM as a Service的一种实现，提供托管式大语言模型服务。</data>
+  <data key="d9">云服务,托管服务</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238538</data>
+  <data key="d13"></data>
+</edge>
+<edge source="私有化部署" target="云服务">
+  <data key="d7">1.0</data>
+  <data key="d8">私有化部署和云服务是企业级LLM接入的两种主要部署策略。</data>
+  <data key="d9">企业方案,部署策略</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238490</data>
+  <data key="d13"></data>
+</edge>
+<edge source="私有化部署" target="企业级LLM接入与部署策略">
+  <data key="d7">1.0</data>
+  <data key="d8">私有化部署是企业级LLM接入与部署策略中的一种可选方案。</data>
+  <data key="d9">策略对比,部署方式</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238535</data>
+  <data key="d13"></data>
+</edge>
+<edge source="云服务" target="企业级LLM接入与部署策略">
+  <data key="d7">1.0</data>
+  <data key="d8">云服务是企业级LLM接入与部署策略中的一种可选方案。</data>
+  <data key="d9">策略对比,部署方式</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238537</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融行业" target="产品经理">
+  <data key="d7">1.0</data>
+  <data key="d8">产品经理是金融行业中参与培训的目标学员角色。</data>
+  <data key="d9">职业角色,行业归属</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238486</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融行业" target="技术开发者">
+  <data key="d7">1.0</data>
+  <data key="d8">技术开发者是金融行业中参与培训的目标学员角色。</data>
+  <data key="d9">职业角色,行业归属</data>
+  <data key="d10">chunk-6c9699f6be450b7bab348fd80cc8c912</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238490</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词" target="大型语言模型">
+  <data key="d7">1.0</data>
+  <data key="d8">提示词用于指导和优化大型语言模型的输出结果。</data>
+  <data key="d9">指令引导,输出控制</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238502</data>
+  <data key="d13"></data>
+</edge>
+<edge source="大型语言模型" target="AI Agents">
+  <data key="d7">1.0</data>
+  <data key="d8">AI Agents代表大型语言模型技术向自主任务执行方向的发展趋势。</data>
+  <data key="d9">技术演进,能力扩展</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238506</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融分析与研究报告" target="市场动态分析">
+  <data key="d7">1.0</data>
+  <data key="d8">市场动态分析是金融分析与研究报告类应用的具体实践场景之一。</data>
+  <data key="d9">功能模块,应用场景</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238503</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融分析与研究报告" target="财务报告解读">
+  <data key="d7">1.0</data>
+  <data key="d8">财务报告解读是金融分析与研究报告类应用的核心组成部分。</data>
+  <data key="d9">功能模块,应用场景</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238506</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融分析与研究报告" target="投资研究与建议">
+  <data key="d7">1.0</data>
+  <data key="d8">投资研究与建议是金融分析与研究报告类应用的重要实践领域。</data>
+  <data key="d9">功能模块,应用场景</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238508</data>
+  <data key="d13"></data>
+</edge>
+<edge source="市场动态分析" target="宏观经济指标">
+  <data key="d7">1.0</data>
+  <data key="d8">市场动态分析需要提取和总结宏观经济指标信息。</data>
+  <data key="d9">信息提取,数据分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238506</data>
+  <data key="d13"></data>
+</edge>
+<edge source="市场动态分析" target="行业新闻">
+  <data key="d7">1.0</data>
+  <data key="d8">市场动态分析需要监控和分析行业新闻动态。</data>
+  <data key="d9">信息监控,趋势分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238509</data>
+  <data key="d13"></data>
+</edge>
+<edge source="市场动态分析" target="竞品动态">
+  <data key="d7">1.0</data>
+  <data key="d8">市场动态分析需要跟踪和分析竞争对手的动态。</data>
+  <data key="d9">市场监测,竞争分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238512</data>
+  <data key="d13"></data>
+</edge>
+<edge source="市场动态分析" target="财经新闻">
+  <data key="d7">1.0</data>
+  <data key="d8">市场动态分析从财经新闻中自动提取关键信息。</data>
+  <data key="d9">信息源,内容提取</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238513</data>
+  <data key="d13"></data>
+</edge>
+<edge source="财务报告解读" target="营收">
+  <data key="d7">1.0</data>
+  <data key="d8">财务报告解读需要提取和分析营收指标。</data>
+  <data key="d9">指标提取,财务分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238509</data>
+  <data key="d13"></data>
+</edge>
+<edge source="财务报告解读" target="利润">
+  <data key="d7">1.0</data>
+  <data key="d8">财务报告解读需要评估利润表现和盈利能力。</data>
+  <data key="d9">盈利分析,绩效评估</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="财务报告解读" target="增长率">
+  <data key="d7">1.0</data>
+  <data key="d8">财务报告解读需要分析各项增长率指标。</data>
+  <data key="d9">发展评估,趋势分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238513</data>
+  <data key="d13"></data>
+</edge>
+<edge source="财务报告解读" target="季度财报PDF">
+  <data key="d7">1.0</data>
+  <data key="d8">财务报告解读需要从季度财报PDF中提取关键信息。</data>
+  <data key="d9">信息提取,文档处理</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238515</data>
+  <data key="d13"></data>
+</edge>
+<edge source="投资研究与建议" target="投资逻辑">
+  <data key="d7">1.0</data>
+  <data key="d8">投资研究与建议需要构建结构化的投资逻辑框架。</data>
+  <data key="d9">决策支持,框架构建</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="投资研究与建议" target="风险评估">
+  <data key="d7">1.0</data>
+  <data key="d8">投资研究与建议需要进行全面的风险评估。</data>
+  <data key="d9">安全评估,风险识别</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238512</data>
+  <data key="d13"></data>
+</edge>
+<edge source="投资研究与建议" target="估值分析">
+  <data key="d7">1.0</data>
+  <data key="d8">投资研究与建议需要运用估值分析方法。</data>
+  <data key="d9">价值评估,定价分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="客户服务与沟通咨询" target="金融产品智能问答">
+  <data key="d7">1.0</data>
+  <data key="d8">金融产品智能问答是客户服务与沟通咨询类应用的具体实现方式。</data>
+  <data key="d9">功能模块,应用场景</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238505</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融产品智能问答" target="RAG">
+  <data key="d7">1.0</data>
+  <data key="d8">金融产品智能问答应用结合RAG技术来提升回答的准确性和可靠性。</data>
+  <data key="d9">技术支撑,效果增强</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238507</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融产品智能问答" target="产品说明书">
+  <data key="d7">1.0</data>
+  <data key="d8">金融产品智能问答基于产品说明书提供准确回答。</data>
+  <data key="d9">信息参考,知识源</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238512</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融产品智能问答" target="FAQ">
+  <data key="d7">1.0</data>
+  <data key="d8">金融产品智能问答参考FAQ文档回答常见问题。</data>
+  <data key="d9">标准答案,知识库</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融产品智能问答" target="虚拟客服助手">
+  <data key="d7">1.0</data>
+  <data key="d8">金融产品智能问答通过虚拟客服助手提供服务。</data>
+  <data key="d9">服务载体,系统实现</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238516</data>
+  <data key="d13"></data>
+</edge>
+<edge source="金融产品智能问答" target="银行业务咨询">
+  <data key="d7">1.0</data>
+  <data key="d8">金融产品智能问答处理各类银行业务咨询。</data>
+  <data key="d9">应用领域,服务范围</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238518</data>
+  <data key="d13"></data>
+</edge>
+<edge source="风险管理与合规审查" target="人机协同">
+  <data key="d7">1.0</data>
+  <data key="d8">风险管理与合规审查类应用强调人机协同原则以确保合规性和降低风险。</data>
+  <data key="d9">实施原则,风险控制</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238505</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAG" target="知识库与LLM结合">
+  <data key="d7">1.0</data>
+  <data key="d8">RAG是知识库与LLM结合的一种具体技术方法。</data>
+  <data key="d9">技术实现,方法应用</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238545</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAG" target="内部合规文档库">
+  <data key="d7">1.0</data>
+  <data key="d8">RAG技术可以基于内部合规文档库构建智能问答系统。</data>
+  <data key="d9">数据基础,知识来源</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238551</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAG" target="智能问答系统">
+  <data key="d7">1.0</data>
+  <data key="d8">RAG技术用于构建基于内部合规文档库的智能问答系统。</data>
+  <data key="d9">技术应用,系统构建</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238553</data>
+  <data key="d13"></data>
+</edge>
+<edge source="客户意图识别" target="问题分类">
+  <data key="d7">1.0</data>
+  <data key="d8">客户意图识别后需要进行问题分类以分配处理流程。</data>
+  <data key="d9">分析方法,处理流程</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="客户通知" target="沟通文案生成">
+  <data key="d7">1.0</data>
+  <data key="d8">沟通文案生成包括生成标准化的客户通知。</data>
+  <data key="d9">内容生成,文案类型</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238517</data>
+  <data key="d13"></data>
+</edge>
+<edge source="营销邮件" target="沟通文案生成">
+  <data key="d7">1.0</data>
+  <data key="d8">沟通文案生成包括生成营销邮件内容。</data>
+  <data key="d9">营销文案,邮件生成</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238519</data>
+  <data key="d13"></data>
+</edge>
+<edge source="投诉回复" target="沟通文案生成">
+  <data key="d7">1.0</data>
+  <data key="d8">沟通文案生成包括生成投诉回复初稿。</data>
+  <data key="d9">客服文案,问题处理</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238520</data>
+  <data key="d13"></data>
+</edge>
+<edge source="客户关怀邮件" target="沟通文案生成">
+  <data key="d7">1.0</data>
+  <data key="d8">沟通文案生成辅助撰写个性化的客户关怀邮件。</data>
+  <data key="d9">个性化服务,关系维护</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238522</data>
+  <data key="d13"></data>
+</edge>
+<edge source="合同条款" target="文档合规性检查">
+  <data key="d7">1.0</data>
+  <data key="d8">文档合规性检查需要对比合同条款与合规要求。</data>
+  <data key="d9">合规审查,条款比对</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238518</data>
+  <data key="d13"></data>
+</edge>
+<edge source="营销材料" target="文档合规性检查">
+  <data key="d7">1.0</data>
+  <data key="d8">文档合规性检查需要审查营销材料的合规性。</data>
+  <data key="d9">内容审查,合规评估</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238520</data>
+  <data key="d13"></data>
+</edge>
+<edge source="合规规则库" target="文档合规性检查">
+  <data key="d7">1.0</data>
+  <data key="d8">文档合规性检查基于合规规则库进行比对分析。</data>
+  <data key="d9">标准参考,规则比对</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238521</data>
+  <data key="d13"></data>
+</edge>
+<edge source="贷款申请材料" target="文档合规性检查">
+  <data key="d7">1.0</data>
+  <data key="d8">文档合规性检查用于审查贷款申请材料是否符合政策。</data>
+  <data key="d9">合规验证,文档审查</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238523</data>
+  <data key="d13"></data>
+</edge>
+<edge source="银行政策" target="文档合规性检查">
+  <data key="d7">1.0</data>
+  <data key="d8">文档合规性检查以银行政策为基准进行审查。</data>
+  <data key="d9">合规基准,标准依据</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238524</data>
+  <data key="d13"></data>
+</edge>
+<edge source="新闻" target="风险事件识别">
+  <data key="d7">1.0</data>
+  <data key="d8">风险事件识别需要从新闻中监测风险信号。</data>
+  <data key="d9">信息监测,风险预警</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238521</data>
+  <data key="d13"></data>
+</edge>
+<edge source="社交媒体" target="风险事件识别">
+  <data key="d7">1.0</data>
+  <data key="d8">风险事件识别需要监控社交媒体上的风险信息。</data>
+  <data key="d9">舆情监控,风险发现</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238522</data>
+  <data key="d13"></data>
+</edge>
+<edge source="监管公告" target="风险事件识别">
+  <data key="d7">1.0</data>
+  <data key="d8">风险事件识别需要关注监管公告中的风险提示。</data>
+  <data key="d9">合规监测,政策跟踪</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238524</data>
+  <data key="d13"></data>
+</edge>
+<edge source="负面信息" target="风险事件识别">
+  <data key="d7">1.0</data>
+  <data key="d8">风险事件识别需要识别与特定公司相关的负面信息。</data>
+  <data key="d9">预警指标,风险信号</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238525</data>
+  <data key="d13"></data>
+</edge>
+<edge source="风险信号" target="风险事件识别">
+  <data key="d7">1.0</data>
+  <data key="d8">风险事件识别旨在监测和识别各类风险信号。</data>
+  <data key="d9">监测目标,预警机制</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238527</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可疑交易模式" target="反洗钱">
+  <data key="d7">1.0</data>
+  <data key="d8">反洗钱应用需要总结可疑交易模式特征。</data>
+  <data key="d9">模式识别,行为分析</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238523</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可疑活动报告" target="反洗钱">
+  <data key="d7">1.0</data>
+  <data key="d8">反洗钱应用辅助生成可疑活动报告的文本内容。</data>
+  <data key="d9">合规报告,文档生成</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238525</data>
+  <data key="d13"></data>
+</edge>
+<edge source="反洗钱" target="欺诈检测">
+  <data key="d7">1.0</data>
+  <data key="d8">反洗钱与欺诈检测共同构成金融风控的重要环节。</data>
+  <data key="d9">安全防护,风险控制</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238526</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词设计" target="CoT">
+  <data key="d7">1.0</data>
+  <data key="d8">CoT是提示词设计中的重要技巧之一。</data>
+  <data key="d9">技巧应用,方法优化</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238524</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词设计" target="Few-shot">
+  <data key="d7">1.0</data>
+  <data key="d8">Few-shot是提示词设计中的关键技术。</data>
+  <data key="d9">学习方法,示例引导</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238526</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词库" target="提示词管理">
+  <data key="d7">1.0</data>
+  <data key="d8">建立提示词库是提示词管理的重要实践。</data>
+  <data key="d9">知识积累,资源管理</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238528</data>
+  <data key="d13"></data>
+</edge>
+<edge source="版本控制" target="提示词管理">
+  <data key="d7">1.0</data>
+  <data key="d8">版本控制是提示词管理的必要技术手段。</data>
+  <data key="d9">历史追踪,变更管理</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238530</data>
+  <data key="d13"></data>
+</edge>
+<edge source="输出质量评估" target="质量保障">
+  <data key="d7">1.0</data>
+  <data key="d8">持续监控和评估模型输出质量是重要实践。</data>
+  <data key="d9">性能监控,效果评估</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238528</data>
+  <data key="d13"></data>
+</edge>
+<edge source="负责任的AI" target="偏见缓解">
+  <data key="d7">1.0</data>
+  <data key="d8">偏见缓解是负责任的AI的核心要求之一。</data>
+  <data key="d9">伦理原则,公平性</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238526</data>
+  <data key="d13"></data>
+</edge>
+<edge source="负责任的AI" target="隐私保护">
+  <data key="d7">1.0</data>
+  <data key="d8">隐私保护是负责任的AI的基本原则。</data>
+  <data key="d9">数据安全,用户权益</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238529</data>
+  <data key="d13"></data>
+</edge>
+<edge source="负责任的AI" target="透明度">
+  <data key="d7">1.0</data>
+  <data key="d8">透明度是负责任的AI的重要特征。</data>
+  <data key="d9">决策公开,系统可信</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238531</data>
+  <data key="d13"></data>
+</edge>
+<edge source="负责任的AI" target="可解释性">
+  <data key="d7">1.0</data>
+  <data key="d8">可解释性有助于建立对AI系统的信任。</data>
+  <data key="d9">信任建立,理解能力</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238533</data>
+  <data key="d13"></data>
+</edge>
+<edge source="领域专用模型" target="未来趋势">
+  <data key="d7">1.0</data>
+  <data key="d8">领域专用模型的发展将推动行业深度应用。</data>
+  <data key="d9">专业化,行业应用</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238532</data>
+  <data key="d13"></data>
+</edge>
+<edge source="个性化" target="未来趋势">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化是AI应用的重要发展趋势。</data>
+  <data key="d9">定制服务,用户体验</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238534</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自适应学习" target="未来趋势">
+  <data key="d7">1.0</data>
+  <data key="d8">自适应学习代表系统的自我优化能力发展。</data>
+  <data key="d9">持续改进,智能优化</data>
+  <data key="d10">chunk-3b3b538833d00a6409a59248e6b395ee</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238536</data>
+  <data key="d13"></data>
+</edge>
+<edge source="反馈" target="估与后续资源">
+  <data key="d7">1.0</data>
+  <data key="d8">估与后续资源的过程包括收集反馈这一步骤。</data>
+  <data key="d9">信息收集,过程步骤</data>
+  <data key="d10">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238531</data>
+  <data key="d13"></data>
+</edge>
+<edge source="延伸阅读材料" target="估与后续资源">
+  <data key="d7">1.0</data>
+  <data key="d8">估与后续资源的过程包括提供延伸阅读材料。</data>
+  <data key="d9">后续支持,资源提供</data>
+  <data key="d10">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238533</data>
+  <data key="d13"></data>
+</edge>
+<edge source="工具链接" target="估与后续资源">
+  <data key="d7">1.0</data>
+  <data key="d8">估与后续资源的过程包括提供工具链接。</data>
+  <data key="d9">后续支持,资源提供</data>
+  <data key="d10">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238535</data>
+  <data key="d13"></data>
+</edge>
+<edge source="社区资源" target="估与后续资源">
+  <data key="d7">1.0</data>
+  <data key="d8">估与后续资源的过程包括提供社区资源。</data>
+  <data key="d9">后续支持,资源提供</data>
+  <data key="d10">chunk-8a4fcca1341ad25245ecd6923d4ddf16</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238536</data>
+  <data key="d13"></data>
+</edge>
+<edge source="企业级LLM接入与部署策略" target="决策树">
+  <data key="d7">1.0</data>
+  <data key="d8">决策树是企业级LLM接入与部署策略中用于帮助企业选择部署方式的工具。</data>
+  <data key="d9">决策框架,策略选择</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238539</data>
+  <data key="d13"></data>
+</edge>
+<edge source="企业级LLM接入与部署策略" target="案例研究">
+  <data key="d7">1.0</data>
+  <data key="d8">案例研究是企业级LLM接入与部署策略中用于分析实际选择案例的内容。</data>
+  <data key="d9">实际分析,策略验证</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238542</data>
+  <data key="d13"></data>
+</edge>
+<edge source="安全访问与身份认证" target="API密钥管理">
+  <data key="d7">1.0</data>
+  <data key="d8">API密钥管理是安全访问与身份认证的重要组成部分。</data>
+  <data key="d9">安全措施,最佳实践</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238537</data>
+  <data key="d13"></data>
+</edge>
+<edge source="安全访问与身份认证" target="身份认证与授权">
+  <data key="d7">1.0</data>
+  <data key="d8">身份认证与授权是安全访问与身份认证的核心技术手段。</data>
+  <data key="d9">安全措施,技术实现</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238540</data>
+  <data key="d13"></data>
+</edge>
+<edge source="安全访问与身份认证" target="网络隔离">
+  <data key="d7">1.0</data>
+  <data key="d8">网络隔离是安全访问与身份认证中的一种安全保护措施。</data>
+  <data key="d9">安全措施,技术实现</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238543</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据保护与敏感信息处理" target="数据脱敏技术">
+  <data key="d7">1.0</data>
+  <data key="d8">数据脱敏技术是数据保护与敏感信息处理中的关键技术。</data>
+  <data key="d9">技术方法,数据安全</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238539</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据保护与敏感信息处理" target="PII">
+  <data key="d7">1.0</data>
+  <data key="d8">PII是数据保护与敏感信息处理中需要重点关注的敏感信息类型。</data>
+  <data key="d9">敏感信息,数据分类</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238541</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据保护与敏感信息处理" target="输入/输出内容监控与审计">
+  <data key="d7">1.0</data>
+  <data key="d8">输入/输出内容监控与审计是数据保护与敏感信息处理中的重要环节。</data>
+  <data key="d9">合规要求,安全监控</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238544</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LLM应用开发平台与工具" target="低代码/无代码平台">
+  <data key="d7">1.0</data>
+  <data key="d8">低代码/无代码平台是LLM应用开发平台与工具中的一类。</data>
+  <data key="d9">平台类型,开发工具</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238541</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LLM应用开发平台与工具" target="应用开发框架">
+  <data key="d7">1.0</data>
+  <data key="d8">应用开发框架是LLM应用开发平台与工具中的一类。</data>
+  <data key="d9">开发工具,框架类型</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238543</data>
+  <data key="d13"></data>
+</edge>
+<edge source="低代码/无代码平台" target="Zapier">
+  <data key="d7">1.0</data>
+  <data key="d8">Zapier是低代码/无代码平台的一个具体实例。</data>
+  <data key="d9">工具集成,平台实例</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238543</data>
+  <data key="d13"></data>
+</edge>
+<edge source="低代码/无代码平台" target="Make">
+  <data key="d7">1.0</data>
+  <data key="d8">Make是低代码/无代码平台的一个具体实例。</data>
+  <data key="d9">工具集成,平台实例</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238546</data>
+  <data key="d13"></data>
+</edge>
+<edge source="低代码/无代码平台" target="Coze">
+  <data key="d7">1.0</data>
+  <data key="d8">Coze是低代码/无代码平台的一个具体实例。</data>
+  <data key="d9">工具集成,平台实例</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238549</data>
+  <data key="d13"></data>
+</edge>
+<edge source="低代码/无代码平台" target="邮件内容摘要应用">
+  <data key="d7">1.0</data>
+  <data key="d8">通过低代码/无代码平台可以快速搭建邮件内容摘要应用。</data>
+  <data key="d9">应用搭建,快速开发</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238550</data>
+  <data key="d13"></data>
+</edge>
+<edge source="应用开发框架" target="LangChain">
+  <data key="d7">1.0</data>
+  <data key="d8">LangChain是应用开发框架的一个具体实例。</data>
+  <data key="d9">开发工具,框架实例</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238546</data>
+  <data key="d13"></data>
+</edge>
+<edge source="应用开发框架" target="LlamaIndex">
+  <data key="d7">1.0</data>
+  <data key="d8">LlamaIndex是应用开发框架的一个具体实例。</data>
+  <data key="d9">开发工具,框架实例</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238549</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="角色">
+  <data key="d7">1.0</data>
+  <data key="d8">角色是CRISP框架中的核心设计要素之一。</data>
+  <data key="d9">框架组成,设计要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238557</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="指令">
+  <data key="d7">1.0</data>
+  <data key="d8">指令是CRISP框架中的核心设计要素之一。</data>
+  <data key="d9">框架组成,设计要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238558</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="背景">
+  <data key="d7">1.0</data>
+  <data key="d8">背景是CRISP框架中的核心设计要素之一。</data>
+  <data key="d9">框架组成,设计要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238559</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="输出格式">
+  <data key="d7">1.0</data>
+  <data key="d8">输出格式是CRISP框架中的核心设计要素之一。</data>
+  <data key="d9">框架组成,设计要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238561</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="语气">
+  <data key="d7">1.0</data>
+  <data key="d8">语气是CRISP框架中的补充设计要素。</data>
+  <data key="d9">框架扩展,补充要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238562</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="目标受众">
+  <data key="d7">1.0</data>
+  <data key="d8">目标受众是CRISP框架中的补充设计要素。</data>
+  <data key="d9">框架扩展,补充要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238563</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRISP框架" target="约束条件">
+  <data key="d7">1.0</data>
+  <data key="d8">约束条件是CRISP框架中的补充设计要素。</data>
+  <data key="d9">框架扩展,补充要素</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238564</data>
+  <data key="d13"></data>
+</edge>
+<edge source="模块四：金融场景提示词工程实战应用" target="金融分析与研究报告类">
+  <data key="d7">1.0</data>
+  <data key="d8">金融分析与研究报告类是模块四中的一个具体应用场景。</data>
+  <data key="d9">内容分类,应用场景</data>
+  <data key="d10">chunk-8de86e7884d97659893db8de682eec5f</data>
+  <data key="d11">llm_course.pdf</data>
+  <data key="d12">1764238553</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RESERVE BANK OF INDIA" target="CENTRAL GOVERNMENT">
+  <data key="d7">1.0</data>
+  <data key="d8">印度储备银行由中央政府担保</data>
+  <data key="d9">担保关系,金融监管</data>
+  <data key="d10">chunk-7882298873876029b066fe9c2191776c</data>
+  <data key="d11">旅行日记2.pdf</data>
+  <data key="d12">1764238606</data>
+  <data key="d13"></data>
+</edge>
+</graph></graphml>

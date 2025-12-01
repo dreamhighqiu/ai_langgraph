@@ -78,6 +78,19 @@ SERVER_SSE_MODE=true
 DEBUG=false
 ```
 
+### 存储配置与知识图谱
+
+本项目通过 `RAGAnythingConnector` 调用 LightRAG，因此存储类型（向量库/知识图谱）需要通过 LightRAG 的 `.env` 来控制。当前部署固化为使用 Milvus 和 Neo4j，`anything-chat-rag/.env` 已设置：
+
+- `LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage`
+- `MILVUS_URI=http://54.179.103.192:19530`
+- `MILVUS_DB_NAME=lightrag`
+- `LIGHTRAG_GRAPH_STORAGE=Neo4JStorage`
+- `NEO4J_URI=bolt://54.179.103.192:7687`
+- `NEO4J_USERNAME=neo4j`（`NEO4J_PASSWORD` 请填入实际容器密码）
+
+启动时，服务会自动尝试从仓库根目录的 `anything-chat-rag/.env` 加载这些配置；如果你的部署路径不同，可以通过设置 `MCP_RAG_ENV_PATH=/path/to/.env` 来指定 LightRAG 的配置文件。
+
 ### 启动服务器
 
 ```bash
@@ -311,4 +324,3 @@ python test_rag_server.py
 
 **版本**: 0.1.0  
 **最后更新**: 2024 年 11 月 22 日
-

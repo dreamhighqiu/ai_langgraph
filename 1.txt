@@ -6,18 +6,3 @@
 
 授权商业应用请联系微信：huice666
 """
-
-from enum import Enum
-# type: ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YWpBeFZBPT06ODVhMmM4YWY=
-
-
-class DocStatus(str, Enum):
-    """Document processing status"""
-# fmt: off  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YWpBeFZBPT06ODVhMmM4YWY=
-
-    READY = "ready"
-    HANDLING = "handling"
-    PENDING = "pending"
-    PROCESSING = "processing"
-    PROCESSED = "processed"
-    FAILED = "failed"

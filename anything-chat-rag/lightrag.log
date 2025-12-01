@@ -1,368 +1,318 @@
-2025-11-27 17:54:52,927 - lightrag - INFO - Frontend build is up-to-date
-2025-11-27 17:54:52,927 - lightrag - INFO - OpenAI LLM Options: {}
-2025-11-27 17:54:52,927 - lightrag - INFO - Ollama Embedding Options: {}
-2025-11-27 17:54:52,987 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
-2025-11-27 17:54:52,987 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
-2025-11-27 17:54:52,987 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
-2025-11-27 17:54:52,987 - lightrag - INFO - Reranking is disabled
-2025-11-27 17:54:53,191 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
-2025-11-27 17:54:53,480 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
-2025-11-27 17:54:53,480 - lightrag - INFO - RAG-Anything processor created successfully
-2025-11-27 17:54:53,480 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
-2025-11-27 17:54:53,527 - uvicorn.error - INFO - Started server process [64597]
-2025-11-27 17:54:53,528 - uvicorn.error - INFO - Waiting for application startup.
-2025-11-27 17:54:53,528 - lightrag - INFO - [] Process 64597 KV load full_docs with 0 records
-2025-11-27 17:54:53,528 - lightrag - INFO - [] Process 64597 KV load text_chunks with 0 records
-2025-11-27 17:54:53,529 - lightrag - INFO - [] Process 64597 KV load full_entities with 0 records
-2025-11-27 17:54:53,529 - lightrag - INFO - [] Process 64597 KV load full_relations with 0 records
-2025-11-27 17:54:53,530 - lightrag - INFO - [] Process 64597 KV load entity_chunks with 0 records
-2025-11-27 17:54:53,530 - lightrag - INFO - [] Process 64597 KV load relation_chunks with 0 records
-2025-11-27 17:54:53,531 - lightrag - INFO - [] Process 64597 KV load llm_response_cache with 0 records
-2025-11-27 17:54:53,531 - lightrag - INFO - [] Process 64597 doc status load doc_status with 0 records
-2025-11-27 17:54:53,532 - uvicorn.error - INFO - Application startup complete.
-2025-11-27 17:54:53,532 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-2025-11-27 17:58:46,254 - lightrag - INFO - Frontend build is up-to-date
-2025-11-27 17:58:46,255 - lightrag - INFO - OpenAI LLM Options: {}
-2025-11-27 17:58:46,255 - lightrag - INFO - Ollama Embedding Options: {}
-2025-11-27 17:58:46,349 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
-2025-11-27 17:58:46,349 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
-2025-11-27 17:58:46,349 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
-2025-11-27 17:58:46,349 - lightrag - INFO - Reranking is disabled
-2025-11-27 17:58:46,556 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
-2025-11-27 17:58:46,838 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
-2025-11-27 17:58:46,838 - lightrag - INFO - RAG-Anything processor created successfully
-2025-11-27 17:58:46,838 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
-2025-11-27 17:58:46,887 - uvicorn.error - INFO - Started server process [75037]
-2025-11-27 17:58:46,887 - uvicorn.error - INFO - Waiting for application startup.
-2025-11-27 17:58:46,888 - lightrag - INFO - [] Process 75037 KV load full_docs with 0 records
-2025-11-27 17:58:46,888 - lightrag - INFO - [] Process 75037 KV load text_chunks with 0 records
-2025-11-27 17:58:46,888 - lightrag - INFO - [] Process 75037 KV load full_entities with 0 records
-2025-11-27 17:58:46,888 - lightrag - INFO - [] Process 75037 KV load full_relations with 0 records
-2025-11-27 17:58:46,888 - lightrag - INFO - [] Process 75037 KV load entity_chunks with 0 records
-2025-11-27 17:58:46,888 - lightrag - INFO - [] Process 75037 KV load relation_chunks with 0 records
-2025-11-27 17:58:46,889 - lightrag - INFO - [] Process 75037 KV load llm_response_cache with 0 records
-2025-11-27 17:58:46,889 - lightrag - INFO - [] Process 75037 doc status load doc_status with 0 records
-2025-11-27 17:58:46,889 - uvicorn.error - INFO - Application startup complete.
-2025-11-27 17:58:46,889 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-2025-11-27 18:07:02,531 - uvicorn.access - INFO - 127.0.0.1:58855 - "GET /auth-status HTTP/1.1" 200
-2025-11-27 18:07:03,165 - uvicorn.access - INFO - 127.0.0.1:58869 - "GET /docs HTTP/1.1" 200
-2025-11-27 18:07:03,326 - uvicorn.access - INFO - 127.0.0.1:58871 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
-2025-11-27 18:07:03,326 - uvicorn.access - INFO - 127.0.0.1:58873 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
-2025-11-27 18:07:03,579 - uvicorn.access - INFO - 127.0.0.1:58877 - "GET /openapi.json HTTP/1.1" 200
-2025-11-27 18:07:12,744 - uvicorn.access - INFO - 127.0.0.1:58932 - "GET /docs HTTP/1.1" 200
-2025-11-27 18:07:13,065 - uvicorn.access - INFO - 127.0.0.1:58942 - "GET /openapi.json HTTP/1.1" 200
-2025-11-27 18:07:18,260 - uvicorn.access - INFO - 127.0.0.1:58965 - "POST /documents/upload HTTP/1.1" 200
-2025-11-27 18:07:18,261 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记2.pdf
-2025-11-27 18:07:18,261 - lightrag - INFO - RAGAnything initialized with config:
-2025-11-27 18:07:18,261 - lightrag - INFO -   Working directory: ./rag_storage
-2025-11-27 18:07:18,261 - lightrag - INFO -   Parser: docling
-2025-11-27 18:07:18,261 - lightrag - INFO -   Parse method: auto
-2025-11-27 18:07:18,261 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
-2025-11-27 18:07:18,261 - lightrag - INFO -   Max concurrent files: 1
-2025-11-27 18:07:18,261 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
-2025-11-27 18:07:18,261 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf
-2025-11-27 18:07:18,262 - lightrag - INFO - Using docling parser with method: auto
-2025-11-27 18:07:18,262 - lightrag - INFO - Detected PDF file, using parser for PDF...
-2025-11-27 18:07:18,276 - uvicorn.access - INFO - 127.0.0.1:58968 - "POST /documents/upload HTTP/1.1" 200
-2025-11-27 18:07:18,276 - lightrag - INFO - Using RAG-Anything multimodal processing for: llm_course.pdf
-2025-11-27 18:07:18,276 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf
-2025-11-27 18:07:18,277 - lightrag - INFO - Using docling parser with method: auto
-2025-11-27 18:07:18,277 - lightrag - INFO - Detected PDF file, using parser for PDF...
-2025-11-27 18:07:35,391 - uvicorn.access - INFO - 127.0.0.1:59058 - "POST /documents/upload HTTP/1.1" 200
-2025-11-27 18:07:35,392 - lightrag - INFO - Using RAG-Anything multimodal processing for: pdf测试_加水印.pdf
-2025-11-27 18:07:35,394 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf
-2025-11-27 18:07:35,394 - lightrag - INFO - Using docling parser with method: auto
-2025-11-27 18:07:35,394 - lightrag - INFO - Detected PDF file, using parser for PDF...
-2025-11-27 18:07:35,410 - uvicorn.access - INFO - 127.0.0.1:59061 - "POST /documents/upload HTTP/1.1" 200
-2025-11-27 18:07:35,410 - lightrag - INFO - Using RAG-Anything multimodal processing for: pdf测试.pdf
-2025-11-27 18:07:35,411 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf
-2025-11-27 18:07:35,411 - lightrag - INFO - Using docling parser with method: auto
-2025-11-27 18:07:35,411 - lightrag - INFO - Detected PDF file, using parser for PDF...
-2025-11-27 18:07:48,213 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf complete! Extracted 230 content blocks
-2025-11-27 18:07:48,214 - lightrag - INFO - Document parsed successfully: llm_course.pdf, doc_id=doc-88b93e772890662b37fff9510ff982e1, blocks=230
-2025-11-27 18:07:53,251 - lightrag - INFO - Parser 'docling' installation verified
-2025-11-27 18:07:53,252 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
-2025-11-27 18:07:53,254 - lightrag - INFO - [] Process 75037 KV load parse_cache with 0 records
-2025-11-27 18:07:53,254 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf complete! Extracted 35 content blocks
-2025-11-27 18:07:53,258 - lightrag - INFO - Multimodal processors initialized with context support
-2025-11-27 18:07:53,258 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
-2025-11-27 18:07:53,258 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
-2025-11-27 18:07:53,258 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf (230 items)
-2025-11-27 18:07:53,258 - lightrag - INFO - Content separation complete:
-2025-11-27 18:07:53,258 - lightrag - INFO -   - Text content length: 5436 characters
-2025-11-27 18:07:53,258 - lightrag - INFO -   - Multimodal items count: 0
-2025-11-27 18:07:53,258 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:07:53,262 - lightrag - INFO - Stored parsing result in cache: 172e62b1ab8529b6abe9364e6746e3c7
-2025-11-27 18:07:53,263 - lightrag - INFO - Document parsed successfully: 旅行日记2.pdf, doc_id=doc-c73a458050d1082c95e859c85ffb2d8c, blocks=35
-2025-11-27 18:07:53,264 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf (35 items)
-2025-11-27 18:07:53,264 - lightrag - INFO - Content separation complete:
-2025-11-27 18:07:53,264 - lightrag - INFO -   - Text content length: 459 characters
-2025-11-27 18:07:53,264 - lightrag - INFO -   - Multimodal items count: 3
-2025-11-27 18:07:53,264 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
-2025-11-27 18:07:53,264 - lightrag - INFO - Setting content source for context-aware multimodal processing...
-2025-11-27 18:07:53,265 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:07:53,265 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:07:53,265 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:07:53,265 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:07:53,265 - lightrag - INFO - Content source set for context extraction (format: minerU)
-2025-11-27 18:07:53,265 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:07:53,267 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:07:53,268 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:07:53,269 - lightrag - INFO - Starting multimodal content processing...
-2025-11-27 18:07:53,269 - lightrag - INFO - Starting to process 3 multimodal content items
-2025-11-27 18:07:53,654 - lightrag - INFO - Processing 1 document(s)
-2025-11-27 18:07:53,668 - lightrag - INFO - Extracting stage 1/1: llm_course.pdf
-2025-11-27 18:07:53,668 - lightrag - INFO - Processing d-id: doc-88b93e772890662b37fff9510ff982e1
-2025-11-27 18:07:53,691 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 300s, Worker: 600s, Health Check: 615s)
-2025-11-27 18:08:02,991 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
-2025-11-27 18:08:10,157 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf complete! Extracted 55 content blocks
-2025-11-27 18:08:10,159 - lightrag - INFO - Stored parsing result in cache: e6d549e7a74b065364abd1e0a587439d
-2025-11-27 18:08:10,159 - lightrag - INFO - Document parsed successfully: pdf测试_加水印.pdf, doc_id=doc-4baee4a7b7bb9f8fcc14c88dbe758360, blocks=55
-2025-11-27 18:08:10,159 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf (55 items)
-2025-11-27 18:08:10,159 - lightrag - INFO - Content separation complete:
-2025-11-27 18:08:10,159 - lightrag - INFO -   - Text content length: 1341 characters
-2025-11-27 18:08:10,159 - lightrag - INFO -   - Multimodal items count: 2
-2025-11-27 18:08:10,159 - lightrag - INFO -   - Multimodal type distribution: {'image': 1, 'table': 1}
-2025-11-27 18:08:10,159 - lightrag - INFO - Setting content source for context-aware multimodal processing...
-2025-11-27 18:08:10,159 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,159 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,160 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,160 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,160 - lightrag - INFO - Content source set for context extraction (format: minerU)
-2025-11-27 18:08:10,160 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:08:10,161 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:08:10,161 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:08:10,161 - lightrag - INFO - Starting multimodal content processing...
-2025-11-27 18:08:10,161 - lightrag - INFO - Starting to process 2 multimodal content items
-2025-11-27 18:08:10,171 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
-2025-11-27 18:08:10,171 - lightrag - INFO - Multimodal chunk generation progress: 1/2 (50.0%)
-2025-11-27 18:08:10,299 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf complete! Extracted 57 content blocks
-2025-11-27 18:08:10,300 - lightrag - INFO - Stored parsing result in cache: 3d1f794cb52713eb05c0d0f8bb5f40b6
-2025-11-27 18:08:10,300 - lightrag - INFO - Document parsed successfully: pdf测试.pdf, doc_id=doc-a3d1987ba759a6e7928275affaf22e8a, blocks=57
-2025-11-27 18:08:10,300 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf (57 items)
-2025-11-27 18:08:10,300 - lightrag - INFO - Content separation complete:
-2025-11-27 18:08:10,300 - lightrag - INFO -   - Text content length: 1371 characters
-2025-11-27 18:08:10,300 - lightrag - INFO -   - Multimodal items count: 2
-2025-11-27 18:08:10,300 - lightrag - INFO -   - Multimodal type distribution: {'image': 1, 'table': 1}
-2025-11-27 18:08:10,300 - lightrag - INFO - Setting content source for context-aware multimodal processing...
-2025-11-27 18:08:10,300 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,300 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,300 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,300 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:08:10,300 - lightrag - INFO - Content source set for context extraction (format: minerU)
-2025-11-27 18:08:10,300 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:08:10,301 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:08:10,301 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:08:10,301 - lightrag - INFO - Starting multimodal content processing...
-2025-11-27 18:08:10,302 - lightrag - INFO - Starting to process 2 multimodal content items
-2025-11-27 18:08:10,317 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
-2025-11-27 18:08:10,317 - lightrag - INFO - Multimodal chunk generation progress: 1/2 (50.0%)
-2025-11-27 18:08:11,515 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
-2025-11-27 18:08:20,405 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
-2025-11-27 18:08:20,405 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
-2025-11-27 18:08:25,129 - lightrag - INFO - Multimodal chunk generation progress: 2/2 (100.0%)
-2025-11-27 18:08:25,129 - lightrag - INFO - Generated descriptions for 2/2 multimodal items using correct processors
-2025-11-27 18:08:26,661 - lightrag - INFO - Multimodal chunk generation progress: 2/2 (100.0%)
-2025-11-27 18:08:26,661 - lightrag - INFO - Generated descriptions for 2/2 multimodal items using correct processors
-2025-11-27 18:09:21,702 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
-2025-11-27 18:09:27,963 - lightrag - INFO -  == LLM cache == saving: default:extract:bc3fe6eef76ecc5c656e8118b3437531
-2025-11-27 18:09:37,130 - lightrag - INFO -  == LLM cache == saving: default:extract:aafa1418eb3794ac31d0a2c045185653
-2025-11-27 18:09:37,130 - lightrag - INFO - Chunk 1 of 4 extracted 5 Ent + 4 Rel chunk-8a4fcca1341ad25245ecd6923d4ddf16
-2025-11-27 18:09:53,018 - lightrag - INFO -  == LLM cache == saving: default:extract:8517ddf0f1a0e4ebad804d05dca209da
-2025-11-27 18:10:10,997 - lightrag - INFO -  == LLM cache == saving: default:extract:af7b04d3592e7c1b146bd2b060f65291
-2025-11-27 18:10:13,290 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/shared_storage.py)
-2025-11-27 18:10:13,291 - lightrag - WARNING - Falling back to individual multimodal processing
-2025-11-27 18:10:13,291 - lightrag - INFO - Processing item 1/3: image content
-2025-11-27 18:10:14,881 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/shared_storage.py)
-2025-11-27 18:10:14,881 - lightrag - WARNING - Falling back to individual multimodal processing
-2025-11-27 18:10:14,881 - lightrag - INFO - Processing item 1/2: image content
-2025-11-27 18:10:16,280 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/shared_storage.py)
-2025-11-27 18:10:16,280 - lightrag - WARNING - Falling back to individual multimodal processing
-2025-11-27 18:10:16,280 - lightrag - INFO - Processing item 1/2: image content
-2025-11-27 18:10:45,083 - lightrag - INFO -  == LLM cache == saving: default:extract:4be4f4e344a0bb31244d44e0fa1bfec2
-2025-11-27 18:10:45,085 - lightrag - INFO - Chunk 2 of 4 extracted 37 Ent + 24 Rel chunk-6c9699f6be450b7bab348fd80cc8c912
-2025-11-27 18:10:49,780 - lightrag - INFO -  == LLM cache == saving: default:extract:ca21b5cdff31584143d4d20c06b7a254
-2025-11-27 18:10:59,894 - uvicorn.access - INFO - 127.0.0.1:60279 - "POST /documents/scan HTTP/1.1" 200
-2025-11-27 18:10:59,895 - lightrag - INFO - Found 4 files to index.
-2025-11-27 18:10:59,899 - lightrag - INFO - Using RAG-Anything multimodal processing for: llm_course.pdf
-2025-11-27 18:10:59,899 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf
-2025-11-27 18:10:59,900 - lightrag - INFO - Using docling parser with method: auto
-2025-11-27 18:10:59,900 - lightrag - INFO - Detected PDF file, using parser for PDF...
-2025-11-27 18:11:10,456 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:11:10,457 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:11:10,457 - lightrag - INFO - Processing item 2/2: table content
-2025-11-27 18:11:10,458 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
-2025-11-27 18:11:19,048 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf complete! Extracted 230 content blocks
-2025-11-27 18:11:19,050 - lightrag - INFO - Stored parsing result in cache: 3e0b1f4573d5f0c4294736010b62c826
-2025-11-27 18:11:19,050 - lightrag - INFO - Document parsed successfully: llm_course.pdf, doc_id=doc-88b93e772890662b37fff9510ff982e1, blocks=230
-2025-11-27 18:11:19,051 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf (230 items)
-2025-11-27 18:11:19,051 - lightrag - INFO - Content separation complete:
-2025-11-27 18:11:19,051 - lightrag - INFO -   - Text content length: 5436 characters
-2025-11-27 18:11:19,051 - lightrag - INFO -   - Multimodal items count: 0
-2025-11-27 18:11:19,051 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:11:19,052 - lightrag - WARNING - Ignoring document ID (already exists): doc-88b93e772890662b37fff9510ff982e1 (llm_course.pdf)
-2025-11-27 18:11:19,052 - lightrag - WARNING - No new unique documents were found.
-2025-11-27 18:11:19,052 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:11:19,052 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:11:19,053 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf
-2025-11-27 18:11:19,054 - lightrag - INFO - Document processing complete: llm_course.pdf, doc_id=doc-88b93e772890662b37fff9510ff982e1
-2025-11-27 18:11:19,054 - lightrag - INFO - RAG-Anything processing completed successfully: llm_course.pdf, doc_id=doc-88b93e772890662b37fff9510ff982e1
-2025-11-27 18:11:19,054 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记2.pdf
-2025-11-27 18:11:19,054 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf
-2025-11-27 18:11:19,054 - lightrag - INFO - Using cached parsing result for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf
-2025-11-27 18:11:19,054 - lightrag - INFO - Document parsed successfully: 旅行日记2.pdf, doc_id=doc-c73a458050d1082c95e859c85ffb2d8c, blocks=35
-2025-11-27 18:11:19,055 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf (35 items)
-2025-11-27 18:11:19,055 - lightrag - INFO - Content separation complete:
-2025-11-27 18:11:19,055 - lightrag - INFO -   - Text content length: 459 characters
-2025-11-27 18:11:19,055 - lightrag - INFO -   - Multimodal items count: 3
-2025-11-27 18:11:19,055 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
-2025-11-27 18:11:19,055 - lightrag - INFO - Setting content source for context-aware multimodal processing...
-2025-11-27 18:11:19,055 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:11:19,055 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:11:19,055 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:11:19,055 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:11:19,055 - lightrag - INFO - Content source set for context extraction (format: minerU)
-2025-11-27 18:11:19,055 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:11:19,056 - lightrag - WARNING - Ignoring document ID (already exists): doc-c73a458050d1082c95e859c85ffb2d8c (旅行日记2.pdf)
-2025-11-27 18:11:19,056 - lightrag - WARNING - No new unique documents were found.
-2025-11-27 18:11:19,056 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:11:19,056 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:11:19,056 - lightrag - INFO - Starting multimodal content processing...
-2025-11-27 18:11:19,056 - lightrag - INFO - Starting to process 3 multimodal content items
-2025-11-27 18:11:22,168 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:11:22,168 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:11:22,168 - lightrag - INFO - Processing item 2/2: table content
-2025-11-27 18:11:22,169 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
-2025-11-27 18:11:29,551 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
-2025-11-27 18:11:30,062 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:11:30,062 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:11:30,062 - lightrag - INFO - Processing item 2/3: image content
-2025-11-27 18:11:33,358 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
-2025-11-27 18:11:35,297 - lightrag - ERROR - Error processing table content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:11:35,297 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:11:35,297 - lightrag - INFO - Individual multimodal content processing complete
-2025-11-27 18:11:35,299 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf
-2025-11-27 18:11:35,299 - lightrag - INFO - Document processing complete: pdf测试.pdf, doc_id=doc-a3d1987ba759a6e7928275affaf22e8a
-2025-11-27 18:11:35,299 - lightrag - INFO - RAG-Anything processing completed successfully: pdf测试.pdf, doc_id=doc-a3d1987ba759a6e7928275affaf22e8a
-2025-11-27 18:11:35,299 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:11:36,472 - lightrag - ERROR - Error processing table content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:11:36,472 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:11:36,472 - lightrag - INFO - Individual multimodal content processing complete
-2025-11-27 18:11:36,473 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf
-2025-11-27 18:11:36,473 - lightrag - INFO - Document processing complete: pdf测试_加水印.pdf, doc_id=doc-4baee4a7b7bb9f8fcc14c88dbe758360
-2025-11-27 18:11:36,473 - lightrag - INFO - RAG-Anything processing completed successfully: pdf测试_加水印.pdf, doc_id=doc-4baee4a7b7bb9f8fcc14c88dbe758360
-2025-11-27 18:11:36,473 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:11:38,956 - lightrag - INFO -  == LLM cache == saving: default:extract:1fb77c3bbb7c92d19c49b0286509b040
-2025-11-27 18:11:38,958 - lightrag - INFO - Chunk 3 of 4 extracted 54 Ent + 47 Rel chunk-8de86e7884d97659893db8de682eec5f
-2025-11-27 18:11:55,200 - lightrag - INFO -  == LLM cache == saving: default:extract:0fee7d48f44cc43b894731cd732f14ce
-2025-11-27 18:11:55,205 - lightrag - INFO - Chunk 4 of 4 extracted 66 Ent + 54 Rel chunk-3b3b538833d00a6409a59248e6b395ee
-2025-11-27 18:11:55,215 - lightrag - INFO - Merging stage 1/1: llm_course.pdf
-2025-11-27 18:11:55,215 - lightrag - INFO - Phase 1: Processing 154 entities from doc-88b93e772890662b37fff9510ff982e1 (async: 8)
-2025-11-27 18:12:00,695 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:12:00,695 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:12:00,695 - lightrag - INFO - Processing item 3/3: image content
-2025-11-27 18:12:08,812 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
-2025-11-27 18:12:08,812 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
-2025-11-27 18:12:57,306 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/shared_storage.py)
-2025-11-27 18:12:57,306 - lightrag - WARNING - Falling back to individual multimodal processing
-2025-11-27 18:12:57,306 - lightrag - INFO - Processing item 1/3: image content
-2025-11-27 18:13:17,917 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:13:17,917 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:13:17,917 - lightrag - INFO - Individual multimodal content processing complete
-2025-11-27 18:13:17,919 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf
-2025-11-27 18:13:17,919 - lightrag - INFO - Document processing complete: 旅行日记2.pdf, doc_id=doc-c73a458050d1082c95e859c85ffb2d8c
-2025-11-27 18:13:17,920 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记2.pdf, doc_id=doc-c73a458050d1082c95e859c85ffb2d8c
-2025-11-27 18:13:17,920 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:13:48,650 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:13:48,650 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:13:48,650 - lightrag - INFO - Processing item 2/3: image content
-2025-11-27 18:14:23,839 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:14:23,839 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:14:23,839 - lightrag - INFO - Processing item 3/3: image content
-2025-11-27 18:14:32,589 - lightrag - INFO - Phase 2: Processing 129 relations from doc-88b93e772890662b37fff9510ff982e1 (async: 8)
-2025-11-27 18:15:01,867 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
-2025-11-27 18:15:01,867 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-2025-11-27 18:15:01,867 - lightrag - INFO - Individual multimodal content processing complete
-2025-11-27 18:15:01,868 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记2.pdf
-2025-11-27 18:15:01,868 - lightrag - INFO - Document processing complete: 旅行日记2.pdf, doc_id=doc-c73a458050d1082c95e859c85ffb2d8c
-2025-11-27 18:15:01,868 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记2.pdf, doc_id=doc-c73a458050d1082c95e859c85ffb2d8c
-2025-11-27 18:15:01,868 - lightrag - INFO - Using RAG-Anything multimodal processing for: pdf测试.pdf
-2025-11-27 18:15:01,868 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf
-2025-11-27 18:15:01,868 - lightrag - INFO - Using cached parsing result for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf
-2025-11-27 18:15:01,868 - lightrag - INFO - Document parsed successfully: pdf测试.pdf, doc_id=doc-a3d1987ba759a6e7928275affaf22e8a, blocks=57
-2025-11-27 18:15:01,868 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf (57 items)
-2025-11-27 18:15:01,869 - lightrag - INFO - Content separation complete:
-2025-11-27 18:15:01,869 - lightrag - INFO -   - Text content length: 1371 characters
-2025-11-27 18:15:01,869 - lightrag - INFO -   - Multimodal items count: 2
-2025-11-27 18:15:01,869 - lightrag - INFO -   - Multimodal type distribution: {'image': 1, 'table': 1}
-2025-11-27 18:15:01,869 - lightrag - INFO - Setting content source for context-aware multimodal processing...
-2025-11-27 18:15:01,869 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,869 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,869 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,869 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,869 - lightrag - INFO - Content source set for context extraction (format: minerU)
-2025-11-27 18:15:01,869 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:15:01,869 - lightrag - WARNING - Ignoring document ID (already exists): doc-a3d1987ba759a6e7928275affaf22e8a (pdf测试.pdf)
-2025-11-27 18:15:01,869 - lightrag - WARNING - No new unique documents were found.
-2025-11-27 18:15:01,869 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:15:01,869 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:15:01,869 - lightrag - INFO - Document doc-a3d1987ba759a6e7928275affaf22e8a multimodal content is already processed
-2025-11-27 18:15:01,869 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试.pdf
-2025-11-27 18:15:01,869 - lightrag - INFO - Document processing complete: pdf测试.pdf, doc_id=doc-a3d1987ba759a6e7928275affaf22e8a
-2025-11-27 18:15:01,870 - lightrag - INFO - RAG-Anything processing completed successfully: pdf测试.pdf, doc_id=doc-a3d1987ba759a6e7928275affaf22e8a
-2025-11-27 18:15:01,870 - lightrag - INFO - Using RAG-Anything multimodal processing for: pdf测试_加水印.pdf
-2025-11-27 18:15:01,870 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf
-2025-11-27 18:15:01,870 - lightrag - INFO - Using cached parsing result for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf
-2025-11-27 18:15:01,870 - lightrag - INFO - Document parsed successfully: pdf测试_加水印.pdf, doc_id=doc-4baee4a7b7bb9f8fcc14c88dbe758360, blocks=55
-2025-11-27 18:15:01,870 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf (55 items)
-2025-11-27 18:15:01,870 - lightrag - INFO - Content separation complete:
-2025-11-27 18:15:01,870 - lightrag - INFO -   - Text content length: 1341 characters
-2025-11-27 18:15:01,870 - lightrag - INFO -   - Multimodal items count: 2
-2025-11-27 18:15:01,870 - lightrag - INFO -   - Multimodal type distribution: {'image': 1, 'table': 1}
-2025-11-27 18:15:01,870 - lightrag - INFO - Setting content source for context-aware multimodal processing...
-2025-11-27 18:15:01,870 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,870 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,870 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,870 - lightrag - INFO - Content source set with format: minerU
-2025-11-27 18:15:01,870 - lightrag - INFO - Content source set for context extraction (format: minerU)
-2025-11-27 18:15:01,870 - lightrag - INFO - Starting text content insertion into LightRAG...
-2025-11-27 18:15:01,870 - lightrag - WARNING - Ignoring document ID (already exists): doc-4baee4a7b7bb9f8fcc14c88dbe758360 (pdf测试_加水印.pdf)
-2025-11-27 18:15:01,870 - lightrag - WARNING - No new unique documents were found.
-2025-11-27 18:15:01,870 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:15:01,871 - lightrag - INFO - Text content insertion complete
-2025-11-27 18:15:01,871 - lightrag - INFO - Document doc-4baee4a7b7bb9f8fcc14c88dbe758360 multimodal content is already processed
-2025-11-27 18:15:01,871 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/pdf测试_加水印.pdf
-2025-11-27 18:15:01,871 - lightrag - INFO - Document processing complete: pdf测试_加水印.pdf, doc_id=doc-4baee4a7b7bb9f8fcc14c88dbe758360
-2025-11-27 18:15:01,871 - lightrag - INFO - RAG-Anything processing completed successfully: pdf测试_加水印.pdf, doc_id=doc-4baee4a7b7bb9f8fcc14c88dbe758360
-2025-11-27 18:15:01,871 - lightrag - INFO - Another process is already processing the document queue. Request queued.
-2025-11-27 18:15:01,871 - lightrag - INFO - Scanning process completed: 4 files Processed.
-2025-11-27 18:16:05,011 - lightrag - INFO - Phase 3: Updating final 161(154+7) entities and  129 relations from doc-88b93e772890662b37fff9510ff982e1
-2025-11-27 18:16:05,011 - lightrag - INFO - Completed merging: 154 entities, 7 extra entities, 129 relations
-2025-11-27 18:16:05,030 - lightrag - INFO - [] Writing graph with 178 nodes, 129 edges
-2025-11-27 18:16:05,051 - lightrag - INFO - In memory DB persist to disk
-2025-11-27 18:16:05,051 - lightrag - INFO - Completed processing file 1/1: llm_course.pdf
-2025-11-27 18:16:05,051 - lightrag - INFO - Processing additional documents due to pending request
-2025-11-27 18:16:05,052 - lightrag - INFO - Processing 3 document(s)
-2025-11-27 18:16:05,052 - lightrag - INFO - Extracting stage 1/3: 旅行日记2.pdf
-2025-11-27 18:16:05,052 - lightrag - INFO - Processing d-id: doc-c73a458050d1082c95e859c85ffb2d8c
-2025-11-27 18:16:05,052 - lightrag - INFO - Extracting stage 2/3: pdf测试_加水印.pdf
-2025-11-27 18:16:05,052 - lightrag - INFO - Processing d-id: doc-4baee4a7b7bb9f8fcc14c88dbe758360
-2025-11-27 18:16:23,531 - lightrag - INFO -  == LLM cache == saving: default:extract:598167cdc6f196e141aaa7ed65ae55c0
-2025-11-27 18:16:39,163 - lightrag - INFO -  == LLM cache == saving: default:extract:a2cf23f9bae45c3de36c8825b18e0b8d
-2025-11-27 18:16:39,164 - lightrag - INFO - Chunk 1 of 1 extracted 23 Ent + 1 Rel chunk-7882298873876029b066fe9c2191776c
-2025-11-27 18:16:39,164 - lightrag - INFO - Merging stage 1/3: 旅行日记2.pdf
-2025-11-27 18:16:39,164 - lightrag - INFO - Phase 1: Processing 23 entities from doc-c73a458050d1082c95e859c85ffb2d8c (async: 8)
-2025-11-27 18:16:46,757 - lightrag - INFO - Phase 2: Processing 1 relations from doc-c73a458050d1082c95e859c85ffb2d8c (async: 8)
-2025-11-27 18:16:47,552 - lightrag - INFO - Phase 3: Updating final 23(23+0) entities and  1 relations from doc-c73a458050d1082c95e859c85ffb2d8c
-2025-11-27 18:16:47,553 - lightrag - INFO - Completed merging: 23 entities, 0 extra entities, 1 relations
-2025-11-27 18:16:47,573 - lightrag - INFO - [] Writing graph with 201 nodes, 130 edges
-2025-11-27 18:16:47,581 - lightrag - INFO - In memory DB persist to disk
-2025-11-27 18:16:47,581 - lightrag - INFO - Completed processing file 1/3: 旅行日记2.pdf
-2025-11-27 18:16:47,582 - lightrag - INFO - Extracting stage 3/3: pdf测试.pdf
-2025-11-27 18:16:47,582 - lightrag - INFO - Processing d-id: doc-a3d1987ba759a6e7928275affaf22e8a
-2025-11-27 18:17:32,305 - lightrag - INFO -  == LLM cache == saving: default:extract:ad98cae701dab2c90399aa38d674738f
-2025-11-27 18:17:52,502 - lightrag - INFO -  == LLM cache == saving: default:extract:cac108af54b2ab47a1c42cd9cb314ca8
-2025-11-27 18:17:52,504 - lightrag - INFO - Chunk 1 of 1 extracted 57 Ent + 13 Rel chunk-50866b161d8cee7f71f2cb8f3f08b9d9
-2025-11-27 18:17:52,505 - lightrag - INFO - Merging stage 2/3: pdf测试_加水印.pdf
-2025-11-27 18:17:52,505 - lightrag - INFO - Phase 1: Processing 57 entities from doc-4baee4a7b7bb9f8fcc14c88dbe758360 (async: 8)
-2025-11-27 18:18:07,023 - lightrag - INFO -  == LLM cache == saving: default:extract:a7a1dbef38d4dad279a447c117cecc18
+2025-11-28 17:49:00,784 - lightrag - INFO - OpenAI LLM Options: {'max_completion_tokens': 8192}
+2025-11-28 17:49:00,785 - lightrag - INFO - Ollama Embedding Options: {'num_ctx': 8192}
+2025-11-28 17:49:00,785 - lightrag - INFO - Reranking is disabled
+2025-11-28 17:49:02,700 - uvicorn.error - INFO - Started server process [99038]
+2025-11-28 17:49:02,700 - uvicorn.error - INFO - Waiting for application startup.
+2025-11-28 17:49:02,701 - lightrag - INFO - [_] Process 99038 KV load full_docs with 4 records
+2025-11-28 17:49:02,701 - lightrag - INFO - [_] Process 99038 KV load text_chunks with 25 records
+2025-11-28 17:49:02,701 - lightrag - INFO - [_] Process 99038 KV load full_entities with 4 records
+2025-11-28 17:49:02,702 - lightrag - INFO - [_] Process 99038 KV load full_relations with 4 records
+2025-11-28 17:49:02,702 - lightrag - INFO - [_] Process 99038 KV load entity_chunks with 265 records
+2025-11-28 17:49:02,703 - lightrag - INFO - [_] Process 99038 KV load relation_chunks with 157 records
+2025-11-28 17:49:03,245 - lightrag - ERROR - [_] Failed to initialize Milvus collection 'entities': <MilvusException: (code=800, message=database not found[database=lightrag])>
+2025-11-28 17:49:03,254 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/api/lightrag_server.py", line 335, in lifespan
+    await rag.initialize_storages()
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/lightrag.py", line 658, in initialize_storages
+    await storage.initialize()
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/kg/milvus_impl.py", line 993, in initialize
+    self._client = MilvusClient(
+                   ^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/milvus_client.py", line 67, in __init__
+    self._using = create_connection(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/_utils.py", line 43, in create_connection
+    connections.connect(using, user, password, db_name, token, uri=uri, _async=use_async, **kwargs)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 472, in connect
+    connect_milvus(**kwargs, user=user, password=password, token=token, db_name=db_name)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 426, in connect_milvus
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 418, in connect_milvus
+    gh._wait_for_channel_ready(timeout=timeout)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 169, in _wait_for_channel_ready
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 160, in _wait_for_channel_ready
+    self._setup_identifier_interceptor(self._user, timeout=timeout)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 271, in _setup_identifier_interceptor
+    self._identifier = self.__internal_register(user, host, timeout=timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 254, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 250, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 297, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 195, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 165, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 337, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 327, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 2333, in __internal_register
+    check_status(response.status)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/utils.py", line 66, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=800, message=database not found[database=lightrag])>
+
+2025-11-28 17:49:03,254 - uvicorn.error - ERROR - Application startup failed. Exiting.
+2025-11-28 17:49:06,594 - lightrag - INFO - OpenAI LLM Options: {'max_completion_tokens': 8192}
+2025-11-28 17:49:06,594 - lightrag - INFO - Ollama Embedding Options: {'num_ctx': 8192}
+2025-11-28 17:49:06,594 - lightrag - INFO - Reranking is disabled
+2025-11-28 17:49:07,214 - uvicorn.error - INFO - Started server process [99081]
+2025-11-28 17:49:07,214 - uvicorn.error - INFO - Waiting for application startup.
+2025-11-28 17:49:07,214 - lightrag - INFO - [_] Process 99081 KV load full_docs with 4 records
+2025-11-28 17:49:07,215 - lightrag - INFO - [_] Process 99081 KV load text_chunks with 25 records
+2025-11-28 17:49:07,215 - lightrag - INFO - [_] Process 99081 KV load full_entities with 4 records
+2025-11-28 17:49:07,215 - lightrag - INFO - [_] Process 99081 KV load full_relations with 4 records
+2025-11-28 17:49:07,216 - lightrag - INFO - [_] Process 99081 KV load entity_chunks with 265 records
+2025-11-28 17:49:07,216 - lightrag - INFO - [_] Process 99081 KV load relation_chunks with 157 records
+2025-11-28 17:49:07,510 - lightrag - ERROR - [_] Failed to initialize Milvus collection 'entities': <MilvusException: (code=800, message=database not found[database=lightrag])>
+2025-11-28 17:49:07,513 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/api/lightrag_server.py", line 335, in lifespan
+    await rag.initialize_storages()
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/lightrag.py", line 658, in initialize_storages
+    await storage.initialize()
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/kg/milvus_impl.py", line 993, in initialize
+    self._client = MilvusClient(
+                   ^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/milvus_client.py", line 67, in __init__
+    self._using = create_connection(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/_utils.py", line 43, in create_connection
+    connections.connect(using, user, password, db_name, token, uri=uri, _async=use_async, **kwargs)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 472, in connect
+    connect_milvus(**kwargs, user=user, password=password, token=token, db_name=db_name)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 426, in connect_milvus
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 418, in connect_milvus
+    gh._wait_for_channel_ready(timeout=timeout)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 169, in _wait_for_channel_ready
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 160, in _wait_for_channel_ready
+    self._setup_identifier_interceptor(self._user, timeout=timeout)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 271, in _setup_identifier_interceptor
+    self._identifier = self.__internal_register(user, host, timeout=timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 254, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 250, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 297, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 195, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 165, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 337, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 327, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 2333, in __internal_register
+    check_status(response.status)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/utils.py", line 66, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=800, message=database not found[database=lightrag])>
+
+2025-11-28 17:49:07,514 - uvicorn.error - ERROR - Application startup failed. Exiting.
+2025-11-28 17:52:09,641 - lightrag - INFO - OpenAI LLM Options: {'max_completion_tokens': 8192}
+2025-11-28 17:52:09,641 - lightrag - INFO - Ollama Embedding Options: {'num_ctx': 8192}
+2025-11-28 17:52:09,642 - lightrag - INFO - Reranking is disabled
+2025-11-28 17:52:10,376 - uvicorn.error - INFO - Started server process [99739]
+2025-11-28 17:52:10,376 - uvicorn.error - INFO - Waiting for application startup.
+2025-11-28 17:52:10,376 - lightrag - INFO - [_] Process 99739 KV load full_docs with 4 records
+2025-11-28 17:52:10,377 - lightrag - INFO - [_] Process 99739 KV load text_chunks with 25 records
+2025-11-28 17:52:10,377 - lightrag - INFO - [_] Process 99739 KV load full_entities with 4 records
+2025-11-28 17:52:10,377 - lightrag - INFO - [_] Process 99739 KV load full_relations with 4 records
+2025-11-28 17:52:10,378 - lightrag - INFO - [_] Process 99739 KV load entity_chunks with 265 records
+2025-11-28 17:52:10,378 - lightrag - INFO - [_] Process 99739 KV load relation_chunks with 157 records
+2025-11-28 17:52:10,670 - lightrag - ERROR - [_] Failed to initialize Milvus collection 'entities': <MilvusException: (code=800, message=database not found[database=lightrag])>
+2025-11-28 17:52:10,679 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/fastapi/routing.py", line 211, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.12.7/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/api/lightrag_server.py", line 335, in lifespan
+    await rag.initialize_storages()
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/lightrag.py", line 658, in initialize_storages
+    await storage.initialize()
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/lightrag/kg/milvus_impl.py", line 993, in initialize
+    self._client = MilvusClient(
+                   ^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/milvus_client.py", line 67, in __init__
+    self._using = create_connection(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/_utils.py", line 43, in create_connection
+    connections.connect(using, user, password, db_name, token, uri=uri, _async=use_async, **kwargs)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 472, in connect
+    connect_milvus(**kwargs, user=user, password=password, token=token, db_name=db_name)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 426, in connect_milvus
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/orm/connections.py", line 418, in connect_milvus
+    gh._wait_for_channel_ready(timeout=timeout)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 169, in _wait_for_channel_ready
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 160, in _wait_for_channel_ready
+    self._setup_identifier_interceptor(self._user, timeout=timeout)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 271, in _setup_identifier_interceptor
+    self._identifier = self.__internal_register(user, host, timeout=timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 254, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 250, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 297, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 195, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 165, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 337, in handler
+    raise e from e
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 327, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 2333, in __internal_register
+    check_status(response.status)
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.12/site-packages/pymilvus/client/utils.py", line 66, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=800, message=database not found[database=lightrag])>
+
+2025-11-28 17:52:10,680 - uvicorn.error - ERROR - Application startup failed. Exiting.
+2025-11-28 17:54:36,261 - lightrag - INFO - OpenAI LLM Options: {'max_completion_tokens': 8192}
+2025-11-28 17:54:36,261 - lightrag - INFO - Ollama Embedding Options: {'num_ctx': 8192}
+2025-11-28 17:54:36,261 - lightrag - INFO - Reranking is disabled
+2025-11-28 17:54:36,961 - uvicorn.error - INFO - Started server process [1194]
+2025-11-28 17:54:36,961 - uvicorn.error - INFO - Waiting for application startup.
+2025-11-28 17:54:36,961 - lightrag - INFO - [_] Process 1194 KV load full_docs with 4 records
+2025-11-28 17:54:36,962 - lightrag - INFO - [_] Process 1194 KV load text_chunks with 25 records
+2025-11-28 17:54:36,962 - lightrag - INFO - [_] Process 1194 KV load full_entities with 4 records
+2025-11-28 17:54:36,963 - lightrag - INFO - [_] Process 1194 KV load full_relations with 4 records
+2025-11-28 17:54:36,964 - lightrag - INFO - [_] Process 1194 KV load entity_chunks with 265 records
+2025-11-28 17:54:36,964 - lightrag - INFO - [_] Process 1194 KV load relation_chunks with 157 records
+2025-11-28 17:54:37,216 - lightrag - INFO - [_] VectorDB collection 'entities' exists check: False
+2025-11-28 17:54:37,216 - lightrag - INFO - [_] Creating new collection: entities
+2025-11-28 17:54:37,957 - lightrag - INFO - [_] Could not create entity_name index using fallback method: <ParamError: (code=1, message=wrong type of argument [index_params], expected type: [IndexParams], got type: [dict])>
+2025-11-28 17:54:37,957 - lightrag - INFO - [_] Created indexes for collection: entities
+2025-11-28 17:54:40,841 - lightrag - INFO - [_] Successfully created Milvus collection: entities
+2025-11-28 17:54:40,841 - lightrag - INFO - [_] Milvus collection 'entities' initialized successfully
+2025-11-28 17:54:40,884 - lightrag - INFO - [_] VectorDB collection 'relationships' exists check: False
+2025-11-28 17:54:40,884 - lightrag - INFO - [_] Creating new collection: relationships
+2025-11-28 17:54:41,630 - lightrag - INFO - [_] Could not create src_id index using fallback method: <ParamError: (code=1, message=wrong type of argument [index_params], expected type: [IndexParams], got type: [dict])>
+2025-11-28 17:54:41,673 - lightrag - INFO - [_] Could not create tgt_id index using fallback method: <ParamError: (code=1, message=wrong type of argument [index_params], expected type: [IndexParams], got type: [dict])>
+2025-11-28 17:54:41,674 - lightrag - INFO - [_] Created indexes for collection: relationships
+2025-11-28 17:54:43,998 - lightrag - INFO - [_] Successfully created Milvus collection: relationships
+2025-11-28 17:54:43,998 - lightrag - INFO - [_] Milvus collection 'relationships' initialized successfully
+2025-11-28 17:54:44,044 - lightrag - INFO - [_] VectorDB collection 'chunks' exists check: False
+2025-11-28 17:54:44,044 - lightrag - INFO - [_] Creating new collection: chunks
+2025-11-28 17:54:44,875 - lightrag - INFO - [_] Could not create full_doc_id index using fallback method: <ParamError: (code=1, message=wrong type of argument [index_params], expected type: [IndexParams], got type: [dict])>
+2025-11-28 17:54:44,876 - lightrag - INFO - [_] Created indexes for collection: chunks
+2025-11-28 17:54:47,893 - lightrag - INFO - [_] Successfully created Milvus collection: chunks
+2025-11-28 17:54:47,893 - lightrag - INFO - [_] Milvus collection 'chunks' initialized successfully
+2025-11-28 17:54:48,105 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-11-28 17:54:48,241 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-11-28 17:54:48,353 - lightrag - INFO - [base] No existing index 'entity_id_fulltext_idx' found. Creating new index.
+2025-11-28 17:54:48,353 - lightrag - INFO - [base] Creating full-text index 'entity_id_fulltext_idx' with Chinese tokenizer support.
+2025-11-28 17:54:48,540 - lightrag - INFO - [base] Successfully created full-text index 'entity_id_fulltext_idx' with CJK analyzer.
+2025-11-28 17:54:48,543 - lightrag - INFO - [_] Process 1194 KV load llm_response_cache with 14 records
+2025-11-28 17:54:48,544 - lightrag - INFO - [_] Process 1194 doc status load doc_status with 4 records
+2025-11-28 17:54:48,648 - uvicorn.error - INFO - Application startup complete.
+2025-11-28 17:54:48,649 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)

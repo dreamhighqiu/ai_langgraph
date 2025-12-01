@@ -21,6 +21,10 @@ from raganything.utils import (
     insert_text_content_with_multimodal_content,
     get_processor_for_type,
 )
+from raganything.shared_storage_compat import (
+    get_namespace_data,
+    get_pipeline_status_lock,
+)
 import asyncio
 from lightrag.utils import compute_mdhash_id
 
@@ -657,10 +661,6 @@ class ProcessorMixin:
         # Batch merge all multimodal content results (similar to text content processing)
         if all_chunk_results:
             from lightrag.operate import merge_nodes_and_edges
-            from lightrag.kg.shared_storage import (
-                get_namespace_data,
-                get_pipeline_status_lock,
-            )
 
             # Get pipeline status and lock from shared storage
             pipeline_status = await get_namespace_data("pipeline_status")
@@ -1158,10 +1158,6 @@ class ProcessorMixin:
         self, lightrag_chunks: Dict[str, Any]
     ) -> List[Tuple]:
         """Use LightRAG's extract_entities for batch entity relation extraction"""
-        from lightrag.kg.shared_storage import (
-            get_namespace_data,
-            get_pipeline_status_lock,
-        )
         from lightrag.operate import extract_entities
 
         # Get pipeline status (consistent with LightRAG)
@@ -1251,10 +1247,6 @@ class ProcessorMixin:
         self, enhanced_chunk_results: List[Tuple], file_path: str, doc_id: str = None
     ):
         """Use LightRAG's merge_nodes_and_edges for batch merge"""
-        from lightrag.kg.shared_storage import (
-            get_namespace_data,
-            get_pipeline_status_lock,
-        )
         from lightrag.operate import merge_nodes_and_edges
 
         pipeline_status = await get_namespace_data("pipeline_status")
@@ -1585,11 +1577,6 @@ class ProcessorMixin:
                 current_doc_status = await self.lightrag.doc_status.get_by_id(
                     doc_pre_id
                 )
-
-            from lightrag.kg.shared_storage import (
-                get_namespace_data,
-                get_pipeline_status_lock,
-            )
 
             pipeline_status = await get_namespace_data("pipeline_status")
             pipeline_status_lock = get_pipeline_status_lock()

@@ -915,3 +915,139 @@
 2025-12-01 11:10:39,390 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 3000s, Worker: 6000s, Health Check: 6015s)
 2025-12-01 11:10:45,218 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
 2025-12-01 11:11:07,140 - lightrag - INFO -  == LLM cache == saving: default:extract:598167cdc6f196e141aaa7ed65ae55c0
+2025-12-01 11:11:43,919 - lightrag - INFO -  == LLM cache == saving: default:extract:07de70f075a44395a1ea3ca3012b9ed0
+2025-12-01 11:11:43,929 - lightrag - INFO - Chunk 1 of 1 extracted 31 Ent + 2 Rel chunk-7882298873876029b066fe9c2191776c
+2025-12-01 11:11:43,931 - lightrag - INFO - Merging stage 1/1: 旅行日记2.pdf
+2025-12-01 11:11:43,931 - lightrag - INFO - Phase 1: Processing 31 entities from doc-fb18a5c68c86f343f0b5dd6181880b12 (async: 8)
+2025-12-01 11:11:59,095 - lightrag - INFO - Phase 2: Processing 2 relations from doc-fb18a5c68c86f343f0b5dd6181880b12 (async: 8)
+2025-12-01 11:12:01,449 - lightrag - INFO - Phase 3: Updating final 31(31+0) entities and  2 relations from doc-fb18a5c68c86f343f0b5dd6181880b12
+2025-12-01 11:12:01,450 - lightrag - INFO - Completed merging: 31 entities, 0 extra entities, 2 relations
+2025-12-01 11:12:01,458 - lightrag - INFO - [] Writing graph with 31 nodes, 2 edges
+2025-12-01 11:12:01,483 - lightrag - INFO - In memory DB persist to disk
+2025-12-01 11:12:01,483 - lightrag - INFO - Completed processing file 1/1: 旅行日记2.pdf
+2025-12-01 11:12:01,483 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-01 11:12:01,483 - lightrag - INFO - Text content insertion complete
+2025-12-01 11:12:01,483 - lightrag - INFO - Document doc-fb18a5c68c86f343f0b5dd6181880b12 text processing is complete, but multimodal content still needs processing
+2025-12-01 11:12:01,483 - lightrag - INFO - Starting multimodal content processing...
+2025-12-01 11:12:01,483 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-01 11:12:10,929 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-01 11:12:11,283 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-01 11:12:20,362 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-01 11:12:20,362 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-01 11:12:46,818 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/shared_storage.py)
+2025-12-01 11:12:46,818 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-01 11:12:46,819 - lightrag - INFO - Processing item 1/3: image content
+2025-12-01 11:13:50,428 - lightrag - INFO -  == LLM cache == saving: default:extract:2a05241551463d285103ab405e44b6fb
+2025-12-01 11:14:09,380 - lightrag - INFO -  == LLM cache == saving: default:extract:b5c659c022f2fd399940ffe0211f67ea
+2025-12-01 11:14:09,383 - lightrag - INFO - Chunk 1 of 1 extracted 18 Ent + 15 Rel chunk-2d22298fcb495b4eaea123db50e92730
+2025-12-01 11:14:31,151 - lightrag - INFO - image processing complete: AirAsia Boarding Scene with Passengers (image)
+2025-12-01 11:14:31,152 - lightrag - INFO - Processing item 2/3: image content
+2025-12-01 11:14:39,387 - uvicorn.access - INFO - 127.0.0.1:53810 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2025-12-01 11:14:39,388 - uvicorn.access - INFO - 127.0.0.1:53828 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2025-12-01 11:14:40,448 - uvicorn.access - INFO - 127.0.0.1:53810 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:14:40,467 - uvicorn.access - INFO - 127.0.0.1:53810 - "GET /webui/favicon.png HTTP/1.1" 200
+2025-12-01 11:14:40,513 - uvicorn.access - INFO - 127.0.0.1:53810 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2025-12-01 11:14:40,518 - uvicorn.access - INFO - 127.0.0.1:53828 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2025-12-01 11:14:40,609 - uvicorn.access - INFO - 127.0.0.1:53810 - "GET /static/swagger-ui/swagger-ui.css.map HTTP/1.1" 404
+2025-12-01 11:14:40,706 - uvicorn.access - INFO - 127.0.0.1:53810 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:15:22,687 - lightrag - INFO -  == LLM cache == saving: default:extract:bb3d76ec7762d21efe06f1a1b90853da
+2025-12-01 11:15:50,131 - lightrag - INFO -  == LLM cache == saving: default:extract:e1ce2bb1432753cd66c533343cea9840
+2025-12-01 11:15:50,134 - lightrag - INFO - Chunk 1 of 1 extracted 15 Ent + 14 Rel chunk-4e84aac4196ddfd881062630f1f80585
+2025-12-01 11:16:10,558 - lightrag - INFO - image processing complete: Fan of Indian 500-Rupee Notes Held by Traveler (image)
+2025-12-01 11:16:10,558 - lightrag - INFO - Processing item 3/3: image content
+2025-12-01 11:17:24,542 - lightrag - INFO -  == LLM cache == saving: default:extract:11a6d48870a8438b727b011e52941782
+2025-12-01 11:17:42,868 - lightrag - INFO -  == LLM cache == saving: default:extract:71839185ea9f125488950ce1e2ef1743
+2025-12-01 11:17:42,871 - lightrag - INFO - Chunk 1 of 1 extracted 23 Ent + 21 Rel chunk-10f732c4447ca0c84b5491e2d6edbf55
+2025-12-01 11:18:17,411 - lightrag - INFO - image processing complete: India Study Tour Group at Dhamek Stupa with Travel Vlog Overlay (image)
+2025-12-01 11:18:17,413 - lightrag - INFO - Updated doc_status with 3 multimodal chunks integrated into chunks_list
+2025-12-01 11:18:17,413 - lightrag - ERROR - Error processing document with RAG-Anything: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/shared_storage.py)
+2025-12-01 11:18:17,414 - lightrag - WARNING - RAG-Anything processing failed for 旅行日记2.pdf, falling back to standard processing
+2025-12-01 11:18:17,482 - lightrag - INFO - Successfully extracted and enqueued file: 旅行日记2.pdf
+2025-12-01 11:18:17,482 - lightrag - INFO - Processing 1 document(s)
+2025-12-01 11:18:17,482 - lightrag - INFO - Extracting stage 1/1: 旅行日记2.pdf
+2025-12-01 11:18:17,482 - lightrag - INFO - Processing d-id: doc-88ead37a15ef08c8b04848ce41143c0d
+2025-12-01 11:18:22,783 - lightrag - INFO -  == LLM cache == saving: default:extract:eb6d256b252658067d983e71b6f22d7e
+2025-12-01 11:18:27,051 - lightrag - INFO -  == LLM cache == saving: default:extract:b4f2cb4f2a2fb427aa6bc24aff9254aa
+2025-12-01 11:18:27,052 - lightrag - INFO - Chunk 1 of 1 extracted 2 Ent + 1 Rel chunk-88ead37a15ef08c8b04848ce41143c0d
+2025-12-01 11:18:27,054 - lightrag - INFO - Merging stage 1/1: 旅行日记2.pdf
+2025-12-01 11:18:27,054 - lightrag - INFO - Phase 1: Processing 2 entities from doc-88ead37a15ef08c8b04848ce41143c0d (async: 8)
+2025-12-01 11:18:27,707 - lightrag - INFO - Phase 2: Processing 1 relations from doc-88ead37a15ef08c8b04848ce41143c0d (async: 8)
+2025-12-01 11:18:28,346 - lightrag - INFO - Phase 3: Updating final 2(2+0) entities and  1 relations from doc-88ead37a15ef08c8b04848ce41143c0d
+2025-12-01 11:18:28,346 - lightrag - INFO - Completed merging: 2 entities, 0 extra entities, 1 relations
+2025-12-01 11:18:28,366 - lightrag - INFO - [] Writing graph with 93 nodes, 59 edges
+2025-12-01 11:18:28,370 - lightrag - INFO - In memory DB persist to disk
+2025-12-01 11:18:28,370 - lightrag - INFO - Completed processing file 1/1: 旅行日记2.pdf
+2025-12-01 11:18:28,370 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-01 11:19:56,133 - lightrag - INFO - Frontend build is up-to-date
+2025-12-01 11:19:56,133 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-01 11:19:56,133 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-01 11:19:56,190 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-01 11:19:56,190 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-01 11:19:56,190 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-01 11:19:56,190 - lightrag - INFO - Reranking is disabled
+2025-12-01 11:19:56,383 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-01 11:19:56,641 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-01 11:19:56,641 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-01 11:19:56,641 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-01 11:19:56,687 - uvicorn.error - INFO - Started server process [71623]
+2025-12-01 11:19:56,688 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-01 11:19:56,688 - lightrag - INFO - [] Process 71623 KV load full_docs with 0 records
+2025-12-01 11:19:56,688 - lightrag - INFO - [] Process 71623 KV load text_chunks with 0 records
+2025-12-01 11:19:56,688 - lightrag - INFO - [] Process 71623 KV load full_entities with 0 records
+2025-12-01 11:19:56,688 - lightrag - INFO - [] Process 71623 KV load full_relations with 0 records
+2025-12-01 11:19:56,688 - lightrag - INFO - [] Process 71623 KV load entity_chunks with 0 records
+2025-12-01 11:19:56,688 - lightrag - INFO - [] Process 71623 KV load relation_chunks with 0 records
+2025-12-01 11:19:56,689 - lightrag - INFO - [] Process 71623 KV load llm_response_cache with 0 records
+2025-12-01 11:19:56,689 - lightrag - INFO - [] Process 71623 doc status load doc_status with 0 records
+2025-12-01 11:19:56,689 - uvicorn.error - INFO - Application startup complete.
+2025-12-01 11:19:56,689 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-01 11:20:55,722 - uvicorn.access - INFO - 127.0.0.1:55587 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:20:55,902 - uvicorn.access - INFO - 127.0.0.1:55587 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:20:58,935 - uvicorn.access - INFO - 127.0.0.1:55587 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:20:58,991 - uvicorn.access - INFO - 127.0.0.1:55587 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:21:04,726 - uvicorn.access - INFO - 127.0.0.1:55641 - "POST /documents/upload HTTP/1.1" 200
+2025-12-01 11:21:04,726 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记2.pdf
+2025-12-01 11:21:04,726 - lightrag - INFO - RAGAnything initialized with config:
+2025-12-01 11:21:04,727 - lightrag - INFO -   Working directory: ./rag_storage
+2025-12-01 11:21:04,727 - lightrag - INFO -   Parser: docling
+2025-12-01 11:21:04,727 - lightrag - INFO -   Parse method: auto
+2025-12-01 11:21:04,727 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2025-12-01 11:21:04,727 - lightrag - INFO -   Max concurrent files: 1
+2025-12-01 11:21:04,727 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2025-12-01 11:21:04,727 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/inputs/旅行日记2.pdf
+2025-12-01 11:21:04,728 - lightrag - INFO - Using docling parser with method: auto
+2025-12-01 11:21:04,728 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-01 11:21:14,735 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:21:14,795 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:21:19,432 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:21:19,486 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:21:23,266 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:21:23,318 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:21:26,964 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/inputs/旅行日记2.pdf complete! Extracted 35 content blocks
+2025-12-01 11:21:26,965 - lightrag - INFO - Document parsed successfully: 旅行日记2.pdf, doc_id=doc-fb18a5c68c86f343f0b5dd6181880b12, blocks=35
+2025-12-01 11:21:30,689 - lightrag - INFO - Parser 'docling' installation verified
+2025-12-01 11:21:30,689 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2025-12-01 11:21:30,689 - lightrag - INFO - [] Process 71623 KV load parse_cache with 0 records
+2025-12-01 11:21:30,691 - lightrag - INFO - Multimodal processors initialized with context support
+2025-12-01 11:21:30,691 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2025-12-01 11:21:30,691 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2025-12-01 11:21:30,691 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/inputs/旅行日记2.pdf (35 items)
+2025-12-01 11:21:30,691 - lightrag - INFO - Content separation complete:
+2025-12-01 11:21:30,691 - lightrag - INFO -   - Text content length: 459 characters
+2025-12-01 11:21:30,691 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-01 11:21:30,691 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-01 11:21:30,691 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-01 11:21:30,691 - lightrag - INFO - Content source set with format: minerU
+2025-12-01 11:21:30,691 - lightrag - INFO - Content source set with format: minerU
+2025-12-01 11:21:30,691 - lightrag - INFO - Content source set with format: minerU
+2025-12-01 11:21:30,691 - lightrag - INFO - Content source set with format: minerU
+2025-12-01 11:21:30,691 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-01 11:21:30,691 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-01 11:21:30,693 - lightrag - INFO - Processing 1 document(s)
+2025-12-01 11:21:30,693 - lightrag - INFO - Extracting stage 1/1: 旅行日记2.pdf
+2025-12-01 11:21:30,693 - lightrag - INFO - Processing d-id: doc-fb18a5c68c86f343f0b5dd6181880b12
+2025-12-01 11:21:30,703 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 3000s, Worker: 6000s, Health Check: 6015s)
+2025-12-01 11:21:31,874 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:21:31,949 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /openapi.json HTTP/1.1" 200
+2025-12-01 11:21:35,635 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-01 11:21:47,922 - lightrag - INFO -  == LLM cache == saving: default:extract:598167cdc6f196e141aaa7ed65ae55c0

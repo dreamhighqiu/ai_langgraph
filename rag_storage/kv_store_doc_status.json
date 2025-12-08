@@ -1,18 +1,23 @@
 {
   "doc-fb18a5c68c86f343f0b5dd6181880b12": {
-    "status": "processing",
-    "chunks_count": 1,
+    "status": "processed",
+    "chunks_count": 4,
     "chunks_list": [
-      "chunk-7882298873876029b066fe9c2191776c"
+      "chunk-7882298873876029b066fe9c2191776c",
+      "chunk-f42d21f98a63828af004d656796b0d0b",
+      "chunk-4ffaa4155aa7ec93ce46d8eaad2cc600",
+      "chunk-ad9b804e4d092eef91aaf50f76f409a8"
     ],
     "content_summary": "我们出去旅行了\n\nAir Asia\n\nMAHATMA GANDHI\n\nwear airch\n\nMAHATHA GANOHI\n\n7400\n\nR 500\n\nMAHATNA GANOHI\n\n298169\n\n999\n\nIN CA\n\n28805\n\n005 €\n\n1500\n\n1900\n\nRESERVE BANK OF INDIA\n\nLARANTEED BY THE CENTRAL GOVERNVENTT\n\nDECERVE BANK OF INDIA\n\nMALIK OF INDIA\n\nI nECERVE BA...",
     "content_length": 459,
     "created_at": "2025-12-01T03:21:30.692282+00:00",
-    "updated_at": "2025-12-01T03:21:30.703285+00:00",
+    "updated_at": "2025-12-01T11:26:14+00:00",
     "file_path": "旅行日记2.pdf",
     "track_id": "insert_20251201_112130_c3a70609",
     "metadata": {
-      "processing_start_time": 1764559290
-    }
+      "processing_start_time": 1764559290,
+      "processing_end_time": 1764559375
+    },
+    "multimodal_processed": true
   }
 }

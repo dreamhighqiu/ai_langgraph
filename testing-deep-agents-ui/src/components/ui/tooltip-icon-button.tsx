@@ -1,0 +1,53 @@
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
+
+import React from "react";
+import { Button } from "./button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./tooltip";
+// FIXME  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1ocFRRPT06OGRkMzhjZDU=
+
+interface TooltipIconButtonProps {
+  icon: React.ReactNode;
+  onClick: () => void;
+  tooltip: string;
+  disabled?: boolean;
+}
+// NOTE  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Ym1ocFRRPT06OGRkMzhjZDU=
+
+export function TooltipIconButton({
+  icon,
+  onClick,
+  tooltip,
+  disabled,
+}: TooltipIconButtonProps) {
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onClick}
+            disabled={disabled}
+          >
+            {icon}
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{tooltip}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+}

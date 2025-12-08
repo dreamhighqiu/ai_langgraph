@@ -1051,3 +1051,55 @@
 2025-12-01 11:21:31,949 - uvicorn.access - INFO - 127.0.0.1:55685 - "GET /openapi.json HTTP/1.1" 200
 2025-12-01 11:21:35,635 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
 2025-12-01 11:21:47,922 - lightrag - INFO -  == LLM cache == saving: default:extract:598167cdc6f196e141aaa7ed65ae55c0
+2025-12-01 11:22:35,630 - lightrag - INFO -  == LLM cache == saving: default:extract:6a7e13e34badfc0318608addcb5a6612
+2025-12-01 11:22:35,635 - lightrag - INFO - Chunk 1 of 1 extracted 29 Ent + 7 Rel chunk-7882298873876029b066fe9c2191776c
+2025-12-01 11:22:35,635 - lightrag - INFO - Merging stage 1/1: 旅行日记2.pdf
+2025-12-01 11:22:35,636 - lightrag - INFO - Phase 1: Processing 29 entities from doc-fb18a5c68c86f343f0b5dd6181880b12 (async: 8)
+2025-12-01 11:22:50,060 - lightrag - INFO - Phase 2: Processing 7 relations from doc-fb18a5c68c86f343f0b5dd6181880b12 (async: 8)
+2025-12-01 11:22:55,655 - lightrag - INFO - Phase 3: Updating final 29(29+0) entities and  7 relations from doc-fb18a5c68c86f343f0b5dd6181880b12
+2025-12-01 11:22:55,656 - lightrag - INFO - Completed merging: 29 entities, 0 extra entities, 7 relations
+2025-12-01 11:22:55,666 - lightrag - INFO - [] Writing graph with 29 nodes, 7 edges
+2025-12-01 11:22:55,692 - lightrag - INFO - In memory DB persist to disk
+2025-12-01 11:22:55,692 - lightrag - INFO - Completed processing file 1/1: 旅行日记2.pdf
+2025-12-01 11:22:55,693 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-01 11:22:55,693 - lightrag - INFO - Text content insertion complete
+2025-12-01 11:22:55,693 - lightrag - INFO - Document doc-fb18a5c68c86f343f0b5dd6181880b12 text processing is complete, but multimodal content still needs processing
+2025-12-01 11:22:55,693 - lightrag - INFO - Starting multimodal content processing...
+2025-12-01 11:22:55,693 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-01 11:23:04,639 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-01 11:23:05,019 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-01 11:23:14,284 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-01 11:23:14,284 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-01 11:24:10,043 - lightrag - INFO -  == LLM cache == saving: default:extract:4a37b12fbad4746bf98c5331d8636a07
+2025-12-01 11:24:15,673 - lightrag - INFO -  == LLM cache == saving: default:extract:47296fc66798ce43fa74417d52aa6d05
+2025-12-01 11:24:17,619 - lightrag - INFO -  == LLM cache == saving: default:extract:468c2d89eec5b04ca4a3ab57fbbc4483
+2025-12-01 11:24:25,247 - lightrag - INFO -  == LLM cache == saving: default:extract:74b1ccfb79bc261752a7349dff9caefe
+2025-12-01 11:24:25,249 - lightrag - INFO - Chunk 1 of 3 extracted 13 Ent + 10 Rel chunk-4ffaa4155aa7ec93ce46d8eaad2cc600
+2025-12-01 11:24:32,058 - lightrag - INFO -  == LLM cache == saving: default:extract:d35c9655f67ab2eb2735e72830e9a853
+2025-12-01 11:24:32,060 - lightrag - INFO - Chunk 2 of 3 extracted 15 Ent + 13 Rel chunk-ad9b804e4d092eef91aaf50f76f409a8
+2025-12-01 11:24:32,774 - lightrag - INFO -  == LLM cache == saving: default:extract:743545c395b1e55f630f14888e9bb63d
+2025-12-01 11:24:32,775 - lightrag - INFO - Chunk 3 of 3 extracted 14 Ent + 14 Rel chunk-f42d21f98a63828af004d656796b0d0b
+2025-12-01 11:24:32,776 - lightrag - INFO - Extracted entities from 3 multimodal chunks
+2025-12-01 11:24:32,776 - lightrag - INFO - Added 42 belongs_to relations for multimodal entities
+2025-12-01 11:24:32,776 - lightrag - INFO - Merging stage 1/1: 旅行日记2.pdf
+2025-12-01 11:24:32,776 - lightrag - INFO - Phase 1: Processing 41 entities from doc-fb18a5c68c86f343f0b5dd6181880b12 (async: 8)
+2025-12-01 11:24:35,756 - lightrag - INFO - Merged: `Air Asia` | 1+1
+2025-12-01 11:24:57,925 - lightrag - INFO - Phase 2: Processing 79 relations from doc-fb18a5c68c86f343f0b5dd6181880b12 (async: 8)
+2025-12-01 11:26:14,259 - lightrag - INFO - Phase 3: Updating final 41(41+0) entities and  79 relations from doc-fb18a5c68c86f343f0b5dd6181880b12
+2025-12-01 11:26:14,260 - lightrag - INFO - Completed merging: 41 entities, 0 extra entities, 79 relations
+2025-12-01 11:26:14,275 - lightrag - INFO - [] Writing graph with 72 nodes, 86 edges
+2025-12-01 11:26:14,280 - lightrag - INFO - In memory DB persist to disk
+2025-12-01 11:26:14,281 - lightrag - INFO - Updated doc_status: added 3 multimodal chunks to standard chunks_list (total chunks: 4)
+2025-12-01 11:26:14,281 - lightrag - INFO - Multimodal content processing complete
+2025-12-01 11:26:14,281 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/inputs/旅行日记2.pdf
+2025-12-01 11:26:14,281 - lightrag - INFO - Document processing complete: 旅行日记2.pdf, doc_id=doc-fb18a5c68c86f343f0b5dd6181880b12
+2025-12-01 11:26:14,281 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记2.pdf, doc_id=doc-fb18a5c68c86f343f0b5dd6181880b12
+2025-12-01 11:26:14,282 - lightrag - INFO - No documents to process
+2025-12-01 11:26:44,691 - uvicorn.access - INFO - 127.0.0.1:57302 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2025-12-01 11:26:44,692 - uvicorn.access - INFO - 127.0.0.1:57307 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2025-12-01 11:26:45,068 - uvicorn.access - INFO - 127.0.0.1:57307 - "GET /docs HTTP/1.1" 200
+2025-12-01 11:26:45,087 - uvicorn.access - INFO - 127.0.0.1:57307 - "GET /webui/favicon.png HTTP/1.1" 200
+2025-12-01 11:26:45,114 - uvicorn.access - INFO - 127.0.0.1:57307 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2025-12-01 11:26:45,114 - uvicorn.access - INFO - 127.0.0.1:57302 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2025-12-01 11:26:45,207 - uvicorn.access - INFO - 127.0.0.1:57302 - "GET /static/swagger-ui/swagger-ui.css.map HTTP/1.1" 404
+2025-12-01 11:26:45,297 - uvicorn.access - INFO - 127.0.0.1:57302 - "GET /openapi.json HTTP/1.1" 200

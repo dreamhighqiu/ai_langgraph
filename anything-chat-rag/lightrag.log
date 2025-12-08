@@ -785,3 +785,9 @@ asyncpg.exceptions.UndefinedObjectError: type "vector" does not exist
 2025-12-08 17:23:51,497 - uvicorn.access - INFO - 127.0.0.1:51090 - "GET /graphs?label=%E7%94%B3%E8%AF%B7%E8%AF%95%E7%94%A8%E5%9F%8B%E7%82%B9&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 2025-12-08 17:23:57,232 - lightrag - INFO - [base] Subgraph query successful | Node count: 69 | Edge count: 65
 2025-12-08 17:23:57,243 - uvicorn.access - INFO - 127.0.0.1:51090 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 17:28:13,117 - lightrag - WARNING - Embedding func: Worker timeout for task 5949183488_20601.010058291 after 600s
+2025-12-08 17:28:13,118 - lightrag - WARNING - Embedding func: Worker timeout for task 5949188672_20601.010078833 after 600s
+2025-12-08 17:28:13,119 - lightrag - ERROR - Error storing chunks to storage: Embedding func: Worker execution timeout after 600s
+2025-12-08 17:28:13,119 - lightrag - ERROR - Error in multimodal processing: Embedding func: Worker execution timeout after 600s
+2025-12-08 17:28:13,119 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-08 17:28:13,120 - lightrag - INFO - Processing item 1/23: image content

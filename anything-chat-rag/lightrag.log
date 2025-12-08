@@ -773,3 +773,15 @@ asyncpg.exceptions.UndefinedObjectError: type "vector" does not exist
 2025-12-08 17:18:02,949 - lightrag - INFO - Multimodal chunk generation progress: 22/23 (95.7%)
 2025-12-08 17:18:12,875 - lightrag - INFO - Multimodal chunk generation progress: 23/23 (100.0%)
 2025-12-08 17:18:12,876 - lightrag - INFO - Generated descriptions for 23/23 multimodal items using correct processors
+2025-12-08 17:23:09,354 - uvicorn.access - INFO - 127.0.0.1:50894 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:23:09,409 - uvicorn.access - INFO - 127.0.0.1:50894 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:23:36,373 - lightrag - WARNING - [base] APOC plugin error: {neo4j_code: Neo.ClientError.Procedure.ProcedureNotFound} {message: There is no procedure with the name `apoc.path.subgraphAll` registered for this database instance. Please ensure you've spelled the procedure name correctly and that the procedure is properly deployed.} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. There is no procedure with the name `apoc.path.subgraphAll` registered for this database instance. Please ensure you've spelled the procedure name correctly and that the procedure is properly deployed.}
+2025-12-08 17:23:36,374 - lightrag - WARNING - [base] Neo4j: falling back to basic Cypher recursive search...
+2025-12-08 17:23:40,261 - lightrag - INFO - [base] BFS subgraph query successful | Node count: 37 | Edge count: 41
+2025-12-08 17:23:40,267 - uvicorn.access - INFO - 127.0.0.1:51023 - "GET /graphs?label=MWS%E5%AE%98%E7%BD%91&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 17:23:50,647 - lightrag - WARNING - [base] APOC plugin error: {neo4j_code: Neo.ClientError.Procedure.ProcedureNotFound} {message: There is no procedure with the name `apoc.path.subgraphAll` registered for this database instance. Please ensure you've spelled the procedure name correctly and that the procedure is properly deployed.} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. There is no procedure with the name `apoc.path.subgraphAll` registered for this database instance. Please ensure you've spelled the procedure name correctly and that the procedure is properly deployed.}
+2025-12-08 17:23:50,648 - lightrag - WARNING - [base] Neo4j: falling back to basic Cypher recursive search...
+2025-12-08 17:23:51,493 - lightrag - INFO - [base] BFS subgraph query successful | Node count: 13 | Edge count: 14
+2025-12-08 17:23:51,497 - uvicorn.access - INFO - 127.0.0.1:51090 - "GET /graphs?label=%E7%94%B3%E8%AF%B7%E8%AF%95%E7%94%A8%E5%9F%8B%E7%82%B9&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 17:23:57,232 - lightrag - INFO - [base] Subgraph query successful | Node count: 69 | Edge count: 65
+2025-12-08 17:23:57,243 - uvicorn.access - INFO - 127.0.0.1:51090 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200

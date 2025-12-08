@@ -142,7 +142,7 @@ class KnowledgeConfig:
         cache_ttl: Cache TTL in seconds.
     """
     enabled: bool = True
-    api_url: str = "http://localhost:8000"
+    api_url: str = "http://localhost:9621"
     api_key: Optional[str] = None
     default_mode: str = "mix"
     top_k: int = 10
@@ -243,7 +243,7 @@ class K6AgentConfig:
 
         knowledge = KnowledgeConfig(
             enabled=os.getenv("KNOWLEDGE_ENABLED", "true").lower() == "true",
-            api_url=os.getenv("KNOWLEDGE_API_URL", "http://localhost:8000"),
+            api_url=os.getenv("KNOWLEDGE_API_URL", "http://localhost:9621"),
             api_key=os.getenv("KNOWLEDGE_API_KEY"),
         )
 

@@ -316,3 +316,328 @@ pymilvus.exceptions.MilvusException: <MilvusException: (code=800, message=databa
 2025-11-28 17:54:48,544 - lightrag - INFO - [_] Process 1194 doc status load doc_status with 4 records
 2025-11-28 17:54:48,648 - uvicorn.error - INFO - Application startup complete.
 2025-11-28 17:54:48,649 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-08 16:40:30,637 - lightrag - INFO - Frontend build is up-to-date
+2025-12-08 16:40:30,637 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-08 16:40:30,637 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-08 16:40:30,696 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-08 16:40:30,696 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-08 16:40:30,697 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-08 16:40:30,697 - lightrag - INFO - Reranking is disabled
+2025-12-08 16:40:30,902 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-08 16:40:33,444 - lightrag - INFO - Created shared Redis connection pool for redis://localhost:6379
+2025-12-08 16:40:33,445 - lightrag - INFO - [_] Initialized Redis doc status storage for doc_status using shared connection pool
+2025-12-08 16:40:33,445 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-08 16:40:33,445 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-08 16:40:33,553 - uvicorn.error - INFO - Started server process [34125]
+2025-12-08 16:40:33,553 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-08 16:40:33,554 - lightrag - INFO - PostgreSQL, Retry config: attempts=3, backoff=0.5s, backoff_max=5.0s, pool_close_timeout=5.0s
+2025-12-08 16:40:33,555 - lightrag - WARNING - PostgreSQL transient connection issue on attempt 1/3: OSError("Multiple exceptions: [Errno 61] Connect call failed ('::1', 5432, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 5432)")
+2025-12-08 16:40:34,061 - lightrag - WARNING - PostgreSQL transient connection issue on attempt 2/3: OSError("Multiple exceptions: [Errno 61] Connect call failed ('::1', 5432, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 5432)")
+2025-12-08 16:40:35,068 - lightrag - ERROR - PostgreSQL, Failed to connect database at localhost:5432/rag_db, Got:Multiple exceptions: [Errno 61] Connect call failed ('::1', 5432, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 5432)
+2025-12-08 16:40:35,084 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/lightrag_server.py", line 360, in lifespan
+    await rag.initialize_storages()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 702, in initialize_storages
+    await storage.initialize()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1709, in initialize
+    self.db = await ClientManager.get_client()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1677, in get_client
+    await db.initdb()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 271, in initdb
+    async for attempt in AsyncRetrying(
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 279, in initdb
+    await _create_pool_once()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 261, in _create_pool_once
+    pool = await asyncpg.create_pool(**connection_params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/pool.py", line 439, in _async__init__
+    await self._initialize()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/pool.py", line 466, in _initialize
+    await first_ch.connect()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/pool.py", line 153, in connect
+    self._con = await self._pool._get_new_connection()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/pool.py", line 538, in _get_new_connection
+    con = await self._connect(
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1249, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1054, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 1099, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connect_utils.py", line 969, in _create_ssl_connection
+    tr, pr = await loop.create_connection(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/base_events.py", line 1093, in create_connection
+    raise OSError('Multiple exceptions: {}'.format(
+OSError: Multiple exceptions: [Errno 61] Connect call failed ('::1', 5432, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 5432)
+
+2025-12-08 16:40:35,087 - uvicorn.error - ERROR - Application startup failed. Exiting.
+2025-12-08 16:44:43,879 - lightrag - INFO - Frontend build is up-to-date
+2025-12-08 16:44:43,879 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-08 16:44:43,879 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-08 16:44:43,930 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-08 16:44:43,930 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-08 16:44:43,930 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-08 16:44:43,930 - lightrag - INFO - Reranking is disabled
+2025-12-08 16:44:44,163 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-08 16:44:45,181 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-08 16:44:45,181 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-08 16:44:45,229 - uvicorn.error - INFO - Started server process [34654]
+2025-12-08 16:44:45,229 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-08 16:44:45,230 - lightrag - INFO - PostgreSQL, Retry config: attempts=3, backoff=0.5s, backoff_max=5.0s, pool_close_timeout=5.0s
+2025-12-08 16:44:45,515 - lightrag - WARNING - Could not create VECTOR extension: extension "vector" is not available
+DETAIL:  Could not open extension control file "/usr/share/postgresql/15/extension/vector.control": No such file or directory.
+HINT:  The extension must first be installed on the system where PostgreSQL is running.
+2025-12-08 16:44:45,561 - lightrag - INFO - PostgreSQL, Connected to database at 54.179.103.192:5432/myapp without SSL
+2025-12-08 16:44:45,710 - lightrag - ERROR - PostgreSQL database, error:relation "lightrag_doc_full" does not exist
+2025-12-08 16:44:45,710 - lightrag - INFO - PostgreSQL, Try Creating table LIGHTRAG_DOC_FULL in database
+2025-12-08 16:44:45,837 - lightrag - INFO - PostgreSQL, Creation success table LIGHTRAG_DOC_FULL in PostgreSQL database
+2025-12-08 16:44:45,963 - lightrag - ERROR - PostgreSQL database, error:relation "lightrag_doc_chunks" does not exist
+2025-12-08 16:44:45,964 - lightrag - INFO - PostgreSQL, Try Creating table LIGHTRAG_DOC_CHUNKS in database
+2025-12-08 16:44:46,075 - lightrag - INFO - PostgreSQL, Creation success table LIGHTRAG_DOC_CHUNKS in PostgreSQL database
+2025-12-08 16:44:46,202 - lightrag - ERROR - PostgreSQL database, error:relation "lightrag_vdb_chunks" does not exist
+2025-12-08 16:44:46,202 - lightrag - INFO - PostgreSQL, Try Creating table LIGHTRAG_VDB_CHUNKS in database
+2025-12-08 16:44:46,286 - lightrag - ERROR - PostgreSQL database,
+sql:CREATE TABLE LIGHTRAG_VDB_CHUNKS (
+                    id VARCHAR(255),
+                    workspace VARCHAR(255),
+                    full_doc_id VARCHAR(256),
+                    chunk_order_index INTEGER,
+                    tokens INTEGER,
+                    content TEXT,
+                    content_vector VECTOR(1024),
+                    file_path TEXT NULL,
+                    create_time TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+                    update_time TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+	                CONSTRAINT LIGHTRAG_VDB_CHUNKS_PK PRIMARY KEY (workspace, id)
+                    ),
+data:None,
+error:type "vector" does not exist
+2025-12-08 16:44:46,287 - lightrag - ERROR - PostgreSQL, Failed to create table LIGHTRAG_VDB_CHUNKS in database, Please verify the connection with PostgreSQL database, Got: type "vector" does not exist
+2025-12-08 16:44:46,300 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1104, in check_tables
+    await self.query(f"SELECT 1 FROM {k} LIMIT 1")
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1476, in query
+    return await self._run_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 358, in _run_with_retry
+    async for attempt in AsyncRetrying(
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 375, in _run_with_retry
+    return await operation(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1462, in _operation
+    rows = await connection.fetch(sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 694, in fetch
+    return await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 1873, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 1970, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 2013, in _do_execute
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedTableError: relation "lightrag_vdb_chunks" does not exist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 210, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/lightrag_server.py", line 360, in lifespan
+    await rag.initialize_storages()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 702, in initialize_storages
+    await storage.initialize()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1709, in initialize
+    self.db = await ClientManager.get_client()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1678, in get_client
+    await db.check_tables()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1116, in check_tables
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1108, in check_tables
+    await self.execute(v["ddl"])
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1516, in execute
+    await self._run_with_retry(
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 358, in _run_with_retry
+    async for attempt in AsyncRetrying(
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 166, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 375, in _run_with_retry
+    return await operation(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/postgres_impl.py", line 1496, in _operation
+    return await connection.execute(sql)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/asyncpg/connection.py", line 354, in execute
+    result = await self._protocol.query(query, timeout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 369, in query
+asyncpg.exceptions.UndefinedObjectError: type "vector" does not exist
+
+2025-12-08 16:44:46,301 - uvicorn.error - ERROR - Application startup failed. Exiting.
+2025-12-08 16:46:25,258 - lightrag - INFO - Frontend build is up-to-date
+2025-12-08 16:46:25,258 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-08 16:46:25,258 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-08 16:46:25,309 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-08 16:46:25,309 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-08 16:46:25,309 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-08 16:46:25,309 - lightrag - INFO - Reranking is disabled
+2025-12-08 16:46:25,495 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-08 16:46:26,486 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-08 16:46:26,486 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-08 16:46:26,533 - uvicorn.error - INFO - Started server process [35194]
+2025-12-08 16:46:26,533 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-08 16:46:26,533 - lightrag - INFO - [] Process 35194 KV load full_docs with 0 records
+2025-12-08 16:46:26,533 - lightrag - INFO - [] Process 35194 KV load text_chunks with 0 records
+2025-12-08 16:46:26,533 - lightrag - INFO - [] Process 35194 KV load full_entities with 0 records
+2025-12-08 16:46:26,533 - lightrag - INFO - [] Process 35194 KV load full_relations with 0 records
+2025-12-08 16:46:26,534 - lightrag - INFO - [] Process 35194 KV load entity_chunks with 0 records
+2025-12-08 16:46:26,534 - lightrag - INFO - [] Process 35194 KV load relation_chunks with 0 records
+2025-12-08 16:46:26,786 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-08 16:46:26,873 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-08 16:46:27,005 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-08 16:46:27,097 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-08 16:46:27,185 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-08 16:46:27,318 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-08 16:46:27,415 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-08 16:46:27,505 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-08 16:46:27,635 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-08 16:46:27,912 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-08 16:46:28,031 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-08 16:46:28,269 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-08 16:46:28,269 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-08 16:46:28,270 - lightrag - INFO - [] Process 35194 KV load llm_response_cache with 0 records
+2025-12-08 16:46:28,270 - lightrag - INFO - [] Process 35194 doc status load doc_status with 0 records
+2025-12-08 16:46:28,610 - uvicorn.error - INFO - Application startup complete.
+2025-12-08 16:46:28,612 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-08 16:54:52,764 - uvicorn.access - INFO - 127.0.0.1:58800 - "GET / HTTP/1.1" 307
+2025-12-08 16:54:52,766 - uvicorn.access - INFO - 127.0.0.1:58800 - "GET /webui HTTP/1.1" 307
+2025-12-08 16:54:52,800 - uvicorn.access - INFO - 127.0.0.1:58800 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2025-12-08 16:54:52,806 - uvicorn.access - INFO - 127.0.0.1:58802 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2025-12-08 16:54:53,156 - uvicorn.access - INFO - 127.0.0.1:58800 - "GET /auth-status HTTP/1.1" 200
+2025-12-08 16:54:53,160 - uvicorn.access - INFO - 127.0.0.1:58802 - "GET /webui/favicon.png HTTP/1.1" 200
+2025-12-08 16:54:53,288 - uvicorn.access - INFO - 127.0.0.1:58802 - "GET /docs HTTP/1.1" 200
+2025-12-08 16:54:53,312 - uvicorn.access - INFO - 127.0.0.1:58802 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2025-12-08 16:54:53,313 - uvicorn.access - INFO - 127.0.0.1:58800 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2025-12-08 16:54:53,454 - uvicorn.access - INFO - 127.0.0.1:58802 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 16:54:53,994 - uvicorn.access - INFO - 127.0.0.1:58815 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
+2025-12-08 16:54:54,196 - uvicorn.access - INFO - 127.0.0.1:58816 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200

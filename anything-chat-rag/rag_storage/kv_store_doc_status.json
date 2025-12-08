@@ -1,0 +1,21 @@
+{
+  "doc-d882e7a95961023237e75108ceea7c01": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-59f5288e0a11af443d9d940299e74cab",
+      "chunk-8ca25a39ff34cb8e0d39d47d6aa86274",
+      "chunk-cddc263894125c77af67cf38864512b5"
+    ],
+    "content_summary": "注册&试⽤流程合并\n\n⼀、需求背景\n\n（⼀）需求背景\n\n⽬前注册 试⽤流程分两步，过⻓，合并为在注册时填写全部信息。\n\n1. &\n\n（⼆）需求范围\n\n1. PT 合并「申请」 + 「试⽤」，官⽹增加「申请 & 试⽤」功能\n\na. 需兼容新客户、 XMP/SS 转化客户、再次 s 申请试⽤客户\n\nb. 需兼容客户⾃主注册、试⽤与内部⼈员申请注册、试⽤\n\n2. UTM 信息发送⾄ CRM\n\n3. 申请试⽤增加埋点并上报⾄ GA\n\n4.\n\n官⽹⼆期改动\n\n⼆、需求描述\n\n流程图\n\n1 / 19\n\n*#...",
+    "content_length": 4306,
+    "created_at": "2025-12-08T09:12:40.350066+00:00",
+    "updated_at": "2025-12-08T09:17:52.286847+00:00",
+    "file_path": "注册&试用流程合并.pdf",
+    "track_id": "insert_20251208_171240_7707c822",
+    "metadata": {
+      "processing_start_time": 1765185160,
+      "processing_end_time": 1765185472
+    }
+  }
+}

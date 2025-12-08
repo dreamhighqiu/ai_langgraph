@@ -641,3 +641,135 @@ asyncpg.exceptions.UndefinedObjectError: type "vector" does not exist
 2025-12-08 16:54:53,454 - uvicorn.access - INFO - 127.0.0.1:58802 - "GET /openapi.json HTTP/1.1" 200
 2025-12-08 16:54:53,994 - uvicorn.access - INFO - 127.0.0.1:58815 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
 2025-12-08 16:54:54,196 - uvicorn.access - INFO - 127.0.0.1:58816 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 17:04:40,553 - lightrag - INFO - Frontend build is up-to-date
+2025-12-08 17:04:40,553 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-08 17:04:40,553 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-08 17:04:40,606 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-08 17:04:40,607 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-08 17:04:40,607 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-08 17:04:40,607 - lightrag - INFO - Reranking is disabled
+2025-12-08 17:04:40,800 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-08 17:04:41,825 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-08 17:04:41,826 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-08 17:04:41,871 - uvicorn.error - INFO - Started server process [47092]
+2025-12-08 17:04:41,871 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-08 17:04:41,872 - lightrag - INFO - [] Process 47092 KV load full_docs with 0 records
+2025-12-08 17:04:41,872 - lightrag - INFO - [] Process 47092 KV load text_chunks with 0 records
+2025-12-08 17:04:41,872 - lightrag - INFO - [] Process 47092 KV load full_entities with 0 records
+2025-12-08 17:04:41,872 - lightrag - INFO - [] Process 47092 KV load full_relations with 0 records
+2025-12-08 17:04:41,872 - lightrag - INFO - [] Process 47092 KV load entity_chunks with 0 records
+2025-12-08 17:04:41,872 - lightrag - INFO - [] Process 47092 KV load relation_chunks with 0 records
+2025-12-08 17:04:42,196 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-08 17:04:42,337 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-08 17:04:42,477 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-08 17:04:42,565 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-08 17:04:42,653 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-08 17:04:42,797 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-08 17:04:42,882 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-08 17:04:42,974 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-08 17:04:43,108 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-08 17:04:43,296 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-08 17:04:43,345 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-08 17:04:43,399 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-08 17:04:43,399 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-08 17:04:43,399 - lightrag - INFO - [] Process 47092 KV load llm_response_cache with 0 records
+2025-12-08 17:04:43,400 - lightrag - INFO - [] Process 47092 doc status load doc_status with 0 records
+2025-12-08 17:04:43,454 - uvicorn.error - INFO - Application startup complete.
+2025-12-08 17:04:43,455 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-08 17:10:11,067 - uvicorn.access - INFO - 127.0.0.1:63382 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:10:11,237 - uvicorn.access - INFO - 127.0.0.1:63382 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:10:11,341 - uvicorn.access - INFO - 127.0.0.1:63414 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
+2025-12-08 17:10:30,441 - uvicorn.access - INFO - 127.0.0.1:63482 - "POST /documents/upload HTTP/1.1" 200
+2025-12-08 17:10:30,442 - lightrag - INFO - Using RAG-Anything multimodal processing for: 注册&试用流程合并.pdf
+2025-12-08 17:10:30,442 - lightrag - INFO - RAGAnything initialized with config:
+2025-12-08 17:10:30,443 - lightrag - INFO -   Working directory: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage
+2025-12-08 17:10:30,443 - lightrag - INFO -   Parser: docling
+2025-12-08 17:10:30,443 - lightrag - INFO -   Parse method: auto
+2025-12-08 17:10:30,443 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2025-12-08 17:10:30,443 - lightrag - INFO -   Max concurrent files: 1
+2025-12-08 17:10:30,443 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2025-12-08 17:10:30,443 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/注册&试用流程合并.pdf
+2025-12-08 17:10:30,444 - lightrag - INFO - Using docling parser with method: auto
+2025-12-08 17:10:30,444 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-08 17:12:36,227 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/注册&试用流程合并.pdf complete! Extracted 252 content blocks
+2025-12-08 17:12:36,231 - lightrag - INFO - Document parsed successfully: 注册&试用流程合并.pdf, doc_id=doc-d882e7a95961023237e75108ceea7c01, blocks=252
+2025-12-08 17:12:40,347 - lightrag - INFO - Parser 'docling' installation verified
+2025-12-08 17:12:40,347 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2025-12-08 17:12:40,347 - lightrag - INFO - [] Process 47092 KV load parse_cache with 0 records
+2025-12-08 17:12:40,348 - lightrag - INFO - Multimodal processors initialized with context support
+2025-12-08 17:12:40,348 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2025-12-08 17:12:40,348 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2025-12-08 17:12:40,348 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/注册&试用流程合并.pdf (252 items)
+2025-12-08 17:12:40,349 - lightrag - INFO - Content separation complete:
+2025-12-08 17:12:40,349 - lightrag - INFO -   - Text content length: 4306 characters
+2025-12-08 17:12:40,349 - lightrag - INFO -   - Multimodal items count: 23
+2025-12-08 17:12:40,349 - lightrag - INFO -   - Multimodal type distribution: {'image': 3, 'table': 20}
+2025-12-08 17:12:40,349 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-08 17:12:40,349 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:12:40,349 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:12:40,349 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:12:40,349 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:12:40,349 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-08 17:12:40,349 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-08 17:12:40,351 - lightrag - INFO - Processing 1 document(s)
+2025-12-08 17:12:40,351 - lightrag - INFO - Extracting stage 1/1: 注册&试用流程合并.pdf
+2025-12-08 17:12:40,351 - lightrag - INFO - Processing d-id: doc-d882e7a95961023237e75108ceea7c01
+2025-12-08 17:12:40,618 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 300s, Worker: 600s, Health Check: 615s)
+2025-12-08 17:14:12,934 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-08 17:15:06,566 - lightrag - INFO -  == LLM cache == saving: default:extract:2ea64d773c3ec1503eec1a6ad84d24db
+2025-12-08 17:15:08,655 - lightrag - INFO -  == LLM cache == saving: default:extract:5d01bb668ecc30a3a9e619399281d087
+2025-12-08 17:15:22,762 - lightrag - INFO -  == LLM cache == saving: default:extract:ec1efde9db623ef3aa27aea5437c7d35
+2025-12-08 17:15:31,294 - lightrag - INFO -  == LLM cache == saving: default:extract:a91367761fb3894eaddf64a5f8697d9e
+2025-12-08 17:15:31,296 - lightrag - INFO - Chunk 1 of 3 extracted 29 Ent + 20 Rel chunk-59f5288e0a11af443d9d940299e74cab
+2025-12-08 17:15:34,311 - lightrag - INFO -  == LLM cache == saving: default:extract:442219973ec514202d9395da32279bcd
+2025-12-08 17:15:34,313 - lightrag - INFO - Chunk 2 of 3 extracted 26 Ent + 22 Rel chunk-cddc263894125c77af67cf38864512b5
+2025-12-08 17:15:55,395 - lightrag - INFO -  == LLM cache == saving: default:extract:a9a00cc5fd0ff0c846abedaff572ebb3
+2025-12-08 17:15:55,401 - lightrag - INFO - Chunk 3 of 3 extracted 29 Ent + 25 Rel chunk-8ca25a39ff34cb8e0d39d47d6aa86274
+2025-12-08 17:15:55,404 - lightrag - INFO - Merging stage 1/1: 注册&试用流程合并.pdf
+2025-12-08 17:15:55,405 - lightrag - INFO - Phase 1: Processing 69 entities from doc-d882e7a95961023237e75108ceea7c01 (async: 8)
+2025-12-08 17:16:12,086 - uvicorn.access - INFO - 127.0.0.1:65123 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:16:12,163 - uvicorn.access - INFO - 127.0.0.1:65123 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:16:12,302 - uvicorn.access - INFO - 127.0.0.1:65172 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
+2025-12-08 17:16:46,933 - lightrag - INFO - Phase 2: Processing 65 relations from doc-d882e7a95961023237e75108ceea7c01 (async: 8)
+2025-12-08 17:17:52,285 - lightrag - INFO - Phase 3: Updating final 69(69+0) entities and  65 relations from doc-d882e7a95961023237e75108ceea7c01
+2025-12-08 17:17:52,286 - lightrag - INFO - Completed merging: 69 entities, 0 extra entities, 65 relations
+2025-12-08 17:17:52,294 - lightrag - INFO - In memory DB persist to disk
+2025-12-08 17:17:52,294 - lightrag - INFO - Completed processing file 1/1: 注册&试用流程合并.pdf
+2025-12-08 17:17:52,295 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-08 17:17:52,295 - lightrag - INFO - Text content insertion complete
+2025-12-08 17:17:52,295 - lightrag - INFO - Document doc-d882e7a95961023237e75108ceea7c01 text processing is complete, but multimodal content still needs processing
+2025-12-08 17:17:52,296 - lightrag - INFO - Starting multimodal content processing...
+2025-12-08 17:17:52,296 - lightrag - INFO - Starting to process 23 multimodal content items
+2025-12-08 17:18:02,906 - lightrag - INFO - Multimodal chunk generation progress: 2/23 (8.7%)
+2025-12-08 17:18:02,910 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,915 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,919 - lightrag - INFO - Multimodal chunk generation progress: 4/23 (17.4%)
+2025-12-08 17:18:02,920 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,923 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,923 - lightrag - INFO - Multimodal chunk generation progress: 6/23 (26.1%)
+2025-12-08 17:18:02,925 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,927 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,928 - lightrag - INFO - Multimodal chunk generation progress: 8/23 (34.8%)
+2025-12-08 17:18:02,930 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,931 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,932 - lightrag - INFO - Multimodal chunk generation progress: 10/23 (43.5%)
+2025-12-08 17:18:02,933 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,935 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,937 - lightrag - INFO - Multimodal chunk generation progress: 12/23 (52.2%)
+2025-12-08 17:18:02,937 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,938 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,939 - lightrag - INFO - Multimodal chunk generation progress: 14/23 (60.9%)
+2025-12-08 17:18:02,940 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,941 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,942 - lightrag - INFO - Multimodal chunk generation progress: 16/23 (69.6%)
+2025-12-08 17:18:02,943 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,943 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,944 - lightrag - INFO - Multimodal chunk generation progress: 18/23 (78.3%)
+2025-12-08 17:18:02,945 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,946 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,947 - lightrag - INFO - Multimodal chunk generation progress: 20/23 (87.0%)
+2025-12-08 17:18:02,948 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,948 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2025-12-08 17:18:02,949 - lightrag - INFO - Multimodal chunk generation progress: 22/23 (95.7%)
+2025-12-08 17:18:12,875 - lightrag - INFO - Multimodal chunk generation progress: 23/23 (100.0%)
+2025-12-08 17:18:12,876 - lightrag - INFO - Generated descriptions for 23/23 multimodal items using correct processors

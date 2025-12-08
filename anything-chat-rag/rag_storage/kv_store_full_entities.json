@@ -75,5 +75,16 @@
     "create_time": 1765185472,
     "update_time": 1765185472,
     "_id": "doc-d882e7a95961023237e75108ceea7c01"
+  },
+  "doc-23893ba460e56ad52c98e6a740753391": {
+    "entity_names": [
+      "AirAsia Passengers Boarding at Airport (image)",
+      "hand_holding_stack_of_indian_500_rupee_notes (image)",
+      "India Travel Group Photo at Dhamek Stupa, Sarnath (image)"
+    ],
+    "count": 3,
+    "update_time": 1765186616,
+    "create_time": 1765186616,
+    "_id": "doc-23893ba460e56ad52c98e6a740753391"
   }
 }

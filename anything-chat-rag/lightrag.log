@@ -791,3 +791,222 @@ asyncpg.exceptions.UndefinedObjectError: type "vector" does not exist
 2025-12-08 17:28:13,119 - lightrag - ERROR - Error in multimodal processing: Embedding func: Worker execution timeout after 600s
 2025-12-08 17:28:13,119 - lightrag - WARNING - Falling back to individual multimodal processing
 2025-12-08 17:28:13,120 - lightrag - INFO - Processing item 1/23: image content
+2025-12-08 17:32:13,439 - uvicorn.access - INFO - 127.0.0.1:53524 - "POST /documents/upload HTTP/1.1" 200
+2025-12-08 17:32:29,561 - uvicorn.access - INFO - 127.0.0.1:53524 - "POST /documents/scan HTTP/1.1" 200
+2025-12-08 17:32:29,564 - lightrag - INFO - Found 5 files to index.
+2025-12-08 17:32:29,564 - lightrag - WARNING - Skipping already processed file: 注册&试用流程合并.pdf
+2025-12-08 17:32:29,565 - lightrag - INFO - Using RAG-Anything multimodal processing for: llm_course.pdf
+2025-12-08 17:32:29,565 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf
+2025-12-08 17:32:29,565 - lightrag - INFO - Using docling parser with method: auto
+2025-12-08 17:32:29,565 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-08 17:32:47,956 - lightrag - INFO -  == LLM cache == saving: default:extract:ce115bdc36322386219e290a27298c37
+2025-12-08 17:32:49,941 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf complete! Extracted 230 content blocks
+2025-12-08 17:32:49,943 - lightrag - INFO - Stored parsing result in cache: 3e0b1f4573d5f0c4294736010b62c826
+2025-12-08 17:32:49,943 - lightrag - INFO - Document parsed successfully: llm_course.pdf, doc_id=doc-88b93e772890662b37fff9510ff982e1, blocks=230
+2025-12-08 17:32:49,943 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/llm_course.pdf (230 items)
+2025-12-08 17:32:49,943 - lightrag - INFO - Content separation complete:
+2025-12-08 17:32:49,943 - lightrag - INFO -   - Text content length: 5436 characters
+2025-12-08 17:32:49,943 - lightrag - INFO -   - Multimodal items count: 0
+2025-12-08 17:32:49,943 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-08 17:32:49,945 - lightrag - INFO - Processing 1 document(s)
+2025-12-08 17:32:49,945 - lightrag - INFO - Extracting stage 1/1: llm_course.pdf
+2025-12-08 17:32:49,945 - lightrag - INFO - Processing d-id: doc-88b93e772890662b37fff9510ff982e1
+2025-12-08 17:33:15,538 - lightrag - INFO -  == LLM cache == saving: default:extract:38ff9c7ff9a018185b3756f371fa070e
+2025-12-08 17:33:15,539 - lightrag - INFO - Chunk 1 of 1 extracted 32 Ent + 32 Rel chunk-4181bde8ab860a11a06c3e6f6f46059a
+2025-12-08 17:34:40,827 - lightrag - INFO -  == LLM cache == saving: default:extract:bc3fe6eef76ecc5c656e8118b3437531
+2025-12-08 17:34:52,080 - uvicorn.access - INFO - 127.0.0.1:54304 - "POST /documents/upload HTTP/1.1" 200
+2025-12-08 17:34:52,671 - lightrag - INFO -  == LLM cache == saving: default:extract:b3b43220c2102913473b1357ee305143
+2025-12-08 17:34:52,674 - lightrag - INFO - Chunk 1 of 4 extracted 6 Ent + 4 Rel chunk-8a4fcca1341ad25245ecd6923d4ddf16
+2025-12-08 17:34:59,441 - uvicorn.access - INFO - 127.0.0.1:54304 - "POST /documents/upload HTTP/1.1" 200
+2025-12-08 17:35:23,086 - uvicorn.access - INFO - 127.0.0.1:54522 - "POST /documents/upload HTTP/1.1" 200
+2025-12-08 17:35:23,087 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记22222.pdf
+2025-12-08 17:35:23,088 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记22222.pdf
+2025-12-08 17:35:23,089 - lightrag - INFO - Using docling parser with method: auto
+2025-12-08 17:35:23,089 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-08 17:35:28,990 - lightrag - INFO -  == LLM cache == saving: default:extract:8517ddf0f1a0e4ebad804d05dca209da
+2025-12-08 17:35:29,172 - lightrag - INFO - image processing complete: PT&EP Registration and Trial Process Flowchart (image)
+2025-12-08 17:35:29,172 - lightrag - INFO - Processing item 2/23: image content
+2025-12-08 17:35:36,154 - lightrag - INFO -  == LLM cache == saving: default:extract:af7b04d3592e7c1b146bd2b060f65291
+2025-12-08 17:35:42,639 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记22222.pdf complete! Extracted 36 content blocks
+2025-12-08 17:35:42,640 - lightrag - INFO - Stored parsing result in cache: 80c7499c967cfe2be61b7019526cc1cd
+2025-12-08 17:35:42,640 - lightrag - INFO - Document parsed successfully: 旅行日记22222.pdf, doc_id=doc-23893ba460e56ad52c98e6a740753391, blocks=36
+2025-12-08 17:35:42,640 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记22222.pdf (36 items)
+2025-12-08 17:35:42,640 - lightrag - INFO - Content separation complete:
+2025-12-08 17:35:42,640 - lightrag - INFO -   - Text content length: 478 characters
+2025-12-08 17:35:42,640 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-08 17:35:42,640 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-08 17:35:42,640 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-08 17:35:42,641 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:35:42,641 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:35:42,641 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:35:42,641 - lightrag - INFO - Content source set with format: minerU
+2025-12-08 17:35:42,641 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-08 17:35:42,641 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-08 17:35:42,642 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-08 17:35:42,642 - lightrag - INFO - Text content insertion complete
+2025-12-08 17:35:42,642 - lightrag - INFO - Starting multimodal content processing...
+2025-12-08 17:35:42,642 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-08 17:35:52,234 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-08 17:35:56,060 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-08 17:36:06,245 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-08 17:36:06,245 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-08 17:36:10,952 - lightrag - INFO -  == LLM cache == saving: default:extract:5d0a1e4311ce88653a8493eedf85f410
+2025-12-08 17:36:10,955 - lightrag - INFO - Chunk 2 of 4 extracted 30 Ent + 27 Rel chunk-6c9699f6be450b7bab348fd80cc8c912
+2025-12-08 17:36:18,826 - lightrag - INFO -  == LLM cache == saving: default:extract:f64299226477c14dca7cbeaf3173d392
+2025-12-08 17:36:18,831 - lightrag - INFO - Chunk 3 of 4 extracted 29 Ent + 32 Rel chunk-3b3b538833d00a6409a59248e6b395ee
+2025-12-08 17:36:21,666 - lightrag - INFO -  == LLM cache == saving: default:extract:ca21b5cdff31584143d4d20c06b7a254
+2025-12-08 17:37:06,380 - lightrag - INFO -  == LLM cache == saving: default:extract:4264590c78037331d7e7a9d5259741fd
+2025-12-08 17:37:06,403 - lightrag - INFO - Chunk 4 of 4 extracted 54 Ent + 46 Rel chunk-8de86e7884d97659893db8de682eec5f
+2025-12-08 17:37:06,404 - lightrag - INFO - Merging stage 1/1: llm_course.pdf
+2025-12-08 17:37:06,404 - lightrag - INFO - Phase 1: Processing 112 entities from doc-88b93e772890662b37fff9510ff982e1 (async: 8)
+2025-12-08 17:37:08,772 - lightrag - INFO -  == LLM cache == saving: default:extract:ff4b6d7015b912890297aab9b5011866
+2025-12-08 17:37:22,204 - lightrag - INFO -  == LLM cache == saving: default:extract:6d903384f396fc5c62f6243b76be7c1b
+2025-12-08 17:37:22,206 - lightrag - INFO - Chunk 1 of 1 extracted 19 Ent + 14 Rel chunk-fb96d4eb777b02da9ce3b3a20a6d183c
+2025-12-08 17:37:23,087 - lightrag - INFO -  == LLM cache == saving: default:extract:41bd295104d3623b8cb2feb570eecda7
+2025-12-08 17:37:24,059 - lightrag - INFO -  == LLM cache == saving: default:extract:63fa7bcacf4123d350045f0f5c959156
+2025-12-08 17:37:42,973 - lightrag - INFO -  == LLM cache == saving: default:extract:6a4e9f780fdcb4b09967be0f9edb8839
+2025-12-08 17:37:42,974 - lightrag - INFO - Chunk 1 of 3 extracted 15 Ent + 13 Rel chunk-f65338b656e0f0d4508573696f2828aa
+2025-12-08 17:37:43,848 - lightrag - INFO -  == LLM cache == saving: default:extract:0f751821f0e93a4b53fa59964a09ac5a
+2025-12-08 17:37:43,852 - lightrag - INFO - Chunk 2 of 3 extracted 15 Ent + 13 Rel chunk-e12b4a79bcebe727411e8df601653b11
+2025-12-08 17:37:45,182 - lightrag - INFO -  == LLM cache == saving: default:extract:eb3023309f1deb66256f832d4580e32a
+2025-12-08 17:38:10,133 - lightrag - INFO -  == LLM cache == saving: default:extract:d25c83675f75970a635e771fd8d53ae3
+2025-12-08 17:38:10,137 - lightrag - INFO - Chunk 3 of 3 extracted 20 Ent + 21 Rel chunk-86df631095f326dfc9bc7dea2e5cf95c
+2025-12-08 17:38:10,137 - lightrag - INFO - Extracted entities from 3 multimodal chunks
+2025-12-08 17:38:10,137 - lightrag - INFO - Added 50 belongs_to relations for multimodal entities
+2025-12-08 17:38:10,138 - lightrag - INFO - Merging stage 1/1: 旅行日记22222.pdf
+2025-12-08 17:38:10,138 - lightrag - INFO - Phase 1: Processing 49 entities from doc-23893ba460e56ad52c98e6a740753391 (async: 8)
+2025-12-08 17:38:47,753 - lightrag - INFO - Phase 2: Processing 109 relations from doc-88b93e772890662b37fff9510ff982e1 (async: 8)
+2025-12-08 17:39:10,890 - lightrag - INFO - Phase 2: Processing 97 relations from doc-23893ba460e56ad52c98e6a740753391 (async: 8)
+2025-12-08 17:39:25,232 - lightrag - INFO - image processing complete: CRM Registration and Trial Application Process Flowchart (image)
+2025-12-08 17:39:25,232 - lightrag - INFO - Processing item 3/23: image content
+2025-12-08 17:39:34,030 - lightrag - INFO - Chunks appended from relation: `图像内容分析`
+2025-12-08 17:44:35,369 - lightrag - INFO - Frontend build is up-to-date
+2025-12-08 17:44:35,369 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-08 17:44:35,369 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-08 17:44:35,418 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-08 17:44:35,418 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-08 17:44:35,418 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-08 17:44:35,418 - lightrag - INFO - Reranking is disabled
+2025-12-08 17:44:35,638 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-08 17:44:36,484 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-08 17:44:36,484 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-08 17:44:36,532 - uvicorn.error - INFO - Started server process [62384]
+2025-12-08 17:44:36,532 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-08 17:44:36,533 - lightrag - INFO - [] Process 62384 KV load full_docs with 3 records
+2025-12-08 17:44:36,533 - lightrag - INFO - [] Process 62384 KV load text_chunks with 3 records
+2025-12-08 17:44:36,534 - lightrag - INFO - [] Process 62384 KV load full_entities with 2 records
+2025-12-08 17:44:36,534 - lightrag - INFO - [] Process 62384 KV load full_relations with 1 records
+2025-12-08 17:44:36,534 - lightrag - INFO - [] Process 62384 KV load entity_chunks with 69 records
+2025-12-08 17:44:36,535 - lightrag - INFO - [] Process 62384 KV load relation_chunks with 65 records
+2025-12-08 17:44:36,712 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-08 17:44:36,799 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-08 17:44:36,933 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-08 17:44:37,030 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-08 17:44:37,128 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-08 17:44:37,263 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-08 17:44:37,352 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-08 17:44:37,447 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-08 17:44:37,583 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-08 17:44:37,766 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-08 17:44:37,812 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-08 17:44:37,857 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-08 17:44:37,857 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-08 17:44:37,860 - lightrag - INFO - [] Process 62384 KV load llm_response_cache with 6 records
+2025-12-08 17:44:37,860 - lightrag - INFO - [] Process 62384 doc status load doc_status with 3 records
+2025-12-08 17:44:37,946 - uvicorn.error - INFO - Application startup complete.
+2025-12-08 17:44:37,946 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-08 17:45:35,516 - uvicorn.access - INFO - 127.0.0.1:58117 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:45:35,558 - uvicorn.access - INFO - 127.0.0.1:58117 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2025-12-08 17:45:35,559 - uvicorn.access - INFO - 127.0.0.1:58118 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2025-12-08 17:45:35,696 - uvicorn.access - INFO - 127.0.0.1:58118 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:45:35,916 - uvicorn.access - INFO - 127.0.0.1:58118 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+2025-12-08 17:46:25,630 - uvicorn.access - INFO - 127.0.0.1:58402 - "GET /redoc HTTP/1.1" 200
+2025-12-08 17:46:26,166 - uvicorn.access - INFO - 127.0.0.1:58402 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:46:30,615 - uvicorn.access - INFO - 127.0.0.1:58402 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:46:30,675 - uvicorn.access - INFO - 127.0.0.1:58402 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:46:30,737 - uvicorn.access - INFO - 127.0.0.1:58402 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+2025-12-08 17:51:09,671 - uvicorn.access - INFO - 127.0.0.1:59925 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:51:09,745 - uvicorn.access - INFO - 127.0.0.1:59925 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:51:10,386 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 17:51:10,402 - uvicorn.access - INFO - 127.0.0.1:59952 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 17:52:27,419 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-08 17:52:30,998 - lightrag - INFO -  == LLM cache == saving: mix:keywords:3d178eded968b9400fc4157ae0128043
+2025-12-08 17:52:30,999 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 300s, Worker: 600s, Health Check: 615s)
+2025-12-08 17:52:32,617 - lightrag - INFO - Query nodes: 用户注册, 产品试用, 流程整合 (top_k:10, cosine:0.2)
+2025-12-08 17:52:33,686 - lightrag - ERROR - Query failed: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^}
+2025-12-08 17:52:33,687 - uvicorn.access - INFO - 127.0.0.1:60328 - "POST /query HTTP/1.1" 200
+2025-12-08 17:52:41,612 - lightrag - INFO -  == LLM cache == saving: mix:keywords:ca6b59f3e94d66eb334e9eca6e7a3aa5
+2025-12-08 17:52:42,122 - lightrag - INFO - Query nodes: 用户注册, 产品试用, 系统整合 (top_k:10, cosine:0.2)
+2025-12-08 17:52:43,191 - lightrag - ERROR - Query failed: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^}
+2025-12-08 17:52:43,192 - uvicorn.access - INFO - 127.0.0.1:60394 - "POST /query HTTP/1.1" 200
+2025-12-08 17:52:52,853 - lightrag - INFO -  == LLM cache == saving: local:keywords:eb912fd4bef52b7716f73e3b9332a389
+2025-12-08 17:52:53,774 - lightrag - INFO - Query nodes: 注册, 试用, 账户创建, 免费试用 (top_k:10, cosine:0.2)
+2025-12-08 17:52:55,599 - lightrag - ERROR - Error processing data query: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^}
+Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/routers/query_routes.py", line 1149, in query_data
+    response = await rag.aquery_data(request.query, param=param)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 2612, in aquery_data
+    query_result = await kg_query(
+                   ^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 3094, in kg_query
+    context_result = await _build_query_context(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 4075, in _build_query_context
+    search_result = await _perform_kg_search(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 3476, in _perform_kg_search
+    local_entities, local_relations = await _get_node_data(
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 4192, in _get_node_data
+    nodes_dict, degrees_dict = await asyncio.gather(
+                               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/neo4j_impl.py", line 591, in node_degrees_batch
+    result = await session.run(query, node_ids=node_ids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/work/session.py", line 320, in run
+    await self._auto_result._run(
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/work/result.py", line 237, in _run
+    await self._attach()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/work/result.py", line 439, in _attach
+    await self._connection.fetch_message()
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/io/_common.py", line 203, in inner
+    await coroutine_func(*args, **kwargs)
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/io/_bolt.py", line 866, in fetch_message
+    res = await self._process_message(tag, fields)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/io/_bolt4.py", line 497, in _process_message
+    await response.on_failure(summary_metadata or {})
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/.venv/lib/python3.11/site-packages/neo4j/_async/io/_common.py", line 262, in on_failure
+    raise self._hydrate_error(metadata)
+neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^}
+2025-12-08 17:52:55,611 - uvicorn.access - INFO - 127.0.0.1:60441 - "POST /query/data HTTP/1.1" 500
+2025-12-08 17:53:03,911 - lightrag - INFO -  == LLM cache == saving: hybrid:keywords:474fc31d2628510a84bc03e52f7b12d6
+2025-12-08 17:53:04,512 - lightrag - INFO - Query nodes: 试用, 注册, 申请 (top_k:10, cosine:0.2)
+2025-12-08 17:53:05,438 - lightrag - ERROR - Query failed: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Invalid input '(': expected ",", ".", "}" or an identifier (line 4, column 58 (offset: 146))
+"                RETURN n.entity_id AS entity_id, count { (n)--() } AS degree;"
+                                                          ^}
+2025-12-08 17:53:05,439 - uvicorn.access - INFO - 127.0.0.1:60503 - "POST /query HTTP/1.1" 200
+2025-12-08 17:53:13,039 - lightrag - INFO - Naive query: 13 chunks (chunk_top_k:20 cosine:0.2)
+2025-12-08 17:53:13,042 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-12-08 17:53:13,059 - lightrag - INFO - Final context: 13 chunks
+2025-12-08 17:53:41,201 - lightrag - INFO -  == LLM cache == saving: naive:query:82f319952dd60220e6c2153bc2061d74
+2025-12-08 17:53:41,207 - uvicorn.access - INFO - 127.0.0.1:60559 - "POST /query HTTP/1.1" 200

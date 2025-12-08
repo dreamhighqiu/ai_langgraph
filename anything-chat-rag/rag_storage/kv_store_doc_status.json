@@ -38,7 +38,7 @@
     }
   },
   "doc-23893ba460e56ad52c98e6a740753391": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
       "chunk-700abcb7689920286ae518a3b9fb468d"
@@ -46,22 +46,29 @@
     "content_summary": "我们出去旅行了\n\n我是谁 我在那 这个是⼀个旅游⽂档\n\nAir Asia\n\nMAHATMA GANDHI\n\nwear airch\n\nMAHATHA GANOHI\n\n7400\n\nR 500\n\nMAHATNA GANOHI\n\n298169\n\n999\n\nIN CA\n\n28805\n\n005 €\n\n1500\n\n1900\n\nRESERVE BANK OF INDIA\n\nLARANTEED BY THE CENTRAL GOVERNVENTT\n\nDECERVE BANK OF INDIA\n\nMALIK OF ...",
     "content_length": 478,
     "created_at": "2025-12-08T09:35:42.641458+00:00",
-    "updated_at": "2025-12-08T10:17:27.339026+00:00",
+    "updated_at": "2025-12-08T10:19:32.567749+00:00",
     "file_path": "旅行日记22222.pdf",
     "track_id": "insert_20251208_173542_ee725e91",
     "metadata": {
-      "processing_start_time": 1765189047
+      "processing_start_time": 1765189047,
+      "processing_end_time": 1765189172
     }
   },
   "doc-1e69f3219864106c5c30ef8763986b78": {
-    "status": "pending",
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-1e69f3219864106c5c30ef8763986b78"
+    ],
     "content_summary": "# Api- Home 得到首页信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html\n\n\n# Api- Home 得到首页信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1.Reponse Heade...",
     "content_length": 2239,
     "created_at": "2025-12-08T10:17:27.174837+00:00",
-    "updated_at": "2025-12-08T10:17:27.174844+00:00",
+    "updated_at": "2025-12-08T10:19:32.588648+00:00",
     "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html",
     "track_id": "insert_20251208_181727_4a4f4ce7",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1765189172
+    }
   },
   "doc-e5c34a256d44ec80577b54f5276df08f": {
     "status": "pending",

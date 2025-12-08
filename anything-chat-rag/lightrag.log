@@ -1046,3 +1046,25 @@ neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.Synta
 2025-12-08 18:17:27,179 - lightrag - INFO - Extracting stage 2/4: 旅行日记22222.pdf
 2025-12-08 18:17:27,179 - lightrag - INFO - Processing d-id: doc-23893ba460e56ad52c98e6a740753391
 2025-12-08 18:17:48,222 - lightrag - INFO -  == LLM cache == saving: default:extract:78ecc60536708cdd28eefdc65d02d0c5
+2025-12-08 18:18:16,794 - lightrag - INFO -  == LLM cache == saving: default:extract:2ab89354ce013565bf78743e0fdefd21
+2025-12-08 18:18:16,797 - lightrag - INFO - Chunk 1 of 1 extracted 22 Ent + 1 Rel chunk-700abcb7689920286ae518a3b9fb468d
+2025-12-08 18:18:16,797 - lightrag - INFO - Merging stage 2/4: 旅行日记22222.pdf
+2025-12-08 18:18:16,798 - lightrag - INFO - Phase 1: Processing 22 entities from doc-23893ba460e56ad52c98e6a740753391 (async: 8)
+2025-12-08 18:19:26,174 - lightrag - INFO -  == LLM cache == saving: default:extract:bc3fe6eef76ecc5c656e8118b3437531
+2025-12-08 18:19:30,396 - lightrag - INFO - Phase 2: Processing 1 relations from doc-23893ba460e56ad52c98e6a740753391 (async: 8)
+2025-12-08 18:19:32,566 - lightrag - INFO - Phase 3: Updating final 22(22+0) entities and  1 relations from doc-23893ba460e56ad52c98e6a740753391
+2025-12-08 18:19:32,567 - lightrag - INFO - Completed merging: 22 entities, 0 extra entities, 1 relations
+2025-12-08 18:19:32,587 - lightrag - INFO - In memory DB persist to disk
+2025-12-08 18:19:32,587 - lightrag - INFO - Completed processing file 2/4: 旅行日记22222.pdf
+2025-12-08 18:19:32,587 - lightrag - INFO - Extracting stage 3/4: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html
+2025-12-08 18:19:32,587 - lightrag - INFO - Processing d-id: doc-1e69f3219864106c5c30ef8763986b78
+2025-12-08 18:19:37,345 - lightrag - INFO -  == LLM cache == saving: default:extract:4c3b64fb24380f7039d835757f00251e
+2025-12-08 18:19:37,347 - lightrag - INFO - Chunk 1 of 4 extracted 7 Ent + 2 Rel chunk-8a4fcca1341ad25245ecd6923d4ddf16
+2025-12-08 18:20:11,806 - lightrag - INFO -  == LLM cache == saving: default:extract:8517ddf0f1a0e4ebad804d05dca209da
+2025-12-08 18:20:17,283 - lightrag - INFO -  == LLM cache == saving: default:extract:af7b04d3592e7c1b146bd2b060f65291
+2025-12-08 18:20:29,433 - lightrag - INFO -  == LLM cache == saving: default:extract:0cd229444df08ce91b98ab62f3f0e020
+2025-12-08 18:20:47,993 - lightrag - INFO -  == LLM cache == saving: default:extract:ff48df7f85eeafb8b268e5526d5082e0
+2025-12-08 18:20:47,994 - lightrag - INFO - Chunk 1 of 1 extracted 19 Ent + 16 Rel chunk-1e69f3219864106c5c30ef8763986b78
+2025-12-08 18:20:47,995 - lightrag - INFO - Merging stage 3/4: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html
+2025-12-08 18:20:47,995 - lightrag - INFO - Phase 1: Processing 19 entities from doc-1e69f3219864106c5c30ef8763986b78 (async: 8)
+2025-12-08 18:21:01,300 - lightrag - INFO - Phase 2: Processing 16 relations from doc-1e69f3219864106c5c30ef8763986b78 (async: 8)

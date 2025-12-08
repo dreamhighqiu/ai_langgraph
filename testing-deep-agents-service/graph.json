@@ -15,6 +15,9 @@
     },
     "knowledge_agent": {
       "path": "./src/knowledge_agent/agent.py:agent"
+    },
+    "web_scraper_agent": {
+      "path": "./src/web_scraper_agent/agent.py:agent"
     }
   },
   "_deployId": "id_MS81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UVhKa01BPT06YjgzMGQ0MDI=",

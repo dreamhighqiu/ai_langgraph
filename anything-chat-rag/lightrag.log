@@ -1010,3 +1010,39 @@ neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.Synta
 2025-12-08 17:53:13,059 - lightrag - INFO - Final context: 13 chunks
 2025-12-08 17:53:41,201 - lightrag - INFO -  == LLM cache == saving: naive:query:82f319952dd60220e6c2153bc2061d74
 2025-12-08 17:53:41,207 - uvicorn.access - INFO - 127.0.0.1:60559 - "POST /query HTTP/1.1" 200
+2025-12-08 17:58:47,796 - uvicorn.access - INFO - 127.0.0.1:62240 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:58:48,035 - uvicorn.access - INFO - 127.0.0.1:62261 - "GET /docs HTTP/1.1" 200
+2025-12-08 17:58:48,097 - uvicorn.access - INFO - 127.0.0.1:62261 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 17:58:48,394 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 17:58:48,616 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 17:58:48,632 - uvicorn.access - INFO - 127.0.0.1:62240 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 18:09:00,869 - uvicorn.access - INFO - 127.0.0.1:65409 - "GET /docs HTTP/1.1" 200
+2025-12-08 18:09:00,927 - uvicorn.access - INFO - 127.0.0.1:65409 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 18:09:01,525 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 18:09:01,541 - uvicorn.access - INFO - 127.0.0.1:65428 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 18:09:07,183 - uvicorn.access - INFO - 127.0.0.1:65459 - "GET /docs HTTP/1.1" 200
+2025-12-08 18:09:07,222 - uvicorn.access - INFO - 127.0.0.1:65461 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 18:09:07,583 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 18:09:07,598 - uvicorn.access - INFO - 127.0.0.1:65459 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 18:14:06,043 - uvicorn.access - INFO - 127.0.0.1:50636 - "GET /docs HTTP/1.1" 200
+2025-12-08 18:14:06,104 - uvicorn.access - INFO - 127.0.0.1:50636 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 18:14:07,015 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 18:14:07,026 - uvicorn.access - INFO - 127.0.0.1:50646 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 18:15:06,502 - uvicorn.access - INFO - 127.0.0.1:50924 - "GET /docs HTTP/1.1" 200
+2025-12-08 18:15:06,544 - uvicorn.access - INFO - 127.0.0.1:50924 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 18:15:07,046 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 18:15:07,057 - uvicorn.access - INFO - 127.0.0.1:50935 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 18:15:07,887 - uvicorn.access - INFO - 127.0.0.1:50935 - "GET /docs HTTP/1.1" 200
+2025-12-08 18:15:07,926 - uvicorn.access - INFO - 127.0.0.1:50935 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 18:15:08,384 - lightrag - INFO - [base] Subgraph query successful | Node count: 236 | Edge count: 183
+2025-12-08 18:15:08,399 - uvicorn.access - INFO - 127.0.0.1:50924 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-08 18:15:20,881 - uvicorn.access - INFO - 127.0.0.1:50987 - "GET /docs HTTP/1.1" 200
+2025-12-08 18:15:20,938 - uvicorn.access - INFO - 127.0.0.1:50987 - "GET /openapi.json HTTP/1.1" 200
+2025-12-08 18:17:27,173 - uvicorn.access - INFO - 127.0.0.1:51602 - "POST /documents/texts HTTP/1.1" 200
+2025-12-08 18:17:27,178 - lightrag - INFO - Reset 1 documents from PROCESSING/FAILED to PENDING status
+2025-12-08 18:17:27,178 - lightrag - INFO - Processing 4 document(s)
+2025-12-08 18:17:27,178 - lightrag - INFO - Extracting stage 1/4: llm_course.pdf
+2025-12-08 18:17:27,178 - lightrag - INFO - Processing d-id: doc-88b93e772890662b37fff9510ff982e1
+2025-12-08 18:17:27,179 - lightrag - INFO - Extracting stage 2/4: 旅行日记22222.pdf
+2025-12-08 18:17:27,179 - lightrag - INFO - Processing d-id: doc-23893ba460e56ad52c98e6a740753391
+2025-12-08 18:17:48,222 - lightrag - INFO -  == LLM cache == saving: default:extract:78ecc60536708cdd28eefdc65d02d0c5

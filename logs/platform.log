@@ -1,0 +1,409 @@
+2025-12-09 16:51:04,344 - INFO - 启动应用 - 主机:0.0.0.0 端口:9999
+🖥️  本地开发环境
+✅ 加载配置文件: .env.local
+
+🔍 环境变量检查:
+  ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
+  ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
+  ✅ MYSQL_HOST: 54.179.103.192
+🖥️  本地开发环境
+✅ 加载配置文件: .env.local
+
+🔍 环境变量检查:
+  ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
+  ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
+  ✅ MYSQL_HOST: 54.179.103.192
+主程序环境变量: LOCAL_EMBEDDING_MODEL_NAME=None
+INFO:     2025-12-09 16:51:04 | Will watch for changes in these directories: ['/Users/qiuyunxia/code/ai_langGraph/autogen_study']
+WARNING:  2025-12-09 16:51:04 | "workers" flag is ignored when reloading is enabled.
+INFO:     2025-12-09 16:51:04 | Uvicorn running on http://0.0.0.0:9999 (Press CTRL+C to quit)
+INFO:     2025-12-09 16:51:04 | Started reloader process [59608] using WatchFiles
+🖥️  本地开发环境
+✅ 加载配置文件: .env.local
+
+🔍 环境变量检查:
+  ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
+  ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
+  ✅ MYSQL_HOST: 54.179.103.192
+🖥️  本地开发环境
+✅ 加载配置文件: .env.local
+
+🔍 环境变量检查:
+  ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
+  ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
+  ✅ MYSQL_HOST: 54.179.103.192
+主程序环境变量: LOCAL_EMBEDDING_MODEL_NAME=None
+🖥️  本地开发环境
+✅ 加载配置文件: .env.local
+
+🔍 环境变量检查:
+  ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
+  ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
+  ✅ MYSQL_HOST: 54.179.103.192
+INFO:     2025-12-09 16:51:05 | 已初始化自定义Pydantic模型替代tortoise-orm的pydantic_model_creator
+/Users/qiuyunxia/code/ai_langGraph/autogen_study/.venv/lib/python3.12/site-packages/passlib/pwd.py:16: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+INFO:     2025-12-09 16:51:06 | 2401 changes detected
+INFO:     2025-12-09 16:51:06 | 🔄 已清空模型客户端缓存
+INFO:     2025-12-09 16:51:06 | 🚀 创建全局模型客户端，当前模型: gpt-4o
+INFO:     2025-12-09 16:51:06 | ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
+🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
+INFO:     2025-12-09 16:51:06 | 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
+INFO:     2025-12-09 16:51:06 | ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
+🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
+INFO:     2025-12-09 16:51:06 | 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
+INFO:     2025-12-09 16:51:08 | 3549 changes detected
+INFO:     2025-12-09 16:51:09 | 1231 changes detected
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+INFO:     2025-12-09 16:51:10 | 3 changes detected
+INFO:     2025-12-09 16:51:10 | 330 changes detected
+54.179.103.192:9100
+INFO:     2025-12-09 16:51:10 | MINIO_ENDPOINT: 54.179.103.192:9100
+INFO:     2025-12-09 16:51:10 | MinIO客户端初始化成功
+INFO:     2025-12-09 16:51:10 | 全局MinIO客户端初始化成功（延迟模式）
+2025-12-09 16:51:11 [INFO] __init__.py:999 - MINIO_ENDPOINT: 54.179.103.192:9100
+54.179.103.192:9100
+INFO:     2025-12-09 16:51:11 | MINIO_ENDPOINT: 54.179.103.192:9100
+2025-12-09 16:51:11 [INFO] __init__.py:999 - MinIO客户端初始化成功
+INFO:     2025-12-09 16:51:11 | MinIO客户端初始化成功
+INFO:     2025-12-09 16:51:11 | 606 changes detected
+2025-12-09 16:51:11 [INFO] __init__.py:999 - 🎯 [AUTOGEN] 创建模型客户端，输入参数: {'model': 'deepseek-chat', 'api_key': 'sk-06f2b46aca1943ba94cb11396a40c28a', 'base_url': 'https://api.deepseek.com/v1'}
+INFO:     2025-12-09 16:51:11 | 🎯 [AUTOGEN] 创建模型客户端，输入参数: {'model': 'deepseek-chat', 'api_key': 'sk-06f2b46aca1943ba94cb11396a40c28a', 'base_url': 'https://api.deepseek.com/v1'}
+2025-12-09 16:51:11 [INFO] __init__.py:999 - ✅ [AUTOGEN] 使用直接传入的配置字典
+INFO:     2025-12-09 16:51:11 | ✅ [AUTOGEN] 使用直接传入的配置字典
+2025-12-09 16:51:11 [INFO] __init__.py:999 - 🚀 [AUTOGEN] 最终使用的模型配置: model=deepseek-chat, base_url=https://api.deepseek.com/v1
+INFO:     2025-12-09 16:51:11 | 🚀 [AUTOGEN] 最终使用的模型配置: model=deepseek-chat, base_url=https://api.deepseek.com/v1
+2025-12-09 16:51:11 [INFO] __init__.py:999 - ✅ [AUTOGEN] 成功创建模型客户端
+INFO:     2025-12-09 16:51:11 | ✅ [AUTOGEN] 成功创建模型客户端
+2025-12-09 16:51:11 [INFO] __init__.py:999 - MINIO_ENDPOINT: 54.179.103.192:9100
+54.179.103.192:9100
+INFO:     2025-12-09 16:51:11 | MINIO_ENDPOINT: 54.179.103.192:9100
+2025-12-09 16:51:11 [INFO] __init__.py:999 - MinIO客户端初始化成功
+INFO:     2025-12-09 16:51:11 | MinIO客户端初始化成功
+INFO:     2025-12-09 16:51:11 | 51 changes detected
+INFO:     2025-12-09 16:51:12 | 创建FastAPI应用...
+静态文件服务已挂载: /Users/qiuyunxia/code/ai_langGraph/autogen_study/static
+INFO:     2025-12-09 16:51:12 | FastAPI应用创建完成
+INFO:     2025-12-09 16:51:12 | Started server process [59613]
+INFO:     2025-12-09 16:51:12 | Waiting for application startup.
+INFO:     2025-12-09 16:51:12 | 应用启动，进入lifespan...
+INFO:     2025-12-09 16:51:12 | 初始化Tortoise ORM连接...
+WARNING:  2025-12-09 16:51:12 | 关闭旧连接时出现警告（这通常是安全的）: DB configuration not initialised. Make sure to call Tortoise.init with a valid configuration before attempting to create connections.
+INFO:     2025-12-09 16:51:12 | 150 changes detected
+INFO:     2025-12-09 16:51:12 | Tortoise ORM连接初始化成功，连接测试通过
+INFO:     2025-12-09 16:51:12 | 开始初始化应用数据...
+INFO:     2025-12-09 16:51:12 | init_db: 数据库连接正常，继续初始化应用
+INFO:     2025-12-09 16:51:12 | init_db: 数据库已初始化，跳过init_db步骤
+INFO:     2025-12-09 16:51:13 | init_db: Aerich迁移工具初始化成功
+INFO:     2025-12-09 16:51:13 | 3 changes detected
+INFO:     2025-12-09 16:51:13 | init_db: 数据库迁移文件生成成功
+INFO:     2025-12-09 16:51:13 | init_db: 数据库升级成功
+INFO:     2025-12-09 16:51:13 | init_db: 数据库初始化过程完成
+INFO:     2025-12-09 16:51:13 | 应用数据初始化成功
+INFO:     2025-12-09 16:51:13 | 开始初始化菜单配置...
+菜单配置已存在，跳过初始化
+INFO:     2025-12-09 16:51:13 | 菜单配置初始化成功
+INFO:     2025-12-09 16:51:13 | 应用启动完成，准备处理请求
+INFO:     2025-12-09 16:51:13 | Application startup complete.
+2025-12-09 16:52:21 [INFO] __init__.py:999 - [1765270341124-5021593440] 开始处理请求: GET /
+INFO:     2025-12-09 16:52:21 | [1765270341124-5021593440] 开始处理请求: GET /
+2025-12-09 16:52:21 [INFO] __init__.py:999 - [1765270341124-5021593440] 完成请求: GET / - 处理时间: 0.06秒
+INFO:     2025-12-09 16:52:21 | [1765270341124-5021593440] 完成请求: GET / - 处理时间: 0.06秒
+INFO:     2025-12-09 16:52:21 | 127.0.0.1:60507 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2025-12-09 16:52:21 | 6 changes detected
+2025-12-09 16:52:21 [INFO] __init__.py:999 - [1765270341394-5021588640] 开始处理请求: GET /favicon.ico
+INFO:     2025-12-09 16:52:21 | [1765270341394-5021588640] 开始处理请求: GET /favicon.ico
+2025-12-09 16:52:21 [INFO] __init__.py:999 - [1765270341394-5021588640] 完成请求: GET /favicon.ico - 处理时间: 0.08秒
+INFO:     2025-12-09 16:52:21 | [1765270341394-5021588640] 完成请求: GET /favicon.ico - 处理时间: 0.08秒
+INFO:     2025-12-09 16:52:21 | 127.0.0.1:60507 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-12-09 16:52:26 [INFO] __init__.py:999 - [1765270346110-5021588016] 开始处理请求: GET /docs
+INFO:     2025-12-09 16:52:26 | [1765270346110-5021588016] 开始处理请求: GET /docs
+2025-12-09 16:52:26 [INFO] __init__.py:999 - [1765270346110-5021588016] 完成请求: GET /docs - 处理时间: 0.00秒
+INFO:     2025-12-09 16:52:26 | [1765270346110-5021588016] 完成请求: GET /docs - 处理时间: 0.00秒
+INFO:     2025-12-09 16:52:26 | 127.0.0.1:60507 - "GET /docs HTTP/1.1" 200 OK
+2025-12-09 16:52:26 [INFO] __init__.py:999 - [1765270346431-5021589456] 开始处理请求: GET /openapi.json
+INFO:     2025-12-09 16:52:26 | [1765270346431-5021589456] 开始处理请求: GET /openapi.json
+2025-12-09 16:52:26 [INFO] __init__.py:999 - [1765270346431-5021589456] 完成请求: GET /openapi.json - 处理时间: 0.09秒
+INFO:     2025-12-09 16:52:26 | [1765270346431-5021589456] 完成请求: GET /openapi.json - 处理时间: 0.09秒
+INFO:     2025-12-09 16:52:26 | 127.0.0.1:60507 - "GET /openapi.json HTTP/1.1" 200 OK
+2025-12-09 16:54:03 [INFO] __init__.py:999 - [1765270443116-5077687216] 开始处理请求: GET /api/v1/menu-config/config
+INFO:     2025-12-09 16:54:03 | [1765270443116-5077687216] 开始处理请求: GET /api/v1/menu-config/config
+2025-12-09 16:54:04 [INFO] __init__.py:999 - [1765270443116-5077687216] 完成请求: GET /api/v1/menu-config/config - 处理时间: 1.11秒
+INFO:     2025-12-09 16:54:04 | [1765270443116-5077687216] 完成请求: GET /api/v1/menu-config/config - 处理时间: 1.11秒
+INFO:     2025-12-09 16:54:04 | 127.0.0.1:61075 - "GET /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445278-5081030848] 开始处理请求: OPTIONS /api/v1/base/access_token
+INFO:     2025-12-09 16:54:05 | [1765270445278-5081030848] 开始处理请求: OPTIONS /api/v1/base/access_token
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445278-5081030848] 完成请求: OPTIONS /api/v1/base/access_token - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | [1765270445278-5081030848] 完成请求: OPTIONS /api/v1/base/access_token - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61075 - "OPTIONS /api/v1/base/access_token HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445280-5080932112] 开始处理请求: POST /api/v1/base/access_token
+INFO:     2025-12-09 16:54:05 | [1765270445280-5080932112] 开始处理请求: POST /api/v1/base/access_token
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445280-5080932112] 完成请求: POST /api/v1/base/access_token - 处理时间: 0.26秒
+INFO:     2025-12-09 16:54:05 | [1765270445280-5080932112] 完成请求: POST /api/v1/base/access_token - 处理时间: 0.26秒
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61075 - "POST /api/v1/base/access_token HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445545-5080596896] 开始处理请求: OPTIONS /api/v1/base/userinfo
+INFO:     2025-12-09 16:54:05 | [1765270445545-5080596896] 开始处理请求: OPTIONS /api/v1/base/userinfo
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445545-5080596896] 完成请求: OPTIONS /api/v1/base/userinfo - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | [1765270445545-5080596896] 完成请求: OPTIONS /api/v1/base/userinfo - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61075 - "OPTIONS /api/v1/base/userinfo HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445546-5080738240] 开始处理请求: GET /api/v1/base/userinfo
+INFO:     2025-12-09 16:54:05 | [1765270445546-5080738240] 开始处理请求: GET /api/v1/base/userinfo
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445546-5080738240] 完成请求: GET /api/v1/base/userinfo - 处理时间: 0.14秒
+INFO:     2025-12-09 16:54:05 | [1765270445546-5080738240] 完成请求: GET /api/v1/base/userinfo - 处理时间: 0.14秒
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61075 - "GET /api/v1/base/userinfo HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445827-5017697600] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-09 16:54:05 | [1765270445827-5017697600] 开始处理请求: OPTIONS /api/v1/menu-config/config
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445827-5077692016] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-09 16:54:05 | [1765270445827-5077692016] 开始处理请求: OPTIONS /api/v1/models/list
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445827-5017697600] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | [1765270445827-5017697600] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445827-5080805552] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-09 16:54:05 | [1765270445827-5080805552] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61075 - "OPTIONS /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445827-5077692016] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | [1765270445827-5077692016] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61085 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445827-5080805552] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | [1765270445827-5080805552] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:05 | 127.0.0.1:61086 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445829-5077696480] 开始处理请求: GET /api/v1/menu-config/config
+INFO:     2025-12-09 16:54:05 | [1765270445829-5077696480] 开始处理请求: GET /api/v1/menu-config/config
+2025-12-09 16:54:05 [INFO] __init__.py:999 - [1765270445829-5078057424] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-09 16:54:05 | [1765270445829-5078057424] 开始处理请求: GET /api/v1/models/list
+2025-12-09 16:54:06 [INFO] __init__.py:999 - [1765270445829-5078057424] 完成请求: GET /api/v1/models/list - 处理时间: 0.49秒
+INFO:     2025-12-09 16:54:06 | [1765270445829-5078057424] 完成请求: GET /api/v1/models/list - 处理时间: 0.49秒
+INFO:     2025-12-09 16:54:06 | 127.0.0.1:61088 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-09 16:54:06 [INFO] __init__.py:999 - [1765270446319-5078012640] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-09 16:54:06 | [1765270446319-5078012640] 开始处理请求: GET /api/v1/models/list
+2025-12-09 16:54:06 [INFO] __init__.py:999 - [1765270446319-5078012640] 完成请求: GET /api/v1/models/list - 处理时间: 0.10秒
+INFO:     2025-12-09 16:54:06 | [1765270446319-5078012640] 完成请求: GET /api/v1/models/list - 处理时间: 0.10秒
+INFO:     2025-12-09 16:54:06 | 127.0.0.1:61094 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-09 16:54:07 [INFO] __init__.py:999 - [1765270445829-5077696480] 完成请求: GET /api/v1/menu-config/config - 处理时间: 1.30秒
+INFO:     2025-12-09 16:54:07 | [1765270445829-5077696480] 完成请求: GET /api/v1/menu-config/config - 处理时间: 1.30秒
+INFO:     2025-12-09 16:54:07 | 127.0.0.1:61087 - "GET /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-09 16:54:11 [INFO] __init__.py:999 - [1765270451988-5080306352] 开始处理请求: GET /api/v1/menu-config/config
+INFO:     2025-12-09 16:54:11 | [1765270451988-5080306352] 开始处理请求: GET /api/v1/menu-config/config
+2025-12-09 16:54:12 [INFO] __init__.py:999 - [1765270452170-5077300144] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-09 16:54:12 | [1765270452170-5077300144] 开始处理请求: GET /api/v1/models/list
+2025-12-09 16:54:12 [INFO] __init__.py:999 - [1765270452170-5077300144] 完成请求: GET /api/v1/models/list - 处理时间: 0.10秒
+INFO:     2025-12-09 16:54:12 | [1765270452170-5077300144] 完成请求: GET /api/v1/models/list - 处理时间: 0.10秒
+INFO:     2025-12-09 16:54:12 | 127.0.0.1:61094 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-09 16:54:12 [INFO] __init__.py:999 - [1765270452274-5078700960] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-09 16:54:12 | [1765270452274-5078700960] 开始处理请求: GET /api/v1/models/list
+2025-12-09 16:54:12 [INFO] __init__.py:999 - [1765270452274-5078700960] 完成请求: GET /api/v1/models/list - 处理时间: 0.11秒
+INFO:     2025-12-09 16:54:12 | [1765270452274-5078700960] 完成请求: GET /api/v1/models/list - 处理时间: 0.11秒
+INFO:     2025-12-09 16:54:12 | 127.0.0.1:61088 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-09 16:54:12 [INFO] __init__.py:999 - [1765270451988-5080306352] 完成请求: GET /api/v1/menu-config/config - 处理时间: 0.96秒
+INFO:     2025-12-09 16:54:12 | [1765270451988-5080306352] 完成请求: GET /api/v1/menu-config/config - 处理时间: 0.96秒
+INFO:     2025-12-09 16:54:12 | 127.0.0.1:61087 - "GET /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456943-5078057280] 开始处理请求: OPTIONS /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:16 | [1765270456943-5078057280] 开始处理请求: OPTIONS /api/v1/ai-assistant/providers
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456944-5078014560] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | [1765270456944-5078014560] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456944-5080804880] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | [1765270456944-5080804880] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456943-5078057280] 完成请求: OPTIONS /api/v1/ai-assistant/providers - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456943-5078057280] 完成请求: OPTIONS /api/v1/ai-assistant/providers - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61087 - "OPTIONS /api/v1/ai-assistant/providers HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456944-5078014560] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456944-5078014560] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456945-5081104704] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | [1765270456945-5081104704] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61088 - "OPTIONS /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456944-5080804880] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456944-5080804880] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456946-5077693744] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | [1765270456946-5077693744] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61094 - "OPTIONS /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456947-5077298848] 开始处理请求: OPTIONS /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:16 | [1765270456947-5077298848] 开始处理请求: OPTIONS /api/v1/ai-assistant/providers
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456945-5081104704] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456945-5081104704] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456948-5080598048] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | [1765270456948-5080598048] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61146 - "OPTIONS /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456946-5077693744] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456946-5077693744] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456948-5078017872] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | [1765270456948-5078017872] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61147 - "OPTIONS /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456947-5077298848] 完成请求: OPTIONS /api/v1/ai-assistant/providers - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456947-5077298848] 完成请求: OPTIONS /api/v1/ai-assistant/providers - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456949-5077293568] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | [1765270456949-5077293568] 开始处理请求: OPTIONS /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61148 - "OPTIONS /api/v1/ai-assistant/providers HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456948-5080598048] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456948-5080598048] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61149 - "OPTIONS /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456948-5078017872] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456948-5078017872] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456951-5078599728] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | [1765270456951-5078599728] 开始处理请求: OPTIONS /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61150 - "OPTIONS /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456949-5077293568] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456949-5077293568] 完成请求: OPTIONS /api/v1/ai-assistant/models - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456951-5080658192] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | [1765270456951-5080658192] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61151 - "OPTIONS /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456952-5081110512] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | [1765270456952-5081110512] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456951-5078599728] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456951-5078599728] 完成请求: OPTIONS /api/v1/ai-assistant/sessions - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456953-5077690528] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | [1765270456953-5077690528] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61152 - "OPTIONS /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456951-5080658192] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456951-5080658192] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456953-5077690816] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | [1765270456953-5077690816] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61153 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456952-5081110512] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456952-5081110512] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456954-5077298512] 开始处理请求: GET /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:16 | [1765270456954-5077298512] 开始处理请求: GET /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61154 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456953-5077690528] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456953-5077690528] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61155 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456953-5077690816] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:16 | [1765270456953-5077690816] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456955-5021581392] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | [1765270456955-5021581392] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:16 | 127.0.0.1:61156 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456956-5081310432] 开始处理请求: GET /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:16 | [1765270456956-5081310432] 开始处理请求: GET /api/v1/ai-assistant/sessions
+2025-12-09 16:54:16 [INFO] __init__.py:999 - [1765270456957-5080527216] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:16 | [1765270456957-5080527216] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270456954-5077298512] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.50秒
+INFO:     2025-12-09 16:54:17 | [1765270456954-5077298512] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.50秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/providers HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457456-5078013936] 开始处理请求: GET /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:17 | [1765270457456-5078013936] 开始处理请求: GET /api/v1/ai-assistant/providers
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270456955-5021581392] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.54秒
+INFO:     2025-12-09 16:54:17 | [1765270456955-5021581392] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.54秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61158 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457498-5077297120] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:17 | [1765270457498-5077297120] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457456-5078013936] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.11秒
+INFO:     2025-12-09 16:54:17 | [1765270457456-5078013936] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.11秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61167 - "GET /api/v1/ai-assistant/providers HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270456956-5081310432] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.67秒
+INFO:     2025-12-09 16:54:17 | [1765270456956-5081310432] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.67秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457623-5081315568] 开始处理请求: GET /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:17 | [1765270457623-5081315568] 开始处理请求: GET /api/v1/ai-assistant/sessions
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457498-5077297120] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.13秒
+INFO:     2025-12-09 16:54:17 | [1765270457498-5077297120] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.13秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457626-5081208672] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:17 | [1765270457626-5081208672] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270456957-5080527216] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.73秒
+INFO:     2025-12-09 16:54:17 | [1765270456957-5080527216] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.73秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61160 - "GET /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457692-5080896752] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:17 | [1765270457692-5080896752] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457626-5081208672] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.25秒
+INFO:     2025-12-09 16:54:17 | [1765270457626-5081208672] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.25秒
+INFO:     2025-12-09 16:54:17 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:17 [INFO] __init__.py:999 - [1765270457880-5081213760] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:17 | [1765270457880-5081213760] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270457623-5081315568] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.59秒
+INFO:     2025-12-09 16:54:18 | [1765270457623-5081315568] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.59秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61167 - "GET /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458220-5080894016] 开始处理请求: GET /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:18 | [1765270458220-5080894016] 开始处理请求: GET /api/v1/ai-assistant/sessions
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270457880-5081213760] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.39秒
+INFO:     2025-12-09 16:54:18 | [1765270457880-5081213760] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.39秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61160 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270457692-5080896752] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.62秒
+INFO:     2025-12-09 16:54:18 | [1765270457692-5080896752] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.62秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458317-5080899392] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:18 | [1765270458317-5080899392] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458220-5080894016] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.24秒
+INFO:     2025-12-09 16:54:18 | [1765270458220-5080894016] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.24秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458458-5080906688] 开始处理请求: GET /api/v1/ai-assistant/sessions
+INFO:     2025-12-09 16:54:18 | [1765270458458-5080906688] 开始处理请求: GET /api/v1/ai-assistant/sessions
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458317-5080899392] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.24秒
+INFO:     2025-12-09 16:54:18 | [1765270458317-5080899392] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.24秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61160 - "GET /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458558-5080902896] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:18 | [1765270458558-5080902896] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458458-5080906688] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.28秒
+INFO:     2025-12-09 16:54:18 | [1765270458458-5080906688] 完成请求: GET /api/v1/ai-assistant/sessions - 处理时间: 0.28秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/sessions?user_id=1&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:18 [INFO] __init__.py:999 - [1765270458558-5080902896] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.29秒
+INFO:     2025-12-09 16:54:18 | [1765270458558-5080902896] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.29秒
+INFO:     2025-12-09 16:54:18 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/agents?user_id=1&include_public=true&page_size=100 HTTP/1.1" 200 OK
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465559-5078012832] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:25 | [1765270465559-5078012832] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465559-5081311056] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465559-5081311056] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465560-5080815696] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465560-5080815696] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465560-5080814304] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465560-5080814304] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465560-5080812480] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465560-5080812480] 开始处理请求: OPTIONS /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465559-5081311056] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:25 | [1765270465559-5081311056] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465560-5080815696] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:25 | [1765270465560-5080815696] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465560-5080814304] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:25 | [1765270465560-5080814304] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465560-5080812480] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:25 | [1765270465560-5080812480] 完成请求: OPTIONS /api/v1/ai-assistant/agents - 处理时间: 0.00秒
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61157 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&agent_type=system&include_public=true&page_size=50 HTTP/1.1" 200 OK
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61160 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&agent_type=custom&include_public=false&page_size=50 HTTP/1.1" 200 OK
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61167 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&agent_type=system&include_public=true&page_size=50 HTTP/1.1" 200 OK
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61158 - "OPTIONS /api/v1/ai-assistant/agents?user_id=1&agent_type=custom&include_public=false&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465562-5080864224] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465562-5080864224] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465563-5080900016] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465563-5080900016] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465559-5078012832] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.15秒
+INFO:     2025-12-09 16:54:25 | [1765270465559-5078012832] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.15秒
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465709-5081313504] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:25 | [1765270465709-5081313504] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465563-5080900016] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.24秒
+INFO:     2025-12-09 16:54:25 | [1765270465563-5080900016] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.24秒
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61160 - "GET /api/v1/ai-assistant/agents?user_id=1&agent_type=system&include_public=true&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465806-5080897136] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465806-5080897136] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465709-5081313504] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.11秒
+INFO:     2025-12-09 16:54:25 | [1765270465709-5081313504] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.11秒
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61167 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465562-5080864224] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.41秒
+INFO:     2025-12-09 16:54:25 | [1765270465562-5080864224] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.41秒
+INFO:     2025-12-09 16:54:25 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/agents?user_id=1&agent_type=custom&include_public=false&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:25 [INFO] __init__.py:999 - [1765270465978-5080811424] 开始处理请求: GET /api/v1/ai-assistant/agents
+INFO:     2025-12-09 16:54:25 | [1765270465978-5080811424] 开始处理请求: GET /api/v1/ai-assistant/agents
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466035-5081315376] 开始处理请求: GET /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:26 | [1765270466035-5081315376] 开始处理请求: GET /api/v1/ai-assistant/providers
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466036-5021586960] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:26 | [1765270466036-5021586960] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270465806-5080897136] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.29秒
+INFO:     2025-12-09 16:54:26 | [1765270465806-5080897136] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.29秒
+INFO:     2025-12-09 16:54:26 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/agents?user_id=1&agent_type=system&include_public=true&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466035-5081315376] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.13秒
+INFO:     2025-12-09 16:54:26 | [1765270466035-5081315376] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.13秒
+INFO:     2025-12-09 16:54:26 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/providers HTTP/1.1" 200 OK
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466167-5080658768] 开始处理请求: GET /api/v1/ai-assistant/providers
+INFO:     2025-12-09 16:54:26 | [1765270466167-5080658768] 开始处理请求: GET /api/v1/ai-assistant/providers
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466036-5021586960] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.14秒
+INFO:     2025-12-09 16:54:26 | [1765270466036-5021586960] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.14秒
+INFO:     2025-12-09 16:54:26 | 127.0.0.1:61160 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466173-5021588640] 开始处理请求: GET /api/v1/ai-assistant/models
+INFO:     2025-12-09 16:54:26 | [1765270466173-5021588640] 开始处理请求: GET /api/v1/ai-assistant/models
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270465978-5080811424] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.27秒
+INFO:     2025-12-09 16:54:26 | [1765270465978-5080811424] 完成请求: GET /api/v1/ai-assistant/agents - 处理时间: 0.27秒
+INFO:     2025-12-09 16:54:26 | 127.0.0.1:61167 - "GET /api/v1/ai-assistant/agents?user_id=1&agent_type=custom&include_public=false&page_size=50 HTTP/1.1" 200 OK
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466167-5080658768] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.10秒
+INFO:     2025-12-09 16:54:26 | [1765270466167-5080658768] 完成请求: GET /api/v1/ai-assistant/providers - 处理时间: 0.10秒
+INFO:     2025-12-09 16:54:26 | 127.0.0.1:61159 - "GET /api/v1/ai-assistant/providers HTTP/1.1" 200 OK
+2025-12-09 16:54:26 [INFO] __init__.py:999 - [1765270466173-5021588640] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.09秒
+INFO:     2025-12-09 16:54:26 | [1765270466173-5021588640] 完成请求: GET /api/v1/ai-assistant/models - 处理时间: 0.09秒
+INFO:     2025-12-09 16:54:26 | 127.0.0.1:61157 - "GET /api/v1/ai-assistant/models HTTP/1.1" 200 OK
+INFO:     2025-12-09 16:55:15 | 2 changes detected

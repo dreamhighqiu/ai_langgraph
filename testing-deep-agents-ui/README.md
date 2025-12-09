@@ -50,7 +50,7 @@ You can get the Deployment URL and Assistant ID from the terminal output and `la
 - Deployment URL: http://127.0.1:2024
 - Assistant ID: `research`
 
-**Open Deepagents UI** at [http://localhost:3000](http://localhost:3000) and input the Deployment URL and Assistant ID:
+**Open Deepagents UI** at [http://localhost:3200](http://localhost:3200) and input the Deployment URL and Assistant ID:
 
 - **Deployment URL**: The URL for the LangGraph deployment you are connecting to
 - **Assistant ID**: The ID of the assistant or agent you want to use

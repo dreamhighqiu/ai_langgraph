@@ -5,10 +5,11 @@
 # 功能: 一键启动所有后端服务（使用 uv 管理的统一虚拟环境）
 # 
 # 服务列表:
-#   1. LightRAG Server (知识库服务) - http://localhost:9621
-#   2. MCP Server (RAG Anything)    - http://localhost:8001
-#   3. Deep Agents Service          - http://localhost:2025
-#   4. Frontend UI (可选)           - http://localhost:3000
+#   1. LightRAG Server (知识库服务)     - http://localhost:9621
+#   2. MCP Server (RAG Anything)        - http://localhost:8001
+#   3. LangGraph Server (智能体后端)    - http://localhost:2025
+#   4. AI Platform Backend (主后端)     - http://localhost:9999
+#   5. AI Platform Frontend (前端 UI)   - http://localhost:5174
 #
 # 使用方法:
 #   ./start_all.sh          # 启动所有后端服务
@@ -145,7 +146,8 @@ start_lightrag() {
     print_info "启动 $name..."
     
     cd "$PROJECT_ROOT/anything-chat-rag"
-    nohup uv run --project "$PROJECT_ROOT" python -m lightrag.api.lightrag_server > "$log_file" 2>&1 &
+    export PATH="$PROJECT_ROOT/.venv/bin:$PATH"
+    nohup "$PROJECT_ROOT/.venv/bin/python" -m lightrag.api.lightrag_server > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
@@ -173,7 +175,9 @@ start_mcp_server() {
     print_info "启动 $name..."
     
     cd "$PROJECT_ROOT/mcp-server"
-    nohup uv run --project "$PROJECT_ROOT" python -m mcp_server_rag_anything.server > "$log_file" 2>&1 &
+    # 使用虚拟环境的 Python 直接启动，确保 PATH 包含 bin 目录
+    export PATH="$PROJECT_ROOT/.venv/bin:$PATH"
+    nohup "$PROJECT_ROOT/.venv/bin/python" -m mcp_server_rag_anything.server > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
@@ -186,11 +190,11 @@ start_mcp_server() {
     fi
 }
 
-start_agent_service() {
+start_langgraph_server() {
     local port=2025
-    local name="Deep Agents Service"
-    local pid_file="$PID_DIR/agent.pid"
-    local log_file="$LOG_DIR/agent.log"
+    local name="LangGraph Server"
+    local pid_file="$PID_DIR/langgraph.pid"
+    local log_file="$LOG_DIR/langgraph.log"
     
     if check_port $port; then
         print_warning "$name 已在运行 (端口 $port)"
@@ -200,7 +204,8 @@ start_agent_service() {
     print_info "启动 $name..."
     
     cd "$PROJECT_ROOT/testing-deep-agents-service"
-    nohup uv run --project "$PROJECT_ROOT" python start_server.py > "$log_file" 2>&1 &
+    export PATH="$PROJECT_ROOT/.venv/bin:$PATH"
+    nohup "$PROJECT_ROOT/.venv/bin/python" start_server.py > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
@@ -215,11 +220,47 @@ start_agent_service() {
     fi
 }
 
-start_frontend() {
-    local port=3000
-    local name="Frontend UI"
-    local pid_file="$PID_DIR/frontend.pid"
-    local log_file="$LOG_DIR/frontend.log"
+start_ai_platform_backend() {
+    local port=9999
+    local name="AI Platform Backend"
+    local pid_file="$PID_DIR/platform.pid"
+    local log_file="$LOG_DIR/platform.log"
+    local venv_dir="$PROJECT_ROOT/autogen_study/.venv"
+    
+    if check_port $port; then
+        print_warning "$name 已在运行 (端口 $port)"
+        return 0
+    fi
+    
+    print_info "启动 $name..."
+    
+    cd "$PROJECT_ROOT/autogen_study"
+    # autogen_study 使用自己的虚拟环境
+    export PATH="$venv_dir/bin:$PATH"
+    nohup "$venv_dir/bin/python" run.py --port $port > "$log_file" 2>&1 &
+    local pid=$!
+    echo $pid > "$pid_file"
+    cd "$PROJECT_ROOT"
+    
+    if wait_for_service $port "$name"; then
+        print_success "$name 已启动 (PID: $pid, 端口: $port)"
+        printf "         📄 API 文档: ${CYAN}http://localhost:$port/docs${NC}\n"
+        printf "         📌 统一服务: ${CYAN}http://localhost:$port/api/v1/services${NC}\n"
+        printf "         📌 知识库:   ${CYAN}http://localhost:$port/api/v1/services/knowledge/list${NC}\n"
+        printf "         📌 Milvus:   ${CYAN}http://localhost:$port/api/v1/services/milvus/collections${NC}\n"
+        printf "         📌 MinIO:    ${CYAN}http://localhost:$port/api/v1/services/minio/buckets${NC}\n"
+        printf "         📌 智能体:   ${CYAN}http://localhost:$port/api/v1/services/agents${NC}\n"
+    else
+        print_error "$name 启动失败，请检查日志: $log_file"
+        return 1
+    fi
+}
+
+start_agent_ui() {
+    local port=3200
+    local name="Agent UI (Next.js)"
+    local pid_file="$PID_DIR/agent_ui.pid"
+    local log_file="$LOG_DIR/agent_ui.log"
     
     if check_port $port; then
         print_warning "$name 已在运行 (端口 $port)"
@@ -233,10 +274,45 @@ start_frontend() {
     # 检查 node_modules
     if [ ! -d "node_modules" ]; then
         print_info "安装前端依赖..."
-        npm install
+        yarn install 2>/dev/null || npm install
     fi
     
-    nohup npm run dev > "$log_file" 2>&1 &
+    nohup env PORT=$port yarn dev > "$log_file" 2>&1 &
+    local pid=$!
+    echo $pid > "$pid_file"
+    cd "$PROJECT_ROOT"
+    
+    if wait_for_service $port "$name"; then
+        print_success "$name 已启动 (PID: $pid, 端口: $port)"
+        printf "         🤖 智能体聊天: ${CYAN}http://localhost:$port${NC}\n"
+    else
+        print_error "$name 启动失败，请检查日志: $log_file"
+        return 1
+    fi
+}
+
+start_frontend() {
+    local port=3100
+    local name="AI Platform Frontend"
+    local pid_file="$PID_DIR/frontend.pid"
+    local log_file="$LOG_DIR/frontend.log"
+    
+    if check_port $port; then
+        print_warning "$name 已在运行 (端口 $port)"
+        return 0
+    fi
+    
+    print_info "启动 $name..."
+    
+    cd "$PROJECT_ROOT/autogen_study/web"
+    
+    # 检查 node_modules
+    if [ ! -d "node_modules" ]; then
+        print_info "安装前端依赖..."
+        yarn install 2>/dev/null || npm install
+    fi
+    
+    nohup yarn dev > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
@@ -244,11 +320,13 @@ start_frontend() {
     if wait_for_service $port "$name"; then
         print_success "$name 已启动 (PID: $pid, 端口: $port)"
         printf "         🌐 访问地址: ${CYAN}http://localhost:$port${NC}\n"
+        printf "         🤖 嵌入式智能体: ${CYAN}http://localhost:$port/langgraph-agent${NC}\n"
     else
         print_error "$name 启动失败，请检查日志: $log_file"
         return 1
     fi
 }
+
 
 # =============================================================================
 # 服务停止函数
@@ -280,8 +358,10 @@ stop_service() {
 stop_all() {
     print_info "停止所有服务..."
     
-    stop_service "Frontend UI" "$PID_DIR/frontend.pid" 3000
-    stop_service "Deep Agents Service" "$PID_DIR/agent.pid" 2025
+    stop_service "AI Platform Frontend" "$PID_DIR/frontend.pid" 3100
+    stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
+    stop_service "AI Platform Backend" "$PID_DIR/platform.pid" 9999
+    stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
     stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
     stop_service "LightRAG Server" "$PID_DIR/lightrag.pid" 9621
     
@@ -302,8 +382,10 @@ show_status() {
     local services=(
         "LightRAG Server:9621"
         "MCP Server:8001"
-        "Deep Agents Service:2025"
-        "Frontend UI:3000"
+        "LangGraph Server:2025"
+        "AI Platform Backend:9999"
+        "Agent UI (Next.js):3200"
+        "AI Platform Frontend:3100"
     )
     
     for service in "${services[@]}"; do
@@ -311,9 +393,9 @@ show_status() {
         local port="${service##*:}"
         
         if check_port $port; then
-            printf "  ${GREEN}●${NC} $name ${GREEN}运行中${NC} (端口: $port)\n"
+            printf "  ${GREEN}●${NC} %-25s ${GREEN}运行中${NC} (端口: $port)\n" "$name"
         else
-            printf "  ${RED}○${NC} $name ${RED}未运行${NC} (端口: $port)\n"
+            printf "  ${RED}○${NC} %-25s ${RED}未运行${NC} (端口: $port)\n" "$name"
         fi
     done
     
@@ -386,10 +468,16 @@ main() {
     start_mcp_server
     echo ""
     
-    start_agent_service
+    start_langgraph_server
+    echo ""
+    
+    start_ai_platform_backend
     echo ""
     
     if [ "$include_frontend" = true ]; then
+        start_agent_ui
+        echo ""
+        
         start_frontend
         echo ""
     fi
@@ -400,13 +488,18 @@ main() {
     printf "${GREEN}🎉 所有服务启动完成！${NC}\n"
     echo ""
     echo "常用命令:"
-    printf "  查看状态: ${CYAN}$0 --status${NC}\n"
-    printf "  停止服务: ${CYAN}$0 --stop${NC}\n"
-    printf "  查看日志: ${CYAN}tail -f logs/*.log${NC}\n"
+    printf "  查看状态:   ${CYAN}$0 --status${NC}\n"
+    printf "  停止服务:   ${CYAN}$0 --stop${NC}\n"
+    printf "  查看日志:   ${CYAN}tail -f logs/*.log${NC}\n"
     echo ""
-    echo "使用 uv run 运行其他命令:"
-    printf "  ${CYAN}uv run python your_script.py${NC}\n"
-    printf "  ${CYAN}uv run lightrag-server${NC}\n"
+    echo "访问地址:"
+    printf "  AI 平台后端: ${CYAN}http://localhost:9999/docs${NC}\n"
+    printf "  统一服务 API: ${CYAN}http://localhost:9999/api/v1/services${NC}\n"
+    if [ "$include_frontend" = true ]; then
+        printf "  智能体聊天 (独立): ${CYAN}http://localhost:3200${NC}\n"
+        printf "  AI 平台前端: ${CYAN}http://localhost:3100${NC}\n"
+        printf "  嵌入式智能体: ${CYAN}http://localhost:3100/langgraph-agent${NC}\n"
+    fi
 }
 
 # 运行主程序

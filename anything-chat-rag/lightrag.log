@@ -3178,3 +3178,561 @@ neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.Synta
 2025-12-09 11:18:33,496 - lightrag - INFO - [base] Graph truncated: 1078 nodes found, limited to 1000
 2025-12-09 11:18:34,057 - lightrag - INFO - [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
 2025-12-09 11:18:34,114 - uvicorn.access - INFO - 127.0.0.1:56802 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-09 11:35:40,420 - uvicorn.access - INFO - 127.0.0.1:62340 - "GET /docs HTTP/1.1" 200
+2025-12-09 11:35:40,475 - uvicorn.access - INFO - 127.0.0.1:62365 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 11:35:40,755 - lightrag - INFO - [base] Graph truncated: 1078 nodes found, limited to 1000
+2025-12-09 11:35:41,720 - lightrag - INFO - [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
+2025-12-09 11:35:41,769 - uvicorn.access - INFO - 127.0.0.1:62340 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-09 11:41:38,170 - uvicorn.access - INFO - 127.0.0.1:64589 - "GET /docs HTTP/1.1" 200
+2025-12-09 11:41:38,233 - uvicorn.access - INFO - 127.0.0.1:64595 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 11:41:38,732 - lightrag - INFO - [base] Graph truncated: 1078 nodes found, limited to 1000
+2025-12-09 11:41:39,811 - lightrag - INFO - [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
+2025-12-09 11:41:39,859 - uvicorn.access - INFO - 127.0.0.1:64589 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-09 11:51:52,027 - uvicorn.error - INFO - Shutting down
+2025-12-09 11:51:52,129 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 11:51:52,132 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 11:51:52,132 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 11:51:52,132 - uvicorn.error - INFO - Finished server process [37306]
+2025-12-09 11:52:00,007 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 11:52:00,007 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 11:52:00,007 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 11:52:00,072 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 11:52:00,072 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 11:52:00,072 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 11:52:00,073 - lightrag - INFO - Reranking is disabled
+2025-12-09 11:52:00,284 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 11:52:00,886 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 11:52:00,886 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 11:52:00,979 - uvicorn.error - INFO - Started server process [11217]
+2025-12-09 11:52:00,979 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 11:52:00,981 - lightrag - INFO - [] Process 11217 KV load full_docs with 52 records
+2025-12-09 11:52:00,983 - lightrag - INFO - [] Process 11217 KV load text_chunks with 63 records
+2025-12-09 11:52:00,983 - lightrag - INFO - [] Process 11217 KV load full_entities with 52 records
+2025-12-09 11:52:00,984 - lightrag - INFO - [] Process 11217 KV load full_relations with 52 records
+2025-12-09 11:52:00,987 - lightrag - INFO - [] Process 11217 KV load entity_chunks with 1000 records
+2025-12-09 11:52:00,989 - lightrag - INFO - [] Process 11217 KV load relation_chunks with 1262 records
+2025-12-09 11:52:01,245 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 11:52:01,358 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 11:52:01,492 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 11:52:01,571 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 11:52:01,749 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 11:52:02,070 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 11:52:02,121 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 11:52:02,212 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 11:52:02,363 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 11:52:02,540 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 11:52:02,594 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 11:52:02,650 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 11:52:02,650 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 11:52:02,666 - lightrag - INFO - [] Process 11217 KV load llm_response_cache with 176 records
+2025-12-09 11:52:02,667 - lightrag - INFO - [] Process 11217 doc status load doc_status with 52 records
+2025-12-09 11:52:02,807 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 11:52:02,807 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 11:52:31,211 - uvicorn.access - INFO - 127.0.0.1:51514 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 11:52:31,213 - uvicorn.access - INFO - 127.0.0.1:51514 - "POST /documents/paginated HTTP/1.1" 422
+2025-12-09 13:11:33,746 - uvicorn.error - INFO - Shutting down
+2025-12-09 13:11:33,848 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 13:11:33,850 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 13:11:33,850 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 13:11:33,851 - uvicorn.error - INFO - Finished server process [11217]
+2025-12-09 13:11:37,330 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:11:37,330 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:11:37,330 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:11:37,389 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:11:37,390 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:11:37,390 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:11:37,390 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:11:37,595 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:11:38,168 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:11:38,168 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:11:38,260 - uvicorn.error - INFO - Started server process [34914]
+2025-12-09 13:11:38,260 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:11:38,262 - lightrag - INFO - [] Process 34914 KV load full_docs with 52 records
+2025-12-09 13:11:38,263 - lightrag - INFO - [] Process 34914 KV load text_chunks with 63 records
+2025-12-09 13:11:38,264 - lightrag - INFO - [] Process 34914 KV load full_entities with 52 records
+2025-12-09 13:11:38,265 - lightrag - INFO - [] Process 34914 KV load full_relations with 52 records
+2025-12-09 13:11:38,268 - lightrag - INFO - [] Process 34914 KV load entity_chunks with 1000 records
+2025-12-09 13:11:38,270 - lightrag - INFO - [] Process 34914 KV load relation_chunks with 1262 records
+2025-12-09 13:11:38,456 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:11:38,546 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:11:38,725 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:11:38,847 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:11:38,986 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:11:39,119 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:11:39,165 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:11:39,257 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:11:39,393 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:11:39,573 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:11:39,627 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:11:39,673 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:11:39,674 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:11:39,701 - lightrag - INFO - [] Process 34914 KV load llm_response_cache with 176 records
+2025-12-09 13:11:39,703 - lightrag - INFO - [] Process 34914 doc status load doc_status with 52 records
+2025-12-09 13:11:39,843 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:11:39,843 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:12:14,128 - uvicorn.access - INFO - 127.0.0.1:56146 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 13:12:14,131 - uvicorn.access - INFO - 127.0.0.1:56146 - "POST /documents/paginated HTTP/1.1" 422
+2025-12-09 13:23:07,874 - uvicorn.error - INFO - Shutting down
+2025-12-09 13:23:07,976 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 13:23:07,978 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 13:23:07,979 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 13:23:07,979 - uvicorn.error - INFO - Finished server process [34914]
+2025-12-09 13:23:12,260 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:23:12,260 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:23:12,260 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:23:12,320 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:23:12,320 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:23:12,320 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:23:12,320 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:23:12,516 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:23:13,044 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:23:13,044 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:23:13,133 - uvicorn.error - INFO - Started server process [55598]
+2025-12-09 13:23:13,134 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:23:13,135 - lightrag - INFO - [] Process 55598 KV load full_docs with 52 records
+2025-12-09 13:23:13,136 - lightrag - INFO - [] Process 55598 KV load text_chunks with 63 records
+2025-12-09 13:23:13,137 - lightrag - INFO - [] Process 55598 KV load full_entities with 52 records
+2025-12-09 13:23:13,138 - lightrag - INFO - [] Process 55598 KV load full_relations with 52 records
+2025-12-09 13:23:13,140 - lightrag - INFO - [] Process 55598 KV load entity_chunks with 1000 records
+2025-12-09 13:23:13,142 - lightrag - INFO - [] Process 55598 KV load relation_chunks with 1262 records
+2025-12-09 13:23:13,315 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:23:13,407 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:23:13,535 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:23:13,580 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:23:13,669 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:23:13,803 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:23:13,848 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:23:13,934 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:23:14,067 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:23:14,249 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:23:14,294 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:23:14,341 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:23:14,341 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:23:14,355 - lightrag - INFO - [] Process 55598 KV load llm_response_cache with 176 records
+2025-12-09 13:23:14,355 - lightrag - INFO - [] Process 55598 doc status load doc_status with 52 records
+2025-12-09 13:23:14,547 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:23:14,547 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:26:53,152 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:26:53,152 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:26:53,152 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:26:53,215 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:26:53,215 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:26:53,215 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:26:53,215 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:26:53,422 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:26:53,993 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:26:53,993 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:26:54,092 - uvicorn.error - INFO - Started server process [65927]
+2025-12-09 13:26:54,092 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:26:54,094 - lightrag - INFO - [] Process 65927 KV load full_docs with 52 records
+2025-12-09 13:26:54,095 - lightrag - INFO - [] Process 65927 KV load text_chunks with 63 records
+2025-12-09 13:26:54,096 - lightrag - INFO - [] Process 65927 KV load full_entities with 52 records
+2025-12-09 13:26:54,097 - lightrag - INFO - [] Process 65927 KV load full_relations with 52 records
+2025-12-09 13:26:54,099 - lightrag - INFO - [] Process 65927 KV load entity_chunks with 1000 records
+2025-12-09 13:26:54,101 - lightrag - INFO - [] Process 65927 KV load relation_chunks with 1262 records
+2025-12-09 13:26:54,276 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:26:54,364 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:26:54,498 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:26:54,543 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:26:54,634 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:26:54,767 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:26:54,813 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:26:54,901 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:26:55,032 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:26:55,214 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:26:55,259 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:26:55,304 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:26:55,304 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:26:55,325 - lightrag - INFO - [] Process 65927 KV load llm_response_cache with 176 records
+2025-12-09 13:26:55,326 - lightrag - INFO - [] Process 65927 doc status load doc_status with 52 records
+2025-12-09 13:26:55,469 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:26:55,469 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:28:07,296 - uvicorn.error - INFO - Shutting down
+2025-12-09 13:28:07,400 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 13:28:07,401 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 13:28:07,401 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 13:28:07,401 - uvicorn.error - INFO - Finished server process [65927]
+2025-12-09 13:28:08,120 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:28:08,120 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:28:08,120 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:28:08,179 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:28:08,179 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:28:08,179 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:28:08,179 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:28:08,380 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:28:08,921 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:28:08,921 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:28:09,015 - uvicorn.error - INFO - Started server process [66773]
+2025-12-09 13:28:09,015 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:28:09,017 - lightrag - INFO - [] Process 66773 KV load full_docs with 52 records
+2025-12-09 13:28:09,018 - lightrag - INFO - [] Process 66773 KV load text_chunks with 63 records
+2025-12-09 13:28:09,020 - lightrag - INFO - [] Process 66773 KV load full_entities with 52 records
+2025-12-09 13:28:09,021 - lightrag - INFO - [] Process 66773 KV load full_relations with 52 records
+2025-12-09 13:28:09,023 - lightrag - INFO - [] Process 66773 KV load entity_chunks with 1000 records
+2025-12-09 13:28:09,025 - lightrag - INFO - [] Process 66773 KV load relation_chunks with 1262 records
+2025-12-09 13:28:09,217 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:28:09,317 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:28:09,532 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:28:09,595 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:28:09,690 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:28:09,834 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:28:09,882 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:28:09,978 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:28:10,122 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:28:10,312 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:28:10,363 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:28:10,413 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:28:10,413 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:28:10,424 - lightrag - INFO - [] Process 66773 KV load llm_response_cache with 176 records
+2025-12-09 13:28:10,425 - lightrag - INFO - [] Process 66773 doc status load doc_status with 52 records
+2025-12-09 13:28:10,573 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:28:10,573 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:29:34,935 - uvicorn.error - INFO - Shutting down
+2025-12-09 13:29:35,036 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 13:29:35,037 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 13:29:35,037 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 13:29:35,037 - uvicorn.error - INFO - Finished server process [66773]
+2025-12-09 13:29:37,885 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:29:37,885 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:29:37,885 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:29:37,949 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:29:37,949 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:29:37,949 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:29:37,949 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:29:38,317 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:29:39,790 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:29:39,790 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:29:39,872 - uvicorn.error - INFO - Started server process [67416]
+2025-12-09 13:29:39,872 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:29:39,873 - lightrag - INFO - [] Process 67416 KV load full_docs with 52 records
+2025-12-09 13:29:39,874 - lightrag - INFO - [] Process 67416 KV load text_chunks with 63 records
+2025-12-09 13:29:39,876 - lightrag - INFO - [] Process 67416 KV load full_entities with 52 records
+2025-12-09 13:29:39,878 - lightrag - INFO - [] Process 67416 KV load full_relations with 52 records
+2025-12-09 13:29:39,880 - lightrag - INFO - [] Process 67416 KV load entity_chunks with 1000 records
+2025-12-09 13:29:39,882 - lightrag - INFO - [] Process 67416 KV load relation_chunks with 1262 records
+2025-12-09 13:29:40,129 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:29:40,228 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:29:40,379 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:29:40,430 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:29:40,545 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:29:40,692 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:29:40,741 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:29:40,836 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:29:40,987 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:29:41,197 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:29:41,243 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:29:41,292 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:29:41,293 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:29:41,305 - lightrag - INFO - [] Process 67416 KV load llm_response_cache with 176 records
+2025-12-09 13:29:41,306 - lightrag - INFO - [] Process 67416 doc status load doc_status with 52 records
+2025-12-09 13:29:41,459 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:29:41,460 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:30:43,386 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:30:43,386 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:30:43,386 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:30:43,452 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:30:43,452 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:30:43,452 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:30:43,452 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:30:43,626 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:30:44,124 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:30:44,124 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:30:44,226 - uvicorn.error - INFO - Started server process [67835]
+2025-12-09 13:30:44,226 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:30:44,228 - lightrag - INFO - [] Process 67835 KV load full_docs with 52 records
+2025-12-09 13:30:44,229 - lightrag - INFO - [] Process 67835 KV load text_chunks with 63 records
+2025-12-09 13:30:44,230 - lightrag - INFO - [] Process 67835 KV load full_entities with 52 records
+2025-12-09 13:30:44,231 - lightrag - INFO - [] Process 67835 KV load full_relations with 52 records
+2025-12-09 13:30:44,233 - lightrag - INFO - [] Process 67835 KV load entity_chunks with 1000 records
+2025-12-09 13:30:44,235 - lightrag - INFO - [] Process 67835 KV load relation_chunks with 1262 records
+2025-12-09 13:30:44,409 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:30:44,500 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:30:44,631 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:30:44,677 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:30:44,765 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:30:44,896 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:30:44,938 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:30:45,051 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:30:45,285 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:30:45,499 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:30:45,601 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:30:45,726 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:30:45,726 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:30:45,749 - lightrag - INFO - [] Process 67835 KV load llm_response_cache with 176 records
+2025-12-09 13:30:45,751 - lightrag - INFO - [] Process 67835 doc status load doc_status with 52 records
+2025-12-09 13:30:45,967 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:30:45,968 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:33:26,230 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:33:26,230 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:33:26,230 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:33:26,298 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:33:26,298 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:33:26,299 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:33:26,299 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:33:26,474 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:33:27,087 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:33:27,087 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:33:27,199 - uvicorn.error - INFO - Started server process [68624]
+2025-12-09 13:33:27,199 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:33:27,201 - lightrag - INFO - [] Process 68624 KV load full_docs with 52 records
+2025-12-09 13:33:27,202 - lightrag - INFO - [] Process 68624 KV load text_chunks with 63 records
+2025-12-09 13:33:27,203 - lightrag - INFO - [] Process 68624 KV load full_entities with 52 records
+2025-12-09 13:33:27,204 - lightrag - INFO - [] Process 68624 KV load full_relations with 52 records
+2025-12-09 13:33:27,205 - lightrag - INFO - [] Process 68624 KV load entity_chunks with 1000 records
+2025-12-09 13:33:27,208 - lightrag - INFO - [] Process 68624 KV load relation_chunks with 1262 records
+2025-12-09 13:33:27,390 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:33:27,483 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:33:27,659 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:33:27,735 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:33:27,824 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:33:27,975 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:33:28,020 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:33:28,107 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:33:28,241 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:33:28,429 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:33:28,557 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:33:28,604 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:33:28,605 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:33:28,630 - lightrag - INFO - [] Process 68624 KV load llm_response_cache with 176 records
+2025-12-09 13:33:28,631 - lightrag - INFO - [] Process 68624 doc status load doc_status with 52 records
+2025-12-09 13:33:28,784 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:33:28,785 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:34:06,404 - uvicorn.access - INFO - 127.0.0.1:63053 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 13:34:17,877 - uvicorn.access - INFO - 127.0.0.1:63110 - "GET /docs HTTP/1.1" 200
+2025-12-09 13:34:17,995 - uvicorn.access - INFO - 127.0.0.1:63134 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 13:34:17,996 - lightrag - INFO - [base] Graph truncated: 1078 nodes found, limited to 1000
+2025-12-09 13:34:18,409 - lightrag - INFO - [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
+2025-12-09 13:34:18,459 - uvicorn.access - INFO - 127.0.0.1:63110 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-09 13:34:21,574 - uvicorn.access - INFO - 127.0.0.1:63150 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 13:34:21,577 - uvicorn.access - INFO - 127.0.0.1:63150 - "POST /documents/paginated HTTP/1.1" 422
+2025-12-09 13:42:40,669 - uvicorn.access - INFO - 127.0.0.1:49252 - "GET /docs HTTP/1.1" 200
+2025-12-09 13:42:40,729 - uvicorn.access - INFO - 127.0.0.1:49268 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 13:42:40,866 - lightrag - INFO - [base] Graph truncated: 1078 nodes found, limited to 1000
+2025-12-09 13:42:41,350 - lightrag - INFO - [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
+2025-12-09 13:42:41,401 - uvicorn.access - INFO - 127.0.0.1:49252 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-09 13:45:41,120 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 13:45:41,120 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 13:45:41,120 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 13:45:41,179 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 13:45:41,179 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 13:45:41,180 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 13:45:41,180 - lightrag - INFO - Reranking is disabled
+2025-12-09 13:45:41,369 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 13:45:41,995 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 13:45:41,995 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 13:45:42,161 - uvicorn.error - INFO - Started server process [74298]
+2025-12-09 13:45:42,161 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 13:45:42,163 - lightrag - INFO - [] Process 74298 KV load full_docs with 52 records
+2025-12-09 13:45:42,164 - lightrag - INFO - [] Process 74298 KV load text_chunks with 63 records
+2025-12-09 13:45:42,165 - lightrag - INFO - [] Process 74298 KV load full_entities with 52 records
+2025-12-09 13:45:42,166 - lightrag - INFO - [] Process 74298 KV load full_relations with 52 records
+2025-12-09 13:45:42,168 - lightrag - INFO - [] Process 74298 KV load entity_chunks with 1000 records
+2025-12-09 13:45:42,170 - lightrag - INFO - [] Process 74298 KV load relation_chunks with 1262 records
+2025-12-09 13:45:42,355 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 13:45:42,454 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 13:45:42,690 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 13:45:42,736 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 13:45:42,875 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 13:45:43,021 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 13:45:43,068 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 13:45:43,214 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 13:45:43,393 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 13:45:43,664 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 13:45:43,732 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 13:45:43,798 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 13:45:43,798 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 13:45:43,814 - lightrag - INFO - [] Process 74298 KV load llm_response_cache with 176 records
+2025-12-09 13:45:43,814 - lightrag - INFO - [] Process 74298 doc status load doc_status with 52 records
+2025-12-09 13:45:43,998 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 13:45:43,999 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 13:51:50,752 - uvicorn.access - INFO - 127.0.0.1:52269 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 14:10:56,141 - uvicorn.access - INFO - 127.0.0.1:58027 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 14:11:06,336 - uvicorn.access - INFO - 127.0.0.1:58074 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 14:11:14,159 - uvicorn.access - INFO - 127.0.0.1:58112 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 14:11:14,433 - uvicorn.access - INFO - 127.0.0.1:58112 - "GET /favicon.ico HTTP/1.1" 404
+2025-12-09 14:19:03,514 - uvicorn.access - INFO - 127.0.0.1:60415 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 14:35:27,773 - uvicorn.access - INFO - 127.0.0.1:65308 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 16:27:51,035 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 16:27:51,035 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 16:27:51,035 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 16:27:51,182 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 16:27:51,182 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 16:27:51,183 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 16:27:51,183 - lightrag - INFO - Reranking is disabled
+2025-12-09 16:27:51,483 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 16:27:52,904 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 16:27:52,904 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 16:27:52,981 - uvicorn.error - INFO - Started server process [25980]
+2025-12-09 16:27:52,982 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 16:27:52,983 - lightrag - INFO - [] Process 25980 KV load full_docs with 52 records
+2025-12-09 16:27:52,985 - lightrag - INFO - [] Process 25980 KV load text_chunks with 63 records
+2025-12-09 16:27:52,986 - lightrag - INFO - [] Process 25980 KV load full_entities with 52 records
+2025-12-09 16:27:52,987 - lightrag - INFO - [] Process 25980 KV load full_relations with 52 records
+2025-12-09 16:27:52,989 - lightrag - INFO - [] Process 25980 KV load entity_chunks with 1000 records
+2025-12-09 16:27:52,991 - lightrag - INFO - [] Process 25980 KV load relation_chunks with 1262 records
+2025-12-09 16:27:53,217 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 16:27:53,352 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 16:27:53,482 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 16:27:53,525 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 16:27:53,613 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 16:27:53,764 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 16:27:53,807 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 16:27:53,894 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 16:27:54,027 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 16:27:54,206 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 16:27:54,248 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 16:27:54,292 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 16:27:54,292 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 16:27:54,303 - lightrag - INFO - [] Process 25980 KV load llm_response_cache with 176 records
+2025-12-09 16:27:54,304 - lightrag - INFO - [] Process 25980 doc status load doc_status with 52 records
+2025-12-09 16:27:54,441 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 16:27:54,442 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 16:32:59,186 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 16:32:59,187 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 16:32:59,187 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 16:32:59,244 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 16:32:59,245 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 16:32:59,245 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 16:32:59,245 - lightrag - INFO - Reranking is disabled
+2025-12-09 16:32:59,436 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 16:32:59,985 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 16:32:59,985 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 16:33:00,077 - uvicorn.error - INFO - Started server process [31731]
+2025-12-09 16:33:00,077 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 16:33:00,079 - lightrag - INFO - [] Process 31731 KV load full_docs with 52 records
+2025-12-09 16:33:00,081 - lightrag - INFO - [] Process 31731 KV load text_chunks with 63 records
+2025-12-09 16:33:00,082 - lightrag - INFO - [] Process 31731 KV load full_entities with 52 records
+2025-12-09 16:33:00,083 - lightrag - INFO - [] Process 31731 KV load full_relations with 52 records
+2025-12-09 16:33:00,085 - lightrag - INFO - [] Process 31731 KV load entity_chunks with 1000 records
+2025-12-09 16:33:00,087 - lightrag - INFO - [] Process 31731 KV load relation_chunks with 1262 records
+2025-12-09 16:33:00,351 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 16:33:00,458 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 16:33:00,715 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 16:33:00,769 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 16:33:00,858 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 16:33:01,000 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 16:33:01,053 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 16:33:01,253 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 16:33:01,440 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 16:33:01,864 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 16:33:01,925 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 16:33:02,014 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 16:33:02,015 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 16:33:02,031 - lightrag - INFO - [] Process 31731 KV load llm_response_cache with 176 records
+2025-12-09 16:33:02,032 - lightrag - INFO - [] Process 31731 doc status load doc_status with 52 records
+2025-12-09 16:33:02,804 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 16:33:02,805 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 16:34:05,869 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 16:34:05,869 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 16:34:05,869 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 16:34:05,937 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 16:34:05,937 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 16:34:05,937 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 16:34:05,937 - lightrag - INFO - Reranking is disabled
+2025-12-09 16:34:06,139 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 16:34:06,823 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 16:34:06,823 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 16:34:06,929 - uvicorn.error - INFO - Started server process [33892]
+2025-12-09 16:34:06,929 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 16:34:06,931 - lightrag - INFO - [] Process 33892 KV load full_docs with 52 records
+2025-12-09 16:34:06,932 - lightrag - INFO - [] Process 33892 KV load text_chunks with 63 records
+2025-12-09 16:34:06,936 - lightrag - INFO - [] Process 33892 KV load full_entities with 52 records
+2025-12-09 16:34:06,939 - lightrag - INFO - [] Process 33892 KV load full_relations with 52 records
+2025-12-09 16:34:06,941 - lightrag - INFO - [] Process 33892 KV load entity_chunks with 1000 records
+2025-12-09 16:34:06,944 - lightrag - INFO - [] Process 33892 KV load relation_chunks with 1262 records
+2025-12-09 16:34:07,487 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 16:34:07,807 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 16:34:07,989 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 16:34:08,068 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 16:34:08,419 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 16:34:08,996 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 16:34:09,118 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 16:34:09,291 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 16:34:09,582 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 16:34:10,353 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 16:34:10,447 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 16:34:10,512 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 16:34:10,512 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 16:34:10,528 - lightrag - INFO - [] Process 33892 KV load llm_response_cache with 176 records
+2025-12-09 16:34:10,529 - lightrag - INFO - [] Process 33892 doc status load doc_status with 52 records
+2025-12-09 16:34:10,713 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 16:34:10,714 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 16:35:34,040 - uvicorn.access - INFO - 127.0.0.1:54698 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 16:40:16,529 - uvicorn.error - INFO - Shutting down
+2025-12-09 16:40:22,804 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 16:40:22,804 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 16:40:22,804 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 16:40:22,862 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 16:40:22,862 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 16:40:22,863 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 16:40:22,863 - lightrag - INFO - Reranking is disabled
+2025-12-09 16:40:23,047 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 16:40:23,572 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 16:40:23,572 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 16:40:23,663 - uvicorn.error - INFO - Started server process [53716]
+2025-12-09 16:40:23,663 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 16:40:23,665 - lightrag - INFO - [] Process 53716 KV load full_docs with 52 records
+2025-12-09 16:40:23,666 - lightrag - INFO - [] Process 53716 KV load text_chunks with 63 records
+2025-12-09 16:40:23,667 - lightrag - INFO - [] Process 53716 KV load full_entities with 52 records
+2025-12-09 16:40:23,668 - lightrag - INFO - [] Process 53716 KV load full_relations with 52 records
+2025-12-09 16:40:23,669 - lightrag - INFO - [] Process 53716 KV load entity_chunks with 1000 records
+2025-12-09 16:40:23,672 - lightrag - INFO - [] Process 53716 KV load relation_chunks with 1262 records
+2025-12-09 16:40:23,848 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 16:40:23,936 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 16:40:24,264 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 16:40:24,307 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 16:40:24,401 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 16:40:24,540 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 16:40:24,584 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 16:40:24,672 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 16:40:24,808 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 16:40:25,468 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 16:40:25,510 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 16:40:25,557 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 16:40:25,557 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 16:40:25,576 - lightrag - INFO - [] Process 53716 KV load llm_response_cache with 176 records
+2025-12-09 16:40:25,577 - lightrag - INFO - [] Process 53716 doc status load doc_status with 52 records
+2025-12-09 16:40:25,899 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 16:40:25,899 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 16:45:12,258 - uvicorn.error - INFO - Shutting down
+2025-12-09 16:45:12,359 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 16:45:12,360 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 16:45:12,360 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 16:45:12,360 - uvicorn.error - INFO - Finished server process [53716]
+2025-12-09 16:47:46,699 - lightrag - INFO - Frontend build is up-to-date
+2025-12-09 16:47:46,700 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 16:47:46,700 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 16:47:46,747 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 16:47:46,747 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 16:47:46,747 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 16:47:46,747 - lightrag - INFO - Reranking is disabled
+2025-12-09 16:47:46,898 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 16:47:47,354 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 16:47:47,354 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 16:47:47,448 - uvicorn.error - INFO - Started server process [56944]
+2025-12-09 16:47:47,448 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 16:47:47,449 - lightrag - INFO - [] Process 56944 KV load full_docs with 52 records
+2025-12-09 16:47:47,450 - lightrag - INFO - [] Process 56944 KV load text_chunks with 63 records
+2025-12-09 16:47:47,450 - lightrag - INFO - [] Process 56944 KV load full_entities with 52 records
+2025-12-09 16:47:47,451 - lightrag - INFO - [] Process 56944 KV load full_relations with 52 records
+2025-12-09 16:47:47,452 - lightrag - INFO - [] Process 56944 KV load entity_chunks with 1000 records
+2025-12-09 16:47:47,454 - lightrag - INFO - [] Process 56944 KV load relation_chunks with 1262 records
+2025-12-09 16:47:47,759 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 16:47:47,911 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 16:47:48,104 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 16:47:48,149 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 16:47:48,292 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 16:47:48,482 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 16:47:48,530 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 16:47:48,621 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 16:47:48,762 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 16:47:48,984 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 16:47:49,191 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 16:47:49,246 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 16:47:49,246 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 16:47:49,272 - lightrag - INFO - [] Process 56944 KV load llm_response_cache with 176 records
+2025-12-09 16:47:49,273 - lightrag - INFO - [] Process 56944 doc status load doc_status with 52 records
+2025-12-09 16:47:49,582 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 16:47:49,583 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 16:48:32,191 - uvicorn.access - INFO - 127.0.0.1:59222 - "GET /docs HTTP/1.1" 200
+2025-12-09 16:48:32,365 - uvicorn.access - INFO - 127.0.0.1:59222 - "GET /openapi.json HTTP/1.1" 200

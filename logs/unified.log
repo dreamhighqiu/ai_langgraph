@@ -1,0 +1,24 @@
+INFO:     Started server process [35425]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+✅ Loaded environment from .env
+🚀 Starting Unified Services API...
+
+============================================================
+📍 Server URL: http://localhost:8080
+📚 API Documentation: http://localhost:8080/docs
+💚 Health Check: http://localhost:8080/ok
+
+📌 API Endpoints:
+   • 知识库: http://localhost:8080/api/v1/services/knowledge
+   • Milvus: http://localhost:8080/api/v1/services/milvus
+   • MinIO:  http://localhost:8080/api/v1/services/minio
+   • 健康检查: http://localhost:8080/api/v1/services/health
+============================================================
+
+INFO:     127.0.0.1:56108 - "GET /ok HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56110 - "GET / HTTP/1.1" 200 OK
+2025-12-09 13:12:14,129 - httpx - INFO - HTTP Request: GET http://localhost:9621/documents/status_counts "HTTP/1.1 200 OK"
+2025-12-09 13:12:14,131 - httpx - INFO - HTTP Request: POST http://localhost:9621/documents/paginated "HTTP/1.1 422 Unprocessable Entity"
+INFO:     127.0.0.1:56144 - "GET /api/v1/services/knowledge/list HTTP/1.1" 200 OK

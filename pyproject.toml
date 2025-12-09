@@ -53,6 +53,7 @@ dependencies = [
     "tiktoken",
     "uvicorn>=0.20.0",
     "xlsxwriter>=3.1.0",
+    "sqlalchemy>=2.0.0",
     
     # ===== LightRAG API 依赖 =====
     "ascii_colors",
@@ -99,6 +100,7 @@ dependencies = [
     # LightRAG 常用存储后端（根据配置自动使用）
     "neo4j>=5.0.0",
     "pymilvus>=2.4.0",
+    "minio>=7.0.0",
     
     # ===== LLM Providers =====
     "openai>=2.0.0,<3.0.0",
@@ -156,6 +158,8 @@ lightrag-server = "lightrag.api.lightrag_server:main"
 lightrag-gunicorn = "lightrag.api.run_with_gunicorn:main"
 lightrag-download-cache = "lightrag.tools.download_cache:main"
 lightrag-clean-llmqc = "lightrag.tools.clean_llm_query_cache:main"
+platform-api-server = "platform_api.main:run"
+platform-import-agents = "platform_api.cli.import_graph:main"
 
 [project.urls]
 Homepage = "https://github.com/your-org/ai-langgraph"
@@ -167,8 +171,8 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-# 这是一个 monorepo 虚拟包，不包含实际代码
-packages = []
+# 包含平台 API 包，其它子项目继续以可编辑方式引用
+packages = ["platform_api"]
 py-modules = []
 
 [tool.uv.sources]

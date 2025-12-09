@@ -1,7 +1,3 @@
-   Building ai-langgraph-monorepo @ file:///Users/qiuyunxia/code/ai_langGraph
-      Built ai-langgraph-monorepo @ file:///Users/qiuyunxia/code/ai_langGraph
-Uninstalled 1 package in 1ms
-Installed 1 package in 1ms
 WARNING:root:>> Forcing workers=1 in uvicorn mode(Ignoring workers=2)
 
 LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag.log
@@ -89,14 +85,14 @@ INFO: Reranking is disabled
 INFO: Vision model initialized: gpt-4o using openai provider
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
-INFO: Started server process [37306]
+INFO: Started server process [56944]
 INFO: Waiting for application startup.
-INFO: [] Process 37306 KV load full_docs with 52 records
-INFO: [] Process 37306 KV load text_chunks with 63 records
-INFO: [] Process 37306 KV load full_entities with 52 records
-INFO: [] Process 37306 KV load full_relations with 52 records
-INFO: [] Process 37306 KV load entity_chunks with 1000 records
-INFO: [] Process 37306 KV load relation_chunks with 1262 records
+INFO: [] Process 56944 KV load full_docs with 52 records
+INFO: [] Process 56944 KV load text_chunks with 63 records
+INFO: [] Process 56944 KV load full_entities with 52 records
+INFO: [] Process 56944 KV load full_relations with 52 records
+INFO: [] Process 56944 KV load entity_chunks with 1000 records
+INFO: [] Process 56944 KV load relation_chunks with 1262 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -110,22 +106,9 @@ INFO: [base] Connected to neo4j at bolt://54.179.103.192:7687
 INFO: [base] Ensured B-Tree index on entity_id for base in neo4j
 INFO: [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
 INFO: [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
-INFO: [] Process 37306 KV load llm_response_cache with 176 records
-INFO: [] Process 37306 doc status load doc_status with 52 records
+INFO: [] Process 56944 KV load llm_response_cache with 176 records
+INFO: [] Process 56944 doc status load doc_status with 52 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:56721 - "GET /docs HTTP/1.1" 200
-INFO: [base] Graph truncated: 1078 nodes found, limited to 1000
-INFO: 127.0.0.1:56721 - "GET /openapi.json HTTP/1.1" 200
-INFO: [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
-INFO: 127.0.0.1:56727 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: 127.0.0.1:56727 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:56721 - "GET /openapi.json HTTP/1.1" 200
-INFO: [base] Graph truncated: 1078 nodes found, limited to 1000
-INFO: [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
-INFO: 127.0.0.1:56727 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: 127.0.0.1:56802 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:56808 - "GET /openapi.json HTTP/1.1" 200
-INFO: [base] Graph truncated: 1078 nodes found, limited to 1000
-INFO: [base] Subgraph query successful | Node count: 1000 | Edge count: 1344
-INFO: 127.0.0.1:56802 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:59222 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:59222 - "GET /openapi.json HTTP/1.1" 200

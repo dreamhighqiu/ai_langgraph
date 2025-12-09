@@ -1,11 +1,4 @@
-/**
- * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
- * 
- * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
- * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
- * 
- * 授权商业应用请联系微信：huice666
- */
+
 // @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhwRGVRPT06YjViYzYyZWE=
 
 "use client";
@@ -301,8 +294,8 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
       <div className="flex-shrink-0 bg-background">
         <div
           className={cn(
-            "mx-4 mb-6 flex flex-shrink-0 flex-col overflow-hidden rounded-xl border border-border bg-background",
-            "mx-auto w-[calc(100%-32px)] max-w-[1024px] transition-colors duration-200 ease-in-out"
+            "mx-4 mb-6 flex flex-shrink-0 flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 shadow-lg shadow-slate-200/50 backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/90 dark:shadow-slate-900/50",
+            "mx-auto w-[calc(100%-32px)] max-w-[1024px] transition-all duration-200 ease-in-out hover:shadow-xl hover:shadow-slate-200/60 dark:hover:shadow-slate-900/60"
           )}
         >
           {(hasTasks || hasFiles) && (
@@ -521,8 +514,8 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder={isLoading ? "运行中..." : "输入您的消息..."}
-              className="font-inherit field-sizing-content flex-1 resize-none border-0 bg-transparent px-[18px] pb-[13px] pt-[14px] text-sm leading-7 text-primary outline-none placeholder:text-tertiary"
+              placeholder={isLoading ? "🔄 智能体运行中，请稍候..." : "💬 输入您的消息，按 Enter 发送..."}
+              className="font-inherit field-sizing-content flex-1 resize-none border-0 bg-transparent px-5 pb-4 pt-5 text-sm leading-7 text-slate-700 outline-none placeholder:text-slate-400 dark:text-slate-200 dark:placeholder:text-slate-500"
               rows={1}
             />
             <div className="flex justify-between gap-2 p-3">
@@ -532,6 +525,12 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                   variant={isLoading ? "destructive" : "default"}
                   onClick={isLoading ? stopStream : handleSubmit}
                   disabled={!isLoading && (submitDisabled || !input.trim())}
+                  className={cn(
+                    "rounded-xl px-5 font-medium transition-all",
+                    isLoading 
+                      ? "bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600" 
+                      : "bg-gradient-to-r from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/25 hover:from-emerald-600 hover:to-teal-700 hover:shadow-xl hover:shadow-emerald-500/30 disabled:opacity-50 disabled:shadow-none"
+                  )}
                 >
                   {isLoading ? (
                     <>

@@ -16,25 +16,25 @@
   }
 
   :root {
-    /* App-specific color variables */
-    --color-primary: #1c3c3c;
-    --color-user-message: #076699;
-    --color-user-message-bg: #e8f4f8;
-    --color-avatar-bg: #e8ebeb;
-    --color-secondary: #1c3c3c;
+    /* App-specific color variables - 优化的配色方案 */
+    --color-primary: #059669;
+    --color-user-message: #0d9488;
+    --color-user-message-bg: #ecfdf5;
+    --color-avatar-bg: #d1fae5;
+    --color-secondary: #14b8a6;
     --color-success: #10b981;
     --color-warning: #f59e0b;
     --color-error: #ef4444;
-    --color-background: #f9f9f9;
-    --color-subagent-hover: #bbc4c4;
-    --color-surface: #f9fafb;
-    --color-border: #e5e7eb;
-    --color-border-light: #f3f4f6;
-    --color-text-primary: #111827;
-    --color-text-secondary: #6b7280;
-    --color-text-tertiary: #9ca3af;
+    --color-background: #f8fafc;
+    --color-subagent-hover: #a7f3d0;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-border-light: #f1f5f9;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-tertiary: #94a3b8;
     --color-file-button: #ffffff;
-    --color-file-button-hover: #e5e7eb;
+    --color-file-button-hover: #f1f5f9;
 
     /* Dark theme colors */
     --color-primary-dark: #2dd4bf;
@@ -107,29 +107,29 @@
     --panel-width: 40vw;
     --chat-max-width: 900px;
 
-    /* Tailwind/Radix UI component variables */
-    --radius: 0.5rem;
-    --background: 0 0% 98%;
-    --foreground: 220 13% 13%;
+    /* Tailwind/Radix UI component variables - 现代化配色 */
+    --radius: 0.75rem;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 13%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 13%;
-    --primary: 180 35% 17%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 160 84% 39%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 13% 91%;
-    --secondary-foreground: 220 13% 13%;
-    --muted: 220 13% 95%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 220 13% 95%;
-    --accent-foreground: 220 13% 13%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 160 84% 95%;
+    --accent-foreground: 160 84% 25%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 180 35% 17%;
-    --sidebar: 220 13% 95%;
-    --chart-1: 12 76% 61%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
+    --sidebar: 210 40% 98%;
+    --chart-1: 160 84% 39%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;

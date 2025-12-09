@@ -6,19 +6,17 @@
  * 
  * 授权商业应用请联系微信：huice666
  */
-// eslint-disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkROMGRnPT06YTkyNjFkODE=
 
 "use client";
-// TODO  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkROMGRnPT06YTkyNjFkODE=
 
 import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { useQueryState } from "nuqs";
-import { getConfig, saveConfig, StandaloneConfig } from "@/lib/config";
+import { getConfig, saveConfig, StandaloneConfig, DEFAULT_CONFIG, getDefaultGraphs } from "@/lib/config";
 import { ConfigDialog } from "@/app/components/ConfigDialog";
 import { Button } from "@/components/ui/button";
 import { Assistant } from "@langchain/langgraph-sdk";
 import { ClientProvider, useClient } from "@/providers/ClientProvider";
-import { Settings, MessagesSquare, SquarePen } from "lucide-react";
+import { Settings, MessagesSquare, SquarePen, Sparkles, Bot } from "lucide-react";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -33,6 +31,13 @@ interface HomePageInnerProps {
   configDialogOpen: boolean;
   setConfigDialogOpen: (open: boolean) => void;
   handleSaveConfig: (config: StandaloneConfig) => void;
+}
+
+// 获取智能体显示名称
+function getAgentDisplayName(agentId: string): string {
+  const graphs = getDefaultGraphs();
+  const graph = graphs.find(g => g.id === agentId);
+  return graph?.name || agentId;
 }
 
 function HomePageInner({
@@ -56,7 +61,6 @@ function HomePageInner({
       );
 
     if (isUUID) {
-      // We should try to fetch the assistant directly with this UUID
       try {
         const data = await client.assistants.get(config.assistantId);
         setAssistant(data);
@@ -76,8 +80,6 @@ function HomePageInner({
       }
     } else {
       try {
-        // We should try to list out the assistants for this graph, and then use the default one.
-        // TODO: Paginate this search, but 100 should be enough for graph name
         const assistants = await client.assistants.search({
           graphId: config.assistantId,
           limit: 100,
@@ -91,7 +93,7 @@ function HomePageInner({
         setAssistant(defaultAssistant);
       } catch (error) {
         console.error(
-          "Failed to find default assistant from graph_id: try setting the assistant_id directly:",
+          "Failed to find default assistant from graph_id:",
           error
         );
         setAssistant({
@@ -121,46 +123,65 @@ function HomePageInner({
         onSave={handleSaveConfig}
         initialConfig={config}
       />
-      <div className="flex h-screen flex-col">
-        <header className="flex h-16 items-center justify-between border-b border-border px-6">
+      <div className="flex h-screen flex-col bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-emerald-950/20">
+        {/* 顶部导航栏 */}
+        <header className="relative flex h-16 items-center justify-between border-b border-slate-200/80 bg-white/80 px-6 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/80">
+          {/* 左侧 Logo 和标题 */}
           <div className="flex items-center gap-4">
-            <h1 className="text-xl font-semibold">但问智能测试平台</h1>
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/25">
+                <Sparkles className="h-5 w-5 text-white" />
+              </div>
+              <h1 className="text-lg font-bold bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                但问智能测试平台
+              </h1>
+            </div>
+            
             {!sidebar && (
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setSidebar("1")}
-                className="rounded-md border border-border bg-card p-3 text-foreground hover:bg-accent"
+                className="ml-2 rounded-xl border border-slate-200 bg-white/60 px-4 text-slate-600 shadow-sm transition-all hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-300 dark:hover:border-emerald-700 dark:hover:bg-emerald-950/30"
               >
                 <MessagesSquare className="mr-2 h-4 w-4" />
                 对话列表
                 {interruptCount > 0 && (
-                  <span className="ml-2 inline-flex min-h-4 min-w-4 items-center justify-center rounded-full bg-destructive px-1 text-[10px] text-destructive-foreground">
+                  <span className="ml-2 inline-flex min-h-5 min-w-5 items-center justify-center rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-1.5 text-[10px] font-semibold text-white shadow-sm">
                     {interruptCount}
                   </span>
                 )}
               </Button>
             )}
           </div>
-          <div className="flex items-center gap-2">
-            <div className="text-sm text-muted-foreground">
-              <span className="font-medium">助手:</span>{" "}
-              {config.assistantId}
+          
+          {/* 右侧操作区 */}
+          <div className="flex items-center gap-3">
+            {/* 当前智能体显示 */}
+            <div className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 px-4 py-2 dark:from-emerald-950/40 dark:to-teal-950/40">
+              <Bot className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+              <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                {getAgentDisplayName(config.assistantId)}
+              </span>
             </div>
+            
+            {/* 设置按钮 */}
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
               onClick={() => setConfigDialogOpen(true)}
+              className="rounded-xl border border-slate-200 bg-white/60 px-4 text-slate-600 shadow-sm transition-all hover:border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               <Settings className="mr-2 h-4 w-4" />
               设置
             </Button>
+            
+            {/* 新建对话按钮 */}
             <Button
-              variant="outline"
               size="sm"
               onClick={() => setThreadId(null)}
               disabled={!threadId}
-              className="border-[#2F6868] bg-[#2F6868] text-white hover:bg-[#2F6868]/80"
+              className="rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 px-5 font-medium text-white shadow-lg shadow-emerald-500/25 transition-all hover:from-emerald-600 hover:to-teal-700 hover:shadow-xl hover:shadow-emerald-500/30 disabled:opacity-50 disabled:shadow-none"
             >
               <SquarePen className="mr-2 h-4 w-4" />
               新建对话
@@ -168,6 +189,7 @@ function HomePageInner({
           </div>
         </header>
 
+        {/* 主内容区 */}
         <div className="flex-1 overflow-hidden">
           <ResizablePanelGroup
             direction="horizontal"
@@ -180,7 +202,7 @@ function HomePageInner({
                   order={1}
                   defaultSize={25}
                   minSize={20}
-                  className="relative min-w-[380px]"
+                  className="relative min-w-[320px] bg-white/40 dark:bg-slate-900/40"
                 >
                   <ThreadList
                     onThreadSelect={async (id) => {
@@ -191,7 +213,7 @@ function HomePageInner({
                     onInterruptCountChange={setInterruptCount}
                   />
                 </ResizablePanel>
-                <ResizableHandle />
+                <ResizableHandle className="w-1 bg-slate-200/50 transition-colors hover:bg-emerald-400 dark:bg-slate-700/50 dark:hover:bg-emerald-600" />
               </>
             )}
 
@@ -213,14 +235,12 @@ function HomePageInner({
     </>
   );
 }
-// FIXME  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkROMGRnPT06YTkyNjFkODE=
 
 function HomePageContent() {
   const [config, setConfig] = useState<StandaloneConfig | null>(null);
   const [configDialogOpen, setConfigDialogOpen] = useState(false);
   const [assistantId, setAssistantId] = useQueryState("assistantId");
 
-  // On mount, check for saved config, otherwise show config dialog
   useEffect(() => {
     const savedConfig = getConfig();
     if (savedConfig) {
@@ -229,12 +249,13 @@ function HomePageContent() {
         setAssistantId(savedConfig.assistantId);
       }
     } else {
-      setConfigDialogOpen(true);
+      // 使用默认配置
+      setConfig(DEFAULT_CONFIG);
+      setAssistantId(DEFAULT_CONFIG.assistantId);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // If config changes, update the assistantId
   useEffect(() => {
     if (config && !assistantId) {
       setAssistantId(config.assistantId);
@@ -244,34 +265,42 @@ function HomePageContent() {
   const handleSaveConfig = useCallback((newConfig: StandaloneConfig) => {
     saveConfig(newConfig);
     setConfig(newConfig);
-  }, []);
+    // 更新 URL 参数
+    setAssistantId(newConfig.assistantId);
+  }, [setAssistantId]);
 
   const langsmithApiKey =
     config?.langsmithApiKey || process.env.NEXT_PUBLIC_LANGSMITH_API_KEY || "";
 
   if (!config) {
     return (
-      <>
+      <div className="flex h-screen items-center justify-center bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-emerald-950/20">
+        <div className="text-center">
+          <div className="mb-6 flex justify-center">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-xl shadow-emerald-500/30">
+              <Sparkles className="h-8 w-8 text-white" />
+            </div>
+          </div>
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+            欢迎使用深度智能体
+          </h1>
+          <p className="mt-3 text-slate-500 dark:text-slate-400">
+            智能测试平台，让测试更简单
+          </p>
+          <Button
+            onClick={() => setConfigDialogOpen(true)}
+            className="mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 px-6 py-2.5 font-medium text-white shadow-lg shadow-emerald-500/25 transition-all hover:from-emerald-600 hover:to-teal-700 hover:shadow-xl"
+          >
+            <Settings className="mr-2 h-4 w-4" />
+            开始配置
+          </Button>
+        </div>
         <ConfigDialog
           open={configDialogOpen}
           onOpenChange={setConfigDialogOpen}
           onSave={handleSaveConfig}
         />
-        <div className="flex h-screen items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold">欢迎使用深度智能体</h1>
-            <p className="mt-2 text-muted-foreground">
-              请配置您的部署以开始使用
-            </p>
-            <Button
-              onClick={() => setConfigDialogOpen(true)}
-              className="mt-4"
-            >
-              打开配置
-            </Button>
-          </div>
-        </div>
-      </>
+      </div>
     );
   }
 
@@ -294,8 +323,13 @@ export default function HomePage() {
   return (
     <Suspense
       fallback={
-        <div className="flex h-screen items-center justify-center">
-          <p className="text-muted-foreground">加载中...</p>
+        <div className="flex h-screen items-center justify-center bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-emerald-950/20">
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg animate-pulse">
+              <Sparkles className="h-6 w-6 text-white" />
+            </div>
+            <p className="text-slate-500 dark:text-slate-400">加载中...</p>
+          </div>
         </div>
       }
     >
@@ -303,4 +337,3 @@ export default function HomePage() {
     </Suspense>
   );
 }
-// eslint-disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkROMGRnPT06YTkyNjFkODE=

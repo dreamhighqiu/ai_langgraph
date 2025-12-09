@@ -3736,3 +3736,116 @@ neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.Synta
 2025-12-09 16:47:49,583 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
 2025-12-09 16:48:32,191 - uvicorn.access - INFO - 127.0.0.1:59222 - "GET /docs HTTP/1.1" 200
 2025-12-09 16:48:32,365 - uvicorn.access - INFO - 127.0.0.1:59222 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 17:37:16,542 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 17:37:16,543 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 17:37:16,604 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 17:37:16,604 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 17:37:16,604 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 17:37:16,604 - lightrag - INFO - Reranking is disabled
+2025-12-09 17:37:16,797 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 17:37:17,461 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 17:37:17,461 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 17:37:17,565 - uvicorn.error - INFO - Started server process [19871]
+2025-12-09 17:37:17,565 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 17:37:17,567 - lightrag - INFO - [] Process 19871 KV load full_docs with 52 records
+2025-12-09 17:37:17,569 - lightrag - INFO - [] Process 19871 KV load text_chunks with 63 records
+2025-12-09 17:37:17,570 - lightrag - INFO - [] Process 19871 KV load full_entities with 52 records
+2025-12-09 17:37:17,571 - lightrag - INFO - [] Process 19871 KV load full_relations with 52 records
+2025-12-09 17:37:17,572 - lightrag - INFO - [] Process 19871 KV load entity_chunks with 1000 records
+2025-12-09 17:37:17,575 - lightrag - INFO - [] Process 19871 KV load relation_chunks with 1262 records
+2025-12-09 17:37:17,811 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2025-12-09 17:37:17,923 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2025-12-09 17:37:18,096 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2025-12-09 17:37:18,139 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2025-12-09 17:37:18,231 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2025-12-09 17:37:18,414 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2025-12-09 17:37:18,457 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2025-12-09 17:37:18,551 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2025-12-09 17:37:18,692 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2025-12-09 17:37:18,874 - lightrag - INFO - [base] Connected to neo4j at bolt://54.179.103.192:7687
+2025-12-09 17:37:18,919 - lightrag - INFO - [base] Ensured B-Tree index on entity_id for base in neo4j
+2025-12-09 17:37:18,962 - lightrag - INFO - [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
+2025-12-09 17:37:18,962 - lightrag - INFO - [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
+2025-12-09 17:37:18,974 - lightrag - INFO - [] Process 19871 KV load llm_response_cache with 176 records
+2025-12-09 17:37:18,975 - lightrag - INFO - [] Process 19871 doc status load doc_status with 52 records
+2025-12-09 17:37:19,117 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 17:37:19,117 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 17:39:12,055 - uvicorn.access - INFO - 127.0.0.1:61278 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 17:39:25,716 - uvicorn.access - INFO - 127.0.0.1:61362 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 17:39:25,719 - uvicorn.access - INFO - 127.0.0.1:61362 - "POST /documents/paginated HTTP/1.1" 422
+2025-12-09 17:55:43,633 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 17:55:43,633 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 17:55:43,693 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 17:55:43,693 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 17:55:43,693 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 17:55:43,694 - lightrag - INFO - Reranking is disabled
+2025-12-09 17:55:43,875 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 17:55:44,142 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-09 17:55:44,143 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 17:55:44,143 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 17:55:44,193 - uvicorn.error - INFO - Started server process [55940]
+2025-12-09 17:55:44,194 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 17:55:44,195 - lightrag - INFO - [] Process 55940 KV load full_docs with 52 records
+2025-12-09 17:55:44,196 - lightrag - INFO - [] Process 55940 KV load text_chunks with 63 records
+2025-12-09 17:55:44,198 - lightrag - INFO - [] Process 55940 KV load full_entities with 52 records
+2025-12-09 17:55:44,198 - lightrag - INFO - [] Process 55940 KV load full_relations with 52 records
+2025-12-09 17:55:44,200 - lightrag - INFO - [] Process 55940 KV load entity_chunks with 1000 records
+2025-12-09 17:55:44,202 - lightrag - INFO - [] Process 55940 KV load relation_chunks with 1262 records
+2025-12-09 17:55:44,212 - lightrag - INFO - [] Process 55940 KV load llm_response_cache with 176 records
+2025-12-09 17:55:44,213 - lightrag - INFO - [] Process 55940 doc status load doc_status with 52 records
+2025-12-09 17:55:44,213 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 17:55:44,214 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 17:56:53,689 - uvicorn.access - INFO - 127.0.0.1:51330 - "GET /docs HTTP/1.1" 200
+2025-12-09 17:56:53,818 - uvicorn.access - INFO - 127.0.0.1:51330 - "GET /openapi.json HTTP/1.1" 200
+2025-12-09 17:57:54,780 - uvicorn.access - INFO - 127.0.0.1:51685 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-09 18:02:31,474 - uvicorn.error - INFO - Shutting down
+2025-12-09 18:02:36,531 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 18:02:36,531 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 18:02:36,584 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 18:02:36,585 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 18:02:36,585 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 18:02:36,585 - lightrag - INFO - Reranking is disabled
+2025-12-09 18:02:36,748 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 18:02:37,011 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-09 18:02:37,011 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 18:02:37,011 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 18:02:37,060 - uvicorn.error - INFO - Started server process [67142]
+2025-12-09 18:02:37,060 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 18:02:37,061 - lightrag - INFO - [] Process 67142 KV load full_docs with 52 records
+2025-12-09 18:02:37,063 - lightrag - INFO - [] Process 67142 KV load text_chunks with 63 records
+2025-12-09 18:02:37,064 - lightrag - INFO - [] Process 67142 KV load full_entities with 52 records
+2025-12-09 18:02:37,065 - lightrag - INFO - [] Process 67142 KV load full_relations with 52 records
+2025-12-09 18:02:37,066 - lightrag - INFO - [] Process 67142 KV load entity_chunks with 1000 records
+2025-12-09 18:02:37,069 - lightrag - INFO - [] Process 67142 KV load relation_chunks with 1262 records
+2025-12-09 18:02:37,079 - lightrag - INFO - [] Process 67142 KV load llm_response_cache with 176 records
+2025-12-09 18:02:37,080 - lightrag - INFO - [] Process 67142 doc status load doc_status with 52 records
+2025-12-09 18:02:37,080 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 18:02:37,081 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 18:04:06,234 - uvicorn.error - INFO - Shutting down
+2025-12-09 18:04:06,336 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-09 18:04:06,337 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-09 18:04:06,337 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-09 18:04:06,337 - uvicorn.error - INFO - Finished server process [67142]
+2025-12-09 18:04:17,079 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-09 18:04:17,079 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-09 18:04:17,135 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-09 18:04:17,135 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-09 18:04:17,135 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-09 18:04:17,135 - lightrag - INFO - Reranking is disabled
+2025-12-09 18:04:17,302 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-09 18:04:17,545 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-09 18:04:17,545 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-09 18:04:17,545 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-09 18:04:17,596 - uvicorn.error - INFO - Started server process [70328]
+2025-12-09 18:04:17,596 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-09 18:04:17,598 - lightrag - INFO - [] Process 70328 KV load full_docs with 52 records
+2025-12-09 18:04:17,600 - lightrag - INFO - [] Process 70328 KV load text_chunks with 63 records
+2025-12-09 18:04:17,601 - lightrag - INFO - [] Process 70328 KV load full_entities with 52 records
+2025-12-09 18:04:17,602 - lightrag - INFO - [] Process 70328 KV load full_relations with 52 records
+2025-12-09 18:04:17,603 - lightrag - INFO - [] Process 70328 KV load entity_chunks with 1000 records
+2025-12-09 18:04:17,606 - lightrag - INFO - [] Process 70328 KV load relation_chunks with 1262 records
+2025-12-09 18:04:17,616 - lightrag - INFO - [] Process 70328 KV load llm_response_cache with 176 records
+2025-12-09 18:04:17,617 - lightrag - INFO - [] Process 70328 doc status load doc_status with 52 records
+2025-12-09 18:04:17,617 - uvicorn.error - INFO - Application startup complete.
+2025-12-09 18:04:17,618 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-09 18:07:48,673 - uvicorn.access - INFO - 127.0.0.1:55567 - "GET /documents/status_counts HTTP/1.1" 200

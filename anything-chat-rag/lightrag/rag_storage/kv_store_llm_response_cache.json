@@ -123,7 +123,7 @@
     "return": "{\"high_level_keywords\": [\"\\u4f46\\u95ee\\u667a\\u80fd\", \"\\u516c\\u53f8\\u4ecb\\u7ecd\", \"\\u4e1a\\u52a1\\u8303\\u56f4\"], \"low_level_keywords\": [\"\\u4f46\\u95ee\\u667a\\u80fd\", \"\\u4eba\\u5de5\\u667a\\u80fd\", \"\\u6280\\u672f\\u670d\\u52a1\"]}",
     "cache_type": "keywords",
     "chunk_id": null,
-    "original_prompt": "介绍一下但问智能是干什么的",
+    "original_prompt": "介绍一下AI提效是干什么的",
     "queryparam": {
       "mode": "global",
       "response_type": "Multiple Paragraphs",

@@ -53,8 +53,8 @@ LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag
 [35m
 💾 Storage Configuration:[0m
 [37m    ├─ KV Storage: [0m[33mJsonKVStorage[0m
-[37m    ├─ Vector Storage: [0m[33mMilvusVectorDBStorage[0m
-[37m    ├─ Graph Storage: [0m[33mNeo4JStorage[0m
+[37m    ├─ Vector Storage: [0m[33mNanoVectorDBStorage[0m
+[37m    ├─ Graph Storage: [0m[33mNetworkXStorage[0m
 [37m    ├─ Document Status Storage: [0m[33mJsonDocStatusStorage[0m
 [37m    └─ Workspace: [0m[33m-[0m
 [32m
@@ -75,7 +75,6 @@ LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag
       • Windows: Run 'ipconfig' in terminal
       • Linux/Mac: Run 'ifconfig' or 'ip addr' in terminal
     [0m
-INFO: Frontend build is up-to-date
 INFO: OpenAI LLM Options: {}
 INFO: Ollama Embedding Options: {}
 INFO: Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
@@ -83,32 +82,19 @@ INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=Tru
 INFO: Embedding max_token_size: 8192 (from ollama provider default)
 INFO: Reranking is disabled
 INFO: Vision model initialized: gpt-4o using openai provider
+INFO: [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
-INFO: Started server process [56944]
+INFO: Started server process [70328]
 INFO: Waiting for application startup.
-INFO: [] Process 56944 KV load full_docs with 52 records
-INFO: [] Process 56944 KV load text_chunks with 63 records
-INFO: [] Process 56944 KV load full_entities with 52 records
-INFO: [] Process 56944 KV load full_relations with 52 records
-INFO: [] Process 56944 KV load entity_chunks with 1000 records
-INFO: [] Process 56944 KV load relation_chunks with 1262 records
-INFO: [] VectorDB collection 'entities' exists check: True
-INFO: [] VectorDB Collection 'entities' compatibility validation passed
-INFO: [] Milvus collection 'entities' initialized successfully
-INFO: [] VectorDB collection 'relationships' exists check: True
-INFO: [] VectorDB Collection 'relationships' compatibility validation passed
-INFO: [] Milvus collection 'relationships' initialized successfully
-INFO: [] VectorDB collection 'chunks' exists check: True
-INFO: [] VectorDB Collection 'chunks' compatibility validation passed
-INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [base] Connected to neo4j at bolt://54.179.103.192:7687
-INFO: [base] Ensured B-Tree index on entity_id for base in neo4j
-INFO: [base] Found existing index 'entity_id_fulltext_idx' with state: ONLINE
-INFO: [base] Full-text index 'entity_id_fulltext_idx' already exists and is online. Skipping recreation.
-INFO: [] Process 56944 KV load llm_response_cache with 176 records
-INFO: [] Process 56944 doc status load doc_status with 52 records
+INFO: [] Process 70328 KV load full_docs with 52 records
+INFO: [] Process 70328 KV load text_chunks with 63 records
+INFO: [] Process 70328 KV load full_entities with 52 records
+INFO: [] Process 70328 KV load full_relations with 52 records
+INFO: [] Process 70328 KV load entity_chunks with 1000 records
+INFO: [] Process 70328 KV load relation_chunks with 1262 records
+INFO: [] Process 70328 KV load llm_response_cache with 176 records
+INFO: [] Process 70328 doc status load doc_status with 52 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:59222 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:59222 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:55567 - "GET /documents/status_counts HTTP/1.1" 200

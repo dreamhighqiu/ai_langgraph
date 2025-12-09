@@ -3,7 +3,8 @@ warning ../package.json: No license field
 warning ../../../package.json: No license field
 $ vite
 
-  VITE v4.5.14  ready in 196 ms
+  VITE v4.5.14  ready in 164 ms
 
   ➜  Local:   http://localhost:3100/
   ➜  Network: http://10.192.202.185:3100/
+  ➜  Network: http://169.254.240.167:3100/

@@ -39,6 +39,89 @@ mkdir -p "$PID_DIR"
 LOG_DIR="$PROJECT_ROOT/logs"
 mkdir -p "$LOG_DIR"
 
+# 当前环境 (local/remote)
+CURRENT_ENV="local"
+ENV_FILE="$PROJECT_ROOT/.env"
+
+# =============================================================================
+# 环境配置函数
+# =============================================================================
+
+switch_env() {
+    local target_env=$1
+    local source_file=""
+    
+    case $target_env in
+        local)
+            source_file="$PROJECT_ROOT/.env.local"
+            ;;
+        remote)
+            source_file="$PROJECT_ROOT/.env.remote"
+            ;;
+        *)
+            print_error "未知环境: $target_env (可选: local, remote)"
+            exit 1
+            ;;
+    esac
+    
+    if [ ! -f "$source_file" ]; then
+        print_error "环境配置文件不存在: $source_file"
+        exit 1
+    fi
+    
+    # 备份当前 .env
+    if [ -f "$ENV_FILE" ]; then
+        cp "$ENV_FILE" "$ENV_FILE.bak"
+    fi
+    
+    # 复制目标环境配置
+    cp "$source_file" "$ENV_FILE"
+    print_success "已切换到 $target_env 环境 (配置文件: $source_file)"
+    
+    # 同步到子项目
+    sync_env_to_subprojects
+}
+
+sync_env_to_subprojects() {
+    print_info "同步环境配置到子项目..."
+    
+    # 同步到 testing-deep-agents-service
+    if [ -d "$PROJECT_ROOT/testing-deep-agents-service" ]; then
+        # 提取 LLM 和 Knowledge 相关配置
+        grep -E "^(LLM_|DEEPSEEK_|KNOWLEDGE_|MILVUS_|MINIO_|LOG_)" "$ENV_FILE" > "$PROJECT_ROOT/testing-deep-agents-service/.env" 2>/dev/null || true
+        # 追加服务地址配置
+        grep -E "^(SERVICE_HOST|LIGHTRAG_URL|LANGGRAPH_URL|PLATFORM_)" "$ENV_FILE" >> "$PROJECT_ROOT/testing-deep-agents-service/.env" 2>/dev/null || true
+        print_success "  → testing-deep-agents-service/.env"
+    fi
+    
+    # 同步到 anything-chat-rag
+    if [ -d "$PROJECT_ROOT/anything-chat-rag" ]; then
+        grep -E "^(ONE_API_|LLM_|DEEPSEEK_|MILVUS_|OLLAMA_)" "$ENV_FILE" > "$PROJECT_ROOT/anything-chat-rag/.env" 2>/dev/null || true
+        print_success "  → anything-chat-rag/.env"
+    fi
+    
+    # 同步到 mcp-server
+    if [ -d "$PROJECT_ROOT/mcp-server/src/mcp_server_rag_anything" ]; then
+        grep -E "^(ONE_API_|LLM_|DEEPSEEK_|LIGHTRAG_)" "$ENV_FILE" > "$PROJECT_ROOT/mcp-server/src/mcp_server_rag_anything/.env" 2>/dev/null || true
+        print_success "  → mcp-server/.env"
+    fi
+}
+
+show_current_env() {
+    if [ -f "$ENV_FILE" ]; then
+        local service_host=$(grep "^SERVICE_HOST=" "$ENV_FILE" 2>/dev/null | cut -d'=' -f2)
+        if [ "$service_host" = "localhost" ]; then
+            printf "${GREEN}当前环境: 本地 (localhost)${NC}\n"
+        elif [ -n "$service_host" ]; then
+            printf "${YELLOW}当前环境: 远程 ($service_host)${NC}\n"
+        else
+            printf "${BLUE}当前环境: 未知 (请使用 --env local/remote 切换)${NC}\n"
+        fi
+    else
+        printf "${RED}当前环境: 未配置 (.env 文件不存在)${NC}\n"
+    fi
+}
+
 # =============================================================================
 # 工具函数
 # =============================================================================
@@ -405,11 +488,125 @@ show_status() {
 }
 
 # =============================================================================
+# 单独重启服务函数
+# =============================================================================
+
+restart_service() {
+    local service_name=$1
+    
+    case $service_name in
+        lightrag)
+            stop_service "LightRAG Server" "$PID_DIR/lightrag.pid" 9621
+            start_lightrag
+            ;;
+        mcp)
+            stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
+            start_mcp_server
+            ;;
+        langgraph)
+            stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
+            start_langgraph_server
+            ;;
+        platform)
+            stop_service "AI Platform Backend" "$PID_DIR/platform.pid" 9999
+            start_ai_platform_backend
+            ;;
+        agent-ui)
+            stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
+            start_agent_ui
+            ;;
+        frontend)
+            stop_service "AI Platform Frontend" "$PID_DIR/frontend.pid" 3100
+            start_frontend
+            ;;
+        *)
+            print_error "未知服务: $service_name"
+            echo ""
+            echo "可用的服务名称:"
+            echo "  lightrag   - LightRAG Server (端口 9621)"
+            echo "  mcp        - MCP Server (端口 8001)"
+            echo "  langgraph  - LangGraph Server (端口 2025)"
+            echo "  platform   - AI Platform Backend (端口 9999)"
+            echo "  agent-ui   - Agent UI (端口 3200)"
+            echo "  frontend   - AI Platform Frontend (端口 3100)"
+            exit 1
+            ;;
+    esac
+}
+
+start_single_service() {
+    local service_name=$1
+    
+    case $service_name in
+        lightrag)
+            start_lightrag
+            ;;
+        mcp)
+            start_mcp_server
+            ;;
+        langgraph)
+            start_langgraph_server
+            ;;
+        platform)
+            start_ai_platform_backend
+            ;;
+        agent-ui)
+            start_agent_ui
+            ;;
+        frontend)
+            start_frontend
+            ;;
+        *)
+            print_error "未知服务: $service_name"
+            echo ""
+            echo "可用的服务名称:"
+            echo "  lightrag   - LightRAG Server (端口 9621)"
+            echo "  mcp        - MCP Server (端口 8001)"
+            echo "  langgraph  - LangGraph Server (端口 2025)"
+            echo "  platform   - AI Platform Backend (端口 9999)"
+            echo "  agent-ui   - Agent UI (端口 3200)"
+            echo "  frontend   - AI Platform Frontend (端口 3100)"
+            exit 1
+            ;;
+    esac
+}
+
+stop_single_service() {
+    local service_name=$1
+    
+    case $service_name in
+        lightrag)
+            stop_service "LightRAG Server" "$PID_DIR/lightrag.pid" 9621
+            ;;
+        mcp)
+            stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
+            ;;
+        langgraph)
+            stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
+            ;;
+        platform)
+            stop_service "AI Platform Backend" "$PID_DIR/platform.pid" 9999
+            ;;
+        agent-ui)
+            stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
+            ;;
+        frontend)
+            stop_service "AI Platform Frontend" "$PID_DIR/frontend.pid" 3100
+            ;;
+        *)
+            print_error "未知服务: $service_name"
+            exit 1
+            ;;
+    esac
+}
+
+# =============================================================================
 # 主程序
 # =============================================================================
 
 main() {
     local include_frontend=false
+    local target_env=""
     
     # 解析参数
     while [[ $# -gt 0 ]]; do
@@ -418,11 +615,72 @@ main() {
                 include_frontend=true
                 shift
                 ;;
+            --env)
+                if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
+                    print_error "请指定环境: local 或 remote"
+                    echo "用法: $0 --env <local|remote>"
+                    exit 1
+                fi
+                target_env="$2"
+                shift 2
+                ;;
+            --env=*)
+                target_env="${1#*=}"
+                shift
+                ;;
+            --switch-env)
+                if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
+                    print_error "请指定环境: local 或 remote"
+                    echo "用法: $0 --switch-env <local|remote>"
+                    exit 1
+                fi
+                switch_env "$2"
+                exit 0
+                ;;
+            --show-env)
+                show_current_env
+                exit 0
+                ;;
             --stop)
+                if [ -n "$2" ] && [[ ! "$2" =~ ^-- ]]; then
+                    stop_single_service "$2"
+                    print_success "服务 $2 已停止"
+                    exit 0
+                fi
                 stop_all
                 exit 0
                 ;;
+            --restart)
+                if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
+                    print_error "请指定要重启的服务名称"
+                    echo "用法: $0 --restart <服务名称>"
+                    echo ""
+                    echo "可用的服务名称:"
+                    echo "  lightrag   - LightRAG Server (端口 9621)"
+                    echo "  mcp        - MCP Server (端口 8001)"
+                    echo "  langgraph  - LangGraph Server (端口 2025)"
+                    echo "  platform   - AI Platform Backend (端口 9999)"
+                    echo "  agent-ui   - Agent UI (端口 3200)"
+                    echo "  frontend   - AI Platform Frontend (端口 3100)"
+                    exit 1
+                fi
+                print_info "重启服务: $2"
+                restart_service "$2"
+                show_status
+                exit 0
+                ;;
+            --start)
+                if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
+                    print_error "请指定要启动的服务名称"
+                    exit 1
+                fi
+                print_info "启动服务: $2"
+                start_single_service "$2"
+                show_status
+                exit 0
+                ;;
             --status)
+                show_current_env
                 show_status
                 exit 0
                 ;;
@@ -430,18 +688,51 @@ main() {
                 echo "用法: $0 [选项]"
                 echo ""
                 echo "选项:"
-                echo "  --all     启动所有服务（包含前端）"
-                echo "  --stop    停止所有服务"
-                echo "  --status  显示服务状态"
-                echo "  --help    显示帮助信息"
+                echo "  --all                  启动所有服务（包含前端）"
+                echo "  --env <local|remote>   指定运行环境后启动服务"
+                echo "  --switch-env <env>     仅切换环境配置（不启动服务）"
+                echo "  --show-env             显示当前环境配置"
+                echo "  --stop                 停止所有服务"
+                echo "  --stop <服务>          停止指定服务"
+                echo "  --start <服务>         启动指定服务"
+                echo "  --restart <服务>       重启指定服务"
+                echo "  --status               显示服务状态"
+                echo "  --help                 显示帮助信息"
+                echo ""
+                echo "环境配置:"
+                echo "  local   - 本地开发环境 (localhost)"
+                echo "  remote  - 远程服务器环境 (54.179.103.192)"
+                echo ""
+                echo "可用的服务名称:"
+                echo "  lightrag   - LightRAG Server (端口 9621)"
+                echo "  mcp        - MCP Server (端口 8001)"
+                echo "  langgraph  - LangGraph Server (端口 2025)"
+                echo "  platform   - AI Platform Backend (端口 9999)"
+                echo "  agent-ui   - Agent UI (端口 3200)"
+                echo "  frontend   - AI Platform Frontend (端口 3100)"
+                echo ""
+                echo "示例:"
+                echo "  $0                      # 启动所有后端服务（使用当前环境）"
+                echo "  $0 --env local          # 切换到本地环境并启动服务"
+                echo "  $0 --env remote --all   # 切换到远程环境并启动所有服务"
+                echo "  $0 --switch-env remote  # 仅切换到远程环境"
+                echo "  $0 --restart langgraph  # 重启 LangGraph Server"
+                echo "  $0 --stop mcp           # 停止 MCP Server"
+                echo "  $0 --start agent-ui     # 启动 Agent UI"
                 exit 0
                 ;;
             *)
                 print_error "未知参数: $1"
+                echo "使用 --help 查看帮助信息"
                 exit 1
                 ;;
         esac
     done
+    
+    # 如果指定了环境，先切换
+    if [ -n "$target_env" ]; then
+        switch_env "$target_env"
+    fi
     
     print_banner
     

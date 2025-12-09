@@ -16,10 +16,26 @@ import logging
 from typing import Optional, Dict, Any, List, Type
 from dataclasses import dataclass
 from contextlib import asynccontextmanager
+from pathlib import Path
+
+# 确保在读取环境变量之前加载 .env 文件
+try:
+    from dotenv import load_dotenv
+    # 从当前文件向上查找 .env 文件
+    env_paths = [
+        Path(__file__).parent.parent.parent / ".env",  # testing-deep-agents-service/.env
+        Path(__file__).parent.parent.parent.parent / ".env",  # 项目根目录/.env
+    ]
+    for env_path in env_paths:
+        if env_path.exists():
+            load_dotenv(env_path)
+            break
+except ImportError:
+    pass
 
 logger = logging.getLogger(__name__)
 
-# 数据库配置
+# 数据库配置 - 在 load_dotenv() 之后读取
 DATABASE_URL = os.getenv("DATABASE_URL", "")
 MYSQL_HOST = os.getenv("MYSQL_HOST", "localhost")
 MYSQL_PORT = int(os.getenv("MYSQL_PORT", "3306"))

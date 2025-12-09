@@ -39,6 +39,7 @@ AGENT_DISPLAY_NAMES = {
     "interrupt_agent": "⏸️ 中断智能体",
     "knowledge_agent": "📚 知识库智能体",
     "web_scraper_agent": "🌐 网页抓取智能体",
+    "services_manager_agent": "⚙️ 服务管理智能体",
 }
 
 

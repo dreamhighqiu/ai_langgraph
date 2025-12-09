@@ -10,11 +10,12 @@ $ next dev --turbopack
    - Network:      http://10.192.202.185:3200
 
  ✓ Starting...
- ✓ Ready in 752ms
+ ✓ Ready in 773ms
  ○ Compiling / ...
- ✓ Compiled / in 4.7s
- GET /?assistantId=testcase_agent 200 in 5274ms
- GET /?assistantId=testcase_agent 200 in 139ms
- GET /?assistantId=knowledge_agent 200 in 74ms
- ✓ Compiled /favicon.ico in 382ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 648ms
+ ✓ Compiled / in 5.4s
+ GET /?assistantId=services_manager_agent&threadId=075740be-dd21-44c2-853a-afebb61ee5e5 200 in 1179ms
+ ✓ Compiled /favicon.ico in 261ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 519ms
+ GET /?assistantId=interrupt_agent&threadId=075740be-dd21-44c2-853a-afebb61ee5e5 200 in 82ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 243ms
+ GET / 200 in 66ms

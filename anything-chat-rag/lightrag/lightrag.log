@@ -4974,7 +4974,7 @@ ollama._types.ResponseError: C[1/4]: chunk-6c9699f6be450b7bab348fd80cc8c912: mod
 2025-11-27 16:47:40,238 - lightrag - INFO - Final chunks S+F/O: E5/1 E20/2 E14/3 E11/4
 2025-11-27 16:47:42,921 - uvicorn.access - INFO - 127.0.0.1:63703 - "POST /query/stream HTTP/1.1" 200
 2025-11-27 16:49:36,461 - lightrag - INFO -  == LLM cache == saving: global:keywords:f45306453d598e72b39afa52f5853393
-2025-11-27 16:49:37,031 - lightrag - INFO - Query edges: 但问智能, 公司介绍, 业务范围 (top_k:40, cosine:0.2)
+2025-11-27 16:49:37,031 - lightrag - INFO - Query edges: AI提效, 公司介绍, 业务范围 (top_k:40, cosine:0.2)
 2025-11-27 16:49:37,726 - lightrag - INFO - Global query: 51 entites, 40 relations
 2025-11-27 16:49:37,726 - lightrag - INFO - Raw search results: 51 entities, 40 relations, 0 vector chunks
 2025-11-27 16:49:37,733 - lightrag - INFO - After truncation: 51 entities, 40 relations

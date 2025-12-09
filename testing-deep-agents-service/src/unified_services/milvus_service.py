@@ -15,13 +15,29 @@ import logging
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass, field
 import time
+from pathlib import Path
+
+# 确保在读取环境变量之前加载 .env 文件
+try:
+    from dotenv import load_dotenv
+    # 从当前文件向上查找 .env 文件
+    env_paths = [
+        Path(__file__).parent.parent.parent / ".env",  # testing-deep-agents-service/.env
+        Path(__file__).parent.parent.parent.parent / ".env",  # 项目根目录/.env
+    ]
+    for env_path in env_paths:
+        if env_path.exists():
+            load_dotenv(env_path)
+            break
+except ImportError:
+    pass
 
 logger = logging.getLogger(__name__)
 
-# 配置
-MILVUS_URI = os.getenv("MILVUS_URI", "http://localhost:19530")
+# 配置 - 在 load_dotenv() 之后读取
 MILVUS_HOST = os.getenv("MILVUS_HOST", "localhost")
 MILVUS_PORT = int(os.getenv("MILVUS_PORT", "19530"))
+MILVUS_URI = os.getenv("MILVUS_URI", f"http://{MILVUS_HOST}:{MILVUS_PORT}")
 MILVUS_USER = os.getenv("MILVUS_USER", "")
 MILVUS_PASSWORD = os.getenv("MILVUS_PASSWORD", "")
 

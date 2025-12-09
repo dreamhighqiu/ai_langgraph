@@ -13,10 +13,26 @@ import logging
 from typing import Optional, List, Dict, Any, BinaryIO
 from dataclasses import dataclass
 from datetime import datetime, timedelta
+from pathlib import Path
+
+# 确保在读取环境变量之前加载 .env 文件
+try:
+    from dotenv import load_dotenv
+    # 从当前文件向上查找 .env 文件
+    env_paths = [
+        Path(__file__).parent.parent.parent / ".env",  # testing-deep-agents-service/.env
+        Path(__file__).parent.parent.parent.parent / ".env",  # 项目根目录/.env
+    ]
+    for env_path in env_paths:
+        if env_path.exists():
+            load_dotenv(env_path)
+            break
+except ImportError:
+    pass
 
 logger = logging.getLogger(__name__)
 
-# 配置
+# 配置 - 在 load_dotenv() 之后读取
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "localhost:9000")
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "minioadmin")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY", "minioadmin")

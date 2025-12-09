@@ -19,7 +19,7 @@
     }
   },
   "doc-88b93e772890662b37fff9510ff982e1": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 4,
     "chunks_list": [
       "chunk-6c9699f6be450b7bab348fd80cc8c912",
@@ -30,11 +30,12 @@
     "content_summary": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲\n\n目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、\n\n合规专员以及对LLM应用感兴趣的相关人员。\n\n培训目标:\n\n· 全面了解主流大型语言模型的特点、能力边界与选型策略。\n\n•\n\n掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。\n\n· 精通提示词工程的核心原理、结构与高级技巧。\n\n· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效\n\n提示词。\n\n· 理解LLM使用的最佳实...",
     "content_length": 5436,
     "created_at": "2025-12-08T09:32:49.944352+00:00",
-    "updated_at": "2025-12-08T10:17:27.191347+00:00",
+    "updated_at": "2025-12-08T10:28:43.376741+00:00",
     "file_path": "llm_course.pdf",
     "track_id": "insert_20251208_173249_ebe687fa",
     "metadata": {
-      "processing_start_time": 1765189047
+      "processing_start_time": 1765189047,
+      "processing_end_time": 1765189723
     }
   },
   "doc-23893ba460e56ad52c98e6a740753391": {
@@ -55,7 +56,7 @@
     }
   },
   "doc-1e69f3219864106c5c30ef8763986b78": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
       "chunk-1e69f3219864106c5c30ef8763986b78"
@@ -63,21 +64,835 @@
     "content_summary": "# Api- Home 得到首页信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html\n\n\n# Api- Home 得到首页信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1.Reponse Heade...",
     "content_length": 2239,
     "created_at": "2025-12-08T10:17:27.174837+00:00",
-    "updated_at": "2025-12-08T10:19:32.588648+00:00",
+    "updated_at": "2025-12-08T10:21:20.082508+00:00",
     "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html",
     "track_id": "insert_20251208_181727_4a4f4ce7",
     "metadata": {
-      "processing_start_time": 1765189172
+      "processing_start_time": 1765189172,
+      "processing_end_time": 1765189280
     }
   },
   "doc-e5c34a256d44ec80577b54f5276df08f": {
-    "status": "pending",
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-e5c34a256d44ec80577b54f5276df08f"
+    ],
     "content_summary": "# Api- Coupon 添加优惠券¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-coupon-add.html\n\n\n# Api- Coupon 添加优惠券¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1.Repon...",
     "content_length": 1783,
     "created_at": "2025-12-08T10:17:27.174848+00:00",
-    "updated_at": "2025-12-08T10:17:27.174850+00:00",
+    "updated_at": "2025-12-08T10:25:46.247635+00:00",
     "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-coupon-add.html",
     "track_id": "insert_20251208_181727_4a4f4ce7",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1765189280,
+      "processing_end_time": 1765189546
+    }
+  },
+  "doc-a7f3a29a91593b842a36628b91d2d802": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a7f3a29a91593b842a36628b91d2d802"
+    ],
+    "content_summary": "# Fecshop Api 分类 AddOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-category-addone.html\n\n\n# Fecshop Api 分类 AddOne¶\n\nApi描述：根据传递的json数据，新增一行page数据\nURL:http://fecshop.appapi.fancyecommerce.com/v1/category/addone...",
+    "content_length": 3148,
+    "created_at": "2025-12-08T10:24:46.718578+00:00",
+    "updated_at": "2025-12-08T10:34:09.140968+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-category-addone.html",
+    "track_id": "insert_20251208_182446_33102ef6",
+    "metadata": {
+      "processing_start_time": 1765189723,
+      "processing_end_time": 1765190049
+    }
+  },
+  "doc-82ee147dfa90c52bf8f642f532b5325e": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-272543e18850547245eacb478fb57640",
+      "chunk-1f83dd990dfaeb08b1d93054c5067095"
+    ],
+    "content_summary": "# Fecmall Api 产品图片同步¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-image-sync.html\n\n\n# Fecmall Api 产品图片同步¶\n\n\n### 产品图片同步¶\n\n通过api同步产品图片\n原理：先将图片通过base64转换成字符串，然后传递字符串到fecmall，\nfecmall接收到后，将base64字符串转化成图片，然后...",
+    "content_length": 3148,
+    "created_at": "2025-12-08T10:24:46.719097+00:00",
+    "updated_at": "2025-12-08T10:32:29.243445+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-image-sync.html",
+    "track_id": "insert_20251208_182446_baaf8701",
+    "metadata": {
+      "processing_start_time": 1765189723,
+      "processing_end_time": 1765189949
+    }
+  },
+  "doc-82195a6e94cf3ee20d3757941a8cd1dc": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-d46553aa9949433016ac681f349447ec",
+      "chunk-3e2efda3cc33b12267112c56549d48d4"
+    ],
+    "content_summary": "# Fecmall Api 产品属性组删除¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-group-delete.html\n\nToggle navigation\nFecmall\nGuide\n关于与安装\nFecmall-2.x 介绍\nFecmall-2.x 安装\nFecmall-2.x Win10本地-WAMP安装\nFecmall-2.x 宝塔安装\nFecmall...",
+    "content_length": 3148,
+    "created_at": "2025-12-08T10:24:46.719615+00:00",
+    "updated_at": "2025-12-08T10:35:55.112592+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-group-delete.html",
+    "track_id": "insert_20251208_182446_e6a0013f",
+    "metadata": {
+      "processing_start_time": 1765189949,
+      "processing_end_time": 1765190155
+    }
+  },
+  "doc-97bda98bc204f32a1f4bbb6ec107def3": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-97bda98bc204f32a1f4bbb6ec107def3"
+    ],
+    "content_summary": "# Api- Product 加入购物车¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-to-cart.html\n\n\n# Api- Product 加入购物车¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#...",
+    "content_length": 2236,
+    "created_at": "2025-12-08T10:24:46.720106+00:00",
+    "updated_at": "2025-12-08T10:37:25.249687+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-to-cart.html",
+    "track_id": "insert_20251208_182446_e3cf1ecd",
+    "metadata": {
+      "processing_start_time": 1765190049,
+      "processing_end_time": 1765190245
+    }
+  },
+  "doc-698571535105432dc679316fd5a4f2ed": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-698571535105432dc679316fd5a4f2ed"
+    ],
+    "content_summary": "# Fecshop Api 产品 UpdateOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-upsertone.html\n\n\n# Fecshop Api 产品 UpdateOne¶\n\nApi描述：根据传递的id，更新一行product数据\n注意: 这里的产品更新，需要提交产品的所有内容进行覆盖，是一个save操作，相当于将该id的产品的原来的内容进行...",
+    "content_length": 3153,
+    "created_at": "2025-12-08T10:24:46.722737+00:00",
+    "updated_at": "2025-12-08T11:40:17.411934+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-upsertone.html",
+    "track_id": "insert_20251208_182446_49d85142",
+    "metadata": {
+      "processing_start_time": 1765190155,
+      "processing_end_time": 1765194017
+    }
+  },
+  "doc-fa53eed93928a7e85e63542698aeb997": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-fa53eed93928a7e85e63542698aeb997"
+    ],
+    "content_summary": "# Api- Customer 忘记密码初始化¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-forgot-password-init.html\n\n\n# Api- Customer 忘记密码初始化¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n...",
+    "content_length": 1676,
+    "created_at": "2025-12-08T10:24:46.723218+00:00",
+    "updated_at": "2025-12-08T11:44:45.130670+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-forgot-password-init.html",
+    "track_id": "insert_20251208_182446_e2aeeff9",
+    "metadata": {
+      "processing_start_time": 1765190245,
+      "processing_end_time": 1765194285
+    }
+  },
+  "doc-c598b4b289a822b58c6aa623ea641ec1": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c598b4b289a822b58c6aa623ea641ec1"
+    ],
+    "content_summary": "# Fecshop Api Page DeleteOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-article-deleteone.html\n\n\n# Fecshop Api Page DeleteOne¶\n\nApi描述：根据传递的id或url_key，删除一行page数据\nURL:http://fecshop.appapi.fancyecommerce.com/v1...",
+    "content_length": 2305,
+    "created_at": "2025-12-08T10:24:46.723951+00:00",
+    "updated_at": "2025-12-08T11:43:56.333853+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-article-deleteone.html",
+    "track_id": "insert_20251208_182446_0bd3c3e5",
+    "metadata": {
+      "processing_start_time": 1765194017,
+      "processing_end_time": 1765194236
+    }
+  },
+  "doc-ca5f99f978f7b23620d5d80cec89fe76": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ca5f99f978f7b23620d5d80cec89fe76"
+    ],
+    "content_summary": "# Api- Customer 产品收藏列表¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-product-favorite-list.html\n\n\n# Api- Customer 产品收藏列表¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n...",
+    "content_length": 3169,
+    "created_at": "2025-12-08T10:24:46.725791+00:00",
+    "updated_at": "2025-12-08T11:46:20.382412+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-product-favorite-list.html",
+    "track_id": "insert_20251208_182446_f447839d",
+    "metadata": {
+      "processing_start_time": 1765194236,
+      "processing_end_time": 1765194380
+    }
+  },
+  "doc-5fd41d144a9fd0cfa839049e244900f5": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-ba7e332d0fa50e234096efdf52bbaae0",
+      "chunk-bb37749c6a6c38e087a0040ed3a9cd59"
+    ],
+    "content_summary": "# Fecmall Api 产品属性删除¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-delete.html\n\nToggle navigation\nFecmall\nGuide\n关于与安装\nFecmall-2.x 介绍\nFecmall-2.x 安装\nFecmall-2.x Win10本地-WAMP安装\nFecmall-2.x 宝塔安装\nFecmall-2.x 界面...",
+    "content_length": 3141,
+    "created_at": "2025-12-08T10:24:46.726673+00:00",
+    "updated_at": "2025-12-08T11:50:18.940855+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-delete.html",
+    "track_id": "insert_20251208_182446_1dc58c22",
+    "metadata": {
+      "processing_start_time": 1765194285,
+      "processing_end_time": 1765194618
+    }
+  },
+  "doc-04bd6b85141fa120015a7d8c360f9d2d": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-04bd6b85141fa120015a7d8c360f9d2d",
+      "chunk-db76dca74117c9c84ccf28b0b1e84bad"
+    ],
+    "content_summary": "# Api- Customer address 编辑切换国家¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-change-country.html\n\n\n# Api- Customer address 编辑切换国家¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Requ...",
+    "content_length": 3183,
+    "created_at": "2025-12-08T10:24:46.731066+00:00",
+    "updated_at": "2025-12-08T11:48:58.593267+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-change-country.html",
+    "track_id": "insert_20251208_182446_cd0b78a3",
+    "metadata": {
+      "processing_start_time": 1765194380,
+      "processing_end_time": 1765194538
+    }
+  },
+  "doc-eccc1df039fcdfa7c1f6410a33f41dae": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-eccc1df039fcdfa7c1f6410a33f41dae",
+      "chunk-7d0c645ecaee0ff19beef6733eb7e5b5"
+    ],
+    "content_summary": "# Api- Customer address 编辑切换国家¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-change-country.html#api-customer-address\n\n\n# Api- Customer address 编辑切换国家¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request ...",
+    "content_length": 3204,
+    "created_at": "2025-12-08T10:24:46.732484+00:00",
+    "updated_at": "2025-12-08T11:55:43.069969+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-change-country.html#api-customer-address",
+    "track_id": "insert_20251208_182446_a1828662",
+    "metadata": {
+      "processing_start_time": 1765194538,
+      "processing_end_time": 1765194943
+    }
+  },
+  "doc-b39e21f5d3637780110dce8e462c20a9": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-bbe70b1747a6cb48c7818c532549bb26",
+      "chunk-31577e4d8d506b48c37471faf03c8c35"
+    ],
+    "content_summary": "# Fecmall Api 产品属性组删除¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-group-delete.html#fecmall-api\n\nToggle navigation\nFecmall\nGuide\n关于与安装\nFecmall-2.x 介绍\nFecmall-2.x 安装\nFecmall-2.x Win10本地-WAMP安装\nFecmall-2.x ...",
+    "content_length": 3160,
+    "created_at": "2025-12-08T10:24:46.733179+00:00",
+    "updated_at": "2025-12-08T11:54:56.870508+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-group-delete.html#fecmall-api",
+    "track_id": "insert_20251208_182446_cdde1eb2",
+    "metadata": {
+      "processing_start_time": 1765194618,
+      "processing_end_time": 1765194896
+    }
+  },
+  "doc-a9985e14ac2c69bcb7bc16a7955da133": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a9985e14ac2c69bcb7bc16a7955da133"
+    ],
+    "content_summary": "# Api- Product 加入购物车¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-to-cart.html#api-product\n\n\n# Api- Product 加入购物车¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n##...",
+    "content_length": 2248,
+    "created_at": "2025-12-08T10:24:46.734347+00:00",
+    "updated_at": "2025-12-08T11:58:15.940001+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-to-cart.html#api-product",
+    "track_id": "insert_20251208_182446_05ab6870",
+    "metadata": {
+      "processing_start_time": 1765194896,
+      "processing_end_time": 1765195095
+    }
+  },
+  "doc-3083af97195f5608d959349873f0d34b": {
+    "status": "processed",
+    "chunks_count": 2,
+    "chunks_list": [
+      "chunk-3083af97195f5608d959349873f0d34b",
+      "chunk-7d0c645ecaee0ff19beef6733eb7e5b5"
+    ],
+    "content_summary": "# Api- Customer address 编辑切换国家¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-change-country.html#3codeapi\n\n\n# Api- Customer address 编辑切换国家¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n##...",
+    "content_length": 3192,
+    "created_at": "2025-12-08T10:24:46.735971+00:00",
+    "updated_at": "2025-12-08T12:02:37.225761+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-change-country.html#3codeapi",
+    "track_id": "insert_20251208_182446_33d3df90",
+    "metadata": {
+      "processing_start_time": 1765194943,
+      "processing_end_time": 1765195357
+    }
+  },
+  "doc-63ea4ba53cc3a0b64768468747a33c14": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-63ea4ba53cc3a0b64768468747a33c14"
+    ],
+    "content_summary": "# Api- Customer address 列表¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address.html\n\n\n# Api- Customer address 列表¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：...",
+    "content_length": 3159,
+    "created_at": "2025-12-08T10:24:46.738989+00:00",
+    "updated_at": "2025-12-08T12:01:37.762656+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address.html",
+    "track_id": "insert_20251208_182446_7556aed8",
+    "metadata": {
+      "processing_start_time": 1765195095,
+      "processing_end_time": 1765195297
+    }
+  },
+  "doc-42e7aad805f103177b9a76183c054d15": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-42e7aad805f103177b9a76183c054d15"
+    ],
+    "content_summary": "# Api- 得到分类信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-category.html\n\n\n# Api- 得到分类信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1.Reponse Header¶\n\n\n#...",
+    "content_length": 3138,
+    "created_at": "2025-12-08T10:24:46.741254+00:00",
+    "updated_at": "2025-12-08T12:05:05.372001+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-category.html",
+    "track_id": "insert_20251208_182446_20aa4052",
+    "metadata": {
+      "processing_start_time": 1765195297,
+      "processing_end_time": 1765195505
+    }
+  },
+  "doc-4f6bf29532dba279147e36b0dc76f882": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-4f6bf29532dba279147e36b0dc76f882"
+    ],
+    "content_summary": "# Fecmall Api 产品属性组 FetchOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-attr-group-fetchone.html\n\n\n# Fecmall Api 产品属性组 FetchOne¶\n\nApi描述：根据传递的id，查询得到一行product attr group数据\nURL:http://fecshop.appapi.fan...",
+    "content_length": 3165,
+    "created_at": "2025-12-08T10:24:46.742495+00:00",
+    "updated_at": "2025-12-08T12:05:53.302812+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-attr-group-fetchone.html",
+    "track_id": "insert_20251208_182446_1ee249f7",
+    "metadata": {
+      "processing_start_time": 1765195357,
+      "processing_end_time": 1765195553
+    }
+  },
+  "doc-cf596d454256a9e5de927d968b0b60be": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-cf596d454256a9e5de927d968b0b60be"
+    ],
+    "content_summary": "# Api- Product Add Review¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-review.html\n\n\n# Api- Product Add Review¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：...",
+    "content_length": 3160,
+    "created_at": "2025-12-08T10:24:46.743799+00:00",
+    "updated_at": "2025-12-08T12:09:33.614903+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-review.html",
+    "track_id": "insert_20251208_182446_460525ac",
+    "metadata": {
+      "processing_start_time": 1765195505,
+      "processing_end_time": 1765195773
+    }
+  },
+  "doc-f2bca38d24b160310749570666f99637": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f2bca38d24b160310749570666f99637"
+    ],
+    "content_summary": "# Api- Customer 忘记密码初始化¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-forgot-password-init.html#3codeapi\n\n\n# Api- Customer 忘记密码初始化¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body For...",
+    "content_length": 1685,
+    "created_at": "2025-12-08T10:24:46.744849+00:00",
+    "updated_at": "2025-12-08T12:08:56.852075+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-forgot-password-init.html#3codeapi",
+    "track_id": "insert_20251208_182446_c587b1f8",
+    "metadata": {
+      "processing_start_time": 1765195553,
+      "processing_end_time": 1765195736
+    }
+  },
+  "doc-a5b54b8738e83286cc687af035664aa7": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a5b54b8738e83286cc687af035664aa7"
+    ],
+    "content_summary": "# Api- Product Add Review¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-review.html#3codeapi\n\n\n# Api- Product Add Review¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：...",
+    "content_length": 3169,
+    "created_at": "2025-12-08T10:24:46.747177+00:00",
+    "updated_at": "2025-12-08T12:11:26.908396+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-product-add-review.html#3codeapi",
+    "track_id": "insert_20251208_182446_60470657",
+    "metadata": {
+      "processing_start_time": 1765195736,
+      "processing_end_time": 1765195886
+    }
+  },
+  "doc-194eb1e93e2975690ab9dcb1ccfe6c9c": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-194eb1e93e2975690ab9dcb1ccfe6c9c"
+    ],
+    "content_summary": "# Api- 得到分类信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-category.html#3codeapi\n\n\n# Api- 得到分类信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1.Reponse He...",
+    "content_length": 3147,
+    "created_at": "2025-12-08T10:24:46.748256+00:00",
+    "updated_at": "2025-12-08T12:13:27.899987+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-category.html#3codeapi",
+    "track_id": "insert_20251208_182446_4354f530",
+    "metadata": {
+      "processing_start_time": 1765195773,
+      "processing_end_time": 1765196007
+    }
+  },
+  "doc-d5ab5a5deca2cc22c27cfcad20df7f94": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-d5ab5a5deca2cc22c27cfcad20df7f94"
+    ],
+    "content_summary": "# Fecmall Api 产品属性更新 UpdateOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-update.html\n\n\n# Fecmall Api 产品属性更新 UpdateOne¶\n\nApi描述：根据传递的json数据，更新product attr数据\nURL:http://fecshop.appapi.fancyecommerce.com/v1...",
+    "content_length": 3151,
+    "created_at": "2025-12-08T10:24:46.751147+00:00",
+    "updated_at": "2025-12-08T12:15:02.571503+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-update.html",
+    "track_id": "insert_20251208_182446_0f3f4716",
+    "metadata": {
+      "processing_start_time": 1765195886,
+      "processing_end_time": 1765196102
+    }
+  },
+  "doc-6b05b3294ee7c2bae69f8d3afac32e44": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-6b05b3294ee7c2bae69f8d3afac32e44"
+    ],
+    "content_summary": "# Fecmall Api 产品属性列表¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-brand-category-list.html\n\n\n# Fecmall Api 产品属性列表¶\n\nApi描述：按照分页，得到产品属性数据的列表\nURL:http://fecshop.appapi.fancyecommerce.com/v1/productbrandcat...",
+    "content_length": 3157,
+    "created_at": "2025-12-08T10:24:46.752941+00:00",
+    "updated_at": "2025-12-08T12:16:24.481373+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-brand-category-list.html",
+    "track_id": "insert_20251208_182446_ae30c867",
+    "metadata": {
+      "processing_start_time": 1765196007,
+      "processing_end_time": 1765196184
+    }
+  },
+  "doc-2cb5f2086f87c1eb8a5015ac5a5f2f91": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-2cb5f2086f87c1eb8a5015ac5a5f2f91"
+    ],
+    "content_summary": "# Api- Customer address 列表¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address.html#api-customer-address\n\n\n# Api- Customer address 列表¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Bod...",
+    "content_length": 3180,
+    "created_at": "2025-12-08T10:24:46.754843+00:00",
+    "updated_at": "2025-12-08T12:20:10.796480+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address.html#api-customer-address",
+    "track_id": "insert_20251208_182446_8905d939",
+    "metadata": {
+      "processing_start_time": 1765196102,
+      "processing_end_time": 1765196410
+    }
+  },
+  "doc-739457644ab0b980020c708759bdd3b8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-739457644ab0b980020c708759bdd3b8"
+    ],
+    "content_summary": "# Api- Cart 更新购物车信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-cart-update-info.html\n\n\n# Api- Cart 更新购物车信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1...",
+    "content_length": 2018,
+    "created_at": "2025-12-08T10:24:46.756585+00:00",
+    "updated_at": "2025-12-08T12:19:28.308036+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-cart-update-info.html",
+    "track_id": "insert_20251208_182446_63e54691",
+    "metadata": {
+      "processing_start_time": 1765196184,
+      "processing_end_time": 1765196368
+    }
+  },
+  "doc-58452ac39ded1251c6d65b080119e76f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-58452ac39ded1251c6d65b080119e76f"
+    ],
+    "content_summary": "# Api- Customer account编辑¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-account-edit.html\n\n\n# Api- Customer account编辑¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n##...",
+    "content_length": 2390,
+    "created_at": "2025-12-08T10:24:46.757389+00:00",
+    "updated_at": "2025-12-08T12:23:06.773841+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-account-edit.html",
+    "track_id": "insert_20251208_182446_e7c4cc5b",
+    "metadata": {
+      "processing_start_time": 1765196368,
+      "processing_end_time": 1765196586
+    }
+  },
+  "doc-8925d93997b8b2047f17948b595ad333": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-8925d93997b8b2047f17948b595ad333"
+    ],
+    "content_summary": "# Api- Onepage 更新信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-onepage-submit-order.html\n\n\n# Api- Onepage 更新信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n##...",
+    "content_length": 3156,
+    "created_at": "2025-12-08T10:24:46.760500+00:00",
+    "updated_at": "2025-12-08T12:24:18.921309+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-onepage-submit-order.html",
+    "track_id": "insert_20251208_182446_2397e713",
+    "metadata": {
+      "processing_start_time": 1765196410,
+      "processing_end_time": 1765196658
+    }
+  },
+  "doc-c8c8ba8331da1fb171e30220a13b6258": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c8c8ba8331da1fb171e30220a13b6258"
+    ],
+    "content_summary": "# Fecshop Api 产品 UpdateOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-upsertone.html#fecshop-api-updateone\n\n\n# Fecshop Api 产品 UpdateOne¶\n\nApi描述：根据传递的id，更新一行product数据\n注意: 这里的产品更新，需要提交产品的所有内容进行覆盖，是一个sav...",
+    "content_length": 3175,
+    "created_at": "2025-12-08T10:24:46.761215+00:00",
+    "updated_at": "2025-12-08T12:25:40.380139+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-upsertone.html#fecshop-api-updateone",
+    "track_id": "insert_20251208_182446_6958c7ce",
+    "metadata": {
+      "processing_start_time": 1765196586,
+      "processing_end_time": 1765196740
+    }
+  },
+  "doc-9504fda2dc26bc7600f17b3e516ac496": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-9504fda2dc26bc7600f17b3e516ac496"
+    ],
+    "content_summary": "# Api- Onepage 更新信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-onepage-submit-order.html#api-onepage\n\n\n# Api- Onepage 更新信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## ...",
+    "content_length": 3168,
+    "created_at": "2025-12-08T10:24:46.764095+00:00",
+    "updated_at": "2025-12-08T12:30:40.465475+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-onepage-submit-order.html#api-onepage",
+    "track_id": "insert_20251208_182446_d5af3607",
+    "metadata": {
+      "processing_start_time": 1765196658,
+      "processing_end_time": 1765197040
+    }
+  },
+  "doc-a2b1577bdf8af718cdb5e4b2026acb1f": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a2b1577bdf8af718cdb5e4b2026acb1f"
+    ],
+    "content_summary": "# Api- Customer account编辑¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-account-edit.html#3codeapi\n\n\n# Api- Customer account编辑¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Da...",
+    "content_length": 2399,
+    "created_at": "2025-12-08T10:24:46.765498+00:00",
+    "updated_at": "2025-12-08T12:31:13.346928+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-account-edit.html#3codeapi",
+    "track_id": "insert_20251208_182446_85eb290e",
+    "metadata": {
+      "processing_start_time": 1765196740,
+      "processing_end_time": 1765197073
+    }
+  },
+  "doc-bbf159d4c44dac8a7271b790e5e3be66": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-bbf159d4c44dac8a7271b790e5e3be66"
+    ],
+    "content_summary": "# Fecshop Api 订单¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-order.html\n\n\n# Fecshop Api 订单¶\n\nApi描述：按照分页，得到order数据的列表\nURL:http://fecshop.appapi.fancyecommerce.com/v1/order/list\n格式：json\n方式：get\nRequest Header 参数:...",
+    "content_length": 3131,
+    "created_at": "2025-12-08T10:24:46.768088+00:00",
+    "updated_at": "2025-12-08T12:33:19.795001+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-order.html",
+    "track_id": "insert_20251208_182446_5e142205",
+    "metadata": {
+      "processing_start_time": 1765197040,
+      "processing_end_time": 1765197199
+    }
+  },
+  "doc-26c31b593afb430158668674b9c4ed62": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-26c31b593afb430158668674b9c4ed62"
+    ],
+    "content_summary": "# Api- Customer 注册初始化¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-register.html\n\n\n# Api- Customer 注册初始化¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#...",
+    "content_length": 2115,
+    "created_at": "2025-12-08T10:24:46.771613+00:00",
+    "updated_at": "2025-12-08T12:37:08.671494+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-register.html",
+    "track_id": "insert_20251208_182446_48afefb5",
+    "metadata": {
+      "processing_start_time": 1765197073,
+      "processing_end_time": 1765197428
+    }
+  },
+  "doc-01f773b159b95ff5973958b1cb95c8f0": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-01f773b159b95ff5973958b1cb95c8f0"
+    ],
+    "content_summary": "# Fecmall Api ShopFw-产品新增¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-shopfw-product-add.html\n\n\n# Fecmall Api ShopFw-产品新增¶\n\nApi描述：根据传递的json数据，新增一行product数据, 该api是专门给shopfw采集工具使用的。\nURL:http://fecshop.appapi.fan...",
+    "content_length": 3153,
+    "created_at": "2025-12-08T10:24:46.773114+00:00",
+    "updated_at": "2025-12-08T12:37:43.851162+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-shopfw-product-add.html",
+    "track_id": "insert_20251208_182446_a1b0c988",
+    "metadata": {
+      "processing_start_time": 1765197199,
+      "processing_end_time": 1765197463
+    }
+  },
+  "doc-f20e792220ee9e08ac20edf5073a5b19": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f20e792220ee9e08ac20edf5073a5b19"
+    ],
+    "content_summary": "# Fecshop Api 分类 AddOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-category-addone.html#fecshop-api-addone\n\n\n# Fecshop Api 分类 AddOne¶\n\nApi描述：根据传递的json数据，新增一行page数据\nURL:http://fecshop.appapi.fancyecommerce.com...",
+    "content_length": 3167,
+    "created_at": "2025-12-08T10:24:46.775348+00:00",
+    "updated_at": "2025-12-08T13:08:05.423819+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-category-addone.html#fecshop-api-addone",
+    "track_id": "insert_20251208_182446_35797472",
+    "metadata": {
+      "processing_start_time": 1765197428,
+      "processing_end_time": 1765199285
+    }
+  },
+  "doc-37c2228b30c3eeb3ce8a53fd34b9e317": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-37c2228b30c3eeb3ce8a53fd34b9e317"
+    ],
+    "content_summary": "# Api- Customer address 编辑初始化¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-init.html\n\n\n# Api- Customer address 编辑初始化¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body For...",
+    "content_length": 3172,
+    "created_at": "2025-12-08T10:24:46.777307+00:00",
+    "updated_at": "2025-12-08T13:08:39.379178+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-init.html",
+    "track_id": "insert_20251208_182446_c51027ac",
+    "metadata": {
+      "processing_start_time": 1765197463,
+      "processing_end_time": 1765199319
+    }
+  },
+  "doc-c5daf9d90709da927b5a7aaabb15f591": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-c5daf9d90709da927b5a7aaabb15f591"
+    ],
+    "content_summary": "# Fecshop Api 产品 UpdateOne 2¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-upsertone-2.html\n\n\n# Fecshop Api 产品 UpdateOne 2¶\n\nApi描述：根据传递的id，更新一行product数据\n注意: 这里的产品更新，需要提交产品的所有内容进行覆盖，是一个save操作，相当于将该id的产品的原...",
+    "content_length": 3157,
+    "created_at": "2025-12-08T10:24:46.777763+00:00",
+    "updated_at": "2025-12-08T13:13:10.670371+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-upsertone-2.html",
+    "track_id": "insert_20251208_182446_6a74f8c6",
+    "metadata": {
+      "processing_start_time": 1765199285,
+      "processing_end_time": 1765199590
+    }
+  },
+  "doc-95e813fc5e3780eb44feea2bbbc9ad0e": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-95e813fc5e3780eb44feea2bbbc9ad0e"
+    ],
+    "content_summary": "# Fecshop Api 产品 UpdateOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-updatene.html\n\n\n# Fecshop Api 产品 UpdateOne¶\n\nApi描述：根据传递的id，更新一行product数据\n注意: 这里的产品更新，需要提交产品的所有内容进行覆盖，是一个save操作，相当于将该id的产品的原来的内容进行替...",
+    "content_length": 3152,
+    "created_at": "2025-12-08T10:24:46.781538+00:00",
+    "updated_at": "2025-12-08T13:12:36.169024+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-product-updatene.html",
+    "track_id": "insert_20251208_182446_d6aadf7e",
+    "metadata": {
+      "processing_start_time": 1765199319,
+      "processing_end_time": 1765199556
+    }
+  },
+  "doc-b5be5ea89afe197ebedddbb241754fd9": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b5be5ea89afe197ebedddbb241754fd9"
+    ],
+    "content_summary": "# Api- Payment Success¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-payment-success.html\n\n\n# Api- Payment Success¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#...",
+    "content_length": 3154,
+    "created_at": "2025-12-08T10:24:46.782394+00:00",
+    "updated_at": "2025-12-08T13:17:03.321304+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-payment-success.html",
+    "track_id": "insert_20251208_182446_8caa982d",
+    "metadata": {
+      "processing_start_time": 1765199556,
+      "processing_end_time": 1765199823
+    }
+  },
+  "doc-09d108a9cbbb0a6fec265da83d74fa69": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-09d108a9cbbb0a6fec265da83d74fa69"
+    ],
+    "content_summary": "# Api- Customer address 编辑初始化¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-init.html#3codeapi\n\n\n# Api- Customer address 编辑初始化¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request...",
+    "content_length": 3181,
+    "created_at": "2025-12-08T10:24:46.785100+00:00",
+    "updated_at": "2025-12-08T13:24:54.903216+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-customer-address-edit-init.html#3codeapi",
+    "track_id": "insert_20251208_182446_56c7b800",
+    "metadata": {
+      "processing_start_time": 1765199590,
+      "processing_end_time": 1765200294
+    }
+  },
+  "doc-50ccb23ea8e7be6b4692ae4786535783": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-50ccb23ea8e7be6b4692ae4786535783"
+    ],
+    "content_summary": "# Fecmall Api ShopFw-产品新增¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-shopfw-product-add.html#fecmall-api-shopfw\n\n\n# Fecmall Api ShopFw-产品新增¶\n\nApi描述：根据传递的json数据，新增一行product数据, 该api是专门给shopfw采集工具使用的。\nURL:http:/...",
+    "content_length": 3172,
+    "created_at": "2025-12-08T10:24:46.787626+00:00",
+    "updated_at": "2025-12-08T13:21:01.761479+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-shopfw-product-add.html#fecmall-api-shopfw",
+    "track_id": "insert_20251208_182446_6844711f",
+    "metadata": {
+      "processing_start_time": 1765199823,
+      "processing_end_time": 1765200061
+    }
+  },
+  "doc-6b4e8fd2faaa0a1e8646652c1f381524": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-6b4e8fd2faaa0a1e8646652c1f381524"
+    ],
+    "content_summary": "# Api- Payment Success¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-payment-success.html#3codeapi\n\n\n# Api- Payment Success¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：...",
+    "content_length": 3163,
+    "created_at": "2025-12-08T10:24:46.789302+00:00",
+    "updated_at": "2025-12-08T13:23:20.704306+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-payment-success.html#3codeapi",
+    "track_id": "insert_20251208_182446_cef7d42a",
+    "metadata": {
+      "processing_start_time": 1765200061,
+      "processing_end_time": 1765200200
+    }
+  },
+  "doc-b2ccb241ab1cfcd8a5ef077d324a20a8": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-b2ccb241ab1cfcd8a5ef077d324a20a8"
+    ],
+    "content_summary": "# Fecmall Api 设置货币¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-currency-set.html\n\n\n# Fecmall Api 设置货币¶\n\nApi描述：设置货币。\nURL:http://fecshop.appapi.fancyecommerce.com/v1/currency/setall\n格式：json\n方式：post\nRequest Heade...",
+    "content_length": 3140,
+    "created_at": "2025-12-08T10:24:46.792636+00:00",
+    "updated_at": "2025-12-08T13:28:42.978441+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-currency-set.html",
+    "track_id": "insert_20251208_182446_a16f0f25",
+    "metadata": {
+      "processing_start_time": 1765200200,
+      "processing_end_time": 1765200522
+    }
+  },
+  "doc-a9cabb7faab9ca9e362eb27444212476": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a9cabb7faab9ca9e362eb27444212476"
+    ],
+    "content_summary": "# Api- Onepage 初始化信息¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-onepage.html\n\n\n# Api- Onepage 初始化信息¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Request Body Form-Data：¶\n\n\n## 二：返回部分¶\n\n\n#### 1.Repons...",
+    "content_length": 3144,
+    "created_at": "2025-12-08T10:24:46.793485+00:00",
+    "updated_at": "2025-12-08T13:29:08.236059+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-onepage.html",
+    "track_id": "insert_20251208_182446_781da19d",
+    "metadata": {
+      "processing_start_time": 1765200294,
+      "processing_end_time": 1765200548
+    }
+  },
+  "doc-ec6170f7e5a9c0c7feeadd84b10a3343": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-ec6170f7e5a9c0c7feeadd84b10a3343"
+    ],
+    "content_summary": "# Api- Onepage Paypal Standard Review¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-paypal-standard-review.html\n\n\n# Api- Onepage Paypal Standard Review¶\n\n\n## 一：请求部分¶\n\n\n#### 1.Request Header¶\n\n\n#### 2.Requ...",
+    "content_length": 2104,
+    "created_at": "2025-12-08T10:24:46.795612+00:00",
+    "updated_at": "2025-12-08T13:33:18.717435+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-paypal-standard-review.html",
+    "track_id": "insert_20251208_182446_3afd418d",
+    "metadata": {
+      "processing_start_time": 1765200523,
+      "processing_end_time": 1765200798
+    }
+  },
+  "doc-2bd4dc5aed8d5af7d22ae5c32cdac257": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-2bd4dc5aed8d5af7d22ae5c32cdac257"
+    ],
+    "content_summary": "# Fecmall Api 产品属性列表¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-list.html\n\n\n# Fecmall Api 产品属性列表¶\n\nApi描述：按照分页，得到产品属性数据的列表\nURL:http://fecshop.appapi.fancyecommerce.com/v1/productattr/list\n格式：json\n方式：get\nR...",
+    "content_length": 3139,
+    "created_at": "2025-12-08T10:24:46.797084+00:00",
+    "updated_at": "2025-12-08T13:32:40.428267+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-list.html",
+    "track_id": "insert_20251208_182446_0a276279",
+    "metadata": {
+      "processing_start_time": 1765200548,
+      "processing_end_time": 1765200760
+    }
+  },
+  "doc-85595281cee3e4aa1bd666cbb75e78ec": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-85595281cee3e4aa1bd666cbb75e78ec"
+    ],
+    "content_summary": "# Fecmall Api 产品属性组更新¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-group-upsert.html\n\n\n# Fecmall Api 产品属性组更新¶\n\nApi描述：根据传递的json数据，更新product attr group数据\n以远程数据库属性表的id，作为remote_id的参数值，当存在该值则更新，如果不存在则插入。\nURL:h...",
+    "content_length": 3148,
+    "created_at": "2025-12-08T10:24:46.798168+00:00",
+    "updated_at": "2025-12-08T13:35:45.500822+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-attr-group-upsert.html",
+    "track_id": "insert_20251208_182446_b550be6d",
+    "metadata": {
+      "processing_start_time": 1765200760,
+      "processing_end_time": 1765200945
+    }
+  },
+  "doc-af1558d4a75682f81f6c2b13df022254": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-af1558d4a75682f81f6c2b13df022254"
+    ],
+    "content_summary": "# Fecshop Api 分类 FetchOne¶\n\n> 文档来源: https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-category-fetchone.html\n\n\n# Fecshop Api 分类 FetchOne¶\n\nApi描述：根据传递的id或url_key，查询得到一行category数据\nURL:http://fecshop.appapi.fancyecommerce.com/v1...",
+    "content_length": 3152,
+    "created_at": "2025-12-08T10:24:46.801995+00:00",
+    "updated_at": "2025-12-08T13:36:11.594455+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-api-category-fetchone.html",
+    "track_id": "insert_20251208_182446_e74f074e",
+    "metadata": {
+      "processing_start_time": 1765200798,
+      "processing_end_time": 1765200971
+    }
   }
 }

@@ -152,6 +152,11 @@ def _create_agent_tools(
         create_result_parser_tool,
         create_metrics_analyzer_tool,
     )
+    from k6_agent.tools.api_query_tools import (
+        query_api_from_knowledge_base,
+        generate_test_data,
+        parse_api_for_k6_script,
+    )
     
     tools = [
         create_k6_script_tool(),
@@ -160,6 +165,10 @@ def _create_agent_tools(
         create_k6_cloud_tool(),
         create_result_parser_tool(),
         create_metrics_analyzer_tool(),
+        # API 查询和数据生成工具 - 支持从知识库查询任意 API
+        query_api_from_knowledge_base,
+        generate_test_data,
+        parse_api_for_k6_script,
     ]
     
     # Add knowledge retrieval tools if enabled
@@ -232,9 +241,18 @@ def _create_subagents(
     # Script Generator Sub-Agent
     script_generator_tools: List[Any] = []
     from k6_agent.tools.k6_tools import create_k6_script_tool, create_k6_validation_tool
+    from k6_agent.tools.api_query_tools import (
+        query_api_from_knowledge_base,
+        generate_test_data,
+        parse_api_for_k6_script,
+    )
     script_generator_tools.extend([
         create_k6_script_tool(),
         create_k6_validation_tool(),
+        # API 查询和数据生成工具
+        query_api_from_knowledge_base,
+        generate_test_data,
+        parse_api_for_k6_script,
     ])
 
     if enable_knowledge and config.knowledge.enabled:

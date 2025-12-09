@@ -1,0 +1,20 @@
+npm warn Unknown user config "python". This will stop working in the next major version of npm.
+
+> deep-agents-ui@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Warning: Found multiple lockfiles. Selecting /Users/qiuyunxia/code/package-lock.json.
+   Consider removing the lockfiles at:
+   * /Users/qiuyunxia/code/ai_langGraph/testing-deep-agents-ui/yarn.lock
+
+   ▲ Next.js 15.4.6 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://10.192.202.185:3000
+
+ ✓ Starting...
+ ✓ Ready in 912ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.4s
+ GET /?assistantId=knowledge_agent&sidebar=1&threadId=9088b7a3-17d8-4aef-89c2-a05a9d203f46 200 in 4074ms
+ ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins

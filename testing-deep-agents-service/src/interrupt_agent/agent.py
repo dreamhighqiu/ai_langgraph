@@ -5,7 +5,7 @@ import os
 
 from langchain.tools import tool
 from deepagents import create_deep_agent
-from langchain_deepseek import ChatDeepSeek
+# from langchain_deepseek import ChatDeepSeek
 from langgraph.checkpoint.memory import MemorySaver
 
 @tool
@@ -25,12 +25,13 @@ def send_email(to: str, subject: str, body: str) -> str:
 
 # Checkpointer is REQUIRED for human-in-the-loop
 # checkpointer = MemorySaver()
-os.environ["DEEPSEEK_API_KEY"] = "sk-ab8dda459d2a4203b71c6aa2065b411a"
-deepseek = ChatDeepSeek(model="deepseek-chat")
+# os.environ["DEEPSEEK_API_KEY"] = "sk-ab8dda459d2a4203b71c6aa2065b411a"
+# deepseek = ChatDeepSeek(model="deepseek-chat")
+from core.llms import deepseek_model
 # pylint: disable  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Wm0xcldRPT06NWQ4NzNiMTQ=
 
 agent = create_deep_agent(
-    model=deepseek,
+    model=deepseek_model,
     tools=[delete_file, read_file, send_email],
     interrupt_on={
         "delete_file": True,  # Default: approve, edit, reject

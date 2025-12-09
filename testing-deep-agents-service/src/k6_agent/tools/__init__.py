@@ -6,6 +6,8 @@ This module provides LangChain-compatible tools for:
 - Result analysis
 - Report and chart generation
 - Knowledge retrieval
+- API query from knowledge base (anything-chat-rag)
+- Test data generation (Faker style)
 """
 
 
@@ -31,6 +33,12 @@ from k6_agent.tools.report_tools import (
     create_report_generation_tool,
     create_quick_summary_tool,
 )
+from k6_agent.tools.api_query_tools import (
+    api_query_tools,
+    query_api_from_knowledge_base,
+    generate_test_data,
+    parse_api_for_k6_script,
+)
 # pragma: no cover  MS8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U3pCQ1dBPT06NDBiNDQzMjY=
 
 __all__ = [
@@ -50,6 +58,11 @@ __all__ = [
     "create_chart_generation_tool",
     "create_report_generation_tool",
     "create_quick_summary_tool",
+    # API query and data generation tools
+    "api_query_tools",
+    "query_api_from_knowledge_base",
+    "generate_test_data",
+    "parse_api_for_k6_script",
 ]
 
 # type: ignore  Mi8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U3pCQ1dBPT06NDBiNDQzMjY=

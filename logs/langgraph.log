@@ -7,29 +7,29 @@
 🎨 Studio UI: http://localhost:2025/ui
 💚 Health Check: http://localhost:2025/ok
 ============================================================
-2025-12-10 15:32:45,155 - uvicorn.error - INFO - Will watch for changes in these directories: ['/Users/qiuyunxia/code/ai_langGraph/testing-deep-agents-service']
-2025-12-10 15:32:45,155 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:2025 (Press CTRL+C to quit)
-2025-12-10 15:32:45,155 - uvicorn.error - INFO - Started reloader process [3109] using WatchFiles
-2025-12-10 15:32:45 [info     ] Using langgraph_runtime_inmem
-2025-12-10 15:32:45 [info     ] Using auth of type=noop
-2025-12-10 15:32:45,716 - uvicorn.error - INFO - Started server process [3129]
-2025-12-10 15:32:45,716 - uvicorn.error - INFO - Waiting for application startup.
-2025-12-10 15:32:45 [info     ] Starting In-Memory runtime with langgraph-api=0.5.35 and in-memory runtime=0.19.1 langgraph_runtime_inmem_version=0.19.1 version=0.5.35
-2025-12-10 15:32:45 [info     ] Starting thread TTL sweeper with interval 5 minutes interval_minutes=5 strategy=delete
-2025-12-10 15:32:48 [info     ] Registering graph with id 'performance_agent' graph_id=performance_agent
-2025-12-10 15:32:49,132 - httpx - INFO - HTTP Request: POST https://mcp.tavily.com/mcp/?tavilyApiKey=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 "HTTP/1.1 200 OK"
-2025-12-10 15:32:49,134 - mcp.client.streamable_http - INFO - Negotiated protocol version: 2025-06-18
-2025-12-10 15:32:50,032 - httpx - INFO - HTTP Request: POST https://mcp.tavily.com/mcp/?tavilyApiKey=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 "HTTP/1.1 202 Accepted"
-2025-12-10 15:32:51,005 - httpx - INFO - HTTP Request: POST https://mcp.tavily.com/mcp/?tavilyApiKey=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 "HTTP/1.1 200 OK"
-2025-12-10 15:32:51 [info     ] Registering graph with id 'research_agent' graph_id=research_agent
-2025-12-10 15:32:51 [info     ] Registering graph with id 'interrupt_agent' graph_id=interrupt_agent
-2025-12-10 15:32:51 [info     ] Registering graph with id 'knowledge_agent' graph_id=knowledge_agent
-2025-12-10 15:32:51 [info     ] Registering graph with id 'web_scraper_agent' graph_id=web_scraper_agent
-2025-12-10 15:32:51,601 - unified_services.minio_service - INFO - MinIO config: endpoint=54.179.103.192:9100, secure=False
-2025-12-10 15:32:51,605 - unified_services.database_service - INFO - Database config: host=54.179.103.192, database=ai_db
-2025-12-10 15:32:51 [info     ] Registering graph with id 'services_manager_agent' graph_id=services_manager_agent
-2025-12-10 15:32:51,613 - uvicorn.error - INFO - Application startup complete.
-2025-12-10 15:32:51,613 - langgraph_runtime_inmem.queue - WARNING - {'event': "Heads up: You've set --allow-blocking, which allows synchronous blocking I/O operations. Be aware that blocking code in one run may tie up the shared event loop and slow down ALL other server operations. For best performance, either convert blocking code to async patterns or set BG_JOB_ISOLATED_LOOPS=true in production to isolate each run in its own event loop.", 'thread_name': 'ThreadPoolExecutor-1_0', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'warning', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T07:32:51.613960Z'}
-2025-12-10 15:32:51,614 - langgraph_runtime_inmem.queue - INFO - {'event': 'Starting 1 background workers', 'thread_name': 'ThreadPoolExecutor-1_1', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'info', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T07:32:51.614203Z'}
-2025-12-10 15:32:51,614 - langgraph_runtime_inmem.queue - INFO - {'max': 1, 'available': 1, 'active': 0, 'event': 'Worker stats', 'thread_name': 'ThreadPoolExecutor-1_0', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'info', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T07:32:51.614328Z'}
-2025-12-10 15:32:52,116 - langgraph_runtime_inmem.queue - INFO - {'n_pending': 0, 'pending_runs_wait_time_max_secs': None, 'pending_runs_wait_time_med_secs': None, 'n_running': 0, 'event': 'Queue stats', 'thread_name': 'ThreadPoolExecutor-1_1', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'info', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T07:32:52.116643Z'}
+2025-12-10 16:14:49,703 - uvicorn.error - INFO - Will watch for changes in these directories: ['/Users/qiuyunxia/code/ai_langGraph/testing-deep-agents-service']
+2025-12-10 16:14:49,703 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:2025 (Press CTRL+C to quit)
+2025-12-10 16:14:49,703 - uvicorn.error - INFO - Started reloader process [69755] using WatchFiles
+2025-12-10 16:14:50 [info     ] Using langgraph_runtime_inmem
+2025-12-10 16:14:50 [info     ] Using auth of type=noop
+2025-12-10 16:14:50,276 - uvicorn.error - INFO - Started server process [69760]
+2025-12-10 16:14:50,276 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-10 16:14:50 [info     ] Starting In-Memory runtime with langgraph-api=0.5.35 and in-memory runtime=0.19.1 langgraph_runtime_inmem_version=0.19.1 version=0.5.35
+2025-12-10 16:14:50 [info     ] Starting thread TTL sweeper with interval 5 minutes interval_minutes=5 strategy=delete
+2025-12-10 16:14:52 [info     ] Registering graph with id 'performance_agent' graph_id=performance_agent
+2025-12-10 16:14:53,408 - httpx - INFO - HTTP Request: POST https://mcp.tavily.com/mcp/?tavilyApiKey=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 "HTTP/1.1 200 OK"
+2025-12-10 16:14:53,410 - mcp.client.streamable_http - INFO - Negotiated protocol version: 2025-06-18
+2025-12-10 16:14:54,652 - httpx - INFO - HTTP Request: POST https://mcp.tavily.com/mcp/?tavilyApiKey=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 "HTTP/1.1 202 Accepted"
+2025-12-10 16:14:55,596 - httpx - INFO - HTTP Request: POST https://mcp.tavily.com/mcp/?tavilyApiKey=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 "HTTP/1.1 200 OK"
+2025-12-10 16:14:55 [info     ] Registering graph with id 'research_agent' graph_id=research_agent
+2025-12-10 16:14:55 [info     ] Registering graph with id 'interrupt_agent' graph_id=interrupt_agent
+2025-12-10 16:14:55 [info     ] Registering graph with id 'knowledge_agent' graph_id=knowledge_agent
+2025-12-10 16:14:56 [info     ] Registering graph with id 'web_scraper_agent' graph_id=web_scraper_agent
+2025-12-10 16:14:56,158 - unified_services.minio_service - INFO - MinIO config: endpoint=54.179.103.192:9100, secure=False
+2025-12-10 16:14:56,163 - unified_services.database_service - INFO - Database config: host=54.179.103.192, database=ai_db
+2025-12-10 16:14:56 [info     ] Registering graph with id 'services_manager_agent' graph_id=services_manager_agent
+2025-12-10 16:14:56,171 - uvicorn.error - INFO - Application startup complete.
+2025-12-10 16:14:56,172 - langgraph_runtime_inmem.queue - WARNING - {'event': "Heads up: You've set --allow-blocking, which allows synchronous blocking I/O operations. Be aware that blocking code in one run may tie up the shared event loop and slow down ALL other server operations. For best performance, either convert blocking code to async patterns or set BG_JOB_ISOLATED_LOOPS=true in production to isolate each run in its own event loop.", 'thread_name': 'ThreadPoolExecutor-1_0', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'warning', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T08:14:56.172006Z'}
+2025-12-10 16:14:56,172 - langgraph_runtime_inmem.queue - INFO - {'event': 'Starting 1 background workers', 'thread_name': 'ThreadPoolExecutor-1_0', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'info', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T08:14:56.172342Z'}
+2025-12-10 16:14:56,172 - langgraph_runtime_inmem.queue - INFO - {'max': 1, 'available': 1, 'active': 0, 'event': 'Worker stats', 'thread_name': 'ThreadPoolExecutor-1_1', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'info', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T08:14:56.172503Z'}
+2025-12-10 16:14:56,674 - langgraph_runtime_inmem.queue - INFO - {'n_pending': 0, 'pending_runs_wait_time_max_secs': None, 'pending_runs_wait_time_med_secs': None, 'n_running': 0, 'event': 'Queue stats', 'thread_name': 'ThreadPoolExecutor-1_0', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'info', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-10T08:14:56.674352Z'}

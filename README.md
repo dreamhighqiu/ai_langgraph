@@ -5,6 +5,8 @@ AI 智能平台，整合 RAG + Agent + 测试管理。
 ## 快速开始
 
 ```bash
+i
+
 # 初始化环境
 ./setup.sh
 
@@ -19,6 +21,10 @@ AI 智能平台，整合 RAG + Agent + 测试管理。
 
 # 停止服务
 ./start_all.sh --stop
+
+
+# 重启 LightRAG（配置变更后）
+./start_all.sh --restart lightrag
 ```
 
 ## 整合架构
@@ -64,13 +70,13 @@ AI 智能平台，整合 RAG + Agent + 测试管理。
 
 ## 服务列表
 
-| 服务 | 端口 | 说明 |
-|------|------|------|
-| LightRAG Server | 9621 | 知识库服务（文档、搜索、知识图谱） |
-| MCP Server | 8001 | RAG Anything（MCP 协议服务） |
-| LangGraph Server | 2025 | 智能体后端（Agent 执行） |
-| AI Platform Backend | 9999 | 主后端服务（统一 API、用户、项目等） |
-| AI Platform Frontend | 5174 | 前端 UI |
+| 服务                 | 端口 | 说明                                 |
+| -------------------- | ---- | ------------------------------------ |
+| LightRAG Server      | 9621 | 知识库服务（文档、搜索、知识图谱）   |
+| MCP Server           | 8001 | RAG Anything（MCP 协议服务）         |
+| LangGraph Server     | 2025 | 智能体后端（Agent 执行）             |
+| AI Platform Backend  | 9999 | 主后端服务（统一 API、用户、项目等） |
+| AI Platform Frontend | 5174 | 前端 UI                              |
 
 ## 统一服务 API
 

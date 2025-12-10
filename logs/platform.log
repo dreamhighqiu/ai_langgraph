@@ -1,4 +1,4 @@
-2025-12-10 15:32:52,617 - INFO - 启动应用 - 主机:0.0.0.0 端口:9999
+2025-12-10 16:14:57,151 - INFO - 启动应用 - 主机:0.0.0.0 端口:9999
 🖥️  本地开发环境
 ✅ 加载配置文件: .env.local
 
@@ -14,10 +14,10 @@
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
   ✅ MYSQL_HOST: 54.179.103.192
 主程序环境变量: LOCAL_EMBEDDING_MODEL_NAME=None
-INFO:     2025-12-10 15:32:52 | Will watch for changes in these directories: ['/Users/qiuyunxia/code/ai_langGraph/autogen_study']
-WARNING:  2025-12-10 15:32:52 | "workers" flag is ignored when reloading is enabled.
-INFO:     2025-12-10 15:32:52 | Uvicorn running on http://0.0.0.0:9999 (Press CTRL+C to quit)
-INFO:     2025-12-10 15:32:52 | Started reloader process [3417] using WatchFiles
+INFO:     2025-12-10 16:14:57 | Will watch for changes in these directories: ['/Users/qiuyunxia/code/ai_langGraph/autogen_study']
+WARNING:  2025-12-10 16:14:57 | "workers" flag is ignored when reloading is enabled.
+INFO:     2025-12-10 16:14:57 | Uvicorn running on http://0.0.0.0:9999 (Press CTRL+C to quit)
+INFO:     2025-12-10 16:14:57 | Started reloader process [69952] using WatchFiles
 🖥️  本地开发环境
 ✅ 加载配置文件: .env.local
 
@@ -40,78 +40,583 @@ INFO:     2025-12-10 15:32:52 | Started reloader process [3417] using WatchFiles
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
   ✅ MYSQL_HOST: 54.179.103.192
-INFO:     2025-12-10 15:32:53 | 已初始化自定义Pydantic模型替代tortoise-orm的pydantic_model_creator
+INFO:     2025-12-10 16:14:57 | 已初始化自定义Pydantic模型替代tortoise-orm的pydantic_model_creator
 /Users/qiuyunxia/code/ai_langGraph/autogen_study/.venv/lib/python3.12/site-packages/passlib/pwd.py:16: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   import pkg_resources
-2025-12-10 15:32:53 [INFO] __init__.py:999 - ✅ Milvus 服务初始化成功
-INFO:     2025-12-10 15:32:53 | ✅ Milvus 服务初始化成功
-2025-12-10 15:32:53 [INFO] __init__.py:999 - ✅ MinIO 服务初始化成功
-INFO:     2025-12-10 15:32:53 | ✅ MinIO 服务初始化成功
-2025-12-10 15:32:53 [ERROR] __init__.py:999 - MinIO 服务初始化失败: name 'MinIOService' is not defined
-ERROR:    2025-12-10 15:32:53 | MinIO 服务初始化失败: name 'MinIOService' is not defined
-INFO:     2025-12-10 15:32:54 | 2 changes detected
+2025-12-10 16:14:57 [INFO] __init__.py:999 - ✅ Milvus 服务初始化成功
+INFO:     2025-12-10 16:14:57 | ✅ Milvus 服务初始化成功
+2025-12-10 16:14:57 [INFO] __init__.py:999 - ✅ MinIO 服务初始化成功
+INFO:     2025-12-10 16:14:57 | ✅ MinIO 服务初始化成功
+2025-12-10 16:14:57 [ERROR] __init__.py:999 - MinIO 服务初始化失败: name 'MinIOService' is not defined
+ERROR:    2025-12-10 16:14:57 | MinIO 服务初始化失败: name 'MinIOService' is not defined
+INFO:     2025-12-10 16:14:58 | 2 changes detected
 None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-2025-12-10 15:32:55 [INFO] __init__.py:999 - Connected to MinIO at 54.179.103.192:9100
-INFO:     2025-12-10 15:32:55 | Connected to MinIO at 54.179.103.192:9100
-2025-12-10 15:32:55 [INFO] __init__.py:999 - 🔄 已清空模型客户端缓存
-INFO:     2025-12-10 15:32:55 | 🔄 已清空模型客户端缓存
-2025-12-10 15:32:55 [INFO] __init__.py:999 - 🚀 创建全局模型客户端，当前模型: gpt-4o
-INFO:     2025-12-10 15:32:55 | 🚀 创建全局模型客户端，当前模型: gpt-4o
-2025-12-10 15:32:55 [INFO] __init__.py:999 - ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
-INFO:     2025-12-10 15:32:55 | ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
-2025-12-10 15:32:55 [INFO] __init__.py:999 - 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
+2025-12-10 16:15:00 [INFO] __init__.py:999 - Connected to MinIO at 54.179.103.192:9100
+INFO:     2025-12-10 16:15:00 | Connected to MinIO at 54.179.103.192:9100
+2025-12-10 16:15:00 [INFO] __init__.py:999 - 🔄 已清空模型客户端缓存
+INFO:     2025-12-10 16:15:00 | 🔄 已清空模型客户端缓存
+2025-12-10 16:15:00 [INFO] __init__.py:999 - 🚀 创建全局模型客户端，当前模型: gpt-4o
+INFO:     2025-12-10 16:15:00 | 🚀 创建全局模型客户端，当前模型: gpt-4o
+2025-12-10 16:15:00 [INFO] __init__.py:999 - ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
+INFO:     2025-12-10 16:15:00 | ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
+2025-12-10 16:15:00 [INFO] __init__.py:999 - 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
-INFO:     2025-12-10 15:32:55 | 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
-2025-12-10 15:32:55 [INFO] __init__.py:999 - ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
-INFO:     2025-12-10 15:32:55 | ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
-2025-12-10 15:32:55 [INFO] __init__.py:999 - 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
+INFO:     2025-12-10 16:15:00 | 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: False
+2025-12-10 16:15:00 [INFO] __init__.py:999 - ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
+INFO:     2025-12-10 16:15:00 | ✅ 初始化Mintegral客户端: http://47.253.63.85:3000/v1
+2025-12-10 16:15:00 [INFO] __init__.py:999 - 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
-INFO:     2025-12-10 15:32:55 | 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🎯 [AUTOGEN] 创建模型客户端，输入参数: {'model': 'deepseek-chat', 'api_key': 'sk-06f2b46aca1943ba94cb11396a40c28a', 'base_url': 'https://api.deepseek.com/v1'}
-INFO:     2025-12-10 15:32:56 | 🎯 [AUTOGEN] 创建模型客户端，输入参数: {'model': 'deepseek-chat', 'api_key': 'sk-06f2b46aca1943ba94cb11396a40c28a', 'base_url': 'https://api.deepseek.com/v1'}
-2025-12-10 15:32:56 [INFO] __init__.py:999 - ✅ [AUTOGEN] 使用直接传入的配置字典
-INFO:     2025-12-10 15:32:56 | ✅ [AUTOGEN] 使用直接传入的配置字典
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🚀 [AUTOGEN] 最终使用的模型配置: model=deepseek-chat, base_url=https://api.deepseek.com/v1
-INFO:     2025-12-10 15:32:56 | 🚀 [AUTOGEN] 最终使用的模型配置: model=deepseek-chat, base_url=https://api.deepseek.com/v1
-2025-12-10 15:32:56 [INFO] __init__.py:999 - ✅ [AUTOGEN] 成功创建模型客户端
-INFO:     2025-12-10 15:32:56 | ✅ [AUTOGEN] 成功创建模型客户端
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🔧 [EnhancedChatService] 当前框架配置: deepagents
-INFO:     2025-12-10 15:32:56 | 🔧 [EnhancedChatService] 当前框架配置: deepagents
-2025-12-10 15:32:56 [INFO] __init__.py:999 - ✅ [EnhancedChatService] 使用 DeepAgents (LangChain) 框架
-INFO:     2025-12-10 15:32:56 | ✅ [EnhancedChatService] 使用 DeepAgents (LangChain) 框架
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🚀 [EnhancedChatService] 初始化完成，使用框架: deepagents
-INFO:     2025-12-10 15:32:56 | 🚀 [EnhancedChatService] 初始化完成，使用框架: deepagents
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🔧 [TeamChatService] 当前框架配置: deepagents
-INFO:     2025-12-10 15:32:56 | 🔧 [TeamChatService] 当前框架配置: deepagents
-2025-12-10 15:32:56 [INFO] __init__.py:999 - ✅ [TeamChatService] 使用 DeepAgents (LangChain) 框架
-INFO:     2025-12-10 15:32:56 | ✅ [TeamChatService] 使用 DeepAgents (LangChain) 框架
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🚀 [TeamChatService] 初始化完成，使用框架: deepagents
-INFO:     2025-12-10 15:32:56 | 🚀 [TeamChatService] 初始化完成，使用框架: deepagents
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🔧 [MultiAgentChatService] 当前框架配置: deepagents
-INFO:     2025-12-10 15:32:56 | 🔧 [MultiAgentChatService] 当前框架配置: deepagents
-2025-12-10 15:32:56 [INFO] __init__.py:999 - ✅ [MultiAgentChatService] 使用 DeepAgents (LangChain) 框架
-INFO:     2025-12-10 15:32:56 | ✅ [MultiAgentChatService] 使用 DeepAgents (LangChain) 框架
-2025-12-10 15:32:56 [INFO] __init__.py:999 - 🚀 [MultiAgentChatService] 初始化完成，使用框架: deepagents
-INFO:     2025-12-10 15:32:56 | 🚀 [MultiAgentChatService] 初始化完成，使用框架: deepagents
-INFO:     2025-12-10 15:32:56 | 创建FastAPI应用...
+INFO:     2025-12-10 16:15:00 | 🎯 [客户端创建成功] 模型: gpt-4o, API端点: http://47.253.63.85:3000, JSON模式: True
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🎯 [AUTOGEN] 创建模型客户端，输入参数: {'model': 'deepseek-chat', 'api_key': 'sk-06f2b46aca1943ba94cb11396a40c28a', 'base_url': 'https://api.deepseek.com/v1'}
+INFO:     2025-12-10 16:15:01 | 🎯 [AUTOGEN] 创建模型客户端，输入参数: {'model': 'deepseek-chat', 'api_key': 'sk-06f2b46aca1943ba94cb11396a40c28a', 'base_url': 'https://api.deepseek.com/v1'}
+2025-12-10 16:15:01 [INFO] __init__.py:999 - ✅ [AUTOGEN] 使用直接传入的配置字典
+INFO:     2025-12-10 16:15:01 | ✅ [AUTOGEN] 使用直接传入的配置字典
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🚀 [AUTOGEN] 最终使用的模型配置: model=deepseek-chat, base_url=https://api.deepseek.com/v1
+INFO:     2025-12-10 16:15:01 | 🚀 [AUTOGEN] 最终使用的模型配置: model=deepseek-chat, base_url=https://api.deepseek.com/v1
+2025-12-10 16:15:01 [INFO] __init__.py:999 - ✅ [AUTOGEN] 成功创建模型客户端
+INFO:     2025-12-10 16:15:01 | ✅ [AUTOGEN] 成功创建模型客户端
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🔧 [EnhancedChatService] 当前框架配置: deepagents
+INFO:     2025-12-10 16:15:01 | 🔧 [EnhancedChatService] 当前框架配置: deepagents
+2025-12-10 16:15:01 [INFO] __init__.py:999 - ✅ [EnhancedChatService] 使用 DeepAgents (LangChain) 框架
+INFO:     2025-12-10 16:15:01 | ✅ [EnhancedChatService] 使用 DeepAgents (LangChain) 框架
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🚀 [EnhancedChatService] 初始化完成，使用框架: deepagents
+INFO:     2025-12-10 16:15:01 | 🚀 [EnhancedChatService] 初始化完成，使用框架: deepagents
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🔧 [TeamChatService] 当前框架配置: deepagents
+INFO:     2025-12-10 16:15:01 | 🔧 [TeamChatService] 当前框架配置: deepagents
+2025-12-10 16:15:01 [INFO] __init__.py:999 - ✅ [TeamChatService] 使用 DeepAgents (LangChain) 框架
+INFO:     2025-12-10 16:15:01 | ✅ [TeamChatService] 使用 DeepAgents (LangChain) 框架
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🚀 [TeamChatService] 初始化完成，使用框架: deepagents
+INFO:     2025-12-10 16:15:01 | 🚀 [TeamChatService] 初始化完成，使用框架: deepagents
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🔧 [MultiAgentChatService] 当前框架配置: deepagents
+INFO:     2025-12-10 16:15:01 | 🔧 [MultiAgentChatService] 当前框架配置: deepagents
+2025-12-10 16:15:01 [INFO] __init__.py:999 - ✅ [MultiAgentChatService] 使用 DeepAgents (LangChain) 框架
+INFO:     2025-12-10 16:15:01 | ✅ [MultiAgentChatService] 使用 DeepAgents (LangChain) 框架
+2025-12-10 16:15:01 [INFO] __init__.py:999 - 🚀 [MultiAgentChatService] 初始化完成，使用框架: deepagents
+INFO:     2025-12-10 16:15:01 | 🚀 [MultiAgentChatService] 初始化完成，使用框架: deepagents
+INFO:     2025-12-10 16:15:02 | 创建FastAPI应用...
 静态文件服务已挂载: /Users/qiuyunxia/code/ai_langGraph/autogen_study/static
-INFO:     2025-12-10 15:32:56 | FastAPI应用创建完成
-INFO:     2025-12-10 15:32:56 | Started server process [3422]
-INFO:     2025-12-10 15:32:56 | Waiting for application startup.
-INFO:     2025-12-10 15:32:56 | 应用启动，进入lifespan...
-INFO:     2025-12-10 15:32:56 | 初始化Tortoise ORM连接...
-WARNING:  2025-12-10 15:32:56 | 关闭旧连接时出现警告（这通常是安全的）: DB configuration not initialised. Make sure to call Tortoise.init with a valid configuration before attempting to create connections.
-INFO:     2025-12-10 15:32:57 | Tortoise ORM连接初始化成功，连接测试通过
-INFO:     2025-12-10 15:32:57 | 开始初始化应用数据...
-INFO:     2025-12-10 15:32:57 | init_db: 数据库连接正常，继续初始化应用
-INFO:     2025-12-10 15:32:57 | init_db: 数据库已初始化，跳过init_db步骤
-INFO:     2025-12-10 15:32:57 | init_db: Aerich迁移工具初始化成功
-INFO:     2025-12-10 15:32:57 | init_db: 数据库迁移文件生成成功
-INFO:     2025-12-10 15:32:58 | init_db: 数据库升级成功
-INFO:     2025-12-10 15:32:58 | init_db: 数据库初始化过程完成
-INFO:     2025-12-10 15:32:58 | 应用数据初始化成功
-INFO:     2025-12-10 15:32:58 | 开始初始化菜单配置...
+INFO:     2025-12-10 16:15:02 | FastAPI应用创建完成
+INFO:     2025-12-10 16:15:02 | Started server process [69957]
+INFO:     2025-12-10 16:15:02 | Waiting for application startup.
+INFO:     2025-12-10 16:15:02 | 应用启动，进入lifespan...
+INFO:     2025-12-10 16:15:02 | 初始化Tortoise ORM连接...
+WARNING:  2025-12-10 16:15:02 | 关闭旧连接时出现警告（这通常是安全的）: DB configuration not initialised. Make sure to call Tortoise.init with a valid configuration before attempting to create connections.
+INFO:     2025-12-10 16:15:02 | Tortoise ORM连接初始化成功，连接测试通过
+INFO:     2025-12-10 16:15:02 | 开始初始化应用数据...
+INFO:     2025-12-10 16:15:02 | init_db: 数据库连接正常，继续初始化应用
+INFO:     2025-12-10 16:15:02 | init_db: 数据库已初始化，跳过init_db步骤
+INFO:     2025-12-10 16:15:03 | init_db: Aerich迁移工具初始化成功
+INFO:     2025-12-10 16:15:03 | init_db: 数据库迁移文件生成成功
+INFO:     2025-12-10 16:15:04 | init_db: 数据库升级成功
+INFO:     2025-12-10 16:15:04 | init_db: 数据库初始化过程完成
+INFO:     2025-12-10 16:15:04 | 应用数据初始化成功
+INFO:     2025-12-10 16:15:04 | 开始初始化菜单配置...
 菜单配置已存在，跳过初始化
-INFO:     2025-12-10 15:32:58 | 菜单配置初始化成功
-INFO:     2025-12-10 15:32:58 | 应用启动完成，准备处理请求
-INFO:     2025-12-10 15:32:58 | Application startup complete.
+INFO:     2025-12-10 16:15:04 | 菜单配置初始化成功
+INFO:     2025-12-10 16:15:04 | 应用启动完成，准备处理请求
+INFO:     2025-12-10 16:15:04 | Application startup complete.
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523054-4970973568] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:23 | [1765354523054-4970973568] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65350 - "OPTIONS /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523054-4970973568] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523054-4970973568] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523072-4971279936] 开始处理请求: GET /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:23 | [1765354523072-4971279936] 开始处理请求: GET /api/v1/menu-config/config
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523407-4971048832] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:23 | [1765354523407-4971048832] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65354 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523407-4971048832] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523407-4971048832] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523414-4971086080] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523414-4971086080] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65354 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523414-4971086080] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523414-4971086080] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523414-4971098176] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523414-4971098176] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65355 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523414-4971098176] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523414-4971098176] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523425-4971051712] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:23 | [1765354523425-4971051712] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65355 - "OPTIONS /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523425-4971051712] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523425-4971051712] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523427-4971048832] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:23 | [1765354523427-4971048832] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65356 - "OPTIONS /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523427-4971048832] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523427-4971048832] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523428-4971040576] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523428-4971040576] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65354 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523428-4971040576] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523428-4971040576] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523428-4971170496] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523428-4971170496] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65357 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523428-4971170496] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523428-4971170496] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523429-4823939264] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:23 | [1765354523429-4823939264] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65358 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523429-4823939264] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523429-4823939264] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523447-4971017664] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:23 | [1765354523447-4971017664] 开始处理请求: GET /api/v1/models/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523447-4971048448] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523447-4971048448] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523448-4971098176] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523448-4971098176] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523448-4971086080] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523448-4971086080] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523448-4824049088] 开始处理请求: GET /api/v1/projects/list
+INFO:     2025-12-10 16:15:23 | [1765354523448-4824049088] 开始处理请求: GET /api/v1/projects/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523467-4971332096] 开始处理请求: GET /api/v1/projects/list
+INFO:     2025-12-10 16:15:23 | [1765354523467-4971332096] 开始处理请求: GET /api/v1/projects/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523470-4971335360] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:23 | [1765354523470-4971335360] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523479-4971335872] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:23 | [1765354523479-4971335872] 开始处理请求: GET /api/v1/models/list
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523701-4971897408] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:23 | [1765354523701-4971897408] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:23 | 127.0.0.1:65364 - "OPTIONS /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523701-4971897408] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:23 | [1765354523701-4971897408] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+2025-12-10 16:15:23 [INFO] __init__.py:999 - [1765354523703-4971906496] 开始处理请求: GET /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:23 | [1765354523703-4971906496] 开始处理请求: GET /api/v1/menu-config/config
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524040-4971913664] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:24 | [1765354524040-4971913664] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65371 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524040-4971913664] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524040-4971913664] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524042-4972079040] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524042-4972079040] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65372 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524042-4972079040] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524042-4972079040] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524043-4972082752] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:24 | [1765354524043-4972082752] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65373 - "OPTIONS /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524043-4972082752] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524043-4972082752] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524044-4972151360] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524044-4972151360] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65371 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524044-4972151360] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524044-4972151360] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524046-4971912128] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524046-4971912128] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65374 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524046-4971912128] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524046-4971912128] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524049-4972154944] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:24 | [1765354524049-4972154944] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65372 - "OPTIONS /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524049-4972154944] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524049-4972154944] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524050-4972078784] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524050-4972078784] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65373 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524050-4972078784] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524050-4972078784] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524051-4972082560] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:24 | [1765354524051-4972082560] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:24 | 127.0.0.1:65375 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524051-4972082560] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:24 | [1765354524051-4972082560] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524051-4972157568] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:24 | [1765354524051-4972157568] 开始处理请求: GET /api/v1/models/list
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524052-4971913664] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524052-4971913664] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524054-4972157504] 开始处理请求: GET /api/v1/projects/list
+INFO:     2025-12-10 16:15:24 | [1765354524054-4972157504] 开始处理请求: GET /api/v1/projects/list
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524054-4972079040] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524054-4972079040] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:24 [INFO] __init__.py:999 - [1765354524056-4972082752] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:24 | [1765354524056-4972082752] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:24 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:24 | 超级用户，显示所有知识库
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:24 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:24 | 超级用户，显示所有知识库
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 🚀 获取项目列表请求: page=1, page_size=100, name=''
+INFO:     2025-12-10 16:15:24 | 🚀 获取项目列表请求: page=1, page_size=100, name=''
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+INFO:     2025-12-10 16:15:24 | 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+INFO:     2025-12-10 16:15:24 | 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 👑 管理员用户，可查看所有项目
+INFO:     2025-12-10 16:15:24 | 👑 管理员用户，可查看所有项目
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+<class 'tortoise.models.ModelMeta'>
+INFO:     2025-12-10 16:15:24 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:24 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:24 | 超级用户，显示所有知识库
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 🚀 获取项目列表请求: page=1, page_size=100, name=''
+INFO:     2025-12-10 16:15:25 | 🚀 获取项目列表请求: page=1, page_size=100, name=''
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+INFO:     2025-12-10 16:15:25 | 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+INFO:     2025-12-10 16:15:25 | 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 👑 管理员用户，可查看所有项目
+INFO:     2025-12-10 16:15:25 | 👑 管理员用户，可查看所有项目
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+<class 'tortoise.models.ModelMeta'>
+INFO:     2025-12-10 16:15:25 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:25 | 超级用户，显示所有知识库
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:25 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:25 | 超级用户，显示所有知识库
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:25 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:25 | 超级用户，显示所有知识库
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:25 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:25 | 超级用户，显示所有知识库
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 🚀 获取项目列表请求: page=1, page_size=100, name=''
+INFO:     2025-12-10 16:15:25 | 🚀 获取项目列表请求: page=1, page_size=100, name=''
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+INFO:     2025-12-10 16:15:25 | 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+INFO:     2025-12-10 16:15:25 | 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 👑 管理员用户，可查看所有项目
+INFO:     2025-12-10 16:15:25 | 👑 管理员用户，可查看所有项目
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+<class 'tortoise.models.ModelMeta'>
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:25 | 知识库总数: 5
+2025-12-10 16:15:25 [INFO] __init__.py:999 - [1765354523447-4971017664] 完成请求: GET /api/v1/models/list - 处理时间: 2.03秒
+INFO:     2025-12-10 16:15:25 | [1765354523447-4971017664] 完成请求: GET /api/v1/models/list - 处理时间: 2.03秒
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:25 | 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:25 | 127.0.0.1:65374 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:25 | 查询到 5 条知识库记录
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:25 | 查询到 5 条知识库记录
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 📊 获取到项目总数: 3, 当前页项目数量: 3
+INFO:     2025-12-10 16:15:25 | 📊 获取到项目总数: 3, 当前页项目数量: 3
+2025-12-10 16:15:25 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:25 | 查询到 5 条知识库记录
+2025-12-10 16:15:25 [INFO] __init__.py:999 - [1765354523479-4971335872] 完成请求: GET /api/v1/models/list - 处理时间: 2.31秒
+INFO:     2025-12-10 16:15:25 | [1765354523479-4971335872] 完成请求: GET /api/v1/models/list - 处理时间: 2.31秒
+2025-12-10 16:15:25 [INFO] __init__.py:999 - [1765354525791-4972333504] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:25 | [1765354525791-4972333504] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:25 [INFO] __init__.py:999 - [1765354524051-4972157568] 完成请求: GET /api/v1/models/list - 处理时间: 1.74秒
+INFO:     2025-12-10 16:15:25 | [1765354524051-4972157568] 完成请求: GET /api/v1/models/list - 处理时间: 1.74秒
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 📊 获取到项目总数: 3, 当前页项目数量: 3
+INFO:     2025-12-10 16:15:26 | 📊 获取到项目总数: 3, 当前页项目数量: 3
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 📊 获取到项目总数: 3, 当前页项目数量: 3
+INFO:     2025-12-10 16:15:26 | 📊 获取到项目总数: 3, 当前页项目数量: 3
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:26 | 查询到 5 条知识库记录
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:26 | 查询到 5 条知识库记录
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:26 | 查询到 5 条知识库记录
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:26 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:26 | 超级用户，显示所有知识库
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:26 | 知识库总数: 5
+2025-12-10 16:15:26 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:26 | 查询到 5 条知识库记录
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A38697DC, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A38697DC, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A38697DC, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A38697DC, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A8DFC37F, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A8DFC37F, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A8DFC37F, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96A8DFC37F, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B2D4BA65, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B2D4BA65, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B2D4BA65, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B2D4BA65, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B8171BEA, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B8171BEA, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B8171BEA, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96B8171BEA, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96BD938DB1, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96BD938DB1, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96BD938DB1, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96BD938DB1, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C043133D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C043133D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C043133D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C043133D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C8917501, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C8917501, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C8917501, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:26 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96C8917501, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:26 [INFO] __init__.py:999 - ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:26 | ✅ 项目列表查询成功，返回 3 个项目
+2025-12-10 16:15:26 [WARNING] __init__.py:999 - [1765354523447-4971048448] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.54秒
+WARNING:  2025-12-10 16:15:26 | [1765354523447-4971048448] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.54秒
+2025-12-10 16:15:27 [INFO] __init__.py:999 - ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:27 | ✅ 项目列表查询成功，返回 3 个项目
+2025-12-10 16:15:27 [INFO] __init__.py:999 - ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:27 | ✅ 项目列表查询成功，返回 3 个项目
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523448-4971086080] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.61秒
+WARNING:  2025-12-10 16:15:27 | [1765354523448-4971086080] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.61秒
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523470-4971335360] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.59秒
+WARNING:  2025-12-10 16:15:27 | [1765354523470-4971335360] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.59秒
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523448-4824049088] 慢请求: GET /api/v1/projects/list - 处理时间: 3.61秒
+WARNING:  2025-12-10 16:15:27 | [1765354523448-4824049088] 慢请求: GET /api/v1/projects/list - 处理时间: 3.61秒
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523448-4971098176] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.61秒
+WARNING:  2025-12-10 16:15:27 | [1765354523448-4971098176] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.61秒
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65375 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:27 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96D5D8061B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:27 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96D5D8061B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:27 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96D5D8061B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:27 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC96D5D8061B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:27 [INFO] __init__.py:999 - [1765354527146-4971406912] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:27 | [1765354527146-4971406912] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65372 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65371 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65373 - "GET /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523467-4971332096] 慢请求: GET /api/v1/projects/list - 处理时间: 3.69秒
+WARNING:  2025-12-10 16:15:27 | [1765354523467-4971332096] 慢请求: GET /api/v1/projects/list - 处理时间: 3.69秒
+2025-12-10 16:15:27 [INFO] __init__.py:999 - [1765354527153-4971334976] 开始处理请求: GET /api/v1/projects/list
+INFO:     2025-12-10 16:15:27 | [1765354527153-4971334976] 开始处理请求: GET /api/v1/projects/list
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354524054-4972079040] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.10秒
+WARNING:  2025-12-10 16:15:27 | [1765354524054-4972079040] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.10秒
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354524056-4972082752] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.10秒
+WARNING:  2025-12-10 16:15:27 | [1765354524056-4972082752] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.10秒
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354524052-4971913664] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.11秒
+WARNING:  2025-12-10 16:15:27 | [1765354524052-4971913664] 慢请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 3.11秒
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354524054-4972157504] 慢请求: GET /api/v1/projects/list - 处理时间: 3.11秒
+WARNING:  2025-12-10 16:15:27 | [1765354524054-4972157504] 慢请求: GET /api/v1/projects/list - 处理时间: 3.11秒
+2025-12-10 16:15:27 [INFO] __init__.py:999 - 🚀 获取项目列表请求: page=1, page_size=100, name=''
+INFO:     2025-12-10 16:15:27 | 🚀 获取项目列表请求: page=1, page_size=100, name=''
+2025-12-10 16:15:27 [INFO] __init__.py:999 - 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+INFO:     2025-12-10 16:15:27 | 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+2025-12-10 16:15:27 [INFO] __init__.py:999 - 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+INFO:     2025-12-10 16:15:27 | 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+2025-12-10 16:15:27 [INFO] __init__.py:999 - 👑 管理员用户，可查看所有项目
+INFO:     2025-12-10 16:15:27 | 👑 管理员用户，可查看所有项目
+<class 'tortoise.models.ModelMeta'>
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65374 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523072-4971279936] 慢请求: GET /api/v1/menu-config/config - 处理时间: 4.17秒
+WARNING:  2025-12-10 16:15:27 | [1765354523072-4971279936] 慢请求: GET /api/v1/menu-config/config - 处理时间: 4.17秒
+2025-12-10 16:15:27 [INFO] __init__.py:999 - [1765354525791-4972333504] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 1.45秒
+INFO:     2025-12-10 16:15:27 | [1765354525791-4972333504] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 1.45秒
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65375 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:27 [INFO] __init__.py:999 - [1765354527146-4971406912] 完成请求: GET /api/v1/models/list - 处理时间: 0.10秒
+INFO:     2025-12-10 16:15:27 | [1765354527146-4971406912] 完成请求: GET /api/v1/models/list - 处理时间: 0.10秒
+2025-12-10 16:15:27 [INFO] __init__.py:999 - 📊 获取到项目总数: 3, 当前页项目数量: 3
+INFO:     2025-12-10 16:15:27 | 📊 获取到项目总数: 3, 当前页项目数量: 3
+2025-12-10 16:15:27 [INFO] __init__.py:999 - ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:27 | ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65364 - "GET /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-10 16:15:27 [WARNING] __init__.py:999 - [1765354523703-4971906496] 慢请求: GET /api/v1/menu-config/config - 处理时间: 3.86秒
+WARNING:  2025-12-10 16:15:27 | [1765354523703-4971906496] 慢请求: GET /api/v1/menu-config/config - 处理时间: 3.86秒
+INFO:     2025-12-10 16:15:27 | 127.0.0.1:65373 - "GET /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:27 [INFO] __init__.py:999 - [1765354527153-4971334976] 完成请求: GET /api/v1/projects/list - 处理时间: 0.45秒
+INFO:     2025-12-10 16:15:27 | [1765354527153-4971334976] 完成请求: GET /api/v1/projects/list - 处理时间: 0.45秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538370-4972333632] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:38 | [1765354538370-4972333632] 开始处理请求: OPTIONS /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65373 - "OPTIONS /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538370-4972333632] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538370-4972333632] 完成请求: OPTIONS /api/v1/menu-config/config - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538374-4971814656] 开始处理请求: GET /api/v1/menu-config/config
+INFO:     2025-12-10 16:15:38 | [1765354538374-4971814656] 开始处理请求: GET /api/v1/menu-config/config
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538747-4970977664] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:38 | [1765354538747-4970977664] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65364 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538747-4970977664] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538747-4970977664] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538748-4972412544] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538748-4972412544] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65375 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538748-4972412544] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538748-4972412544] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538749-4971909248] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:38 | [1765354538749-4971909248] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65374 - "OPTIONS /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538749-4971909248] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538749-4971909248] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538750-4971894080] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538750-4971894080] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65371 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538750-4971894080] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538750-4971894080] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538750-4972404736] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:38 | [1765354538750-4972404736] 开始处理请求: OPTIONS /api/v1/models/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65372 - "OPTIONS /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538750-4972404736] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538750-4972404736] 完成请求: OPTIONS /api/v1/models/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538752-4972405760] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538752-4972405760] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65364 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538752-4972405760] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538752-4972405760] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538753-4972339712] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:38 | [1765354538753-4972339712] 开始处理请求: OPTIONS /api/v1/projects/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65375 - "OPTIONS /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538753-4972339712] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538753-4972339712] 完成请求: OPTIONS /api/v1/projects/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538755-4972594368] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538755-4972594368] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65374 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538755-4972594368] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:38 | [1765354538755-4972594368] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538755-4970977408] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:38 | [1765354538755-4970977408] 开始处理请求: GET /api/v1/models/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538756-4971894080] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538756-4971894080] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538762-4972404288] 开始处理请求: GET /api/v1/projects/list
+INFO:     2025-12-10 16:15:38 | [1765354538762-4972404288] 开始处理请求: GET /api/v1/projects/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538764-4971098752] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538764-4971098752] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538764-4972397312] 开始处理请求: GET /api/v1/models/list
+INFO:     2025-12-10 16:15:38 | [1765354538764-4972397312] 开始处理请求: GET /api/v1/models/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:38 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:38 | 超级用户，显示所有知识库
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:38 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:38 | 超级用户，显示所有知识库
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 🚀 获取项目列表请求: page=1, page_size=100, name=''
+INFO:     2025-12-10 16:15:38 | 🚀 获取项目列表请求: page=1, page_size=100, name=''
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+INFO:     2025-12-10 16:15:38 | 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+INFO:     2025-12-10 16:15:38 | 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 👑 管理员用户，可查看所有项目
+INFO:     2025-12-10 16:15:38 | 👑 管理员用户，可查看所有项目
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 知识库总数: 5
+<class 'tortoise.models.ModelMeta'>
+INFO:     2025-12-10 16:15:38 | 知识库总数: 5
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:38 | 知识库总数: 5
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65371 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+INFO:     2025-12-10 16:15:38 | 127.0.0.1:65374 - "GET /api/v1/models/list HTTP/1.1" 200 OK
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538937-4972404736] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:38 | [1765354538937-4972404736] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538938-4970973568] 开始处理请求: GET /api/v1/projects/list
+INFO:     2025-12-10 16:15:38 | [1765354538938-4970973568] 开始处理请求: GET /api/v1/projects/list
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538755-4970977408] 完成请求: GET /api/v1/models/list - 处理时间: 0.19秒
+INFO:     2025-12-10 16:15:38 | [1765354538755-4970977408] 完成请求: GET /api/v1/models/list - 处理时间: 0.19秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - [1765354538764-4972397312] 完成请求: GET /api/v1/models/list - 处理时间: 0.18秒
+INFO:     2025-12-10 16:15:38 | [1765354538764-4972397312] 完成请求: GET /api/v1/models/list - 处理时间: 0.18秒
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:38 | 查询到 5 条知识库记录
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:38 | 查询到 5 条知识库记录
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 📊 获取到项目总数: 3, 当前页项目数量: 3
+INFO:     2025-12-10 16:15:38 | 📊 获取到项目总数: 3, 当前页项目数量: 3
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 🚀 获取项目列表请求: page=1, page_size=100, name=''
+INFO:     2025-12-10 16:15:38 | 🚀 获取项目列表请求: page=1, page_size=100, name=''
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+INFO:     2025-12-10 16:15:38 | 👤 当前用户信息: {'user_id': 1, 'username': 'admin', 'is_superuser': True, 'role': 'admin'}
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+INFO:     2025-12-10 16:15:38 | 🔍 用户权限: user_id=1, is_admin=True, is_superuser=True
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 👑 管理员用户，可查看所有项目
+INFO:     2025-12-10 16:15:38 | 👑 管理员用户，可查看所有项目
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+<class 'tortoise.models.ModelMeta'>
+INFO:     2025-12-10 16:15:38 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:38 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:38 | 超级用户，显示所有知识库
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:39 | 知识库总数: 5
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 📊 获取到项目总数: 3, 当前页项目数量: 3
+INFO:     2025-12-10 16:15:39 | 📊 获取到项目总数: 3, 当前页项目数量: 3
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:39 | 查询到 5 条知识库记录
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A4835692, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A4835692, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A4835692, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A4835692, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A8407A53, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A8407A53, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A8407A53, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99A8407A53, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [INFO] __init__.py:999 - ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:39 | ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:39 | 127.0.0.1:65364 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354539322-4972500928] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:39 | [1765354539322-4972500928] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354538756-4971894080] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.57秒
+INFO:     2025-12-10 16:15:39 | [1765354538756-4971894080] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.57秒
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99B0AB684B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99B0AB684B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99B0AB684B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99B0AB684B, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:39 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:39 | 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:39 | 127.0.0.1:65375 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     2025-12-10 16:15:39 | 127.0.0.1:65372 - "GET /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     2025-12-10 16:15:39 | 127.0.0.1:65373 - "GET /api/v1/menu-config/config HTTP/1.1" 200 OK
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354538764-4971098752] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.65秒
+INFO:     2025-12-10 16:15:39 | [1765354538764-4971098752] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.65秒
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354538762-4972404288] 完成请求: GET /api/v1/projects/list - 处理时间: 0.65秒
+INFO:     2025-12-10 16:15:39 | [1765354538762-4972404288] 完成请求: GET /api/v1/projects/list - 处理时间: 0.65秒
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354538374-4971814656] 完成请求: GET /api/v1/menu-config/config - 处理时间: 1.04秒
+INFO:     2025-12-10 16:15:39 | [1765354538374-4971814656] 完成请求: GET /api/v1/menu-config/config - 处理时间: 1.04秒
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:39 | 知识库总数: 5
+2025-12-10 16:15:39 [INFO] __init__.py:999 - ✅ 项目列表查询成功，返回 3 个项目
+INFO:     2025-12-10 16:15:39 | ✅ 项目列表查询成功，返回 3 个项目
+2025-12-10 16:15:39 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:39 | 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:39 | 127.0.0.1:65374 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     2025-12-10 16:15:39 | 127.0.0.1:65371 - "GET /api/v1/projects/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354538937-4972404736] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.56秒
+INFO:     2025-12-10 16:15:39 | [1765354538937-4972404736] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.56秒
+2025-12-10 16:15:39 [INFO] __init__.py:999 - [1765354538938-4970973568] 完成请求: GET /api/v1/projects/list - 处理时间: 0.56秒
+INFO:     2025-12-10 16:15:39 | [1765354538938-4970973568] 完成请求: GET /api/v1/projects/list - 处理时间: 0.56秒
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99C6550F42, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99C6550F42, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:39 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99C6550F42, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:39 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC99C6550F42, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+INFO:     2025-12-10 16:15:40 | 127.0.0.1:65364 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:40 [INFO] __init__.py:999 - [1765354539322-4972500928] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.75秒
+INFO:     2025-12-10 16:15:40 | [1765354539322-4972500928] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.75秒
+2025-12-10 16:15:43 [INFO] __init__.py:999 - [1765354543865-4972405696] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:43 | [1765354543865-4972405696] 开始处理请求: OPTIONS /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:43 | 127.0.0.1:65364 - "OPTIONS /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:43 [INFO] __init__.py:999 - [1765354543865-4972405696] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+INFO:     2025-12-10 16:15:43 | [1765354543865-4972405696] 完成请求: OPTIONS /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.00秒
+2025-12-10 16:15:43 [INFO] __init__.py:999 - [1765354543868-4972495360] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+INFO:     2025-12-10 16:15:43 | [1765354543868-4972495360] 开始处理请求: GET /api/v1/minio_knowledge/knowledge/list
+2025-12-10 16:15:43 [INFO] __init__.py:999 - 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+INFO:     2025-12-10 16:15:43 | 获取知识库列表，页码: 1, 每页数量: 100, 关键词: None, 项目ID: None, 用户ID: 1, 是否超级用户: True
+2025-12-10 16:15:43 [INFO] __init__.py:999 - 超级用户，显示所有知识库
+INFO:     2025-12-10 16:15:43 | 超级用户，显示所有知识库
+2025-12-10 16:15:43 [INFO] __init__.py:999 - 知识库总数: 5
+INFO:     2025-12-10 16:15:43 | 知识库总数: 5
+2025-12-10 16:15:44 [INFO] __init__.py:999 - 查询到 5 条知识库记录
+INFO:     2025-12-10 16:15:44 | 查询到 5 条知识库记录
+2025-12-10 16:15:44 [ERROR] __init__.py:999 - Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC9ADA9F4B1D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:44 | Failed to get presigned URL: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC9ADA9F4B1D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+2025-12-10 16:15:44 [ERROR] __init__.py:999 - 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC9ADA9F4B1D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+ERROR:    2025-12-10 16:15:44 | 获取文件URL失败: 获取预签名 URL 失败: S3 operation failed; code: NoSuchBucket, message: The specified bucket does not exist, resource: /combo, request_id: 187FCC9ADA9F4B1D, host_id: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8, bucket_name: combo
+INFO:     2025-12-10 16:15:44 | 127.0.0.1:65364 - "GET /api/v1/minio_knowledge/knowledge/list?page=1&page_size=100 HTTP/1.1" 200 OK
+2025-12-10 16:15:44 [INFO] __init__.py:999 - [1765354543868-4972495360] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.65秒
+INFO:     2025-12-10 16:15:44 | [1765354543868-4972495360] 完成请求: GET /api/v1/minio_knowledge/knowledge/list - 处理时间: 0.65秒

@@ -1364,5 +1364,407 @@
     "create_time": 1765186542,
     "update_time": 1765186542,
     "_id": "80c7499c967cfe2be61b7019526cc1cd"
+  },
+  "44baeb618e38b41dcc10b5905d06e23d": {
+    "content_list": [
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记4444/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我是谁 我在那 这个是⼀个旅游⽂档",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记4444/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记4444/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-3859e0813acf736e468fb01b4ce85629",
+    "mtime": 1765352836.3437803,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1765352859.912098,
+    "cache_version": "1.0",
+    "create_time": 1765352859,
+    "update_time": 1765352859,
+    "_id": "44baeb618e38b41dcc10b5905d06e23d"
+  },
+  "5a300ff59e5d48738bdd32e910e765fb": {
+    "content_list": [
+      {
+        "type": "text",
+        "text": "我们出去旅行了",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "我是谁 我在那 这个是⼀个旅游⽂档",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "Air Asia",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANDHI",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "wear airch",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "MAHATHA GANOHI",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_1.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "7400",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "R 500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "MAHATNA GANOHI",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "298169",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "999",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "IN CA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "28805",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "005 €",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1500",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "1900",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "LARANTEED BY THE CENTRAL GOVERNVENTT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "DECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MALIK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "I nECERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "* DANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "RESERVE BANK OF INDIA",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "OLARANTEED BY THE CENTRAL. GOVERNMENT",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "# пток кі",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "NET УАЙ ВТ",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "Ta AN 61",
+        "page_idx": 2
+      },
+      {
+        "type": "text",
+        "text": "MAHATMA GANON!",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "7500",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "4УK0128805",
+        "page_idx": 3
+      },
+      {
+        "type": "text",
+        "text": "VAH 855123",
+        "page_idx": 3
+      },
+      {
+        "type": "image",
+        "img_path": "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_2.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "TEDE IN * VlogJ",
+        "page_idx": 1
+      },
+      {
+        "type": "text",
+        "text": "2023.12.27-2024.01.10",
+        "page_idx": 1
+      }
+    ],
+    "doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "mtime": 1765353396.0317063,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1765353421.052426,
+    "cache_version": "1.0",
+    "create_time": 1765353421,
+    "update_time": 1765353421,
+    "_id": "5a300ff59e5d48738bdd32e910e765fb"
   }
 }

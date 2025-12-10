@@ -101,14 +101,10 @@
     "tokens": 200,
     "content": "我们出去旅行了\n\n我是谁 我在那 这个是⼀个旅游⽂档\n\nAir Asia\n\nMAHATMA GANDHI\n\nwear airch\n\nMAHATHA GANOHI\n\n7400\n\nR 500\n\nMAHATNA GANOHI\n\n298169\n\n999\n\nIN CA\n\n28805\n\n005 €\n\n1500\n\n1900\n\nRESERVE BANK OF INDIA\n\nLARANTEED BY THE CENTRAL GOVERNVENTT\n\nDECERVE BANK OF INDIA\n\nMALIK OF INDIA\n\nI nECERVE BANK OF INDIA\n\n* DANK OF INDIA\n\nRESERVE BANK OF INDIA\n\nOLARANTEED BY THE CENTRAL. GOVERNMENT\n\n# пток кі\n\nNET УАЙ ВТ\n\nTa AN 61\n\nMAHATMA GANON!\n\n7500\n\n4УK0128805\n\nVAH 855123\n\nTEDE IN * VlogJ\n\n2023.12.27-2024.01.10",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-23893ba460e56ad52c98e6a740753391",
-    "file_path": "旅行日记22222.pdf",
-    "llm_cache_list": [
-      "default:extract:78ecc60536708cdd28eefdc65d02d0c5",
-      "default:extract:2ab89354ce013565bf78743e0fdefd21"
-    ],
-    "create_time": 1765189047,
-    "update_time": 1765189096,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [],
+    "update_time": 1765353240,
     "_id": "chunk-700abcb7689920286ae518a3b9fb468d"
   },
   "chunk-1e69f3219864106c5c30ef8763986b78": {
@@ -880,5 +876,35 @@
     "create_time": 1765200798,
     "update_time": 1765200910,
     "_id": "chunk-af1558d4a75682f81f6c2b13df022254"
+  },
+  "chunk-049ac219465c70372e6ca206069217d9": {
+    "tokens": 116,
+    "content": "\nImage Content Analysis:\nImage Path: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_0.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': '/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_0.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 0}",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [],
+    "update_time": 1765353240,
+    "_id": "chunk-049ac219465c70372e6ca206069217d9"
+  },
+  "chunk-f044c4be52b46ff3875844f4552aacf0": {
+    "tokens": 116,
+    "content": "\nImage Content Analysis:\nImage Path: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_1.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': '/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_1.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 0}",
+    "chunk_order_index": 1,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [],
+    "update_time": 1765353240,
+    "_id": "chunk-f044c4be52b46ff3875844f4552aacf0"
+  },
+  "chunk-c9f1723fa497b795a462b09a288a35e9": {
+    "tokens": 116,
+    "content": "\nImage Content Analysis:\nImage Path: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_2.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': '/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_2.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 0}",
+    "chunk_order_index": 2,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [],
+    "update_time": 1765353240,
+    "_id": "chunk-c9f1723fa497b795a462b09a288a35e9"
   }
 }

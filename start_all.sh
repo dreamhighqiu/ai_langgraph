@@ -94,9 +94,9 @@ sync_env_to_subprojects() {
         print_success "  → testing-deep-agents-service/.env"
     fi
     
-    # 同步到 anything-chat-rag
+    # 同步到 anything-chat-rag（包含 EMBEDDING_ 配置）
     if [ -d "$PROJECT_ROOT/anything-chat-rag" ]; then
-        grep -E "^(ONE_API_|LLM_|DEEPSEEK_|MILVUS_|OLLAMA_)" "$ENV_FILE" > "$PROJECT_ROOT/anything-chat-rag/.env" 2>/dev/null || true
+        grep -E "^(ONE_API_|LLM_|DEEPSEEK_|EMBEDDING_|MILVUS_|OLLAMA_)" "$ENV_FILE" > "$PROJECT_ROOT/anything-chat-rag/.env" 2>/dev/null || true
         print_success "  → anything-chat-rag/.env"
     fi
     

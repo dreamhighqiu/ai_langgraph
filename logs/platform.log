@@ -4213,3 +4213,18 @@ INFO:     2025-12-10 14:29:50 | 127.0.0.1:59801 - "GET /api/v1/projects/list?pag
 INFO:     2025-12-10 14:29:50 | [1765348188977-5455057792] 完成请求: GET /api/v1/projects/list - 处理时间: 1.27秒
 2025-12-10 14:29:50 [INFO] __init__.py:999 - [1765348189029-5455067456] 完成请求: GET /api/v1/projects/list - 处理时间: 1.22秒
 INFO:     2025-12-10 14:29:50 | [1765348189029-5455067456] 完成请求: GET /api/v1/projects/list - 处理时间: 1.22秒
+INFO:     2025-12-10 14:37:31 | 1 change detected
+INFO:     2025-12-10 14:37:35 | 1 change detected
+INFO:     2025-12-10 14:37:38 | 1 change detected
+INFO:     2025-12-10 14:37:48 | 1 change detected
+INFO:     2025-12-10 14:38:03 | 1 change detected
+INFO:     2025-12-10 14:38:04 | 1 change detected
+INFO:     2025-12-10 14:38:07 | 1 change detected
+INFO:     2025-12-10 14:38:07 | 1 change detected
+INFO:     2025-12-10 14:38:21 | 2 changes detected
+INFO:     2025-12-10 14:38:39 | 1 change detected
+INFO:     2025-12-10 14:38:39 | 1 change detected
+INFO:     2025-12-10 14:38:46 | 1 change detected
+INFO:     2025-12-10 14:38:54 | 1 change detected
+INFO:     2025-12-10 14:38:55 | 1 change detected
+INFO:     2025-12-10 14:39:12 | 1 change detected

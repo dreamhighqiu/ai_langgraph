@@ -22,3 +22,12 @@ $ vite
 2:28:10 PM [vite] hmr update /src/pages/Services/MilvusManagement.tsx
 2:28:10 PM [vite] hmr invalidate /src/router/index.tsx Could not Fast Refresh ("routes" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
 2:28:10 PM [vite] hmr update /src/App.tsx
+2:43:55 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:43:59 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:43:59 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:44:10 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:44:40 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:45:08 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:45:18 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:45:18 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+2:47:16 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx

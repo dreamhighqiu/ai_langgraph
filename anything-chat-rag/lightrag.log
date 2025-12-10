@@ -4069,3 +4069,31 @@ neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.Synta
 2025-12-10 14:48:16,773 - uvicorn.access - INFO - 127.0.0.1:50234 - "GET /openapi.json HTTP/1.1" 200
 2025-12-10 14:48:31,659 - uvicorn.access - INFO - 127.0.0.1:50368 - "POST /documents/upload HTTP/1.1" 200
 2025-12-10 14:50:40,805 - uvicorn.access - INFO - 127.0.0.1:51157 - "GET /openapi.json HTTP/1.1" 200
+2025-12-10 15:32:36,571 - lightrag - INFO - Frontend build is up-to-date
+2025-12-10 15:32:36,572 - lightrag - INFO - Ollama LLM Options: {}
+2025-12-10 15:32:36,572 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-10 15:32:36,666 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-12-10 15:32:36,666 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-10 15:32:36,666 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-10 15:32:36,666 - lightrag - INFO - Reranking is disabled
+2025-12-10 15:32:36,666 - lightrag - INFO - Vision model initialized: deepseek-chat using ollama provider
+2025-12-10 15:32:37,007 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-10 15:32:37,016 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-10 15:32:37,016 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
+2025-12-10 15:32:37,077 - uvicorn.error - INFO - Started server process [2722]
+2025-12-10 15:32:37,077 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-10 15:32:37,079 - lightrag - INFO - [] Process 2722 KV load full_docs with 52 records
+2025-12-10 15:32:37,080 - lightrag - INFO - [] Process 2722 KV load text_chunks with 63 records
+2025-12-10 15:32:37,081 - lightrag - INFO - [] Process 2722 KV load full_entities with 52 records
+2025-12-10 15:32:37,081 - lightrag - INFO - [] Process 2722 KV load full_relations with 52 records
+2025-12-10 15:32:37,083 - lightrag - INFO - [] Process 2722 KV load entity_chunks with 1000 records
+2025-12-10 15:32:37,085 - lightrag - INFO - [] Process 2722 KV load relation_chunks with 1262 records
+2025-12-10 15:32:37,097 - lightrag - INFO - [] Process 2722 KV load llm_response_cache with 178 records
+2025-12-10 15:32:37,098 - lightrag - INFO - [] Process 2722 doc status load doc_status with 52 records
+2025-12-10 15:32:37,098 - uvicorn.error - INFO - Application startup complete.
+2025-12-10 15:32:37,099 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-10 15:32:45,004 - uvicorn.access - INFO - 127.0.0.1:50389 - "GET /documents/milvus/collections?database=lightrag HTTP/1.1" 404
+2025-12-10 15:32:53,345 - uvicorn.access - INFO - 127.0.0.1:50447 - "GET /docs HTTP/1.1" 200
+2025-12-10 15:32:53,472 - uvicorn.access - INFO - 127.0.0.1:50447 - "GET /openapi.json HTTP/1.1" 200
+2025-12-10 15:32:59,838 - uvicorn.access - INFO - 127.0.0.1:50447 - "GET /docs HTTP/1.1" 200
+2025-12-10 15:32:59,906 - uvicorn.access - INFO - 127.0.0.1:50447 - "GET /openapi.json HTTP/1.1" 200

@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2025-12-10 14:21:43,029 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2025-12-10 15:32:38,829 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ╭──────────────────────────────────────────────────────────────────────────────╮
@@ -21,17 +21,17 @@
 ╰──────────────────────────────────────────────────────────────────────────────╯
 
 
-2025-12-10 14:21:43,036 - __main__ - INFO - Starting RAG Anything MCP Server...
-2025-12-10 14:21:43,038 - __main__ - INFO - Configuration loaded
-2025-12-10 14:21:43,038 - __main__ - INFO -   LLM Provider: deepseek
-2025-12-10 14:21:43,038 - __main__ - INFO -   LLM Model: deepseek-chat
-2025-12-10 14:21:43,038 - __main__ - INFO -   RAG Parser: docling
-2025-12-10 14:21:43,038 - __main__ - INFO - Creating LLM model function...
-2025-12-10 14:21:43,038 - __main__ - INFO - Creating vision model function...
-2025-12-10 14:21:43,038 - __main__ - INFO - Creating embedding function...
-2025-12-10 14:21:43,038 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2025-12-10 14:21:43,038 - __main__ - INFO - Creating RAGAnything connector...
-2025-12-10 14:21:43,038 - __main__ - INFO - Initializing RAGAnything...
+2025-12-10 15:32:38,839 - __main__ - INFO - Starting RAG Anything MCP Server...
+2025-12-10 15:32:38,841 - __main__ - INFO - Configuration loaded
+2025-12-10 15:32:38,841 - __main__ - INFO -   LLM Provider: deepseek
+2025-12-10 15:32:38,841 - __main__ - INFO -   LLM Model: deepseek-chat
+2025-12-10 15:32:38,841 - __main__ - INFO -   RAG Parser: docling
+2025-12-10 15:32:38,841 - __main__ - INFO - Creating LLM model function...
+2025-12-10 15:32:38,841 - __main__ - INFO - Creating vision model function...
+2025-12-10 15:32:38,841 - __main__ - INFO - Creating embedding function...
+2025-12-10 15:32:38,841 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2025-12-10 15:32:38,841 - __main__ - INFO - Creating RAGAnything connector...
+2025-12-10 15:32:38,841 - __main__ - INFO - Initializing RAGAnything...
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ./rag_storage
 INFO:   Parser: docling
@@ -41,30 +41,30 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': './rag_storage'}
 INFO: [] Created new empty graph file: ./rag_storage/graph_chunk_entity_relation.graphml
-2025-12-10 14:21:48,796 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_entities.json'} 0 data
-2025-12-10 14:21:48,796 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_relationships.json'} 0 data
-2025-12-10 14:21:48,796 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_chunks.json'} 0 data
-INFO: [] Process 15409 KV load full_docs with 0 records
-INFO: [] Process 15409 KV load text_chunks with 0 records
-INFO: [] Process 15409 KV load full_entities with 0 records
-INFO: [] Process 15409 KV load full_relations with 0 records
-INFO: [] Process 15409 KV load entity_chunks with 0 records
-INFO: [] Process 15409 KV load relation_chunks with 0 records
-INFO: [] Process 15409 KV load llm_response_cache with 0 records
-INFO: [] Process 15409 doc status load doc_status with 0 records
-INFO: [] Process 15409 KV load parse_cache with 0 records
+2025-12-10 15:32:44,034 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_entities.json'} 0 data
+2025-12-10 15:32:44,034 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_relationships.json'} 0 data
+2025-12-10 15:32:44,034 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_chunks.json'} 0 data
+INFO: [] Process 2868 KV load full_docs with 0 records
+INFO: [] Process 2868 KV load text_chunks with 0 records
+INFO: [] Process 2868 KV load full_entities with 0 records
+INFO: [] Process 2868 KV load full_relations with 0 records
+INFO: [] Process 2868 KV load entity_chunks with 0 records
+INFO: [] Process 2868 KV load relation_chunks with 0 records
+INFO: [] Process 2868 KV load llm_response_cache with 0 records
+INFO: [] Process 2868 doc status load doc_status with 0 records
+INFO: [] Process 2868 KV load parse_cache with 0 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2025-12-10 14:21:48,798 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2025-12-10 14:21:48,798 - __main__ - INFO - RAG Anything initialized successfully
-2025-12-10 14:21:48,798 - __main__ - INFO -   Working Directory: ./rag_storage
-2025-12-10 14:21:48,798 - __main__ - INFO -   Parser: docling
-[12/10/25 14:21:48] INFO     Starting MCP server '但问企业级RAG'  server.py:2058
+2025-12-10 15:32:44,036 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2025-12-10 15:32:44,036 - __main__ - INFO - RAG Anything initialized successfully
+2025-12-10 15:32:44,036 - __main__ - INFO -   Working Directory: ./rag_storage
+2025-12-10 15:32:44,036 - __main__ - INFO -   Parser: docling
+[12/10/25 15:32:44] INFO     Starting MCP server '但问企业级RAG'  server.py:2058
                              with transport 'sse' on                            
                              http://0.0.0.0:8001/sse                            
-INFO:     Started server process [15409]
+INFO:     Started server process [2868]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)

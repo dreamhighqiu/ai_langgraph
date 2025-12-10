@@ -36,12 +36,15 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 # 数据库配置 - 在 load_dotenv() 之后读取
+# 优先使用 AI_MYSQL_* 配置（用于 unified_services），其次使用 MYSQL_* 配置
 DATABASE_URL = os.getenv("DATABASE_URL", "")
-MYSQL_HOST = os.getenv("MYSQL_HOST", "localhost")
-MYSQL_PORT = int(os.getenv("MYSQL_PORT", "3306"))
-MYSQL_USER = os.getenv("MYSQL_USER", "root")
-MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "")
-MYSQL_DB = os.getenv("MYSQL_DB", "ai_db")
+MYSQL_HOST = os.getenv("AI_MYSQL_HOST", os.getenv("MYSQL_HOST", "54.179.103.192"))
+MYSQL_PORT = int(os.getenv("AI_MYSQL_PORT", os.getenv("MYSQL_PORT", "3306")))
+MYSQL_USER = os.getenv("AI_MYSQL_USER", os.getenv("MYSQL_USER", "ai_mysql"))
+MYSQL_PASSWORD = os.getenv("AI_MYSQL_PASSWORD", os.getenv("MYSQL_PASSWORD", "Qazwsx123"))
+MYSQL_DB = os.getenv("AI_MYSQL_DB", os.getenv("MYSQL_DB", "ai_db"))
+
+logger.info(f"Database config: host={MYSQL_HOST}, database={MYSQL_DB}")
 
 
 @dataclass
@@ -425,10 +428,27 @@ class DatabaseService:
     # 健康检查
     # =========================================================================
     
-    async def health_check(self) -> Dict[str, Any]:
-        """健康检查."""
+    async def health_check(self, auto_init: bool = True) -> Dict[str, Any]:
+        """健康检查.
+        
+        Args:
+            auto_init: 如果未初始化，是否自动尝试初始化连接
+        """
         try:
             from tortoise import Tortoise
+            
+            # 如果未初始化且允许自动初始化，尝试初始化连接
+            if not self._initialized and auto_init:
+                logger.info(f"Auto-initializing database connection to {self.config.host}...")
+                init_success = await self.init()
+                if not init_success:
+                    return {
+                        "status": "init_failed",
+                        "host": self.config.host,
+                        "port": self.config.port,
+                        "database": self.config.database,
+                        "error": "Failed to initialize database connection",
+                    }
             
             if not self._initialized:
                 return {
@@ -448,9 +468,11 @@ class DatabaseService:
             }
             
         except Exception as e:
+            logger.error(f"Database health check failed: {e}")
             return {
                 "status": "unhealthy",
                 "host": self.config.host,
+                "port": self.config.port,
                 "database": self.config.database,
                 "error": str(e),
             }

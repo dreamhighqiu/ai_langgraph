@@ -1808,5 +1808,45 @@
     "create_time": 1765200910,
     "update_time": 1765200910,
     "_id": "default:extract:087db2c4e704e688b61d71048f7c6673"
+  },
+  "hybrid:keywords:563e48178e9bcad30ee0c8f63c2ce82c": {
+    "return": "{\"high_level_keywords\": [\"LLM\", \"\\u5b9a\\u4e49\", \"\\u89e3\\u91ca\", \"\\u4eba\\u5de5\\u667a\\u80fd\"], \"low_level_keywords\": [\"\\u5927\\u8bed\\u8a00\\u6a21\\u578b\", \"Large Language Model\", \"\\u81ea\\u7136\\u8bed\\u8a00\\u5904\\u7406\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "什么是 LLM",
+    "queryparam": {
+      "mode": "hybrid",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765275355,
+    "update_time": 1765275355,
+    "_id": "hybrid:keywords:563e48178e9bcad30ee0c8f63c2ce82c"
+  },
+  "naive:query:9ae2031288131d9f49d72acb13f84121": {
+    "return": "根据提供的上下文信息，我无法找到关于“注册流程”的具体说明。文档内容主要涉及旅行日记和大型语言模型（LLM）的培训课程大纲，其中并未包含任何系统、服务或平台的注册步骤。\n\n如果您询问的是与**旅行**或**LLM课程**相关的注册流程，建议您查阅其他专门的资料或联系相关服务提供商以获取准确信息。\n\n### References\n\n- [1] 旅行日记2.pdf\n- [2] llm_course.pdf",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "注册流程是什么",
+    "queryparam": {
+      "mode": "naive",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765275521,
+    "update_time": 1765275521,
+    "_id": "naive:query:9ae2031288131d9f49d72acb13f84121"
   }
 }

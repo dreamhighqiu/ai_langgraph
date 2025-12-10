@@ -32,12 +32,38 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
+
+def parse_minio_endpoint(endpoint: str) -> tuple[str, bool]:
+    """解析 MinIO endpoint，返回 (host:port, secure).
+    
+    支持格式：
+    - http://host:port -> (host:port, False)
+    - https://host:port -> (host:port, True)
+    - host:port -> (host:port, False)
+    """
+    secure = False
+    if endpoint.startswith("https://"):
+        endpoint = endpoint[8:]
+        secure = True
+    elif endpoint.startswith("http://"):
+        endpoint = endpoint[7:]
+        secure = False
+    
+    # 移除尾部斜杠
+    endpoint = endpoint.rstrip("/")
+    return endpoint, secure
+
+
 # 配置 - 在 load_dotenv() 之后读取
-MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "localhost:9000")
+_raw_endpoint = os.getenv("MINIO_ENDPOINT", "localhost:9000")
+MINIO_ENDPOINT, _endpoint_secure = parse_minio_endpoint(_raw_endpoint)
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "minioadmin")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY", "minioadmin")
-MINIO_SECURE = os.getenv("MINIO_SECURE", "false").lower() == "true"
+# 如果 endpoint 带 https:// 则自动设置 secure=True
+MINIO_SECURE = os.getenv("MINIO_SECURE", str(_endpoint_secure)).lower() == "true"
 MINIO_DEFAULT_BUCKET = os.getenv("MINIO_DEFAULT_BUCKET", "knowledge-base")
+
+logger.info(f"MinIO config: endpoint={MINIO_ENDPOINT}, secure={MINIO_SECURE}")
 
 
 @dataclass

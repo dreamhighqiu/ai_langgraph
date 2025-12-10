@@ -85,16 +85,18 @@ INFO: Vision model initialized: gpt-4o using openai provider
 INFO: [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
-INFO: Started server process [70328]
+INFO: Started server process [95021]
 INFO: Waiting for application startup.
-INFO: [] Process 70328 KV load full_docs with 52 records
-INFO: [] Process 70328 KV load text_chunks with 63 records
-INFO: [] Process 70328 KV load full_entities with 52 records
-INFO: [] Process 70328 KV load full_relations with 52 records
-INFO: [] Process 70328 KV load entity_chunks with 1000 records
-INFO: [] Process 70328 KV load relation_chunks with 1262 records
-INFO: [] Process 70328 KV load llm_response_cache with 176 records
-INFO: [] Process 70328 doc status load doc_status with 52 records
+INFO: [] Process 95021 KV load full_docs with 52 records
+INFO: [] Process 95021 KV load text_chunks with 63 records
+INFO: [] Process 95021 KV load full_entities with 52 records
+INFO: [] Process 95021 KV load full_relations with 52 records
+INFO: [] Process 95021 KV load entity_chunks with 1000 records
+INFO: [] Process 95021 KV load relation_chunks with 1262 records
+INFO: [] Process 95021 KV load llm_response_cache with 178 records
+INFO: [] Process 95021 doc status load doc_status with 52 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:55567 - "GET /documents/status_counts HTTP/1.1" 200
+INFO: 127.0.0.1:55990 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:55990 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
+INFO: 127.0.0.1:55990 - "GET /openapi.json HTTP/1.1" 200

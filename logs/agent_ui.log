@@ -10,7 +10,4 @@ $ next dev --turbopack
    - Network:      http://10.192.202.185:3200
 
  ✓ Starting...
- ✓ Ready in 959ms
- ○ Compiling / ...
- ✓ Compiled / in 4.3s
- GET /?assistantId=services_manager_agent&threadId=e22bcb6c-b686-4b4c-a2da-3ce2d6c86bbc 200 in 4849ms
+ ✓ Ready in 977ms

@@ -3995,3 +3995,61 @@ neo4j.exceptions.CypherSyntaxError: {neo4j_code: Neo.ClientError.Statement.Synta
 2025-12-10 13:36:58,729 - uvicorn.access - INFO - 127.0.0.1:55990 - "GET /docs HTTP/1.1" 200
 2025-12-10 13:36:58,776 - uvicorn.access - INFO - 127.0.0.1:55990 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
 2025-12-10 13:36:58,945 - uvicorn.access - INFO - 127.0.0.1:55990 - "GET /openapi.json HTTP/1.1" 200
+2025-12-10 14:14:00,935 - uvicorn.error - INFO - Shutting down
+2025-12-10 14:14:01,038 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-10 14:14:01,039 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-10 14:14:01,040 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-10 14:14:01,040 - uvicorn.error - INFO - Finished server process [95021]
+2025-12-10 14:14:04,992 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-10 14:14:04,992 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-10 14:14:05,061 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-10 14:14:05,061 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-10 14:14:05,061 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-10 14:14:05,061 - lightrag - INFO - Reranking is disabled
+2025-12-10 14:14:05,274 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-10 14:14:05,584 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-10 14:14:05,594 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-10 14:14:05,594 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-10 14:14:05,652 - uvicorn.error - INFO - Started server process [12019]
+2025-12-10 14:14:05,652 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-10 14:14:05,654 - lightrag - INFO - [] Process 12019 KV load full_docs with 52 records
+2025-12-10 14:14:05,655 - lightrag - INFO - [] Process 12019 KV load text_chunks with 63 records
+2025-12-10 14:14:05,655 - lightrag - INFO - [] Process 12019 KV load full_entities with 52 records
+2025-12-10 14:14:05,656 - lightrag - INFO - [] Process 12019 KV load full_relations with 52 records
+2025-12-10 14:14:05,657 - lightrag - INFO - [] Process 12019 KV load entity_chunks with 1000 records
+2025-12-10 14:14:05,660 - lightrag - INFO - [] Process 12019 KV load relation_chunks with 1262 records
+2025-12-10 14:14:05,671 - lightrag - INFO - [] Process 12019 KV load llm_response_cache with 178 records
+2025-12-10 14:14:05,671 - lightrag - INFO - [] Process 12019 doc status load doc_status with 52 records
+2025-12-10 14:14:05,672 - uvicorn.error - INFO - Application startup complete.
+2025-12-10 14:14:05,674 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-10 14:21:33,805 - uvicorn.access - INFO - 127.0.0.1:56705 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-10 14:21:35,495 - uvicorn.error - INFO - Shutting down
+2025-12-10 14:21:35,597 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-10 14:21:35,597 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-10 14:21:35,597 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-10 14:21:35,598 - uvicorn.error - INFO - Finished server process [12019]
+2025-12-10 14:21:40,805 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-10 14:21:40,806 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-10 14:21:40,886 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-10 14:21:40,886 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-10 14:21:40,886 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-10 14:21:40,886 - lightrag - INFO - Reranking is disabled
+2025-12-10 14:21:41,125 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-10 14:21:41,444 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-10 14:21:41,459 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-10 14:21:41,459 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-10 14:21:41,514 - uvicorn.error - INFO - Started server process [15387]
+2025-12-10 14:21:41,514 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-10 14:21:41,515 - lightrag - INFO - [] Process 15387 KV load full_docs with 52 records
+2025-12-10 14:21:41,517 - lightrag - INFO - [] Process 15387 KV load text_chunks with 63 records
+2025-12-10 14:21:41,518 - lightrag - INFO - [] Process 15387 KV load full_entities with 52 records
+2025-12-10 14:21:41,519 - lightrag - INFO - [] Process 15387 KV load full_relations with 52 records
+2025-12-10 14:21:41,520 - lightrag - INFO - [] Process 15387 KV load entity_chunks with 1000 records
+2025-12-10 14:21:41,523 - lightrag - INFO - [] Process 15387 KV load relation_chunks with 1262 records
+2025-12-10 14:21:41,534 - lightrag - INFO - [] Process 15387 KV load llm_response_cache with 178 records
+2025-12-10 14:21:41,535 - lightrag - INFO - [] Process 15387 doc status load doc_status with 52 records
+2025-12-10 14:21:41,537 - uvicorn.error - INFO - Application startup complete.
+2025-12-10 14:21:41,540 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-10 14:22:35,984 - uvicorn.access - INFO - 127.0.0.1:57152 - "GET /documents/status_counts HTTP/1.1" 200
+2025-12-10 14:35:10,885 - uvicorn.access - INFO - 127.0.0.1:61959 - "GET /openapi.json HTTP/1.1" 200
+2025-12-10 14:35:23,514 - uvicorn.access - INFO - 127.0.0.1:62041 - "GET /openapi.json HTTP/1.1" 200

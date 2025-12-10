@@ -3,7 +3,23 @@ warning ../package.json: No license field
 warning ../../../package.json: No license field
 $ vite
 
-  VITE v4.5.14  ready in 210 ms
+  VITE v4.5.14  ready in 208 ms
 
   ➜  Local:   http://localhost:3100/
   ➜  Network: http://10.192.202.185:3100/
+4:23:48 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+4:23:59 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx
+4:37:49 PM [vite] hmr update /src/App.tsx, /src/router/index.tsx, /src/components/layout/MainLayout/index.tsx, /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/components/common/ModelSelector/index.tsx, /src/pages/TestCases/testcase_manage.tsx
+4:37:50 PM [vite] hmr invalidate /src/router/index.tsx Could not Fast Refresh ("routes" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:37:50 PM [vite] hmr update /src/App.tsx
+4:38:00 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/pages/TestCases/testcase_manage.tsx
+4:38:02 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/pages/TestCases/testcase_manage.tsx
+4:38:04 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/pages/TestCases/testcase_manage.tsx
+4:38:20 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx
+4:38:51 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/pages/TestCases/testcase_manage.tsx
+4:38:51 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx
+4:38:51 PM [vite] hmr update /src/App.tsx, /src/router/index.tsx, /src/components/layout/MainLayout/index.tsx, /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/components/common/ModelSelector/index.tsx, /src/pages/TestCases/testcase_manage.tsx
+4:38:51 PM [vite] hmr invalidate /src/router/index.tsx Could not Fast Refresh ("routes" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+4:38:51 PM [vite] hmr update /src/App.tsx
+4:49:57 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/pages/Projects/MinIOManagement.tsx, /src/pages/Projects/OriginalRequirementsFile.tsx, /src/components/ProjectSelector.tsx, /src/pages/Requirements/OriginalRequirements/index.tsx
+4:50:14 PM [vite] hmr update /src/pages/Projects/KnowledgeManagement.tsx, /src/pages/Projects/Simple.tsx, /src/pages/Projects/MinIOManagement.tsx, /src/pages/Projects/OriginalRequirementsFile.tsx, /src/components/ProjectSelector.tsx, /src/pages/Requirements/OriginalRequirements/index.tsx

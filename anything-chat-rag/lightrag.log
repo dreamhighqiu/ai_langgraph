@@ -351,3 +351,85 @@ ConnectionError: Failed to connect to Ollama. Please check that Ollama is downlo
 2025-12-10 16:23:34,529 - lightrag - INFO - In memory DB persist to disk
 2025-12-10 16:23:34,530 - lightrag - INFO - Document deleted 1/1: doc-78fb7df08ce980cbf869a712b992bba9[旅行日记5555.pdf]
 2025-12-10 16:23:34,530 - lightrag - INFO - Successfully deleted input_dir file: 旅行日记5555.pdf
+2025-12-10 18:22:11,230 - uvicorn.error - INFO - Shutting down
+2025-12-10 18:22:15,865 - lightrag - INFO - Frontend build is up-to-date
+2025-12-10 18:22:15,865 - lightrag - INFO - Ollama LLM Options: {}
+2025-12-10 18:22:15,865 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-10 18:22:15,934 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-12-10 18:22:15,934 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-10 18:22:15,934 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-10 18:22:15,934 - lightrag - INFO - Reranking is disabled
+2025-12-10 18:22:15,934 - lightrag - INFO - Vision model initialized: deepseek-chat using ollama provider
+2025-12-10 18:22:16,214 - lightrag - INFO - [] Loaded graph from /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+2025-12-10 18:22:16,223 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-10 18:22:16,224 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
+2025-12-10 18:22:16,312 - uvicorn.error - INFO - Started server process [72643]
+2025-12-10 18:22:16,312 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-10 18:22:16,313 - lightrag - INFO - [] Process 72643 KV load full_docs with 52 records
+2025-12-10 18:22:16,315 - lightrag - INFO - [] Process 72643 KV load text_chunks with 66 records
+2025-12-10 18:22:16,315 - lightrag - INFO - [] Process 72643 KV load full_entities with 52 records
+2025-12-10 18:22:16,316 - lightrag - INFO - [] Process 72643 KV load full_relations with 52 records
+2025-12-10 18:22:16,318 - lightrag - INFO - [] Process 72643 KV load entity_chunks with 1000 records
+2025-12-10 18:22:16,321 - lightrag - INFO - [] Process 72643 KV load relation_chunks with 1262 records
+2025-12-10 18:22:16,331 - lightrag - INFO - [] Process 72643 KV load llm_response_cache with 178 records
+2025-12-10 18:22:16,331 - lightrag - INFO - [] Process 72643 doc status load doc_status with 52 records
+2025-12-10 18:22:16,331 - uvicorn.error - INFO - Application startup complete.
+2025-12-10 18:22:16,333 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-11 10:18:44,512 - uvicorn.error - INFO - Shutting down
+2025-12-11 10:18:44,616 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-11 10:18:44,617 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-11 10:18:44,618 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-11 10:18:44,619 - uvicorn.error - INFO - Finished server process [72643]
+2025-12-11 10:18:48,380 - lightrag - INFO - Frontend build is up-to-date
+2025-12-11 10:18:48,381 - lightrag - INFO - Ollama LLM Options: {}
+2025-12-11 10:18:48,381 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-11 10:18:48,596 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-12-11 10:18:48,596 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-11 10:18:48,596 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-11 10:18:48,596 - lightrag - INFO - Reranking is disabled
+2025-12-11 10:18:48,596 - lightrag - INFO - Vision model initialized: deepseek-chat using ollama provider
+2025-12-11 10:18:48,882 - lightrag - INFO - [] Loaded graph from /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+2025-12-11 10:18:48,891 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-11 10:18:48,891 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
+2025-12-11 10:18:48,977 - uvicorn.error - INFO - Started server process [79432]
+2025-12-11 10:18:48,977 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-11 10:18:48,979 - lightrag - INFO - [] Process 79432 KV load full_docs with 52 records
+2025-12-11 10:18:48,980 - lightrag - INFO - [] Process 79432 KV load text_chunks with 66 records
+2025-12-11 10:18:48,981 - lightrag - INFO - [] Process 79432 KV load full_entities with 52 records
+2025-12-11 10:18:48,982 - lightrag - INFO - [] Process 79432 KV load full_relations with 52 records
+2025-12-11 10:18:48,984 - lightrag - INFO - [] Process 79432 KV load entity_chunks with 1000 records
+2025-12-11 10:18:48,986 - lightrag - INFO - [] Process 79432 KV load relation_chunks with 1262 records
+2025-12-11 10:18:48,997 - lightrag - INFO - [] Process 79432 KV load llm_response_cache with 178 records
+2025-12-11 10:18:48,997 - lightrag - INFO - [] Process 79432 doc status load doc_status with 52 records
+2025-12-11 10:18:48,997 - uvicorn.error - INFO - Application startup complete.
+2025-12-11 10:18:48,999 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-11 10:52:37,525 - uvicorn.error - INFO - Shutting down
+2025-12-11 10:52:42,472 - lightrag - INFO - Frontend build is up-to-date
+2025-12-11 10:52:42,472 - lightrag - INFO - Ollama LLM Options: {}
+2025-12-11 10:52:42,472 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-11 10:52:42,551 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2025-12-11 10:52:42,551 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-11 10:52:42,551 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-11 10:52:42,551 - lightrag - INFO - Reranking is disabled
+2025-12-11 10:52:42,551 - lightrag - INFO - Vision model initialized: deepseek-chat using ollama provider
+2025-12-11 10:52:42,856 - lightrag - INFO - [] Loaded graph from /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+2025-12-11 10:52:42,865 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-11 10:52:42,865 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
+2025-12-11 10:52:42,962 - uvicorn.error - INFO - Started server process [27766]
+2025-12-11 10:52:42,962 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-11 10:52:42,963 - lightrag - INFO - [] Process 27766 KV load full_docs with 52 records
+2025-12-11 10:52:42,965 - lightrag - INFO - [] Process 27766 KV load text_chunks with 66 records
+2025-12-11 10:52:42,965 - lightrag - INFO - [] Process 27766 KV load full_entities with 52 records
+2025-12-11 10:52:42,966 - lightrag - INFO - [] Process 27766 KV load full_relations with 52 records
+2025-12-11 10:52:42,968 - lightrag - INFO - [] Process 27766 KV load entity_chunks with 1000 records
+2025-12-11 10:52:42,970 - lightrag - INFO - [] Process 27766 KV load relation_chunks with 1262 records
+2025-12-11 10:52:42,980 - lightrag - INFO - [] Process 27766 KV load llm_response_cache with 178 records
+2025-12-11 10:52:42,981 - lightrag - INFO - [] Process 27766 doc status load doc_status with 52 records
+2025-12-11 10:52:42,981 - uvicorn.error - INFO - Application startup complete.
+2025-12-11 10:52:42,983 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-11 13:46:11,387 - uvicorn.access - INFO - 127.0.0.1:55008 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 304
+2025-12-11 13:46:11,388 - uvicorn.access - INFO - 127.0.0.1:55007 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 304
+2025-12-11 13:46:12,040 - uvicorn.access - INFO - 127.0.0.1:55007 - "GET /docs HTTP/1.1" 200
+2025-12-11 13:46:12,116 - uvicorn.access - INFO - 127.0.0.1:55007 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 304
+2025-12-11 13:46:12,117 - uvicorn.access - INFO - 127.0.0.1:55008 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
+2025-12-11 13:46:12,318 - uvicorn.access - INFO - 127.0.0.1:55008 - "GET /openapi.json HTTP/1.1" 200

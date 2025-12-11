@@ -1,0 +1,6 @@
+2025-12-11 10:09:40 [INFO] __init__.py:953 - ✅ Milvus 服务初始化成功
+2025-12-11 10:09:40 [INFO] __init__.py:953 - ✅ MinIO 服务初始化成功
+2025-12-11 10:09:40 [ERROR] __init__.py:953 - MinIO 服务初始化失败: name 'MinIOService' is not defined
+2025-12-11 11:34:26 [INFO] __init__.py:953 - ✅ Milvus 服务初始化成功
+2025-12-11 11:34:26 [INFO] __init__.py:953 - ✅ MinIO 服务初始化成功
+2025-12-11 11:34:26 [ERROR] __init__.py:953 - MinIO 服务初始化失败: name 'MinIOService' is not defined

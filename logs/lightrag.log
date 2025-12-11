@@ -86,34 +86,21 @@ INFO: Vision model initialized: deepseek-chat using ollama provider
 INFO: [] Loaded graph from /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
-INFO: Started server process [83049]
+INFO: Started server process [27766]
 INFO: Waiting for application startup.
-INFO: [] Process 83049 KV load full_docs with 53 records
-INFO: [] Process 83049 KV load text_chunks with 66 records
-INFO: [] Process 83049 KV load full_entities with 52 records
-INFO: [] Process 83049 KV load full_relations with 52 records
-INFO: [] Process 83049 KV load entity_chunks with 1000 records
-INFO: [] Process 83049 KV load relation_chunks with 1262 records
-INFO: [] Process 83049 KV load llm_response_cache with 178 records
-INFO: [] Process 83049 doc status load doc_status with 53 records
+INFO: [] Process 27766 KV load full_docs with 52 records
+INFO: [] Process 27766 KV load text_chunks with 66 records
+INFO: [] Process 27766 KV load full_entities with 52 records
+INFO: [] Process 27766 KV load full_relations with 52 records
+INFO: [] Process 27766 KV load entity_chunks with 1000 records
+INFO: [] Process 27766 KV load relation_chunks with 1262 records
+INFO: [] Process 27766 KV load llm_response_cache with 178 records
+INFO: [] Process 27766 doc status load doc_status with 52 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:51455 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404
-INFO: 127.0.0.1:51455 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
-INFO: 127.0.0.1:51464 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
-INFO: 127.0.0.1:51455 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:51455 - "GET /webui/favicon.png HTTP/1.1" 200
-INFO: 127.0.0.1:51464 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
-INFO: 127.0.0.1:51455 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
-INFO: 127.0.0.1:51464 - "GET /static/swagger-ui/swagger-ui.css.map HTTP/1.1" 404
-INFO: 127.0.0.1:51464 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:51507 - "DELETE /documents/delete_document HTTP/1.1" 200
-INFO: Deleting document 1/1: doc-78fb7df08ce980cbf869a712b992bba9
-INFO: Starting deletion process for document doc-78fb7df08ce980cbf869a712b992bba9
-INFO: Deleting doc-78fb7df08ce980cbf869a712b992bba9 旅行日记5555.pdf(previous status: FAILED)
-WARNING: No chunks found for document doc-78fb7df08ce980cbf869a712b992bba9
-INFO: Document deleted without associated chunks: doc-78fb7df08ce980cbf869a712b992bba9
-INFO: [] Writing graph with 0 nodes, 0 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 1/1: doc-78fb7df08ce980cbf869a712b992bba9[旅行日记5555.pdf]
-INFO: Successfully deleted input_dir file: 旅行日记5555.pdf
+INFO: 127.0.0.1:55008 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 304
+INFO: 127.0.0.1:55007 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 304
+INFO: 127.0.0.1:55007 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:55007 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 304
+INFO: 127.0.0.1:55008 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
+INFO: 127.0.0.1:55008 - "GET /openapi.json HTTP/1.1" 200

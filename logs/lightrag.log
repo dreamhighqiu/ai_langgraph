@@ -27,8 +27,8 @@ LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag
 [37m    └─ Input Directory: [0m[33m/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs[0m
 [35m
 🤖 LLM Configuration:[0m
-[37m    ├─ Binding: [0m[33mollama[0m
-[37m    ├─ Host: [0m[33mhttp://localhost:11434[0m
+[37m    ├─ Binding: [0m[33mopenai[0m
+[37m    ├─ Host: [0m[33mhttp://47.253.63.85:3000/v1[0m
 [37m    ├─ Model: [0m[33mdeepseek-chat[0m
 [37m    ├─ Max Async for LLM: [0m[33m4[0m
 [37m    ├─ Summary Context Size: [0m[33m12000[0m
@@ -37,8 +37,8 @@ LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag
 [35m
 📊 Embedding Configuration:[0m
 [37m    ├─ Binding: [0m[33mollama[0m
-[37m    ├─ Host: [0m[33mhttp://localhost:11434[0m
-[37m    ├─ Model: [0m[33mbge-m3:latest[0m
+[37m    ├─ Host: [0m[33mhttp://54.179.103.192:11434[0m
+[37m    ├─ Model: [0m[33mqwen3-embedding:0.6b[0m
 [37m    └─ Dimensions: [0m[33m1024[0m
 [35m
 ⚙️ RAG Configuration:[0m
@@ -76,31 +76,188 @@ LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag
       • Linux/Mac: Run 'ifconfig' or 'ip addr' in terminal
     [0m
 INFO: Frontend build is up-to-date
-INFO: Ollama LLM Options: {}
+INFO: OpenAI LLM Options: {}
 INFO: Ollama Embedding Options: {}
-INFO: Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+INFO: Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
 INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
 INFO: Embedding max_token_size: 8192 (from ollama provider default)
 INFO: Reranking is disabled
-INFO: Vision model initialized: deepseek-chat using ollama provider
-INFO: [] Loaded graph from /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+INFO: Vision model initialized: gpt-4o using openai provider
+INFO: [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
 INFO: RAG-Anything processor created successfully
-INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
-INFO: Started server process [27766]
+INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+INFO: Started server process [93143]
 INFO: Waiting for application startup.
-INFO: [] Process 27766 KV load full_docs with 52 records
-INFO: [] Process 27766 KV load text_chunks with 66 records
-INFO: [] Process 27766 KV load full_entities with 52 records
-INFO: [] Process 27766 KV load full_relations with 52 records
-INFO: [] Process 27766 KV load entity_chunks with 1000 records
-INFO: [] Process 27766 KV load relation_chunks with 1262 records
-INFO: [] Process 27766 KV load llm_response_cache with 178 records
-INFO: [] Process 27766 doc status load doc_status with 52 records
+INFO: [] Process 93143 KV load full_docs with 1 records
+INFO: [] Process 93143 KV load text_chunks with 0 records
+INFO: [] Process 93143 KV load full_entities with 1 records
+INFO: [] Process 93143 KV load full_relations with 0 records
+INFO: [] Process 93143 KV load entity_chunks with 0 records
+INFO: [] Process 93143 KV load relation_chunks with 0 records
+INFO: [] Process 93143 KV load llm_response_cache with 0 records
+INFO: [] Process 93143 doc status load doc_status with 1 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:55008 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 304
-INFO: 127.0.0.1:55007 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 304
-INFO: 127.0.0.1:55007 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55007 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 304
-INFO: 127.0.0.1:55008 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
-INFO: 127.0.0.1:55008 - "GET /openapi.json HTTP/1.1" 200
+INFO: [] Process 93143 drop entities(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_entities.json)
+INFO: [] Process 93143 drop relationships(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_relationships.json)
+INFO: [] Process 93143 drop chunks(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_chunks.json)
+INFO: [] Process 93143 drop graph file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+INFO: [] Process 93143 drop text_chunks
+INFO: [] Process 93143 drop full_docs
+INFO: [] Process 93143 drop full_entities
+INFO: [] Process 93143 drop full_relations
+INFO: [] Process 93143 drop entity_chunks
+INFO: [] Process 93143 drop relation_chunks
+INFO: [] Process 93143 drop doc_status
+INFO: Successfully dropped JsonKVStorage: /text_chunks
+INFO: Successfully dropped JsonKVStorage: /full_docs
+INFO: Successfully dropped JsonKVStorage: /full_entities
+INFO: Successfully dropped JsonKVStorage: /full_relations
+INFO: Successfully dropped JsonKVStorage: /entity_chunks
+INFO: Successfully dropped JsonKVStorage: /relation_chunks
+INFO: Successfully dropped NanoVectorDBStorage: /entities
+INFO: Successfully dropped NanoVectorDBStorage: /relationships
+INFO: Successfully dropped NanoVectorDBStorage: /chunks
+INFO: Successfully dropped NetworkXStorage: /chunk_entity_relation
+INFO: Successfully dropped JsonDocStatusStorage: /doc_status
+INFO: 127.0.0.1:60017 - "DELETE /documents HTTP/1.1" 200
+INFO: [] Process 93143 drop llm_response_cache
+INFO: Cleared all cache
+INFO: 127.0.0.1:60017 - "POST /documents/clear_cache HTTP/1.1" 200
+INFO: 127.0.0.1:60017 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:60017 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:60017 - "POST /documents/upload HTTP/1.1" 200
+INFO: Using RAG-Anything multimodal processing for: 旅行日记5555.pdf
+INFO: RAGAnything initialized with config:
+INFO:   Working directory: ./rag_storage
+INFO:   Parser: docling
+INFO:   Parse method: auto
+INFO:   Multimodal processing - Image: True, Table: True, Equation: True
+INFO:   Max concurrent files: 1
+INFO: RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+INFO: Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+INFO: Using docling parser with method: auto
+INFO: Detected PDF file, using parser for PDF...
+INFO: Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf complete! Extracted 36 content blocks
+INFO: Document parsed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9, blocks=36
+INFO: Parser 'docling' installation verified
+INFO: Initializing parse cache for pre-provided LightRAG instance
+INFO: [] Process 93143 KV load parse_cache with 5 records
+INFO: Multimodal processors initialized with context support
+INFO: Available processors: ['image', 'table', 'equation', 'generic']
+INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+INFO: Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf (36 items)
+INFO: Content separation complete:
+INFO:   - Text content length: 478 characters
+INFO:   - Multimodal items count: 3
+INFO:   - Multimodal type distribution: {'image': 3}
+INFO: Setting content source for context-aware multimodal processing...
+INFO: Content source set with format: minerU
+INFO: Content source set with format: minerU
+INFO: Content source set with format: minerU
+INFO: Content source set with format: minerU
+INFO: Content source set for context extraction (format: minerU)
+INFO: Starting text content insertion into LightRAG...
+INFO: Processing 1 document(s)
+INFO: Extracting stage 1/1: 旅行日记5555.pdf
+INFO: Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+INFO:  == LLM cache == saving: default:extract:1683003dabe8ca5ad95838a4c6009873
+INFO:  == LLM cache == saving: default:extract:c6e8a55d781db0dc160f736aeb25759e
+INFO: Chunk 1 of 1 extracted 30 Ent + 2 Rel chunk-700abcb7689920286ae518a3b9fb468d
+INFO: Merging stage 1/1: 旅行日记5555.pdf
+INFO: Phase 1: Processing 30 entities from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+INFO: Phase 2: Processing 2 relations from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+INFO: Phase 3: Updating final 30(30+0) entities and  2 relations from doc-78fb7df08ce980cbf869a712b992bba9
+INFO: Completed merging: 30 entities, 0 extra entities, 2 relations
+INFO: [] Writing graph with 30 nodes, 2 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: 旅行日记5555.pdf
+INFO: Enqueued document processing pipeline stopped
+INFO: Text content insertion complete
+INFO: Document doc-78fb7df08ce980cbf869a712b992bba9 text processing is complete, but multimodal content still needs processing
+INFO: Starting multimodal content processing...
+INFO: Starting to process 3 multimodal content items
+INFO: Multimodal chunk generation progress: 1/3 (33.3%)
+INFO: 127.0.0.1:60583 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:60583 - "GET /openapi.json HTTP/1.1" 200
+INFO: Multimodal chunk generation progress: 2/3 (66.7%)
+INFO: Multimodal chunk generation progress: 3/3 (100.0%)
+INFO: Generated descriptions for 3/3 multimodal items using correct processors
+INFO: 127.0.0.1:60719 - "GET /webui/assets/index-X6S77QzN.js HTTP/1.1" 200
+INFO:  == LLM cache == saving: global:keywords:5ed284f33580ee043fa0223baffdf226
+INFO: Query edges: 旅游, 旅行内容, 旅游活动 (top_k:40, cosine:0.2)
+INFO: Global query: 2 entites, 1 relations
+INFO: Raw search results: 2 entities, 1 relations, 0 vector chunks
+INFO: After truncation: 2 entities, 1 relations
+INFO: Selecting 1 from 1 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 1 relations
+INFO: Round-robin merged chunks: 1 -> 1 (deduplicated 0)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 2 entities, 1 relations, 1 chunks
+INFO: Final chunks S+F/O: E2/1
+INFO: 127.0.0.1:60717 - "POST /query/stream HTTP/1.1" 200
+INFO:  == LLM cache == saving: default:extract:0166eb83c3ff9028b6045eefc73e18de
+INFO:  == LLM cache == saving: mix:keywords:926742c08c403ef227783c2ca14a0088
+WARNING: low_level_keywords is empty
+INFO: Query edges: 旅游景点, 推荐 (top_k:10, cosine:0.2)
+INFO:  == LLM cache == saving: default:extract:b575faa5cf1d15e7db9b75b0807f6451
+INFO: Global query: 2 entites, 1 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 2 entities, 1 relations, 4 vector chunks
+INFO: After truncation: 2 entities, 1 relations
+INFO: Selecting 1 from 1 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 1 relations
+INFO: Round-robin merged chunks: 5 -> 4 (deduplicated 1)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 2 entities, 1 relations, 4 chunks
+INFO: Final chunks S+F/O: E2/1 C1/2 C1/3 C1/4
+INFO:  == LLM cache == saving: default:extract:7e07d312121df5fd9777fec7ec677c37
+INFO:  == LLM cache == saving: mix:query:17d376c75122b0c7a94d226db64615cb
+INFO: 127.0.0.1:61056 - "POST /query HTTP/1.1" 200
+INFO:  == LLM cache == saving: default:extract:059735bffd1c29c127481683e0333f7c
+INFO: Chunk 1 of 3 extracted 14 Ent + 11 Rel chunk-3383e6dcf537fa64d4ccc8f5d7f05104
+INFO:  == LLM cache == saving: default:extract:9e577131d899916ef058caf7f9266859
+INFO: Chunk 2 of 3 extracted 14 Ent + 12 Rel chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3
+INFO:  == LLM cache == saving: mix:keywords:4a97463c29d86b6e353871b9353c7b06
+INFO: Query nodes: 景点推荐, 行程安排, 住宿, 交通, 美食 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 1 relations
+INFO: Query edges: 旅行攻略, 旅游规划, 旅行指南 (top_k:10, cosine:0.2)
+INFO: Global query: 2 entites, 1 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 10 entities, 1 relations, 4 vector chunks
+INFO: After truncation: 10 entities, 1 relations
+INFO: Selecting 4 from 4 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 1 relations
+INFO: Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 10 entities, 1 relations, 4 chunks
+INFO: Final chunks S+F/O: E7/1 E1/2 E1/3 E1/4
+INFO:  == LLM cache == saving: default:extract:cc89a7e2b0ac4065f266c30a092fbc18
+INFO: Chunk 3 of 3 extracted 18 Ent + 18 Rel chunk-03f73960e92a10b61243dd8f47889425
+INFO: Extracted entities from 3 multimodal chunks
+INFO: Added 46 belongs_to relations for multimodal entities
+INFO: Merging stage 1/1: 旅行日记5555.pdf
+INFO: Phase 1: Processing 40 entities from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+INFO: Merged: `Air Asia` | 1+2
+INFO: Merged: `Mahatma Gandhi` | 1+2
+INFO:  == LLM cache == saving: mix:query:bce64338770059fb616382228e7b15bd
+INFO: 127.0.0.1:61180 - "POST /query HTTP/1.1" 200
+INFO: Merged: `Reserve Bank Of India` | 1+1
+INFO:  == LLM cache == saving: mix:keywords:b3e58e80b81ff2b31ef0e0dd7f87b0f9
+WARNING: low_level_keywords is empty
+INFO: Phase 2: Processing 86 relations from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+INFO: Query edges: 旅游, 目的地, 旅行规划 (top_k:10, cosine:0.2)
+INFO: Global query: 8 entites, 4 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 8 entities, 4 relations, 4 vector chunks
+INFO: After truncation: 8 entities, 4 relations
+INFO: Selecting 4 from 4 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 4 relations
+INFO: Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 8 entities, 4 relations, 4 chunks
+INFO: Final chunks S+F/O: E2/1 E1/2 E6/3 E1/4
+INFO:  == LLM cache == saving: mix:query:120ea5af2818037fa493c59214ad1848
+INFO: 127.0.0.1:61358 - "POST /query HTTP/1.1" 200

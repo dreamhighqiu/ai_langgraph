@@ -433,3 +433,841 @@ ConnectionError: Failed to connect to Ollama. Please check that Ollama is downlo
 2025-12-11 13:46:12,116 - uvicorn.access - INFO - 127.0.0.1:55007 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 304
 2025-12-11 13:46:12,117 - uvicorn.access - INFO - 127.0.0.1:55008 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
 2025-12-11 13:46:12,318 - uvicorn.access - INFO - 127.0.0.1:55008 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:29:02,959 - uvicorn.access - INFO - 127.0.0.1:52272 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:29:03,036 - uvicorn.access - INFO - 127.0.0.1:52272 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:29:47,662 - uvicorn.access - INFO - 127.0.0.1:52498 - "POST /documents/upload HTTP/1.1" 200
+2025-12-11 15:29:47,663 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记5555.pdf
+2025-12-11 15:29:47,665 - lightrag - INFO - RAGAnything initialized with config:
+2025-12-11 15:29:47,665 - lightrag - INFO -   Working directory: ./rag_storage
+2025-12-11 15:29:47,665 - lightrag - INFO -   Parser: docling
+2025-12-11 15:29:47,665 - lightrag - INFO -   Parse method: auto
+2025-12-11 15:29:47,665 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2025-12-11 15:29:47,665 - lightrag - INFO -   Max concurrent files: 1
+2025-12-11 15:29:47,666 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2025-12-11 15:29:47,666 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:29:47,674 - lightrag - INFO - Using docling parser with method: auto
+2025-12-11 15:29:47,674 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-11 15:29:52,581 - uvicorn.access - INFO - 127.0.0.1:52498 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:29:52,601 - uvicorn.access - INFO - 127.0.0.1:52522 - "GET /webui/favicon.png HTTP/1.1" 304
+2025-12-11 15:29:52,650 - uvicorn.access - INFO - 127.0.0.1:52522 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:30:11,824 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf complete! Extracted 36 content blocks
+2025-12-11 15:30:11,825 - lightrag - INFO - Document parsed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9, blocks=36
+2025-12-11 15:30:16,656 - lightrag - INFO - Parser 'docling' installation verified
+2025-12-11 15:30:16,657 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2025-12-11 15:30:16,662 - lightrag - INFO - [] Process 27766 KV load parse_cache with 4 records
+2025-12-11 15:30:16,666 - lightrag - INFO - Multimodal processors initialized with context support
+2025-12-11 15:30:16,666 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2025-12-11 15:30:16,666 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2025-12-11 15:30:16,666 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf (36 items)
+2025-12-11 15:30:16,666 - lightrag - INFO - Content separation complete:
+2025-12-11 15:30:16,666 - lightrag - INFO -   - Text content length: 478 characters
+2025-12-11 15:30:16,666 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-11 15:30:16,666 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-11 15:30:16,666 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-11 15:30:16,666 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:30:16,666 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:30:16,667 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:30:16,667 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:30:16,667 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-11 15:30:16,667 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-11 15:30:16,679 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:30:16,680 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:30:16,681 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:30:16,766 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-12-11 15:30:16,796 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,797 - lightrag - ERROR - Embedding func: Error in decorated function for task 5015428288_279374.606: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,804 - lightrag - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/nano_vector_db_impl.py", line 126, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 672, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 455, in __call__
+    result = await self.func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/lightrag_server.py", line 751, in optimized_embedding_function
+    return await actual_func(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 213, in ollama_embed
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 200, in ollama_embed
+    data = await ollama_client.embed(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 1011, in embed
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-12-11 15:30:16,804 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记5555.pdf
+2025-12-11 15:30:16,805 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:30:16,806 - lightrag - INFO - Text content insertion complete
+2025-12-11 15:30:16,806 - lightrag - INFO - Starting multimodal content processing...
+2025-12-11 15:30:16,806 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-11 15:30:16,809 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:30:16,809 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-11 15:30:16,811 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:30:16,811 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-11 15:30:16,814 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:30:16,814 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-11 15:30:16,814 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-11 15:30:16,822 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,822 - lightrag - ERROR - Embedding func: Error in decorated function for task 5028041664_279374.656: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,822 - lightrag - ERROR - Error storing chunks to storage: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,822 - lightrag - ERROR - Error in multimodal processing: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,822 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-11 15:30:16,822 - lightrag - INFO - Processing item 1/3: image content
+2025-12-11 15:30:16,824 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:30:16,830 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,830 - lightrag - ERROR - Embedding func: Error in decorated function for task 5028042432_279374.664: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,831 - lightrag - ERROR - Error processing image content: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,831 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:30:16,831 - lightrag - INFO - Processing item 2/3: image content
+2025-12-11 15:30:16,833 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:30:16,839 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,839 - lightrag - ERROR - Embedding func: Error in decorated function for task 5028043008_279374.673: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,839 - lightrag - ERROR - Error processing image content: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,839 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:30:16,839 - lightrag - INFO - Processing item 3/3: image content
+2025-12-11 15:30:16,841 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:30:16,848 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,848 - lightrag - ERROR - Embedding func: Error in decorated function for task 5028043392_279374.681: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,848 - lightrag - ERROR - Error processing image content: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,849 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:30:16,849 - lightrag - INFO - Individual multimodal content processing complete
+2025-12-11 15:30:16,850 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:30:16,851 - lightrag - INFO - Document processing complete: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:30:16,851 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:30:16,852 - lightrag - INFO - Reset 1 documents from PROCESSING/FAILED to PENDING status
+2025-12-11 15:30:16,852 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:30:16,852 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:30:16,852 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:30:16,859 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,859 - lightrag - ERROR - Embedding func: Error in decorated function for task 5028044352_279374.693: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:30:16,860 - lightrag - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/nano_vector_db_impl.py", line 126, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 672, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 455, in __call__
+    result = await self.func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/lightrag_server.py", line 751, in optimized_embedding_function
+    return await actual_func(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 213, in ollama_embed
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 200, in ollama_embed
+    data = await ollama_client.embed(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 1011, in embed
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-12-11 15:30:16,860 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记5555.pdf
+2025-12-11 15:30:16,862 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:30:22,113 - uvicorn.access - INFO - 127.0.0.1:52677 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:30:22,182 - uvicorn.access - INFO - 127.0.0.1:52677 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:42:18,875 - lightrag - INFO - [] Process 27766 drop entities(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_entities.json)
+2025-12-11 15:42:18,877 - lightrag - INFO - [] Process 27766 drop relationships(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_relationships.json)
+2025-12-11 15:42:18,877 - lightrag - INFO - [] Process 27766 drop chunks(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_chunks.json)
+2025-12-11 15:42:18,878 - lightrag - INFO - [] Process 27766 drop graph file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-11 15:42:18,880 - lightrag - INFO - [] Process 27766 drop text_chunks
+2025-12-11 15:42:18,880 - lightrag - INFO - [] Process 27766 drop full_docs
+2025-12-11 15:42:18,880 - lightrag - INFO - [] Process 27766 drop full_entities
+2025-12-11 15:42:18,880 - lightrag - INFO - [] Process 27766 drop full_relations
+2025-12-11 15:42:18,880 - lightrag - INFO - [] Process 27766 drop entity_chunks
+2025-12-11 15:42:18,881 - lightrag - INFO - [] Process 27766 drop relation_chunks
+2025-12-11 15:42:18,881 - lightrag - INFO - [] Process 27766 drop doc_status
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonKVStorage: /text_chunks
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_docs
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_entities
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_relations
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonKVStorage: /entity_chunks
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonKVStorage: /relation_chunks
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /entities
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /relationships
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /chunks
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped NetworkXStorage: /chunk_entity_relation
+2025-12-11 15:42:18,881 - lightrag - INFO - Successfully dropped JsonDocStatusStorage: /doc_status
+2025-12-11 15:42:18,885 - uvicorn.access - INFO - 127.0.0.1:56207 - "DELETE /documents HTTP/1.1" 200
+2025-12-11 15:42:18,921 - lightrag - INFO - [] Process 27766 drop llm_response_cache
+2025-12-11 15:42:18,921 - lightrag - INFO - Cleared all cache
+2025-12-11 15:42:18,922 - uvicorn.access - INFO - 127.0.0.1:56207 - "POST /documents/clear_cache HTTP/1.1" 200
+2025-12-11 15:42:23,696 - uvicorn.access - INFO - 127.0.0.1:56207 - "POST /documents/upload HTTP/1.1" 200
+2025-12-11 15:42:23,696 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记5555.pdf
+2025-12-11 15:42:23,697 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:42:23,698 - lightrag - INFO - Using docling parser with method: auto
+2025-12-11 15:42:23,698 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-11 15:42:50,921 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf complete! Extracted 36 content blocks
+2025-12-11 15:42:50,926 - lightrag - INFO - Stored parsing result in cache: b51b7b39b846b2c437ab76851d56c048
+2025-12-11 15:42:50,926 - lightrag - INFO - Document parsed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9, blocks=36
+2025-12-11 15:42:50,926 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf (36 items)
+2025-12-11 15:42:50,926 - lightrag - INFO - Content separation complete:
+2025-12-11 15:42:50,926 - lightrag - INFO -   - Text content length: 478 characters
+2025-12-11 15:42:50,926 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-11 15:42:50,926 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-11 15:42:50,926 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-11 15:42:50,926 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:42:50,926 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:42:50,926 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:42:50,926 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:42:50,926 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-11 15:42:50,926 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-11 15:42:50,928 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:42:50,928 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:42:50,928 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:42:50,953 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,953 - lightrag - ERROR - Embedding func: Error in decorated function for task 5012431168_280128.775: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,954 - lightrag - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/nano_vector_db_impl.py", line 126, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 672, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 455, in __call__
+    result = await self.func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/lightrag_server.py", line 751, in optimized_embedding_function
+    return await actual_func(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 213, in ollama_embed
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 200, in ollama_embed
+    data = await ollama_client.embed(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 1011, in embed
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-12-11 15:42:50,955 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记5555.pdf
+2025-12-11 15:42:50,956 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:42:50,956 - lightrag - INFO - Text content insertion complete
+2025-12-11 15:42:50,956 - lightrag - INFO - Starting multimodal content processing...
+2025-12-11 15:42:50,956 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-11 15:42:50,958 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:42:50,958 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-11 15:42:50,961 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:42:50,961 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-11 15:42:50,963 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:42:50,964 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-11 15:42:50,964 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-11 15:42:50,971 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,971 - lightrag - ERROR - Embedding func: Error in decorated function for task 5012430592_280128.804: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,971 - lightrag - ERROR - Error storing chunks to storage: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,971 - lightrag - ERROR - Error in multimodal processing: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,971 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-11 15:42:50,972 - lightrag - INFO - Processing item 1/3: image content
+2025-12-11 15:42:50,973 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:42:50,982 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,982 - lightrag - ERROR - Embedding func: Error in decorated function for task 5012428672_280128.813: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,982 - lightrag - ERROR - Error processing image content: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,982 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:42:50,983 - lightrag - INFO - Processing item 2/3: image content
+2025-12-11 15:42:50,985 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:42:50,991 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,991 - lightrag - ERROR - Embedding func: Error in decorated function for task 5012423296_280128.825: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,991 - lightrag - ERROR - Error processing image content: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:50,991 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:42:50,991 - lightrag - INFO - Processing item 3/3: image content
+2025-12-11 15:42:50,994 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:42:51,000 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:51,000 - lightrag - ERROR - Embedding func: Error in decorated function for task 5011419968_280128.834: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:51,000 - lightrag - ERROR - Error processing image content: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:51,000 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:42:51,000 - lightrag - INFO - Individual multimodal content processing complete
+2025-12-11 15:42:51,001 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:42:51,001 - lightrag - INFO - Document processing complete: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:42:51,001 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:42:51,002 - lightrag - INFO - Reset 1 documents from PROCESSING/FAILED to PENDING status
+2025-12-11 15:42:51,002 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:42:51,002 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:42:51,002 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:42:51,009 - lightrag - ERROR - Error in ollama_embed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:51,009 - lightrag - ERROR - Embedding func: Error in decorated function for task 5028044352_280128.842: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:42:51,010 - lightrag - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/kg/nano_vector_db_impl.py", line 126, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 672, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 455, in __call__
+    result = await self.func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/api/lightrag_server.py", line 751, in optimized_embedding_function
+    return await actual_func(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 213, in ollama_embed
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 200, in ollama_embed
+    data = await ollama_client.embed(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 1011, in embed
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-12-11 15:42:51,010 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记5555.pdf
+2025-12-11 15:42:51,011 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:46:45,267 - uvicorn.error - INFO - Shutting down
+2025-12-11 15:46:45,369 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-11 15:46:45,370 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-11 15:46:45,370 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-11 15:46:45,372 - uvicorn.error - INFO - Finished server process [27766]
+2025-12-11 15:46:49,146 - lightrag - INFO - Frontend build is up-to-date
+2025-12-11 15:46:49,146 - lightrag - INFO - Ollama LLM Options: {}
+2025-12-11 15:46:49,146 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-11 15:46:49,205 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-11 15:46:49,206 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-11 15:46:49,206 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-11 15:46:49,206 - lightrag - INFO - Reranking is disabled
+2025-12-11 15:46:49,206 - lightrag - INFO - Vision model initialized: deepseek-chat using ollama provider
+2025-12-11 15:46:49,497 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-11 15:46:49,498 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-11 15:46:49,498 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model deepseek-chat
+2025-12-11 15:46:49,587 - uvicorn.error - INFO - Started server process [81131]
+2025-12-11 15:46:49,587 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-11 15:46:49,588 - lightrag - INFO - [] Process 81131 KV load full_docs with 1 records
+2025-12-11 15:46:49,588 - lightrag - INFO - [] Process 81131 KV load text_chunks with 0 records
+2025-12-11 15:46:49,588 - lightrag - INFO - [] Process 81131 KV load full_entities with 0 records
+2025-12-11 15:46:49,589 - lightrag - INFO - [] Process 81131 KV load full_relations with 0 records
+2025-12-11 15:46:49,589 - lightrag - INFO - [] Process 81131 KV load entity_chunks with 0 records
+2025-12-11 15:46:49,590 - lightrag - INFO - [] Process 81131 KV load relation_chunks with 0 records
+2025-12-11 15:46:49,590 - lightrag - INFO - [] Process 81131 KV load llm_response_cache with 0 records
+2025-12-11 15:46:49,590 - lightrag - INFO - [] Process 81131 doc status load doc_status with 1 records
+2025-12-11 15:46:49,591 - uvicorn.error - INFO - Application startup complete.
+2025-12-11 15:46:49,592 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-11 15:47:19,435 - lightrag - INFO - [] Process 81131 drop entities(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_entities.json)
+2025-12-11 15:47:19,436 - lightrag - INFO - [] Process 81131 drop relationships(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_relationships.json)
+2025-12-11 15:47:19,436 - lightrag - INFO - [] Process 81131 drop chunks(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_chunks.json)
+2025-12-11 15:47:19,437 - lightrag - INFO - [] Process 81131 drop graph file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop text_chunks
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop full_docs
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop full_entities
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop full_relations
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop entity_chunks
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop relation_chunks
+2025-12-11 15:47:19,440 - lightrag - INFO - [] Process 81131 drop doc_status
+2025-12-11 15:47:19,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /text_chunks
+2025-12-11 15:47:19,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_docs
+2025-12-11 15:47:19,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_entities
+2025-12-11 15:47:19,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_relations
+2025-12-11 15:47:19,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /entity_chunks
+2025-12-11 15:47:19,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /relation_chunks
+2025-12-11 15:47:19,441 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /entities
+2025-12-11 15:47:19,441 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /relationships
+2025-12-11 15:47:19,441 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /chunks
+2025-12-11 15:47:19,441 - lightrag - INFO - Successfully dropped NetworkXStorage: /chunk_entity_relation
+2025-12-11 15:47:19,441 - lightrag - INFO - Successfully dropped JsonDocStatusStorage: /doc_status
+2025-12-11 15:47:19,441 - uvicorn.access - INFO - 127.0.0.1:57730 - "DELETE /documents HTTP/1.1" 200
+2025-12-11 15:47:19,446 - lightrag - INFO - [] Process 81131 drop llm_response_cache
+2025-12-11 15:47:19,446 - lightrag - INFO - Cleared all cache
+2025-12-11 15:47:19,446 - uvicorn.access - INFO - 127.0.0.1:57730 - "POST /documents/clear_cache HTTP/1.1" 200
+2025-12-11 15:47:28,198 - uvicorn.access - INFO - 127.0.0.1:57765 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:47:28,362 - uvicorn.access - INFO - 127.0.0.1:57765 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:47:32,921 - uvicorn.access - INFO - 127.0.0.1:57765 - "POST /documents/upload HTTP/1.1" 200
+2025-12-11 15:47:32,921 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记5555.pdf
+2025-12-11 15:47:32,921 - lightrag - INFO - RAGAnything initialized with config:
+2025-12-11 15:47:32,921 - lightrag - INFO -   Working directory: ./rag_storage
+2025-12-11 15:47:32,921 - lightrag - INFO -   Parser: docling
+2025-12-11 15:47:32,921 - lightrag - INFO -   Parse method: auto
+2025-12-11 15:47:32,921 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2025-12-11 15:47:32,921 - lightrag - INFO -   Max concurrent files: 1
+2025-12-11 15:47:32,921 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2025-12-11 15:47:32,921 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:47:32,922 - lightrag - INFO - Using docling parser with method: auto
+2025-12-11 15:47:32,922 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-11 15:47:53,085 - uvicorn.access - INFO - 127.0.0.1:57881 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:47:53,148 - uvicorn.access - INFO - 127.0.0.1:57881 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:47:55,805 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf complete! Extracted 36 content blocks
+2025-12-11 15:47:55,806 - lightrag - INFO - Document parsed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9, blocks=36
+2025-12-11 15:47:59,737 - lightrag - INFO - Parser 'docling' installation verified
+2025-12-11 15:47:59,738 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2025-12-11 15:47:59,739 - lightrag - INFO - [] Process 81131 KV load parse_cache with 5 records
+2025-12-11 15:47:59,742 - lightrag - INFO - Multimodal processors initialized with context support
+2025-12-11 15:47:59,742 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2025-12-11 15:47:59,742 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2025-12-11 15:47:59,742 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf (36 items)
+2025-12-11 15:47:59,742 - lightrag - INFO - Content separation complete:
+2025-12-11 15:47:59,742 - lightrag - INFO -   - Text content length: 478 characters
+2025-12-11 15:47:59,742 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-11 15:47:59,742 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-11 15:47:59,742 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-11 15:47:59,742 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:47:59,742 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:47:59,742 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:47:59,742 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:47:59,742 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-11 15:47:59,742 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-11 15:47:59,745 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:47:59,745 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:47:59,745 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:47:59,758 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-12-11 15:48:00,037 - uvicorn.access - INFO - 127.0.0.1:57909 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:48:00,092 - uvicorn.access - INFO - 127.0.0.1:57909 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:48:05,846 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-11 15:48:05,866 - lightrag - ERROR - LLM func: Error in decorated function for task 4457247552_280443.652: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:05,868 - lightrag - ERROR - Failed to extract entities and relationships: C[1/1]: chunk-700abcb7689920286ae518a3b9fb468d: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:05,879 - lightrag - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 2966, in _process_with_semaphore
+    return await _process_single_content(chunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 2851, in _process_single_content
+    final_result, timestamp = await use_llm_func_with_cache(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 2002, in use_llm_func_with_cache
+    res: str = await use_llm_func(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 672, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 170, in ollama_model_complete
+    return await _ollama_model_if_cache(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 144, in _ollama_model_if_cache
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 107, in _ollama_model_if_cache
+    response = await ollama_client.chat(model=model, messages=messages, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 983, in chat
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 2970, in _process_with_semaphore
+    raise prefixed_exception from e
+ConnectionError: chunk-700abcb7689920286ae518a3b9fb468d: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 1900, in process_document
+    chunk_results = await entity_relation_task
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 2184, in _process_extract_entities
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 2169, in _process_extract_entities
+    chunk_results = await extract_entities(
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 3012, in extract_entities
+    raise prefixed_exception from first_exception
+ConnectionError: C[1/1]: chunk-700abcb7689920286ae518a3b9fb468d: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-12-11 15:48:05,879 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记5555.pdf
+2025-12-11 15:48:05,882 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:48:05,882 - lightrag - INFO - Text content insertion complete
+2025-12-11 15:48:05,882 - lightrag - INFO - Starting multimodal content processing...
+2025-12-11 15:48:05,883 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-11 15:48:05,885 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:48:05,885 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-11 15:48:05,888 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:48:05,888 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-11 15:48:05,890 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:48:05,890 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-11 15:48:05,891 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-11 15:48:15,173 - lightrag - ERROR - LLM func: Error in decorated function for task 4457247552_280452.952: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:15,174 - lightrag - ERROR - LLM func: Error in decorated function for task 4457236992_280452.953: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:15,174 - lightrag - ERROR - LLM func: Error in decorated function for task 4458322176_280452.954: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:15,174 - lightrag - ERROR - Error in multimodal processing: C[1/3]: chunk-049ac219465c70372e6ca206069217d9: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:15,174 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-11 15:48:15,174 - lightrag - INFO - Processing item 1/3: image content
+2025-12-11 15:48:15,176 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:48:21,836 - lightrag - ERROR - LLM func: Error in decorated function for task 4457246784_280459.629: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:21,836 - lightrag - ERROR - Error processing image content: C[1/1]: chunk-049ac219465c70372e6ca206069217d9: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:21,836 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:48:21,836 - lightrag - INFO - Processing item 2/3: image content
+2025-12-11 15:48:21,840 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:48:28,508 - lightrag - ERROR - LLM func: Error in decorated function for task 4458327360_280466.301: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:28,508 - lightrag - ERROR - Error processing image content: C[1/1]: chunk-f044c4be52b46ff3875844f4552aacf0: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:28,508 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:48:28,508 - lightrag - INFO - Processing item 3/3: image content
+2025-12-11 15:48:28,512 - lightrag - ERROR - Error generating image description: 'hashing_kv'
+2025-12-11 15:48:35,790 - lightrag - ERROR - LLM func: Error in decorated function for task 4458325632_280473.589: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:35,790 - lightrag - ERROR - Error processing image content: C[1/1]: chunk-c9f1723fa497b795a462b09a288a35e9: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:35,790 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-11 15:48:35,790 - lightrag - INFO - Individual multimodal content processing complete
+2025-12-11 15:48:35,791 - lightrag - INFO - Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:48:35,791 - lightrag - INFO - Document processing complete: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:48:35,791 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:48:35,792 - lightrag - INFO - Reset 1 documents from PROCESSING/FAILED to PENDING status
+2025-12-11 15:48:35,792 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:48:35,793 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:48:35,793 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:48:41,125 - lightrag - ERROR - LLM func: Error in decorated function for task 4457247360_280478.919: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:41,125 - lightrag - ERROR - Failed to extract entities and relationships: C[1/1]: chunk-700abcb7689920286ae518a3b9fb468d: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-12-11 15:48:41,127 - lightrag - ERROR - Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 2966, in _process_with_semaphore
+    return await _process_single_content(chunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 2851, in _process_single_content
+    final_result, timestamp = await use_llm_func_with_cache(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 2002, in use_llm_func_with_cache
+    res: str = await use_llm_func(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/utils.py", line 672, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/asyncio/tasks.py", line 479, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 170, in ollama_model_complete
+    return await _ollama_model_if_cache(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 189, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 111, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 153, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/_utils.py", line 99, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/__init__.py", line 400, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/.pyenv/versions/3.11.5/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/tenacity/asyncio/__init__.py", line 114, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 144, in _ollama_model_if_cache
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/llm/ollama.py", line 107, in _ollama_model_if_cache
+    response = await ollama_client.chat(model=model, messages=messages, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 983, in chat
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/.venv/lib/python3.11/site-packages/ollama/_client.py", line 713, in _request_raw
+    raise ConnectionError(CONNECTION_ERROR_MESSAGE) from None
+ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 2970, in _process_with_semaphore
+    raise prefixed_exception from e
+ConnectionError: chunk-700abcb7689920286ae518a3b9fb468d: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 1900, in process_document
+    chunk_results = await entity_relation_task
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 2184, in _process_extract_entities
+    raise e
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/lightrag.py", line 2169, in _process_extract_entities
+    chunk_results = await extract_entities(
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag/operate.py", line 3012, in extract_entities
+    raise prefixed_exception from first_exception
+ConnectionError: C[1/1]: chunk-700abcb7689920286ae518a3b9fb468d: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+
+2025-12-11 15:48:41,127 - lightrag - ERROR - Failed to extract document 1/1: 旅行日记5555.pdf
+2025-12-11 15:48:41,129 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:48:44,247 - uvicorn.access - INFO - 127.0.0.1:58130 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:48:44,304 - uvicorn.access - INFO - 127.0.0.1:58130 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:49:45,082 - uvicorn.access - INFO - 127.0.0.1:58534 - "POST /documents/paginated HTTP/1.1" 401
+2025-12-11 15:49:45,163 - uvicorn.access - INFO - 127.0.0.1:58535 - "GET /auth-status HTTP/1.1" 200
+2025-12-11 15:49:45,373 - uvicorn.access - INFO - 127.0.0.1:58535 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:49:45,433 - uvicorn.access - INFO - 127.0.0.1:58534 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:54:09,607 - uvicorn.error - INFO - Shutting down
+2025-12-11 15:54:09,707 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-11 15:54:09,708 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-11 15:54:09,708 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-11 15:54:09,709 - uvicorn.error - INFO - Finished server process [81131]
+2025-12-11 15:54:13,091 - lightrag - INFO - Frontend build is up-to-date
+2025-12-11 15:54:13,091 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-11 15:54:13,091 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-11 15:54:13,149 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-11 15:54:13,149 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-11 15:54:13,149 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-11 15:54:13,149 - lightrag - INFO - Reranking is disabled
+2025-12-11 15:54:13,341 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-11 15:54:13,614 - lightrag - INFO - [] Created new empty graph file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-11 15:54:13,615 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-11 15:54:13,615 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model gpt-4o
+2025-12-11 15:54:13,668 - uvicorn.error - INFO - Started server process [93143]
+2025-12-11 15:54:13,668 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-11 15:54:13,669 - lightrag - INFO - [] Process 93143 KV load full_docs with 1 records
+2025-12-11 15:54:13,669 - lightrag - INFO - [] Process 93143 KV load text_chunks with 0 records
+2025-12-11 15:54:13,669 - lightrag - INFO - [] Process 93143 KV load full_entities with 1 records
+2025-12-11 15:54:13,670 - lightrag - INFO - [] Process 93143 KV load full_relations with 0 records
+2025-12-11 15:54:13,670 - lightrag - INFO - [] Process 93143 KV load entity_chunks with 0 records
+2025-12-11 15:54:13,670 - lightrag - INFO - [] Process 93143 KV load relation_chunks with 0 records
+2025-12-11 15:54:13,671 - lightrag - INFO - [] Process 93143 KV load llm_response_cache with 0 records
+2025-12-11 15:54:13,671 - lightrag - INFO - [] Process 93143 doc status load doc_status with 1 records
+2025-12-11 15:54:13,671 - uvicorn.error - INFO - Application startup complete.
+2025-12-11 15:54:13,672 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-11 15:54:54,273 - lightrag - INFO - [] Process 93143 drop entities(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_entities.json)
+2025-12-11 15:54:54,273 - lightrag - INFO - [] Process 93143 drop relationships(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_relationships.json)
+2025-12-11 15:54:54,274 - lightrag - INFO - [] Process 93143 drop chunks(file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/vdb_chunks.json)
+2025-12-11 15:54:54,274 - lightrag - INFO - [] Process 93143 drop graph file:/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/rag_storage/graph_chunk_entity_relation.graphml
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop text_chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop full_docs
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop full_entities
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop full_relations
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop entity_chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop relation_chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - [] Process 93143 drop doc_status
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped JsonKVStorage: /text_chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_docs
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_entities
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_relations
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped JsonKVStorage: /entity_chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped JsonKVStorage: /relation_chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /entities
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /relationships
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped NanoVectorDBStorage: /chunks
+2025-12-11 15:54:54,275 - lightrag - INFO - Successfully dropped NetworkXStorage: /chunk_entity_relation
+2025-12-11 15:54:54,276 - lightrag - INFO - Successfully dropped JsonDocStatusStorage: /doc_status
+2025-12-11 15:54:54,276 - uvicorn.access - INFO - 127.0.0.1:60017 - "DELETE /documents HTTP/1.1" 200
+2025-12-11 15:54:54,282 - lightrag - INFO - [] Process 93143 drop llm_response_cache
+2025-12-11 15:54:54,282 - lightrag - INFO - Cleared all cache
+2025-12-11 15:54:54,283 - uvicorn.access - INFO - 127.0.0.1:60017 - "POST /documents/clear_cache HTTP/1.1" 200
+2025-12-11 15:54:56,079 - uvicorn.access - INFO - 127.0.0.1:60017 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:54:56,206 - uvicorn.access - INFO - 127.0.0.1:60017 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:55:01,085 - uvicorn.access - INFO - 127.0.0.1:60017 - "POST /documents/upload HTTP/1.1" 200
+2025-12-11 15:55:01,085 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记5555.pdf
+2025-12-11 15:55:01,085 - lightrag - INFO - RAGAnything initialized with config:
+2025-12-11 15:55:01,085 - lightrag - INFO -   Working directory: ./rag_storage
+2025-12-11 15:55:01,085 - lightrag - INFO -   Parser: docling
+2025-12-11 15:55:01,086 - lightrag - INFO -   Parse method: auto
+2025-12-11 15:55:01,086 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2025-12-11 15:55:01,086 - lightrag - INFO -   Max concurrent files: 1
+2025-12-11 15:55:01,086 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2025-12-11 15:55:01,086 - lightrag - INFO - Starting document parsing: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+2025-12-11 15:55:01,086 - lightrag - INFO - Using docling parser with method: auto
+2025-12-11 15:55:01,086 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-11 15:55:23,644 - lightrag - INFO - Parsing /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf complete! Extracted 36 content blocks
+2025-12-11 15:55:23,645 - lightrag - INFO - Document parsed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9, blocks=36
+2025-12-11 15:55:27,744 - lightrag - INFO - Parser 'docling' installation verified
+2025-12-11 15:55:27,745 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2025-12-11 15:55:27,746 - lightrag - INFO - [] Process 93143 KV load parse_cache with 5 records
+2025-12-11 15:55:27,748 - lightrag - INFO - Multimodal processors initialized with context support
+2025-12-11 15:55:27,748 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2025-12-11 15:55:27,748 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2025-12-11 15:55:27,748 - lightrag - INFO - Starting direct content list insertion for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf (36 items)
+2025-12-11 15:55:27,748 - lightrag - INFO - Content separation complete:
+2025-12-11 15:55:27,748 - lightrag - INFO -   - Text content length: 478 characters
+2025-12-11 15:55:27,748 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-11 15:55:27,749 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-11 15:55:27,749 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-11 15:55:27,749 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:55:27,749 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:55:27,749 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:55:27,749 - lightrag - INFO - Content source set with format: minerU
+2025-12-11 15:55:27,749 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-11 15:55:27,749 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-11 15:55:27,750 - lightrag - INFO - Processing 1 document(s)
+2025-12-11 15:55:27,751 - lightrag - INFO - Extracting stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:55:27,751 - lightrag - INFO - Processing d-id: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:55:27,762 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+2025-12-11 15:55:33,909 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-11 15:56:03,762 - lightrag - INFO -  == LLM cache == saving: default:extract:1683003dabe8ca5ad95838a4c6009873
+2025-12-11 15:56:23,022 - lightrag - INFO -  == LLM cache == saving: default:extract:c6e8a55d781db0dc160f736aeb25759e
+2025-12-11 15:56:23,023 - lightrag - INFO - Chunk 1 of 1 extracted 30 Ent + 2 Rel chunk-700abcb7689920286ae518a3b9fb468d
+2025-12-11 15:56:23,024 - lightrag - INFO - Merging stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:56:23,024 - lightrag - INFO - Phase 1: Processing 30 entities from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+2025-12-11 15:56:39,139 - lightrag - INFO - Phase 2: Processing 2 relations from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+2025-12-11 15:56:41,299 - lightrag - INFO - Phase 3: Updating final 30(30+0) entities and  2 relations from doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-11 15:56:41,299 - lightrag - INFO - Completed merging: 30 entities, 0 extra entities, 2 relations
+2025-12-11 15:56:41,302 - lightrag - INFO - [] Writing graph with 30 nodes, 2 edges
+2025-12-11 15:56:41,318 - lightrag - INFO - In memory DB persist to disk
+2025-12-11 15:56:41,319 - lightrag - INFO - Completed processing file 1/1: 旅行日记5555.pdf
+2025-12-11 15:56:41,319 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-11 15:56:41,319 - lightrag - INFO - Text content insertion complete
+2025-12-11 15:56:41,319 - lightrag - INFO - Document doc-78fb7df08ce980cbf869a712b992bba9 text processing is complete, but multimodal content still needs processing
+2025-12-11 15:56:41,320 - lightrag - INFO - Starting multimodal content processing...
+2025-12-11 15:56:41,320 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-11 15:56:50,124 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-11 15:56:50,224 - uvicorn.access - INFO - 127.0.0.1:60583 - "GET /docs HTTP/1.1" 200
+2025-12-11 15:56:50,300 - uvicorn.access - INFO - 127.0.0.1:60583 - "GET /openapi.json HTTP/1.1" 200
+2025-12-11 15:56:54,137 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-11 15:57:02,947 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-11 15:57:02,947 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-11 15:57:14,115 - uvicorn.access - INFO - 127.0.0.1:60719 - "GET /webui/assets/index-X6S77QzN.js HTTP/1.1" 200
+2025-12-11 15:57:18,119 - lightrag - INFO -  == LLM cache == saving: global:keywords:5ed284f33580ee043fa0223baffdf226
+2025-12-11 15:57:29,356 - lightrag - INFO - Query edges: 旅游, 旅行内容, 旅游活动 (top_k:40, cosine:0.2)
+2025-12-11 15:57:32,457 - lightrag - INFO - Global query: 2 entites, 1 relations
+2025-12-11 15:57:32,457 - lightrag - INFO - Raw search results: 2 entities, 1 relations, 0 vector chunks
+2025-12-11 15:57:32,458 - lightrag - INFO - After truncation: 2 entities, 1 relations
+2025-12-11 15:57:32,458 - lightrag - INFO - Selecting 1 from 1 entity-related chunks by vector similarity
+2025-12-11 15:57:32,458 - lightrag - INFO - Find no additional relations-related chunks from 1 relations
+2025-12-11 15:57:32,459 - lightrag - INFO - Round-robin merged chunks: 1 -> 1 (deduplicated 0)
+2025-12-11 15:57:32,459 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-12-11 15:57:32,460 - lightrag - INFO - Final context: 2 entities, 1 relations, 1 chunks
+2025-12-11 15:57:32,460 - lightrag - INFO - Final chunks S+F/O: E2/1
+2025-12-11 15:57:34,084 - uvicorn.access - INFO - 127.0.0.1:60717 - "POST /query/stream HTTP/1.1" 200
+2025-12-11 15:57:59,945 - lightrag - INFO -  == LLM cache == saving: default:extract:0166eb83c3ff9028b6045eefc73e18de
+2025-12-11 15:58:00,787 - lightrag - INFO -  == LLM cache == saving: mix:keywords:926742c08c403ef227783c2ca14a0088
+2025-12-11 15:58:00,787 - lightrag - WARNING - low_level_keywords is empty
+2025-12-11 15:58:01,437 - lightrag - INFO - Query edges: 旅游景点, 推荐 (top_k:10, cosine:0.2)
+2025-12-11 15:58:01,613 - lightrag - INFO -  == LLM cache == saving: default:extract:b575faa5cf1d15e7db9b75b0807f6451
+2025-12-11 15:58:01,915 - lightrag - INFO - Global query: 2 entites, 1 relations
+2025-12-11 15:58:01,915 - lightrag - INFO - Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+2025-12-11 15:58:01,915 - lightrag - INFO - Raw search results: 2 entities, 1 relations, 4 vector chunks
+2025-12-11 15:58:01,915 - lightrag - INFO - After truncation: 2 entities, 1 relations
+2025-12-11 15:58:01,916 - lightrag - INFO - Selecting 1 from 1 entity-related chunks by vector similarity
+2025-12-11 15:58:01,916 - lightrag - INFO - Find no additional relations-related chunks from 1 relations
+2025-12-11 15:58:01,916 - lightrag - INFO - Round-robin merged chunks: 5 -> 4 (deduplicated 1)
+2025-12-11 15:58:01,917 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-12-11 15:58:01,918 - lightrag - INFO - Final context: 2 entities, 1 relations, 4 chunks
+2025-12-11 15:58:01,918 - lightrag - INFO - Final chunks S+F/O: E2/1 C1/2 C1/3 C1/4
+2025-12-11 15:58:15,869 - lightrag - INFO -  == LLM cache == saving: default:extract:7e07d312121df5fd9777fec7ec677c37
+2025-12-11 15:58:16,238 - lightrag - INFO -  == LLM cache == saving: mix:query:17d376c75122b0c7a94d226db64615cb
+2025-12-11 15:58:16,239 - uvicorn.access - INFO - 127.0.0.1:61056 - "POST /query HTTP/1.1" 200
+2025-12-11 15:58:16,315 - lightrag - INFO -  == LLM cache == saving: default:extract:059735bffd1c29c127481683e0333f7c
+2025-12-11 15:58:16,316 - lightrag - INFO - Chunk 1 of 3 extracted 14 Ent + 11 Rel chunk-3383e6dcf537fa64d4ccc8f5d7f05104
+2025-12-11 15:58:25,243 - lightrag - INFO -  == LLM cache == saving: default:extract:9e577131d899916ef058caf7f9266859
+2025-12-11 15:58:25,244 - lightrag - INFO - Chunk 2 of 3 extracted 14 Ent + 12 Rel chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3
+2025-12-11 15:58:25,705 - lightrag - INFO -  == LLM cache == saving: mix:keywords:4a97463c29d86b6e353871b9353c7b06
+2025-12-11 15:58:26,059 - lightrag - INFO - Query nodes: 景点推荐, 行程安排, 住宿, 交通, 美食 (top_k:10, cosine:0.2)
+2025-12-11 15:58:26,739 - lightrag - INFO - Local query: 10 entites, 1 relations
+2025-12-11 15:58:26,739 - lightrag - INFO - Query edges: 旅行攻略, 旅游规划, 旅行指南 (top_k:10, cosine:0.2)
+2025-12-11 15:58:27,289 - lightrag - INFO - Global query: 2 entites, 1 relations
+2025-12-11 15:58:27,290 - lightrag - INFO - Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+2025-12-11 15:58:27,290 - lightrag - INFO - Raw search results: 10 entities, 1 relations, 4 vector chunks
+2025-12-11 15:58:27,290 - lightrag - INFO - After truncation: 10 entities, 1 relations
+2025-12-11 15:58:27,291 - lightrag - INFO - Selecting 4 from 4 entity-related chunks by vector similarity
+2025-12-11 15:58:27,291 - lightrag - INFO - Find no additional relations-related chunks from 1 relations
+2025-12-11 15:58:27,291 - lightrag - INFO - Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+2025-12-11 15:58:27,292 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-12-11 15:58:27,293 - lightrag - INFO - Final context: 10 entities, 1 relations, 4 chunks
+2025-12-11 15:58:27,293 - lightrag - INFO - Final chunks S+F/O: E7/1 E1/2 E1/3 E1/4
+2025-12-11 15:58:31,281 - lightrag - INFO -  == LLM cache == saving: default:extract:cc89a7e2b0ac4065f266c30a092fbc18
+2025-12-11 15:58:31,282 - lightrag - INFO - Chunk 3 of 3 extracted 18 Ent + 18 Rel chunk-03f73960e92a10b61243dd8f47889425
+2025-12-11 15:58:31,282 - lightrag - INFO - Extracted entities from 3 multimodal chunks
+2025-12-11 15:58:31,282 - lightrag - INFO - Added 46 belongs_to relations for multimodal entities
+2025-12-11 15:58:31,282 - lightrag - INFO - Merging stage 1/1: 旅行日记5555.pdf
+2025-12-11 15:58:31,282 - lightrag - INFO - Phase 1: Processing 40 entities from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+2025-12-11 15:58:42,772 - lightrag - INFO - Merged: `Air Asia` | 1+2
+2025-12-11 15:58:43,303 - lightrag - INFO - Merged: `Mahatma Gandhi` | 1+2
+2025-12-11 15:58:47,020 - lightrag - INFO -  == LLM cache == saving: mix:query:bce64338770059fb616382228e7b15bd
+2025-12-11 15:58:47,022 - uvicorn.access - INFO - 127.0.0.1:61180 - "POST /query HTTP/1.1" 200
+2025-12-11 15:58:47,413 - lightrag - INFO - Merged: `Reserve Bank Of India` | 1+1
+2025-12-11 15:58:56,302 - lightrag - INFO -  == LLM cache == saving: mix:keywords:b3e58e80b81ff2b31ef0e0dd7f87b0f9
+2025-12-11 15:58:56,302 - lightrag - WARNING - low_level_keywords is empty
+2025-12-11 15:58:58,644 - lightrag - INFO - Phase 2: Processing 86 relations from doc-78fb7df08ce980cbf869a712b992bba9 (async: 8)
+2025-12-11 15:58:58,686 - lightrag - INFO - Query edges: 旅游, 目的地, 旅行规划 (top_k:10, cosine:0.2)
+2025-12-11 15:59:00,675 - lightrag - INFO - Global query: 8 entites, 4 relations
+2025-12-11 15:59:00,675 - lightrag - INFO - Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+2025-12-11 15:59:00,675 - lightrag - INFO - Raw search results: 8 entities, 4 relations, 4 vector chunks
+2025-12-11 15:59:00,676 - lightrag - INFO - After truncation: 8 entities, 4 relations
+2025-12-11 15:59:00,677 - lightrag - INFO - Selecting 4 from 4 entity-related chunks by vector similarity
+2025-12-11 15:59:00,677 - lightrag - INFO - Find no additional relations-related chunks from 4 relations
+2025-12-11 15:59:00,677 - lightrag - INFO - Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+2025-12-11 15:59:00,678 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2025-12-11 15:59:00,678 - lightrag - INFO - Final context: 8 entities, 4 relations, 4 chunks
+2025-12-11 15:59:00,678 - lightrag - INFO - Final chunks S+F/O: E2/1 E1/2 E6/3 E1/4
+2025-12-11 15:59:09,761 - lightrag - INFO -  == LLM cache == saving: mix:query:120ea5af2818037fa493c59214ad1848
+2025-12-11 15:59:09,762 - uvicorn.access - INFO - 127.0.0.1:61358 - "POST /query HTTP/1.1" 200

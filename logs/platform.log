@@ -225,3 +225,7 @@ INFO:     2025-12-11 15:57:34 | [1765439854607-5826398336] 开始处理请求: G
 INFO:     2025-12-11 15:57:34 | 127.0.0.1:60949 - "GET /agents/simple HTTP/1.1" 404 Not Found
 2025-12-11 15:57:34 [INFO] __init__.py:999 - [1765439854607-5826398336] 完成请求: GET /agents/simple - 处理时间: 0.09秒
 INFO:     2025-12-11 15:57:34 | [1765439854607-5826398336] 完成请求: GET /agents/simple - 处理时间: 0.09秒
+INFO:     2025-12-11 16:03:10 | 1 change detected
+INFO:     2025-12-11 16:03:11 | 7 changes detected
+INFO:     2025-12-11 16:03:16 | 4 changes detected
+INFO:     2025-12-11 16:03:19 | 1 change detected

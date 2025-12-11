@@ -224,5 +224,173 @@
     "create_time": 1765439949,
     "update_time": 1765439949,
     "_id": "mix:query:120ea5af2818037fa493c59214ad1848"
+  },
+  "mix:keywords:f34c003e3ce1a6b18d050ed70e5f1251": {
+    "return": "{\"high_level_keywords\": [\"India tourism\", \"Travel planning\", \"Tourist destinations\"], \"low_level_keywords\": [\"India\", \"Taj Mahal\", \"Kerala\", \"Goa\", \"Delhi\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "印度旅游",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765439963,
+    "update_time": 1765439963,
+    "_id": "mix:keywords:f34c003e3ce1a6b18d050ed70e5f1251"
+  },
+  "mix:query:fdac2d4e27f32288360d2c2d2cd01839": {
+    "return": "根据提供的上下文，这是一份关于一次印度游学旅行的个人记录。以下是基于现有信息对这次旅行的概述。\n\n这次旅行被记录为一次“印度游学Vlog”，时间从 **2023年12月27日持续到2024年1月10日**。旅行日记中包含了几张图片，生动地记录了旅途中的几个关键场景。\n\n**行程与地点**\n根据游学Vlog标题中提到的地点，这次旅行的行程可能覆盖了印度几个重要的文化和宗教城市，包括：\n*   **菩提伽耶**\n*   **瓦拉纳西**\n*   **阿格拉**\n*   **新德里**\n\n其中一张图片明确展示了旅行团在**萨尔纳特**的**达美克佛塔**前的合影，这表明瓦拉纳西（萨尔纳特是瓦拉纳西附近著名的佛教遗址）是实际到访的地点之一。\n\n**旅途记录**\n旅行日记以图文并茂的方式记录了旅程的片段：\n1.  **启程**：一张图片显示旅行者们正在一个晴朗的日子，通过登机梯排队登上**泰国亚洲航空**的客机，这标志着旅行的开始。\n2.  **财务准备**：另一张特写图片展示了一叠印度500卢比的纸币，上面印有圣雄甘地的头像。这可能是为印度之行准备的现金，是旅行财务记录的一部分。\n3.  **景点留念**：最核心的一张图片是旅行团在**萨尔纳特达美克佛塔**前的集体合影。照片中既有旅行者也有当地人，大家身着色彩鲜艳的服装，气氛友好，照片上叠加的中文标题清晰地指明了这次“印度游学Vlog”的主题和行程日期。\n\n总的来说，这份资料记录了一次在2023年底至2024年初进行的印度游学之旅，通过图片和简单的文字，展现了从出发准备、行程安排到实地参观的片段，属于个人旅行日记的性质。\n\n### References\n\n- [1] 旅行日记5555.pdf",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "印度旅游",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "hl_keywords": "India tourism, Travel planning, Tourist destinations",
+      "ll_keywords": "India, Taj Mahal, Kerala, Goa, Delhi",
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765439989,
+    "update_time": 1765439989,
+    "_id": "mix:query:fdac2d4e27f32288360d2c2d2cd01839"
+  },
+  "mix:keywords:a4d64b6e7018012928c0df3f5306722d": {
+    "return": "{\"high_level_keywords\": [\"\\u65c5\\u884c\\u65e5\\u8bb0\", \"\\u5929\\u6c14\"], \"low_level_keywords\": [\"\\u65c5\\u884c\\u65e5\\u8bb05555.pdf\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "旅行日记5555.pdf 天气",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765440000,
+    "update_time": 1765440000,
+    "_id": "mix:keywords:a4d64b6e7018012928c0df3f5306722d"
+  },
+  "mix:query:51a7560fc136fa5de8e2065dce7706c1": {
+    "return": "根据提供的 **Context**，**旅行日记5555.pdf** 文档中没有直接描述旅行期间具体天气状况的信息。\n\n文档内容主要围绕一次前往印度的游学旅行，包含了旅行日记、相关图片及对图片内容的分析。其中提到了旅行日期（2023年12月27日至2024年1月10日）、使用的航空公司（Air Asia）、印度货币（500卢比纸币）以及一张在印度鹿野苑（Sarnath）的达美克佛塔（Dhamek Stupa）前的团体合影。\n\n虽然对其中一张户外照片（`image_2.png`）的视觉分析提到了“光线柔和且略微漫射，可能是由于朦胧的大气条件，使整体图像呈现出柔和温暖的色调”，但这是一种基于图像外观的描述性分析，并非对旅行期间天气状况的明确记录或报告。\n\n因此，基于现有资料，无法回答关于这份旅行日记所记载的具体天气情况。\n\n### References\n\n- [1] 旅行日记5555.pdf",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "旅行日记5555.pdf 天气",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "hl_keywords": "旅行日记, 天气",
+      "ll_keywords": "旅行日记5555.pdf",
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765440014,
+    "update_time": 1765440014,
+    "_id": "mix:query:51a7560fc136fa5de8e2065dce7706c1"
+  },
+  "mix:keywords:d344f6caa59088aa2bbced4dd7dd8446": {
+    "return": "{\"high_level_keywords\": [\"\\u5929\\u6c14\", \"\\u5929\\u6c14\\u72b6\\u51b5\"], \"low_level_keywords\": [\"\\u6674\\u6717\", \"\\u9633\\u5149\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "天气 晴朗 阳光",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765440023,
+    "update_time": 1765440023,
+    "_id": "mix:keywords:d344f6caa59088aa2bbced4dd7dd8446"
+  },
+  "mix:query:bdbc5d3924e80548c30acb8f9d7c7f23": {
+    "return": "根据提供的上下文信息，关于“天气 晴朗 阳光”的描述，主要出现在对一张旅行照片的视觉分析中。\n\n**视觉分析中的天气描述**\n\n在分析一张名为 `image_0.png` 的图片时，其视觉分析明确指出，照片拍摄于一个**晴朗的天气**。具体描述如下：\n*   照片中，**明亮的蓝色天空**上点缀着**几缕稀疏的云彩**，这为整个场景提供了**充足的自然光照**。阳光照射在混凝土的机场跑道上，投下了**浅浅的阴影**。\n\n这张图片描绘的是一群旅行者在一个晴朗的日子里，通过舷梯登上一架亚航飞机的情景。晴朗的天气是构成该场景自然光照和整体氛围的关键元素。\n\n### References\n\n- [1] 旅行日记5555.pdf",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "天气 晴朗 阳光",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "hl_keywords": "天气, 天气状况",
+      "ll_keywords": "晴朗, 阳光",
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765440033,
+    "update_time": 1765440033,
+    "_id": "mix:query:bdbc5d3924e80548c30acb8f9d7c7f23"
+  },
+  "mix:keywords:d39c0936f155d992899e7a9a26b03b59": {
+    "return": "{\"high_level_keywords\": [\"\\u5149\\u7ebf\", \"\\u5149\\u7ebf\\u7279\\u6027\", \"\\u89c6\\u89c9\\u611f\\u53d7\"], \"low_level_keywords\": [\"\\u67d4\\u548c\", \"\\u6e29\\u6696\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "光线 柔和 温暖",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765440042,
+    "update_time": 1765440042,
+    "_id": "mix:keywords:d39c0936f155d992899e7a9a26b03b59"
+  },
+  "mix:query:1eddd991fd4409b1ea278298abd1c909": {
+    "return": "根据提供的上下文，图像分析中描述的光线效果是**柔和且温暖**的。\n\n具体来说，在分析“印度游学Vlog”的图像（即一群人聚集在印度鹿野苑的达美克佛塔前的照片）时，视觉分析指出：\n\n> “The lighting is soft and slightly diffused, likely due to hazy atmospheric conditions, lending the overall image a gentle and warm tone.”\n\n这句话的中文意思是：“光线柔和且略带漫射，可能是由于朦胧的大气条件所致，赋予整张图像一种温和而温暖的色调。”\n\n这种光线效果与图像的视觉风格——一种适合个人旅行记录主题的随意风格——是相符的。它并非刺眼或强烈的光线，而是营造出一种友好、社交氛围的漫射光，与旅行摄影中常见的氛围相吻合。\n\n### 参考文献\n\n- [1] 旅行日记5555.pdf",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "光线 柔和 温暖",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "hl_keywords": "光线, 光线特性, 视觉感受",
+      "ll_keywords": "柔和, 温暖",
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1765440053,
+    "update_time": 1765440053,
+    "_id": "mix:query:1eddd991fd4409b1ea278298abd1c909"
   }
 }

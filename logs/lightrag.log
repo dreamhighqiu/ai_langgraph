@@ -261,3 +261,77 @@ INFO: Final context: 8 entities, 4 relations, 4 chunks
 INFO: Final chunks S+F/O: E2/1 E1/2 E6/3 E1/4
 INFO:  == LLM cache == saving: mix:query:120ea5af2818037fa493c59214ad1848
 INFO: 127.0.0.1:61358 - "POST /query HTTP/1.1" 200
+INFO:  == LLM cache == saving: mix:keywords:f34c003e3ce1a6b18d050ed70e5f1251
+INFO: Query nodes: India, Taj Mahal, Kerala, Goa, Delhi (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 16 relations
+INFO: Query edges: India tourism, Travel planning, Tourist destinations (top_k:10, cosine:0.2)
+INFO: Global query: 12 entites, 10 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 20 entities, 22 relations, 4 vector chunks
+INFO: After truncation: 20 entities, 22 relations
+INFO: Selecting 4 from 4 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 22 relations
+INFO: Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 20 entities, 22 relations, 4 chunks
+INFO: Final chunks S+F/O: E2/1 E13/2 E3/3 E5/4
+INFO:  == LLM cache == saving: mix:query:fdac2d4e27f32288360d2c2d2cd01839
+INFO: 127.0.0.1:61547 - "POST /query HTTP/1.1" 200
+INFO:  == LLM cache == saving: mix:keywords:a4d64b6e7018012928c0df3f5306722d
+INFO: Query nodes: 旅行日记5555.pdf (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 45 relations
+INFO: Query edges: 旅行日记, 天气 (top_k:10, cosine:0.2)
+INFO: Global query: 13 entites, 10 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 17 entities, 45 relations, 4 vector chunks
+INFO: After truncation: 17 entities, 45 relations
+INFO: Selecting 4 from 4 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 45 relations
+INFO: Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 17 entities, 45 relations, 4 chunks
+INFO: Final chunks S+F/O: E3/1 E7/2 E8/3 E4/4
+INFO:  == LLM cache == saving: mix:query:51a7560fc136fa5de8e2065dce7706c1
+INFO: 127.0.0.1:61762 - "POST /query HTTP/1.1" 200
+INFO: Phase 3: Updating final 40(40+0) entities and  86 relations from doc-78fb7df08ce980cbf869a712b992bba9
+INFO: Completed merging: 40 entities, 0 extra entities, 86 relations
+INFO: [] Writing graph with 70 nodes, 88 edges
+INFO: In memory DB persist to disk
+INFO: Updated doc_status: added 3 multimodal chunks to standard chunks_list (total chunks: 4)
+INFO: Multimodal content processing complete
+INFO: Content list insertion complete for: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf
+INFO: Document processing complete: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+INFO: RAG-Anything processing completed successfully: 旅行日记5555.pdf, doc_id=doc-78fb7df08ce980cbf869a712b992bba9
+INFO: No documents to process
+INFO:  == LLM cache == saving: mix:keywords:d344f6caa59088aa2bbced4dd7dd8446
+INFO: Query nodes: 晴朗, 阳光 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 44 relations
+INFO: Query edges: 天气, 天气状况 (top_k:10, cosine:0.2)
+INFO: Global query: 12 entites, 10 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 17 entities, 46 relations, 4 vector chunks
+INFO: After truncation: 17 entities, 46 relations
+INFO: Selecting 4 from 4 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 46 relations
+INFO: Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 17 entities, 46 relations, 4 chunks
+INFO: Final chunks S+F/O: E9/1 E2/2 E6/3 E3/4
+INFO:  == LLM cache == saving: mix:query:bdbc5d3924e80548c30acb8f9d7c7f23
+INFO: 127.0.0.1:61893 - "POST /query HTTP/1.1" 200
+INFO:  == LLM cache == saving: mix:keywords:d39c0936f155d992899e7a9a26b03b59
+INFO: Query nodes: 柔和, 温暖 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 41 relations
+INFO: Query edges: 光线, 光线特性, 视觉感受 (top_k:10, cosine:0.2)
+INFO: Global query: 11 entites, 10 relations
+INFO: Naive query: 4 chunks (chunk_top_k:20 cosine:0.2)
+INFO: Raw search results: 15 entities, 44 relations, 4 vector chunks
+INFO: After truncation: 15 entities, 44 relations
+INFO: Selecting 4 from 4 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 44 relations
+INFO: Round-robin merged chunks: 8 -> 4 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 15 entities, 44 relations, 4 chunks
+INFO: Final chunks S+F/O: E8/1 E1/2 E6/3 E3/4
+INFO:  == LLM cache == saving: mix:query:1eddd991fd4409b1ea278298abd1c909
+INFO: 127.0.0.1:61985 - "POST /query HTTP/1.1" 200

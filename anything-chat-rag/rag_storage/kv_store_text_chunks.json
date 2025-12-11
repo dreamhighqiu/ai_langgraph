@@ -12,5 +12,59 @@
     "create_time": 1765439727,
     "update_time": 1765439783,
     "_id": "chunk-700abcb7689920286ae518a3b9fb468d"
+  },
+  "chunk-3383e6dcf537fa64d4ccc8f5d7f05104": {
+    "content": "\nImage Content Analysis:\nImage Path: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_0.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: The image shows a group of travelers boarding an AirAsia airplane via a portable staircase on a sunny day. The AirAsia aircraft, painted in its distinctive red and white livery and labeled 'airasia.com', occupies most of the frame from left to right, with the front section and visible engine. The text 'THAI AIRASIA' and 'AIRBUS' appear near the cockpit on the aircraft. A line of passengers, dressed mostly in casual jackets and comfortable clothes suitable for travel, walk in single file towards the open airplane door. A bright blue sky with few wispy clouds stretches overhead, providing ample natural lighting that casts light shadows on the concrete tarmac. A tall airport lamp post rises in the background to the left. The image is taken from behind the queue of people, emphasizing the anticipation and communal aspect of boarding. No visible captions, signs, or explicit destination details are present, but the airplane’s brand and model are clearly visible. The scene and travelers’ attire suggest a relaxed, leisure-oriented journey, and the sequence complements the surrounding content about going out for travel ('我们出去旅行了') and related documentation, such as AirAsia and travel dates, reinforcing the theme of a travel diary or log.",
+    "tokens": 300,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "chunk_order_index": 1,
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [
+      "default:extract:b575faa5cf1d15e7db9b75b0807f6451",
+      "default:extract:059735bffd1c29c127481683e0333f7c"
+    ],
+    "is_multimodal": true,
+    "modal_entity_name": "Boarding AirAsia Aircraft at Airport (image)",
+    "original_type": "image",
+    "page_idx": 0,
+    "create_time": 1765439822,
+    "update_time": 1765439896,
+    "_id": "chunk-3383e6dcf537fa64d4ccc8f5d7f05104"
+  },
+  "chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3": {
+    "content": "\nImage Content Analysis:\nImage Path: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_1.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: The image shows a close-up, top-down view of a hand holding a fanned-out stack of Indian 500 rupee banknotes. Approximately 16 notes are visible, arranged in a semi-circular fan shape, with the hand gripping the bottom left corner of the stack. The thumb and part of the index finger are visible, with the person wearing a dark blue sleeve. The notes clearly display multiple '₹500' denominations and feature the printed image of Mahatma Gandhi, along with the text 'RESERVE BANK OF INDIA' at the top right and various security features like watermarks, security threads, and micro-lettering. The notes contain serial numbers, several featuring prominently, such as '4VK 0128805'. Some Hindi script is visible on the notes, including 'भारतीय रिजर्व बैंक' (Bharatiya Reserve Bank). The currency design matches the updated Mahatma Gandhi (New Series) issued by the Reserve Bank of India. The notes rest atop a black or very dark brown textured leather item with a metallic button – likely a bag or wallet – and navy clothing fabric, indicating the person may be sitting, potentially in transit such as at an airport or train station. The lighting is soft and natural, evenly illuminating the scene, likely from overhead ambient light. The visual style is candid and documentary, consistent with travel documentation. The image's context, supported by surrounding content referencing 'Air Asia,' specific dates (2023.12.27-2024.01.10), and 'travel diary' terms, suggests this currency was withdrawn or prepared for a trip in India, possibly for expenditures during the journey, with an intention to document the travel experience and related finances.",
+    "tokens": 396,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "chunk_order_index": 2,
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [
+      "default:extract:0166eb83c3ff9028b6045eefc73e18de",
+      "default:extract:9e577131d899916ef058caf7f9266859"
+    ],
+    "is_multimodal": true,
+    "modal_entity_name": "Hand holding fanned Indian 500 rupee banknotes (image)",
+    "original_type": "image",
+    "page_idx": 0,
+    "create_time": 1765439822,
+    "update_time": 1765439905,
+    "_id": "chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3"
+  },
+  "chunk-03f73960e92a10b61243dd8f47889425": {
+    "content": "\nImage Content Analysis:\nImage Path: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_2.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: The image depicts a group of people gathered outdoors in front of a large historic stupa structure, which appears to be the Dhamek Stupa located in Sarnath, India. The composition places the stupa centrally in the background, partially framed by large overhanging tree branches that extend from the upper left and right corners, adding a natural border to the scene. The foreground is occupied by a group of approximately fifteen individuals, including children and adults, many of whom are dressed in brightly colored traditional Indian clothing such as saris and shawls in shades of orange, yellow, red, and some darker hues. One central figure in the front row is wearing a long, light green garment with a scarf and is holding a camera, suggesting the person may be a tourist or documentarian. Most group members have their hands raised in greeting or waving gestures, indicating a friendly, social atmosphere typical of travel photography. Prominently overlaid across the upper-middle of the image is white Chinese text, partially transparent, which acts as a title for the image. The main title reads '印度游学Vlog' (India Study Tour Vlog), followed by the Chinese names of several Indian cities or locations ('菩提迪耶-瓦拉纳希-阿格拉-新德里', which correspond to Bodhgaya, Varanasi, Agra, and New Delhi). Beneath is a date range, '2023.12.27-2024.01.10', indicating the timeframe of the documented travel. The lighting is soft and slightly diffused, likely due to hazy atmospheric conditions, lending the overall image a gentle and warm tone. The visual style is casual, fitting with a personal travel documentation theme. The group appears to be intentionally posed for the camera, reinforcing the idea of a travel vlog or diary. This setting and composition correspond with the surrounding content focused on a travel diary, including references to Air Asia and Mahatma Gandhi, and the travel period.",
+    "tokens": 456,
+    "full_doc_id": "doc-78fb7df08ce980cbf869a712b992bba9",
+    "chunk_order_index": 3,
+    "file_path": "旅行日记5555.pdf",
+    "llm_cache_list": [
+      "default:extract:7e07d312121df5fd9777fec7ec677c37",
+      "default:extract:cc89a7e2b0ac4065f266c30a092fbc18"
+    ],
+    "is_multimodal": true,
+    "modal_entity_name": "India Study Tour Group at Dhamek Stupa, Sarnath (image)",
+    "original_type": "image",
+    "page_idx": 0,
+    "create_time": 1765439822,
+    "update_time": 1765439911,
+    "_id": "chunk-03f73960e92a10b61243dd8f47889425"
   }
 }

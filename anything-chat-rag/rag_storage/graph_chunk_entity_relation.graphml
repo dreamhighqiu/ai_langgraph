@@ -16,28 +16,28 @@
 <graph edgedefault="undirected"><node id="Air Asia">
   <data key="d0">Air Asia</data>
   <data key="d1">organization</data>
-  <data key="d2">Air Asia is an airline company mentioned in the text.</data>
-  <data key="d3">chunk-700abcb7689920286ae518a3b9fb468d</data>
+  <data key="d2">Air Asia is an airline company mentioned in the text.&lt;SEP&gt;An airline company referenced in the surrounding content of the travel diary.&lt;SEP&gt;An airline referenced in the surrounding travel diary content.</data>
+  <data key="d3">chunk-700abcb7689920286ae518a3b9fb468d&lt;SEP&gt;chunk-03f73960e92a10b61243dd8f47889425&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
   <data key="d4">旅行日记5555.pdf</data>
-  <data key="d5">1765439783</data>
+  <data key="d5">1765439922</data>
   <data key="d6"></data>
 </node>
 <node id="Mahatma Gandhi">
   <data key="d0">Mahatma Gandhi</data>
   <data key="d1">person</data>
-  <data key="d2">Mahatma Gandhi is a historical figure whose name appears multiple times in the text.</data>
-  <data key="d3">chunk-700abcb7689920286ae518a3b9fb468d</data>
+  <data key="d2">Mahatma Gandhi is a historical figure whose name appears multiple times in the text.&lt;SEP&gt;The historical figure whose printed image appears on the Indian 500 rupee banknotes.&lt;SEP&gt;A historical figure referenced in the surrounding travel diary content.</data>
+  <data key="d3">chunk-700abcb7689920286ae518a3b9fb468d&lt;SEP&gt;chunk-03f73960e92a10b61243dd8f47889425&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
   <data key="d4">旅行日记5555.pdf</data>
-  <data key="d5">1765439783</data>
+  <data key="d5">1765439923</data>
   <data key="d6"></data>
 </node>
 <node id="Reserve Bank Of India">
   <data key="d0">Reserve Bank Of India</data>
   <data key="d1">organization</data>
-  <data key="d2">The Reserve Bank of India is a central bank, and its name is repeated and referenced as being guaranteed by the central government.</data>
-  <data key="d3">chunk-700abcb7689920286ae518a3b9fb468d</data>
+  <data key="d2">The Reserve Bank of India is a central bank, and its name is repeated and referenced as being guaranteed by the central government.&lt;SEP&gt;The central bank of India, which issues the currency notes, as indicated by the text 'RESERVE BANK OF INDIA' and its Hindi equivalent on the notes.</data>
+  <data key="d3">chunk-700abcb7689920286ae518a3b9fb468d&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
   <data key="d4">旅行日记5555.pdf</data>
-  <data key="d5">1765439783</data>
+  <data key="d5">1765439927</data>
   <data key="d6"></data>
 </node>
 <node id="Central Government">
@@ -283,6 +283,426 @@
   <data key="d5">1765439794</data>
   <data key="d6"></data>
 </node>
+<node id="Boarding AirAsia Aircraft at Airport (image)">
+  <data key="d0">Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">This image shows travelers boarding an AirAsia plane outdoors via steps, under a clear blue sky. It reflects the start of a travel journey and visually connects to the surrounding context about tourism documentation and travel activities.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439849</data>
+</node>
+<node id="Hand holding fanned Indian 500 rupee banknotes (image)">
+  <data key="d0">Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">The image depicts a person's hand holding a spread of 500 rupee Indian notes, suggesting cash preparation or usage during travel in India. It illustrates part of a travel diary, connecting to trip details and financial arrangements referenced in the surrounding context.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439849</data>
+</node>
+<node id="India Study Tour Group at Dhamek Stupa, Sarnath (image)">
+  <data key="d0">India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d1">image</data>
+  <data key="d2">A group photo in front of the Dhamek Stupa, Sarnath, featuring travelers and local people, with overlaying Chinese text indicating a travel vlog itinerary in India from late 2023 to early 2024—visually connecting with the surrounding travel diary context.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439849</data>
+</node>
+<node id="Airasia">
+  <data key="d0">Airasia</data>
+  <data key="d1">organization</data>
+  <data key="d2">AirAsia is an airline with a distinctive red and white livery, operating the aircraft shown in the image.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Airbus">
+  <data key="d0">Airbus</data>
+  <data key="d1">organization</data>
+  <data key="d2">Airbus is an aircraft manufacturer, identified by the text on the airplane near the cockpit.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Thai Airasia">
+  <data key="d0">Thai Airasia</data>
+  <data key="d1">organization</data>
+  <data key="d2">Thai AirAsia is an airline brand, as indicated by the text on the aircraft's fuselage.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Travelers">
+  <data key="d0">Travelers</data>
+  <data key="d1">person</data>
+  <data key="d2">Travelers are a group of people boarding an airplane, dressed in casual jackets and comfortable clothes suitable for travel.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Airasia Airplane">
+  <data key="d0">Airasia Airplane</data>
+  <data key="d1">artifact</data>
+  <data key="d2">The AirAsia airplane is an Airbus aircraft painted in red and white, with passengers boarding via a portable staircase.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Portable Staircase">
+  <data key="d0">Portable Staircase</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A portable staircase is used by travelers to board the AirAsia airplane.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Airport Tarmac">
+  <data key="d0">Airport Tarmac</data>
+  <data key="d1">location</data>
+  <data key="d2">The airport tarmac is the concrete ground where the airplane is parked and travelers are boarding.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Airport Lamp Post">
+  <data key="d0">Airport Lamp Post</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A tall airport lamp post is visible in the background of the scene.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439911</data>
+  <data key="d6"></data>
+</node>
+<node id="Sunny Day">
+  <data key="d0">Sunny Day</data>
+  <data key="d1">naturalobject</data>
+  <data key="d2">The scene occurs on a sunny day with a bright blue sky and few wispy clouds providing natural lighting.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439912</data>
+  <data key="d6"></data>
+</node>
+<node id="Travel Diary">
+  <data key="d0">Travel Diary</data>
+  <data key="d1">content</data>
+  <data key="d2">A documented record of a travel experience, which includes the image of the currency and references specific dates and the airline Air Asia.&lt;SEP&gt;The image complements the theme of a travel diary or log, as mentioned in the surrounding content.&lt;SEP&gt;The surrounding content theme focused on personal travel documentation, to which the image corresponds.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104&lt;SEP&gt;chunk-03f73960e92a10b61243dd8f47889425&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439912</data>
+  <data key="d6"></data>
+</node>
+<node id="Image Content Analysis">
+  <data key="d0">Image Content Analysis</data>
+  <data key="d1">content</data>
+  <data key="d2">Image Content Analysis is the process describing the visual scene, including the image path, captions, footnotes, and a detailed visual analysis.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439913</data>
+  <data key="d6"></data>
+</node>
+<node id="Image Path">
+  <data key="d0">Image Path</data>
+  <data key="d1">data</data>
+  <data key="d2">The image path is '/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_0.png', specifying the file location of the analyzed image.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439913</data>
+  <data key="d6"></data>
+</node>
+<node id="Visual Analysis">
+  <data key="d0">Visual Analysis</data>
+  <data key="d1">content</data>
+  <data key="d2">Visual Analysis is the detailed description of the image's content, including objects, colors, actions, and inferred themes.&lt;SEP&gt;The descriptive text analyzing the content, context, and details of the image 'image_1.png', including observations about the currency, setting, and travel implications.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439914</data>
+  <data key="d6"></data>
+</node>
+<node id="We Go Out For Travel">
+  <data key="d0">We Go Out For Travel</data>
+  <data key="d1">content</data>
+  <data key="d2">"我们出去旅行了" (We go out for travel) is a phrase from the surrounding content that the image complements, reinforcing the travel diary theme.</data>
+  <data key="d3">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439914</data>
+  <data key="d6"></data>
+</node>
+<node id="Dhamek Stupa">
+  <data key="d0">Dhamek Stupa</data>
+  <data key="d1">location</data>
+  <data key="d2">A large historic stupa located in Sarnath, India, depicted centrally in the background of the image.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439915</data>
+  <data key="d6"></data>
+</node>
+<node id="Sarnath">
+  <data key="d0">Sarnath</data>
+  <data key="d1">location</data>
+  <data key="d2">A location in India where the Dhamek Stupa is situated.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439915</data>
+  <data key="d6"></data>
+</node>
+<node id="India">
+  <data key="d0">India</data>
+  <data key="d1">location</data>
+  <data key="d2">The country associated with the currency and the intended destination of the travel documented in the diary.&lt;SEP&gt;The country where the travel and the depicted scene take place.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439915</data>
+  <data key="d6"></data>
+</node>
+<node id="Group Of People">
+  <data key="d0">Group Of People</data>
+  <data key="d1">person</data>
+  <data key="d2">A group of approximately fifteen individuals, including children and adults, dressed in traditional Indian clothing and posing for a photo in front of the stupa.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439917</data>
+  <data key="d6"></data>
+</node>
+<node id="Tourist With Camera">
+  <data key="d0">Tourist With Camera</data>
+  <data key="d1">person</data>
+  <data key="d2">A central figure in the group wearing a light green garment and holding a camera, suggesting they are a tourist or documentarian.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439917</data>
+  <data key="d6"></data>
+</node>
+<node id="Image">
+  <data key="d0">Image</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A photograph depicting a group in front of the Dhamek Stupa, overlaid with Chinese text indicating it is part of a travel vlog.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439918</data>
+  <data key="d6"></data>
+</node>
+<node id="India Study Tour Vlog">
+  <data key="d0">India Study Tour Vlog</data>
+  <data key="d1">content</data>
+  <data key="d2">A travel vlog documented in Chinese, with the title '印度游学Vlog', covering a tour from December 27, 2023, to January 10, 2024.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439919</data>
+  <data key="d6"></data>
+</node>
+<node id="Bodhgaya">
+  <data key="d0">Bodhgaya</data>
+  <data key="d1">location</data>
+  <data key="d2">An Indian city listed in the vlog title as part of the travel itinerary.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439920</data>
+  <data key="d6"></data>
+</node>
+<node id="Varanasi">
+  <data key="d0">Varanasi</data>
+  <data key="d1">location</data>
+  <data key="d2">An Indian city listed in the vlog title as part of the travel itinerary.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439921</data>
+  <data key="d6"></data>
+</node>
+<node id="Agra">
+  <data key="d0">Agra</data>
+  <data key="d1">location</data>
+  <data key="d2">An Indian city listed in the vlog title as part of the travel itinerary.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439921</data>
+  <data key="d6"></data>
+</node>
+<node id="New Delhi">
+  <data key="d0">New Delhi</data>
+  <data key="d1">location</data>
+  <data key="d2">An Indian city listed in the vlog title as part of the travel itinerary.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439922</data>
+  <data key="d6"></data>
+</node>
+<node id="Traditional Indian Clothing">
+  <data key="d0">Traditional Indian Clothing</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Brightly colored garments such as saris and shawls in shades of orange, yellow, and red, worn by the group in the image.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439924</data>
+  <data key="d6"></data>
+</node>
+<node id="Chinese Text Overlay">
+  <data key="d0">Chinese Text Overlay</data>
+  <data key="d1">content</data>
+  <data key="d2">White, partially transparent Chinese text overlaid on the image, containing the vlog title, location names, and date range.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439924</data>
+  <data key="d6"></data>
+</node>
+<node id="Travel Period">
+  <data key="d0">Travel Period</data>
+  <data key="d1">event</data>
+  <data key="d2">The timeframe from December 27, 2023, to January 10, 2024, during which the documented study tour took place.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439925</data>
+  <data key="d6"></data>
+</node>
+<node id="Visual Style">
+  <data key="d0">Visual Style</data>
+  <data key="d1">concept</data>
+  <data key="d2">The casual and personal visual style of the image, fitting a travel documentation theme.</data>
+  <data key="d3">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439925</data>
+  <data key="d6"></data>
+</node>
+<node id="Indian 500 Rupee Banknotes">
+  <data key="d0">Indian 500 Rupee Banknotes</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A stack of Indian currency notes of the 500 rupee denomination, featuring Mahatma Gandhi's image, text 'RESERVE BANK OF INDIA', and various security features like watermarks and serial numbers.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439926</data>
+  <data key="d6"></data>
+</node>
+<node id="Hand">
+  <data key="d0">Hand</data>
+  <data key="d1">naturalobject</data>
+  <data key="d2">A human hand, wearing a dark blue sleeve, holding a fanned-out stack of Indian 500 rupee banknotes.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439926</data>
+  <data key="d6"></data>
+</node>
+<node id="Bag Or Wallet">
+  <data key="d0">Bag Or Wallet</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A black or dark brown textured leather item with a metallic button, likely a bag or wallet, upon which the banknotes are resting.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439928</data>
+  <data key="d6"></data>
+</node>
+<node id="Image_1.png">
+  <data key="d0">Image_1.png</data>
+  <data key="d1">artifact</data>
+  <data key="d2">The specific image file located at '/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/parser_output/旅行日记5555/docling/images/image_1.png' that contains the visual analysis of the banknotes and hand.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439929</data>
+  <data key="d6"></data>
+</node>
+<node id="Serial Number 4VK 0128805">
+  <data key="d0">Serial Number 4VK 0128805</data>
+  <data key="d1">data</data>
+  <data key="d2">A specific serial number, '4VK 0128805', that is prominently visible on one of the Indian 500 rupee banknotes in the image.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439929</data>
+  <data key="d6"></data>
+</node>
+<node id="Hindi Script">
+  <data key="d0">Hindi Script</data>
+  <data key="d1">content</data>
+  <data key="d2">The text 'भारतीय रिजर्व बैंक' (Bharatiya Reserve Bank) written in the Hindi script, visible on the Indian 500 rupee banknotes.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439930</data>
+  <data key="d6"></data>
+</node>
+<node id="Mahatma Gandhi (New Series)">
+  <data key="d0">Mahatma Gandhi (New Series)</data>
+  <data key="d1">artifact</data>
+  <data key="d2">The specific updated series of Indian banknotes issued by the Reserve Bank of India, to which the 500 rupee note in the image belongs.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439930</data>
+  <data key="d6"></data>
+</node>
+<node id="Travel Experience">
+  <data key="d0">Travel Experience</data>
+  <data key="d1">event</data>
+  <data key="d2">The journey or trip to India occurring between 2023.12.27 and 2024.01.10, which is being documented in the travel diary.</data>
+  <data key="d3">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d4">旅行日记5555.pdf</data>
+  <data key="d5">1765439931</data>
+  <data key="d6"></data>
+</node>
+<edge source="Air Asia" target="Travel Diary">
+  <data key="d7">2.0</data>
+  <data key="d8">The travel diary references the airline Air Asia, indicating travel logistics.&lt;SEP&gt;The travel diary references the airline Air Asia.</data>
+  <data key="d9">logistics,reference,travel logistics,travel reference</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425&lt;SEP&gt;chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439961</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Air Asia" target="India Study Tour Group at Dhamek Stupa, Sarnath (image)">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Air Asia belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439982</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Air Asia" target="Hand holding fanned Indian 500 rupee banknotes (image)">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Air Asia belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440004</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mahatma Gandhi" target="Travel Diary">
+  <data key="d7">1.0</data>
+  <data key="d8">The travel diary references the historical figure Mahatma Gandhi.</data>
+  <data key="d9">cultural context,reference</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439963</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mahatma Gandhi" target="Indian 500 Rupee Banknotes">
+  <data key="d7">1.0</data>
+  <data key="d8">The Indian 500 rupee banknotes feature the printed image of Mahatma Gandhi.</data>
+  <data key="d9">currency design,national symbol</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439981</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mahatma Gandhi" target="India Study Tour Group at Dhamek Stupa, Sarnath (image)">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Mahatma Gandhi belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439984</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mahatma Gandhi" target="Hand holding fanned Indian 500 rupee banknotes (image)">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Mahatma Gandhi belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440000</data>
+  <data key="d13"></data>
+</edge>
 <edge source="Reserve Bank Of India" target="Central Government">
   <data key="d7">1.0</data>
   <data key="d8">The Reserve Bank of India is guaranteed by the Central Government, as stated in the text.</data>
@@ -292,6 +712,24 @@
   <data key="d12">1765439799</data>
   <data key="d13"></data>
 </edge>
+<edge source="Reserve Bank Of India" target="Indian 500 Rupee Banknotes">
+  <data key="d7">1.0</data>
+  <data key="d8">The Indian 500 rupee banknotes are issued by and bear the name of the Reserve Bank of India.</data>
+  <data key="d9">authority,issuance</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439983</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Reserve Bank Of India" target="Hand holding fanned Indian 500 rupee banknotes (image)">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Reserve Bank Of India belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440001</data>
+  <data key="d13"></data>
+</edge>
 <edge source="Travel Document" target="Date Range 2023.12.27-2024.01.10">
   <data key="d7">1.0</data>
   <data key="d8">The travel document is associated with the specified date range, indicating the period of the trip.</data>
@@ -299,6 +737,699 @@
   <data key="d10">chunk-700abcb7689920286ae518a3b9fb468d</data>
   <data key="d11">旅行日记5555.pdf</data>
   <data key="d12">1765439799</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Airbus">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Airbus belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439942</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Airasia">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Airasia belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439943</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Thai Airasia">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Thai Airasia belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439945</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Travelers">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Travelers belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439946</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Portable Staircase">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Portable Staircase belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439947</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Airport Tarmac">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Airport Tarmac belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439949</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Airport Lamp Post">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Airport Lamp Post belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439950</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Sunny Day">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Sunny Day belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439951</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Travel Diary">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Travel Diary belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439952</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Image Content Analysis">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Image Content Analysis belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439953</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Image Path">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Image Path belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439955</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Visual Analysis">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Visual Analysis belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439957</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="We Go Out For Travel">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity We Go Out For Travel belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439958</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Boarding AirAsia Aircraft at Airport (image)" target="Airasia Airplane">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Airasia Airplane belongs to Boarding AirAsia Aircraft at Airport (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439960</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Indian 500 Rupee Banknotes">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Indian 500 Rupee Banknotes belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439997</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Hand">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Hand belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439999</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Bag Or Wallet">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Bag Or Wallet belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440003</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Travel Diary">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Travel Diary belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440005</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="India">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity India belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440007</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Image_1.png">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Image_1.png belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440008</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Visual Analysis">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Visual Analysis belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440009</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Serial Number 4VK 0128805">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Serial Number 4VK 0128805 belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440011</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Hindi Script">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Hindi Script belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440012</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Mahatma Gandhi (New Series)">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Mahatma Gandhi (New Series) belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440013</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hand holding fanned Indian 500 rupee banknotes (image)" target="Travel Experience">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Travel Experience belongs to Hand holding fanned Indian 500 rupee banknotes (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765440015</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Dhamek Stupa">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Dhamek Stupa belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439963</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Sarnath">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Sarnath belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439966</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="India">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity India belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439968</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Group Of People">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Group Of People belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439970</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Tourist With Camera">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Tourist With Camera belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439971</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Image">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Image belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439973</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="India Study Tour Vlog">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity India Study Tour Vlog belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439974</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Bodhgaya">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Bodhgaya belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439975</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Varanasi">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Varanasi belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439976</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Agra">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Agra belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439978</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="New Delhi">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity New Delhi belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439979</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Travel Diary">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Travel Diary belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439981</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Traditional Indian Clothing">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Traditional Indian Clothing belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Chinese Text Overlay">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Chinese Text Overlay belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439988</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Travel Period">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Travel Period belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439990</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Group at Dhamek Stupa, Sarnath (image)" target="Visual Style">
+  <data key="d7">10.0</data>
+  <data key="d8">Entity Visual Style belongs to India Study Tour Group at Dhamek Stupa, Sarnath (image)</data>
+  <data key="d9">belongs_to,contained_in,part_of</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">/Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/inputs/旅行日记5555.pdf</data>
+  <data key="d12">1765439992</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Airasia" target="Airasia Airplane">
+  <data key="d7">1.0</data>
+  <data key="d8">The airplane is painted in AirAsia's livery and is operated by the airline.</data>
+  <data key="d9">branding,operation</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Airbus" target="Airasia Airplane">
+  <data key="d7">1.0</data>
+  <data key="d8">The airplane is an Airbus model, as indicated by the text on its fuselage.</data>
+  <data key="d9">manufacture,model</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439943</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Thai Airasia" target="Airasia Airplane">
+  <data key="d7">1.0</data>
+  <data key="d8">The airplane is labeled with the 'THAI AIRASIA' brand text.</data>
+  <data key="d9">brand affiliation,labeling</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439946</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Travelers" target="Airasia Airplane">
+  <data key="d7">1.0</data>
+  <data key="d8">Travelers are boarding the AirAsia airplane via a portable staircase.</data>
+  <data key="d9">boarding,travel</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439938</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Airasia Airplane" target="Airport Tarmac">
+  <data key="d7">1.0</data>
+  <data key="d8">The AirAsia airplane is parked on the concrete airport tarmac.</data>
+  <data key="d9">location,parking</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439950</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Airport Tarmac" target="Airport Lamp Post">
+  <data key="d7">1.0</data>
+  <data key="d8">An airport lamp post is located on the tarmac, likely for illumination.</data>
+  <data key="d9">illumination,infrastructure</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439938</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Airport Tarmac" target="Sunny Day">
+  <data key="d7">1.0</data>
+  <data key="d8">The sunny day provides natural lighting that casts shadows on the airport tarmac.</data>
+  <data key="d9">lighting,setting</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Travel Diary" target="Image Content Analysis">
+  <data key="d7">1.0</data>
+  <data key="d8">The image analysis describes the scene as complementing the theme of a travel diary.</data>
+  <data key="d9">documentation,theme</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439938</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Travel Diary" target="Image">
+  <data key="d7">1.0</data>
+  <data key="d8">The image corresponds with and is part of the surrounding travel diary content.</data>
+  <data key="d9">content association,theme</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439959</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Travel Diary" target="India">
+  <data key="d7">1.0</data>
+  <data key="d8">The travel diary documents a trip to India, providing context for the currency image.</data>
+  <data key="d9">context,travel destination</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439986</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Travel Diary" target="Indian 500 Rupee Banknotes">
+  <data key="d7">1.0</data>
+  <data key="d8">The travel diary contains an image of the currency, documenting it as part of the travel finances.</data>
+  <data key="d9">documentation,financial record</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439989</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Travel Diary" target="Travel Experience">
+  <data key="d7">1.0</data>
+  <data key="d8">The Travel Diary documents the Travel Experience that took place from 2023.12.27 to 2024.01.10.</data>
+  <data key="d9">documentation,record</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439991</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image Content Analysis" target="Image Path">
+  <data key="d7">1.0</data>
+  <data key="d8">The Image Content Analysis references the specific file path where the image is stored.</data>
+  <data key="d9">data reference,file location</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439939</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image Content Analysis" target="Visual Analysis">
+  <data key="d7">1.0</data>
+  <data key="d8">The Image Content Analysis contains the detailed Visual Analysis of the image.</data>
+  <data key="d9">contains,description</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439943</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Visual Analysis" target="We Go Out For Travel">
+  <data key="d7">1.0</data>
+  <data key="d8">The Visual Analysis of the image complements the phrase "我们出去旅行了" from the surrounding content.</data>
+  <data key="d9">complements,contextualizes</data>
+  <data key="d10">chunk-3383e6dcf537fa64d4ccc8f5d7f05104</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439940</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Visual Analysis" target="Image_1.png">
+  <data key="d7">1.0</data>
+  <data key="d8">The Visual Analysis provides a detailed description of the contents and context of the image file 'image_1.png'.</data>
+  <data key="d9">description,source</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439987</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dhamek Stupa" target="Sarnath">
+  <data key="d7">1.0</data>
+  <data key="d8">The Dhamek Stupa is located in Sarnath.</data>
+  <data key="d9">landmark,location</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439951</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dhamek Stupa" target="Group Of People">
+  <data key="d7">1.0</data>
+  <data key="d8">The group of people is gathered and posing for a photo in front of the Dhamek Stupa.</data>
+  <data key="d9">photography,tourism</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439953</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dhamek Stupa" target="Image">
+  <data key="d7">1.0</data>
+  <data key="d8">The image depicts the Dhamek Stupa as its central background element.</data>
+  <data key="d9">depiction,visual content</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439954</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Sarnath" target="India">
+  <data key="d7">1.0</data>
+  <data key="d8">Sarnath is a location within India.</data>
+  <data key="d9">geographic inclusion</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439953</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Group Of People" target="Tourist With Camera">
+  <data key="d7">1.0</data>
+  <data key="d8">The tourist with a camera is part of the group posing for the photograph.</data>
+  <data key="d9">documentation,membership</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439954</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Group Of People" target="Image">
+  <data key="d7">1.0</data>
+  <data key="d8">The image depicts the group of people in its foreground.</data>
+  <data key="d9">depiction,visual content</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439958</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Group Of People" target="Traditional Indian Clothing">
+  <data key="d7">1.0</data>
+  <data key="d8">The group of people in the image are dressed in traditional Indian clothing.</data>
+  <data key="d9">cultural attire,wearing</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439960</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image" target="India Study Tour Vlog">
+  <data key="d7">1.0</data>
+  <data key="d8">The image is part of the content for the 'India Study Tour Vlog', as indicated by the overlaid title.</data>
+  <data key="d9">belonging to,documentation</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439956</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image" target="Chinese Text Overlay">
+  <data key="d7">1.0</data>
+  <data key="d8">The image has a Chinese text overlay that provides the title and details of the travel vlog.</data>
+  <data key="d9">annotation,title overlay</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439961</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Image" target="Visual Style">
+  <data key="d7">1.0</data>
+  <data key="d8">The image possesses a casual visual style typical of personal travel documentation.</data>
+  <data key="d9">aesthetic quality,characteristic</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439964</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Vlog" target="Bodhgaya">
+  <data key="d7">1.0</data>
+  <data key="d8">The vlog includes Bodhgaya as a location on its travel itinerary.</data>
+  <data key="d9">documentation,travel itinerary</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439958</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Vlog" target="Varanasi">
+  <data key="d7">1.0</data>
+  <data key="d8">The vlog includes Varanasi as a location on its travel itinerary.</data>
+  <data key="d9">documentation,travel itinerary</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439959</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Vlog" target="Agra">
+  <data key="d7">1.0</data>
+  <data key="d8">The vlog includes Agra as a location on its travel itinerary.</data>
+  <data key="d9">documentation,travel itinerary</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439961</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Vlog" target="New Delhi">
+  <data key="d7">1.0</data>
+  <data key="d8">The vlog includes New Delhi as a location on its travel itinerary.</data>
+  <data key="d9">documentation,travel itinerary</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439965</data>
+  <data key="d13"></data>
+</edge>
+<edge source="India Study Tour Vlog" target="Travel Period">
+  <data key="d7">1.0</data>
+  <data key="d8">The India Study Tour Vlog documents events that occurred during the specified travel period.</data>
+  <data key="d9">documentation period,timeframe</data>
+  <data key="d10">chunk-03f73960e92a10b61243dd8f47889425</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439967</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Indian 500 Rupee Banknotes" target="Hand">
+  <data key="d7">1.0</data>
+  <data key="d8">The hand is holding and displaying a fanned-out stack of Indian 500 rupee banknotes.</data>
+  <data key="d9">display,possession</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439985</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Indian 500 Rupee Banknotes" target="Bag Or Wallet">
+  <data key="d7">1.0</data>
+  <data key="d8">The stack of Indian 500 rupee banknotes is resting on top of a bag or wallet.</data>
+  <data key="d9">context,placement</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439987</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Indian 500 Rupee Banknotes" target="Serial Number 4VK 0128805">
+  <data key="d7">1.0</data>
+  <data key="d8">The Indian 500 rupee banknotes bear serial numbers, with '4VK 0128805' being a specific example visible in the image.</data>
+  <data key="d9">identification,security feature</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439991</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Indian 500 Rupee Banknotes" target="Hindi Script">
+  <data key="d7">1.0</data>
+  <data key="d8">The Indian 500 rupee banknotes include text in the Hindi script, such as 'भारतीय रिजर्व बैंक'.</data>
+  <data key="d9">design element,language</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439993</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Indian 500 Rupee Banknotes" target="Mahatma Gandhi (New Series)">
+  <data key="d7">1.0</data>
+  <data key="d8">The Indian 500 rupee banknotes shown belong to the updated Mahatma Gandhi (New Series) of currency.</data>
+  <data key="d9">currency issue,series classification</data>
+  <data key="d10">chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3</data>
+  <data key="d11">旅行日记5555.pdf</data>
+  <data key="d12">1765439996</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

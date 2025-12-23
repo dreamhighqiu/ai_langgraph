@@ -34,10 +34,10 @@ documents = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=2048, chunk_overlap=200)
 docs = text_splitter.split_documents(documents)
 
-uri = "http://54.179.103.192:19530"
+uri = "http://47.110.95.246:19530"
 
 #嵌入向量数据库
-embeddings = OllamaEmbeddings(model="qwen3-embedding:0.6b", base_url="http://54.179.103.192:11434")
+embeddings = OllamaEmbeddings(model="qwen3-embedding:0.6b", base_url="http://47.110.95.246:11434")
 vectorstore = Milvus.from_documents(
     documents=docs,
     embedding=embeddings,

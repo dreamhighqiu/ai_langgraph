@@ -25,8 +25,8 @@
 2025-12-11 15:54:25 [info     ] Registering graph with id 'interrupt_agent' graph_id=interrupt_agent
 2025-12-11 15:54:26 [info     ] Registering graph with id 'knowledge_agent' graph_id=knowledge_agent
 2025-12-11 15:54:26 [info     ] Registering graph with id 'web_scraper_agent' graph_id=web_scraper_agent
-2025-12-11 15:54:26,369 - unified_services.minio_service - INFO - MinIO config: endpoint=54.179.103.192:9100, secure=False
-2025-12-11 15:54:26,373 - unified_services.database_service - INFO - Database config: host=54.179.103.192, database=ai_db
+2025-12-11 15:54:26,369 - unified_services.minio_service - INFO - MinIO config: endpoint=47.110.95.246:9100, secure=False
+2025-12-11 15:54:26,373 - unified_services.database_service - INFO - Database config: host=47.110.95.246, database=ai_db
 2025-12-11 15:54:26 [info     ] Registering graph with id 'services_manager_agent' graph_id=services_manager_agent
 2025-12-11 15:54:26,382 - uvicorn.error - INFO - Application startup complete.
 2025-12-11 15:54:26,382 - langgraph_runtime_inmem.queue - WARNING - {'event': "Heads up: You've set --allow-blocking, which allows synchronous blocking I/O operations. Be aware that blocking code in one run may tie up the shared event loop and slow down ALL other server operations. For best performance, either convert blocking code to async patterns or set BG_JOB_ISOLATED_LOOPS=true in production to isolate each run in its own event loop.", 'thread_name': 'ThreadPoolExecutor-1_0', 'logger': 'langgraph_runtime_inmem.queue', 'level': 'warning', 'api_variant': 'local_dev', 'langgraph_api_version': '0.5.35', 'timestamp': '2025-12-11T07:54:26.382179Z'}

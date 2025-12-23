@@ -37,7 +37,7 @@ LightRAG log file: /Users/qiuyunxia/code/ai_langGraph/anything-chat-rag/lightrag
 [35m
 📊 Embedding Configuration:[0m
 [37m    ├─ Binding: [0m[33mollama[0m
-[37m    ├─ Host: [0m[33mhttp://54.179.103.192:11434[0m
+[37m    ├─ Host: [0m[33mhttp://47.110.95.246:11434[0m
 [37m    ├─ Model: [0m[33mqwen3-embedding:0.6b[0m
 [37m    └─ Dimensions: [0m[33m1024[0m
 [35m

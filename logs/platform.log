@@ -9,8 +9,8 @@
 2025-12-11 15:54:27 [ERROR] __init__.py:999 - MinIO 服务初始化失败: name 'MinIOService' is not defined
 2025-12-11 15:54:27,514 - ERROR - MinIO 服务初始化失败: name 'MinIOService' is not defined
 None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-2025-12-11 15:54:29 [INFO] __init__.py:999 - Connected to MinIO at 54.179.103.192:9100
-2025-12-11 15:54:29,518 - INFO - Connected to MinIO at 54.179.103.192:9100
+2025-12-11 15:54:29 [INFO] __init__.py:999 - Connected to MinIO at 47.110.95.246:9100
+2025-12-11 15:54:29,518 - INFO - Connected to MinIO at 47.110.95.246:9100
 2025-12-11 15:54:29 [INFO] __init__.py:999 - 🔄 已清空模型客户端缓存
 2025-12-11 15:54:29,592 - INFO - 🔄 已清空模型客户端缓存
 2025-12-11 15:54:29 [INFO] __init__.py:999 - 🚀 创建全局模型客户端，当前模型: gpt-4o
@@ -73,14 +73,14 @@ None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be ava
 🔍 环境变量检查:
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
-  ✅ MYSQL_HOST: 54.179.103.192
+  ✅ MYSQL_HOST: 47.110.95.246
 🖥️  本地开发环境
 ✅ 加载配置文件: .env.local
 
 🔍 环境变量检查:
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
-  ✅ MYSQL_HOST: 54.179.103.192
+  ✅ MYSQL_HOST: 47.110.95.246
 主程序环境变量: LOCAL_EMBEDDING_MODEL_NAME=None
 🖥️  本地开发环境
 ✅ 加载配置文件: .env.local
@@ -88,7 +88,7 @@ None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be ava
 🔍 环境变量检查:
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
-  ✅ MYSQL_HOST: 54.179.103.192
+  ✅ MYSQL_HOST: 47.110.95.246
 ⚠️  Embedding模型设置失败: No module named 'llama_index.embeddings.ollama'
 回退到本地embedding模型...
 ❌ 本地Embedding模型也失败: No module named 'llama_index.embeddings.huggingface'
@@ -110,8 +110,8 @@ INFO:     2025-12-11 15:54:30 | Started reloader process [93634] using WatchFile
 2025-12-11 15:54:31,031 - ERROR - MinIO 服务初始化失败: name 'MinIOService' is not defined
 INFO:     2025-12-11 15:54:31 | 1 change detected
 None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
-2025-12-11 15:54:32 [INFO] __init__.py:999 - Connected to MinIO at 54.179.103.192:9100
-2025-12-11 15:54:32,514 - INFO - Connected to MinIO at 54.179.103.192:9100
+2025-12-11 15:54:32 [INFO] __init__.py:999 - Connected to MinIO at 47.110.95.246:9100
+2025-12-11 15:54:32,514 - INFO - Connected to MinIO at 47.110.95.246:9100
 2025-12-11 15:54:32 [INFO] __init__.py:999 - 🔄 已清空模型客户端缓存
 2025-12-11 15:54:32,569 - INFO - 🔄 已清空模型客户端缓存
 2025-12-11 15:54:32 [INFO] __init__.py:999 - 🚀 创建全局模型客户端，当前模型: gpt-4o
@@ -174,14 +174,14 @@ None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be ava
 🔍 环境变量检查:
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
-  ✅ MYSQL_HOST: 54.179.103.192
+  ✅ MYSQL_HOST: 47.110.95.246
 🖥️  本地开发环境
 ✅ 加载配置文件: .env.local
 
 🔍 环境变量检查:
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
-  ✅ MYSQL_HOST: 54.179.103.192
+  ✅ MYSQL_HOST: 47.110.95.246
 主程序环境变量: LOCAL_EMBEDDING_MODEL_NAME=None
 🖥️  本地开发环境
 ✅ 加载配置文件: .env.local
@@ -189,7 +189,7 @@ None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be ava
 🔍 环境变量检查:
   ❌ LOCAL_EMBEDDING_MODEL_NAME: NOT SET
   ✅ DEEPSEEK_MODEL_NAME: deepseek-chat
-  ✅ MYSQL_HOST: 54.179.103.192
+  ✅ MYSQL_HOST: 47.110.95.246
 ⚠️  Embedding模型设置失败: No module named 'llama_index.embeddings.ollama'
 回退到本地embedding模型...
 ❌ 本地Embedding模型也失败: No module named 'llama_index.embeddings.huggingface'

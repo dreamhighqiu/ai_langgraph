@@ -14,7 +14,7 @@ from langchain_ollama import OllamaEmbeddings
 
 embeddings = OllamaEmbeddings(
     model="qwen3-embedding:0.6b",
-    base_url="http://54.179.103.192:11434/"
+    base_url="http://47.110.95.246:11434/"
 )
 
 s = embeddings.embed_query(text)

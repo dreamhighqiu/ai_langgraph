@@ -52,7 +52,7 @@ documents = text_splitter.split_documents(document)
 
 embeddings = OllamaEmbeddings(
     model="qwen3-embedding:0.6b",
-    base_url="http://54.179.103.192:11434"
+    base_url="http://47.110.95.246:11434"
 )
 
 # 使用embeddings 嵌入对象将 texts 转换为向量，然后存入向量数据库
@@ -71,7 +71,7 @@ embeddings = OllamaEmbeddings(
 
 from langchain_milvus import Milvus
 
-URI = "http://54.179.103.192:19530"
+URI = "http://47.110.95.246:19530"
 
 # 第一次将数据存入向量数据库
 # 将texts转换为向量，并保存在向量数据库中

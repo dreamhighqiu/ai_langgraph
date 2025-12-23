@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 # 数据库配置 - 在 load_dotenv() 之后读取
 # 优先使用 AI_MYSQL_* 配置（用于 unified_services），其次使用 MYSQL_* 配置
 DATABASE_URL = os.getenv("DATABASE_URL", "")
-MYSQL_HOST = os.getenv("AI_MYSQL_HOST", os.getenv("MYSQL_HOST", "54.179.103.192"))
+MYSQL_HOST = os.getenv("AI_MYSQL_HOST", os.getenv("MYSQL_HOST", "47.110.95.246"))
 MYSQL_PORT = int(os.getenv("AI_MYSQL_PORT", os.getenv("MYSQL_PORT", "3306")))
 MYSQL_USER = os.getenv("AI_MYSQL_USER", os.getenv("MYSQL_USER", "ai_mysql"))
 MYSQL_PASSWORD = os.getenv("AI_MYSQL_PASSWORD", os.getenv("MYSQL_PASSWORD", "Qazwsx123"))

@@ -701,7 +701,7 @@ main() {
                 echo ""
                 echo "环境配置:"
                 echo "  local   - 本地开发环境 (localhost)"
-                echo "  remote  - 远程服务器环境 (54.179.103.192)"
+                echo "  remote  - 远程服务器环境 (47.110.95.246)"
                 echo ""
                 echo "可用的服务名称:"
                 echo "  lightrag   - LightRAG Server (端口 9621)"

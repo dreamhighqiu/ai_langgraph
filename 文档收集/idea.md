@@ -116,3 +116,10 @@ html报告要求：
 
 @https://github.com/insistence/RuoYi-Vue3-FastAPI
 https://gitee.com/xuesjie/TaiXu-Admin
+
+仔细分析整个项目 @d:\yunxia\ai_langgraph\  需要根据当前项目 进行优化升级 实现一个新的ai智能测试平台 要求实现性能 UI API等功能对各自的功能进行脚本生成 脚本管理 执行以及报告输出
+需要对报告和脚本持续化保存
+平台实现技术架构 @RuoYi-Vue3-FastAPI/ 
+底层技术实现  @testing-agents-service/testing-agents-service/ 通过RAG技术 mcp 技术以及deepagent langraph等智能体协作来实现测试领域相关的功能
+目前mllvus mysql postsql minio等服务已经部署
+实现的ai智能平台一定是符合企业级标准 高可用 可维护可扩展的

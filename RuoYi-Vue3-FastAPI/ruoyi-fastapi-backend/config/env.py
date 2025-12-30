@@ -15,7 +15,7 @@ class AppSettings(BaseSettings):
     """
 
     app_env: str = 'dev'
-    app_name: str = 'RuoYi-FasAPI'
+    app_name: str = 'AI智能测试平台'
     app_root_path: str = '/dev-api'
     app_host: str = '0.0.0.0'
     app_port: int = 9099
@@ -71,6 +71,64 @@ class RedisSettings(BaseSettings):
     redis_username: str = ''
     redis_password: str = ''
     redis_database: int = 2
+
+
+class MinIOSettings(BaseSettings):
+    """
+    MinIO对象存储配置
+    """
+
+    minio_endpoint: str = '127.0.0.1:9000'
+    minio_access_key: str = 'minioadmin'
+    minio_secret_key: str = 'minioadmin123'
+    minio_bucket: str = 'ai-testing'
+    minio_secure: bool = False
+
+
+class MilvusSettings(BaseSettings):
+    """
+    Milvus向量数据库配置
+    """
+
+    milvus_host: str = '127.0.0.1'
+    milvus_port: int = 19530
+    milvus_collection: str = 'test_knowledge'
+
+
+class LangGraphSettings(BaseSettings):
+    """
+    LangGraph AI服务配置
+    """
+
+    langgraph_api_url: str = 'http://127.0.0.1:2025'
+    langgraph_api_key: str = ''
+
+
+class OllamaSettings(BaseSettings):
+    """
+    Ollama AI模型配置
+    """
+
+    ollama_host: str = 'http://127.0.0.1:11434'
+    ollama_model: str = 'qwen2.5:7b'
+
+
+class OpenAISettings(BaseSettings):
+    """
+    OpenAI兼容配置
+    """
+
+    openai_api_key: str = ''
+    openai_api_base: str = 'http://127.0.0.1:11434/v1'
+    openai_model: str = 'qwen2.5:7b'
+
+
+class StorageSettings(BaseSettings):
+    """
+    本地存储配置
+    """
+
+    local_storage_path: str = './storage'
 
 
 class GenSettings:
@@ -182,6 +240,42 @@ class GetConfig:
         # 实例化Redis配置模型
         return RedisSettings()
 
+    def get_minio_config(self) -> MinIOSettings:
+        """
+        获取MinIO配置
+        """
+        return MinIOSettings()
+
+    def get_milvus_config(self) -> MilvusSettings:
+        """
+        获取Milvus配置
+        """
+        return MilvusSettings()
+
+    def get_langgraph_config(self) -> LangGraphSettings:
+        """
+        获取LangGraph配置
+        """
+        return LangGraphSettings()
+
+    def get_ollama_config(self) -> OllamaSettings:
+        """
+        获取Ollama配置
+        """
+        return OllamaSettings()
+
+    def get_openai_config(self) -> OpenAISettings:
+        """
+        获取OpenAI配置
+        """
+        return OpenAISettings()
+
+    def get_storage_config(self) -> StorageSettings:
+        """
+        获取存储配置
+        """
+        return StorageSettings()
+
     def get_gen_config(self) -> GenSettings:
         """
         获取代码生成配置
@@ -241,6 +335,18 @@ JwtConfig = get_config.get_jwt_config()
 DataBaseConfig = get_config.get_database_config()
 # Redis配置
 RedisConfig = get_config.get_redis_config()
+# MinIO配置
+MinIOConfig = get_config.get_minio_config()
+# Milvus配置
+MilvusConfig = get_config.get_milvus_config()
+# LangGraph配置
+LangGraphConfig = get_config.get_langgraph_config()
+# Ollama配置
+OllamaConfig = get_config.get_ollama_config()
+# OpenAI配置
+OpenAIConfig = get_config.get_openai_config()
+# 存储配置
+StorageConfig = get_config.get_storage_config()
 # 代码生成配置
 GenConfig = get_config.get_gen_config()
 # 上传配置

@@ -35,7 +35,7 @@ from langgraph.pregel import Pregel
 #         }
 #     }
 # )
-os.environ["DEEPSEEK_API_KEY"] = "sk-a7299a7df2904fe69c24a2ca98e8dca4"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 # model = init_chat_model("deepseek:deepseek-chat")
 #
 # tools = asyncio.run(client.get_tools())

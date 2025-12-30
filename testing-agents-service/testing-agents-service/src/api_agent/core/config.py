@@ -68,7 +68,7 @@ class LLMConfig(BaseModel):
     def get_api_key(cls, v):
         """从环境变量获取API密钥"""
         if v is None:
-            v = os.getenv("DEEPSEEK_API_KEY", "sk-868325fd211f4303a106658a98bb9aab") or os.getenv("OPENAI_API_KEY")
+            v = os.getenv("DEEPSEEK_API_KEY", "sk-0292e5a35e064f6f86169a20e39f0749") or os.getenv("OPENAI_API_KEY")
         return v
 
 

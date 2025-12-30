@@ -15,7 +15,7 @@ from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 # pragma: no cover  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y25oTVlRPT06YjVmODE4NzE=
 
-os.environ["DEEPSEEK_API_KEY"] = "sk-9f51590e5d464509ad731fa8aea89f16"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 llm = init_chat_model("deepseek:deepseek-chat")
 client = MultiServerMCPClient({
     "rag-server": {

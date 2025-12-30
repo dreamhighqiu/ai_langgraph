@@ -24,7 +24,7 @@ def read_email_tool(email_id: str) -> str:
 def send_email_tool(recipient: str, subject: str, body: str) -> str:
     """Mock function to send an email."""
     return f"Email sent to {recipient} with subject '{subject}'"
-os.environ["DEEPSEEK_API_KEY"] = "sk-868325fd211f4303a106658a98bb9aab"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 model = init_chat_model("deepseek:deepseek-chat")
 agent = create_agent(
     model=model,

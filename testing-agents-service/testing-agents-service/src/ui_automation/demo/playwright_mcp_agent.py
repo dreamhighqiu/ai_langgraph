@@ -20,7 +20,7 @@ from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.pregel import Pregel
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VjJKWWNBPT06ZGEzZGJmNDg=
 
-os.environ["DEEPSEEK_API_KEY"] = "sk-a7299a7df2904fe69c24a2ca98e8dca4"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 
 # 定义系统提示词
 SYSTEM_PROMPT = """你是一个专业的Web自动化测试助手，可以使用Playwright来控制浏览器完成各种任务。

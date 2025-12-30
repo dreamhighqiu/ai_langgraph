@@ -15,7 +15,7 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from deepagents import create_deep_agent as create_agent
 # pylint: disable  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZDNnMmVnPT06OWQ4NmJmNzg=
 
-os.environ["DEEPSEEK_API_KEY"] = "sk-868325fd211f4303a106658a98bb9aab"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 model = init_chat_model("deepseek:deepseek-chat")
 # pragma: no cover  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZDNnMmVnPT06OWQ4NmJmNzg=
 

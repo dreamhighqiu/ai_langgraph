@@ -68,7 +68,7 @@ def create_k6_agent(
         ```
     """
     cfg = config or DEFAULT_CONFIG
-    os.environ["DEEPSEEK_API_KEY"] = "sk-868325fd211f4303a106658a98bb9aab"
+    os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
     # 初始化语言模型
     if model is None:
         llm = init_chat_model("deepseek:deepseek-chat")

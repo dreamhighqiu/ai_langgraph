@@ -29,7 +29,7 @@ chrome_client = MultiServerMCPClient({
     })
 
 tools = asyncio.run(chrome_client.get_tools())
-os.environ["DEEPSEEK_API_KEY"] = "sk-a7299a7df2904fe69c24a2ca98e8dca4"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 model = init_chat_model("deepseek:deepseek-chat")
 # pylint: disable  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VHpGNWJ3PT06MDE2ZTAzOGQ=
 

@@ -17,7 +17,7 @@ import os
 from k6_agent import create_k6_agent
 
 # 设置API密钥
-os.environ["DEEPSEEK_API_KEY"] = "your-api-key"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 
 # 创建智能体
 agent = create_k6_agent()

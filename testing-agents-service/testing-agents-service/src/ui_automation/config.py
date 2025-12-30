@@ -75,7 +75,7 @@ class UIAutomationConfig:
 
     # 语言模型配置
     model_name: str = field(default_factory=lambda: _env("UI_MODEL_NAME", "deepseek:deepseek-chat"))
-    api_key: str = field(default_factory=lambda: _env("DEEPSEEK_API_KEY", "sk-a7299a7df2904fe69c24a2ca98e8dca4"))
+    api_key: str = field(default_factory=lambda: _env("DEEPSEEK_API_KEY", "sk-0292e5a35e064f6f86169a20e39f0749"))
 
 # pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFhsWk5BPT06Y2JlZjg0M2E=
 

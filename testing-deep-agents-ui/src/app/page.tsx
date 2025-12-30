@@ -84,18 +84,42 @@ function HomePageInner({
           graphId: config.assistantId,
           limit: 100,
         });
-        const defaultAssistant = assistants.find(
+        
+        // Try to find system-created assistant first
+        let defaultAssistant = assistants.find(
           (assistant) => assistant.metadata?.["created_by"] === "system"
         );
-        if (defaultAssistant === undefined) {
-          throw new Error("No default assistant found");
+        
+        // If no system assistant found, use the first available assistant
+        if (defaultAssistant === undefined && assistants.length > 0) {
+          defaultAssistant = assistants[0];
         }
-        setAssistant(defaultAssistant);
+        
+        // If still no assistant found, create a fallback assistant
+        if (defaultAssistant === undefined) {
+          console.warn(
+            `No assistant found for graph_id: ${config.assistantId}, using fallback`
+          );
+          setAssistant({
+            assistant_id: config.assistantId,
+            graph_id: config.assistantId,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+            config: {},
+            metadata: {},
+            version: 1,
+            name: config.assistantId,
+            context: {},
+          });
+        } else {
+          setAssistant(defaultAssistant);
+        }
       } catch (error) {
         console.error(
           "Failed to find default assistant from graph_id:",
           error
         );
+        // Use fallback assistant on error
         setAssistant({
           assistant_id: config.assistantId,
           graph_id: config.assistantId,

@@ -552,11 +552,57 @@ stop_service() {
         rm -f "$pid_file"
     fi
     
-    # Ensure port is released
+    # Ensure port is released (cross-platform)
     if [ -n "$port" ] && check_port $port; then
-        local pids=$(lsof -ti:$port)
+        local pids=""
+        if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+            # Windows: use Python to find PID via netstat
+            pids=$("$VENV_PYTHON" -c "
+import socket
+import subprocess
+import os
+
+port = $port
+try:
+    if os.name == 'nt':
+        result = subprocess.run(
+            ['netstat', '-ano'],
+            capture_output=True,
+            text=True,
+            shell=True,
+            timeout=5
+        )
+        for line in result.stdout.split('\n'):
+            if f':{port}' in line and 'LISTENING' in line:
+                parts = line.split()
+                if len(parts) >= 5:
+                    pid_str = parts[-1].strip()
+                    if pid_str.isdigit() and pid_str != '0':
+                        print(pid_str)
+except:
+    pass
+" 2>/dev/null)
+        else
+            # Linux/macOS: use lsof
+            if command -v lsof &> /dev/null; then
+                pids=$(lsof -ti:$port 2>/dev/null)
+            fi
+        fi
+        
         if [ -n "$pids" ]; then
-            echo "$pids" | xargs kill -9 2>/dev/null
+            for pid in $pids; do
+                if [ -n "$pid" ] && [ "$pid" != "0" ]; then
+                    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+                        if command -v taskkill &> /dev/null; then
+                            taskkill /F /PID "$pid" >/dev/null 2>&1
+                        else
+                            kill -9 "$pid" >/dev/null 2>&1
+                        fi
+                    else
+                        kill -9 "$pid" >/dev/null 2>&1
+                    fi
+                fi
+            done
         fi
     fi
 }

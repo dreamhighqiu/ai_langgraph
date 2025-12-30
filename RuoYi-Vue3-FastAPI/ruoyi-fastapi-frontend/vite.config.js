@@ -40,15 +40,15 @@ export default defineConfig(({ mode, command }) => {
     },
     // vite 相关配置
     server: {
-      port: 80,
+      port: 5173,
       host: true,
-      open: true,
+      open: false,  // 开发环境不自动打开浏览器
       proxy: {
         // https://cn.vitejs.dev/config/#server-proxy
         '/dev-api': {
           target: 'http://127.0.0.1:9099',
           changeOrigin: true,
-          rewrite: (p) => p.replace(/^\/dev-api/, '')
+          rewrite: (p) => p.replace(/^\/dev-api/, '')  // 移除 /dev-api 前缀
         }
       }
     },

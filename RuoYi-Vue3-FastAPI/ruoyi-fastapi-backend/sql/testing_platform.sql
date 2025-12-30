@@ -91,56 +91,56 @@ CREATE TABLE `test_report` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='测试报告表';
 
 -- ----------------------------
--- 5. 菜单SQL
+-- 5. 菜单SQL (兼容不同版本的 sys_menu 表)
 -- ----------------------------
 -- 一级菜单：测试管理
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
-VALUES (2000, '测试管理', 0, 5, 'testing', NULL, NULL, 1, 0, 'M', '0', '0', '', 'bug', 'admin', NOW(), '', NULL, 'AI智能测试平台');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
+VALUES (2000, '测试管理', 0, 5, 'testing', NULL, 1, 0, 'M', '0', '0', '', 'bug', 'admin', NOW(), '', NULL, 'AI智能测试平台');
 
 -- 二级菜单：项目管理
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
-VALUES (2001, '项目管理', 2000, 1, 'project', 'testing/project/index', NULL, 1, 0, 'C', '0', '0', 'testing:project:list', 'tree', 'admin', NOW(), '', NULL, '测试项目管理');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
+VALUES (2001, '项目管理', 2000, 1, 'project', 'testing/project/index', 1, 0, 'C', '0', '0', 'testing:project:list', 'tree', 'admin', NOW(), '', NULL, '测试项目管理');
 
 -- 二级菜单：脚本管理
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
-VALUES (2002, '脚本管理', 2000, 2, 'script', 'testing/script/index', NULL, 1, 0, 'C', '0', '0', 'testing:script:list', 'documentation', 'admin', NOW(), '', NULL, '测试脚本管理');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
+VALUES (2002, '脚本管理', 2000, 2, 'script', 'testing/script/index', 1, 0, 'C', '0', '0', 'testing:script:list', 'documentation', 'admin', NOW(), '', NULL, '测试脚本管理');
 
 -- 二级菜单：执行监控
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
-VALUES (2003, '执行监控', 2000, 3, 'execution', 'testing/execution/index', NULL, 1, 0, 'C', '0', '0', 'testing:execution:list', 'monitor', 'admin', NOW(), '', NULL, '测试执行监控');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
+VALUES (2003, '执行监控', 2000, 3, 'execution', 'testing/execution/index', 1, 0, 'C', '0', '0', 'testing:execution:list', 'monitor', 'admin', NOW(), '', NULL, '测试执行监控');
 
 -- 二级菜单：报告管理
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
-VALUES (2004, '报告管理', 2000, 4, 'report', 'testing/report/index', NULL, 1, 0, 'C', '0', '0', 'testing:report:list', 'chart', 'admin', NOW(), '', NULL, '测试报告管理');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) 
+VALUES (2004, '报告管理', 2000, 4, 'report', 'testing/report/index', 1, 0, 'C', '0', '0', 'testing:report:list', 'chart', 'admin', NOW(), '', NULL, '测试报告管理');
 
 -- 项目管理按钮权限
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
-(2011, '项目查询', 2001, 1, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:project:query', '#', 'admin', NOW(), '', NULL, ''),
-(2012, '项目新增', 2001, 2, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:project:add', '#', 'admin', NOW(), '', NULL, ''),
-(2013, '项目修改', 2001, 3, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:project:edit', '#', 'admin', NOW(), '', NULL, ''),
-(2014, '项目删除', 2001, 4, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:project:remove', '#', 'admin', NOW(), '', NULL, '');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
+(2011, '项目查询', 2001, 1, '', NULL, 1, 0, 'F', '0', '0', 'testing:project:query', '#', 'admin', NOW(), '', NULL, ''),
+(2012, '项目新增', 2001, 2, '', NULL, 1, 0, 'F', '0', '0', 'testing:project:add', '#', 'admin', NOW(), '', NULL, ''),
+(2013, '项目修改', 2001, 3, '', NULL, 1, 0, 'F', '0', '0', 'testing:project:edit', '#', 'admin', NOW(), '', NULL, ''),
+(2014, '项目删除', 2001, 4, '', NULL, 1, 0, 'F', '0', '0', 'testing:project:remove', '#', 'admin', NOW(), '', NULL, '');
 
 -- 脚本管理按钮权限
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
-(2021, '脚本查询', 2002, 1, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:script:query', '#', 'admin', NOW(), '', NULL, ''),
-(2022, '脚本新增', 2002, 2, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:script:add', '#', 'admin', NOW(), '', NULL, ''),
-(2023, '脚本修改', 2002, 3, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:script:edit', '#', 'admin', NOW(), '', NULL, ''),
-(2024, '脚本删除', 2002, 4, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:script:remove', '#', 'admin', NOW(), '', NULL, ''),
-(2025, 'AI生成', 2002, 5, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:script:generate', '#', 'admin', NOW(), '', NULL, ''),
-(2026, '脚本执行', 2002, 6, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:script:execute', '#', 'admin', NOW(), '', NULL, '');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
+(2021, '脚本查询', 2002, 1, '', NULL, 1, 0, 'F', '0', '0', 'testing:script:query', '#', 'admin', NOW(), '', NULL, ''),
+(2022, '脚本新增', 2002, 2, '', NULL, 1, 0, 'F', '0', '0', 'testing:script:add', '#', 'admin', NOW(), '', NULL, ''),
+(2023, '脚本修改', 2002, 3, '', NULL, 1, 0, 'F', '0', '0', 'testing:script:edit', '#', 'admin', NOW(), '', NULL, ''),
+(2024, '脚本删除', 2002, 4, '', NULL, 1, 0, 'F', '0', '0', 'testing:script:remove', '#', 'admin', NOW(), '', NULL, ''),
+(2025, 'AI生成', 2002, 5, '', NULL, 1, 0, 'F', '0', '0', 'testing:script:generate', '#', 'admin', NOW(), '', NULL, ''),
+(2026, '脚本执行', 2002, 6, '', NULL, 1, 0, 'F', '0', '0', 'testing:script:execute', '#', 'admin', NOW(), '', NULL, '');
 
 -- 执行监控按钮权限
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
-(2031, '执行查询', 2003, 1, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:execution:query', '#', 'admin', NOW(), '', NULL, ''),
-(2032, '取消执行', 2003, 2, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:execution:cancel', '#', 'admin', NOW(), '', NULL, '');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
+(2031, '执行查询', 2003, 1, '', NULL, 1, 0, 'F', '0', '0', 'testing:execution:query', '#', 'admin', NOW(), '', NULL, ''),
+(2032, '取消执行', 2003, 2, '', NULL, 1, 0, 'F', '0', '0', 'testing:execution:cancel', '#', 'admin', NOW(), '', NULL, '');
 
 -- 报告管理按钮权限
-INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `query_param`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
-(2041, '报告查询', 2004, 1, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:report:query', '#', 'admin', NOW(), '', NULL, ''),
-(2042, '报告生成', 2004, 2, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:report:add', '#', 'admin', NOW(), '', NULL, ''),
-(2043, '报告下载', 2004, 3, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:report:download', '#', 'admin', NOW(), '', NULL, ''),
-(2044, '报告删除', 2004, 4, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:report:remove', '#', 'admin', NOW(), '', NULL, ''),
-(2045, '报告对比', 2004, 5, '', NULL, NULL, 1, 0, 'F', '0', '0', 'testing:report:compare', '#', 'admin', NOW(), '', NULL, '');
+INSERT INTO `sys_menu` (`menu_id`, `menu_name`, `parent_id`, `order_num`, `path`, `component`, `is_frame`, `is_cache`, `menu_type`, `visible`, `status`, `perms`, `icon`, `create_by`, `create_time`, `update_by`, `update_time`, `remark`) VALUES 
+(2041, '报告查询', 2004, 1, '', NULL, 1, 0, 'F', '0', '0', 'testing:report:query', '#', 'admin', NOW(), '', NULL, ''),
+(2042, '报告生成', 2004, 2, '', NULL, 1, 0, 'F', '0', '0', 'testing:report:add', '#', 'admin', NOW(), '', NULL, ''),
+(2043, '报告下载', 2004, 3, '', NULL, 1, 0, 'F', '0', '0', 'testing:report:download', '#', 'admin', NOW(), '', NULL, ''),
+(2044, '报告删除', 2004, 4, '', NULL, 1, 0, 'F', '0', '0', 'testing:report:remove', '#', 'admin', NOW(), '', NULL, ''),
+(2045, '报告对比', 2004, 5, '', NULL, 1, 0, 'F', '0', '0', 'testing:report:compare', '#', 'admin', NOW(), '', NULL, '');
 
 -- ----------------------------
 -- 6. 初始化示例数据

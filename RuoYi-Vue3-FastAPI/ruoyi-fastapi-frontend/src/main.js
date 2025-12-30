@@ -19,7 +19,7 @@ import plugins from './plugins' // plugins
 import { download } from '@/utils/request'
 
 // svg图标
-import 'virtual:svg-icons-register'
+// import 'virtual:svg-icons-register'  // 临时禁用，Node.js 24不兼容
 import SvgIcon from '@/components/SvgIcon'
 import elementIcons from '@/components/SvgIcon/svgicon'
 

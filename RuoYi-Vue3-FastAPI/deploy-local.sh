@@ -1,6 +1,8 @@
 #!/bin/bash
 # ================================
-# AI智能测试平台 - 本地开发部署脚本 (Linux/Mac)
+# AI智能测试平台 - 本地开发部署脚本 (Linux/Mac/Git Bash)
+# 
+# 使用 uv 管理 Python 虚拟环境
 # 
 # 本地开发场景：
 #   - 前端服务: 本地 (localhost:5173)
@@ -15,6 +17,7 @@ REMOTE_SERVER="47.110.95.246"
 BACKEND_DIR="ruoyi-fastapi-backend"
 FRONTEND_DIR="ruoyi-fastapi-frontend"
 ENV_MODE="dev"
+PYTHON_VERSION="3.11"
 
 # 颜色定义
 RED='\033[0;31m'
@@ -36,6 +39,7 @@ AI智能测试平台 - 本地开发部署脚本
 ========================================
 部署模式说明:
   本地开发: 前端+后端在本地，基础设施在远程服务器
+  使用 uv 管理 Python 虚拟环境
   
   本地服务:
     - 前端: http://localhost:5173
@@ -52,7 +56,7 @@ AI智能测试平台 - 本地开发部署脚本
 用法: ./deploy-local.sh [命令]
 
 命令:
-  init        初始化本地开发环境
+  init        初始化本地开发环境 (使用uv)
   check       检查远程服务连接
   backend     启动后端服务
   frontend    启动前端服务
@@ -69,17 +73,51 @@ AI智能测试平台 - 本地开发部署脚本
 "
 }
 
+# 检查并安装 uv
+check_uv() {
+    if command -v uv &> /dev/null; then
+        print_success "uv: $(uv --version)"
+        return 0
+    else
+        print_warning "uv 未安装，正在安装..."
+        
+        # 根据系统安装 uv
+        if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "mingw"* ]] || [[ "$OSTYPE" == "cygwin"* ]]; then
+            # Windows (Git Bash / MSYS2)
+            print_info "在 Windows 上安装 uv..."
+            powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+            
+            # 添加到 PATH (当前会话)
+            export PATH="$HOME/.local/bin:$PATH"
+            export PATH="$USERPROFILE/.local/bin:$PATH"
+            export PATH="$HOME/.cargo/bin:$PATH"
+        else
+            # Linux / Mac
+            curl -LsSf https://astral.sh/uv/install.sh | sh
+            export PATH="$HOME/.local/bin:$PATH"
+        fi
+        
+        # 验证安装
+        if command -v uv &> /dev/null; then
+            print_success "uv 安装成功: $(uv --version)"
+            return 0
+        else
+            print_error "uv 安装失败，请手动安装: https://docs.astral.sh/uv/getting-started/installation/"
+            print_info "Windows: powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\""
+            print_info "Linux/Mac: curl -LsSf https://astral.sh/uv/install.sh | sh"
+            return 1
+        fi
+    fi
+}
+
 # 检查依赖
 check_dependencies() {
     print_info "检查本地依赖..."
     
     local has_error=false
     
-    # Python
-    if command -v python3 &> /dev/null; then
-        print_success "Python: $(python3 --version)"
-    else
-        print_error "Python3 未安装"
+    # 检查 uv
+    if ! check_uv; then
         has_error=true
     fi
     
@@ -124,7 +162,10 @@ check_remote_services() {
         name="${svc%%:*}"
         port="${svc##*:}"
         
+        # 使用多种方式检测端口
         if nc -z -w 2 $REMOTE_SERVER $port 2>/dev/null; then
+            print_success "$name: OK (${REMOTE_SERVER}:${port})"
+        elif timeout 2 bash -c "echo >/dev/tcp/$REMOTE_SERVER/$port" 2>/dev/null; then
             print_success "$name: OK (${REMOTE_SERVER}:${port})"
         else
             print_error "$name: 无法连接 (${REMOTE_SERVER}:${port})"
@@ -148,24 +189,23 @@ init_environment() {
     check_dependencies
     echo ""
     
-    # Python虚拟环境
-    print_info "创建Python虚拟环境..."
+    # 使用 uv 创建 Python 虚拟环境
+    print_info "使用 uv 创建 Python 虚拟环境..."
     cd $BACKEND_DIR
     
-    if [ ! -d "venv" ]; then
-        python3 -m venv venv
-        print_success "虚拟环境创建成功"
+    # 创建虚拟环境
+    if [ ! -d ".venv" ]; then
+        uv venv --python $PYTHON_VERSION
+        print_success "虚拟环境创建成功 (.venv)"
     else
         print_info "虚拟环境已存在"
     fi
     
     # 安装依赖
-    print_info "安装Python依赖..."
-    source venv/bin/activate
-    pip install --upgrade pip -q
-    pip install -r requirements.txt -q
-    pip install minio python-dotenv -q
-    print_success "Python依赖安装完成"
+    print_info "使用 uv 安装 Python 依赖..."
+    uv pip install -r requirements.txt
+    uv pip install minio python-dotenv
+    print_success "Python 依赖安装完成"
     
     # 创建环境配置
     if [ ! -f ".env.dev" ]; then
@@ -179,10 +219,25 @@ init_environment() {
     cd ..
     
     # 前端依赖
-    print_info "安装前端依赖..."
+    print_info "安装前端依赖 (可能需要几分钟)..."
     cd $FRONTEND_DIR
-    npm install --silent
-    print_success "前端依赖安装完成"
+    
+    # 检查是否已有 node_modules
+    if [ -d "node_modules" ]; then
+        print_info "node_modules 已存在，检查是否需要更新..."
+        npm install --prefer-offline --no-audit --progress=true || npm install
+    else
+        print_info "首次安装，请稍候..."
+        npm install --no-audit --progress=true
+    fi
+    
+    if [ $? -eq 0 ]; then
+        print_success "前端依赖安装完成"
+    else
+        print_error "前端依赖安装失败"
+        exit 1
+    fi
+    
     cd ..
     
     # 创建目录
@@ -201,26 +256,41 @@ init_environment() {
 init_database() {
     print_info "数据库初始化..."
     echo ""
-    echo "请使用MySQL客户端连接远程数据库执行SQL文件:"
-    echo ""
-    echo "  服务器: $REMOTE_SERVER"
-    echo "  端口:   3306"
-    echo "  用户名: root"
-    echo "  密码:   root123456"
-    echo "  数据库: ai_db"
-    echo ""
-    echo "SQL文件:"
-    echo "  1. $BACKEND_DIR/sql/ruoyi-fastapi.sql (RuoYi基础表)"
-    echo "  2. $BACKEND_DIR/sql/testing_platform.sql (测试平台表)"
-    echo ""
-    echo "命令示例:"
-    echo "  mysql -h $REMOTE_SERVER -P 3306 -u root -proot123456 ai_db < $BACKEND_DIR/sql/ruoyi-fastapi.sql"
-    echo "  mysql -h $REMOTE_SERVER -P 3306 -u root -proot123456 ai_db < $BACKEND_DIR/sql/testing_platform.sql"
+    
+    cd $BACKEND_DIR
+    
+    # 检查 pymysql 是否安装
+    if ! uv pip show pymysql &>/dev/null; then
+        print_info "安装 pymysql..."
+        uv pip install pymysql
+    fi
+    
+    # 激活虚拟环境并运行初始化脚本
+    activate_venv
+    
+    # 运行数据库初始化工具
+    python init_db.py --env dev
+    
+    cd ..
+}
+
+# 激活虚拟环境的辅助函数
+activate_venv() {
+    if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "mingw"* ]] || [[ "$OSTYPE" == "cygwin"* ]]; then
+        # Windows Git Bash
+        source .venv/Scripts/activate
+    else
+        # Linux / Mac
+        source .venv/bin/activate
+    fi
 }
 
 # 启动后端
 start_backend() {
     print_info "启动后端服务..."
+    
+    # 创建目录
+    mkdir -p logs .pids
     
     # 检查是否已运行
     if [ -f ".pids/backend.pid" ]; then
@@ -229,27 +299,56 @@ start_backend() {
             print_warning "后端服务已在运行 (PID: $pid)"
             return
         fi
+        rm -f .pids/backend.pid
     fi
     
     cd $BACKEND_DIR
-    source venv/bin/activate
+    
+    # 检查虚拟环境
+    if [ ! -d ".venv" ]; then
+        print_error "虚拟环境不存在，请先运行: ./deploy-local.sh init"
+        cd ..
+        return 1
+    fi
+    
+    # 激活虚拟环境
+    activate_venv
     export APP_ENV=dev
+    
+    # 检查依赖
+    if ! python -c "import fastapi" 2>/dev/null; then
+        print_error "依赖未安装，请先运行: ./deploy-local.sh init"
+        cd ..
+        return 1
+    fi
     
     # 启动
     print_info "启动中..."
     nohup python app.py --env dev > ../logs/backend.log 2>&1 &
-    echo $! > ../.pids/backend.pid
+    backend_pid=$!
+    echo $backend_pid > ../.pids/backend.pid
     
-    sleep 2
+    # 等待启动
+    sleep 5
     
-    if kill -0 $(cat ../.pids/backend.pid) 2>/dev/null; then
-        print_success "后端服务启动成功"
-        echo "  地址: http://localhost:9099/dev-api"
-        echo "  文档: http://localhost:9099/dev-api/docs"
-        echo "  PID:  $(cat ../.pids/backend.pid)"
-        echo "  日志: logs/backend.log"
+    # 检查进程
+    if kill -0 $backend_pid 2>/dev/null; then
+        # 检查端口
+        sleep 2
+        if nc -z localhost 9099 2>/dev/null || timeout 1 bash -c "echo >/dev/tcp/localhost/9099" 2>/dev/null; then
+            print_success "后端服务启动成功"
+            echo "  地址: http://localhost:9099/dev-api"
+            echo "  文档: http://localhost:9099/dev-api/docs"
+            echo "  PID:  $backend_pid"
+            echo "  日志: logs/backend.log"
+        else
+            print_warning "进程已启动但端口未监听，请查看日志"
+            tail -20 ../logs/backend.log 2>/dev/null
+        fi
     else
-        print_error "后端启动失败，请查看日志"
+        print_error "后端启动失败，请查看日志: logs/backend.log"
+        tail -30 ../logs/backend.log 2>/dev/null || print_error "日志文件不存在"
+        rm -f ../.pids/backend.pid
     fi
     
     cd ..
@@ -266,24 +365,50 @@ start_frontend() {
             print_warning "前端服务已在运行 (PID: $pid)"
             return
         fi
+        rm -f .pids/frontend.pid
     fi
     
     cd $FRONTEND_DIR
     
+    # 检查 node_modules
+    if [ ! -d "node_modules" ]; then
+        print_error "依赖未安装，请先运行: ./deploy-local.sh init"
+        cd ..
+        return 1
+    fi
+    
+    # 修复 vite 配置中的端口（从80改为5173）
+    if grep -q "port: 80" vite.config.js 2>/dev/null; then
+        print_info "修复 vite 配置端口..."
+        sed -i 's/port: 80/port: 5173/' vite.config.js
+    fi
+    
     # 启动
     print_info "启动中..."
     nohup npm run dev > ../logs/frontend.log 2>&1 &
-    echo $! > ../.pids/frontend.pid
+    frontend_pid=$!
+    echo $frontend_pid > ../.pids/frontend.pid
     
-    sleep 3
+    # 等待启动
+    sleep 8
     
-    if kill -0 $(cat ../.pids/frontend.pid) 2>/dev/null; then
-        print_success "前端服务启动成功"
-        echo "  地址: http://localhost:5173"
-        echo "  PID:  $(cat ../.pids/frontend.pid)"
-        echo "  日志: logs/frontend.log"
+    # 检查进程
+    if kill -0 $frontend_pid 2>/dev/null; then
+        # 检查端口
+        sleep 2
+        if nc -z localhost 5173 2>/dev/null || timeout 1 bash -c "echo >/dev/tcp/localhost/5173" 2>/dev/null; then
+            print_success "前端服务启动成功"
+            echo "  地址: http://localhost:5173"
+            echo "  PID:  $frontend_pid"
+            echo "  日志: logs/frontend.log"
+        else
+            print_warning "进程已启动但端口未监听，请查看日志"
+            tail -20 ../logs/frontend.log 2>/dev/null
+        fi
     else
-        print_error "前端启动失败，请查看日志"
+        print_error "前端启动失败，请查看日志: logs/frontend.log"
+        tail -30 ../logs/frontend.log 2>/dev/null || print_error "日志文件不存在"
+        rm -f ../.pids/frontend.pid
     fi
     
     cd ..
@@ -328,7 +453,7 @@ stop_all() {
     if [ -f ".pids/backend.pid" ]; then
         pid=$(cat .pids/backend.pid)
         if kill -0 $pid 2>/dev/null; then
-            kill $pid
+            kill $pid 2>/dev/null || true
             print_success "后端服务已停止 (PID: $pid)"
         fi
         rm -f .pids/backend.pid
@@ -338,7 +463,7 @@ stop_all() {
     if [ -f ".pids/frontend.pid" ]; then
         pid=$(cat .pids/frontend.pid)
         if kill -0 $pid 2>/dev/null; then
-            kill $pid
+            kill $pid 2>/dev/null || true
             print_success "前端服务已停止 (PID: $pid)"
         fi
         rm -f .pids/frontend.pid
@@ -396,4 +521,3 @@ case "${1:-help}" in
     status) show_status ;;
     *) show_help ;;
 esac
-

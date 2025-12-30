@@ -105,3 +105,11 @@ html报告要求：
     将base64位的数据转换成正常的pdf文件，然后 借助 langchain-pymupdf4llm实现文字内容的提取，langchain-pymupdf4llm的参考地址：https://docs.langchain.com/oss/python/integrations/document_loaders/pymupdf4llm，使用多模态提取图片，多模态代码在 @llms.py文件中的get_doubao_seed_model函数
 
     把解析出的pdf内容作为AImessage 添加到state["messages"]中
+
+
+
+@d:\yunxia\ai_langgraph\ 仔细分析当前整个项目
+梳理出当前项目依赖的python依赖 生成依赖的  @requirements.txt 和uv 的依赖
+并且生成可执行的发布脚本
+@start_all.sh @start_all.ps1 @start_all.bat 
+里面所有的服务都需要覆盖部署

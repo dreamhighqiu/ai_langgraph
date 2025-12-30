@@ -10,10 +10,10 @@
 
 
 from typing import Any
+# fmt: off  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WlhveldnPT06OGQ1ZjgyOGY=
 
 from langchain_core.language_models import BaseChatModel
 from langchain_core.tools import BaseTool
-# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TWt4T1JnPT06Y2FjZGQ2OGM=
 
 from deepagents import SubAgent
 from k6_agent.prompts import (
@@ -23,6 +23,7 @@ from k6_agent.prompts import (
     REPORT_SUBAGENT_PROMPT,
 )
 
+# noqa  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WlhveldnPT06OGQ1ZjgyOGY=
 
 def create_rag_subagent(
     rag_tools: list[BaseTool],
@@ -47,7 +48,6 @@ def create_rag_subagent(
         subagent["model"] = model
     return subagent
 
-# type: ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TWt4T1JnPT06Y2FjZGQ2OGM=
 
 def create_script_subagent(
     tools: list[BaseTool],
@@ -96,7 +96,7 @@ def create_analyzer_subagent(
         subagent["model"] = model
     return subagent
 
-# pragma: no cover  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TWt4T1JnPT06Y2FjZGQ2OGM=
+# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WlhveldnPT06OGQ1ZjgyOGY=
 
 def create_report_subagent(
     chart_tools: list[BaseTool],
@@ -147,5 +147,5 @@ def create_all_subagents(
         create_analyzer_subagent(analyzer_tools, model),
         create_report_subagent(chart_tools, model),
     ]
-# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TWt4T1JnPT06Y2FjZGQ2OGM=
+# pragma: no cover  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WlhveldnPT06OGQ1ZjgyOGY=
 

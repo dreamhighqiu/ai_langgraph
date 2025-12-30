@@ -38,7 +38,6 @@ def _resolve_virtual_path(virtual_path: str, workspace_root: str) -> Path:
     # 移除开头的 /
     relative_path = virtual_path.lstrip("/")
     return Path(workspace_root).resolve() / relative_path
-# fmt: off  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhFNWNRPT06YTJlMjk1M2Q=
 
 
 def _to_virtual_path(scripts_dir: str, script_name: str) -> str:
@@ -57,6 +56,7 @@ def _to_virtual_path(scripts_dir: str, script_name: str) -> str:
     # 移除末尾的 /
     scripts_dir = scripts_dir.rstrip("/")
     return f"{scripts_dir}/{script_name}"
+# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0VSb05nPT06ZWU3NjE1ZDg=
 
 
 def create_script_save_tool(config: K6Config | None = None) -> BaseTool:
@@ -95,7 +95,7 @@ def create_script_save_tool(config: K6Config | None = None) -> BaseTool:
 
         # 确保目录存在
         actual_path.parent.mkdir(parents=True, exist_ok=True)
-# pylint: disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhFNWNRPT06YTJlMjk1M2Q=
+# pylint: disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0VSb05nPT06ZWU3NjE1ZDg=
 
         # 保存脚本
         actual_path.write_text(script_content, encoding="utf-8")
@@ -191,13 +191,13 @@ def create_k6_executor_tool(config: K6Config | None = None) -> BaseTool:
                 "error": str(e),
                 "script_path": script_path,
             }, ensure_ascii=False)
+# type: ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0VSb05nPT06ZWU3NjE1ZDg=
     
     return StructuredTool.from_function(
         name="run_k6_script",
         func=run_k6_script,
         description="执行K6性能测试脚本。参数：script_path(脚本路径), output_format(可选，输出格式)",
     )
-# pragma: no cover  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhFNWNRPT06YTJlMjk1M2Q=
 
 
 def _parse_k6_json_output(result_file: Path) -> dict[str, Any]:
@@ -224,7 +224,6 @@ def _parse_k6_json_output(result_file: Path) -> dict[str, Any]:
                     data = json.loads(line.strip())
                     metric_type = data.get("type")
                     metric_name = data.get("metric")
-# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhFNWNRPT06YTJlMjk1M2Q=
                     
                     if metric_type == "Point":
                         value = data.get("data", {}).get("value", 0)
@@ -256,6 +255,7 @@ def _parse_k6_json_output(result_file: Path) -> dict[str, Any]:
             
     except Exception as e:
         metrics["parse_error"] = str(e)
+# type: ignore  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y0VSb05nPT06ZWU3NjE1ZDg=
     
     return metrics
 

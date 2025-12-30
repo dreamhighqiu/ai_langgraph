@@ -13,9 +13,9 @@ import os
 from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
-# fmt: off  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VVZkdmRBPT06MDQxMjQ4YWI=
+# pragma: no cover  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y25oTVlRPT06YjVmODE4NzE=
 
-os.environ["DEEPSEEK_API_KEY"] = "sk-aa26d8462b7e49b8b772d142b7fca250"
+os.environ["DEEPSEEK_API_KEY"] = "sk-9f51590e5d464509ad731fa8aea89f16"
 llm = init_chat_model("deepseek:deepseek-chat")
 client = MultiServerMCPClient({
     "rag-server": {
@@ -23,7 +23,7 @@ client = MultiServerMCPClient({
         "transport": "sse",
     }
 })
-# type: ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VVZkdmRBPT06MDQxMjQ4YWI=
 
 tools = asyncio.run(client.get_tools())
 agent = create_agent(model=llm, tools=tools)
+# fmt: off  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y25oTVlRPT06YjVmODE4NzE=

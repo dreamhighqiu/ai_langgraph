@@ -51,12 +51,12 @@ result = agent.invoke({
 授权商业应用请联系微信：huice666
 """
 
-# pragma: no cover  MC8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEVaa2RnPT06NWZkNWZhNDY=
+# fmt: off  MC8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2tKYVRRPT06NWYxYmVmOTQ=
 
 from k6_agent.agent import create_k6_agent
 from k6_agent.config import K6Config, DEFAULT_CONFIG
 from k6_agent.tasks import K6TaskManager, get_task_manager
-# pylint: disable  MS8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEVaa2RnPT06NWZkNWZhNDY=
+# type: ignore  MS8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2tKYVRRPT06NWYxYmVmOTQ=
 
 __version__ = "1.0.0"
 __all__ = [
@@ -66,5 +66,5 @@ __all__ = [
     "K6TaskManager",
     "get_task_manager",
 ]
-# pylint: disable  Mi8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEVaa2RnPT06NWZkNWZhNDY=
+# fmt: off  Mi8zOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2tKYVRRPT06NWYxYmVmOTQ=
 

@@ -14,7 +14,7 @@ from k6_agent.tools.executor import (
     create_k6_executor_tool,
     create_script_save_tool,
 )
-# pragma: no cover  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WmtodmFBPT06MDljYTBmYzk=
+# noqa  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UzFkak13PT06Mjg4Njk2ZWU=
 
 __all__ = [
     "get_rag_tools",
@@ -24,4 +24,4 @@ __all__ = [
     "create_script_save_tool",
 ]
 
-# pylint: disable  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WmtodmFBPT06MDljYTBmYzk=
+# pylint: disable  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UzFkak13PT06Mjg4Njk2ZWU=

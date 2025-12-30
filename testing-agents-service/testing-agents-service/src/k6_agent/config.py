@@ -21,8 +21,8 @@ def _env(key: str, default: str = "") -> str:
 def _env_int(key: str, default: int = 0) -> int:
     """获取整数环境变量."""
     return int(os.environ.get(key, str(default)))
-# noqa  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TjJwVVZRPT06MTVhMTQ4OTY=
 
+# pylint: disable  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y21NMlVnPT06YWFkYjZmMDQ=
 
 @dataclass
 class K6Config:
@@ -43,7 +43,7 @@ class K6Config:
     # 虚拟路径（以 / 开头）
     scripts_dir: str = field(default_factory=lambda: _env("K6_SCRIPTS_DIR", "/k6_scripts"))
     results_dir: str = field(default_factory=lambda: _env("K6_RESULTS_DIR", "/k6_results"))
-# pragma: no cover  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TjJwVVZRPT06MTVhMTQ4OTY=
+# fmt: off  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y21NMlVnPT06YWFkYjZmMDQ=
 
     # 默认测试参数
     default_vus: int = field(default_factory=lambda: _env_int("K6_DEFAULT_VUS", 10))

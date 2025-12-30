@@ -8,7 +8,7 @@
 授权商业应用请联系微信：huice666
 """
 
-# fmt: off  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V1ZRd1VBPT06M2ZhMjFiMDY=
+# fmt: off  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YWxCNVlRPT06NDAwNjUxMTc=
 
 # 主智能体系统提示词
 SYSTEM_PROMPT = """你是一个专业的K6性能测试智能体，负责帮助用户完成性能测试的全流程工作。
@@ -286,4 +286,4 @@ REPORT_SUBAGENT_PROMPT = """你是一个测试报告生成专家，负责生成�
 4. 可使用图表工具生成可视化图表
 """
 
-# fmt: off  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V1ZRd1VBPT06M2ZhMjFiMDY=
+# pragma: no cover  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YWxCNVlRPT06NDAwNjUxMTc=

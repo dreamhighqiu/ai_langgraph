@@ -1,37 +1,38 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2025-12-11 15:54:15,398 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2025-12-30 13:48:33,600 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
-╭──────────────────────────────────────────────────────────────────────────────╮
-│                                                                              │
-│                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
-│                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
-│                                                                              │
-│                                FastMCP 2.13.3                                │
-│                                                                              │
-│                                                                              │
-│                   🖥  Server name: 但问企业级RAG                              │
-│                                                                              │
-│                   📦 Transport:   SSE                                        │
-│                   🔗 Server URL:  http://0.0.0.0:8001/sse                    │
-│                                                                              │
-│                   📚 Docs:        https://gofastmcp.com                      │
-│                   🚀 Hosting:     https://fastmcp.cloud                      │
-│                                                                              │
-╰──────────────────────────────────────────────────────────────────────────────╯
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                        ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                        █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                             │
+│                               FastMCP 2.14.1                                │
+│                                                                             │
+│                                                                             │
+│                   🖥  Server name: 但问企业级RAG                             │
+│                                                                             │
+│                   📦 Transport:   SSE                                       │
+│                   🔗 Server URL:  http://0.0.0.0:8001/sse                   │
+│                                                                             │
+│                   📚 Docs:        https://gofastmcp.com                     │
+│                   🚀 Hosting:     https://fastmcp.cloud                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 
 
-2025-12-11 15:54:15,407 - __main__ - INFO - Starting RAG Anything MCP Server...
-2025-12-11 15:54:15,409 - __main__ - INFO - Configuration loaded
-2025-12-11 15:54:15,409 - __main__ - INFO -   LLM Provider: deepseek
-2025-12-11 15:54:15,409 - __main__ - INFO -   LLM Model: deepseek-chat
-2025-12-11 15:54:15,409 - __main__ - INFO -   RAG Parser: docling
-2025-12-11 15:54:15,409 - __main__ - INFO - Creating LLM model function...
-2025-12-11 15:54:15,409 - __main__ - INFO - Creating vision model function...
-2025-12-11 15:54:15,409 - __main__ - INFO - Creating embedding function...
-2025-12-11 15:54:15,409 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2025-12-11 15:54:15,409 - __main__ - INFO - Creating RAGAnything connector...
-2025-12-11 15:54:15,409 - __main__ - INFO - Initializing RAGAnything...
+2025-12-30 13:48:33,633 - __main__ - INFO - Starting RAG Anything MCP Server...
+2025-12-30 13:48:33,648 - __main__ - INFO - Configuration loaded
+2025-12-30 13:48:33,648 - __main__ - INFO -   LLM Provider: deepseek
+2025-12-30 13:48:33,648 - __main__ - INFO -   LLM Model: deepseek-chat
+2025-12-30 13:48:33,649 - __main__ - INFO -   RAG Parser: docling
+2025-12-30 13:48:33,649 - __main__ - INFO - Creating LLM model function...
+2025-12-30 13:48:33,649 - __main__ - INFO - Creating vision model function...
+2025-12-30 13:48:33,649 - __main__ - INFO - Creating embedding function...
+2025-12-30 13:48:33,649 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2025-12-30 13:48:33,649 - __main__ - INFO - Creating RAGAnything connector...
+2025-12-30 13:48:33,649 - __main__ - INFO - Initializing RAGAnything...
+INFO: Created working directory: ./rag_storage
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ./rag_storage
 INFO:   Parser: docling
@@ -40,31 +41,35 @@ INFO:   Multimodal processing - Image: True, Table: True, Equation: True
 INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': './rag_storage'}
-INFO: [] Created new empty graph file: ./rag_storage/graph_chunk_entity_relation.graphml
-2025-12-11 15:54:20,151 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_entities.json'} 0 data
-2025-12-11 15:54:20,151 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_relationships.json'} 0 data
-2025-12-11 15:54:20,151 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage/vdb_chunks.json'} 0 data
-INFO: [] Process 93217 KV load full_docs with 0 records
-INFO: [] Process 93217 KV load text_chunks with 0 records
-INFO: [] Process 93217 KV load full_entities with 0 records
-INFO: [] Process 93217 KV load full_relations with 0 records
-INFO: [] Process 93217 KV load entity_chunks with 0 records
-INFO: [] Process 93217 KV load relation_chunks with 0 records
-INFO: [] Process 93217 KV load llm_response_cache with 0 records
-INFO: [] Process 93217 doc status load doc_status with 0 records
-INFO: [] Process 93217 KV load parse_cache with 0 records
+INFO: [] Created new empty graph file: ./rag_storage\graph_chunk_entity_relation.graphml
+2025-12-30 13:49:14,165 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
+2025-12-30 13:49:14,166 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
+2025-12-30 13:49:14,167 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
+INFO: [] Process 10312 KV load full_docs with 0 records
+INFO: [] Process 10312 KV load text_chunks with 0 records
+INFO: [] Process 10312 KV load full_entities with 0 records
+INFO: [] Process 10312 KV load full_relations with 0 records
+INFO: [] Process 10312 KV load entity_chunks with 0 records
+INFO: [] Process 10312 KV load relation_chunks with 0 records
+INFO: [] Process 10312 KV load llm_response_cache with 0 records
+INFO: [] Process 10312 doc status load doc_status with 0 records
+INFO: [] Process 10312 KV load parse_cache with 0 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2025-12-11 15:54:20,153 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2025-12-11 15:54:20,153 - __main__ - INFO - RAG Anything initialized successfully
-2025-12-11 15:54:20,153 - __main__ - INFO -   Working Directory: ./rag_storage
-2025-12-11 15:54:20,153 - __main__ - INFO -   Parser: docling
-[12/11/25 15:54:20] INFO     Starting MCP server '但问企业级RAG'  server.py:2058
-                             with transport 'sse' on                            
-                             http://0.0.0.0:8001/sse                            
-INFO:     Started server process [93217]
+2025-12-30 13:49:14,180 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2025-12-30 13:49:14,180 - __main__ - INFO - RAG Anything initialized successfully
+2025-12-30 13:49:14,180 - __main__ - INFO -   Working Directory: ./rag_storage
+2025-12-30 13:49:14,180 - __main__ - INFO -   Parser: docling
+[12/30/25 13:49:14] INFO     Starting MCP server '但问企业级RAG' server.py:2618
+                             with transport 'sse' on                           
+                             http://0.0.0.0:8001/sse                           
+INFO:     Started server process [10312]
 INFO:     Waiting for application startup.
+2025-12-30 13:49:14,961 - docket.worker - INFO - Starting worker 'caobinbin#10312' with the following tasks:
+2025-12-30 13:49:14,962 - docket.worker - INFO - * trace(message: str, ...)
+2025-12-30 13:49:14,962 - docket.worker - INFO - * fail(message: str, ...)
+2025-12-30 13:49:14,962 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)

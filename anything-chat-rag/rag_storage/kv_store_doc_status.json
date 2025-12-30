@@ -1,23 +1,22 @@
 {
-  "doc-78fb7df08ce980cbf869a712b992bba9": {
-    "status": "processed",
-    "chunks_count": 4,
+  "doc-fa7239cf2000114b9ada546d638aeefb": {
+    "status": "processing",
+    "chunks_count": 5,
     "chunks_list": [
-      "chunk-700abcb7689920286ae518a3b9fb468d",
-      "chunk-3383e6dcf537fa64d4ccc8f5d7f05104",
-      "chunk-b6d6098e4303ef28aa7e4b0b9aaaf9c3",
-      "chunk-03f73960e92a10b61243dd8f47889425"
+      "chunk-0ed01d0a52df8896f87835c170a4127f",
+      "chunk-6e7a38ff30ab59324d9302f116d5064a",
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7",
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01",
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
     ],
-    "content_summary": "我们出去旅行了\n\n我是谁 我在那 这个是⼀个旅游⽂档\n\nAir Asia\n\nMAHATMA GANDHI\n\nwear airch\n\nMAHATHA GANOHI\n\n7400\n\nR 500\n\nMAHATNA GANOHI\n\n298169\n\n999\n\nIN CA\n\n28805\n\n005 €\n\n1500\n\n1900\n\nRESERVE BANK OF INDIA\n\nLARANTEED BY THE CENTRAL GOVERNVENTT\n\nDECERVE BANK OF INDIA\n\nMALIK OF ...",
-    "content_length": 478,
-    "created_at": "2025-12-11T07:55:27.749581+00:00",
-    "updated_at": "2025-12-11T16:00:16+00:00",
-    "file_path": "旅行日记5555.pdf",
-    "track_id": "insert_20251211_155527_f6e71db9",
+    "content_summary": "# 意图与实体识别\r\n基于自然语言理解的助手本节涉及构建基于NLU的助手。如果您正在使用语言模型对话式人工智能(CALM)，此内容可能不适用于您。NLU(自然语言理解)的目标是从用户消息中提取结构化信息。这通常包括用户的意图以及消息中包含的任何实体。你可以在训练数据中添加额外的信息，如正则表达式和查找表，以帮助模型正确识别意图和实体。\r\n\r\n## 步骤\r\n 1、安装\r\n 2、进入watch目录下\r\n 3、在data/nlu.yaml中添加调整训练数据\r\n 4、在config.yml中调整相关配置...",
+    "content_length": 11267,
+    "created_at": "2025-12-30T05:45:54.453767+00:00",
+    "updated_at": "2025-12-30T05:45:54.519777+00:00",
+    "file_path": "操作步骤1.md",
+    "track_id": "upload_20251230_134554_d4fabeff",
     "metadata": {
-      "processing_start_time": 1765439727,
-      "processing_end_time": 1765439801
-    },
-    "multimodal_processed": true
+      "processing_start_time": 1767073554
+    }
   }
 }

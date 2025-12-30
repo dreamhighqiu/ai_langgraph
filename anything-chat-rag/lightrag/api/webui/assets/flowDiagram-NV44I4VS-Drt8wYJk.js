@@ -1,4 +1,11 @@
-
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
 // NOTE  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkV4bWVRPT06ZmZiMTYxODY=
 
 import{g as qt}from"./chunk-FMBD7UC4-DgX9XrwK.js";import{_ as m,n as Ot,l as t1,c as b1,d as S1,o as Ht,r as Xt,u as it,b as Qt,s as Jt,p as Zt,a as $t,g as te,q as ee,k as se,t as ie,J as re,v as ae,x as st,y as ne,z as ue,A as oe}from"./index-BRREmx1I.js";import{g as le}from"./chunk-55IACEB6-BjjVWjYC.js";import{s as ce}from"./chunk-QN33PNHL-CU45xCtC.js";import{c as he}from"./channel-CeC6j_HH.js";var de="flowchart-",P1,pe=(P1=class{constructor(){this.vertexCounter=0,this.config=b1(),this.vertices=new Map,this.edges=[],this.classes=new Map,this.subGraphs=[],this.subGraphLookup=new Map,this.tooltips=new Map,this.subCount=0,this.firstGraphFlag=!0,this.secCount=-1,this.posCrossRef=[],this.funs=[],this.setAccTitle=Qt,this.setAccDescription=Jt,this.setDiagramTitle=Zt,this.getAccTitle=$t,this.getAccDescription=te,this.getDiagramTitle=ee,this.funs.push(this.setupToolTips.bind(this)),this.addVertex=this.addVertex.bind(this),this.firstGraph=this.firstGraph.bind(this),this.setDirection=this.setDirection.bind(this),this.addSubGraph=this.addSubGraph.bind(this),this.addLink=this.addLink.bind(this),this.setLink=this.setLink.bind(this),this.updateLink=this.updateLink.bind(this),this.addClass=this.addClass.bind(this),this.setClass=this.setClass.bind(this),this.destructLink=this.destructLink.bind(this),this.setClickEvent=this.setClickEvent.bind(this),this.setTooltip=this.setTooltip.bind(this),this.updateLinkInterpolate=this.updateLinkInterpolate.bind(this),this.setClickFun=this.setClickFun.bind(this),this.bindFunctions=this.bindFunctions.bind(this),this.lex={firstGraph:this.firstGraph.bind(this)},this.clear(),this.setGen("gen-2")}sanitizeText(i){return se.sanitizeText(i,this.config)}lookUpDomId(i){for(const a of this.vertices.values())if(a.id===i)return a.domId;return i}addVertex(i,a,n,u,o,f,c={},A){var L,C;if(!i||i.trim().length===0)return;let r;if(A!==void 0){let d;A.includes(`

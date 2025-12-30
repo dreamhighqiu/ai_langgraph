@@ -1,25 +1,26 @@
 #!/bin/bash
 # =============================================================================
-# AI LangGraph 服务启动脚本 (使用 uv)
+# AI LangGraph Service Starter (using uv)
 # 
-# 功能: 一键启动所有后端服务（使用 uv 管理的统一虚拟环境）
+# Function: One-click start all backend services (using unified virtual environment managed by uv)
 # 
-# 服务列表:
-#   1. LightRAG Server (知识库服务)     - http://localhost:9621
-#   2. MCP Server (RAG Anything)        - http://localhost:8001
-#   3. LangGraph Server (智能体后端)    - http://localhost:2025
-#   4. AI Platform Backend (主后端)     - http://localhost:9999
-#   5. AI Platform Frontend (前端 UI)   - http://localhost:5174
+# Service List:
+#   1. LightRAG Server (Knowledge Base)     - http://localhost:9621
+#   2. MCP Server (RAG Anything)            - http://localhost:8001
+#   3. LangGraph Server (Agent Backend)     - http://localhost:2025
+#   4. AI Platform Backend (Main Backend)   - http://localhost:9999
+#   5. AI Platform Frontend (Frontend UI)   - http://localhost:5174
 #
-# 使用方法:
-#   ./start_all.sh          # 启动所有后端服务
-#   ./start_all.sh --all    # 启动所有服务（包含前端）
-#   ./start_all.sh --stop   # 停止所有服务
+# Usage:
+#   ./start_all.sh          # Start all backend services
+#   ./start_all.sh --all    # Start all services (including frontend)
+#   ./start_all.sh --stop   # Stop all services
 # =============================================================================
 
-set -e
+# Don't exit on error - we want to start all services even if one fails
+# set -e
 
-# 颜色定义
+# Color definitions
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -27,112 +28,44 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# 项目根目录
+# Project root directory
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_ROOT"
 
-# PID 文件目录
+# PID file directory
 PID_DIR="$PROJECT_ROOT/.pids"
 mkdir -p "$PID_DIR"
 
-# 日志目录
+# Log directory
 LOG_DIR="$PROJECT_ROOT/logs"
 mkdir -p "$LOG_DIR"
 
-# 当前环境 (local/remote)
+# Current environment (local/remote)
 CURRENT_ENV="local"
 ENV_FILE="$PROJECT_ROOT/.env"
 
-# =============================================================================
-# 环境配置函数
-# =============================================================================
-
-switch_env() {
-    local target_env=$1
-    local source_file=""
-    
-    case $target_env in
-        local)
-            source_file="$PROJECT_ROOT/.env.local"
-            ;;
-        remote)
-            source_file="$PROJECT_ROOT/.env.remote"
-            ;;
-        *)
-            print_error "未知环境: $target_env (可选: local, remote)"
-            exit 1
-            ;;
-    esac
-    
-    if [ ! -f "$source_file" ]; then
-        print_error "环境配置文件不存在: $source_file"
-        exit 1
-    fi
-    
-    # 备份当前 .env
-    if [ -f "$ENV_FILE" ]; then
-        cp "$ENV_FILE" "$ENV_FILE.bak"
-    fi
-    
-    # 复制目标环境配置
-    cp "$source_file" "$ENV_FILE"
-    print_success "已切换到 $target_env 环境 (配置文件: $source_file)"
-    
-    # 同步到子项目
-    sync_env_to_subprojects
-}
-
-sync_env_to_subprojects() {
-    print_info "同步环境配置到子项目..."
-    
-    # 同步到 testing-deep-agents-service
-    if [ -d "$PROJECT_ROOT/testing-deep-agents-service" ]; then
-        # 提取 LLM 和 Knowledge 相关配置
-        grep -E "^(LLM_|DEEPSEEK_|KNOWLEDGE_|MILVUS_|MINIO_|LOG_)" "$ENV_FILE" > "$PROJECT_ROOT/testing-deep-agents-service/.env" 2>/dev/null || true
-        # 追加服务地址配置
-        grep -E "^(SERVICE_HOST|LIGHTRAG_URL|LANGGRAPH_URL|PLATFORM_)" "$ENV_FILE" >> "$PROJECT_ROOT/testing-deep-agents-service/.env" 2>/dev/null || true
-        print_success "  → testing-deep-agents-service/.env"
-    fi
-    
-    # 同步到 anything-chat-rag（包含 EMBEDDING_ 配置）
-    if [ -d "$PROJECT_ROOT/anything-chat-rag" ]; then
-        grep -E "^(ONE_API_|LLM_|DEEPSEEK_|EMBEDDING_|MILVUS_|OLLAMA_)" "$ENV_FILE" > "$PROJECT_ROOT/anything-chat-rag/.env" 2>/dev/null || true
-        print_success "  → anything-chat-rag/.env"
-    fi
-    
-    # 同步到 mcp-server
-    if [ -d "$PROJECT_ROOT/mcp-server/src/mcp_server_rag_anything" ]; then
-        grep -E "^(ONE_API_|LLM_|DEEPSEEK_|LIGHTRAG_)" "$ENV_FILE" > "$PROJECT_ROOT/mcp-server/src/mcp_server_rag_anything/.env" 2>/dev/null || true
-        print_success "  → mcp-server/.env"
-    fi
-}
-
-show_current_env() {
-    if [ -f "$ENV_FILE" ]; then
-        local service_host=$(grep "^SERVICE_HOST=" "$ENV_FILE" 2>/dev/null | cut -d'=' -f2)
-        if [ "$service_host" = "localhost" ]; then
-            printf "${GREEN}当前环境: 本地 (localhost)${NC}\n"
-        elif [ -n "$service_host" ]; then
-            printf "${YELLOW}当前环境: 远程 ($service_host)${NC}\n"
-        else
-            printf "${BLUE}当前环境: 未知 (请使用 --env local/remote 切换)${NC}\n"
-        fi
-    else
-        printf "${RED}当前环境: 未配置 (.env 文件不存在)${NC}\n"
-    fi
-}
+# Detect OS and set Python path
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+    # Windows (Git Bash/MSYS2/Cygwin)
+    VENV_PYTHON="$PROJECT_ROOT/.venv/Scripts/python.exe"
+    VENV_BIN="$PROJECT_ROOT/.venv/Scripts"
+else
+    # Linux/macOS
+    VENV_PYTHON="$PROJECT_ROOT/.venv/bin/python"
+    VENV_BIN="$PROJECT_ROOT/.venv/bin"
+fi
 
 # =============================================================================
-# 工具函数
+# Utility Functions
 # =============================================================================
 
 print_banner() {
     printf "${CYAN}"
-    printf "╔═══════════════════════════════════════════════════════════════╗\n"
-    printf "║           🚀 AI LangGraph 服务启动器 (uv)                      ║\n"
-    printf "║                                                               ║\n"
-    printf "║   统一虚拟环境 · 一键启动 · 简单高效                           ║\n"
-    printf "╚═══════════════════════════════════════════════════════════════╝\n"
+    printf "================================================================\n"
+    printf "          AI LangGraph Service Starter (uv)                    \n"
+    printf "                                                                \n"
+    printf "          Unified Virtual Env · One-Click Start · Simple       \n"
+    printf "================================================================\n"
     printf "${NC}"
 }
 
@@ -141,7 +74,7 @@ print_info() {
 }
 
 print_success() {
-    printf "${GREEN}[✓]${NC} %s\n" "$1"
+    printf "${GREEN}[OK]${NC} %s\n" "$1"
 }
 
 print_warning() {
@@ -149,25 +82,52 @@ print_warning() {
 }
 
 print_error() {
-    printf "${RED}[✗]${NC} %s\n" "$1"
+    printf "${RED}[X]${NC} %s\n" "$1"
 }
 
-# 检查端口是否被占用
+# Check if port is occupied (cross-platform)
 check_port() {
     local port=$1
-    if lsof -Pi :$port -sTCP:LISTEN -t >/dev/null 2>&1; then
-        return 0  # 端口被占用
+    
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        # Windows: use netstat or Python
+        if command -v netstat &> /dev/null; then
+            netstat -an | grep -q ":$port.*LISTEN" 2>/dev/null && return 0 || return 1
+        else
+            # Fallback to Python
+            "$VENV_PYTHON" -c "
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+result = s.connect_ex(('127.0.0.1', $port))
+s.close()
+exit(0 if result == 0 else 1)
+" 2>/dev/null && return 0 || return 1
+        fi
     else
-        return 1  # 端口空闲
+        # Linux/macOS: use lsof
+        if command -v lsof &> /dev/null; then
+            lsof -Pi :$port -sTCP:LISTEN -t >/dev/null 2>&1 && return 0 || return 1
+        else
+            # Fallback to Python
+            "$VENV_PYTHON" -c "
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+result = s.connect_ex(('127.0.0.1', $port))
+s.close()
+exit(0 if result == 0 else 1)
+" 2>/dev/null && return 0 || return 1
+        fi
     fi
 }
 
-# 等待服务启动
+# Wait for service to start
 wait_for_service() {
     local port=$1
     local name=$2
     local max_wait=30
     local count=0
+    
+    print_info "Waiting for $name to start on port $port..."
     
     while [ $count -lt $max_wait ]; do
         if check_port $port; then
@@ -175,14 +135,19 @@ wait_for_service() {
         fi
         sleep 1
         count=$((count + 1))
+        # Show progress every 5 seconds
+        if [ $((count % 5)) -eq 0 ]; then
+            printf "."
+        fi
     done
+    echo ""
     return 1
 }
 
-# 检查 uv 是否安装
+# Check if uv is installed
 check_uv() {
     if ! command -v uv &> /dev/null; then
-        print_error "uv 未安装！请先安装 uv:"
+        print_error "uv is not installed! Please install uv first:"
         echo ""
         echo "  curl -LsSf https://astral.sh/uv/install.sh | sh"
         echo ""
@@ -190,29 +155,127 @@ check_uv() {
     fi
 }
 
-# 检查虚拟环境，不存在则创建
-check_venv() {
-    if [ ! -d "$PROJECT_ROOT/.venv" ]; then
-        print_warning "虚拟环境不存在，正在使用 uv 创建..."
-        print_info "运行 uv sync 安装依赖（首次运行可能需要几分钟）..."
-        uv sync --python 3.11
-        
-        # 安装 LightRAG
-        uv pip install -e ./anything-chat-rag[api]
-        
-        # 配置 Python 路径
-        local site_packages=$(.venv/bin/python -c "import site; print(site.getsitepackages()[0])")
-        cat > "$site_packages/ai-langgraph.pth" << EOF
-$PROJECT_ROOT/testing-deep-agents-service/src
+# Get file modification time (cross-platform)
+get_file_mtime() {
+    local file="$1"
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        # Windows Git Bash: use Python to get mtime
+        "$VENV_PYTHON" -c "import os; print(int(os.path.getmtime('$file')))" 2>/dev/null || echo "0"
+    else
+        # Linux/macOS: use stat
+        stat -c "%Y" "$file" 2>/dev/null || stat -f "%m" "$file" 2>/dev/null || echo "0"
+    fi
+}
+
+# Check if requirements.txt has been modified since last sync
+check_dependencies_updated() {
+    local requirements_file="$PROJECT_ROOT/requirements.txt"
+    local sync_marker="$PROJECT_ROOT/.venv/.last_sync"
+    
+    if [ ! -f "$sync_marker" ]; then
+        return 1  # Needs sync
+    fi
+    
+    if [ ! -f "$requirements_file" ]; then
+        return 0  # No requirements file, skip check
+    fi
+    
+    # Use Python for cross-platform compatibility
+    local requirements_mtime=$(get_file_mtime "$requirements_file")
+    local sync_mtime=$(get_file_mtime "$sync_marker")
+    
+    # Compare as integers
+    if [ -n "$requirements_mtime" ] && [ -n "$sync_mtime" ] && [ "$requirements_mtime" -gt "$sync_mtime" ] 2>/dev/null; then
+        return 1  # Requirements updated, needs sync
+    fi
+    
+    return 0  # Up to date
+}
+
+# Install or update dependencies
+install_dependencies() {
+    print_info "Installing/updating dependencies (may take a few minutes)..."
+    
+    # Try with pre-compiled wheels first (except forbiddenfruit which needs compilation)
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        # Windows: allow source builds for specific packages
+        print_info "Windows detected: allowing source builds for packages without wheels..."
+        uv pip install -r requirements.txt
+    else
+        # Linux/macOS: try binary only first, fallback to compilation
+        uv pip install --only-binary :all: -r requirements.txt 2>/dev/null || {
+            print_warning "Some packages need compilation, retrying without --only-binary..."
+            uv pip install -r requirements.txt
+        }
+    fi
+    
+    # Install LightRAG in editable mode
+    print_info "Installing LightRAG..."
+    uv pip install -e ./anything-chat-rag --no-deps
+    
+    # Configure Python path for other modules
+    local site_packages=$("$VENV_PYTHON" -c "import site; print(site.getsitepackages()[0])")
+    cat > "$site_packages/ai-langgraph.pth" << EOF
+$PROJECT_ROOT/testing-agents-service/testing-agents-service/src
 $PROJECT_ROOT/mcp-server/src
 EOF
+    
+    # Ensure mcp-server/src is in Python path (for Windows compatibility)
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        # Convert to Windows path format for .pth file
+        local mcp_path_win=$(cygpath -w "$PROJECT_ROOT/mcp-server/src" 2>/dev/null || echo "$PROJECT_ROOT/mcp-server/src")
+        local testing_path_win=$(cygpath -w "$PROJECT_ROOT/testing-agents-service/testing-agents-service/src" 2>/dev/null || echo "$PROJECT_ROOT/testing-agents-service/testing-agents-service/src")
+        cat > "$site_packages/ai-langgraph.pth" << EOF
+$testing_path_win
+$mcp_path_win
+EOF
+    fi
+    
+    # Mark sync time
+    touch "$PROJECT_ROOT/.venv/.last_sync"
+}
+
+# Check virtual environment, create or update if needed
+check_venv() {
+    local force_update=false
+    
+    # Check for --update flag
+    for arg in "$@"; do
+        if [[ "$arg" == "--update" || "$arg" == "-u" ]]; then
+            force_update=true
+            break
+        fi
+    done
+    
+    if [ ! -d "$PROJECT_ROOT/.venv" ]; then
+        print_warning "Virtual environment does not exist, creating with uv..."
         
-        print_success "虚拟环境创建完成"
+        # Create virtual environment
+        print_info "Creating virtual environment..."
+        uv venv --python 3.11
+        
+        # Install dependencies
+        install_dependencies
+        
+        print_success "Virtual environment created and dependencies installed"
+    elif [ "$force_update" = true ] || ! check_dependencies_updated; then
+        if [ "$force_update" = true ]; then
+            print_info "Force update requested, updating dependencies..."
+        else
+            print_warning "Dependencies have been updated, syncing virtual environment..."
+        fi
+        
+        # Update dependencies
+        install_dependencies
+        
+        print_success "Dependencies updated"
+    else
+        print_success "Virtual environment is up to date"
     fi
 }
 
 # =============================================================================
-# 服务启动函数 (使用 uv run)
+# Service Start Functions (using uv run)
 # =============================================================================
 
 start_lightrag() {
@@ -222,24 +285,25 @@ start_lightrag() {
     local log_file="$LOG_DIR/lightrag.log"
     
     if check_port $port; then
-        print_warning "$name 已在运行 (端口 $port)"
+        print_warning "$name is already running (port $port)"
         return 0
     fi
     
-    print_info "启动 $name..."
+    print_info "Starting $name..."
     
     cd "$PROJECT_ROOT/anything-chat-rag"
-    export PATH="$PROJECT_ROOT/.venv/bin:$PATH"
-    nohup "$PROJECT_ROOT/.venv/bin/python" -m lightrag.api.lightrag_server > "$log_file" 2>&1 &
+    export PATH="$VENV_BIN:$PATH"
+    export PYTHONIOENCODING=utf-8
+    nohup "$VENV_PYTHON" -m lightrag.api.lightrag_server > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
     if wait_for_service $port "$name"; then
-        print_success "$name 已启动 (PID: $pid, 端口: $port)"
-        printf "         📄 API 文档: ${CYAN}http://localhost:$port/docs${NC}\n"
+        print_success "$name started (PID: $pid, Port: $port)"
+        printf "         API Docs: ${CYAN}http://localhost:$port/docs${NC}\n"
     else
-        print_error "$name 启动失败，请检查日志: $log_file"
+        print_error "$name failed to start, check log: $log_file"
         return 1
     fi
 }
@@ -251,24 +315,27 @@ start_mcp_server() {
     local log_file="$LOG_DIR/mcp.log"
     
     if check_port $port; then
-        print_warning "$name 已在运行 (端口 $port)"
+        print_warning "$name is already running (port $port)"
         return 0
     fi
     
-    print_info "启动 $name..."
+    print_info "Starting $name..."
     
-    cd "$PROJECT_ROOT/mcp-server"
-    # 使用虚拟环境的 Python 直接启动，确保 PATH 包含 bin 目录
-    export PATH="$PROJECT_ROOT/.venv/bin:$PATH"
-    nohup "$PROJECT_ROOT/.venv/bin/python" -m mcp_server_rag_anything.server > "$log_file" 2>&1 &
+    cd "$PROJECT_ROOT/mcp-server/src"
+    export PATH="$VENV_BIN:$PATH"
+    export PYTHONIOENCODING=utf-8
+    # Add current directory to Python path
+    export PYTHONPATH="$PROJECT_ROOT/mcp-server/src:$PYTHONPATH"
+    # Use python -m with explicit path or direct script execution
+    nohup "$VENV_PYTHON" -m mcp_server_rag_anything.server > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
     if wait_for_service $port "$name"; then
-        print_success "$name 已启动 (PID: $pid, 端口: $port)"
+        print_success "$name started (PID: $pid, Port: $port)"
     else
-        print_error "$name 启动失败，请检查日志: $log_file"
+        print_error "$name failed to start, check log: $log_file"
         return 1
     fi
 }
@@ -280,83 +347,50 @@ start_langgraph_server() {
     local log_file="$LOG_DIR/langgraph.log"
     
     if check_port $port; then
-        print_warning "$name 已在运行 (端口 $port)"
+        print_warning "$name is already running (port $port)"
         return 0
     fi
     
-    print_info "启动 $name..."
+    print_info "Starting $name..."
     
-    cd "$PROJECT_ROOT/testing-deep-agents-service"
-    export PATH="$PROJECT_ROOT/.venv/bin:$PATH"
-    nohup "$PROJECT_ROOT/.venv/bin/python" start_server.py > "$log_file" 2>&1 &
+    cd "$PROJECT_ROOT/testing-agents-service/testing-agents-service"
+    export PATH="$VENV_BIN:$PATH"
+    export PYTHONIOENCODING=utf-8
+    # Add testing-agents-service/src to Python path
+    export PYTHONPATH="$PROJECT_ROOT/testing-agents-service/testing-agents-service/src:$PYTHONPATH"
+    nohup "$VENV_PYTHON" start_server.py > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
     if wait_for_service $port "$name"; then
-        print_success "$name 已启动 (PID: $pid, 端口: $port)"
-        printf "         📄 API 文档: ${CYAN}http://localhost:$port/docs${NC}\n"
-        printf "         🎛️  Studio:  ${CYAN}http://localhost:$port/ui${NC}\n"
+        print_success "$name started (PID: $pid, Port: $port)"
+        printf "         API Docs: ${CYAN}http://localhost:$port/docs${NC}\n"
+        printf "         Studio:   ${CYAN}http://localhost:$port/ui${NC}\n"
     else
-        print_error "$name 启动失败，请检查日志: $log_file"
-        return 1
-    fi
-}
-
-start_ai_platform_backend() {
-    local port=9999
-    local name="AI Platform Backend"
-    local pid_file="$PID_DIR/platform.pid"
-    local log_file="$LOG_DIR/platform.log"
-    local venv_dir="$PROJECT_ROOT/autogen_study/.venv"
-    
-    if check_port $port; then
-        print_warning "$name 已在运行 (端口 $port)"
-        return 0
-    fi
-    
-    print_info "启动 $name..."
-    
-    cd "$PROJECT_ROOT/autogen_study"
-    # autogen_study 使用自己的虚拟环境
-    export PATH="$venv_dir/bin:$PATH"
-    nohup "$venv_dir/bin/python" run.py --port $port > "$log_file" 2>&1 &
-    local pid=$!
-    echo $pid > "$pid_file"
-    cd "$PROJECT_ROOT"
-    
-    if wait_for_service $port "$name"; then
-        print_success "$name 已启动 (PID: $pid, 端口: $port)"
-        printf "         📄 API 文档: ${CYAN}http://localhost:$port/docs${NC}\n"
-        printf "         📌 统一服务: ${CYAN}http://localhost:$port/api/v1/services${NC}\n"
-        printf "         📌 知识库:   ${CYAN}http://localhost:$port/api/v1/services/knowledge/list${NC}\n"
-        printf "         📌 Milvus:   ${CYAN}http://localhost:$port/api/v1/services/milvus/collections${NC}\n"
-        printf "         📌 MinIO:    ${CYAN}http://localhost:$port/api/v1/services/minio/buckets${NC}\n"
-        printf "         📌 智能体:   ${CYAN}http://localhost:$port/api/v1/services/agents${NC}\n"
-    else
-        print_error "$name 启动失败，请检查日志: $log_file"
+        print_error "$name failed to start, check log: $log_file"
         return 1
     fi
 }
 
 start_agent_ui() {
     local port=3200
-    local name="Agent UI (Next.js)"
+    local name="Agent UI"
     local pid_file="$PID_DIR/agent_ui.pid"
     local log_file="$LOG_DIR/agent_ui.log"
     
     if check_port $port; then
-        print_warning "$name 已在运行 (端口 $port)"
+        print_warning "$name is already running (port $port)"
         return 0
     fi
     
-    print_info "启动 $name..."
+    print_info "Starting $name..."
     
     cd "$PROJECT_ROOT/testing-deep-agents-ui"
     
-    # 检查 node_modules
+    # Check if node_modules exists
     if [ ! -d "node_modules" ]; then
-        print_info "安装前端依赖..."
+        print_info "Installing frontend dependencies..."
         yarn install 2>/dev/null || npm install
     fi
     
@@ -366,53 +400,16 @@ start_agent_ui() {
     cd "$PROJECT_ROOT"
     
     if wait_for_service $port "$name"; then
-        print_success "$name 已启动 (PID: $pid, 端口: $port)"
-        printf "         🤖 智能体聊天: ${CYAN}http://localhost:$port${NC}\n"
+        print_success "$name started (PID: $pid, Port: $port)"
+        printf "         URL: ${CYAN}http://localhost:$port${NC}\n"
     else
-        print_error "$name 启动失败，请检查日志: $log_file"
+        print_error "$name failed to start, check log: $log_file"
         return 1
     fi
 }
-
-start_frontend() {
-    local port=3100
-    local name="AI Platform Frontend"
-    local pid_file="$PID_DIR/frontend.pid"
-    local log_file="$LOG_DIR/frontend.log"
-    
-    if check_port $port; then
-        print_warning "$name 已在运行 (端口 $port)"
-        return 0
-    fi
-    
-    print_info "启动 $name..."
-    
-    cd "$PROJECT_ROOT/autogen_study/web"
-    
-    # 检查 node_modules
-    if [ ! -d "node_modules" ]; then
-        print_info "安装前端依赖..."
-        yarn install 2>/dev/null || npm install
-    fi
-    
-    nohup yarn dev > "$log_file" 2>&1 &
-    local pid=$!
-    echo $pid > "$pid_file"
-    cd "$PROJECT_ROOT"
-    
-    if wait_for_service $port "$name"; then
-        print_success "$name 已启动 (PID: $pid, 端口: $port)"
-        printf "         🌐 访问地址: ${CYAN}http://localhost:$port${NC}\n"
-        printf "         🤖 嵌入式智能体: ${CYAN}http://localhost:$port/langgraph-agent${NC}\n"
-    else
-        print_error "$name 启动失败，请检查日志: $log_file"
-        return 1
-    fi
-}
-
 
 # =============================================================================
-# 服务停止函数
+# Service Stop Functions
 # =============================================================================
 
 stop_service() {
@@ -424,12 +421,12 @@ stop_service() {
         local pid=$(cat "$pid_file")
         if kill -0 $pid 2>/dev/null; then
             kill $pid
-            print_success "已停止 $name (PID: $pid)"
+            print_success "Stopped $name (PID: $pid)"
         fi
         rm -f "$pid_file"
     fi
     
-    # 确保端口释放
+    # Ensure port is released
     if [ -n "$port" ] && check_port $port; then
         local pids=$(lsof -ti:$port)
         if [ -n "$pids" ]; then
@@ -439,36 +436,32 @@ stop_service() {
 }
 
 stop_all() {
-    print_info "停止所有服务..."
+    print_info "Stopping all services..."
     
-    stop_service "AI Platform Frontend" "$PID_DIR/frontend.pid" 3100
     stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
-    stop_service "AI Platform Backend" "$PID_DIR/platform.pid" 9999
     stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
     stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
     stop_service "LightRAG Server" "$PID_DIR/lightrag.pid" 9621
     
-    print_success "所有服务已停止"
+    print_success "All services stopped"
 }
 
 # =============================================================================
-# 状态检查
+# Service Status Check
 # =============================================================================
 
 show_status() {
     echo ""
-    printf "${CYAN}═══════════════════════════════════════════════════════════════${NC}\n"
-    printf "${CYAN}                      服务状态概览                              ${NC}\n"
-    printf "${CYAN}═══════════════════════════════════════════════════════════════${NC}\n"
+    printf "${CYAN}================================================================${NC}\n"
+    printf "${CYAN}                      Service Status                            ${NC}\n"
+    printf "${CYAN}================================================================${NC}\n"
     echo ""
     
     local services=(
         "LightRAG Server:9621"
         "MCP Server:8001"
         "LangGraph Server:2025"
-        "AI Platform Backend:9999"
-        "Agent UI (Next.js):3200"
-        "AI Platform Frontend:3100"
+        "Agent UI:3200"
     )
     
     for service in "${services[@]}"; do
@@ -476,19 +469,19 @@ show_status() {
         local port="${service##*:}"
         
         if check_port $port; then
-            printf "  ${GREEN}●${NC} %-25s ${GREEN}运行中${NC} (端口: $port)\n" "$name"
+            printf "  ${GREEN}[*]${NC} %-25s ${GREEN}RUNNING${NC} (Port: $port)\n" "$name"
         else
-            printf "  ${RED}○${NC} %-25s ${RED}未运行${NC} (端口: $port)\n" "$name"
+            printf "  ${RED}[ ]${NC} %-25s ${RED}STOPPED${NC} (Port: $port)\n" "$name"
         fi
     done
     
     echo ""
-    printf "${CYAN}═══════════════════════════════════════════════════════════════${NC}\n"
+    printf "${CYAN}================================================================${NC}\n"
     echo ""
 }
 
 # =============================================================================
-# 单独重启服务函数
+# Single Service Restart Functions
 # =============================================================================
 
 restart_service() {
@@ -507,28 +500,18 @@ restart_service() {
             stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
             start_langgraph_server
             ;;
-        platform)
-            stop_service "AI Platform Backend" "$PID_DIR/platform.pid" 9999
-            start_ai_platform_backend
-            ;;
         agent-ui)
             stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
             start_agent_ui
             ;;
-        frontend)
-            stop_service "AI Platform Frontend" "$PID_DIR/frontend.pid" 3100
-            start_frontend
-            ;;
         *)
-            print_error "未知服务: $service_name"
+            print_error "Unknown service: $service_name"
             echo ""
-            echo "可用的服务名称:"
-            echo "  lightrag   - LightRAG Server (端口 9621)"
-            echo "  mcp        - MCP Server (端口 8001)"
-            echo "  langgraph  - LangGraph Server (端口 2025)"
-            echo "  platform   - AI Platform Backend (端口 9999)"
-            echo "  agent-ui   - Agent UI (端口 3200)"
-            echo "  frontend   - AI Platform Frontend (端口 3100)"
+            echo "Available services:"
+            echo "  lightrag   - LightRAG Server (Port 9621)"
+            echo "  mcp        - MCP Server (Port 8001)"
+            echo "  langgraph  - LangGraph Server (Port 2025)"
+            echo "  agent-ui   - Agent UI (Port 3200)"
             exit 1
             ;;
     esac
@@ -547,25 +530,17 @@ start_single_service() {
         langgraph)
             start_langgraph_server
             ;;
-        platform)
-            start_ai_platform_backend
-            ;;
         agent-ui)
             start_agent_ui
             ;;
-        frontend)
-            start_frontend
-            ;;
         *)
-            print_error "未知服务: $service_name"
+            print_error "Unknown service: $service_name"
             echo ""
-            echo "可用的服务名称:"
-            echo "  lightrag   - LightRAG Server (端口 9621)"
-            echo "  mcp        - MCP Server (端口 8001)"
-            echo "  langgraph  - LangGraph Server (端口 2025)"
-            echo "  platform   - AI Platform Backend (端口 9999)"
-            echo "  agent-ui   - Agent UI (端口 3200)"
-            echo "  frontend   - AI Platform Frontend (端口 3100)"
+            echo "Available services:"
+            echo "  lightrag   - LightRAG Server (Port 9621)"
+            echo "  mcp        - MCP Server (Port 8001)"
+            echo "  langgraph  - LangGraph Server (Port 2025)"
+            echo "  agent-ui   - Agent UI (Port 3200)"
             exit 1
             ;;
     esac
@@ -584,67 +559,34 @@ stop_single_service() {
         langgraph)
             stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
             ;;
-        platform)
-            stop_service "AI Platform Backend" "$PID_DIR/platform.pid" 9999
-            ;;
         agent-ui)
             stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
             ;;
-        frontend)
-            stop_service "AI Platform Frontend" "$PID_DIR/frontend.pid" 3100
-            ;;
         *)
-            print_error "未知服务: $service_name"
+            print_error "Unknown service: $service_name"
             exit 1
             ;;
     esac
 }
 
 # =============================================================================
-# 主程序
+# Main Program
 # =============================================================================
 
 main() {
     local include_frontend=false
-    local target_env=""
     
-    # 解析参数
+    # Parse arguments
     while [[ $# -gt 0 ]]; do
         case $1 in
             --all)
                 include_frontend=true
                 shift
                 ;;
-            --env)
-                if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
-                    print_error "请指定环境: local 或 remote"
-                    echo "用法: $0 --env <local|remote>"
-                    exit 1
-                fi
-                target_env="$2"
-                shift 2
-                ;;
-            --env=*)
-                target_env="${1#*=}"
-                shift
-                ;;
-            --switch-env)
-                if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
-                    print_error "请指定环境: local 或 remote"
-                    echo "用法: $0 --switch-env <local|remote>"
-                    exit 1
-                fi
-                switch_env "$2"
-                exit 0
-                ;;
-            --show-env)
-                show_current_env
-                exit 0
-                ;;
             --stop)
                 if [ -n "$2" ] && [[ ! "$2" =~ ^-- ]]; then
                     stop_single_service "$2"
-                    print_success "服务 $2 已停止"
+                    print_success "Service $2 stopped"
                     exit 0
                 fi
                 stop_all
@@ -652,146 +594,153 @@ main() {
                 ;;
             --restart)
                 if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
-                    print_error "请指定要重启的服务名称"
-                    echo "用法: $0 --restart <服务名称>"
+                    print_error "Please specify service name to restart"
+                    echo "Usage: $0 --restart <service_name>"
                     echo ""
-                    echo "可用的服务名称:"
-                    echo "  lightrag   - LightRAG Server (端口 9621)"
-                    echo "  mcp        - MCP Server (端口 8001)"
-                    echo "  langgraph  - LangGraph Server (端口 2025)"
-                    echo "  platform   - AI Platform Backend (端口 9999)"
-                    echo "  agent-ui   - Agent UI (端口 3200)"
-                    echo "  frontend   - AI Platform Frontend (端口 3100)"
+                    echo "Available services:"
+                    echo "  lightrag   - LightRAG Server (Port 9621)"
+                    echo "  mcp        - MCP Server (Port 8001)"
+                    echo "  langgraph  - LangGraph Server (Port 2025)"
+                    echo "  agent-ui   - Agent UI (Port 3200)"
                     exit 1
                 fi
-                print_info "重启服务: $2"
+                print_info "Restarting service: $2"
                 restart_service "$2"
                 show_status
                 exit 0
                 ;;
             --start)
                 if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
-                    print_error "请指定要启动的服务名称"
+                    print_error "Please specify service name to start"
                     exit 1
                 fi
-                print_info "启动服务: $2"
+                print_info "Starting service: $2"
                 start_single_service "$2"
                 show_status
                 exit 0
                 ;;
             --status)
-                show_current_env
                 show_status
                 exit 0
                 ;;
+            --update|-u)
+                # Force update flag will be handled in check_venv
+                shift
+                ;;
             --help|-h)
-                echo "用法: $0 [选项]"
+                echo "Usage: $0 [options]"
                 echo ""
-                echo "选项:"
-                echo "  --all                  启动所有服务（包含前端）"
-                echo "  --env <local|remote>   指定运行环境后启动服务"
-                echo "  --switch-env <env>     仅切换环境配置（不启动服务）"
-                echo "  --show-env             显示当前环境配置"
-                echo "  --stop                 停止所有服务"
-                echo "  --stop <服务>          停止指定服务"
-                echo "  --start <服务>         启动指定服务"
-                echo "  --restart <服务>       重启指定服务"
-                echo "  --status               显示服务状态"
-                echo "  --help                 显示帮助信息"
+                echo "Options:"
+                echo "  --all              Start all services (including frontend)"
+                echo "  --stop             Stop all services"
+                echo "  --stop <service>   Stop specific service"
+                echo "  --start <service>  Start specific service"
+                echo "  --restart <service> Restart specific service"
+                echo "  --status           Show service status"
+                echo "  --update, -u       Force update dependencies before starting"
+                echo "  --help             Show this help"
                 echo ""
-                echo "环境配置:"
-                echo "  local   - 本地开发环境 (localhost)"
-                echo "  remote  - 远程服务器环境 (47.110.95.246)"
+                echo "Available services:"
+                echo "  lightrag   - LightRAG Server (Port 9621)"
+                echo "  mcp        - MCP Server (Port 8001)"
+                echo "  langgraph  - LangGraph Server (Port 2025)"
+                echo "  agent-ui   - Agent UI (Port 3200)"
                 echo ""
-                echo "可用的服务名称:"
-                echo "  lightrag   - LightRAG Server (端口 9621)"
-                echo "  mcp        - MCP Server (端口 8001)"
-                echo "  langgraph  - LangGraph Server (端口 2025)"
-                echo "  platform   - AI Platform Backend (端口 9999)"
-                echo "  agent-ui   - Agent UI (端口 3200)"
-                echo "  frontend   - AI Platform Frontend (端口 3100)"
-                echo ""
-                echo "示例:"
-                echo "  $0                      # 启动所有后端服务（使用当前环境）"
-                echo "  $0 --env local          # 切换到本地环境并启动服务"
-                echo "  $0 --env remote --all   # 切换到远程环境并启动所有服务"
-                echo "  $0 --switch-env remote  # 仅切换到远程环境"
-                echo "  $0 --restart langgraph  # 重启 LangGraph Server"
-                echo "  $0 --stop mcp           # 停止 MCP Server"
-                echo "  $0 --start agent-ui     # 启动 Agent UI"
+                echo "Examples:"
+                echo "  $0                      # Start all backend services (auto-sync if deps changed)"
+                echo "  $0 --all                # Start all services (including frontend)"
+                echo "  $0 --update             # Force update dependencies and start services"
+                echo "  $0 --restart langgraph  # Restart LangGraph Server"
+                echo "  $0 --stop mcp           # Stop MCP Server"
+                echo "  $0 --start agent-ui     # Start Agent UI"
                 exit 0
                 ;;
             *)
-                print_error "未知参数: $1"
-                echo "使用 --help 查看帮助信息"
+                print_error "Unknown argument: $1"
+                echo "Use --help to see help information"
                 exit 1
                 ;;
         esac
     done
     
-    # 如果指定了环境，先切换
-    if [ -n "$target_env" ]; then
-        switch_env "$target_env"
-    fi
-    
     print_banner
     
-    # 检查 uv
-    print_info "检查 uv..."
+    # Check uv
+    print_info "Checking uv..."
     check_uv
-    print_success "uv 已安装"
+    print_success "uv is installed"
     
-    # 检查并创建虚拟环境
-    print_info "检查虚拟环境..."
-    check_venv
-    print_success "虚拟环境就绪"
+    # Check and create/update virtual environment
+    print_info "Checking virtual environment..."
+    check_venv "$@"
+    print_success "Virtual environment ready"
     
     echo ""
-    printf "${CYAN}═══════════════════════════════════════════════════════════════${NC}\n"
-    printf "${CYAN}                      启动服务                                  ${NC}\n"
-    printf "${CYAN}═══════════════════════════════════════════════════════════════${NC}\n"
+    printf "${CYAN}================================================================${NC}\n"
+    printf "${CYAN}                      Starting Services                         ${NC}\n"
+    printf "${CYAN}================================================================${NC}\n"
     echo ""
     
-    # 按顺序启动服务
-    start_lightrag
-    echo ""
+    # Start services in order (continue even if one fails)
+    local failed_services=()
     
-    start_mcp_server
-    echo ""
-    
-    start_langgraph_server
-    echo ""
-    
-    start_ai_platform_backend
-    echo ""
-    
-    if [ "$include_frontend" = true ]; then
-        start_agent_ui
+    if start_lightrag; then
         echo ""
-        
-        start_frontend
+    else
+        failed_services+=("LightRAG Server")
         echo ""
     fi
     
-    # 显示状态
+    if start_mcp_server; then
+        echo ""
+    else
+        failed_services+=("MCP Server")
+        echo ""
+    fi
+    
+    if start_langgraph_server; then
+        echo ""
+    else
+        failed_services+=("LangGraph Server")
+        echo ""
+    fi
+    
+    if [ "$include_frontend" = true ]; then
+        if start_agent_ui; then
+            echo ""
+        else
+            failed_services+=("Agent UI")
+            echo ""
+        fi
+    fi
+    
+    # Show status
     show_status
     
-    printf "${GREEN}🎉 所有服务启动完成！${NC}\n"
+    # Report results
+    if [ ${#failed_services[@]} -eq 0 ]; then
+        printf "${GREEN}All services started successfully!${NC}\n"
+    else
+        printf "${YELLOW}Some services failed to start:${NC}\n"
+        for service in "${failed_services[@]}"; do
+            printf "  ${RED}-${NC} $service\n"
+        done
+        printf "${YELLOW}Check logs in $LOG_DIR for details${NC}\n"
+    fi
     echo ""
-    echo "常用命令:"
-    printf "  查看状态:   ${CYAN}$0 --status${NC}\n"
-    printf "  停止服务:   ${CYAN}$0 --stop${NC}\n"
-    printf "  查看日志:   ${CYAN}tail -f logs/*.log${NC}\n"
+    echo "Common commands:"
+    printf "  Check status:   ${CYAN}$0 --status${NC}\n"
+    printf "  Stop services:  ${CYAN}$0 --stop${NC}\n"
+    printf "  View logs:      ${CYAN}tail -f logs/*.log${NC}\n"
     echo ""
-    echo "访问地址:"
-    printf "  AI 平台后端: ${CYAN}http://localhost:9999/docs${NC}\n"
-    printf "  统一服务 API: ${CYAN}http://localhost:9999/api/v1/services${NC}\n"
+    echo "Access URLs:"
+    printf "  LightRAG API:     ${CYAN}http://localhost:9621/docs${NC}\n"
+    printf "  LangGraph API:    ${CYAN}http://localhost:2025/docs${NC}\n"
+    printf "  LangGraph Studio: ${CYAN}http://localhost:2025/ui${NC}\n"
     if [ "$include_frontend" = true ]; then
-        printf "  智能体聊天 (独立): ${CYAN}http://localhost:3200${NC}\n"
-        printf "  AI 平台前端: ${CYAN}http://localhost:3100${NC}\n"
-        printf "  嵌入式智能体: ${CYAN}http://localhost:3100/langgraph-agent${NC}\n"
+        printf "  Agent UI:         ${CYAN}http://localhost:3200${NC}\n"
     fi
 }
 
-# 运行主程序
+# Run main program
 main "$@"

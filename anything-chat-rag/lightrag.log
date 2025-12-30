@@ -1345,3 +1345,200 @@ ConnectionError: C[1/1]: chunk-700abcb7689920286ae518a3b9fb468d: Failed to conne
 2025-12-11 16:00:44,106 - lightrag - INFO - Final chunks S+F/O: E8/1 E1/2 E6/3 E3/4
 2025-12-11 16:00:53,875 - lightrag - INFO -  == LLM cache == saving: mix:query:1eddd991fd4409b1ea278298abd1c909
 2025-12-11 16:00:53,877 - uvicorn.access - INFO - 127.0.0.1:61985 - "POST /query HTTP/1.1" 200
+2025-12-30 12:48:26,278 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 12:48:28,294 - lightrag - INFO - Embedding config: binding=openai model=text-embedding-3-large embedding_dim=3072 max_token_size=8192
+2025-12-30 12:48:28,295 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=3072, has_param=True, binding=openai)
+2025-12-30 12:48:28,296 - lightrag - INFO - Embedding max_token_size: 8192 (from env variable)
+2025-12-30 12:48:28,296 - lightrag - INFO - Reranking is disabled
+2025-12-30 12:48:28,297 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-30 12:49:57,388 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 70 nodes, 88 edges
+2025-12-30 12:49:57,396 - lightrag - ERROR - Failed to initialize LightRAG: Embedding dim mismatch, expected: 3072, but loaded: 1024
+2025-12-30 12:57:39,391 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 12:57:40,081 - lightrag - INFO - Embedding config: binding=openai model=text-embedding-3-large embedding_dim=3072 max_token_size=8192
+2025-12-30 12:57:40,082 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=3072, has_param=True, binding=openai)
+2025-12-30 12:57:40,082 - lightrag - INFO - Embedding max_token_size: 8192 (from env variable)
+2025-12-30 12:57:40,083 - lightrag - INFO - Reranking is disabled
+2025-12-30 12:57:40,083 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-30 12:57:40,842 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 70 nodes, 88 edges
+2025-12-30 12:57:40,847 - lightrag - ERROR - Failed to initialize LightRAG: Embedding dim mismatch, expected: 3072, but loaded: 1024
+2025-12-30 13:01:24,840 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 13:01:25,559 - lightrag - INFO - Embedding config: binding=openai model=text-embedding-3-large embedding_dim=3072 max_token_size=8192
+2025-12-30 13:01:25,560 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=3072, has_param=True, binding=openai)
+2025-12-30 13:01:25,560 - lightrag - INFO - Embedding max_token_size: 8192 (from env variable)
+2025-12-30 13:01:25,560 - lightrag - INFO - Reranking is disabled
+2025-12-30 13:01:25,561 - lightrag - INFO - Vision model initialized: gpt-4o using openai provider
+2025-12-30 13:01:26,370 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 70 nodes, 88 edges
+2025-12-30 13:01:26,375 - lightrag - ERROR - Failed to initialize LightRAG: Embedding dim mismatch, expected: 3072, but loaded: 1024
+2025-12-30 13:31:28,575 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 13:31:28,575 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-30 13:31:31,609 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-30 13:31:31,610 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-30 13:31:31,610 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-30 13:31:31,610 - lightrag - INFO - Reranking is disabled
+2025-12-30 13:31:32,312 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2025-12-30 13:31:33,219 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 70 nodes, 88 edges
+2025-12-30 13:31:33,234 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-30 13:31:33,234 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2025-12-30 13:31:34,026 - uvicorn.error - INFO - Started server process [16388]
+2025-12-30 13:31:34,027 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-30 13:31:34,037 - lightrag - INFO - [] Process 16388 KV load full_docs with 1 records
+2025-12-30 13:31:34,039 - lightrag - INFO - [] Process 16388 KV load text_chunks with 4 records
+2025-12-30 13:31:34,040 - lightrag - INFO - [] Process 16388 KV load full_entities with 1 records
+2025-12-30 13:31:34,042 - lightrag - INFO - [] Process 16388 KV load full_relations with 1 records
+2025-12-30 13:31:34,043 - lightrag - INFO - [] Process 16388 KV load entity_chunks with 30 records
+2025-12-30 13:31:34,044 - lightrag - INFO - [] Process 16388 KV load relation_chunks with 2 records
+2025-12-30 13:31:34,047 - lightrag - INFO - [] Process 16388 KV load llm_response_cache with 23 records
+2025-12-30 13:31:34,048 - lightrag - INFO - [] Process 16388 doc status load doc_status with 1 records
+2025-12-30 13:31:34,049 - uvicorn.error - INFO - Application startup complete.
+2025-12-30 13:31:34,052 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-30 13:32:29,095 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 13:32:29,096 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-30 13:32:32,892 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-30 13:32:32,893 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-30 13:32:32,894 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-30 13:32:32,894 - lightrag - INFO - Reranking is disabled
+2025-12-30 13:32:34,251 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2025-12-30 13:32:35,720 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 70 nodes, 88 edges
+2025-12-30 13:32:35,747 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-30 13:32:35,748 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2025-12-30 13:32:36,098 - uvicorn.error - INFO - Started server process [38316]
+2025-12-30 13:32:36,100 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-30 13:32:36,107 - lightrag - INFO - [] Process 38316 KV load full_docs with 1 records
+2025-12-30 13:32:36,110 - lightrag - INFO - [] Process 38316 KV load text_chunks with 4 records
+2025-12-30 13:32:36,112 - lightrag - INFO - [] Process 38316 KV load full_entities with 1 records
+2025-12-30 13:32:36,113 - lightrag - INFO - [] Process 38316 KV load full_relations with 1 records
+2025-12-30 13:32:36,117 - lightrag - INFO - [] Process 38316 KV load entity_chunks with 30 records
+2025-12-30 13:32:36,118 - lightrag - INFO - [] Process 38316 KV load relation_chunks with 2 records
+2025-12-30 13:32:36,122 - lightrag - INFO - [] Process 38316 KV load llm_response_cache with 23 records
+2025-12-30 13:32:36,124 - lightrag - INFO - [] Process 38316 doc status load doc_status with 1 records
+2025-12-30 13:32:36,126 - uvicorn.error - INFO - Application startup complete.
+2025-12-30 13:32:36,128 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-30 13:34:26,468 - uvicorn.access - INFO - 127.0.0.1:61707 - "GET / HTTP/1.1" 307
+2025-12-30 13:34:26,479 - uvicorn.access - INFO - 127.0.0.1:61707 - "GET /webui HTTP/1.1" 307
+2025-12-30 13:34:27,349 - uvicorn.access - INFO - 127.0.0.1:61707 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2025-12-30 13:34:27,357 - uvicorn.access - INFO - 127.0.0.1:52479 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2025-12-30 13:34:28,249 - uvicorn.access - INFO - 127.0.0.1:61707 - "GET /auth-status HTTP/1.1" 200
+2025-12-30 13:34:28,255 - uvicorn.access - INFO - 127.0.0.1:52479 - "GET /webui/favicon.png HTTP/1.1" 200
+2025-12-30 13:34:28,764 - uvicorn.access - INFO - 127.0.0.1:52479 - "GET /docs HTTP/1.1" 200
+2025-12-30 13:34:28,810 - uvicorn.access - INFO - 127.0.0.1:51404 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
+2025-12-30 13:34:28,823 - lightrag - INFO - [] Subgraph query successful | Node count: 70 | Edge count: 88
+2025-12-30 13:34:28,839 - uvicorn.access - INFO - 127.0.0.1:51405 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-30 13:34:28,849 - uvicorn.access - INFO - 127.0.0.1:51404 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2025-12-30 13:34:28,851 - uvicorn.access - INFO - 127.0.0.1:52479 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2025-12-30 13:34:29,383 - uvicorn.access - INFO - 127.0.0.1:52479 - "GET /openapi.json HTTP/1.1" 200
+2025-12-30 13:35:30,178 - uvicorn.access - INFO - 127.0.0.1:54580 - "GET /docs HTTP/1.1" 200
+2025-12-30 13:35:30,200 - lightrag - INFO - [] Subgraph query successful | Node count: 70 | Edge count: 88
+2025-12-30 13:35:30,215 - uvicorn.access - INFO - 127.0.0.1:54587 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-30 13:35:30,468 - uvicorn.access - INFO - 127.0.0.1:54587 - "GET /openapi.json HTTP/1.1" 200
+2025-12-30 13:36:34,353 - uvicorn.access - INFO - 127.0.0.1:49310 - "POST /documents/upload HTTP/1.1" 200
+2025-12-30 13:36:34,371 - lightrag - INFO - Successfully extracted and enqueued file: 操作步骤1.md
+2025-12-30 13:36:34,400 - lightrag - INFO - Processing 1 document(s)
+2025-12-30 13:36:34,402 - lightrag - INFO - Extracting stage 1/1: 操作步骤1.md
+2025-12-30 13:36:34,403 - lightrag - INFO - Processing d-id: doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:36:34,536 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 300s, Worker: 600s, Health Check: 615s)
+2025-12-30 13:36:38,095 - lightrag - ERROR - Error in ollama_embed: model "qwen3-embedding:0.6b" not found, try pulling it first (status code: 404)
+2025-12-30 13:36:38,096 - lightrag - ERROR - Embedding func: Error in decorated function for task 1674545378880_873984.671: model "qwen3-embedding:0.6b" not found, try pulling it first (status code: 404)
+2025-12-30 13:36:38,111 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1899, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\nano_vector_db_impl.py", line 133, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 975, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 679, in worker
+    result = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\tasks.py", line 489, in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 462, in __call__
+    result = await self.func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\lightrag_server.py", line 758, in optimized_embedding_function
+    return await actual_func(
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\llm\ollama.py", line 220, in ollama_embed
+    raise e
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\llm\ollama.py", line 207, in ollama_embed
+    data = await ollama_client.embed(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\ollama\_client.py", line 1011, in embed
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\ollama\_client.py", line 767, in _request
+    return cls(**(await self._request_raw(*args, **kwargs)).json())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\ollama\_client.py", line 711, in _request_raw
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: model "qwen3-embedding:0.6b" not found, try pulling it first (status code: 404)
+
+2025-12-30 13:36:38,113 - lightrag - ERROR - Failed to extract document 1/1: 操作步骤1.md
+2025-12-30 13:36:38,119 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-30 13:45:31,050 - uvicorn.access - INFO - 127.0.0.1:60604 - "GET /docs HTTP/1.1" 200
+2025-12-30 13:45:31,078 - lightrag - INFO - [] Subgraph query successful | Node count: 70 | Edge count: 88
+2025-12-30 13:45:31,088 - uvicorn.access - INFO - 127.0.0.1:49670 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-30 13:45:31,266 - uvicorn.access - INFO - 127.0.0.1:49670 - "GET /openapi.json HTTP/1.1" 200
+2025-12-30 13:45:45,007 - uvicorn.access - INFO - 127.0.0.1:63266 - "DELETE /documents/delete_document HTTP/1.1" 200
+2025-12-30 13:45:45,008 - lightrag - INFO - Deleting document 1/2: doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:45:45,010 - lightrag - INFO - Starting deletion process for document doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:45:45,011 - lightrag - INFO - Deleting doc-fa7239cf2000114b9ada546d638aeefb 操作步骤1.md(previous status: FAILED)
+2025-12-30 13:45:45,012 - lightrag - WARNING - No chunks found for document doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:45:45,014 - lightrag - INFO - Document deleted without associated chunks: doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:45:45,056 - lightrag - INFO - [] Writing graph with 70 nodes, 88 edges
+2025-12-30 13:45:45,144 - lightrag - INFO - In memory DB persist to disk
+2025-12-30 13:45:45,145 - lightrag - INFO - Document deleted 1/2: doc-fa7239cf2000114b9ada546d638aeefb[操作步骤1.md]
+2025-12-30 13:45:45,151 - lightrag - INFO - Successfully deleted enqueued file: 操作步骤1.md
+2025-12-30 13:45:45,152 - lightrag - INFO - Deleting document 2/2: doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-30 13:45:45,153 - lightrag - INFO - Starting deletion process for document doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-30 13:45:45,154 - lightrag - INFO - Collected 8 LLM cache entries for document doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-30 13:45:45,168 - lightrag - INFO - Found 0 affected entities
+2025-12-30 13:45:45,174 - lightrag - INFO - Found 0 affected relations
+2025-12-30 13:45:45,177 - lightrag - INFO - Successfully deleted 4 chunks from storage
+2025-12-30 13:45:45,180 - lightrag - INFO - Successfully deleted 86 relations
+2025-12-30 13:45:45,184 - lightrag - WARNING - Edge still exists: Reserve Bank Of India --> Central Government
+2025-12-30 13:45:45,185 - lightrag - WARNING - ⚠️ 1 entities still has edges before deletion
+2025-12-30 13:45:45,187 - lightrag - INFO - Cleaned 1 residual edges from VDB and chunk-tracking storage
+2025-12-30 13:45:45,189 - lightrag - INFO - Successfully deleted 40 entities
+2025-12-30 13:45:45,206 - lightrag - INFO - [] Writing graph with 30 nodes, 1 edges
+2025-12-30 13:45:45,212 - lightrag - INFO - In memory DB persist to disk
+2025-12-30 13:45:45,213 - lightrag - INFO - Successfully deleted 8 LLM cache entries for document doc-78fb7df08ce980cbf869a712b992bba9
+2025-12-30 13:45:45,232 - lightrag - INFO - [] Writing graph with 30 nodes, 1 edges
+2025-12-30 13:45:45,238 - lightrag - INFO - In memory DB persist to disk
+2025-12-30 13:45:45,239 - lightrag - INFO - Document deleted 2/2: doc-78fb7df08ce980cbf869a712b992bba9[旅行日记5555.pdf]
+2025-12-30 13:45:45,246 - lightrag - INFO - Successfully deleted input_dir file: 旅行日记5555.pdf
+2025-12-30 13:45:54,445 - uvicorn.access - INFO - 127.0.0.1:63162 - "POST /documents/upload HTTP/1.1" 200
+2025-12-30 13:45:54,464 - lightrag - INFO - Successfully extracted and enqueued file: 操作步骤1.md
+2025-12-30 13:45:54,486 - lightrag - INFO - Processing 1 document(s)
+2025-12-30 13:45:54,500 - lightrag - INFO - Extracting stage 1/1: 操作步骤1.md
+2025-12-30 13:45:54,501 - lightrag - INFO - Processing d-id: doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:46:51,633 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-30 13:47:31,577 - lightrag - INFO -  == LLM cache == saving: default:extract:81640de0c65fed636cbad31b1e833810
+2025-12-30 13:47:46,717 - lightrag - INFO -  == LLM cache == saving: default:extract:d9600de2c39501dc7097e4af77605644
+2025-12-30 13:47:52,244 - lightrag - INFO -  == LLM cache == saving: default:extract:bccdb854ca73702e9cde3662b549c95a
+2025-12-30 13:47:56,184 - lightrag - INFO -  == LLM cache == saving: default:extract:f3a72c3c44ebd3b9b034a6b0c495827e
+2025-12-30 13:47:56,189 - lightrag - INFO - Chunk 1 of 5 extracted 19 Ent + 15 Rel chunk-6e7a38ff30ab59324d9302f116d5064a
+2025-12-30 13:47:59,358 - lightrag - INFO -  == LLM cache == saving: default:extract:35758dec0eb1f19ea3a32b64ae2615ef
+2025-12-30 13:48:06,780 - lightrag - INFO -  == LLM cache == saving: default:extract:e44ae100330c3c3431ca8a1504ac1c31
+2025-12-30 13:48:06,783 - lightrag - INFO - Chunk 2 of 5 extracted 25 Ent + 18 Rel chunk-e2a73219a6b81a765a98ce10205dfeb7
+2025-12-30 13:48:21,729 - lightrag - INFO -  == LLM cache == saving: default:extract:0b47255739b0edfc4975774b67b71f0a
+2025-12-30 13:48:21,735 - lightrag - INFO - Chunk 3 of 5 extracted 28 Ent + 29 Rel chunk-0ed01d0a52df8896f87835c170a4127f
+2025-12-30 13:48:33,446 - lightrag - INFO -  == LLM cache == saving: default:extract:253adba1016a7677c23dfb6b3ec0be2c
+2025-12-30 13:48:56,195 - lightrag - INFO -  == LLM cache == saving: default:extract:2524f93f9bd2c309813443974191451f
+2025-12-30 13:48:56,199 - lightrag - INFO - Chunk 4 of 5 extracted 21 Ent + 13 Rel chunk-c0dd04808417ed9e3c6f74d1e54d5a54
+2025-12-30 13:49:15,252 - lightrag - INFO -  == LLM cache == saving: default:extract:d2ada95bca8172f480f44f888afb8ec7
+2025-12-30 13:49:15,265 - lightrag - INFO - Chunk 5 of 5 extracted 44 Ent + 45 Rel chunk-e0b0e1c4d631cf0610d16ca55817ac01
+2025-12-30 13:49:15,327 - lightrag - INFO - Merging stage 1/1: 操作步骤1.md
+2025-12-30 13:49:15,328 - lightrag - INFO - Phase 1: Processing 109 entities from doc-fa7239cf2000114b9ada546d638aeefb (async: 8)
+2025-12-30 13:49:23,836 - uvicorn.access - INFO - 127.0.0.1:52482 - "DELETE /documents/delete_document HTTP/1.1" 200
+2025-12-30 13:50:51,678 - uvicorn.access - INFO - 127.0.0.1:62685 - "GET /docs HTTP/1.1" 200
+2025-12-30 13:50:54,896 - uvicorn.access - INFO - 127.0.0.1:62685 - "GET /openapi.json HTTP/1.1" 200
+2025-12-30 13:50:58,057 - uvicorn.access - INFO - 127.0.0.1:62900 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+2025-12-30 13:53:16,632 - uvicorn.access - INFO - 127.0.0.1:60058 - "GET /docs HTTP/1.1" 200
+2025-12-30 13:53:19,667 - uvicorn.access - INFO - 127.0.0.1:52048 - "GET /openapi.json HTTP/1.1" 200
+2025-12-30 13:53:19,676 - lightrag - INFO - [] Subgraph query successful | Node count: 117 | Edge count: 1
+2025-12-30 13:53:19,683 - uvicorn.access - INFO - 127.0.0.1:60060 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-30 13:54:30,394 - lightrag - INFO - Phase 2: Processing 114 relations from doc-fa7239cf2000114b9ada546d638aeefb (async: 8)
+2025-12-30 13:55:27,555 - uvicorn.access - INFO - 127.0.0.1:50240 - "GET /docs HTTP/1.1" 200
+2025-12-30 13:55:29,582 - uvicorn.access - INFO - 127.0.0.1:55443 - "GET /openapi.json HTTP/1.1" 200

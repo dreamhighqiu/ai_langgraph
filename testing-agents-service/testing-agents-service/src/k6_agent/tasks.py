@@ -66,6 +66,7 @@ class TaskStatus(str, Enum):
     FAILED = "failed"        # 执行失败
     CANCELLED = "cancelled"  # 已取消
 
+# type: ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YW14bFpBPT06NzU4NWFjMDU=
 
 @dataclass
 class K6Task:
@@ -94,7 +95,6 @@ class K6Task:
             "error": self.error,
         }
 
-# type: ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V210aGJnPT06NDBlM2NmNDM=
 
 class K6TaskManager:
     """K6任务管理器 - 管理异步任务执行和状态."""
@@ -184,11 +184,11 @@ class K6TaskManager:
                 return
             task.status = TaskStatus.RUNNING
             task.started_at = datetime.now().isoformat()
-# pragma: no cover  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V210aGJnPT06NDBlM2NmNDM=
 
         try:
             # 将虚拟脚本路径解析为实际路径
             actual_script_path = _resolve_virtual_path(task.script_path, self.config.workspace_root)
+# type: ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YW14bFpBPT06NzU4NWFjMDU=
 
             # 生成结果文件的虚拟路径和实际路径
             result_filename = f"result_{task_id}.json"
@@ -205,6 +205,7 @@ class K6TaskManager:
                 str(actual_script_path),
                 "--out", f"json={actual_result_path}",
             ]
+# pylint: disable  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YW14bFpBPT06NzU4NWFjMDU=
 
             # 执行K6
             process = subprocess.Popen(
@@ -260,7 +261,6 @@ class K6TaskManager:
                     task.status = TaskStatus.FAILED
                     task.error = str(e)
                     task.completed_at = datetime.now().isoformat()
-# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V210aGJnPT06NDBlM2NmNDM=
     
     def _update_progress(self, task_id: str, process: subprocess.Popen) -> None:
         """更新任务进度（模拟）."""
@@ -317,7 +317,6 @@ class K6TaskManager:
             pass
         
         return metrics
-# type: ignore  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V210aGJnPT06NDBlM2NmNDM=
 
 
 # 全局任务管理器
@@ -335,6 +334,7 @@ def get_task_manager(config: K6Config | None = None) -> K6TaskManager:
 def create_task_tools(config: K6Config | None = None) -> list[BaseTool]:
     """创建任务管理工具."""
     manager = get_task_manager(config)
+# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YW14bFpBPT06NzU4NWFjMDU=
 
     def submit_k6_task(script_path: str) -> str:
         """提交K6测试任务到执行队列（异步执行）.

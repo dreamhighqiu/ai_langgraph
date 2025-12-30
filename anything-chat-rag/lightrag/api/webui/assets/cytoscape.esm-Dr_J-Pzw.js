@@ -1,4 +1,11 @@
-
+/**
+ * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+ * 
+ * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+ * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+ * 
+ * 授权商业应用请联系微信：huice666
+ */
 
 function cs(t,e){(e==null||e>t.length)&&(e=t.length);for(var r=0,a=Array(e);r<e;r++)a[r]=t[r];return a}function Nf(t){if(Array.isArray(t))return t}function Ff(t){if(Array.isArray(t))return cs(t)}function or(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function zf(t,e){for(var r=0;r<e.length;r++){var a=e[r];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,Ol(a.key),a)}}function ur(t,e,r){return e&&zf(t.prototype,e),Object.defineProperty(t,"prototype",{writable:!1}),t}function Pt(t,e){var r=typeof Symbol<"u"&&t[Symbol.iterator]||t["@@iterator"];if(!r){if(Array.isArray(t)||(r=Rs(t))||e){r&&(t=r);var a=0,n=function(){};return{s:n,n:function(){return a>=t.length?{done:!0}:{done:!1,value:t[a++]}},e:function(l){throw l},f:n}}throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}var i,s=!0,o=!1;return{s:function(){r=r.call(t)},n:function(){var l=r.next();return s=l.done,l},e:function(l){o=!0,i=l},f:function(){try{s||r.return==null||r.return()}finally{if(o)throw i}}}}function Ll(t,e,r){return(e=Ol(e))in t?Object.defineProperty(t,e,{value:r,enumerable:!0,configurable:!0,writable:!0}):t[e]=r,t}function qf(t){if(typeof Symbol<"u"&&t[Symbol.iterator]!=null||t["@@iterator"]!=null)return Array.from(t)}function Vf(t,e){var r=t==null?null:typeof Symbol<"u"&&t[Symbol.iterator]||t["@@iterator"];if(r!=null){var a,n,i,s,o=[],l=!0,u=!1;try{if(i=(r=r.call(t)).next,e===0){if(Object(r)!==r)return;l=!1}else for(;!(l=(a=i.call(r)).done)&&(o.push(a.value),o.length!==e);l=!0);}catch(v){u=!0,n=v}finally{try{if(!l&&r.return!=null&&(s=r.return(),Object(s)!==s))return}finally{if(u)throw n}}return o}}function _f(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.

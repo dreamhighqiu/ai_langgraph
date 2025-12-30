@@ -34,23 +34,23 @@ async def main():
         #     only_text=True,
         #     verbose=True
         # )
-# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0dGS2F3PT06Y2Y0ZTM1OTc=
 
         result = await crawler.arun(
             url="https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-README.html",
             # config=config
         )
+# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VFdwRFNRPT06ZDA3ZTgxOGM=
 
         # 提取并显示包含 server-api 的链接
         if result.success:
             internal_links = result.links.get("internal", [])
-# pylint: disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0dGS2F3PT06Y2Y0ZTM1OTc=
 
             # 过滤包含 server-api 的链接
             server_api_links = [
                 link for link in internal_links
                 if "server-api" in link.get("href", "").lower()
             ]
+# pylint: disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VFdwRFNRPT06ZDA3ZTgxOGM=
 
             print(f"✅ 爬取成功: {result.url}")
             print(f"📊 找到 {len(internal_links)} 个内部链接")
@@ -70,7 +70,6 @@ async def main():
                     print(f"   总分: {link.get('total_score'):.3f}")
                 if link.get('intrinsic_score'):
                     print(f"   内在分: {link.get('intrinsic_score'):.2f}/10.0")
-# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0dGS2F3PT06Y2Y0ZTM1OTc=
 
                 result = await crawler.arun(
                     url=link.get('href', 'N/A'),
@@ -92,6 +91,7 @@ async def main():
                             },
                             timeout=30.0
                         )
+# pragma: no cover  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VFdwRFNRPT06ZDA3ZTgxOGM=
 
                         if response.status_code == 200:
                             result_data = response.json()
@@ -105,7 +105,7 @@ async def main():
 
         else:
             print(f"❌ 爬取失败: {result.error_message}")
-# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0dGS2F3PT06Y2Y0ZTM1OTc=
 
 if __name__ == "__main__":
     asyncio.run(main())
+# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VFdwRFNRPT06ZDA3ZTgxOGM=

@@ -1,31 +1,4 @@
 {
-  "Air Asia": {
-    "chunk_ids": [
-      "chunk-700abcb7689920286ae518a3b9fb468d"
-    ],
-    "count": 1,
-    "create_time": 1765439783,
-    "update_time": 1765439783,
-    "_id": "Air Asia"
-  },
-  "Mahatma Gandhi": {
-    "chunk_ids": [
-      "chunk-700abcb7689920286ae518a3b9fb468d"
-    ],
-    "count": 1,
-    "create_time": 1765439783,
-    "update_time": 1765439783,
-    "_id": "Mahatma Gandhi"
-  },
-  "Reserve Bank Of India": {
-    "chunk_ids": [
-      "chunk-700abcb7689920286ae518a3b9fb468d"
-    ],
-    "count": 1,
-    "create_time": 1765439783,
-    "update_time": 1765439783,
-    "_id": "Reserve Bank Of India"
-  },
   "Central Government": {
     "chunk_ids": [
       "chunk-700abcb7689920286ae518a3b9fb468d"

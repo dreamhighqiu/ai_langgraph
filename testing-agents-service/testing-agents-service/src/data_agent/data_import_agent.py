@@ -28,7 +28,6 @@ Benefits of Send API:
 授权商业应用请联系微信：huice666
 """
 
-# noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdoT1dRPT06NmNjY2IyZDM=
 
 import asyncio
 import logging
@@ -54,12 +53,13 @@ from langchain_core.language_models import BaseChatModel
 # Instead, we run the crawler in a separate thread with its own ProactorEventLoop.
 
 logger = logging.getLogger(__name__)
+# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjAxVmJnPT06YWEzYTUzZmQ=
 
 # ============================================================================
 # State Definitions
 # ============================================================================
 
-os.environ["DEEPSEEK_API_KEY"] = "sk-aa26d8462b7e49b8b772d142b7fca250"
+load_dotenv()
 deepseek = ChatDeepSeek(model="deepseek-chat")
 
 class DataCollectionState(MessagesState, total=False):
@@ -97,6 +97,7 @@ class CrawlWorkerState(TypedDict):
     url: str
     crawled_data: Annotated[List[Dict[str, Any]], operator.add]
     error_messages: Annotated[List[str], operator.add]
+# pragma: no cover  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjAxVmJnPT06YWEzYTUzZmQ=
 
 
 class FilterWorkerState(TypedDict):
@@ -160,7 +161,6 @@ If no URLs are found, return an empty list."""
             SystemMessage(content=system_prompt),
             *messages
         ])
-# type: ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdoT1dRPT06NmNjY2IyZDM=
 
         # Parse response
         content = response.content
@@ -179,7 +179,6 @@ If no URLs are found, return an empty list."""
             result = json.loads(json_str)
             extracted_urls = result.get("urls", [])
             explanation = result.get("explanation", "")
-# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdoT1dRPT06NmNjY2IyZDM=
 
             logger.info(f"LLM extracted {len(extracted_urls)} URLs")
             if explanation:
@@ -214,6 +213,7 @@ If no URLs are found, return an empty list."""
 # ============================================================================
 # Node 1: Fetch API Addresses (Same as before)
 # ============================================================================
+# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjAxVmJnPT06YWEzYTUzZmQ=
 
 
 async def fetch_api_addresses(state: DataCollectionState) -> Command:
@@ -243,7 +243,6 @@ async def fetch_api_addresses(state: DataCollectionState) -> Command:
 
     # Remove duplicates
     api_urls = list(set(api_urls))
-# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UkdoT1dRPT06NmNjY2IyZDM=
 
     if not api_urls:
         logger.warning("No API URLs found from any source")
@@ -274,6 +273,7 @@ def crawl_orchestrator_route(state: DataCollectionState):
     if not api_urls:
         logger.warning("No URLs to crawl, skipping to insert_orchestrator")
         return "insert_orchestrator"
+# pragma: no cover  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UjAxVmJnPT06YWEzYTUzZmQ=
 
     logger.info(f"Dispatching {len(api_urls)} crawl workers")
 

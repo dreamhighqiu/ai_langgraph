@@ -8,7 +8,6 @@
 授权商业应用请联系微信：huice666
 """
 
-# type: ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VUd0M1pnPT06MWM4ZTM3NzY=
 
 import os
 from pathlib import Path
@@ -18,6 +17,7 @@ from langchain.chat_models import init_chat_model
 from langchain_core.language_models import BaseChatModel
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
+# noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VERWa1ZBPT06YmFiMTMxNzQ=
 
 from deepagents import create_deep_agent, SubAgent
 from deepagents.backends import FilesystemBackend
@@ -27,7 +27,7 @@ from k6_agent.subagents import create_all_subagents
 from k6_agent.tools.mcp import get_rag_tools, get_chart_tools, get_login_tools
 from k6_agent.tools.executor import create_k6_executor_tool, create_script_save_tool
 from k6_agent.tasks import create_task_tools, get_task_manager
-os.environ["DEEPSEEK_API_KEY"] = "sk-aa26d8462b7e49b8b772d142b7fca250"
+
 
 def create_k6_agent(
     model: str | BaseChatModel | None = None,
@@ -68,7 +68,7 @@ def create_k6_agent(
         ```
     """
     cfg = config or DEFAULT_CONFIG
-
+    os.environ["DEEPSEEK_API_KEY"] = "sk-868325fd211f4303a106658a98bb9aab"
     # 初始化语言模型
     if model is None:
         llm = init_chat_model("deepseek:deepseek-chat")
@@ -86,15 +86,15 @@ def create_k6_agent(
     # 创建执行工具
     executor_tool = create_k6_executor_tool(cfg)
     script_save_tool = create_script_save_tool(cfg)
-# pragma: no cover  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VUd0M1pnPT06MWM4ZTM3NzY=
+# pylint: disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VERWa1ZBPT06YmFiMTMxNzQ=
 
     # 创建任务管理工具（异步执行 + 状态监控）
     task_tools = create_task_tools(cfg)
+# pylint: disable  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VERWa1ZBPT06YmFiMTMxNzQ=
 
 
     # 主智能体工具（脚本保存、执行、任务管理）
     main_tools = [script_save_tool, executor_tool] + task_tools
-# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VUd0M1pnPT06MWM4ZTM3NzY=
 
     # 创建子智能体
     subagents = create_all_subagents(
@@ -120,7 +120,7 @@ def create_k6_agent(
         backend=backend,
         **kwargs,
     ).with_config(RunnableConfig(recursion_limit=1000))
+# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VERWa1ZBPT06YmFiMTMxNzQ=
 
     return agent
-# fmt: off  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VUd0M1pnPT06MWM4ZTM3NzY=
 

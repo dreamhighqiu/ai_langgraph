@@ -13,10 +13,11 @@ import asyncio
 from typing import Any
 
 from langchain_core.tools import BaseTool
-# type: ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2t0S1V3PT06ZTA4M2UwODY=
+# type: ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZWtSVldnPT06YTI3NzFhMjE=
 
 from k6_agent.config import K6Config, DEFAULT_CONFIG
 
+# noqa  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZWtSVldnPT06YTI3NzFhMjE=
 
 def get_rag_tools(config: K6Config | None = None) -> list[BaseTool]:
     """获取RAG MCP工具.
@@ -38,7 +39,6 @@ def get_rag_tools(config: K6Config | None = None) -> list[BaseTool]:
                 "transport": "sse",
             }
         })
-# pragma: no cover  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2t0S1V3PT06ZTA4M2UwODY=
         
         tools = asyncio.run(client.get_tools())
         return list(tools)
@@ -60,6 +60,7 @@ def get_chart_tools(config: K6Config | None = None) -> list[BaseTool]:
     
     try:
         from langchain_mcp_adapters.client import MultiServerMCPClient
+# type: ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZWtSVldnPT06YTI3NzFhMjE=
         
         client = MultiServerMCPClient({
             "chart-server": {
@@ -68,7 +69,6 @@ def get_chart_tools(config: K6Config | None = None) -> list[BaseTool]:
                 "transport": "stdio",
             }
         })
-# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2t0S1V3PT06ZTA4M2UwODY=
         
         tools = asyncio.run(client.get_tools())
         return list(tools)
@@ -86,10 +86,10 @@ def get_login_tools(config: K6Config | None = None) -> list[BaseTool]:
         登录工具列表
     """
     cfg = config or DEFAULT_CONFIG
-# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2t0S1V3PT06ZTA4M2UwODY=
 
     try:
         from langchain_mcp_adapters.client import MultiServerMCPClient
+# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZWtSVldnPT06YTI3NzFhMjE=
 
         client = MultiServerMCPClient({
             "login-server": {
@@ -112,6 +112,7 @@ def get_all_mcp_tools(config: K6Config | None = None) -> list[BaseTool]:
         所有MCP工具列表
     """
     tools = []
+    # tools.extend(get_login_tools(config))
     tools.extend(get_rag_tools(config))
     tools.extend(get_chart_tools(config))
     return tools

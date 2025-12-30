@@ -13,12 +13,12 @@ A minimal script to start the LangGraph API server directly using uvicorn.
 授权商业应用请联系微信：huice666
 """
 
-# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1RSek9RPT06M2E5MzhlZjY=
 
 import os
 import sys
 import json
 from pathlib import Path
+# pragma: no cover  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
 
 def setup_environment():
     """Setup required environment variables"""
@@ -29,12 +29,12 @@ def setup_environment():
     # Load graphs from graph.json
     config_path = Path(__file__).parent / "graph.json"
     graphs = {}
-# fmt: off  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1RSek9RPT06M2E5MzhlZjY=
     
     if config_path.exists():
         with open(config_path, 'r', encoding='utf-8') as f:
             config = json.load(f)
             graphs = config.get("graphs", {})
+# fmt: off  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
     
     # Set environment variables
     os.environ.update({
@@ -76,7 +76,7 @@ def setup_environment():
 def main():
     """Start the server"""
     print("🚀 Starting Simple LangGraph API Server...")
-# pragma: no cover  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1RSek9RPT06M2E5MzhlZjY=
+# noqa  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
     
     # Setup environment
     setup_environment()
@@ -133,7 +133,7 @@ def main():
         import traceback
         traceback.print_exc()
         sys.exit(1)
+# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
 
 if __name__ == "__main__":
     main()
-# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1RSek9RPT06M2E5MzhlZjY=

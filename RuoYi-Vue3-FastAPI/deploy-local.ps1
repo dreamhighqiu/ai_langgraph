@@ -371,6 +371,15 @@ function Start-All {
     Write-Info "启动本地开发服务 (Debug 模式)..."
     Write-Host ""
     
+    # 先停止已运行的服务（如果存在）
+    Write-Info "检查并停止已运行的服务..."
+    if (Test-Path ".pids\backend.pid") -or (Test-Path ".pids\frontend.pid") {
+        Write-Info "发现已运行的服务，先停止..."
+        Stop-All
+        Start-Sleep -Seconds 2
+        Write-Host ""
+    }
+    
     Start-Backend
     Write-Host ""
     Start-Frontend
@@ -405,11 +414,18 @@ function Start-All {
 function Stop-PortProcess {
     param([int]$Port, [string]$Name)
     
-    # 获取占用端口的进程
-    $connections = netstat -ano | Select-String ":$Port\s+" | Select-String "LISTENING"
-    
-    if ($connections) {
-        $pids = @()
+    # 尝试使用 Get-NetTCPConnection（可获取所有状态）
+    $pids = @()
+    try {
+        $conns = Get-NetTCPConnection -LocalPort $Port -ErrorAction Stop
+        foreach ($c in $conns) {
+            if ($c.OwningProcess -ne 0) {
+                $pids += [int]$c.OwningProcess
+            }
+        }
+    } catch {
+        # 回退使用 netstat（匹配所有状态）
+        $connections = netstat -ano | Select-String ":$Port\s+"
         foreach ($line in $connections) {
             $parts = $line.ToString().Trim() -split '\s+'
             $pidStr = $parts[-1]
@@ -417,16 +433,21 @@ function Stop-PortProcess {
                 $pids += [int]$pidStr
             }
         }
-        
-        $pids = $pids | Sort-Object -Unique
-        
-        foreach ($pid in $pids) {
-            try {
-                Stop-Process -Id $pid -Force -ErrorAction Stop
-                Write-Success "已杀掉占用端口 $Port 的进程 (PID: $pid)"
-            } catch {
-                Write-Warn "无法杀掉进程 $pid"
-            }
+    }
+    
+    $pids = $pids | Sort-Object -Unique
+    
+    if ($pids.Count -eq 0) {
+        Write-Info "端口 $Port 当前无占用进程"
+        return
+    }
+    
+    foreach ($pid in $pids) {
+        try {
+            Stop-Process -Id $pid -Force -ErrorAction Stop
+            Write-Success "已杀掉占用端口 $Port 的进程 (PID: $pid)"
+        } catch {
+            Write-Warn "无法杀掉进程 $pid"
         }
     }
 }
@@ -482,6 +503,22 @@ function Stop-All {
     Write-Success "本地服务已全部停止，端口已释放"
 }
 
+# 重启所有服务
+function Restart-All {
+    Write-Info "重启本地开发服务..."
+    Write-Host ""
+    
+    # 先停止
+    Stop-All
+    Write-Host ""
+    
+    # 等待一下确保端口释放
+    Start-Sleep -Seconds 2
+    
+    # 再启动
+    Start-All
+}
+
 # 查看状态
 function Show-Status {
     Write-Host ""
@@ -529,6 +566,7 @@ switch ($Command) {
     "backend" { Start-Backend }
     "frontend" { Start-Frontend }
     "all" { Start-All }
+    "restart" { Restart-All }
     "stop" { Stop-All }
     "status" { Show-Status }
     default { Show-Help }

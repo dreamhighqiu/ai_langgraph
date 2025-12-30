@@ -64,12 +64,14 @@ AI智能测试平台 - 本地开发部署脚本
   stop        停止所有本地服务
   status      查看服务状态
   db          初始化数据库
+  restart     重启所有服务（先停止再启动）
   help        显示帮助
 
 示例:
   ./deploy-local.sh init       # 初始化环境
   ./deploy-local.sh check      # 检查远程服务
   ./deploy-local.sh all        # 启动本地服务
+  ./deploy-local.sh restart    # 重启所有服务
 "
 }
 
@@ -423,6 +425,15 @@ start_all() {
     print_info "启动本地开发服务 (Debug 模式)..."
     echo ""
     
+    # 先停止已运行的服务（如果存在）
+    print_info "检查并停止已运行的服务..."
+    if [ -f ".pids/backend.pid" ] || [ -f ".pids/frontend.pid" ]; then
+        print_info "发现已运行的服务，先停止..."
+        stop_all
+        sleep 2
+        echo ""
+    fi
+    
     mkdir -p logs .pids
     
     start_backend
@@ -466,10 +477,41 @@ kill_port() {
         local pids=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u)
         local killed=0
         if [ -n "$pids" ]; then
+            print_info "发现占用端口 $port 的进程: $pids"
+        fi
+        if [ -n "$pids" ]; then
             for pid in $pids; do
                 if [ "$pid" != "0" ] && [ -n "$pid" ] && [ "$pid" != "-" ]; then
-                    taskkill //F //PID $pid 2>/dev/null && {
+                    taskkill /F /PID $pid 2>/dev/null && {
                         print_success "已杀掉占用端口 $port 的进程 (PID: $pid)"
+                        killed=1
+                    } || true
+                fi
+            done
+        fi
+        # 若 netstat 未找到或未杀干净，尝试 PowerShell 获取并杀掉
+        if [ $killed -eq 0 ]; then
+            local ps_pids=$(powershell.exe -NoProfile -Command "Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess" 2>/dev/null | tr '\r' ' ' | xargs)
+            if [ -n "$ps_pids" ]; then
+                print_info "PowerShell 发现占用端口 $port 的进程: $ps_pids"
+                for pid in $ps_pids; do
+                    if [ -n "$pid" ]; then
+                        taskkill /F /PID $pid 2>/dev/null && {
+                            print_success "已杀掉占用端口 $port 的进程 (PID: $pid)"
+                            killed=1
+                        } || true
+                    fi
+                done
+            fi
+        fi
+        # 兜底：再用 netstat 逐个 taskkill，确保清理
+        local pids2=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u)
+        if [ -n "$pids2" ]; then
+            print_info "兜底清理端口 $port: $pids2"
+            for pid in $pids2; do
+                if [ "$pid" != "0" ] && [ -n "$pid" ] && [ "$pid" != "-" ]; then
+                    taskkill /F /PID $pid 2>/dev/null && {
+                        print_success "兜底已杀掉占用端口 $port 的进程 (PID: $pid)"
                         killed=1
                     } || true
                 fi
@@ -553,6 +595,22 @@ stop_all() {
     print_success "本地服务已全部停止，端口已释放"
 }
 
+# 重启所有服务
+restart_all() {
+    print_info "重启本地开发服务..."
+    echo ""
+    
+    # 先停止
+    stop_all
+    echo ""
+    
+    # 等待一下确保端口释放
+    sleep 2
+    
+    # 再启动
+    start_all
+}
+
 # 查看状态
 show_status() {
     echo ""
@@ -598,6 +656,7 @@ case "${1:-help}" in
     backend) start_backend ;;
     frontend) start_frontend ;;
     all) start_all ;;
+    restart) restart_all ;;
     stop) stop_all ;;
     status) show_status ;;
     *) show_help ;;

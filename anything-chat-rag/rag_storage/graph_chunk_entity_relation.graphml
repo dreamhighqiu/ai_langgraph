@@ -280,6 +280,987 @@
   <data key="d4">旅行日记5555.pdf</data>
   <data key="d5">1765439849</data>
 </node>
+<node id="同义词">
+  <data key="d0">同义词</data>
+  <data key="d1">concept</data>
+  <data key="d2">同义词用于将不同的短语映射到相同的值，例如将“credit card account”和“credit account”映射到“credit”。&lt;SEP&gt;同义词将提取的实体映射到一个非字面文本值，用于处理用户指代同一事物的多种方式。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073755</data>
+  <data key="d6"></data>
+</node>
+<node id="正则表达式">
+  <data key="d0">正则表达式</data>
+  <data key="d1">method</data>
+  <data key="d2">正则表达式是一种用于模式匹配的文本处理工具，可用于改进意图分类和实体提取。&lt;SEP&gt;正则表达式用于基于字符模式提取实体，通过RegexEntityExtractor组件实现。&lt;SEP&gt;正则表达式是正则表达式实体提取器用于模式匹配和实体提取的方法。&lt;SEP&gt;正则表达式是RegexEntityExtractor组件使用的一种模式匹配规则，用于从文本中提取实体。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073755</data>
+  <data key="d6"></data>
+</node>
+<node id="RegexFeaturizer">
+  <data key="d0">RegexFeaturizer</data>
+  <data key="d1">method</data>
+  <data key="d2">RegexFeaturizer是Rasa NLU管道中的一个组件，它使用正则表达式为意图分类器或实体提取器生成特征。&lt;SEP&gt;使用正则表达式为用户消息创建向量表示，输出稀疏特征，用于实体提取和意图分类。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073755</data>
+  <data key="d6"></data>
+</node>
+<node id="RegexEntityExtractor">
+  <data key="d0">RegexEntityExtractor</data>
+  <data key="d1">method</data>
+  <data key="d2">RegexEntityExtractor是Rasa NLU管道中的一个组件，它使用正则表达式直接提取实体。&lt;SEP&gt;RegexEntityExtractor是Rasa中基于正则表达式提取实体的组件。&lt;SEP&gt;正则表达式实体提取器使用查找表或正则表达式从用户消息中提取实体，匹配训练数据中定义的实体。&lt;SEP&gt;RegexEntityExtractor是一个Rasa NLU管道组件，用于通过正则表达式或查找表从文本中提取实体。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073763</data>
+  <data key="d6"></data>
+</node>
+<node id="CRFEntityExtractor">
+  <data key="d0">CRFEntityExtractor</data>
+  <data key="d1">method</data>
+  <data key="d2">CRFEntityExtractor是Rasa NLU管道中的一个组件，它支持使用正则表达式特征进行实体提取。&lt;SEP&gt;一个实体提取器，目前是唯一支持使用RegexFeaturizer生成的特征进行实体提取的组件。&lt;SEP&gt;条件随机场实体提取器使用条件随机场进行命名实体识别，可处理稠密特征，并支持BILOU标记。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e2a73219a6b81a765a98ce10205dfeb7&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073767</data>
+  <data key="d6"></data>
+</node>
+<node id="意图分类">
+  <data key="d0">意图分类</data>
+  <data key="d1">concept</data>
+  <data key="d2">意图分类是自然语言理解的任务，旨在识别用户话语背后的意图。&lt;SEP&gt;意图分类是对话系统中的任务，由DIET分类器、逻辑回归分类器和Sklearn意图分类器等组件执行。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073767</data>
+  <data key="d6"></data>
+</node>
+<node id="实体提取">
+  <data key="d0">实体提取</data>
+  <data key="d1">concept</data>
+  <data key="d2">实体提取是自然语言理解的任务，旨在从用户话语中识别和提取结构化信息片段。&lt;SEP&gt;实体提取是对话系统中的任务，由DIET分类器(当经过实体识别训练时)、CRF实体提取器和正则表达式实体提取器等组件执行。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073770</data>
+  <data key="d6"></data>
+</node>
+<node id="WhitespaceTokenizer">
+  <data key="d0">WhitespaceTokenizer</data>
+  <data key="d1">method</data>
+  <data key="d2">WhitespaceTokenizer是Rasa NLU管道中的一个分词器组件，它使用空格作为分隔符将文本分割成词元。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073770</data>
+  <data key="d6"></data>
+</node>
+<node id="稀疏特征提取器">
+  <data key="d0">稀疏特征提取器</data>
+  <data key="d1">concept</data>
+  <data key="d2">稀疏特征提取器返回的特征向量中包含大量零值，通常存储为稀疏格式以节省内存。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073780</data>
+  <data key="d6"></data>
+</node>
+<node id="稠密特征提取器">
+  <data key="d0">稠密特征提取器</data>
+  <data key="d1">concept</data>
+  <data key="d2">稠密特征提取器返回的特征向量中非零值较多，占用内存相对较大。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073780</data>
+  <data key="d6"></data>
+</node>
+<node id="序列特征">
+  <data key="d0">序列特征</data>
+  <data key="d1">data</data>
+  <data key="d2">序列特征是大小为(词元数量x特征维度)的矩阵，包含序列中每个词元的特征向量，用于训练序列模型。&lt;SEP&gt;序列特征是大小为(token数量x特征维度)的矩阵，包含序列中每个token的特征向量，用于训练序列模型。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073783</data>
+  <data key="d6"></data>
+</node>
+<node id="句子特征">
+  <data key="d0">句子特征</data>
+  <data key="d1">data</data>
+  <data key="d2">句子特征是大小为(1 x特征维度)的矩阵，包含整个话语的特征向量，可用于词袋模型。&lt;SEP&gt;句子特征是一个大小为(1 x特征维度)的矩阵，包含整个话语的特征向量，可以用于任何词袋模型。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073790</data>
+  <data key="d6"></data>
+</node>
+<node id="MitieEntityExtractor">
+  <data key="d0">MitieEntityExtractor</data>
+  <data key="d1">method</data>
+  <data key="d2">MitieEntityExtractor是Rasa NLU管道中的一个实体提取器组件，它不使用RegexFeaturizer生成的正则表达式特征。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073790</data>
+  <data key="d6"></data>
+</node>
+<node id="SpacyEntityExtractor">
+  <data key="d0">SpacyEntityExtractor</data>
+  <data key="d1">method</data>
+  <data key="d2">SpacyEntityExtractor是Rasa NLU管道中的一个实体提取器组件，它不使用RegexFeaturizer生成的正则表达式特征。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073794</data>
+  <data key="d6"></data>
+</node>
+<node id="训练数据">
+  <data key="d0">训练数据</data>
+  <data key="d1">data</data>
+  <data key="d2">NLU训练数据由示例用户语句组成，用于训练模型识别意图和实体。&lt;SEP&gt;训练数据是用于训练NLU模型的示例集合，应包含同义词示例以帮助模型识别实体。&lt;SEP&gt;包含定义好的正则表达式列表，用于RegexFeaturizer在训练期间创建特征。&lt;SEP&gt;训练数据是用于训练Rasa模型的数据集，包含意图、实体和对话示例。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e2a73219a6b81a765a98ce10205dfeb7&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073798</data>
+  <data key="d6"></data>
+</node>
+<node id="管道">
+  <data key="d0">管道</data>
+  <data key="d1">concept</data>
+  <data key="d2">管道指的是Rasa NLU中一系列按顺序执行的组件，用于处理用户消息。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073798</data>
+  <data key="d6"></data>
+</node>
+<node id="配置文件">
+  <data key="d0">配置文件</data>
+  <data key="d1">content</data>
+  <data key="d2">配置文件用于定义Rasa NLU管道的结构和组件的配置参数。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073798</data>
+  <data key="d6"></data>
+</node>
+<node id="意图标签">
+  <data key="d0">意图标签</data>
+  <data key="d1">data</data>
+  <data key="d2">意图标签是分配给用户话语的类别，用于表示用户的意图。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073812</data>
+  <data key="d6"></data>
+</node>
+<node id="词袋模型">
+  <data key="d0">词袋模型</data>
+  <data key="d1">concept</data>
+  <data key="d2">词袋模型是一种文本表示方法，它忽略词语的顺序，只考虑词语的出现频率。</data>
+  <data key="d3">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073812</data>
+  <data key="d6"></data>
+</node>
+<node id="分类器">
+  <data key="d0">分类器</data>
+  <data key="d1">concept</data>
+  <data key="d2">分类器可以决定使用序列特征或句子特征。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073820</data>
+  <data key="d6"></data>
+</node>
+<node id="LanguageModelFeaturizer">
+  <data key="d0">LanguageModelFeaturizer</data>
+  <data key="d1">method</data>
+  <data key="d2">使用预训练语言模型为用户消息创建向量表示，输出密集特征，用于实体提取、意图分类和创建特征。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073820</data>
+  <data key="d6"></data>
+</node>
+<node id="分词器">
+  <data key="d0">分词器</data>
+  <data key="d1">method</data>
+  <data key="d2">一个需要在LanguageModelFeaturizer之前包含的组件，用于处理输入文本。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073827</data>
+  <data key="d6"></data>
+</node>
+<node id="BERT">
+  <data key="d0">BERT</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"bert"，默认model_weights为"rasa/LaBSE"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073827</data>
+  <data key="d6"></data>
+</node>
+<node id="GPT">
+  <data key="d0">GPT</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"gpt"，默认model_weights为"openai-gpt"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073827</data>
+  <data key="d6"></data>
+</node>
+<node id="GPT-2">
+  <data key="d0">GPT-2</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"gpt2"，默认model_weights为"gpt2"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073830</data>
+  <data key="d6"></data>
+</node>
+<node id="XLNet">
+  <data key="d0">XLNet</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"xlnet"，默认model_weights为"xlnet-base-cased"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073833</data>
+  <data key="d6"></data>
+</node>
+<node id="DistilBERT">
+  <data key="d0">DistilBERT</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"distilbert"，默认model_weights为"distilbert-base-uncased"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073839</data>
+  <data key="d6"></data>
+</node>
+<node id="RoBERTa">
+  <data key="d0">RoBERTa</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"roberta"，默认model_weights为"roberta-base"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073845</data>
+  <data key="d6"></data>
+</node>
+<node id="camemBERT">
+  <data key="d0">camemBERT</data>
+  <data key="d1">model</data>
+  <data key="d2">一种语言模型，model_name为"camembert"，默认model_weights为"camembert-base"。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073845</data>
+  <data key="d6"></data>
+</node>
+<node id="HuggingFace模型库">
+  <data key="d0">HuggingFace模型库</data>
+  <data key="d1">content</data>
+  <data key="d2">提供预训练模型权重，模型需满足特定架构、权重格式和分词器要求才能被LanguageModelFeaturizer使用。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073851</data>
+  <data key="d6"></data>
+</node>
+<node id="sentence-transformers/all-MiniLM-L6-v2">
+  <data key="d0">sentence-transformers/all-MiniLM-L6-v2</data>
+  <data key="d1">model</data>
+  <data key="d2">一种推荐的BERT模型权重，用于提升LanguageModelFeaturizer的性能。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073851</data>
+  <data key="d6"></data>
+</node>
+<node id="DIETClassifier">
+  <data key="d0">DIETClassifier</data>
+  <data key="d1">method</data>
+  <data key="d2">DIETClassifier是Rasa中用于提取实体的组件。&lt;SEP&gt;Rasa中的一个多任务NLU组件，可同时执行意图分类和实体识别，基于Transformer架构，处理序列和句子特征。&lt;SEP&gt;DIETClassifier是Rasa中的一个机器学习组件，用于意图分类和实体识别。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073858</data>
+  <data key="d6"></data>
+</node>
+<node id="意图分类器">
+  <data key="d0">意图分类器</data>
+  <data key="d1">concept</data>
+  <data key="d2">用于识别用户消息意图的组件。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073858</data>
+  <data key="d6"></data>
+</node>
+<node id="实体提取器">
+  <data key="d0">实体提取器</data>
+  <data key="d1">concept</data>
+  <data key="d2">用于从用户消息中提取实体的组件。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073858</data>
+  <data key="d6"></data>
+</node>
+<node id="密集特征">
+  <data key="d0">密集特征</data>
+  <data key="d1">data</data>
+  <data key="d2">由LanguageModelFeaturizer输出的用户消息的向量表示，用于后续NLU任务。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073861</data>
+  <data key="d6"></data>
+</node>
+<node id="稀疏特征">
+  <data key="d0">稀疏特征</data>
+  <data key="d1">data</data>
+  <data key="d2">稀疏特征是分类器(如逻辑回归分类器)所依赖的一种特征类型，用于模型训练。&lt;SEP&gt;由RegexFeaturizer输出的用户消息和标记的向量表示，用于意图分类和实体提取。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073864</data>
+  <data key="d6"></data>
+</node>
+<node id="意图">
+  <data key="d0">意图</data>
+  <data key="d1">concept</data>
+  <data key="d2">意图是用户希望通过消息完成的任务，在NLU训练数据中由示例用户语句按意图分类。&lt;SEP&gt;用户消息的目标或目的，由意图分类器识别。&lt;SEP&gt;意图是用户话语背后的目的或目标，是Rasa NLU模型需要识别的标签之一。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073872</data>
+  <data key="d6"></data>
+</node>
+<node id="实体">
+  <data key="d0">实体</data>
+  <data key="d1">concept</data>
+  <data key="d2">实体是用户消息中的结构化信息片段，可以通过机器学习模型或正则表达式进行提取。&lt;SEP&gt;用户消息中需要提取的关键信息片段，由实体提取器识别。&lt;SEP&gt;实体是用户话语中需要提取的关键信息片段，是Rasa NLU模型需要识别的标签之一。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073879</data>
+  <data key="d6"></data>
+</node>
+<node id="模型检查点">
+  <data key="d0">模型检查点</data>
+  <data key="d1">artifact</data>
+  <data key="d2">在训练期间保存的表现最佳的模型，DIETClassifier支持此功能。</data>
+  <data key="d3">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073879</data>
+  <data key="d6"></data>
+</node>
+<node id="EntitySynonymMapper">
+  <data key="d0">EntitySynonymMapper</data>
+  <data key="d1">method</data>
+  <data key="d2">EntitySynonymMapper是一个Rasa NLU管道组件，用于将同义实体值映射到相同的值。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073886</data>
+  <data key="d6"></data>
+</node>
+<node id="Rasa">
+  <data key="d0">Rasa</data>
+  <data key="d1">organization</data>
+  <data key="d2">Rasa是一个用于构建基于NLU的助手的框架，版本为3.6.21。&lt;SEP&gt;Rasa是一个用于构建对话式AI的开源框架。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073886</data>
+  <data key="d6"></data>
+</node>
+<node id="rasa train --finetune">
+  <data key="d0">rasa train --finetune</data>
+  <data key="d1">method</data>
+  <data key="d2">这是一个Rasa命令行命令，用于对已训练好的模型进行增量训练或微调。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073893</data>
+  <data key="d6"></data>
+</node>
+<node id="增量训练">
+  <data key="d0">增量训练</data>
+  <data key="d1">method</data>
+  <data key="d2">增量训练是一种模型训练方法，使用现有模型作为基础，在新的训练数据上进行微调以提高性能。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073893</data>
+  <data key="d6"></data>
+</node>
+<node id="查找表">
+  <data key="d0">查找表</data>
+  <data key="d1">data</data>
+  <data key="d2">查找表是添加到训练数据中的额外信息，用于帮助模型正确识别意图和实体。&lt;SEP&gt;查找表是正则表达式实体提取器用于匹配和提取实体的数据源。&lt;SEP&gt;查找表是RegexEntityExtractor组件使用的一种特征，用于基于预定义列表匹配和提取实体。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073893</data>
+  <data key="d6"></data>
+</node>
+<node id="自定义组件">
+  <data key="d0">自定义组件</data>
+  <data key="d1">method</data>
+  <data key="d2">自定义组件是用户根据特定需求开发的Rasa NLU管道组件，需遵循特定格式。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073897</data>
+  <data key="d6"></data>
+</node>
+<node id="jieba_tokenizer.py">
+  <data key="d0">jieba_tokenizer.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">jieba_tokenizer.py是一个文件，作为开发Rasa自定义分词器组件的参考格式。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073901</data>
+  <data key="d6"></data>
+</node>
+<node id="标签集">
+  <data key="d0">标签集</data>
+  <data key="d1">data</data>
+  <data key="d2">标签集指训练数据中定义的意图和实体的集合，增量训练要求标签集保持不变。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073905</data>
+  <data key="d6"></data>
+</node>
+<node id="case_sensitive">
+  <data key="d0">case_sensitive</data>
+  <data key="d1">concept</data>
+  <data key="d2">case_sensitive是RegexEntityExtractor组件的一个配置参数，用于控制文本匹配是否区分大小写，默认值为False。&lt;SEP&gt;case_sensitive是正则表达式实体提取器的配置参数，指示文本处理是否区分大小写，在示例中设置为False。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073908</data>
+  <data key="d6"></data>
+</node>
+<node id="use_lookup_tables">
+  <data key="d0">use_lookup_tables</data>
+  <data key="d1">concept</data>
+  <data key="d2">use_lookup_tables是RegexEntityExtractor组件的一个配置参数，用于启用或禁用查找表进行实体提取。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073908</data>
+  <data key="d6"></data>
+</node>
+<node id="use_regexes">
+  <data key="d0">use_regexes</data>
+  <data key="d1">concept</data>
+  <data key="d2">use_regexes是RegexEntityExtractor组件的一个配置参数，用于启用或禁用正则表达式进行实体提取。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073911</data>
+  <data key="d6"></data>
+</node>
+<node id="use_word_boundaries">
+  <data key="d0">use_word_boundaries</data>
+  <data key="d1">concept</data>
+  <data key="d2">use_word_boundaries是RegexEntityExtractor组件的一个配置参数，用于控制在查找表匹配时是否使用词边界。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073911</data>
+  <data key="d6"></data>
+</node>
+<node id="--epoch-fraction">
+  <data key="d0">--epoch-fraction</data>
+  <data key="d1">concept</data>
+  <data key="d2">--epoch-fraction是`rasa train --finetune`命令的一个参数，用于指定微调时使用的迭代次数比例。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073914</data>
+  <data key="d6"></data>
+</node>
+<node id="CDD">
+  <data key="d0">CDD</data>
+  <data key="d1">method</data>
+  <data key="d2">CDD(Conversation-Driven Development)是一种开发实践，根据用户与助手的交互方式来改进模型。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073914</data>
+  <data key="d6"></data>
+</node>
+<node id="nlu">
+  <data key="d0">nlu</data>
+  <data key="d1">concept</data>
+  <data key="d2">nlu(Natural Language Understanding)是Rasa框架中负责理解用户意图和提取实体的模块。</data>
+  <data key="d3">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073914</data>
+  <data key="d6"></data>
+</node>
+<node id="DIET分类器">
+  <data key="d0">DIET分类器</data>
+  <data key="d1">method</data>
+  <data key="d2">DIET分类器是一种用于意图分类和实体识别的组件，它需要来自特征提取器的分词输入和特征，并在Transformer层前独立处理序列和句子特征。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073915</data>
+  <data key="d6"></data>
+</node>
+<node id="LogisticRegressionClassifier">
+  <data key="d0">LogisticRegressionClassifier</data>
+  <data key="d1">method</data>
+  <data key="d2">逻辑回归分类器使用scikit-learn实现，用于意图分类，支持稀疏和密集特征，训练速度快，可作为轻量级基准。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073916</data>
+  <data key="d6"></data>
+</node>
+<node id="SklearnIntentClassifier">
+  <data key="d0">SklearnIntentClassifier</data>
+  <data key="d1">method</data>
+  <data key="d2">Sklearn意图分类器训练一个线性SVM模型，使用网格搜索进行优化，用于意图分类。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073919</data>
+  <data key="d6"></data>
+</node>
+<node id="特征提取器">
+  <data key="d0">特征提取器</data>
+  <data key="d1">method</data>
+  <data key="d2">特征提取器为DIET分类器等组件提供分词输入和特征，是管道中的必要组成部分。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073925</data>
+  <data key="d6"></data>
+</node>
+<node id="稠密特征">
+  <data key="d0">稠密特征</data>
+  <data key="d1">data</data>
+  <data key="d2">稠密特征是多种分类器和提取器(如逻辑回归分类器、Sklearn意图分类器、CRF实体提取器)所依赖的特征类型。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073925</data>
+  <data key="d6"></data>
+</node>
+<node id="条件随机场">
+  <data key="d0">条件随机场</data>
+  <data key="d1">method</data>
+  <data key="d2">条件随机场是CRF实体提取器使用的机器学习方法，用于命名实体识别。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073931</data>
+  <data key="d6"></data>
+</node>
+<node id="线性SVM">
+  <data key="d0">线性SVM</data>
+  <data key="d1">method</data>
+  <data key="d2">线性SVM是Sklearn意图分类器使用的机器学习模型，用于意图分类。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073931</data>
+  <data key="d6"></data>
+</node>
+<node id="网格搜索">
+  <data key="d0">网格搜索</data>
+  <data key="d1">method</data>
+  <data key="d2">网格搜索是Sklearn意图分类器用于优化模型超参数的方法。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073936</data>
+  <data key="d6"></data>
+</node>
+<node id="BILOU标记">
+  <data key="d0">BILOU标记</data>
+  <data key="d1">method</data>
+  <data key="d2">BILOU标记是CRF实体提取器使用的一种标记方案，用于实体识别。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073936</data>
+  <data key="d6"></data>
+</node>
+<node id="Transformer层">
+  <data key="d0">Transformer层</data>
+  <data key="d1">method</data>
+  <data key="d2">Transformer层是DIET分类器架构的一部分，用于处理序列特征。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073936</data>
+  <data key="d6"></data>
+</node>
+<node id="FFNN层">
+  <data key="d0">FFNN层</data>
+  <data key="d1">method</data>
+  <data key="d2">FFNN层是DIET分类器中的前馈神经网络层，与DenseForSparse层之间可应用Dropout。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073938</data>
+  <data key="d6"></data>
+</node>
+<node id="DenseForSparse层">
+  <data key="d0">DenseForSparse层</data>
+  <data key="d1">method</data>
+  <data key="d2">DenseForSparse层是DIET分类器中的层，用于处理稀疏到稠密的转换，与FFNN层之间可应用Dropout。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073939</data>
+  <data key="d6"></data>
+</node>
+<node id="Dropout">
+  <data key="d0">Dropout</data>
+  <data key="d1">method</data>
+  <data key="d2">Dropout是一种正则化技术，在DIET分类器中可通过参数在FFNN层与DenseForSparse层之间控制。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073942</data>
+  <data key="d6"></data>
+</node>
+<node id="训练步数">
+  <data key="d0">训练步数</data>
+  <data key="d1">data</data>
+  <data key="d2">训练步数是一个配置参数，在示例配置中设置为100个epochs。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073946</data>
+  <data key="d6"></data>
+</node>
+<node id="学习率">
+  <data key="d0">学习率</data>
+  <data key="d1">data</data>
+  <data key="d2">学习率是一个配置参数，在示例配置中设置为0.001。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073946</data>
+  <data key="d6"></data>
+</node>
+<node id="use_dense_input_dropout">
+  <data key="d0">use_dense_input_dropout</data>
+  <data key="d1">data</data>
+  <data key="d2">use_dense_input_dropout是一个布尔型配置参数，用于控制是否在DIET分类器的FFNN层与DenseForSparse层之间应用Dropout。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073949</data>
+  <data key="d6"></data>
+</node>
+<node id="checkpoint_model">
+  <data key="d0">checkpoint_model</data>
+  <data key="d1">data</data>
+  <data key="d2">checkpoint_model是一个布尔型配置参数，指示是否在训练过程中保存模型检查点。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073949</data>
+  <data key="d6"></data>
+</node>
+<node id="evaluate_on_number_of_examples">
+  <data key="d0">evaluate_on_number_of_examples</data>
+  <data key="d1">data</data>
+  <data key="d2">evaluate_on_number_of_examples是一个配置参数，指定用于评估的示例数量，在示例中设置为100。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073952</data>
+  <data key="d6"></data>
+</node>
+<node id="max_iter">
+  <data key="d0">max_iter</data>
+  <data key="d1">data</data>
+  <data key="d2">max_iter是逻辑回归分类器的配置参数，表示最大迭代次数，在示例中设置为100。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073952</data>
+  <data key="d6"></data>
+</node>
+<node id="solver">
+  <data key="d0">solver</data>
+  <data key="d1">data</data>
+  <data key="d2">solver是逻辑回归分类器的配置参数，表示求解器类型，在示例中设置为'lbfgs'。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073952</data>
+  <data key="d6"></data>
+</node>
+<node id="tol">
+  <data key="d0">tol</data>
+  <data key="d1">data</data>
+  <data key="d2">tol是逻辑回归分类器的配置参数，表示优化器停止标准的容限，在示例中设置为0.0001。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073953</data>
+  <data key="d6"></data>
+</node>
+<node id="random_state">
+  <data key="d0">random_state</data>
+  <data key="d1">data</data>
+  <data key="d2">random_state是逻辑回归分类器的配置参数，用于在训练前打乱数据，在示例中设置为42。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073955</data>
+  <data key="d6"></data>
+</node>
+<node id="ranking_length">
+  <data key="d0">ranking_length</data>
+  <data key="d1">data</data>
+  <data key="d2">ranking_length是逻辑回归分类器的配置参数，指定意图排名的长度，在示例中设置为10。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073962</data>
+  <data key="d6"></data>
+</node>
+<node id="C">
+  <data key="d0">C</data>
+  <data key="d1">data</data>
+  <data key="d2">C是Sklearn意图分类器的配置参数，是用于C-SVM交叉验证的正则化值列表。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073968</data>
+  <data key="d6"></data>
+</node>
+<node id="kernels">
+  <data key="d0">kernels</data>
+  <data key="d1">data</data>
+  <data key="d2">kernels是Sklearn意图分类器的配置参数，指定用于C-SVM的内核类型列表，在示例中为["linear"]。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073968</data>
+  <data key="d6"></data>
+</node>
+<node id="gamma">
+  <data key="d0">gamma</data>
+  <data key="d1">data</data>
+  <data key="d2">gamma是Sklearn意图分类器的配置参数，表示C-SVM的Gamma参数，在示例中设置为[0.1]。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073975</data>
+  <data key="d6"></data>
+</node>
+<node id="max_cross_validation_folds">
+  <data key="d0">max_cross_validation_folds</data>
+  <data key="d1">data</data>
+  <data key="d2">max_cross_validation_folds是Sklearn意图分类器的配置参数，指定交叉验证的折数，在示例中设置为5。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073975</data>
+  <data key="d6"></data>
+</node>
+<node id="scoring_function">
+  <data key="d0">scoring_function</data>
+  <data key="d1">data</data>
+  <data key="d2">scoring_function是Sklearn意图分类器的配置参数，指定评估函数，在示例中设置为"f1_weighted"。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073983</data>
+  <data key="d6"></data>
+</node>
+<node id="BILOU_flag">
+  <data key="d0">BILOU_flag</data>
+  <data key="d1">data</data>
+  <data key="d2">BILOU_flag是CRF实体提取器的配置参数，指示是否使用BILOU标记，在示例中设置为True。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073983</data>
+  <data key="d6"></data>
+</node>
+<node id="features">
+  <data key="d0">features</data>
+  <data key="d1">data</data>
+  <data key="d2">features是CRF实体提取器的配置参数，指定滑动窗口中要提取的特征列表。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073983</data>
+  <data key="d6"></data>
+</node>
+<node id="L1_c">
+  <data key="d0">L1_c</data>
+  <data key="d1">data</data>
+  <data key="d2">L1_c是CRF实体提取器的配置参数，表示L1正则化的权重，在示例中设置为0.1。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073984</data>
+  <data key="d6"></data>
+</node>
+<node id="L2_c">
+  <data key="d0">L2_c</data>
+  <data key="d1">data</data>
+  <data key="d2">L2_c是CRF实体提取器的配置参数，表示L2正则化的权重，在示例中设置为0.1。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073988</data>
+  <data key="d6"></data>
+</node>
+<node id="featurizers">
+  <data key="d0">featurizers</data>
+  <data key="d1">data</data>
+  <data key="d2">featurizers是CRF实体提取器的配置参数，指定要使用的稠密特征提取器名称列表，如果为空则使用所有可用特征。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073993</data>
+  <data key="d6"></data>
+</node>
+<node id="split_entities_by_comma">
+  <data key="d0">split_entities_by_comma</data>
+  <data key="d1">data</data>
+  <data key="d2">split_entities_by_comma是CRF实体提取器的配置参数，指示是否将提取出的实体列表按给定实体类型拆分为单个实体。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073999</data>
+  <data key="d6"></data>
+</node>
+<node id="token">
+  <data key="d0">token</data>
+  <data key="d1">data</data>
+  <data key="d2">token是CRF实体提取器所依赖的输入数据，代表分词后的文本单元。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767073999</data>
+  <data key="d6"></data>
+</node>
+<node id="text_dense_feature">
+  <data key="d0">text_dense_feature</data>
+  <data key="d1">data</data>
+  <data key="d2">text_dense_feature是CRF实体提取器可选的配置参数，当使用稠密特征时需要添加。</data>
+  <data key="d3">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074006</data>
+  <data key="d6"></data>
+</node>
+<node id="自然语言理解(NLU)">
+  <data key="d0">自然语言理解(NLU)</data>
+  <data key="d1">concept</data>
+  <data key="d2">自然语言理解(NLU)的目标是从用户消息中提取结构化信息，包括用户意图和消息中包含的实体。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074006</data>
+  <data key="d6"></data>
+</node>
+<node id="config.yml">
+  <data key="d0">config.yml</data>
+  <data key="d1">artifact</data>
+  <data key="d2">config.yml是Rasa的配置文件，用于调整模型训练的相关配置。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074013</data>
+  <data key="d6"></data>
+</node>
+<node id="domain.yml">
+  <data key="d0">domain.yml</data>
+  <data key="d1">artifact</data>
+  <data key="d2">domain.yml是Rasa的领域文件，用于定义意图和实体。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074013</data>
+  <data key="d6"></data>
+</node>
+<node id="data/nlu.yaml">
+  <data key="d0">data/nlu.yaml</data>
+  <data key="d1">artifact</data>
+  <data key="d2">data/nlu.yaml是Rasa中存储NLU训练数据的文件。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074013</data>
+  <data key="d6"></data>
+</node>
+<node id="rasa train nlu">
+  <data key="d0">rasa train nlu</data>
+  <data key="d1">method</data>
+  <data key="d2">rasa train nlu是用于训练NLU模型的命令，可添加--debug参数进行调试。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074016</data>
+  <data key="d6"></data>
+</node>
+<node id="rasa run">
+  <data key="d0">rasa run</data>
+  <data key="d1">method</data>
+  <data key="d2">rasa run是用于运行Rasa服务的命令，可指定模型、启用API和日志路径。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074019</data>
+  <data key="d6"></data>
+</node>
+<node id="rasa shell">
+  <data key="d0">rasa shell</data>
+  <data key="d1">method</data>
+  <data key="d2">rasa shell是用于交互式测试Rasa模型的命令。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074025</data>
+  <data key="d6"></data>
+</node>
+<node id="http://localhost:5005/model/parse">
+  <data key="d0">http://localhost:5005/model/parse</data>
+  <data key="d1">artifact</data>
+  <data key="d2">http://localhost:5005/model/parse是Rasa服务提供的NLU解析接口的URL。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074031</data>
+  <data key="d6"></data>
+</node>
+<node id="语言模型对话式人工智能(CALM)">
+  <data key="d0">语言模型对话式人工智能(CALM)</data>
+  <data key="d1">artifact</data>
+  <data key="d2">语言模型对话式人工智能(CALM)是一种可能不适用于基于NLU助手构建内容的对话式人工智能。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074031</data>
+  <data key="d6"></data>
+</node>
+<node id="Python">
+  <data key="d0">Python</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Python是用于运行Rasa的编程语言，版本为3.10.19。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074038</data>
+  <data key="d6"></data>
+</node>
+<node id="requirements.txt">
+  <data key="d0">requirements.txt</data>
+  <data key="d1">artifact</data>
+  <data key="d2">requirements.txt是包含Rasa项目依赖包列表的文件。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074038</data>
+  <data key="d6"></data>
+</node>
+<node id="模型">
+  <data key="d0">模型</data>
+  <data key="d1">artifact</data>
+  <data key="d2">模型是Rasa训练后生成的产物，可通过命令指定运行。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074044</data>
+  <data key="d6"></data>
+</node>
+<node id="日志">
+  <data key="d0">日志</data>
+  <data key="d1">data</data>
+  <data key="d2">日志是Rasa服务运行过程中产生的记录信息，可通过--log-file参数指定路径。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074044</data>
+  <data key="d6"></data>
+</node>
+<node id="用户消息">
+  <data key="d0">用户消息</data>
+  <data key="d1">data</data>
+  <data key="d2">用户消息是用户输入给NLU助手的文本，是意图和实体提取的源数据。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074044</data>
+  <data key="d6"></data>
+</node>
+<node id="置信度">
+  <data key="d0">置信度</data>
+  <data key="d1">concept</data>
+  <data key="d2">置信度是模型对识别出的意图或实体正确性的概率评估。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074047</data>
+  <data key="d6"></data>
+</node>
+<node id="tokens">
+  <data key="d0">tokens</data>
+  <data key="d1">data</data>
+  <data key="d2">tokens是用户输入文本经过分词后的片段列表。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074051</data>
+  <data key="d6"></data>
+</node>
+<node id="意图列表">
+  <data key="d0">意图列表</data>
+  <data key="d1">data</data>
+  <data key="d2">意图列表是模型对所有可能意图的排名，包含名称和置信度。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074057</data>
+  <data key="d6"></data>
+</node>
+<node id="示例用户语句">
+  <data key="d0">示例用户语句</data>
+  <data key="d1">data</data>
+  <data key="d2">示例用户语句是用于训练NLU模型的、按意图分类的具体话语。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074063</data>
+  <data key="d6"></data>
+</node>
+<node id="同义词映射">
+  <data key="d0">同义词映射</data>
+  <data key="d1">method</data>
+  <data key="d2">同义词映射是将提取的实体与一个非字面文本值相关联的过程，不区分大小写。</data>
+  <data key="d3">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d4">操作步骤1.md</data>
+  <data key="d5">1767074063</data>
+  <data key="d6"></data>
+</node>
 <edge source="Travel Document" target="Date Range 2023.12.27-2024.01.10">
   <data key="d7">1.0</data>
   <data key="d8">The travel document is associated with the specified date range, indicating the period of the trip.</data>
@@ -287,6 +1268,1032 @@
   <data key="d10">chunk-700abcb7689920286ae518a3b9fb468d</data>
   <data key="d11">旅行日记5555.pdf</data>
   <data key="d12">1765439799</data>
+  <data key="d13"></data>
+</edge>
+<edge source="同义词" target="实体提取">
+  <data key="d7">1.0</data>
+  <data key="d8">同义词映射发生在实体被提取之后，用于将不同短语的实体值标准化为同一个值。</data>
+  <data key="d9">映射,标准化</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074070</data>
+  <data key="d13"></data>
+</edge>
+<edge source="同义词" target="训练数据">
+  <data key="d7">1.0</data>
+  <data key="d8">训练数据中需要包含同义词示例，以便模型学会将这些示例识别为实体并进行同义词替换。</data>
+  <data key="d9">模型学习,示例包含</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074087</data>
+  <data key="d13"></data>
+</edge>
+<edge source="同义词" target="实体">
+  <data key="d7">1.0</data>
+  <data key="d8">同义词将提取的实体映射到一个规范化的值，用于处理用户指代同一事物的多种方式。</data>
+  <data key="d9">值映射,规范化</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074333</data>
+  <data key="d13"></data>
+</edge>
+<edge source="同义词" target="同义词映射">
+  <data key="d7">1.0</data>
+  <data key="d8">同义词映射是实现同义词功能的具体操作过程，发生在实体被提取之后。</data>
+  <data key="d9">实现过程,操作</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074354</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="RegexFeaturizer">
+  <data key="d7">1.0</data>
+  <data key="d8">正则表达式被RegexFeaturizer组件使用，为意图分类或实体提取生成特征。</data>
+  <data key="d9">模式匹配,特征生成</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074070</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="RegexEntityExtractor">
+  <data key="d7">4.0</data>
+  <data key="d8">正则表达式被RegexEntityExtractor组件使用，直接基于模式匹配来提取实体。&lt;SEP&gt;RegexEntityExtractor是Rasa中实现基于正则表达式提取实体的组件。&lt;SEP&gt;正则表达式实体提取器使用正则表达式来匹配和提取实体。&lt;SEP&gt;RegexEntityExtractor组件使用正则表达式作为特征来匹配和提取文本中的实体。</data>
+  <data key="d9">使用,实体提取,提取方法,方法,模式匹配,特征使用,直接提取,组件实现</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01&lt;SEP&gt;chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074085</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="MitieEntityExtractor">
+  <data key="d7">1.0</data>
+  <data key="d8">MitieEntityExtractor实体提取器不会使用RegexFeaturizer生成的正则表达式特征。</data>
+  <data key="d9">不支持,特征无关</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074092</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="SpacyEntityExtractor">
+  <data key="d7">1.0</data>
+  <data key="d8">SpacyEntityExtractor实体提取器不会使用RegexFeaturizer生成的正则表达式特征。</data>
+  <data key="d9">不支持,特征无关</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074097</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="实体">
+  <data key="d7">1.0</data>
+  <data key="d8">正则表达式用于基于字符模式提取实体，是实体提取的一种方法。</data>
+  <data key="d9">提取方法,模式匹配</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074325</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexFeaturizer" target="意图分类">
+  <data key="d7">1.0</data>
+  <data key="d8">RegexFeaturizer为意图分类器提供正则表达式特征，帮助分类器学习与模式相关的意图。</data>
+  <data key="d9">模式学习,特征提供</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074087</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexFeaturizer" target="CRFEntityExtractor">
+  <data key="d7">2.0</data>
+  <data key="d8">RegexFeaturizer生成的正则表达式特征被CRFEntityExtractor组件使用，以改进实体识别能力。&lt;SEP&gt;RegexFeaturizer为实体提取创建的特征目前仅由CRFEntityExtractor支持。</data>
+  <data key="d9">功能支持,实体识别,特征提供,组件协作</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a&lt;SEP&gt;chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074094</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexFeaturizer" target="管道">
+  <data key="d7">1.0</data>
+  <data key="d8">RegexFeaturizer组件需要被包含在NLU管道中，以便为正则表达式匹配生成特征。</data>
+  <data key="d9">特征化流程,组件包含</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074101</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexFeaturizer" target="训练数据">
+  <data key="d7">1.0</data>
+  <data key="d8">RegexFeaturizer在训练期间，根据训练数据中定义的正则表达式列表来创建特征。</data>
+  <data key="d9">数据依赖,特征创建</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074121</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="查找表">
+  <data key="d7">2.0</data>
+  <data key="d8">正则表达式实体提取器使用查找表来匹配和提取实体。&lt;SEP&gt;RegexEntityExtractor组件使用查找表作为特征来匹配和提取文本中的实体。</data>
+  <data key="d9">使用,实体提取,数据源,特征使用</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074129</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="EntitySynonymMapper">
+  <data key="d7">1.0</data>
+  <data key="d8">EntitySynonymMapper组件依赖于实体提取器(如RegexEntityExtractor)发现的实体，并对它们进行同义词映射处理。</data>
+  <data key="d9">数据处理,管道依赖</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074142</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="case_sensitive">
+  <data key="d7">2.0</data>
+  <data key="d8">case_sensitive是RegexEntityExtractor组件的一个配置参数，决定了其文本匹配的敏感性。&lt;SEP&gt;case_sensitive是正则表达式实体提取器的一个配置参数，用于控制匹配是否区分大小写。</data>
+  <data key="d9">参数,参数设置,组件配置,配置</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54&lt;SEP&gt;chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074157</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="use_lookup_tables">
+  <data key="d7">1.0</data>
+  <data key="d8">use_lookup_tables是RegexEntityExtractor组件的一个配置参数，用于控制是否使用查找表。</data>
+  <data key="d9">参数设置,组件配置</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074170</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="use_regexes">
+  <data key="d7">1.0</data>
+  <data key="d8">use_regexes是RegexEntityExtractor组件的一个配置参数，用于控制是否使用正则表达式。</data>
+  <data key="d9">参数设置,组件配置</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074180</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="use_word_boundaries">
+  <data key="d7">1.0</data>
+  <data key="d8">use_word_boundaries是RegexEntityExtractor组件的一个配置参数，用于控制查找表匹配时的词边界使用。</data>
+  <data key="d9">参数设置,组件配置</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074187</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RegexEntityExtractor" target="实体提取">
+  <data key="d7">1.0</data>
+  <data key="d8">正则表达式实体提取器专门用于执行基于模式的实体提取任务。</data>
+  <data key="d9">功能,执行</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074227</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="稠密特征">
+  <data key="d7">1.0</data>
+  <data key="d8">CRF实体提取器可以可选地依赖稠密特征进行命名实体识别。</data>
+  <data key="d9">依赖,输入</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074211</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="实体提取">
+  <data key="d7">1.0</data>
+  <data key="d8">CRF实体提取器专门用于执行实体提取任务。</data>
+  <data key="d9">功能,执行</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074220</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="条件随机场">
+  <data key="d7">1.0</data>
+  <data key="d8">CRF实体提取器通过实现条件随机场算法来执行实体识别。</data>
+  <data key="d9">实现,方法</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074227</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="BILOU标记">
+  <data key="d7">1.0</data>
+  <data key="d8">CRF实体提取器可以使用BILOU标记方案来标注实体。</data>
+  <data key="d9">使用,标记方案</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074238</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="BILOU_flag">
+  <data key="d7">1.0</data>
+  <data key="d8">BILOU_flag是CRF实体提取器的一个配置参数，用于控制是否使用BILOU标记。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074273</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="features">
+  <data key="d7">1.0</data>
+  <data key="d8">features是CRF实体提取器的一个配置参数，用于指定要提取的特征列表。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074286</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="L1_c">
+  <data key="d7">1.0</data>
+  <data key="d8">L1_c是CRF实体提取器的一个配置参数，用于控制L1正则化的强度。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074293</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="L2_c">
+  <data key="d7">1.0</data>
+  <data key="d8">L2_c是CRF实体提取器的一个配置参数，用于控制L2正则化的强度。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074302</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="featurizers">
+  <data key="d7">1.0</data>
+  <data key="d8">featurizers是CRF实体提取器的一个配置参数，用于指定要使用的稠密特征提取器。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074312</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="split_entities_by_comma">
+  <data key="d7">1.0</data>
+  <data key="d8">split_entities_by_comma是CRF实体提取器的一个配置参数，用于控制实体拆分行为。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074319</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="token">
+  <data key="d7">1.0</data>
+  <data key="d8">CRF实体提取器的命名实体识别过程依赖于分词(token)输入。</data>
+  <data key="d9">依赖,输入</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074330</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CRFEntityExtractor" target="text_dense_feature">
+  <data key="d7">1.0</data>
+  <data key="d8">当CRF实体提取器使用稠密特征时，需要在参数中添加"text_dense_feature"。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074335</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图分类" target="WhitespaceTokenizer">
+  <data key="d7">1.0</data>
+  <data key="d8">WhitespaceTokenizer可以配置为对意图标签进行分词，通过设置intent_tokenization_flag和intent_split_symbol。</data>
+  <data key="d9">分词,意图标签处理</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074070</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图分类" target="DIET分类器">
+  <data key="d7">1.0</data>
+  <data key="d8">DIET分类器的主要功能之一是执行意图分类任务。</data>
+  <data key="d9">功能,执行</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074180</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图分类" target="LogisticRegressionClassifier">
+  <data key="d7">1.0</data>
+  <data key="d8">逻辑回归分类器专门用于执行意图分类任务。</data>
+  <data key="d9">功能,执行</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074202</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图分类" target="SklearnIntentClassifier">
+  <data key="d7">1.0</data>
+  <data key="d8">Sklearn意图分类器的主要功能是执行意图分类。</data>
+  <data key="d9">功能,执行</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074211</data>
+  <data key="d13"></data>
+</edge>
+<edge source="实体提取" target="DIET分类器">
+  <data key="d7">1.0</data>
+  <data key="d8">当经过实体识别训练时，DIET分类器可以执行实体提取任务。</data>
+  <data key="d9">功能,执行</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074193</data>
+  <data key="d13"></data>
+</edge>
+<edge source="WhitespaceTokenizer" target="管道">
+  <data key="d7">1.0</data>
+  <data key="d8">WhitespaceTokenizer是NLU管道中的一个可选分词器组件。</data>
+  <data key="d9">分词流程,组件包含</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074092</data>
+  <data key="d13"></data>
+</edge>
+<edge source="WhitespaceTokenizer" target="配置文件">
+  <data key="d7">1.0</data>
+  <data key="d8">配置文件中包含WhitespaceTokenizer组件的配置参数，如intent_tokenization_flag和intent_split_symbol。</data>
+  <data key="d9">参数配置,组件定义</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074097</data>
+  <data key="d13"></data>
+</edge>
+<edge source="稀疏特征提取器" target="序列特征">
+  <data key="d7">1.0</data>
+  <data key="d8">稀疏特征提取器可以生成序列特征，这种特征以稀疏格式存储，能够处理更大的数据集。</data>
+  <data key="d9">内存优化,特征表示</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074073</data>
+  <data key="d13"></data>
+</edge>
+<edge source="稀疏特征提取器" target="句子特征">
+  <data key="d7">1.0</data>
+  <data key="d8">稀疏特征提取器可以生成句子特征，这种特征可用于词袋模型。</data>
+  <data key="d9">特征表示,词袋模型</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074087</data>
+  <data key="d13"></data>
+</edge>
+<edge source="序列特征" target="句子特征">
+  <data key="d7">1.0</data>
+  <data key="d8">序列特征用于序列模型，而句子特征用于词袋模型，分类器决定使用哪种特征。</data>
+  <data key="d9">对比,特征类型</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074101</data>
+  <data key="d13"></data>
+</edge>
+<edge source="序列特征" target="DIETClassifier">
+  <data key="d7">1.0</data>
+  <data key="d8">DIETClassifier基于Transformer架构，能够独立处理序列特征。</data>
+  <data key="d9">模型输入,特征处理</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074108</data>
+  <data key="d13"></data>
+</edge>
+<edge source="句子特征" target="词袋模型">
+  <data key="d7">1.0</data>
+  <data key="d8">句子特征可以作为词袋模型的输入特征。</data>
+  <data key="d9">模型适用,特征输入</data>
+  <data key="d10">chunk-6e7a38ff30ab59324d9302f116d5064a</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074094</data>
+  <data key="d13"></data>
+</edge>
+<edge source="句子特征" target="DIETClassifier">
+  <data key="d7">1.0</data>
+  <data key="d8">DIETClassifier基于Transformer架构，能够独立处理句子特征。</data>
+  <data key="d9">模型输入,特征处理</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074114</data>
+  <data key="d13"></data>
+</edge>
+<edge source="训练数据" target="增量训练">
+  <data key="d7">1.0</data>
+  <data key="d8">进行增量训练时，所使用的训练数据必须与基础模型的标签集(意图、实体)完全一致。</data>
+  <data key="d9">数据需求,流程约束</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074148</data>
+  <data key="d13"></data>
+</edge>
+<edge source="训练数据" target="意图">
+  <data key="d7">1.0</data>
+  <data key="d8">NLU训练数据由示例用户语句组成，这些语句按意图进行分类，用于训练模型识别意图。</data>
+  <data key="d9">分类,数据训练</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074306</data>
+  <data key="d13"></data>
+</edge>
+<edge source="训练数据" target="实体">
+  <data key="d7">1.0</data>
+  <data key="d8">NLU训练数据用于训练机器学习模型以正确提取实体。</data>
+  <data key="d9">提取,数据训练</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074315</data>
+  <data key="d13"></data>
+</edge>
+<edge source="训练数据" target="查找表">
+  <data key="d7">1.0</data>
+  <data key="d8">查找表可以作为额外信息添加到训练数据中，以帮助模型正确识别意图和实体。</data>
+  <data key="d9">模型训练,辅助信息</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074325</data>
+  <data key="d13"></data>
+</edge>
+<edge source="训练数据" target="data/nlu.yaml">
+  <data key="d7">1.0</data>
+  <data key="d8">data/nlu.yaml是Rasa中存储NLU训练数据的文件路径。</data>
+  <data key="d9">数据存储,文件路径</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074333</data>
+  <data key="d13"></data>
+</edge>
+<edge source="训练数据" target="示例用户语句">
+  <data key="d7">1.0</data>
+  <data key="d8">示例用户语句是构成NLU训练数据的基础单元。</data>
+  <data key="d9">基础单元,数据构成</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074354</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="分词器">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer需要在其之前包含一个分词器组件来处理输入文本。</data>
+  <data key="d9">组件依赖,预处理</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074097</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="BERT">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载BERT语言模型，并使用指定的模型权重(如rasa/LaBSE)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074104</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="GPT">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载GPT语言模型，并使用指定的模型权重(如openai-gpt)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074106</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="GPT-2">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载GPT-2语言模型，并使用指定的模型权重(如gpt2)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074108</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="XLNet">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载XLNet语言模型，并使用指定的模型权重(如xlnet-base-cased)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074111</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="DistilBERT">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载DistilBERT语言模型，并使用指定的模型权重(如distilbert-base-uncased)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074118</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="RoBERTa">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载RoBERTa语言模型，并使用指定的模型权重(如roberta-base)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074127</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="camemBERT">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer可以通过配置加载camemBERT语言模型，并使用指定的模型权重(如camembert-base)。</data>
+  <data key="d9">模型应用,配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074135</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="HuggingFace模型库">
+  <data key="d7">1.0</data>
+  <data key="d8">LanguageModelFeaturizer除了使用默认权重，还可以从HuggingFace模型库加载满足特定条件的其他预训练模型。</data>
+  <data key="d9">模型来源,资源依赖</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074148</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LanguageModelFeaturizer" target="sentence-transformers/all-MiniLM-L6-v2">
+  <data key="d7">1.0</data>
+  <data key="d8">为提升性能，推荐在LanguageModelFeaturizer中使用sentence-transformers/all-MiniLM-L6-v2作为BERT模型的权重。</data>
+  <data key="d9">性能优化,推荐配置</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074160</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIETClassifier" target="意图分类器">
+  <data key="d7">1.0</data>
+  <data key="d8">DIETClassifier是一个可以执行意图分类任务的组件。</data>
+  <data key="d9">功能实现,组件类型</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074121</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIETClassifier" target="实体提取器">
+  <data key="d7">1.0</data>
+  <data key="d8">DIETClassifier是一个可以执行实体识别任务的组件。</data>
+  <data key="d9">功能实现,组件类型</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074129</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIETClassifier" target="密集特征">
+  <data key="d7">1.0</data>
+  <data key="d8">DIETClassifier的执行依赖于从管道中特征提取器获得的密集特征输入。</data>
+  <data key="d9">模型输入,特征依赖</data>
+  <data key="d10">chunk-e2a73219a6b81a765a98ce10205dfeb7</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074142</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIETClassifier" target="增量训练">
+  <data key="d7">1.0</data>
+  <data key="d8">增量训练方法适用于DIETClassifier等机器学习组件，通过减少迭代次数来微调模型。</data>
+  <data key="d9">机器学习组件,训练方法</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074160</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIETClassifier" target="实体">
+  <data key="d7">1.0</data>
+  <data key="d8">DIETClassifier是Rasa中用于提取实体的机器学习组件。</data>
+  <data key="d9">提取组件,机器学习</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074338</data>
+  <data key="d13"></data>
+</edge>
+<edge source="稀疏特征" target="LogisticRegressionClassifier">
+  <data key="d7">1.0</data>
+  <data key="d8">逻辑回归分类器的训练依赖于稀疏特征的存在。</data>
+  <data key="d9">依赖,输入</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074187</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图" target="自然语言理解(NLU)">
+  <data key="d7">1.0</data>
+  <data key="d8">自然语言理解(NLU)的目标是从用户消息中提取结构化信息，其中包括识别用户的意图。</data>
+  <data key="d9">信息提取,目标</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074296</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图" target="置信度">
+  <data key="d7">1.0</data>
+  <data key="d8">置信度是模型对识别出的意图名称正确性的评估指标。</data>
+  <data key="d9">模型输出,评估指标</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074345</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图" target="意图列表">
+  <data key="d7">1.0</data>
+  <data key="d8">意图列表是模型输出的对所有可能意图的排名，包含每个意图的名称和置信度。</data>
+  <data key="d9">排名输出,模型结果</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074351</data>
+  <data key="d13"></data>
+</edge>
+<edge source="实体" target="自然语言理解(NLU)">
+  <data key="d7">1.0</data>
+  <data key="d8">自然语言理解(NLU)的目标是从用户消息中提取结构化信息，其中包括识别消息中的实体。</data>
+  <data key="d9">信息提取,目标</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074306</data>
+  <data key="d13"></data>
+</edge>
+<edge source="实体" target="置信度">
+  <data key="d7">1.0</data>
+  <data key="d8">置信度是模型对提取出的实体正确性的评估指标。</data>
+  <data key="d9">模型输出,评估指标</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074351</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="自然语言理解(NLU)">
+  <data key="d7">1.0</data>
+  <data key="d8">Rasa是一个用于构建基于自然语言理解(NLU)的助手的框架。</data>
+  <data key="d9">应用,框架实现</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074319</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="config.yml">
+  <data key="d7">1.0</data>
+  <data key="d8">config.yml是Rasa框架中用于调整模型训练相关配置的文件。</data>
+  <data key="d9">框架文件,配置管理</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074330</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="domain.yml">
+  <data key="d7">1.0</data>
+  <data key="d8">domain.yml是Rasa框架中用于定义意图和实体的领域文件。</data>
+  <data key="d9">框架文件,领域定义</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074335</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="rasa train nlu">
+  <data key="d7">1.0</data>
+  <data key="d8">rasa train nlu是Rasa框架中用于训练NLU模型的命令。</data>
+  <data key="d9">命令,模型训练</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074341</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="rasa run">
+  <data key="d7">1.0</data>
+  <data key="d8">rasa run是Rasa框架中用于运行服务的命令。</data>
+  <data key="d9">命令,服务运行</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074348</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="rasa shell">
+  <data key="d7">1.0</data>
+  <data key="d8">rasa shell是Rasa框架中用于交互式测试模型的命令。</data>
+  <data key="d9">交互测试,命令</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074354</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="http://localhost:5005/model/parse">
+  <data key="d7">1.0</data>
+  <data key="d8">http://localhost:5005/model/parse是Rasa服务提供的用于解析用户消息的接口URL。</data>
+  <data key="d9">URL,接口服务</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074358</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="Python">
+  <data key="d7">1.0</data>
+  <data key="d8">Rasa框架需要Python 3.10.19环境来运行。</data>
+  <data key="d9">依赖,运行环境</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074360</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa" target="requirements.txt">
+  <data key="d7">1.0</data>
+  <data key="d8">requirements.txt文件用于安装Rasa项目所需的依赖包。</data>
+  <data key="d9">依赖管理,安装文件</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074362</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rasa train --finetune" target="增量训练">
+  <data key="d7">1.0</data>
+  <data key="d8">执行`rasa train --finetune`命令是为了对模型进行增量训练，即使用现有模型并在新数据上微调。</data>
+  <data key="d9">命令执行,模型优化</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074135</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rasa train --finetune" target="--epoch-fraction">
+  <data key="d7">1.0</data>
+  <data key="d8">--epoch-fraction参数与`rasa train --finetune`命令一起使用，用于控制微调过程中的迭代次数。</data>
+  <data key="d9">命令参数,训练控制</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074160</data>
+  <data key="d13"></data>
+</edge>
+<edge source="增量训练" target="CDD">
+  <data key="d7">1.0</data>
+  <data key="d8">进行增量训练是为了实践CDD(对话驱动开发)，根据用户交互数据改进助手。</data>
+  <data key="d9">实践方法,开发流程</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074176</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义组件" target="jieba_tokenizer.py">
+  <data key="d7">1.0</data>
+  <data key="d8">开发Rasa自定义组件时，需要参照`jieba_tokenizer.py`文件的格式进行。</data>
+  <data key="d9">开发参考,格式规范</data>
+  <data key="d10">chunk-c0dd04808417ed9e3c6f74d1e54d5a54</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074148</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="特征提取器">
+  <data key="d7">1.0</data>
+  <data key="d8">DIET分类器需要来自特征提取器的分词输入和特征才能正常工作。</data>
+  <data key="d9">依赖,特征输入</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074170</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="Transformer层">
+  <data key="d7">1.0</data>
+  <data key="d8">DIET分类器在Transformer层前独立处理序列和句子特征。</data>
+  <data key="d9">包含,处理</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074199</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="FFNN层">
+  <data key="d7">1.0</data>
+  <data key="d8">DIET分类器包含FFNN层，用于前馈神经网络处理。</data>
+  <data key="d9">包含,架构</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074208</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="DenseForSparse层">
+  <data key="d7">1.0</data>
+  <data key="d8">DIET分类器包含DenseForSparse层，用于处理稀疏到稠密的特征转换。</data>
+  <data key="d9">包含,架构</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074217</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="Dropout">
+  <data key="d7">1.0</data>
+  <data key="d8">在DIET分类器中，可通过参数在FFNN层与DenseForSparse层之间控制Dropout的应用。</data>
+  <data key="d9">应用,正则化</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074225</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="训练步数">
+  <data key="d7">1.0</data>
+  <data key="d8">训练步数是DIET分类器的一个配置参数，用于控制训练周期数。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074236</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="学习率">
+  <data key="d7">1.0</data>
+  <data key="d8">学习率是DIET分类器的一个配置参数，用于控制模型训练的学习速率。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074243</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="use_dense_input_dropout">
+  <data key="d7">1.0</data>
+  <data key="d8">use_dense_input_dropout是DIET分类器的一个配置参数，用于控制Dropout的应用。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074251</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="checkpoint_model">
+  <data key="d7">1.0</data>
+  <data key="d8">checkpoint_model是DIET分类器的一个配置参数，用于控制是否保存模型检查点。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074262</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DIET分类器" target="evaluate_on_number_of_examples">
+  <data key="d7">1.0</data>
+  <data key="d8">evaluate_on_number_of_examples是DIET分类器的一个配置参数，用于指定评估示例数量。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074273</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LogisticRegressionClassifier" target="稠密特征">
+  <data key="d7">1.0</data>
+  <data key="d8">逻辑回归分类器的训练也可以依赖于稠密特征的存在。</data>
+  <data key="d9">依赖,输入</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074196</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LogisticRegressionClassifier" target="max_iter">
+  <data key="d7">1.0</data>
+  <data key="d8">max_iter是逻辑回归分类器的一个配置参数，用于控制最大迭代次数。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074238</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LogisticRegressionClassifier" target="solver">
+  <data key="d7">1.0</data>
+  <data key="d8">solver是逻辑回归分类器的一个配置参数，用于指定求解器类型。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074246</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LogisticRegressionClassifier" target="tol">
+  <data key="d7">1.0</data>
+  <data key="d8">tol是逻辑回归分类器的一个配置参数，用于指定优化器停止容限。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074259</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LogisticRegressionClassifier" target="random_state">
+  <data key="d7">1.0</data>
+  <data key="d8">random_state是逻辑回归分类器的一个配置参数，用于控制数据打乱的随机种子。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074269</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LogisticRegressionClassifier" target="ranking_length">
+  <data key="d7">1.0</data>
+  <data key="d8">ranking_length是逻辑回归分类器的一个配置参数，用于指定意图排名长度。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074283</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="稠密特征">
+  <data key="d7">1.0</data>
+  <data key="d8">Sklearn意图分类器必须依赖用户消息的稠密特征进行训练和预测。</data>
+  <data key="d9">依赖,输入</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074202</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="线性SVM">
+  <data key="d7">1.0</data>
+  <data key="d8">Sklearn意图分类器使用线性SVM作为其核心机器学习模型。</data>
+  <data key="d9">使用,模型</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074220</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="网格搜索">
+  <data key="d7">1.0</data>
+  <data key="d8">Sklearn意图分类器使用网格搜索来优化其线性SVM模型的超参数。</data>
+  <data key="d9">优化,使用</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074227</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="C">
+  <data key="d7">1.0</data>
+  <data key="d8">C是Sklearn意图分类器的一个配置参数，用于指定SVM的正则化值。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074251</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="kernels">
+  <data key="d7">1.0</data>
+  <data key="d8">kernels是Sklearn意图分类器的一个配置参数，用于指定SVM的内核类型。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074262</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="gamma">
+  <data key="d7">1.0</data>
+  <data key="d8">gamma是Sklearn意图分类器的一个配置参数，用于指定SVM的Gamma参数。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074273</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="max_cross_validation_folds">
+  <data key="d7">1.0</data>
+  <data key="d8">max_cross_validation_folds是Sklearn意图分类器的一个配置参数，用于指定交叉验证折数。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074286</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SklearnIntentClassifier" target="scoring_function">
+  <data key="d7">1.0</data>
+  <data key="d8">scoring_function是Sklearn意图分类器的一个配置参数，用于指定模型评估函数。</data>
+  <data key="d9">参数,配置</data>
+  <data key="d10">chunk-e0b0e1c4d631cf0610d16ca55817ac01</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074296</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自然语言理解(NLU)" target="语言模型对话式人工智能(CALM)">
+  <data key="d7">1.0</data>
+  <data key="d8">基于NLU的助手构建内容可能不适用于语言模型对话式人工智能(CALM)。</data>
+  <data key="d9">技术对比,适用性</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074338</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自然语言理解(NLU)" target="用户消息">
+  <data key="d7">1.0</data>
+  <data key="d8">自然语言理解(NLU)处理的对象是用户消息，旨在从中提取结构化信息。</data>
+  <data key="d9">信息源,处理对象</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074344</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rasa run" target="模型">
+  <data key="d7">1.0</data>
+  <data key="d8">rasa run命令可以通过-m参数指定要运行的模型。</data>
+  <data key="d9">命令参数,运行指定</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074342</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rasa run" target="日志">
+  <data key="d7">1.0</data>
+  <data key="d8">rasa run命令可以通过--log-file参数指定日志文件的输出路径。</data>
+  <data key="d9">命令参数,输出记录</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074345</data>
+  <data key="d13"></data>
+</edge>
+<edge source="用户消息" target="tokens">
+  <data key="d7">1.0</data>
+  <data key="d8">tokens是用户输入文本经过分词处理后得到的片段列表。</data>
+  <data key="d9">分词结果,文本处理</data>
+  <data key="d10">chunk-0ed01d0a52df8896f87835c170a4127f</data>
+  <data key="d11">操作步骤1.md</data>
+  <data key="d12">1767074348</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

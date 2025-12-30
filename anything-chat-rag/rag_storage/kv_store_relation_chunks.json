@@ -7,5 +7,1037 @@
     "create_time": 1765439799,
     "update_time": 1765439799,
     "_id": "Date Range 2023.12.27-2024.01.10<SEP>Travel Document"
+  },
+  "同义词<SEP>实体提取": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074070,
+    "update_time": 1767074070,
+    "_id": "同义词<SEP>实体提取"
+  },
+  "RegexFeaturizer<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074070,
+    "update_time": 1767074070,
+    "_id": "RegexFeaturizer<SEP>正则表达式"
+  },
+  "WhitespaceTokenizer<SEP>意图分类": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074070,
+    "update_time": 1767074070,
+    "_id": "WhitespaceTokenizer<SEP>意图分类"
+  },
+  "序列特征<SEP>稀疏特征提取器": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074070,
+    "update_time": 1767074070,
+    "_id": "序列特征<SEP>稀疏特征提取器"
+  },
+  "RegexEntityExtractor<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a",
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54",
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01",
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 4,
+    "create_time": 1767074085,
+    "update_time": 1767074085,
+    "_id": "RegexEntityExtractor<SEP>正则表达式"
+  },
+  "句子特征<SEP>稀疏特征提取器": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074087,
+    "update_time": 1767074087,
+    "_id": "句子特征<SEP>稀疏特征提取器"
+  },
+  "RegexFeaturizer<SEP>意图分类": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074087,
+    "update_time": 1767074087,
+    "_id": "RegexFeaturizer<SEP>意图分类"
+  },
+  "同义词<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074087,
+    "update_time": 1767074087,
+    "_id": "同义词<SEP>训练数据"
+  },
+  "MitieEntityExtractor<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074092,
+    "update_time": 1767074092,
+    "_id": "MitieEntityExtractor<SEP>正则表达式"
+  },
+  "WhitespaceTokenizer<SEP>管道": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074092,
+    "update_time": 1767074092,
+    "_id": "WhitespaceTokenizer<SEP>管道"
+  },
+  "CRFEntityExtractor<SEP>RegexFeaturizer": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a",
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 2,
+    "create_time": 1767074094,
+    "update_time": 1767074094,
+    "_id": "CRFEntityExtractor<SEP>RegexFeaturizer"
+  },
+  "句子特征<SEP>词袋模型": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074094,
+    "update_time": 1767074094,
+    "_id": "句子特征<SEP>词袋模型"
+  },
+  "SpacyEntityExtractor<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074097,
+    "update_time": 1767074097,
+    "_id": "SpacyEntityExtractor<SEP>正则表达式"
+  },
+  "WhitespaceTokenizer<SEP>配置文件": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074097,
+    "update_time": 1767074097,
+    "_id": "WhitespaceTokenizer<SEP>配置文件"
+  },
+  "LanguageModelFeaturizer<SEP>分词器": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074097,
+    "update_time": 1767074097,
+    "_id": "LanguageModelFeaturizer<SEP>分词器"
+  },
+  "RegexFeaturizer<SEP>管道": {
+    "chunk_ids": [
+      "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    ],
+    "count": 1,
+    "create_time": 1767074101,
+    "update_time": 1767074101,
+    "_id": "RegexFeaturizer<SEP>管道"
+  },
+  "句子特征<SEP>序列特征": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074101,
+    "update_time": 1767074101,
+    "_id": "句子特征<SEP>序列特征"
+  },
+  "BERT<SEP>LanguageModelFeaturizer": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074104,
+    "update_time": 1767074104,
+    "_id": "BERT<SEP>LanguageModelFeaturizer"
+  },
+  "GPT<SEP>LanguageModelFeaturizer": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074106,
+    "update_time": 1767074106,
+    "_id": "GPT<SEP>LanguageModelFeaturizer"
+  },
+  "GPT-2<SEP>LanguageModelFeaturizer": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074108,
+    "update_time": 1767074108,
+    "_id": "GPT-2<SEP>LanguageModelFeaturizer"
+  },
+  "DIETClassifier<SEP>序列特征": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074108,
+    "update_time": 1767074108,
+    "_id": "DIETClassifier<SEP>序列特征"
+  },
+  "LanguageModelFeaturizer<SEP>XLNet": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074111,
+    "update_time": 1767074111,
+    "_id": "LanguageModelFeaturizer<SEP>XLNet"
+  },
+  "DIETClassifier<SEP>句子特征": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074114,
+    "update_time": 1767074114,
+    "_id": "DIETClassifier<SEP>句子特征"
+  },
+  "DistilBERT<SEP>LanguageModelFeaturizer": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074118,
+    "update_time": 1767074118,
+    "_id": "DistilBERT<SEP>LanguageModelFeaturizer"
+  },
+  "DIETClassifier<SEP>意图分类器": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074121,
+    "update_time": 1767074121,
+    "_id": "DIETClassifier<SEP>意图分类器"
+  },
+  "RegexFeaturizer<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074121,
+    "update_time": 1767074121,
+    "_id": "RegexFeaturizer<SEP>训练数据"
+  },
+  "LanguageModelFeaturizer<SEP>RoBERTa": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074127,
+    "update_time": 1767074127,
+    "_id": "LanguageModelFeaturizer<SEP>RoBERTa"
+  },
+  "DIETClassifier<SEP>实体提取器": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074129,
+    "update_time": 1767074129,
+    "_id": "DIETClassifier<SEP>实体提取器"
+  },
+  "RegexEntityExtractor<SEP>查找表": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54",
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 2,
+    "create_time": 1767074129,
+    "update_time": 1767074129,
+    "_id": "RegexEntityExtractor<SEP>查找表"
+  },
+  "LanguageModelFeaturizer<SEP>camemBERT": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074135,
+    "update_time": 1767074135,
+    "_id": "LanguageModelFeaturizer<SEP>camemBERT"
+  },
+  "rasa train --finetune<SEP>增量训练": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074135,
+    "update_time": 1767074135,
+    "_id": "rasa train --finetune<SEP>增量训练"
+  },
+  "EntitySynonymMapper<SEP>RegexEntityExtractor": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074142,
+    "update_time": 1767074142,
+    "_id": "EntitySynonymMapper<SEP>RegexEntityExtractor"
+  },
+  "DIETClassifier<SEP>密集特征": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074142,
+    "update_time": 1767074142,
+    "_id": "DIETClassifier<SEP>密集特征"
+  },
+  "HuggingFace模型库<SEP>LanguageModelFeaturizer": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074148,
+    "update_time": 1767074148,
+    "_id": "HuggingFace模型库<SEP>LanguageModelFeaturizer"
+  },
+  "增量训练<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074148,
+    "update_time": 1767074148,
+    "_id": "增量训练<SEP>训练数据"
+  },
+  "jieba_tokenizer.py<SEP>自定义组件": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074148,
+    "update_time": 1767074148,
+    "_id": "jieba_tokenizer.py<SEP>自定义组件"
+  },
+  "RegexEntityExtractor<SEP>case_sensitive": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54",
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 2,
+    "create_time": 1767074157,
+    "update_time": 1767074157,
+    "_id": "RegexEntityExtractor<SEP>case_sensitive"
+  },
+  "DIETClassifier<SEP>增量训练": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074160,
+    "update_time": 1767074160,
+    "_id": "DIETClassifier<SEP>增量训练"
+  },
+  "LanguageModelFeaturizer<SEP>sentence-transformers/all-MiniLM-L6-v2": {
+    "chunk_ids": [
+      "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    ],
+    "count": 1,
+    "create_time": 1767074160,
+    "update_time": 1767074160,
+    "_id": "LanguageModelFeaturizer<SEP>sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "--epoch-fraction<SEP>rasa train --finetune": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074160,
+    "update_time": 1767074160,
+    "_id": "--epoch-fraction<SEP>rasa train --finetune"
+  },
+  "RegexEntityExtractor<SEP>use_lookup_tables": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074170,
+    "update_time": 1767074170,
+    "_id": "RegexEntityExtractor<SEP>use_lookup_tables"
+  },
+  "DIET分类器<SEP>特征提取器": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074170,
+    "update_time": 1767074170,
+    "_id": "DIET分类器<SEP>特征提取器"
+  },
+  "CDD<SEP>增量训练": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074176,
+    "update_time": 1767074176,
+    "_id": "CDD<SEP>增量训练"
+  },
+  "DIET分类器<SEP>意图分类": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074180,
+    "update_time": 1767074180,
+    "_id": "DIET分类器<SEP>意图分类"
+  },
+  "RegexEntityExtractor<SEP>use_regexes": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074180,
+    "update_time": 1767074180,
+    "_id": "RegexEntityExtractor<SEP>use_regexes"
+  },
+  "RegexEntityExtractor<SEP>use_word_boundaries": {
+    "chunk_ids": [
+      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    ],
+    "count": 1,
+    "create_time": 1767074187,
+    "update_time": 1767074187,
+    "_id": "RegexEntityExtractor<SEP>use_word_boundaries"
+  },
+  "LogisticRegressionClassifier<SEP>稀疏特征": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074187,
+    "update_time": 1767074187,
+    "_id": "LogisticRegressionClassifier<SEP>稀疏特征"
+  },
+  "DIET分类器<SEP>实体提取": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074193,
+    "update_time": 1767074193,
+    "_id": "DIET分类器<SEP>实体提取"
+  },
+  "LogisticRegressionClassifier<SEP>稠密特征": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074196,
+    "update_time": 1767074196,
+    "_id": "LogisticRegressionClassifier<SEP>稠密特征"
+  },
+  "DIET分类器<SEP>Transformer层": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074199,
+    "update_time": 1767074199,
+    "_id": "DIET分类器<SEP>Transformer层"
+  },
+  "SklearnIntentClassifier<SEP>稠密特征": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074202,
+    "update_time": 1767074202,
+    "_id": "SklearnIntentClassifier<SEP>稠密特征"
+  },
+  "LogisticRegressionClassifier<SEP>意图分类": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074202,
+    "update_time": 1767074202,
+    "_id": "LogisticRegressionClassifier<SEP>意图分类"
+  },
+  "DIET分类器<SEP>FFNN层": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074208,
+    "update_time": 1767074208,
+    "_id": "DIET分类器<SEP>FFNN层"
+  },
+  "SklearnIntentClassifier<SEP>意图分类": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074211,
+    "update_time": 1767074211,
+    "_id": "SklearnIntentClassifier<SEP>意图分类"
+  },
+  "CRFEntityExtractor<SEP>稠密特征": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074211,
+    "update_time": 1767074211,
+    "_id": "CRFEntityExtractor<SEP>稠密特征"
+  },
+  "DIET分类器<SEP>DenseForSparse层": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074217,
+    "update_time": 1767074217,
+    "_id": "DIET分类器<SEP>DenseForSparse层"
+  },
+  "SklearnIntentClassifier<SEP>线性SVM": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074220,
+    "update_time": 1767074220,
+    "_id": "SklearnIntentClassifier<SEP>线性SVM"
+  },
+  "CRFEntityExtractor<SEP>实体提取": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074220,
+    "update_time": 1767074220,
+    "_id": "CRFEntityExtractor<SEP>实体提取"
+  },
+  "DIET分类器<SEP>Dropout": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074225,
+    "update_time": 1767074225,
+    "_id": "DIET分类器<SEP>Dropout"
+  },
+  "SklearnIntentClassifier<SEP>网格搜索": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074227,
+    "update_time": 1767074227,
+    "_id": "SklearnIntentClassifier<SEP>网格搜索"
+  },
+  "RegexEntityExtractor<SEP>实体提取": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074227,
+    "update_time": 1767074227,
+    "_id": "RegexEntityExtractor<SEP>实体提取"
+  },
+  "CRFEntityExtractor<SEP>条件随机场": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074227,
+    "update_time": 1767074227,
+    "_id": "CRFEntityExtractor<SEP>条件随机场"
+  },
+  "DIET分类器<SEP>训练步数": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074236,
+    "update_time": 1767074236,
+    "_id": "DIET分类器<SEP>训练步数"
+  },
+  "BILOU标记<SEP>CRFEntityExtractor": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074238,
+    "update_time": 1767074238,
+    "_id": "BILOU标记<SEP>CRFEntityExtractor"
+  },
+  "LogisticRegressionClassifier<SEP>max_iter": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074238,
+    "update_time": 1767074238,
+    "_id": "LogisticRegressionClassifier<SEP>max_iter"
+  },
+  "DIET分类器<SEP>学习率": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074243,
+    "update_time": 1767074243,
+    "_id": "DIET分类器<SEP>学习率"
+  },
+  "LogisticRegressionClassifier<SEP>solver": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074246,
+    "update_time": 1767074246,
+    "_id": "LogisticRegressionClassifier<SEP>solver"
+  },
+  "DIET分类器<SEP>use_dense_input_dropout": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074251,
+    "update_time": 1767074251,
+    "_id": "DIET分类器<SEP>use_dense_input_dropout"
+  },
+  "C<SEP>SklearnIntentClassifier": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074251,
+    "update_time": 1767074251,
+    "_id": "C<SEP>SklearnIntentClassifier"
+  },
+  "LogisticRegressionClassifier<SEP>tol": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074259,
+    "update_time": 1767074259,
+    "_id": "LogisticRegressionClassifier<SEP>tol"
+  },
+  "SklearnIntentClassifier<SEP>kernels": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074262,
+    "update_time": 1767074262,
+    "_id": "SklearnIntentClassifier<SEP>kernels"
+  },
+  "DIET分类器<SEP>checkpoint_model": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074262,
+    "update_time": 1767074262,
+    "_id": "DIET分类器<SEP>checkpoint_model"
+  },
+  "LogisticRegressionClassifier<SEP>random_state": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074269,
+    "update_time": 1767074269,
+    "_id": "LogisticRegressionClassifier<SEP>random_state"
+  },
+  "DIET分类器<SEP>evaluate_on_number_of_examples": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074273,
+    "update_time": 1767074273,
+    "_id": "DIET分类器<SEP>evaluate_on_number_of_examples"
+  },
+  "SklearnIntentClassifier<SEP>gamma": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074273,
+    "update_time": 1767074273,
+    "_id": "SklearnIntentClassifier<SEP>gamma"
+  },
+  "BILOU_flag<SEP>CRFEntityExtractor": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074273,
+    "update_time": 1767074273,
+    "_id": "BILOU_flag<SEP>CRFEntityExtractor"
+  },
+  "LogisticRegressionClassifier<SEP>ranking_length": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074283,
+    "update_time": 1767074283,
+    "_id": "LogisticRegressionClassifier<SEP>ranking_length"
+  },
+  "SklearnIntentClassifier<SEP>max_cross_validation_folds": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074286,
+    "update_time": 1767074286,
+    "_id": "SklearnIntentClassifier<SEP>max_cross_validation_folds"
+  },
+  "CRFEntityExtractor<SEP>features": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074286,
+    "update_time": 1767074286,
+    "_id": "CRFEntityExtractor<SEP>features"
+  },
+  "CRFEntityExtractor<SEP>L1_c": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074293,
+    "update_time": 1767074293,
+    "_id": "CRFEntityExtractor<SEP>L1_c"
+  },
+  "SklearnIntentClassifier<SEP>scoring_function": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074296,
+    "update_time": 1767074296,
+    "_id": "SklearnIntentClassifier<SEP>scoring_function"
+  },
+  "意图<SEP>自然语言理解(NLU)": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074296,
+    "update_time": 1767074296,
+    "_id": "意图<SEP>自然语言理解(NLU)"
+  },
+  "CRFEntityExtractor<SEP>L2_c": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074302,
+    "update_time": 1767074302,
+    "_id": "CRFEntityExtractor<SEP>L2_c"
+  },
+  "实体<SEP>自然语言理解(NLU)": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074306,
+    "update_time": 1767074306,
+    "_id": "实体<SEP>自然语言理解(NLU)"
+  },
+  "意图<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074306,
+    "update_time": 1767074306,
+    "_id": "意图<SEP>训练数据"
+  },
+  "CRFEntityExtractor<SEP>featurizers": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074312,
+    "update_time": 1767074312,
+    "_id": "CRFEntityExtractor<SEP>featurizers"
+  },
+  "实体<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074315,
+    "update_time": 1767074315,
+    "_id": "实体<SEP>训练数据"
+  },
+  "CRFEntityExtractor<SEP>split_entities_by_comma": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074319,
+    "update_time": 1767074319,
+    "_id": "CRFEntityExtractor<SEP>split_entities_by_comma"
+  },
+  "Rasa<SEP>自然语言理解(NLU)": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074319,
+    "update_time": 1767074319,
+    "_id": "Rasa<SEP>自然语言理解(NLU)"
+  },
+  "查找表<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074325,
+    "update_time": 1767074325,
+    "_id": "查找表<SEP>训练数据"
+  },
+  "实体<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074325,
+    "update_time": 1767074325,
+    "_id": "实体<SEP>正则表达式"
+  },
+  "CRFEntityExtractor<SEP>token": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074330,
+    "update_time": 1767074330,
+    "_id": "CRFEntityExtractor<SEP>token"
+  },
+  "Rasa<SEP>config.yml": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074330,
+    "update_time": 1767074330,
+    "_id": "Rasa<SEP>config.yml"
+  },
+  "同义词<SEP>实体": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074333,
+    "update_time": 1767074333,
+    "_id": "同义词<SEP>实体"
+  },
+  "data/nlu.yaml<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074333,
+    "update_time": 1767074333,
+    "_id": "data/nlu.yaml<SEP>训练数据"
+  },
+  "CRFEntityExtractor<SEP>text_dense_feature": {
+    "chunk_ids": [
+      "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    ],
+    "count": 1,
+    "create_time": 1767074335,
+    "update_time": 1767074335,
+    "_id": "CRFEntityExtractor<SEP>text_dense_feature"
+  },
+  "Rasa<SEP>domain.yml": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074335,
+    "update_time": 1767074335,
+    "_id": "Rasa<SEP>domain.yml"
+  },
+  "DIETClassifier<SEP>实体": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074338,
+    "update_time": 1767074338,
+    "_id": "DIETClassifier<SEP>实体"
+  },
+  "自然语言理解(NLU)<SEP>语言模型对话式人工智能(CALM)": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074338,
+    "update_time": 1767074338,
+    "_id": "自然语言理解(NLU)<SEP>语言模型对话式人工智能(CALM)"
+  },
+  "Rasa<SEP>rasa train nlu": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074341,
+    "update_time": 1767074341,
+    "_id": "Rasa<SEP>rasa train nlu"
+  },
+  "rasa run<SEP>模型": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074342,
+    "update_time": 1767074342,
+    "_id": "rasa run<SEP>模型"
+  },
+  "用户消息<SEP>自然语言理解(NLU)": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074344,
+    "update_time": 1767074344,
+    "_id": "用户消息<SEP>自然语言理解(NLU)"
+  },
+  "rasa run<SEP>日志": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074345,
+    "update_time": 1767074345,
+    "_id": "rasa run<SEP>日志"
+  },
+  "意图<SEP>置信度": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074345,
+    "update_time": 1767074345,
+    "_id": "意图<SEP>置信度"
+  },
+  "Rasa<SEP>rasa run": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074348,
+    "update_time": 1767074348,
+    "_id": "Rasa<SEP>rasa run"
+  },
+  "tokens<SEP>用户消息": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074348,
+    "update_time": 1767074348,
+    "_id": "tokens<SEP>用户消息"
+  },
+  "实体<SEP>置信度": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074351,
+    "update_time": 1767074351,
+    "_id": "实体<SEP>置信度"
+  },
+  "意图<SEP>意图列表": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074351,
+    "update_time": 1767074351,
+    "_id": "意图<SEP>意图列表"
+  },
+  "Rasa<SEP>rasa shell": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074354,
+    "update_time": 1767074354,
+    "_id": "Rasa<SEP>rasa shell"
+  },
+  "示例用户语句<SEP>训练数据": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074354,
+    "update_time": 1767074354,
+    "_id": "示例用户语句<SEP>训练数据"
+  },
+  "同义词<SEP>同义词映射": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074354,
+    "update_time": 1767074354,
+    "_id": "同义词<SEP>同义词映射"
+  },
+  "Rasa<SEP>http://localhost:5005/model/parse": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074358,
+    "update_time": 1767074358,
+    "_id": "Rasa<SEP>http://localhost:5005/model/parse"
+  },
+  "Python<SEP>Rasa": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074360,
+    "update_time": 1767074360,
+    "_id": "Python<SEP>Rasa"
+  },
+  "Rasa<SEP>requirements.txt": {
+    "chunk_ids": [
+      "chunk-0ed01d0a52df8896f87835c170a4127f"
+    ],
+    "count": 1,
+    "create_time": 1767074362,
+    "update_time": 1767074362,
+    "_id": "Rasa<SEP>requirements.txt"
   }
 }

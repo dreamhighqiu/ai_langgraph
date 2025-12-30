@@ -124,7 +124,7 @@ exit(0 if result == 0 else 1)
 wait_for_service() {
     local port=$1
     local name=$2
-    local max_wait=30
+    local max_wait=${3:-60}  # Default 60 seconds, can be overridden
     local count=0
     
     print_info "Waiting for $name to start on port $port..."
@@ -299,7 +299,8 @@ start_lightrag() {
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
-    if wait_for_service $port "$name"; then
+    # LightRAG may take longer to initialize (storage initialization)
+    if wait_for_service $port "$name" 90; then
         print_success "$name started (PID: $pid, Port: $port)"
         printf "         API Docs: ${CYAN}http://localhost:$port/docs${NC}\n"
     else
@@ -353,6 +354,19 @@ start_langgraph_server() {
     
     print_info "Starting $name..."
     
+    # Install Node.js dependencies for automation-quality-mcp if needed
+    local automation_mcp_dir="$PROJECT_ROOT/testing-agents-service/testing-agents-service/src/api_agent/mcp_servers/automation-quality-mcp"
+    if [ -d "$automation_mcp_dir" ] && [ ! -d "$automation_mcp_dir/node_modules" ]; then
+        print_info "Installing Node.js dependencies for automation-quality-mcp..."
+        cd "$automation_mcp_dir"
+        if command -v npm &> /dev/null; then
+            npm install 2>&1 | head -20
+        else
+            print_warning "npm not found, automation-quality-mcp may not work"
+        fi
+        cd "$PROJECT_ROOT"
+    fi
+    
     cd "$PROJECT_ROOT/testing-agents-service/testing-agents-service"
     export PATH="$VENV_BIN:$PATH"
     export PYTHONIOENCODING=utf-8
@@ -363,7 +377,8 @@ start_langgraph_server() {
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
-    if wait_for_service $port "$name"; then
+    # LangGraph may take longer to initialize (graph loading, MCP connections)
+    if wait_for_service $port "$name" 120; then
         print_success "$name started (PID: $pid, Port: $port)"
         printf "         API Docs: ${CYAN}http://localhost:$port/docs${NC}\n"
         printf "         Studio:   ${CYAN}http://localhost:$port/ui${NC}\n"
@@ -391,10 +406,19 @@ start_agent_ui() {
     # Check if node_modules exists
     if [ ! -d "node_modules" ]; then
         print_info "Installing frontend dependencies..."
-        yarn install 2>/dev/null || npm install
+        if command -v yarn &> /dev/null; then
+            yarn install
+        else
+            npm install
+        fi
     fi
     
-    nohup env PORT=$port yarn dev > "$log_file" 2>&1 &
+    # Use npm if yarn is not available
+    if command -v yarn &> /dev/null; then
+        nohup env PORT=$port yarn dev > "$log_file" 2>&1 &
+    else
+        nohup env PORT=$port npm run dev > "$log_file" 2>&1 &
+    fi
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"

@@ -1,6 +1,6 @@
 {
   "doc-fa7239cf2000114b9ada546d638aeefb": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 5,
     "chunks_list": [
       "chunk-0ed01d0a52df8896f87835c170a4127f",
@@ -12,11 +12,12 @@
     "content_summary": "# 意图与实体识别\r\n基于自然语言理解的助手本节涉及构建基于NLU的助手。如果您正在使用语言模型对话式人工智能(CALM)，此内容可能不适用于您。NLU(自然语言理解)的目标是从用户消息中提取结构化信息。这通常包括用户的意图以及消息中包含的任何实体。你可以在训练数据中添加额外的信息，如正则表达式和查找表，以帮助模型正确识别意图和实体。\r\n\r\n## 步骤\r\n 1、安装\r\n 2、进入watch目录下\r\n 3、在data/nlu.yaml中添加调整训练数据\r\n 4、在config.yml中调整相关配置...",
     "content_length": 11267,
     "created_at": "2025-12-30T05:45:54.453767+00:00",
-    "updated_at": "2025-12-30T05:45:54.519777+00:00",
+    "updated_at": "2025-12-30T05:59:24.605103+00:00",
     "file_path": "操作步骤1.md",
     "track_id": "upload_20251230_134554_d4fabeff",
     "metadata": {
-      "processing_start_time": 1767073554
+      "processing_start_time": 1767073554,
+      "processing_end_time": 1767074364
     }
   }
 }

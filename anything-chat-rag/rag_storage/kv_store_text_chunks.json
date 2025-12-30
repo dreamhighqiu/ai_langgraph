@@ -5,10 +5,13 @@
     "chunk_order_index": 0,
     "full_doc_id": "doc-fa7239cf2000114b9ada546d638aeefb",
     "file_path": "操作步骤1.md",
-    "llm_cache_list": [],
-    "create_time": 1767072994,
-    "update_time": 1767072994,
-    "_id": "chunk-0ed01d0a52df8896f87835c170a4127f"
+    "llm_cache_list": [
+      "default:extract:d9600de2c39501dc7097e4af77605644",
+      "default:extract:0b47255739b0edfc4975774b67b71f0a"
+    ],
+    "update_time": 1767073701,
+    "_id": "chunk-0ed01d0a52df8896f87835c170a4127f",
+    "create_time": 0
   },
   "chunk-6e7a38ff30ab59324d9302f116d5064a": {
     "tokens": 1200,
@@ -16,10 +19,13 @@
     "chunk_order_index": 1,
     "full_doc_id": "doc-fa7239cf2000114b9ada546d638aeefb",
     "file_path": "操作步骤1.md",
-    "llm_cache_list": [],
-    "create_time": 1767072994,
-    "update_time": 1767072994,
-    "_id": "chunk-6e7a38ff30ab59324d9302f116d5064a"
+    "llm_cache_list": [
+      "default:extract:81640de0c65fed636cbad31b1e833810",
+      "default:extract:f3a72c3c44ebd3b9b034a6b0c495827e"
+    ],
+    "update_time": 1767073676,
+    "_id": "chunk-6e7a38ff30ab59324d9302f116d5064a",
+    "create_time": 0
   },
   "chunk-e2a73219a6b81a765a98ce10205dfeb7": {
     "tokens": 1200,
@@ -27,10 +33,13 @@
     "chunk_order_index": 2,
     "full_doc_id": "doc-fa7239cf2000114b9ada546d638aeefb",
     "file_path": "操作步骤1.md",
-    "llm_cache_list": [],
-    "create_time": 1767072994,
-    "update_time": 1767072994,
-    "_id": "chunk-e2a73219a6b81a765a98ce10205dfeb7"
+    "llm_cache_list": [
+      "default:extract:bccdb854ca73702e9cde3662b549c95a",
+      "default:extract:e44ae100330c3c3431ca8a1504ac1c31"
+    ],
+    "update_time": 1767073686,
+    "_id": "chunk-e2a73219a6b81a765a98ce10205dfeb7",
+    "create_time": 0
   },
   "chunk-e0b0e1c4d631cf0610d16ca55817ac01": {
     "tokens": 1200,
@@ -38,10 +47,13 @@
     "chunk_order_index": 3,
     "full_doc_id": "doc-fa7239cf2000114b9ada546d638aeefb",
     "file_path": "操作步骤1.md",
-    "llm_cache_list": [],
-    "create_time": 1767072994,
-    "update_time": 1767072994,
-    "_id": "chunk-e0b0e1c4d631cf0610d16ca55817ac01"
+    "llm_cache_list": [
+      "default:extract:35758dec0eb1f19ea3a32b64ae2615ef",
+      "default:extract:d2ada95bca8172f480f44f888afb8ec7"
+    ],
+    "update_time": 1767073755,
+    "_id": "chunk-e0b0e1c4d631cf0610d16ca55817ac01",
+    "create_time": 0
   },
   "chunk-c0dd04808417ed9e3c6f74d1e54d5a54": {
     "tokens": 677,
@@ -49,9 +61,12 @@
     "chunk_order_index": 4,
     "full_doc_id": "doc-fa7239cf2000114b9ada546d638aeefb",
     "file_path": "操作步骤1.md",
-    "llm_cache_list": [],
-    "create_time": 1767072994,
-    "update_time": 1767072994,
-    "_id": "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+    "llm_cache_list": [
+      "default:extract:253adba1016a7677c23dfb6b3ec0be2c",
+      "default:extract:2524f93f9bd2c309813443974191451f"
+    ],
+    "update_time": 1767073736,
+    "_id": "chunk-c0dd04808417ed9e3c6f74d1e54d5a54",
+    "create_time": 0
   }
 }

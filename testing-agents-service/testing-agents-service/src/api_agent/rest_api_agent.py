@@ -9,6 +9,7 @@
 
 import asyncio
 import os
+from pathlib import Path
 from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from deepagents import create_deep_agent as create_agent
@@ -18,12 +19,18 @@ os.environ["DEEPSEEK_API_KEY"] = "sk-868325fd211f4303a106658a98bb9aab"
 model = init_chat_model("deepseek:deepseek-chat")
 # pragma: no cover  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZDNnMmVnPT06OWQ4NmJmNzg=
 
+# Get the directory of this file and build relative path to automation-quality-mcp
+_current_dir = Path(__file__).parent
+_automation_mcp_dir = _current_dir / "mcp_servers" / "automation-quality-mcp"
+_automation_mcp_server = _automation_mcp_dir / "mcpServer.js"
+_automation_mcp_server_str = str(_automation_mcp_server.resolve())
+
 client = MultiServerMCPClient(
     {
         "automation-quality": {
             "transport": "stdio",
-            "command": "npx",
-            "args": [r"C:\Users\86134\Desktop\workspace\production\004\testing-agents-service\src\api_agent\mcp_servers\automation-quality-mcp"],
+            "command": "node",
+            "args": [_automation_mcp_server_str],
             "env": {
                 "NODE_ENV": "production",
                 "OUTPUT_DIR": "./api-test-reports"

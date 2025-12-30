@@ -1542,3 +1542,68 @@ ollama._types.ResponseError: model "qwen3-embedding:0.6b" not found, try pulling
 2025-12-30 13:54:30,394 - lightrag - INFO - Phase 2: Processing 114 relations from doc-fa7239cf2000114b9ada546d638aeefb (async: 8)
 2025-12-30 13:55:27,555 - uvicorn.access - INFO - 127.0.0.1:50240 - "GET /docs HTTP/1.1" 200
 2025-12-30 13:55:29,582 - uvicorn.access - INFO - 127.0.0.1:55443 - "GET /openapi.json HTTP/1.1" 200
+2025-12-30 13:59:24,603 - lightrag - INFO - Phase 3: Updating final 109(109+0) entities and  114 relations from doc-fa7239cf2000114b9ada546d638aeefb
+2025-12-30 13:59:24,603 - lightrag - INFO - Completed merging: 109 entities, 0 extra entities, 114 relations
+2025-12-30 13:59:24,644 - lightrag - INFO - [] Writing graph with 139 nodes, 115 edges
+2025-12-30 13:59:24,655 - lightrag - INFO - In memory DB persist to disk
+2025-12-30 13:59:24,655 - lightrag - INFO - Completed processing file 1/1: 操作步骤1.md
+2025-12-30 13:59:24,656 - lightrag - INFO - Enqueued document processing pipeline stopped
+2025-12-30 14:02:45,586 - uvicorn.error - INFO - Shutting down
+2025-12-30 14:02:45,694 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-30 14:02:45,696 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-30 14:02:45,696 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-30 14:02:45,697 - uvicorn.error - INFO - Finished server process [38316]
+2025-12-30 14:03:02,668 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 14:03:02,669 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-30 14:03:04,309 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-30 14:03:04,310 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-30 14:03:04,310 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-30 14:03:04,311 - lightrag - INFO - Reranking is disabled
+2025-12-30 14:03:05,031 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2025-12-30 14:03:05,831 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 139 nodes, 115 edges
+2025-12-30 14:03:05,858 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-30 14:03:05,858 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2025-12-30 14:03:06,053 - uvicorn.error - INFO - Started server process [21928]
+2025-12-30 14:03:06,054 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-30 14:03:06,056 - lightrag - INFO - [] Process 21928 KV load full_docs with 1 records
+2025-12-30 14:03:06,058 - lightrag - INFO - [] Process 21928 KV load text_chunks with 5 records
+2025-12-30 14:03:06,059 - lightrag - INFO - [] Process 21928 KV load full_entities with 1 records
+2025-12-30 14:03:06,060 - lightrag - INFO - [] Process 21928 KV load full_relations with 1 records
+2025-12-30 14:03:06,062 - lightrag - INFO - [] Process 21928 KV load entity_chunks with 136 records
+2025-12-30 14:03:06,063 - lightrag - INFO - [] Process 21928 KV load relation_chunks with 115 records
+2025-12-30 14:03:06,066 - lightrag - INFO - [] Process 21928 KV load llm_response_cache with 25 records
+2025-12-30 14:03:06,067 - lightrag - INFO - [] Process 21928 doc status load doc_status with 1 records
+2025-12-30 14:03:06,068 - uvicorn.error - INFO - Application startup complete.
+2025-12-30 14:03:06,069 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-30 14:09:32,864 - uvicorn.error - INFO - Shutting down
+2025-12-30 14:09:32,971 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-30 14:09:32,972 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-30 14:09:32,973 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-30 14:09:32,973 - uvicorn.error - INFO - Finished server process [21928]
+2025-12-30 14:09:41,542 - lightrag - INFO - OpenAI LLM Options: {}
+2025-12-30 14:09:41,544 - lightrag - INFO - Ollama Embedding Options: {}
+2025-12-30 14:09:45,562 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2025-12-30 14:09:45,563 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2025-12-30 14:09:45,564 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2025-12-30 14:09:45,565 - lightrag - INFO - Reranking is disabled
+2025-12-30 14:09:47,015 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2025-12-30 14:09:48,542 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 139 nodes, 115 edges
+2025-12-30 14:09:48,582 - lightrag - INFO - RAG-Anything processor created successfully
+2025-12-30 14:09:48,583 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2025-12-30 14:09:48,943 - uvicorn.error - INFO - Started server process [24388]
+2025-12-30 14:09:48,944 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-30 14:09:48,950 - lightrag - INFO - [] Process 24388 KV load full_docs with 1 records
+2025-12-30 14:09:48,952 - lightrag - INFO - [] Process 24388 KV load text_chunks with 5 records
+2025-12-30 14:09:48,955 - lightrag - INFO - [] Process 24388 KV load full_entities with 1 records
+2025-12-30 14:09:48,957 - lightrag - INFO - [] Process 24388 KV load full_relations with 1 records
+2025-12-30 14:09:48,960 - lightrag - INFO - [] Process 24388 KV load entity_chunks with 136 records
+2025-12-30 14:09:48,963 - lightrag - INFO - [] Process 24388 KV load relation_chunks with 115 records
+2025-12-30 14:09:48,969 - lightrag - INFO - [] Process 24388 KV load llm_response_cache with 25 records
+2025-12-30 14:09:48,971 - lightrag - INFO - [] Process 24388 doc status load doc_status with 1 records
+2025-12-30 14:09:48,973 - uvicorn.error - INFO - Application startup complete.
+2025-12-30 14:09:48,975 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-30 14:10:05,836 - uvicorn.error - INFO - Shutting down
+2025-12-30 14:10:05,944 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-30 14:10:05,945 - lightrag - INFO - Successfully finalized 12 storages
+2025-12-30 14:10:05,950 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-30 14:10:05,951 - uvicorn.error - INFO - Finished server process [24388]

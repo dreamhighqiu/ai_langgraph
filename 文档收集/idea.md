@@ -113,3 +113,6 @@ html报告要求：
 并且生成可执行的发布脚本
 @start_all.sh @start_all.ps1 @start_all.bat 
 里面所有的服务都需要覆盖部署
+
+@https://github.com/insistence/RuoYi-Vue3-FastAPI
+https://gitee.com/xuesjie/TaiXu-Admin

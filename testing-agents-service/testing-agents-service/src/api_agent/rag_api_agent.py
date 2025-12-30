@@ -287,10 +287,37 @@ from api_agent.core.orchestrator import APITestOrchestrator
 #         asyncio.run(run_interactive_mode(config))
 # fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WmpaalF3PT06ZTc5MWI5N2Y=
 
-api = APITestOrchestrator()
-asyncio.run(api.initialize())
+# 配置日志
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
-agent = api.agent
+# 初始化 API 编排器，如果 MCP 服务器不可用则优雅降级
+api = APITestOrchestrator()
+try:
+    asyncio.run(api.initialize())
+    agent = api.agent
+except ExceptionGroup as eg:
+    # 捕获 ExceptionGroup（MCP 连接错误）
+    logger.error(f"Failed to initialize APITestOrchestrator due to MCP server connection errors: {eg}")
+    # 创建一个不依赖 MCP 工具的简化 agent
+    from api_agent.core.orchestrator import create_api_test_agent
+    from api_agent.core.config import get_config
+    config = get_config()
+    agent = create_api_test_agent(config=config, tools=[], debug=False)
+    logger.warning("Created agent without MCP tools due to connection failures")
+except Exception as e:
+    # 捕获其他异常
+    logger.error(f"An unexpected error occurred during APITestOrchestrator initialization: {e}")
+    # 创建一个不依赖 MCP 工具的简化 agent
+    from api_agent.core.orchestrator import create_api_test_agent
+    from api_agent.core.config import get_config
+    config = get_config()
+    agent = create_api_test_agent(config=config, tools=[], debug=False)
+    logger.warning("Created agent without MCP tools due to initialization error")
+
 # noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WmpaalF3PT06ZTc5MWI5N2Y=
 
 #

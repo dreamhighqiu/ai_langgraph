@@ -53,7 +53,7 @@ LightRAG log file: D:\yunxia\ai_langgraph\anything-chat-rag\lightrag.log
 [35m
 💾 Storage Configuration:[0m
 [37m    ├─ KV Storage: [0m[33mJsonKVStorage[0m
-[37m    ├─ Vector Storage: [0m[33mNanoVectorDBStorage[0m
+[37m    ├─ Vector Storage: [0m[33mMilvusVectorDBStorage[0m
 [37m    ├─ Graph Storage: [0m[33mNetworkXStorage[0m
 [37m    ├─ Document Status Storage: [0m[33mJsonDocStatusStorage[0m
 [37m    └─ Workspace: [0m[33m-[0m
@@ -82,43 +82,27 @@ INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=Tru
 INFO: Embedding max_token_size: 8192 (from ollama provider default)
 INFO: Reranking is disabled
 INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
-INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 139 nodes, 115 edges
+INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 197 nodes, 157 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [24388]
+INFO: Started server process [11928]
 INFO: Waiting for application startup.
-INFO: [] Process 24388 KV load full_docs with 1 records
-INFO: [] Process 24388 KV load text_chunks with 5 records
-INFO: [] Process 24388 KV load full_entities with 1 records
-INFO: [] Process 24388 KV load full_relations with 1 records
-INFO: [] Process 24388 KV load entity_chunks with 136 records
-INFO: [] Process 24388 KV load relation_chunks with 115 records
-INFO: [] Process 24388 KV load llm_response_cache with 25 records
-INFO: [] Process 24388 doc status load doc_status with 1 records
+INFO: [] Process 11928 KV load full_docs with 2 records
+INFO: [] Process 11928 KV load text_chunks with 8 records
+INFO: [] Process 11928 KV load full_entities with 2 records
+INFO: [] Process 11928 KV load full_relations with 2 records
+INFO: [] Process 11928 KV load entity_chunks with 194 records
+INFO: [] Process 11928 KV load relation_chunks with 157 records
+INFO: [] VectorDB collection 'entities' exists check: True
+INFO: [] VectorDB Collection 'entities' compatibility validation passed
+INFO: [] Milvus collection 'entities' initialized successfully
+INFO: [] VectorDB collection 'relationships' exists check: True
+INFO: [] VectorDB Collection 'relationships' compatibility validation passed
+INFO: [] Milvus collection 'relationships' initialized successfully
+INFO: [] VectorDB collection 'chunks' exists check: True
+INFO: [] VectorDB Collection 'chunks' compatibility validation passed
+INFO: [] Milvus collection 'chunks' initialized successfully
+INFO: [] Process 11928 KV load llm_response_cache with 31 records
+INFO: [] Process 11928 doc status load doc_status with 2 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: Shutting down
-INFO: Waiting for application shutdown.
-INFO: Successfully finalized 12 storages
-INFO: Application shutdown complete.
-INFO: Finished server process [24388]
-[33m
-================================================================================[0m
-[33mWARNING: Frontend Source Code Has Been Updated[0m
-[33m================================================================================[0m
-[33mThe frontend source code is newer than the current build.[0m
-[33mThis might happen after 'git pull' or manual code changes.
-[0m
-[36mRecommended: Rebuild the frontend to use the latest changes:[0m
-[36m    cd lightrag_webui[0m
-[36m    bun install --frozen-lockfile[0m
-[36m    bun run build[0m
-[36m    cd ..[0m
-[33m
-The server will continue with the current build.[0m
-[33m================================================================================
-[0m
-Starting Uvicorn server in single-process mode on 0.0.0.0:9621
-[32m
-Server is ready to accept connections! 🚀
-[0m

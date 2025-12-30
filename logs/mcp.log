@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2025-12-30 14:09:58,868 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2025-12-30 14:52:10,678 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -21,17 +21,17 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2025-12-30 14:09:58,929 - __main__ - INFO - Starting RAG Anything MCP Server...
-2025-12-30 14:09:58,959 - __main__ - INFO - Configuration loaded
-2025-12-30 14:09:58,959 - __main__ - INFO -   LLM Provider: deepseek
-2025-12-30 14:09:58,959 - __main__ - INFO -   LLM Model: deepseek-chat
-2025-12-30 14:09:58,959 - __main__ - INFO -   RAG Parser: docling
-2025-12-30 14:09:58,959 - __main__ - INFO - Creating LLM model function...
-2025-12-30 14:09:58,959 - __main__ - INFO - Creating vision model function...
-2025-12-30 14:09:58,960 - __main__ - INFO - Creating embedding function...
-2025-12-30 14:09:58,960 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2025-12-30 14:09:58,960 - __main__ - INFO - Creating RAGAnything connector...
-2025-12-30 14:09:58,960 - __main__ - INFO - Initializing RAGAnything...
+2025-12-30 14:52:10,724 - __main__ - INFO - Starting RAG Anything MCP Server...
+2025-12-30 14:52:10,753 - __main__ - INFO - Configuration loaded
+2025-12-30 14:52:10,753 - __main__ - INFO -   LLM Provider: deepseek
+2025-12-30 14:52:10,753 - __main__ - INFO -   LLM Model: deepseek-chat
+2025-12-30 14:52:10,753 - __main__ - INFO -   RAG Parser: docling
+2025-12-30 14:52:10,753 - __main__ - INFO - Creating LLM model function...
+2025-12-30 14:52:10,754 - __main__ - INFO - Creating vision model function...
+2025-12-30 14:52:10,754 - __main__ - INFO - Creating embedding function...
+2025-12-30 14:52:10,754 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2025-12-30 14:52:10,754 - __main__ - INFO - Creating RAGAnything connector...
+2025-12-30 14:52:10,754 - __main__ - INFO - Initializing RAGAnything...
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ./rag_storage
 INFO:   Parser: docling
@@ -41,70 +41,34 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': './rag_storage'}
 INFO: [] Created new empty graph file: ./rag_storage\graph_chunk_entity_relation.graphml
-2025-12-30 14:10:30,093 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
-2025-12-30 14:10:30,094 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
-2025-12-30 14:10:30,096 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
-INFO: [] Process 38692 KV load full_docs with 0 records
-Traceback (most recent call last):
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 654, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2348, in wrapper
-    return await func(*args)
-           ^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastmcp\server\server.py", line 634, in run_async
-    await self.run_http_async(
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastmcp\server\server.py", line 2614, in run_http_async
-    async with self._lifespan_manager():
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 210, in __aenter__
-    return await anext(self.gen)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastmcp\server\server.py", line 590, in _lifespan_manager
-    async with (
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 210, in __aenter__
-    return await anext(self.gen)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\server.py", line 95, in server_lifespan
-    init_result = await connector.initialize()
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 82, in initialize
-    init_result = await self.rag_anything._ensure_lightrag_initialized()
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\raganything.py", line 337, in _ensure_lightrag_initialized
-    await self.lightrag.initialize_storages()
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 709, in initialize_storages
-    await storage.initialize()
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\json_kv_impl.py", line 72, in initialize
-    async with self._storage_lock:
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py", line 1545, in __aexit__
-    result = await ctx.__aexit__(exc_type, exc_val, exc_tb)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py", line 1057, in __aexit__
-    all_errors = await asyncio.shield(release_all_locks())
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-asyncio.exceptions.CancelledError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\server.py", line 312, in <module>
-    main()
-  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\server.py", line 306, in main
-    mcp.run(transport="sse", port=args.port, host=args.host)
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastmcp\server\server.py", line 654, in run
-    anyio.run(
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 75, in run
-    return async_backend.run(func, args, {}, backend_options)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2365, in run
-    return runner.run(wrapper())
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 123, in run
-    raise KeyboardInterrupt()
-KeyboardInterrupt
-Warning: Failed to finalize RAGAnything storages: There is no current event loop in thread 'MainThread'.
+2025-12-30 14:52:38,618 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
+2025-12-30 14:52:38,619 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
+2025-12-30 14:52:38,622 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
+INFO: [] Process 17236 KV load full_docs with 0 records
+INFO: [] Process 17236 KV load text_chunks with 0 records
+INFO: [] Process 17236 KV load full_entities with 0 records
+INFO: [] Process 17236 KV load full_relations with 0 records
+INFO: [] Process 17236 KV load entity_chunks with 0 records
+INFO: [] Process 17236 KV load relation_chunks with 0 records
+INFO: [] Process 17236 KV load llm_response_cache with 0 records
+INFO: [] Process 17236 doc status load doc_status with 0 records
+INFO: [] Process 17236 KV load parse_cache with 0 records
+INFO: Multimodal processors initialized with context support
+INFO: Available processors: ['image', 'table', 'equation', 'generic']
+INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+INFO: LightRAG, parse cache, and multimodal processors initialized
+2025-12-30 14:52:38,633 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2025-12-30 14:52:38,633 - __main__ - INFO - RAG Anything initialized successfully
+2025-12-30 14:52:38,633 - __main__ - INFO -   Working Directory: ./rag_storage
+2025-12-30 14:52:38,633 - __main__ - INFO -   Parser: docling
+[12/30/25 14:52:38] INFO     Starting MCP server '但问企业级RAG' server.py:2618
+                             with transport 'sse' on                           
+                             http://0.0.0.0:8001/sse                           
+INFO:     Started server process [17236]
+INFO:     Waiting for application startup.
+2025-12-30 14:52:38,922 - docket.worker - INFO - Starting worker 'caobinbin#17236' with the following tasks:
+2025-12-30 14:52:38,922 - docket.worker - INFO - * trace(message: str, ...)
+2025-12-30 14:52:38,922 - docket.worker - INFO - * fail(message: str, ...)
+2025-12-30 14:52:38,923 - docket.worker - INFO - * sleep(seconds: float, ...)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)

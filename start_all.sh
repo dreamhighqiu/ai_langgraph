@@ -53,7 +53,7 @@ else
     # Linux/macOS
     VENV_PYTHON="$PROJECT_ROOT/.venv/bin/python"
     VENV_BIN="$PROJECT_ROOT/.venv/bin"
-fi
+    fi
 
 # =============================================================================
 # Utility Functions
@@ -118,6 +118,104 @@ exit(0 if result == 0 else 1)
 " 2>/dev/null && return 0 || return 1
         fi
     fi
+}
+
+# Kill process using a specific port (cross-platform)
+kill_port() {
+    local port=$1
+    local killed=false
+    
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        # Windows: use Python to find and kill process on port
+        local pid=$("$VENV_PYTHON" -c "
+import socket
+import subprocess
+import sys
+import os
+
+port = $port
+try:
+    # Use netstat to find PID
+    if os.name == 'nt':
+        try:
+            # Run netstat -ano to find listening processes
+            result = subprocess.run(
+                ['netstat', '-ano'],
+                capture_output=True,
+                text=True,
+                shell=True,
+                timeout=5
+            )
+            for line in result.stdout.split('\n'):
+                if f':{port}' in line and 'LISTENING' in line:
+                    parts = line.split()
+                    if len(parts) >= 5:
+                        pid_str = parts[-1].strip()
+                        if pid_str.isdigit() and pid_str != '0':
+                            print(pid_str)
+                            break
+        except Exception as e:
+            pass
+except:
+    pass
+" 2>/dev/null)
+        
+        if [ -n "$pid" ] && [ "$pid" != "0" ]; then
+            print_info "Killing process on port $port (PID: $pid)..."
+            if command -v taskkill &> /dev/null; then
+                taskkill /F /PID "$pid" >/dev/null 2>&1 && killed=true
+            else
+                # Fallback: try kill command (Git Bash)
+                kill -9 "$pid" >/dev/null 2>&1 && killed=true
+            fi
+        fi
+    else
+        # Linux/macOS: use lsof to find PID, then kill
+        if command -v lsof &> /dev/null; then
+            local pid=$(lsof -ti:$port 2>/dev/null | head -1)
+            if [ -n "$pid" ]; then
+                print_info "Killing process on port $port (PID: $pid)..."
+                kill -9 "$pid" >/dev/null 2>&1 && killed=true
+            fi
+        else
+            # Fallback: use fuser (Linux)
+            if command -v fuser &> /dev/null; then
+                fuser -k "$port/tcp" >/dev/null 2>&1 && killed=true
+            fi
+        fi
+    fi
+    
+    if [ "$killed" = true ]; then
+        # Wait a moment for the port to be released
+        sleep 2
+        # Verify port is actually free
+        if ! check_port $port; then
+            return 0
+        else
+            print_warning "Port $port may still be in use after kill attempt"
+            return 1
+        fi
+    else
+        return 1
+    fi
+}
+
+# Ensure port is free, kill if occupied
+ensure_port_free() {
+    local port=$1
+    local name=$2
+    
+    if check_port $port; then
+        print_warning "Port $port is already in use ($name)"
+        if kill_port $port; then
+            print_success "Freed port $port"
+            return 0
+        else
+            print_error "Failed to free port $port"
+            return 1
+        fi
+    fi
+    return 0
 }
 
 # Wait for service to start
@@ -284,9 +382,10 @@ start_lightrag() {
     local pid_file="$PID_DIR/lightrag.pid"
     local log_file="$LOG_DIR/lightrag.log"
     
-    if check_port $port; then
-        print_warning "$name is already running (port $port)"
-        return 0
+    # Ensure port is free
+    if ! ensure_port_free $port "$name"; then
+        print_error "Cannot start $name: port $port is occupied and cannot be freed"
+        return 1
     fi
     
     print_info "Starting $name..."
@@ -315,9 +414,10 @@ start_mcp_server() {
     local pid_file="$PID_DIR/mcp.pid"
     local log_file="$LOG_DIR/mcp.log"
     
-    if check_port $port; then
-        print_warning "$name is already running (port $port)"
-        return 0
+    # Ensure port is free (MCP Server must use fixed port 8001)
+    if ! ensure_port_free $port "$name"; then
+        print_error "Cannot start $name: port $port is occupied and cannot be freed"
+        return 1
     fi
     
     print_info "Starting $name..."
@@ -347,9 +447,10 @@ start_langgraph_server() {
     local pid_file="$PID_DIR/langgraph.pid"
     local log_file="$LOG_DIR/langgraph.log"
     
-    if check_port $port; then
-        print_warning "$name is already running (port $port)"
-        return 0
+    # Ensure port is free
+    if ! ensure_port_free $port "$name"; then
+        print_error "Cannot start $name: port $port is occupied and cannot be freed"
+        return 1
     fi
     
     print_info "Starting $name..."
@@ -394,9 +495,10 @@ start_agent_ui() {
     local pid_file="$PID_DIR/agent_ui.pid"
     local log_file="$LOG_DIR/agent_ui.log"
     
-    if check_port $port; then
-        print_warning "$name is already running (port $port)"
-        return 0
+    # Ensure port is free
+    if ! ensure_port_free $port "$name"; then
+        print_error "Cannot start $name: port $port is occupied and cannot be freed"
+        return 1
     fi
     
     print_info "Starting $name..."
@@ -410,12 +512,12 @@ start_agent_ui() {
             yarn install
         else
             npm install
-        fi
+    fi
     fi
     
     # Use npm if yarn is not available
     if command -v yarn &> /dev/null; then
-        nohup env PORT=$port yarn dev > "$log_file" 2>&1 &
+    nohup env PORT=$port yarn dev > "$log_file" 2>&1 &
     else
         nohup env PORT=$port npm run dev > "$log_file" 2>&1 &
     fi
@@ -712,29 +814,29 @@ main() {
         echo ""
     else
         failed_services+=("LightRAG Server")
-        echo ""
+    echo ""
     fi
     
     if start_mcp_server; then
         echo ""
     else
         failed_services+=("MCP Server")
-        echo ""
+    echo ""
     fi
     
     if start_langgraph_server; then
         echo ""
     else
         failed_services+=("LangGraph Server")
-        echo ""
+    echo ""
     fi
     
     if [ "$include_frontend" = true ]; then
         if start_agent_ui; then
-            echo ""
+        echo ""
         else
             failed_services+=("Agent UI")
-            echo ""
+        echo ""
         fi
     fi
     

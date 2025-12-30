@@ -1039,5 +1039,385 @@
     "create_time": 1767074362,
     "update_time": 1767074362,
     "_id": "Rasa<SEP>requirements.txt"
+  },
+  "Dify工作流<SEP>算法备案": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076431,
+    "update_time": 1767076431,
+    "_id": "Dify工作流<SEP>算法备案"
+  },
+  "建友官网<SEP>隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076431,
+    "update_time": 1767076431,
+    "_id": "建友官网<SEP>隐私协议"
+  },
+  "AI服务器<SEP>小季": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076431,
+    "update_time": 1767076431,
+    "_id": "AI服务器<SEP>小季"
+  },
+  "Dify CPU服务器<SEP>移动云": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076431,
+    "update_time": 1767076431,
+    "_id": "Dify CPU服务器<SEP>移动云"
+  },
+  "Ragflow GPU服务器<SEP>腾讯云": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076431,
+    "update_time": 1767076431,
+    "_id": "Ragflow GPU服务器<SEP>腾讯云"
+  },
+  "敏感词API<SEP>敏感词参考源码": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076431,
+    "update_time": 1767076431,
+    "_id": "敏感词API<SEP>敏感词参考源码"
+  },
+  "Dify工作流<SEP>百寻智能问答+AI": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076452,
+    "update_time": 1767076452,
+    "_id": "Dify工作流<SEP>百寻智能问答+AI"
+  },
+  "健康数据管理类APP<SEP>提示词参考": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076452,
+    "update_time": 1767076452,
+    "_id": "健康数据管理类APP<SEP>提示词参考"
+  },
+  "算法备案<SEP>隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076452,
+    "update_time": 1767076452,
+    "_id": "算法备案<SEP>隐私协议"
+  },
+  "AI医生智能体<SEP>健康计划智能体": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076458,
+    "update_time": 1767076458,
+    "_id": "AI医生智能体<SEP>健康计划智能体"
+  },
+  "健康信息咨询类APP<SEP>提示词参考": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076460,
+    "update_time": 1767076460,
+    "_id": "健康信息咨询类APP<SEP>提示词参考"
+  },
+  "Tokyo<SEP>World Athletics Championship": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076460,
+    "update_time": 1767076460,
+    "_id": "Tokyo<SEP>World Athletics Championship"
+  },
+  "100m Sprint Record<SEP>Noah Carter": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076460,
+    "update_time": 1767076460,
+    "_id": "100m Sprint Record<SEP>Noah Carter"
+  },
+  "健康计划智能体<SEP>标准化管理方案": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076466,
+    "update_time": 1767076466,
+    "_id": "健康计划智能体<SEP>标准化管理方案"
+  },
+  "健康方式养成类APP<SEP>提示词参考": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076470,
+    "update_time": 1767076470,
+    "_id": "健康方式养成类APP<SEP>提示词参考"
+  },
+  "Carbon-Fiber Spikes<SEP>Noah Carter": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076470,
+    "update_time": 1767076470,
+    "_id": "Carbon-Fiber Spikes<SEP>Noah Carter"
+  },
+  "个性化健康管理方案<SEP>用户健康信息": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076470,
+    "update_time": 1767076470,
+    "_id": "个性化健康管理方案<SEP>用户健康信息"
+  },
+  "监测与反馈<SEP>监测指标": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076470,
+    "update_time": 1767076470,
+    "_id": "监测与反馈<SEP>监测指标"
+  },
+  "提示词参考<SEP>问诊类APP": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076485,
+    "update_time": 1767076485,
+    "_id": "提示词参考<SEP>问诊类APP"
+  },
+  "Noah Carter<SEP>World Athletics Championship": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767076489,
+    "update_time": 1767076489,
+    "_id": "Noah Carter<SEP>World Athletics Championship"
+  },
+  "监测指标<SEP>监测频率": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076489,
+    "update_time": 1767076489,
+    "_id": "监测指标<SEP>监测频率"
+  },
+  "数据记录与反馈机制<SEP>监测与反馈": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076489,
+    "update_time": 1767076489,
+    "_id": "数据记录与反馈机制<SEP>监测与反馈"
+  },
+  "个性化健康管理方案<SEP>标准化结构": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076489,
+    "update_time": 1767076489,
+    "_id": "个性化健康管理方案<SEP>标准化结构"
+  },
+  "用户健康信息<SEP>饮食建议输入参数": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076507,
+    "update_time": 1767076507,
+    "_id": "用户健康信息<SEP>饮食建议输入参数"
+  },
+  "监测指标<SEP>监测方法": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076511,
+    "update_time": 1767076511,
+    "_id": "监测指标<SEP>监测方法"
+  },
+  "个性化健康管理方案<SEP>示例用户(45岁男性高血压患者)": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076511,
+    "update_time": 1767076511,
+    "_id": "个性化健康管理方案<SEP>示例用户(45岁男性高血压患者)"
+  },
+  "用户健康信息<SEP>运动建议输入参数": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076519,
+    "update_time": 1767076519,
+    "_id": "用户健康信息<SEP>运动建议输入参数"
+  },
+  "左磺酸氨氯地平片<SEP>示例用户(45岁男性高血压患者)": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076521,
+    "update_time": 1767076521,
+    "_id": "左磺酸氨氯地平片<SEP>示例用户(45岁男性高血压患者)"
+  },
+  "监测指标<SEP>目标值/范围": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076521,
+    "update_time": 1767076521,
+    "_id": "监测指标<SEP>目标值/范围"
+  },
+  "智能体<SEP>用户健康信息": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076530,
+    "update_time": 1767076530,
+    "_id": "智能体<SEP>用户健康信息"
+  },
+  "BMI<SEP>示例用户(45岁男性高血压患者)": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076533,
+    "update_time": 1767076533,
+    "_id": "BMI<SEP>示例用户(45岁男性高血压患者)"
+  },
+  "个性化月报<SEP>智能体": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 2,
+    "create_time": 1767076537,
+    "update_time": 1767076537,
+    "_id": "个性化月报<SEP>智能体"
+  },
+  "示例用户(45岁男性高血压患者)<SEP>血压": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076540,
+    "update_time": 1767076540,
+    "_id": "示例用户(45岁男性高血压患者)<SEP>血压"
+  },
+  "健康信息<SEP>用户": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767076540,
+    "update_time": 1767076540,
+    "_id": "健康信息<SEP>用户"
+  },
+  "提示词<SEP>智能体": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 2,
+    "create_time": 1767076544,
+    "update_time": 1767076544,
+    "_id": "提示词<SEP>智能体"
+  },
+  "个性化月报<SEP>附件内容": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076544,
+    "update_time": 1767076544,
+    "_id": "个性化月报<SEP>附件内容"
+  },
+  "生活方式干预<SEP>示例用户(45岁男性高血压患者)": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076547,
+    "update_time": 1767076547,
+    "_id": "生活方式干预<SEP>示例用户(45岁男性高血压患者)"
+  },
+  "智能体<SEP>请求参数示例": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076549,
+    "update_time": 1767076549,
+    "_id": "智能体<SEP>请求参数示例"
+  },
+  "提示词<SEP>详细输出示例": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767076549,
+    "update_time": 1767076549,
+    "_id": "提示词<SEP>详细输出示例"
+  },
+  "个性化月报<SEP>附件": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767076549,
+    "update_time": 1767076549,
+    "_id": "个性化月报<SEP>附件"
+  },
+  "一年期健康管理计划<SEP>示例用户(45岁男性高血压患者)": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767076554,
+    "update_time": 1767076554,
+    "_id": "一年期健康管理计划<SEP>示例用户(45岁男性高血压患者)"
+  },
+  "健康信息<SEP>智能体": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767076556,
+    "update_time": 1767076556,
+    "_id": "健康信息<SEP>智能体"
   }
 }

@@ -36,6 +36,7 @@ from typing import Any, Dict, List, Optional, TypedDict, Annotated
 import json
 import operator
 
+from dotenv import load_dotenv
 from langchain_deepseek import ChatDeepSeek
 from langgraph.graph import StateGraph, START, END, MessagesState
 from langgraph.types import Command, Send

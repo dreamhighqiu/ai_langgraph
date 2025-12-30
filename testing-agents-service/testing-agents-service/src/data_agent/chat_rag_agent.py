@@ -9,21 +9,40 @@
 
 import asyncio
 import os
+import logging
 
 from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 # pragma: no cover  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y25oTVlRPT06YjVmODE4NzE=
 
+# 配置日志
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 llm = init_chat_model("deepseek:deepseek-chat")
-client = MultiServerMCPClient({
-    "rag-server": {
-        "url": "http://localhost:8002/sse",
-        "transport": "sse",
-    }
-})
 
-tools = asyncio.run(client.get_tools())
+# 尝试连接 MCP 服务器，如果失败则使用空工具列表
+tools = []
+try:
+    client = MultiServerMCPClient({
+        "rag-server": {
+            "url": "http://localhost:8002/sse",
+            "transport": "sse",
+        }
+    })
+    tools = asyncio.run(client.get_tools())
+    logger.info(f"Successfully loaded {len(tools)} tools from RAG MCP server")
+except ExceptionGroup as eg:
+    logger.warning(f"Failed to load RAG MCP tools (ExceptionGroup): {eg}. Creating agent without MCP tools.")
+    tools = []
+except Exception as e:
+    logger.warning(f"Failed to load RAG MCP tools: {e}. Creating agent without MCP tools.")
+    tools = []
+
 agent = create_agent(model=llm, tools=tools)
 # fmt: off  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y25oTVlRPT06YjVmODE4NzE=

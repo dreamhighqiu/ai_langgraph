@@ -18,6 +18,7 @@ import os
 from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
 from langchain.tools import tool
+from dotenv import load_dotenv
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0c1NmFBPT06YmUwMTc5YTk=
 
 from data_agent.chat_rag_agent import agent as rag_agent

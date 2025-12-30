@@ -27,6 +27,7 @@
 import asyncio
 import base64
 import json
+import logging
 import os
 import re
 from datetime import datetime
@@ -34,6 +35,9 @@ from pathlib import Path
 from typing import Any
 
 from langchain.agents import AgentState
+
+# 配置日志
+logger = logging.getLogger(__name__)
 from langchain.agents.middleware import before_model
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import ToolMessage
@@ -172,13 +176,22 @@ def create_ui_automation_agent(
 
     # 1. 加载 Chrome MCP 工具
     chrome_url = chrome_mcp_url or config.chrome_mcp_url
-    chrome_client = MultiServerMCPClient({
-        "midscene-web": {
-            "transport": config.chrome_mcp_transport,
-            "url": chrome_url,
-        }
-    })
-    chrome_tools = asyncio.run(chrome_client.get_tools())
+    chrome_tools = []
+    try:
+        chrome_client = MultiServerMCPClient({
+            "midscene-web": {
+                "transport": config.chrome_mcp_transport,
+                "url": chrome_url,
+            }
+        })
+        chrome_tools = asyncio.run(chrome_client.get_tools())
+        logger.info(f"Successfully loaded {len(chrome_tools)} Chrome MCP tools")
+    except ExceptionGroup as eg:
+        logger.warning(f"Failed to load Chrome MCP tools (ExceptionGroup): {eg}. Creating agent without Chrome MCP tools.")
+        chrome_tools = []
+    except Exception as e:
+        logger.warning(f"Failed to load Chrome MCP tools: {e}. Creating agent without Chrome MCP tools.")
+        chrome_tools = []
     all_tools.extend(chrome_tools)
 
     # 2. 加载图表 MCP 工具（可选）

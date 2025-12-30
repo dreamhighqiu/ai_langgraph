@@ -72,10 +72,13 @@ class ExecutionService:
                     'error': '执行记录不存在'
                 }
             
-            if execution.execution_status not in ['pending', 'running']:
+            # 立即提取属性，避免greenlet错误
+            exec_status = execution.execution_status
+            
+            if exec_status not in ['pending', 'running']:
                 return {
                     'success': False,
-                    'error': f'当前状态[{execution.execution_status}]无法取消'
+                    'error': f'当前状态[{exec_status}]无法取消'
                 }
             
             # 更新状态为已取消
@@ -108,6 +111,7 @@ class ExecutionService:
         execution = await ExecutionDAO.get_by_id(db, execution_id)
         
         if execution:
+            # 立即提取所有需要的属性
             return {
                 'execution_id': execution.execution_id,
                 'execution_status': execution.execution_status,
@@ -155,7 +159,12 @@ class ExecutionService:
                     'error': '执行记录不存在'
                 }
             
-            if original.execution_status not in ['failed', 'cancelled']:
+            # 立即提取需要的属性
+            orig_status = original.execution_status
+            orig_script_id = original.script_id
+            orig_config = original.config
+            
+            if orig_status not in ['failed', 'cancelled']:
                 return {
                     'success': False,
                     'error': '只能重试失败或已取消的执行'
@@ -167,8 +176,8 @@ class ExecutionService:
             
             # 使用原配置重新执行
             model = ExecuteScriptModel(
-                script_id=original.script_id,
-                config=original.config,
+                script_id=orig_script_id,
+                config=orig_config,
                 execution_type='manual'
             )
             

@@ -114,13 +114,15 @@ class ScriptService:
                     script.script_file_path = path
             
             created = await ScriptDAO.create(db, script)
+            created_id = created.script_id  # 立即提取
+            created_name = created.script_name
             await db.commit()
             
-            logger.info(f'创建脚本成功: {created.script_id} - {created.script_name}')
+            logger.info(f'创建脚本成功: {created_id} - {created_name}')
             
             return {
                 'success': True,
-                'script_id': created.script_id
+                'script_id': created_id
             }
         
         except Exception as e:
@@ -203,13 +205,14 @@ class ScriptService:
             )
             
             created_script = await ScriptDAO.create(db, script)
+            created_script_id = created_script.script_id  # 立即提取ID
             await db.commit()
             
-            logger.info(f'AI生成脚本成功: {created_script.script_id}')
+            logger.info(f'AI生成脚本成功: {created_script_id}')
             
             return {
                 'success': True,
-                'script_id': created_script.script_id,
+                'script_id': created_script_id,
                 'script_content': script_content,
                 'file_path': path,
                 'thread_id': result.get('thread_id'),
@@ -240,6 +243,11 @@ class ScriptService:
                     'error': '脚本不存在'
                 }
             
+            # 立即提取需要的值，避免后续异步操作中访问ORM对象导致greenlet错误
+            script_type = script.script_type
+            project_id = script.project_id
+            current_version = script.version or '1.0.0'
+            
             # 构建更新字段
             update_data = {'update_by': update_by}
             if model.script_name is not None:
@@ -250,8 +258,8 @@ class ScriptService:
                 # 更新MinIO中的脚本文件
                 if model.script_content:
                     minio_client = get_minio_client()
-                    file_ext = {'k6': 'js', 'playwright': 'py', 'api': 'py'}.get(script.script_type, 'txt')
-                    object_path = f"scripts/{script.script_type}/project_{script.project_id}/{datetime.now().strftime('%Y%m%d_%H%M%S')}.{file_ext}"
+                    file_ext = {'k6': 'js', 'playwright': 'py', 'api': 'py'}.get(script_type, 'txt')
+                    object_path = f"scripts/{script_type}/project_{project_id}/{datetime.now().strftime('%Y%m%d_%H%M%S')}.{file_ext}"
                     
                     success, path = minio_client.upload_file(
                         file_content=model.script_content.encode('utf-8'),
@@ -262,7 +270,6 @@ class ScriptService:
                     if success:
                         update_data['script_file_path'] = path
                         # 更新版本号
-                        current_version = script.version or '1.0.0'
                         parts = current_version.split('.')
                         parts[-1] = str(int(parts[-1]) + 1)
                         update_data['version'] = '.'.join(parts)
@@ -309,9 +316,10 @@ class ScriptService:
                 exec_count = await ExecutionDAO.count_by_script(db, script_id)
                 if exec_count > 0:
                     script = await ScriptDAO.get_by_id(db, script_id)
+                    script_name = script.script_name if script else f'ID:{script_id}'
                     return {
                         'success': False,
-                        'error': f'脚本[{script.script_name}]存在{exec_count}条执行记录，无法删除'
+                        'error': f'脚本[{script_name}]存在{exec_count}条执行记录，无法删除'
                     }
             
             # 执行删除
@@ -355,6 +363,10 @@ class ScriptService:
                     'error': '脚本已停用，无法执行'
                 }
             
+            # 立即提取需要的值，避免后续异步操作中访问ORM对象导致greenlet错误
+            script_type = script.script_type
+            script_content = script.script_content
+            
             # 创建执行记录
             execution = TestExecution(
                 script_id=model.script_id,
@@ -365,10 +377,11 @@ class ScriptService:
             )
             
             created_execution = await ExecutionDAO.create(db, execution)
+            execution_id = created_execution.execution_id  # 提取ID
             
             # 更新状态为运行中
             await ExecutionDAO.update_status(
-                db, created_execution.execution_id,
+                db, execution_id,
                 'running',
                 start_time=datetime.now()
             )
@@ -380,13 +393,13 @@ class ScriptService:
                 'playwright': 'ui_automation_agent',
                 'api': 'rest_api_agent'
             }
-            agent_type = agent_type_map.get(script.script_type)
+            agent_type = agent_type_map.get(script_type)
             
             if agent_type:
                 agent_manager = get_agent_manager()
                 exec_result = await agent_manager.execute_script(
                     agent_type=agent_type,
-                    script_content=script.script_content,
+                    script_content=script_content,
                     config=model.config
                 )
                 
@@ -394,21 +407,21 @@ class ScriptService:
                 end_time = datetime.now()
                 if exec_result['success']:
                     await ExecutionDAO.update_result(
-                        db, created_execution.execution_id,
+                        db, execution_id,
                         result_data=exec_result.get('result', {}),
                         status='success',
                         end_time=end_time
                     )
                     # 更新Agent ID和Thread ID
                     await ExecutionDAO.update_status(
-                        db, created_execution.execution_id,
+                        db, execution_id,
                         'success',
                         agent_id=exec_result.get('agent_id'),
                         thread_id=exec_result.get('thread_id')
                     )
                 else:
                     await ExecutionDAO.update_status(
-                        db, created_execution.execution_id,
+                        db, execution_id,
                         'failed',
                         error_msg=exec_result.get('error'),
                         end_time=end_time
@@ -416,11 +429,11 @@ class ScriptService:
                 
                 await db.commit()
             
-            logger.info(f'执行脚本: {model.script_id}, execution_id: {created_execution.execution_id}')
+            logger.info(f'执行脚本: {model.script_id}, execution_id: {execution_id}')
             
             return {
                 'success': True,
-                'execution_id': created_execution.execution_id
+                'execution_id': execution_id
             }
         
         except Exception as e:

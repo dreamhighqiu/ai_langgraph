@@ -80,14 +80,18 @@ class ProjectService:
             )
             
             created = await ProjectDAO.create(db, project)
+            # 立即提取属性，避免commit后访问ORM对象
+            created_id = created.project_id
+            created_name = created.project_name
+            project_model = ProjectModel.model_validate(created)
             await db.commit()
             
-            logger.info(f'创建项目成功: {created.project_id} - {created.project_name}')
+            logger.info(f'创建项目成功: {created_id} - {created_name}')
             
             return {
                 'success': True,
-                'project_id': created.project_id,
-                'project': ProjectModel.model_validate(created)
+                'project_id': created_id,
+                'project': project_model
             }
         
         except Exception as e:
@@ -114,8 +118,11 @@ class ProjectService:
                     'error': '项目不存在'
                 }
             
+            # 立即提取属性
+            current_name = project.project_name
+            
             # 检查名称唯一性
-            if model.project_name and model.project_name != project.project_name:
+            if model.project_name and model.project_name != current_name:
                 is_unique = await ProjectDAO.check_name_unique(
                     db, model.project_name, model.project_id
                 )
@@ -173,9 +180,10 @@ class ProjectService:
                 script_count = await ScriptDAO.count_by_project(db, project_id)
                 if script_count > 0:
                     project = await ProjectDAO.get_by_id(db, project_id)
+                    project_name = project.project_name if project else f'ID:{project_id}'
                     return {
                         'success': False,
-                        'error': f'项目[{project.project_name}]下存在{script_count}个脚本，无法删除'
+                        'error': f'项目[{project_name}]下存在{script_count}个脚本，无法删除'
                     }
             
             # 执行删除

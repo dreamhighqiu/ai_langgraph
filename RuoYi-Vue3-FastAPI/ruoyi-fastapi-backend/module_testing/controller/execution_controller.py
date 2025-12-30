@@ -46,7 +46,7 @@ async def get_execution_list(
     """获取执行记录分页列表"""
     result = await ExecutionService.get_execution_list(db, query, is_page=True)
     logger.info('获取执行列表成功')
-    return ResponseUtil.success(model_content=result)
+    return ResponseUtil.success(dict_content=result)
 
 
 @execution_controller.get(

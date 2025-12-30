@@ -48,7 +48,8 @@ async def get_project_list(
     """获取测试项目分页列表"""
     result = await ProjectService.get_project_list(db, query, is_page=True)
     logger.info('获取项目列表成功')
-    return ResponseUtil.success(model_content=result)
+    # 返回分页字段需要 dict_content，而非 model_content（model_content 要求 BaseModel）
+    return ResponseUtil.success(dict_content=result)
 
 
 @project_controller.get(

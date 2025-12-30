@@ -50,7 +50,7 @@ async def get_script_list(
     """获取测试脚本分页列表"""
     result = await ScriptService.get_script_list(db, query, is_page=True)
     logger.info('获取脚本列表成功')
-    return ResponseUtil.success(model_content=result)
+    return ResponseUtil.success(dict_content=result)
 
 
 @script_controller.get(

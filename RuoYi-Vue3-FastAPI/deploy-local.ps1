@@ -274,7 +274,7 @@ function Initialize-Database {
 
 # 启动后端
 function Start-Backend {
-    Write-Info "启动后端服务..."
+    Write-Info "启动后端服务 (热重载模式)..."
     
     # 检查是否已运行
     if (Test-Path ".pids\backend.pid") {
@@ -282,6 +282,7 @@ function Start-Backend {
         try {
             Get-Process -Id $pid -ErrorAction Stop | Out-Null
             Write-Warn "后端服务已在运行 (PID: $pid)"
+            Write-Info "💡 代码更改将自动重载，无需重启"
             return
         } catch {}
     }
@@ -295,23 +296,24 @@ function Start-Backend {
         # 激活虚拟环境并启动
         $env:APP_ENV = "dev"
         
-        Write-Info "启动中..."
+        Write-Info "启动中 (uvicorn --reload)..."
         
-        # 使用 uv run 启动
-        $process = Start-Process -FilePath "uv" -ArgumentList "run", "python", "app.py", "--env", "dev" `
+        # 使用 uvicorn 直接启动，启用热重载
+        $process = Start-Process -FilePath "uv" -ArgumentList "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9099", "--reload", "--reload-dir", "." `
             -PassThru -WindowStyle Hidden `
             -RedirectStandardOutput "..\logs\backend.log" `
             -RedirectStandardError "..\logs\backend_error.log"
         
-        Start-Sleep -Seconds 3
+        Start-Sleep -Seconds 5
         
         if (-not $process.HasExited) {
             $process.Id | Out-File -FilePath "..\`.pids\backend.pid"
-            Write-Success "后端服务启动成功"
-            Write-Host "  地址: http://localhost:9099/dev-api"
-            Write-Host "  文档: http://localhost:9099/dev-api/docs"
-            Write-Host "  PID:  $($process.Id)"
-            Write-Host "  日志: logs\backend.log"
+            Write-Success "后端服务启动成功 ✅"
+            Write-Host "  🌐 地址: http://localhost:9099/dev-api"
+            Write-Host "  📚 文档: http://localhost:9099/dev-api/docs"
+            Write-Host "  🔧 PID:  $($process.Id)"
+            Write-Host "  📝 日志: logs\backend.log"
+            Write-Host "  🔥 热重载: 已启用 (代码更改自动生效)"
         } else {
             Write-Err "后端启动失败，请查看日志: logs\backend_error.log"
             if (Test-Path "..\logs\backend_error.log") {
@@ -325,7 +327,7 @@ function Start-Backend {
 
 # 启动前端
 function Start-Frontend {
-    Write-Info "启动前端服务..."
+    Write-Info "启动前端服务 (HMR 热更新模式)..."
     
     # 检查是否已运行
     if (Test-Path ".pids\frontend.pid") {
@@ -333,6 +335,7 @@ function Start-Frontend {
         try {
             Get-Process -Id $pid -ErrorAction Stop | Out-Null
             Write-Warn "前端服务已在运行 (PID: $pid)"
+            Write-Info "💡 代码更改将自动热更新，无需重启"
             return
         } catch {}
     }
@@ -340,20 +343,21 @@ function Start-Frontend {
     Push-Location $FRONTEND_DIR
     
     try {
-        Write-Info "启动中..."
+        Write-Info "启动中 (Vite HMR)..."
         $process = Start-Process -FilePath "npm" -ArgumentList "run", "dev" `
             -PassThru -WindowStyle Hidden `
             -RedirectStandardOutput "..\logs\frontend.log" `
             -RedirectStandardError "..\logs\frontend_error.log"
         
-        Start-Sleep -Seconds 5
+        Start-Sleep -Seconds 8
         
         if (-not $process.HasExited) {
             $process.Id | Out-File -FilePath "..\`.pids\frontend.pid"
-            Write-Success "前端服务启动成功"
-            Write-Host "  地址: http://localhost:5173"
-            Write-Host "  PID:  $($process.Id)"
-            Write-Host "  日志: logs\frontend.log"
+            Write-Success "前端服务启动成功 ✅"
+            Write-Host "  🌐 地址: http://localhost:5173"
+            Write-Host "  🔧 PID:  $($process.Id)"
+            Write-Host "  📝 日志: logs\frontend.log"
+            Write-Host "  🔥 HMR:  已启用 (代码更改自动热更新)"
         } else {
             Write-Err "前端启动失败，请查看日志: logs\frontend_error.log"
         }
@@ -364,7 +368,7 @@ function Start-Frontend {
 
 # 启动所有服务
 function Start-All {
-    Write-Info "启动本地开发服务..."
+    Write-Info "启动本地开发服务 (Debug 模式)..."
     Write-Host ""
     
     Start-Backend
@@ -373,13 +377,13 @@ function Start-All {
     
     Write-Host ""
     Write-Host "========================================"
-    Write-Success "本地开发服务启动完成！"
+    Write-Success "🚀 本地开发服务启动完成！"
     Write-Host "========================================"
     Write-Host ""
     Write-Host "本地服务:"
-    Write-Host "  前端: http://localhost:5173"
-    Write-Host "  后端: http://localhost:9099/dev-api"
-    Write-Host "  文档: http://localhost:9099/dev-api/docs"
+    Write-Host "  🌐 前端: http://localhost:5173"
+    Write-Host "  🔧 后端: http://localhost:9099/dev-api"
+    Write-Host "  📚 文档: http://localhost:9099/dev-api/docs"
     Write-Host ""
     Write-Host "远程服务 ($REMOTE_SERVER):"
     Write-Host "  MySQL:        ${REMOTE_SERVER}:3306"
@@ -388,12 +392,52 @@ function Start-All {
     Write-Host "  Milvus管理:   http://${REMOTE_SERVER}:3000"
     Write-Host ""
     Write-Host "默认账号: admin / admin123"
+    Write-Host ""
     Write-Host "========================================"
+    Write-Host "🔥 热重载模式已启用:"
+    Write-Host "  • 后端: 修改 Python 代码后自动重载 (uvicorn --reload)"
+    Write-Host "  • 前端: 修改 Vue/JS 代码后自动热更新 (Vite HMR)"
+    Write-Host "  • 无需手动重启服务，代码更改自动生效!"
+    Write-Host "========================================"
+}
+
+# 根据端口杀进程
+function Stop-PortProcess {
+    param([int]$Port, [string]$Name)
+    
+    # 获取占用端口的进程
+    $connections = netstat -ano | Select-String ":$Port\s+" | Select-String "LISTENING"
+    
+    if ($connections) {
+        $pids = @()
+        foreach ($line in $connections) {
+            $parts = $line.ToString().Trim() -split '\s+'
+            $pidStr = $parts[-1]
+            if ($pidStr -match '^\d+$' -and $pidStr -ne '0') {
+                $pids += [int]$pidStr
+            }
+        }
+        
+        $pids = $pids | Sort-Object -Unique
+        
+        foreach ($pid in $pids) {
+            try {
+                Stop-Process -Id $pid -Force -ErrorAction Stop
+                Write-Success "已杀掉占用端口 $Port 的进程 (PID: $pid)"
+            } catch {
+                Write-Warn "无法杀掉进程 $pid"
+            }
+        }
+    }
 }
 
 # 停止服务
 function Stop-All {
     Write-Info "停止本地服务..."
+    Write-Host ""
+    
+    # 1. 首先尝试通过 PID 文件停止
+    Write-Info "通过 PID 文件停止服务..."
     
     # 停止后端
     if (Test-Path ".pids\backend.pid") {
@@ -419,7 +463,23 @@ function Stop-All {
         Remove-Item ".pids\frontend.pid" -Force -ErrorAction SilentlyContinue
     }
     
-    Write-Success "本地服务已停止"
+    # 2. 强制清理端口占用（确保端口被释放）
+    Write-Host ""
+    Write-Info "检查并清理端口占用..."
+    
+    # 清理后端端口 9099
+    Stop-PortProcess -Port 9099 -Name "后端"
+    
+    # 清理前端端口 5173 和 5174
+    Stop-PortProcess -Port 5173 -Name "前端"
+    Stop-PortProcess -Port 5174 -Name "前端备用"
+    
+    # 3. 清理 PID 文件
+    Remove-Item ".pids\backend.pid" -Force -ErrorAction SilentlyContinue
+    Remove-Item ".pids\frontend.pid" -Force -ErrorAction SilentlyContinue
+    
+    Write-Host ""
+    Write-Success "本地服务已全部停止，端口已释放"
 }
 
 # 查看状态

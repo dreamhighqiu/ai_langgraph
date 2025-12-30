@@ -46,7 +46,7 @@ async def get_report_list(
     """获取测试报告分页列表"""
     result = await ReportService.get_report_list(db, query, is_page=True)
     logger.info('获取报告列表成功')
-    return ResponseUtil.success(model_content=result)
+    return ResponseUtil.success(dict_content=result)
 
 
 @report_controller.get(

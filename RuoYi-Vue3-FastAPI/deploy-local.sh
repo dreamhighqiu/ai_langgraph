@@ -287,7 +287,7 @@ activate_venv() {
 
 # 启动后端
 start_backend() {
-    print_info "启动后端服务..."
+    print_info "启动后端服务 (热重载模式)..."
     
     # 创建目录
     mkdir -p logs .pids
@@ -297,6 +297,7 @@ start_backend() {
         pid=$(cat .pids/backend.pid)
         if kill -0 $pid 2>/dev/null; then
             print_warning "后端服务已在运行 (PID: $pid)"
+            print_info "💡 代码更改将自动重载，无需重启"
             return
         fi
         rm -f .pids/backend.pid
@@ -322,9 +323,9 @@ start_backend() {
         return 1
     fi
     
-    # 启动
-    print_info "启动中..."
-    nohup python app.py --env dev > ../logs/backend.log 2>&1 &
+    # 使用 uvicorn 直接启动，启用热重载
+    print_info "启动中 (uvicorn --reload)..."
+    nohup uvicorn app:app --host 0.0.0.0 --port 9099 --reload --reload-dir . > ../logs/backend.log 2>&1 &
     backend_pid=$!
     echo $backend_pid > ../.pids/backend.pid
     
@@ -336,11 +337,12 @@ start_backend() {
         # 检查端口
         sleep 2
         if nc -z localhost 9099 2>/dev/null || timeout 1 bash -c "echo >/dev/tcp/localhost/9099" 2>/dev/null; then
-            print_success "后端服务启动成功"
-            echo "  地址: http://localhost:9099/dev-api"
-            echo "  文档: http://localhost:9099/dev-api/docs"
-            echo "  PID:  $backend_pid"
-            echo "  日志: logs/backend.log"
+            print_success "后端服务启动成功 ✅"
+            echo "  🌐 地址: http://localhost:9099/dev-api"
+            echo "  📚 文档: http://localhost:9099/dev-api/docs"
+            echo "  🔧 PID:  $backend_pid"
+            echo "  📝 日志: logs/backend.log"
+            echo "  🔥 热重载: 已启用 (代码更改自动生效)"
         else
             print_warning "进程已启动但端口未监听，请查看日志"
             tail -20 ../logs/backend.log 2>/dev/null
@@ -356,13 +358,14 @@ start_backend() {
 
 # 启动前端
 start_frontend() {
-    print_info "启动前端服务..."
+    print_info "启动前端服务 (HMR 热更新模式)..."
     
     # 检查是否已运行
     if [ -f ".pids/frontend.pid" ]; then
         pid=$(cat .pids/frontend.pid)
         if kill -0 $pid 2>/dev/null; then
             print_warning "前端服务已在运行 (PID: $pid)"
+            print_info "💡 代码更改将自动热更新，无需重启"
             return
         fi
         rm -f .pids/frontend.pid
@@ -383,8 +386,8 @@ start_frontend() {
         sed -i 's/port: 80/port: 5173/' vite.config.js
     fi
     
-    # 启动
-    print_info "启动中..."
+    # 启动 (Vite 开发服务器自带 HMR)
+    print_info "启动中 (Vite HMR)..."
     nohup npm run dev > ../logs/frontend.log 2>&1 &
     frontend_pid=$!
     echo $frontend_pid > ../.pids/frontend.pid
@@ -397,10 +400,11 @@ start_frontend() {
         # 检查端口
         sleep 2
         if nc -z localhost 5173 2>/dev/null || timeout 1 bash -c "echo >/dev/tcp/localhost/5173" 2>/dev/null; then
-            print_success "前端服务启动成功"
-            echo "  地址: http://localhost:5173"
-            echo "  PID:  $frontend_pid"
-            echo "  日志: logs/frontend.log"
+            print_success "前端服务启动成功 ✅"
+            echo "  🌐 地址: http://localhost:5173"
+            echo "  🔧 PID:  $frontend_pid"
+            echo "  📝 日志: logs/frontend.log"
+            echo "  🔥 HMR:  已启用 (代码更改自动热更新)"
         else
             print_warning "进程已启动但端口未监听，请查看日志"
             tail -20 ../logs/frontend.log 2>/dev/null
@@ -416,7 +420,7 @@ start_frontend() {
 
 # 启动所有服务
 start_all() {
-    print_info "启动本地开发服务..."
+    print_info "启动本地开发服务 (Debug 模式)..."
     echo ""
     
     mkdir -p logs .pids
@@ -427,13 +431,13 @@ start_all() {
     
     echo ""
     echo "========================================"
-    print_success "本地开发服务启动完成！"
+    print_success "🚀 本地开发服务启动完成！"
     echo "========================================"
     echo ""
     echo "本地服务:"
-    echo "  前端: http://localhost:5173"
-    echo "  后端: http://localhost:9099/dev-api"
-    echo "  文档: http://localhost:9099/dev-api/docs"
+    echo "  🌐 前端: http://localhost:5173"
+    echo "  🔧 后端: http://localhost:9099/dev-api"
+    echo "  📚 文档: http://localhost:9099/dev-api/docs"
     echo ""
     echo "远程服务 ($REMOTE_SERVER):"
     echo "  MySQL:        ${REMOTE_SERVER}:3306"
@@ -442,18 +446,76 @@ start_all() {
     echo "  Milvus管理:   http://${REMOTE_SERVER}:3000"
     echo ""
     echo "默认账号: admin / admin123"
+    echo ""
     echo "========================================"
+    echo "🔥 热重载模式已启用:"
+    echo "  • 后端: 修改 Python 代码后自动重载 (uvicorn --reload)"
+    echo "  • 前端: 修改 Vue/JS 代码后自动热更新 (Vite HMR)"
+    echo "  • 无需手动重启服务，代码更改自动生效!"
+    echo "========================================"
+}
+
+# 根据端口杀进程
+kill_port() {
+    local port=$1
+    local name=$2
+    
+    # 检测系统类型
+    if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "mingw"* ]] || [[ "$OSTYPE" == "cygwin"* ]]; then
+        # Windows (Git Bash / MSYS2) - netstat 输出全部状态，避免遗漏
+        local pids=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u)
+        local killed=0
+        if [ -n "$pids" ]; then
+            for pid in $pids; do
+                if [ "$pid" != "0" ] && [ -n "$pid" ] && [ "$pid" != "-" ]; then
+                    taskkill //F //PID $pid 2>/dev/null && {
+                        print_success "已杀掉占用端口 $port 的进程 (PID: $pid)"
+                        killed=1
+                    } || true
+                fi
+            done
+        fi
+        if [ $killed -eq 0 ]; then
+            print_info "端口 $port 当前无占用进程"
+        fi
+    else
+        # Linux / Mac
+        local pids=$(lsof -t -i:$port 2>/dev/null || ss -tlnp 2>/dev/null | grep ":$port" | awk '{print $7}' | cut -d',' -f2 | cut -d'=' -f2)
+        local killed=0
+        if [ -n "$pids" ]; then
+            for pid in $pids; do
+                if [ -n "$pid" ] && [ "$pid" != "-" ]; then
+                    kill -9 $pid 2>/dev/null && {
+                        print_success "已杀掉占用端口 $port 的进程 (PID: $pid)"
+                        killed=1
+                    } || true
+                fi
+            done
+        fi
+        if [ $killed -eq 0 ]; then
+            print_info "端口 $port 当前无占用进程"
+        fi
+    fi
 }
 
 # 停止服务
 stop_all() {
     print_info "停止本地服务..."
+    echo ""
+    
+    # 1. 首先尝试通过 PID 文件停止
+    print_info "通过 PID 文件停止服务..."
     
     # 停止后端
     if [ -f ".pids/backend.pid" ]; then
         pid=$(cat .pids/backend.pid)
         if kill -0 $pid 2>/dev/null; then
             kill $pid 2>/dev/null || true
+            sleep 1
+            # 如果还没停，强制杀
+            if kill -0 $pid 2>/dev/null; then
+                kill -9 $pid 2>/dev/null || true
+            fi
             print_success "后端服务已停止 (PID: $pid)"
         fi
         rm -f .pids/backend.pid
@@ -464,12 +526,31 @@ stop_all() {
         pid=$(cat .pids/frontend.pid)
         if kill -0 $pid 2>/dev/null; then
             kill $pid 2>/dev/null || true
+            sleep 1
+            if kill -0 $pid 2>/dev/null; then
+                kill -9 $pid 2>/dev/null || true
+            fi
             print_success "前端服务已停止 (PID: $pid)"
         fi
         rm -f .pids/frontend.pid
     fi
     
-    print_success "本地服务已停止"
+    # 2. 强制清理端口占用（确保端口被释放）
+    echo ""
+    print_info "检查并清理端口占用..."
+    
+    # 清理后端端口 9099
+    kill_port 9099 "后端"
+    
+    # 清理前端端口 5173 和 5174
+    kill_port 5173 "前端"
+    kill_port 5174 "前端备用"
+    
+    # 3. 清理 PID 文件
+    rm -f .pids/backend.pid .pids/frontend.pid 2>/dev/null
+    
+    echo ""
+    print_success "本地服务已全部停止，端口已释放"
 }
 
 # 查看状态

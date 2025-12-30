@@ -71,20 +71,24 @@ class ReportService:
                 'error': '报告不存在'
             }
         
-        if not report.report_path:
+        # 立即提取属性
+        report_path = report.report_path
+        report_name = report.report_name
+        
+        if not report_path:
             return {
                 'success': False,
                 'error': '报告文件不存在'
             }
         
         minio_client = get_minio_client()
-        url = minio_client.get_presigned_url(report.report_path)
+        url = minio_client.get_presigned_url(report_path)
         
         if url:
             return {
                 'success': True,
                 'url': url,
-                'filename': report.report_name
+                'filename': report_name
             }
         
         return {
@@ -156,13 +160,14 @@ class ReportService:
             )
             
             created = await ReportDAO.create(db, report)
+            created_id = created.report_id  # 立即提取
             await db.commit()
             
-            logger.info(f'创建报告成功: {created.report_id}')
+            logger.info(f'创建报告成功: {created_id}')
             
             return {
                 'success': True,
-                'report_id': created.report_id,
+                'report_id': created_id,
                 'report_path': path
             }
         
@@ -242,10 +247,13 @@ class ReportService:
                     'error': '报告不存在'
                 }
             
+            # 立即提取属性
+            report_path = report.report_path
+            
             # 删除MinIO中的文件
-            if report.report_path:
+            if report_path:
                 minio_client = get_minio_client()
-                minio_client.delete_file(report.report_path)
+                minio_client.delete_file(report_path)
             
             # 删除数据库记录
             await ReportDAO.delete_by_id(db, report_id)

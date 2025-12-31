@@ -289,6 +289,8 @@ activate_venv() {
 
 # 启动后端
 start_backend() {
+    local force_restart=${1:-false}  # 是否强制重启
+    
     print_info "启动后端服务 (热重载模式)..."
     
     # 创建目录
@@ -298,11 +300,25 @@ start_backend() {
     if [ -f ".pids/backend.pid" ]; then
         pid=$(cat .pids/backend.pid)
         if kill -0 $pid 2>/dev/null; then
-            print_warning "后端服务已在运行 (PID: $pid)"
-            print_info "💡 代码更改将自动重载，无需重启"
-            return
+            if [ "$force_restart" = "true" ]; then
+                print_info "强制重启：停止旧进程 (PID: $pid)..."
+                kill $pid 2>/dev/null || true
+                sleep 1
+                if kill -0 $pid 2>/dev/null; then
+                    kill -9 $pid 2>/dev/null || true
+                fi
+                rm -f .pids/backend.pid
+                # 清理端口
+                kill_port 9099 "后端"
+            else
+                print_warning "后端服务已在运行 (PID: $pid)"
+                print_info "💡 代码更改将自动重载，无需重启"
+                print_info "💡 如需强制重启，请使用: ./deploy-local.sh restart"
+                return
+            fi
+        else
+            rm -f .pids/backend.pid
         fi
-        rm -f .pids/backend.pid
     fi
     
     cd $BACKEND_DIR
@@ -360,17 +376,34 @@ start_backend() {
 
 # 启动前端
 start_frontend() {
+    local force_restart=${1:-false}  # 是否强制重启
+    
     print_info "启动前端服务 (HMR 热更新模式)..."
     
     # 检查是否已运行
     if [ -f ".pids/frontend.pid" ]; then
         pid=$(cat .pids/frontend.pid)
         if kill -0 $pid 2>/dev/null; then
-            print_warning "前端服务已在运行 (PID: $pid)"
-            print_info "💡 代码更改将自动热更新，无需重启"
-            return
+            if [ "$force_restart" = "true" ]; then
+                print_info "强制重启：停止旧进程 (PID: $pid)..."
+                kill $pid 2>/dev/null || true
+                sleep 1
+                if kill -0 $pid 2>/dev/null; then
+                    kill -9 $pid 2>/dev/null || true
+                fi
+                rm -f .pids/frontend.pid
+                # 清理端口
+                kill_port 5173 "前端"
+                kill_port 5174 "前端备用"
+            else
+                print_warning "前端服务已在运行 (PID: $pid)"
+                print_info "💡 代码更改将自动热更新，无需重启"
+                print_info "💡 如需强制重启，请使用: ./deploy-local.sh restart"
+                return
+            fi
+        else
+            rm -f .pids/frontend.pid
         fi
-        rm -f .pids/frontend.pid
     fi
     
     cd $FRONTEND_DIR
@@ -422,23 +455,26 @@ start_frontend() {
 
 # 启动所有服务
 start_all() {
+    local force_restart=${1:-false}  # 是否强制重启
+    
     print_info "启动本地开发服务 (Debug 模式)..."
     echo ""
     
     # 先停止已运行的服务（如果存在）
-    print_info "检查并停止已运行的服务..."
-    if [ -f ".pids/backend.pid" ] || [ -f ".pids/frontend.pid" ]; then
-        print_info "发现已运行的服务，先停止..."
+    if [ "$force_restart" = "true" ] || [ -f ".pids/backend.pid" ] || [ -f ".pids/frontend.pid" ]; then
+        print_info "检查并停止已运行的服务..."
         stop_all
         sleep 2
         echo ""
+        # 如果检测到服务，强制重启
+        force_restart="true"
     fi
     
     mkdir -p logs .pids
     
-    start_backend
+    start_backend "$force_restart"
     echo ""
-    start_frontend
+    start_frontend "$force_restart"
     
     echo ""
     echo "========================================"
@@ -607,8 +643,8 @@ restart_all() {
     # 等待一下确保端口释放
     sleep 2
     
-    # 再启动
-    start_all
+    # 再启动（强制重启模式）
+    start_all "true"
 }
 
 # 查看状态

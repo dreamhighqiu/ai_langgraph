@@ -2,29 +2,47 @@
 Agent控制器
 提供AI Agent相关的API接口
 """
-from fastapi import APIRouter, Depends
+from typing import Annotated
+
+from fastapi import Body, Request, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from common.router import APIRouterPro
+from common.aspect.pre_auth import PreAuthDependency
+from common.aspect.interface_auth import UserInterfaceAuthDependency
+from common.aspect.db_seesion import DBSessionDependency
+from common.aspect.pre_auth import CurrentUserDependency
+from common.annotation.log_annotation import Log
+from common.enums import BusinessType
+from common.vo import ResponseBaseModel
 from config.get_db import get_db
-from module_admin.annotation.log_annotation import Log
-from module_admin.aspect.interface_auth import CheckUserInterfaceAuth
 from module_admin.entity.vo.user_vo import CurrentUserModel
-from module_admin.service.login_service import LoginService
 from utils.response_util import ResponseUtil
 from utils.log_util import logger
 
 from module_testing.agents.agent_manager import get_agent_manager, reset_agent_manager
 
-router = APIRouter(prefix='/testing/agent', tags=['AI Agent管理'])
+agent_controller = APIRouterPro(
+    prefix='/testing/agent',
+    order_num=40,
+    tags=['测试管理-AI Agent管理'],
+    dependencies=[PreAuthDependency()],
+    auto_register=True
+)
 
 
 # ============== Agent 信息接口 ==============
 
-@router.get('/list', summary='获取可用Agent列表')
-@CheckUserInterfaceAuth('testing:agent:list')
+@agent_controller.get(
+    '/list',
+    summary='获取可用Agent列表',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:list')]
+)
 async def get_agent_list(
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """获取所有可用的AI Agent列表"""
     try:
         agent_manager = get_agent_manager()
@@ -39,12 +57,17 @@ async def get_agent_list(
         return ResponseUtil.failure(msg=f'获取Agent列表失败: {str(e)}')
 
 
-@router.get('/info/{agent_type}', summary='获取Agent详情')
-@CheckUserInterfaceAuth('testing:agent:query')
+@agent_controller.get(
+    '/info/{agent_type}',
+    summary='获取Agent详情',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:query')]
+)
 async def get_agent_info(
+    request: Request,
     agent_type: str,
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """获取指定Agent的详细信息"""
     try:
         agent_manager = get_agent_manager()
@@ -59,11 +82,16 @@ async def get_agent_info(
         return ResponseUtil.failure(msg=f'获取Agent信息失败: {str(e)}')
 
 
-@router.get('/status', summary='获取Agent服务状态')
-@CheckUserInterfaceAuth('testing:agent:query')
+@agent_controller.get(
+    '/status',
+    summary='获取Agent服务状态',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:query')]
+)
 async def get_service_status(
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """获取Agent服务状态（模式、连接状态等）"""
     try:
         agent_manager = get_agent_manager()
@@ -75,12 +103,17 @@ async def get_service_status(
         return ResponseUtil.failure(msg=f'获取服务状态失败: {str(e)}')
 
 
-@router.post('/reconnect', summary='重新连接Agent服务')
-@CheckUserInterfaceAuth('testing:agent:edit')
-@Log(title='重连Agent服务', business_type=2)
+@agent_controller.post(
+    '/reconnect',
+    summary='重新连接Agent服务',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:edit')]
+)
+@Log(title='重连Agent服务', business_type=BusinessType.UPDATE)
 async def reconnect_service(
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """重新初始化Agent连接"""
     try:
         agent_manager = await reset_agent_manager()
@@ -97,13 +130,18 @@ async def reconnect_service(
 
 # ============== Agent 对话接口 ==============
 
-@router.post('/chat', summary='与Agent对话')
-@CheckUserInterfaceAuth('testing:agent:chat')
-@Log(title='Agent对话', business_type=1)
+@agent_controller.post(
+    '/chat',
+    summary='与Agent对话',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:chat')]
+)
+@Log(title='Agent对话', business_type=BusinessType.OTHER)
 async def chat_with_agent(
-    request: dict,
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    body: Annotated[dict, Body()],
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """
     与指定Agent进行对话
     
@@ -115,9 +153,9 @@ async def chat_with_agent(
     }
     """
     try:
-        agent_type = request.get('agent_type')
-        message = request.get('message')
-        thread_id = request.get('thread_id')
+        agent_type = body.get('agent_type')
+        message = body.get('message')
+        thread_id = body.get('thread_id')
         
         if not agent_type or not message:
             return ResponseUtil.failure(msg='agent_type和message不能为空')
@@ -137,14 +175,19 @@ async def chat_with_agent(
 
 # ============== 脚本生成接口 ==============
 
-@router.post('/generate', summary='AI生成测试脚本')
-@CheckUserInterfaceAuth('testing:agent:generate')
-@Log(title='AI生成脚本', business_type=1)
+@agent_controller.post(
+    '/generate',
+    summary='AI生成测试脚本',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:generate')]
+)
+@Log(title='AI生成脚本', business_type=BusinessType.INSERT)
 async def generate_script(
-    request: dict,
-    db: AsyncSession = Depends(get_db),
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    body: Annotated[dict, Body()],
+    db: Annotated[AsyncSession, DBSessionDependency()],
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """
     使用AI Agent生成测试脚本
     
@@ -160,9 +203,9 @@ async def generate_script(
     }
     """
     try:
-        agent_type = request.get('agent_type')
-        prompt = request.get('prompt')
-        config = request.get('config', {})
+        agent_type = body.get('agent_type')
+        prompt = body.get('prompt')
+        config = body.get('config', {})
         
         if not agent_type or not prompt:
             return ResponseUtil.failure(msg='agent_type和prompt不能为空')
@@ -186,13 +229,18 @@ async def generate_script(
 
 # ============== 脚本执行接口 ==============
 
-@router.post('/execute', summary='执行测试脚本')
-@CheckUserInterfaceAuth('testing:agent:execute')
-@Log(title='执行测试脚本', business_type=1)
+@agent_controller.post(
+    '/execute',
+    summary='执行测试脚本',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:execute')]
+)
+@Log(title='执行测试脚本', business_type=BusinessType.OTHER)
 async def execute_script(
-    request: dict,
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    body: Annotated[dict, Body()],
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """
     使用AI Agent执行测试脚本
     
@@ -207,9 +255,9 @@ async def execute_script(
     }
     """
     try:
-        agent_type = request.get('agent_type')
-        script_content = request.get('script_content')
-        config = request.get('config', {})
+        agent_type = body.get('agent_type')
+        script_content = body.get('script_content')
+        config = body.get('config', {})
         
         if not agent_type or not script_content:
             return ResponseUtil.failure(msg='agent_type和script_content不能为空')
@@ -233,13 +281,18 @@ async def execute_script(
 
 # ============== 知识库接口 ==============
 
-@router.post('/rag/import', summary='导入数据到RAG知识库')
-@CheckUserInterfaceAuth('testing:agent:import')
-@Log(title='导入RAG数据', business_type=1)
+@agent_controller.post(
+    '/rag/import',
+    summary='导入数据到RAG知识库',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:import')]
+)
+@Log(title='导入RAG数据', business_type=BusinessType.INSERT)
 async def import_to_rag(
-    request: dict,
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    body: Annotated[dict, Body()],
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """
     导入数据到RAG知识库
     
@@ -250,8 +303,8 @@ async def import_to_rag(
     }
     """
     try:
-        url = request.get('url')
-        data_type = request.get('data_type', 'api_doc')
+        url = body.get('url')
+        data_type = body.get('data_type', 'api_doc')
         
         if not url:
             return ResponseUtil.failure(msg='url不能为空')
@@ -269,12 +322,18 @@ async def import_to_rag(
         return ResponseUtil.failure(msg=f'导入失败: {str(e)}')
 
 
-@router.post('/rag/query', summary='查询RAG知识库')
-@CheckUserInterfaceAuth('testing:agent:query')
+@agent_controller.post(
+    '/rag/query',
+    summary='查询RAG知识库',
+    response_model=ResponseBaseModel,
+    dependencies=[UserInterfaceAuthDependency('testing:agent:query')]
+)
+@Log(title='查询RAG知识库', business_type=BusinessType.OTHER)
 async def query_rag(
-    request: dict,
-    current_user: CurrentUserModel = Depends(LoginService.get_current_user)
-):
+    request: Request,
+    body: Annotated[dict, Body()],
+    current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
+) -> Response:
     """
     查询RAG知识库
     
@@ -284,7 +343,7 @@ async def query_rag(
     }
     """
     try:
-        question = request.get('question')
+        question = body.get('question')
         
         if not question:
             return ResponseUtil.failure(msg='question不能为空')

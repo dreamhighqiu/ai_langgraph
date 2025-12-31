@@ -274,6 +274,8 @@ function Initialize-Database {
 
 # 启动后端
 function Start-Backend {
+    param([bool]$ForceRestart = $false)
+    
     Write-Info "启动后端服务 (热重载模式)..."
     
     # 检查是否已运行
@@ -281,10 +283,21 @@ function Start-Backend {
         $pid = Get-Content ".pids\backend.pid"
         try {
             Get-Process -Id $pid -ErrorAction Stop | Out-Null
-            Write-Warn "后端服务已在运行 (PID: $pid)"
-            Write-Info "💡 代码更改将自动重载，无需重启"
-            return
-        } catch {}
+            if ($ForceRestart) {
+                Write-Info "强制重启：停止旧进程 (PID: $pid)..."
+                Stop-Process -Id $pid -Force -ErrorAction Stop
+                Start-Sleep -Seconds 1
+                Remove-Item ".pids\backend.pid" -Force -ErrorAction SilentlyContinue
+                Stop-PortProcess -Port 9099 -Name "后端"
+            } else {
+                Write-Warn "后端服务已在运行 (PID: $pid)"
+                Write-Info "💡 代码更改将自动重载，无需重启"
+                Write-Info "💡 如需强制重启，请使用: .\deploy-local.ps1 restart"
+                return
+            }
+        } catch {
+            Remove-Item ".pids\backend.pid" -Force -ErrorAction SilentlyContinue
+        }
     }
     
     # 创建目录
@@ -327,6 +340,8 @@ function Start-Backend {
 
 # 启动前端
 function Start-Frontend {
+    param([bool]$ForceRestart = $false)
+    
     Write-Info "启动前端服务 (HMR 热更新模式)..."
     
     # 检查是否已运行
@@ -334,10 +349,22 @@ function Start-Frontend {
         $pid = Get-Content ".pids\frontend.pid"
         try {
             Get-Process -Id $pid -ErrorAction Stop | Out-Null
-            Write-Warn "前端服务已在运行 (PID: $pid)"
-            Write-Info "💡 代码更改将自动热更新，无需重启"
-            return
-        } catch {}
+            if ($ForceRestart) {
+                Write-Info "强制重启：停止旧进程 (PID: $pid)..."
+                Stop-Process -Id $pid -Force -ErrorAction Stop
+                Start-Sleep -Seconds 1
+                Remove-Item ".pids\frontend.pid" -Force -ErrorAction SilentlyContinue
+                Stop-PortProcess -Port 5173 -Name "前端"
+                Stop-PortProcess -Port 5174 -Name "前端备用"
+            } else {
+                Write-Warn "前端服务已在运行 (PID: $pid)"
+                Write-Info "💡 代码更改将自动热更新，无需重启"
+                Write-Info "💡 如需强制重启，请使用: .\deploy-local.ps1 restart"
+                return
+            }
+        } catch {
+            Remove-Item ".pids\frontend.pid" -Force -ErrorAction SilentlyContinue
+        }
     }
     
     Push-Location $FRONTEND_DIR
@@ -368,21 +395,24 @@ function Start-Frontend {
 
 # 启动所有服务
 function Start-All {
+    param([bool]$ForceRestart = $false)
+    
     Write-Info "启动本地开发服务 (Debug 模式)..."
     Write-Host ""
     
     # 先停止已运行的服务（如果存在）
-    Write-Info "检查并停止已运行的服务..."
-    if (Test-Path ".pids\backend.pid") -or (Test-Path ".pids\frontend.pid") {
-        Write-Info "发现已运行的服务，先停止..."
+    if ($ForceRestart -or (Test-Path ".pids\backend.pid") -or (Test-Path ".pids\frontend.pid")) {
+        Write-Info "检查并停止已运行的服务..."
         Stop-All
         Start-Sleep -Seconds 2
         Write-Host ""
+        # 如果检测到服务，强制重启
+        $ForceRestart = $true
     }
     
-    Start-Backend
+    Start-Backend -ForceRestart $ForceRestart
     Write-Host ""
-    Start-Frontend
+    Start-Frontend -ForceRestart $ForceRestart
     
     Write-Host ""
     Write-Host "========================================"
@@ -515,8 +545,8 @@ function Restart-All {
     # 等待一下确保端口释放
     Start-Sleep -Seconds 2
     
-    # 再启动
-    Start-All
+    # 再启动（强制重启模式）
+    Start-All -ForceRestart $true
 }
 
 # 查看状态

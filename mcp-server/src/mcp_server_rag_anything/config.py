@@ -3,14 +3,20 @@ Configuration management for RAG Anything MCP Server
 
 Handles environment variables and configuration settings for the MCP server.
 """
+"""
+版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
 
+本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+
+授权商业应用请联系微信：huice666
+"""
 
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0RoWGVBPT06N2YzNDg5ZTc=
 
 import os
 from dataclasses import dataclass, field
 from typing import Optional, List
-from pathlib import Path
 from dotenv import load_dotenv
 
 
@@ -81,24 +87,6 @@ class MCSConfig:
     def from_env(cls) -> "MCSConfig":
         """Load configuration from environment variables"""
         load_dotenv()
-
-        # Allow overriding the env file location (helps share LightRAG config)
-        env_override = os.environ.get("MCP_RAG_ENV_PATH")
-        if env_override:
-            load_dotenv(env_override, override=False)
-            return cls()
-
-        # Load shared LightRAG .env when the repo layout is present
-        try:
-            repo_root = Path(__file__).resolve().parents[3]
-        except IndexError:
-            repo_root = None
-
-        if repo_root:
-            shared_env = repo_root / "anything-chat-rag" / ".env"
-            if shared_env.is_file():
-                load_dotenv(shared_env, override=False)
-
         return cls()
 
     def to_dict(self) -> dict:
@@ -140,3 +128,4 @@ class MCSConfig:
                 "debug": self.server.debug,
             },
         }
+

@@ -18,6 +18,7 @@ health_controller = APIRouterPro(
     prefix="/testing/health",
     order_num=10,
     tags=["测试管理-健康检查"],
+    auto_register=True,
 )
 
 
@@ -47,7 +48,7 @@ def _parse_host_port(url: str, default_port: int | None = None) -> tuple[str, in
 @health_controller.get("", summary="依赖健康检查")
 async def health_check(
     request: Request,
-    db=Annotated[object, DBSessionDependency()],
+    db: Annotated[object, DBSessionDependency()] = None,
 ) -> Response:
     """
     检查关键外部依赖：数据库、Redis、MinIO、Milvus、LangGraph、Ollama/OpenAI

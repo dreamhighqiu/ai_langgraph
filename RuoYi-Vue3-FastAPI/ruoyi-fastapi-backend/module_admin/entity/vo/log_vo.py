@@ -14,10 +14,10 @@ class OperLogModel(BaseModel):
 
     oper_id: Optional[int] = Field(default=None, description='日志主键')
     title: Optional[str] = Field(default=None, description='模块标题')
-    business_type: Optional[Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']] = (
-        Field(
-            default=None, description='业务类型（0其它 1新增 2修改 3删除 4授权 5导出 6导入 7强退 8生成代码 9清空数据）'
-        )
+    business_type: Optional[
+        Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    ] = Field(
+        default=None, description='业务类型（0其它 1新增 2修改 3删除 4授权 5导出 6导入 7强退 8生成代码 9清空数据 10查询）'
     )
     method: Optional[str] = Field(default=None, description='方法名称')
     request_method: Optional[str] = Field(default=None, description='请求方式')

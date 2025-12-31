@@ -15,7 +15,6 @@ from common.aspect.pre_auth import CurrentUserDependency
 from common.annotation.log_annotation import Log
 from common.enums import BusinessType
 from common.vo import ResponseBaseModel
-from config.get_db import get_db
 from module_admin.entity.vo.user_vo import CurrentUserModel
 from utils.response_util import ResponseUtil
 from utils.log_util import logger

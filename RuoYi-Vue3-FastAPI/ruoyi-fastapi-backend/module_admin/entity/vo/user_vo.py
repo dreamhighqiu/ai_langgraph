@@ -137,6 +137,11 @@ class CurrentUserModel(BaseModel):
     is_default_modify_pwd: bool = Field(default=False, description='是否初始密码修改提醒')
     is_password_expired: bool = Field(default=False, description='密码是否过期提醒')
 
+    @property
+    def user_name(self) -> Union[str, None]:
+        """兼容旧代码直接访问 current_user.user_name"""
+        return self.user.user_name if self.user else None
+
 
 class UserDetailModel(BaseModel):
     """

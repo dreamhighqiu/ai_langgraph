@@ -278,10 +278,10 @@ class MinIOClient:
     def list_files(self, prefix: str = '') -> list:
         """
         列出文件
-        
+
         Args:
             prefix: 路径前缀
-            
+
         Returns:
             文件列表
         """
@@ -305,10 +305,99 @@ class MinIOClient:
                     recursive=True
                 )
                 return [obj.object_name for obj in objects]
-                
+
         except Exception as e:
             logger.error(f"列出文件失败: {e}")
             return []
+
+    # ==================== 性能测试专用方法 ====================
+
+    async def upload_script(self, script_content: str, filename: str) -> str:
+        """
+        上传测试脚本
+
+        Args:
+            script_content: 脚本内容
+            filename: 文件名
+
+        Returns:
+            脚本存储路径
+        """
+        object_name = f"scripts/{filename}"
+        success, path = self.upload_file(
+            file_content=script_content.encode('utf-8'),
+            object_name=object_name,
+            content_type='application/javascript'
+        )
+
+        if not success:
+            raise Exception(f"上传脚本失败: {path}")
+
+        return path
+
+    async def upload_result(self, result_content: str, filename: str) -> str:
+        """
+        上传测试结果
+
+        Args:
+            result_content: 结果内容(JSON)
+            filename: 文件名
+
+        Returns:
+            结果存储路径
+        """
+        object_name = f"results/{filename}"
+        success, path = self.upload_file(
+            file_content=result_content.encode('utf-8'),
+            object_name=object_name,
+            content_type='application/json'
+        )
+
+        if not success:
+            raise Exception(f"上传结果失败: {path}")
+
+        return path
+
+    async def upload_report(self, report_content: bytes, filename: str, content_type: str) -> str:
+        """
+        上传测试报告
+
+        Args:
+            report_content: 报告内容
+            filename: 文件名
+            content_type: 内容类型 (text/html, application/pdf等)
+
+        Returns:
+            报告存储路径
+        """
+        object_name = f"reports/{filename}"
+        success, path = self.upload_file(
+            file_content=report_content,
+            object_name=object_name,
+            content_type=content_type
+        )
+
+        if not success:
+            raise Exception(f"上传报告失败: {path}")
+
+        return path
+
+    async def download_file_async(self, object_path: str) -> bytes:
+        """
+        异步下载文件（适配async/await）
+
+        Args:
+            object_path: 对象路径
+
+        Returns:
+            文件内容
+        """
+        success, content = self.download_file(object_path)
+
+        if not success or content is None:
+            raise Exception(f"下载文件失败: {object_path}")
+
+        return content
 
 
 # 全局单例

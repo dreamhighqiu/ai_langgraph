@@ -30,7 +30,8 @@ project_controller = APIRouterPro(
     prefix='/testing/project',
     order_num=50,
     tags=['测试管理-项目管理'],
-    dependencies=[PreAuthDependency()]
+    dependencies=[PreAuthDependency()],
+    auto_register=True,
 )
 
 

@@ -1,0 +1,269 @@
+{
+  "config": {
+    "configFile": "D:\\yunxia\\ai_langgraph\\testing-agents-service\\testing-agents-service\\playwright_scripts\\playwright.config.ts",
+    "rootDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/yunxia/ai_langgraph/testing-agents-service/testing-agents-service/playwright_scripts/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "playturbo-basic-test.spec.ts",
+      "file": "playturbo-basic-test.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "PlayTurbo网站基本功能测试",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7836,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "测试1: 访问主页...\n"
+                    },
+                    {
+                      "text": "页面标题: Playturbo | Creative Automation Platform\n"
+                    },
+                    {
+                      "text": "检查页面基本元素...\n"
+                    },
+                    {
+                      "text": "找到header元素\n"
+                    },
+                    {
+                      "text": "检查导航链接...\n"
+                    },
+                    {
+                      "text": "找到 44 个链接\n"
+                    },
+                    {
+                      "text": "第一个链接: /\n"
+                    },
+                    {
+                      "text": "点击第一个链接...\n"
+                    },
+                    {
+                      "text": "链接点击成功，页面加载正常\n"
+                    },
+                    {
+                      "text": "截图记录...\n"
+                    },
+                    {
+                      "text": "测试完成！\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-31T01:32:18.026Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f494e24ed94991112e36-8d106be1790bbd9e9598",
+          "file": "playturbo-basic-test.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "PlayTurbo网站响应式测试",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 9110,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "测试响应式设计...\n"
+                    },
+                    {
+                      "text": "测试 desktop 视图 (1920x1080)\n"
+                    },
+                    {
+                      "text": "测试 tablet 视图 (768x1024)\n"
+                    },
+                    {
+                      "text": "测试 mobile 视图 (375x667)\n"
+                    },
+                    {
+                      "text": "响应式测试完成！\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-31T01:32:17.998Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f494e24ed94991112e36-ded2bc530a9531994fe4",
+          "file": "playturbo-basic-test.spec.ts",
+          "line": 61,
+          "column": 5
+        },
+        {
+          "title": "PlayTurbo网站性能测试",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 6836,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "测试页面性能...\n"
+                    },
+                    {
+                      "text": "页面加载时间: 6067ms\n"
+                    },
+                    {
+                      "text": "加载的资源数量: 78\n"
+                    },
+                    {
+                      "text": "性能测试完成！\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-31T01:32:17.977Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f494e24ed94991112e36-c5769c15f5e14ae0ab59",
+          "file": "playturbo-basic-test.spec.ts",
+          "line": 91,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-31T01:32:12.159Z",
+    "duration": 17615.837,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

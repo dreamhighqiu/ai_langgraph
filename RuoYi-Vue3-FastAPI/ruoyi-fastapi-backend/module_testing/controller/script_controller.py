@@ -24,6 +24,7 @@ from module_testing.entity.vo.script_vo import (
     ScriptPageQueryModel,
 )
 from module_testing.service.script_service import ScriptService
+from module_testing.service.script_execution_service import ScriptExecutionService
 from module_admin.entity.vo.user_vo import CurrentUserModel
 from utils.log_util import logger
 from utils.response_util import ResponseUtil
@@ -32,7 +33,8 @@ script_controller = APIRouterPro(
     prefix='/testing/script',
     order_num=51,
     tags=['测试管理-脚本管理'],
-    dependencies=[PreAuthDependency()]
+    dependencies=[PreAuthDependency()],
+    auto_register=True,
 )
 
 

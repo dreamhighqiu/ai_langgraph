@@ -1,0 +1,646 @@
+🔍 Starting router registration...
+📂 Project root: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\cache_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\captcha_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\common_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\config_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dept_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dict_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\job_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\login_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\log_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\menu_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\notice_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\online_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\post_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\role_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\server_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\user_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_generator\controller\gen_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\agent_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\execution_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\health_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\performance_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\project_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\report_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\requirement_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\script_controller.py
+📁 Found 25 controller files
+📦 Imported module: module_admin.controller.cache_controller
+   ✓ Found APIRouterPro: cache_controller (auto_register=True)
+📦 Imported module: module_admin.controller.captcha_controller
+   ✓ Found APIRouterPro: captcha_controller (auto_register=True)
+📦 Imported module: module_admin.controller.common_controller
+   ✓ Found APIRouterPro: common_controller (auto_register=True)
+📦 Imported module: module_admin.controller.config_controller
+   ✓ Found APIRouterPro: config_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dept_controller
+   ✓ Found APIRouterPro: dept_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dict_controller
+   ✓ Found APIRouterPro: dict_controller (auto_register=True)
+📦 Imported module: module_admin.controller.job_controller
+   ✓ Found APIRouterPro: job_controller (auto_register=True)
+📦 Imported module: module_admin.controller.login_controller
+   ✓ Found APIRouterPro: login_controller (auto_register=True)
+📦 Imported module: module_admin.controller.log_controller
+   ✓ Found APIRouterPro: log_controller (auto_register=True)
+📦 Imported module: module_admin.controller.menu_controller
+   ✓ Found APIRouterPro: menu_controller (auto_register=True)
+📦 Imported module: module_admin.controller.notice_controller
+   ✓ Found APIRouterPro: notice_controller (auto_register=True)
+📦 Imported module: module_admin.controller.online_controller
+   ✓ Found APIRouterPro: online_controller (auto_register=True)
+📦 Imported module: module_admin.controller.post_controller
+   ✓ Found APIRouterPro: post_controller (auto_register=True)
+📦 Imported module: module_admin.controller.role_controller
+   ✓ Found APIRouterPro: role_controller (auto_register=True)
+📦 Imported module: module_admin.controller.server_controller
+   ✓ Found APIRouterPro: server_controller (auto_register=True)
+📦 Imported module: module_admin.controller.user_controller
+   ✓ Found APIRouterPro: user_controller (auto_register=True)
+📦 Imported module: module_generator.controller.gen_controller
+   ✓ Found APIRouterPro: gen_controller (auto_register=True)
+📦 Imported module: module_testing.controller.agent_controller
+   ✓ Found APIRouterPro: agent_controller (auto_register=True)
+📦 Imported module: module_testing.controller.execution_controller
+   ✓ Found APIRouterPro: execution_controller (auto_register=True)
+📦 Imported module: module_testing.controller.health_controller
+   ✓ Found APIRouterPro: health_controller (auto_register=True)
+📦 Imported module: module_testing.controller.performance_controller
+   ✓ Found APIRouterPro: performance_controller (auto_register=True)
+📦 Imported module: module_testing.controller.project_controller
+   ✓ Found APIRouterPro: project_controller (auto_register=True)
+📦 Imported module: module_testing.controller.report_controller
+   ✓ Found APIRouterPro: report_controller (auto_register=True)
+📦 Imported module: module_testing.controller.requirement_controller
+   ✓ Found APIRouterPro: requirement_controller (auto_register=True)
+📦 Imported module: module_testing.controller.script_controller
+   ✓ Found APIRouterPro: script_controller (auto_register=True)
+🔌 Found 25 routers
+✅ Registered router: login_controller (prefix: , tags: ['登录模块'], routes: 5)
+✅ Registered router: captcha_controller (prefix: , tags: ['验证码模块'], routes: 1)
+✅ Registered router: user_controller (prefix: /system/user, tags: ['系统管理-用户管理'], routes: 18)
+✅ Registered router: role_controller (prefix: /system/role, tags: ['系统管理-角色管理'], routes: 14)
+✅ Registered router: menu_controller (prefix: /system/menu, tags: ['系统管理-菜单管理'], routes: 7)
+✅ Registered router: dept_controller (prefix: /system/dept, tags: ['系统管理-部门管理'], routes: 6)
+✅ Registered router: post_controller (prefix: /system/post, tags: ['系统管理-岗位管理'], routes: 6)
+✅ Registered router: dict_controller (prefix: /system/dict, tags: ['系统管理-字典管理'], routes: 15)
+✅ Registered router: config_controller (prefix: /system/config, tags: ['系统管理-参数管理'], routes: 8)
+✅ Registered router: health_controller (prefix: /testing/health, tags: ['测试管理-健康检查'], routes: 1)
+✅ Registered router: notice_controller (prefix: /system/notice, tags: ['系统管理-通知公告管理'], routes: 5)
+✅ Registered router: log_controller (prefix: /monitor, tags: ['系统管理-日志管理'], routes: 9)
+✅ Registered router: online_controller (prefix: /monitor/online, tags: ['系统监控-在线用户'], routes: 2)
+✅ Registered router: job_controller (prefix: /monitor, tags: ['系统监控-定时任务'], routes: 12)
+✅ Registered router: server_controller (prefix: /monitor/server, tags: ['系统监控-服务监控'], routes: 1)
+✅ Registered router: cache_controller (prefix: /monitor/cache, tags: ['系统监控-缓存监控'], routes: 7)
+✅ Registered router: common_controller (prefix: /common, tags: ['通用模块'], routes: 3)
+✅ Registered router: gen_controller (prefix: /tool/gen, tags: ['代码生成'], routes: 11)
+✅ Registered router: requirement_controller (prefix: /testing/requirement, tags: ['测试管理-需求管理'], routes: 8)
+✅ Registered router: performance_controller (prefix: /testing/performance, tags: ['性能测试管理-K6'], routes: 5)
+✅ Registered router: agent_controller (prefix: /testing/agent, tags: ['测试管理-AI Agent管理'], routes: 9)
+✅ Registered router: project_controller (prefix: /testing/project, tags: ['测试管理-项目管理'], routes: 7)
+✅ Registered router: script_controller (prefix: /testing/script, tags: ['测试管理-脚本管理'], routes: 7)
+✅ Registered router: execution_controller (prefix: /testing/execution, tags: ['测试管理-执行监控'], routes: 7)
+✅ Registered router: report_controller (prefix: /testing/report, tags: ['测试管理-报告管理'], routes: 6)
+📊 Successfully registered 25/25 routers
+✨ Router registration completed! Total: 25 routers registered
+
+📋 Summary of registered routes:
+   - login_controller:  (tags: ['登录模块'], 5 routes)
+   - captcha_controller:  (tags: ['验证码模块'], 1 routes)
+   - user_controller: /system/user (tags: ['系统管理-用户管理'], 18 routes)
+   - role_controller: /system/role (tags: ['系统管理-角色管理'], 14 routes)
+   - menu_controller: /system/menu (tags: ['系统管理-菜单管理'], 7 routes)
+   - dept_controller: /system/dept (tags: ['系统管理-部门管理'], 6 routes)
+   - post_controller: /system/post (tags: ['系统管理-岗位管理'], 6 routes)
+   - dict_controller: /system/dict (tags: ['系统管理-字典管理'], 15 routes)
+   - config_controller: /system/config (tags: ['系统管理-参数管理'], 8 routes)
+   - health_controller: /testing/health (tags: ['测试管理-健康检查'], 1 routes)
+   - notice_controller: /system/notice (tags: ['系统管理-通知公告管理'], 5 routes)
+   - log_controller: /monitor (tags: ['系统管理-日志管理'], 9 routes)
+   - online_controller: /monitor/online (tags: ['系统监控-在线用户'], 2 routes)
+   - job_controller: /monitor (tags: ['系统监控-定时任务'], 12 routes)
+   - server_controller: /monitor/server (tags: ['系统监控-服务监控'], 1 routes)
+   - cache_controller: /monitor/cache (tags: ['系统监控-缓存监控'], 7 routes)
+   - common_controller: /common (tags: ['通用模块'], 3 routes)
+   - gen_controller: /tool/gen (tags: ['代码生成'], 11 routes)
+   - requirement_controller: /testing/requirement (tags: ['测试管理-需求管理'], 8 routes)
+   - performance_controller: /testing/performance (tags: ['性能测试管理-K6'], 5 routes)
+   - agent_controller: /testing/agent (tags: ['测试管理-AI Agent管理'], 9 routes)
+   - project_controller: /testing/project (tags: ['测试管理-项目管理'], 7 routes)
+   - script_controller: /testing/script (tags: ['测试管理-脚本管理'], 7 routes)
+   - execution_controller: /testing/execution (tags: ['测试管理-执行监控'], 7 routes)
+   - report_controller: /testing/report (tags: ['测试管理-报告管理'], 6 routes)
+
+////////////////////////////////////////////////////////////////////
+//                          _ooOoo_                               //
+//                         o8888888o                              //
+//                         88" . "88                              //
+//                         (| ^_^ |)                              //
+//                         O\  =  /O                              //
+//                      ____/`---'\____                           //
+//                    .'  \\|     |//  `.                         //
+//                   /  \\|||  :  |||//  \                        //
+//                  /  _||||| -:- |||||-  \                       //
+//                  |   | \\\  -  /// |   |                       //
+//                  | \_|  ''\---/''  |   |                       //
+//                  \  .-\__  `-`  ___/-. /                       //
+//                ___`. .'  /--.--\  `. . ___                     //
+//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//      ========`-.____`-.___\_____/___.-`____.-'========         //
+//                           `=---='                              //
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+//             佛祖保佑       永不宕机      永无BUG                  //
+////////////////////////////////////////////////////////////////////
+    
+INFO:     127.0.0.1:51167 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56052 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50380 - "POST /logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62507 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62961 - "POST /logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62965 - "GET /captchaImage HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53266 - "POST /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65368 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54002 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57853 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57684 - "POST /logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50953 - "GET /testing/project/list?project_type=performance&status=0&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50952 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59893 - "POST /testing/requirement HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:54255 - "POST /testing/requirement HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:51011 - "POST /testing/requirement HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:64169 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:63940 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "POST /logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61748 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61748 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61748 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56290 - "GET /getInfo HTTP/1.1" 200 OK
+🔍 Starting router registration...
+📂 Project root: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\cache_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\captcha_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\common_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\config_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dept_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dict_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\job_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\login_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\log_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\menu_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\notice_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\online_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\post_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\role_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\server_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\user_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_generator\controller\gen_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\agent_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\execution_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\health_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\performance_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\project_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\report_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\requirement_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\script_controller.py
+📁 Found 25 controller files
+📦 Imported module: module_admin.controller.cache_controller
+   ✓ Found APIRouterPro: cache_controller (auto_register=True)
+📦 Imported module: module_admin.controller.captcha_controller
+   ✓ Found APIRouterPro: captcha_controller (auto_register=True)
+📦 Imported module: module_admin.controller.common_controller
+   ✓ Found APIRouterPro: common_controller (auto_register=True)
+📦 Imported module: module_admin.controller.config_controller
+   ✓ Found APIRouterPro: config_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dept_controller
+   ✓ Found APIRouterPro: dept_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dict_controller
+   ✓ Found APIRouterPro: dict_controller (auto_register=True)
+📦 Imported module: module_admin.controller.job_controller
+   ✓ Found APIRouterPro: job_controller (auto_register=True)
+📦 Imported module: module_admin.controller.login_controller
+   ✓ Found APIRouterPro: login_controller (auto_register=True)
+📦 Imported module: module_admin.controller.log_controller
+   ✓ Found APIRouterPro: log_controller (auto_register=True)
+📦 Imported module: module_admin.controller.menu_controller
+   ✓ Found APIRouterPro: menu_controller (auto_register=True)
+📦 Imported module: module_admin.controller.notice_controller
+   ✓ Found APIRouterPro: notice_controller (auto_register=True)
+📦 Imported module: module_admin.controller.online_controller
+   ✓ Found APIRouterPro: online_controller (auto_register=True)
+📦 Imported module: module_admin.controller.post_controller
+   ✓ Found APIRouterPro: post_controller (auto_register=True)
+📦 Imported module: module_admin.controller.role_controller
+   ✓ Found APIRouterPro: role_controller (auto_register=True)
+📦 Imported module: module_admin.controller.server_controller
+   ✓ Found APIRouterPro: server_controller (auto_register=True)
+📦 Imported module: module_admin.controller.user_controller
+   ✓ Found APIRouterPro: user_controller (auto_register=True)
+📦 Imported module: module_generator.controller.gen_controller
+   ✓ Found APIRouterPro: gen_controller (auto_register=True)
+📦 Imported module: module_testing.controller.agent_controller
+   ✓ Found APIRouterPro: agent_controller (auto_register=True)
+📦 Imported module: module_testing.controller.execution_controller
+   ✓ Found APIRouterPro: execution_controller (auto_register=True)
+📦 Imported module: module_testing.controller.health_controller
+   ✓ Found APIRouterPro: health_controller (auto_register=True)
+📦 Imported module: module_testing.controller.performance_controller
+   ✓ Found APIRouterPro: performance_controller (auto_register=True)
+📦 Imported module: module_testing.controller.project_controller
+   ✓ Found APIRouterPro: project_controller (auto_register=True)
+📦 Imported module: module_testing.controller.report_controller
+   ✓ Found APIRouterPro: report_controller (auto_register=True)
+📦 Imported module: module_testing.controller.requirement_controller
+   ✓ Found APIRouterPro: requirement_controller (auto_register=True)
+📦 Imported module: module_testing.controller.script_controller
+   ✓ Found APIRouterPro: script_controller (auto_register=True)
+🔌 Found 25 routers
+✅ Registered router: login_controller (prefix: , tags: ['登录模块'], routes: 5)
+✅ Registered router: captcha_controller (prefix: , tags: ['验证码模块'], routes: 1)
+✅ Registered router: user_controller (prefix: /system/user, tags: ['系统管理-用户管理'], routes: 18)
+✅ Registered router: role_controller (prefix: /system/role, tags: ['系统管理-角色管理'], routes: 14)
+✅ Registered router: menu_controller (prefix: /system/menu, tags: ['系统管理-菜单管理'], routes: 7)
+✅ Registered router: dept_controller (prefix: /system/dept, tags: ['系统管理-部门管理'], routes: 6)
+✅ Registered router: post_controller (prefix: /system/post, tags: ['系统管理-岗位管理'], routes: 6)
+✅ Registered router: dict_controller (prefix: /system/dict, tags: ['系统管理-字典管理'], routes: 15)
+✅ Registered router: config_controller (prefix: /system/config, tags: ['系统管理-参数管理'], routes: 8)
+✅ Registered router: health_controller (prefix: /testing/health, tags: ['测试管理-健康检查'], routes: 1)
+✅ Registered router: notice_controller (prefix: /system/notice, tags: ['系统管理-通知公告管理'], routes: 5)
+✅ Registered router: log_controller (prefix: /monitor, tags: ['系统管理-日志管理'], routes: 9)
+✅ Registered router: online_controller (prefix: /monitor/online, tags: ['系统监控-在线用户'], routes: 2)
+✅ Registered router: job_controller (prefix: /monitor, tags: ['系统监控-定时任务'], routes: 12)
+✅ Registered router: server_controller (prefix: /monitor/server, tags: ['系统监控-服务监控'], routes: 1)
+✅ Registered router: cache_controller (prefix: /monitor/cache, tags: ['系统监控-缓存监控'], routes: 7)
+✅ Registered router: common_controller (prefix: /common, tags: ['通用模块'], routes: 3)
+✅ Registered router: gen_controller (prefix: /tool/gen, tags: ['代码生成'], routes: 11)
+✅ Registered router: requirement_controller (prefix: /testing/requirement, tags: ['测试管理-需求管理'], routes: 8)
+✅ Registered router: performance_controller (prefix: /testing/performance, tags: ['性能测试管理-K6'], routes: 5)
+✅ Registered router: agent_controller (prefix: /testing/agent, tags: ['测试管理-AI Agent管理'], routes: 9)
+✅ Registered router: project_controller (prefix: /testing/project, tags: ['测试管理-项目管理'], routes: 7)
+✅ Registered router: script_controller (prefix: /testing/script, tags: ['测试管理-脚本管理'], routes: 7)
+✅ Registered router: execution_controller (prefix: /testing/execution, tags: ['测试管理-执行监控'], routes: 7)
+✅ Registered router: report_controller (prefix: /testing/report, tags: ['测试管理-报告管理'], routes: 6)
+📊 Successfully registered 25/25 routers
+✨ Router registration completed! Total: 25 routers registered
+
+📋 Summary of registered routes:
+   - login_controller:  (tags: ['登录模块'], 5 routes)
+   - captcha_controller:  (tags: ['验证码模块'], 1 routes)
+   - user_controller: /system/user (tags: ['系统管理-用户管理'], 18 routes)
+   - role_controller: /system/role (tags: ['系统管理-角色管理'], 14 routes)
+   - menu_controller: /system/menu (tags: ['系统管理-菜单管理'], 7 routes)
+   - dept_controller: /system/dept (tags: ['系统管理-部门管理'], 6 routes)
+   - post_controller: /system/post (tags: ['系统管理-岗位管理'], 6 routes)
+   - dict_controller: /system/dict (tags: ['系统管理-字典管理'], 15 routes)
+   - config_controller: /system/config (tags: ['系统管理-参数管理'], 8 routes)
+   - health_controller: /testing/health (tags: ['测试管理-健康检查'], 1 routes)
+   - notice_controller: /system/notice (tags: ['系统管理-通知公告管理'], 5 routes)
+   - log_controller: /monitor (tags: ['系统管理-日志管理'], 9 routes)
+   - online_controller: /monitor/online (tags: ['系统监控-在线用户'], 2 routes)
+   - job_controller: /monitor (tags: ['系统监控-定时任务'], 12 routes)
+   - server_controller: /monitor/server (tags: ['系统监控-服务监控'], 1 routes)
+   - cache_controller: /monitor/cache (tags: ['系统监控-缓存监控'], 7 routes)
+   - common_controller: /common (tags: ['通用模块'], 3 routes)
+   - gen_controller: /tool/gen (tags: ['代码生成'], 11 routes)
+   - requirement_controller: /testing/requirement (tags: ['测试管理-需求管理'], 8 routes)
+   - performance_controller: /testing/performance (tags: ['性能测试管理-K6'], 5 routes)
+   - agent_controller: /testing/agent (tags: ['测试管理-AI Agent管理'], 9 routes)
+   - project_controller: /testing/project (tags: ['测试管理-项目管理'], 7 routes)
+   - script_controller: /testing/script (tags: ['测试管理-脚本管理'], 7 routes)
+   - execution_controller: /testing/execution (tags: ['测试管理-执行监控'], 7 routes)
+   - report_controller: /testing/report (tags: ['测试管理-报告管理'], 6 routes)
+
+////////////////////////////////////////////////////////////////////
+//                          _ooOoo_                               //
+//                         o8888888o                              //
+//                         88" . "88                              //
+//                         (| ^_^ |)                              //
+//                         O\  =  /O                              //
+//                      ____/`---'\____                           //
+//                    .'  \\|     |//  `.                         //
+//                   /  \\|||  :  |||//  \                        //
+//                  /  _||||| -:- |||||-  \                       //
+//                  |   | \\\  -  /// |   |                       //
+//                  | \_|  ''\---/''  |   |                       //
+//                  \  .-\__  `-`  ___/-. /                       //
+//                ___`. .'  /--.--\  `. . ___                     //
+//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//      ========`-.____`-.___\_____/___.-`____.-'========         //
+//                           `=---='                              //
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+//             佛祖保佑       永不宕机      永无BUG                  //
+////////////////////////////////////////////////////////////////////
+    
+INFO:     127.0.0.1:56298 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54631 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52094 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52097 - "GET /testing/project/list?project_type=performance&status=0&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52096 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59421 - "POST /testing/requirement/generate/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59589 - "GET /testing/requirement/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50828 - "GET /testing/script/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50829 - "GET /testing/project/list?projectType=performance&status=0&pageNum=1&pageSize=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64238 - "GET /testing/execution/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64239 - "GET /testing/execution/statistics?days=7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54905 - "GET /testing/execution/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54906 - "GET /testing/execution/statistics?days=7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51834 - "GET /testing/report/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61839 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61948 - "POST /testing/project HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49714 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62417 - "PUT /testing/project/changeStatus HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50490 - "PUT /testing/project/changeStatus HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63806 - "GET /testing/project/7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60836 - "PUT /testing/project HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50061 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57571 - "DELETE /testing/project/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65221 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63923 - "GET /testing/project/list?page_num=1&page_size=10&project_name=ui HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62784 - "GET /testing/project/list?page_num=1&page_size=10&project_type=ui HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56949 - "GET /testing/project/list?page_num=1&page_size=10&project_type=performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49840 - "GET /testing/project/list?page_num=1&page_size=10&project_type=performance&status=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50460 - "GET /testing/project/list?page_num=1&page_size=10&project_type=performance&status=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57118 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62088 - "POST /testing/requirement HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:61822 - "POST /testing/requirement HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:62417 - "GET /testing/project/list?project_type=performance&status=0&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62415 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56692 - "GET /testing/project/list?project_type=performance&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56691 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52725 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57025 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57027 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57028 - "GET /testing/project/list?project_type=performance&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50090 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57617 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56216 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56984 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60149 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53354 - "GET /testing/script/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53355 - "GET /testing/project/list?projectType=performance&status=0&pageNum=1&pageSize=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59466 - "GET /testing/execution/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59467 - "GET /testing/execution/statistics?days=7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61381 - "GET /testing/report/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:63533 - "GET /testing/requirement/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59473 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49879 - "PUT /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64836 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64884 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64886 - "GET /testing/project/list?project_type=performance&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64885 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65425 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64388 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65047 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65047 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65047 - "GET /openapi.json HTTP/1.1" 200 OK
+🔍 Starting router registration...
+📂 Project root: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\cache_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\captcha_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\common_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\config_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dept_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dict_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\job_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\login_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\log_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\menu_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\notice_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\online_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\post_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\role_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\server_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\user_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_generator\controller\gen_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\agent_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\execution_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\health_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\performance_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\project_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\report_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\requirement_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\script_controller.py
+📁 Found 25 controller files
+📦 Imported module: module_admin.controller.cache_controller
+   ✓ Found APIRouterPro: cache_controller (auto_register=True)
+📦 Imported module: module_admin.controller.captcha_controller
+   ✓ Found APIRouterPro: captcha_controller (auto_register=True)
+📦 Imported module: module_admin.controller.common_controller
+   ✓ Found APIRouterPro: common_controller (auto_register=True)
+📦 Imported module: module_admin.controller.config_controller
+   ✓ Found APIRouterPro: config_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dept_controller
+   ✓ Found APIRouterPro: dept_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dict_controller
+   ✓ Found APIRouterPro: dict_controller (auto_register=True)
+📦 Imported module: module_admin.controller.job_controller
+   ✓ Found APIRouterPro: job_controller (auto_register=True)
+📦 Imported module: module_admin.controller.login_controller
+   ✓ Found APIRouterPro: login_controller (auto_register=True)
+📦 Imported module: module_admin.controller.log_controller
+   ✓ Found APIRouterPro: log_controller (auto_register=True)
+📦 Imported module: module_admin.controller.menu_controller
+   ✓ Found APIRouterPro: menu_controller (auto_register=True)
+📦 Imported module: module_admin.controller.notice_controller
+   ✓ Found APIRouterPro: notice_controller (auto_register=True)
+📦 Imported module: module_admin.controller.online_controller
+   ✓ Found APIRouterPro: online_controller (auto_register=True)
+📦 Imported module: module_admin.controller.post_controller
+   ✓ Found APIRouterPro: post_controller (auto_register=True)
+📦 Imported module: module_admin.controller.role_controller
+   ✓ Found APIRouterPro: role_controller (auto_register=True)
+📦 Imported module: module_admin.controller.server_controller
+   ✓ Found APIRouterPro: server_controller (auto_register=True)
+📦 Imported module: module_admin.controller.user_controller
+   ✓ Found APIRouterPro: user_controller (auto_register=True)
+📦 Imported module: module_generator.controller.gen_controller
+   ✓ Found APIRouterPro: gen_controller (auto_register=True)
+📦 Imported module: module_testing.controller.agent_controller
+   ✓ Found APIRouterPro: agent_controller (auto_register=True)
+📦 Imported module: module_testing.controller.execution_controller
+   ✓ Found APIRouterPro: execution_controller (auto_register=True)
+📦 Imported module: module_testing.controller.health_controller
+   ✓ Found APIRouterPro: health_controller (auto_register=True)
+📦 Imported module: module_testing.controller.performance_controller
+   ✓ Found APIRouterPro: performance_controller (auto_register=True)
+📦 Imported module: module_testing.controller.project_controller
+   ✓ Found APIRouterPro: project_controller (auto_register=True)
+📦 Imported module: module_testing.controller.report_controller
+   ✓ Found APIRouterPro: report_controller (auto_register=True)
+📦 Imported module: module_testing.controller.requirement_controller
+   ✓ Found APIRouterPro: requirement_controller (auto_register=True)
+📦 Imported module: module_testing.controller.script_controller
+   ✓ Found APIRouterPro: script_controller (auto_register=True)
+🔌 Found 25 routers
+✅ Registered router: login_controller (prefix: , tags: ['登录模块'], routes: 5)
+✅ Registered router: captcha_controller (prefix: , tags: ['验证码模块'], routes: 1)
+✅ Registered router: user_controller (prefix: /system/user, tags: ['系统管理-用户管理'], routes: 18)
+✅ Registered router: role_controller (prefix: /system/role, tags: ['系统管理-角色管理'], routes: 14)
+✅ Registered router: menu_controller (prefix: /system/menu, tags: ['系统管理-菜单管理'], routes: 7)
+✅ Registered router: dept_controller (prefix: /system/dept, tags: ['系统管理-部门管理'], routes: 6)
+✅ Registered router: post_controller (prefix: /system/post, tags: ['系统管理-岗位管理'], routes: 6)
+✅ Registered router: dict_controller (prefix: /system/dict, tags: ['系统管理-字典管理'], routes: 15)
+✅ Registered router: config_controller (prefix: /system/config, tags: ['系统管理-参数管理'], routes: 8)
+✅ Registered router: health_controller (prefix: /testing/health, tags: ['测试管理-健康检查'], routes: 1)
+✅ Registered router: notice_controller (prefix: /system/notice, tags: ['系统管理-通知公告管理'], routes: 5) 
+✅ Registered router: log_controller (prefix: /monitor, tags: ['系统管理-日志管理'], routes: 9)
+✅ Registered router: online_controller (prefix: /monitor/online, tags: ['系统监控-在线用户'], routes: 2)
+✅ Registered router: job_controller (prefix: /monitor, tags: ['系统监控-定时任务'], routes: 12)
+✅ Registered router: server_controller (prefix: /monitor/server, tags: ['系统监控-服务监控'], routes: 1)
+✅ Registered router: cache_controller (prefix: /monitor/cache, tags: ['系统监控-缓存监控'], routes: 7)
+✅ Registered router: common_controller (prefix: /common, tags: ['通用模块'], routes: 3)
+✅ Registered router: gen_controller (prefix: /tool/gen, tags: ['代码生成'], routes: 11)
+✅ Registered router: requirement_controller (prefix: /testing/requirement, tags: ['测试管理-需求管理'], routes: 8)
+✅ Registered router: performance_controller (prefix: /testing/performance, tags: ['性能测试管理-K6'], routes: 5)
+✅ Registered router: agent_controller (prefix: /testing/agent, tags: ['测试管理-AI Agent管理'], routes: 9)
+✅ Registered router: project_controller (prefix: /testing/project, tags: ['测试管理-项目管理'], routes: 7)
+✅ Registered router: script_controller (prefix: /testing/script, tags: ['测试管理-脚本管理'], routes: 7)
+✅ Registered router: execution_controller (prefix: /testing/execution, tags: ['测试管理-执行监控'], routes: 7)
+✅ Registered router: report_controller (prefix: /testing/report, tags: ['测试管理-报告管理'], routes: 6)
+📊 Successfully registered 25/25 routers
+✨ Router registration completed! Total: 25 routers registered
+
+📋 Summary of registered routes:
+   - login_controller:  (tags: ['登录模块'], 5 routes)
+   - captcha_controller:  (tags: ['验证码模块'], 1 routes)
+   - user_controller: /system/user (tags: ['系统管理-用户管理'], 18 routes)
+   - role_controller: /system/role (tags: ['系统管理-角色管理'], 14 routes)
+   - menu_controller: /system/menu (tags: ['系统管理-菜单管理'], 7 routes)
+   - dept_controller: /system/dept (tags: ['系统管理-部门管理'], 6 routes)
+   - post_controller: /system/post (tags: ['系统管理-岗位管理'], 6 routes)
+   - dict_controller: /system/dict (tags: ['系统管理-字典管理'], 15 routes)
+   - config_controller: /system/config (tags: ['系统管理-参数管理'], 8 routes)
+   - health_controller: /testing/health (tags: ['测试管理-健康检查'], 1 routes)
+   - notice_controller: /system/notice (tags: ['系统管理-通知公告管理'], 5 routes)
+   - log_controller: /monitor (tags: ['系统管理-日志管理'], 9 routes)
+   - online_controller: /monitor/online (tags: ['系统监控-在线用户'], 2 routes)
+   - job_controller: /monitor (tags: ['系统监控-定时任务'], 12 routes)
+   - server_controller: /monitor/server (tags: ['系统监控-服务监控'], 1 routes)
+   - cache_controller: /monitor/cache (tags: ['系统监控-缓存监控'], 7 routes)
+   - common_controller: /common (tags: ['通用模块'], 3 routes)
+   - gen_controller: /tool/gen (tags: ['代码生成'], 11 routes)
+   - requirement_controller: /testing/requirement (tags: ['测试管理-需求管理'], 8 routes)
+   - performance_controller: /testing/performance (tags: ['性能测试管理-K6'], 5 routes)
+   - agent_controller: /testing/agent (tags: ['测试管理-AI Agent管理'], 9 routes)
+   - project_controller: /testing/project (tags: ['测试管理-项目管理'], 7 routes)
+   - script_controller: /testing/script (tags: ['测试管理-脚本管理'], 7 routes)
+   - execution_controller: /testing/execution (tags: ['测试管理-执行监控'], 7 routes)
+   - report_controller: /testing/report (tags: ['测试管理-报告管理'], 6 routes)
+
+////////////////////////////////////////////////////////////////////
+//                          _ooOoo_                               //
+//                         o8888888o                              //
+//                         88" . "88                              //
+//                         (| ^_^ |)                              //
+//                         O\  =  /O                              //
+//                      ____/`---'\____                           //
+//                    .'  \\|     |//  `.                         //
+//                   /  \\|||  :  |||//  \                        //
+//                  /  _||||| -:- |||||-  \                       //
+//                  |   | \\\  -  /// |   |                       //
+//                  | \_|  ''\---/''  |   |                       //
+//                  \  .-\__  `-`  ___/-. /                       //
+//                ___`. .'  /--.--\  `. . ___                     //
+//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//      ========`-.____`-.___\_____/___.-`____.-'========         //
+//                           `=---='                              //
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+//             佛祖保佑       永不宕机      永无BUG                  //
+////////////////////////////////////////////////////////////////////
+    
+🔍 Starting router registration...
+📂 Project root: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\cache_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\captcha_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\common_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\config_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dept_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\dict_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\job_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\login_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\log_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\menu_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\notice_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\online_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\post_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\role_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\server_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\controller\user_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_generator\controller\gen_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\agent_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\execution_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\health_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\performance_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\project_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\report_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\requirement_controller.py
+   📄 Found controller file: D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_testing\controller\script_controller.py
+📁 Found 25 controller files
+📦 Imported module: module_admin.controller.cache_controller
+   ✓ Found APIRouterPro: cache_controller (auto_register=True)
+📦 Imported module: module_admin.controller.captcha_controller
+   ✓ Found APIRouterPro: captcha_controller (auto_register=True)
+📦 Imported module: module_admin.controller.common_controller
+   ✓ Found APIRouterPro: common_controller (auto_register=True)
+📦 Imported module: module_admin.controller.config_controller
+   ✓ Found APIRouterPro: config_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dept_controller
+   ✓ Found APIRouterPro: dept_controller (auto_register=True)
+📦 Imported module: module_admin.controller.dict_controller
+   ✓ Found APIRouterPro: dict_controller (auto_register=True)
+📦 Imported module: module_admin.controller.job_controller
+   ✓ Found APIRouterPro: job_controller (auto_register=True)
+📦 Imported module: module_admin.controller.login_controller
+   ✓ Found APIRouterPro: login_controller (auto_register=True)
+📦 Imported module: module_admin.controller.log_controller
+   ✓ Found APIRouterPro: log_controller (auto_register=True)
+📦 Imported module: module_admin.controller.menu_controller
+   ✓ Found APIRouterPro: menu_controller (auto_register=True)
+📦 Imported module: module_admin.controller.notice_controller
+   ✓ Found APIRouterPro: notice_controller (auto_register=True)
+📦 Imported module: module_admin.controller.online_controller
+   ✓ Found APIRouterPro: online_controller (auto_register=True)
+📦 Imported module: module_admin.controller.post_controller
+   ✓ Found APIRouterPro: post_controller (auto_register=True)
+📦 Imported module: module_admin.controller.role_controller
+   ✓ Found APIRouterPro: role_controller (auto_register=True)
+📦 Imported module: module_admin.controller.server_controller
+   ✓ Found APIRouterPro: server_controller (auto_register=True)
+📦 Imported module: module_admin.controller.user_controller
+   ✓ Found APIRouterPro: user_controller (auto_register=True)
+📦 Imported module: module_generator.controller.gen_controller
+   ✓ Found APIRouterPro: gen_controller (auto_register=True)
+📦 Imported module: module_testing.controller.agent_controller
+   ✓ Found APIRouterPro: agent_controller (auto_register=True)
+📦 Imported module: module_testing.controller.execution_controller
+   ✓ Found APIRouterPro: execution_controller (auto_register=True)
+📦 Imported module: module_testing.controller.health_controller
+   ✓ Found APIRouterPro: health_controller (auto_register=True)
+📦 Imported module: module_testing.controller.performance_controller
+   ✓ Found APIRouterPro: performance_controller (auto_register=True)
+📦 Imported module: module_testing.controller.project_controller
+   ✓ Found APIRouterPro: project_controller (auto_register=True)
+📦 Imported module: module_testing.controller.report_controller
+   ✓ Found APIRouterPro: report_controller (auto_register=True)
+📦 Imported module: module_testing.controller.requirement_controller
+   ✓ Found APIRouterPro: requirement_controller (auto_register=True)
+📦 Imported module: module_testing.controller.script_controller
+   ✓ Found APIRouterPro: script_controller (auto_register=True)
+🔌 Found 25 routers
+✅ Registered router: login_controller (prefix: , tags: ['登录模块'], routes: 5)
+✅ Registered router: captcha_controller (prefix: , tags: ['验证码模块'], routes: 1)
+✅ Registered router: user_controller (prefix: /system/user, tags: ['系统管理-用户管理'], routes: 18)
+✅ Registered router: role_controller (prefix: /system/role, tags: ['系统管理-角色管理'], routes: 14)
+✅ Registered router: menu_controller (prefix: /system/menu, tags: ['系统管理-菜单管理'], routes: 7)
+✅ Registered router: dept_controller (prefix: /system/dept, tags: ['系统管理-部门管理'], routes: 6)
+✅ Registered router: post_controller (prefix: /system/post, tags: ['系统管理-岗位管理'], routes: 6)
+✅ Registered router: dict_controller (prefix: /system/dict, tags: ['系统管理-字典管理'], routes: 15)
+✅ Registered router: config_controller (prefix: /system/config, tags: ['系统管理-参数管理'], routes: 8)
+✅ Registered router: health_controller (prefix: /testing/health, tags: ['测试管理-健康检查'], routes: 1)
+✅ Registered router: notice_controller (prefix: /system/notice, tags: ['系统管理-通知公告管理'], routes: 5)

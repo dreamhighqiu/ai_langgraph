@@ -31,7 +31,13 @@ export function addProject(data) {
   return request({
     url: '/testing/project',
     method: 'post',
-    data: data
+    data: {
+      project_name: data.projectName,
+      project_type: data.projectType,
+      description: data.description,
+      status: data.status,
+      remark: data.remark
+    }
   })
 }
 
@@ -40,7 +46,14 @@ export function updateProject(data) {
   return request({
     url: '/testing/project',
     method: 'put',
-    data: data
+    data: {
+      project_id: data.projectId,
+      project_name: data.projectName,
+      project_type: data.projectType,
+      description: data.description,
+      status: data.status,
+      remark: data.remark
+    }
   })
 }
 
@@ -57,7 +70,7 @@ export function changeProjectStatus(projectId, status) {
   return request({
     url: '/testing/project/changeStatus',
     method: 'put',
+    // Backend expects snake_case keys
     data: { project_id: projectId, status: status }
   })
 }
-

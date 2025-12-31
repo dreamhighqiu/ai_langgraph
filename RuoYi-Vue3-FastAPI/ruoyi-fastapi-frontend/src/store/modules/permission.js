@@ -32,6 +32,73 @@ const usePermissionStore = defineStore(
       setSidebarRouters(routes) {
         this.sidebarRouters = routes
       },
+      // 兜底：若后端未正确挂载，补充测试三大模块路由，避免 404
+      ensureTestingRoutes() {
+        const existing = router.getRoutes().map(r => r.path)
+        const toAdd = []
+
+        // 项目管理路由
+        const makeProject = () => ({
+          path: '/testing',
+          component: Layout,
+          alwaysShow: true,
+          meta: { title: '测试管理', icon: 'test-tube' },
+          children: [
+            {
+              path: 'project',
+              component: loadView('testing/project/index'),
+              name: 'TestingProject',
+              meta: { title: '项目管理', icon: 'folder-opened' }
+            }
+          ]
+        })
+
+        const makePerf = () => ({
+          path: '/performance',
+          component: Layout,
+          alwaysShow: true,
+          meta: { title: '性能测试', icon: 'dashboard' },
+          children: [
+            { path: 'index', component: loadView('testing/performance/index'), name: 'PerformanceTesting', meta: { title: '性能测试', icon: 'odometer' } },
+            { path: 'requirement', component: loadView('testing/performance/requirement'), name: 'PerformanceRequirement', meta: { title: '需求管理', icon: 'list' } },
+            { path: 'script', component: loadView('testing/performance/script'), name: 'PerformanceScript', meta: { title: '脚本管理', icon: 'edit' } },
+            { path: 'execution', component: loadView('testing/performance/execution'), name: 'PerformanceExecution', meta: { title: '脚本执行', icon: 'play' } },
+            { path: 'report', component: loadView('testing/performance/report'), name: 'PerformanceReport', meta: { title: '报告管理', icon: 'document' } }
+          ]
+        })
+        const makeUI = () => ({
+          path: '/ui-automation',
+          component: Layout,
+          alwaysShow: true,
+          meta: { title: 'UI自动化', icon: 'monitor' },
+          children: [
+            { path: 'index', component: loadView('testing/ui-automation/index'), name: 'UIAutomation', meta: { title: 'UI自动化', icon: 'monitor' } },
+            { path: 'requirement', component: loadView('testing/ui-automation/requirement'), name: 'UIRequirement', meta: { title: '需求管理', icon: 'list' } },
+            { path: 'script', component: loadView('testing/ui-automation/script'), name: 'UIScript', meta: { title: '脚本管理', icon: 'edit' } },
+            { path: 'execution', component: loadView('testing/ui-automation/execution'), name: 'UIExecution', meta: { title: '脚本执行', icon: 'play' } },
+            { path: 'report', component: loadView('testing/ui-automation/report'), name: 'UIReport', meta: { title: '报告管理', icon: 'document' } }
+          ]
+        })
+        const makeAPI = () => ({
+          path: '/api-automation',
+          component: Layout,
+          alwaysShow: true,
+          meta: { title: 'API自动化', icon: 'api' },
+          children: [
+            { path: 'index', component: loadView('testing/api-automation/index'), name: 'APIAutomation', meta: { title: 'API自动化', icon: 'connection' } },
+            { path: 'requirement', component: loadView('testing/api-automation/requirement'), name: 'APIRequirement', meta: { title: '需求管理', icon: 'list' } },
+            { path: 'script', component: loadView('testing/api-automation/script'), name: 'APIScript', meta: { title: '脚本管理', icon: 'edit' } },
+            { path: 'execution', component: loadView('testing/api-automation/execution'), name: 'APIExecution', meta: { title: '脚本执行', icon: 'play' } },
+            { path: 'report', component: loadView('testing/api-automation/report'), name: 'APIReport', meta: { title: '报告管理', icon: 'document' } }
+          ]
+        })
+
+        if (!existing.includes('/testing')) toAdd.push(makeProject())
+        if (!existing.includes('/performance')) toAdd.push(makePerf())
+        if (!existing.includes('/ui-automation')) toAdd.push(makeUI())
+        if (!existing.includes('/api-automation')) toAdd.push(makeAPI())
+        toAdd.forEach(r => router.addRoute(r))
+      },
       generateRoutes(roles) {
         return new Promise(resolve => {
           // 向后端请求路由数据
@@ -44,6 +111,8 @@ const usePermissionStore = defineStore(
             const defaultRoutes = filterAsyncRouter(defaultData)
             const asyncRoutes = filterDynamicRoutes(dynamicRoutes)
             asyncRoutes.forEach(route => { router.addRoute(route) })
+            // 兜底补充三大测试模块，防止路由未挂载导致 404
+            this.ensureTestingRoutes()
             this.setRoutes(rewriteRoutes)
             this.setSidebarRouters(constantRoutes.concat(sidebarRoutes))
             this.setDefaultRoutes(sidebarRoutes)

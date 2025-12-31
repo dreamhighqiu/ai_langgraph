@@ -1,6 +1,7 @@
 """
 测试脚本DAO - 数据访问层
 """
+import json
 from typing import Optional
 
 from sqlalchemy import and_, func, select, update
@@ -179,4 +180,84 @@ class ScriptDAO:
             )
         )
         return result.scalar() or 0
+    
+    @staticmethod
+    async def add_script(db: AsyncSession, script_data: dict) -> TestScript:
+        """
+        创建脚本（从字典数据）
+        
+        Args:
+            db: 数据库会话
+            script_data: 脚本数据字典
+            
+        Returns:
+            创建的脚本对象
+        """
+        # 字段映射（将服务层字段映射到DO字段）
+        field_mapping = {
+            'script_path': 'script_file_path',
+            'generation_config': 'config',  # 合并到config
+        }
+        
+        # 准备数据
+        processed_data = {}
+        for key, value in script_data.items():
+            # 跳过不存在的字段
+            if key in ['tags', 'ai_generated', 'description', 'requirement_id']:
+                # 这些字段合并到config或remark中
+                continue
+            
+            # 字段映射
+            mapped_key = field_mapping.get(key, key)
+            
+            # 只添加TestScript有的字段
+            if hasattr(TestScript, mapped_key):
+                processed_data[mapped_key] = value
+        
+        # 处理特殊字段
+        if 'generation_config' in script_data:
+            import json
+            existing_config = processed_data.get('config', {}) or {}
+            if isinstance(existing_config, str):
+                try:
+                    existing_config = json.loads(existing_config)
+                except:
+                    existing_config = {}
+            gen_config = script_data.get('generation_config')
+            if isinstance(gen_config, str):
+                try:
+                    gen_config = json.loads(gen_config)
+                except:
+                    gen_config = {}
+            existing_config['generation'] = gen_config
+            processed_data['config'] = existing_config
+        
+        # 添加AI相关信息到remark
+        if 'ai_generated' in script_data or 'requirement_id' in script_data:
+            remark_parts = []
+            if processed_data.get('remark'):
+                remark_parts.append(processed_data['remark'])
+            if script_data.get('ai_generated') == '1':
+                remark_parts.append('AI生成')
+            if script_data.get('requirement_id'):
+                remark_parts.append(f"需求ID:{script_data['requirement_id']}")
+            if script_data.get('description'):
+                remark_parts.append(script_data['description'])
+            processed_data['remark'] = ' | '.join(remark_parts)
+        
+        # 设置agent_id
+        if 'agent_id' not in processed_data and 'generation_config' in script_data:
+            try:
+                gen_config = script_data['generation_config']
+                if isinstance(gen_config, str):
+                    gen_config = json.loads(gen_config)
+                processed_data['agent_id'] = gen_config.get('agent_id')
+            except:
+                pass
+        
+        script = TestScript(**processed_data)
+        db.add(script)
+        await db.flush()
+        await db.refresh(script)
+        return script
 

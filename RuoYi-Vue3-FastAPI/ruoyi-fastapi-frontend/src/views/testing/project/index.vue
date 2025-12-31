@@ -1,19 +1,29 @@
 <template>
   <div class="app-container">
+    <!-- 页面标题卡片 -->
+    <el-card class="header-card mb-4">
+      <div class="header-content">
+        <div>
+          <h2><el-icon><FolderOpened /></el-icon> 测试项目管理</h2>
+          <p class="subtitle">Test Project Management - 统一管理性能测试/UI自动化/API自动化项目</p>
+        </div>
+      </div>
+    </el-card>
+
     <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="项目名称" prop="project_name">
+      <el-form-item label="项目名称" prop="projectName">
         <el-input
-          v-model="queryParams.project_name"
+          v-model="queryParams.projectName"
           placeholder="请输入项目名称"
           clearable
           @keyup.enter="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="项目类型" prop="project_type">
-        <el-select v-model="queryParams.project_type" placeholder="请选择项目类型" clearable>
+      <el-form-item label="项目类型" prop="projectType">
+        <el-select v-model="queryParams.projectType" placeholder="请选择项目类型" clearable>
           <el-option label="性能测试" value="performance" />
-          <el-option label="UI测试" value="ui" />
-          <el-option label="API测试" value="api" />
+          <el-option label="UI自动化" value="ui" />
+          <el-option label="API自动化" value="api" />
         </el-select>
       </el-form-item>
       <el-form-item label="状态" prop="status">
@@ -30,7 +40,7 @@
 
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
-        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:project:add']">新增</el-button>
+        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:project:add']">新增项目</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:project:remove']">删除</el-button>
@@ -40,11 +50,11 @@
 
     <el-table v-loading="loading" :data="projectList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="项目ID" align="center" prop="project_id" width="80" />
-      <el-table-column label="项目名称" align="center" prop="project_name" :show-overflow-tooltip="true" />
-      <el-table-column label="项目类型" align="center" prop="project_type" width="100">
+      <el-table-column label="项目ID" align="center" prop="projectId" width="80" />
+      <el-table-column label="项目名称" align="center" prop="projectName" :show-overflow-tooltip="true" />
+      <el-table-column label="项目类型" align="center" prop="projectType" width="120">
         <template #default="scope">
-          <el-tag :type="getProjectTypeTag(scope.row.project_type)">{{ getProjectTypeName(scope.row.project_type) }}</el-tag>
+          <el-tag :type="getProjectTypeTag(scope.row.projectType)">{{ getProjectTypeName(scope.row.projectType) }}</el-tag>
         </template>
       </el-table-column>
       <el-table-column label="描述" align="center" prop="description" :show-overflow-tooltip="true" />
@@ -59,9 +69,9 @@
           />
         </template>
       </el-table-column>
-      <el-table-column label="创建时间" align="center" prop="create_time" width="160">
+      <el-table-column label="创建时间" align="center" prop="createTime" width="160">
         <template #default="scope">
-          <span>{{ parseTime(scope.row.create_time) }}</span>
+          <span>{{ parseTime(scope.row.createTime) }}</span>
         </template>
       </el-table-column>
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width" width="200">
@@ -75,22 +85,22 @@
     <pagination
       v-show="total > 0"
       :total="total"
-      v-model:page="queryParams.page_num"
-      v-model:limit="queryParams.page_size"
+      v-model:page="queryParams.pageNum"
+      v-model:limit="queryParams.pageSize"
       @pagination="getList"
     />
 
     <!-- 添加或修改项目对话框 -->
-    <el-dialog :title="title" v-model="open" width="500px" append-to-body>
+    <el-dialog :title="title" v-model="open" width="600px" append-to-body>
       <el-form ref="projectRef" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="项目名称" prop="project_name">
-          <el-input v-model="form.project_name" placeholder="请输入项目名称" />
+        <el-form-item label="项目名称" prop="projectName">
+          <el-input v-model="form.projectName" placeholder="请输入项目名称" />
         </el-form-item>
-        <el-form-item label="项目类型" prop="project_type">
-          <el-select v-model="form.project_type" placeholder="请选择项目类型" style="width: 100%">
+        <el-form-item label="项目类型" prop="projectType">
+          <el-select v-model="form.projectType" placeholder="请选择项目类型" style="width: 100%">
             <el-option label="性能测试" value="performance" />
-            <el-option label="UI测试" value="ui" />
-            <el-option label="API测试" value="api" />
+            <el-option label="UI自动化" value="ui" />
+            <el-option label="API自动化" value="api" />
           </el-select>
         </el-form-item>
         <el-form-item label="描述" prop="description">
@@ -134,15 +144,15 @@ const title = ref("");
 const data = reactive({
   form: {},
   queryParams: {
-    page_num: 1,
-    page_size: 10,
-    project_name: undefined,
-    project_type: undefined,
+    pageNum: 1,
+    pageSize: 10,
+    projectName: undefined,
+    projectType: undefined,
     status: undefined
   },
   rules: {
-    project_name: [{ required: true, message: "项目名称不能为空", trigger: "blur" }],
-    project_type: [{ required: true, message: "项目类型不能为空", trigger: "change" }]
+    projectName: [{ required: true, message: "项目名称不能为空", trigger: "blur" }],
+    projectType: [{ required: true, message: "项目类型不能为空", trigger: "change" }]
   }
 });
 
@@ -152,8 +162,8 @@ const { queryParams, form, rules } = toRefs(data);
 function getProjectTypeName(type) {
   const typeMap = {
     'performance': '性能测试',
-    'ui': 'UI测试',
-    'api': 'API测试'
+    'ui': 'UI自动化',
+    'api': 'API自动化'
   };
   return typeMap[type] || type;
 }
@@ -171,9 +181,24 @@ function getProjectTypeTag(type) {
 /** 查询项目列表 */
 function getList() {
   loading.value = true;
-  listProject(queryParams.value).then(response => {
-    projectList.value = response.rows;
-    total.value = response.total;
+  const query = {
+    page_num: queryParams.value.pageNum,
+    page_size: queryParams.value.pageSize,
+    project_name: queryParams.value.projectName,
+    project_type: queryParams.value.projectType,
+    status: queryParams.value.status
+  };
+  listProject(query).then(response => {
+    projectList.value = (response.rows || []).map(item => ({
+      projectId: item.project_id,
+      projectName: item.project_name,
+      projectType: item.project_type,
+      description: item.description,
+      status: item.status,
+      createTime: item.create_time,
+      remark: item.remark
+    }));
+    total.value = response.total || 0;
     loading.value = false;
   });
 }
@@ -187,9 +212,9 @@ function cancel() {
 /** 表单重置 */
 function reset() {
   form.value = {
-    project_id: undefined,
-    project_name: undefined,
-    project_type: undefined,
+    projectId: undefined,
+    projectName: undefined,
+    projectType: undefined,
     description: undefined,
     status: "0",
     remark: undefined
@@ -199,7 +224,7 @@ function reset() {
 
 /** 搜索按钮操作 */
 function handleQuery() {
-  queryParams.value.page_num = 1;
+  queryParams.value.pageNum = 1;
   getList();
 }
 
@@ -211,7 +236,7 @@ function resetQuery() {
 
 /** 多选框选中数据 */
 function handleSelectionChange(selection) {
-  ids.value = selection.map(item => item.project_id);
+  ids.value = selection.map(item => item.projectId);
   single.value = selection.length != 1;
   multiple.value = !selection.length;
 }
@@ -226,9 +251,17 @@ function handleAdd() {
 /** 修改按钮操作 */
 function handleUpdate(row) {
   reset();
-  const projectId = row.project_id || ids.value;
+  const projectId = row.projectId || ids.value;
   getProject(projectId).then(response => {
-    form.value = response.data;
+    const data = response.data || {};
+    form.value = {
+      projectId: data.project_id,
+      projectName: data.project_name,
+      projectType: data.project_type,
+      description: data.description,
+      status: data.status ?? "0",
+      remark: data.remark
+    };
     open.value = true;
     title.value = "修改项目";
   });
@@ -238,7 +271,7 @@ function handleUpdate(row) {
 function submitForm() {
   proxy.$refs["projectRef"].validate(valid => {
     if (valid) {
-      if (form.value.project_id != undefined) {
+      if (form.value.projectId != undefined) {
         updateProject(form.value).then(response => {
           proxy.$modal.msgSuccess("修改成功");
           open.value = false;
@@ -257,7 +290,7 @@ function submitForm() {
 
 /** 删除按钮操作 */
 function handleDelete(row) {
-  const projectIds = row.project_id || ids.value;
+  const projectIds = row.projectId || ids.value;
   proxy.$modal.confirm('是否确认删除项目编号为"' + projectIds + '"的数据项?').then(function() {
     return delProject(projectIds);
   }).then(() => {
@@ -269,8 +302,8 @@ function handleDelete(row) {
 /** 状态修改 */
 function handleStatusChange(row) {
   let text = row.status === "0" ? "启用" : "停用";
-  proxy.$modal.confirm('确认要"' + text + '""' + row.project_name + '"项目吗?').then(function() {
-    return changeProjectStatus(row.project_id, row.status);
+  proxy.$modal.confirm('确认要"' + text + '""' + row.projectName + '"项目吗?').then(function() {
+    return changeProjectStatus(row.projectId, row.status);
   }).then(() => {
     proxy.$modal.msgSuccess(text + "成功");
   }).catch(function() {
@@ -281,3 +314,34 @@ function handleStatusChange(row) {
 getList();
 </script>
 
+<style scoped lang="scss">
+.header-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 20px;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+    }
+
+    .subtitle {
+      margin: 8px 0 0 0;
+      opacity: 0.9;
+      font-size: 14px;
+    }
+  }
+}
+
+:deep(.el-card__body) {
+  padding: 20px;
+}
+</style>

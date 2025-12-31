@@ -1163,11 +1163,12 @@
   },
   "Python": {
     "chunk_ids": [
-      "chunk-0ed01d0a52df8896f87835c170a4127f"
+      "chunk-0ed01d0a52df8896f87835c170a4127f",
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
     ],
-    "count": 1,
-    "create_time": 1767074031,
-    "update_time": 1767074031,
+    "count": 3,
+    "update_time": 1767178072,
     "_id": "Python"
   },
   "requirements.txt": {
@@ -1775,5 +1776,1361 @@
     "create_time": 1767076423,
     "update_time": 1767076423,
     "_id": "详细输出示例"
+  },
+  "邱云霞": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178041,
+    "update_time": 1767178041,
+    "_id": "邱云霞"
+  },
+  "广州": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178041,
+    "update_time": 1767178041,
+    "_id": "广州"
+  },
+  "高级测试工程师": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178041,
+    "update_time": 1767178041,
+    "_id": "高级测试工程师"
+  },
+  "测试开发工程师": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178041,
+    "update_time": 1767178041,
+    "_id": "测试开发工程师"
+  },
+  "AI赋能测试平台": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178041,
+    "update_time": 1767178041,
+    "_id": "AI赋能测试平台"
+  },
+  "大模型(LLM)": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178041,
+    "update_time": 1767178041,
+    "_id": "大模型(LLM)"
+  },
+  "LangChain": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 3,
+    "create_time": 1767178045,
+    "update_time": 1767178045,
+    "_id": "LangChain"
+  },
+  "DeepAgent": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178046,
+    "update_time": 1767178046,
+    "_id": "DeepAgent"
+  },
+  "RAG": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178072,
+    "update_time": 1767178072,
+    "_id": "RAG"
+  },
+  "MCP": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178072,
+    "update_time": 1767178072,
+    "_id": "MCP"
+  },
+  "React": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178083,
+    "update_time": 1767178083,
+    "_id": "React"
+  },
+  "TypeScript": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178083,
+    "update_time": 1767178083,
+    "_id": "TypeScript"
+  },
+  "Dify": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178083,
+    "update_time": 1767178083,
+    "_id": "Dify"
+  },
+  "RAGFlow": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178083,
+    "update_time": 1767178083,
+    "_id": "RAGFlow"
+  },
+  "UI自动化框架": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178083,
+    "update_time": 1767178083,
+    "_id": "UI自动化框架"
+  },
+  "Playwright": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178103,
+    "update_time": 1767178103,
+    "_id": "Playwright"
+  },
+  "Pytest": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178103,
+    "update_time": 1767178103,
+    "_id": "Pytest"
+  },
+  "Allure": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178103,
+    "update_time": 1767178103,
+    "_id": "Allure"
+  },
+  "Jenkins": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178103,
+    "update_time": 1767178103,
+    "_id": "Jenkins"
+  },
+  "接口自动化框架": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178117,
+    "update_time": 1767178117,
+    "_id": "接口自动化框架"
+  },
+  "YAML": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178117,
+    "update_time": 1767178117,
+    "_id": "YAML"
+  },
+  "APP自动化测试框架": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178117,
+    "update_time": 1767178117,
+    "_id": "APP自动化测试框架"
+  },
+  "Appium": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178117,
+    "update_time": 1767178117,
+    "_id": "Appium"
+  },
+  "SQLAlchemy": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178138,
+    "update_time": 1767178138,
+    "_id": "SQLAlchemy"
+  },
+  "ADB": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178138,
+    "update_time": 1767178138,
+    "_id": "ADB"
+  },
+  "质量体系与流程建设": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178138,
+    "update_time": 1767178138,
+    "_id": "质量体系与流程建设"
+  },
+  "监控与可观测性": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178138,
+    "update_time": 1767178138,
+    "_id": "监控与可观测性"
+  },
+  "ELK": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 3,
+    "create_time": 1767178151,
+    "update_time": 1767178151,
+    "_id": "ELK"
+  },
+  "Jaeger": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178151,
+    "update_time": 1767178151,
+    "_id": "Jaeger"
+  },
+  "Prometheus": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178151,
+    "update_time": 1767178151,
+    "_id": "Prometheus"
+  },
+  "Grafana": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178151,
+    "update_time": 1767178151,
+    "_id": "Grafana"
+  },
+  "Docker": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178165,
+    "update_time": 1767178165,
+    "_id": "Docker"
+  },
+  "Linux": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178165,
+    "update_time": 1767178165,
+    "_id": "Linux"
+  },
+  "Shell": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178165,
+    "update_time": 1767178165,
+    "_id": "Shell"
+  },
+  "FastAPI": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 3,
+    "create_time": 1767178165,
+    "update_time": 1767178165,
+    "_id": "FastAPI"
+  },
+  "MySQL": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178179,
+    "update_time": 1767178179,
+    "_id": "MySQL"
+  },
+  "Charles": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178179,
+    "update_time": 1767178179,
+    "_id": "Charles"
+  },
+  "Postman": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178179,
+    "update_time": 1767178179,
+    "_id": "Postman"
+  },
+  "Jmeter": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178179,
+    "update_time": 1767178179,
+    "_id": "Jmeter"
+  },
+  "K6": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 3,
+    "create_time": 1767178195,
+    "update_time": 1767178195,
+    "_id": "K6"
+  },
+  "内部测试环境管理平台": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178195,
+    "update_time": 1767178195,
+    "_id": "内部测试环境管理平台"
+  },
+  "要出发周边游": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178195,
+    "update_time": 1767178195,
+    "_id": "要出发周边游"
+  },
+  "百度在线网络技术(北京)有限公司": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178195,
+    "update_time": 1767178195,
+    "_id": "百度在线网络技术(北京)有限公司"
+  },
+  "百度糯米App": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 2,
+    "create_time": 1767178195,
+    "update_time": 1767178195,
+    "_id": "百度糯米App"
+  },
+  "环境部署平台": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178217,
+    "update_time": 1767178217,
+    "_id": "环境部署平台"
+  },
+  "组件化数据集平台": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178217,
+    "update_time": 1767178217,
+    "_id": "组件化数据集平台"
+  },
+  "移动应用广告归因自动化测试平台": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 3,
+    "create_time": 1767178217,
+    "update_time": 1767178217,
+    "_id": "移动应用广告归因自动化测试平台"
+  },
+  "需求评审": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178217,
+    "update_time": 1767178217,
+    "_id": "需求评审"
+  },
+  "测试方案": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178232,
+    "update_time": 1767178232,
+    "_id": "测试方案"
+  },
+  "发布准入": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178232,
+    "update_time": 1767178232,
+    "_id": "发布准入"
+  },
+  "线上监控": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178232,
+    "update_time": 1767178232,
+    "_id": "线上监控"
+  },
+  "冒烟Checklist": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178232,
+    "update_time": 1767178232,
+    "_id": "冒烟Checklist"
+  },
+  "自动化门禁": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178256,
+    "update_time": 1767178256,
+    "_id": "自动化门禁"
+  },
+  "Swagger": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178256,
+    "update_time": 1767178256,
+    "_id": "Swagger"
+  },
+  "契约测试": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178256,
+    "update_time": 1767178256,
+    "_id": "契约测试"
+  },
+  "性能瓶颈分析与调优": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178256,
+    "update_time": 1767178256,
+    "_id": "性能瓶颈分析与调优"
+  },
+  "用户行为点检测": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178273,
+    "update_time": 1767178273,
+    "_id": "用户行为点检测"
+  },
+  "日志监控体系": {
+    "chunk_ids": [
+      "chunk-79be94d8c3833dcb484c8e1712014160"
+    ],
+    "count": 1,
+    "create_time": 1767178273,
+    "update_time": 1767178273,
+    "_id": "日志监控体系"
+  },
+  "监控体系": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178273,
+    "update_time": 1767178273,
+    "_id": "监控体系"
+  },
+  "测试工程师": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178273,
+    "update_time": 1767178273,
+    "_id": "测试工程师"
+  },
+  "兼容性与灰度测试": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178290,
+    "update_time": 1767178290,
+    "_id": "兼容性与灰度测试"
+  },
+  "汇量科技Mobvista": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178290,
+    "update_time": 1767178290,
+    "_id": "汇量科技Mobvista"
+  },
+  "平台测试负责人": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178290,
+    "update_time": 1767178290,
+    "_id": "平台测试负责人"
+  },
+  "PlayTurbo素材制作平台与仓库素材管理后台": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178290,
+    "update_time": 1767178290,
+    "_id": "PlayTurbo素材制作平台与仓库素材管理后台"
+  },
+  "AI智能制作平台": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178307,
+    "update_time": 1767178307,
+    "_id": "AI智能制作平台"
+  },
+  "AI测试工具": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178307,
+    "update_time": 1767178307,
+    "_id": "AI测试工具"
+  },
+  "自动化测试体系": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178307,
+    "update_time": 1767178307,
+    "_id": "自动化测试体系"
+  },
+  "研发效能平台": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178307,
+    "update_time": 1767178307,
+    "_id": "研发效能平台"
+  },
+  "智能监控系统": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178323,
+    "update_time": 1767178323,
+    "_id": "智能监控系统"
+  },
+  "AI智能测试平台": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178323,
+    "update_time": 1767178323,
+    "_id": "AI智能测试平台"
+  },
+  "多智能体系统": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178323,
+    "update_time": 1767178323,
+    "_id": "多智能体系统"
+  },
+  "需求分析Agent": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178323,
+    "update_time": 1767178323,
+    "_id": "需求分析Agent"
+  },
+  "测试用例生成Agent": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178337,
+    "update_time": 1767178337,
+    "_id": "测试用例生成Agent"
+  },
+  "K6性能测试Agent": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178337,
+    "update_time": 1767178337,
+    "_id": "K6性能测试Agent"
+  },
+  "缺陷分析Agent": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178337,
+    "update_time": 1767178337,
+    "_id": "缺陷分析Agent"
+  },
+  "测试报告生成Agent": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178337,
+    "update_time": 1767178337,
+    "_id": "测试报告生成Agent"
+  },
+  "日志分析Agent": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178350,
+    "update_time": 1767178350,
+    "_id": "日志分析Agent"
+  },
+  "RAG知识库": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178350,
+    "update_time": 1767178350,
+    "_id": "RAG知识库"
+  },
+  "Dify平台": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178350,
+    "update_time": 1767178350,
+    "_id": "Dify平台"
+  },
+  "作者": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178350,
+    "update_time": 1767178350,
+    "_id": "作者"
+  },
+  "LangGraph": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178363,
+    "update_time": 1767178363,
+    "_id": "LangGraph"
+  },
+  "DeepAgents": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178363,
+    "update_time": 1767178363,
+    "_id": "DeepAgents"
+  },
+  "Milvus": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178363,
+    "update_time": 1767178363,
+    "_id": "Milvus"
+  },
+  "MinIO": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178363,
+    "update_time": 1767178363,
+    "_id": "MinIO"
+  },
+  "LightRAG": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 2,
+    "create_time": 1767178377,
+    "update_time": 1767178377,
+    "_id": "LightRAG"
+  },
+  "P0/P1级线上漏洞": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178377,
+    "update_time": 1767178377,
+    "_id": "P0/P1级线上漏洞"
+  },
+  "500+条用户反馈": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178377,
+    "update_time": 1767178377,
+    "_id": "500+条用户反馈"
+  },
+  "30+项体验优化": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178377,
+    "update_time": 1767178377,
+    "_id": "30+项体验优化"
+  },
+  "1400个用例": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178390,
+    "update_time": 1767178390,
+    "_id": "1400个用例"
+  },
+  "500+次发布": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178390,
+    "update_time": 1767178390,
+    "_id": "500+次发布"
+  },
+  "业务生产效率提升300%": {
+    "chunk_ids": [
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
+    ],
+    "count": 1,
+    "create_time": 1767178390,
+    "update_time": 1767178390,
+    "_id": "业务生产效率提升300%"
+  },
+  "Pydantic": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178390,
+    "update_time": 1767178390,
+    "_id": "Pydantic"
+  },
+  "Uvicorn": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178404,
+    "update_time": 1767178404,
+    "_id": "Uvicorn"
+  },
+  "LLM": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178404,
+    "update_time": 1767178404,
+    "_id": "LLM"
+  },
+  "Loguru": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178404,
+    "update_time": 1767178404,
+    "_id": "Loguru"
+  },
+  "DingTalk API": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178404,
+    "update_time": 1767178404,
+    "_id": "DingTalk API"
+  },
+  "酒店、门票、特产等多品类电商交易系统": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178419,
+    "update_time": 1767178419,
+    "_id": "酒店、门票、特产等多品类电商交易系统"
+  },
+  "项目测试负责人": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178419,
+    "update_time": 1767178419,
+    "_id": "项目测试负责人"
+  },
+  "JMeter": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178419,
+    "update_time": 1767178419,
+    "_id": "JMeter"
+  },
+  "江西理工大学": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178419,
+    "update_time": 1767178419,
+    "_id": "江西理工大学"
+  },
+  "软件工程(本科)": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178434,
+    "update_time": 1767178434,
+    "_id": "软件工程(本科)"
+  },
+  "英语(六级)": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178434,
+    "update_time": 1767178434,
+    "_id": "英语(六级)"
+  },
+  "国家励志奖学金": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178434,
+    "update_time": 1767178434,
+    "_id": "国家励志奖学金"
+  },
+  "优秀毕业生": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178434,
+    "update_time": 1767178434,
+    "_id": "优秀毕业生"
+  },
+  "一等奖学金": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178447,
+    "update_time": 1767178447,
+    "_id": "一等奖学金"
+  },
+  "三等奖学金": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178447,
+    "update_time": 1767178447,
+    "_id": "三等奖学金"
+  },
+  "三好学生": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178447,
+    "update_time": 1767178447,
+    "_id": "三好学生"
+  },
+  "多模态大模型能力": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178447,
+    "update_time": 1767178447,
+    "_id": "多模态大模型能力"
+  },
+  "跨平台框架": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178462,
+    "update_time": 1767178462,
+    "_id": "跨平台框架"
+  },
+  "数据驱动测试": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178462,
+    "update_time": 1767178462,
+    "_id": "数据驱动测试"
+  },
+  "环境自动化": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178462,
+    "update_time": 1767178462,
+    "_id": "环境自动化"
+  },
+  "监控告警": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178462,
+    "update_time": 1767178462,
+    "_id": "监控告警"
+  },
+  "复杂业务质量保障": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178477,
+    "update_time": 1767178477,
+    "_id": "复杂业务质量保障"
+  },
+  "接口自动化与性能测试": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178477,
+    "update_time": 1767178477,
+    "_id": "接口自动化与性能测试"
+  },
+  "线上质量防控": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178477,
+    "update_time": 1767178477,
+    "_id": "线上质量防控"
+  },
+  "自我评价": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178477,
+    "update_time": 1767178477,
+    "_id": "自我评价"
+  },
+  "个人": {
+    "chunk_ids": [
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "count": 1,
+    "create_time": 1767178842,
+    "update_time": 1767178842,
+    "_id": "个人"
+  },
+  "Asia.com": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "Asia.com"
+  },
+  "Thai AirAsia": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "Thai AirAsia"
+  },
+  "Airbus": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "Airbus"
+  },
+  "F900": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "F900"
+  },
+  "Mahatma Gandhi": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "Mahatma Gandhi"
+  },
+  "Reserve Bank of India": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "Reserve Bank of India"
+  },
+  "500卢比纸币": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178986,
+    "update_time": 1767178986,
+    "_id": "500卢比纸币"
+  },
+  "印度游学Vlog": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767178994,
+    "update_time": 1767178994,
+    "_id": "印度游学Vlog"
+  },
+  "菩提迦耶": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179016,
+    "update_time": 1767179016,
+    "_id": "菩提迦耶"
+  },
+  "瓦拉纳希": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179016,
+    "update_time": 1767179016,
+    "_id": "瓦拉纳希"
+  },
+  "阿格拉": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179016,
+    "update_time": 1767179016,
+    "_id": "阿格拉"
+  },
+  "新德里": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179023,
+    "update_time": 1767179023,
+    "_id": "新德里"
+  },
+  "2023.12.27-2024.01.10": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179023,
+    "update_time": 1767179023,
+    "_id": "2023.12.27-2024.01.10"
+  },
+  "500": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179023,
+    "update_time": 1767179023,
+    "_id": "500"
+  },
+  "MAHATHA GANOHI": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179023,
+    "update_time": 1767179023,
+    "_id": "MAHATHA GANOHI"
+  },
+  "6EBA": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179023,
+    "update_time": 1767179023,
+    "_id": "6EBA"
+  },
+  "DESERVE BANK OF INDIA": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179042,
+    "update_time": 1767179042,
+    "_id": "DESERVE BANK OF INDIA"
+  },
+  "DANK OF INDIA": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179042,
+    "update_time": 1767179042,
+    "_id": "DANK OF INDIA"
+  },
+  "4594836": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179042,
+    "update_time": 1767179042,
+    "_id": "4594836"
+  },
+  "nECERVE BANK OF INDIA": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179043,
+    "update_time": 1767179043,
+    "_id": "nECERVE BANK OF INDIA"
+  },
+  "UDANK OF INDIA": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179060,
+    "update_time": 1767179060,
+    "_id": "UDANK OF INDIA"
+  },
+  "28805": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179060,
+    "update_time": 1767179060,
+    "_id": "28805"
+  },
+  "0800": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179060,
+    "update_time": 1767179060,
+    "_id": "0800"
+  },
+  "GUARANTEEDBYTHECENTRALGOVERNMENT": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179060,
+    "update_time": 1767179060,
+    "_id": "GUARANTEEDBYTHECENTRALGOVERNMENT"
+  },
+  "TE": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179076,
+    "update_time": 1767179076,
+    "_id": "TE"
+  },
+  "IPROMISETOPAYTHEBEARERTHESUMOFFIVEHUNDREDRUPEES": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179076,
+    "update_time": 1767179076,
+    "_id": "IPROMISETOPAYTHEBEARERTHESUMOFFIVEHUNDREDRUPEES"
+  },
+  "M": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179076,
+    "update_time": 1767179076,
+    "_id": "M"
+  },
+  "GOVERNOR": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179076,
+    "update_time": 1767179076,
+    "_id": "GOVERNOR"
+  },
+  "4VKU128805": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179094,
+    "update_time": 1767179094,
+    "_id": "4VKU128805"
+  },
+  "OAH-855123": {
+    "chunk_ids": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "count": 1,
+    "create_time": 1767179094,
+    "update_time": 1767179094,
+    "_id": "OAH-855123"
   }
 }

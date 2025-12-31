@@ -1,5 +1,9 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2025-12-30 15:49:52,934 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2025-12-31 20:01:09,067 - __main__ - INFO - Loaded LightRAG config from: D:\yunxia\ai_langgraph\anything-chat-rag\.env
+2025-12-31 20:01:09,067 - __main__ - INFO - [Storage Config] Vector Storage: MilvusVectorDBStorage
+2025-12-31 20:01:09,067 - __main__ - INFO - [Storage Config] Milvus URI: http://47.110.95.246:19530
+2025-12-31 20:01:09,067 - __main__ - INFO - [Storage Config] Milvus DB Name: lightrag
+2025-12-31 20:01:09,068 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -21,54 +25,396 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2025-12-30 15:49:52,960 - __main__ - INFO - Starting RAG Anything MCP Server...
-2025-12-30 15:49:52,976 - __main__ - INFO - Configuration loaded
-2025-12-30 15:49:52,976 - __main__ - INFO -   LLM Provider: deepseek
-2025-12-30 15:49:52,976 - __main__ - INFO -   LLM Model: deepseek-chat
-2025-12-30 15:49:52,976 - __main__ - INFO -   RAG Parser: docling
-2025-12-30 15:49:52,976 - __main__ - INFO - Creating LLM model function...
-2025-12-30 15:49:52,976 - __main__ - INFO - Creating vision model function...
-2025-12-30 15:49:52,976 - __main__ - INFO - Creating embedding function...
-2025-12-30 15:49:52,976 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2025-12-30 15:49:52,976 - __main__ - INFO - Creating RAGAnything connector...
-2025-12-30 15:49:52,976 - __main__ - INFO - Initializing RAGAnything...
+2025-12-31 20:01:09,095 - __main__ - INFO - Starting RAG Anything MCP Server...
+2025-12-31 20:01:09,113 - __main__ - INFO - Configuration loaded
+2025-12-31 20:01:09,113 - __main__ - INFO -   LLM Provider: deepseek
+2025-12-31 20:01:09,114 - __main__ - INFO -   LLM Model: deepseek-chat
+2025-12-31 20:01:09,114 - __main__ - INFO -   RAG Parser: docling
+2025-12-31 20:01:09,114 - __main__ - INFO - Creating LLM model function...
+2025-12-31 20:01:09,114 - __main__ - INFO - Creating vision model function...
+2025-12-31 20:01:09,114 - __main__ - INFO - Creating embedding function...
+2025-12-31 20:01:13,151 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created (Ollama): qwen3-embedding:0.6b (dim=1024, host=http://47.110.95.246:11434)
+2025-12-31 20:01:13,152 - __main__ - INFO - Creating RAGAnything connector...
+2025-12-31 20:01:13,152 - __main__ - INFO - Initializing RAGAnything...
+2025-12-31 20:01:13,152 - mcp_server_rag_anything.connector - INFO - [RAGAnything Init] Using vector storage: MilvusVectorDBStorage
 INFO: RAGAnything initialized with config:
-INFO:   Working directory: ./rag_storage
+INFO:   Working directory: D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage
 INFO:   Parser: docling
 INFO:   Parse method: auto
 INFO:   Multimodal processing - Image: True, Table: True, Equation: True
 INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
-INFO: Initializing LightRAG with parameters: {'working_dir': './rag_storage'}
-INFO: [] Created new empty graph file: ./rag_storage\graph_chunk_entity_relation.graphml
-2025-12-30 15:50:10,642 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
-2025-12-30 15:50:10,643 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
-2025-12-30 15:50:10,643 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
-INFO: [] Process 5008 KV load full_docs with 0 records
-INFO: [] Process 5008 KV load text_chunks with 0 records
-INFO: [] Process 5008 KV load full_entities with 0 records
-INFO: [] Process 5008 KV load full_relations with 0 records
-INFO: [] Process 5008 KV load entity_chunks with 0 records
-INFO: [] Process 5008 KV load relation_chunks with 0 records
-INFO: [] Process 5008 KV load llm_response_cache with 0 records
-INFO: [] Process 5008 doc status load doc_status with 0 records
-INFO: [] Process 5008 KV load parse_cache with 0 records
+INFO: Initializing LightRAG with parameters: {'working_dir': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\rag_storage', 'vector_storage': 'MilvusVectorDBStorage'}
+INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 347 nodes, 271 edges
+INFO: [] Process 66316 KV load full_docs with 6 records
+INFO: [] Process 66316 KV load text_chunks with 15 records
+INFO: [] Process 66316 KV load full_entities with 5 records
+INFO: [] Process 66316 KV load full_relations with 4 records
+INFO: [] Process 66316 KV load entity_chunks with 341 records
+INFO: [] Process 66316 KV load relation_chunks with 271 records
+INFO: [] VectorDB collection 'entities' exists check: True
+INFO: [] VectorDB Collection 'entities' compatibility validation passed
+INFO: [] Milvus collection 'entities' initialized successfully
+INFO: [] VectorDB collection 'relationships' exists check: True
+INFO: [] VectorDB Collection 'relationships' compatibility validation passed
+INFO: [] Milvus collection 'relationships' initialized successfully
+INFO: [] VectorDB collection 'chunks' exists check: True
+INFO: [] VectorDB Collection 'chunks' compatibility validation passed
+INFO: [] Milvus collection 'chunks' initialized successfully
+INFO: [] Process 66316 KV load llm_response_cache with 39 records
+INFO: [] Process 66316 doc status load doc_status with 6 records
+INFO: [] Process 66316 KV load parse_cache with 9 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2025-12-30 15:50:10,649 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2025-12-30 15:50:10,649 - __main__ - INFO - RAG Anything initialized successfully
-2025-12-30 15:50:10,649 - __main__ - INFO -   Working Directory: ./rag_storage
-2025-12-30 15:50:10,649 - __main__ - INFO -   Parser: docling
-[12/30/25 15:50:10] INFO     Starting MCP server '但问企业级RAG' server.py:2618
+2025-12-31 20:01:45,663 - mcp_server_rag_anything.connector - INFO - [Storage Backend] Actual Vector Storage: MilvusVectorDBStorage
+2025-12-31 20:01:45,663 - mcp_server_rag_anything.connector - INFO - [Storage Backend] ✅ Using Milvus for vector storage
+2025-12-31 20:01:45,663 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2025-12-31 20:01:45,663 - __main__ - INFO - RAG Anything initialized successfully
+2025-12-31 20:01:45,663 - __main__ - INFO -   Working Directory: D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage
+2025-12-31 20:01:45,663 - __main__ - INFO -   Parser: docling
+[12/31/25 20:01:45] INFO     Starting MCP server '但问企业级RAG' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8001/sse                           
-INFO:     Started server process [5008]
+INFO:     Started server process [66316]
 INFO:     Waiting for application startup.
-2025-12-30 15:50:10,791 - docket.worker - INFO - Starting worker 'caobinbin#5008' with the following tasks:
-2025-12-30 15:50:10,791 - docket.worker - INFO - * trace(message: str, ...)
-2025-12-30 15:50:10,791 - docket.worker - INFO - * fail(message: str, ...)
-2025-12-30 15:50:10,791 - docket.worker - INFO - * sleep(seconds: float, ...)
+2025-12-31 20:01:45,927 - docket.worker - INFO - Starting worker 'caobinbin#66316' with the following tasks:
+2025-12-31 20:01:45,929 - docket.worker - INFO - * trace(message: str, ...)
+2025-12-31 20:01:45,929 - docket.worker - INFO - * fail(message: str, ...)
+2025-12-31 20:01:45,929 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:60508 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60511 - "POST /messages/?session_id=1e1c933a40fd495d95ada8eb5a7e9b5a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:60513 - "POST /messages/?session_id=1e1c933a40fd495d95ada8eb5a7e9b5a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:60515 - "POST /messages/?session_id=1e1c933a40fd495d95ada8eb5a7e9b5a HTTP/1.1" 202 Accepted
+2025-12-31 20:01:57,179 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51353 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51355 - "POST /messages/?session_id=2c57e648fdbc49e1837a1e8ef06d60fd HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51357 - "POST /messages/?session_id=2c57e648fdbc49e1837a1e8ef06d60fd HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51359 - "POST /messages/?session_id=2c57e648fdbc49e1837a1e8ef06d60fd HTTP/1.1" 202 Accepted
+2025-12-31 20:03:25,690 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:64575 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64577 - "POST /messages/?session_id=7f7976a7ab204ea88b50c761b04cd6b8 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:64579 - "POST /messages/?session_id=7f7976a7ab204ea88b50c761b04cd6b8 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:64581 - "POST /messages/?session_id=7f7976a7ab204ea88b50c761b04cd6b8 HTTP/1.1" 202 Accepted
+2025-12-31 20:04:04,877 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51993 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51995 - "POST /messages/?session_id=f6b537aba4f94416977abf2d262b8a48 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51997 - "POST /messages/?session_id=f6b537aba4f94416977abf2d262b8a48 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52002 - "POST /messages/?session_id=f6b537aba4f94416977abf2d262b8a48 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:01,596 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:05:01,596 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞..., mode: hybrid, top_k: 10
+2025-12-31 20:05:01,596 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞... (mode: hybrid)
+2025-12-31 20:05:01,596 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞... (mode: hybrid)
+INFO: Executing VLM enhanced query: 邱云霞...
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+ERROR: LLM func: Error in decorated function for task 2722271658816_983692.296: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:05:07,352 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    enhanced_prompt, images_found = await self._process_image_paths_for_vlm(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+    matches = re.findall(image_path_pattern, prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:05:07,356 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:05:07,356 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:65294 - "POST /messages/?session_id=f6b537aba4f94416977abf2d262b8a48 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:07,378 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:65359 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65361 - "POST /messages/?session_id=20a5fc7fe5954d2dafde7a95e26236e6 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:65363 - "POST /messages/?session_id=20a5fc7fe5954d2dafde7a95e26236e6 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:65365 - "POST /messages/?session_id=20a5fc7fe5954d2dafde7a95e26236e6 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:14,241 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:05:14,242 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞 信息..., mode: hybrid, top_k: 10
+2025-12-31 20:05:14,242 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞 信息... (mode: hybrid)
+2025-12-31 20:05:14,242 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞 信息... (mode: hybrid)
+INFO: Executing VLM enhanced query: 邱云霞 信息...
+ERROR: LLM func: Error in decorated function for task 2722271671872_983704.906: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:05:19,221 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    enhanced_prompt, images_found = await self._process_image_paths_for_vlm(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+    matches = re.findall(image_path_pattern, prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:05:19,223 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:05:19,223 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:56142 - "POST /messages/?session_id=20a5fc7fe5954d2dafde7a95e26236e6 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:19,244 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:62578 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62580 - "POST /messages/?session_id=1ab2c7bbbbb84fad9e758529f2634eb6 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:62582 - "POST /messages/?session_id=1ab2c7bbbbb84fad9e758529f2634eb6 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:62584 - "POST /messages/?session_id=1ab2c7bbbbb84fad9e758529f2634eb6 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:24,974 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+INFO:     127.0.0.1:62586 - "POST /messages/?session_id=1ab2c7bbbbb84fad9e758529f2634eb6 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:24,988 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:49704 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60403 - "POST /messages/?session_id=dbf77ea2c4b74f30872d4578a1bdcc38 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:60405 - "POST /messages/?session_id=dbf77ea2c4b74f30872d4578a1bdcc38 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:60407 - "POST /messages/?session_id=dbf77ea2c4b74f30872d4578a1bdcc38 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:31,282 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:05:31,283 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞..., mode: local, top_k: 10
+2025-12-31 20:05:31,283 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞... (mode: local)
+2025-12-31 20:05:31,283 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞... (mode: local)
+INFO: Executing VLM enhanced query: 邱云霞...
+ERROR: LLM func: Error in decorated function for task 2722280699840_983721.953: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:05:36,219 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    enhanced_prompt, images_found = await self._process_image_paths_for_vlm(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+    matches = re.findall(image_path_pattern, prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:05:36,221 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:05:36,222 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:57105 - "POST /messages/?session_id=dbf77ea2c4b74f30872d4578a1bdcc38 HTTP/1.1" 202 Accepted
+2025-12-31 20:05:36,247 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:49741 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49743 - "POST /messages/?session_id=aad5cb7f57314cb6ae8633febcfc019b HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49745 - "POST /messages/?session_id=aad5cb7f57314cb6ae8633febcfc019b HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49747 - "POST /messages/?session_id=aad5cb7f57314cb6ae8633febcfc019b HTTP/1.1" 202 Accepted
+2025-12-31 20:09:28,930 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:09:28,930 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞 个人信息 介绍..., mode: hybrid, top_k: 10
+2025-12-31 20:09:28,930 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞 个人信息 介绍... (mode: hybrid)
+2025-12-31 20:09:28,930 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞 个人信息 介绍... (mode: hybrid)
+INFO: Executing VLM enhanced query: 邱云霞 个人信息 介绍...
+ERROR: LLM func: Error in decorated function for task 2722281392256_983959.609: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:09:34,308 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    enhanced_prompt, images_found = await self._process_image_paths_for_vlm(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+    if prompt is None:
+              ^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:09:34,317 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:09:34,319 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:52823 - "POST /messages/?session_id=aad5cb7f57314cb6ae8633febcfc019b HTTP/1.1" 202 Accepted
+2025-12-31 20:09:34,345 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:58523 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58525 - "POST /messages/?session_id=d3d3d45236674a59a8108bf018231a4c HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58527 - "POST /messages/?session_id=d3d3d45236674a59a8108bf018231a4c HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58529 - "POST /messages/?session_id=d3d3d45236674a59a8108bf018231a4c HTTP/1.1" 202 Accepted
+2025-12-31 20:09:39,836 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+INFO:     127.0.0.1:58531 - "POST /messages/?session_id=d3d3d45236674a59a8108bf018231a4c HTTP/1.1" 202 Accepted
+2025-12-31 20:09:39,881 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:63421 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63423 - "POST /messages/?session_id=34556feb561b4e73958a7d1e123ba146 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:63425 - "POST /messages/?session_id=34556feb561b4e73958a7d1e123ba146 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:63427 - "POST /messages/?session_id=34556feb561b4e73958a7d1e123ba146 HTTP/1.1" 202 Accepted
+2025-12-31 20:10:23,945 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:10:23,946 - __main__ - INFO - [MCP Tool: query] Called with query_text: 出远门..., mode: hybrid, top_k: 10
+2025-12-31 20:10:23,946 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 出远门... (mode: hybrid)
+2025-12-31 20:10:23,946 - mcp_server_rag_anything.connector - INFO - Executing query: 出远门... (mode: hybrid)
+INFO: Executing VLM enhanced query: 出远门...
+ERROR: LLM func: Error in decorated function for task 2722271669952_984014.609: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:10:29,476 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    enhanced_prompt, images_found = await self._process_image_paths_for_vlm(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+    if prompt is None:
+              ^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:10:29,478 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:10:29,478 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:60110 - "POST /messages/?session_id=34556feb561b4e73958a7d1e123ba146 HTTP/1.1" 202 Accepted
+2025-12-31 20:10:29,502 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:57051 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57053 - "POST /messages/?session_id=52ab94cecf1a43d684b8bf801eda73f1 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:57055 - "POST /messages/?session_id=52ab94cecf1a43d684b8bf801eda73f1 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:57057 - "POST /messages/?session_id=52ab94cecf1a43d684b8bf801eda73f1 HTTP/1.1" 202 Accepted
+2025-12-31 20:17:01,732 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:17:01,734 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞 简历..., mode: hybrid, top_k: 10
+2025-12-31 20:17:01,734 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞 简历... (mode: hybrid)
+2025-12-31 20:17:01,734 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞 简历... (mode: hybrid)
+INFO: Executing VLM enhanced query: 邱云霞 简历...
+ERROR: LLM func: Error in decorated function for task 2722281395520_984412.406: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:17:06,881 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    if raw_prompt is None:
+                           
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:17:06,887 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:17:06,887 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:60566 - "POST /messages/?session_id=52ab94cecf1a43d684b8bf801eda73f1 HTTP/1.1" 202 Accepted
+2025-12-31 20:17:06,908 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:55001 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55003 - "POST /messages/?session_id=94ab8545c5c54d559190412c0f267764 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55005 - "POST /messages/?session_id=94ab8545c5c54d559190412c0f267764 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55007 - "POST /messages/?session_id=94ab8545c5c54d559190412c0f267764 HTTP/1.1" 202 Accepted
+2025-12-31 20:17:13,661 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:17:13,662 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞 工作经历 教育背景..., mode: hybrid, top_k: 10
+2025-12-31 20:17:13,662 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞 工作经历 教育背景... (mode: hybrid)
+2025-12-31 20:17:13,662 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞 工作经历 教育背景... (mode: hybrid)
+INFO: Executing VLM enhanced query: 邱云霞 工作经历 教育背景...
+ERROR: LLM func: Error in decorated function for task 2722281394176_984424.328: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:17:19,284 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    if raw_prompt is None:
+                           
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:17:19,286 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:17:19,287 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:63832 - "POST /messages/?session_id=94ab8545c5c54d559190412c0f267764 HTTP/1.1" 202 Accepted
+2025-12-31 20:17:19,310 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:65018 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65020 - "POST /messages/?session_id=4e6515aea11b468ca4433a367c529f2a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:65022 - "POST /messages/?session_id=4e6515aea11b468ca4433a367c529f2a HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:65024 - "POST /messages/?session_id=4e6515aea11b468ca4433a367c529f2a HTTP/1.1" 202 Accepted
+2025-12-31 20:17:25,259 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+INFO:     127.0.0.1:65026 - "POST /messages/?session_id=4e6515aea11b468ca4433a367c529f2a HTTP/1.1" 202 Accepted
+2025-12-31 20:17:25,294 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:59446 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59448 - "POST /messages/?session_id=87fdd39908b8466aa7a5b3a54eb4e89b HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59450 - "POST /messages/?session_id=87fdd39908b8466aa7a5b3a54eb4e89b HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59452 - "POST /messages/?session_id=87fdd39908b8466aa7a5b3a54eb4e89b HTTP/1.1" 202 Accepted
+2025-12-31 20:25:13,581 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:25:13,581 - __main__ - INFO - [MCP Tool: query] Called with query_text: 邱云霞 个人简介..., mode: hybrid, top_k: 10
+2025-12-31 20:25:13,582 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 邱云霞 个人简介... (mode: hybrid)
+2025-12-31 20:25:13,582 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞 个人简介... (mode: hybrid)
+INFO: Executing VLM enhanced query: 邱云霞 个人简介...
+ERROR: LLM func: Error in decorated function for task 2722271673408_984904.25: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:25:18,668 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    if raw_prompt is None:
+                           
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:25:18,670 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:25:18,671 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:62956 - "POST /messages/?session_id=87fdd39908b8466aa7a5b3a54eb4e89b HTTP/1.1" 202 Accepted
+2025-12-31 20:25:18,697 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:62214 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "POST /messages/?session_id=92019c11faef4a6d828c640bbb490d8d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:62218 - "POST /messages/?session_id=92019c11faef4a6d828c640bbb490d8d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:62220 - "POST /messages/?session_id=92019c11faef4a6d828c640bbb490d8d HTTP/1.1" 202 Accepted
+2025-12-31 20:25:25,992 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 20:25:25,993 - __main__ - INFO - [MCP Tool: query] Called with query_text: 个人简介 邱云霞..., mode: hybrid, top_k: 10
+2025-12-31 20:25:25,993 - mcp_server_rag_anything.tools - INFO - [Query Tool] Received query request: 个人简介 邱云霞... (mode: hybrid)
+2025-12-31 20:25:25,993 - mcp_server_rag_anything.connector - INFO - Executing query: 个人简介 邱云霞... (mode: hybrid)
+INFO: Executing VLM enhanced query: 个人简介 邱云霞...
+ERROR: LLM func: Error in decorated function for task 2722281391296_984916.656: An asyncio.Future, a coroutine or an awaitable is required
+ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
+2025-12-31 20:25:31,282 - mcp_server_rag_anything.connector - ERROR - Error executing query: expected string or bytes-like object, got 'NoneType'
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\connector.py", line 195, in query
+    result = await self.rag_anything.aquery(query_text, mode=mode, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 146, in aquery
+    return await self.aquery_vlm_enhanced(query, mode=mode, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 343, in aquery_vlm_enhanced
+    if raw_prompt is None:
+                           
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\raganything\query.py", line 555, in _process_image_paths_for_vlm
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\re\__init__.py", line 216, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+2025-12-31 20:25:31,285 - mcp_server_rag_anything.tools - INFO - [Query Tool] Query completed successfully, result keys: ['success', 'error']
+2025-12-31 20:25:31,285 - __main__ - INFO - [MCP Tool: query] Returning result (length: 89 chars)
+INFO:     127.0.0.1:56858 - "POST /messages/?session_id=92019c11faef4a6d828c640bbb490d8d HTTP/1.1" 202 Accepted
+2025-12-31 20:25:31,308 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:63026 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63028 - "POST /messages/?session_id=2672a8f5bec44cde89c712547f1d4047 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:63030 - "POST /messages/?session_id=2672a8f5bec44cde89c712547f1d4047 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:63032 - "POST /messages/?session_id=2672a8f5bec44cde89c712547f1d4047 HTTP/1.1" 202 Accepted
+2025-12-31 20:25:38,559 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+INFO:     127.0.0.1:63034 - "POST /messages/?session_id=2672a8f5bec44cde89c712547f1d4047 HTTP/1.1" 202 Accepted
+2025-12-31 20:25:38,665 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest

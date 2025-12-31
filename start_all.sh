@@ -307,9 +307,22 @@ install_dependencies() {
         }
     fi
     
-    # Install LightRAG in editable mode
+    # Install critical dependencies for LightRAG (especially ascii_colors for pipmaster)
+    # Note: pipmaster requires ascii_colors, but it might not be installed yet
+    print_info "Installing critical LightRAG dependencies..."
+    uv pip install ascii-colors pipmaster 2>/dev/null || {
+        print_warning "Failed to install ascii-colors/pipmaster, will try from requirements..."
+    }
+    
+    # Install LightRAG dependencies from requirements.txt
+    if [ -f "./anything-chat-rag/requirements.txt" ]; then
+        print_info "Installing LightRAG dependencies from requirements.txt..."
+        uv pip install -r ./anything-chat-rag/requirements.txt
+    fi
+    
+    # Install LightRAG in editable mode (with dependencies to ensure everything is installed)
     print_info "Installing LightRAG..."
-    uv pip install -e ./anything-chat-rag --no-deps
+    uv pip install -e ./anything-chat-rag
     
     # Configure Python path for other modules
     local site_packages=$("$VENV_PYTHON" -c "import site; print(site.getsitepackages()[0])")

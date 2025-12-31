@@ -339,6 +339,14 @@ class QueryMixin:
         self.logger.debug("Retrieved raw prompt from LightRAG")
 # noqa  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Vm5WbVRnPT06NmRiMTM3OTA=
 
+        # Ensure raw_prompt is not None
+        if raw_prompt is None:
+            self.logger.warning("raw_prompt is None from LightRAG, using query as fallback")
+            raw_prompt = query
+        elif not isinstance(raw_prompt, str):
+            self.logger.warning(f"raw_prompt is not a string (type: {type(raw_prompt)}), converting to string")
+            raw_prompt = str(raw_prompt) if raw_prompt else query
+
         # 2. Extract and process image paths
         enhanced_prompt, images_found = await self._process_image_paths_for_vlm(
             raw_prompt
@@ -550,6 +558,14 @@ class QueryMixin:
         image_path_pattern = (
             r"Image Path:\s*([^\r\n]*?\.(?:jpg|jpeg|png|gif|bmp|webp|tiff|tif))"
         )
+
+        # Ensure prompt is a string
+        if prompt is None:
+            self.logger.warning("Prompt is None, using empty string")
+            prompt = ""
+        elif not isinstance(prompt, str):
+            self.logger.warning(f"Prompt is not a string (type: {type(prompt)}), converting to string")
+            prompt = str(prompt)
 
         # First, let's see what matches we find
         matches = re.findall(image_path_pattern, prompt)

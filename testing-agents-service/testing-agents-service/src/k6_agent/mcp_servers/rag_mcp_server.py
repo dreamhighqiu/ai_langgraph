@@ -9,6 +9,22 @@ RAG MCP 服务器 - 基于 LightRAG 的高级数据检索服务
 
 主要工具：
 1. rag_query_data: 高级数据检索端点，返回结构化 RAG 分析数据
+
+存储后端说明：
+    本 MCP 服务器通过 HTTP API 调用 LightRAG 服务器，不直接访问存储。
+    数据存储配置（Milvus/Qdrant/本地存储）需要在 LightRAG 服务器端配置。
+    
+    要使用 Milvus 作为向量存储：
+    1. 在 LightRAG 服务器的 .env 文件中配置：
+       LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage
+       MILVUS_URI=http://your-milvus-server:19530
+       MILVUS_DB_NAME=lightrag
+    
+    2. 确保本 MCP 服务器的 LIGHTRAG_BASE_URL 环境变量指向正确的 LightRAG 服务器
+    
+    3. 重启 LightRAG 服务器以应用配置
+    
+    4. 重新处理文档以将数据写入 Milvus（从本地存储切换到 Milvus 需要重新处理）
 """
 """
 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
@@ -120,7 +136,13 @@ QueryMode = Literal["local", "global", "hybrid", "naive", "mix", "bypass"]
 # ============================================================================
 
 class LightRAGClient:
-    """LightRAG API 客户端"""
+    """LightRAG API 客户端
+    
+    注意：此客户端通过 HTTP API 调用 LightRAG 服务器，不直接访问存储。
+    数据存储配置（如 Milvus、Qdrant 等）需要在 LightRAG 服务器端配置。
+    确保 LightRAG 服务器已正确配置向量数据库（如 Milvus），
+    这样通过此客户端查询的数据将自动从配置的向量数据库中读取。
+    """
 
     def __init__(
         self,
@@ -131,9 +153,18 @@ class LightRAGClient:
         """初始化 LightRAG 客户端
 
         参数：
-            base_url: LightRAG 服务器基础 URL
+            base_url: LightRAG 服务器基础 URL（默认：http://localhost:9621）
+                      确保此 URL 指向已配置 Milvus 的 LightRAG 服务器实例
             api_key: API 密钥（可选）
             timeout: 请求超时时间（秒）
+            
+        重要提示：
+            - 此客户端通过 LightRAG 服务器的 /query/data API 端点获取数据
+            - 数据存储后端（Milvus/Qdrant/本地存储）由 LightRAG 服务器配置决定
+            - 确保 LightRAG 服务器的 .env 文件中配置了正确的存储后端：
+              LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage
+              MILVUS_URI=http://your-milvus-server:19530
+              MILVUS_DB_NAME=lightrag
         """
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
@@ -318,11 +349,22 @@ class RAGContext:
 
 @asynccontextmanager
 async def server_lifespan(server: FastMCP) -> AsyncIterator[RAGContext]:
-    """管理 LightRAG 客户端的应用程序生命周期"""
+    """管理 LightRAG 客户端的应用程序生命周期
+    
+    注意：此 MCP 服务器通过 HTTP API 调用 LightRAG 服务器。
+    数据存储后端（Milvus/Qdrant/本地存储）由 LightRAG 服务器配置决定。
+    确保 LightRAG 服务器已正确配置向量数据库（如 Milvus）。
+    """
     config = server.config
 
+    base_url = config.get("lightrag_base_url", "http://localhost:9621")
+    
+    # 打印连接信息（用于调试）
+    print(f"🔗 Connecting to LightRAG server: {base_url}")
+    print(f"   ⚠️  确保该 LightRAG 服务器已配置 Milvus 向量存储")
+
     client = LightRAGClient(
-        base_url=config.get("lightrag_base_url", "http://localhost:9621"),
+        base_url=base_url,
         api_key=config.get("lightrag_api_key"),
         timeout=config.get("timeout", 60.0)
     )
@@ -691,15 +733,40 @@ def parse_arguments():
 
 
 def main():
-    """主入口点"""
+    """主入口点
+    
+    配置说明：
+        - LIGHTRAG_BASE_URL: LightRAG 服务器 URL（默认：http://localhost:9621）
+        - LIGHTRAG_API_KEY: LightRAG API 密钥（可选）
+        - LIGHTRAG_TIMEOUT: 请求超时时间（秒，默认：60.0）
+        
+    重要提示：
+        此 MCP 服务器通过 HTTP API 调用 LightRAG 服务器，数据存储配置在 LightRAG 服务器端。
+        要使用 Milvus 作为向量存储，需要在 LightRAG 服务器的 .env 文件中配置：
+        
+        LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage
+        MILVUS_URI=http://your-milvus-server:19530
+        MILVUS_DB_NAME=lightrag
+        
+        确保 LIGHTRAG_BASE_URL 指向已配置 Milvus 的 LightRAG 服务器实例。
+    """
     load_dotenv()
     args = parse_arguments()
 
+    # 从环境变量或命令行参数获取配置
+    lightrag_url = os.environ.get("LIGHTRAG_BASE_URL", args.lightrag_url)
+
     mcp.config = {
-        "lightrag_base_url": os.environ.get("LIGHTRAG_BASE_URL", args.lightrag_url),
+        "lightrag_base_url": lightrag_url,
         "lightrag_api_key": os.environ.get("LIGHTRAG_API_KEY", args.lightrag_api_key),
         "timeout": float(os.environ.get("LIGHTRAG_TIMEOUT", args.timeout))
     }
+    
+    # 打印配置信息（用于调试）
+    print(f"🔗 LightRAG MCP Server Configuration:")
+    print(f"   LightRAG URL: {lightrag_url}")
+    print(f"   Timeout: {mcp.config['timeout']}s")
+    print(f"   ⚠️  确保 LightRAG 服务器 ({lightrag_url}) 已配置 Milvus 向量存储")
 
     if args.sse:
         mcp.run(transport="sse", port=args.port, host="0.0.0.0")

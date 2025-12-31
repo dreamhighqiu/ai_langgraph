@@ -38,5 +38,75 @@
       "processing_start_time": 1767076099,
       "processing_end_time": 1767076558
     }
+  },
+  "doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
+      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
+    ],
+    "content_summary": "PERSONAL RESUME\n\n邱云霞\n\n求职意向：高级测试工程师 / 测试开发工程师\n\n广州\n\n20k-25k\n\n随时到岗\n\n 年　　龄：\n\n35 岁\n\n 性　　别：女\n\n 婚姻状况：已婚已育\n\n 工作年限：\n\n12 年经验\n\n 联系电话：\n\n13802784929\n\n 联系邮箱：\n\n1509062627@qq.com\n\n技能特长\n\n· AI 赋能测试平台开发和实施 ：具备大模型（ LLM ）应用开发能力，熟练使用 LangChain 、 DeepAgent 、 RAG 、 MC...",
+    "content_length": 5231,
+    "created_at": "2025-12-31T10:43:51.630529+00:00",
+    "updated_at": "2025-12-31T19:39:32+00:00",
+    "file_path": "邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf",
+    "track_id": "insert_20251231_184351_6924264e",
+    "metadata": {
+      "processing_start_time": 1767177831,
+      "processing_end_time": 1767178912
+    },
+    "multimodal_processed": true
+  },
+  "doc-cd6da09bf7fcb88fcd1809ee8f9b2248": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-05aea82394ee290311fbc092b4a96ffe"
+    ],
+    "content_summary": "我们出去旅行了\n\n我是谁 我在那 这个是⼀个旅游⽂档\n\nasia.com\n\nTHAIAIRASIA\n\nAIRBUS\n\nF900\n\nF900\n\n39\n\n500\n\n500\n\nMAHATHA GANOHI\n\nMAHATMA GANOHI\n\nMAHATHA GANOHI\n\n6EBA\n\nDESERVE BANK OF INDIA\n\nDANK OF INDIA\n\n4594836\n\nnECERVE BANK OF INDIA\n\nUDANK OF INDIA\n\nRESERVE BANK OF INDIA\n\n28...",
+    "content_length": 463,
+    "created_at": "2025-12-31T10:43:56.294927+00:00",
+    "updated_at": "2025-12-31T19:40:55+00:00",
+    "file_path": "旅行日记2.pdf",
+    "track_id": "insert_20251231_184356_63bc2378",
+    "metadata": {
+      "processing_start_time": 1767178912,
+      "processing_end_time": 1767179155
+    },
+    "multimodal_processed": true
+  },
+  "doc-bc26a12e57eeaa82fff369b374ce1112": {
+    "status": "failed",
+    "error_msg": "C[1/1]: chunk-01d0bff8610ce0bc33971ccb3bbd6b08: An asyncio.Future, a coroutine or an awaitable is required",
+    "content_summary": "我们出去旅行了\n\nasia.com\n\nTHAIAIRASIA\n\nAIRBUS\n\nF900\n\nF900\n\n39\n\n500\n\n500\n\nMAHATHA GANOHI\n\nMAHATMA GANOHI\n\nMAHATHA GANOHI\n\n6EBA\n\nDESERVE BANK OF INDIA\n\nDANK OF INDIA\n\n4594836\n\nnECERVE BANK OF INDIA\n\nUDANK OF INDIA\n\nRESERVE BANK OF INDIA\n\n28805\n\n0800\n\nGUARANTE...",
+    "content_length": 444,
+    "created_at": "2025-12-31T11:41:31.728710+00:00",
+    "updated_at": "2025-12-31T19:44:30+00:00",
+    "file_path": "旅行日记2.pdf",
+    "track_id": "insert_20251231_194131_f74d3bbc",
+    "metadata": {
+      "processing_start_time": 1767181359,
+      "processing_end_time": 1767181407
+    },
+    "chunks_list": [],
+    "multimodal_processed": true
+  },
+  "doc-88b93e772890662b37fff9510ff982e1": {
+    "status": "failed",
+    "error_msg": "Embedding func: Worker execution timeout after 60s",
+    "content_summary": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲\n\n目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、\n\n合规专员以及对LLM应用感兴趣的相关人员。\n\n培训目标:\n\n· 全面了解主流大型语言模型的特点、能力边界与选型策略。\n\n•\n\n掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。\n\n· 精通提示词工程的核心原理、结构与高级技巧。\n\n· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效\n\n提示词。\n\n· 理解LLM使用的最佳实...",
+    "content_length": 5436,
+    "created_at": "2025-12-31T11:42:39.051255+00:00",
+    "updated_at": "2025-12-31T19:43:42+00:00",
+    "file_path": "llm_course.pdf",
+    "track_id": "insert_20251231_194239_8b514817",
+    "metadata": {
+      "processing_start_time": 1767181359,
+      "processing_end_time": 1767181422
+    },
+    "chunks_list": [],
+    "multimodal_processed": true
   }
 }

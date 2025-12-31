@@ -28,7 +28,8 @@ report_controller = APIRouterPro(
     prefix='/testing/report',
     order_num=53,
     tags=['测试管理-报告管理'],
-    dependencies=[PreAuthDependency()]
+    dependencies=[PreAuthDependency()],
+    auto_register=True,
 )
 
 

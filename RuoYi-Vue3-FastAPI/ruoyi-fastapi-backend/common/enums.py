@@ -16,6 +16,7 @@ class BusinessType(Enum):
     FORCE: 强退
     GENCODE: 生成代码
     CLEAN: 清空数据
+    QUERY: 查询
     """
 
     OTHER = 0
@@ -28,6 +29,7 @@ class BusinessType(Enum):
     FORCE = 7
     GENCODE = 8
     CLEAN = 9
+    QUERY = 10
 
 
 class RedisInitKeyConfig(Enum):

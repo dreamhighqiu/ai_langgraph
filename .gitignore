@@ -13,11 +13,11 @@ env/
 ENV/
 
 # 环境变量文件（敏感信息）
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
 # 注意：.env.example 应该被提交到仓库，作为配置模板
 
 # Node.js 依赖

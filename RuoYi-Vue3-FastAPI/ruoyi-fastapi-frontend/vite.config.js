@@ -46,7 +46,8 @@ export default defineConfig(({ mode, command }) => {
       proxy: {
         // https://cn.vitejs.dev/config/#server-proxy
         '/dev-api': {
-          target: 'http://127.0.0.1:9099',
+          // 后端临时调整到 9199 端口，避免 9099 上旧进程阻塞
+          target: 'http://127.0.0.1:9199',
           changeOrigin: true,
           rewrite: (p) => p.replace(/^\/dev-api/, '')  // 移除 /dev-api 前缀
         }

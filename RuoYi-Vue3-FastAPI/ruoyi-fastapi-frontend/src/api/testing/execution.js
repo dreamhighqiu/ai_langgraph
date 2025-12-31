@@ -1,32 +1,71 @@
+/**
+ * 测试执行管理API
+ */
 import request from '@/utils/request'
 
-// 查询执行记录列表
+/**
+ * 获取执行记录分页列表
+ * @param {Object} query - 查询参数
+ */
 export function listExecution(query) {
   return request({
     url: '/testing/execution/list',
     method: 'get',
-    params: query
+    params: {
+      script_id: query.script_id,
+      script_type: query.script_type,
+      project_id: query.project_id,
+      execution_status: query.execution_status,
+      execution_type: query.execution_type,
+      executor: query.executor,
+      page_num: query.page_num || 1,
+      page_size: query.page_size || 10
+    }
   })
 }
 
-// 查询执行详情
+/**
+ * 获取执行详情
+ * @param {number} executionId - 执行ID
+ */
 export function getExecution(executionId) {
   return request({
-    url: '/testing/execution/' + executionId,
+    url: `/testing/execution/${executionId}`,
     method: 'get'
   })
 }
 
-// 查询执行状态
-export function getExecutionStatus(executionId) {
+/**
+ * 取消执行
+ * @param {Object} data - 取消参数
+ * @param {number} data.execution_id - 执行ID
+ */
+export function cancelExecution(data) {
   return request({
-    url: '/testing/execution/' + executionId + '/status',
-    method: 'get'
+    url: '/testing/execution/cancel',
+    method: 'post',
+    data: {
+      execution_id: data.execution_id
+    }
   })
 }
 
-// 获取执行统计数据
-export function getExecutionStatistics(days) {
+/**
+ * 重试执行
+ * @param {number} executionId - 执行ID
+ */
+export function retryExecution(executionId) {
+  return request({
+    url: `/testing/execution/${executionId}/retry`,
+    method: 'post'
+  })
+}
+
+/**
+ * 获取执行统计信息
+ * @param {number} days - 统计天数，默认7天
+ */
+export function getExecutionStatistics(days = 7) {
   return request({
     url: '/testing/execution/statistics',
     method: 'get',
@@ -34,28 +73,25 @@ export function getExecutionStatistics(days) {
   })
 }
 
-// 获取正在运行的执行
-export function getRunningExecutions() {
+/**
+ * 获取执行日志（流式）
+ * @param {number} executionId - 执行ID
+ */
+export function getExecutionLogs(executionId) {
   return request({
-    url: '/testing/execution/running',
+    url: `/testing/execution/${executionId}/logs`,
     method: 'get'
   })
 }
 
-// 取消执行
-export function cancelExecution(data) {
+/**
+ * 获取执行的实时状态
+ * @param {number} executionId - 执行ID
+ */
+export function getExecutionStatus(executionId) {
   return request({
-    url: '/testing/execution/cancel',
-    method: 'post',
-    data: data
-  })
-}
-
-// 重试执行
-export function retryExecution(executionId) {
-  return request({
-    url: '/testing/execution/' + executionId + '/retry',
-    method: 'post'
+    url: `/testing/execution/${executionId}/status`,
+    method: 'get'
   })
 }
 

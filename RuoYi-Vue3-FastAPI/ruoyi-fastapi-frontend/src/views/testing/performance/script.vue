@@ -335,15 +335,33 @@ const executeForm = reactive({
 /** 查询脚本列表 */
 function getList() {
   loading.value = true
-  listScript({
+  const query = {
     script_name: queryParams.scriptName,
     script_type: queryParams.scriptType,
     project_id: queryParams.projectId,
     status: queryParams.status,
     page_num: queryParams.pageNum,
     page_size: queryParams.pageSize
-  }).then(response => {
-    scriptList.value = response.data?.rows || response.rows || []
+  }
+  listScript(query).then(response => {
+    const rows = response.data?.rows || response.rows || []
+    scriptList.value = rows.map(item => ({
+      scriptId: item.script_id,
+      scriptName: item.script_name,
+      scriptType: item.script_type,
+      projectId: item.project_id,
+      projectName: item.project_name,
+      scriptContent: item.script_content,
+      version: item.version,
+      status: item.status,
+      aiGenerated: item.ai_generated,
+      createBy: item.create_by,
+      createTime: item.create_time,
+      updateBy: item.update_by,
+      updateTime: item.update_time,
+      remark: item.remark,
+      agentId: item.agent_id
+    }))
     total.value = response.data?.total || response.total || 0
     loading.value = false
   }).catch(() => {
@@ -353,8 +371,18 @@ function getList() {
 
 /** 查询项目列表 */
 function getProjectList() {
-  listProject({ projectType: 'performance', status: '0', pageNum: 1, pageSize: 100 }).then(response => {
-    projectList.value = response.data?.rows || []
+  const query = {
+    project_type: 'performance',
+    status: undefined,
+    page_num: 1,
+    page_size: 100
+  }
+  listProject(query).then(response => {
+    const rows = response.rows || response.data?.rows || []
+    projectList.value = rows.map(item => ({
+      projectId: item.project_id,
+      projectName: item.project_name
+    }))
   })
 }
 

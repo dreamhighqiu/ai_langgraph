@@ -19,7 +19,7 @@ os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 llm = init_chat_model("deepseek:deepseek-chat")
 client = MultiServerMCPClient({
     "rag-server": {
-        "url": "http://localhost:8002/sse",
+        "url": "http://localhost:8001/sse",  # 使用 8001 端口的 RAG Anything MCP 服务器
         "transport": "sse",
     }
 })

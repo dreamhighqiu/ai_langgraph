@@ -644,3 +644,103 @@ INFO:     127.0.0.1:65047 - "GET /openapi.json HTTP/1.1" 200 OK
 ✅ Registered router: config_controller (prefix: /system/config, tags: ['系统管理-参数管理'], routes: 8)
 ✅ Registered router: health_controller (prefix: /testing/health, tags: ['测试管理-健康检查'], routes: 1)
 ✅ Registered router: notice_controller (prefix: /system/notice, tags: ['系统管理-通知公告管理'], routes: 5)
+✅ Registered router: log_controller (prefix: /monitor, tags: ['系统管理-日志管理'], routes: 9)
+✅ Registered router: online_controller (prefix: /monitor/online, tags: ['系统监控-在线用户'], routes: 2)
+✅ Registered router: job_controller (prefix: /monitor, tags: ['系统监控-定时任务'], routes: 12)
+✅ Registered router: server_controller (prefix: /monitor/server, tags: ['系统监控-服务监控'], routes: 1)
+✅ Registered router: cache_controller (prefix: /monitor/cache, tags: ['系统监控-缓存监控'], routes: 7)
+✅ Registered router: common_controller (prefix: /common, tags: ['通用模块'], routes: 3)
+✅ Registered router: gen_controller (prefix: /tool/gen, tags: ['代码生成'], routes: 11)
+✅ Registered router: requirement_controller (prefix: /testing/requirement, tags: ['测试管理-需求管理'], routes: 8)
+✅ Registered router: performance_controller (prefix: /testing/performance, tags: ['性能测试管理-K6'], routes: 5)
+✅ Registered router: agent_controller (prefix: /testing/agent, tags: ['测试管理-AI Agent管理'], routes: 9)
+✅ Registered router: project_controller (prefix: /testing/project, tags: ['测试管理-项目管理'], routes: 7)
+✅ Registered router: script_controller (prefix: /testing/script, tags: ['测试管理-脚本管理'], routes: 7)
+✅ Registered router: execution_controller (prefix: /testing/execution, tags: ['测试管理-执行监控'], routes: 7)
+✅ Registered router: report_controller (prefix: /testing/report, tags: ['测试管理-报告管理'], routes: 6)
+📊 Successfully registered 25/25 routers
+✨ Router registration completed! Total: 25 routers registered
+
+📋 Summary of registered routes:
+   - login_controller:  (tags: ['登录模块'], 5 routes)
+   - captcha_controller:  (tags: ['验证码模块'], 1 routes)
+   - user_controller: /system/user (tags: ['系统管理-用户管理'], 18 routes)
+   - role_controller: /system/role (tags: ['系统管理-角色管理'], 14 routes)
+   - menu_controller: /system/menu (tags: ['系统管理-菜单管理'], 7 routes)
+   - dept_controller: /system/dept (tags: ['系统管理-部门管理'], 6 routes)
+   - post_controller: /system/post (tags: ['系统管理-岗位管理'], 6 routes)
+   - dict_controller: /system/dict (tags: ['系统管理-字典管理'], 15 routes)
+   - config_controller: /system/config (tags: ['系统管理-参数管理'], 8 routes)
+   - health_controller: /testing/health (tags: ['测试管理-健康检查'], 1 routes)
+   - notice_controller: /system/notice (tags: ['系统管理-通知公告管理'], 5 routes)
+   - log_controller: /monitor (tags: ['系统管理-日志管理'], 9 routes)
+   - online_controller: /monitor/online (tags: ['系统监控-在线用户'], 2 routes)
+   - job_controller: /monitor (tags: ['系统监控-定时任务'], 12 routes)
+   - server_controller: /monitor/server (tags: ['系统监控-服务监控'], 1 routes)
+   - cache_controller: /monitor/cache (tags: ['系统监控-缓存监控'], 7 routes)
+   - common_controller: /common (tags: ['通用模块'], 3 routes)
+   - gen_controller: /tool/gen (tags: ['代码生成'], 11 routes)
+   - requirement_controller: /testing/requirement (tags: ['测试管理-需求管理'], 8 routes)
+   - performance_controller: /testing/performance (tags: ['性能测试管理-K6'], 5 routes)
+   - agent_controller: /testing/agent (tags: ['测试管理-AI Agent管理'], 9 routes)
+   - project_controller: /testing/project (tags: ['测试管理-项目管理'], 7 routes)
+   - script_controller: /testing/script (tags: ['测试管理-脚本管理'], 7 routes)
+   - execution_controller: /testing/execution (tags: ['测试管理-执行监控'], 7 routes)
+   - report_controller: /testing/report (tags: ['测试管理-报告管理'], 6 routes)
+
+////////////////////////////////////////////////////////////////////
+//                          _ooOoo_                               //
+//                         o8888888o                              //
+//                         88" . "88                              //
+//                         (| ^_^ |)                              //
+//                         O\  =  /O                              //
+//                      ____/`---'\____                           //
+//                    .'  \\|     |//  `.                         //
+//                   /  \\|||  :  |||//  \                        //
+//                  /  _||||| -:- |||||-  \                       //
+//                  |   | \\\  -  /// |   |                       //
+//                  | \_|  ''\---/''  |   |                       //
+//                  \  .-\__  `-`  ___/-. /                       //
+//                ___`. .'  /--.--\  `. . ___                     //
+//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//      ========`-.____`-.___\_____/___.-`____.-'========         //
+//                           `=---='                              //
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+//             佛祖保佑       永不宕机      永无BUG                  //
+////////////////////////////////////////////////////////////////////
+    
+INFO:     127.0.0.1:49256 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49359 - "POST /logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57688 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60736 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57207 - "GET /testing/project/list?project_type=performance&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57206 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63360 - "POST /testing/requirement HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57850 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55265 - "GET /testing/script/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55266 - "GET /testing/project/list?projectType=performance&status=0&pageNum=1&pageSize=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59638 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53020 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59490 - "GET /testing/requirement/list?priority=low&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55526 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50183 - "GET /testing/requirement/list?status=0&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57356 - "GET /testing/requirement/list?status=1&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63491 - "GET /testing/requirement/list?status=1&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59062 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58030 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52461 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62548 - "POST /testing/requirement/generate/4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51560 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60514 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60520 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59097 - "GET /testing/project/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51369 - "GET /testing/project/list?page_num=1&page_size=10&project_type=performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61765 - "GET /testing/project/list?page_num=1&page_size=10&project_name=UI&project_type=performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59006 - "GET /testing/project/list?page_num=1&page_size=10&project_type=performance HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55734 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62539 - "GET /testing/requirement/list?page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55735 - "GET /testing/project/list?project_type=performance&page_num=1&page_size=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49871 - "GET /testing/script/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49872 - "GET /testing/project/list?project_type=performance&page_num=1&page_size=100 HTTP/1.1" 200 OK

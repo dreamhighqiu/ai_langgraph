@@ -23,6 +23,7 @@ Functions:
 
 import asyncio
 import logging
+import concurrent.futures
 from typing import Callable, Optional, Any
 
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
@@ -40,6 +41,9 @@ def _handle_coroutine_result(result: Any) -> str:
     
     LightRAG functions may return either a string or a coroutine depending on
     the context. This function detects and properly handles both cases.
+    
+    When called from LightRAG's worker thread (which may have an event loop),
+    we need to run the coroutine in a separate thread to avoid conflicts.
 
     Args:
         result: The result from LightRAG function (could be str or coroutine)
@@ -53,19 +57,27 @@ def _handle_coroutine_result(result: Any) -> str:
     if asyncio.iscoroutine(result):
         try:
             # Check if we're already in an async context
-            asyncio.get_running_loop()
-            logger.warning("Coroutine returned in async context, returning empty string")
-            return ""
+            loop = asyncio.get_running_loop()
+            # If we're in an async context (LightRAG worker thread),
+            # run the coroutine in a separate thread with a new event loop
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                future = executor.submit(_run_coroutine_in_new_loop, result)
+                result = future.result()
         except RuntimeError:
-            # No running loop, safe to use run_until_complete
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-            try:
-                result = loop.run_until_complete(result)
-            finally:
-                loop.close()
+            # No running loop, safe to use asyncio.run
+            result = asyncio.run(result)
 
     return result if isinstance(result, str) else str(result)
+
+
+def _run_coroutine_in_new_loop(coro):
+    """Run a coroutine in a new event loop in a separate thread."""
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        return loop.run_until_complete(coro)
+    finally:
+        loop.close()
 
 
 def create_llm_model_func(config: MCSConfig) -> Callable:

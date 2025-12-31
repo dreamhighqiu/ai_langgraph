@@ -274,7 +274,8 @@ class AgentManager:
     async def execute_script(
         self,
         agent_id: str,
-        script_path: str,
+        script_path: Optional[str] = None,
+        script_content: Optional[str] = None,
         config: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
@@ -282,7 +283,8 @@ class AgentManager:
         
         Args:
             agent_id: Agent ID
-            script_path: 脚本路径
+            script_path: 脚本路径（可选）
+            script_content: 脚本内容（可选，若提供则优先使用）
             config: 可选配置
             
         Returns:
@@ -291,8 +293,14 @@ class AgentManager:
         try:
             logger.info(f"开始执行脚本 - Agent: {agent_id}, 脚本: {script_path}")
             
-            # 读取脚本内容
-            script_content = Path(script_path).read_text(encoding='utf-8')
+            # 读取脚本内容（优先使用传入的内容）
+            if script_content is None:
+                if not script_path:
+                    return {
+                        'success': False,
+                        'error': '脚本内容和脚本路径至少提供一个'
+                    }
+                script_content = Path(script_path).read_text(encoding='utf-8')
             
             # 构建执行提示
             prompt = f"""请执行以下脚本并返回测试结果：

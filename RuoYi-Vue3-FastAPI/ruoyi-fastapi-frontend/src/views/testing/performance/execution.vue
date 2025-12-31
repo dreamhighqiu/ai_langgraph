@@ -196,7 +196,25 @@ function getList() {
     page_num: queryParams.pageNum,
     page_size: queryParams.pageSize
   }).then(response => {
-    executionList.value = response.data?.rows || response.rows || []
+    const rows = response.data?.rows || response.rows || []
+    executionList.value = rows.map(item => ({
+      executionId: item.execution_id,
+      scriptId: item.script_id,
+      scriptName: item.script_name,
+      scriptType: item.script_type,
+      projectName: item.project_name,
+      executionType: item.execution_type,
+      executionStatus: item.execution_status,
+      startTime: item.start_time,
+      endTime: item.end_time,
+      duration: item.duration,
+      threadId: item.thread_id,
+      agentId: item.agent_id,
+      result: item.result,
+      errorMsg: item.error_msg,
+      executor: item.executor,
+      createTime: item.create_time
+    }))
     total.value = response.data?.total || response.total || 0
     loading.value = false
   }).catch(() => {

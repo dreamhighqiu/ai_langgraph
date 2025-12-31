@@ -123,3 +123,7 @@ https://gitee.com/xuesjie/TaiXu-Admin
 底层技术实现  @testing-agents-service/testing-agents-service/ 通过RAG技术 mcp 技术以及deepagent langraph等智能体协作来实现测试领域相关的功能
 目前mllvus mysql postsql minio等服务已经部署
 实现的ai智能平台一定是符合企业级标准 高可用 可维护可扩展的
+
+
+
+chat_rag_agent.py 本身不直接访问 Milvus，它通过 MCP 服务器（8001）查询。MCP 服务器使用 RAGAnything，RAGAnything 使用 LightRAG，LightRAG 连接到 Milvus。因此，只要 MCP 服务器配置正确，Agent 就能从 Milvus 获取内容

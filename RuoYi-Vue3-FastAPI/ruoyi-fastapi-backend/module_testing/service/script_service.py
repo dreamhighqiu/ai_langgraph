@@ -162,12 +162,21 @@ class ScriptService:
                     'success': False,
                     'error': f'不支持的脚本类型: {model.script_type}'
                 }
+
+            # 构造需求信息供 Agent 生成脚本（使用脚本名称+提示词）
+            requirement = {
+                'requirement_id': None,
+                'requirement_name': model.script_name,
+                'requirement_type': {'k6': 'performance', 'playwright': 'ui', 'api': 'api'}.get(model.script_type, 'api'),
+                'description': model.prompt,
+                'acceptance_criteria': model.config or {}
+            }
             
             # 调用Agent生成脚本
             agent_manager = get_agent_manager()
             result = await agent_manager.generate_script(
-                agent_type=agent_type,
-                prompt=model.prompt,
+                agent_id=agent_type,
+                requirement=requirement,
                 config=model.config
             )
             
@@ -398,7 +407,7 @@ class ScriptService:
             if agent_type:
                 agent_manager = get_agent_manager()
                 exec_result = await agent_manager.execute_script(
-                    agent_type=agent_type,
+                    agent_id=agent_type,
                     script_content=script_content,
                     config=model.config
                 )

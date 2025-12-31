@@ -9566,3 +9566,429 @@ Traceback (most recent call last):
 redis.exceptions.ConnectionError: Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)
 2025-12-31 21:06:37.131 | e4c98efd286c499dac422fae4c34f45e | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
 2025-12-31 21:06:37.150 | 5e486e248d8b43c591a70108c16933ea | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:09:24.823 | afac364cb71d4ec78457022d85f2bffb | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:09:25.219 | 1c631e37eee24501939a6cc1b3a6bc70 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:09:26.277 | faece97a9eee4eddbd9e0a8ce103fb40 | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:09:26.304 | 5db8954cb8214418b958b284985efd7c | INFO     | module_testing.controller.requirement_controller:get_requirement_list:56 - 获取需求列表成功，共 4 条
+2025-12-31 21:09:30.781 | ed9f9256e8854becaa5405e96a9021ad | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:09:30.793 | c1342031d1404e1498446b967965616c | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:09:41.178 | 690462da4cb04197b56f491889d49552 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:09:58.622 | dd02f385daaf43aaab8c2e33615d7575 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:09:58.624 | 35fd313a793e46ac9df10988aab90c07 | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:10:22.161 | 2cf792783ccc4dd2bf57ef09dbba31d3 | INFO     | module_testing.storage.minio_client:__init__:64 - MinIO客户端初始化成功: 47.110.95.246:9000
+2025-12-31 21:10:22.211 | 2cf792783ccc4dd2bf57ef09dbba31d3 | DEBUG    | module_testing.storage.minio_client:upload_file:120 - 文件已上传到MinIO: scripts/k6/project_7/20251231_211022.js
+2025-12-31 21:10:22.399 | 2cf792783ccc4dd2bf57ef09dbba31d3 | INFO     | module_testing.service.script_service:create_script:121 - 创建脚本成功: 3 - test load
+2025-12-31 21:10:23.058 | 4a7720ef351c42f9901a7779d66449f6 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:10:31.138 | d3e84cae3d8e420c8f1015143f9202d3 | ERROR    | module_testing.service.script_service:execute_script:441 - 执行脚本失败: AgentManager.execute_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:10:41.212 | 403e4b9d70a749e5a30237c35f9e5804 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:10:57.785 | dd2ef6eb5f78460a9e0b9a0dc6b8d236 | DEBUG    | module_testing.storage.minio_client:upload_file:120 - 文件已上传到MinIO: scripts/k6/project_2/20251231_211057.js
+2025-12-31 21:10:57.968 | dd2ef6eb5f78460a9e0b9a0dc6b8d236 | INFO     | module_testing.service.script_service:create_script:121 - 创建脚本成功: 4 - test2
+2025-12-31 21:10:58.610 | 76639e6399da406db71b4730a0b1f4ea | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:01.909 | 5842705413c14eb3882ff14d67cbec70 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:04.786 | 757fd173f5934acd888deaa932f317b8 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:06.296 | e9bcb5a41e27487b94761442a7bef082 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:07.832 | 52af636b907c4470a99c365332b7e521 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:13.302 | 19c4c600b702413c8f90b63e9895dc15 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:16.605 | b9a141d9918b43149083a76813b16399 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:18.883 | 4a8ffaf81eee4341ab1b324b3349c622 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:11:33.041 | e5bfa9e449c047e79ba864a0b075dbba | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:11:35.277 | c3a9604db3e9495193540d0aa242f7f1 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:11:38.011 | 171616e6fb024e13a717506851b15513 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:11:40.208 | 439c58e9df0c4d94b92f4c864931894c | INFO     | module_testing.controller.report_controller:get_report_list:49 - 获取报告列表成功
+2025-12-31 21:11:43.010 | 63fd1701f85a40a18ce5258ce3ac6138 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:12:56.528 | fb4b71a8f9414dd0bda01ce62e6c09da | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:12:56.547 | 1eceb7214c354d3d8a735f91e4ad7a31 | INFO     | module_testing.controller.requirement_controller:get_requirement_list:56 - 获取需求列表成功，共 4 条
+2025-12-31 21:13:00.701 | ac2745fd421540a5b23cbe58e5f2daad | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:13:00.732 | 4eb1d723a8824a238719fc65b06f8f48 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:13:03.236 | c410f9b81afd43c7a042f4d8e1021fe3 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:08.203 | af98f030f8504ba680a8835943c8de4e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:13.209 | 1a67ae24d94644b98adc0651cb9fe3bd | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:18.398 | c493e0ecd5ac46219313eec870cdd1a1 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:21.164 | ecbc555757144093b2d8c50e02efb33c | ERROR    | module_testing.service.script_service:execute_script:441 - 执行脚本失败: AgentManager.execute_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:13:23.223 | 3bd2ec14eb6e4853ad9beb1c732dd063 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:28.193 | 25f5bdfdd17741e6b9331e9911b0844e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:33.216 | 051328dfa36e49ae9260ba3f3356c97f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:38.208 | b48909679e644338bafce8da79c22a0a | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:43.189 | 307ae79d94684f61946082effd8c79a3 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:48.643 | 9d26b4878d5d425e8042e30db7db8bbf | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:53.611 | 6105083682bc4d4f8be59e28c7613345 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:13:58.199 | 05bcc6c60fdc4f04ae119145d8b289ac | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:03.216 | d3cc08412c544abe8f77f2a1ce15ebfd | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:08.183 | c808456075824cd8972e620db4eadb26 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:09.966 | 803ba98989a546faa2ed824afa1885ce | ERROR    | module_testing.service.script_service:generate_script:224 - AI生成脚本失败: AgentManager.generate_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:14:09.968 | 803ba98989a546faa2ed824afa1885ce | ERROR    | module_testing.controller.script_controller:generate_script:114 - AI生成脚本失败: AgentManager.generate_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:14:13.228 | 441f7b0e52644267aca438770da837d0 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:18.204 | e10defd9864b481388bacb01af5ed73b | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:23.208 | 431b219e84c74f6ea505616b32b660d9 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:28.637 | 2c63a9bca7d540a6aebb554176e6833e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:33.599 | b0cdcb7b3ba543628decbb014072f0fe | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:38.659 | 2c3cbc1513ce43679fe11a92e4598727 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:43.644 | 60af5bd56536416582f937185b416048 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:48.206 | f9d0a0b4741c4276bd0ef968d56af4ae | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:53.183 | ab984a993252449db507f2a3f442ca94 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:14:58.174 | e449ddc0622c48a0b1973f57117547f1 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:02.893 | 83227f72b37e4053ad50ce56d6cea37e | ERROR    | module_testing.service.script_service:execute_script:441 - 执行脚本失败: AgentManager.execute_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:15:03.184 | ce79df0aea8e45c4a807cf891947e772 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:08.237 | 45e6bd8887bd4b6e85fb5fdf0cd9ef48 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:13.214 | e66375448e9048b1a957e39418ef0f1a | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:18.384 | edcf57d048fd49019826dce93ccebecf | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:23.179 | ec2edcbdad5e442c9208d5bb7f31c32d | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:28.213 | b5dc76ca05f84e7688a745fd502aab28 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:33.180 | a860fa3b8f3c455a9354743562e740f6 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:38.228 | 113e454cd82f49309cec77d80a88076a | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:43.207 | 6487a5eae1b348db872c3af30fa81692 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:46.548 | 7fe9035267104566826b9356b6e12ac7 | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:15:46.945 | 3c668debb5e04046874c6fe7e8875de3 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:15:47.958 | 3fcbfef74a854cf1acbc09706a607073 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:52.955 | 89a4184b3d414b1798c71e130fb87853 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:15:57.948 | 5ec7a52818434431846492b9076d0994 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:02.948 | 799186b480e34f7ea84a13546ee2fd01 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:08.624 | 5cb5692944584ca89af8dcb2570871b9 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:13.594 | e664e67d8cd24b398141513a5af78e91 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:18.608 | f1c11fba4db647bd8481711a696bcab0 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:23.635 | bc12856078af4e8396954eedb05e86ca | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:27.965 | 7db4a1b7cf94436387ca163268c8b3bb | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:32.944 | ee26b1364da44f30b58dadd20682c80e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:38.581 | fa0e2e8f41b54b298ae54a61645e868f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:43.379 | 66101c354e2c44c8a5bb615bc757f31e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:48.077 | 1a003b4dd2374514813b554b04d7e776 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:53.619 | 21a8e868536f4b28b86bee77690ca2a8 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:16:58.628 | 553237c8493c4344ae71a688813dadfa | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:03.611 | b6eeae0c16c34e42aab5920a16edeed7 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:08.624 | 3bdea2a4352e43efb79c1e34bdd86385 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:13.678 | 96cde40c458e47e18c1f45f6a1e6d6aa | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:18.621 | 311fd8c4c14c45e8a757bb6284e1079d | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:23.633 | beaf52e9e4aa4ff182fb1725e8981b37 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:28.634 | 014319b40bd648c492f0d6059e1aaf60 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:33.604 | 2476d772490541d7bb4ba41c74d13f36 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:38.612 | 83bf672dc15140a4ac3f22391e708f6f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:43.617 | f37440d567a4452db5c437814e421e10 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:17:48.593 | c6c1bfaf545a4aa5b0341ce5d2b17924 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:18:40.649 | 2f9a0f8fcd5941b7bbbfbe1917dd07e6 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:19:40.648 | 0d9e4f18c72c4a63ab4ff827c0e40f3f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:20:40.699 | bbe252b94db4491bbd9922ee0fc6def2 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:16.697 | 0eb43595aabf4d1695ac910e9d9293af | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:17.931 | 283fc57e80924ea7b00f79289a7534d9 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:20.752 | 5fcfcb54b39a420c8cba0f41a3ee07a3 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:21:20.828 | 2925eece185342efae00d94dc5cb3186 | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:21:22.905 | f8b23c38b5494b72a001716b4cb4a05c | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:29.414 | 2a427b9a16b548b2804d89e75debe79d | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:33.573 | fd1995f99ed44fc587424c0219ff6c6f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:38.557 | 52872d7850e74aee9d349fd8a62f6616 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:43.595 | f8d262cc39b8498bae257990bad1eba4 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:48.564 | 37b15596d8514c0080acac59a6ff8ab4 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:53.578 | 626eb5747f9a4cf6bb341ff207641fdb | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:21:58.598 | 3ab2e7d4e71e4478aba9c4d5f1570de5 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:22:03.569 | 7d4c055877104f9d90e215ea49b0194b | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:22:08.575 | e4e3125ac5db4e7fa7459581f7943a88 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:22:13.596 | 1189675bfb934861b639e8be22b82507 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:22:18.571 | 564df936956c4020a67dc829f5a77853 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:22:23.633 | 57d7096b9ab149e79b164d26d82beb37 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:22:40.597 | c6fbb074cf124459978375113886fa69 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:23:40.577 | 8c5d4db165da49fa860a776b027edbc7 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:27.077 | e19fbd56928b42bba0f4a1bbed2c17e7 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:27.906 | c917f5a4148f46fc89955286ae0041f8 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:33.540 | 3ab6ca88876842e1a7274dd407ee698c | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:38.551 | 6c97af4536554976bd5c9996ee080dc4 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:43.580 | df6a4da25aab4326b20cd3876f5ca6e5 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:48.554 | 66f9f824f7ec41768df9266e27a5f228 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:53.561 | ca1f45283dca4803bff2abf6ba151a9f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:24:58.571 | 33fb399934d344e696c0978a74fec136 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:25:03.532 | a23b9a3b9be14169a32f7f6ae13d1635 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:25:08.565 | c4071cd7ceba47d0b9fb3913d1b1c6af | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:25:13.573 | d2b5e027dc9e490a91190840780681db | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:25:18.549 | d58527743b6847ef9e31c8a3c62fe379 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:25:23.544 | e6e0af5fd757413ca19c53cbdfb77529 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:25:28.567 | e854f9cf534d445589bcd2057e904ec8 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+WARNING:  WatchFiles detected changes in 'module_testing\service\script_service.py'. Reloading...
+2025-12-31 21:25:40.753 | e61fabd3488645b6930eab9d969c8abe | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2025-12-31 21:36:17.567 |  | INFO     | config.get_redis:close_redis_pool:58 - ✅️ 关闭redis连接成功
+2025-12-31 21:36:17.568 |  | INFO     | config.get_scheduler:close_system_scheduler:154 - ✅️ 关闭定时任务成功
+INFO:     Application shutdown complete.
+INFO:     Finished server process [47228]
+D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py:43: FastAPIDeprecationWarning: `regex` has been deprecated, please use `pattern` instead
+  grant_type: str = Form(default=None, regex='password'),
+INFO:     Started server process [67948]
+INFO:     Waiting for application startup.
+2025-12-31 21:36:30.231 |  | INFO     | server:lifespan:23 - ⏰️ AI智能测试平台开始启动
+2025-12-31 21:36:30.232 |  | INFO     | config.get_db:init_create_table:25 - 🔎 初始化数据库连接...
+2025-12-31 21:36:31.993 |  | INFO     | config.get_db:init_create_table:28 - ✅️ 数据库连接成功
+2025-12-31 21:36:31.994 |  | INFO     | config.get_redis:create_redis_pool:25 - 🔎 开始连接redis...
+2025-12-31 21:36:32.179 |  | INFO     | config.get_redis:create_redis_pool:38 - ✅️ redis连接成功
+2025-12-31 21:36:33.973 |  | INFO     | config.get_scheduler:init_system_scheduler:136 - 🔎 开始启动定时任务...
+2025-12-31 21:36:35.217 |  | INFO     | config.get_scheduler:init_system_scheduler:144 - ✅️ 系统初始定时任务加载成功
+INFO:     Application startup complete.
+2025-12-31 21:36:35.218 |  | INFO     | server:lifespan:30 - 🚀 AI智能测试平台启动成功
+2025-12-31 21:36:35.799 | b142185bbbf74f818b693ea9ab6715f4 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:36:36.530 | 340053d2dbb8428786b7e1b85ef58dd0 | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:36:39.296 | 6bb51f720ed04b78a9568425fec1f843 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:36:39.495 | 6d5d98a69d17427c9a4f6c9f7f698ab2 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:36:39.673 | bf8e1b9908c742b9a1568e44fb2ab386 | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:36:40.112 | aed74c99297a4b00ae73abc437eeed38 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:36:41.237 | 99ab59987875494fa11056b83e70a0e5 | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:36:41.271 | 8dc968499cff464a8bc400fd1d860240 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:37:33.513 | e880924fe5d1450bbf197548c5222ed3 | ERROR    | module_testing.service.script_service:execute_script:450 - 执行脚本失败: AgentManager.execute_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:37:59.148 | a1536dddf5b340c689281a2b32570ca8 | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:37:59.571 | 12ea8ef585f042e3b520f9aa2922a8a7 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:38:00.599 | d452c82daaa441f5ab22ed14cd97c782 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:38:00.601 | 8519837c06fe4418a8660c6a2d08a04b | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:38:07.084 | 271e811e34d5480faa2b1843583d9642 | ERROR    | module_testing.service.script_service:execute_script:450 - 执行脚本失败: AgentManager.execute_script() got an unexpected keyword argument 'agent_type'
+2025-12-31 21:38:15.088 | 22fb5aa3b89c4655ae4ffa27aa8da13b | ERROR    | module_testing.service.script_service:execute_script:450 - 执行脚本失败: AgentManager.execute_script() got an unexpected keyword argument 'agent_type'
+WARNING:  WatchFiles detected changes in 'module_testing\agents\agent_manager.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2025-12-31 21:46:21.557 |  | INFO     | config.get_redis:close_redis_pool:58 - ✅️ 关闭redis连接成功
+2025-12-31 21:46:21.558 |  | INFO     | config.get_scheduler:close_system_scheduler:154 - ✅️ 关闭定时任务成功
+INFO:     Application shutdown complete.
+INFO:     Finished server process [67948]
+WARNING:  WatchFiles detected changes in 'module_testing\service\script_service.py'. Reloading...
+D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py:43: FastAPIDeprecationWarning: `regex` has been deprecated, please use `pattern` instead
+  grant_type: str = Form(default=None, regex='password'),
+INFO:     Started server process [63012]
+INFO:     Waiting for application startup.
+2025-12-31 21:46:32.166 |  | INFO     | server:lifespan:23 - ⏰️ AI智能测试平台开始启动
+2025-12-31 21:46:32.167 |  | INFO     | config.get_db:init_create_table:25 - 🔎 初始化数据库连接...
+2025-12-31 21:46:33.687 |  | INFO     | config.get_db:init_create_table:28 - ✅️ 数据库连接成功
+2025-12-31 21:46:33.687 |  | INFO     | config.get_redis:create_redis_pool:25 - 🔎 开始连接redis...
+2025-12-31 21:46:33.862 |  | INFO     | config.get_redis:create_redis_pool:38 - ✅️ redis连接成功
+2025-12-31 21:46:36.375 |  | INFO     | config.get_scheduler:init_system_scheduler:136 - 🔎 开始启动定时任务...
+2025-12-31 21:46:38.076 |  | INFO     | config.get_scheduler:init_system_scheduler:144 - ✅️ 系统初始定时任务加载成功
+INFO:     Application startup complete.
+2025-12-31 21:46:38.077 |  | INFO     | server:lifespan:30 - 🚀 AI智能测试平台启动成功
+ERROR:    Traceback (most recent call last):
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\_compat.py", line 30, in asyncio_run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py:43: FastAPIDeprecationWarning: `regex` has been deprecated, please use `pattern` instead
+  grant_type: str = Form(default=None, regex='password'),
+INFO:     Started server process [66344]
+INFO:     Waiting for application startup.
+2025-12-31 21:46:48.078 |  | INFO     | server:lifespan:23 - ⏰️ AI智能测试平台开始启动
+2025-12-31 21:46:48.079 |  | INFO     | config.get_db:init_create_table:25 - 🔎 初始化数据库连接...
+2025-12-31 21:46:49.761 |  | INFO     | config.get_db:init_create_table:28 - ✅️ 数据库连接成功
+2025-12-31 21:46:49.762 |  | INFO     | config.get_redis:create_redis_pool:25 - 🔎 开始连接redis...
+2025-12-31 21:46:49.914 |  | INFO     | config.get_redis:create_redis_pool:38 - ✅️ redis连接成功
+2025-12-31 21:46:51.600 |  | INFO     | config.get_scheduler:init_system_scheduler:136 - 🔎 开始启动定时任务...
+2025-12-31 21:46:52.784 |  | INFO     | config.get_scheduler:init_system_scheduler:144 - ✅️ 系统初始定时任务加载成功
+INFO:     Application startup complete.
+2025-12-31 21:46:52.785 |  | INFO     | server:lifespan:30 - 🚀 AI智能测试平台启动成功
+2025-12-31 21:47:29.239 | 6c9ff7f60297410da64096f24197e9ac | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:47:29.904 | b793354a559d4691a9e437097040e787 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:47:31.073 | d13a7216c2254f32a3586930e2a5bebb | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:47:31.159 | a0d8eceeb7e4468a940c881d7d4a1a95 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:47:40.008 | 2b9c3266396d48f0b1afaed2e5df3642 | INFO     | module_testing.agents.agent_manager:execute_script:294 - 开始执行脚本 - Agent: k6_agent, 脚本: None
+2025-12-31 21:47:43.500 | 2b9c3266396d48f0b1afaed2e5df3642 | INFO     | module_testing.agents.langgraph_client:invoke_agent:112 - 调用Agent [k6_agent] - Thread [48ea9868-b889-4c7a-be81-17449d090b71]
+2025-12-31 21:47:43.500 | 2b9c3266396d48f0b1afaed2e5df3642 | DEBUG    | module_testing.agents.langgraph_client:invoke_agent:113 - 请求消息: 请执行以下脚本并返回测试结果：
+
+脚本路径: None
+
+脚本内容:
+```
+test2
+```
+
+请执行测试并返回详细结果。
+...
+2025-12-31 21:47:47.084 | 2b9c3266396d48f0b1afaed2e5df3642 | ERROR    | module_testing.agents.langgraph_client:invoke_agent:155 - Agent调用失败 [k6_agent]: Client error '422 Unprocessable Entity' for url 'http://localhost:2025/threads/48ea9868-b889-4c7a-be81-17449d090b71/runs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422
+2025-12-31 21:47:47.224 | 2b9c3266396d48f0b1afaed2e5df3642 | INFO     | module_testing.service.script_service:execute_script:441 - 执行脚本: 4, execution_id: 7
+2025-12-31 21:47:47.225 | 2b9c3266396d48f0b1afaed2e5df3642 | INFO     | module_testing.controller.script_controller:execute_script:174 - 执行脚本: 4, execution_id: 7
+2025-12-31 21:48:09.933 | 57e3f60500ad468b84f2003e026b3fe7 | INFO     | module_testing.agents.agent_manager:execute_script:294 - 开始执行脚本 - Agent: k6_agent, 脚本: None
+2025-12-31 21:48:13.482 | 57e3f60500ad468b84f2003e026b3fe7 | INFO     | module_testing.agents.langgraph_client:invoke_agent:112 - 调用Agent [k6_agent] - Thread [f54f667b-575e-41aa-8a4d-84789a1e5afd]
+2025-12-31 21:48:13.483 | 57e3f60500ad468b84f2003e026b3fe7 | DEBUG    | module_testing.agents.langgraph_client:invoke_agent:113 - 请求消息: 请执行以下脚本并返回测试结果：
+
+脚本路径: None
+
+脚本内容:
+```
+test2
+```
+
+请执行测试并返回详细结果。
+...
+2025-12-31 21:48:17.237 | 57e3f60500ad468b84f2003e026b3fe7 | ERROR    | module_testing.agents.langgraph_client:invoke_agent:155 - Agent调用失败 [k6_agent]: Client error '422 Unprocessable Entity' for url 'http://localhost:2025/threads/f54f667b-575e-41aa-8a4d-84789a1e5afd/runs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422
+2025-12-31 21:48:17.375 | 57e3f60500ad468b84f2003e026b3fe7 | INFO     | module_testing.service.script_service:execute_script:441 - 执行脚本: 4, execution_id: 8
+2025-12-31 21:48:17.376 | 57e3f60500ad468b84f2003e026b3fe7 | INFO     | module_testing.controller.script_controller:execute_script:174 - 执行脚本: 4, execution_id: 8
+2025-12-31 21:48:17.624 | b7288282c6424dbfaa32e2f16cae8407 | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 21:48:18.042 | 2ecdb27bf9c54d28a1acdf2824f4d816 | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 21:48:19.304 | 4a8d4798d75c4ac5a4cc5143c818de07 | INFO     | module_testing.controller.script_controller:get_script_list:54 - 获取脚本列表成功
+2025-12-31 21:48:19.312 | 7fab9ffb51c940829138f0a01a52e450 | INFO     | module_testing.controller.project_controller:get_project_list:51 - 获取项目列表成功
+2025-12-31 21:48:26.721 | c2b5fc89d0d741c0933d7077967f7e1c | INFO     | module_testing.agents.agent_manager:execute_script:294 - 开始执行脚本 - Agent: k6_agent, 脚本: None
+2025-12-31 21:48:30.239 | c2b5fc89d0d741c0933d7077967f7e1c | INFO     | module_testing.agents.langgraph_client:invoke_agent:112 - 调用Agent [k6_agent] - Thread [007922d7-d1fc-4e04-b7a3-ad947255d14a]
+2025-12-31 21:48:30.240 | c2b5fc89d0d741c0933d7077967f7e1c | DEBUG    | module_testing.agents.langgraph_client:invoke_agent:113 - 请求消息: 请执行以下脚本并返回测试结果：
+
+脚本路径: None
+
+脚本内容:
+```
+test2
+```
+
+请执行测试并返回详细结果。
+...
+2025-12-31 21:48:33.856 | c2b5fc89d0d741c0933d7077967f7e1c | ERROR    | module_testing.agents.langgraph_client:invoke_agent:155 - Agent调用失败 [k6_agent]: Client error '422 Unprocessable Entity' for url 'http://localhost:2025/threads/007922d7-d1fc-4e04-b7a3-ad947255d14a/runs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422
+2025-12-31 21:48:33.995 | c2b5fc89d0d741c0933d7077967f7e1c | INFO     | module_testing.service.script_service:execute_script:441 - 执行脚本: 4, execution_id: 9
+2025-12-31 21:48:33.996 | c2b5fc89d0d741c0933d7077967f7e1c | INFO     | module_testing.controller.script_controller:execute_script:174 - 执行脚本: 4, execution_id: 9
+2025-12-31 21:48:35.309 | 7a4d1f98117a4549b3b1fe67db9eed6b | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:48:40.308 | b391b68820614ab68542cb9785fbe1a6 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:48:45.311 | e4d6cea25c0e4352af7f1887a7d5edef | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:48:50.313 | fe5ee43e9b7e4c9384b4157165d0f5fe | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:48:55.308 | 7ad01f71f4c54282a7328d00b876ba31 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:00.310 | d8171bd62f834fef84bacf74bda329fe | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:05.289 | 98fd4e9fa28f4f8fb34746a3d360fbe4 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:10.292 | 666bc0d6306d4131bce9fc9fd7e4fde0 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:15.301 | b3f1ae009ae8445c9b3172c52ff4a87c | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:20.302 | 2328e9347f1d41cfba3617c484b74ede | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:25.288 | aeb3cac0d6fe40f2a2c3b04ae2a7712f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:30.270 | dc93de0f57b54288a148873d8bc8f6de | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:35.610 | a6c39ea62c2e40279af83caab65a9601 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:40.590 | 899df5a5af6d4616b47feb5afe91033e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:45.568 | 858dd131d7f94594960f46aad1578ff8 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:50.564 | ea6af31d976446ed8ce6ce363675547e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:49:55.565 | 2a7d5dcc6de2474097216254f344fcea | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:00.562 | 9006431bc1384b588587893360533702 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:05.284 | 5ea737c285b54a988d64100b865541f7 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:06.994 | 1bbffcb8ee4f4f549b8a02cd9551c615 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:10.283 | 5fb06c6e134548618f9615644507ade7 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:10.789 | aaf464dcf6e848f29ea612498392b84e | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:11.754 | 5fdc8c928d2b4a589caec625d904ccdb | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:14.935 | dc017294c410482c9aa4cf90cb3f83ce | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:15.449 | 453cea94ae0440a59bdbfe2d87c67280 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:20.257 | 8736fcaf41334befbd6d3adbe73c0a5c | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:22.222 | 4f77fefc4e384eae8ccf2b1ab4a30497 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:25.300 | 8266cc249c904ec99cdc70145ff4fecb | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:25.824 | 49675049bdcf4de891d91f0afb1b605f | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:28.930 | f7a530bdc09947ae928d6f78a42d0320 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:30.303 | 3c317367a6e04d27a1d7e4436c589633 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:32.311 | ba76f495ae0d4d6e8906f8eccb85198a | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:34.280 | d577497253ca4a769ddef987b57f19a5 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:35.288 | 283139b0e5024e66a6c5d8b84f3c9853 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:37.059 | 5b30f76790b4430a8ac2808622fd5d52 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:40.543 | df6344763ef444e1a37da39d3ddf2c81 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:44.740 | 09221490adfa4e4b9ec41ccd2939e63b | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:45.283 | 9a77efa5c8c4463d955868e03006c444 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:48.181 | 8b6354a89fdb45ab873a7409072518fd | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:50.278 | 5d4164cb75a24bf8bdf538da5e339af1 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:54.088 | 2f426714741b479394f4d3e1a3d96f41 | INFO     | module_testing.controller.report_controller:get_report_list:49 - 获取报告列表成功
+2025-12-31 21:50:55.285 | ccdbfcbc0a9e43f5986e6b7da94dde47 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:50:56.031 | 86ffe2ccfdd64d758dd6237e69f9daec | INFO     | module_testing.controller.report_controller:get_report_list:49 - 获取报告列表成功
+2025-12-31 21:51:00.365 | 7cb587ffb53d4b388c8c543092927523 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:05.586 | 5fa5882f0c8843fbad7eb5bd90a7d2d4 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:10.738 | 6cdeb71598b84373937aeea7a721604b | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:15.558 | 6b6661526f0d458fa9ade925d727960a | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:20.588 | 908a6655878a4ff9a832d90d41ada9d7 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:25.579 | 1273ba13a5c544f08856e9e04027711a | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:30.582 | 546b154ac4e74d86be74b7846a8a7112 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:35.566 | 62eb3996702442a68a67b92febb63886 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:40.581 | 439e4ea9f9324c0cbf55c6f606d31a5c | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:45.573 | fbb07e2a33b64cf48f5cdc89413f1ff6 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:50.583 | ea8f42d3ad134084b30126afcd8ce9fa | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:51:55.583 | b0046fce686c4db3b5d2fb2d51931520 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:52:00.568 | 8b6f7316c7a04d9eaf4737037cdee405 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:52:40.568 | 7cc7469948d64fd0a461c04099165f21 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:53:40.859 | 80297aec6546405984cdadd1b9abb1a0 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:54:25.533 | 51ccad7ff7d343418223910e34c958e8 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:54:27.065 | 5ac44ca340174c75bb2e4649157c8266 | INFO     | module_testing.controller.report_controller:get_report_list:49 - 获取报告列表成功
+2025-12-31 21:54:30.266 | fcaa32f97d13474e8a13cc4d0e0e44d2 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:54:35.587 | fc57060a4fa1491a9267432ec5fb61e0 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:54:40.568 | 2e8b23cf4d9d495cb714a31ea4357110 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:54:45.558 | 7b3e05f361224dc0a96f1b73d8b7e899 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+WARNING:  WatchFiles detected changes in 'module_testing\dao\execution_dao.py'. Reloading...
+2025-12-31 21:54:50.560 | bbd6343fa0a4448aac88c719e4b99787 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:54:55.566 | 2398d32fb99c40d19a6e9b6b6732ba67 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:55:00.311 | 5de1e80ad04e4705a7e11ecc9f0f0be1 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:55:01.415 | b964413a692042c09351493f2e74c2cb | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:55:05.542 | f7e52d0fa10e4b1f8c56f8ba1fa23f10 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+INFO:     Shutting down
+2025-12-31 21:55:10.611 | 8d54234b93714be58218047c0c95940d | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+INFO:     Waiting for application shutdown.
+2025-12-31 21:55:10.809 |  | INFO     | config.get_redis:close_redis_pool:58 - ✅️ 关闭redis连接成功
+2025-12-31 21:55:10.810 |  | INFO     | config.get_scheduler:close_system_scheduler:154 - ✅️ 关闭定时任务成功
+INFO:     Application shutdown complete.
+INFO:     Finished server process [66344]
+D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py:43: FastAPIDeprecationWarning: `regex` has been deprecated, please use `pattern` instead
+  grant_type: str = Form(default=None, regex='password'),
+INFO:     Started server process [57836]
+INFO:     Waiting for application startup.
+2025-12-31 21:55:21.152 |  | INFO     | server:lifespan:23 - ⏰️ AI智能测试平台开始启动
+2025-12-31 21:55:21.153 |  | INFO     | config.get_db:init_create_table:25 - 🔎 初始化数据库连接...
+2025-12-31 21:55:23.760 |  | INFO     | config.get_db:init_create_table:28 - ✅️ 数据库连接成功
+2025-12-31 21:55:23.761 |  | INFO     | config.get_redis:create_redis_pool:25 - 🔎 开始连接redis...
+2025-12-31 21:55:23.933 |  | INFO     | config.get_redis:create_redis_pool:38 - ✅️ redis连接成功
+2025-12-31 21:55:25.747 |  | INFO     | config.get_scheduler:init_system_scheduler:136 - 🔎 开始启动定时任务...
+2025-12-31 21:55:27.042 |  | INFO     | config.get_scheduler:init_system_scheduler:144 - ✅️ 系统初始定时任务加载成功
+INFO:     Application startup complete.
+2025-12-31 21:55:27.043 |  | INFO     | server:lifespan:30 - 🚀 AI智能测试平台启动成功
+2025-12-31 21:55:27.791 | 7523e0763bb5425d9ae4c8967e890f35 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:57:22.711 | 6c0f6c4f459247e6b4cc5bab53b88cd1 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 21:57:37.017 | 83eb08cecaa64c30b31eca1814cf562b | INFO     | module_testing.agents.agent_manager:execute_script:294 - 开始执行脚本 - Agent: k6_agent, 脚本: None
+2025-12-31 21:57:40.478 | 83eb08cecaa64c30b31eca1814cf562b | INFO     | module_testing.agents.langgraph_client:invoke_agent:112 - 调用Agent [k6_agent] - Thread [ffbeffb0-a91d-41eb-a769-fd8f3b8ff42b]
+2025-12-31 21:57:40.479 | 83eb08cecaa64c30b31eca1814cf562b | DEBUG    | module_testing.agents.langgraph_client:invoke_agent:113 - 请求消息: 请执行以下脚本并返回测试结果：
+
+脚本路径: None
+
+脚本内容:
+```
+test2
+```
+
+请执行测试并返回详细结果。
+...
+2025-12-31 21:57:43.974 | 83eb08cecaa64c30b31eca1814cf562b | ERROR    | module_testing.agents.langgraph_client:invoke_agent:155 - Agent调用失败 [k6_agent]: Client error '422 Unprocessable Entity' for url 'http://localhost:2025/threads/ffbeffb0-a91d-41eb-a769-fd8f3b8ff42b/runs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422
+2025-12-31 21:57:44.333 | 83eb08cecaa64c30b31eca1814cf562b | INFO     | module_testing.service.script_service:execute_script:441 - 执行脚本: 4, execution_id: 10
+2025-12-31 21:57:44.335 | 83eb08cecaa64c30b31eca1814cf562b | INFO     | module_testing.service.execution_service:retry_execution:187 - 重试执行成功: 9 -> 10
+2025-12-31 21:57:44.335 | 83eb08cecaa64c30b31eca1814cf562b | INFO     | module_testing.controller.execution_controller:retry_execution:156 - 重试执行: 9 -> 10
+2025-12-31 21:57:44.445 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.agents.agent_manager:execute_script:294 - 开始执行脚本 - Agent: k6_agent, 脚本: None
+2025-12-31 21:57:48.410 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.agents.langgraph_client:invoke_agent:112 - 调用Agent [k6_agent] - Thread [a3f49498-63a7-4826-a893-35c638c5010a]
+2025-12-31 21:57:48.412 | 244894d1ceab4002a5043d0c66ee529d | DEBUG    | module_testing.agents.langgraph_client:invoke_agent:113 - 请求消息: 请执行以下脚本并返回测试结果：
+
+脚本路径: None
+
+脚本内容:
+```
+test2
+```
+
+请执行测试并返回详细结果。
+...
+2025-12-31 21:57:51.856 | 244894d1ceab4002a5043d0c66ee529d | ERROR    | module_testing.agents.langgraph_client:invoke_agent:155 - Agent调用失败 [k6_agent]: Client error '422 Unprocessable Entity' for url 'http://localhost:2025/threads/a3f49498-63a7-4826-a893-35c638c5010a/runs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422
+2025-12-31 21:57:51.890 | beb2708f9c384e7fb952f8f3a43822a1 | INFO     | module_testing.service.execution_service:cancel_execution:93 - 取消执行: 6
+2025-12-31 21:57:51.891 | beb2708f9c384e7fb952f8f3a43822a1 | INFO     | module_testing.controller.execution_controller:cancel_execution:135 - 取消执行: 6
+2025-12-31 21:57:51.986 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.service.script_service:execute_script:441 - 执行脚本: 4, execution_id: 11
+2025-12-31 21:57:51.987 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.service.execution_service:retry_execution:187 - 重试执行成功: 9 -> 11
+2025-12-31 21:57:51.988 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.controller.execution_controller:retry_execution:156 - 重试执行: 9 -> 11
+2025-12-31 21:58:05.852 | 623da3fcad5e4bc6a76313c2f735a10d | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功

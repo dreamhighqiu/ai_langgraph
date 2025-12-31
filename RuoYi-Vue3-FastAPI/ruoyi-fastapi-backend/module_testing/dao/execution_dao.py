@@ -131,6 +131,10 @@ class ExecutionDAO:
                 'start_time': execution.start_time,
                 'end_time': execution.end_time,
                 'duration': execution.duration,
+                'thread_id': execution.thread_id,
+                'agent_id': execution.agent_id,
+                'result': execution.result,
+                'error_msg': execution.error_msg,
                 'executor': execution.executor,
                 'create_time': execution.create_time,
             }

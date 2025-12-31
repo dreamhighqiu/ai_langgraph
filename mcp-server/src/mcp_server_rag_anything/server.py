@@ -73,6 +73,7 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[RAGAnythingContext]:
     logger.info(f"Configuration loaded")
     logger.info(f"  LLM Provider: {config.llm.provider}")
     logger.info(f"  LLM Model: {config.llm.model}")
+    logger.info(f"  LLM API Key: {'***' + config.llm.api_key[-4:] if config.llm.api_key else 'NOT SET'}")
     logger.info(f"  RAG Parser: {config.rag.parser}")
 
     try:

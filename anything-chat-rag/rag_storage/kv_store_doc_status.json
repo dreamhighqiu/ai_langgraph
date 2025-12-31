@@ -1,111 +1,130 @@
 {
-  "doc-fa7239cf2000114b9ada546d638aeefb": {
+  "doc-2f24877f426d1aa3d83c35bd7b6931f0": {
     "status": "processed",
-    "chunks_count": 5,
+    "chunks_count": 2,
     "chunks_list": [
-      "chunk-0ed01d0a52df8896f87835c170a4127f",
-      "chunk-6e7a38ff30ab59324d9302f116d5064a",
-      "chunk-e2a73219a6b81a765a98ce10205dfeb7",
-      "chunk-e0b0e1c4d631cf0610d16ca55817ac01",
-      "chunk-c0dd04808417ed9e3c6f74d1e54d5a54"
+      "chunk-e1503226bff786bd39cd20659e09194f",
+      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
     ],
-    "content_summary": "# 意图与实体识别\r\n基于自然语言理解的助手本节涉及构建基于NLU的助手。如果您正在使用语言模型对话式人工智能(CALM)，此内容可能不适用于您。NLU(自然语言理解)的目标是从用户消息中提取结构化信息。这通常包括用户的意图以及消息中包含的任何实体。你可以在训练数据中添加额外的信息，如正则表达式和查找表，以帮助模型正确识别意图和实体。\r\n\r\n## 步骤\r\n 1、安装\r\n 2、进入watch目录下\r\n 3、在data/nlu.yaml中添加调整训练数据\r\n 4、在config.yml中调整相关配置...",
-    "content_length": 11267,
-    "created_at": "2025-12-30T05:45:54.453767+00:00",
-    "updated_at": "2025-12-30T05:59:24.605103+00:00",
-    "file_path": "操作步骤1.md",
-    "track_id": "upload_20251230_134554_d4fabeff",
+    "content_summary": "# 🚀 项目部署流程\r\n\r\n本文档介绍如何部署完整的 RAG + Agent 服务栈。请按顺序启动以下服务。\r\n\r\n---\r\n\r\n## 📋 前置条件\r\n\r\n- Python 3.11+\r\n- Node.js 18+\r\n- 各服务的 `.env` 配置文件已正确配置\r\n\r\n---\r\n\r\n## 1️⃣ MCP Server (RAG Anything)\r\n\r\n**功能**: 提供 RAG 知识库的 MCP 服务接口\r\n\r\n```bash\r\n# 进入目录\r\ncd mcp-server\r\n\r\n# 激活虚...",
+    "content_length": 3786,
+    "created_at": "2025-12-31T13:18:25.858995+00:00",
+    "updated_at": "2025-12-31T13:38:09.283608+00:00",
+    "file_path": "部署流程.md",
+    "track_id": "upload_20251231_211825_2d5b8c9e",
     "metadata": {
-      "processing_start_time": 1767073554,
-      "processing_end_time": 1767074364
+      "processing_start_time": 1767187105,
+      "processing_end_time": 1767188289
     }
   },
-  "doc-f1fff04f1907ceef2945d91abc146ec6": {
-    "status": "processed",
+  "doc-72c928b8ab3958f49cb9e3fc45dfcf83": {
+    "status": "processing",
     "chunks_count": 3,
     "chunks_list": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d",
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-508db58a2a7942df34569046bec9d997"
+      "chunk-dd872650d5ae9ccc276a960f8f8e685a",
+      "chunk-3a90cb28394f31c2fb45ad92c57adf97",
+      "chunk-b2cf63e1686276dae0b7e2bf4113ebc5"
     ],
-    "content_summary": "一、算法备案 \r\nDify工作流 体验网址：\r\nhttp://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS\r\nhttp://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS\r\n# 加在工作流回复的最后一行：以上内容由AI生成\r\n# 免责声明：本网页所有内容由百寻智能问答+AI 生成\r\n隐私协议（用于算法备案）：http://www.baixunsz.com/dn/aiprivacy.html\r\n隐私协议（用于建友官网）：h...",
-    "content_length": 3900,
-    "created_at": "2025-12-30T06:28:19.524481+00:00",
-    "updated_at": "2025-12-30T06:35:58.173413+00:00",
-    "file_path": "重要信息.txt",
-    "track_id": "upload_20251230_142819_d376cf43",
+    "content_summary": "# AI 智能体编写代码规范规则\r\n\r\n## 1. 总体原则\r\n\r\n- **专业工程师标准**：遵循企业级代码规范\r\n- **可扩展性**：代码必须易于扩展和维护\r\n- **复用性强**：提高代码复用率，减少重复代码\r\n- **中文注释**：所有代码注释使用中文\r\n- **无版权声明**：不添加任何版权或授权声明\r\n- **README文件保存docs目录下**：生成的操作手册不要啰嗦，保存到 docs 目录，不要每次执行任务都生成大量手册\r\n- **调试或者测试文件保存到debug目录下**：...",
+    "content_length": 6068,
+    "created_at": "2025-12-31T13:18:25.886974+00:00",
+    "updated_at": "2025-12-31T13:38:09.335121+00:00",
+    "file_path": "rule.md",
+    "track_id": "upload_20251231_211825_09230fb1",
     "metadata": {
-      "processing_start_time": 1767076099,
-      "processing_end_time": 1767076558
+      "processing_start_time": 1767188289
     }
+  },
+  "doc-e6cb36be043ee380584e6bc6bec47169": {
+    "status": "processing",
+    "chunks_count": 4,
+    "chunks_list": [
+      "chunk-2bb2063c1171c4e83dcce08f30c80ca6",
+      "chunk-b0f2508811d1092697ffb2e6184ae138",
+      "chunk-84442b4f59294a7e04293d7e0131614c",
+      "chunk-c7faa9ed4c124ad7075266f47e52eeba"
+    ],
+    "content_summary": "# AI LangGraph 服务启动脚本使用手册\r\n\r\n## 📖 目录\r\n\r\n- [概述](#概述)\r\n- [快速开始](#快速开始)\r\n- [命令详解](#命令详解)\r\n- [服务管理](#服务管理)\r\n- [故障排除](#故障排除)\r\n- [高级用法](#高级用法)\r\n\r\n---\r\n\r\n## 概述\r\n\r\n`start_all.sh` 是一个跨平台（Windows/Linux/macOS）的统一服务启动脚本，用于管理 AI LangGraph 项目的所有服务。\r\n\r\n### 支持的服务\r\n\r...",
+    "content_length": 10411,
+    "created_at": "2025-12-31T13:18:25.915842+00:00",
+    "updated_at": "2025-12-31T13:38:09.463492+00:00",
+    "file_path": "START_ALL_MANUAL.md",
+    "track_id": "upload_20251231_211825_696b2637",
+    "metadata": {
+      "processing_start_time": 1767188289
+    }
+  },
+  "doc-07ee19afffb247d1d50547297f3964f4": {
+    "status": "pending",
+    "content_summary": "# 启动脚本快速参考卡片\r\n\r\n## 🚀 常用命令\r\n\r\n```bash\r\n# 启动所有服务\r\n./start_all.sh --all\r\n\r\n# 停止所有服务\r\n./start_all.sh --stop\r\n\r\n# 查看服务状态\r\n./start_all.sh --status\r\n\r\n# 重启所有服务\r\n./start_all.sh --restart\r\n\r\n# 更新依赖并重启\r\n./start_all.sh --update\r\n```\r\n\r\n## 📦 单个服务操作\r\n\r\n```bash\r\n#...",
+    "content_length": 2110,
+    "created_at": "2025-12-31T13:18:29.221608+00:00",
+    "updated_at": "2025-12-31T13:18:29.221608+00:00",
+    "file_path": "START_ALL_QUICK_REFERENCE.md",
+    "track_id": "upload_20251231_211825_93b792c4",
+    "chunks_list": []
+  },
+  "doc-6b5919566dacc3dbcb9fb685d5b1205f": {
+    "status": "pending",
+    "content_summary": "# 性能测试模块前后端对接分析报告\n\n## 一、当前问题诊断\n\n### 1.1 项目管理入口缺失问题 ✅ 已解决\n\n**问题描述：**\n- 前端只有需求管理入口,没有独立的项目管理入口\n- 用户无法直接管理和查看所有测试项目\n- 需求无法关联到具体项目\n\n**解决方案：**\n1. ✅ 修复了项目管理页面字段名称不匹配问题\n   - 将 `project_name` 改为 `projectName`\n   - 将 `project_type` 改为 `projectType`\n   - 将 `pr...",
+    "content_length": 3982,
+    "created_at": "2025-12-31T13:18:42.154501+00:00",
+    "updated_at": "2025-12-31T13:18:42.154501+00:00",
+    "file_path": "性能测试模块前后端对接分析报告.md",
+    "track_id": "upload_20251231_211842_40b4d5f5",
+    "chunks_list": []
+  },
+  "doc-422e9cc3042e9f9b6a00aa07d1f777c5": {
+    "status": "pending",
+    "content_summary": "# 性能测试模块完整实施方案\n\n## 📋 执行摘要\n\n基于您的需求，我已经完成了以下工作：\n\n### ✅ 已完成\n1. **修复项目管理页面字段名称不匹配问题**\n   - 前端字段统一改为驼峰命名（projectId, projectName, projectType等）\n   - 与后端API返回字段完全匹配\n   - 修复了分页参数（pageNum, pageSize）\n\n2. **美化项目管理页面UI**\n   - 添加醒目的页面标题卡片（紫色渐变）\n   - 统一按钮文字（\"新增项目\"...",
+    "content_length": 5475,
+    "created_at": "2025-12-31T13:18:42.183579+00:00",
+    "updated_at": "2025-12-31T13:18:42.183579+00:00",
+    "file_path": "性能测试模块实施方案.md",
+    "track_id": "upload_20251231_211842_ebc29c21",
+    "chunks_list": []
   },
   "doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e": {
-    "status": "processed",
-    "chunks_count": 3,
-    "chunks_list": [
-      "chunk-79be94d8c3833dcb484c8e1712014160",
-      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
-      "chunk-6bd4d94bce1ed431abb1a2e97286558f"
-    ],
+    "status": "pending",
     "content_summary": "PERSONAL RESUME\n\n邱云霞\n\n求职意向：高级测试工程师 / 测试开发工程师\n\n广州\n\n20k-25k\n\n随时到岗\n\n 年　　龄：\n\n35 岁\n\n 性　　别：女\n\n 婚姻状况：已婚已育\n\n 工作年限：\n\n12 年经验\n\n 联系电话：\n\n13802784929\n\n 联系邮箱：\n\n1509062627@qq.com\n\n技能特长\n\n· AI 赋能测试平台开发和实施 ：具备大模型（ LLM ）应用开发能力，熟练使用 LangChain 、 DeepAgent 、 RAG 、 MC...",
     "content_length": 5231,
-    "created_at": "2025-12-31T10:43:51.630529+00:00",
-    "updated_at": "2025-12-31T19:39:32+00:00",
+    "created_at": "2025-12-31T13:21:26.880229+00:00",
+    "updated_at": "2025-12-31T21:21:49+00:00",
     "file_path": "邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf",
-    "track_id": "insert_20251231_184351_6924264e",
-    "metadata": {
-      "processing_start_time": 1767177831,
-      "processing_end_time": 1767178912
-    },
-    "multimodal_processed": true
-  },
-  "doc-cd6da09bf7fcb88fcd1809ee8f9b2248": {
-    "status": "processed",
-    "chunks_count": 1,
-    "chunks_list": [
-      "chunk-05aea82394ee290311fbc092b4a96ffe"
-    ],
-    "content_summary": "我们出去旅行了\n\n我是谁 我在那 这个是⼀个旅游⽂档\n\nasia.com\n\nTHAIAIRASIA\n\nAIRBUS\n\nF900\n\nF900\n\n39\n\n500\n\n500\n\nMAHATHA GANOHI\n\nMAHATMA GANOHI\n\nMAHATHA GANOHI\n\n6EBA\n\nDESERVE BANK OF INDIA\n\nDANK OF INDIA\n\n4594836\n\nnECERVE BANK OF INDIA\n\nUDANK OF INDIA\n\nRESERVE BANK OF INDIA\n\n28...",
-    "content_length": 463,
-    "created_at": "2025-12-31T10:43:56.294927+00:00",
-    "updated_at": "2025-12-31T19:40:55+00:00",
-    "file_path": "旅行日记2.pdf",
-    "track_id": "insert_20251231_184356_63bc2378",
-    "metadata": {
-      "processing_start_time": 1767178912,
-      "processing_end_time": 1767179155
-    },
-    "multimodal_processed": true
-  },
-  "doc-bc26a12e57eeaa82fff369b374ce1112": {
-    "status": "failed",
-    "error_msg": "C[1/1]: chunk-01d0bff8610ce0bc33971ccb3bbd6b08: An asyncio.Future, a coroutine or an awaitable is required",
-    "content_summary": "我们出去旅行了\n\nasia.com\n\nTHAIAIRASIA\n\nAIRBUS\n\nF900\n\nF900\n\n39\n\n500\n\n500\n\nMAHATHA GANOHI\n\nMAHATMA GANOHI\n\nMAHATHA GANOHI\n\n6EBA\n\nDESERVE BANK OF INDIA\n\nDANK OF INDIA\n\n4594836\n\nnECERVE BANK OF INDIA\n\nUDANK OF INDIA\n\nRESERVE BANK OF INDIA\n\n28805\n\n0800\n\nGUARANTE...",
-    "content_length": 444,
-    "created_at": "2025-12-31T11:41:31.728710+00:00",
-    "updated_at": "2025-12-31T19:44:30+00:00",
-    "file_path": "旅行日记2.pdf",
-    "track_id": "insert_20251231_194131_f74d3bbc",
-    "metadata": {
-      "processing_start_time": 1767181359,
-      "processing_end_time": 1767181407
-    },
+    "track_id": "insert_20251231_212126_e036184e",
     "chunks_list": [],
     "multimodal_processed": true
   },
-  "doc-88b93e772890662b37fff9510ff982e1": {
-    "status": "failed",
-    "error_msg": "Embedding func: Worker execution timeout after 60s",
-    "content_summary": "《大型语言模型（LLM）系列产品工具及提示词工程》专业培训大纲\n\n目标学员: 金融行业产品经理、运营人员、技术开发者、数据分析师、风险管理人员、\n\n合规专员以及对LLM应用感兴趣的相关人员。\n\n培训目标:\n\n· 全面了解主流大型语言模型的特点、能力边界与选型策略。\n\n•\n\n掌握LLM的多种使用方式，理解企业级接入与部署的关键考量。\n\n· 精通提示词工程的核心原理、结构与高级技巧。\n\n· 能够针对金融领域的具体场景（分析、客服、风控等）设计、优化和应用高效\n\n提示词。\n\n· 理解LLM使用的最佳实...",
-    "content_length": 5436,
-    "created_at": "2025-12-31T11:42:39.051255+00:00",
-    "updated_at": "2025-12-31T19:43:42+00:00",
-    "file_path": "llm_course.pdf",
-    "track_id": "insert_20251231_194239_8b514817",
-    "metadata": {
-      "processing_start_time": 1767181359,
-      "processing_end_time": 1767181422
-    },
+  "doc-8eaf2550553b2561b0ef7232965c0c56": {
+    "status": "pending",
+    "content_summary": "教育部学籍在线验证报告\n\n更新日期：2025年12月19日\n\n姓名\n\n邱云霞\n\n性别\n\n女\n\n出生日期\n\n1990年08月21日\n\n民族\n\n汉族\n\n学校名称\n\n江西理工大学\n\n层次\n\n本科\n\n专业\n\n软件工程(机械电子工程)\n\n学制\n\n4 年\n\n学历类别\n\n普通高等教育\n\n学习形式\n\n普通全日制\n\n分院\n\n软件学院\n\n系所\n\n机电工程系\n\n入学日期\n\n2010年09月01日\n\n学籍状态\n\n不在籍（毕业）\n\n离校日期\n\n2014年07月01日\n\n注意事项：\n\n1、《学籍在线验证报告》是教育部学籍电...",
+    "content_length": 466,
+    "created_at": "2025-12-31T13:21:27.044348+00:00",
+    "updated_at": "2025-12-31T21:37:21+00:00",
+    "file_path": "教育部学籍在线验证报告_邱云霞.pdf",
+    "track_id": "insert_20251231_212127_b1a20a7b",
+    "chunks_list": [],
+    "multimodal_processed": true
+  },
+  "doc-f7ead14bf760c6a58f9c82db30097647": {
+    "status": "pending",
+    "content_summary": "教育部学历证书电子注册备案表\n\n更新日期：2025年12月20日\n\n姓名\n\n邱云霞\n\n性别\n\n女\n\n出生日期\n\n1990年08月21日\n\n入学日期\n\n2010年09月01日\n\n毕（结）业日期\n\n2014年07月01日\n\n学校名称\n\n江西理工大学\n\n专业\n\n软件工程(机械电子工程)\n\n学制\n\n4 年\n\n层次\n\n本科\n\n学历类别\n\n普通高等教育\n\n学习形式\n\n普通全日制\n\n毕（结）业\n\n毕业\n\n证书编号\n\n1040 7120 1405 0041 22\n\n校（院）长姓名\n\n罗嗣海\n\n注意事项：\n\n1、...",
+    "content_length": 515,
+    "created_at": "2025-12-31T13:21:27.088042+00:00",
+    "updated_at": "2025-12-31T21:37:14+00:00",
+    "file_path": "教育部学历证书电子注册备案表_邱云霞 (1).pdf",
+    "track_id": "insert_20251231_212127_5feadda0",
+    "chunks_list": [],
+    "multimodal_processed": true
+  },
+  "doc-cd6da09bf7fcb88fcd1809ee8f9b2248": {
+    "status": "pending",
+    "content_summary": "我们出去旅行了\n\n我是谁 我在那 这个是⼀个旅游⽂档\n\nasia.com\n\nTHAIAIRASIA\n\nAIRBUS\n\nF900\n\nF900\n\n39\n\n500\n\n500\n\nMAHATHA GANOHI\n\nMAHATMA GANOHI\n\nMAHATHA GANOHI\n\n6EBA\n\nDESERVE BANK OF INDIA\n\nDANK OF INDIA\n\n4594836\n\nnECERVE BANK OF INDIA\n\nUDANK OF INDIA\n\nRESERVE BANK OF INDIA\n\n28...",
+    "content_length": 463,
+    "created_at": "2025-12-31T13:22:48.844875+00:00",
+    "updated_at": "2025-12-31T21:37:35+00:00",
+    "file_path": "旅行日记2.pdf",
+    "track_id": "insert_20251231_212248_5e84b5dc",
     "chunks_list": [],
     "multimodal_processed": true
   }

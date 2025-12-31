@@ -2855,3 +2855,385 @@ Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpe
 2025-12-31 21:03:24,412 - lightrag - INFO - [] Process 36028 doc status load doc_status with 6 records
 2025-12-31 21:03:24,414 - uvicorn.error - INFO - Application startup complete.
 2025-12-31 21:03:24,417 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2025-12-31 21:17:03,473 - uvicorn.access - INFO - 127.0.0.1:53102 - "GET /docs HTTP/1.1" 200
+2025-12-31 21:17:03,513 - lightrag - INFO - [] Subgraph query successful | Node count: 347 | Edge count: 271
+2025-12-31 21:17:03,556 - uvicorn.access - INFO - 127.0.0.1:54860 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-31 21:17:04,059 - uvicorn.access - INFO - 127.0.0.1:54860 - "GET /openapi.json HTTP/1.1" 200
+2025-12-31 21:17:25,255 - uvicorn.access - INFO - 127.0.0.1:55698 - "DELETE /documents/delete_document HTTP/1.1" 200
+2025-12-31 21:17:25,256 - lightrag - INFO - Deleting document 1/2: doc-88b93e772890662b37fff9510ff982e1
+2025-12-31 21:17:25,258 - lightrag - INFO - Starting deletion process for document doc-88b93e772890662b37fff9510ff982e1
+2025-12-31 21:17:25,259 - lightrag - INFO - Deleting doc-88b93e772890662b37fff9510ff982e1 llm_course.pdf(previous status: FAILED)
+2025-12-31 21:17:25,261 - lightrag - WARNING - No chunks found for document doc-88b93e772890662b37fff9510ff982e1
+2025-12-31 21:17:25,264 - lightrag - INFO - Document deleted without associated chunks: doc-88b93e772890662b37fff9510ff982e1
+2025-12-31 21:17:25,273 - lightrag - INFO - [] Writing graph with 347 nodes, 271 edges
+2025-12-31 21:17:25,353 - lightrag - INFO - In memory DB persist to disk
+2025-12-31 21:17:25,355 - lightrag - INFO - Document deleted 1/2: doc-88b93e772890662b37fff9510ff982e1[llm_course.pdf]
+2025-12-31 21:17:25,360 - lightrag - WARNING - File deletion skipped, missing or unsafe file: llm_course.pdf
+2025-12-31 21:17:25,361 - lightrag - INFO - Deleting document 2/2: doc-bc26a12e57eeaa82fff369b374ce1112
+2025-12-31 21:17:25,362 - lightrag - INFO - Starting deletion process for document doc-bc26a12e57eeaa82fff369b374ce1112
+2025-12-31 21:17:25,362 - lightrag - INFO - Deleting doc-bc26a12e57eeaa82fff369b374ce1112 旅行日记2.pdf(previous status: FAILED)
+2025-12-31 21:17:25,363 - lightrag - WARNING - No chunks found for document doc-bc26a12e57eeaa82fff369b374ce1112
+2025-12-31 21:17:25,365 - lightrag - INFO - Document deleted without associated chunks: doc-bc26a12e57eeaa82fff369b374ce1112
+2025-12-31 21:17:25,372 - lightrag - INFO - [] Writing graph with 347 nodes, 271 edges
+2025-12-31 21:17:25,418 - lightrag - INFO - In memory DB persist to disk
+2025-12-31 21:17:25,419 - lightrag - INFO - Document deleted 2/2: doc-bc26a12e57eeaa82fff369b374ce1112[旅行日记2.pdf]
+2025-12-31 21:17:25,424 - lightrag - INFO - Successfully deleted input_dir file: 旅行日记2.pdf
+2025-12-31 21:17:35,150 - lightrag - INFO - [] VectorDB collection 'entities' exists check: False
+2025-12-31 21:17:35,152 - lightrag - INFO - [] Creating new collection: entities
+2025-12-31 21:17:36,515 - lightrag - INFO - [] Created indexes for collection: entities
+2025-12-31 21:17:37,420 - lightrag - INFO - [] Successfully created Milvus collection: entities
+2025-12-31 21:17:37,422 - lightrag - INFO - [] Process 36028 drop Milvus collection entities
+2025-12-31 21:17:37,567 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: False
+2025-12-31 21:17:37,568 - lightrag - INFO - [] Creating new collection: relationships
+2025-12-31 21:17:39,576 - lightrag - INFO - [] Created indexes for collection: relationships
+2025-12-31 21:17:40,236 - lightrag - INFO - [] Successfully created Milvus collection: relationships
+2025-12-31 21:17:40,238 - lightrag - INFO - [] Process 36028 drop Milvus collection relationships
+2025-12-31 21:17:40,382 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: False
+2025-12-31 21:17:40,383 - lightrag - INFO - [] Creating new collection: chunks
+2025-12-31 21:17:41,755 - lightrag - INFO - [] Created indexes for collection: chunks
+2025-12-31 21:17:42,413 - lightrag - INFO - [] Successfully created Milvus collection: chunks
+2025-12-31 21:17:42,414 - lightrag - INFO - [] Process 36028 drop Milvus collection chunks
+2025-12-31 21:17:42,416 - lightrag - INFO - [] Process 36028 drop graph file:D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml
+2025-12-31 21:17:42,431 - lightrag - INFO - [] Process 36028 drop text_chunks
+2025-12-31 21:17:42,434 - lightrag - INFO - [] Process 36028 drop full_docs
+2025-12-31 21:17:42,435 - lightrag - INFO - [] Process 36028 drop full_entities
+2025-12-31 21:17:42,436 - lightrag - INFO - [] Process 36028 drop full_relations
+2025-12-31 21:17:42,437 - lightrag - INFO - [] Process 36028 drop entity_chunks
+2025-12-31 21:17:42,438 - lightrag - INFO - [] Process 36028 drop relation_chunks
+2025-12-31 21:17:42,439 - lightrag - INFO - [] Process 36028 drop doc_status
+2025-12-31 21:17:42,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /text_chunks
+2025-12-31 21:17:42,440 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_docs
+2025-12-31 21:17:42,441 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_entities
+2025-12-31 21:17:42,442 - lightrag - INFO - Successfully dropped JsonKVStorage: /full_relations
+2025-12-31 21:17:42,443 - lightrag - INFO - Successfully dropped JsonKVStorage: /entity_chunks
+2025-12-31 21:17:42,444 - lightrag - INFO - Successfully dropped JsonKVStorage: /relation_chunks
+2025-12-31 21:17:42,445 - lightrag - INFO - Successfully dropped MilvusVectorDBStorage: /entities
+2025-12-31 21:17:42,446 - lightrag - INFO - Successfully dropped MilvusVectorDBStorage: /relationships
+2025-12-31 21:17:42,447 - lightrag - INFO - Successfully dropped MilvusVectorDBStorage: /chunks
+2025-12-31 21:17:42,448 - lightrag - INFO - Successfully dropped NetworkXStorage: /chunk_entity_relation
+2025-12-31 21:17:42,450 - lightrag - INFO - Successfully dropped JsonDocStatusStorage: /doc_status
+2025-12-31 21:17:42,453 - uvicorn.access - INFO - 127.0.0.1:54123 - "DELETE /documents HTTP/1.1" 200
+2025-12-31 21:17:42,471 - lightrag - INFO - [] Process 36028 drop llm_response_cache
+2025-12-31 21:17:42,473 - lightrag - INFO - Cleared all cache
+2025-12-31 21:17:42,473 - uvicorn.access - INFO - 127.0.0.1:54123 - "POST /documents/clear_cache HTTP/1.1" 200
+2025-12-31 21:18:25,851 - uvicorn.access - INFO - 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:18:25,868 - uvicorn.access - INFO - 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:18:25,872 - lightrag - INFO - Successfully extracted and enqueued file: 部署流程.md
+2025-12-31 21:18:25,888 - uvicorn.access - INFO - 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:18:25,900 - lightrag - INFO - Processing 1 document(s)
+2025-12-31 21:18:25,906 - lightrag - INFO - Successfully extracted and enqueued file: rule.md
+2025-12-31 21:18:25,909 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:18:25,915 - lightrag - INFO - Extracting stage 1/1: 部署流程.md
+2025-12-31 21:18:25,916 - lightrag - INFO - Processing d-id: doc-2f24877f426d1aa3d83c35bd7b6931f0
+2025-12-31 21:18:25,920 - uvicorn.access - INFO - 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:18:26,105 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+2025-12-31 21:18:29,223 - lightrag - INFO - Successfully extracted and enqueued file: START_ALL_MANUAL.md
+2025-12-31 21:18:29,229 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:18:29,248 - lightrag - INFO - Successfully extracted and enqueued file: START_ALL_QUICK_REFERENCE.md
+2025-12-31 21:18:29,252 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:18:42,148 - uvicorn.access - INFO - 127.0.0.1:52547 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:18:42,162 - lightrag - INFO - Successfully extracted and enqueued file: 性能测试模块前后端对接分析报告.md
+2025-12-31 21:18:42,166 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:18:42,174 - uvicorn.access - INFO - 127.0.0.1:52547 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:18:42,192 - lightrag - INFO - Successfully extracted and enqueued file: 性能测试模块实施方案.md
+2025-12-31 21:18:42,199 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:18:59,631 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2025-12-31 21:19:06,595 - uvicorn.access - INFO - 127.0.0.1:64647 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:19:06,596 - lightrag - INFO - Using RAG-Anything multimodal processing for: 教育部学籍在线验证报告_邱云霞.pdf
+2025-12-31 21:19:06,598 - lightrag - INFO - RAGAnything initialized with config:
+2025-12-31 21:19:06,598 - lightrag - INFO -   Working directory: ./rag_storage
+2025-12-31 21:19:06,599 - lightrag - INFO -   Parser: docling
+2025-12-31 21:19:06,600 - lightrag - INFO -   Parse method: auto
+2025-12-31 21:19:06,601 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2025-12-31 21:19:06,602 - lightrag - INFO -   Max concurrent files: 1
+2025-12-31 21:19:06,603 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2025-12-31 21:19:06,617 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf
+2025-12-31 21:19:06,619 - lightrag - INFO - Using docling parser with method: auto
+2025-12-31 21:19:06,620 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-31 21:19:06,638 - uvicorn.access - INFO - 127.0.0.1:57455 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:19:06,639 - lightrag - INFO - Using RAG-Anything multimodal processing for: 教育部学历证书电子注册备案表_邱云霞 (1).pdf
+2025-12-31 21:19:06,645 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf
+2025-12-31 21:19:06,647 - lightrag - INFO - Using docling parser with method: auto
+2025-12-31 21:19:06,649 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-31 21:19:06,668 - uvicorn.access - INFO - 127.0.0.1:57455 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:19:06,670 - lightrag - INFO - Using RAG-Anything multimodal processing for: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+2025-12-31 21:19:06,671 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+2025-12-31 21:19:06,675 - lightrag - INFO - Using docling parser with method: auto
+2025-12-31 21:19:06,683 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-31 21:19:15,403 - uvicorn.access - INFO - 127.0.0.1:57455 - "GET /docs HTTP/1.1" 200
+2025-12-31 21:19:15,425 - lightrag - INFO - [] Subgraph query successful | Node count: 0 | Edge count: 0
+2025-12-31 21:19:15,427 - uvicorn.access - INFO - 127.0.0.1:57455 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2025-12-31 21:19:15,605 - uvicorn.access - INFO - 127.0.0.1:57455 - "GET /openapi.json HTTP/1.1" 200
+2025-12-31 21:19:35,126 - lightrag - INFO -  == LLM cache == saving: default:extract:220667d7f1b5372c3d5727e70460fe56
+2025-12-31 21:19:42,627 - lightrag - INFO -  == LLM cache == saving: default:extract:67ed7f069d575bfecb1834f693219837
+2025-12-31 21:19:57,715 - lightrag - INFO -  == LLM cache == saving: default:extract:c333fffc9dfe16923460c9cf149d655b
+2025-12-31 21:19:57,723 - lightrag - INFO - Chunk 1 of 2 extracted 16 Ent + 19 Rel chunk-8c827224c9f6af5154b5ce1fa4bb2b80
+2025-12-31 21:20:08,362 - lightrag - INFO -  == LLM cache == saving: default:extract:06af474f411cc8589dd3097c15e3058e
+2025-12-31 21:20:08,366 - lightrag - INFO - Chunk 2 of 2 extracted 25 Ent + 18 Rel chunk-e1503226bff786bd39cd20659e09194f
+2025-12-31 21:20:08,371 - lightrag - INFO - Merging stage 1/1: 部署流程.md
+2025-12-31 21:20:08,372 - lightrag - INFO - Phase 1: Processing 37 entities from doc-2f24877f426d1aa3d83c35bd7b6931f0 (async: 8)
+2025-12-31 21:20:39,368 - uvicorn.access - INFO - 127.0.0.1:59800 - "POST /documents/upload HTTP/1.1" 200
+2025-12-31 21:20:39,370 - lightrag - INFO - Using RAG-Anything multimodal processing for: 旅行日记2.pdf
+2025-12-31 21:20:39,372 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf
+2025-12-31 21:20:39,374 - lightrag - INFO - Using docling parser with method: auto
+2025-12-31 21:20:39,375 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2025-12-31 21:20:52,683 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf complete! Extracted 110 content blocks
+2025-12-31 21:20:52,684 - lightrag - INFO - Document parsed successfully: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e, blocks=110
+2025-12-31 21:21:26,803 - lightrag - INFO - Parser 'docling' installation verified
+2025-12-31 21:21:26,805 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2025-12-31 21:21:26,821 - lightrag - INFO - [] Process 36028 KV load parse_cache with 9 records
+2025-12-31 21:21:26,837 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf complete! Extracted 44 content blocks
+2025-12-31 21:21:26,840 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf complete! Extracted 42 content blocks
+2025-12-31 21:21:26,852 - lightrag - INFO - Multimodal processors initialized with context support
+2025-12-31 21:21:26,853 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2025-12-31 21:21:26,855 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2025-12-31 21:21:26,857 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf (110 items)
+2025-12-31 21:21:26,862 - lightrag - INFO - Content separation complete:
+2025-12-31 21:21:26,866 - lightrag - INFO -   - Text content length: 5231 characters
+2025-12-31 21:21:26,871 - lightrag - INFO -   - Multimodal items count: 0
+2025-12-31 21:21:26,872 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-31 21:21:26,947 - lightrag - INFO - Stored parsing result in cache: 3b44dd0b61359230be474e4cc3ddb16d
+2025-12-31 21:21:26,948 - lightrag - INFO - Document parsed successfully: 教育部学籍在线验证报告_邱云霞.pdf, doc_id=doc-8eaf2550553b2561b0ef7232965c0c56, blocks=44
+2025-12-31 21:21:26,955 - lightrag - INFO - Stored parsing result in cache: 0e319154192c159ead6eaec325229ea5
+2025-12-31 21:21:26,956 - lightrag - INFO - Document parsed successfully: 教育部学历证书电子注册备案表_邱云霞 (1).pdf, doc_id=doc-f7ead14bf760c6a58f9c82db30097647, blocks=42
+2025-12-31 21:21:27,014 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf (44 items)
+2025-12-31 21:21:27,019 - lightrag - INFO - Content separation complete:
+2025-12-31 21:21:27,023 - lightrag - INFO -   - Text content length: 466 characters
+2025-12-31 21:21:27,026 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-31 21:21:27,029 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-31 21:21:27,031 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-31 21:21:27,032 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,034 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,034 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,036 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,037 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-31 21:21:27,040 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-31 21:21:27,056 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf (42 items)
+2025-12-31 21:21:27,061 - lightrag - INFO - Content separation complete:
+2025-12-31 21:21:27,064 - lightrag - INFO -   - Text content length: 515 characters
+2025-12-31 21:21:27,065 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-31 21:21:27,066 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-31 21:21:27,068 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-31 21:21:27,073 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,075 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,078 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,081 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:21:27,084 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-31 21:21:27,085 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-31 21:21:41,026 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:21:44,449 - lightrag - INFO - Text content insertion complete
+2025-12-31 21:21:49,070 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:21:49,071 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:21:49,227 - lightrag - INFO - Text content insertion complete
+2025-12-31 21:21:49,377 - lightrag - INFO - Text content insertion complete
+2025-12-31 21:21:52,440 - lightrag - INFO - Starting multimodal content processing...
+2025-12-31 21:21:55,613 - lightrag - INFO - Starting multimodal content processing...
+2025-12-31 21:21:55,620 - lightrag - INFO - Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+2025-12-31 21:21:55,621 - lightrag - INFO - Document processing complete: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
+2025-12-31 21:21:55,622 - lightrag - INFO - RAG-Anything processing completed successfully: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
+2025-12-31 21:21:55,623 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:21:55,793 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-31 21:22:01,892 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-31 21:22:18,281 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187334683ffe43015d735359faff049ec38e2b5f5141b94', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:18,284 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346838d5b781e89b1033d1b98e0082083129be6e33d', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:18,287 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346831f89d7a51cae2ccde9d7b9caad447a843cdc73', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:21,708 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187334683ffe43015d735359faff049ec38e2b5f5141b94', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:21,709 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-31 21:22:21,711 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346838d5b781e89b1033d1b98e0082083129be6e33d', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:21,712 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-31 21:22:21,713 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346831f89d7a51cae2ccde9d7b9caad447a843cdc73', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:21,716 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-31 21:22:28,243 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718733483286475d51b405451fc484fdd1a9abe503ba7908', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:28,248 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718733483286475d51b405451fc484fdd1a9abe503ba7908', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:28,249 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-31 21:22:45,280 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf complete! Extracted 40 content blocks
+2025-12-31 21:22:45,342 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187358862c710b3d771f5011ef7eccce758c790d29944ad', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:45,510 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187358862c710b3d771f5011ef7eccce758c790d29944ad', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:45,511 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-31 21:22:45,513 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187361919b27d07d4a31e534f61104e57109d4de5bdcd74', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:45,516 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187361919b27d07d4a31e534f61104e57109d4de5bdcd74', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:22:45,517 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-31 21:22:45,520 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-31 21:22:45,526 - lightrag - INFO - Stored parsing result in cache: 830d3c479b0d88864a4f6f61b15910be
+2025-12-31 21:22:45,527 - lightrag - INFO - Document parsed successfully: 旅行日记2.pdf, doc_id=doc-cd6da09bf7fcb88fcd1809ee8f9b2248, blocks=40
+2025-12-31 21:22:45,528 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-31 21:22:48,833 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf (40 items)
+2025-12-31 21:22:48,835 - lightrag - INFO - Content separation complete:
+2025-12-31 21:22:48,837 - lightrag - INFO -   - Text content length: 463 characters
+2025-12-31 21:22:48,838 - lightrag - INFO -   - Multimodal items count: 3
+2025-12-31 21:22:48,838 - lightrag - INFO -   - Multimodal type distribution: {'image': 3}
+2025-12-31 21:22:48,839 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2025-12-31 21:22:48,840 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:22:48,841 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:22:48,841 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:22:48,842 - lightrag - INFO - Content source set with format: minerU
+2025-12-31 21:22:48,843 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2025-12-31 21:22:48,843 - lightrag - INFO - Starting text content insertion into LightRAG...
+2025-12-31 21:22:58,537 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:23:01,713 - lightrag - INFO - Text content insertion complete
+2025-12-31 21:23:01,879 - lightrag - INFO - Starting multimodal content processing...
+2025-12-31 21:23:07,856 - lightrag - INFO - Starting to process 3 multimodal content items
+2025-12-31 21:23:27,529 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187400611ec532cad304213904cdde48aeb6c6826c8d61f', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:27,533 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874006152856367a65b621c15f7d0cb2a0f35cc4d29489', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:30,646 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187400611ec532cad304213904cdde48aeb6c6826c8d61f', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:30,647 - lightrag - INFO - Multimodal chunk generation progress: 1/3 (33.3%)
+2025-12-31 21:23:30,648 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874006152856367a65b621c15f7d0cb2a0f35cc4d29489', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:30,649 - lightrag - INFO - Multimodal chunk generation progress: 2/3 (66.7%)
+2025-12-31 21:23:37,516 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718741686066d4fff57f472cc97f9dc7178d7aa526c36fd6', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:37,518 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718741686066d4fff57f472cc97f9dc7178d7aa526c36fd6', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:37,519 - lightrag - INFO - Multimodal chunk generation progress: 3/3 (100.0%)
+2025-12-31 21:23:37,520 - lightrag - INFO - Generated descriptions for 3/3 multimodal items using correct processors
+2025-12-31 21:23:40,991 - lightrag - INFO - Phase 2: Processing 36 relations from doc-2f24877f426d1aa3d83c35bd7b6931f0 (async: 8)
+2025-12-31 21:23:40,995 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
+2025-12-31 21:23:40,998 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-31 21:23:41,000 - lightrag - INFO - Processing item 1/3: image content
+2025-12-31 21:23:44,155 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
+2025-12-31 21:23:44,156 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-31 21:23:44,158 - lightrag - INFO - Processing item 1/3: image content
+2025-12-31 21:23:47,696 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874269916246fa05d035050efc9e62170c29c5f2b8b66f', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:23:47,698 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874269916246fa05d035050efc9e62170c29c5f2b8b66f', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:01,053 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187431147f6bbcadc5ac62a9c6cfd677b3d413815b40ff6', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:01,055 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187431147f6bbcadc5ac62a9c6cfd677b3d413815b40ff6', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:14,518 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
+2025-12-31 21:24:14,519 - lightrag - WARNING - Falling back to individual multimodal processing
+2025-12-31 21:24:14,533 - lightrag - INFO - Processing item 1/3: image content
+2025-12-31 21:24:31,938 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187468009dae410d06a911c4f7bd0a80e7e433f8a9f854e', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:32,289 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187468009dae410d06a911c4f7bd0a80e7e433f8a9f854e', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:38,425 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:24:38,427 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:24:38,427 - lightrag - INFO - Processing item 2/3: image content
+2025-12-31 21:24:51,869 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874909035de161b16d50149cbf4122a430bab0f05b8426', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:51,872 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874909035de161b16d50149cbf4122a430bab0f05b8426', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:24:58,744 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:24:58,745 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:24:58,746 - lightrag - INFO - Processing item 2/3: image content
+2025-12-31 21:25:11,582 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187510997f916f2e250264480d9a70ca8038cd15f9eea29', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:25:11,584 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187510997f916f2e250264480d9a70ca8038cd15f9eea29', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:25:39,273 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:25:39,274 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:25:39,275 - lightrag - INFO - Processing item 2/3: image content
+2025-12-31 21:25:46,636 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:25:46,637 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:25:46,639 - lightrag - INFO - Processing item 3/3: image content
+2025-12-31 21:25:53,571 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187549572eb148de919522c9d22c84fecf2e787b1d36f96', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:25:53,575 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187549572eb148de919522c9d22c84fecf2e787b1d36f96', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:25:57,325 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671875533316246fa05d035050efc9e62170c29c5f2fb650f', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:26:00,361 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671875533316246fa05d035050efc9e62170c29c5f2fb650f', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:26:03,992 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:26:03,993 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:26:03,994 - lightrag - INFO - Processing item 3/3: image content
+2025-12-31 21:36:29,162 - lightrag - ERROR - Error in ollama_embed:  (status code: 502)
+2025-12-31 21:36:29,316 - lightrag - ERROR - Embedding func: Error in decorated function for task 2362383620352_988544.5:  (status code: 502)
+2025-12-31 21:36:29,327 - lightrag - ERROR - Error processing image content:  (status code: 502)
+2025-12-31 21:36:29,341 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:36:29,343 - lightrag - INFO - Processing item 3/3: image content
+2025-12-31 21:36:43,545 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767188199935be1165b3464d7873d589895ee39c5755920503', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:36:43,548 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767188199935be1165b3464d7873d589895ee39c5755920503', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:36:46,854 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671882032988b55878d95caf0a54b04de1dacd104edec02f5', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:36:46,858 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671882032988b55878d95caf0a54b04de1dacd104edec02f5', 'param': '', 'type': 'Not Found'}}
+2025-12-31 21:37:10,945 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:37:10,945 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:37:10,946 - lightrag - INFO - Individual multimodal content processing complete
+2025-12-31 21:37:14,655 - lightrag - INFO - Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf
+2025-12-31 21:37:14,656 - lightrag - INFO - Document processing complete: 教育部学历证书电子注册备案表_邱云霞 (1).pdf, doc_id=doc-f7ead14bf760c6a58f9c82db30097647
+2025-12-31 21:37:14,657 - lightrag - INFO - RAG-Anything processing completed successfully: 教育部学历证书电子注册备案表_邱云霞 (1).pdf, doc_id=doc-f7ead14bf760c6a58f9c82db30097647
+2025-12-31 21:37:17,771 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:37:21,299 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:37:21,300 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:37:21,302 - lightrag - INFO - Individual multimodal content processing complete
+2025-12-31 21:37:29,189 - lightrag - INFO - Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf
+2025-12-31 21:37:29,190 - lightrag - INFO - Document processing complete: 教育部学籍在线验证报告_邱云霞.pdf, doc_id=doc-8eaf2550553b2561b0ef7232965c0c56
+2025-12-31 21:37:29,191 - lightrag - INFO - RAG-Anything processing completed successfully: 教育部学籍在线验证报告_邱云霞.pdf, doc_id=doc-8eaf2550553b2561b0ef7232965c0c56
+2025-12-31 21:37:29,192 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:37:35,839 - lightrag - ERROR - Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+2025-12-31 21:37:35,840 - lightrag - ERROR - Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+2025-12-31 21:37:35,841 - lightrag - INFO - Individual multimodal content processing complete
+2025-12-31 21:37:35,905 - uvicorn.access - INFO - 127.0.0.1:53569 - "GET /docs HTTP/1.1" 200
+2025-12-31 21:37:35,918 - lightrag - INFO - Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf
+2025-12-31 21:37:35,919 - lightrag - INFO - Document processing complete: 旅行日记2.pdf, doc_id=doc-cd6da09bf7fcb88fcd1809ee8f9b2248
+2025-12-31 21:37:35,919 - lightrag - INFO - RAG-Anything processing completed successfully: 旅行日记2.pdf, doc_id=doc-cd6da09bf7fcb88fcd1809ee8f9b2248
+2025-12-31 21:37:35,921 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2025-12-31 21:37:36,468 - uvicorn.access - INFO - 127.0.0.1:57399 - "GET /openapi.json HTTP/1.1" 200
+2025-12-31 21:38:09,280 - lightrag - INFO - Phase 3: Updating final 37(37+0) entities and  36 relations from doc-2f24877f426d1aa3d83c35bd7b6931f0
+2025-12-31 21:38:09,282 - lightrag - INFO - Completed merging: 37 entities, 0 extra entities, 36 relations
+2025-12-31 21:38:09,299 - lightrag - INFO - [] Writing graph with 46 nodes, 36 edges
+2025-12-31 21:38:09,307 - lightrag - INFO - In memory DB persist to disk
+2025-12-31 21:38:09,308 - lightrag - INFO - Completed processing file 1/1: 部署流程.md
+2025-12-31 21:38:09,310 - lightrag - INFO - Processing additional documents due to pending request
+2025-12-31 21:38:09,314 - lightrag - INFO - Processing 9 document(s)
+2025-12-31 21:38:09,315 - lightrag - INFO - Extracting stage 1/9: rule.md
+2025-12-31 21:38:09,316 - lightrag - INFO - Processing d-id: doc-72c928b8ab3958f49cb9e3fc45dfcf83
+2025-12-31 21:38:09,317 - lightrag - INFO - Extracting stage 2/9: START_ALL_MANUAL.md
+2025-12-31 21:38:09,318 - lightrag - INFO - Processing d-id: doc-e6cb36be043ee380584e6bc6bec47169
+2025-12-31 21:39:31,493 - lightrag - INFO -  == LLM cache == saving: default:extract:374ca8b06a499eec103aa4e076c00550
+2025-12-31 21:39:48,192 - lightrag - INFO -  == LLM cache == saving: default:extract:559c0c86781c7f3e47b22e1dcf2bc616
+2025-12-31 21:39:48,197 - lightrag - INFO - Chunk 1 of 3 extracted 15 Ent + 13 Rel chunk-b2cf63e1686276dae0b7e2bf4113ebc5
+2025-12-31 21:40:09,640 - lightrag - INFO -  == LLM cache == saving: default:extract:287233de58419fc3d863aa1b6c839c0b
+2025-12-31 21:40:56,442 - lightrag - INFO -  == LLM cache == saving: default:extract:0d5eff2f3e746b41b56be8eb2c6da785
+2025-12-31 21:40:59,448 - lightrag - INFO - Chunk 2 of 3 extracted 43 Ent + 41 Rel chunk-dd872650d5ae9ccc276a960f8f8e685a
+2025-12-31 21:41:02,721 - lightrag - INFO -  == LLM cache == saving: default:extract:3476178e776a727a6ef67c6e7659a78d
+2025-12-31 21:41:27,636 - lightrag - INFO -  == LLM cache == saving: default:extract:bc970e3456b158ddaf34c5a5f2e5ece3
+2025-12-31 21:41:58,879 - lightrag - INFO -  == LLM cache == saving: default:extract:f6b816380bf55ababdc36bcacee435fb
+2025-12-31 21:42:01,931 - lightrag - INFO - Chunk 1 of 4 extracted 21 Ent + 21 Rel chunk-b0f2508811d1092697ffb2e6184ae138
+2025-12-31 21:42:01,933 - lightrag - INFO -  == LLM cache == saving: default:extract:f15a4da9a136c937771fcc5b467355d4
+2025-12-31 21:42:07,577 - lightrag - INFO -  == LLM cache == saving: default:extract:9c75bdb30b8236100b86cd4561e32e92
+2025-12-31 21:42:34,339 - lightrag - INFO -  == LLM cache == saving: default:extract:3e0aa5e3babff6da549c0e0acdfdffdb
+2025-12-31 21:42:34,346 - lightrag - INFO - Chunk 2 of 4 extracted 33 Ent + 30 Rel chunk-2bb2063c1171c4e83dcce08f30c80ca6
+2025-12-31 21:42:36,796 - lightrag - INFO -  == LLM cache == saving: default:extract:df3bee30ec5fe2c873cda0e70d985424
+2025-12-31 21:42:36,802 - lightrag - INFO - Chunk 3 of 4 extracted 37 Ent + 27 Rel chunk-c7faa9ed4c124ad7075266f47e52eeba
+2025-12-31 21:43:03,920 - lightrag - INFO -  == LLM cache == saving: default:extract:834f8a45534a4dac9653acfa17d49b51
+2025-12-31 21:43:03,930 - lightrag - INFO - Chunk 4 of 4 extracted 44 Ent + 39 Rel chunk-84442b4f59294a7e04293d7e0131614c
+2025-12-31 21:43:03,933 - lightrag - INFO - Merging stage 2/9: START_ALL_MANUAL.md
+2025-12-31 21:43:03,933 - lightrag - INFO - Phase 1: Processing 106 entities from doc-e6cb36be043ee380584e6bc6bec47169 (async: 8)
+2025-12-31 21:43:03,940 - lightrag - INFO - Merged: `start_all.sh` | 2+3
+2025-12-31 21:43:03,942 - lightrag - INFO - Merged: `LightRAG Server` | 2+3
+2025-12-31 21:43:04,072 - lightrag - INFO - Merged: `MCP Server` | 1+4
+2025-12-31 21:43:58,846 - lightrag - INFO - Merged: `虚拟环境` | 1+3
+2025-12-31 21:44:12,220 - lightrag - INFO - Merged: `LightRAG` | 2+2
+2025-12-31 21:44:12,356 - lightrag - INFO - Merged: `LangGraph` | 1+1
+2025-12-31 21:44:43,316 - lightrag - INFO -  == LLM cache == saving: default:extract:f908e2a889145aa43387c8fea7731c45
+2025-12-31 21:45:53,109 - lightrag - INFO -  == LLM cache == saving: default:extract:2355a09e46990c8c042df7cd232c772b
+2025-12-31 21:45:53,122 - lightrag - INFO - Chunk 3 of 3 extracted 48 Ent + 42 Rel chunk-3a90cb28394f31c2fb45ad92c57adf97
+2025-12-31 21:45:59,830 - lightrag - INFO - Merged: `服务状态` | 1+1
+2025-12-31 21:45:59,833 - lightrag - INFO - Merging stage 1/9: rule.md
+2025-12-31 21:45:59,864 - lightrag - INFO - Phase 1: Processing 98 entities from doc-72c928b8ab3958f49cb9e3fc45dfcf83 (async: 8)
+2025-12-31 21:51:23,467 - lightrag - INFO - Merged: `pyproject.toml` | 1+1
+2025-12-31 21:52:35,637 - lightrag - INFO - Phase 2: Processing 107 relations from doc-e6cb36be043ee380584e6bc6bec47169 (async: 8)
+2025-12-31 21:54:58,456 - lightrag - INFO - Phase 2: Processing 95 relations from doc-72c928b8ab3958f49cb9e3fc45dfcf83 (async: 8)
+2025-12-31 21:55:48,802 - lightrag - INFO - Merged: `LightRAG`~`start_all.sh` | 1+1

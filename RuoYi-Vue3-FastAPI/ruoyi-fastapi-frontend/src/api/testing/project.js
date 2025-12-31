@@ -2,10 +2,21 @@ import request from '@/utils/request'
 
 // 查询项目列表
 export function listProject(query) {
+  // 兼容前端传入的驼峰字段，统一转换为后端需要的下划线
+  const params = {
+    project_id: query?.projectId ?? query?.project_id,
+    project_name: query?.projectName ?? query?.project_name,
+    project_type: query?.projectType ?? query?.project_type,
+    status: query?.status,
+    begin_time: query?.beginTime ?? query?.begin_time,
+    end_time: query?.endTime ?? query?.end_time,
+    page_num: query?.pageNum ?? query?.page_num ?? 1,
+    page_size: query?.pageSize ?? query?.page_size ?? 10
+  }
   return request({
     url: '/testing/project/list',
     method: 'get',
-    params: query
+    params
   })
 }
 

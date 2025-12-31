@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2025-12-31 21:03:33,168 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2025-12-31 21:12:50,744 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -21,17 +21,17 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2025-12-31 21:03:33,209 - __main__ - INFO - Starting RAG Anything MCP Server...
-2025-12-31 21:03:33,216 - __main__ - INFO - Configuration loaded
-2025-12-31 21:03:33,217 - __main__ - INFO -   LLM Provider: deepseek
-2025-12-31 21:03:33,217 - __main__ - INFO -   LLM Model: deepseek-chat
-2025-12-31 21:03:33,217 - __main__ - INFO -   RAG Parser: docling
-2025-12-31 21:03:33,217 - __main__ - INFO - Creating LLM model function...
-2025-12-31 21:03:33,217 - __main__ - INFO - Creating vision model function...
-2025-12-31 21:03:33,217 - __main__ - INFO - Creating embedding function...
-2025-12-31 21:03:33,217 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2025-12-31 21:03:33,217 - __main__ - INFO - Creating RAGAnything connector...
-2025-12-31 21:03:33,217 - __main__ - INFO - Initializing RAGAnything...
+2025-12-31 21:12:50,790 - __main__ - INFO - Starting RAG Anything MCP Server...
+2025-12-31 21:12:50,796 - __main__ - INFO - Configuration loaded
+2025-12-31 21:12:50,796 - __main__ - INFO -   LLM Provider: deepseek
+2025-12-31 21:12:50,796 - __main__ - INFO -   LLM Model: deepseek-chat
+2025-12-31 21:12:50,796 - __main__ - INFO -   RAG Parser: docling
+2025-12-31 21:12:50,796 - __main__ - INFO - Creating LLM model function...
+2025-12-31 21:12:50,797 - __main__ - INFO - Creating vision model function...
+2025-12-31 21:12:50,797 - __main__ - INFO - Creating embedding function...
+2025-12-31 21:12:50,797 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2025-12-31 21:12:50,797 - __main__ - INFO - Creating RAGAnything connector...
+2025-12-31 21:12:50,797 - __main__ - INFO - Initializing RAGAnything...
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ./rag_storage
 INFO:   Parser: docling
@@ -41,54 +41,60 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': './rag_storage'}
 INFO: [] Created new empty graph file: ./rag_storage\graph_chunk_entity_relation.graphml
-2025-12-31 21:04:03,940 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
-2025-12-31 21:04:03,941 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
-2025-12-31 21:04:03,943 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
-INFO: [] Process 78712 KV load full_docs with 0 records
-INFO: [] Process 78712 KV load text_chunks with 0 records
-INFO: [] Process 78712 KV load full_entities with 0 records
-INFO: [] Process 78712 KV load full_relations with 0 records
-INFO: [] Process 78712 KV load entity_chunks with 0 records
-INFO: [] Process 78712 KV load relation_chunks with 0 records
-INFO: [] Process 78712 KV load llm_response_cache with 0 records
-INFO: [] Process 78712 doc status load doc_status with 0 records
-INFO: [] Process 78712 KV load parse_cache with 0 records
+2025-12-31 21:13:22,963 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
+2025-12-31 21:13:22,964 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
+2025-12-31 21:13:22,966 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
+INFO: [] Process 51576 KV load full_docs with 0 records
+INFO: [] Process 51576 KV load text_chunks with 0 records
+INFO: [] Process 51576 KV load full_entities with 0 records
+INFO: [] Process 51576 KV load full_relations with 0 records
+INFO: [] Process 51576 KV load entity_chunks with 0 records
+INFO: [] Process 51576 KV load relation_chunks with 0 records
+INFO: [] Process 51576 KV load llm_response_cache with 0 records
+INFO: [] Process 51576 doc status load doc_status with 0 records
+INFO: [] Process 51576 KV load parse_cache with 0 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2025-12-31 21:04:03,954 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2025-12-31 21:04:03,954 - __main__ - INFO - RAG Anything initialized successfully
-2025-12-31 21:04:03,954 - __main__ - INFO -   Working Directory: ./rag_storage
-2025-12-31 21:04:03,954 - __main__ - INFO -   Parser: docling
-[12/31/25 21:04:04] INFO     Starting MCP server '但问企业级RAG' server.py:2618
+2025-12-31 21:13:22,978 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2025-12-31 21:13:22,979 - __main__ - INFO - RAG Anything initialized successfully
+2025-12-31 21:13:22,979 - __main__ - INFO -   Working Directory: ./rag_storage
+2025-12-31 21:13:22,979 - __main__ - INFO -   Parser: docling
+[12/31/25 21:13:23] INFO     Starting MCP server '但问企业级RAG' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8001/sse                           
-INFO:     Started server process [78712]
+INFO:     Started server process [51576]
 INFO:     Waiting for application startup.
-2025-12-31 21:04:04,222 - docket.worker - INFO - Starting worker 'caobinbin#78712' with the following tasks:
-2025-12-31 21:04:04,223 - docket.worker - INFO - * trace(message: str, ...)
-2025-12-31 21:04:04,223 - docket.worker - INFO - * fail(message: str, ...)
-2025-12-31 21:04:04,223 - docket.worker - INFO - * sleep(seconds: float, ...)
+2025-12-31 21:13:23,271 - docket.worker - INFO - Starting worker 'caobinbin#51576' with the following tasks:
+2025-12-31 21:13:23,272 - docket.worker - INFO - * trace(message: str, ...)
+2025-12-31 21:13:23,272 - docket.worker - INFO - * fail(message: str, ...)
+2025-12-31 21:13:23,272 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:64054 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64056 - "POST /messages/?session_id=d22fd646f0fa4c23ac474f6545c5a642 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64058 - "POST /messages/?session_id=d22fd646f0fa4c23ac474f6545c5a642 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64060 - "POST /messages/?session_id=d22fd646f0fa4c23ac474f6545c5a642 HTTP/1.1" 202 Accepted
-2025-12-31 21:04:04,821 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:58932 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58934 - "POST /messages/?session_id=4bf6a50000464aeda31c4bce3a6768b3 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:58936 - "POST /messages/?session_id=4bf6a50000464aeda31c4bce3a6768b3 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:58938 - "POST /messages/?session_id=4bf6a50000464aeda31c4bce3a6768b3 HTTP/1.1" 202 Accepted
-2025-12-31 21:04:39,349 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:58197 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58199 - "POST /messages/?session_id=209a2d633f2e4321b171a5fca98fdcca HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:58201 - "POST /messages/?session_id=209a2d633f2e4321b171a5fca98fdcca HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:58203 - "POST /messages/?session_id=209a2d633f2e4321b171a5fca98fdcca HTTP/1.1" 202 Accepted
-2025-12-31 21:06:08,858 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:61786 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61788 - "POST /messages/?session_id=61cede6ef68940dbbff96f2a5921bc7a HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:61790 - "POST /messages/?session_id=61cede6ef68940dbbff96f2a5921bc7a HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:61792 - "POST /messages/?session_id=61cede6ef68940dbbff96f2a5921bc7a HTTP/1.1" 202 Accepted
-2025-12-31 21:06:48,833 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:61263 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61265 - "POST /messages/?session_id=7f07e2a376e149a2aa0302c9c32e951e HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61267 - "POST /messages/?session_id=7f07e2a376e149a2aa0302c9c32e951e HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61269 - "POST /messages/?session_id=7f07e2a376e149a2aa0302c9c32e951e HTTP/1.1" 202 Accepted
+2025-12-31 21:44:36,007 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2025-12-31 21:44:36,008 - mcp_server_rag_anything.connector - INFO - Executing query: 项目部署流程... (mode: hybrid)
+INFO: Executing VLM enhanced query: 项目部署流程...
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+ERROR: OpenAI API Call Failed,
+Model: deepseek-chat,
+Params: {'temperature': 0.7, 'max_tokens': 4096, 'response_format': <class 'lightrag.types.GPTKeywordExtractionFormat'>}, Got: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+2025-12-31 21:44:40,948 - mcp_server_rag_anything.llm_functions - ERROR - Error calling LLM: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+ERROR: LLM func: Error in decorated function for task 2955184201088_989666.781: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+ERROR: Query failed: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+WARNING: raw_prompt is None from LightRAG, using query as fallback
+INFO: Found 0 image path matches in prompt
+INFO: No valid images found, falling back to normal query
+ERROR: OpenAI API Call Failed,
+Model: deepseek-chat,
+Params: {'temperature': 0.7, 'max_tokens': 4096, 'response_format': <class 'lightrag.types.GPTKeywordExtractionFormat'>}, Got: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+2025-12-31 21:44:44,739 - mcp_server_rag_anything.llm_functions - ERROR - Error calling LLM: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+ERROR: LLM func: Error in decorated function for task 2955184201088_989671.703: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+ERROR: Query failed: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****e742 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+2025-12-31 21:44:44,740 - mcp_server_rag_anything.connector - INFO - Query completed successfully
+INFO:     127.0.0.1:49864 - "POST /messages/?session_id=7f07e2a376e149a2aa0302c9c32e951e HTTP/1.1" 202 Accepted
+2025-12-31 21:44:44,757 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest

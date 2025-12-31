@@ -25,7 +25,7 @@ class LLMConfig:
     """LLM Configuration"""
     provider: str = field(default_factory=lambda: os.getenv("LLM_PROVIDER", "deepseek"))
     model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "deepseek-chat"))
-    api_key: Optional[str] = field(default_factory=lambda: os.getenv("LLM_API_KEY"))
+    api_key: Optional[str] = field(default_factory=lambda: os.getenv("LLM_API_KEY") or os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY"))
     base_url: str = field(default_factory=lambda: os.getenv("LLM_BASE_URL", "https://api.deepseek.com/v1"))
     temperature: float = field(default_factory=lambda: float(os.getenv("LLM_TEMPERATURE", "0.7")))
     max_tokens: int = field(default_factory=lambda: int(os.getenv("LLM_MAX_TOKENS", "4096")))

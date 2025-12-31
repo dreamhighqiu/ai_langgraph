@@ -440,6 +440,17 @@ start_mcp_server() {
     export PYTHONIOENCODING=utf-8
     # Add current directory to Python path
     export PYTHONPATH="$PROJECT_ROOT/mcp-server/src:$PYTHONPATH"
+    # Set API Key if not already set (for DeepSeek)
+    if [ -z "$LLM_API_KEY" ] && [ -z "$DEEPSEEK_API_KEY" ]; then
+        # Try to load from .env file if exists
+        if [ -f "$PROJECT_ROOT/.env" ]; then
+            source "$PROJECT_ROOT/.env"
+        fi
+    fi
+    # Ensure DEEPSEEK_API_KEY is available for MCP server
+    if [ -n "$DEEPSEEK_API_KEY" ] && [ -z "$LLM_API_KEY" ]; then
+        export LLM_API_KEY="$DEEPSEEK_API_KEY"
+    fi
     # Use python -m with explicit path or direct script execution
     nohup "$VENV_PYTHON" -m mcp_server_rag_anything.server > "$log_file" 2>&1 &
     local pid=$!

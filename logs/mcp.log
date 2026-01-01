@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2026-01-01 15:36:06,194 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2026-01-01 16:08:15,098 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -21,18 +21,18 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2026-01-01 15:36:06,255 - __main__ - INFO - Starting RAG Anything MCP Server...
-2026-01-01 15:36:06,262 - __main__ - INFO - Configuration loaded
-2026-01-01 15:36:06,263 - __main__ - INFO -   LLM Provider: deepseek
-2026-01-01 15:36:06,263 - __main__ - INFO -   LLM Model: deepseek-chat
-2026-01-01 15:36:06,263 - __main__ - INFO -   LLM API Key: ***0749
-2026-01-01 15:36:06,263 - __main__ - INFO -   RAG Parser: docling
-2026-01-01 15:36:06,263 - __main__ - INFO - Creating LLM model function...
-2026-01-01 15:36:06,263 - __main__ - INFO - Creating vision model function...
-2026-01-01 15:36:06,263 - __main__ - INFO - Creating embedding function...
-2026-01-01 15:36:06,263 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2026-01-01 15:36:06,264 - __main__ - INFO - Creating RAGAnything connector...
-2026-01-01 15:36:06,264 - __main__ - INFO - Initializing RAGAnything...
+2026-01-01 16:08:15,124 - __main__ - INFO - Starting RAG Anything MCP Server...
+2026-01-01 16:08:15,128 - __main__ - INFO - Configuration loaded
+2026-01-01 16:08:15,128 - __main__ - INFO -   LLM Provider: deepseek
+2026-01-01 16:08:15,128 - __main__ - INFO -   LLM Model: deepseek-chat
+2026-01-01 16:08:15,128 - __main__ - INFO -   LLM API Key: ***0749
+2026-01-01 16:08:15,128 - __main__ - INFO -   RAG Parser: docling
+2026-01-01 16:08:15,128 - __main__ - INFO - Creating LLM model function...
+2026-01-01 16:08:15,128 - __main__ - INFO - Creating vision model function...
+2026-01-01 16:08:15,128 - __main__ - INFO - Creating embedding function...
+2026-01-01 16:08:15,129 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2026-01-01 16:08:15,129 - __main__ - INFO - Creating RAGAnything connector...
+2026-01-01 16:08:15,129 - __main__ - INFO - Initializing RAGAnything...
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ./rag_storage
 INFO:   Parser: docling
@@ -42,58 +42,65 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': './rag_storage'}
 INFO: [] Created new empty graph file: ./rag_storage\graph_chunk_entity_relation.graphml
-2026-01-01 15:36:39,863 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
-2026-01-01 15:36:39,864 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
-2026-01-01 15:36:39,865 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
-INFO: [] Process 34088 KV load full_docs with 0 records
-INFO: [] Process 34088 KV load text_chunks with 0 records
-INFO: [] Process 34088 KV load full_entities with 0 records
-INFO: [] Process 34088 KV load full_relations with 0 records
-INFO: [] Process 34088 KV load entity_chunks with 0 records
-INFO: [] Process 34088 KV load relation_chunks with 0 records
-INFO: [] Process 34088 KV load llm_response_cache with 0 records
-INFO: [] Process 34088 doc status load doc_status with 0 records
-INFO: [] Process 34088 KV load parse_cache with 0 records
+2026-01-01 16:08:29,469 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_entities.json'} 0 data
+2026-01-01 16:08:29,470 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_relationships.json'} 0 data
+2026-01-01 16:08:29,470 - nano-vectordb - INFO - Init {'embedding_dim': 1024, 'metric': 'cosine', 'storage_file': './rag_storage\\vdb_chunks.json'} 0 data
+INFO: [] Process 18972 KV load full_docs with 0 records
+INFO: [] Process 18972 KV load text_chunks with 0 records
+INFO: [] Process 18972 KV load full_entities with 0 records
+INFO: [] Process 18972 KV load full_relations with 0 records
+INFO: [] Process 18972 KV load entity_chunks with 0 records
+INFO: [] Process 18972 KV load relation_chunks with 0 records
+INFO: [] Process 18972 KV load llm_response_cache with 0 records
+INFO: [] Process 18972 doc status load doc_status with 0 records
+INFO: [] Process 18972 KV load parse_cache with 0 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2026-01-01 15:36:39,876 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2026-01-01 15:36:39,876 - __main__ - INFO - RAG Anything initialized successfully
-2026-01-01 15:36:39,876 - __main__ - INFO -   Working Directory: ./rag_storage
-2026-01-01 15:36:39,876 - __main__ - INFO -   Parser: docling
-[01/01/26 15:36:40] INFO     Starting MCP server '但问企业级RAG' server.py:2618
+2026-01-01 16:08:29,476 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2026-01-01 16:08:29,476 - __main__ - INFO - RAG Anything initialized successfully
+2026-01-01 16:08:29,476 - __main__ - INFO -   Working Directory: ./rag_storage
+2026-01-01 16:08:29,476 - __main__ - INFO -   Parser: docling
+[01/01/26 16:08:29] INFO     Starting MCP server '但问企业级RAG' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8001/sse                           
-INFO:     Started server process [34088]
+INFO:     Started server process [18972]
 INFO:     Waiting for application startup.
-2026-01-01 15:36:40,142 - docket.worker - INFO - Starting worker 'caobinbin#34088' with the following tasks:
-2026-01-01 15:36:40,143 - docket.worker - INFO - * trace(message: str, ...)
-2026-01-01 15:36:40,143 - docket.worker - INFO - * fail(message: str, ...)
-2026-01-01 15:36:40,143 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-01 16:08:29,610 - docket.worker - INFO - Starting worker 'caobinbin#18972' with the following tasks:
+2026-01-01 16:08:29,610 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-01 16:08:29,610 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-01 16:08:29,611 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:52913 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52916 - "POST /messages/?session_id=90128f336f1c4dd4892c8b2db10186c7 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52918 - "POST /messages/?session_id=90128f336f1c4dd4892c8b2db10186c7 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52920 - "POST /messages/?session_id=90128f336f1c4dd4892c8b2db10186c7 HTTP/1.1" 202 Accepted
-2026-01-01 15:37:59,148 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:64345 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64347 - "POST /messages/?session_id=c5155271f23b4db9b9795c0673da8ab2 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64349 - "POST /messages/?session_id=c5155271f23b4db9b9795c0673da8ab2 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64351 - "POST /messages/?session_id=c5155271f23b4db9b9795c0673da8ab2 HTTP/1.1" 202 Accepted
-2026-01-01 15:38:35,626 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:56187 - "GET / HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56187 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50904 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52640 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52642 - "POST /messages/?session_id=e521efc830de478e8810e2330a629400 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52644 - "POST /messages/?session_id=e521efc830de478e8810e2330a629400 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52646 - "POST /messages/?session_id=e521efc830de478e8810e2330a629400 HTTP/1.1" 202 Accepted
+2026-01-01 16:08:41,203 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:49683 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49685 - "POST /messages/?session_id=6d5c9f6fbecf4d80a8fbbbe9dc6d0186 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49687 - "POST /messages/?session_id=6d5c9f6fbecf4d80a8fbbbe9dc6d0186 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49689 - "POST /messages/?session_id=6d5c9f6fbecf4d80a8fbbbe9dc6d0186 HTTP/1.1" 202 Accepted
+2026-01-01 16:09:12,344 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:59554 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59556 - "POST /messages/?session_id=52a3822d14c546158127f459cf9f2a34 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59558 - "POST /messages/?session_id=52a3822d14c546158127f459cf9f2a34 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59560 - "POST /messages/?session_id=52a3822d14c546158127f459cf9f2a34 HTTP/1.1" 202 Accepted
+2026-01-01 16:10:39,371 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+INFO:     127.0.0.1:53539 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53541 - "POST /messages/?session_id=7b7f172a900245438199c8e1ade1c104 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53543 - "POST /messages/?session_id=7b7f172a900245438199c8e1ade1c104 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53545 - "POST /messages/?session_id=7b7f172a900245438199c8e1ade1c104 HTTP/1.1" 202 Accepted
+2026-01-01 16:11:18,599 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
 INFO:     Shutting down
 ERROR:    Cancel 0 running task(s), timeout graceful shutdown exceeded
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [34088]
-2026-01-01 16:04:14,280 - __main__ - INFO - Shutting down RAG Anything MCP Server...
+INFO:     Finished server process [18972]
+2026-01-01 16:14:08,898 - __main__ - INFO - Shutting down RAG Anything MCP Server...
 INFO: Successfully finalized 12 storages
 INFO: Successfully finalized all RAGAnything storages
-2026-01-01 16:04:14,292 - mcp_server_rag_anything.connector - INFO - RAGAnything storages finalized
-2026-01-01 16:04:14,292 - __main__ - INFO - Server shutdown complete
+2026-01-01 16:14:08,907 - mcp_server_rag_anything.connector - INFO - RAGAnything storages finalized
+2026-01-01 16:14:08,907 - __main__ - INFO - Server shutdown complete
 Warning: Failed to finalize RAGAnything storages: There is no current event loop in thread 'MainThread'.

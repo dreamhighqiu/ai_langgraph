@@ -1,0 +1,798 @@
+{
+  "test_plan": {
+    "project_name": "PlayTurbo游戏网站API测试计划",
+    "version": "1.0",
+    "created_date": "2024-01-15",
+    "last_updated": "2024-01-15",
+    
+    "overview": {
+      "api_basic_info": {
+        "website": "https://www.playturbo.com/",
+        "api_type": "RESTful API",
+        "authentication_method": "JWT Token",
+        "data_format": "JSON",
+        "protocol": "HTTPS"
+      },
+      "test_scope": [
+        "用户认证模块",
+        "游戏数据模块", 
+        "社交功能模块",
+        "支付模块",
+        "系统状态模块"
+      ],
+      "test_objectives": [
+        "验证所有API接口的功能正确性",
+        "确保API的安全性和数据完整性",
+        "验证API的性能和稳定性",
+        "测试边界条件和异常处理",
+        "确保API的兼容性和可扩展性"
+      ]
+    },
+    
+    "test_strategy": {
+      "functional_testing": {
+        "description": "验证API的基本功能实现",
+        "coverage": "所有API端点",
+        "techniques": [
+          "正向测试",
+          "数据验证",
+          "状态转换测试"
+        ]
+      },
+      "boundary_testing": {
+        "description": "测试参数边界值和极限条件",
+        "coverage": "所有带参数的API",
+        "techniques": [
+          "最小值/最大值测试",
+          "空值/null值测试",
+          "特殊字符测试"
+        ]
+      },
+      "exception_testing": {
+        "description": "测试错误处理和异常场景",
+        "coverage": "所有可能出错的API",
+        "techniques": [
+          "无效输入测试",
+          "权限不足测试",
+          "资源不存在测试"
+        ]
+      },
+      "security_testing": {
+        "description": "验证认证、授权和数据安全",
+        "coverage": "所有需要认证的API",
+        "techniques": [
+          "Token验证测试",
+          "权限越权测试",
+          "SQL注入测试",
+          "XSS攻击测试"
+        ]
+      },
+      "performance_testing": {
+        "description": "测试API的性能指标",
+        "coverage": "核心业务API",
+        "techniques": [
+          "响应时间测试",
+          "并发用户测试",
+          "负载测试"
+        ],
+        "performance_targets": {
+          "average_response_time": "< 500ms",
+          "p95_response_time": "< 1000ms",
+          "max_concurrent_users": "1000",
+          "availability": "99.9%"
+        }
+      }
+    },
+    
+    "test_cases": {
+      "user_authentication_module": [
+        {
+          "test_case_id": "AUTH-001",
+          "name": "用户注册接口 - 正常注册",
+          "priority": "Critical",
+          "preconditions": ["测试环境已就绪", "数据库连接正常"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/register",
+            "提供有效的用户信息：用户名、邮箱、密码",
+            "验证响应状态码为201"
+          ],
+          "expected_result": "用户注册成功，返回用户ID和Token",
+          "assertions": [
+            "status_code == 201",
+            "response contains user_id",
+            "response contains access_token"
+          ]
+        },
+        {
+          "test_case_id": "AUTH-002",
+          "name": "用户注册接口 - 重复用户名",
+          "priority": "High",
+          "preconditions": ["已存在用户testuser"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/register",
+            "使用已存在的用户名testuser",
+            "验证响应状态码为409"
+          ],
+          "expected_result": "注册失败，返回用户名已存在错误",
+          "assertions": [
+            "status_code == 409",
+            "error_message contains 'already exists'"
+          ]
+        },
+        {
+          "test_case_id": "AUTH-003",
+          "name": "用户登录接口 - 正常登录",
+          "priority": "Critical",
+          "preconditions": ["用户testuser已注册"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/login",
+            "提供正确的用户名和密码",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "登录成功，返回Token和用户信息",
+          "assertions": [
+            "status_code == 200",
+            "response contains access_token",
+            "response contains refresh_token",
+            "response contains user_info"
+          ]
+        },
+        {
+          "test_case_id": "AUTH-004",
+          "name": "用户登录接口 - 密码错误",
+          "priority": "High",
+          "preconditions": ["用户testuser已注册"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/login",
+            "提供错误的密码",
+            "验证响应状态码为401"
+          ],
+          "expected_result": "登录失败，返回认证错误",
+          "assertions": [
+            "status_code == 401",
+            "error_message contains 'invalid credentials'"
+          ]
+        },
+        {
+          "test_case_id": "AUTH-005",
+          "name": "获取用户信息接口 - 正常获取",
+          "priority": "Critical",
+          "preconditions": ["用户已登录，获取到有效Token"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/user/profile",
+            "在Header中添加Authorization: Bearer {token}",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取用户信息",
+          "assertions": [
+            "status_code == 200",
+            "response contains username",
+            "response contains email",
+            "response contains created_at"
+          ]
+        },
+        {
+          "test_case_id": "AUTH-006",
+          "name": "获取用户信息接口 - 无效Token",
+          "priority": "High",
+          "preconditions": [],
+          "test_steps": [
+            "发送GET请求到 /api/v1/user/profile",
+            "在Header中添加无效Token",
+            "验证响应状态码为401"
+          ],
+          "expected_result": "获取失败，返回认证错误",
+          "assertions": [
+            "status_code == 401",
+            "error_message contains 'invalid token'"
+          ]
+        },
+        {
+          "test_case_id": "AUTH-007",
+          "name": "用户登出接口",
+          "priority": "Medium",
+          "preconditions": ["用户已登录，获取到有效Token"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/logout",
+            "在Header中添加Authorization: Bearer {token}",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功登出，Token失效",
+          "assertions": [
+            "status_code == 200",
+            "subsequent requests with same token return 401"
+          ]
+        }
+      ],
+      
+      "game_data_module": [
+        {
+          "test_case_id": "GAME-001",
+          "name": "获取游戏列表接口",
+          "priority": "Critical",
+          "preconditions": ["游戏数据库有数据"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/games",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取游戏列表",
+          "assertions": [
+            "status_code == 200",
+            "response is array",
+            "each game has id, name, description"
+          ]
+        },
+        {
+          "test_case_id": "GAME-002",
+          "name": "获取游戏详情接口",
+          "priority": "Critical",
+          "preconditions": ["游戏ID=1存在"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/games/1",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取游戏详情",
+          "assertions": [
+            "status_code == 200",
+            "response contains game details",
+            "response contains screenshots array"
+          ]
+        },
+        {
+          "test_case_id": "GAME-003",
+          "name": "保存游戏进度接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "游戏ID=1存在"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/games/1/save",
+            "提供游戏进度数据",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "游戏进度保存成功",
+          "assertions": [
+            "status_code == 200",
+            "response contains save_id",
+            "response contains timestamp"
+          ]
+        },
+        {
+          "test_case_id": "GAME-004",
+          "name": "加载游戏进度接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "有保存的游戏进度"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/games/1/load",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功加载游戏进度",
+          "assertions": [
+            "status_code == 200",
+            "response contains game_data",
+            "response contains save_timestamp"
+          ]
+        },
+        {
+          "test_case_id": "GAME-005",
+          "name": "获取游戏排行榜接口",
+          "priority": "Medium",
+          "preconditions": ["游戏有排行榜数据"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/games/1/leaderboard",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取排行榜数据",
+          "assertions": [
+            "status_code == 200",
+            "response is array",
+            "each entry has rank, username, score"
+          ]
+        },
+        {
+          "test_case_id": "GAME-006",
+          "name": "提交游戏分数接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "游戏ID=1存在"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/games/1/score",
+            "提供分数数据",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "分数提交成功",
+          "assertions": [
+            "status_code == 200",
+            "response contains new_rank",
+            "response contains total_score"
+          ]
+        }
+      ],
+      
+      "social_features_module": [
+        {
+          "test_case_id": "SOCIAL-001",
+          "name": "获取好友列表接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "用户有好友"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/friends",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取好友列表",
+          "assertions": [
+            "status_code == 200",
+            "response is array",
+            "each friend has id, username, online_status"
+          ]
+        },
+        {
+          "test_case_id": "SOCIAL-002",
+          "name": "添加好友接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "目标用户存在"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/friends/add",
+            "提供目标用户ID",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "好友请求发送成功",
+          "assertions": [
+            "status_code == 200",
+            "response contains request_id",
+            "response contains status"
+          ]
+        },
+        {
+          "test_case_id": "SOCIAL-003",
+          "name": "获取消息通知接口",
+          "priority": "Medium",
+          "preconditions": ["用户已登录", "有未读消息"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/notifications",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取消息通知",
+          "assertions": [
+            "status_code == 200",
+            "response contains unread_count",
+            "response contains notifications array"
+          ]
+        },
+        {
+          "test_case_id": "SOCIAL-004",
+          "name": "标记消息为已读接口",
+          "priority": "Medium",
+          "preconditions": ["用户已登录", "有未读消息"],
+          "test_steps": [
+            "发送PUT请求到 /api/v1/notifications/1/read",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "消息标记为已读成功",
+          "assertions": [
+            "status_code == 200",
+            "response contains updated_at"
+          ]
+        },
+        {
+          "test_case_id": "SOCIAL-005",
+          "name": "获取社区动态接口",
+          "priority": "Medium",
+          "preconditions": ["社区有动态数据"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/community/feed",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取社区动态",
+          "assertions": [
+            "status_code == 200",
+            "response is array",
+            "each post has content, author, timestamp"
+          ]
+        },
+        {
+          "test_case_id": "SOCIAL-006",
+          "name": "发布社区动态接口",
+          "priority": "High",
+          "preconditions": ["用户已登录"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/community/posts",
+            "提供动态内容",
+            "验证响应状态码为201"
+          ],
+          "expected_result": "动态发布成功",
+          "assertions": [
+            "status_code == 201",
+            "response contains post_id",
+            "response contains created_at"
+          ]
+        }
+      ],
+      
+      "payment_module": [
+        {
+          "test_case_id": "PAY-001",
+          "name": "获取商品列表接口",
+          "priority": "Critical",
+          "preconditions": ["商品数据库有数据"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/shop/products",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取商品列表",
+          "assertions": [
+            "status_code == 200",
+            "response is array",
+            "each product has id, name, price, currency"
+          ]
+        },
+        {
+          "test_case_id": "PAY-002",
+          "name": "获取商品详情接口",
+          "priority": "High",
+          "preconditions": ["商品ID=1存在"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/shop/products/1",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取商品详情",
+          "assertions": [
+            "status_code == 200",
+            "response contains product details",
+            "response contains purchase_options"
+          ]
+        },
+        {
+          "test_case_id": "PAY-003",
+          "name": "创建订单接口",
+          "priority": "Critical",
+          "preconditions": ["用户已登录", "商品ID=1存在"],
+          "test_steps": [
+            "发送POST请求到 /api/v1/orders",
+            "提供商品ID和数量",
+            "验证响应状态码为201"
+          ],
+          "expected_result": "订单创建成功",
+          "assertions": [
+            "status_code == 201",
+            "response contains order_id",
+            "response contains total_amount",
+            "response contains payment_url"
+          ]
+        },
+        {
+          "test_case_id": "PAY-004",
+          "name": "获取订单列表接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "有历史订单"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/orders",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取订单列表",
+          "assertions": [
+            "status_code == 200",
+            "response is array",
+            "each order has id, status, amount, created_at"
+          ]
+        },
+        {
+          "test_case_id": "PAY-005",
+          "name": "获取订单详情接口",
+          "priority": "High",
+          "preconditions": ["用户已登录", "订单ID=1存在"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/orders/1",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取订单详情",
+          "assertions": [
+            "status_code == 200",
+            "response contains order details",
+            "response contains payment_status",
+            "response contains items array"
+          ]
+        },
+        {
+          "test_case_id": "PAY-006",
+          "name": "支付回调接口测试",
+          "priority": "Critical",
+          "preconditions": ["有未支付订单", "支付网关配置正常"],
+          "test_steps": [
+            "模拟支付网关回调请求",
+            "发送POST请求到 /api/v1/payment/callback",
+            "提供支付成功数据",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "支付回调处理成功，订单状态更新",
+          "assertions": [
+            "status_code == 200",
+            "order status updated to 'paid'",
+            "user balance updated correctly"
+          ],
+          "special_requirements": "需要模拟支付网关环境"
+        }
+      ],
+      
+      "system_status_module": [
+        {
+          "test_case_id": "SYS-001",
+          "name": "服务器健康检查接口",
+          "priority": "Critical",
+          "preconditions": ["服务器正常运行"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/health",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "服务器健康状态正常",
+          "assertions": [
+            "status_code == 200",
+            "response contains status: 'healthy'",
+            "response contains timestamp"
+          ]
+        },
+        {
+          "test_case_id": "SYS-002",
+          "name": "获取系统配置接口",
+          "priority": "Medium",
+          "preconditions": ["配置服务正常"],
+          "test_steps": [
+            "发送GET请求到 /api/v1/config",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取系统配置",
+          "assertions": [
+            "status_code == 200",
+            "response contains app_version",
+            "response contains maintenance_mode",
+            "response contains features"
+          ]
+        },
+        {
+          "test_case_id": "SYS-003",
+          "name": "版本检查接口",
+          "priority": "High",
+          "preconditions": [],
+          "test_steps": [
+            "发送GET请求到 /api/v1/version/check",
+            "提供客户端版本号",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "返回版本检查结果",
+          "assertions": [
+            "status_code == 200",
+            "response contains latest_version",
+            "response contains update_required",
+            "response contains changelog"
+          ]
+        },
+        {
+          "test_case_id": "SYS-004",
+          "name": "获取服务器时间接口",
+          "priority": "Low",
+          "preconditions": [],
+          "test_steps": [
+            "发送GET请求到 /api/v1/time",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "成功获取服务器时间",
+          "assertions": [
+            "status_code == 200",
+            "response contains timestamp",
+            "response contains timezone"
+          ]
+        },
+        {
+          "test_case_id": "SYS-005",
+          "name": "系统维护模式接口",
+          "priority": "Medium",
+          "preconditions": ["管理员权限"],
+          "test_steps": [
+            "发送PUT请求到 /api/v1/admin/maintenance",
+            "设置维护模式为true",
+            "验证响应状态码为200"
+          ],
+          "expected_result": "维护模式设置成功",
+          "assertions": [
+            "status_code == 200",
+            "maintenance_mode enabled",
+            "non-admin APIs return 503"
+          ],
+          "special_requirements": "需要管理员权限"
+        }
+      ]
+    },
+    
+    "test_data_preparation": {
+      "user_data": [
+        {
+          "username": "testuser1",
+          "email": "test1@example.com",
+          "password": "Test123!@#",
+          "role": "user"
+        },
+        {
+          "username": "testuser2",
+          "email": "test2@example.com",
+          "password": "Test456$%^",
+          "role": "user"
+        },
+        {
+          "username": "adminuser",
+          "email": "admin@example.com",
+          "password": "Admin789&*(",
+          "role": "admin"
+        }
+      ],
+      "game_data": [
+        {
+          "game_id": 1,
+          "name": "Turbo Racing",
+          "category": "racing",
+          "description": "High-speed racing game"
+        },
+        {
+          "game_id": 2,
+          "name": "Puzzle Adventure",
+          "category": "puzzle",
+          "description": "Challenging puzzle game"
+        }
+      ],
+      "product_data": [
+        {
+          "product_id": 1,
+          "name": "100 Coins",
+          "price": 4.99,
+          "currency": "USD"
+        },
+        {
+          "product_id": 2,
+          "name": "500 Coins",
+          "price": 19.99,
+          "currency": "USD"
+        }
+      ],
+      "test_data_management": {
+        "setup_strategy": "每个测试用例前创建，测试后清理",
+        "cleanup_strategy": "自动清理测试数据",
+        "data_isolation": "使用独立的测试数据库"
+      }
+    },
+    
+    "risk_assessment": {
+      "high_risks": [
+        {
+          "risk": "支付安全漏洞",
+          "impact": "用户资金损失，法律风险",
+          "probability": "Medium",
+          "mitigation": "严格的安全测试，使用沙箱环境测试支付"
+        },
+        {
+          "risk": "用户数据泄露",
+          "impact": "用户隐私泄露，品牌声誉受损",
+          "probability": "Low",
+          "mitigation": "加强认证授权测试，数据加密验证"
+        },
+        {
+          "risk": "API性能瓶颈",
+          "impact": "用户体验下降，用户流失",
+          "probability": "Medium",
+          "mitigation": "全面的性能测试，负载测试"
+        }
+      ],
+      "medium_risks": [
+        {
+          "risk": "API兼容性问题",
+          "impact": "客户端无法正常使用",
+          "probability": "Medium",
+          "mitigation": "版本兼容性测试，向后兼容验证"
+        },
+        {
+          "risk": "游戏数据丢失",
+          "impact": "用户游戏进度丢失",
+          "probability": "Low",
+          "mitigation": "数据持久化测试，备份恢复测试"
+        }
+      ],
+      "low_risks": [
+        {
+          "risk": "接口响应格式不一致",
+          "impact": "前端解析错误",
+          "probability": "Low",
+          "mitigation": "响应格式验证测试"
+        }
+      ]
+    },
+    
+    "test_environment_requirements": {
+      "environments": {
+        "development": {
+          "url": "https://dev.playturbo.com/api",
+          "database": "开发数据库",
+          "payment_gateway": "沙箱环境"
+        },
+        "staging": {
+          "url": "https://staging.playturbo.com/api",
+          "database": "预发布数据库",
+          "payment_gateway": "测试环境"
+        },
+        "production": {
+          "url": "https://www.playturbo.com/api",
+          "database": "生产数据库",
+          "payment_gateway": "生产环境"
+        }
+      },
+      "hardware_requirements": {
+        "test_server": "4核CPU, 8GB RAM, 100GB存储",
+        "network": "稳定高速互联网连接",
+        "monitoring": "API监控工具，性能分析工具"
+      },
+      "software_requirements": {
+        "testing_tools": [
+          "Postman/Insomnia",
+          "JMeter/Locust",
+          "Selenium/Playwright",
+          "OWASP ZAP"
+        ],
+        "automation_framework": "Python pytest + requests",
+        "ci_cd": "Jenkins/GitHub Actions",
+        "monitoring": "Prometheus + Grafana"
+      },
+      "security_requirements": {
+        "ssl_certificates": "有效的SSL证书",
+        "firewall": "配置适当的防火墙规则",
+        "access_control": "严格的API访问控制"
+      }
+    },
+    
+    "test_schedule": {
+      "phase_1": {
+        "name": "功能测试",
+        "duration": "5天",
+        "coverage": "所有API基本功能",
+        "deliverables": ["功能测试报告", "缺陷列表"]
+      },
+      "phase_2": {
+        "name": "安全测试",
+        "duration": "3天",
+        "coverage": "认证、授权、数据安全",
+        "deliverables": ["安全测试报告", "漏洞评估"]
+      },
+      "phase_3": {
+        "name": "性能测试",
+        "duration": "2天",
+        "coverage": "核心业务API性能",
+        "deliverables": ["性能测试报告", "性能基准"]
+      },
+      "phase_4": {
+        "name": "集成测试",
+        "duration": "2天",
+        "coverage": "API间集成和端到端流程",
+        "deliverables": ["集成测试报告", "流程验证"]
+      }
+    },
+    
+    "success_criteria": {
+      "functional": "所有Critical和High优先级测试用例通过率100%",
+      "security": "无高危安全漏洞",
+      "performance": "响应时间满足性能目标",
+      "reliability": "API可用性达到99.9%",
+      "coverage": "API端点测试覆盖率≥95%"
+    },
+    
+    "deliverables": [
+      "完整的测试计划文档",
+      "测试用例文档",
+      "测试执行报告",
+      "缺陷报告",
+      "性能测试报告",
+      "安全测试报告",
+      "测试总结报告"
+    ],
+    
+    "team_responsibilities": {
+      "test_manager": "测试计划制定，进度跟踪，报告审核",
+      "test_engineers": "测试用例设计，测试执行，缺陷报告",
+      "security_specialist": "安全测试执行，漏洞评估",
+      "performance_engineer": "性能测试设计执行，性能分析",
+      "devops_engineer": "测试环境搭建维护，CI/CD集成"
+    }
+  }
+}

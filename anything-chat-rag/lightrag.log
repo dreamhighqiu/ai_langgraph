@@ -3703,3 +3703,103 @@ Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpe
 2026-01-01 16:04:58,922 - lightrag - INFO - Chunk 3 of 3 extracted 33 Ent + 28 Rel chunk-5a33a13687e4d0249a967aad7a35c98e
 2026-01-01 16:04:58,924 - lightrag - INFO - Merging stage 1/5: 性能测试模块实施方案.md
 2026-01-01 16:04:58,925 - lightrag - INFO - Phase 1: Processing 77 entities from doc-422e9cc3042e9f9b6a00aa07d1f777c5 (async: 8)
+2026-01-01 16:05:07,652 - lightrag - INFO - Merged: `AI生成脚本` | 1+2
+2026-01-01 16:05:30,368 - lightrag - INFO - Merged: `K6` | 1+2
+2026-01-01 16:05:30,653 - lightrag - INFO - Merged: `K6脚本` | 1+2
+2026-01-01 16:05:55,703 - lightrag - INFO -  == LLM cache == saving: default:extract:9d1c490971e7de55f76d8131a83bb1e6
+2026-01-01 16:06:20,388 - lightrag - INFO - Merged: `项目管理页面` | 1+1
+2026-01-01 16:06:20,623 - lightrag - INFO - Merged: `前端` | 1+1
+2026-01-01 16:06:34,646 - lightrag - INFO -  == LLM cache == saving: default:extract:9320a1e1660ccc78fd6baee9b3f98282
+2026-01-01 16:06:37,668 - lightrag - INFO - Chunk 1 of 1 extracted 15 Ent + 13 Rel chunk-e409dd2e4a0fd1ff8186e4b449f5afba
+2026-01-01 16:06:43,080 - lightrag - INFO - Merging stage 3/5: 教育部学籍在线验证报告_邱云霞.pdf
+2026-01-01 16:06:46,064 - lightrag - INFO - Phase 1: Processing 15 entities from doc-8eaf2550553b2561b0ef7232965c0c56 (async: 8)
+2026-01-01 16:06:57,631 - lightrag - INFO - Merged: `邱云霞` | 1+1
+2026-01-01 16:06:57,785 - lightrag - INFO - Merged: `江西理工大学` | 1+1
+2026-01-01 16:06:57,787 - lightrag - INFO - Merged: `软件工程(机械电子工程)` | 1+1
+2026-01-01 16:07:03,539 - lightrag - INFO - Merged: `学信网` | 1+1
+2026-01-01 16:07:14,334 - lightrag - INFO - Merged: `在线验证码` | 1+1
+2026-01-01 16:07:58,845 - uvicorn.error - INFO - Finished server process [63612]
+2026-01-01 16:07:58,858 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-01 16:07:58,865 - lightrag - INFO - Successfully finalized 12 storages
+2026-01-01 16:07:58,883 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\_compat.py", line 30, in asyncio_run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\server.py", line 70, in serve
+    with self.capture_signals():
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\server.py", line 331, in capture_signals
+    signal.raise_signal(captured_signal)
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 701, in lifespan
+    await receive()
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\lifespan\on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+2026-01-01 16:08:03,967 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-01 16:08:03,967 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-01 16:08:05,379 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-01 16:08:05,380 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-01 16:08:05,380 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-01 16:08:05,381 - lightrag - INFO - Reranking is disabled
+2026-01-01 16:08:06,134 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-01 16:08:07,477 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 88 nodes, 64 edges
+2026-01-01 16:08:08,125 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-01 16:08:08,125 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-01 16:08:08,685 - uvicorn.error - INFO - Started server process [6688]
+2026-01-01 16:08:08,686 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-01 16:08:08,691 - lightrag - INFO - [] Process 6688 KV load full_docs with 6 records
+2026-01-01 16:08:08,694 - lightrag - INFO - [] Process 6688 KV load text_chunks with 18 records
+2026-01-01 16:08:08,695 - lightrag - INFO - [] Process 6688 KV load full_entities with 5 records
+2026-01-01 16:08:08,697 - lightrag - INFO - [] Process 6688 KV load full_relations with 2 records
+2026-01-01 16:08:08,700 - lightrag - INFO - [] Process 6688 KV load entity_chunks with 76 records
+2026-01-01 16:08:08,703 - lightrag - INFO - [] Process 6688 KV load relation_chunks with 64 records
+2026-01-01 16:08:08,896 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-01 16:08:08,979 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-01 16:08:09,107 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-01 16:08:09,150 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-01 16:08:09,232 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-01 16:08:09,361 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-01 16:08:09,401 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-01 16:08:09,527 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-01 16:08:09,649 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-01 16:08:09,659 - lightrag - INFO - [] Process 6688 KV load llm_response_cache with 14 records
+2026-01-01 16:08:09,661 - lightrag - INFO - [] Process 6688 doc status load doc_status with 6 records
+2026-01-01 16:08:09,662 - uvicorn.error - INFO - Application startup complete.
+2026-01-01 16:08:09,666 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-01 16:08:35,340 - uvicorn.access - INFO - 127.0.0.1:61645 - "GET /docs HTTP/1.1" 200
+2026-01-01 16:08:36,096 - uvicorn.access - INFO - 127.0.0.1:61645 - "GET /openapi.json HTTP/1.1" 200
+2026-01-01 16:08:55,735 - uvicorn.access - INFO - 127.0.0.1:53172 - "GET /docs HTTP/1.1" 200
+2026-01-01 16:08:55,907 - uvicorn.access - INFO - 127.0.0.1:53172 - "GET /openapi.json HTTP/1.1" 200
+2026-01-01 16:11:38,221 - uvicorn.access - INFO - 127.0.0.1:64137 - "GET /docs HTTP/1.1" 200
+2026-01-01 16:11:38,497 - uvicorn.access - INFO - 127.0.0.1:64137 - "GET /openapi.json HTTP/1.1" 200
+2026-01-01 16:14:08,856 - uvicorn.error - INFO - Shutting down
+2026-01-01 16:14:08,964 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-01-01 16:14:08,970 - lightrag - INFO - Successfully finalized 12 storages
+2026-01-01 16:14:08,973 - uvicorn.error - INFO - Application shutdown complete.
+2026-01-01 16:14:08,975 - uvicorn.error - INFO - Finished server process [6688]
+2026-01-01 16:14:09,792 - lightrag - INFO - Successfully finalized all RAGAnything storages

@@ -316,7 +316,7 @@ class RouterRegister:
                     if file.endswith('.py') and not file.startswith('__'):
                         file_path = os.path.join(root, file)
                         controller_files.append(file_path)
-                        print(f'   📄 Found controller file: {file_path}')
+                        print(f'   Found controller file: {file_path}')
         return controller_files
 
     def _import_module_and_get_routers(self, controller_files: list[str]) -> list[tuple[str, APIRouter]]:
@@ -335,7 +335,7 @@ class RouterRegister:
             try:
                 # 动态导入模块
                 module = importlib.import_module(module_name)
-                print(f'📦 Imported module: {module_name}')
+                print(f'Imported module: {module_name}')
                 
                 # 遍历模块属性，寻找APIRouter和APIRouterPro实例
                 router_found = False
@@ -351,34 +351,34 @@ class RouterRegister:
                             if auto_register:
                                 routers.append((attr_name, attr))
                                 router_found = True
-                                print(f'   ✓ Found APIRouterPro: {attr_name} (auto_register={auto_register})')
+                                print(f'   Found APIRouterPro: {attr_name} (auto_register={auto_register})')
                             else:
-                                print(f'   ⊘ Skipped APIRouterPro: {attr_name} (auto_register=False)')
+                                print(f'   Skipped APIRouterPro: {attr_name} (auto_register=False)')
                         # 对于APIRouter实例，直接添加
                         elif isinstance(attr, APIRouter):
                             routers.append((attr_name, attr))
                             router_found = True
-                            print(f'   ✓ Found APIRouter: {attr_name}')
+                            print(f'   Found APIRouter: {attr_name}')
                     except Exception as e:
                         # 某些属性可能无法访问，记录但不中断
                         if 'router' in attr_name.lower() or 'controller' in attr_name.lower():
-                            print(f'   ⚠️  Warning: Could not access attribute {attr_name}: {e}')
+                            print(f'   WARNING: Could not access attribute {attr_name}: {e}')
                 
                 if not router_found:
-                    print(f'⚠️  Warning: No router found in module {module_name}')
+                    print(f'WARNING: No router found in module {module_name}')
             except ImportError as e:
                 import traceback
-                print(f'❌ ImportError importing module {module_name}: {e}')
+                print(f'ImportError importing module {module_name}: {e}')
                 print(f'   File: {file_path}')
                 print(f'   Traceback: {traceback.format_exc()}')
             except SyntaxError as e:
                 import traceback
-                print(f'❌ SyntaxError in module {module_name}: {e}')
+                print(f'SyntaxError in module {module_name}: {e}')
                 print(f'   File: {file_path}')
                 print(f'   Traceback: {traceback.format_exc()}')
             except Exception as e:
                 import traceback
-                print(f'❌ Unexpected error importing module {module_name}: {e}')
+                print(f'Unexpected error importing module {module_name}: {e}')
                 print(f'   File: {file_path}')
                 print(f'   Error type: {type(e).__name__}')
                 print(f'   Traceback: {traceback.format_exc()}')
@@ -421,25 +421,25 @@ class RouterRegister:
                 
                 # 检查是否应该自动注册
                 if isinstance(router, APIRouterPro) and not auto_register:
-                    print(f'⏭️  Router {attr_name} (prefix: {prefix}) skipped (auto_register=False)')
+                    print(f'Router {attr_name} (prefix: {prefix}) skipped (auto_register=False)')
                     continue
                 
                 # 检查是否应该包含在schema中
                 if not include_in_schema:
-                    print(f'⚠️  Router {attr_name} (prefix: {prefix}) is excluded from schema')
+                    print(f'WARNING: Router {attr_name} (prefix: {prefix}) is excluded from schema')
                 
                 # 获取路由数量
                 route_count = len(router.routes) if hasattr(router, 'routes') else 0
                 
                 self.app.include_router(router=router)
                 registered_count += 1
-                print(f'✅ Registered router: {attr_name} (prefix: {prefix}, tags: {tags}, routes: {route_count})')
+                print(f'Registered router: {attr_name} (prefix: {prefix}, tags: {tags}, routes: {route_count})')
             except Exception as e:
                 import traceback
-                print(f'❌ Error registering router {attr_name}: {e}')
+                print(f'Error registering router {attr_name}: {e}')
                 print(f'   Traceback: {traceback.format_exc()}')
         
-        print(f'📊 Successfully registered {registered_count}/{len(routers)} routers')
+        print(f'Successfully registered {registered_count}/{len(routers)} routers')
 
     def register_routers(self) -> None:
         """
@@ -447,28 +447,28 @@ class RouterRegister:
 
         :return: None
         """
-        print('🔍 Starting router registration...')
-        print(f'📂 Project root: {self.project_root}')
+        print('Starting router registration...')
+        print(f'Project root: {self.project_root}')
         # 查找所有controller目录下的py文件
         controller_files = self._find_controller_files()
-        print(f'📁 Found {len(controller_files)} controller files')
+        print(f'Found {len(controller_files)} controller files')
         if not controller_files:
-            print('⚠️  WARNING: No controller files found!')
+            print('WARNING: No controller files found!')
             print(f'   Searched in: {self.project_root}')
         # 导入模块并获取路由实例
         routers = self._import_module_and_get_routers(controller_files)
-        print(f'🔌 Found {len(routers)} routers')
+        print(f'Found {len(routers)} routers')
         if len(routers) < len(controller_files):
-            print(f'⚠️  WARNING: Found {len(routers)} routers but {len(controller_files)} controller files!')
+            print(f'WARNING: Found {len(routers)} routers but {len(controller_files)} controller files!')
             print('   Some controllers may have failed to import or have no router defined.')
         # 按规则排序路由
         sorted_routers = self._sort_routers(routers)
         # 注册路由到FastAPI应用
         self._register_routers_to_app(sorted_routers)
-        print(f'✨ Router registration completed! Total: {len(sorted_routers)} routers registered')
+        print(f'Router registration completed! Total: {len(sorted_routers)} routers registered')
         
         # 验证：列出所有已注册的路由前缀
-        print('\n📋 Summary of registered routes:')
+        print('\nSummary of registered routes:')
         for attr_name, router in sorted_routers:
             prefix = getattr(router, 'prefix', '')
             tags = getattr(router, 'tags', [])

@@ -1,31 +1,31 @@
 {
-  "chunk-e1503226bff786bd39cd20659e09194f": {
+  "chunk-9b24edb7e56cd76dd6ec67a60020f6c5": {
     "tokens": 1200,
-    "content": "# 🚀 项目部署流程\r\n\r\n本文档介绍如何部署完整的 RAG + Agent 服务栈。请按顺序启动以下服务。\r\n\r\n---\r\n\r\n## 📋 前置条件\r\n\r\n- Python 3.11+\r\n- Node.js 18+\r\n- 各服务的 `.env` 配置文件已正确配置\r\n\r\n---\r\n\r\n## 1️⃣ MCP Server (RAG Anything)\r\n\r\n**功能**: 提供 RAG 知识库的 MCP 服务接口\r\n\r\n```bash\r\n# 进入目录\r\ncd mcp-server\r\n\r\n# 激活虚拟环境\r\nsource .venv/bin/activate\r\n\r\n# 启动服务\r\npython -m mcp_server_rag_anything.server\r\n```\r\n\r\n| 项目     | 地址                          |\r\n| -------- | ----------------------------- |\r\n| 服务地址 | <br />`http://0.0.0.0:8000` |\r\n\r\n访问接口文档：http://localhost:9621/docs\r\n\r\n---\r\n\r\n## 2️⃣ LightRAG Server (知识库服务)\r\n\r\n**功能**: 提供 LightRAG 知识图谱和向量检索服务\r\n\r\n```bash\r\n# 进入目录\r\ncd anything-chat-rag\r\n\r\n# 激活虚拟环境\r\nsource .venv/bin/activate\r\n\r\n# 启动服务\r\nlightrag-server\r\n```\r\n\r\n| 项目     | 地址                      |\r\n| -------- | ------------------------- |\r\n| API 服务 | `http://localhost:9621` |\r\n\r\n**界面预览**:\r\n\r\n![LightRAG 界面](image/部署流程/1765184748249.png)\r\n\r\n---\r\n\r\n## 3️⃣ Deep Agents Service (Agent 服务)\r\n\r\n**功能**: 提供 LangGraph Agent 服务，支持 Performance Agent 和 Research Agent\r\n\r\n```bash\r\n# 进入目录\r\ncd testing-deep-agents-service\r\n\r\n# 激活虚拟环境\r\nsource .venv/bin/activate\r\n\r\n# 启动服务\r\npython start_server.py\r\n```\r\n\r\n| 项目      | 地址                           |\r\n| --------- | ------------------------------ |\r\n| API 服务  | `http://localhost:2025`      |\r\n| API 文档  | `http://localhost:2025/docs` |\r\n| Studio UI | `http://localhost:2025/ui`   |\r\n| 健康检查  | `http://localhost:2025/ok`   |\r\n\r\n---\r\n\r\n## 4️⃣ 前端服务 (Testing Deep Agents UI)\r\n\r\n**功能**: 提供可视化交互界面\r\n\r\n```bash\r\n# 进入目录\r\ncd testing-deep-agents-ui\r\n\r\n# 安装依赖 (首次运行)\r\nnpm install\r\n\r\n# 启动开发服务器\r\nPORT=3200 npm run dev\r\n```\r\n\r\n| 项目     | 地址                      |\r\n| -------- | ------------------------- |\r\n| 前端页面 | `http://localhost:3200` |\r\n\r\n---\r\n\r\n## 🔗 服务依赖关系\r\n\r\n```\r\n┌─────────────────┐\r\n│   Frontend UI   │  ← 用户访问入口\r\n│  localhost:3200 │\r\n└────────┬────────┘\r\n         │\r\n         ▼\r\n┌─────────────────┐\r\n│  Agent Service  │  ← 核心 Agent 服务\r\n│  localhost:2025 │\r\n└────────┬────────┘\r\n         │\r\n    ┌────┴────┐\r\n    ▼         ▼\r\n┌────────┐  ┌──────────┐\r\n│MCP Srv │  │ LightRAG │  ← 知识库服务\r\n│ :8000  │  │  :9621   │\r\n└────────┘  └──────────┘\r\n```\r\n\r\n---\r\n\r\n## ⚠️ 常见问题\r\n\r\n### 1. Pydantic Settings 验证错误\r\n\r\n如果启动 Agent Service 时出现 `Extra inputs are not permitted` 错误，请在 `src/core/config.py` 的 `Settings.Config` 中添加：\r\n\r\n```python\r\nextra = \"ignore\"\r\n```\r\n\r\n### 2. 端口被占用\r\n\r\n```bash\r\n# 查找占用端口的进程\r\nlsof -i :端口号\r\n\r\n# 终止进程\r\nkill -9 进程ID\r\n```\r\n\r\n---\r\n\r\n## 📝 快速启动脚本（推荐）\r\n\r\n### 🆕 统一虚拟环境方式（推荐）\r\n\r\n项目已配置统一的 `pyproject.toml`，只需一个虚拟环境即可运行所有服务。\r\n\r\n#### 首次使用 - 初始化环境\r\n\r\n```bash\r\ncd ~/code/ai_langGraph\r\n\r\n# 运行初始化脚本\r\n./setup.sh\r\n```\r\n\r\n#### 启动服务\r\n\r\n```bash\r\n# 启动所有后端服务\r\n./start_all.sh\r\n\r\n# 启动包含前端的所有服务\r\n./start_all.sh --all\r\n\r\n# 查看服务状态\r\n./start_all.sh --status\r\n\r\n# 停止所有服务\r\n./start_all.sh --stop\r\n```\r\n\r\n#### 脚本功能说明\r\n\r\n| 命令 | 说明 |\r\n|------|------|\r\n| `./setup.sh` | 初始化环境，创建虚拟环境并安装依赖 |\r\n| `./setup.sh --reinstall` | 重新创建虚拟环境 |\r\n| `./start_all.sh` | 启动后端服务（LightRAG + MCP + Agent） |\r\n| `./start_all.sh --all` | 启动所有服务（包含前端） |\r\n| `./start_all.sh --status` | 显示服务状态 |\r\n| `./start_all.sh --stop` | 停止所有服务 |\r\n\r\n---\r\n\r\n### 旧方式 - 分别启动（各自虚拟环境）\r\n\r\n如果需要分别使用各自的虚拟环境，可以使用",
+    "content": "# 性能测试模块前后端对接分析报告\n\n## 一、当前问题诊断\n\n### 1.1 项目管理入口缺失问题 ✅ 已解决\n\n**问题描述：**\n- 前端只有需求管理入口,没有独立的项目管理入口\n- 用户无法直接管理和查看所有测试项目\n- 需求无法关联到具体项目\n\n**解决方案：**\n1. ✅ 修复了项目管理页面字段名称不匹配问题\n   - 将 `project_name` 改为 `projectName`\n   - 将 `project_type` 改为 `projectType`\n   - 将 `project_id` 改为 `projectId`\n   - 将 `create_time` 改为 `createTime`\n   - 将 `page_num` 改为 `pageNum`\n   - 将 `page_size` 改为 `pageSize`\n\n2. ✅ 美化了项目管理页面UI\n   - 添加了醒目的页面标题卡片\n   - 统一了三个测试模块的项目管理风格\n\n3. 📋 待完成：添加到菜单系统\n   - 需要在路由中添加项目管理独立入口\n   - 建议路径：`/testing/project`\n\n### 1.2 前后端字段名称不匹配\n\n**后端返回字段（驼峰命名）：**\n```python\nclass ProjectModel(BaseModel):\n    project_id: Optional[int]\n    project_name: str\n    project_type: str\n    description: Optional[str]\n    create_time: Optional[datetime]\n    status: Optional[str]\n    remark: Optional[str]\n```\n\n**前端期望字段：**\n- 前端需要统一使用驼峰命名（camelCase）\n- 后端已使用下划线命名（snake_case）\n\n**解决方案：**\n- ✅ 前端已统一修改为驼峰命名,匹配后端返回\n- 后端保持下划线命名,通过 Pydantic 自动转换\n\n## 二、性能测试功能完整性检查\n\n### 2.1 后端API接口检查\n\n#### 需求管理 API ✅\n| 接口 | 路径 | 状态 |\n|------|------|------|\n| 获取需求列表 | GET /testing/requirement/list | ✅ 已实现 |\n| 获取需求详情 | GET /testing/requirement/{id} | ✅ 已实现 |\n| 新增需求 | POST /testing/requirement | ✅ 已实现 |\n| 修改需求 | PUT /testing/requirement | ✅ 已实现 |\n| 删除需求 | DELETE /testing/requirement | ✅ 已实现 |\n| AI生成脚本 | POST /testing/requirement/{id}/generate | ✅ 已实现 |\n\n#### 脚本管理 API ✅\n| 接口 | 路径 | 状态 |\n|------|------|------|\n| 获取脚本列表 | GET /testing/script/list | ✅ 已实现 |\n| 获取脚本详情 | GET /testing/script/{id} | ✅ 已实现 |\n| 新增脚本 | POST /testing/script | ✅ 已实现 |\n| 修改脚本 | PUT /testing/script | ✅ 已实现 |\n| 删除脚本 | DELETE /testing/script | ✅ 已实现 |\n| 执行脚本 | POST /testing/script/{id}/execute | ✅ 已实现 |\n\n#### 执行管理 API ✅\n| 接口 | 路径 | 状态 |\n|------|------|------|\n| 获取执行列表 | GET /testing/execution/list | ✅ 已实现 |\n| 获取执行详情 | GET /testing/execution/{id} | ✅ 已实现 |\n| 取消执行 | POST /testing/execution/{id}/cancel | ✅ 已实现 |\n| 重试执行 | POST /testing/execution/{id}/retry | ✅ 已实现 |\n\n#### 报告管理 API ✅\n| 接口 | 路径 | 状态 |\n|------|------|------|\n| 获取报告列表 | GET /testing/report/list | ✅ 已实现 |\n| 获取报告详情 | GET /testing/report/{id} | ✅ 已实现 |\n| 下载报告 | GET /testing/report/{id}/download | ✅ 已实现 |\n| 删除报告 | DELETE /testing/report | ✅ 已实现 |\n| 导出HTML报告 | POST /testing/report/{id}/export/html | ✅ 已实现 |\n\n#### 性能测试专用 API ✅\n| 接口 | 路径 | 状态 |\n|------|------|------|\n| K6脚本生成 | POST /testing/performance/generate-script | ✅ 已实现 |\n| K6测试执行 | POST /testing/performance/execute | ✅ 已实现 |\n| 获取执行状态 | GET /testing/performance/execution/{id}/status | ✅ 已实现 |\n| 获取执行日志(SSE) | GET /testing/performance/execution/{id}/logs | ✅ 已实现 |\n| 下载K6报告 | GET /testing/performance/report/{id}/download | ✅ 已实现 |\n\n### 2.2 前端功能检查\n\n#### 需求管理页面 ✅\n- ✅ 列表展示（支持筛选、分页）\n- ✅ 新增需求（表单验证）\n- ✅ 编辑需求\n- ✅ 删除需求\n- ✅ 查看需求详情\n- ✅ AI生成脚本（配置K6参数）\n- ⚠️ 项目关联（需要确保项目下拉列表正常加载）\n\n#### 脚本管理页面 ⚠️\n- ✅ 列表展示\n- ✅ 代码编辑器（Monaco Editor）\n- ✅ 脚本执行\n- ⚠️ 需要验证K6脚本类型的筛选\n\n#### 执行管理页面 ⚠️\n- ✅ 列表展示\n- ✅ 查看执行详情\n- ⚠️ 实时日志展示（",
     "chunk_order_index": 0,
-    "full_doc_id": "doc-2f24877f426d1aa3d83c35bd7b6931f0",
-    "file_path": "部署流程.md",
+    "full_doc_id": "doc-6b5919566dacc3dbcb9fb685d5b1205f",
+    "file_path": "性能测试模块前后端对接分析报告.md",
     "llm_cache_list": [
-      "default:extract:67ed7f069d575bfecb1834f693219837",
-      "default:extract:06af474f411cc8589dd3097c15e3058e"
+      "default:extract:4c9b7211563ee6fb9457a9817f9dc684",
+      "default:extract:7b51bdea17eb8bed49a70d313d20ca76"
     ],
-    "create_time": 1767187106,
-    "update_time": 1767187208,
-    "_id": "chunk-e1503226bff786bd39cd20659e09194f"
+    "create_time": 1767253882,
+    "update_time": 1767254051,
+    "_id": "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
   },
-  "chunk-8c827224c9f6af5154b5ce1fa4bb2b80": {
-    "tokens": 314,
-    "content": "启动后端服务（LightRAG + MCP + Agent） |\r\n| `./start_all.sh --all` | 启动所有服务（包含前端） |\r\n| `./start_all.sh --status` | 显示服务状态 |\r\n| `./start_all.sh --stop` | 停止所有服务 |\r\n\r\n---\r\n\r\n### 旧方式 - 分别启动（各自虚拟环境）\r\n\r\n如果需要分别使用各自的虚拟环境，可以使用以下脚本：\r\n\r\n```bash\r\n#!/bin/bash\r\n\r\n# 启动 MCP Server\r\nosascript -e 'tell app \"Terminal\" to do script \"cd ~/code/ai_langGraph/mcp-server && source .venv/bin/activate && python -m mcp_server_rag_anything.server\"'\r\n\r\n# 启动 LightRAG\r\nosascript -e 'tell app \"Terminal\" to do script \"cd ~/code/ai_langGraph/anything-chat-rag && source .venv/bin/activate && lightrag-server\"'\r\n\r\n# 启动 Agent Service\r\nosascript -e 'tell app \"Terminal\" to do script \"cd ~/code/ai_langGraph/testing-deep-agents-service && source .venv/bin/activate && python start_server.py\"'\r\n\r\n# 启动前端\r\nosascript -e 'tell app \"Terminal\" to do script \"cd ~/code/ai_langGraph/testing-deep-agents-ui && npm run dev\"'\r\n\r\necho \"✅ 所有服务已启动!\"\r\n```",
+  "chunk-107d5dbf30036a96f58f85fdab2ada27": {
+    "tokens": 712,
+    "content": "�️ 项目关联（需要确保项目下拉列表正常加载）\n\n#### 脚本管理页面 ⚠️\n- ✅ 列表展示\n- ✅ 代码编辑器（Monaco Editor）\n- ✅ 脚本执行\n- ⚠️ 需要验证K6脚本类型的筛选\n\n#### 执行管理页面 ⚠️\n- ✅ 列表展示\n- ✅ 查看执行详情\n- ⚠️ 实时日志展示（SSE流）需要测试\n- ✅ 取消执行\n- ✅ 重试执行\n\n#### 报告管理页面 ⚠️\n- ✅ 列表展示\n- ✅ 查看报告详情\n- ⚠️ K6性能图表展示需要验证\n- ✅ 下载报告\n- ✅ 删除报告\n\n## 三、待完成任务清单\n\n### 高优先级 🔴\n\n1. **添加项目管理菜单入口**\n   - 在系统菜单中添加\"项目管理\"一级菜单\n   - 路径：`/testing/project`\n   - 权限标识：`testing:project:list`\n\n2. **验证前后端字段匹配**\n   - 检查所有API调用的请求参数\n   - 检查所有API返回数据的字段解析\n   - 特别注意：项目ID、需求ID、脚本ID的传递\n\n3. **测试K6专用功能**\n   - 测试K6脚本生成\n   - 测试K6执行日志SSE流\n   - 测试K6性能报告展示\n\n### 中优先级 🟡\n\n4. **完善项目选择器**\n   - 确保需求管理页面的项目下拉列表正常\n   - 添加项目类型筛选（只显示性能测试项目）\n   - 添加项目状态筛选（只显示激活的项目）\n\n5. **优化用户体验**\n   - 添加加载状态提示\n   - 添加错误提示信息\n   - 优化表单验证\n\n### 低优先级 🟢\n\n6. **文档和注释**\n   - 补充API文档\n   - 添加前端组件注释\n   - 编写用户使用手册\n\n## 四、技术架构说明\n\n### 4.1 数据流向\n\n```\n前端 -> 后端API -> Service层 -> Agent服务(testing-agents-service) -> K6执行\n  ↑                                                                          ↓\n  └────────────────── SSE实时日志 ←──────────────────────────────────────────┘\n```\n\n### 4.2 关键技术点\n\n1. **SSE流式传输**：用于实时推送K6执行日志\n2. **MinIO对象存储**：存储脚本文件和测试报告\n3. **LangGraph Agent**：AI生成K6脚本\n4. **RAG知识库**：增强脚本生成质量\n\n## 五、下一步行动建议\n\n1. ✅ **立即完成**：修复前端字段名称不匹配（已完成）\n2. 📋 **今天完成**：添加项目管理菜单入口\n3. 📋 **明天完成**：全流程测试（需求→脚本→执行→报告）\n4. 📋 **本周完成**：优化用户体验和错误处理\n5. 📋 **下周完成**：补充文档和测试用例",
     "chunk_order_index": 1,
-    "full_doc_id": "doc-2f24877f426d1aa3d83c35bd7b6931f0",
-    "file_path": "部署流程.md",
+    "full_doc_id": "doc-6b5919566dacc3dbcb9fb685d5b1205f",
+    "file_path": "性能测试模块前后端对接分析报告.md",
     "llm_cache_list": [
-      "default:extract:220667d7f1b5372c3d5727e70460fe56",
-      "default:extract:c333fffc9dfe16923460c9cf149d655b"
+      "default:extract:ba5f04485e4fb06dc20bc027fc9c9b87",
+      "default:extract:08cfc43c84d59db736dbc96efd161343"
     ],
-    "create_time": 1767187106,
-    "update_time": 1767187197,
-    "_id": "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+    "create_time": 1767253882,
+    "update_time": 1767254136,
+    "_id": "chunk-107d5dbf30036a96f58f85fdab2ada27"
   },
   "chunk-f86fba222bc47ed4f279fdf5ae0eaad1": {
     "tokens": 140,
@@ -34,7 +34,7 @@
     "full_doc_id": "doc-f7ead14bf760c6a58f9c82db30097647",
     "file_path": "教育部学历证书电子注册备案表_邱云霞 (1).pdf",
     "llm_cache_list": [],
-    "update_time": 1767187427,
+    "update_time": 1767254076,
     "_id": "chunk-f86fba222bc47ed4f279fdf5ae0eaad1"
   },
   "chunk-f5a6537a6016c00a813cdd2c55652741": {
@@ -44,7 +44,7 @@
     "full_doc_id": "doc-f7ead14bf760c6a58f9c82db30097647",
     "file_path": "教育部学历证书电子注册备案表_邱云霞 (1).pdf",
     "llm_cache_list": [],
-    "update_time": 1767187491,
+    "update_time": 1767254114,
     "_id": "chunk-f5a6537a6016c00a813cdd2c55652741"
   },
   "chunk-2dcb46cab6ba933160e6326df5103b77": {
@@ -54,7 +54,7 @@
     "full_doc_id": "doc-f7ead14bf760c6a58f9c82db30097647",
     "file_path": "教育部学历证书电子注册备案表_邱云霞 (1).pdf",
     "llm_cache_list": [],
-    "update_time": 1767187560,
+    "update_time": 1767254180,
     "_id": "chunk-2dcb46cab6ba933160e6326df5103b77"
   },
   "chunk-ba2b4acd551c7cc966b4e2d28e9d0cff": {
@@ -64,7 +64,7 @@
     "full_doc_id": "doc-8eaf2550553b2561b0ef7232965c0c56",
     "file_path": "教育部学籍在线验证报告_邱云霞.pdf",
     "llm_cache_list": [],
-    "update_time": 1767187441,
+    "update_time": 1767254092,
     "_id": "chunk-ba2b4acd551c7cc966b4e2d28e9d0cff"
   },
   "chunk-9ac78689bb56788a4c8a50659a53a99d": {
@@ -74,7 +74,7 @@
     "full_doc_id": "doc-8eaf2550553b2561b0ef7232965c0c56",
     "file_path": "教育部学籍在线验证报告_邱云霞.pdf",
     "llm_cache_list": [],
-    "update_time": 1767187511,
+    "update_time": 1767254128,
     "_id": "chunk-9ac78689bb56788a4c8a50659a53a99d"
   },
   "chunk-7f7e6f3519cb38247104ea6e234481f3": {
@@ -84,8 +84,38 @@
     "full_doc_id": "doc-8eaf2550553b2561b0ef7232965c0c56",
     "file_path": "教育部学籍在线验证报告_邱云霞.pdf",
     "llm_cache_list": [],
-    "update_time": 1767188203,
+    "update_time": 1767254208,
     "_id": "chunk-7f7e6f3519cb38247104ea6e234481f3"
+  },
+  "chunk-f39109e05ed3fe47d4aab91909e4ca74": {
+    "tokens": 135,
+    "content": "\nImage Content Analysis:\nImage Path: D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\中国高等教育学位在线验证报告_邱云霞\\docling\\images\\image_0.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': 'D:\\\\yunxia\\\\ai_langgraph\\\\anything-chat-rag\\\\parser_output\\\\中国高等教育学位在线验证报告_邱云霞\\\\docling\\\\images\\\\image_0.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 0}",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-4a61c7a0a17ed1895516963a1366b094",
+    "file_path": "中国高等教育学位在线验证报告_邱云霞.pdf",
+    "llm_cache_list": [],
+    "update_time": 1767254095,
+    "_id": "chunk-f39109e05ed3fe47d4aab91909e4ca74"
+  },
+  "chunk-42fa5a28cb2e568adcc35a8726c54be0": {
+    "tokens": 135,
+    "content": "\nImage Content Analysis:\nImage Path: D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\中国高等教育学位在线验证报告_邱云霞\\docling\\images\\image_1.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': 'D:\\\\yunxia\\\\ai_langgraph\\\\anything-chat-rag\\\\parser_output\\\\中国高等教育学位在线验证报告_邱云霞\\\\docling\\\\images\\\\image_1.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 1}",
+    "chunk_order_index": 1,
+    "full_doc_id": "doc-4a61c7a0a17ed1895516963a1366b094",
+    "file_path": "中国高等教育学位在线验证报告_邱云霞.pdf",
+    "llm_cache_list": [],
+    "update_time": 1767254141,
+    "_id": "chunk-42fa5a28cb2e568adcc35a8726c54be0"
+  },
+  "chunk-554b47a20bc6036f6550f4811a211386": {
+    "tokens": 135,
+    "content": "\nImage Content Analysis:\nImage Path: D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\中国高等教育学位在线验证报告_邱云霞\\docling\\images\\image_2.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': 'D:\\\\yunxia\\\\ai_langgraph\\\\anything-chat-rag\\\\parser_output\\\\中国高等教育学位在线验证报告_邱云霞\\\\docling\\\\images\\\\image_2.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 1}",
+    "chunk_order_index": 2,
+    "full_doc_id": "doc-4a61c7a0a17ed1895516963a1366b094",
+    "file_path": "中国高等教育学位在线验证报告_邱云霞.pdf",
+    "llm_cache_list": [],
+    "update_time": 1767254235,
+    "_id": "chunk-554b47a20bc6036f6550f4811a211386"
   },
   "chunk-28190b591ca3e949ff2bb87cba31d3e0": {
     "tokens": 115,
@@ -94,7 +124,7 @@
     "full_doc_id": "doc-cd6da09bf7fcb88fcd1809ee8f9b2248",
     "file_path": "旅行日记2.pdf",
     "llm_cache_list": [],
-    "update_time": 1767187472,
+    "update_time": 1767254103,
     "_id": "chunk-28190b591ca3e949ff2bb87cba31d3e0"
   },
   "chunk-a3eec6406850b958968234dd16458983": {
@@ -104,7 +134,7 @@
     "full_doc_id": "doc-cd6da09bf7fcb88fcd1809ee8f9b2248",
     "file_path": "旅行日记2.pdf",
     "llm_cache_list": [],
-    "update_time": 1767187553,
+    "update_time": 1767254144,
     "_id": "chunk-a3eec6406850b958968234dd16458983"
   },
   "chunk-f9379175a53fd548ca3e8f6e252838bc": {
@@ -114,7 +144,60 @@
     "full_doc_id": "doc-cd6da09bf7fcb88fcd1809ee8f9b2248",
     "file_path": "旅行日记2.pdf",
     "llm_cache_list": [],
-    "update_time": 1767188206,
+    "update_time": 1767254241,
     "_id": "chunk-f9379175a53fd548ca3e8f6e252838bc"
+  },
+  "chunk-5a33a13687e4d0249a967aad7a35c98e": {
+    "tokens": 1200,
+    "content": "# 性能测试模块完整实施方案\n\n## 📋 执行摘要\n\n基于您的需求，我已经完成了以下工作：\n\n### ✅ 已完成\n1. **修复项目管理页面字段名称不匹配问题**\n   - 前端字段统一改为驼峰命名（projectId, projectName, projectType等）\n   - 与后端API返回字段完全匹配\n   - 修复了分页参数（pageNum, pageSize）\n\n2. **美化项目管理页面UI**\n   - 添加醒目的页面标题卡片（紫色渐变）\n   - 统一按钮文字（\"新增项目\"而不是\"新增\"）\n   - 优化布局和样式\n\n3. **添加项目管理菜单入口**\n   - 在路由配置中添加了独立的项目管理入口\n   - 路径：`/testing/project`\n   - 图标：folder-opened\n   - 权限：testing:project:list\n\n4. **完善测试模块路由**\n   - 性能测试：添加了index主页路由\n   - UI自动化：添加了index主页路由\n   - API自动化：添加了index主页路由\n\n5. **分析前后端对接情况**\n   - 检查了所有性能测试相关的API接口（全部实现✅）\n   - 检查了前端功能实现\n   - 生成了详细的分析报告\n\n## 一、项目管理功能说明\n\n### 1.1 功能清单\n- ✅ 项目列表（分页、筛选）\n- ✅ 新增项目\n- ✅ 编辑项目\n- ✅ 删除项目\n- ✅ 项目状态切换（正常/停用）\n- ✅ 项目类型分类（性能测试/UI自动化/API自动化）\n\n### 1.2 访问路径\n- 前端路由：`http://localhost:5173/testing/project`\n- 后端API：`http://localhost:8000/testing/project/list`\n\n### 1.3 权限配置\n需要在系统中配置以下权限标识：\n```\ntesting:project:list      # 查看项目列表\ntesting:project:query     # 查看项目详情\ntesting:project:add       # 新增项目\ntesting:project:edit      # 编辑项目\ntesting:project:remove    # 删除项目\n```\n\n## 二、性能测试完整流程\n\n### 2.1 业务流程图\n\n```\n1. 项目管理\n   ↓ 创建性能测试项目\n2. 需求管理\n   ↓ 编写性能测试需求\n3. AI生成脚本\n   ↓ 配置K6参数（VUs、Duration、Thresholds）\n4. 脚本管理\n   ↓ 编辑和调试K6脚本\n5. 执行管理\n   ↓ 运行性能测试\n6. 报告管理\n   ↓ 查看和分析性能报告\n```\n\n### 2.2 技术架构\n\n```\n┌─────────────┐      ┌─────────────┐      ┌─────────────────┐      ┌──────────┐\n│   前端Vue3  │ HTTP │  后端FastAPI │ gRPC │ testing-agents  │ Exec │   K6     │\n│             │─────>│             │─────>│    -service     │─────>│  Engine  │\n│  Element+   │      │  SQLAlchemy │      │   LangGraph     │      │          │\n└─────────────┘      └─────────────┘      └─────────────────┘      └──────────┘\n       │                     │                     │\n       │                     │                     │\n       └─────────SSE实时日志推送───────────────────┘\n                             │\n                        ┌────┴────┐\n                        │  MinIO  │  (存储脚本和报告)\n                        └─────────┘\n```\n\n## 三、前后端字段映射表\n\n### 3.1 项目管理字段\n\n| 前端字段 | 后端字段 | 类型 | 说明 |\n|---------|---------|------|------|\n| projectId | project_id | int | 项目ID |\n| projectName | project_name | string | 项目名称 |\n| projectType | project_type | string | 项目类型 |\n| description | description | string | 项目描述 |\n| createTime | create_time | datetime | 创建时间 |\n| status | status | string | 状态(0正常/1停用) |\n| remark | remark | string | 备注 |\n\n**注意**：后端使用snake_case，前端使用camelCase，Pydantic会自动转换。\n\n### 3.2 需求管理字段\n\n| 前端字段 | 后端字段 | 类型 | 说明 |\n|---------|---------|------|------|\n| requirementId | requirement_id | int | 需求ID |\n| requirementName | requirement_name | string | 需求名称 |\n| projectId | project_id | int | 所属项目ID |\n| requirementType | requirement_type | string | 需求类型(performance) |\n| description | description | string | 需求描述 |\n| acceptanceCriteria | acceptance_criteria | string | 验收标准 |\n| priority | priority | string | 优先级 |\n| status | status | string | 状态 |\n| tags | tags | array | 标签 |\n\n## 四、API接口清单\n\n### 4.1 项目管理API\n\n| 方法 | 路径 | 说明 | 状态 |\n|-----|------|------|------|\n| GET | /testing/project/list | 获取项目列表 | ✅ |\n| GET | /testing/project/all |",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-422e9cc3042e9f9b6a00aa07d1f777c5",
+    "file_path": "性能测试模块实施方案.md",
+    "llm_cache_list": [],
+    "create_time": 1767254532,
+    "update_time": 1767254532,
+    "_id": "chunk-5a33a13687e4d0249a967aad7a35c98e"
+  },
+  "chunk-b19d6ab119a82e6d562645be06d527c2": {
+    "tokens": 1200,
+    "content": "| string | 验收标准 |\n| priority | priority | string | 优先级 |\n| status | status | string | 状态 |\n| tags | tags | array | 标签 |\n\n## 四、API接口清单\n\n### 4.1 项目管理API\n\n| 方法 | 路径 | 说明 | 状态 |\n|-----|------|------|------|\n| GET | /testing/project/list | 获取项目列表 | ✅ |\n| GET | /testing/project/all | 获取所有项目(下拉用) | ✅ |\n| GET | /testing/project/{id} | 获取项目详情 | ✅ |\n| POST | /testing/project | 新增项目 | ✅ |\n| PUT | /testing/project | 修改项目 | ✅ |\n| DELETE | /testing/project/{id} | 删除项目 | ✅ |\n| PUT | /testing/project/changeStatus | 修改项目状态 | ✅ |\n\n### 4.2 性能测试专用API\n\n| 方法 | 路径 | 说明 | 状态 |\n|-----|------|------|------|\n| POST | /testing/performance/generate-script | AI生成K6脚本 | ✅ |\n| POST | /testing/performance/execute | 执行K6测试 | ✅ |\n| GET | /testing/performance/execution/{id}/status | 获取执行状态 | ✅ |\n| GET | /testing/performance/execution/{id}/logs | 获取执行日志(SSE) | ✅ |\n| GET | /testing/performance/report/{id}/download | 下载K6报告 | ✅ |\n\n## 五、测试验证清单\n\n### 5.1 项目管理功能测试\n\n- [ ] 访问项目管理页面（/testing/project）\n- [ ] 新增性能测试项目\n- [ ] 编辑项目信息\n- [ ] 切换项目状态\n- [ ] 删除项目\n- [ ] 搜索和筛选项目\n\n### 5.2 性能测试完整流程测试\n\n- [ ] 1. 创建性能测试项目\n- [ ] 2. 在项目下创建性能测试需求\n- [ ] 3. 使用AI生成K6脚本\n  - [ ] 配置VUs（虚拟用户数）\n  - [ ] 配置Duration（测试时长）\n  - [ ] 配置Stages（压力阶段）\n  - [ ] 配置Thresholds（性能阈值）\n- [ ] 4. 编辑和调试生成的K6脚本\n- [ ] 5. 执行K6性能测试\n- [ ] 6. 实时查看执行日志（SSE流）\n- [ ] 7. 查看性能测试报告\n- [ ] 8. 下载性能测试报告（HTML/JSON）\n\n### 5.3 前后端对接验证\n\n- [ ] 验证项目下拉列表加载正常\n- [ ] 验证需求关联项目功能正常\n- [ ] 验证脚本关联需求功能正常\n- [ ] 验证执行记录关联脚本功能正常\n- [ ] 验证报告关联执行记录功能正常\n\n## 六、下一步工作建议\n\n### 6.1 立即执行（今天）\n\n1. **启动服务并测试**\n   ```bash\n   # 启动后端\n   cd RuoYi-Vue3-FastAPI/ruoyi-fastapi-backend\n   python main.py\n\n   # 启动前端\n   cd RuoYi-Vue3-FastAPI/ruoyi-fastapi-frontend\n   npm run dev\n   ```\n\n2. **验证项目管理入口**\n   - 浏览器访问：`http://localhost:5173/testing/project`\n   - 检查菜单是否显示\n\n3. **测试完整流程**\n   - 创建一个测试项目\n   - 创建一个性能测试需求\n   - 生成一个K6脚本\n\n### 6.2 本周完成\n\n1. **优化用户体验**\n   - 添加更友好的错误提示\n   - 优化加载状态提示\n   - 改进表单验证\n\n2. **补充文档**\n   - 用户操作手册\n   - API接口文档\n   - 部署运维文档\n\n3. **性能优化**\n   - 优化大数据量列表加载\n   - 实现虚拟滚动\n   - 优化SSE日志推送性能\n\n### 6.3 下周完成\n\n1. **集成testing-agents-service**\n   - 确保Agent服务正常运行\n   - 测试AI脚本生成功能\n   - 测试K6执行功能\n\n2. **MinIO集成**\n   - 配置MinIO存储\n   - 测试脚本上传下载\n   - 测试报告存储\n\n3. **监控和日志**\n   - 添加性能监控\n   - 完善日志记录\n   - 添加告警机制\n\n## 七、常见问题FAQ\n\n### Q1: 菜单中看不到\"项目管理\"？\n**A**: 检查以下几点：\n1. 确保路由配置已更新（permission.js）\n2. 清除浏览器缓存并重新登录\n3. 检查用户是否有 `testing:project:list` 权限\n\n### Q2: 项目列表加载失败？\n**A**: 检查：\n1. 后端服务是否正常启动\n2. 数据库连接是否正常\n3. 浏览器控制台的错误信息\n4. 后端日志的错误信息\n\n### Q3: AI生成脚本失败？\n**A**: 检查：\n1. testing-agents-service 是否启动\n2. gRPC连接是否正常\n3",
+    "chunk_order_index": 1,
+    "full_doc_id": "doc-422e9cc3042e9f9b6a00aa07d1f777c5",
+    "file_path": "性能测试模块实施方案.md",
+    "llm_cache_list": [
+      "default:extract:f5ace8693d669547919d088ec95b5805",
+      "default:extract:b4a1b422171261a4265ba1a57e428499"
+    ],
+    "create_time": 1767254532,
+    "update_time": 1767254695,
+    "_id": "chunk-b19d6ab119a82e6d562645be06d527c2"
+  },
+  "chunk-2211cec5f2c2b9cd7b764fdcb1b7fe9b": {
+    "tokens": 250,
+    "content": "有 `testing:project:list` 权限\n\n### Q2: 项目列表加载失败？\n**A**: 检查：\n1. 后端服务是否正常启动\n2. 数据库连接是否正常\n3. 浏览器控制台的错误信息\n4. 后端日志的错误信息\n\n### Q3: AI生成脚本失败？\n**A**: 检查：\n1. testing-agents-service 是否启动\n2. gRPC连接是否正常\n3. LangGraph配置是否正确\n4. Agent是否有足够的上下文信息\n\n### Q4: K6执行失败？\n**A**: 检查：\n1. K6是否正确安装\n2. K6脚本语法是否正确\n3. 测试目标是否可访问\n4. 系统资源是否充足\n\n## 八、技术支持\n\n如遇到问题，请提供以下信息：\n1. 错误截图\n2. 浏览器控制台错误日志\n3. 后端服务日志\n4. 操作步骤描述\n\n---\n\n**最后更新时间**: 2025-01-XX\n**文档版本**: v1.0\n**作者**: AI Assistant",
+    "chunk_order_index": 2,
+    "full_doc_id": "doc-422e9cc3042e9f9b6a00aa07d1f777c5",
+    "file_path": "性能测试模块实施方案.md",
+    "llm_cache_list": [
+      "default:extract:1e3b1f4f95710de355be02de3fdbabbc",
+      "default:extract:3dc61b29706056df66bed38518057231"
+    ],
+    "create_time": 1767254532,
+    "update_time": 1767254666,
+    "_id": "chunk-2211cec5f2c2b9cd7b764fdcb1b7fe9b"
+  },
+  "chunk-e61a1731aec9cf18fadf61cb57ca5b46": {
+    "tokens": 233,
+    "content": "中国高等教育学位在线验证报告\n\n更新日期：2025年12月20日\n\n姓名\n\n邱云霞\n\n性别\n\n女\n\n出生日期\n\n1990年08月21日\n\n获学位日期\n\n2014年07月01日\n\n学位授予单位\n\n江西理工大学\n\n所授学位\n\n工学学士学位\n\n学科/专业\n\n软件工程(机械电子工程)\n\n学位证书编号\n\n1040742014003966\n\n注意事项：\n\n1、报告内容如有修改，请以最新在线验证的内容为准。\n\n2、未经学位信息权属人同意，不得将报告用于违背权属人意愿之用途。\n\n3、报告在线验证有效期由报告权属人设置（1~6个月），其在报告验证到期前可再次延长验证有效期。\n\n在线验证码 X4RD32N0JR3YJTSA\n\n①验证报告在线查验网址：https://www.chsi.com.cn/xlcx/bgcx.jsp\n\n②使用学信网App扫描二维码验证\n\nCHSI",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-4a61c7a0a17ed1895516963a1366b094",
+    "file_path": "中国高等教育学位在线验证报告_邱云霞.pdf",
+    "llm_cache_list": [
+      "default:extract:3fe27496ab27aa460d4d70ffe0746470",
+      "default:extract:89dc46062300121e9a78c0c861795efa"
+    ],
+    "create_time": 1767254533,
+    "update_time": 1767254597,
+    "_id": "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
   }
 }

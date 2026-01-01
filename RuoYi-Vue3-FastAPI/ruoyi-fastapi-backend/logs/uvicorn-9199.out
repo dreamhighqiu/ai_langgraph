@@ -1770,3 +1770,13 @@ INFO:     127.0.0.1:56240 - "POST /testing/execution/cancel HTTP/1.1" 200 OK
 INFO:     127.0.0.1:64088 - "POST /testing/execution/9/retry HTTP/1.1" 200 OK
 INFO:     127.0.0.1:52468 - "GET /testing/execution/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53524 - "GET /testing/execution/11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59093 - "GET /testing/execution/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59092 - "GET /testing/execution/statistics?days=7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52109 - "GET /testing/execution/11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50241 - "GET /testing/execution/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62218 - "GET /getInfo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54553 - "GET /getRouters HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54554 - "GET /testing/execution/list?script_type=k6&page_num=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63728 - "GET /testing/execution/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51267 - "GET /testing/execution/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54555 - "GET /testing/execution/statistics?days=7 HTTP/1.1" 200 OK

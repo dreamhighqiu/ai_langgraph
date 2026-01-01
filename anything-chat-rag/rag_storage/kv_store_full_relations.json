@@ -1,154 +1,274 @@
 {
-  "doc-2f24877f426d1aa3d83c35bd7b6931f0": {
+  "doc-6b5919566dacc3dbcb9fb685d5b1205f": {
     "relation_pairs": [
       [
-        "MCP",
-        "MCP Server (RAG Anything)"
+        "AI生成脚本",
+        "需求管理API"
       ],
       [
-        "MCP Server (RAG Anything)",
-        "RAG + Agent服务栈"
+        "SSE",
+        "性能测试专用API"
       ],
       [
-        "Deep Agents Service",
-        "Research Agent"
+        "项目管理",
+        "项目选择器"
       ],
       [
-        "Terminal",
-        "osascript"
+        "API调用",
+        "脚本ID"
       ],
       [
-        "start_all.sh",
-        "后端服务"
+        "Agent服务",
+        "K6执行"
       ],
       [
-        "MCP",
-        "start_all.sh"
+        "实时日志展示",
+        "执行管理页面"
+      ],
+      [
+        "后端API接口",
+        "脚本管理API"
+      ],
+      [
+        "项目状态筛选",
+        "项目选择器"
+      ],
+      [
+        "K6",
+        "性能测试专用API"
+      ],
+      [
+        "项目管理页面",
+        "驼峰命名"
+      ],
+      [
+        "路由",
+        "项目管理入口"
+      ],
+      [
+        "报告管理页面",
+        "报告详情"
+      ],
+      [
+        "需求管理入口",
+        "项目管理入口"
+      ],
+      [
+        "代码编辑器",
+        "脚本管理页面"
+      ],
+      [
+        "K6执行",
+        "数据流向"
+      ],
+      [
+        "菜单系统",
+        "项目管理入口"
+      ],
+      [
+        "K6性能图表",
+        "报告管理页面"
+      ],
+      [
+        "脚本管理页面",
+        "项目管理"
+      ],
+      [
+        "前端功能",
+        "执行管理页面"
+      ],
+      [
+        "前端功能",
+        "脚本管理页面"
+      ],
+      [
+        "K6性能图表",
+        "K6执行"
+      ],
+      [
+        "后端API接口",
+        "性能测试专用API"
+      ],
+      [
+        "前端功能",
+        "驼峰命名"
+      ],
+      [
+        "K6执行",
+        "SSE流"
+      ],
+      [
+        "K6脚本类型",
+        "脚本管理页面"
+      ],
+      [
+        "Agent服务",
+        "数据流向"
+      ],
+      [
+        "后端API",
+        "数据流向"
+      ],
+      [
+        "API调用",
+        "需求ID"
+      ],
+      [
+        "K6脚本",
+        "MinIO对象存储"
+      ],
+      [
+        "SSE流",
+        "执行管理页面"
+      ],
+      [
+        "Service层",
+        "数据流向"
+      ],
+      [
+        "执行管理页面",
+        "执行详情"
+      ],
+      [
+        "前端功能",
+        "需求管理页面"
       ],
       [
         "前端",
-        "旧方式"
+        "数据流向"
       ],
       [
-        "Deep Agents Service",
-        "LightRAG Server"
+        "K6脚本",
+        "脚本管理页面"
       ],
       [
-        "pyproject.toml",
-        "快速启动脚本"
+        "LangGraph Agent",
+        "RAG知识库"
       ],
       [
-        "start_all.sh",
-        "快速启动脚本"
+        "项目类型筛选",
+        "项目选择器"
       ],
       [
-        "RAG + Agent服务栈",
-        "前端服务(Testing Deep Agents UI)"
+        "后端API接口",
+        "报告管理API"
       ],
       [
-        "Deep Agents Service",
-        "RAG + Agent服务栈"
+        "后端API接口",
+        "需求管理API"
       ],
       [
-        "快速启动脚本",
-        "旧方式-分别启动"
+        "实时日志",
+        "执行管理页面"
       ],
       [
-        "Agent Service",
-        "虚拟环境"
+        "SSE流",
+        "数据流向"
       ],
       [
-        "LightRAG",
-        "LightRAG Server"
+        "MinIO对象存储",
+        "报告管理页面"
       ],
       [
-        "旧方式",
-        "虚拟环境"
+        "需求管理页面",
+        "项目关联"
       ],
       [
-        "Shell脚本",
-        "start_all.sh"
+        "Monaco Editor",
+        "脚本管理页面"
       ],
       [
-        "LightRAG Server",
-        "RAG + Agent服务栈"
+        "下划线命名",
+        "后端API接口"
       ],
       [
-        "start_all.sh",
-        "前端"
+        "API调用",
+        "项目ID"
       ],
       [
-        "AppleScript",
-        "osascript"
+        "后端API接口",
+        "执行管理API"
       ],
       [
-        "Agent Service",
-        "旧方式"
+        "K6脚本",
+        "LangGraph Agent"
       ],
       [
-        "MCP",
-        "MCP Server"
+        "性能测试模块",
+        "项目管理入口"
       ],
       [
-        "Deep Agents Service",
-        "Performance Agent"
-      ],
-      [
-        "setup.sh",
-        "快速启动脚本"
-      ],
-      [
-        "Agent",
-        "start_all.sh"
-      ],
-      [
-        "Deep Agents Service",
-        "LangGraph"
-      ],
-      [
-        "快速启动脚本",
-        "统一虚拟环境"
-      ],
-      [
-        "Deep Agents Service",
-        "MCP Server (RAG Anything)"
-      ],
-      [
-        "LightRAG Server",
-        "虚拟环境"
-      ],
-      [
-        "MCP Server",
-        "虚拟环境"
-      ],
-      [
-        "Deep Agents Service",
-        "前端服务(Testing Deep Agents UI)"
-      ],
-      [
-        "Agent",
-        "Agent Service"
-      ],
-      [
-        "LightRAG Server",
-        "旧方式"
-      ],
-      [
-        "Pydantic Settings验证错误",
-        "src/core/config.py"
-      ],
-      [
-        "MCP Server",
-        "旧方式"
-      ],
-      [
-        "LightRAG",
-        "start_all.sh"
+        "Pydantic",
+        "后端API接口"
       ]
     ],
-    "count": 36,
-    "create_time": 1767188289,
-    "update_time": 1767188289,
-    "_id": "doc-2f24877f426d1aa3d83c35bd7b6931f0"
+    "count": 50,
+    "create_time": 1767254532,
+    "update_time": 1767254532,
+    "_id": "doc-6b5919566dacc3dbcb9fb685d5b1205f"
+  },
+  "doc-4a61c7a0a17ed1895516963a1366b094": {
+    "relation_pairs": [
+      [
+        "学位证书编号",
+        "邱云霞"
+      ],
+      [
+        "中国高等教育学位在线验证报告",
+        "邱云霞"
+      ],
+      [
+        "报告验证有效期",
+        "注意事项"
+      ],
+      [
+        "中国高等教育学位在线验证报告",
+        "学信网"
+      ],
+      [
+        "中国高等教育学位在线验证报告",
+        "注意事项"
+      ],
+      [
+        "出生日期",
+        "邱云霞"
+      ],
+      [
+        "江西理工大学",
+        "邱云霞"
+      ],
+      [
+        "软件工程(机械电子工程)",
+        "邱云霞"
+      ],
+      [
+        "中国高等教育学位在线验证报告",
+        "更新日期"
+      ],
+      [
+        "工学学士学位",
+        "邱云霞"
+      ],
+      [
+        "中国高等教育学位在线验证报告",
+        "在线验证码"
+      ],
+      [
+        "性别",
+        "邱云霞"
+      ],
+      [
+        "学位信息权属人",
+        "注意事项"
+      ],
+      [
+        "获学位日期",
+        "邱云霞"
+      ]
+    ],
+    "count": 14,
+    "create_time": 1767254696,
+    "update_time": 1767254696,
+    "_id": "doc-4a61c7a0a17ed1895516963a1366b094"
   }
 }

@@ -1,339 +1,688 @@
 {
-  "LightRAG": {
+  "性能测试模块": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80",
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 2,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "LightRAG"
-  },
-  "MCP": {
-    "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80",
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 2,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "MCP"
-  },
-  "Agent": {
-    "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "Agent"
+    "create_time": 1767254141,
+    "update_time": 1767254141,
+    "_id": "性能测试模块"
   },
-  "start_all.sh": {
+  "项目管理入口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80",
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 2,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "start_all.sh"
-  },
-  "MCP Server": {
-    "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "MCP Server"
+    "create_time": 1767254141,
+    "update_time": 1767254141,
+    "_id": "项目管理入口"
   },
-  "LightRAG Server": {
+  "需求管理入口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80",
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 2,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "LightRAG Server"
-  },
-  "Agent Service": {
-    "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187208,
-    "update_time": 1767187208,
-    "_id": "Agent Service"
+    "create_time": 1767254141,
+    "update_time": 1767254141,
+    "_id": "需求管理入口"
+  },
+  "项目管理页面": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254144,
+    "update_time": 1767254144,
+    "_id": "项目管理页面"
+  },
+  "驼峰命名": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254144,
+    "update_time": 1767254144,
+    "_id": "驼峰命名"
+  },
+  "下划线命名": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254145,
+    "update_time": 1767254145,
+    "_id": "下划线命名"
+  },
+  "后端API接口": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254153,
+    "update_time": 1767254153,
+    "_id": "后端API接口"
+  },
+  "需求管理API": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254158,
+    "update_time": 1767254158,
+    "_id": "需求管理API"
+  },
+  "脚本管理API": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254185,
+    "update_time": 1767254185,
+    "_id": "脚本管理API"
+  },
+  "执行管理API": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254185,
+    "update_time": 1767254185,
+    "_id": "执行管理API"
+  },
+  "报告管理API": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254185,
+    "update_time": 1767254185,
+    "_id": "报告管理API"
+  },
+  "性能测试专用API": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254188,
+    "update_time": 1767254188,
+    "_id": "性能测试专用API"
+  },
+  "前端功能": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254188,
+    "update_time": 1767254188,
+    "_id": "前端功能"
+  },
+  "需求管理页面": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254194,
+    "update_time": 1767254194,
+    "_id": "需求管理页面"
+  },
+  "脚本管理页面": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5",
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 2,
+    "create_time": 1767254205,
+    "update_time": 1767254205,
+    "_id": "脚本管理页面"
+  },
+  "执行管理页面": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5",
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 2,
+    "create_time": 1767254205,
+    "update_time": 1767254205,
+    "_id": "执行管理页面"
+  },
+  "K6": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254224,
+    "update_time": 1767254224,
+    "_id": "K6"
+  },
+  "Pydantic": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254227,
+    "update_time": 1767254227,
+    "_id": "Pydantic"
+  },
+  "Monaco Editor": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254227,
+    "update_time": 1767254227,
+    "_id": "Monaco Editor"
+  },
+  "路由": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254227,
+    "update_time": 1767254227,
+    "_id": "路由"
+  },
+  "ProjectModel": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254232,
+    "update_time": 1767254232,
+    "_id": "ProjectModel"
+  },
+  "AI生成脚本": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254235,
+    "update_time": 1767254235,
+    "_id": "AI生成脚本"
+  },
+  "SSE": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254252,
+    "update_time": 1767254252,
+    "_id": "SSE"
+  },
+  "菜单系统": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254254,
+    "update_time": 1767254254,
+    "_id": "菜单系统"
+  },
+  "实时日志展示": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254255,
+    "update_time": 1767254255,
+    "_id": "实时日志展示"
+  },
+  "K6脚本类型": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254260,
+    "update_time": 1767254260,
+    "_id": "K6脚本类型"
+  },
+  "项目关联": {
+    "chunk_ids": [
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
+    ],
+    "count": 1,
+    "create_time": 1767254260,
+    "update_time": 1767254260,
+    "_id": "项目关联"
+  },
+  "项目管理": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254260,
+    "update_time": 1767254260,
+    "_id": "项目管理"
+  },
+  "报告管理页面": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254276,
+    "update_time": 1767254276,
+    "_id": "报告管理页面"
+  },
+  "K6脚本": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254276,
+    "update_time": 1767254276,
+    "_id": "K6脚本"
+  },
+  "SSE流": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254279,
+    "update_time": 1767254279,
+    "_id": "SSE流"
+  },
+  "K6性能图表": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254279,
+    "update_time": 1767254279,
+    "_id": "K6性能图表"
+  },
+  "项目选择器": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254285,
+    "update_time": 1767254285,
+    "_id": "项目选择器"
+  },
+  "MinIO对象存储": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254290,
+    "update_time": 1767254290,
+    "_id": "MinIO对象存储"
+  },
+  "LangGraph Agent": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254298,
+    "update_time": 1767254298,
+    "_id": "LangGraph Agent"
+  },
+  "RAG知识库": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254299,
+    "update_time": 1767254299,
+    "_id": "RAG知识库"
+  },
+  "Agent服务": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254301,
+    "update_time": 1767254301,
+    "_id": "Agent服务"
+  },
+  "K6执行": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254307,
+    "update_time": 1767254307,
+    "_id": "K6执行"
+  },
+  "项目下拉列表": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254307,
+    "update_time": 1767254307,
+    "_id": "项目下拉列表"
+  },
+  "代码编辑器": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254310,
+    "update_time": 1767254310,
+    "_id": "代码编辑器"
+  },
+  "实时日志": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254315,
+    "update_time": 1767254315,
+    "_id": "实时日志"
+  },
+  "执行详情": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254315,
+    "update_time": 1767254315,
+    "_id": "执行详情"
+  },
+  "报告详情": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254318,
+    "update_time": 1767254318,
+    "_id": "报告详情"
+  },
+  "API调用": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254323,
+    "update_time": 1767254323,
+    "_id": "API调用"
+  },
+  "项目ID": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254326,
+    "update_time": 1767254326,
+    "_id": "项目ID"
+  },
+  "需求ID": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254329,
+    "update_time": 1767254329,
+    "_id": "需求ID"
+  },
+  "脚本ID": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254329,
+    "update_time": 1767254329,
+    "_id": "脚本ID"
+  },
+  "K6脚本生成": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254331,
+    "update_time": 1767254331,
+    "_id": "K6脚本生成"
+  },
+  "项目类型筛选": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254337,
+    "update_time": 1767254337,
+    "_id": "项目类型筛选"
+  },
+  "项目状态筛选": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254337,
+    "update_time": 1767254337,
+    "_id": "项目状态筛选"
+  },
+  "加载状态提示": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254340,
+    "update_time": 1767254340,
+    "_id": "加载状态提示"
+  },
+  "错误提示信息": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254340,
+    "update_time": 1767254340,
+    "_id": "错误提示信息"
+  },
+  "表单验证": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254350,
+    "update_time": 1767254350,
+    "_id": "表单验证"
+  },
+  "API文档": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254350,
+    "update_time": 1767254350,
+    "_id": "API文档"
+  },
+  "前端组件注释": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254350,
+    "update_time": 1767254350,
+    "_id": "前端组件注释"
+  },
+  "用户使用手册": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254351,
+    "update_time": 1767254351,
+    "_id": "用户使用手册"
+  },
+  "数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254362,
+    "update_time": 1767254362,
+    "_id": "数据流向"
   },
   "前端": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767187215,
-    "update_time": 1767187215,
+    "create_time": 1767254362,
+    "update_time": 1767254362,
     "_id": "前端"
   },
-  "虚拟环境": {
+  "后端API": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767187239,
-    "update_time": 1767187239,
-    "_id": "虚拟环境"
+    "create_time": 1767254362,
+    "update_time": 1767254362,
+    "_id": "后端API"
   },
-  "Terminal": {
+  "Service层": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767187239,
-    "update_time": 1767187239,
-    "_id": "Terminal"
+    "create_time": 1767254362,
+    "update_time": 1767254362,
+    "_id": "Service层"
   },
-  "osascript": {
+  "测试用例": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767187239,
-    "update_time": 1767187239,
-    "_id": "osascript"
+    "create_time": 1767254362,
+    "update_time": 1767254362,
+    "_id": "测试用例"
   },
-  "后端服务": {
+  "中国高等教育学位在线验证报告": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187286,
-    "update_time": 1767187286,
-    "_id": "后端服务"
+    "create_time": 1767254597,
+    "update_time": 1767254597,
+    "_id": "中国高等教育学位在线验证报告"
   },
-  "旧方式": {
+  "邱云霞": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187287,
-    "update_time": 1767187287,
-    "_id": "旧方式"
+    "create_time": 1767254597,
+    "update_time": 1767254597,
+    "_id": "邱云霞"
   },
-  "Shell脚本": {
+  "江西理工大学": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187287,
-    "update_time": 1767187287,
-    "_id": "Shell脚本"
+    "create_time": 1767254597,
+    "update_time": 1767254597,
+    "_id": "江西理工大学"
   },
-  "AppleScript": {
+  "工学学士学位": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187287,
-    "update_time": 1767187287,
-    "_id": "AppleScript"
+    "create_time": 1767254597,
+    "update_time": 1767254597,
+    "_id": "工学学士学位"
   },
-  "npm": {
+  "软件工程(机械电子工程)": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187287,
-    "update_time": 1767187287,
-    "_id": "npm"
+    "create_time": 1767254597,
+    "update_time": 1767254597,
+    "_id": "软件工程(机械电子工程)"
   },
-  "RAG + Agent服务栈": {
+  "学位证书编号": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187291,
-    "update_time": 1767187291,
-    "_id": "RAG + Agent服务栈"
+    "create_time": 1767254598,
+    "update_time": 1767254598,
+    "_id": "学位证书编号"
   },
-  "MCP Server (RAG Anything)": {
+  "在线验证码": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187308,
-    "update_time": 1767187308,
-    "_id": "MCP Server (RAG Anything)"
+    "create_time": 1767254598,
+    "update_time": 1767254598,
+    "_id": "在线验证码"
   },
-  "Deep Agents Service": {
+  "学信网": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187309,
-    "update_time": 1767187309,
-    "_id": "Deep Agents Service"
+    "create_time": 1767254603,
+    "update_time": 1767254603,
+    "_id": "学信网"
   },
-  "前端服务(Testing Deep Agents UI)": {
+  "注意事项": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187309,
-    "update_time": 1767187309,
-    "_id": "前端服务(Testing Deep Agents UI)"
+    "create_time": 1767254619,
+    "update_time": 1767254619,
+    "_id": "注意事项"
   },
-  "服务依赖关系": {
+  "更新日期": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187315,
-    "update_time": 1767187315,
-    "_id": "服务依赖关系"
+    "create_time": 1767254619,
+    "update_time": 1767254619,
+    "_id": "更新日期"
   },
-  "快速启动脚本": {
+  "性别": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187334,
-    "update_time": 1767187334,
-    "_id": "快速启动脚本"
+    "create_time": 1767254619,
+    "update_time": 1767254619,
+    "_id": "性别"
   },
-  "setup.sh": {
+  "出生日期": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187334,
-    "update_time": 1767187334,
-    "_id": "setup.sh"
+    "create_time": 1767254628,
+    "update_time": 1767254628,
+    "_id": "出生日期"
   },
-  "pyproject.toml": {
+  "获学位日期": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187334,
-    "update_time": 1767187334,
-    "_id": "pyproject.toml"
+    "create_time": 1767254628,
+    "update_time": 1767254628,
+    "_id": "获学位日期"
   },
-  "src/core/config.py": {
+  "学位信息权属人": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187334,
-    "update_time": 1767187334,
-    "_id": "src/core/config.py"
+    "create_time": 1767254628,
+    "update_time": 1767254628,
+    "_id": "学位信息权属人"
   },
-  "Python 3.11+": {
+  "报告验证有效期": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
     "count": 1,
-    "create_time": 1767187348,
-    "update_time": 1767187348,
-    "_id": "Python 3.11+"
-  },
-  "Node.js 18+": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187351,
-    "update_time": 1767187351,
-    "_id": "Node.js 18+"
-  },
-  ".env配置文件": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187352,
-    "update_time": 1767187352,
-    "_id": ".env配置文件"
-  },
-  "Pydantic Settings验证错误": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187358,
-    "update_time": 1767187358,
-    "_id": "Pydantic Settings验证错误"
-  },
-  "端口被占用": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187368,
-    "update_time": 1767187368,
-    "_id": "端口被占用"
-  },
-  "LangGraph": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187368,
-    "update_time": 1767187368,
-    "_id": "LangGraph"
-  },
-  "Performance Agent": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187375,
-    "update_time": 1767187375,
-    "_id": "Performance Agent"
-  },
-  "Research Agent": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187375,
-    "update_time": 1767187375,
-    "_id": "Research Agent"
-  },
-  "统一虚拟环境": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187381,
-    "update_time": 1767187381,
-    "_id": "统一虚拟环境"
-  },
-  "旧方式-分别启动": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187394,
-    "update_time": 1767187394,
-    "_id": "旧方式-分别启动"
-  },
-  "常见问题": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187394,
-    "update_time": 1767187394,
-    "_id": "常见问题"
-  },
-  "服务状态": {
-    "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 1,
-    "create_time": 1767187397,
-    "update_time": 1767187397,
-    "_id": "服务状态"
+    "create_time": 1767254628,
+    "update_time": 1767254628,
+    "_id": "报告验证有效期"
   }
 }

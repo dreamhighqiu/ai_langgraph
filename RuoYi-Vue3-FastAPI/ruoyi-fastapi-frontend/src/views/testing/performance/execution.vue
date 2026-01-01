@@ -186,6 +186,30 @@ function getStatusTag(status) {
   return map[status] || 'info'
 }
 
+function mapExecution(item = {}) {
+  return {
+    executionId: item.execution_id ?? item.executionId,
+    scriptId: item.script_id ?? item.scriptId,
+    scriptName: item.script_name ?? item.scriptName,
+    scriptType: item.script_type ?? item.scriptType,
+    projectName: item.project_name ?? item.projectName,
+    executionType: item.execution_type ?? item.executionType,
+    executionStatus: item.execution_status ?? item.executionStatus,
+    startTime: item.start_time ?? item.startTime,
+    endTime: item.end_time ?? item.endTime,
+    duration: item.duration,
+    threadId: item.thread_id ?? item.threadId,
+    agentId: item.agent_id ?? item.agentId,
+    result: item.result,
+    errorMsg: item.error_msg ?? item.errorMsg,
+    executor: item.executor,
+    createTime: item.create_time ?? item.createTime,
+    config: item.config,
+    scriptContent: item.script_content ?? item.scriptContent,
+    scriptFilePath: item.script_file_path ?? item.scriptFilePath
+  }
+}
+
 /** 查询执行列表 */
 function getList() {
   loading.value = true
@@ -197,24 +221,7 @@ function getList() {
     page_size: queryParams.pageSize
   }).then(response => {
     const rows = response.data?.rows || response.rows || []
-    executionList.value = rows.map(item => ({
-      executionId: item.execution_id,
-      scriptId: item.script_id,
-      scriptName: item.script_name,
-      scriptType: item.script_type,
-      projectName: item.project_name,
-      executionType: item.execution_type,
-      executionStatus: item.execution_status,
-      startTime: item.start_time,
-      endTime: item.end_time,
-      duration: item.duration,
-      threadId: item.thread_id,
-      agentId: item.agent_id,
-      result: item.result,
-      errorMsg: item.error_msg,
-      executor: item.executor,
-      createTime: item.create_time
-    }))
+    executionList.value = rows.map(mapExecution)
     total.value = response.data?.total || response.total || 0
     loading.value = false
   }).catch(() => {
@@ -247,7 +254,8 @@ function refreshList() {
 
 function handleView(row) {
   getExecution(row.executionId || row.execution_id).then(response => {
-    viewData.value = response.data || row
+    const data = response.data || row
+    viewData.value = mapExecution(data)
     viewVisible.value = true
   })
 }

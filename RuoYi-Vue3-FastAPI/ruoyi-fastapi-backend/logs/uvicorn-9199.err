@@ -9992,3 +9992,1179 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2025-12-31 21:57:51.987 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.service.execution_service:retry_execution:187 - 重试执行成功: 9 -> 11
 2025-12-31 21:57:51.988 | 244894d1ceab4002a5043d0c66ee529d | INFO     | module_testing.controller.execution_controller:retry_execution:156 - 重试执行: 9 -> 11
 2025-12-31 21:58:05.852 | 623da3fcad5e4bc6a76313c2f735a10d | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 22:02:01.893 | c473b29d07d64bcb96078a033ae51b26 | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 22:02:20.651 | acb91b5a0e3143d78c9602a3718bb46e | ERROR    | exceptions.handle:exception_handler:71 - (asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+[SQL: SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.email, sys_user.phonenumber, sys_user.sex, sys_user.avatar, sys_user.password, sys_user.status, sys_user.del_flag, sys_user.login_ip, sys_user.login_date, sys_user.pwd_update_date, sys_user.create_by, sys_user.create_time, sys_user.update_by, sys_user.update_time, sys_user.remark 
+FROM sys_user 
+WHERE sys_user.status = %s AND sys_user.del_flag = %s AND sys_user.user_id = %s]
+[parameters: ('0', '0', 1)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 402, in terminate
+    self.await_(asyncio.shield(self._terminate_graceful_close()))  # type: ignore[attr-defined] # noqa: E501
+    │    │      │       │      │    └ <function AsyncAdapt_asyncmy_connection._terminate_graceful_close at 0x000001EFFFCBBF60>
+    │    │      │       │      └ <AdaptedConnection <asyncmy.connection.Connection object at 0x000001EFA3F38E90>>
+    │    │      │       └ <function shield at 0x000001EFFB1AF100>
+    │    │      └ <module 'asyncio' from 'C:\\Users\\98214\\AppData\\Roaming\\uv\\python\\cpython-3.11.13-windows-x86_64-none\\Lib\\asyncio\\__...
+    │    └ <staticmethod(<function await_only at 0x000001EFFE1E4F40>)>
+    └ <AdaptedConnection <asyncmy.connection.Connection object at 0x000001EFA3F38E90>>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           │       │             └ <Future finished exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)>
+           │       └ <attribute 'parent' of 'greenlet.greenlet' objects>
+           └ <_AsyncIoGreenlet object at 0x000001EFA51D4280 (otid=0x000001EFFE1D8D20) dead>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <Future finished exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 117, in _terminate_graceful_close
+    await self._connection.ensure_closed()
+          │    └ <member '_connection' of 'AdaptedConnection' objects>
+          └ <AdaptedConnection <asyncmy.connection.Connection object at 0x000001EFA3F38E90>>
+  File "asyncmy\\connection.pyx", line 361, in ensure_closed
+    await self._writer.drain()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 380, in drain
+    raise exc
+          └ ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)
+  File "asyncmy\\connection.pyx", line 658, in asyncmy.connection.Connection._read_bytes
+    data = await self._reader.readexactly(num_bytes)
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 750, in readexactly
+    await self._wait_for_data('readexactly')
+          │    └ <function StreamReader._wait_for_data at 0x000001EFFCBD94E0>
+          └ <StreamReader exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None) transport=<_SelectorSocketTranspo...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 543, in _wait_for_data
+    await self._waiter
+          │    └ None
+          └ <StreamReader exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None) transport=<_SelectorSocketTranspo...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\selector_events.py", line 999, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+           │    │          │    └ 262144
+           │    │          └ <_SelectorSocketTransport closed fd=2288>
+           │    └ None
+           └ <_SelectorSocketTransport closed fd=2288>
+
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001EFFF814400>
+    │    └ <sqlalchemy.dialects.mysql.asyncmy.MySQLDialect_asyncmy object at 0x000001EFFFC2B350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ ('0', '0', 1)
+    │      │       └ 'SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.ema...
+    │      └ <function AsyncAdapt_dbapi_cursor.execute at 0x000001EFFFCB9760>
+    └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 230, in execute
+    self._adapt_connection._handle_exception(error)
+    │    └ <member '_adapt_connection' of 'AsyncAdapt_dbapi_cursor' objects>
+    └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 91, in _handle_exception
+    raise error
+          └ OperationalError(2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 228, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           │    │      │    │              │          └ ('0', '0', 1)
+           │    │      │    │              └ 'SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.ema...
+           │    │      │    └ <function AsyncAdapt_dbapi_cursor._execute_async at 0x000001EFFFCB98A0>
+           │    │      └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+           │    └ <member 'await_' of 'AsyncAdapt_dbapi_cursor' objects>
+           └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           │       │             └ <coroutine object AsyncAdapt_dbapi_cursor._execute_async at 0x000001EFA4186C40>
+           │       └ <attribute 'parent' of 'greenlet.greenlet' objects>
+           └ <_AsyncIoGreenlet object at 0x000001EFA51D4280 (otid=0x000001EFFE1D8D20) dead>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <Future finished exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 251, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+                   │    │               │          └ ('0', '0', 1)
+                   │    │               └ 'SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.ema...
+                   │    └ <member '_cursor' of 'AsyncAdapt_dbapi_cursor' objects>
+                   └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "asyncmy\\cursors.pyx", line 179, in execute
+    result = await self._query(query)
+  File "asyncmy\\cursors.pyx", line 364, in _query
+    await conn.query(q)
+  File "asyncmy\\connection.pyx", line 496, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "asyncmy\\connection.pyx", line 684, in _read_query_result
+    await result.read()
+  File "asyncmy\\connection.pyx", line 1071, in read
+    first_packet = await self.connection.read_packet()
+  File "asyncmy\\connection.pyx", line 619, in read_packet
+    packet_header = await self._read_bytes(4)
+  File "asyncmy\\connection.pyx", line 660, in _read_bytes
+    raise errors.OperationalError(
+          │      └ <class 'asyncmy.errors.OperationalError'>
+          └ <module 'asyncmy.errors' from 'D:\\yunxia\\ai_langgraph\\.venv\\Lib\\site-packages\\asyncmy\\errors.cp311-win_amd64.pyd'>
+
+asyncmy.errors.OperationalError: (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 112
+               │     └ 3
+               └ <function _main at 0x000001EFFAD4A0C0>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 112
+           │    └ <function BaseProcess._bootstrap at 0x000001EFFAA90D60>
+           └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001EFFAA902C0>
+    └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001EFFAD24510>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+    │    └ <function subprocess_started at 0x000001EFFCE61760>
+    └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=336, family=2, type=1, proto=6, laddr=('0.0.0.0', 9199)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001EFFCFE21D0>>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000001EFFCE01800>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000001EFFAD24510>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000001EFFCFE21D0>
+           │           │    │             └ [<socket.socket fd=336, family=2, type=1, proto=6, laddr=('0.0.0.0', 9199)>]
+           │           │    └ <function Server.serve at 0x000001EFFCE60400>
+           │           └ <uvicorn.server.Server object at 0x000001EFFCFE21D0>
+           └ <function asyncio_run at 0x000001EFFCDC5B20>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\_compat.py", line 30, in asyncio_run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001EFFCFBC9A0>
+           │      └ <function Runner.run at 0x000001EFFCBBE2A0>
+           └ <asyncio.runners.Runner object at 0x000001EFFCFE18D0>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\server.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001EFFCBAFD80>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001EFFCFE18D0>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001EFFCBAFCE0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001EFFCBBDB20>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001EFFB107060>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001EFA35E4990>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001EFA4...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001EFFD199290>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001EFA35E4990>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001EFA4...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001EFA4...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001EFA3BBDBD0>
+          └ <fastapi.applications.FastAPI object at 0x000001EFFD199290>
+> File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001EFA3FAFBA0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <middlewares.trace_middleware.middle.TraceASGIMiddleware object at 0x000001EFA3A2A710>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001EFA3BBDBD0>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\trace_middleware\middle.py", line 42, in __call__
+    await self.app(scope, handle_outgoing_receive, handle_outgoing_request)
+          │    │   │      │                        └ <function TraceASGIMiddleware.__call__.<locals>.handle_outgoing_request at 0x000001EFA3FAF920>
+          │    │   │      └ <function RequestResponseCycle.receive at 0x000001EFA3FAF2E0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.gzip.GZipMiddleware object at 0x000001EFA3CBBB90>
+          └ <middlewares.trace_middleware.middle.TraceASGIMiddleware object at 0x000001EFA3A2A710>
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+          │         │      │        └ <function TraceASGIMiddleware.__call__.<locals>.handle_outgoing_request at 0x000001EFA3FAF920>
+          │         │      └ <function RequestResponseCycle.receive at 0x000001EFA3FAF2E0>
+          │         └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          └ <starlette.middleware.gzip.GZipResponder object at 0x000001EFA41A7D10>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <function TraceASGIMiddleware.__call__.<locals>.handle_outgoing_request at 0x000001EFA3FAF920>
+                           │      └ <function RequestResponseCycle.receive at 0x000001EFA3FAF2E0>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+          │    │   │      │        │    └ <function IdentityResponder.send_with_compression at 0x000001EFA0D9CD60>
+          │    │   │      │        └ <starlette.middleware.gzip.GZipResponder object at 0x000001EFA41A7D10>
+          │    │   │      └ <function RequestResponseCycle.receive at 0x000001EFA3FAF2E0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000001EFA3BADC90>
+          └ <starlette.middleware.gzip.GZipResponder object at 0x000001EFA41A7D10>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method IdentityResponder.send_with_compression of <starlette.middleware.gzip.GZipResponder object at 0x000001EFA41A7D10>>
+          │    │   │      └ <function RequestResponseCycle.receive at 0x000001EFA3FAF2E0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <middlewares.context_middleware.ContextCleanupMiddleware object at 0x000001EFA3BD57D0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001EFA3BADC90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+         │            │            └ <function collapse_excgroups at 0x000001EFFE021A80>
+         │            └ MemoryObjectSendStream(_state=_MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_receiv...
+         └ MemoryObjectReceiveStream(_state=_MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rec...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+    │    │   │     │    │      └ <traceback object at 0x000001EFA51D46C0>
+    │    │   │     │    └ ExceptionGroup('unhandled errors in a TaskGroup', [OperationalError("(asyncmy.errors.OperationalError) (2013, 'Lost connectio...
+    │    │   │     └ <class 'ExceptionGroup'>
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object collapse_excgroups at 0x000001EFA51E92A0>
+    └ <contextlib._GeneratorContextManager object at 0x000001EFA3FCA710>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     │    │             │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x000001EFA3FAF060>
+                     │    │             └ <starlette.middleware.base._CachedRequest object at 0x000001EFA41B9790>
+                     │    └ <bound method ContextCleanupMiddleware.dispatch of <middlewares.context_middleware.ContextCleanupMiddleware object at 0x00000...
+                     └ <middlewares.context_middleware.ContextCleanupMiddleware object at 0x000001EFA3BD57D0>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\context_middleware.py", line 17, in dispatch
+    response = await call_next(request)
+                     │         └ <starlette.middleware.base._CachedRequest object at 0x000001EFA41B9790>
+                     └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x000001EFA3FAF060>
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+          │            │       │            │       └ <attribute '__context__' of 'BaseException' objects>
+          │            │       │            └ OperationalError("(asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程...
+          │            │       └ <attribute '__cause__' of 'BaseException' objects>
+          │            └ OperationalError("(asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程...
+          └ OperationalError("(asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001EFA51E6520>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001EFA3BD5A90>
+          └ <middlewares.context_middleware.ContextCleanupMiddleware object at 0x000001EFA3BD57D0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001EFA51E6520>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001EFA3FC8610>
+          │                            │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001EFA3A42550>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001EFA3BD5A90>
+          └ <function wrap_app_handling_exceptions at 0x000001EFFE0AD8A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E7060>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001EFA3A42550>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E7060>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <fastapi.routing.APIRouter object at 0x000001EFFD1992D0>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001EFA3A42550>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E7060>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001EFFD1992D0>>
+          └ <fastapi.routing.APIRouter object at 0x000001EFFD1992D0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E7060>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │     └ <function Route.handle at 0x000001EFFE0AEF20>
+          └ APIRoute(path='/testing/execution/statistics', name='get_execution_statistics', methods=['GET'])
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E7060>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <function request_response.<locals>.app at 0x000001EFA3CD76A0>
+          └ APIRoute(path='/testing/execution/statistics', name='get_execution_statistics', methods=['GET'])
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E7060>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001EFA41D0910>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001EFA51E7740>
+          └ <function wrap_app_handling_exceptions at 0x000001EFFE0AD8A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA51E6E80>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA3FAF880>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001EFA51E7740>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001EFA41D0910>
+                     └ <function get_request_handler.<locals>.app at 0x000001EFA3CD7560>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 345, in app
+    solved_result = await solve_dependencies(
+                          └ <function solve_dependencies at 0x000001EFFE08ECA0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 643, in solve_dependencies
+    solved = await call(**solved_result.values)
+                   │      │             └ {'db': <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA41D18D0>, 'request': <starlette.requests.Request obj...
+                   │      └ SolvedDependency(values={'db': <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA41D18D0>, 'request': <starle...
+                   └ <common.aspect.pre_auth.PreAuth object at 0x000001EFA32A2490>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\common\aspect\pre_auth.py", line 124, in __call__
+    current_user = await LoginService.get_current_user(request, token, db)
+                         │            │                │        │      └ <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA41D18D0>
+                         │            │                │        └ 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6ImFkbWluIiwiZGVwdF9uYW1lIjoiXHU3ODE0XHU1M2Qx...
+                         │            │                └ <starlette.requests.Request object at 0x000001EFA41D0910>
+                         │            └ <classmethod(<function LoginService.get_current_user at 0x000001EFA0F394E0>)>
+                         └ <class 'module_admin.service.login_service.LoginService'>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py", line 220, in get_current_user
+    query_user = await UserDao.get_user_by_id(query_db, user_id=token_data.user_id)
+                       │       │              │                 │          └ 1
+                       │       │              │                 └ TokenData(user_id=1)
+                       │       │              └ <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA41D18D0>
+                       │       └ <classmethod(<function UserDao.get_user_by_id at 0x000001EFA0E6E2A0>)>
+                       └ <class 'module_admin.dao.user_dao.UserDao'>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\dao\user_dao.py", line 94, in get_user_by_id
+    await db.execute(
+          │  └ <function AsyncSession.execute at 0x000001EFFFC176A0>
+          └ <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA41D18D0>
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 449, in execute
+    result = await greenlet_spawn(
+                   └ <function greenlet_spawn at 0x000001EFFE1D7BA0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             │       │      │   └ <built-in function exc_info>
+             │       │      └ <module 'sys' (built-in)>
+             │       └ <method 'throw' of 'greenlet.greenlet' objects>
+             └ <_AsyncIoGreenlet object at 0x000001EFA51D4280 (otid=0x000001EFFE1D8D20) dead>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x000001EFFFB55A80>
+           └ <sqlalchemy.orm.session.Session object at 0x000001EFA3B9B650>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                   │      │                 └ <classmethod(<function AbstractORMCompileState.orm_execute_statement at 0x000001EFFF9D0040>)>
+                   │      └ <class 'sqlalchemy.orm.context.ORMSelectCompileState'>
+                   └ typing.Any
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             │    └ <function Connection.execute at 0x000001EFFF74BE20>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.selectable.Select object at 0x000001EFA51D5210>>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001EFFF754180>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001EFFF754360>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001EFFF754400>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001EFFF754680>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+          │                    │              └ (<class 'asyncmy.errors.OperationalError'>, OperationalError(2013, 'Lost connection to MySQL server during query ([WinError 1...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError("(asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001EFFF814400>
+    │    └ <sqlalchemy.dialects.mysql.asyncmy.MySQLDialect_asyncmy object at 0x000001EFFFC2B350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001EFA3F90B90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ ('0', '0', 1)
+    │      │       └ 'SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.ema...
+    │      └ <function AsyncAdapt_dbapi_cursor.execute at 0x000001EFFFCB9760>
+    └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 230, in execute
+    self._adapt_connection._handle_exception(error)
+    │    └ <member '_adapt_connection' of 'AsyncAdapt_dbapi_cursor' objects>
+    └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 91, in _handle_exception
+    raise error
+          └ OperationalError(2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 228, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           │    │      │    │              │          └ ('0', '0', 1)
+           │    │      │    │              └ 'SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.ema...
+           │    │      │    └ <function AsyncAdapt_dbapi_cursor._execute_async at 0x000001EFFFCB98A0>
+           │    │      └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+           │    └ <member 'await_' of 'AsyncAdapt_dbapi_cursor' objects>
+           └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           │       │             └ <coroutine object AsyncAdapt_dbapi_cursor._execute_async at 0x000001EFA4186C40>
+           │       └ <attribute 'parent' of 'greenlet.greenlet' objects>
+           └ <_AsyncIoGreenlet object at 0x000001EFA51D4280 (otid=0x000001EFFE1D8D20) dead>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <Future finished exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 251, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+                   │    │               │          └ ('0', '0', 1)
+                   │    │               └ 'SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.ema...
+                   │    └ <member '_cursor' of 'AsyncAdapt_dbapi_cursor' objects>
+                   └ <sqlalchemy.dialects.mysql.asyncmy.AsyncAdapt_asyncmy_cursor object at 0x000001EFA521C9A0>
+  File "asyncmy\\cursors.pyx", line 179, in execute
+    result = await self._query(query)
+  File "asyncmy\\cursors.pyx", line 364, in _query
+    await conn.query(q)
+  File "asyncmy\\connection.pyx", line 496, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "asyncmy\\connection.pyx", line 684, in _read_query_result
+    await result.read()
+  File "asyncmy\\connection.pyx", line 1071, in read
+    first_packet = await self.connection.read_packet()
+  File "asyncmy\\connection.pyx", line 619, in read_packet
+    packet_header = await self._read_bytes(4)
+  File "asyncmy\\connection.pyx", line 660, in _read_bytes
+    raise errors.OperationalError(
+          │      └ <class 'asyncmy.errors.OperationalError'>
+          └ <module 'asyncmy.errors' from 'D:\\yunxia\\ai_langgraph\\.venv\\Lib\\site-packages\\asyncmy\\errors.cp311-win_amd64.pyd'>
+
+sqlalchemy.exc.OperationalError: (asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+[SQL: SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.email, sys_user.phonenumber, sys_user.sex, sys_user.avatar, sys_user.password, sys_user.status, sys_user.del_flag, sys_user.login_ip, sys_user.login_date, sys_user.pwd_update_date, sys_user.create_by, sys_user.create_time, sys_user.update_by, sys_user.update_time, sys_user.remark 
+FROM sys_user 
+WHERE sys_user.status = %s AND sys_user.del_flag = %s AND sys_user.user_id = %s]
+[parameters: ('0', '0', 1)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 402, in terminate
+    self.await_(asyncio.shield(self._terminate_graceful_close()))  # type: ignore[attr-defined] # noqa: E501
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 117, in _terminate_graceful_close
+    await self._connection.ensure_closed()
+  File "asyncmy\\connection.pyx", line 361, in ensure_closed
+    await self._writer.drain()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 380, in drain
+    raise exc
+  File "asyncmy\\connection.pyx", line 658, in asyncmy.connection.Connection._read_bytes
+    data = await self._reader.readexactly(num_bytes)
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 750, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 543, in _wait_for_data
+    await self._waiter
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\selector_events.py", line 999, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 230, in execute
+    self._adapt_connection._handle_exception(error)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 91, in _handle_exception
+    raise error
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 228, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 251, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy\\cursors.pyx", line 179, in execute
+    result = await self._query(query)
+  File "asyncmy\\cursors.pyx", line 364, in _query
+    await conn.query(q)
+  File "asyncmy\\connection.pyx", line 496, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "asyncmy\\connection.pyx", line 684, in _read_query_result
+    await result.read()
+  File "asyncmy\\connection.pyx", line 1071, in read
+    first_packet = await self.connection.read_packet()
+  File "asyncmy\\connection.pyx", line 619, in read_packet
+    packet_header = await self._read_bytes(4)
+  File "asyncmy\\connection.pyx", line 660, in _read_bytes
+    raise errors.OperationalError(
+asyncmy.errors.OperationalError: (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\trace_middleware\middle.py", line 42, in __call__
+    await self.app(scope, handle_outgoing_receive, handle_outgoing_request)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\context_middleware.py", line 17, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 345, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 643, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\common\aspect\pre_auth.py", line 124, in __call__
+    current_user = await LoginService.get_current_user(request, token, db)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py", line 220, in get_current_user
+    query_user = await UserDao.get_user_by_id(query_db, user_id=token_data.user_id)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\dao\user_dao.py", line 94, in get_user_by_id
+    await db.execute(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 449, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 230, in execute
+    self._adapt_connection._handle_exception(error)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 91, in _handle_exception
+    raise error
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 228, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\sqlalchemy\connectors\asyncio.py", line 251, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy\\cursors.pyx", line 179, in execute
+    result = await self._query(query)
+  File "asyncmy\\cursors.pyx", line 364, in _query
+    await conn.query(q)
+  File "asyncmy\\connection.pyx", line 496, in query
+    await self._read_query_result(unbuffered=unbuffered)
+  File "asyncmy\\connection.pyx", line 684, in _read_query_result
+    await result.read()
+  File "asyncmy\\connection.pyx", line 1071, in read
+    first_packet = await self.connection.read_packet()
+  File "asyncmy\\connection.pyx", line 619, in read_packet
+    packet_header = await self._read_bytes(4)
+  File "asyncmy\\connection.pyx", line 660, in _read_bytes
+    raise errors.OperationalError(
+sqlalchemy.exc.OperationalError: (asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+[SQL: SELECT DISTINCT sys_user.user_id, sys_user.dept_id, sys_user.user_name, sys_user.nick_name, sys_user.user_type, sys_user.email, sys_user.phonenumber, sys_user.sex, sys_user.avatar, sys_user.password, sys_user.status, sys_user.del_flag, sys_user.login_ip, sys_user.login_date, sys_user.pwd_update_date, sys_user.create_by, sys_user.create_time, sys_user.update_by, sys_user.update_time, sys_user.remark 
+FROM sys_user 
+WHERE sys_user.status = %s AND sys_user.del_flag = %s AND sys_user.user_id = %s]
+[parameters: ('0', '0', 1)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-12-31 22:03:52.476 | 3958a7bf6afe4e31a468c3763931efd1 | INFO     | module_admin.controller.login_controller:get_login_user_info:96 - 获取成功
+2025-12-31 22:03:52.913 | ab6b764e7d6541ba949b79b803a8bbfb | INFO     | module_admin.controller.login_controller:get_login_user_routers:112 - 获取成功
+2025-12-31 22:03:53.935 | 3ffaf25bbbe64e148071733cabe5000b | INFO     | module_testing.controller.execution_controller:get_execution_list:49 - 获取执行列表成功
+2025-12-31 22:04:12.982 | ef9bd483a50c465789c9b9d6f15efee9 | ERROR    | exceptions.handle:exception_handler:71 - Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)
+Traceback (most recent call last):
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\connection.py", line 607, in read_response
+    response = await self._parser.read_response(
+                     │    └ <member '_parser' of 'AbstractConnection' objects>
+                     └ <redis.asyncio.connection.Connection(host=47.110.95.246,port=6379,db=2)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+                     │    │                               └ False
+                     │    └ <function _AsyncRESP2Parser._read_response at 0x000001EFFFF6E3E0>
+                     └ <redis._parsers.resp2._AsyncRESP2Parser object at 0x000001EFA3D4B550>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 90, in _read_response
+    raw = await self._readline()
+                │    └ <function _AsyncRESPBase._readline at 0x000001EFFFF6C540>
+                └ <redis._parsers.resp2._AsyncRESP2Parser object at 0x000001EFA3D4B550>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\_parsers\base.py", line 468, in _readline
+    data = await self._stream.readline()
+                 │    └ <member '_stream' of '_AsyncRESPBase' objects>
+                 └ <redis._parsers.resp2._AsyncRESP2Parser object at 0x000001EFA3D4B550>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 566, in readline
+    line = await self.readuntil(sep)
+                 │    │         └ b'\n'
+                 │    └ <function StreamReader.readuntil at 0x000001EFFCBD9620>
+                 └ <StreamReader exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None) transport=<_SelectorSocketTranspo...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 658, in readuntil
+    await self._wait_for_data('readuntil')
+          │    └ <function StreamReader._wait_for_data at 0x000001EFFCBD94E0>
+          └ <StreamReader exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None) transport=<_SelectorSocketTranspo...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 543, in _wait_for_data
+    await self._waiter
+          │    └ None
+          └ <StreamReader exception=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None) transport=<_SelectorSocketTranspo...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\selector_events.py", line 999, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+           │    │          │    └ 262144
+           │    │          └ <_SelectorSocketTransport closed fd=2372>
+           │    └ None
+           └ <_SelectorSocketTransport closed fd=2372>
+
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 112
+               │     └ 3
+               └ <function _main at 0x000001EFFAD4A0C0>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 112
+           │    └ <function BaseProcess._bootstrap at 0x000001EFFAA90D60>
+           └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001EFFAA902C0>
+    └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001EFFAD24510>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+    │    └ <function subprocess_started at 0x000001EFFCE61760>
+    └ <SpawnProcess name='SpawnProcess-8' parent=73032 started>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=336, family=2, type=1, proto=6, laddr=('0.0.0.0', 9199)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001EFFCFE21D0>>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000001EFFCE01800>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000001EFFAD24510>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000001EFFCFE21D0>
+           │           │    │             └ [<socket.socket fd=336, family=2, type=1, proto=6, laddr=('0.0.0.0', 9199)>]
+           │           │    └ <function Server.serve at 0x000001EFFCE60400>
+           │           └ <uvicorn.server.Server object at 0x000001EFFCFE21D0>
+           └ <function asyncio_run at 0x000001EFFCDC5B20>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\_compat.py", line 30, in asyncio_run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001EFFCFBC9A0>
+           │      └ <function Runner.run at 0x000001EFFCBBE2A0>
+           └ <asyncio.runners.Runner object at 0x000001EFFCFE18D0>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\server.py:...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001EFFCBAFD80>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001EFFCFE18D0>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001EFFCBAFCE0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001EFFCBBDB20>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001EFFB107060>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=None>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=None>)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001EFA35E4990>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001EFA5...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001EFFD199290>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001EFA35E4990>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001EFA5...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001EFA5...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001EFA3BBDBD0>
+          └ <fastapi.applications.FastAPI object at 0x000001EFFD199290>
+> File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001EFA55BE0C0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <middlewares.trace_middleware.middle.TraceASGIMiddleware object at 0x000001EFA3A2A710>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001EFA3BBDBD0>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\trace_middleware\middle.py", line 42, in __call__
+    await self.app(scope, handle_outgoing_receive, handle_outgoing_request)
+          │    │   │      │                        └ <function TraceASGIMiddleware.__call__.<locals>.handle_outgoing_request at 0x000001EFA55BE160>
+          │    │   │      └ <function RequestResponseCycle.receive at 0x000001EFA55BE340>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.gzip.GZipMiddleware object at 0x000001EFA3CBBB90>
+          └ <middlewares.trace_middleware.middle.TraceASGIMiddleware object at 0x000001EFA3A2A710>
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+          │         │      │        └ <function TraceASGIMiddleware.__call__.<locals>.handle_outgoing_request at 0x000001EFA55BE160>
+          │         │      └ <function RequestResponseCycle.receive at 0x000001EFA55BE340>
+          │         └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          └ <starlette.middleware.gzip.GZipResponder object at 0x000001EFA55B86D0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <function TraceASGIMiddleware.__call__.<locals>.handle_outgoing_request at 0x000001EFA55BE160>
+                           │      └ <function RequestResponseCycle.receive at 0x000001EFA55BE340>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+          │    │   │      │        │    └ <function IdentityResponder.send_with_compression at 0x000001EFA0D9CD60>
+          │    │   │      │        └ <starlette.middleware.gzip.GZipResponder object at 0x000001EFA55B86D0>
+          │    │   │      └ <function RequestResponseCycle.receive at 0x000001EFA55BE340>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000001EFA3BADC90>
+          └ <starlette.middleware.gzip.GZipResponder object at 0x000001EFA55B86D0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <bound method IdentityResponder.send_with_compression of <starlette.middleware.gzip.GZipResponder object at 0x000001EFA55B86D0>>
+          │    │   │      └ <function RequestResponseCycle.receive at 0x000001EFA55BE340>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <middlewares.context_middleware.ContextCleanupMiddleware object at 0x000001EFA3BD57D0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001EFA3BADC90>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+         │            │            └ <function collapse_excgroups at 0x000001EFFE021A80>
+         │            └ MemoryObjectSendStream(_state=_MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_receiv...
+         └ MemoryObjectReceiveStream(_state=_MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rec...
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+    │    │   │     │    │      └ <traceback object at 0x000001EFA41BB900>
+    │    │   │     │    └ ExceptionGroup('unhandled errors in a TaskGroup', [ConnectionError("Error while reading from 47.110.95.246:6379 : (10054, '远程...
+    │    │   │     └ <class 'ExceptionGroup'>
+    │    │   └ <method 'throw' of 'generator' objects>
+    │    └ <generator object collapse_excgroups at 0x000001EFA417F840>
+    └ <contextlib._GeneratorContextManager object at 0x000001EFA55BA590>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     │    │             │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x000001EFA55BE200>
+                     │    │             └ <starlette.middleware.base._CachedRequest object at 0x000001EFA55BBA90>
+                     │    └ <bound method ContextCleanupMiddleware.dispatch of <middlewares.context_middleware.ContextCleanupMiddleware object at 0x00000...
+                     └ <middlewares.context_middleware.ContextCleanupMiddleware object at 0x000001EFA3BD57D0>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\context_middleware.py", line 17, in dispatch
+    response = await call_next(request)
+                     │         └ <starlette.middleware.base._CachedRequest object at 0x000001EFA55BBA90>
+                     └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x000001EFA55BE200>
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+          │            │       │            │       └ <attribute '__context__' of 'BaseException' objects>
+          │            │       │            └ ConnectionError("Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)")
+          │            │       └ <attribute '__cause__' of 'BaseException' objects>
+          │            └ ConnectionError("Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)")
+          └ ConnectionError("Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)")
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001EFA55BE7A0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001EFA3BD5A90>
+          └ <middlewares.context_middleware.ContextCleanupMiddleware object at 0x000001EFA3BD57D0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001EFA55BE7A0>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001EFA55BA810>
+          │                            │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001EFA3A42550>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001EFA3BD5A90>
+          └ <function wrap_app_handling_exceptions at 0x000001EFFE0AD8A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE8E0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001EFA3A42550>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE8E0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <fastapi.routing.APIRouter object at 0x000001EFFD1992D0>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001EFA3A42550>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE8E0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001EFFD1992D0>>
+          └ <fastapi.routing.APIRouter object at 0x000001EFFD1992D0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE8E0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │     └ <function Route.handle at 0x000001EFFE0AEF20>
+          └ APIRoute(path='/testing/execution/statistics', name='get_execution_statistics', methods=['GET'])
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE8E0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │    └ <function request_response.<locals>.app at 0x000001EFA3CD76A0>
+          └ APIRoute(path='/testing/execution/statistics', name='get_execution_statistics', methods=['GET'])
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE8E0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001EFA55B9D50>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001EFA55BDD00>
+          └ <function wrap_app_handling_exceptions at 0x000001EFFE0AD8A0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001EFA55BE3E0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001EFA55BE840>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 9199), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001EFA55BDD00>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001EFA55B9D50>
+                     └ <function get_request_handler.<locals>.app at 0x000001EFA3CD7560>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 345, in app
+    solved_result = await solve_dependencies(
+                          └ <function solve_dependencies at 0x000001EFFE08ECA0>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 643, in solve_dependencies
+    solved = await call(**solved_result.values)
+                   │      │             └ {'db': <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA5242510>, 'request': <starlette.requests.Request obj...
+                   │      └ SolvedDependency(values={'db': <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA5242510>, 'request': <starle...
+                   └ <common.aspect.pre_auth.PreAuth object at 0x000001EFA32A2490>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\common\aspect\pre_auth.py", line 124, in __call__
+    current_user = await LoginService.get_current_user(request, token, db)
+                         │            │                │        │      └ <sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001EFA5242510>
+                         │            │                │        └ 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6ImFkbWluIiwiZGVwdF9uYW1lIjoiXHU3ODE0XHU1M2Qx...
+                         │            │                └ <starlette.requests.Request object at 0x000001EFA55B9D50>
+                         │            └ <classmethod(<function LoginService.get_current_user at 0x000001EFA0F394E0>)>
+                         └ <class 'module_admin.service.login_service.LoginService'>
+
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py", line 225, in get_current_user
+    redis_token = await request.app.state.redis.get(f'{RedisInitKeyConfig.ACCESS_TOKEN.key}:{session_id}')
+                        │       └ <property object at 0x000001EFFE01D030>
+                        └ <starlette.requests.Request object at 0x000001EFA55B9D50>
+
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\client.py", line 725, in execute_command
+    return await conn.retry.call_with_retry(
+                 │    │     └ <function Retry.call_with_retry at 0x000001EF80006FC0>
+                 │    └ <redis.asyncio.retry.Retry object at 0x000001EFA3D908D0>
+                 └ <redis.asyncio.connection.Connection(host=47.110.95.246,port=6379,db=2)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\retry.py", line 55, in call_with_retry
+    raise error
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\retry.py", line 50, in call_with_retry
+    return await do()
+                 └ <function Redis.execute_command.<locals>.<lambda> at 0x000001EFA55BD440>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\client.py", line 700, in _send_command_parse_response
+    return await self.parse_response(conn, command_name, **options)
+                 │    │              │     │               └ {'keys': ['access_token:aeb63d0e-353c-4258-8bce-94e4382b2778']}
+                 │    │              │     └ 'GET'
+                 │    │              └ <redis.asyncio.connection.Connection(host=47.110.95.246,port=6379,db=2)>
+                 │    └ <function Redis.parse_response at 0x000001EF801409A0>
+                 └ <redis.asyncio.client.Redis(<redis.asyncio.connection.ConnectionPool(<redis.asyncio.connection.Connection(port=6379,username=...
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\client.py", line 746, in parse_response
+    response = await connection.read_response()
+                     │          └ <function AbstractConnection.read_response at 0x000001EF80068E00>
+                     └ <redis.asyncio.connection.Connection(host=47.110.95.246,port=6379,db=2)>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\connection.py", line 621, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+          └ <class 'redis.exceptions.ConnectionError'>
+
+redis.exceptions.ConnectionError: Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\connection.py", line 607, in read_response
+    response = await self._parser.read_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 82, in read_response
+    response = await self._read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\_parsers\resp2.py", line 90, in _read_response
+    raw = await self._readline()
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\_parsers\base.py", line 468, in _readline
+    data = await self._stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 566, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 658, in readuntil
+    await self._wait_for_data('readuntil')
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\streams.py", line 543, in _wait_for_data
+    await self._waiter
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\selector_events.py", line 999, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\trace_middleware\middle.py", line 42, in __call__
+    await self.app(scope, handle_outgoing_receive, handle_outgoing_request)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 29, in __call__
+    await responder(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 130, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\gzip.py", line 46, in __call__
+    await self.app(scope, receive, self.send_with_compression)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\middlewares\context_middleware.py", line 17, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 345, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 643, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\common\aspect\pre_auth.py", line 124, in __call__
+    current_user = await LoginService.get_current_user(request, token, db)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\RuoYi-Vue3-FastAPI\ruoyi-fastapi-backend\module_admin\service\login_service.py", line 225, in get_current_user
+    redis_token = await request.app.state.redis.get(f'{RedisInitKeyConfig.ACCESS_TOKEN.key}:{session_id}')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\client.py", line 725, in execute_command
+    return await conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\retry.py", line 55, in call_with_retry
+    raise error
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\retry.py", line 50, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\client.py", line 700, in _send_command_parse_response
+    return await self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\client.py", line 746, in parse_response
+    response = await connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\redis\asyncio\connection.py", line 621, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 47.110.95.246:6379 : (10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)

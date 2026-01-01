@@ -1,327 +1,578 @@
 {
-  "LightRAG<SEP>start_all.sh": {
+  "性能测试模块<SEP>项目管理入口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187424,
-    "update_time": 1767187424,
-    "_id": "LightRAG<SEP>start_all.sh"
+    "create_time": 1767254377,
+    "update_time": 1767254377,
+    "_id": "性能测试模块<SEP>项目管理入口"
   },
-  "MCP Server<SEP>虚拟环境": {
+  "项目管理页面<SEP>驼峰命名": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187424,
-    "update_time": 1767187424,
-    "_id": "MCP Server<SEP>虚拟环境"
+    "create_time": 1767254377,
+    "update_time": 1767254377,
+    "_id": "项目管理页面<SEP>驼峰命名"
   },
-  "MCP<SEP>start_all.sh": {
+  "下划线命名<SEP>后端API接口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187444,
-    "update_time": 1767187444,
-    "_id": "MCP<SEP>start_all.sh"
+    "create_time": 1767254377,
+    "update_time": 1767254377,
+    "_id": "下划线命名<SEP>后端API接口"
   },
-  "LightRAG<SEP>LightRAG Server": {
+  "前端功能<SEP>驼峰命名": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80",
-      "chunk-e1503226bff786bd39cd20659e09194f"
-    ],
-    "count": 2,
-    "create_time": 1767187444,
-    "update_time": 1767187444,
-    "_id": "LightRAG<SEP>LightRAG Server"
-  },
-  "Agent Service<SEP>虚拟环境": {
-    "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187447,
-    "update_time": 1767187447,
-    "_id": "Agent Service<SEP>虚拟环境"
+    "create_time": 1767254388,
+    "update_time": 1767254388,
+    "_id": "前端功能<SEP>驼峰命名"
   },
-  "Agent<SEP>start_all.sh": {
+  "需求管理入口<SEP>项目管理入口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187468,
-    "update_time": 1767187468,
-    "_id": "Agent<SEP>start_all.sh"
+    "create_time": 1767254391,
+    "update_time": 1767254391,
+    "_id": "需求管理入口<SEP>项目管理入口"
   },
-  "MCP<SEP>MCP Server": {
+  "Pydantic<SEP>后端API接口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187468,
-    "update_time": 1767187468,
-    "_id": "MCP<SEP>MCP Server"
+    "create_time": 1767254391,
+    "update_time": 1767254391,
+    "_id": "Pydantic<SEP>后端API接口"
   },
-  "Terminal<SEP>osascript": {
+  "前端功能<SEP>需求管理页面": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187468,
-    "update_time": 1767187468,
-    "_id": "Terminal<SEP>osascript"
+    "create_time": 1767254397,
+    "update_time": 1767254397,
+    "_id": "前端功能<SEP>需求管理页面"
   },
-  "LightRAG Server<SEP>虚拟环境": {
+  "后端API接口<SEP>需求管理API": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187484,
-    "update_time": 1767187484,
-    "_id": "LightRAG Server<SEP>虚拟环境"
+    "create_time": 1767254400,
+    "update_time": 1767254400,
+    "_id": "后端API接口<SEP>需求管理API"
   },
-  "start_all.sh<SEP>前端": {
+  "前端功能<SEP>脚本管理页面": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187487,
-    "update_time": 1767187487,
-    "_id": "start_all.sh<SEP>前端"
+    "create_time": 1767254403,
+    "update_time": 1767254403,
+    "_id": "前端功能<SEP>脚本管理页面"
   },
-  "Agent<SEP>Agent Service": {
+  "后端API接口<SEP>脚本管理API": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187487,
-    "update_time": 1767187487,
-    "_id": "Agent<SEP>Agent Service"
+    "create_time": 1767254406,
+    "update_time": 1767254406,
+    "_id": "后端API接口<SEP>脚本管理API"
   },
-  "旧方式<SEP>虚拟环境": {
+  "K6<SEP>性能测试专用API": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187507,
-    "update_time": 1767187507,
-    "_id": "旧方式<SEP>虚拟环境"
+    "create_time": 1767254406,
+    "update_time": 1767254406,
+    "_id": "K6<SEP>性能测试专用API"
   },
-  "start_all.sh<SEP>后端服务": {
+  "Monaco Editor<SEP>脚本管理页面": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187511,
-    "update_time": 1767187511,
-    "_id": "start_all.sh<SEP>后端服务"
+    "create_time": 1767254411,
+    "update_time": 1767254411,
+    "_id": "Monaco Editor<SEP>脚本管理页面"
   },
-  "AppleScript<SEP>osascript": {
+  "前端功能<SEP>执行管理页面": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187517,
-    "update_time": 1767187517,
-    "_id": "AppleScript<SEP>osascript"
+    "create_time": 1767254411,
+    "update_time": 1767254411,
+    "_id": "前端功能<SEP>执行管理页面"
   },
-  "MCP Server<SEP>旧方式": {
+  "路由<SEP>项目管理入口": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187521,
-    "update_time": 1767187521,
-    "_id": "MCP Server<SEP>旧方式"
+    "create_time": 1767254411,
+    "update_time": 1767254411,
+    "_id": "路由<SEP>项目管理入口"
   },
-  "MCP Server (RAG Anything)<SEP>RAG + Agent服务栈": {
+  "后端API接口<SEP>执行管理API": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187521,
-    "update_time": 1767187521,
-    "_id": "MCP Server (RAG Anything)<SEP>RAG + Agent服务栈"
+    "create_time": 1767254420,
+    "update_time": 1767254420,
+    "_id": "后端API接口<SEP>执行管理API"
   },
-  "Shell脚本<SEP>start_all.sh": {
+  "AI生成脚本<SEP>需求管理API": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187546,
-    "update_time": 1767187546,
-    "_id": "Shell脚本<SEP>start_all.sh"
+    "create_time": 1767254420,
+    "update_time": 1767254420,
+    "_id": "AI生成脚本<SEP>需求管理API"
   },
-  "LightRAG Server<SEP>旧方式": {
+  "SSE<SEP>性能测试专用API": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187553,
-    "update_time": 1767187553,
-    "_id": "LightRAG Server<SEP>旧方式"
+    "create_time": 1767254420,
+    "update_time": 1767254420,
+    "_id": "SSE<SEP>性能测试专用API"
   },
-  "Deep Agents Service<SEP>RAG + Agent服务栈": {
+  "菜单系统<SEP>项目管理入口": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767187563,
-    "update_time": 1767187563,
-    "_id": "Deep Agents Service<SEP>RAG + Agent服务栈"
+    "create_time": 1767254429,
+    "update_time": 1767254429,
+    "_id": "菜单系统<SEP>项目管理入口"
   },
-  "Agent Service<SEP>旧方式": {
+  "实时日志展示<SEP>执行管理页面": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767188203,
-    "update_time": 1767188203,
-    "_id": "Agent Service<SEP>旧方式"
+    "create_time": 1767254429,
+    "update_time": 1767254429,
+    "_id": "实时日志展示<SEP>执行管理页面"
   },
-  "RAG + Agent服务栈<SEP>前端服务(Testing Deep Agents UI)": {
+  "K6脚本类型<SEP>脚本管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767188210,
-    "update_time": 1767188210,
-    "_id": "RAG + Agent服务栈<SEP>前端服务(Testing Deep Agents UI)"
+    "create_time": 1767254429,
+    "update_time": 1767254429,
+    "_id": "K6脚本类型<SEP>脚本管理页面"
   },
-  "setup.sh<SEP>快速启动脚本": {
+  "后端API接口<SEP>报告管理API": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767188217,
-    "update_time": 1767188217,
-    "_id": "setup.sh<SEP>快速启动脚本"
+    "create_time": 1767254439,
+    "update_time": 1767254439,
+    "_id": "后端API接口<SEP>报告管理API"
   },
-  "前端<SEP>旧方式": {
+  "需求管理页面<SEP>项目关联": {
     "chunk_ids": [
-      "chunk-8c827224c9f6af5154b5ce1fa4bb2b80"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767188231,
-    "update_time": 1767188231,
-    "_id": "前端<SEP>旧方式"
+    "create_time": 1767254439,
+    "update_time": 1767254439,
+    "_id": "需求管理页面<SEP>项目关联"
   },
-  "Deep Agents Service<SEP>前端服务(Testing Deep Agents UI)": {
+  "脚本管理页面<SEP>项目管理": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188237,
-    "update_time": 1767188237,
-    "_id": "Deep Agents Service<SEP>前端服务(Testing Deep Agents UI)"
+    "create_time": 1767254445,
+    "update_time": 1767254445,
+    "_id": "脚本管理页面<SEP>项目管理"
   },
-  "LightRAG Server<SEP>RAG + Agent服务栈": {
+  "SSE流<SEP>执行管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188237,
-    "update_time": 1767188237,
-    "_id": "LightRAG Server<SEP>RAG + Agent服务栈"
+    "create_time": 1767254445,
+    "update_time": 1767254445,
+    "_id": "SSE流<SEP>执行管理页面"
   },
-  "start_all.sh<SEP>快速启动脚本": {
+  "K6性能图表<SEP>报告管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188238,
-    "update_time": 1767188238,
-    "_id": "start_all.sh<SEP>快速启动脚本"
+    "create_time": 1767254445,
+    "update_time": 1767254445,
+    "_id": "K6性能图表<SEP>报告管理页面"
   },
-  "Pydantic Settings验证错误<SEP>src/core/config.py": {
+  "后端API接口<SEP>性能测试专用API": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-9b24edb7e56cd76dd6ec67a60020f6c5"
     ],
     "count": 1,
-    "create_time": 1767188238,
-    "update_time": 1767188238,
-    "_id": "Pydantic Settings验证错误<SEP>src/core/config.py"
+    "create_time": 1767254454,
+    "update_time": 1767254454,
+    "_id": "后端API接口<SEP>性能测试专用API"
   },
-  "Deep Agents Service<SEP>MCP Server (RAG Anything)": {
+  "项目管理<SEP>项目选择器": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188257,
-    "update_time": 1767188257,
-    "_id": "Deep Agents Service<SEP>MCP Server (RAG Anything)"
+    "create_time": 1767254457,
+    "update_time": 1767254457,
+    "_id": "项目管理<SEP>项目选择器"
   },
-  "pyproject.toml<SEP>快速启动脚本": {
+  "K6脚本<SEP>脚本管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188260,
-    "update_time": 1767188260,
-    "_id": "pyproject.toml<SEP>快速启动脚本"
+    "create_time": 1767254457,
+    "update_time": 1767254457,
+    "_id": "K6脚本<SEP>脚本管理页面"
   },
-  "MCP<SEP>MCP Server (RAG Anything)": {
+  "K6执行<SEP>SSE流": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188264,
-    "update_time": 1767188264,
-    "_id": "MCP<SEP>MCP Server (RAG Anything)"
+    "create_time": 1767254457,
+    "update_time": 1767254457,
+    "_id": "K6执行<SEP>SSE流"
   },
-  "Deep Agents Service<SEP>LightRAG Server": {
+  "LangGraph Agent<SEP>RAG知识库": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188264,
-    "update_time": 1767188264,
-    "_id": "Deep Agents Service<SEP>LightRAG Server"
+    "create_time": 1767254457,
+    "update_time": 1767254457,
+    "_id": "LangGraph Agent<SEP>RAG知识库"
   },
-  "快速启动脚本<SEP>统一虚拟环境": {
+  "MinIO对象存储<SEP>报告管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188270,
-    "update_time": 1767188270,
-    "_id": "快速启动脚本<SEP>统一虚拟环境"
+    "create_time": 1767254470,
+    "update_time": 1767254470,
+    "_id": "MinIO对象存储<SEP>报告管理页面"
   },
-  "Deep Agents Service<SEP>LangGraph": {
+  "K6脚本<SEP>LangGraph Agent": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188273,
-    "update_time": 1767188273,
-    "_id": "Deep Agents Service<SEP>LangGraph"
+    "create_time": 1767254473,
+    "update_time": 1767254473,
+    "_id": "K6脚本<SEP>LangGraph Agent"
   },
-  "快速启动脚本<SEP>旧方式-分别启动": {
+  "K6性能图表<SEP>K6执行": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188277,
-    "update_time": 1767188277,
-    "_id": "快速启动脚本<SEP>旧方式-分别启动"
+    "create_time": 1767254473,
+    "update_time": 1767254473,
+    "_id": "K6性能图表<SEP>K6执行"
   },
-  "Deep Agents Service<SEP>Performance Agent": {
+  "代码编辑器<SEP>脚本管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188280,
-    "update_time": 1767188280,
-    "_id": "Deep Agents Service<SEP>Performance Agent"
+    "create_time": 1767254473,
+    "update_time": 1767254473,
+    "_id": "代码编辑器<SEP>脚本管理页面"
   },
-  "Deep Agents Service<SEP>Research Agent": {
+  "实时日志<SEP>执行管理页面": {
     "chunk_ids": [
-      "chunk-e1503226bff786bd39cd20659e09194f"
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
     ],
     "count": 1,
-    "create_time": 1767188285,
-    "update_time": 1767188285,
-    "_id": "Deep Agents Service<SEP>Research Agent"
+    "create_time": 1767254473,
+    "update_time": 1767254473,
+    "_id": "实时日志<SEP>执行管理页面"
+  },
+  "报告管理页面<SEP>报告详情": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254485,
+    "update_time": 1767254485,
+    "_id": "报告管理页面<SEP>报告详情"
+  },
+  "执行管理页面<SEP>执行详情": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254488,
+    "update_time": 1767254488,
+    "_id": "执行管理页面<SEP>执行详情"
+  },
+  "K6脚本<SEP>MinIO对象存储": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254488,
+    "update_time": 1767254488,
+    "_id": "K6脚本<SEP>MinIO对象存储"
+  },
+  "Agent服务<SEP>K6执行": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254488,
+    "update_time": 1767254488,
+    "_id": "Agent服务<SEP>K6执行"
+  },
+  "API调用<SEP>项目ID": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254488,
+    "update_time": 1767254488,
+    "_id": "API调用<SEP>项目ID"
+  },
+  "项目类型筛选<SEP>项目选择器": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254488,
+    "update_time": 1767254488,
+    "_id": "项目类型筛选<SEP>项目选择器"
+  },
+  "前端<SEP>数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254502,
+    "update_time": 1767254502,
+    "_id": "前端<SEP>数据流向"
+  },
+  "项目状态筛选<SEP>项目选择器": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254505,
+    "update_time": 1767254505,
+    "_id": "项目状态筛选<SEP>项目选择器"
+  },
+  "API调用<SEP>需求ID": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254505,
+    "update_time": 1767254505,
+    "_id": "API调用<SEP>需求ID"
+  },
+  "后端API<SEP>数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254511,
+    "update_time": 1767254511,
+    "_id": "后端API<SEP>数据流向"
+  },
+  "API调用<SEP>脚本ID": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254514,
+    "update_time": 1767254514,
+    "_id": "API调用<SEP>脚本ID"
+  },
+  "Service层<SEP>数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254517,
+    "update_time": 1767254517,
+    "_id": "Service层<SEP>数据流向"
+  },
+  "Agent服务<SEP>数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254521,
+    "update_time": 1767254521,
+    "_id": "Agent服务<SEP>数据流向"
+  },
+  "K6执行<SEP>数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254525,
+    "update_time": 1767254525,
+    "_id": "K6执行<SEP>数据流向"
+  },
+  "SSE流<SEP>数据流向": {
+    "chunk_ids": [
+      "chunk-107d5dbf30036a96f58f85fdab2ada27"
+    ],
+    "count": 1,
+    "create_time": 1767254528,
+    "update_time": 1767254528,
+    "_id": "SSE流<SEP>数据流向"
+  },
+  "中国高等教育学位在线验证报告<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254642,
+    "update_time": 1767254642,
+    "_id": "中国高等教育学位在线验证报告<SEP>邱云霞"
+  },
+  "江西理工大学<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254648,
+    "update_time": 1767254648,
+    "_id": "江西理工大学<SEP>邱云霞"
+  },
+  "中国高等教育学位在线验证报告<SEP>在线验证码": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254651,
+    "update_time": 1767254651,
+    "_id": "中国高等教育学位在线验证报告<SEP>在线验证码"
+  },
+  "工学学士学位<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254660,
+    "update_time": 1767254660,
+    "_id": "工学学士学位<SEP>邱云霞"
+  },
+  "中国高等教育学位在线验证报告<SEP>学信网": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254663,
+    "update_time": 1767254663,
+    "_id": "中国高等教育学位在线验证报告<SEP>学信网"
+  },
+  "软件工程(机械电子工程)<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254666,
+    "update_time": 1767254666,
+    "_id": "软件工程(机械电子工程)<SEP>邱云霞"
+  },
+  "中国高等教育学位在线验证报告<SEP>注意事项": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254669,
+    "update_time": 1767254669,
+    "_id": "中国高等教育学位在线验证报告<SEP>注意事项"
+  },
+  "学位证书编号<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254672,
+    "update_time": 1767254672,
+    "_id": "学位证书编号<SEP>邱云霞"
+  },
+  "学位信息权属人<SEP>注意事项": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254675,
+    "update_time": 1767254675,
+    "_id": "学位信息权属人<SEP>注意事项"
+  },
+  "中国高等教育学位在线验证报告<SEP>更新日期": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254675,
+    "update_time": 1767254675,
+    "_id": "中国高等教育学位在线验证报告<SEP>更新日期"
+  },
+  "性别<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254682,
+    "update_time": 1767254682,
+    "_id": "性别<SEP>邱云霞"
+  },
+  "报告验证有效期<SEP>注意事项": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254685,
+    "update_time": 1767254685,
+    "_id": "报告验证有效期<SEP>注意事项"
+  },
+  "出生日期<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254688,
+    "update_time": 1767254688,
+    "_id": "出生日期<SEP>邱云霞"
+  },
+  "获学位日期<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+    ],
+    "count": 1,
+    "create_time": 1767254692,
+    "update_time": 1767254692,
+    "_id": "获学位日期<SEP>邱云霞"
   }
 }

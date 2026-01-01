@@ -82,17 +82,17 @@ INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=Tru
 INFO: Embedding max_token_size: 8192 (from ollama provider default)
 INFO: Reranking is disabled
 INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
-INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 347 nodes, 271 edges
+INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 252 nodes, 206 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [36028]
+INFO: Started server process [63612]
 INFO: Waiting for application startup.
-INFO: [] Process 36028 KV load full_docs with 6 records
-INFO: [] Process 36028 KV load text_chunks with 15 records
-INFO: [] Process 36028 KV load full_entities with 5 records
-INFO: [] Process 36028 KV load full_relations with 4 records
-INFO: [] Process 36028 KV load entity_chunks with 341 records
-INFO: [] Process 36028 KV load relation_chunks with 271 records
+INFO: [] Process 63612 KV load full_docs with 10 records
+INFO: [] Process 63612 KV load text_chunks with 18 records
+INFO: [] Process 63612 KV load full_entities with 5 records
+INFO: [] Process 63612 KV load full_relations with 2 records
+INFO: [] Process 63612 KV load entity_chunks with 243 records
+INFO: [] Process 63612 KV load relation_chunks with 207 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -102,56 +102,70 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 36028 KV load llm_response_cache with 39 records
-INFO: [] Process 36028 doc status load doc_status with 6 records
+INFO: [] Process 63612 KV load llm_response_cache with 18 records
+INFO: [] Process 63612 doc status load doc_status with 10 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:53102 - "GET /docs HTTP/1.1" 200
-INFO: [] Subgraph query successful | Node count: 347 | Edge count: 271
-INFO: 127.0.0.1:54860 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: 127.0.0.1:54860 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:55698 - "DELETE /documents/delete_document HTTP/1.1" 200
-INFO: Deleting document 1/2: doc-88b93e772890662b37fff9510ff982e1
-INFO: Starting deletion process for document doc-88b93e772890662b37fff9510ff982e1
-INFO: Deleting doc-88b93e772890662b37fff9510ff982e1 llm_course.pdf(previous status: FAILED)
-WARNING: No chunks found for document doc-88b93e772890662b37fff9510ff982e1
-INFO: Document deleted without associated chunks: doc-88b93e772890662b37fff9510ff982e1
-INFO: [] Writing graph with 347 nodes, 271 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 1/2: doc-88b93e772890662b37fff9510ff982e1[llm_course.pdf]
-WARNING: File deletion skipped, missing or unsafe file: llm_course.pdf
-INFO: Deleting document 2/2: doc-bc26a12e57eeaa82fff369b374ce1112
-INFO: Starting deletion process for document doc-bc26a12e57eeaa82fff369b374ce1112
-INFO: Deleting doc-bc26a12e57eeaa82fff369b374ce1112 旅行日记2.pdf(previous status: FAILED)
-WARNING: No chunks found for document doc-bc26a12e57eeaa82fff369b374ce1112
-INFO: Document deleted without associated chunks: doc-bc26a12e57eeaa82fff369b374ce1112
-INFO: [] Writing graph with 347 nodes, 271 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 2/2: doc-bc26a12e57eeaa82fff369b374ce1112[旅行日记2.pdf]
-INFO: Successfully deleted input_dir file: 旅行日记2.pdf
+INFO: 127.0.0.1:59025 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+INFO: 127.0.0.1:54288 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+INFO: 127.0.0.1:54288 - "GET /auth-status HTTP/1.1" 200
+INFO: 127.0.0.1:59025 - "GET /webui/favicon.png HTTP/1.1" 200
+INFO: 127.0.0.1:59025 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:59084 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:54825 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:54288 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+INFO: 127.0.0.1:59084 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+INFO: 127.0.0.1:54288 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:52653 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:50060 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:50060 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:50060 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:52904 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:52904 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:51310 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:61837 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:61837 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:64530 - "GET / HTTP/1.1" 307
+INFO: 127.0.0.1:64530 - "GET /webui HTTP/1.1" 307
+INFO: 127.0.0.1:64530 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:56229 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:56229 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:56229 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:53058 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:53058 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:64447 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 252 | Edge count: 206
+INFO: 127.0.0.1:63776 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:63776 - "GET /openapi.json HTTP/1.1" 200
 INFO: [] VectorDB collection 'entities' exists check: False
 INFO: [] Creating new collection: entities
 INFO: [] Created indexes for collection: entities
 INFO: [] Successfully created Milvus collection: entities
-INFO: [] Process 36028 drop Milvus collection entities
+INFO: [] Process 63612 drop Milvus collection entities
 INFO: [] VectorDB collection 'relationships' exists check: False
 INFO: [] Creating new collection: relationships
 INFO: [] Created indexes for collection: relationships
 INFO: [] Successfully created Milvus collection: relationships
-INFO: [] Process 36028 drop Milvus collection relationships
+INFO: [] Process 63612 drop Milvus collection relationships
 INFO: [] VectorDB collection 'chunks' exists check: False
 INFO: [] Creating new collection: chunks
 INFO: [] Created indexes for collection: chunks
 INFO: [] Successfully created Milvus collection: chunks
-INFO: [] Process 36028 drop Milvus collection chunks
-INFO: [] Process 36028 drop graph file:D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml
-INFO: [] Process 36028 drop text_chunks
-INFO: [] Process 36028 drop full_docs
-INFO: [] Process 36028 drop full_entities
-INFO: [] Process 36028 drop full_relations
-INFO: [] Process 36028 drop entity_chunks
-INFO: [] Process 36028 drop relation_chunks
-INFO: [] Process 36028 drop doc_status
+INFO: [] Process 63612 drop Milvus collection chunks
+INFO: [] Process 63612 drop graph file:D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml
+INFO: [] Process 63612 drop text_chunks
+INFO: [] Process 63612 drop full_docs
+INFO: [] Process 63612 drop full_entities
+INFO: [] Process 63612 drop full_relations
+INFO: [] Process 63612 drop entity_chunks
+INFO: [] Process 63612 drop relation_chunks
+INFO: [] Process 63612 drop doc_status
 INFO: Successfully dropped JsonKVStorage: /text_chunks
 INFO: Successfully dropped JsonKVStorage: /full_docs
 INFO: Successfully dropped JsonKVStorage: /full_entities
@@ -163,33 +177,17 @@ INFO: Successfully dropped MilvusVectorDBStorage: /relationships
 INFO: Successfully dropped MilvusVectorDBStorage: /chunks
 INFO: Successfully dropped NetworkXStorage: /chunk_entity_relation
 INFO: Successfully dropped JsonDocStatusStorage: /doc_status
-INFO: 127.0.0.1:54123 - "DELETE /documents HTTP/1.1" 200
-INFO: [] Process 36028 drop llm_response_cache
+INFO: 127.0.0.1:63776 - "DELETE /documents HTTP/1.1" 200
+INFO: [] Process 63612 drop llm_response_cache
 INFO: Cleared all cache
-INFO: 127.0.0.1:54123 - "POST /documents/clear_cache HTTP/1.1" 200
-INFO: 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
-INFO: 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: 部署流程.md
-INFO: 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
-INFO: Processing 1 document(s)
-INFO: Successfully extracted and enqueued file: rule.md
-INFO: Another process is already processing the document queue. Request queued.
-INFO: Extracting stage 1/1: 部署流程.md
-INFO: Processing d-id: doc-2f24877f426d1aa3d83c35bd7b6931f0
-INFO: 127.0.0.1:49749 - "POST /documents/upload HTTP/1.1" 200
-INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
-INFO: Successfully extracted and enqueued file: START_ALL_MANUAL.md
-INFO: Another process is already processing the document queue. Request queued.
-INFO: Successfully extracted and enqueued file: START_ALL_QUICK_REFERENCE.md
-INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:52547 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: 性能测试模块前后端对接分析报告.md
-INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:52547 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: 性能测试模块实施方案.md
-INFO: Another process is already processing the document queue. Request queued.
-INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
-INFO: 127.0.0.1:64647 - "POST /documents/upload HTTP/1.1" 200
+INFO: 127.0.0.1:65497 - "POST /documents/clear_cache HTTP/1.1" 200
+INFO: 127.0.0.1:64396 - "GET / HTTP/1.1" 307
+INFO: 127.0.0.1:64396 - "GET /webui HTTP/1.1" 307
+INFO: 127.0.0.1:64396 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 0 | Edge count: 0
+INFO: 127.0.0.1:63811 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:63811 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:52742 - "POST /documents/upload HTTP/1.1" 200
 INFO: Using RAG-Anything multimodal processing for: 教育部学籍在线验证报告_邱云霞.pdf
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ./rag_storage
@@ -201,51 +199,58 @@ INFO: RAG-Anything initialized with parser=docling, method=auto, multimodal=True
 INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf
 INFO: Using docling parser with method: auto
 INFO: Detected PDF file, using parser for PDF...
-INFO: 127.0.0.1:57455 - "POST /documents/upload HTTP/1.1" 200
+INFO: 127.0.0.1:52742 - "POST /documents/upload HTTP/1.1" 200
 INFO: Using RAG-Anything multimodal processing for: 教育部学历证书电子注册备案表_邱云霞 (1).pdf
 INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf
 INFO: Using docling parser with method: auto
 INFO: Detected PDF file, using parser for PDF...
-INFO: 127.0.0.1:57455 - "POST /documents/upload HTTP/1.1" 200
-INFO: Using RAG-Anything multimodal processing for: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
-INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: 127.0.0.1:52742 - "POST /documents/upload HTTP/1.1" 200
+INFO: Using RAG-Anything multimodal processing for: 中国高等教育学位在线验证报告_邱云霞.pdf
+INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\中国高等教育学位在线验证报告_邱云霞.pdf
 INFO: Using docling parser with method: auto
 INFO: Detected PDF file, using parser for PDF...
-INFO: 127.0.0.1:57455 - "GET /docs HTTP/1.1" 200
-INFO: [] Subgraph query successful | Node count: 0 | Edge count: 0
-INFO: 127.0.0.1:57455 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: 127.0.0.1:57455 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: default:extract:220667d7f1b5372c3d5727e70460fe56
-INFO:  == LLM cache == saving: default:extract:67ed7f069d575bfecb1834f693219837
-INFO:  == LLM cache == saving: default:extract:c333fffc9dfe16923460c9cf149d655b
-INFO: Chunk 1 of 2 extracted 16 Ent + 19 Rel chunk-8c827224c9f6af5154b5ce1fa4bb2b80
-INFO:  == LLM cache == saving: default:extract:06af474f411cc8589dd3097c15e3058e
-INFO: Chunk 2 of 2 extracted 25 Ent + 18 Rel chunk-e1503226bff786bd39cd20659e09194f
-INFO: Merging stage 1/1: 部署流程.md
-INFO: Phase 1: Processing 37 entities from doc-2f24877f426d1aa3d83c35bd7b6931f0 (async: 8)
-INFO: 127.0.0.1:59800 - "POST /documents/upload HTTP/1.1" 200
+INFO: 127.0.0.1:65271 - "POST /documents/upload HTTP/1.1" 200
+INFO: Successfully extracted and enqueued file: 性能测试模块前后端对接分析报告.md
+INFO: 127.0.0.1:65271 - "POST /documents/upload HTTP/1.1" 200
+INFO: Processing 1 document(s)
+INFO: Extracting stage 1/1: 性能测试模块前后端对接分析报告.md
+INFO: Processing d-id: doc-6b5919566dacc3dbcb9fb685d5b1205f
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+INFO: Successfully extracted and enqueued file: 性能测试模块实施方案.md
+INFO: Another process is already processing the document queue. Request queued.
+INFO: 127.0.0.1:49222 - "POST /documents/upload HTTP/1.1" 200
 INFO: Using RAG-Anything multimodal processing for: 旅行日记2.pdf
 INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf
 INFO: Using docling parser with method: auto
 INFO: Detected PDF file, using parser for PDF...
-INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf complete! Extracted 110 content blocks
-INFO: Document parsed successfully: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e, blocks=110
+INFO: 127.0.0.1:56483 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:56483 - "GET /openapi.json HTTP/1.1" 200
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\中国高等教育学位在线验证报告_邱云霞.pdf complete! Extracted 29 content blocks
+INFO: Document parsed successfully: 中国高等教育学位在线验证报告_邱云霞.pdf, doc_id=doc-4a61c7a0a17ed1895516963a1366b094, blocks=29
 INFO: Parser 'docling' installation verified
 INFO: Initializing parse cache for pre-provided LightRAG instance
-INFO: [] Process 36028 KV load parse_cache with 9 records
+INFO: [] Process 63612 KV load parse_cache with 12 records
 INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf complete! Extracted 44 content blocks
 INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf complete! Extracted 42 content blocks
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
-INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf (110 items)
+INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\中国高等教育学位在线验证报告_邱云霞.pdf (29 items)
 INFO: Content separation complete:
-INFO:   - Text content length: 5231 characters
-INFO:   - Multimodal items count: 0
+INFO:   - Text content length: 380 characters
+INFO:   - Multimodal items count: 3
+INFO:   - Multimodal type distribution: {'image': 3}
+INFO: Setting content source for context-aware multimodal processing...
+INFO: Content source set with format: minerU
+INFO: Content source set with format: minerU
+INFO: Content source set with format: minerU
+INFO: Content source set with format: minerU
+INFO: Content source set for context extraction (format: minerU)
 INFO: Starting text content insertion into LightRAG...
-INFO: Stored parsing result in cache: 3b44dd0b61359230be474e4cc3ddb16d
+INFO: Stored parsing result in cache: 4da9c6e94b4d72ae9719e55b7ac7fb6a
 INFO: Document parsed successfully: 教育部学籍在线验证报告_邱云霞.pdf, doc_id=doc-8eaf2550553b2561b0ef7232965c0c56, blocks=44
-INFO: Stored parsing result in cache: 0e319154192c159ead6eaec325229ea5
+INFO: Stored parsing result in cache: fa1ecfe4015911f6bcd59c0a7c84d705
 INFO: Document parsed successfully: 教育部学历证书电子注册备案表_邱云霞 (1).pdf, doc_id=doc-f7ead14bf760c6a58f9c82db30097647, blocks=42
 INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf (44 items)
 INFO: Content separation complete:
@@ -259,6 +264,7 @@ INFO: Content source set with format: minerU
 INFO: Content source set with format: minerU
 INFO: Content source set for context extraction (format: minerU)
 INFO: Starting text content insertion into LightRAG...
+INFO:  == LLM cache == saving: default:extract:4c9b7211563ee6fb9457a9817f9dc684
 INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学历证书电子注册备案表_邱云霞 (1).pdf (42 items)
 INFO: Content separation complete:
 INFO:   - Text content length: 515 characters
@@ -273,53 +279,67 @@ INFO: Content source set for context extraction (format: minerU)
 INFO: Starting text content insertion into LightRAG...
 INFO: Another process is already processing the document queue. Request queued.
 INFO: Text content insertion complete
-INFO: Another process is already processing the document queue. Request queued.
-INFO: Another process is already processing the document queue. Request queued.
-INFO: Text content insertion complete
-INFO: Text content insertion complete
 INFO: Starting multimodal content processing...
-INFO: Starting multimodal content processing...
-INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
-INFO: Document processing complete: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
-INFO: RAG-Anything processing completed successfully: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
 INFO: Another process is already processing the document queue. Request queued.
 INFO: Starting to process 3 multimodal content items
+INFO: Text content insertion complete
+INFO: Starting multimodal content processing...
+INFO: Another process is already processing the document queue. Request queued.
+INFO: Starting to process 3 multimodal content items
+INFO: Text content insertion complete
+INFO: Starting multimodal content processing...
 INFO: Starting to process 3 multimodal content items
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187334683ffe43015d735359faff049ec38e2b5f5141b94', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254035006c7ba22cbcbef0b3ad5a364f1d5ffd4d5850cf0', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254035006c7ba22cbcbef0b3ad5a364f1d5ffd4d5850cf0', 'param': '', 'type': 'Not Found'}}
+INFO: Multimodal chunk generation progress: 1/3 (33.3%)
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346838d5b781e89b1033d1b98e0082083129be6e33d', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725403501287ae225ab05a40b5f0c6e9f6bb224072cc5a5a', 'param': '', 'type': 'Not Found'}}
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346831f89d7a51cae2ccde9d7b9caad447a843cdc73', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187334683ffe43015d735359faff049ec38e2b5f5141b94', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672540349839c89e28337e7f7d7974958d34378420cb1bfcf', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725403501287ae225ab05a40b5f0c6e9f6bb224072cc5a5a', 'param': '', 'type': 'Not Found'}}
+INFO: Multimodal chunk generation progress: 2/3 (66.7%)
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672540349839c89e28337e7f7d7974958d34378420cb1bfcf', 'param': '', 'type': 'Not Found'}}
 INFO: Multimodal chunk generation progress: 1/3 (33.3%)
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346838d5b781e89b1033d1b98e0082083129be6e33d', 'param': '', 'type': 'Not Found'}}
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725403492431d2de4c405ce93db61bc8d4702ef60d92bd3c', 'param': '', 'type': 'Not Found'}}
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254034920cb1021ee4195f5391b444bb7c7eb4d071a43fd', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725403492431d2de4c405ce93db61bc8d4702ef60d92bd3c', 'param': '', 'type': 'Not Found'}}
 INFO: Multimodal chunk generation progress: 1/3 (33.3%)
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671873346831f89d7a51cae2ccde9d7b9caad447a843cdc73', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254034920cb1021ee4195f5391b444bb7c7eb4d071a43fd', 'param': '', 'type': 'Not Found'}}
 INFO: Multimodal chunk generation progress: 2/3 (66.7%)
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718733483286475d51b405451fc484fdd1a9abe503ba7908', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718733483286475d51b405451fc484fdd1a9abe503ba7908', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672540349924926e3bcfbddd98bc8d75f22def3c80f7ebc91', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672540349924926e3bcfbddd98bc8d75f22def3c80f7ebc91', 'param': '', 'type': 'Not Found'}}
 INFO: Multimodal chunk generation progress: 2/3 (66.7%)
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254042959716fddb08fde0ff9d4c650d24eb426d1eb6eca', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254042959716fddb08fde0ff9d4c650d24eb426d1eb6eca', 'param': '', 'type': 'Not Found'}}
+INFO: Multimodal chunk generation progress: 3/3 (100.0%)
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254042960f819a70ccfcb34f701bfee049253c600501075', 'param': '', 'type': 'Not Found'}}
+INFO: Generated descriptions for 3/3 multimodal items using correct processors
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254042960f819a70ccfcb34f701bfee049253c600501075', 'param': '', 'type': 'Not Found'}}
+INFO: Multimodal chunk generation progress: 3/3 (100.0%)
+INFO: Generated descriptions for 3/3 multimodal items using correct processors
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254042958fcf36596e09aec8e6d4343a28ec37f7fb25bde', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254042958fcf36596e09aec8e6d4343a28ec37f7fb25bde', 'param': '', 'type': 'Not Found'}}
+INFO: Multimodal chunk generation progress: 3/3 (100.0%)
+INFO: Generated descriptions for 3/3 multimodal items using correct processors
 INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf complete! Extracted 40 content blocks
-ERROR: OpenAI API Call Failed,
-Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187358862c710b3d771f5011ef7eccce758c790d29944ad', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187358862c710b3d771f5011ef7eccce758c790d29944ad', 'param': '', 'type': 'Not Found'}}
-INFO: Multimodal chunk generation progress: 3/3 (100.0%)
-ERROR: OpenAI API Call Failed,
-Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187361919b27d07d4a31e534f61104e57109d4de5bdcd74', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187361919b27d07d4a31e534f61104e57109d4de5bdcd74', 'param': '', 'type': 'Not Found'}}
-INFO: Multimodal chunk generation progress: 3/3 (100.0%)
-INFO: Generated descriptions for 3/3 multimodal items using correct processors
-INFO: Stored parsing result in cache: 830d3c479b0d88864a4f6f61b15910be
+INFO: Stored parsing result in cache: 2c3003b6da8735e60e81463856a9cf16
 INFO: Document parsed successfully: 旅行日记2.pdf, doc_id=doc-cd6da09bf7fcb88fcd1809ee8f9b2248, blocks=40
-INFO: Generated descriptions for 3/3 multimodal items using correct processors
 INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf (40 items)
 INFO: Content separation complete:
 INFO:   - Text content length: 463 characters
@@ -332,108 +352,120 @@ INFO: Content source set with format: minerU
 INFO: Content source set with format: minerU
 INFO: Content source set for context extraction (format: minerU)
 INFO: Starting text content insertion into LightRAG...
+INFO:  == LLM cache == saving: default:extract:7b51bdea17eb8bed49a70d313d20ca76
 INFO: Another process is already processing the document queue. Request queued.
 INFO: Text content insertion complete
+INFO: Chunk 1 of 2 extracted 27 Ent + 23 Rel chunk-9b24edb7e56cd76dd6ec67a60020f6c5
 INFO: Starting multimodal content processing...
 INFO: Starting to process 3 multimodal content items
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187400611ec532cad304213904cdde48aeb6c6826c8d61f', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254056320e577630002db537cb4c69978019db15b1a8396', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254056320e577630002db537cb4c69978019db15b1a8396', 'param': '', 'type': 'Not Found'}}
+INFO: Multimodal chunk generation progress: 1/3 (33.3%)
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874006152856367a65b621c15f7d0cb2a0f35cc4d29489', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187400611ec532cad304213904cdde48aeb6c6826c8d61f', 'param': '', 'type': 'Not Found'}}
-INFO: Multimodal chunk generation progress: 1/3 (33.3%)
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874006152856367a65b621c15f7d0cb2a0f35cc4d29489', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725405631393d48a1e66202f00c169609005fb20c8b6e363', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725405631393d48a1e66202f00c169609005fb20c8b6e363', 'param': '', 'type': 'Not Found'}}
 INFO: Multimodal chunk generation progress: 2/3 (66.7%)
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718741686066d4fff57f472cc97f9dc7178d7aa526c36fd6', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176718741686066d4fff57f472cc97f9dc7178d7aa526c36fd6', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725406214543854e365f1eb1011ffcf5b03a34eea3808d95', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725406214543854e365f1eb1011ffcf5b03a34eea3808d95', 'param': '', 'type': 'Not Found'}}
 INFO: Multimodal chunk generation progress: 3/3 (100.0%)
 INFO: Generated descriptions for 3/3 multimodal items using correct processors
-INFO: Phase 2: Processing 36 relations from doc-2f24877f426d1aa3d83c35bd7b6931f0 (async: 8)
+INFO:  == LLM cache == saving: default:extract:ba5f04485e4fb06dc20bc027fc9c9b87
+ERROR: Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
+WARNING: Falling back to individual multimodal processing
+INFO: Processing item 1/3: image content
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254075854248935c665ca19b5d4e2d11432f52bbb44eda9', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254075854248935c665ca19b5d4e2d11432f52bbb44eda9', 'param': '', 'type': 'Not Found'}}
 ERROR: Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
 WARNING: Falling back to individual multimodal processing
 INFO: Processing item 1/3: image content
 ERROR: Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
 WARNING: Falling back to individual multimodal processing
 INFO: Processing item 1/3: image content
-ERROR: OpenAI API Call Failed,
-Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874269916246fa05d035050efc9e62170c29c5f2b8b66f', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874269916246fa05d035050efc9e62170c29c5f2b8b66f', 'param': '', 'type': 'Not Found'}}
-ERROR: OpenAI API Call Failed,
-Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187431147f6bbcadc5ac62a9c6cfd677b3d413815b40ff6', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187431147f6bbcadc5ac62a9c6cfd677b3d413815b40ff6', 'param': '', 'type': 'Not Found'}}
 ERROR: Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
 WARNING: Falling back to individual multimodal processing
 INFO: Processing item 1/3: image content
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187468009dae410d06a911c4f7bd0a80e7e433f8a9f854e', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187468009dae410d06a911c4f7bd0a80e7e433f8a9f854e', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725408954923da0b914a891515853fa2b273acf40e2ceeb0', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176725408954923da0b914a891515853fa2b273acf40e2ceeb0', 'param': '', 'type': 'Not Found'}}
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254092215ea2f555e4fbffd64aed47d8c02ef9eb3ee1ea2', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254092215ea2f555e4fbffd64aed47d8c02ef9eb3ee1ea2', 'param': '', 'type': 'Not Found'}}
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254100282fcf36596e09aec8e6d4343a28ec37f7f96220d', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254100282fcf36596e09aec8e6d4343a28ec37f7f96220d', 'param': '', 'type': 'Not Found'}}
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Processing item 2/3: image content
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874909035de161b16d50149cbf4122a430bab0f05b8426', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671874909035de161b16d50149cbf4122a430bab0f05b8426', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254113876ea2f555e4fbffd64aed47d8c02ef9eb3aef632', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254113876ea2f555e4fbffd64aed47d8c02ef9eb3aef632', 'param': '', 'type': 'Not Found'}}
+INFO: 127.0.0.1:63615 - "GET /docs HTTP/1.1" 200
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Processing item 2/3: image content
+INFO: 127.0.0.1:56918 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:55942 - "GET /openapi.json HTTP/1.1" 200
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187510997f916f2e250264480d9a70ca8038cd15f9eea29', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187510997f916f2e250264480d9a70ca8038cd15f9eea29', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254127489e3fc3002f37f70960f01c9f37bff6e82bbf80d', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254127489e3fc3002f37f70960f01c9f37bff6e82bbf80d', 'param': '', 'type': 'Not Found'}}
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Processing item 2/3: image content
+INFO:  == LLM cache == saving: default:extract:08cfc43c84d59db736dbc96efd161343
+ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+INFO: Processing item 2/3: image content
+INFO: Chunk 2 of 2 extracted 36 Ent + 27 Rel chunk-107d5dbf30036a96f58f85fdab2ada27
+INFO: Merging stage 1/1: 性能测试模块前后端对接分析报告.md
+INFO: Phase 1: Processing 61 entities from doc-6b5919566dacc3dbcb9fb685d5b1205f (async: 8)
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254141000da22f1f1183cde111ae4437ca04d4ff4e185f7', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254141000da22f1f1183cde111ae4437ca04d4ff4e185f7', 'param': '', 'type': 'Not Found'}}
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254141023ff6a8436a5fcc26a5645410f3484ba01fa3e82', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254141023ff6a8436a5fcc26a5645410f3484ba01fa3e82', 'param': '', 'type': 'Not Found'}}
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Processing item 3/3: image content
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187549572eb148de919522c9d22c84fecf2e787b1d36f96', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767187549572eb148de919522c9d22c84fecf2e787b1d36f96', 'param': '', 'type': 'Not Found'}}
-ERROR: OpenAI API Call Failed,
-Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671875533316246fa05d035050efc9e62170c29c5f2fb650f', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671875533316246fa05d035050efc9e62170c29c5f2fb650f', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672541689415da7f0512df11701b41b7d5ea6d146b4a0c85f', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672541689415da7f0512df11701b41b7d5ea6d146b4a0c85f', 'param': '', 'type': 'Not Found'}}
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Processing item 3/3: image content
-ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
-handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
-Traceback (most recent call last):
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\events.py", line 84, in _run
-    self._context.run(self._callback, *self._args)
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
-    self._sock.shutdown(socket.SHUT_RDWR)
-ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
-ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
-handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
-Traceback (most recent call last):
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\events.py", line 84, in _run
-    self._context.run(self._callback, *self._args)
-  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
-    self._sock.shutdown(socket.SHUT_RDWR)
-ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
-ERROR: Error in ollama_embed:  (status code: 502)
-ERROR: Embedding func: Error in decorated function for task 2362383620352_988544.5:  (status code: 502)
-ERROR: Error processing image content:  (status code: 502)
+ERROR: OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254201850cb54996e3d14fef84d9805eacb7eb6eb5930bd', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767254201850cb54996e3d14fef84d9805eacb7eb6eb5930bd', 'param': '', 'type': 'Not Found'}}
+ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+INFO: Processing item 3/3: image content
+ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Processing item 3/3: image content
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767188199935be1165b3464d7873d589895ee39c5755920503', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767188199935be1165b3464d7873d589895ee39c5755920503', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672542319652ec3a31a7ec826e3a1fe07d02a30e95ab45e91', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672542319652ec3a31a7ec826e3a1fe07d02a30e95ab45e91', 'param': '', 'type': 'Not Found'}}
 ERROR: OpenAI API Call Failed,
 Model: doubao-seed-1-6-vision-250815,
-Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671882032988b55878d95caf0a54b04de1dacd104edec02f5', 'param': '', 'type': 'Not Found'}}
-ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217671882032988b55878d95caf0a54b04de1dacd104edec02f5', 'param': '', 'type': 'Not Found'}}
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672542373886a2f496fb72ac0b1b9b13f27800ce0ef1748d2', 'param': '', 'type': 'Not Found'}}
+ERROR: Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 0217672542373886a2f496fb72ac0b1b9b13f27800ce0ef1748d2', 'param': '', 'type': 'Not Found'}}
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Individual multimodal content processing complete
@@ -447,60 +479,33 @@ INFO: Individual multimodal content processing complete
 INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\教育部学籍在线验证报告_邱云霞.pdf
 INFO: Document processing complete: 教育部学籍在线验证报告_邱云霞.pdf, doc_id=doc-8eaf2550553b2561b0ef7232965c0c56
 INFO: RAG-Anything processing completed successfully: 教育部学籍在线验证报告_邱云霞.pdf, doc_id=doc-8eaf2550553b2561b0ef7232965c0c56
+ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
+ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+INFO: Individual multimodal content processing complete
 INFO: Another process is already processing the document queue. Request queued.
 ERROR: Error processing image content: get_storage_keyed_lock() missing 1 required positional argument: 'keys'
 ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
 INFO: Individual multimodal content processing complete
-INFO: 127.0.0.1:53569 - "GET /docs HTTP/1.1" 200
+INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\中国高等教育学位在线验证报告_邱云霞.pdf
+INFO: Document processing complete: 中国高等教育学位在线验证报告_邱云霞.pdf, doc_id=doc-4a61c7a0a17ed1895516963a1366b094
+INFO: RAG-Anything processing completed successfully: 中国高等教育学位在线验证报告_邱云霞.pdf, doc_id=doc-4a61c7a0a17ed1895516963a1366b094
+INFO: Another process is already processing the document queue. Request queued.
+INFO: 127.0.0.1:57671 - "GET /docs HTTP/1.1" 200
 INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\旅行日记2.pdf
 INFO: Document processing complete: 旅行日记2.pdf, doc_id=doc-cd6da09bf7fcb88fcd1809ee8f9b2248
 INFO: RAG-Anything processing completed successfully: 旅行日记2.pdf, doc_id=doc-cd6da09bf7fcb88fcd1809ee8f9b2248
 INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:57399 - "GET /openapi.json HTTP/1.1" 200
-INFO: Phase 3: Updating final 37(37+0) entities and  36 relations from doc-2f24877f426d1aa3d83c35bd7b6931f0
-INFO: Completed merging: 37 entities, 0 extra entities, 36 relations
-INFO: [] Writing graph with 46 nodes, 36 edges
+INFO: 127.0.0.1:57671 - "GET /openapi.json HTTP/1.1" 200
+INFO: Phase 2: Processing 50 relations from doc-6b5919566dacc3dbcb9fb685d5b1205f (async: 8)
+INFO: Phase 3: Updating final 61(61+0) entities and  50 relations from doc-6b5919566dacc3dbcb9fb685d5b1205f
+INFO: Completed merging: 61 entities, 0 extra entities, 50 relations
+INFO: [] Writing graph with 73 nodes, 50 edges
 INFO: In memory DB persist to disk
-INFO: Completed processing file 1/1: 部署流程.md
+INFO: Completed processing file 1/1: 性能测试模块前后端对接分析报告.md
 INFO: Processing additional documents due to pending request
-INFO: Processing 9 document(s)
-INFO: Extracting stage 1/9: rule.md
-INFO: Processing d-id: doc-72c928b8ab3958f49cb9e3fc45dfcf83
-INFO: Extracting stage 2/9: START_ALL_MANUAL.md
-INFO: Processing d-id: doc-e6cb36be043ee380584e6bc6bec47169
-INFO:  == LLM cache == saving: default:extract:374ca8b06a499eec103aa4e076c00550
-INFO:  == LLM cache == saving: default:extract:559c0c86781c7f3e47b22e1dcf2bc616
-INFO: Chunk 1 of 3 extracted 15 Ent + 13 Rel chunk-b2cf63e1686276dae0b7e2bf4113ebc5
-INFO:  == LLM cache == saving: default:extract:287233de58419fc3d863aa1b6c839c0b
-INFO:  == LLM cache == saving: default:extract:0d5eff2f3e746b41b56be8eb2c6da785
-INFO: Chunk 2 of 3 extracted 43 Ent + 41 Rel chunk-dd872650d5ae9ccc276a960f8f8e685a
-INFO:  == LLM cache == saving: default:extract:3476178e776a727a6ef67c6e7659a78d
-INFO:  == LLM cache == saving: default:extract:bc970e3456b158ddaf34c5a5f2e5ece3
-INFO:  == LLM cache == saving: default:extract:f6b816380bf55ababdc36bcacee435fb
-INFO: Chunk 1 of 4 extracted 21 Ent + 21 Rel chunk-b0f2508811d1092697ffb2e6184ae138
-INFO:  == LLM cache == saving: default:extract:f15a4da9a136c937771fcc5b467355d4
-INFO:  == LLM cache == saving: default:extract:9c75bdb30b8236100b86cd4561e32e92
-INFO:  == LLM cache == saving: default:extract:3e0aa5e3babff6da549c0e0acdfdffdb
-INFO: Chunk 2 of 4 extracted 33 Ent + 30 Rel chunk-2bb2063c1171c4e83dcce08f30c80ca6
-INFO:  == LLM cache == saving: default:extract:df3bee30ec5fe2c873cda0e70d985424
-INFO: Chunk 3 of 4 extracted 37 Ent + 27 Rel chunk-c7faa9ed4c124ad7075266f47e52eeba
-INFO:  == LLM cache == saving: default:extract:834f8a45534a4dac9653acfa17d49b51
-INFO: Chunk 4 of 4 extracted 44 Ent + 39 Rel chunk-84442b4f59294a7e04293d7e0131614c
-INFO: Merging stage 2/9: START_ALL_MANUAL.md
-INFO: Phase 1: Processing 106 entities from doc-e6cb36be043ee380584e6bc6bec47169 (async: 8)
-INFO: Merged: `start_all.sh` | 2+3
-INFO: Merged: `LightRAG Server` | 2+3
-INFO: Merged: `MCP Server` | 1+4
-INFO: Merged: `虚拟环境` | 1+3
-INFO: Merged: `LightRAG` | 2+2
-INFO: Merged: `LangGraph` | 1+1
-INFO:  == LLM cache == saving: default:extract:f908e2a889145aa43387c8fea7731c45
-INFO:  == LLM cache == saving: default:extract:2355a09e46990c8c042df7cd232c772b
-INFO: Chunk 3 of 3 extracted 48 Ent + 42 Rel chunk-3a90cb28394f31c2fb45ad92c57adf97
-INFO: Merged: `服务状态` | 1+1
-INFO: Merging stage 1/9: rule.md
-INFO: Phase 1: Processing 98 entities from doc-72c928b8ab3958f49cb9e3fc45dfcf83 (async: 8)
-INFO: Merged: `pyproject.toml` | 1+1
-INFO: Phase 2: Processing 107 relations from doc-e6cb36be043ee380584e6bc6bec47169 (async: 8)
-INFO: Phase 2: Processing 95 relations from doc-72c928b8ab3958f49cb9e3fc45dfcf83 (async: 8)
-INFO: Merged: `LightRAG`~`start_all.sh` | 1+1
+INFO: Processing 5 document(s)
+INFO: Extracting stage 1/5: 性能测试模块实施方案.md
+INFO: Processing d-id: doc-422e9cc3042e9f9b6a00aa07d1f777c5
+INFO: Extracting stage 2/5: 中国高等教育学位在线验证报告_邱云霞.pdf
+INFO: Processing d-id: doc-4a61c7a0a17ed1895516963a1366b094
+INFO:  == LLM cache == saving: default:extract:3fe27496ab27aa460d4d70ffe0746470

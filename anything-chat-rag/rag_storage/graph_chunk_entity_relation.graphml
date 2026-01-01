@@ -13,345 +13,13 @@
 <key id="d2" for="node" attr.name="description" attr.type="string"/>
 <key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
 <key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
-<graph edgedefault="undirected"><node id="LightRAG">
-  <data key="d0">LightRAG</data>
-  <data key="d1">artifact</data>
-  <data key="d2">LightRAG是一个后端服务组件，用于提供检索增强生成功能。&lt;SEP&gt;一个知识图谱和向量检索系统，是LightRAG Server的核心。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80&lt;SEP&gt;chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187208</data>
-  <data key="d6"></data>
-</node>
-<node id="MCP">
-  <data key="d0">MCP</data>
-  <data key="d1">artifact</data>
-  <data key="d2">MCP是一个后端服务组件，作为模型上下文协议服务器运行。&lt;SEP&gt;一种服务接口协议，MCP Server基于此协议提供RAG服务。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80&lt;SEP&gt;chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187208</data>
-  <data key="d6"></data>
-</node>
-<node id="Agent">
-  <data key="d0">Agent</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Agent是一个后端服务组件，提供智能体服务功能。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187208</data>
-  <data key="d6"></data>
-</node>
-<node id="start_all.sh">
-  <data key="d0">start_all.sh</data>
-  <data key="d1">artifact</data>
-  <data key="d2">start_all.sh是一个用于启动、停止和检查服务状态的Shell脚本。&lt;SEP&gt;一个用于启动、停止和查看服务状态的Shell脚本。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80&lt;SEP&gt;chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187215</data>
-  <data key="d6"></data>
-</node>
-<node id="MCP Server">
-  <data key="d0">MCP Server</data>
-  <data key="d1">artifact</data>
-  <data key="d2">MCP Server是一个具体的服务器实例，运行在指定的虚拟环境中，负责处理RAG相关请求。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187215</data>
-  <data key="d6"></data>
-</node>
-<node id="LightRAG Server">
-  <data key="d0">LightRAG Server</data>
-  <data key="d1">artifact</data>
-  <data key="d2">LightRAG Server是一个具体的服务器实例，运行在指定的虚拟环境中，提供轻量级RAG服务。&lt;SEP&gt;一个提供LightRAG知识图谱和向量检索服务的知识库服务器。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80&lt;SEP&gt;chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187219</data>
-  <data key="d6"></data>
-</node>
-<node id="Agent Service">
-  <data key="d0">Agent Service</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Agent Service是一个具体的服务实例，运行在指定的虚拟环境中，提供智能体功能。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187219</data>
-  <data key="d6"></data>
-</node>
-<node id="前端">
-  <data key="d0">前端</data>
-  <data key="d1">artifact</data>
-  <data key="d2">前端是一个用户界面组件，通过npm运行在开发模式。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187223</data>
-  <data key="d6"></data>
-</node>
-<node id="虚拟环境">
-  <data key="d0">虚拟环境</data>
-  <data key="d1">concept</data>
-  <data key="d2">虚拟环境是用于隔离Python项目依赖的独立环境，在旧启动方式中每个服务使用各自的虚拟环境。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187239</data>
-  <data key="d6"></data>
-</node>
-<node id="Terminal">
-  <data key="d0">Terminal</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Terminal是macOS上的终端应用程序，用于执行命令行脚本。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187239</data>
-  <data key="d6"></data>
-</node>
-<node id="osascript">
-  <data key="d0">osascript</data>
-  <data key="d1">artifact</data>
-  <data key="d2">osascript是用于执行AppleScript命令的工具，用于在新终端窗口中启动服务。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187244</data>
-  <data key="d6"></data>
-</node>
-<node id="后端服务">
-  <data key="d0">后端服务</data>
-  <data key="d1">concept</data>
-  <data key="d2">后端服务指由LightRAG、MCP和Agent组成的服务集合，可以通过脚本启动。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187287</data>
-  <data key="d6"></data>
-</node>
-<node id="旧方式">
-  <data key="d0">旧方式</data>
-  <data key="d1">concept</data>
-  <data key="d2">旧方式指分别使用各自虚拟环境启动服务的传统方法，与使用start_all.sh脚本的新方式相对。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187287</data>
-  <data key="d6"></data>
-</node>
-<node id="Shell脚本">
-  <data key="d0">Shell脚本</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Shell脚本是一种包含命令行指令的文本文件，用于自动化任务，如start_all.sh。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187291</data>
-  <data key="d6"></data>
-</node>
-<node id="AppleScript">
-  <data key="d0">AppleScript</data>
-  <data key="d1">artifact</data>
-  <data key="d2">AppleScript是苹果系统的一种脚本语言，osascript工具用于执行其命令以控制应用程序。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187291</data>
-  <data key="d6"></data>
-</node>
-<node id="npm">
-  <data key="d0">npm</data>
-  <data key="d1">artifact</data>
-  <data key="d2">npm是Node.js的包管理器，用于运行前端开发服务器。</data>
-  <data key="d3">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187294</data>
-  <data key="d6"></data>
-</node>
-<node id="RAG + Agent服务栈">
-  <data key="d0">RAG + Agent服务栈</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个完整的服务栈，包含RAG和Agent功能，需要按顺序部署启动。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187294</data>
-  <data key="d6"></data>
-</node>
-<node id="MCP Server (RAG Anything)">
-  <data key="d0">MCP Server (RAG Anything)</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个提供RAG知识库MCP服务接口的服务器。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187309</data>
-  <data key="d6"></data>
-</node>
-<node id="Deep Agents Service">
-  <data key="d0">Deep Agents Service</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个提供LangGraph Agent服务的服务器，支持Performance Agent和Research Agent。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187309</data>
-  <data key="d6"></data>
-</node>
-<node id="前端服务(Testing Deep Agents UI)">
-  <data key="d0">前端服务(Testing Deep Agents UI)</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个提供可视化交互界面的前端服务。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187315</data>
-  <data key="d6"></data>
-</node>
-<node id="服务依赖关系">
-  <data key="d0">服务依赖关系</data>
-  <data key="d1">concept</data>
-  <data key="d2">描述了项目中各个服务之间的调用和依赖关系。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187331</data>
-  <data key="d6"></data>
-</node>
-<node id="快速启动脚本">
-  <data key="d0">快速启动脚本</data>
-  <data key="d1">method</data>
-  <data key="d2">用于快速初始化环境和启动所有服务的自动化脚本。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187334</data>
-  <data key="d6"></data>
-</node>
-<node id="setup.sh">
-  <data key="d0">setup.sh</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个用于初始化环境、创建虚拟环境并安装依赖的Shell脚本。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187334</data>
-  <data key="d6"></data>
-</node>
-<node id="pyproject.toml">
-  <data key="d0">pyproject.toml</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个配置文件，用于管理项目依赖，支持统一虚拟环境。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187335</data>
-  <data key="d6"></data>
-</node>
-<node id="src/core/config.py">
-  <data key="d0">src/core/config.py</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Agent Service的配置文件，用于处理Pydantic Settings验证。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187348</data>
-  <data key="d6"></data>
-</node>
-<node id="Python 3.11+">
-  <data key="d0">Python 3.11+</data>
-  <data key="d1">artifact</data>
-  <data key="d2">部署项目所需的最低Python版本。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187352</data>
-  <data key="d6"></data>
-</node>
-<node id="Node.js 18+">
-  <data key="d0">Node.js 18+</data>
-  <data key="d1">artifact</data>
-  <data key="d2">部署项目所需的最低Node.js版本。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187355</data>
-  <data key="d6"></data>
-</node>
-<node id=".env配置文件">
-  <data key="d0">.env配置文件</data>
-  <data key="d1">artifact</data>
-  <data key="d2">各服务所需的配置文件，用于设置环境变量。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187355</data>
-  <data key="d6"></data>
-</node>
-<node id="Pydantic Settings验证错误">
-  <data key="d0">Pydantic Settings验证错误</data>
-  <data key="d1">concept</data>
-  <data key="d2">启动Agent Service时可能遇到的一种配置验证错误。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187365</data>
-  <data key="d6"></data>
-</node>
-<node id="端口被占用">
-  <data key="d0">端口被占用</data>
-  <data key="d1">concept</data>
-  <data key="d2">服务启动时因端口已被其他进程使用而导致的常见问题。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187375</data>
-  <data key="d6"></data>
-</node>
-<node id="LangGraph">
-  <data key="d0">LangGraph</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个用于构建Agent的框架，被Deep Agents Service所使用。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187375</data>
-  <data key="d6"></data>
-</node>
-<node id="Performance Agent">
-  <data key="d0">Performance Agent</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Deep Agents Service支持的一种Agent类型。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187375</data>
-  <data key="d6"></data>
-</node>
-<node id="Research Agent">
-  <data key="d0">Research Agent</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Deep Agents Service支持的一种Agent类型。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187381</data>
-  <data key="d6"></data>
-</node>
-<node id="统一虚拟环境">
-  <data key="d0">统一虚拟环境</data>
-  <data key="d1">method</data>
-  <data key="d2">一种项目环境管理方法，通过pyproject.toml配置，允许所有服务共享一个虚拟环境。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187381</data>
-  <data key="d6"></data>
-</node>
-<node id="旧方式-分别启动">
-  <data key="d0">旧方式-分别启动</data>
-  <data key="d1">method</data>
-  <data key="d2">一种备用的服务启动方法，每个服务使用各自独立的虚拟环境。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187397</data>
-  <data key="d6"></data>
-</node>
-<node id="image_349dc6df3ec41cd857aed3d6fb8cef4c">
+<graph edgedefault="undirected"><node id="image_349dc6df3ec41cd857aed3d6fb8cef4c">
   <data key="d0">image_349dc6df3ec41cd857aed3d6fb8cef4c</data>
   <data key="d1">image</data>
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学历证书电子</data>
   <data key="d3">chunk-f86fba222bc47ed4f279fdf5ae0eaad1</data>
   <data key="d4">教育部学历证书电子注册备案表_邱云霞 (1).pdf</data>
-  <data key="d5">1767187444</data>
-</node>
-<node id="image_8283a3e19e2449e172fe475793f2c1be">
-  <data key="d0">image_8283a3e19e2449e172fe475793f2c1be</data>
-  <data key="d1">image</data>
-  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学籍在线验证</data>
-  <data key="d3">chunk-ba2b4acd551c7cc966b4e2d28e9d0cff</data>
-  <data key="d4">教育部学籍在线验证报告_邱云霞.pdf</data>
-  <data key="d5">1767187457</data>
-</node>
-<node id="常见问题">
-  <data key="d0">常见问题</data>
-  <data key="d1">content</data>
-  <data key="d2">文档中列出的在部署过程中可能遇到的问题及其解决方案。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187397</data>
-  <data key="d6"></data>
+  <data key="d5">1767254084</data>
 </node>
 <node id="image_466cf5c072f89a13ef7bb8634b979466">
   <data key="d0">image_466cf5c072f89a13ef7bb8634b979466</data>
@@ -359,24 +27,7 @@
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学历证书电子</data>
   <data key="d3">chunk-f5a6537a6016c00a813cdd2c55652741</data>
   <data key="d4">教育部学历证书电子注册备案表_邱云霞 (1).pdf</data>
-  <data key="d5">1767187511</data>
-</node>
-<node id="image_dabd6dc8952e3b78131e5389bc7f0412">
-  <data key="d0">image_dabd6dc8952e3b78131e5389bc7f0412</data>
-  <data key="d1">image</data>
-  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学籍在线验证</data>
-  <data key="d3">chunk-9ac78689bb56788a4c8a50659a53a99d</data>
-  <data key="d4">教育部学籍在线验证报告_邱云霞.pdf</data>
-  <data key="d5">1767187525</data>
-</node>
-<node id="服务状态">
-  <data key="d0">服务状态</data>
-  <data key="d1">data</data>
-  <data key="d2">通过start_all.sh脚本可以查看的各个服务的运行状态信息。</data>
-  <data key="d3">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d4">部署流程.md</data>
-  <data key="d5">1767187400</data>
-  <data key="d6"></data>
+  <data key="d5">1767254128</data>
 </node>
 <node id="image_a7a7ae4334b345a34c36fa43d4cd5357">
   <data key="d0">image_a7a7ae4334b345a34c36fa43d4cd5357</data>
@@ -384,7 +35,23 @@
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学历证书电子</data>
   <data key="d3">chunk-2dcb46cab6ba933160e6326df5103b77</data>
   <data key="d4">教育部学历证书电子注册备案表_邱云霞 (1).pdf</data>
-  <data key="d5">1767188195</data>
+  <data key="d5">1767254205</data>
+</node>
+<node id="image_8283a3e19e2449e172fe475793f2c1be">
+  <data key="d0">image_8283a3e19e2449e172fe475793f2c1be</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学籍在线验证</data>
+  <data key="d3">chunk-ba2b4acd551c7cc966b4e2d28e9d0cff</data>
+  <data key="d4">教育部学籍在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254101</data>
+</node>
+<node id="image_dabd6dc8952e3b78131e5389bc7f0412">
+  <data key="d0">image_dabd6dc8952e3b78131e5389bc7f0412</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学籍在线验证</data>
+  <data key="d3">chunk-9ac78689bb56788a4c8a50659a53a99d</data>
+  <data key="d4">教育部学籍在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254141</data>
 </node>
 <node id="image_e2deb8d6d995057cd3665a5db09bb6f2">
   <data key="d0">image_e2deb8d6d995057cd3665a5db09bb6f2</data>
@@ -392,7 +59,31 @@
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\教育部学籍在线验证</data>
   <data key="d3">chunk-7f7e6f3519cb38247104ea6e234481f3</data>
   <data key="d4">教育部学籍在线验证报告_邱云霞.pdf</data>
-  <data key="d5">1767188213</data>
+  <data key="d5">1767254238</data>
+</node>
+<node id="image_31468403e2f4f348272e9d84493b6b52">
+  <data key="d0">image_31468403e2f4f348272e9d84493b6b52</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\中国高等教育学位在</data>
+  <data key="d3">chunk-f39109e05ed3fe47d4aab91909e4ca74</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254109</data>
+</node>
+<node id="image_e45437545763fa63bc5f3f09f94f37b3">
+  <data key="d0">image_e45437545763fa63bc5f3f09f94f37b3</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\中国高等教育学位在</data>
+  <data key="d3">chunk-42fa5a28cb2e568adcc35a8726c54be0</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254169</data>
+</node>
+<node id="image_a761cfcd406e323df2fa9d0a11518327">
+  <data key="d0">image_a761cfcd406e323df2fa9d0a11518327</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\中国高等教育学位在</data>
+  <data key="d3">chunk-554b47a20bc6036f6550f4811a211386</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254260</data>
 </node>
 <node id="image_0ffe8850e084d0dd1d5e7badd87f8e14">
   <data key="d0">image_0ffe8850e084d0dd1d5e7badd87f8e14</data>
@@ -400,7 +91,7 @@
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\旅行日记2\\do</data>
   <data key="d3">chunk-28190b591ca3e949ff2bb87cba31d3e0</data>
   <data key="d4">旅行日记2.pdf</data>
-  <data key="d5">1767187498</data>
+  <data key="d5">1767254114</data>
 </node>
 <node id="image_2300661c7c6cc10c14ec65099b7411e3">
   <data key="d0">image_2300661c7c6cc10c14ec65099b7411e3</data>
@@ -408,7 +99,7 @@
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\旅行日记2\\do</data>
   <data key="d3">chunk-a3eec6406850b958968234dd16458983</data>
   <data key="d4">旅行日记2.pdf</data>
-  <data key="d5">1767187430</data>
+  <data key="d5">1767254172</data>
 </node>
 <node id="image_41f7cf57a513e735c486d3185ffd8ed6">
   <data key="d0">image_41f7cf57a513e735c486d3185ffd8ed6</data>
@@ -416,330 +107,1266 @@
   <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\旅行日记2\\do</data>
   <data key="d3">chunk-f9379175a53fd548ca3e8f6e252838bc</data>
   <data key="d4">旅行日记2.pdf</data>
-  <data key="d5">1767188220</data>
+  <data key="d5">1767254274</data>
 </node>
-<edge source="LightRAG" target="start_all.sh">
+<node id="性能测试模块">
+  <data key="d0">性能测试模块</data>
+  <data key="d1">artifact</data>
+  <data key="d2">性能测试模块是报告中分析的对象，涉及前后端对接，包含需求管理、脚本管理、执行管理和报告管理等功能。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254144</data>
+  <data key="d6"></data>
+</node>
+<node id="项目管理入口">
+  <data key="d0">项目管理入口</data>
+  <data key="d1">concept</data>
+  <data key="d2">项目管理入口是前端界面中用于管理和查看所有测试项目的独立功能入口，最初缺失但已解决。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254144</data>
+  <data key="d6"></data>
+</node>
+<node id="需求管理入口">
+  <data key="d0">需求管理入口</data>
+  <data key="d1">concept</data>
+  <data key="d2">需求管理入口是前端界面中用于管理测试需求的功能入口，在项目管理入口缺失时存在。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254144</data>
+  <data key="d6"></data>
+</node>
+<node id="项目管理页面">
+  <data key="d0">项目管理页面</data>
+  <data key="d1">content</data>
+  <data key="d2">项目管理页面是前端用于展示和管理项目的界面，其字段名称已从下划线命名修复为驼峰命名，UI也进行了美化。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254158</data>
+  <data key="d6"></data>
+</node>
+<node id="驼峰命名">
+  <data key="d0">驼峰命名</data>
+  <data key="d1">method</data>
+  <data key="d2">驼峰命名是一种编程命名约定，前端统一使用此格式来匹配后端返回的数据字段。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254161</data>
+  <data key="d6"></data>
+</node>
+<node id="下划线命名">
+  <data key="d0">下划线命名</data>
+  <data key="d1">method</data>
+  <data key="d2">下划线命名是一种编程命名约定，后端使用此格式定义数据模型字段。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254161</data>
+  <data key="d6"></data>
+</node>
+<node id="后端API接口">
+  <data key="d0">后端API接口</data>
+  <data key="d1">artifact</data>
+  <data key="d2">后端API接口是性能测试模块提供的功能接口，包括需求管理、脚本管理、执行管理、报告管理和性能测试专用API。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254163</data>
+  <data key="d6"></data>
+</node>
+<node id="需求管理API">
+  <data key="d0">需求管理API</data>
+  <data key="d1">artifact</data>
+  <data key="d2">需求管理API是一组用于处理测试需求的后端接口，包括获取列表、详情、新增、修改、删除和AI生成脚本。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254164</data>
+  <data key="d6"></data>
+</node>
+<node id="脚本管理API">
+  <data key="d0">脚本管理API</data>
+  <data key="d1">artifact</data>
+  <data key="d2">脚本管理API是一组用于处理测试脚本的后端接口，包括获取列表、详情、新增、修改、删除和执行脚本。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254188</data>
+  <data key="d6"></data>
+</node>
+<node id="执行管理API">
+  <data key="d0">执行管理API</data>
+  <data key="d1">artifact</data>
+  <data key="d2">执行管理API是一组用于管理测试执行的后端接口，包括获取列表、详情、取消执行和重试执行。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254188</data>
+  <data key="d6"></data>
+</node>
+<node id="报告管理API">
+  <data key="d0">报告管理API</data>
+  <data key="d1">artifact</data>
+  <data key="d2">报告管理API是一组用于处理测试报告的后端接口，包括获取列表、详情、下载、删除和导出HTML报告。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254188</data>
+  <data key="d6"></data>
+</node>
+<node id="性能测试专用API">
+  <data key="d0">性能测试专用API</data>
+  <data key="d1">artifact</data>
+  <data key="d2">性能测试专用API是专门用于性能测试的后端接口，包括K6脚本生成、测试执行、获取状态、获取日志和下载报告。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254194</data>
+  <data key="d6"></data>
+</node>
+<node id="前端功能">
+  <data key="d0">前端功能</data>
+  <data key="d1">artifact</data>
+  <data key="d2">前端功能是用户界面提供的操作模块，包括需求管理页面、脚本管理页面和执行管理页面等。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254194</data>
+  <data key="d6"></data>
+</node>
+<node id="需求管理页面">
+  <data key="d0">需求管理页面</data>
+  <data key="d1">content</data>
+  <data key="d2">需求管理页面是前端用于管理测试需求的界面，支持列表展示、筛选、分页、新增、编辑、删除、查看详情和AI生成脚本。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254202</data>
+  <data key="d6"></data>
+</node>
+<node id="脚本管理页面">
+  <data key="d0">脚本管理页面</data>
+  <data key="d1">content</data>
+  <data key="d2">脚本管理页面是前端用于管理测试脚本的界面，支持列表展示、代码编辑和脚本执行。&lt;SEP&gt;脚本管理页面是前端的一个功能页面，用于展示脚本列表、提供代码编辑器、执行脚本以及筛选特定类型的脚本。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5&lt;SEP&gt;chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254208</data>
+  <data key="d6"></data>
+</node>
+<node id="执行管理页面">
+  <data key="d0">执行管理页面</data>
+  <data key="d1">content</data>
+  <data key="d2">执行管理页面是前端用于管理测试执行的界面，支持列表展示、查看执行详情和实时日志展示。&lt;SEP&gt;执行管理页面是前端的一个功能页面，用于展示执行列表、查看执行详情、展示实时日志、取消执行和重试执行。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5&lt;SEP&gt;chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254210</data>
+  <data key="d6"></data>
+</node>
+<node id="K6">
+  <data key="d0">K6</data>
+  <data key="d1">artifact</data>
+  <data key="d2">K6是一种性能测试工具，报告中提到了K6脚本生成、K6测试执行和K6报告下载。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254227</data>
+  <data key="d6"></data>
+</node>
+<node id="Pydantic">
+  <data key="d0">Pydantic</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Pydantic是一个Python库，用于数据验证和设置管理，报告中提到后端使用它进行字段命名转换。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254227</data>
+  <data key="d6"></data>
+</node>
+<node id="Monaco Editor">
+  <data key="d0">Monaco Editor</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Monaco Editor是一个代码编辑器组件，在脚本管理页面中用于编辑测试脚本。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254232</data>
+  <data key="d6"></data>
+</node>
+<node id="路由">
+  <data key="d0">路由</data>
+  <data key="d1">concept</data>
+  <data key="d2">路由是前端应用中的路径配置，报告中提到需要在路由中添加项目管理的独立入口。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254232</data>
+  <data key="d6"></data>
+</node>
+<node id="ProjectModel">
+  <data key="d0">ProjectModel</data>
+  <data key="d1">artifact</data>
+  <data key="d2">ProjectModel是后端定义的数据模型类，用于表示项目信息，包含project_id、project_name等字段。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254235</data>
+  <data key="d6"></data>
+</node>
+<node id="AI生成脚本">
+  <data key="d0">AI生成脚本</data>
+  <data key="d1">method</data>
+  <data key="d2">AI生成脚本是需求管理API中的一个功能，可以根据配置的K6参数自动生成测试脚本。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254241</data>
+  <data key="d6"></data>
+</node>
+<node id="SSE">
+  <data key="d0">SSE</data>
+  <data key="d1">method</data>
+  <data key="d2">SSE(Server-Sent Events)是一种服务器推送技术，用于在性能测试专用API中实时获取执行日志。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254254</data>
+  <data key="d6"></data>
+</node>
+<node id="菜单系统">
+  <data key="d0">菜单系统</data>
+  <data key="d1">concept</data>
+  <data key="d2">菜单系统是前端应用的用户导航界面，报告中提到需要将项目管理入口添加到其中。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254254</data>
+  <data key="d6"></data>
+</node>
+<node id="实时日志展示">
+  <data key="d0">实时日志展示</data>
+  <data key="d1">concept</data>
+  <data key="d2">实时日志展示是执行管理页面的一项待验证功能，用于显示测试执行的实时日志信息。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254260</data>
+  <data key="d6"></data>
+</node>
+<node id="K6脚本类型">
+  <data key="d0">K6脚本类型</data>
+  <data key="d1">concept</data>
+  <data key="d2">K6脚本类型是脚本管理页面中用于筛选脚本的一个分类维度，需要验证其功能是否正常。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254260</data>
+  <data key="d6"></data>
+</node>
+<node id="项目关联">
+  <data key="d0">项目关联</data>
+  <data key="d1">concept</data>
+  <data key="d2">项目关联是需求管理页面的一项功能，用于将测试需求与具体的项目进行关联，需要确保项目下拉列表正常加载。</data>
+  <data key="d3">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254263</data>
+  <data key="d6"></data>
+</node>
+<node id="项目管理">
+  <data key="d0">项目管理</data>
+  <data key="d1">concept</data>
+  <data key="d2">项目管理是系统中的一个功能模块，需要在系统菜单中添加对应的一级菜单入口，并关联特定的权限标识。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254268</data>
+  <data key="d6"></data>
+</node>
+<node id="报告管理页面">
+  <data key="d0">报告管理页面</data>
+  <data key="d1">content</data>
+  <data key="d2">报告管理页面是前端的一个功能页面，用于展示报告列表、查看报告详情、展示性能图表、下载报告和删除报告。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254279</data>
+  <data key="d6"></data>
+</node>
+<node id="K6脚本">
+  <data key="d0">K6脚本</data>
+  <data key="d1">artifact</data>
+  <data key="d2">K6脚本是一种特定类型的性能测试脚本，可以通过AI生成，并在脚本管理页面中进行筛选和执行。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254279</data>
+  <data key="d6"></data>
+</node>
+<node id="SSE流">
+  <data key="d0">SSE流</data>
+  <data key="d1">method</data>
+  <data key="d2">SSE流是一种用于实时推送K6执行日志到前端页面的流式传输技术。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254282</data>
+  <data key="d6"></data>
+</node>
+<node id="K6性能图表">
+  <data key="d0">K6性能图表</data>
+  <data key="d1">content</data>
+  <data key="d2">K6性能图表是在报告管理页面中用于可视化展示K6测试结果的图表，需要验证其展示功能。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254284</data>
+  <data key="d6"></data>
+</node>
+<node id="项目选择器">
+  <data key="d0">项目选择器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">项目选择器是前端的一个组件，用于在需求管理等页面中筛选和选择项目，需要确保其正常加载和筛选功能。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254290</data>
+  <data key="d6"></data>
+</node>
+<node id="MinIO对象存储">
+  <data key="d0">MinIO对象存储</data>
+  <data key="d1">artifact</data>
+  <data key="d2">MinIO对象存储是后端用于存储脚本文件和测试报告的技术组件。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254298</data>
+  <data key="d6"></data>
+</node>
+<node id="LangGraph Agent">
+  <data key="d0">LangGraph Agent</data>
+  <data key="d1">artifact</data>
+  <data key="d2">LangGraph Agent是一个AI组件，用于生成K6脚本。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254301</data>
+  <data key="d6"></data>
+</node>
+<node id="RAG知识库">
+  <data key="d0">RAG知识库</data>
+  <data key="d1">artifact</data>
+  <data key="d2">RAG知识库是一个用于增强AI生成K6脚本质量的知识库组件。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254301</data>
+  <data key="d6"></data>
+</node>
+<node id="Agent服务">
+  <data key="d0">Agent服务</data>
+  <data key="d1">organization</data>
+  <data key="d2">Agent服务(testing-agents-service)是后端架构中的一个服务层组件，负责处理与K6执行相关的逻辑。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254307</data>
+  <data key="d6"></data>
+</node>
+<node id="K6执行">
+  <data key="d0">K6执行</data>
+  <data key="d1">event</data>
+  <data key="d2">K6执行是性能测试的核心事件，由Agent服务触发，并产生执行日志和测试报告。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254307</data>
+  <data key="d6"></data>
+</node>
+<node id="项目下拉列表">
+  <data key="d0">项目下拉列表</data>
+  <data key="d1">artifact</data>
+  <data key="d2">项目下拉列表是前端的一个UI组件，用于在脚本管理等页面中选择项目，其正常加载是项目关联功能的一部分。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254309</data>
+  <data key="d6"></data>
+</node>
+<node id="代码编辑器">
+  <data key="d0">代码编辑器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">代码编辑器(Monaco Editor)是集成在脚本管理页面中的一个组件，用于编辑脚本代码。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254315</data>
+  <data key="d6"></data>
+</node>
+<node id="实时日志">
+  <data key="d0">实时日志</data>
+  <data key="d1">content</data>
+  <data key="d2">实时日志是K6执行过程中产生的日志信息，通过SSE流在执行管理页面中展示。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254318</data>
+  <data key="d6"></data>
+</node>
+<node id="执行详情">
+  <data key="d0">执行详情</data>
+  <data key="d1">content</data>
+  <data key="d2">执行详情是每次K6执行的详细信息，可以在执行管理页面中查看。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254318</data>
+  <data key="d6"></data>
+</node>
+<node id="报告详情">
+  <data key="d0">报告详情</data>
+  <data key="d1">content</data>
+  <data key="d2">报告详情是每次K6测试生成的报告的详细信息，可以在报告管理页面中查看。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254321</data>
+  <data key="d6"></data>
+</node>
+<node id="API调用">
+  <data key="d0">API调用</data>
+  <data key="d1">method</data>
+  <data key="d2">API调用是前后端交互的方法，需要验证其请求参数和返回数据的字段匹配。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254326</data>
+  <data key="d6"></data>
+</node>
+<node id="项目ID">
+  <data key="d0">项目ID</data>
+  <data key="d1">data</data>
+  <data key="d2">项目ID是标识项目的唯一数据字段，在API调用中需要确保其正确传递。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254329</data>
+  <data key="d6"></data>
+</node>
+<node id="需求ID">
+  <data key="d0">需求ID</data>
+  <data key="d1">data</data>
+  <data key="d2">需求ID是标识需求的唯一数据字段，在API调用中需要确保其正确传递。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254331</data>
+  <data key="d6"></data>
+</node>
+<node id="脚本ID">
+  <data key="d0">脚本ID</data>
+  <data key="d1">data</data>
+  <data key="d2">脚本ID是标识脚本的唯一数据字段，在API调用中需要确保其正确传递。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254331</data>
+  <data key="d6"></data>
+</node>
+<node id="K6脚本生成">
+  <data key="d0">K6脚本生成</data>
+  <data key="d1">event</data>
+  <data key="d2">K6脚本生成是通过AI(如LangGraph Agent)自动创建K6脚本的过程，是待测试的K6专用功能之一。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254337</data>
+  <data key="d6"></data>
+</node>
+<node id="项目类型筛选">
+  <data key="d0">项目类型筛选</data>
+  <data key="d1">method</data>
+  <data key="d2">项目类型筛选是项目选择器中的一种功能，用于只显示性能测试相关的项目。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254340</data>
+  <data key="d6"></data>
+</node>
+<node id="项目状态筛选">
+  <data key="d0">项目状态筛选</data>
+  <data key="d1">method</data>
+  <data key="d2">项目状态筛选是项目选择器中的一种功能，用于只显示处于激活状态的项目。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254340</data>
+  <data key="d6"></data>
+</node>
+<node id="加载状态提示">
+  <data key="d0">加载状态提示</data>
+  <data key="d1">content</data>
+  <data key="d2">加载状态提示是前端用户体验优化的一部分，用于在数据加载时向用户提供反馈。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254342</data>
+  <data key="d6"></data>
+</node>
+<node id="错误提示信息">
+  <data key="d0">错误提示信息</data>
+  <data key="d1">content</data>
+  <data key="d2">错误提示信息是前端用户体验优化的一部分，用于在操作出错时向用户提供清晰的错误信息。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254345</data>
+  <data key="d6"></data>
+</node>
+<node id="表单验证">
+  <data key="d0">表单验证</data>
+  <data key="d1">method</data>
+  <data key="d2">表单验证是前端用户体验优化的一部分，用于确保用户输入的数据符合要求。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254350</data>
+  <data key="d6"></data>
+</node>
+<node id="API文档">
+  <data key="d0">API文档</data>
+  <data key="d1">content</data>
+  <data key="d2">API文档是待补充的技术文档，用于描述后端API的接口规范。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254351</data>
+  <data key="d6"></data>
+</node>
+<node id="前端组件注释">
+  <data key="d0">前端组件注释</data>
+  <data key="d1">content</data>
+  <data key="d2">前端组件注释是待补充的代码注释，用于解释前端组件的功能和逻辑。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254353</data>
+  <data key="d6"></data>
+</node>
+<node id="用户使用手册">
+  <data key="d0">用户使用手册</data>
+  <data key="d1">content</data>
+  <data key="d2">用户使用手册是待编写的文档，用于指导用户如何使用该系统。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254353</data>
+  <data key="d6"></data>
+</node>
+<node id="数据流向">
+  <data key="d0">数据流向</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据流向描述了系统中数据从前端到后端，再到Agent服务和K6执行的传递路径，以及通过SSE流返回日志的闭环。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254362</data>
+  <data key="d6"></data>
+</node>
+<node id="前端">
+  <data key="d0">前端</data>
+  <data key="d1">organization</data>
+  <data key="d2">前端是系统架构中的用户界面层，负责与用户交互并调用后端API。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254362</data>
+  <data key="d6"></data>
+</node>
+<node id="后端API">
+  <data key="d0">后端API</data>
+  <data key="d1">organization</data>
+  <data key="d2">后端API是系统架构中的接口层，接收前端请求并调用Service层处理。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254362</data>
+  <data key="d6"></data>
+</node>
+<node id="Service层">
+  <data key="d0">Service层</data>
+  <data key="d1">organization</data>
+  <data key="d2">Service层是系统架构中的业务逻辑层，处理核心业务并协调Agent服务。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254364</data>
+  <data key="d6"></data>
+</node>
+<node id="测试用例">
+  <data key="d0">测试用例</data>
+  <data key="d1">content</data>
+  <data key="d2">测试用例是待补充的文档，用于验证系统的各项功能。</data>
+  <data key="d3">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d4">性能测试模块前后端对接分析报告.md</data>
+  <data key="d5">1767254367</data>
+  <data key="d6"></data>
+</node>
+<node id="中国高等教育学位在线验证报告">
+  <data key="d0">中国高等教育学位在线验证报告</data>
+  <data key="d1">content</data>
+  <data key="d2">中国高等教育学位在线验证报告是一份用于在线验证学位信息的官方文件，包含学位持有人的个人信息、学位授予详情以及在线验证码。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254597</data>
+  <data key="d6"></data>
+</node>
+<node id="邱云霞">
+  <data key="d0">邱云霞</data>
+  <data key="d1">person</data>
+  <data key="d2">邱云霞是学位证书的持有人，女性，出生于1990年08月21日，于2014年07月01日获得工学学士学位。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254597</data>
+  <data key="d6"></data>
+</node>
+<node id="江西理工大学">
+  <data key="d0">江西理工大学</data>
+  <data key="d1">organization</data>
+  <data key="d2">江西理工大学是学位授予单位，向邱云霞授予了工学学士学位。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254598</data>
+  <data key="d6"></data>
+</node>
+<node id="工学学士学位">
+  <data key="d0">工学学士学位</data>
+  <data key="d1">concept</data>
+  <data key="d2">工学学士学位是邱云霞所获得的学位类型，属于工学领域。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254603</data>
+  <data key="d6"></data>
+</node>
+<node id="软件工程(机械电子工程)">
+  <data key="d0">软件工程(机械电子工程)</data>
+  <data key="d1">concept</data>
+  <data key="d2">软件工程(机械电子工程)是邱云霞在学位授予期间所修读的学科或专业。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254603</data>
+  <data key="d6"></data>
+</node>
+<node id="学位证书编号">
+  <data key="d0">学位证书编号</data>
+  <data key="d1">data</data>
+  <data key="d2">学位证书编号是学位证书的唯一标识码，邱云霞的编号为1040742014003966。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254606</data>
+  <data key="d6"></data>
+</node>
+<node id="在线验证码">
+  <data key="d0">在线验证码</data>
+  <data key="d1">data</data>
+  <data key="d2">在线验证码是用于在线查验学位验证报告的唯一代码，本例中为X4RD32N0JR3YJTSA。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254606</data>
+  <data key="d6"></data>
+</node>
+<node id="学信网">
+  <data key="d0">学信网</data>
+  <data key="d1">organization</data>
+  <data key="d2">学信网是提供学位证书在线验证服务的官方网站或应用程序，其网址为https://www.chsi.com.cn/xlcx/bgcx.jsp。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254608</data>
+  <data key="d6"></data>
+</node>
+<node id="注意事项">
+  <data key="d0">注意事项</data>
+  <data key="d1">content</data>
+  <data key="d2">注意事项是验证报告中的说明部分，规定了报告的使用规则、修改依据以及验证有效期的管理方式。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254619</data>
+  <data key="d6"></data>
+</node>
+<node id="更新日期">
+  <data key="d0">更新日期</data>
+  <data key="d1">data</data>
+  <data key="d2">更新日期指该验证报告最近一次内容更新的时间，具体为2025年12月20日。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254619</data>
+  <data key="d6"></data>
+</node>
+<node id="性别">
+  <data key="d0">性别</data>
+  <data key="d1">data</data>
+  <data key="d2">性别是邱云霞的个人属性信息，在本报告中为女性。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254622</data>
+  <data key="d6"></data>
+</node>
+<node id="出生日期">
+  <data key="d0">出生日期</data>
+  <data key="d1">data</data>
+  <data key="d2">出生日期是邱云霞的个人信息，具体为1990年08月21日。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254628</data>
+  <data key="d6"></data>
+</node>
+<node id="获学位日期">
+  <data key="d0">获学位日期</data>
+  <data key="d1">data</data>
+  <data key="d2">获学位日期指邱云霞获得学位的具体时间，为2014年07月01日。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254628</data>
+  <data key="d6"></data>
+</node>
+<node id="学位信息权属人">
+  <data key="d0">学位信息权属人</data>
+  <data key="d1">concept</data>
+  <data key="d2">学位信息权属人指学位信息的所有者，在本报告中即邱云霞，对报告的使用拥有决定权。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254628</data>
+  <data key="d6"></data>
+</node>
+<node id="报告验证有效期">
+  <data key="d0">报告验证有效期</data>
+  <data key="d1">concept</data>
+  <data key="d2">报告验证有效期指该在线验证报告可供查验的时间段，由权属人设置并可在到期前延长。</data>
+  <data key="d3">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d4">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d5">1767254631</data>
+  <data key="d6"></data>
+</node>
+<edge source="性能测试模块" target="项目管理入口">
   <data key="d7">1.0</data>
-  <data key="d8">start_all.sh脚本用于启动LightRAG后端服务。</data>
-  <data key="d9">启动,服务管理</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187427</data>
+  <data key="d8">报告诊断性能测试模块的前端最初缺失独立的项目管理入口，这是一个需要解决的问题。</data>
+  <data key="d9">功能缺失,问题诊断</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254377</data>
   <data key="d13"></data>
 </edge>
-<edge source="LightRAG" target="LightRAG Server">
-  <data key="d7">2.0</data>
-  <data key="d8">LightRAG Server是LightRAG组件的一个具体运行实例。&lt;SEP&gt;LightRAG Server的核心功能由LightRAG系统提供。</data>
-  <data key="d9">实例化,实现,核心功能,系统实现</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80&lt;SEP&gt;chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187447</data>
+<edge source="项目管理入口" target="需求管理入口">
+  <data key="d7">1.0</data>
+  <data key="d8">前端原本只有需求管理入口，缺少项目管理入口，导致用户无法直接管理项目。</data>
+  <data key="d9">入口区分,功能对比</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254391</data>
   <data key="d13"></data>
 </edge>
-<edge source="MCP" target="start_all.sh">
+<edge source="项目管理入口" target="路由">
   <data key="d7">1.0</data>
-  <data key="d8">start_all.sh脚本用于启动MCP后端服务。</data>
-  <data key="d9">启动,服务管理</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187447</data>
+  <data key="d8">需要在路由配置中添加独立的项目管理入口，以提供`/testing/project`的访问路径。</data>
+  <data key="d9">访问路径,配置添加</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254412</data>
   <data key="d13"></data>
 </edge>
-<edge source="MCP" target="MCP Server">
+<edge source="项目管理入口" target="菜单系统">
   <data key="d7">1.0</data>
-  <data key="d8">MCP Server是MCP组件的一个具体运行实例。</data>
-  <data key="d9">实例化,实现</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187468</data>
+  <data key="d8">项目管理入口作为一个独立功能，需要被集成到前端的菜单系统中，以便用户访问。</data>
+  <data key="d9">导航添加,界面集成</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254429</data>
   <data key="d13"></data>
 </edge>
-<edge source="MCP" target="MCP Server (RAG Anything)">
+<edge source="项目管理页面" target="驼峰命名">
   <data key="d7">1.0</data>
-  <data key="d8">MCP Server遵循MCP协议来提供RAG服务接口。</data>
-  <data key="d9">协议遵循,接口提供</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188264</data>
+  <data key="d8">项目管理页面的字段名称被修复，从下划线命名改为驼峰命名以匹配后端数据。</data>
+  <data key="d9">命名规范,字段修复</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254378</data>
   <data key="d13"></data>
 </edge>
-<edge source="Agent" target="start_all.sh">
+<edge source="驼峰命名" target="前端功能">
   <data key="d7">1.0</data>
-  <data key="d8">start_all.sh脚本用于启动Agent后端服务。</data>
-  <data key="d9">启动,服务管理</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187468</data>
+  <data key="d8">前端功能统一使用驼峰命名来接收和处理后端API返回的数据。</data>
+  <data key="d9">接口对接,数据格式</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254388</data>
   <data key="d13"></data>
 </edge>
-<edge source="Agent" target="Agent Service">
+<edge source="下划线命名" target="后端API接口">
   <data key="d7">1.0</data>
-  <data key="d8">Agent Service是Agent组件的一个具体运行实例。</data>
-  <data key="d9">实例化,实现</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187491</data>
+  <data key="d8">后端API接口的数据模型使用下划线命名进行定义。</data>
+  <data key="d9">数据定义,模型规范</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254378</data>
   <data key="d13"></data>
 </edge>
-<edge source="start_all.sh" target="前端">
+<edge source="后端API接口" target="Pydantic">
   <data key="d7">1.0</data>
-  <data key="d8">start_all.sh脚本可以用于启动前端服务。</data>
-  <data key="d9">启动,服务管理</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187491</data>
+  <data key="d8">后端使用Pydantic库，可以自动处理下划线命名和驼峰命名之间的转换。</data>
+  <data key="d9">数据转换,自动处理</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254391</data>
   <data key="d13"></data>
 </edge>
-<edge source="start_all.sh" target="后端服务">
+<edge source="后端API接口" target="需求管理API">
   <data key="d7">1.0</data>
-  <data key="d8">start_all.sh脚本用于统一启动由LightRAG、MCP和Agent组成的后端服务。</data>
-  <data key="d9">启动,服务管理</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187518</data>
+  <data key="d8">需求管理API是后端API接口的一个组成部分，专门处理测试需求相关操作。</data>
+  <data key="d9">包含关系,接口分类</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254400</data>
   <data key="d13"></data>
 </edge>
-<edge source="start_all.sh" target="Shell脚本">
+<edge source="后端API接口" target="脚本管理API">
   <data key="d7">1.0</data>
-  <data key="d8">start_all.sh文件是一个具体的Shell脚本实例。</data>
-  <data key="d9">实例,类别归属</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187550</data>
+  <data key="d8">脚本管理API是后端API接口的一个组成部分，专门处理测试脚本相关操作。</data>
+  <data key="d9">包含关系,接口分类</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254406</data>
   <data key="d13"></data>
 </edge>
-<edge source="start_all.sh" target="快速启动脚本">
+<edge source="后端API接口" target="执行管理API">
   <data key="d7">1.0</data>
-  <data key="d8">快速启动流程中包含用于管理服务启动、停止和状态的start_all.sh脚本。</data>
-  <data key="d9">服务管理,脚本包含</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188241</data>
+  <data key="d8">执行管理API是后端API接口的一个组成部分，专门处理测试执行相关操作。</data>
+  <data key="d9">包含关系,接口分类</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254420</data>
   <data key="d13"></data>
 </edge>
-<edge source="MCP Server" target="虚拟环境">
+<edge source="后端API接口" target="报告管理API">
   <data key="d7">1.0</data>
-  <data key="d8">在旧启动方式中，MCP Server需要在特定的虚拟环境中运行。</data>
-  <data key="d9">依赖,运行环境</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187430</data>
+  <data key="d8">报告管理API是后端API接口的一个组成部分，专门处理测试报告相关操作。</data>
+  <data key="d9">包含关系,接口分类</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254439</data>
   <data key="d13"></data>
 </edge>
-<edge source="MCP Server" target="旧方式">
+<edge source="后端API接口" target="性能测试专用API">
   <data key="d7">1.0</data>
-  <data key="d8">在旧方式中，MCP Server是通过在Terminal中执行特定命令启动的。</data>
-  <data key="d9">启动,执行方法</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187531</data>
+  <data key="d8">性能测试专用API是后端API接口的一个组成部分，专门用于性能测试的特定操作。</data>
+  <data key="d9">包含关系,接口分类</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254454</data>
   <data key="d13"></data>
 </edge>
-<edge source="LightRAG Server" target="虚拟环境">
+<edge source="需求管理API" target="AI生成脚本">
   <data key="d7">1.0</data>
-  <data key="d8">在旧启动方式中，LightRAG Server需要在特定的虚拟环境中运行。</data>
-  <data key="d9">依赖,运行环境</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187487</data>
+  <data key="d8">需求管理API包含AI生成脚本的接口，用于根据需求ID和K6参数自动生成测试脚本。</data>
+  <data key="d9">功能包含,自动化生成</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254420</data>
   <data key="d13"></data>
 </edge>
-<edge source="LightRAG Server" target="旧方式">
+<edge source="性能测试专用API" target="K6">
   <data key="d7">1.0</data>
-  <data key="d8">在旧方式中，LightRAG Server是通过在Terminal中执行特定命令启动的。</data>
-  <data key="d9">启动,执行方法</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187560</data>
+  <data key="d8">性能测试专用API支持K6性能测试工具，提供脚本生成、测试执行和报告下载等功能。</data>
+  <data key="d9">功能实现,工具支持</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254406</data>
   <data key="d13"></data>
 </edge>
-<edge source="LightRAG Server" target="RAG + Agent服务栈">
+<edge source="性能测试专用API" target="SSE">
   <data key="d7">1.0</data>
-  <data key="d8">LightRAG Server是RAG + Agent服务栈的一个组成部分，提供知识库服务。</data>
-  <data key="d9">服务部署,组件包含</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188241</data>
+  <data key="d8">性能测试专用API中的获取执行日志接口使用了SSE技术，以实现日志的实时推送。</data>
+  <data key="d9">实时推送,技术应用</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254421</data>
   <data key="d13"></data>
 </edge>
-<edge source="LightRAG Server" target="Deep Agents Service">
+<edge source="前端功能" target="需求管理页面">
   <data key="d7">1.0</data>
-  <data key="d8">Agent Service在运行时会依赖并调用LightRAG Server提供的知识库服务。</data>
-  <data key="d9">功能调用,服务依赖</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188264</data>
+  <data key="d8">需求管理页面是前端功能的一个具体界面模块，用于管理测试需求。</data>
+  <data key="d9">包含关系,界面模块</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254397</data>
   <data key="d13"></data>
 </edge>
-<edge source="Agent Service" target="虚拟环境">
+<edge source="前端功能" target="脚本管理页面">
   <data key="d7">1.0</data>
-  <data key="d8">在旧启动方式中，Agent Service需要在特定的虚拟环境中运行。</data>
-  <data key="d9">依赖,运行环境</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187457</data>
+  <data key="d8">脚本管理页面是前端功能的一个具体界面模块，用于管理测试脚本。</data>
+  <data key="d9">包含关系,界面模块</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254403</data>
   <data key="d13"></data>
 </edge>
-<edge source="Agent Service" target="旧方式">
+<edge source="前端功能" target="执行管理页面">
   <data key="d7">1.0</data>
-  <data key="d8">在旧方式中，Agent Service是通过在Terminal中执行特定命令启动的。</data>
-  <data key="d9">启动,执行方法</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188210</data>
+  <data key="d8">执行管理页面是前端功能的一个具体界面模块，用于管理测试执行。</data>
+  <data key="d9">包含关系,界面模块</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254412</data>
   <data key="d13"></data>
 </edge>
-<edge source="前端" target="旧方式">
+<edge source="需求管理页面" target="项目关联">
   <data key="d7">1.0</data>
-  <data key="d8">在旧方式中，前端是通过在Terminal中执行npm命令启动的。</data>
-  <data key="d9">启动,执行方法</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188234</data>
+  <data key="d8">需求管理页面中的项目关联功能依赖于项目下拉列表的正常加载，以确保需求能关联到正确项目。</data>
+  <data key="d9">功能依赖,数据加载</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254440</data>
   <data key="d13"></data>
 </edge>
-<edge source="虚拟环境" target="旧方式">
+<edge source="脚本管理页面" target="Monaco Editor">
   <data key="d7">1.0</data>
-  <data key="d8">旧启动方式的核心特点是每个后端服务都运行在各自独立的虚拟环境中。</data>
-  <data key="d9">方法依赖,隔离</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187507</data>
+  <data key="d8">脚本管理页面集成了Monaco Editor代码编辑器组件，用于编辑测试脚本。</data>
+  <data key="d9">代码编辑,工具集成</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254411</data>
   <data key="d13"></data>
 </edge>
-<edge source="Terminal" target="osascript">
+<edge source="脚本管理页面" target="K6脚本类型">
   <data key="d7">1.0</data>
-  <data key="d8">osascript工具通过AppleScript命令控制Terminal应用程序打开新窗口并执行命令。</data>
-  <data key="d9">控制,脚本执行</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187468</data>
+  <data key="d8">脚本管理页面需要验证K6脚本类型的筛选功能是否正常工作。</data>
+  <data key="d9">筛选功能,类型验证</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254430</data>
   <data key="d13"></data>
 </edge>
-<edge source="osascript" target="AppleScript">
+<edge source="脚本管理页面" target="项目管理">
   <data key="d7">1.0</data>
-  <data key="d8">osascript是专门用于执行AppleScript脚本的命令行工具。</data>
-  <data key="d9">依赖,工具执行</data>
-  <data key="d10">chunk-8c827224c9f6af5154b5ce1fa4bb2b80</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187524</data>
+  <data key="d8">项目管理功能需要确保其关联的脚本管理页面中的项目下拉列表能正常加载。</data>
+  <data key="d9">功能关联,系统集成</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254445</data>
   <data key="d13"></data>
 </edge>
-<edge source="RAG + Agent服务栈" target="MCP Server (RAG Anything)">
+<edge source="脚本管理页面" target="K6脚本">
   <data key="d7">1.0</data>
-  <data key="d8">MCP Server是RAG + Agent服务栈的一个组成部分，需要首先部署。</data>
-  <data key="d9">服务部署,组件包含</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767187531</data>
+  <data key="d8">脚本管理页面负责展示、编辑和执行K6脚本，并需要验证对K6脚本类型的筛选功能。</data>
+  <data key="d9">内容管理,功能支持</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254457</data>
   <data key="d13"></data>
 </edge>
-<edge source="RAG + Agent服务栈" target="Deep Agents Service">
+<edge source="脚本管理页面" target="代码编辑器">
   <data key="d7">1.0</data>
-  <data key="d8">Deep Agents Service是RAG + Agent服务栈的核心Agent服务组件。</data>
-  <data key="d9">服务部署,组件包含</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188195</data>
+  <data key="d8">脚本管理页面集成了代码编辑器(Monaco Editor)，用于编辑脚本。</data>
+  <data key="d9">功能集成,开发工具</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254474</data>
   <data key="d13"></data>
 </edge>
-<edge source="RAG + Agent服务栈" target="前端服务(Testing Deep Agents UI)">
+<edge source="执行管理页面" target="实时日志展示">
   <data key="d7">1.0</data>
-  <data key="d8">前端服务是RAG + Agent服务栈的用户访问入口和交互界面。</data>
-  <data key="d9">用户界面,组件包含</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188220</data>
+  <data key="d8">执行管理页面包含实时日志展示功能，但该功能的状态标记为待验证。</data>
+  <data key="d9">功能验证,状态检查</data>
+  <data key="d10">chunk-9b24edb7e56cd76dd6ec67a60020f6c5</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254430</data>
   <data key="d13"></data>
 </edge>
-<edge source="MCP Server (RAG Anything)" target="Deep Agents Service">
+<edge source="执行管理页面" target="SSE流">
   <data key="d7">1.0</data>
-  <data key="d8">Agent Service在运行时会依赖并调用MCP Server提供的RAG服务接口。</data>
-  <data key="d9">功能调用,服务依赖</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188257</data>
+  <data key="d8">执行管理页面依赖SSE流技术来实时展示K6执行的日志。</data>
+  <data key="d9">技术实现,数据展示</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254445</data>
   <data key="d13"></data>
 </edge>
-<edge source="Deep Agents Service" target="前端服务(Testing Deep Agents UI)">
+<edge source="执行管理页面" target="实时日志">
   <data key="d7">1.0</data>
-  <data key="d8">前端服务作为用户入口，会调用后端的核心Agent服务。</data>
-  <data key="d9">数据交互,服务调用</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188241</data>
+  <data key="d8">执行管理页面负责展示K6执行产生的实时日志。</data>
+  <data key="d9">内容展示,实时监控</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254476</data>
   <data key="d13"></data>
 </edge>
-<edge source="Deep Agents Service" target="LangGraph">
+<edge source="执行管理页面" target="执行详情">
   <data key="d7">1.0</data>
-  <data key="d8">Deep Agents Service是基于LangGraph框架构建的Agent服务。</data>
-  <data key="d9">功能实现,框架使用</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188273</data>
+  <data key="d8">执行管理页面提供查看每次K6执行详情的功能。</data>
+  <data key="d9">信息查看,内容管理</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254488</data>
   <data key="d13"></data>
 </edge>
-<edge source="Deep Agents Service" target="Performance Agent">
+<edge source="项目管理" target="项目选择器">
   <data key="d7">1.0</data>
-  <data key="d8">Deep Agents Service提供并支持Performance Agent功能。</data>
-  <data key="d9">功能支持,服务提供</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188280</data>
+  <data key="d8">项目选择器组件用于在相关页面中选择项目，其功能完善(如添加类型和状态筛选)依赖于项目管理模块的数据。</data>
+  <data key="d9">数据筛选,组件依赖</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254457</data>
   <data key="d13"></data>
 </edge>
-<edge source="Deep Agents Service" target="Research Agent">
+<edge source="报告管理页面" target="K6性能图表">
   <data key="d7">1.0</data>
-  <data key="d8">Deep Agents Service提供并支持Research Agent功能。</data>
-  <data key="d9">功能支持,服务提供</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188285</data>
+  <data key="d8">报告管理页面需要展示K6性能图表，并且此功能需要被验证。</data>
+  <data key="d9">功能验证,数据可视化</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254446</data>
   <data key="d13"></data>
 </edge>
-<edge source="快速启动脚本" target="setup.sh">
+<edge source="报告管理页面" target="MinIO对象存储">
   <data key="d7">1.0</data>
-  <data key="d8">快速启动流程中包含用于初始化环境的setup.sh脚本。</data>
-  <data key="d9">环境初始化,脚本包含</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188224</data>
+  <data key="d8">MinIO对象存储也用于存储测试报告，这些报告可在报告管理页面中被查看和下载。</data>
+  <data key="d9">数据提供,资源存储</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254470</data>
   <data key="d13"></data>
 </edge>
-<edge source="快速启动脚本" target="pyproject.toml">
+<edge source="报告管理页面" target="报告详情">
   <data key="d7">1.0</data>
-  <data key="d8">快速启动脚本利用pyproject.toml配置文件来管理项目依赖，实现统一虚拟环境。</data>
-  <data key="d9">依赖管理,统一环境</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188260</data>
+  <data key="d8">报告管理页面提供查看每次K6测试报告详情的功能。</data>
+  <data key="d9">信息查看,内容管理</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254485</data>
   <data key="d13"></data>
 </edge>
-<edge source="快速启动脚本" target="统一虚拟环境">
+<edge source="K6脚本" target="LangGraph Agent">
   <data key="d7">1.0</data>
-  <data key="d8">快速启动脚本通过统一虚拟环境的方法来管理项目依赖和环境。</data>
-  <data key="d9">方法实现,环境管理</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188270</data>
+  <data key="d8">LangGraph Agent利用AI技术来生成K6脚本。</data>
+  <data key="d9">AI应用,内容生成</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254473</data>
   <data key="d13"></data>
 </edge>
-<edge source="快速启动脚本" target="旧方式-分别启动">
+<edge source="K6脚本" target="MinIO对象存储">
   <data key="d7">1.0</data>
-  <data key="d8">快速启动脚本是新推荐的方法，文档中也提到了旧式的分别启动方法作为对比或备选。</data>
-  <data key="d9">备选方案,方法对比</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188277</data>
+  <data key="d8">MinIO对象存储用于存储K6脚本文件。</data>
+  <data key="d9">文件管理,资源存储</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254488</data>
   <data key="d13"></data>
 </edge>
-<edge source="src/core/config.py" target="Pydantic Settings验证错误">
+<edge source="SSE流" target="K6执行">
   <data key="d7">1.0</data>
-  <data key="d8">当遇到Pydantic Settings验证错误时，需要在src/core/config.py文件中修改配置来解决。</data>
-  <data key="d9">配置修改,错误修复</data>
-  <data key="d10">chunk-e1503226bff786bd39cd20659e09194f</data>
-  <data key="d11">部署流程.md</data>
-  <data key="d12">1767188245</data>
+  <data key="d8">K6执行过程会产生日志数据，这些数据通过SSE流实时推送到前端。</data>
+  <data key="d9">实时传输,数据产生</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254457</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SSE流" target="数据流向">
+  <data key="d7">1.0</data>
+  <data key="d8">数据流向描述了K6执行产生的日志通过SSE流实时返回给前端的反馈回路。</data>
+  <data key="d9">反馈回路,架构描述</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254528</data>
+  <data key="d13"></data>
+</edge>
+<edge source="K6性能图表" target="K6执行">
+  <data key="d7">1.0</data>
+  <data key="d8">K6执行产生的性能数据是K6性能图表展示的数据来源。</data>
+  <data key="d9">数据来源,结果展示</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254473</data>
+  <data key="d13"></data>
+</edge>
+<edge source="项目选择器" target="项目类型筛选">
+  <data key="d7">1.0</data>
+  <data key="d8">项目选择器需要实现项目类型筛选功能，以只显示性能测试项目。</data>
+  <data key="d9">功能实现,数据过滤</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254494</data>
+  <data key="d13"></data>
+</edge>
+<edge source="项目选择器" target="项目状态筛选">
+  <data key="d7">1.0</data>
+  <data key="d8">项目选择器需要实现项目状态筛选功能，以只显示激活的项目。</data>
+  <data key="d9">功能实现,数据过滤</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254505</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LangGraph Agent" target="RAG知识库">
+  <data key="d7">1.0</data>
+  <data key="d8">RAG知识库为LangGraph Agent提供知识支持，以增强其生成的K6脚本的质量。</data>
+  <data key="d9">知识增强,质量提升</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254458</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Agent服务" target="K6执行">
+  <data key="d7">1.0</data>
+  <data key="d8">Agent服务(testing-agents-service)是后端架构中直接调用和处理K6执行的服务层。</data>
+  <data key="d9">任务处理,服务调用</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254489</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Agent服务" target="数据流向">
+  <data key="d7">1.0</data>
+  <data key="d8">数据流向描述了数据传递到Agent服务(testing-agents-service)的架构流程。</data>
+  <data key="d9">架构描述,流程节点</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254521</data>
+  <data key="d13"></data>
+</edge>
+<edge source="K6执行" target="数据流向">
+  <data key="d7">1.0</data>
+  <data key="d8">数据流向描述了数据最终触发K6执行的架构流程。</data>
+  <data key="d9">架构描述,流程终点</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254525</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API调用" target="项目ID">
+  <data key="d7">1.0</data>
+  <data key="d8">API调用过程中需要正确传递和验证项目ID字段。</data>
+  <data key="d9">参数验证,数据传输</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254494</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API调用" target="需求ID">
+  <data key="d7">1.0</data>
+  <data key="d8">API调用过程中需要正确传递和验证需求ID字段。</data>
+  <data key="d9">参数验证,数据传输</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254505</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API调用" target="脚本ID">
+  <data key="d7">1.0</data>
+  <data key="d8">API调用过程中需要正确传递和验证脚本ID字段。</data>
+  <data key="d9">参数验证,数据传输</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据流向" target="前端">
+  <data key="d7">1.0</data>
+  <data key="d8">数据流向描述了数据从前端开始传递的架构流程。</data>
+  <data key="d9">架构描述,流程起点</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254502</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据流向" target="后端API">
+  <data key="d7">1.0</data>
+  <data key="d8">数据流向描述了数据经过后端API层的架构流程。</data>
+  <data key="d9">架构描述,流程节点</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据流向" target="Service层">
+  <data key="d7">1.0</data>
+  <data key="d8">数据流向描述了数据经过Service层的架构流程。</data>
+  <data key="d9">架构描述,流程节点</data>
+  <data key="d10">chunk-107d5dbf30036a96f58f85fdab2ada27</data>
+  <data key="d11">性能测试模块前后端对接分析报告.md</data>
+  <data key="d12">1767254517</data>
+  <data key="d13"></data>
+</edge>
+<edge source="中国高等教育学位在线验证报告" target="邱云霞">
+  <data key="d7">1.0</data>
+  <data key="d8">该验证报告的核心内容是证明邱云霞的学位信息，报告以她为主体进行信息验证。</data>
+  <data key="d9">信息载体,身份验证</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254642</data>
+  <data key="d13"></data>
+</edge>
+<edge source="中国高等教育学位在线验证报告" target="在线验证码">
+  <data key="d7">1.0</data>
+  <data key="d8">该验证报告包含一个在线验证码，作为在线查验报告真实性和有效性的关键凭证。</data>
+  <data key="d9">安全验证,访问凭证</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254653</data>
+  <data key="d13"></data>
+</edge>
+<edge source="中国高等教育学位在线验证报告" target="学信网">
+  <data key="d7">1.0</data>
+  <data key="d8">该验证报告通过学信网提供的在线平台或App进行查验，学信网是官方指定的验证渠道。</data>
+  <data key="d9">在线服务,验证平台</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254663</data>
+  <data key="d13"></data>
+</edge>
+<edge source="中国高等教育学位在线验证报告" target="注意事项">
+  <data key="d7">1.0</data>
+  <data key="d8">注意事项是该验证报告的组成部分，明确了报告的使用限制、更新规则和有效期管理。</data>
+  <data key="d9">使用条款,规范说明</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254669</data>
+  <data key="d13"></data>
+</edge>
+<edge source="中国高等教育学位在线验证报告" target="更新日期">
+  <data key="d7">1.0</data>
+  <data key="d8">验证报告包含一个更新日期，表明报告内容的时效性，最新内容以此日期为准。</data>
+  <data key="d9">信息时效,版本管理</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254675</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="江西理工大学">
+  <data key="d7">1.0</data>
+  <data key="d8">邱云霞的工学学士学位由江西理工大学授予，表明了她的教育经历和毕业院校。</data>
+  <data key="d9">学位授予,教育背景</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254653</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="工学学士学位">
+  <data key="d7">1.0</data>
+  <data key="d8">邱云霞于2014年07月01日获得了工学学士学位，这是她取得的学术资格。</data>
+  <data key="d9">学位获得,学术成就</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254660</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="软件工程(机械电子工程)">
+  <data key="d7">1.0</data>
+  <data key="d8">邱云霞在攻读学位期间的专业是软件工程(机械电子工程)，这定义了她的学术专长领域。</data>
+  <data key="d9">专业修读,学科领域</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254666</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="学位证书编号">
+  <data key="d7">1.0</data>
+  <data key="d8">学位证书编号1040742014003966是邱云霞所获学位证书的唯一官方标识。</data>
+  <data key="d9">唯一编码,身份标识</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254672</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="性别">
+  <data key="d7">1.0</data>
+  <data key="d8">性别是邱云霞个人身份信息的一部分，记录在验证报告中。</data>
+  <data key="d9">个人属性,身份信息</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254682</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="出生日期">
+  <data key="d7">1.0</data>
+  <data key="d8">出生日期是邱云霞个人身份信息的一部分，记录在验证报告中。</data>
+  <data key="d9">个人属性,身份信息</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254688</data>
+  <data key="d13"></data>
+</edge>
+<edge source="邱云霞" target="获学位日期">
+  <data key="d7">1.0</data>
+  <data key="d8">获学位日期标志着邱云霞完成学业并获得学位证书的具体时间点。</data>
+  <data key="d9">学业完成,时间节点</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254692</data>
+  <data key="d13"></data>
+</edge>
+<edge source="注意事项" target="学位信息权属人">
+  <data key="d7">1.0</data>
+  <data key="d8">注意事项中明确指出，未经学位信息权属人(邱云霞)同意，不得将报告用于违背其意愿的用途。</data>
+  <data key="d9">使用约束,权利声明</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254675</data>
+  <data key="d13"></data>
+</edge>
+<edge source="注意事项" target="报告验证有效期">
+  <data key="d7">1.0</data>
+  <data key="d8">注意事项中说明了报告验证有效期的设置规则，即由权属人设置并可在到期前延长。</data>
+  <data key="d9">时间管理,规则说明</data>
+  <data key="d10">chunk-e61a1731aec9cf18fadf61cb57ca5b46</data>
+  <data key="d11">中国高等教育学位在线验证报告_邱云霞.pdf</data>
+  <data key="d12">1767254685</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

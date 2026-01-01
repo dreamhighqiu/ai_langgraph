@@ -7,15 +7,15 @@
    - Network:      http://192.168.1.59:3200
 
  ✓ Starting...
- ✓ Ready in 2.1s
+ ✓ Ready in 4.2s
  ○ Compiling / ...
- ✓ Compiled / in 14.1s
- GET /?assistantId=rag_api_agent&threadId=13ea5f97-3430-4c62-a9f2-b597c907ad96 200 in 16115ms
+ ✓ Compiled / in 16.8s
+ GET /?assistantId=chat_rag_agent&threadId=15f4b1ef-e651-42c9-8be4-0c10b6a0cc85 200 in 19584ms
  ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /?assistantId=chat_rag_agent&threadId=7859c52b-5e82-4c56-ba5a-80ae1c74c145&sidebar=1 200 in 671ms
+ GET / 200 in 1182ms
  ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 525ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 1013ms
- GET /?assistantId=rag_api_agent&threadId=13ea5f97-3430-4c62-a9f2-b597c907ad96 200 in 345ms
- GET /?assistantId=rag_api_agent&threadId=13ea5f97-3430-4c62-a9f2-b597c907ad96 200 in 353ms
-[?25h
+ ✓ Compiled /favicon.ico in 2.3s
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 3098ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 731ms

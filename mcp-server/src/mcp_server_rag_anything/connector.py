@@ -59,6 +59,18 @@ class RAGAnythingConnector:
                 logger.info("RAGAnything already initialized")
                 return {"success": True, "message": "Already initialized"}
 
+            # Log storage env to确认是否指向 Milvus
+            storage_backend = os.getenv("LIGHTRAG_VECTOR_STORAGE", "")
+            milvus_uri = os.getenv("MILVUS_URI", "")
+            milvus_db = os.getenv("MILVUS_DB_NAME", "")
+            logger.info(
+                "LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=%s, MILVUS_URI=%s, MILVUS_DB_NAME=%s, working_dir=%s",
+                storage_backend or "<unset>",
+                milvus_uri or "<unset>",
+                milvus_db or "<unset>",
+                self.config.rag.working_dir,
+            )
+
             # Create RAGAnything configuration
             rag_config = RAGAnythingConfig(
                 working_dir=self.config.rag.working_dir,
@@ -192,4 +204,3 @@ class RAGAnythingConnector:
                 logger.info("RAGAnything storages finalized")
         except Exception as e:
             logger.error(f"Error closing RAGAnything: {e}")
-

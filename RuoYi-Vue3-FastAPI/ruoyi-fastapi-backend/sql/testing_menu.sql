@@ -1,6 +1,9 @@
 -- ----------------------------
--- 测试管理模块菜单数据（完整版）
--- 说明：在已有3000-3299菜单基础上，新增项目管理（2900-2999）
+-- 测试管理模块菜单数据（完整版 v2.0）
+-- 说明：
+--   1. 项目管理（2900-2919）
+--   2. 知识库管理（2920-2929）- 新增
+--   3. 性能测试/UI自动化/API自动化（3000-3299）
 -- ----------------------------
 
 -- 强烈建议先备份
@@ -8,12 +11,12 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 
--- ========== 第一部分：项目管理（2900-2999） ==========
--- 1) 清空项目管理相关菜单与角色绑定
+-- ========== 第一部分：项目管理 + 知识库管理（2900-2999） ==========
+-- 1) 清空项目管理和知识库管理相关菜单与角色绑定
 DELETE FROM sys_role_menu WHERE menu_id BETWEEN 2900 AND 2999;
 DELETE FROM sys_menu WHERE menu_id BETWEEN 2900 AND 2999;
 
--- 2) 插入项目管理菜单
+-- 2) 插入测试管理根目录和项目管理菜单
 INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, path, component, query, is_frame, is_cache, menu_type, visible, status, perms, icon, create_by, create_time, update_by, update_time, remark) VALUES
 (2900,'测试管理',0,0,'testing',NULL,NULL,1,0,'M','0','0',NULL,'folder-opened','admin',NOW(),'admin',NOW(),'测试管理根目录'),
 (2901,'项目管理',2900,1,'project','testing/project/index',NULL,1,0,'C','0','0','testing:project:list','folder-opened','admin',NOW(),'admin',NOW(),'测试项目管理');
@@ -27,7 +30,20 @@ INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, path, component,
 (2915,'项目导出',2901,5,'','',NULL,1,0,'F','0','0','testing:project:export',NULL,'admin',NOW(),'admin',NOW(),NULL),
 (2916,'项目导入',2901,6,'','',NULL,1,0,'F','0','0','testing:project:import',NULL,'admin',NOW(),'admin',NOW(),NULL);
 
--- 4) 为管理员角色绑定项目管理权限（role_id=1）
+-- 4) 插入知识库管理菜单（2920-2929）
+INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, path, component, query, is_frame, is_cache, menu_type, visible, status, perms, icon, create_by, create_time, update_by, update_time, remark) VALUES
+(2920,'知识库管理',2900,4,'knowledge','testing/knowledge/index',NULL,1,0,'C','0','0','testing:knowledge:list','collection','admin',NOW(),'admin',NOW(),'知识库管理菜单');
+
+-- 5) 插入知识库管理按钮权限（2921-2926）
+INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, path, component, query, is_frame, is_cache, menu_type, visible, status, perms, icon, create_by, create_time, update_by, update_time, remark) VALUES
+(2921,'知识库查询',2920,1,'','',NULL,1,0,'F','0','0','testing:knowledge:query',NULL,'admin',NOW(),'admin',NOW(),'知识库查询权限'),
+(2922,'知识库新增',2920,2,'','',NULL,1,0,'F','0','0','testing:knowledge:add',NULL,'admin',NOW(),'admin',NOW(),'知识库新增权限'),
+(2923,'知识库修改',2920,3,'','',NULL,1,0,'F','0','0','testing:knowledge:edit',NULL,'admin',NOW(),'admin',NOW(),'知识库修改权限'),
+(2924,'知识库删除',2920,4,'','',NULL,1,0,'F','0','0','testing:knowledge:remove',NULL,'admin',NOW(),'admin',NOW(),'知识库删除权限'),
+(2925,'文件上传',2920,5,'','',NULL,1,0,'F','0','0','testing:knowledge:upload',NULL,'admin',NOW(),'admin',NOW(),'文件上传权限'),
+(2926,'知识库导出',2920,6,'','',NULL,1,0,'F','0','0','testing:knowledge:export',NULL,'admin',NOW(),'admin',NOW(),'知识库导出权限');
+
+-- 6) 为管理员角色绑定项目管理和知识库管理权限（role_id=1）
 INSERT INTO sys_role_menu (role_id, menu_id)
 SELECT 1, menu_id FROM sys_menu WHERE menu_id BETWEEN 2900 AND 2999;
 

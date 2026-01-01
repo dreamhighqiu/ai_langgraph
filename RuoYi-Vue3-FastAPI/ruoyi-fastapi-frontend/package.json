@@ -32,6 +32,7 @@
     "js-beautify": "1.15.1",
     "js-cookie": "3.0.5",
     "jsencrypt": "3.3.2",
+    "marked": "^15.0.12",
     "nprogress": "0.2.0",
     "pinia": "3.0.2",
     "splitpanes": "4.0.4",

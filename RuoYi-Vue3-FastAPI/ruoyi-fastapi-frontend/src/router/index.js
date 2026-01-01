@@ -157,6 +157,52 @@ export const dynamicRoutes = [
         meta: { title: '修改生成配置', activeMenu: '/tool/gen' }
       }
     ]
+  },
+  {
+    path: '/knowledge',
+    component: Layout,
+    hidden: true,
+    permissions: ['testing:knowledge:list'],
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/testing/knowledge/index'),
+        name: 'Knowledge',
+        meta: { title: '知识库列表', activeMenu: '/knowledge' }
+      },
+      {
+        path: 'files/:knowledgeId(\\d+)',
+        component: () => import('@/views/testing/knowledge/files'),
+        name: 'KnowledgeFiles',
+        meta: { title: '文件管理', activeMenu: '/knowledge' }
+      },
+      {
+        path: 'chat/:knowledgeId(\\d+)',
+        component: () => import('@/views/testing/knowledge/chat'),
+        name: 'KnowledgeChat',
+        meta: { title: 'RAG 问答', activeMenu: '/knowledge' }
+      }
+    ]
+  },
+  {
+    path: '/testing/knowledge',
+    component: Layout,
+    hidden: true,
+    permissions: ['testing:knowledge:list'],
+    children: [
+      {
+        path: 'files/:knowledgeId(\\d+)',
+        component: () => import('@/views/testing/knowledge/files'),
+        name: 'KnowledgeFilesOld',
+        meta: { title: '文件管理', activeMenu: '/knowledge' }
+      },
+      {
+        path: 'chat/:knowledgeId(\\d+)',
+        component: () => import('@/views/testing/knowledge/chat'),
+        name: 'KnowledgeChatOld',
+        meta: { title: 'RAG 问答', activeMenu: '/knowledge' }
+      }
+    ]
   }
 ]
 

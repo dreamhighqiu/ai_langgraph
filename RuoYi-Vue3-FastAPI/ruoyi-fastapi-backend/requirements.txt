@@ -18,3 +18,11 @@ ruff==0.14.10
 SQLAlchemy[asyncio]==2.0.45
 sqlglot[rs]==28.5.0
 user-agents==2.2.0
+deepagents==0.3.1
+fastmcp==2.14.2
+langchain==1.2.0
+langchain-deepseek==1.0.1
+langchain-mcp-adapters==0.2.1
+langgraph==1.0.5
+langgraph-cli[inmem]==0.4.11
+zstandard==0.25.0

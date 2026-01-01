@@ -63,11 +63,19 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[RAGAnythingContext]:
 
     # Load configuration
     config = MCSConfig.from_env()
-    logger.info(f"Configuration loaded")
-    logger.info(f"  LLM Provider: {config.llm.provider}")
-    logger.info(f"  LLM Model: {config.llm.model}")
-    logger.info(f"  LLM API Key: {'***' + config.llm.api_key[-4:] if config.llm.api_key else 'NOT SET'}")
-    logger.info(f"  RAG Parser: {config.rag.parser}")
+    logger.info("Configuration loaded")
+    logger.info("  LLM Provider: %s", config.llm.provider)
+    logger.info("  LLM Model: %s", config.llm.model)
+    logger.info("  LLM API Key: %s", '***' + config.llm.api_key[-4:] if config.llm.api_key else 'NOT SET')
+    logger.info("  RAG Parser: %s", config.rag.parser)
+    logger.info("  Working Dir: %s", config.rag.working_dir)
+    # 关键存储配置，便于确认是否走 Milvus
+    logger.info(
+        "  Storage Env -> LIGHTRAG_VECTOR_STORAGE=%s, MILVUS_URI=%s, MILVUS_DB_NAME=%s",
+        os.getenv("LIGHTRAG_VECTOR_STORAGE", "<unset>"),
+        os.getenv("MILVUS_URI", "<unset>"),
+        os.getenv("MILVUS_DB_NAME", "<unset>"),
+    )
 
     try:
         # Create LLM function
@@ -311,4 +319,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

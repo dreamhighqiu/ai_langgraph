@@ -33,7 +33,9 @@ class ExecutionDAO:
                 TestScript.script_name,
                 TestScript.script_type,
                 TestScript.script_content,
-                TestProject.project_name
+                TestScript.script_file_path,
+                TestProject.project_name,
+                TestProject.project_id
             )
             .join(TestScript, TestExecution.script_id == TestScript.script_id)
             .join(TestProject, TestScript.project_id == TestProject.project_id)
@@ -41,13 +43,15 @@ class ExecutionDAO:
         )
         row = result.first()
         if row:
-            execution, script_name, script_type, script_content, project_name = row
+            execution, script_name, script_type, script_content, script_file_path, project_name, project_id = row
             return {
                 'execution_id': execution.execution_id,
                 'script_id': execution.script_id,
+                'project_id': project_id,
                 'script_name': script_name,
                 'script_type': script_type,
                 'script_content': script_content,
+                'script_file_path': script_file_path,
                 'project_name': project_name,
                 'execution_type': execution.execution_type,
                 'execution_status': execution.execution_status,
@@ -100,7 +104,9 @@ class ExecutionDAO:
                 TestExecution,
                 TestScript.script_name,
                 TestScript.script_type,
-                TestProject.project_name
+                TestProject.project_name,
+                TestProject.project_id,
+                TestScript.script_file_path
             )
             .join(TestScript, TestExecution.script_id == TestScript.script_id)
             .join(TestProject, TestScript.project_id == TestProject.project_id)
@@ -119,13 +125,15 @@ class ExecutionDAO:
         rows = result.all()
         
         executions = []
-        for execution, script_name, script_type, project_name in rows:
+        for execution, script_name, script_type, project_name, project_id, script_file_path in rows:
             exec_dict = {
                 'execution_id': execution.execution_id,
                 'script_id': execution.script_id,
+                'project_id': project_id,
                 'script_name': script_name,
                 'script_type': script_type,
                 'project_name': project_name,
+                'script_file_path': script_file_path,
                 'execution_type': execution.execution_type,
                 'execution_status': execution.execution_status,
                 'start_time': execution.start_time,

@@ -23,6 +23,7 @@ from module_testing.entity.vo.script_vo import (
 )
 from module_testing.storage.minio_client import get_minio_client
 from utils.log_util import logger
+from module_testing.agents.k6_runner import get_k6_runner
 
 
 class ScriptService:
@@ -375,6 +376,7 @@ class ScriptService:
             # 立即提取需要的值，避免后续异步操作中访问ORM对象导致greenlet错误
             script_type = script.script_type
             script_content = script.script_content
+            script_name = script.script_name
             
             # 创建执行记录
             execution = TestExecution(
@@ -388,55 +390,28 @@ class ScriptService:
             created_execution = await ExecutionDAO.create(db, execution)
             execution_id = created_execution.execution_id  # 提取ID
             
-            # 更新状态为运行中
+            # 保存脚本到 k6_agent workspace 并提交执行任务
+            if script_type != 'k6':
+                return {
+                    'success': False,
+                    'error': '当前仅支持K6性能脚本执行'
+                }
+
+            runner = get_k6_runner()
+            virtual_path, actual_path = runner.save_script(script_name, script_content or '')
+            start_time = datetime.now()
+            task_id = runner.submit_and_monitor(virtual_path, execution_id)
+
+            # 更新执行记录为运行中，写入 thread_id/agent_id/开始时间/文件路径
             await ExecutionDAO.update_status(
                 db, execution_id,
                 'running',
-                start_time=datetime.now()
+                start_time=start_time,
+                thread_id=task_id,
+                agent_id='k6_agent',
+                result={'script_path': virtual_path, 'actual_path': str(actual_path)}
             )
             await db.commit()
-            
-            # 异步执行脚本(这里简化处理，实际应该使用任务队列)
-            agent_type_map = {
-                'k6': 'k6_agent',
-                'playwright': 'ui_automation_agent',
-                'api': 'rest_api_agent'
-            }
-            agent_type = agent_type_map.get(script_type)
-            
-            if agent_type:
-                agent_manager = get_agent_manager()
-                exec_result = await agent_manager.execute_script(
-                    agent_id=agent_type,
-                    script_content=script_content,
-                    config=model.config
-                )
-                
-                # 更新执行结果
-                end_time = datetime.now()
-                if exec_result['success']:
-                    await ExecutionDAO.update_result(
-                        db, execution_id,
-                        result_data=exec_result.get('result', {}),
-                        status='success',
-                        end_time=end_time
-                    )
-                    # 更新Agent ID和Thread ID
-                    await ExecutionDAO.update_status(
-                        db, execution_id,
-                        'success',
-                        agent_id=exec_result.get('agent_id'),
-                        thread_id=exec_result.get('thread_id')
-                    )
-                else:
-                    await ExecutionDAO.update_status(
-                        db, execution_id,
-                        'failed',
-                        error_msg=exec_result.get('error'),
-                        end_time=end_time
-                    )
-                
-                await db.commit()
             
             logger.info(f'执行脚本: {model.script_id}, execution_id: {execution_id}')
             

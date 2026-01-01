@@ -1,0 +1,33 @@
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                        ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                        █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                             │
+│                               FastMCP 2.14.1                                │
+│                                                                             │
+│                                                                             │
+│                   🖥  Server name: TestExecutor                              │
+│                                                                             │
+│                   📦 Transport:   SSE                                       │
+│                   🔗 Server URL:  http://0.0.0.0:8004/sse                   │
+│                                                                             │
+│                   📚 Docs:        https://gofastmcp.com                     │
+│                   🚀 Hosting:     https://fastmcp.cloud                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+INFO:__main__:并行执行支持: xdist=False, CPU核心数=16, Allure CLI=False
+[01/01/26 20:01:53] INFO     Starting MCP server 'TestExecutor'  server.py:2618
+                             with transport 'sse' on                           
+                             http://0.0.0.0:8004/sse                           
+INFO:     Started server process [77508]
+INFO:     Waiting for application startup.
+INFO:docket.worker:Starting worker 'caobinbin#77508' with the following tasks:
+INFO:docket.worker:* trace(message: str, ...)
+INFO:docket.worker:* fail(message: str, ...)
+INFO:docket.worker:* sleep(seconds: float, ...)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)

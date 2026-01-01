@@ -410,3 +410,21 @@ def get_minio_client() -> MinIOClient:
     if _minio_client is None:
         _minio_client = MinIOClient()
     return _minio_client
+
+
+class MinioClientManager:
+    """MinIO客户端管理器（兼容性封装）"""
+    
+    _instance: Optional[MinIOClient] = None
+    
+    @classmethod
+    def get_client(cls) -> MinIOClient:
+        """获取MinIO客户端实例"""
+        if cls._instance is None:
+            cls._instance = get_minio_client()
+        return cls._instance
+    
+    @classmethod
+    def reset(cls):
+        """重置客户端实例（用于测试）"""
+        cls._instance = None

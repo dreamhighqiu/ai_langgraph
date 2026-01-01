@@ -27,6 +27,19 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     await RedisUtil.init_sys_dict(app.state.redis)
     await RedisUtil.init_sys_config(app.state.redis)
     await SchedulerUtil.init_system_scheduler()
+    
+    # 配置 LightRAG 客户端
+    try:
+        import os
+        from module_testing.service.lightrag_client import LightRAGManager
+        
+        lightrag_url = os.getenv('LIGHTRAG_BASE_URL', 'http://localhost:9621')
+        lightrag_api_key = os.getenv('LIGHTRAG_API_KEY')
+        LightRAGManager.configure(base_url=lightrag_url, api_key=lightrag_api_key)
+        logger.info(f'✅ LightRAG 客户端配置成功: {lightrag_url}')
+    except Exception as e:
+        logger.warning(f'⚠️  LightRAG 客户端配置失败: {e}')
+    
     logger.info(f'🚀 {AppConfig.app_name}启动成功')
     yield
     await RedisUtil.close_redis_pool(app)

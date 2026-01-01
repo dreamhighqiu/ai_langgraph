@@ -1,0 +1,28 @@
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                        ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                        █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                             │
+│                               FastMCP 2.14.1                                │
+│                                                                             │
+│                                                                             │
+│                   🖥  Server name: PytestGenerator                           │
+│                                                                             │
+│                   📦 Transport:   SSE                                       │
+│                   🔗 Server URL:  http://0.0.0.0:8005/sse                   │
+│                                                                             │
+│                   📚 Docs:        https://gofastmcp.com                     │
+│                   🚀 Hosting:     https://fastmcp.cloud                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+[01/01/26 20:01:24] INFO     Starting MCP server                 server.py:2618
+                             'PytestGenerator' with transport                  
+                             'sse' on http://0.0.0.0:8005/sse                  
+INFO:     Started server process [18040]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8005 (Press CTRL+C to quit)

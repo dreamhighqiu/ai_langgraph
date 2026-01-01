@@ -410,6 +410,74 @@ async def get_file_list(
         return ResponseUtil.error(msg=f'查询失败: {str(e)}')
 
 
+@knowledge_controller.get(
+    '/files/{file_id}/download',
+    summary='下载/预览文件（支持MinIO预签名URL和本地文件直接下载）',
+    dependencies=[UserInterfaceAuthDependency('testing:knowledge:list')],
+)
+async def download_file(
+    request: Request,
+    file_id: Annotated[int, Path(description='文件ID')],
+    db: Annotated[AsyncSession, DBSessionDependency()],
+    preview: bool = Query(False, description='是否预览（true=预览，false=下载）'),
+):
+    """
+    下载或预览文件
+    
+    如果是MinIO存储：
+      - 生成预签名URL并重定向（支持预览和下载）
+    如果是本地存储：
+      - 直接返回文件内容（根据preview参数设置Content-Disposition）
+    """
+    try:
+        from module_testing.storage.minio_client import MinioClientManager
+        from fastapi.responses import StreamingResponse, RedirectResponse
+        import io
+        import mimetypes
+        
+        # 获取文件信息
+        file_record = await KnowledgeFileDao.select_file_by_id(db, file_id)
+        if not file_record:
+            return ResponseUtil.error(msg='文件不存在')
+        
+        minio_client = MinioClientManager.get_client()
+        
+        # 如果是MinIO存储，生成预签名URL并重定向
+        if file_record.file_path.startswith('minio://') and not minio_client.use_local:
+            file_url = minio_client.get_presigned_url(file_record.file_path, expires=3600)
+            if file_url:
+                return RedirectResponse(url=file_url)
+        
+        # 本地存储或无法生成预签名URL，直接返回文件内容
+        success, file_content = minio_client.download_file(file_record.file_path)
+        if not success or file_content is None:
+            return ResponseUtil.error(msg='文件不存在或无法读取')
+        
+        # 检测MIME类型
+        mime_type, _ = mimetypes.guess_type(file_record.file_name)
+        if not mime_type:
+            mime_type = 'application/octet-stream'
+        
+        # 设置响应头
+        headers = {}
+        if preview:
+            # 预览模式：inline（在浏览器中显示）
+            headers['Content-Disposition'] = f'inline; filename="{file_record.file_name}"'
+        else:
+            # 下载模式：attachment（下载文件）
+            headers['Content-Disposition'] = f'attachment; filename="{file_record.file_name}"'
+        
+        # 返回文件内容
+        return StreamingResponse(
+            io.BytesIO(file_content),
+            media_type=mime_type,
+            headers=headers
+        )
+    except Exception as e:
+        logger.error(f'下载文件失败: {e}', exc_info=True)
+        return ResponseUtil.error(msg=f'下载失败: {str(e)}')
+
+
 @knowledge_controller.delete(
     '/files/{file_id}',
     summary='删除文件',
@@ -526,6 +594,86 @@ async def query_knowledge(
         return ResponseUtil.error(msg=str(e))
     except Exception as e:
         logger.error(f'知识库查询失败: {e}', exc_info=True)
+        return ResponseUtil.error(msg=f'查询失败: {str(e)}')
+
+
+@knowledge_controller.get(
+    '/project/{project_id}/rag-documents',
+    summary='获取项目RAG处理后的文档列表',
+    response_model=DataResponseModel[dict],
+    dependencies=[UserInterfaceAuthDependency('testing:knowledge:files')],
+)
+async def get_project_rag_documents(
+    request: Request,
+    project_id: Annotated[int, Path(description='项目ID')],
+    db: Annotated[AsyncSession, DBSessionDependency()],
+    status_filter: Optional[str] = Query(None, description='状态过滤：PENDING/PROCESSING/PREPROCESSED/PROCESSED/FAILED'),
+    page: int = Query(1, ge=1, description='页码'),
+    page_size: int = Query(50, ge=10, le=200, description='每页数量'),
+    sort_field: str = Query('updated_at', description='排序字段'),
+    sort_direction: str = Query('desc', description='排序方向'),
+) -> Response:
+    """获取项目RAG处理后的文档列表"""
+    try:
+        # 获取项目对应的知识库
+        knowledge = await KnowledgeDao.select_knowledge_by_project_id(db, project_id)
+        if not knowledge:
+            return ResponseUtil.error(msg=f'项目 {project_id} 尚未创建知识库')
+        
+        # 获取RAG处理后的文档列表
+        lightrag_manager = get_lightrag_manager()
+        result = await lightrag_manager.get_documents_paginated(
+            collection_name=knowledge.collection_name,
+            status_filter=status_filter,
+            page=page,
+            page_size=page_size,
+            sort_field=sort_field,
+            sort_direction=sort_direction
+        )
+        
+        return ResponseUtil.success(data=result)
+    except Exception as e:
+        logger.error(f'获取RAG文档列表失败: {e}', exc_info=True)
+        return ResponseUtil.error(msg=f'查询失败: {str(e)}')
+
+
+@knowledge_controller.get(
+    '/{knowledge_id}/rag-documents',
+    summary='获取知识库RAG处理后的文档列表',
+    response_model=DataResponseModel[dict],
+    dependencies=[UserInterfaceAuthDependency('testing:knowledge:files')],
+)
+async def get_knowledge_rag_documents(
+    request: Request,
+    knowledge_id: Annotated[int, Path(description='知识库ID')],
+    db: Annotated[AsyncSession, DBSessionDependency()],
+    status_filter: Optional[str] = Query(None, description='状态过滤：PENDING/PROCESSING/PREPROCESSED/PROCESSED/FAILED'),
+    page: int = Query(1, ge=1, description='页码'),
+    page_size: int = Query(50, ge=10, le=200, description='每页数量'),
+    sort_field: str = Query('updated_at', description='排序字段'),
+    sort_direction: str = Query('desc', description='排序方向'),
+) -> Response:
+    """获取知识库RAG处理后的文档列表"""
+    try:
+        # 获取知识库信息
+        knowledge = await KnowledgeDao.select_knowledge_by_id(db, knowledge_id)
+        if not knowledge:
+            return ResponseUtil.error(msg='知识库不存在')
+        
+        # 获取RAG处理后的文档列表
+        lightrag_manager = get_lightrag_manager()
+        result = await lightrag_manager.get_documents_paginated(
+            collection_name=knowledge.collection_name,
+            status_filter=status_filter,
+            page=page,
+            page_size=page_size,
+            sort_field=sort_field,
+            sort_direction=sort_direction
+        )
+        
+        return ResponseUtil.success(data=result)
+    except Exception as e:
+        logger.error(f'获取RAG文档列表失败: {e}', exc_info=True)
         return ResponseUtil.error(msg=f'查询失败: {str(e)}')
 
 

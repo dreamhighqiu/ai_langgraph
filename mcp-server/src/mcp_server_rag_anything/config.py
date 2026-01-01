@@ -47,6 +47,7 @@ class EmbeddingConfig:
 class RAGConfig:
     """RAG Configuration"""
     working_dir: str = field(default_factory=lambda: os.getenv("RAG_WORKING_DIR", "./rag_storage"))
+    # 若未设置则默认为 docling，与生产一致
     parser: str = field(default_factory=lambda: os.getenv("RAG_PARSER", "docling"))
     parse_method: str = field(default_factory=lambda: os.getenv("RAG_PARSE_METHOD", "auto"))
     enable_image: bool = field(default_factory=lambda: os.getenv("RAG_ENABLE_IMAGE", "true").lower() == "true")
@@ -121,4 +122,3 @@ class MCSConfig:
                 "debug": self.server.debug,
             },
         }
-

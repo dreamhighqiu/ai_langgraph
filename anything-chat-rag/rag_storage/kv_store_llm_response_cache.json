@@ -300,5 +300,25 @@
     "create_time": 1767276290,
     "update_time": 1767276290,
     "_id": "hybrid:query:eab70023ae41529b381b37eebefccee2"
+  },
+  "global:keywords:508355c5376edfd8fef70cf3af64414a": {
+    "return": "{\"high_level_keywords\": [\"\\u4e2a\\u4eba\\u4fe1\\u606f\", \"\\u4eba\\u7269\\u67e5\\u8be2\"], \"low_level_keywords\": [\"\\u90b1\\u4e91\\u971e\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "邱云霞信息",
+    "queryparam": {
+      "mode": "global",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767278193,
+    "update_time": 1767278193,
+    "_id": "global:keywords:508355c5376edfd8fef70cf3af64414a"
   }
 }

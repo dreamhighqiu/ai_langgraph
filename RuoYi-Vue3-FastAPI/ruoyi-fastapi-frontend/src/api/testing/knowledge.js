@@ -107,6 +107,32 @@ export function deleteKnowledgeFile(fileId) {
   })
 }
 
+// 获取文件下载URL
+export function getFileDownloadUrl(fileId) {
+  return request({
+    url: '/testing/knowledge/files/' + fileId + '/download',
+    method: 'get'
+  })
+}
+
+// 获取项目RAG处理后的文档列表
+export function getProjectRagDocuments(projectId, params) {
+  return request({
+    url: '/testing/knowledge/project/' + projectId + '/rag-documents',
+    method: 'get',
+    params
+  })
+}
+
+// 获取知识库RAG处理后的文档列表
+export function getKnowledgeRagDocuments(knowledgeId, params) {
+  return request({
+    url: '/testing/knowledge/' + knowledgeId + '/rag-documents',
+    method: 'get',
+    params
+  })
+}
+
 // 知识库查询（RAG）
 export function queryKnowledge(knowledgeId, data) {
   return request({

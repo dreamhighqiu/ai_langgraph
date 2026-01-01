@@ -209,6 +209,53 @@ class LightRAGClient:
             logger.error(f'获取文档状态失败: {doc_id} (workspace: {workspace}), 错误: {e}')
             raise
     
+    async def get_documents_paginated(
+        self,
+        workspace: str,
+        status_filter: Optional[str] = None,
+        page: int = 1,
+        page_size: int = 50,
+        sort_field: str = 'updated_at',
+        sort_direction: str = 'desc'
+    ) -> Dict[str, Any]:
+        """
+        获取分页文档列表（RAG处理后的文档）
+        
+        Args:
+            workspace: 工作空间名称
+            status_filter: 状态过滤（PENDING/PROCESSING/PREPROCESSED/PROCESSED/FAILED）
+            page: 页码（从1开始）
+            page_size: 每页数量（10-200）
+            sort_field: 排序字段（created_at/updated_at/id/file_path）
+            sort_direction: 排序方向（asc/desc）
+        
+        Returns:
+            分页文档列表
+        """
+        try:
+            headers = self._get_headers(workspace)
+            payload = {
+                'page': page,
+                'page_size': page_size,
+                'sort_field': sort_field,
+                'sort_direction': sort_direction
+            }
+            if status_filter:
+                payload['status_filter'] = status_filter
+            
+            response = await self.client.post(
+                f'{self.base_url}/documents/paginated',
+                headers=headers,
+                json=payload
+            )
+            response.raise_for_status()
+            result = response.json()
+            logger.debug(f'获取文档列表成功: workspace={workspace}, page={page}, total={result.get("total", 0)}')
+            return result
+        except Exception as e:
+            logger.error(f'获取文档列表失败: workspace={workspace}, 错误: {e}')
+            raise
+    
     async def init_workspace(self, workspace: str) -> Dict[str, Any]:
         """
         初始化工作空间（通过上传占位文档来触发 Milvus 集合创建）
@@ -359,6 +406,40 @@ class LightRAGManager:
         """
         client = cls.get_client()
         return await client.init_workspace(collection_name)
+    
+    @classmethod
+    async def get_documents_paginated(
+        cls,
+        collection_name: str,
+        status_filter: Optional[str] = None,
+        page: int = 1,
+        page_size: int = 50,
+        sort_field: str = 'updated_at',
+        sort_direction: str = 'desc'
+    ) -> Dict[str, Any]:
+        """
+        获取分页文档列表（RAG处理后的文档）
+        
+        Args:
+            collection_name: Collection 名称（作为 workspace）
+            status_filter: 状态过滤
+            page: 页码
+            page_size: 每页数量
+            sort_field: 排序字段
+            sort_direction: 排序方向
+        
+        Returns:
+            分页文档列表
+        """
+        client = cls.get_client()
+        return await client.get_documents_paginated(
+            collection_name,
+            status_filter,
+            page,
+            page_size,
+            sort_field,
+            sort_direction
+        )
 
 
 def get_lightrag_manager() -> type[LightRAGManager]:

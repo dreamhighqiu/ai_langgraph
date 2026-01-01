@@ -120,7 +120,7 @@ class KnowledgeProcessor:
             if not knowledge:
                 raise Exception('知识库不存在')
             
-            logger.debug(f'知识库信息: {knowledge.knowledge_name} (Collection: {knowledge.milvus_collection_name})')
+            logger.debug(f'知识库信息: {knowledge.knowledge_name} (Collection: {knowledge.collection_name})')
             
             # 3. 从 MinIO 下载文件
             logger.debug(f'从 MinIO 下载文件: {file.file_path}')
@@ -135,7 +135,7 @@ class KnowledgeProcessor:
             lightrag_manager = get_lightrag_manager()
             
             upload_result = await lightrag_manager.upload_document(
-                collection_name=knowledge.milvus_collection_name,
+                collection_name=knowledge.collection_name,
                 file_content=file_content,
                 filename=file.file_name,
                 metadata={

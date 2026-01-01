@@ -181,6 +181,12 @@ export const dynamicRoutes = [
         component: () => import('@/views/testing/knowledge/chat'),
         name: 'KnowledgeChat',
         meta: { title: 'RAG 问答', activeMenu: '/knowledge' }
+      },
+      {
+        path: 'files',
+        component: () => import('@/views/testing/knowledge/files-manage'),
+        name: 'KnowledgeFilesManage',
+        meta: { title: '文件管理', activeMenu: '/knowledge' }
       }
     ]
   },

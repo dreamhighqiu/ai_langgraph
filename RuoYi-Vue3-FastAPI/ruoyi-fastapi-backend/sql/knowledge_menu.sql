@@ -1,9 +1,9 @@
 -- ----------------------------
 -- 知识库管理模块菜单数据（完整安装版）
--- 版本：v1.1.0
+-- 版本：v1.2.0
 -- 更新日期：2026-01-01
--- 说明：知识库管理菜单和权限配置（菜单ID：2920-2929）
---       知识库管理为一级目录菜单，包含"知识库列表"二级菜单
+-- 说明：知识库管理菜单和权限配置（菜单ID：2920-2930）
+--       知识库管理为一级目录菜单，包含"知识库列表"和"文件管理"二级菜单
 -- 使用：mysql -u root -p database_name < knowledge_menu.sql
 -- ----------------------------
 
@@ -15,8 +15,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ========== 知识库管理菜单（2920-2929） ==========
 
 -- 1) 清空知识库管理相关菜单与角色绑定
-DELETE FROM sys_role_menu WHERE menu_id BETWEEN 2920 AND 2929;
-DELETE FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2929;
+DELETE FROM sys_role_menu WHERE menu_id BETWEEN 2920 AND 2930;
+DELETE FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2930;
 
 -- 2) 插入知识库管理主菜单（作为一级目录菜单，parent_id=0，menu_type='M'）
 INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, path, component, query, is_frame, is_cache, menu_type, visible, status, perms, icon, create_by, create_time, update_by, update_time, remark) 
@@ -24,7 +24,9 @@ VALUES
 -- 一级菜单：知识库管理（目录类型）
 (2920,'知识库管理',0,5,'knowledge',NULL,NULL,1,0,'M','0','0',NULL,'collection','admin',NOW(),'admin',NOW(),'知识库管理 - 支持文档上传和RAG智能问答'),
 -- 二级菜单：知识库列表
-(2921,'知识库列表',2920,1,'index','testing/knowledge/index',NULL,1,0,'C','0','0','testing:knowledge:list','list','admin',NOW(),'admin',NOW(),'知识库列表管理');
+(2921,'知识库列表',2920,1,'index','testing/knowledge/index',NULL,1,0,'C','0','0','testing:knowledge:list','list','admin',NOW(),'admin',NOW(),'知识库列表管理'),
+-- 二级菜单：文件管理
+(2922,'文件管理',2920,2,'files','testing/knowledge/files-manage',NULL,1,0,'C','0','0','testing:knowledge:files','folder','admin',NOW(),'admin',NOW(),'文件管理 - 按项目查看文件，支持预览和RAG处理后的文档');
 
 -- 4) 插入知识库管理按钮权限
 INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, path, component, query, is_frame, is_cache, menu_type, visible, status, perms, icon, create_by, create_time, update_by, update_time, remark) 
@@ -41,11 +43,11 @@ VALUES
 -- 5) 为管理员角色绑定知识库管理权限（role_id=1）
 -- 如需为其他角色分配权限，请手动添加或修改 role_id
 INSERT INTO sys_role_menu (role_id, menu_id)
-SELECT 1, menu_id FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2929;
+SELECT 1, menu_id FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2930;
 
 -- 6) 为超级管理员角色绑定（如果存在 role_id=2）
 INSERT IGNORE INTO sys_role_menu (role_id, menu_id)
-SELECT 2, menu_id FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2929;
+SELECT 2, menu_id FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2930;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
@@ -65,7 +67,7 @@ SELECT
     visible AS '可见',
     status AS '状态'
 FROM sys_menu 
-WHERE menu_id BETWEEN 2920 AND 2929
+WHERE menu_id BETWEEN 2920 AND 2930
 ORDER BY menu_id;
 
 -- 查看角色绑定情况
@@ -146,10 +148,10 @@ ORDER BY rm.role_id;
 如需卸载知识库管理模块，请执行以下命令：
 
 -- 1. 删除角色菜单绑定
-DELETE FROM sys_role_menu WHERE menu_id BETWEEN 2920 AND 2929;
+DELETE FROM sys_role_menu WHERE menu_id BETWEEN 2920 AND 2930;
 
 -- 2. 删除菜单数据
-DELETE FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2929;
+DELETE FROM sys_menu WHERE menu_id BETWEEN 2920 AND 2930;
 
 -- 3. （可选）删除业务数据
 -- 警告：此操作会删除所有知识库数据，请谨慎！

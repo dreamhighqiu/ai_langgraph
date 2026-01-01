@@ -302,3 +302,53 @@ INFO: 127.0.0.1:50360 - "GET /openapi.json HTTP/1.1" 200
 INFO: [] Subgraph query successful | Node count: 287 | Edge count: 168
 INFO: 127.0.0.1:51075 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 INFO: Merged: `RAG知识库` | 1+1
+INFO: Local query: 40 entites, 31 relations
+INFO: Query edges: AI model, Model identity, Capabilities (top_k:40, cosine:0.2)
+INFO: Global query: 46 entites, 40 relations
+INFO: Raw search results: 69 entities, 48 relations, 0 vector chunks
+INFO: After truncation: 69 entities, 48 relations
+INFO: Selecting 22 from 22 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 48 relations
+INFO: Round-robin merged chunks: 22 -> 22 (deduplicated 0)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 69 entities, 48 relations, 20 chunks
+INFO: Final chunks S+F/O: E1/1 E1/2 E1/3 E1/4 E1/5 E1/6 E1/7 E1/8 E1/9 E1/10 E1/11 E1/12 E6/13 E5/14 E5/15 E3/16 E2/17 E12/18 E11/19 E16/20
+INFO: Phase 2: Processing 142 relations from doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e (async: 8)
+INFO:  == LLM cache == saving: hybrid:query:eab70023ae41529b381b37eebefccee2
+INFO: 127.0.0.1:53045 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 353 | Edge count: 171
+INFO: 127.0.0.1:53045 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:60642 - "GET /openapi.json HTTP/1.1" 200
+INFO: Chunks appended from relation: `测试开发工程师`
+INFO: 127.0.0.1:64773 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:64773 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:64773 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+INFO: Phase 3: Updating final 159(159+0) entities and  142 relations from doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
+INFO: Completed merging: 159 entities, 0 extra entities, 142 relations
+INFO: [] Writing graph with 353 nodes, 310 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: Enqueued document processing pipeline stopped
+INFO: Text content insertion complete
+INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: Document processing complete: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
+INFO: RAG-Anything processing completed successfully: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
+INFO: No documents to process
+INFO: 127.0.0.1:55455 - "GET /auth-status HTTP/1.1" 200
+INFO: 127.0.0.1:55455 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 353 | Edge count: 310
+INFO: 127.0.0.1:52461 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:58735 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:60483 - "GET /webui/assets/index-X6S77QzN.js HTTP/1.1" 200
+INFO:  == LLM cache == saving: global:keywords:508355c5376edfd8fef70cf3af64414a
+INFO: Query edges: 个人信息, 人物查询 (top_k:40, cosine:0.2)
+INFO: Global query: 49 entites, 40 relations
+INFO: Raw search results: 49 entities, 40 relations, 0 vector chunks
+INFO: After truncation: 49 entities, 40 relations
+INFO: Selecting 12 from 12 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 40 relations
+INFO: Round-robin merged chunks: 12 -> 12 (deduplicated 0)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 49 entities, 40 relations, 12 chunks
+INFO: Final chunks S+F/O: E9/1 E5/2 E8/3 E6/4 E10/5 E3/6 E2/7 E7/8 E4/9 E13/10 E1/11 E5/12
+INFO: 127.0.0.1:51841 - "POST /query/stream HTTP/1.1" 200

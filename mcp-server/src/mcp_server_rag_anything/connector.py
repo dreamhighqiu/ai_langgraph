@@ -60,7 +60,7 @@ class RAGAnythingConnector:
                 return {"success": True, "message": "Already initialized"}
 
             # Log storage env to确认是否指向 Milvus
-            storage_backend = os.getenv("LIGHTRAG_VECTOR_STORAGE", "")
+            storage_backend = os.getenv("VECTOR_STORAGE") or os.getenv("LIGHTRAG_VECTOR_STORAGE", "")
             milvus_uri = os.getenv("MILVUS_URI", "")
             milvus_db = os.getenv("MILVUS_DB_NAME", "")
             logger.info(
@@ -81,6 +81,14 @@ class RAGAnythingConnector:
                 enable_equation_processing=self.config.rag.enable_equation,
                 max_concurrent_files=self.config.rag.max_concurrent_files,
             )
+            # 强制向量存储使用 Milvus（或环境指定的 storage_backend）
+            vector_storage = storage_backend or "MilvusVectorDBStorage"
+            vector_db_kwargs: Dict[str, Any] = {}
+            if vector_storage == "MilvusVectorDBStorage":
+                if milvus_uri:
+                    vector_db_kwargs["uri"] = milvus_uri
+                if milvus_db:
+                    vector_db_kwargs["db_name"] = milvus_db
 
             # Create RAGAnything instance
             self.rag_anything = RAGAnything(
@@ -88,6 +96,10 @@ class RAGAnythingConnector:
                 llm_model_func=self.llm_model_func,
                 vision_model_func=self.vision_model_func,
                 embedding_func=self.embedding_func,
+                lightrag_kwargs={
+                    "vector_storage": vector_storage,
+                    "vector_db_storage_cls_kwargs": vector_db_kwargs,
+                },
             )
 
             # Initialize LightRAG

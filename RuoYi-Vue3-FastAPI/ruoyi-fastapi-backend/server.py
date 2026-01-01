@@ -40,8 +40,36 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     except Exception as e:
         logger.warning(f'⚠️  LightRAG 客户端配置失败: {e}')
     
+    # 启动知识库文件处理器（后台任务）
+    try:
+        import asyncio
+        from module_testing.service.knowledge_processor import start_processor
+        
+        # 在后台任务中启动处理器
+        async def start_knowledge_processor():
+            try:
+                await start_processor(check_interval=10)
+                logger.info('✅ 知识库文件处理器启动成功')
+            except Exception as e:
+                logger.error(f'❌ 知识库文件处理器启动失败: {e}', exc_info=True)
+        
+        # 创建后台任务
+        task = asyncio.create_task(start_knowledge_processor())
+        app.state.knowledge_processor_task = task
+    except Exception as e:
+        logger.warning(f'⚠️  知识库文件处理器启动失败: {e}')
+    
     logger.info(f'🚀 {AppConfig.app_name}启动成功')
     yield
+    
+    # 关闭知识库文件处理器
+    try:
+        from module_testing.service.knowledge_processor import stop_processor
+        await stop_processor()
+        logger.info('✅ 知识库文件处理器已停止')
+    except Exception as e:
+        logger.warning(f'⚠️  停止知识库文件处理器失败: {e}')
+    
     await RedisUtil.close_redis_pool(app)
     await SchedulerUtil.close_system_scheduler()
 

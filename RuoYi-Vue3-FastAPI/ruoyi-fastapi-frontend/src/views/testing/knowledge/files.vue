@@ -76,7 +76,20 @@
     <!-- 表格 -->
     <el-table v-loading="loading" :data="fileList">
       <el-table-column label="文件ID" align="center" prop="fileId" width="80" />
-      <el-table-column label="文件名" align="center" prop="fileName" :show-overflow-tooltip="true" min-width="200" />
+      <el-table-column label="文件名" align="center" prop="fileName" :show-overflow-tooltip="true" min-width="200">
+        <template #default="scope">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <el-icon><Document /></el-icon>
+            <span>{{ scope.row.fileName }}</span>
+          </div>
+        </template>
+      </el-table-column>
+      <el-table-column label="文件格式" align="center" prop="fileType" width="100">
+        <template #default="scope">
+          <el-tag v-if="scope.row.fileType" type="info" size="small">{{ scope.row.fileType }}</el-tag>
+          <span v-else>-</span>
+        </template>
+      </el-table-column>
       <el-table-column label="文件大小" align="center" prop="fileSize" width="120">
         <template #default="scope">
           {{ formatFileSize(scope.row.fileSize) }}
@@ -114,8 +127,28 @@
           {{ parseTime(scope.row.createTime) }}
         </template>
       </el-table-column>
-      <el-table-column label="操作" align="center" width="150">
+      <el-table-column label="操作" align="center" width="250" fixed="right">
         <template #default="scope">
+          <el-button
+            link
+            type="primary"
+            icon="Download"
+            @click="handleDownload(scope.row)"
+            :disabled="!scope.row.fileUrl"
+            v-if="scope.row.processStatus === 'completed'"
+          >
+            下载
+          </el-button>
+          <el-button
+            link
+            type="primary"
+            icon="View"
+            @click="handlePreview(scope.row)"
+            :disabled="!scope.row.fileUrl"
+            v-if="scope.row.processStatus === 'completed' && isPreviewable(scope.row.fileName)"
+          >
+            预览
+          </el-button>
           <el-tooltip content="查看错误信息" placement="top" v-if="scope.row.processStatus === 'failed' && scope.row.errorMsg">
             <el-button link type="warning" icon="Warning" @click="showError(scope.row)">错误</el-button>
           </el-tooltip>
@@ -209,6 +242,8 @@ function getList() {
       fileName: item.file_name,
       filePath: item.file_path,
       fileSize: item.file_size,
+      fileType: item.file_type,
+      fileUrl: item.file_url,
       docId: item.doc_id,
       processStatus: item.process_status,
       processProgress: item.process_progress,
@@ -295,6 +330,33 @@ function resetQuery() {
 function refreshStats() {
   getStats();
   getList();
+}
+
+/** 下载文件 */
+function handleDownload(row) {
+  if (row.fileUrl) {
+    // 直接打开URL下载
+    window.open(row.fileUrl, '_blank');
+  } else {
+    proxy.$modal.msgWarning('文件URL不可用，无法下载');
+  }
+}
+
+/** 预览文件 */
+function handlePreview(row) {
+  if (row.fileUrl) {
+    // 在新窗口打开预览
+    window.open(row.fileUrl, '_blank');
+  } else {
+    proxy.$modal.msgWarning('文件URL不可用，无法预览');
+  }
+}
+
+/** 判断文件是否可预览 */
+function isPreviewable(fileName) {
+  const ext = fileName.split('.').pop()?.toLowerCase();
+  const previewableExts = ['pdf', 'txt', 'md', 'html', 'htm', 'jpg', 'jpeg', 'png', 'gif'];
+  return previewableExts.includes(ext);
 }
 
 /** 删除文件 */

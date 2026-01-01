@@ -51,6 +51,9 @@
         <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:knowledge:add']">新增知识库</el-button>
       </el-col>
       <el-col :span="1.5">
+        <el-button type="info" plain icon="Folder" @click="handleViewProjectFiles" v-if="queryParams.projectId" v-hasPermi="['testing:knowledge:list']">查看项目文件</el-button>
+      </el-col>
+      <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:knowledge:remove']">删除</el-button>
       </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
@@ -463,6 +466,33 @@ function handleChat(row) {
       knowledgeName: row.knowledgeName
     } 
   });
+}
+
+/** 查看项目文件（按项目层级） */
+function handleViewProjectFiles() {
+  if (!queryParams.value.projectId) {
+    proxy.$modal.msgWarning('请先选择项目');
+    return;
+  }
+  
+  // 查找该项目的知识库
+  const projectKnowledge = knowledgeList.value.find(k => k.projectId === queryParams.value.projectId);
+  if (projectKnowledge) {
+    handleFiles(projectKnowledge);
+  } else {
+    proxy.$modal.confirm('该项目尚未创建知识库，是否立即创建？').then(() => {
+      // 创建知识库
+      form.value = {
+        projectId: queryParams.value.projectId,
+        knowledgeName: projectList.value.find(p => p.projectId === queryParams.value.projectId)?.projectName + '知识库',
+        description: '',
+        status: '0',
+        remark: ''
+      };
+      open.value = true;
+      title.value = '添加知识库';
+    }).catch(() => {});
+  }
 }
 
 onMounted(() => {

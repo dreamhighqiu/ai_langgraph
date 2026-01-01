@@ -122,7 +122,7 @@
     }
   },
   "doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 3,
     "chunks_list": [
       "chunk-79be94d8c3833dcb484c8e1712014160",
@@ -132,11 +132,13 @@
     "content_summary": "PERSONAL RESUME\n\n邱云霞\n\n求职意向：高级测试工程师 / 测试开发工程师\n\n广州\n\n20k-25k\n\n随时到岗\n\n 年　　龄：\n\n35 岁\n\n 性　　别：女\n\n 婚姻状况：已婚已育\n\n 工作年限：\n\n12 年经验\n\n 联系电话：\n\n13802784929\n\n 联系邮箱：\n\n1509062627@qq.com\n\n技能特长\n\n· AI 赋能测试平台开发和实施 ：具备大模型（ LLM ）应用开发能力，熟练使用 LangChain 、 DeepAgent 、 RAG 、 MC...",
     "content_length": 5231,
     "created_at": "2026-01-01T13:50:16.906592+00:00",
-    "updated_at": "2026-01-01T13:50:17.008676+00:00",
+    "updated_at": "2026-01-01T22:13:12+00:00",
     "file_path": "邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf",
     "track_id": "insert_20260101_215016_f5490a19",
     "metadata": {
-      "processing_start_time": 1767275417
-    }
+      "processing_start_time": 1767275417,
+      "processing_end_time": 1767276792
+    },
+    "multimodal_processed": true
   }
 }

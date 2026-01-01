@@ -379,7 +379,8 @@ class KnowledgeService:
         knowledge_id: int,
         file: UploadFile,
         create_by: str,
-        remark: Optional[str] = None
+        remark: Optional[str] = None,
+        base_url: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         上传知识库文件
@@ -437,14 +438,72 @@ class KnowledgeService:
         
         logger.info(f'文件上传成功: {file.filename} (file_id: {created_file.file_id})')
         
+        # 生成文件URL（预签名URL或后端API URL）
+        file_url = None
+        try:
+            file_url = minio_client.get_presigned_url(file_path, expires=3600)
+            # 如果是本地存储或无法生成预签名URL，使用后端API URL
+            if not file_url:
+                import os
+                # 从环境变量获取base_url，或使用默认值
+                base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                # 移除API前缀（如果有）
+                if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                    base_url = base_url.rsplit('/', 1)[0]
+                # 确保base_url不包含尾随斜杠
+                base_url = base_url.rstrip('/')
+                file_url = f'{base_url}/testing/knowledge/files/{created_file.file_id}/download?preview=true'
+                logger.info(f'生成后端文件访问URL: {file_url}')
+        except Exception as e:
+            logger.warning(f'生成文件URL失败: {file.filename}, 错误: {e}')
+            # 即使出错也提供后端API URL作为后备
+            try:
+                import os
+                base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                    base_url = base_url.rsplit('/', 1)[0]
+                base_url = base_url.rstrip('/')
+                file_url = f'{base_url}/testing/knowledge/files/{created_file.file_id}/download?preview=true'
+            except:
+                file_url = None
+        
         # 返回结果（实际处理由 KnowledgeProcessor 异步完成）
         return {
             'file_id': created_file.file_id,
             'file_name': created_file.file_name,
             'file_size': created_file.file_size,
+            'file_path': file_path,
+            'file_url': file_url,  # 添加文件URL
             'status': created_file.process_status,
             'message': '文件已上传，正在处理中...'
         }
+    
+    @staticmethod
+    def _get_file_type(filename: str) -> str:
+        """从文件名提取文件类型"""
+        import os
+        ext = os.path.splitext(filename)[1].lower()
+        type_map = {
+            '.pdf': 'PDF',
+            '.doc': 'Word',
+            '.docx': 'Word',
+            '.txt': '文本',
+            '.md': 'Markdown',
+            '.html': 'HTML',
+            '.htm': 'HTML',
+            '.xls': 'Excel',
+            '.xlsx': 'Excel',
+            '.ppt': 'PowerPoint',
+            '.pptx': 'PowerPoint',
+            '.jpg': '图片',
+            '.jpeg': '图片',
+            '.png': '图片',
+            '.gif': '图片',
+            '.zip': '压缩包',
+            '.rar': '压缩包',
+            '.7z': '压缩包'
+        }
+        return type_map.get(ext, ext[1:].upper() if ext else '未知')
     
     @staticmethod
     async def get_file_list(
@@ -452,8 +511,44 @@ class KnowledgeService:
         query: KnowledgeFileQueryModel
     ) -> Tuple[List[KnowledgeFileModel], int]:
         """获取文件列表"""
+        from module_testing.storage.minio_client import MinioClientManager
+        
         file_list, total = await KnowledgeFileDao.select_file_list(db, query)
-        return [KnowledgeFileModel.model_validate(f) for f in file_list], total
+        minio_client = MinioClientManager.get_client()
+        
+        result = []
+        for f in file_list:
+            file_model = KnowledgeFileModel.model_validate(f)
+            # 添加文件类型
+            file_model.file_type = KnowledgeService._get_file_type(f.file_name)
+            # 生成文件URL（预签名URL或后端API URL）
+            try:
+                file_url = minio_client.get_presigned_url(f.file_path, expires=3600)
+                # 如果是本地存储或无法生成预签名URL，使用后端API URL
+                if not file_url:
+                    import os
+                    base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                    # 移除API前缀（如果有）
+                    if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                        base_url = base_url.rsplit('/', 1)[0]
+                    base_url = base_url.rstrip('/')
+                    file_url = f'{base_url}/testing/knowledge/files/{f.file_id}/download?preview=true'
+                file_model.file_url = file_url
+            except Exception as e:
+                logger.warning(f'生成文件URL失败: {f.file_name}, 错误: {e}')
+                # 即使出错也提供后端API URL作为后备
+                try:
+                    import os
+                    base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                    if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                        base_url = base_url.rsplit('/', 1)[0]
+                    base_url = base_url.rstrip('/')
+                    file_model.file_url = f'{base_url}/testing/knowledge/files/{f.file_id}/download?preview=true'
+                except:
+                    file_model.file_url = None
+            result.append(file_model)
+        
+        return result, total
     
     @staticmethod
     async def get_file_by_id(db: AsyncSession, file_id: int) -> Optional[KnowledgeFileModel]:

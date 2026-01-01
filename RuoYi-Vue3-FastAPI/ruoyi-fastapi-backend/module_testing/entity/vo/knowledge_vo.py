@@ -76,6 +76,8 @@ class KnowledgeFileModel(BaseModel):
     file_name: str = Field(..., max_length=255, description='文件名称')
     file_path: str = Field(..., max_length=500, description='文件存储路径')
     file_size: int = Field(0, description='文件大小')
+    file_type: Optional[str] = Field(None, description='文件类型/格式（从文件名提取）')
+    file_url: Optional[str] = Field(None, description='文件访问URL（预签名URL）')
     doc_id: Optional[str] = Field(None, description='LightRAG 文档ID')
     process_status: str = Field('pending', description='处理状态')
     process_progress: int = Field(0, description='处理进度')

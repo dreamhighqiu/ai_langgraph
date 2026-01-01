@@ -297,6 +297,33 @@ class KnowledgeService:
         return success
     
     @staticmethod
+    async def delete_knowledges(db: AsyncSession, knowledge_ids: List[int], delete_by: str) -> int:
+        """
+        批量删除知识库
+        
+        Args:
+            db: 数据库会话
+            knowledge_ids: 知识库ID列表
+            delete_by: 删除者
+        
+        Returns:
+            成功删除的数量
+        """
+        if not knowledge_ids:
+            return 0
+        
+        success_count = 0
+        for knowledge_id in knowledge_ids:
+            try:
+                success = await KnowledgeService.delete_knowledge(db, knowledge_id, delete_by)
+                if success:
+                    success_count += 1
+            except Exception as e:
+                logger.error(f'删除知识库失败 {knowledge_id}: {e}', exc_info=True)
+        
+        return success_count
+    
+    @staticmethod
     async def get_knowledge_stats(db: AsyncSession, knowledge_id: int) -> KnowledgeStatsModel:
         """获取知识库统计信息"""
         stats = await KnowledgeFileDao.get_knowledge_stats(db, knowledge_id)

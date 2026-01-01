@@ -196,30 +196,42 @@ async def update_knowledge(
 
 
 @knowledge_controller.delete(
-    '/{knowledge_id}',
-    summary='删除知识库',
+    '/{knowledge_ids}',
+    summary='删除知识库（支持批量删除）',
     response_model=DataResponseModel[dict],
     dependencies=[UserInterfaceAuthDependency('testing:knowledge:remove')],
 )
 @Log(title='知识库管理', business_type=BusinessType.DELETE, log_type='operate')
 async def delete_knowledge(
     request: Request,
-    knowledge_id: Annotated[int, Path(description='知识库ID')],
+    knowledge_ids: Annotated[str, Path(description='知识库ID列表，逗号分隔，如：1,2,3')],
     db: Annotated[AsyncSession, DBSessionDependency()],
     current_user: Annotated[CurrentUserModel, CurrentUserDependency()],
 ) -> Response:
-    """删除知识库"""
+    """删除知识库（支持单个或批量删除）"""
     try:
-        success = await KnowledgeService.delete_knowledge(
+        # 解析ID列表（支持单个ID或逗号分隔的多个ID）
+        id_list = [int(id_str.strip()) for id_str in knowledge_ids.split(',') if id_str.strip()]
+        
+        if not id_list:
+            return ResponseUtil.error(msg='知识库ID不能为空')
+        
+        # 批量删除
+        success_count = await KnowledgeService.delete_knowledges(
             db=db,
-            knowledge_id=knowledge_id,
+            knowledge_ids=id_list,
             delete_by=current_user.user.user_name
         )
         
-        if success:
-            return ResponseUtil.success(msg='删除成功')
+        if success_count > 0:
+            if len(id_list) == 1:
+                return ResponseUtil.success(msg='删除成功')
+            else:
+                return ResponseUtil.success(msg=f'删除成功，共删除 {success_count}/{len(id_list)} 个知识库')
         else:
             return ResponseUtil.error(msg='删除失败，知识库不存在')
+    except ValueError as e:
+        return ResponseUtil.error(msg=f'知识库ID格式错误: {str(e)}')
     except Exception as e:
         logger.error(f'删除知识库失败: {e}', exc_info=True)
         return ResponseUtil.error(msg=f'删除失败: {str(e)}')

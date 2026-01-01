@@ -240,3 +240,65 @@ INFO: 127.0.0.1:60367 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1
 INFO: 127.0.0.1:65118 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
 INFO: 127.0.0.1:53351 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
 INFO: 127.0.0.1:65118 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:50812 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 203 | Edge count: 168
+INFO: 127.0.0.1:50878 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:50812 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:52099 - "POST /documents/upload HTTP/1.1" 200
+INFO: Using RAG-Anything multimodal processing for: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: RAGAnything initialized with config:
+INFO:   Working directory: ./rag_storage
+INFO:   Parser: docling
+INFO:   Parse method: auto
+INFO:   Multimodal processing - Image: True, Table: True, Equation: True
+INFO:   Max concurrent files: 1
+INFO: RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: Using docling parser with method: auto
+INFO: Detected PDF file, using parser for PDF...
+INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf complete! Extracted 110 content blocks
+INFO: Document parsed successfully: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf, doc_id=doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e, blocks=110
+INFO: Parser 'docling' installation verified
+INFO: Initializing parse cache for pre-provided LightRAG instance
+INFO: [] Process 53652 KV load parse_cache with 15 records
+INFO: Multimodal processors initialized with context support
+INFO: Available processors: ['image', 'table', 'equation', 'generic']
+INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf (110 items)
+INFO: Content separation complete:
+INFO:   - Text content length: 5231 characters
+INFO:   - Multimodal items count: 0
+INFO: Starting text content insertion into LightRAG...
+INFO: Processing 1 document(s)
+INFO: Extracting stage 1/1: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: Processing d-id: doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e
+INFO: 127.0.0.1:52074 - "DELETE /documents/delete_all HTTP/1.1" 404
+INFO: 127.0.0.1:63653 - "DELETE /documents/delete_all HTTP/1.1" 404
+INFO: 127.0.0.1:54062 - "DELETE /documents/delete_all HTTP/1.1" 404
+INFO:  == LLM cache == saving: default:extract:af06b5e82af6dff04e01d64d813b0a5f
+INFO:  == LLM cache == saving: default:extract:0063edcc441bec507e6dfc6a6a11b84f
+INFO:  == LLM cache == saving: default:extract:deb668bc93fdcaae513ff2fd8a4702b3
+INFO:  == LLM cache == saving: default:extract:834dd36d0cb44963c28242060535d4a8
+INFO: Chunk 1 of 3 extracted 54 Ent + 27 Rel chunk-6bd4d94bce1ed431abb1a2e97286558f
+INFO:  == LLM cache == saving: default:extract:ff1f7a5e0fa333b868c5b0feb854a206
+INFO: Chunk 2 of 3 extracted 54 Ent + 53 Rel chunk-79be94d8c3833dcb484c8e1712014160
+INFO: 127.0.0.1:64511 - "DELETE /documents/delete_all HTTP/1.1" 404
+INFO:  == LLM cache == saving: default:extract:551a7ce27289e7abc2d5589820323bb2
+INFO: Chunk 3 of 3 extracted 85 Ent + 63 Rel chunk-d5a659de14ee61f2da2e8322c8a7e3fc
+INFO: Merging stage 1/1: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+INFO: Phase 1: Processing 159 entities from doc-e6bd18cfed0af7f82cfd8d9bf7d16e7e (async: 8)
+INFO: Merged: `邱云霞` | 3+1
+INFO: Merged: `SQLAlchemy` | 1+2
+INFO: Merged: `FastAPI` | 1+3
+INFO: Merged: `K6` | 3+3
+INFO:  == LLM cache == saving: hybrid:keywords:3817b9c0a2da001a9558bd939735f102
+INFO: Merged: `LangGraph` | 1+2
+INFO: Merged: `MinIO` | 2+2
+INFO: Query nodes: Language model, Assistant (top_k:40, cosine:0.2)
+INFO: Merged: `Pydantic` | 2+1
+INFO: Merged: `江西理工大学` | 3+1
+INFO: 127.0.0.1:61511 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:50360 - "GET /openapi.json HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 287 | Edge count: 168
+INFO: 127.0.0.1:51075 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: Merged: `RAG知识库` | 1+1

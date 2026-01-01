@@ -376,13 +376,22 @@ function submitForm() {
 
 /** 删除按钮操作 */
 function handleDelete(row) {
-  const knowledgeIds = row.knowledgeId || ids.value;
-  proxy.$modal.confirm('是否确认删除知识库编号为"' + knowledgeIds + '"的数据项？此操作将删除所有相关文件和向量数据！').then(function() {
-    return deleteKnowledge(knowledgeIds);
-  }).then(() => {
-    getList();
-    proxy.$modal.msgSuccess("删除成功");
-  }).catch(() => {});
+  const knowledgeIds = row ? row.knowledgeId : ids.value;
+  const idsArray = Array.isArray(knowledgeIds) ? knowledgeIds : [knowledgeIds];
+  const idsText = idsArray.length > 1 ? idsArray.join('、') : idsArray[0];
+  
+  proxy.$modal.confirm('是否确认删除知识库编号为"' + idsText + '"的数据项？此操作将删除所有相关文件和向量数据！').then(function() {
+    return deleteKnowledge(idsArray);
+  }).then((response) => {
+    if (response.code === 200) {
+      getList();
+      proxy.$modal.msgSuccess(response.msg || "删除成功");
+    } else {
+      proxy.$modal.msgError(response.msg || "删除失败");
+    }
+  }).catch((error) => {
+    proxy.$modal.msgError(error.msg || "删除失败");
+  });
 }
 
 /** 状态修改 */

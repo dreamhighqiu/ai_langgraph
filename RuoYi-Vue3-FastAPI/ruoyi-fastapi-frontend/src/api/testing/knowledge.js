@@ -53,10 +53,12 @@ export function updateKnowledge(data) {
   })
 }
 
-// 删除知识库
-export function deleteKnowledge(knowledgeId) {
+// 删除知识库（支持单个ID或ID数组）
+export function deleteKnowledge(knowledgeIds) {
+  // 如果是数组，转换为逗号分隔的字符串
+  const ids = Array.isArray(knowledgeIds) ? knowledgeIds.join(',') : knowledgeIds;
   return request({
-    url: '/testing/knowledge/' + knowledgeId,
+    url: '/testing/knowledge/' + ids,
     method: 'delete'
   })
 }

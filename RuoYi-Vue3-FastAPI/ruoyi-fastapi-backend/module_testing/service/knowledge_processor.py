@@ -6,6 +6,7 @@ import asyncio
 import logging
 from datetime import datetime
 from typing import Optional
+from urllib.parse import quote_plus
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
@@ -33,9 +34,21 @@ class KnowledgeProcessor:
         self.check_interval = check_interval
         self.running = False
         
+        # 构建数据库URL（与config/database.py保持一致）
+        if DataBaseConfig.db_type == 'postgresql':
+            database_url = (
+                f'postgresql+asyncpg://{DataBaseConfig.db_username}:{quote_plus(DataBaseConfig.db_password)}@'
+                f'{DataBaseConfig.db_host}:{DataBaseConfig.db_port}/{DataBaseConfig.db_database}'
+            )
+        else:
+            database_url = (
+                f'mysql+asyncmy://{DataBaseConfig.db_username}:{quote_plus(DataBaseConfig.db_password)}@'
+                f'{DataBaseConfig.db_host}:{DataBaseConfig.db_port}/{DataBaseConfig.db_database}'
+            )
+        
         # 创建独立的数据库引擎
         self.engine = create_async_engine(
-            DataBaseConfig.db_url,
+            database_url,
             echo=DataBaseConfig.db_echo,
             pool_pre_ping=True,
             pool_recycle=3600
@@ -199,7 +212,7 @@ _processor: Optional[KnowledgeProcessor] = None
 
 
 async def start_processor(check_interval: int = 10):
-    """启动处理器"""
+    """启动处理器（非阻塞）"""
     global _processor
     
     if _processor is not None:
@@ -207,7 +220,9 @@ async def start_processor(check_interval: int = 10):
         return
     
     _processor = KnowledgeProcessor(check_interval)
-    await _processor.start()
+    # 在后台任务中启动，不阻塞
+    asyncio.create_task(_processor.start())
+    logger.info('知识库处理器已在后台启动')
 
 
 async def stop_processor():

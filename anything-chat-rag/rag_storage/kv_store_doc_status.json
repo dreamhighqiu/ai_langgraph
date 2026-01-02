@@ -140,5 +140,25 @@
       "processing_end_time": 1767276792
     },
     "multimodal_processed": true
+  },
+  "doc-6a481f5411d454c23815eb883f2ef20d": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
+      "chunk-66909c66602f124357c709798f010177",
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "content_summary": "PERSONAL RESUME\n\n邱云霞\n\n求职意向：高级测试工程师\n\n广州\n\n20k-25k\n\n随时到岗\n\n 年　　龄：35岁\n\n 性　　别：女\n\n 婚姻状况：已婚已育\n\n 工作年限：12年经验\n\n\n\n联系电话：13802784929\n\n\n\n联系邮箱：1509062627@qq.com\n\n技能特长\n\n· 质量保障全流程闭环能力 ：具备从需求分析、用例设计到执行反馈的全流程质量把控能力，擅长将业务需求转化为可验证的测试场 景，并通过缺陷管理与评审确保需求高质量交付\n\n· 具备大模型（...",
+    "content_length": 4765,
+    "created_at": "2026-01-02T01:59:27.206396+00:00",
+    "updated_at": "2026-01-02T10:19:17+00:00",
+    "file_path": "邱云霞的简历.pdf",
+    "track_id": "insert_20260102_095927_a07ee242",
+    "metadata": {
+      "processing_start_time": 1767319167,
+      "processing_end_time": 1767320357
+    },
+    "multimodal_processed": true
   }
 }

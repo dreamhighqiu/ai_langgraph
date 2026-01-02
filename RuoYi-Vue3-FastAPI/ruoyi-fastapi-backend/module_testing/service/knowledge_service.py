@@ -335,7 +335,8 @@ class KnowledgeService:
         project_id: int,
         file: UploadFile,
         create_by: str,
-        remark: Optional[str] = None
+        remark: Optional[str] = None,
+        base_url: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         通过项目ID上传文件到知识库（项目与知识库一对一）
@@ -370,7 +371,8 @@ class KnowledgeService:
             knowledge_id=knowledge.knowledge_id,
             file=file,
             create_by=create_by,
-            remark=remark
+            remark=remark,
+            base_url=base_url  # 传递base_url
         )
     
     @staticmethod
@@ -444,25 +446,27 @@ class KnowledgeService:
             file_url = minio_client.get_presigned_url(file_path, expires=3600)
             # 如果是本地存储或无法生成预签名URL，使用后端API URL
             if not file_url:
-                import os
-                # 从环境变量获取base_url，或使用默认值
-                base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                # 使用传入的base_url，或从环境变量获取，或使用默认值
+                if not base_url:
+                    import os
+                    base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
                 # 移除API前缀（如果有）
-                if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
                     base_url = base_url.rsplit('/', 1)[0]
                 # 确保base_url不包含尾随斜杠
-                base_url = base_url.rstrip('/')
+                base_url = (base_url or 'http://localhost:9099').rstrip('/')
                 file_url = f'{base_url}/testing/knowledge/files/{created_file.file_id}/download?preview=true'
                 logger.info(f'生成后端文件访问URL: {file_url}')
         except Exception as e:
             logger.warning(f'生成文件URL失败: {file.filename}, 错误: {e}')
             # 即使出错也提供后端API URL作为后备
             try:
-                import os
-                base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
-                if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                if not base_url:
+                    import os
+                    base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
                     base_url = base_url.rsplit('/', 1)[0]
-                base_url = base_url.rstrip('/')
+                base_url = (base_url or 'http://localhost:9099').rstrip('/')
                 file_url = f'{base_url}/testing/knowledge/files/{created_file.file_id}/download?preview=true'
             except:
                 file_url = None
@@ -508,7 +512,8 @@ class KnowledgeService:
     @staticmethod
     async def get_file_list(
         db: AsyncSession,
-        query: KnowledgeFileQueryModel
+        query: KnowledgeFileQueryModel,
+        base_url: Optional[str] = None
     ) -> Tuple[List[KnowledgeFileModel], int]:
         """获取文件列表"""
         from module_testing.storage.minio_client import MinioClientManager
@@ -526,23 +531,28 @@ class KnowledgeService:
                 file_url = minio_client.get_presigned_url(f.file_path, expires=3600)
                 # 如果是本地存储或无法生成预签名URL，使用后端API URL
                 if not file_url:
-                    import os
-                    base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                    # 使用传入的base_url，或从环境变量获取，或使用默认值
+                    if not base_url:
+                        import os
+                        base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
                     # 移除API前缀（如果有）
-                    if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                    if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
                         base_url = base_url.rsplit('/', 1)[0]
-                    base_url = base_url.rstrip('/')
+                    # 确保base_url不包含尾随斜杠
+                    base_url = (base_url or 'http://localhost:9099').rstrip('/')
                     file_url = f'{base_url}/testing/knowledge/files/{f.file_id}/download?preview=true'
+                    logger.debug(f'生成后端文件访问URL: {file_url}')
                 file_model.file_url = file_url
             except Exception as e:
                 logger.warning(f'生成文件URL失败: {f.file_name}, 错误: {e}')
                 # 即使出错也提供后端API URL作为后备
                 try:
-                    import os
-                    base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
-                    if base_url.endswith('/dev-api') or base_url.endswith('/prod-api'):
+                    if not base_url:
+                        import os
+                        base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
+                    if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
                         base_url = base_url.rsplit('/', 1)[0]
-                    base_url = base_url.rstrip('/')
+                    base_url = (base_url or 'http://localhost:9099').rstrip('/')
                     file_model.file_url = f'{base_url}/testing/knowledge/files/{f.file_id}/download?preview=true'
                 except:
                     file_model.file_url = None

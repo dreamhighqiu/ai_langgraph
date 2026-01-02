@@ -274,7 +274,7 @@ function getList() {
         description: item.description,
         fileCount: item.file_count || 0,
         vectorCount: item.vector_count || 0,
-        status: item.status,
+        status: item.status || '0', // 确保status有默认值，避免显示为空
         createTime: item.create_time,
         updateTime: item.update_time,
         remark: item.remark

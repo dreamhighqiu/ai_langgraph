@@ -7,15 +7,16 @@
 # Service List:
 #   1. LightRAG Server (Knowledge Base)     - http://localhost:9621
 #   2. MCP Server (RAG Anything)            - http://localhost:8001
-#   3. API Agent MCP Servers                - http://localhost:8002-8005
+#   3. Anything RAG MCP (LightRAG HTTP)     - http://localhost:8006/sse
+#   4. API Agent MCP Servers                - http://localhost:8002-8005
 #      - RAG MCP Server                     - http://localhost:8002/sse
 #      - Login MCP Server                   - http://localhost:8003/sse
 #      - Test Executor MCP Server           - http://localhost:8004/sse
 #      - Pytest Generator MCP Server        - http://localhost:8005/sse
 #      - Automation Quality MCP Server      - stdio mode (no HTTP)
-#   4. LangGraph Server (Agent Backend)     - http://localhost:2025
-#   5. AI Platform Backend (Main Backend)   - http://localhost:9999
-#   6. AI Platform Frontend (Frontend UI)   - http://localhost:5174
+#   5. LangGraph Server (Agent Backend)     - http://localhost:2025
+#   6. AI Platform Backend (Main Backend)   - http://localhost:9999
+#   7. AI Platform Frontend (Frontend UI)   - http://localhost:5174
 #
 # Usage:
 #   ./start_all.sh          # Start all backend services
@@ -483,6 +484,38 @@ start_mcp_server() {
     fi
 }
 
+start_anything_rag_mcp() {
+    local port=8006
+    local name="Anything RAG MCP Server"
+    local pid_file="$PID_DIR/anything_rag_mcp.pid"
+    local log_file="$LOG_DIR/anything_rag_mcp.log"
+
+    if ! ensure_port_free $port "$name"; then
+        print_error "Cannot start $name: port $port is occupied and cannot be freed"
+        return 1
+    fi
+
+    print_info "Starting $name..."
+
+    cd "$PROJECT_ROOT"
+    export PATH="$VENV_BIN:$PATH"
+    export PYTHONIOENCODING=utf-8
+    # Load environment variables if .env exists (for LIGHTRAG_BASE_URL, API keys, etc.)
+    if [ -f "$PROJECT_ROOT/.env" ]; then
+        source "$PROJECT_ROOT/.env"
+    fi
+    nohup "$VENV_PYTHON" "$PROJECT_ROOT/anything_rag_mcp/server.py" --port $port --transport sse > "$log_file" 2>&1 &
+    local pid=$!
+    echo $pid > "$pid_file"
+    cd "$PROJECT_ROOT"
+
+    if wait_for_service $port "$name" 30; then
+        print_success "$name started (PID: $pid, Port: $port)"
+    else
+        print_warning "$name may not have started properly, check log: $log_file"
+    fi
+}
+
 start_api_agent_mcp_servers() {
     local src_dir="$PROJECT_ROOT/testing-agents-service/testing-agents-service/src"
     local services_dir="$src_dir/api_agent/mcp_servers"
@@ -866,6 +899,7 @@ stop_all() {
     stop_service "Pytest Generator MCP Server" "$PID_DIR/pytest_generator_mcp.pid" 8005
     stop_service "Login MCP Server" "$PID_DIR/login_mcp.pid" 8003
     stop_service "RAG MCP Server" "$PID_DIR/rag_mcp.pid" 8002
+    stop_service "Anything RAG MCP Server" "$PID_DIR/anything_rag_mcp.pid" 8006
     stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
     stop_service "LightRAG Server" "$PID_DIR/lightrag.pid" 9621
     
@@ -886,6 +920,7 @@ show_status() {
     local services=(
         "LightRAG Server:9621"
         "MCP Server:8001"
+        "Anything RAG MCP Server:8006"
         "RAG MCP Server:8002"
         "Login MCP Server:8003"
         "Test Executor MCP Server:8004"
@@ -926,6 +961,10 @@ restart_service() {
             stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
             start_mcp_server
             ;;
+        anything-rag-mcp)
+            stop_service "Anything RAG MCP Server" "$PID_DIR/anything_rag_mcp.pid" 8006
+            start_anything_rag_mcp
+            ;;
         api-agent-mcp)
             stop_service "Automation Quality MCP Server" "$PID_DIR/automation_quality_mcp.pid"
             stop_service "Test Executor MCP Server" "$PID_DIR/test_executor_mcp.pid" 8004
@@ -965,6 +1004,9 @@ start_single_service() {
         mcp)
             start_mcp_server
             ;;
+        anything-rag-mcp)
+            start_anything_rag_mcp
+            ;;
         api-agent-mcp)
             start_api_agent_mcp_servers
             ;;
@@ -997,6 +1039,9 @@ stop_single_service() {
             ;;
         mcp)
             stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
+            ;;
+        anything-rag-mcp)
+            stop_service "Anything RAG MCP Server" "$PID_DIR/anything_rag_mcp.pid" 8006
             ;;
         api-agent-mcp)
             stop_service "Automation Quality MCP Server" "$PID_DIR/automation_quality_mcp.pid"
@@ -1044,14 +1089,15 @@ main() {
             --restart)
                 if [ -z "$2" ] || [[ "$2" =~ ^-- ]]; then
                     print_error "Please specify service name to restart"
-                    echo "Usage: $0 --restart <service_name>"
-                    echo ""
-                    echo "Available services:"
-                    echo "  lightrag   - LightRAG Server (Port 9621)"
-                    echo "  mcp        - MCP Server (Port 8001)"
-                    echo "  langgraph  - LangGraph Server (Port 2025)"
-                    echo "  agent-ui   - Agent UI (Port 3200)"
-                    exit 1
+                echo "Usage: $0 --restart <service_name>"
+                echo ""
+                echo "Available services:"
+                echo "  lightrag   - LightRAG Server (Port 9621)"
+                echo "  mcp        - MCP Server (Port 8001)"
+                echo "  anything-rag-mcp - LightRAG HTTP MCP Server (Port 8006)"
+                echo "  langgraph  - LangGraph Server (Port 2025)"
+                echo "  agent-ui   - Agent UI (Port 3200)"
+                exit 1
                 fi
                 print_info "Restarting service: $2"
                 restart_service "$2"
@@ -1092,6 +1138,7 @@ main() {
                 echo "Available services:"
                 echo "  lightrag      - LightRAG Server (Port 9621)"
                 echo "  mcp           - MCP Server (Port 8001)"
+                echo "  anything-rag-mcp - LightRAG HTTP MCP Server (Port 8006)"
                 echo "  api-agent-mcp - API Agent MCP Servers (Ports 8002-8004)"
                 echo "  langgraph     - LangGraph Server (Port 2025)"
                 echo "  agent-ui      - Agent UI (Port 3200)"
@@ -1147,6 +1194,13 @@ main() {
         failed_services+=("MCP Server")
     echo ""
     fi
+
+    if start_anything_rag_mcp; then
+        echo ""
+    else
+        failed_services+=("Anything RAG MCP Server")
+    echo ""
+    fi
     
     if start_api_agent_mcp_servers; then
         echo ""
@@ -1192,6 +1246,7 @@ main() {
     echo ""
     echo "Access URLs:"
     printf "  LightRAG API:     ${CYAN}http://localhost:9621/docs${NC}\n"
+    printf "  Anything RAG MCP: ${CYAN}http://localhost:8006/sse${NC}\n"
     printf "  RAG MCP Server:         ${CYAN}http://localhost:8002/sse${NC}\n"
     printf "  Login MCP Server:      ${CYAN}http://localhost:8003/sse${NC}\n"
     printf "  Test Executor MCP:      ${CYAN}http://localhost:8004/sse${NC}\n"

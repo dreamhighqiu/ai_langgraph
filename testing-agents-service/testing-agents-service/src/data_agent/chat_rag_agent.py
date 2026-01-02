@@ -40,4 +40,10 @@ def _load_mcp_tools():
 
 # 延迟加载工具，避免 import 时阻塞
 tools = _load_mcp_tools()
-agent = create_agent(model=llm, tools=tools)
+
+# 系统提示：强制优先使用 RAG 工具检索，再回答
+SYSTEM_PROMPT = """你是企业内部知识库助手。必须先调用可用的工具（rag-server.query 或 query_with_multimodal）从知识库检索相关内容，再给出回答。
+除非工具不可用或检索为空，否则不要直接凭空回答。
+回答时优先使用检索到的事实，并保持简洁。"""
+
+agent = create_agent(model=llm, tools=tools, system_prompt=SYSTEM_PROMPT)

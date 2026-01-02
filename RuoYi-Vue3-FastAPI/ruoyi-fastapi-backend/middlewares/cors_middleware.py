@@ -9,10 +9,14 @@ def add_cors_middleware(app: FastAPI) -> None:
     :param app: FastAPI对象
     :return:
     """
-    # 前端页面url
+    # 前端页面url（包括开发环境的端口）
     origins = [
         'http://localhost:80',
         'http://127.0.0.1:80',
+        'http://localhost:5173',  # Vite开发服务器
+        'http://127.0.0.1:5173',
+        'http://localhost:9099',  # 后端API服务器（用于测试）
+        'http://127.0.0.1:9099',
     ]
 
     # 后台api允许跨域

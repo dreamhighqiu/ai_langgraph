@@ -1515,11 +1515,11 @@
   },
   "邱云霞<SEP>高级测试工程师": {
     "chunk_ids": [
-      "chunk-79be94d8c3833dcb484c8e1712014160"
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
     ],
-    "count": 1,
-    "create_time": 1767276281,
-    "update_time": 1767276281,
+    "count": 2,
+    "update_time": 1767319905,
     "_id": "邱云霞<SEP>高级测试工程师"
   },
   "测试开发工程师<SEP>邱云霞": {
@@ -1533,11 +1533,11 @@
   },
   "广州<SEP>邱云霞": {
     "chunk_ids": [
-      "chunk-79be94d8c3833dcb484c8e1712014160"
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
     ],
-    "count": 1,
-    "create_time": 1767276291,
-    "update_time": 1767276291,
+    "count": 2,
+    "update_time": 1767319909,
     "_id": "广州<SEP>邱云霞"
   },
   "AI赋能测试平台<SEP>邱云霞": {
@@ -1551,20 +1551,20 @@
   },
   "UI自动化框架<SEP>邱云霞": {
     "chunk_ids": [
-      "chunk-79be94d8c3833dcb484c8e1712014160"
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
     ],
-    "count": 1,
-    "create_time": 1767276299,
-    "update_time": 1767276299,
+    "count": 2,
+    "update_time": 1767319921,
     "_id": "UI自动化框架<SEP>邱云霞"
   },
   "接口自动化框架<SEP>邱云霞": {
     "chunk_ids": [
-      "chunk-79be94d8c3833dcb484c8e1712014160"
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
     ],
-    "count": 1,
-    "create_time": 1767276304,
-    "update_time": 1767276304,
+    "count": 2,
+    "update_time": 1767319925,
     "_id": "接口自动化框架<SEP>邱云霞"
   },
   "APP自动化测试框架<SEP>邱云霞": {
@@ -1605,11 +1605,11 @@
   },
   "要出发周边游<SEP>邱云霞": {
     "chunk_ids": [
-      "chunk-79be94d8c3833dcb484c8e1712014160"
+      "chunk-79be94d8c3833dcb484c8e1712014160",
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
     ],
-    "count": 1,
-    "create_time": 1767276326,
-    "update_time": 1767276326,
+    "count": 2,
+    "update_time": 1767319974,
     "_id": "要出发周边游<SEP>邱云霞"
   },
   "百度在线网络技术(北京)有限公司<SEP>邱云霞": {
@@ -2791,5 +2791,1125 @@
     "create_time": 1767276788,
     "update_time": 1767276788,
     "_id": "AI智能测试平台<SEP>返工成本"
+  },
+  "质量保障全流程闭环能力<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319913,
+    "update_time": 1767319913,
+    "_id": "质量保障全流程闭环能力<SEP>邱云霞"
+  },
+  "大模型(LLM)应用开发能力<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319917,
+    "update_time": 1767319917,
+    "_id": "大模型(LLM)应用开发能力<SEP>邱云霞"
+  },
+  "邱云霞<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319929,
+    "update_time": 1767319929,
+    "_id": "邱云霞<SEP>问题分析与监控"
+  },
+  "数据库与脚本<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319933,
+    "update_time": 1767319933,
+    "_id": "数据库与脚本<SEP>邱云霞"
+  },
+  "Playturbo智能素材平台<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319937,
+    "update_time": 1767319937,
+    "_id": "Playturbo智能素材平台<SEP>邱云霞"
+  },
+  "质量策略与流程建设<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319941,
+    "update_time": 1767319941,
+    "_id": "质量策略与流程建设<SEP>邱云霞"
+  },
+  "AI制作<SEP>Playturbo智能素材平台": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319941,
+    "update_time": 1767319941,
+    "_id": "AI制作<SEP>Playturbo智能素材平台"
+  },
+  "Playturbo智能素材平台<SEP>模板化创作": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319947,
+    "update_time": 1767319947,
+    "_id": "Playturbo智能素材平台<SEP>模板化创作"
+  },
+  "自动化测试体系<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319950,
+    "update_time": 1767319950,
+    "_id": "自动化测试体系<SEP>邱云霞"
+  },
+  "Playturbo智能素材平台<SEP>审核": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319953,
+    "update_time": 1767319953,
+    "_id": "Playturbo智能素材平台<SEP>审核"
+  },
+  "研发效能平台建设<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319956,
+    "update_time": 1767319956,
+    "_id": "研发效能平台建设<SEP>邱云霞"
+  },
+  "LangChain<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319956,
+    "update_time": 1767319956,
+    "_id": "LangChain<SEP>大模型(LLM)应用开发能力"
+  },
+  "Playturbo智能素材平台<SEP>数据分析": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319962,
+    "update_time": 1767319962,
+    "_id": "Playturbo智能素材平台<SEP>数据分析"
+  },
+  "线上监控与可观测体系<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319965,
+    "update_time": 1767319965,
+    "_id": "线上监控与可观测体系<SEP>邱云霞"
+  },
+  "DeepAgent<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319965,
+    "update_time": 1767319965,
+    "_id": "DeepAgent<SEP>大模型(LLM)应用开发能力"
+  },
+  "Playturbo智能素材平台<SEP>订阅计费": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319971,
+    "update_time": 1767319971,
+    "_id": "Playturbo智能素材平台<SEP>订阅计费"
+  },
+  "RAG<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319974,
+    "update_time": 1767319974,
+    "_id": "RAG<SEP>大模型(LLM)应用开发能力"
+  },
+  "Playwright<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 2,
+    "create_time": 1767319980,
+    "update_time": 1767319980,
+    "_id": "Playwright<SEP>UI自动化框架"
+  },
+  "MCP<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319982,
+    "update_time": 1767319982,
+    "_id": "MCP<SEP>大模型(LLM)应用开发能力"
+  },
+  "汇量科技Mobvista<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319982,
+    "update_time": 1767319982,
+    "_id": "汇量科技Mobvista<SEP>邱云霞"
+  },
+  "Pytest<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 2,
+    "create_time": 1767319988,
+    "update_time": 1767319988,
+    "_id": "Pytest<SEP>UI自动化框架"
+  },
+  "Python<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319991,
+    "update_time": 1767319991,
+    "_id": "Python<SEP>大模型(LLM)应用开发能力"
+  },
+  "YAML<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767319991,
+    "update_time": 1767319991,
+    "_id": "YAML<SEP>接口自动化框架"
+  },
+  "Allure<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 2,
+    "create_time": 1767319997,
+    "update_time": 1767319997,
+    "_id": "Allure<SEP>UI自动化框架"
+  },
+  "React<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320000,
+    "update_time": 1767320000,
+    "_id": "React<SEP>大模型(LLM)应用开发能力"
+  },
+  "Pytest<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320000,
+    "update_time": 1767320000,
+    "_id": "Pytest<SEP>接口自动化框架"
+  },
+  "Charles<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320000,
+    "update_time": 1767320000,
+    "_id": "Charles<SEP>问题分析与监控"
+  },
+  "Jenkins<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 2,
+    "create_time": 1767320009,
+    "update_time": 1767320009,
+    "_id": "Jenkins<SEP>UI自动化框架"
+  },
+  "TypeScript<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320012,
+    "update_time": 1767320012,
+    "_id": "TypeScript<SEP>大模型(LLM)应用开发能力"
+  },
+  "Allure<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320012,
+    "update_time": 1767320012,
+    "_id": "Allure<SEP>接口自动化框架"
+  },
+  "Fiddler<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320012,
+    "update_time": 1767320012,
+    "_id": "Fiddler<SEP>问题分析与监控"
+  },
+  "SQL<SEP>数据库与脚本": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320023,
+    "update_time": 1767320023,
+    "_id": "SQL<SEP>数据库与脚本"
+  },
+  "Jenkins<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320026,
+    "update_time": 1767320026,
+    "_id": "Jenkins<SEP>接口自动化框架"
+  },
+  "Postman<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320026,
+    "update_time": 1767320026,
+    "_id": "Postman<SEP>问题分析与监控"
+  },
+  "Linux<SEP>数据库与脚本": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320033,
+    "update_time": 1767320033,
+    "_id": "Linux<SEP>数据库与脚本"
+  },
+  "ELK<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320036,
+    "update_time": 1767320036,
+    "_id": "ELK<SEP>问题分析与监控"
+  },
+  "FastAPI<SEP>研发效能平台建设": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320036,
+    "update_time": 1767320036,
+    "_id": "FastAPI<SEP>研发效能平台建设"
+  },
+  "Shell<SEP>数据库与脚本": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320042,
+    "update_time": 1767320042,
+    "_id": "Shell<SEP>数据库与脚本"
+  },
+  "Jaeger<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320045,
+    "update_time": 1767320045,
+    "_id": "Jaeger<SEP>问题分析与监控"
+  },
+  "React<SEP>研发效能平台建设": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320045,
+    "update_time": 1767320045,
+    "_id": "React<SEP>研发效能平台建设"
+  },
+  "大模型(LLM)应用开发能力<SEP>环境部署平台": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320045,
+    "update_time": 1767320045,
+    "_id": "大模型(LLM)应用开发能力<SEP>环境部署平台"
+  },
+  "Docker<SEP>数据库与脚本": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320055,
+    "update_time": 1767320055,
+    "_id": "Docker<SEP>数据库与脚本"
+  },
+  "Prometheus/Grafana<SEP>问题分析与监控": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320058,
+    "update_time": 1767320058,
+    "_id": "Prometheus/Grafana<SEP>问题分析与监控"
+  },
+  "AI赋能平台<SEP>大模型(LLM)应用开发能力": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320058,
+    "update_time": 1767320058,
+    "_id": "AI赋能平台<SEP>大模型(LLM)应用开发能力"
+  },
+  "冒烟Checklist准入体系<SEP>质量策略与流程建设": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320058,
+    "update_time": 1767320058,
+    "_id": "冒烟Checklist准入体系<SEP>质量策略与流程建设"
+  },
+  "Docker<SEP>研发效能平台建设": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320068,
+    "update_time": 1767320068,
+    "_id": "Docker<SEP>研发效能平台建设"
+  },
+  "Swagger<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320068,
+    "update_time": 1767320068,
+    "_id": "Swagger<SEP>接口自动化框架"
+  },
+  "上线准出测试报告标准<SEP>质量策略与流程建设": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320074,
+    "update_time": 1767320074,
+    "_id": "上线准出测试报告标准<SEP>质量策略与流程建设"
+  },
+  "大模型(LLM)应用开发能力<SEP>组件化数据集平台": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320074,
+    "update_time": 1767320074,
+    "_id": "大模型(LLM)应用开发能力<SEP>组件化数据集平台"
+  },
+  "App<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320074,
+    "update_time": 1767320074,
+    "_id": "App<SEP>要出发周边游"
+  },
+  "大模型(LLM)应用开发能力<SEP>自动化管理平台": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320086,
+    "update_time": 1767320086,
+    "_id": "大模型(LLM)应用开发能力<SEP>自动化管理平台"
+  },
+  "M版<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320090,
+    "update_time": 1767320090,
+    "_id": "M版<SEP>要出发周边游"
+  },
+  "小程序<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320094,
+    "update_time": 1767320094,
+    "_id": "小程序<SEP>要出发周边游"
+  },
+  "服务号<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320098,
+    "update_time": 1767320098,
+    "_id": "服务号<SEP>要出发周边游"
+  },
+  "主App<SEP>全链路质量保障": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320098,
+    "update_time": 1767320098,
+    "_id": "主App<SEP>全链路质量保障"
+  },
+  "H5<SEP>全链路质量保障": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320105,
+    "update_time": 1767320105,
+    "_id": "H5<SEP>全链路质量保障"
+  },
+  "官网<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320108,
+    "update_time": 1767320108,
+    "_id": "官网<SEP>要出发周边游"
+  },
+  "全链路质量保障<SEP>小程序": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320111,
+    "update_time": 1767320111,
+    "_id": "全链路质量保障<SEP>小程序"
+  },
+  "大版本发布<SEP>版本测试负责人": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320111,
+    "update_time": 1767320111,
+    "_id": "大版本发布<SEP>版本测试负责人"
+  },
+  "大数据业务<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320118,
+    "update_time": 1767320118,
+    "_id": "大数据业务<SEP>要出发周边游"
+  },
+  "P0事故<SEP>版本测试负责人": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320121,
+    "update_time": 1767320121,
+    "_id": "P0事故<SEP>版本测试负责人"
+  },
+  "日志监控体系<SEP>用户行为埋点验证": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320121,
+    "update_time": 1767320121,
+    "_id": "日志监控体系<SEP>用户行为埋点验证"
+  },
+  "商品系统<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320130,
+    "update_time": 1767320130,
+    "_id": "商品系统<SEP>要出发周边游"
+  },
+  "投诉率<SEP>线上缺陷": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320130,
+    "update_time": 1767320130,
+    "_id": "投诉率<SEP>线上缺陷"
+  },
+  "测试左移<SEP>需求评审": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320138,
+    "update_time": 1767320138,
+    "_id": "测试左移<SEP>需求评审"
+  },
+  "检查机制<SEP>用例库": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320138,
+    "update_time": 1767320138,
+    "_id": "检查机制<SEP>用例库"
+  },
+  "营销系统<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320146,
+    "update_time": 1767320146,
+    "_id": "营销系统<SEP>要出发周边游"
+  },
+  "日志监控体系<SEP>线上缺陷": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320146,
+    "update_time": 1767320146,
+    "_id": "日志监控体系<SEP>线上缺陷"
+  },
+  "API自动化测试框架<SEP>接口覆盖率": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320146,
+    "update_time": 1767320146,
+    "_id": "API自动化测试框架<SEP>接口覆盖率"
+  },
+  "百度糯米App<SEP>端到端集成测试": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320157,
+    "update_time": 1767320157,
+    "_id": "百度糯米App<SEP>端到端集成测试"
+  },
+  "推送系统<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320160,
+    "update_time": 1767320160,
+    "_id": "推送系统<SEP>要出发周边游"
+  },
+  "API自动化测试框架<SEP>核心回归时间": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320160,
+    "update_time": 1767320160,
+    "_id": "API自动化测试框架<SEP>核心回归时间"
+  },
+  "兼容性测试流程<SEP>兼容性问题拦截率": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320160,
+    "update_time": 1767320160,
+    "_id": "兼容性测试流程<SEP>兼容性问题拦截率"
+  },
+  "多机型兼容性测试<SEP>百度糯米App": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320169,
+    "update_time": 1767320169,
+    "_id": "多机型兼容性测试<SEP>百度糯米App"
+  },
+  "体验优化<SEP>用户反馈": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320169,
+    "update_time": 1767320169,
+    "_id": "体验优化<SEP>用户反馈"
+  },
+  "抢购系统<SEP>要出发周边游": {
+    "chunk_ids": [
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+    ],
+    "count": 1,
+    "create_time": 1767320176,
+    "update_time": 1767320176,
+    "_id": "抢购系统<SEP>要出发周边游"
+  },
+  "业务风险<SEP>需求评审": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320176,
+    "update_time": 1767320176,
+    "_id": "业务风险<SEP>需求评审"
+  },
+  "AI智能制作<SEP>PlayTurbo素材制作平台": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320179,
+    "update_time": 1767320179,
+    "_id": "AI智能制作<SEP>PlayTurbo素材制作平台"
+  },
+  "用户体验灰度测试<SEP>百度糯米App": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320179,
+    "update_time": 1767320179,
+    "_id": "用户体验灰度测试<SEP>百度糯米App"
+  },
+  "PlayTurbo素材制作平台<SEP>平台模板化制作": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320191,
+    "update_time": 1767320191,
+    "_id": "PlayTurbo素材制作平台<SEP>平台模板化制作"
+  },
+  "用户体验灰度测试<SEP>用户反馈": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320195,
+    "update_time": 1767320195,
+    "_id": "用户体验灰度测试<SEP>用户反馈"
+  },
+  "全链路质量保障流程<SEP>需求分析": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320197,
+    "update_time": 1767320197,
+    "_id": "全链路质量保障流程<SEP>需求分析"
+  },
+  "PlayTurbo素材制作平台<SEP>可玩模板制作": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320203,
+    "update_time": 1767320203,
+    "_id": "PlayTurbo素材制作平台<SEP>可玩模板制作"
+  },
+  "PlayTurbo素材制作平台<SEP>素材审核": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320209,
+    "update_time": 1767320209,
+    "_id": "PlayTurbo素材制作平台<SEP>素材审核"
+  },
+  "发布checklist<SEP>自动化门禁": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320209,
+    "update_time": 1767320209,
+    "_id": "发布checklist<SEP>自动化门禁"
+  },
+  "全链路质量保障流程<SEP>测试方案": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320215,
+    "update_time": 1767320215,
+    "_id": "全链路质量保障流程<SEP>测试方案"
+  },
+  "Docker<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320215,
+    "update_time": 1767320215,
+    "_id": "Docker<SEP>UI自动化框架"
+  },
+  "PlayTurbo素材制作平台<SEP>数据分析": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320221,
+    "update_time": 1767320221,
+    "_id": "PlayTurbo素材制作平台<SEP>数据分析"
+  },
+  "UI自动化框架<SEP>图片相似度断言": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320228,
+    "update_time": 1767320228,
+    "_id": "UI自动化框架<SEP>图片相似度断言"
+  },
+  "PlayTurbo素材制作平台<SEP>订阅计费": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320228,
+    "update_time": 1767320228,
+    "_id": "PlayTurbo素材制作平台<SEP>订阅计费"
+  },
+  "全链路质量保障流程<SEP>发布准入": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320231,
+    "update_time": 1767320231,
+    "_id": "全链路质量保障流程<SEP>发布准入"
+  },
+  "Playturbo前台<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320234,
+    "update_time": 1767320234,
+    "_id": "Playturbo前台<SEP>UI自动化框架"
+  },
+  "主流程覆盖率<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320234,
+    "update_time": 1767320234,
+    "_id": "主流程覆盖率<SEP>接口自动化框架"
+  },
+  "UI自动化框架<SEP>仓库后台": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320246,
+    "update_time": 1767320246,
+    "_id": "UI自动化框架<SEP>仓库后台"
+  },
+  "接口回归效率<SEP>接口自动化框架": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320246,
+    "update_time": 1767320246,
+    "_id": "接口回归效率<SEP>接口自动化框架"
+  },
+  "FastAPI<SEP>自助化环境平台": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320246,
+    "update_time": 1767320246,
+    "_id": "FastAPI<SEP>自助化环境平台"
+  },
+  "全链路质量保障流程<SEP>线上监控": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320255,
+    "update_time": 1767320255,
+    "_id": "全链路质量保障流程<SEP>线上监控"
+  },
+  "React<SEP>自助化环境平台": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320258,
+    "update_time": 1767320258,
+    "_id": "React<SEP>自助化环境平台"
+  },
+  "Monkey压力测试<SEP>UI自动化框架": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320258,
+    "update_time": 1767320258,
+    "_id": "Monkey压力测试<SEP>UI自动化框架"
+  },
+  "效能提升<SEP>研发自助测试环境管理平台": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320258,
+    "update_time": 1767320258,
+    "_id": "效能提升<SEP>研发自助测试环境管理平台"
+  },
+  "测试工程师<SEP>线上数据库监控与API服务监控体系": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320258,
+    "update_time": 1767320258,
+    "_id": "测试工程师<SEP>线上数据库监控与API服务监控体系"
+  },
+  "Docker<SEP>自助化环境平台": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320274,
+    "update_time": 1767320274,
+    "_id": "Docker<SEP>自助化环境平台"
+  },
+  "UI自动化框架<SEP>主流程覆盖率": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320274,
+    "update_time": 1767320274,
+    "_id": "UI自动化框架<SEP>主流程覆盖率"
+  },
+  "Jaeger<SEP>链路追踪与性能洞察": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320274,
+    "update_time": 1767320274,
+    "_id": "Jaeger<SEP>链路追踪与性能洞察"
+  },
+  "测试脚本<SEP>自助化环境平台": {
+    "chunk_ids": [
+      "chunk-66909c66602f124357c709798f010177"
+    ],
+    "count": 1,
+    "create_time": 1767320287,
+    "update_time": 1767320287,
+    "_id": "测试脚本<SEP>自助化环境平台"
+  },
+  "要出发B端和C端酒店、门票、特产等多品类电商交易系统<SEP>需求分析与用例设计": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320287,
+    "update_time": 1767320287,
+    "_id": "要出发B端和C端酒店、门票、特产等多品类电商交易系统<SEP>需求分析与用例设计"
+  },
+  "测试工程师<SEP>链路追踪与性能洞察": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320294,
+    "update_time": 1767320294,
+    "_id": "测试工程师<SEP>链路追踪与性能洞察"
+  },
+  "功能与兼容性测试执行<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320300,
+    "update_time": 1767320300,
+    "_id": "功能与兼容性测试执行<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统"
+  },
+  "日志与错误监控<SEP>测试工程师": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320304,
+    "update_time": 1767320304,
+    "_id": "日志与错误监控<SEP>测试工程师"
+  },
+  "江西理工大学<SEP>软件工程(本科)": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320304,
+    "update_time": 1767320304,
+    "_id": "江西理工大学<SEP>软件工程(本科)"
+  },
+  "自动化测试实施与维护<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320310,
+    "update_time": 1767320310,
+    "_id": "自动化测试实施与维护<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统"
+  },
+  "ELK (Kibana)<SEP>日志与错误监控": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320313,
+    "update_time": 1767320313,
+    "_id": "ELK (Kibana)<SEP>日志与错误监控"
+  },
+  "线上问题定位与分析<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320317,
+    "update_time": 1767320317,
+    "_id": "线上问题定位与分析<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统"
+  },
+  "Pytest<SEP>自动化测试实施与维护": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320317,
+    "update_time": 1767320317,
+    "_id": "Pytest<SEP>自动化测试实施与维护"
+  },
+  "测试工程师<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320324,
+    "update_time": 1767320324,
+    "_id": "测试工程师<SEP>要出发B端和C端酒店、门票、特产等多品类电商交易系统"
+  },
+  "订单、支付、退款<SEP>需求分析与用例设计": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320324,
+    "update_time": 1767320324,
+    "_id": "订单、支付、退款<SEP>需求分析与用例设计"
+  },
+  "YAML<SEP>自动化测试实施与维护": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320330,
+    "update_time": 1767320330,
+    "_id": "YAML<SEP>自动化测试实施与维护"
+  },
+  "测试工程师<SEP>百度在线网络技术(北京)有限公司": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320333,
+    "update_time": 1767320333,
+    "_id": "测试工程师<SEP>百度在线网络技术(北京)有限公司"
+  },
+  "支付风控<SEP>需求分析与用例设计": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320333,
+    "update_time": 1767320333,
+    "_id": "支付风控<SEP>需求分析与用例设计"
+  },
+  "TraceID<SEP>线上问题定位与分析": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320333,
+    "update_time": 1767320333,
+    "_id": "TraceID<SEP>线上问题定位与分析"
+  },
+  "2015-12 ~ 2018-04<SEP>测试工程师": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320344,
+    "update_time": 1767320344,
+    "_id": "2015-12 ~ 2018-04<SEP>测试工程师"
+  },
+  "状态流转<SEP>需求分析与用例设计": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320346,
+    "update_time": 1767320346,
+    "_id": "状态流转<SEP>需求分析与用例设计"
+  },
+  "江西理工大学<SEP>测试工程师": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320349,
+    "update_time": 1767320349,
+    "_id": "江西理工大学<SEP>测试工程师"
+  },
+  "2010-09 ~ 2014-06<SEP>测试工程师": {
+    "chunk_ids": [
+      "chunk-c638d946337676dcade3a77177e35589"
+    ],
+    "count": 1,
+    "create_time": 1767320353,
+    "update_time": 1767320353,
+    "_id": "2010-09 ~ 2014-06<SEP>测试工程师"
   }
 }

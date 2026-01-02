@@ -4278,3 +4278,196 @@ asyncio.exceptions.CancelledError
 2026-01-01 22:36:42,889 - lightrag - INFO - Final context: 49 entities, 40 relations, 12 chunks
 2026-01-01 22:36:42,890 - lightrag - INFO - Final chunks S+F/O: E9/1 E5/2 E8/3 E6/4 E10/5 E3/6 E2/7 E7/8 E4/9 E13/10 E1/11 E5/12
 2026-01-01 22:36:46,253 - uvicorn.access - INFO - 127.0.0.1:51841 - "POST /query/stream HTTP/1.1" 200
+2026-01-01 22:39:34,509 - uvicorn.error - INFO - Shutting down
+2026-01-01 22:39:34,624 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-01-01 22:39:34,626 - lightrag - INFO - Successfully finalized 12 storages
+2026-01-01 22:39:34,628 - uvicorn.error - INFO - Application shutdown complete.
+2026-01-01 22:39:34,628 - uvicorn.error - INFO - Finished server process [53652]
+2026-01-01 22:39:34,644 - lightrag - INFO - Successfully finalized all RAGAnything storages
+2026-01-01 22:39:39,874 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-01 22:39:39,875 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-01 22:39:43,296 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-01 22:39:43,298 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-01 22:39:43,299 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-01 22:39:43,300 - lightrag - INFO - Reranking is disabled
+2026-01-01 22:39:44,900 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-01 22:39:48,050 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 353 nodes, 310 edges
+2026-01-01 22:39:49,559 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-01 22:39:49,561 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-01 22:39:50,018 - uvicorn.error - INFO - Started server process [47200]
+2026-01-01 22:39:50,019 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-01 22:39:50,029 - lightrag - INFO - [] Process 47200 KV load full_docs with 8 records
+2026-01-01 22:39:50,032 - lightrag - INFO - [] Process 47200 KV load text_chunks with 25 records
+2026-01-01 22:39:50,034 - lightrag - INFO - [] Process 47200 KV load full_entities with 8 records
+2026-01-01 22:39:50,037 - lightrag - INFO - [] Process 47200 KV load full_relations with 8 records
+2026-01-01 22:39:50,043 - lightrag - INFO - [] Process 47200 KV load entity_chunks with 341 records
+2026-01-01 22:39:50,048 - lightrag - INFO - [] Process 47200 KV load relation_chunks with 310 records
+2026-01-01 22:39:50,258 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-01 22:39:50,342 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-01 22:39:50,469 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-01 22:39:50,512 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-01 22:39:50,597 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-01 22:39:50,725 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-01 22:39:50,768 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-01 22:39:50,854 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-01 22:39:50,983 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-01 22:39:50,997 - lightrag - INFO - [] Process 47200 KV load llm_response_cache with 29 records
+2026-01-01 22:39:51,000 - lightrag - INFO - [] Process 47200 doc status load doc_status with 8 records
+2026-01-01 22:39:51,002 - uvicorn.error - INFO - Application startup complete.
+2026-01-01 22:39:51,005 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-01 23:10:27,573 - uvicorn.access - INFO - 127.0.0.1:55202 - "GET /openapi.json HTTP/1.1" 200
+2026-01-01 23:10:39,073 - uvicorn.access - INFO - 127.0.0.1:55542 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 09:51:52,739 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-02 09:51:52,742 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-02 09:51:55,398 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-02 09:51:55,399 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-02 09:51:55,400 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-02 09:51:55,400 - lightrag - INFO - Reranking is disabled
+2026-01-02 09:51:57,184 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-02 09:52:00,310 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 353 nodes, 310 edges
+2026-01-02 09:52:02,405 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-02 09:52:02,407 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-02 09:52:02,849 - uvicorn.error - INFO - Started server process [54132]
+2026-01-02 09:52:02,849 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-02 09:52:02,855 - lightrag - INFO - [] Process 54132 KV load full_docs with 8 records
+2026-01-02 09:52:02,858 - lightrag - INFO - [] Process 54132 KV load text_chunks with 25 records
+2026-01-02 09:52:02,861 - lightrag - INFO - [] Process 54132 KV load full_entities with 8 records
+2026-01-02 09:52:02,863 - lightrag - INFO - [] Process 54132 KV load full_relations with 8 records
+2026-01-02 09:52:02,867 - lightrag - INFO - [] Process 54132 KV load entity_chunks with 341 records
+2026-01-02 09:52:02,871 - lightrag - INFO - [] Process 54132 KV load relation_chunks with 310 records
+2026-01-02 09:52:03,111 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-02 09:52:03,195 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-02 09:52:03,324 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-02 09:52:03,367 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-02 09:52:03,451 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-02 09:52:03,578 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-02 09:52:03,623 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-02 09:52:03,706 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-02 09:52:03,833 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-02 09:52:03,846 - lightrag - INFO - [] Process 54132 KV load llm_response_cache with 29 records
+2026-01-02 09:52:03,848 - lightrag - INFO - [] Process 54132 doc status load doc_status with 8 records
+2026-01-02 09:52:03,851 - uvicorn.error - INFO - Application startup complete.
+2026-01-02 09:52:03,853 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-02 09:55:29,262 - uvicorn.access - INFO - 127.0.0.1:59519 - "GET /auth-status HTTP/1.1" 200
+2026-01-02 09:55:29,916 - uvicorn.access - INFO - 127.0.0.1:64731 - "GET /docs HTTP/1.1" 200
+2026-01-02 09:55:30,599 - uvicorn.access - INFO - 127.0.0.1:64731 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 09:57:11,281 - uvicorn.access - INFO - 127.0.0.1:55508 - "GET /auth-status HTTP/1.1" 200
+2026-01-02 09:57:11,682 - uvicorn.access - INFO - 127.0.0.1:55508 - "GET /docs HTTP/1.1" 200
+2026-01-02 09:57:12,040 - uvicorn.access - INFO - 127.0.0.1:55508 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 09:57:18,033 - uvicorn.access - INFO - 127.0.0.1:55508 - "GET /docs HTTP/1.1" 200
+2026-01-02 09:57:18,099 - uvicorn.access - INFO - 127.0.0.1:55508 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 09:57:35,461 - uvicorn.access - INFO - 127.0.0.1:63471 - "POST /documents/upload HTTP/1.1" 200
+2026-01-02 09:57:35,462 - lightrag - INFO - Using RAG-Anything multimodal processing for: 邱云霞的简历.pdf
+2026-01-02 09:57:35,464 - lightrag - INFO - RAGAnything initialized with config:
+2026-01-02 09:57:35,464 - lightrag - INFO -   Working directory: ./rag_storage
+2026-01-02 09:57:35,465 - lightrag - INFO -   Parser: docling
+2026-01-02 09:57:35,466 - lightrag - INFO -   Parse method: auto
+2026-01-02 09:57:35,467 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2026-01-02 09:57:35,468 - lightrag - INFO -   Max concurrent files: 1
+2026-01-02 09:57:35,469 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2026-01-02 09:57:35,472 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf
+2026-01-02 09:57:35,475 - lightrag - INFO - Using docling parser with method: auto
+2026-01-02 09:57:35,475 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2026-01-02 09:58:09,356 - uvicorn.access - INFO - 127.0.0.1:53177 - "HEAD /docs HTTP/1.1" 405
+2026-01-02 09:58:15,809 - uvicorn.access - INFO - 127.0.0.1:53196 - "GET /docs HTTP/1.1" 200
+2026-01-02 09:59:04,333 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf complete! Extracted 107 content blocks
+2026-01-02 09:59:04,336 - lightrag - INFO - Document parsed successfully: 邱云霞的简历.pdf, doc_id=doc-6a481f5411d454c23815eb883f2ef20d, blocks=107
+2026-01-02 09:59:27,171 - lightrag - INFO - Parser 'docling' installation verified
+2026-01-02 09:59:27,173 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2026-01-02 09:59:27,181 - lightrag - INFO - [] Process 54132 KV load parse_cache with 15 records
+2026-01-02 09:59:27,188 - lightrag - INFO - Multimodal processors initialized with context support
+2026-01-02 09:59:27,188 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2026-01-02 09:59:27,189 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2026-01-02 09:59:27,190 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf (107 items)
+2026-01-02 09:59:27,191 - lightrag - INFO - Content separation complete:
+2026-01-02 09:59:27,192 - lightrag - INFO -   - Text content length: 4765 characters
+2026-01-02 09:59:27,192 - lightrag - INFO -   - Multimodal items count: 0
+2026-01-02 09:59:27,193 - lightrag - INFO - Starting text content insertion into LightRAG...
+2026-01-02 09:59:27,215 - lightrag - INFO - Processing 1 document(s)
+2026-01-02 09:59:27,217 - lightrag - INFO - Extracting stage 1/1: 邱云霞的简历.pdf
+2026-01-02 09:59:27,218 - lightrag - INFO - Processing d-id: doc-6a481f5411d454c23815eb883f2ef20d
+2026-01-02 09:59:27,485 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+2026-01-02 10:00:24,095 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2026-01-02 10:00:34,684 - uvicorn.access - INFO - 127.0.0.1:53405 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+2026-01-02 10:01:20,041 - lightrag - INFO -  == LLM cache == saving: default:extract:d0fdb578ab46eb628d606a98c4caa118
+2026-01-02 10:01:22,637 - lightrag - INFO -  == LLM cache == saving: default:extract:13bb10a1a420dd659c8ddf7f0d1f0c0f
+2026-01-02 10:01:48,893 - lightrag - INFO -  == LLM cache == saving: default:extract:b6dd4fb56608cb51eee5f36c7f01e7f7
+2026-01-02 10:01:48,901 - lightrag - INFO - Chunk 1 of 3 extracted 33 Ent + 22 Rel chunk-c638d946337676dcade3a77177e35589
+2026-01-02 10:02:36,601 - lightrag - INFO -  == LLM cache == saving: default:extract:7484972153f176e3d64bbdc9d1a5ef4a
+2026-01-02 10:02:36,603 - lightrag - WARNING - chunk-66909c66602f124357c709798f010177: Complete delimiter can not be found in extraction result
+2026-01-02 10:02:36,622 - lightrag - WARNING - chunk-66909c66602f124357c709798f010177: LLM output format error; found 4/5 fields on REALTION `UI自动化框架`~`Console日志报错监控`
+2026-01-02 10:03:04,936 - lightrag - INFO -  == LLM cache == saving: default:extract:38bfca864eb4c12e4f20509f23b436ac
+2026-01-02 10:03:04,940 - lightrag - INFO - Chunk 2 of 3 extracted 73 Ent + 46 Rel chunk-66909c66602f124357c709798f010177
+2026-01-02 10:03:28,072 - lightrag - INFO -  == LLM cache == saving: default:extract:0710b032aa12d6ad450cb5f44fd0051f
+2026-01-02 10:03:28,073 - lightrag - WARNING - chunk-d34f4f4096c5c994a4190c333cf5b57f: Complete delimiter can not be found in extraction result
+2026-01-02 10:03:28,100 - lightrag - INFO - Chunk 3 of 3 extracted 62 Ent + 65 Rel chunk-d34f4f4096c5c994a4190c333cf5b57f
+2026-01-02 10:03:28,149 - lightrag - INFO - Merging stage 1/1: 邱云霞的简历.pdf
+2026-01-02 10:03:28,151 - lightrag - INFO - Phase 1: Processing 152 entities from doc-6a481f5411d454c23815eb883f2ef20d (async: 8)
+2026-01-02 10:03:28,165 - lightrag - INFO - Merged: `邱云霞` | 4+1
+2026-01-02 10:03:28,168 - lightrag - INFO - Merged: `高级测试工程师` | 2+1
+2026-01-02 10:03:28,297 - lightrag - INFO - Merged: `广州` | 1+1
+2026-01-02 10:03:34,689 - lightrag - INFO - Merged: `UI自动化框架` | 1+2
+2026-01-02 10:03:34,816 - lightrag - INFO - Merged: `接口自动化框架` | 1+2
+2026-01-02 10:04:00,240 - lightrag - INFO - Merged: `自动化测试体系` | 1+1
+2026-01-02 10:04:11,922 - lightrag - INFO - Merged: `要出发周边游` | 1+1
+2026-01-02 10:04:19,289 - lightrag - INFO - Merged: `汇量科技Mobvista` | 1+1
+2026-01-02 10:04:41,840 - lightrag - INFO - Merged: `订阅计费` | 1+2
+2026-01-02 10:04:41,844 - uvicorn.access - INFO - 127.0.0.1:58970 - "GET /docs HTTP/1.1" 200
+2026-01-02 10:04:41,860 - lightrag - INFO - Merged: `LangChain` | 3+1
+2026-01-02 10:04:42,039 - lightrag - INFO - [] Subgraph query successful | Node count: 365 | Edge count: 310
+2026-01-02 10:04:42,104 - uvicorn.access - INFO - 127.0.0.1:56475 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-02 10:04:50,026 - lightrag - INFO - Merged: `DeepAgent` | 1+1
+2026-01-02 10:04:50,028 - lightrag - INFO - Merged: `RAG` | 1+1
+2026-01-02 10:04:50,171 - lightrag - INFO - Merged: `MCP` | 2+1
+2026-01-02 10:04:53,661 - lightrag - INFO - Merged: `Python` | 2+1
+2026-01-02 10:05:08,675 - lightrag - INFO - Merged: `React` | 2+2
+2026-01-02 10:05:08,809 - lightrag - INFO - Merged: `TypeScript` | 1+1
+2026-01-02 10:05:16,424 - lightrag - INFO - Merged: `Playwright` | 1+2
+2026-01-02 10:05:19,878 - lightrag - INFO - Merged: `Pytest` | 2+3
+2026-01-02 10:05:19,915 - uvicorn.access - INFO - 127.0.0.1:57177 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 10:05:20,211 - lightrag - INFO - Merged: `Allure` | 1+2
+2026-01-02 10:05:31,108 - lightrag - INFO - Merged: `Jenkins` | 1+2
+2026-01-02 10:05:31,111 - lightrag - INFO - Merged: `YAML` | 1+2
+2026-01-02 10:05:31,114 - lightrag - INFO - Merged: `Charles` | 2+1
+2026-01-02 10:05:36,572 - lightrag - INFO - Merged: `Postman` | 2+1
+2026-01-02 10:05:52,342 - lightrag - INFO - Merged: `ELK` | 3+1
+2026-01-02 10:05:52,347 - lightrag - INFO - Merged: `Jaeger` | 2+2
+2026-01-02 10:06:05,076 - lightrag - INFO - Merged: `Linux` | 2+1
+2026-01-02 10:06:05,079 - lightrag - INFO - Merged: `Shell` | 1+1
+2026-01-02 10:06:05,205 - lightrag - INFO - Merged: `Docker` | 1+2
+2026-01-02 10:06:08,081 - lightrag - INFO - Merged: `FastAPI` | 4+2
+2026-01-02 10:06:17,262 - lightrag - INFO - Merged: `环境部署平台` | 1+1
+2026-01-02 10:06:17,265 - lightrag - INFO - Merged: `AI赋能平台` | 1+1
+2026-01-02 10:06:17,268 - lightrag - INFO - Merged: `组件化数据集平台` | 1+1
+2026-01-02 10:06:41,109 - lightrag - INFO - Merged: `小程序` | 1+2
+2026-01-02 10:07:20,116 - lightrag - INFO - Merged: `全链路质量保障` | 1+1
+2026-01-02 10:07:34,566 - lightrag - INFO - Merged: `线上缺陷` | 1+1
+2026-01-02 10:07:57,966 - lightrag - INFO - Merged: `API自动化测试框架` | 1+1
+2026-01-02 10:07:58,234 - lightrag - INFO - Merged: `百度糯米App` | 2+1
+2026-01-02 10:10:22,368 - lightrag - INFO - Merged: `百度在线网络技术(北京)有限公司` | 2+1
+2026-01-02 10:10:24,956 - lightrag - INFO - Merged: `测试工程师` | 1+1
+2026-01-02 10:10:34,449 - lightrag - INFO - Merged: `Grafana` | 1+1
+2026-01-02 10:10:50,756 - lightrag - INFO - Merged: `江西理工大学` | 4+1
+2026-01-02 10:11:03,496 - lightrag - INFO - Merged: `英语(六级)` | 1+1
+2026-01-02 10:11:03,500 - lightrag - INFO - Merged: `国家励志奖学金` | 1+1
+2026-01-02 10:11:03,630 - lightrag - INFO - Merged: `优秀毕业生` | 1+1
+2026-01-02 10:11:06,625 - lightrag - INFO - Merged: `一等奖学金` | 1+1
+2026-01-02 10:11:16,292 - lightrag - INFO - Merged: `三等奖学金` | 1+1
+2026-01-02 10:11:16,295 - lightrag - INFO - Merged: `三好学生` | 1+1
+2026-01-02 10:11:45,421 - lightrag - INFO - Phase 2: Processing 129 relations from doc-6a481f5411d454c23815eb883f2ef20d (async: 8)
+2026-01-02 10:11:45,445 - lightrag - INFO - Merged: `邱云霞`~`高级测试工程师` | 1+1
+2026-01-02 10:11:49,650 - lightrag - INFO - Merged: `广州`~`邱云霞` | 1+1
+2026-01-02 10:12:01,615 - lightrag - INFO - Merged: `UI自动化框架`~`邱云霞` | 1+1
+2026-01-02 10:12:05,737 - lightrag - INFO - Merged: `接口自动化框架`~`邱云霞` | 1+1
+2026-01-02 10:12:54,305 - lightrag - INFO - Merged: `要出发周边游`~`邱云霞` | 1+1
+2026-01-02 10:19:17,718 - lightrag - INFO - Phase 3: Updating final 159(152+7) entities and  129 relations from doc-6a481f5411d454c23815eb883f2ef20d
+2026-01-02 10:19:17,721 - lightrag - INFO - Completed merging: 152 entities, 7 extra entities, 129 relations
+2026-01-02 10:19:17,789 - lightrag - INFO - [] Writing graph with 465 nodes, 434 edges
+2026-01-02 10:19:17,966 - lightrag - INFO - In memory DB persist to disk
+2026-01-02 10:19:17,967 - lightrag - INFO - Completed processing file 1/1: 邱云霞的简历.pdf
+2026-01-02 10:19:17,970 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-02 10:19:17,972 - lightrag - INFO - Text content insertion complete
+2026-01-02 10:19:17,976 - lightrag - INFO - Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf
+2026-01-02 10:19:17,977 - lightrag - INFO - Document processing complete: 邱云霞的简历.pdf, doc_id=doc-6a481f5411d454c23815eb883f2ef20d
+2026-01-02 10:19:17,979 - lightrag - INFO - RAG-Anything processing completed successfully: 邱云霞的简历.pdf, doc_id=doc-6a481f5411d454c23815eb883f2ef20d
+2026-01-02 10:19:17,980 - lightrag - INFO - No documents to process

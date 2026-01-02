@@ -282,12 +282,19 @@ async def upload_file_by_project(
     文件会自动上传到项目对应的 workspace（project_{project_id}），确保数据隔离。
     """
     try:
+        # 获取base_url用于生成文件URL
+        base_url = str(request.base_url).rstrip('/')
+        # 移除API前缀（如果有）
+        if '/dev-api' in base_url or '/prod-api' in base_url:
+            base_url = base_url.rsplit('/', 1)[0]
+        
         result = await KnowledgeService.upload_knowledge_file_by_project(
             db=db,
             project_id=project_id,
             file=file,
             create_by=current_user.user.user_name,
-            remark=remark
+            remark=remark,
+            base_url=base_url  # 传递base_url
         )
         
         return ResponseUtil.success(msg='文件上传成功', data=result)
@@ -365,7 +372,13 @@ async def get_file_list_by_project(
             process_status=process_status
         )
         
-        file_list, total = await KnowledgeService.get_file_list(db, query)
+        # 获取base_url用于生成文件URL
+        base_url = str(request.base_url).rstrip('/')
+        # 移除API前缀（如果有）
+        if '/dev-api' in base_url or '/prod-api' in base_url:
+            base_url = base_url.rsplit('/', 1)[0]
+        
+        file_list, total = await KnowledgeService.get_file_list(db, query, base_url=base_url)
         
         return ResponseUtil.success(
             data={'rows': [f.model_dump() for f in file_list], 'total': total}
@@ -400,7 +413,13 @@ async def get_file_list(
             process_status=process_status
         )
         
-        file_list, total = await KnowledgeService.get_file_list(db, query)
+        # 获取base_url用于生成文件URL
+        base_url = str(request.base_url).rstrip('/')
+        # 移除API前缀（如果有）
+        if '/dev-api' in base_url or '/prod-api' in base_url:
+            base_url = base_url.rsplit('/', 1)[0]
+        
+        file_list, total = await KnowledgeService.get_file_list(db, query, base_url=base_url)
         
         return ResponseUtil.success(
             data={'rows': [f.model_dump() for f in file_list], 'total': total}

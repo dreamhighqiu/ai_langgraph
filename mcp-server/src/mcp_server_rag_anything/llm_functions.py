@@ -21,6 +21,9 @@ from typing import Callable, Optional, Any
 
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
 from lightrag.utils import EmbeddingFunc
+# 禁用 LightRAG 默认的 response_format 以兼容 deepseek 等模型
+import lightrag.llm.openai as lightrag_openai
+lightrag_openai.DEFAULT_RESPONSE_FORMAT = None
 
 from .config import MCSConfig
 
@@ -123,6 +126,10 @@ def create_llm_model_func(config: MCSConfig) -> Callable:
         """
         if history_messages is None:
             history_messages = []
+
+        # deepseek 不支持 OpenAI response_format，强制关闭关键词提取/response_format
+        kwargs.pop("keyword_extraction", None)
+        kwargs.pop("response_format", None)
 
         try:
             result = openai_complete_if_cache(
@@ -301,4 +308,3 @@ def create_embedding_func(config: MCSConfig) -> EmbeddingFunc:
     except Exception as e:
         logger.error(f"Error creating embedding function: {e}")
         raise
-

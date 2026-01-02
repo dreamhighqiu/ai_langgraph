@@ -127,6 +127,9 @@ def create_app() -> FastAPI:
         description=f'{AppConfig.app_name}接口文档',
         version=AppConfig.app_version,
         lifespan=lifespan,
+        docs_url="/docs",  # 明确指定docs路径
+        redoc_url="/redoc",  # 明确指定redoc路径
+        openapi_url="/openapi.json",  # 明确指定openapi路径
     )
 
     # 挂载子应用
@@ -137,5 +140,18 @@ def create_app() -> FastAPI:
     handle_exception(app)
     # 自动注册路由
     auto_register_routers(app)
-
+    
+    # 添加根路径路由
+    @app.get("/", include_in_schema=False)
+    async def root():
+        """根路径，重定向到API文档"""
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse(url="/docs")
+    
+    # 添加健康检查端点
+    @app.get("/health", include_in_schema=False)
+    async def health():
+        """健康检查端点"""
+        return {"status": "ok", "message": "Server is running"}
+    
     return app

@@ -97,6 +97,25 @@ async def query_tool(
         Query result as JSON string
     """
     result = await connector.query(query_text, mode=mode, top_k=top_k)
+    try:
+        logger.info(
+            "Query debug | text=%s | mode=%s | top_k=%s | result_keys=%s",
+            query_text,
+            mode,
+            top_k,
+            list(result.keys()) if isinstance(result, dict) else type(result),
+        )
+        if isinstance(result, dict):
+            data = result.get("result") or {}
+            logger.info(
+                "Query debug | entities=%s chunks=%s relations=%s refs=%s",
+                len(data.get("entities", [])) if isinstance(data, dict) else None,
+                len(data.get("chunks", [])) if isinstance(data, dict) else None,
+                len(data.get("relationships", [])) if isinstance(data, dict) else None,
+                len(data.get("references", [])) if isinstance(data, dict) else None,
+            )
+    except Exception:
+        pass
     return json.dumps(result, ensure_ascii=False, indent=2)
 # fmt: off  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VWxwS1N3PT06MDY4YzIzNjg=
 
@@ -246,4 +265,3 @@ async def list_supported_formats_tool(connector) -> str:
     }
     return json.dumps(supported_formats, ensure_ascii=False, indent=2)
 # pragma: no cover  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VWxwS1N3PT06MDY4YzIzNjg=
-

@@ -37,6 +37,12 @@
     <el-tabs v-model="activeTab" @tab-change="handleTabChange">
       <el-tab-pane label="原始文件" name="original">
         <el-table v-loading="loading" :data="originalFileList">
+          <el-table-column label="项目" align="center" prop="projectName" width="150" v-if="!queryParams.projectId">
+            <template #default="scope">
+              <el-tag v-if="scope.row.projectName" type="info" size="small">{{ scope.row.projectName }}</el-tag>
+              <span v-else>-</span>
+            </template>
+          </el-table-column>
           <el-table-column label="文件名" align="center" prop="fileName" :show-overflow-tooltip="true" min-width="200">
             <template #default="scope">
               <div style="display: flex; align-items: center; gap: 8px;">
@@ -71,25 +77,26 @@
           <el-table-column label="操作" align="center" width="200" fixed="right">
             <template #default="scope">
               <el-button
+                v-if="canPreviewOrDownload(scope.row)"
                 link
                 type="primary"
                 icon="View"
                 @click="handlePreview(scope.row)"
-                :disabled="!scope.row.fileUrl"
-                v-if="scope.row.processStatus === 'completed'"
               >
                 预览
               </el-button>
               <el-button
+                v-if="canPreviewOrDownload(scope.row)"
                 link
                 type="primary"
                 icon="Download"
                 @click="handleDownload(scope.row)"
-                :disabled="!scope.row.fileUrl"
-                v-if="scope.row.processStatus === 'completed'"
               >
                 下载
               </el-button>
+              <span v-if="!canPreviewOrDownload(scope.row)" style="color: #999; font-size: 12px;">
+                {{ getUnavailableReason(scope.row) }}
+              </span>
             </template>
           </el-table-column>
         </el-table>
@@ -122,11 +129,17 @@
         </el-form>
 
         <el-table v-loading="ragLoading" :data="ragDocumentList">
-          <el-table-column label="文件路径" align="center" prop="file_path" :show-overflow-tooltip="true" min-width="250">
+          <el-table-column label="项目" align="center" prop="knowledge_name" width="150" v-if="!queryParams.projectId">
+            <template #default="scope">
+              <el-tag v-if="scope.row.knowledge_name" type="info" size="small">{{ scope.row.knowledge_name }}</el-tag>
+              <span v-else>-</span>
+            </template>
+          </el-table-column>
+          <el-table-column label="文件名" align="center" prop="file_name" :show-overflow-tooltip="true" min-width="250">
             <template #default="scope">
               <div style="display: flex; align-items: center; gap: 8px;">
                 <el-icon><Document /></el-icon>
-                <span>{{ scope.row.file_path }}</span>
+                <span>{{ scope.row.file_name || scope.row.file_path || '-' }}</span>
               </div>
             </template>
           </el-table-column>
@@ -153,12 +166,21 @@
               {{ formatRagTime(scope.row.updated_at) }}
             </template>
           </el-table-column>
-          <el-table-column label="操作" align="center" width="150" fixed="right">
+          <el-table-column label="操作" align="center" width="200" fixed="right">
             <template #default="scope">
               <el-button
                 link
                 type="primary"
                 icon="View"
+                @click="handlePreviewRagFile(scope.row)"
+                v-if="scope.row.file_url"
+              >
+                预览文件
+              </el-button>
+              <el-button
+                link
+                type="primary"
+                icon="InfoFilled"
                 @click="handleViewRagDocument(scope.row)"
                 v-if="scope.row.status === 'PROCESSED'"
               >
@@ -179,7 +201,7 @@
     </el-tabs>
 
     <!-- 文件预览对话框 -->
-    <el-dialog title="文件预览" v-model="previewVisible" width="80%" append-to-body>
+    <el-dialog title="文件预览" v-model="previewVisible" width="80%" append-to-body @close="handlePreviewClose">
       <iframe
         v-if="previewUrl"
         :src="previewUrl"
@@ -210,8 +232,11 @@
 
 <script setup name="KnowledgeFilesManage">
 import { listAllProject } from "@/api/testing/project";
-import { listKnowledgeFiles, listKnowledge, getProjectRagDocuments } from "@/api/testing/knowledge";
+import { getAllFiles, getAllRagDocuments } from "@/api/testing/knowledge";
 import { Folder, Document } from '@element-plus/icons-vue';
+import request from '@/utils/request';
+import axios from 'axios';
+import { getToken } from '@/utils/auth';
 
 const { proxy } = getCurrentInstance();
 
@@ -222,6 +247,7 @@ const showSearch = ref(true);
 const activeTab = ref('original');
 const previewVisible = ref(false);
 const previewUrl = ref('');
+const previewBlobUrl = ref(null); // 存储blob URL，用于释放内存
 const ragDetailVisible = ref(false);
 const currentRagDocument = ref(null);
 
@@ -241,7 +267,7 @@ const ragQueryParams = ref({
 });
 
 const queryParams = ref({
-  projectId: undefined
+  projectId: undefined  // 默认不选择项目，显示所有项目的文件
 });
 
 /** 查询项目列表 */
@@ -258,53 +284,39 @@ function getProjectList() {
 
 /** 项目改变 */
 function handleProjectChange() {
-  if (queryParams.value.projectId) {
-    getOriginalFileList();
-    if (activeTab.value === 'rag') {
-      getRagDocumentList();
-    }
+  // 无论是否选择项目，都加载数据（如果未选择项目，显示所有项目的文件）
+  getOriginalFileList();
+  if (activeTab.value === 'rag') {
+    getRagDocumentList();
   }
 }
 
 /** 获取原始文件列表 */
 function getOriginalFileList() {
-  if (!queryParams.value.projectId) {
-    originalFileList.value = [];
-    originalTotal.value = 0;
-    return;
-  }
-
   loading.value = true;
-  // 先获取项目的知识库ID
-  listKnowledge({ project_id: queryParams.value.projectId, page_num: 1, page_size: 1 }).then(response => {
-    if (response.code === 200 && response.data && response.data.rows && response.data.rows.length > 0) {
-      const knowledgeId = response.data.rows[0].knowledge_id;
-      const query = {
-        page_num: originalQueryParams.value.pageNum,
-        page_size: originalQueryParams.value.pageSize
-      };
-      listKnowledgeFiles(knowledgeId, query).then(fileResponse => {
-        if (fileResponse.code === 200 && fileResponse.data) {
-          originalFileList.value = (fileResponse.data.rows || []).map(item => ({
-            fileId: item.file_id,
-            fileName: item.file_name,
-            fileType: item.file_type,
-            fileSize: item.file_size,
-            fileUrl: item.file_url,
-            processStatus: item.process_status,
-            createTime: item.create_time
-          }));
-          originalTotal.value = fileResponse.data.total || 0;
-        }
-        loading.value = false;
-      }).catch(() => {
-        loading.value = false;
-      });
-    } else {
-      loading.value = false;
-      originalFileList.value = [];
-      originalTotal.value = 0;
+  const query = {
+    page_num: originalQueryParams.value.pageNum,
+    page_size: originalQueryParams.value.pageSize,
+    project_id: queryParams.value.projectId || undefined  // 如果未选择项目，传undefined显示所有
+  };
+  
+  getAllFiles(query).then(response => {
+    if (response.code === 200 && response.data) {
+      originalFileList.value = (response.data.rows || []).map(item => ({
+        fileId: item.file_id,
+        fileName: item.file_name,
+        fileType: item.file_type,
+        fileSize: item.file_size,
+        fileUrl: item.file_url,
+        processStatus: item.process_status,
+        createTime: item.create_time,
+        projectId: item.project_id,
+        projectName: item.project_name,
+        knowledgeName: item.knowledge_name
+      }));
+      originalTotal.value = response.data.total || 0;
     }
+    loading.value = false;
   }).catch(() => {
     loading.value = false;
   });
@@ -312,22 +324,24 @@ function getOriginalFileList() {
 
 /** 获取RAG处理后的文档列表 */
 function getRagDocumentList() {
-  if (!queryParams.value.projectId) {
-    ragDocumentList.value = [];
-    ragTotal.value = 0;
-    return;
-  }
-
   ragLoading.value = true;
   const params = {
+    project_id: queryParams.value.projectId || undefined,  // 如果未选择项目，传undefined显示所有
     status_filter: ragQueryParams.value.statusFilter || undefined,
     page: ragQueryParams.value.page,
     page_size: ragQueryParams.value.pageSize
   };
-  getProjectRagDocuments(queryParams.value.projectId, params).then(response => {
+  
+  getAllRagDocuments(params).then(response => {
     if (response.code === 200 && response.data) {
-      ragDocumentList.value = response.data.documents || [];
-      ragTotal.value = response.data.total || 0;
+      ragDocumentList.value = (response.data.documents || []).map(doc => ({
+        id: doc[0] || doc.id,  // doc可能是[doc_id, DocProcessingStatus]元组或对象
+        ...(typeof doc[1] === 'object' ? doc[1] : doc),  // 如果是元组，展开DocProcessingStatus
+        project_id: doc.project_id,
+        knowledge_id: doc.knowledge_id,
+        knowledge_name: doc.knowledge_name
+      }));
+      ragTotal.value = response.data.total || response.data.pagination?.total_count || 0;
     }
     ragLoading.value = false;
   }).catch(() => {
@@ -337,8 +351,10 @@ function getRagDocumentList() {
 
 /** Tab切换 */
 function handleTabChange(tab) {
-  if (tab === 'rag' && queryParams.value.projectId) {
+  if (tab === 'rag') {
     getRagDocumentList();
+  } else if (tab === 'original') {
+    getOriginalFileList();
   }
 }
 
@@ -351,8 +367,9 @@ function handleQuery() {
 /** 重置 */
 function resetQuery() {
   proxy.resetForm("queryRef");
-  originalFileList.value = [];
-  originalTotal.value = 0;
+  queryParams.value.projectId = undefined;  // 重置为显示所有项目
+  originalQueryParams.value.pageNum = 1;
+  getOriginalFileList();
 }
 
 /** RAG搜索 */
@@ -394,9 +411,43 @@ function getStatusText(status) {
     'pending': '等待处理',
     'processing': '处理中',
     'completed': '已完成',
+    'processed': '已处理',
     'failed': '失败'
   };
   return textMap[status] || status;
+}
+
+/** 判断是否可以预览或下载 */
+function canPreviewOrDownload(row) {
+  // 只要有fileId就可以下载/预览
+  const fileId = row.fileId || row.file_id;
+  if (!fileId) {
+    return false;
+  }
+  
+  // 如果状态是pending或processing，可能文件还未准备好
+  const status = row.processStatus || row.process_status;
+  if (status === 'pending' || status === 'processing') {
+    return false;
+  }
+  
+  // 其他状态（completed, processed, failed等）都允许预览/下载
+  return true;
+}
+
+/** 获取不可用的原因 */
+function getUnavailableReason(row) {
+  if (!row.fileId && !row.file_id) {
+    return '文件ID缺失';
+  }
+  const status = row.processStatus || row.process_status;
+  if (status === 'pending') {
+    return '等待处理';
+  }
+  if (status === 'processing') {
+    return '处理中';
+  }
+  return '暂不可用';
 }
 
 /** 获取RAG状态类型 */
@@ -434,26 +485,139 @@ function formatRagTime(timeStr) {
 }
 
 /** 预览文件 */
-function handlePreview(row) {
-  if (row.fileUrl) {
-    // 如果是后端API URL，添加preview参数
-    let url = row.fileUrl;
-    if (url.includes('/files/') && url.includes('/download')) {
-      url = url + (url.includes('?') ? '&' : '?') + 'preview=true';
-    }
-    previewUrl.value = url;
-    previewVisible.value = true;
-  } else {
-    proxy.$modal.msgWarning('文件URL不可用，无法预览');
+async function handlePreview(row) {
+  const fileId = row.fileId || row.file_id;
+  if (!fileId) {
+    proxy.$modal.msgWarning('文件ID不可用，无法预览');
+    return;
   }
+  
+  try {
+    // 释放之前的blob URL（如果存在）
+    if (previewBlobUrl.value) {
+      URL.revokeObjectURL(previewBlobUrl.value);
+      previewBlobUrl.value = null;
+    }
+    
+    // 使用axios直接获取文件内容，这样可以获取完整的响应信息（包括响应头）
+    const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
+    const response = await axios({
+      url: `${baseUrl}/testing/knowledge/files/${fileId}/download`,
+      method: 'get',
+      params: { preview: true },
+      responseType: 'blob',
+      headers: {
+        'Authorization': 'Bearer ' + getToken()
+      }
+    });
+    
+    // axios返回的blob响应，response.data是Blob对象，response.headers包含响应头
+    let blob = response.data;
+    let mimeType = blob.type || 'application/octet-stream';
+    
+    // 如果Blob没有type或type不正确，从响应头获取
+    if (!mimeType || mimeType === 'application/octet-stream') {
+      const contentType = response.headers['content-type'];
+      if (contentType) {
+        mimeType = contentType.split(';')[0].trim(); // 移除charset等参数
+      }
+    }
+    
+    // 如果还是没有，根据文件名推断MIME类型
+    if (!mimeType || mimeType === 'application/octet-stream') {
+      const fileName = row.fileName || row.file_name || '';
+      const ext = fileName.toLowerCase().split('.').pop() || '';
+      const mimeMap = {
+        'pdf': 'application/pdf',
+        'txt': 'text/plain',
+        'md': 'text/markdown',
+        'html': 'text/html',
+        'htm': 'text/html',
+        'doc': 'application/msword',
+        'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'xls': 'application/vnd.ms-excel',
+        'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'jpg': 'image/jpeg',
+        'jpeg': 'image/jpeg',
+        'png': 'image/png',
+        'gif': 'image/gif',
+        'json': 'application/json',
+        'xml': 'application/xml',
+      };
+      mimeType = mimeMap[ext] || 'application/octet-stream';
+    }
+    
+    // 如果推断出的类型与Blob类型不同，创建新的Blob以确保正确的MIME类型
+    if (blob.type !== mimeType) {
+      blob = new Blob([blob], { type: mimeType });
+    }
+    
+    // 创建blob URL
+    const blobUrl = URL.createObjectURL(blob);
+    
+    previewBlobUrl.value = blobUrl;
+    previewUrl.value = blobUrl;
+    previewVisible.value = true;
+  } catch (error) {
+    console.error('预览文件失败:', error);
+    // 检查是否是401错误
+    if (error.response && error.response.status === 401) {
+      proxy.$modal.msgError('预览文件失败：用户未登录，请先完成登录');
+    } else if (error.response && error.response.status === 404) {
+      proxy.$modal.msgError('预览文件失败：文件不存在');
+    } else {
+      proxy.$modal.msgError('预览文件失败：' + (error.message || '未知错误'));
+    }
+  }
+}
+
+/** 关闭预览对话框时释放blob URL */
+function handlePreviewClose() {
+  if (previewBlobUrl.value) {
+    URL.revokeObjectURL(previewBlobUrl.value);
+    previewBlobUrl.value = null;
+  }
+  previewUrl.value = '';
 }
 
 /** 下载文件 */
 function handleDownload(row) {
-  if (row.fileUrl) {
-    window.open(row.fileUrl, '_blank');
+  const fileId = row.fileId || row.file_id;
+  if (!fileId) {
+    proxy.$modal.msgWarning('文件ID不可用，无法下载');
+    return;
+  }
+  
+  let url = row.fileUrl || row.file_url;
+  
+  // 如果没有fileUrl，通过fileId生成URL
+  if (!url) {
+    const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
+    url = `${baseUrl}/testing/knowledge/files/${fileId}/download`;
+  }
+  
+  // 确保是下载而不是预览
+  if (url.includes('preview=true')) {
+    url = url.replace('preview=true', 'preview=false');
+  } else if (!url.includes('preview=')) {
+    url = url + (url.includes('?') ? '&' : '?') + 'preview=false';
+  }
+  
+  window.open(url, '_blank');
+}
+
+/** 预览RAG文档的原始文件 */
+async function handlePreviewRagFile(row) {
+  const fileId = row.fileId || row.file_id;
+  if (fileId) {
+    // 如果有fileId，使用handlePreview函数（会自动携带token）
+    await handlePreview(row);
+  } else if (row.file_url) {
+    // 如果没有fileId但有file_url，直接使用（可能是MinIO预签名URL）
+    previewUrl.value = row.file_url;
+    previewVisible.value = true;
   } else {
-    proxy.$modal.msgWarning('文件URL不可用，无法下载');
+    proxy.$modal.msgWarning('文件URL不可用，无法预览');
   }
 }
 
@@ -465,6 +629,8 @@ function handleViewRagDocument(row) {
 
 onMounted(() => {
   getProjectList();
+  // 默认加载所有项目的文件
+  getOriginalFileList();
 });
 </script>
 

@@ -160,5 +160,79 @@
       "processing_end_time": 1767320357
     },
     "multimodal_processed": true
+  },
+  "doc-bb440d81710e098075e1a589ffdcdaff": {
+    "status": "processed",
+    "chunks_count": 7,
+    "chunks_list": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a",
+      "chunk-ee95678b86c9b568620faa3f642a99f2",
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02",
+      "chunk-713d53fa915224637d4b450019cfe610",
+      "chunk-a170001b91ee547d8ee4bfd173d4248c",
+      "chunk-337c99f0d9f1f9baf228abe482019a62",
+      "chunk-cf594e249f001b800b56f6b7ad4706dc"
+    ],
+    "content_summary": "# Playwright + Pytest UI自动化测试框架 - 面试详解\r\n\r\n## 一、项目概述\r\n\r\n### 1.1 项目背景\r\n这是一个基于 **Playwright + Pytest** 的 Web UI 自动化测试框架，主要用于 **PlayTurbo** 和 **MindWorks Creative** 平台的自动化测试。该平台是一个可玩广告（Playable Ads）创意制作和管理系统。\r\n\r\n### 1.2 核心价值\r\n- **提升测试效率**：将手工测试转换为自动化，节省8...",
+    "content_length": 19191,
+    "created_at": "2026-01-02T02:54:41.846360+00:00",
+    "updated_at": "2026-01-02T03:28:23.658191+00:00",
+    "file_path": "PlayWrightUI 自动化面试.md",
+    "track_id": "upload_20260102_105441_78f71036",
+    "metadata": {
+      "processing_start_time": 1767322481,
+      "processing_end_time": 1767324503
+    }
+  },
+  "doc-19b08af7e45ec2e99d072b66272eb956": {
+    "status": "processing",
+    "chunks_count": 6,
+    "chunks_list": [
+      "chunk-faaf941d4d9f8097309219433b1bd751",
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09",
+      "chunk-5011e22e4be70add89b59cd7592f5fc5",
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3",
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f",
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "content_summary": "# pytest_yaml_api 接口自动化测试框架 - 面试要点整理\r\n\r\n---\r\n\r\n## 📊 项目概述\r\n\r\n这是一套基于 **Pytest + YAML + Jinja2** 的企业级 API 接口自动化测试框架，实现了**数据驱动**和**关键字驱动**相结合的测试方案，支持多环境切换、数据库校验、Allure报告、WebSocket测试、Mock数据、CI/CD集成等功能。\r\n\r\n### 业务场景\r\n- 支持 Backend（后台管理系统）、Playturbo（创意平台）、Ope...",
+    "content_length": 20663,
+    "created_at": "2026-01-02T06:20:13.614599+00:00",
+    "updated_at": "2026-01-02T06:20:13.706592+00:00",
+    "file_path": "pytest 接口自动化面试.md",
+    "track_id": "upload_20260102_142013_ee02cccf",
+    "metadata": {
+      "processing_start_time": 1767334813
+    }
+  },
+  "doc-91e3d2ffffcf256e6821ed0e80f2d522": {
+    "status": "pending",
+    "content_summary": "# 账户中心一体化项目 - 面试详解\r\n\r\n## 一、项目背景与价值\r\n\r\n### 1.1 项目背景\r\n\r\n面试官您好，我之前主导过一个**\"账户中心一体化\"**项目的测试工作。我们自研的**PlayTurbo创意平台**需要与上游的**XMP投放平台**和下游的**SS素材审核系统**实现账号体系的双向打通。\r\n\r\n**系统角色定位**：\r\n```\r\n┌─────────────────────────────────────────────────────────────────┐\r\n│  ...",
+    "content_length": 17538,
+    "created_at": "2026-01-02T06:20:16.516805+00:00",
+    "updated_at": "2026-01-02T06:20:16.516805+00:00",
+    "file_path": "注册登录权限通过：难点项目.md",
+    "track_id": "upload_20260102_142016_a419c985",
+    "chunks_list": []
+  },
+  "doc-973d0356010bb23eeb1179a842047c82": {
+    "status": "pending",
+    "content_summary": "# MTG 移动广告归因自动化测试框架 - 面试详解\r\n\r\n---\r\n\r\n## 📌 一、项目概述\r\n\r\n### 1.1 项目背景与业务价值\r\n\r\n**业务背景**：在移动广告投放场景中，广告主投放广告后需要验证归因系统是否能正确追踪用户从**点击广告 → 跳转应用商店 → 下载安装应用 → 打开应用**的完整链路。这个归因链路的准确性直接关系到广告收益结算。\r\n\r\n**项目定位**：这是一个**端到端的移动应用广告归因自动化测试平台**，通过自动化手段替代人工测试，实现高效、稳定的归因验证。\r\n...",
+    "content_length": 28031,
+    "created_at": "2026-01-02T06:20:17.740262+00:00",
+    "updated_at": "2026-01-02T06:20:17.740262+00:00",
+    "file_path": "UI app面试.md",
+    "track_id": "upload_20260102_142017_04accc5e",
+    "chunks_list": []
+  },
+  "doc-13e7049e21c1d035b1d3529823616f19": {
+    "status": "pending",
+    "content_summary": "# 测试工程师简历 - 工作经验与项目经验\n\n---\n\n## 📝 个人技能总结\n\n### 测试技能\n\n- **自动化测试**: 精通移动端 UI 自动化测试,熟练使用 Appium + Pytest 框架\n- **编程语言**: Python (熟练),具备良好的代码编写和调试能力\n- **测试工具**: Appium、ADB、Appium Inspector、Monkey、ideviceinstaller\n- **测试框架**: Pytest、Unittest、Fixture、参数化测试\n- ...",
+    "content_length": 10767,
+    "created_at": "2026-01-02T06:20:18.943499+00:00",
+    "updated_at": "2026-01-02T06:20:18.943499+00:00",
+    "file_path": "app appium面试项目1-最优.md",
+    "track_id": "upload_20260102_142018_f36e4d62",
+    "chunks_list": []
   }
 }

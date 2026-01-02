@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2026-01-02 09:52:17,440 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2026-01-02 11:31:43,178 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -22,21 +22,21 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2026-01-02 09:52:17,487 - __main__ - INFO - Starting RAG Anything MCP Server...
-2026-01-02 09:52:17,493 - __main__ - INFO - Configuration loaded
-2026-01-02 09:52:17,493 - __main__ - INFO -   LLM Provider: deepseek
-2026-01-02 09:52:17,493 - __main__ - INFO -   LLM Model: deepseek-chat
-2026-01-02 09:52:17,493 - __main__ - INFO -   LLM API Key: ***0749
-2026-01-02 09:52:17,493 - __main__ - INFO -   RAG Parser: docling
-2026-01-02 09:52:17,494 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
-2026-01-02 09:52:17,494 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
-2026-01-02 09:52:17,494 - __main__ - INFO - Creating LLM model function...
-2026-01-02 09:52:17,494 - __main__ - INFO - Creating vision model function...
-2026-01-02 09:52:17,494 - __main__ - INFO - Creating embedding function...
-2026-01-02 09:52:17,494 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2026-01-02 09:52:17,494 - __main__ - INFO - Creating RAGAnything connector...
-2026-01-02 09:52:17,495 - __main__ - INFO - Initializing RAGAnything...
-2026-01-02 09:52:17,495 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
+2026-01-02 11:31:43,222 - __main__ - INFO - Starting RAG Anything MCP Server...
+2026-01-02 11:31:43,229 - __main__ - INFO - Configuration loaded
+2026-01-02 11:31:43,229 - __main__ - INFO -   LLM Provider: deepseek
+2026-01-02 11:31:43,230 - __main__ - INFO -   LLM Model: deepseek-chat
+2026-01-02 11:31:43,230 - __main__ - INFO -   LLM API Key: ***0749
+2026-01-02 11:31:43,230 - __main__ - INFO -   RAG Parser: docling
+2026-01-02 11:31:43,230 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
+2026-01-02 11:31:43,230 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
+2026-01-02 11:31:43,231 - __main__ - INFO - Creating LLM model function...
+2026-01-02 11:31:43,231 - __main__ - INFO - Creating vision model function...
+2026-01-02 11:31:43,232 - __main__ - INFO - Creating embedding function...
+2026-01-02 11:31:43,232 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2026-01-02 11:31:43,232 - __main__ - INFO - Creating RAGAnything connector...
+2026-01-02 11:31:43,232 - __main__ - INFO - Initializing RAGAnything...
+2026-01-02 11:31:43,232 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ../../anything-chat-rag/rag_storage
 INFO:   Parser: docling
@@ -45,13 +45,13 @@ INFO:   Multimodal processing - Image: True, Table: True, Equation: True
 INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': '../../anything-chat-rag/rag_storage', 'vector_storage': 'MilvusVectorDBStorage'}
-INFO: [] Loaded graph from ../../anything-chat-rag/rag_storage\graph_chunk_entity_relation.graphml with 353 nodes, 310 edges
-INFO: [] Process 27704 KV load full_docs with 8 records
-INFO: [] Process 27704 KV load text_chunks with 25 records
-INFO: [] Process 27704 KV load full_entities with 8 records
-INFO: [] Process 27704 KV load full_relations with 8 records
-INFO: [] Process 27704 KV load entity_chunks with 341 records
-INFO: [] Process 27704 KV load relation_chunks with 310 records
+INFO: [] Loaded graph from ../../anything-chat-rag/rag_storage\graph_chunk_entity_relation.graphml with 673 nodes, 625 edges
+INFO: [] Process 30000 KV load full_docs with 10 records
+INFO: [] Process 30000 KV load text_chunks with 35 records
+INFO: [] Process 30000 KV load full_entities with 10 records
+INFO: [] Process 30000 KV load full_relations with 10 records
+INFO: [] Process 30000 KV load entity_chunks with 661 records
+INFO: [] Process 30000 KV load relation_chunks with 625 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -61,81 +61,25 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 27704 KV load llm_response_cache with 29 records
-INFO: [] Process 27704 doc status load doc_status with 8 records
-INFO: [] Process 27704 KV load parse_cache with 15 records
+INFO: [] Process 30000 KV load llm_response_cache with 51 records
+INFO: [] Process 30000 doc status load doc_status with 10 records
+INFO: [] Process 30000 KV load parse_cache with 15 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2026-01-02 09:52:55,261 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2026-01-02 09:52:55,261 - __main__ - INFO - RAG Anything initialized successfully
-2026-01-02 09:52:55,262 - __main__ - INFO -   Working Directory: ../../anything-chat-rag/rag_storage
-2026-01-02 09:52:55,262 - __main__ - INFO -   Parser: docling
-[01/02/26 09:52:55] INFO     Starting MCP server '但问企业级RAG' server.py:2582
+2026-01-02 11:32:16,685 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2026-01-02 11:32:16,685 - __main__ - INFO - RAG Anything initialized successfully
+2026-01-02 11:32:16,685 - __main__ - INFO -   Working Directory: ../../anything-chat-rag/rag_storage
+2026-01-02 11:32:16,685 - __main__ - INFO -   Parser: docling
+[01/02/26 11:32:16] INFO     Starting MCP server '但问企业级RAG' server.py:2582
                              with transport 'sse' on                           
                              http://0.0.0.0:8001/sse                           
-INFO:     Started server process [27704]
+INFO:     Started server process [30000]
 INFO:     Waiting for application startup.
-2026-01-02 09:52:55,610 - docket.worker - INFO - Starting worker 'caobinbin#27704' with the following tasks:
-2026-01-02 09:52:55,611 - docket.worker - INFO - * trace(message: str, ...)
-2026-01-02 09:52:55,611 - docket.worker - INFO - * fail(message: str, ...)
-2026-01-02 09:52:55,612 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-02 11:32:17,024 - docket.worker - INFO - Starting worker 'caobinbin#30000' with the following tasks:
+2026-01-02 11:32:17,027 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-02 11:32:17,027 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-02 11:32:17,027 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:52556 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52558 - "POST /messages/?session_id=5ead729645924594b878355be513347e HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52560 - "POST /messages/?session_id=5ead729645924594b878355be513347e HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52562 - "POST /messages/?session_id=5ead729645924594b878355be513347e HTTP/1.1" 202 Accepted
-2026-01-02 09:55:34,991 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:51774 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51776 - "POST /messages/?session_id=d9055929ce3d4fa089b4185086d7b3a8 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:51778 - "POST /messages/?session_id=d9055929ce3d4fa089b4185086d7b3a8 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:51780 - "POST /messages/?session_id=d9055929ce3d4fa089b4185086d7b3a8 HTTP/1.1" 202 Accepted
-2026-01-02 09:56:08,718 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:65211 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65213 - "POST /messages/?session_id=f9d9a4ef3dc344fd96a04f318968a7ee HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:65215 - "POST /messages/?session_id=f9d9a4ef3dc344fd96a04f318968a7ee HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:65217 - "POST /messages/?session_id=f9d9a4ef3dc344fd96a04f318968a7ee HTTP/1.1" 202 Accepted
-2026-01-02 10:05:29,499 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-01-02 10:05:29,509 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞... (mode: hybrid)
-INFO: Executing VLM enhanced query: 邱云霞...
-INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
-ERROR: LLM func: Error in decorated function for task 1488601941184_1120520.312: An asyncio.Future, a coroutine or an awaitable is required
-ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
-WARNING: raw_prompt is None from LightRAG, using query as fallback
-INFO: Found 0 image path matches in prompt
-INFO: No valid images found, falling back to normal query
-ERROR: LLM func: Error in decorated function for task 1488601941184_1120530.25: An asyncio.Future, a coroutine or an awaitable is required
-ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
-2026-01-02 10:05:46,332 - mcp_server_rag_anything.connector - INFO - Query completed successfully
-2026-01-02 10:05:46,332 - mcp_server_rag_anything.tools - INFO - Query debug | text=邱云霞 | mode=hybrid | top_k=10 | result_keys=['success', 'result']
-2026-01-02 10:05:46,332 - mcp_server_rag_anything.tools - INFO - Query debug | entities=0 chunks=0 relations=0 refs=0
-INFO:     127.0.0.1:57102 - "POST /messages/?session_id=f9d9a4ef3dc344fd96a04f318968a7ee HTTP/1.1" 202 Accepted
-2026-01-02 10:05:46,358 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:50291 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50293 - "POST /messages/?session_id=60127d9e32f1495bbee285a429e972b1 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:50295 - "POST /messages/?session_id=60127d9e32f1495bbee285a429e972b1 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:50297 - "POST /messages/?session_id=60127d9e32f1495bbee285a429e972b1 HTTP/1.1" 202 Accepted
-2026-01-02 10:05:54,242 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-01-02 10:05:54,242 - mcp_server_rag_anything.connector - INFO - Executing query: 邱云霞 个人信息 员工信息... (mode: hybrid)
-INFO: Executing VLM enhanced query: 邱云霞 个人信息 员工信息...
-ERROR: LLM func: Error in decorated function for task 1488624101568_1120544.984: An asyncio.Future, a coroutine or an awaitable is required
-ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
-WARNING: raw_prompt is None from LightRAG, using query as fallback
-INFO: Found 0 image path matches in prompt
-INFO: No valid images found, falling back to normal query
-ERROR: LLM func: Error in decorated function for task 1488624101568_1120550.453: An asyncio.Future, a coroutine or an awaitable is required
-ERROR: Query failed: An asyncio.Future, a coroutine or an awaitable is required
-2026-01-02 10:06:05,268 - mcp_server_rag_anything.connector - INFO - Query completed successfully
-2026-01-02 10:06:05,268 - mcp_server_rag_anything.tools - INFO - Query debug | text=邱云霞 个人信息 员工信息 | mode=hybrid | top_k=10 | result_keys=['success', 'result']
-2026-01-02 10:06:05,268 - mcp_server_rag_anything.tools - INFO - Query debug | entities=0 chunks=0 relations=0 refs=0
-INFO:     127.0.0.1:54727 - "POST /messages/?session_id=60127d9e32f1495bbee285a429e972b1 HTTP/1.1" 202 Accepted
-2026-01-02 10:06:05,289 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-INFO:     127.0.0.1:59360 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59362 - "POST /messages/?session_id=28b6ae260be3449aab7e2dea7160a755 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:59364 - "POST /messages/?session_id=28b6ae260be3449aab7e2dea7160a755 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:59366 - "POST /messages/?session_id=28b6ae260be3449aab7e2dea7160a755 HTTP/1.1" 202 Accepted
-2026-01-02 10:06:10,883 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-INFO:     127.0.0.1:59368 - "POST /messages/?session_id=28b6ae260be3449aab7e2dea7160a755 HTTP/1.1" 202 Accepted
-2026-01-02 10:06:10,897 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest

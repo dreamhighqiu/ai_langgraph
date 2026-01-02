@@ -2029,37 +2029,39 @@
 <node id="Playwright">
   <data key="d0">Playwright</data>
   <data key="d1">artifact</data>
-  <data key="d2">Playwright是一个用于UI自动化的框架，邱云霞在UI自动化框架中使用了它。&lt;SEP&gt;Playwright是用于UI自动化测试的浏览器自动化库。&lt;SEP&gt;Playwright是邱云霞在UI自动化框架中使用的浏览器自动化工具。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319519</data>
+  <data key="d2">Playwright是一个用于Web自动化和UI自动化测试的现代框架或库，主要作为浏览器自动化工具使用。它提供了驱动浏览器进行自动化测试的核心功能，支持多种浏览器，并内置了智能等待、网络拦截以及Trace录制与回放等高级特性。该框架通过提供浏览器上下文和页面操作等强大的API，使开发者能够执行复杂的页面操作与测试任务。
+
+在具体实践中，Playwright被应用于UI自动化框架中，例如开发者邱云霞就在其UI自动化框架中使用了Playwright。该工具的一个具体版本是1.50.0，它作为一个Web自动化测试引擎，专门用于驱动和完成UI自动化测试。总体而言，Playwright是一个旨在提升Web自动化测试效率和可靠性的综合性解决方案。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322934</data>
   <data key="d6"></data>
 </node>
 <node id="Pytest">
   <data key="d0">Pytest</data>
   <data key="d1">artifact</data>
-  <data key="d2">一个Python测试框架，用于编写小型到复杂的测试。&lt;SEP&gt;Pytest是一个Python测试框架，邱云霞在UI和接口自动化框架中都使用了它。&lt;SEP&gt;一个Python测试框架，用于编写和维护自动化测试脚本。&lt;SEP&gt;Pytest是用于编写和运行测试的Python框架。&lt;SEP&gt;Pytest是邱云霞在UI和接口自动化框架中使用的Python测试框架。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-c638d946337676dcade3a77177e35589</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319519</data>
+  <data key="d2">一个Python测试框架，用于编写小型到复杂的测试。&lt;SEP&gt;Pytest是一个Python测试框架，邱云霞在UI和接口自动化框架中都使用了它。&lt;SEP&gt;一个Python测试框架，用于编写和维护自动化测试脚本。&lt;SEP&gt;Pytest是用于编写和运行测试的Python框架。&lt;SEP&gt;Pytest是邱云霞在UI和接口自动化框架中使用的Python测试框架。&lt;SEP&gt;Pytest是一个单元测试框架，版本为7.2.2，作为自动化测试框架的核心测试框架。&lt;SEP&gt;一个功能强大的Python测试框架，支持fixture、参数化、插件等高级特性。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-c638d946337676dcade3a77177e35589&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323260</data>
   <data key="d6"></data>
 </node>
 <node id="Allure">
   <data key="d0">Allure</data>
   <data key="d1">artifact</data>
-  <data key="d2">Allure是一个测试报告框架，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Allure是用于生成测试报告的工具。&lt;SEP&gt;Allure是邱云霞在UI和接口自动化框架中使用的测试报告工具。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319523</data>
+  <data key="d2">Allure是一个测试报告框架，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Allure是用于生成测试报告的工具。&lt;SEP&gt;Allure是邱云霞在UI和接口自动化框架中使用的测试报告工具。&lt;SEP&gt;Allure是一个报告工具，版本为2.13.1，用于生成美观的测试报告。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323271</data>
   <data key="d6"></data>
 </node>
 <node id="Jenkins">
   <data key="d0">Jenkins</data>
   <data key="d1">artifact</data>
-  <data key="d2">Jenkins是一个持续集成工具，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Jenkins是用于持续集成和部署的自动化服务器。&lt;SEP&gt;Jenkins是邱云霞在UI和接口自动化框架中使用的持续集成工具。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319531</data>
+  <data key="d2">Jenkins是一个持续集成工具，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Jenkins是用于持续集成和部署的自动化服务器。&lt;SEP&gt;Jenkins是邱云霞在UI和接口自动化框架中使用的持续集成工具。&lt;SEP&gt;Jenkins是一个持续集成工具，该自动化测试框架被集成到其流水线中。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323296</data>
   <data key="d6"></data>
 </node>
 <node id="YAML">
@@ -2128,10 +2130,10 @@
 <node id="Docker">
   <data key="d0">Docker</data>
   <data key="d1">artifact</data>
-  <data key="d2">Docker是一个容器化平台，邱云霞具备其使用经验，并在自研平台中应用。&lt;SEP&gt;Docker是用于容器化部署的平台。&lt;SEP&gt;Docker是邱云霞具备部署与维护经验的容器化平台。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319568</data>
+  <data key="d2">Docker是一个容器化平台，邱云霞具备其使用经验，并在自研平台中应用。&lt;SEP&gt;Docker是用于容器化部署的平台。&lt;SEP&gt;Docker是邱云霞具备部署与维护经验的容器化平台。&lt;SEP&gt;Docker是一个容器化技术，用于测试环境的容器化。&lt;SEP&gt;一个容器化平台，用于将测试框架及其依赖打包成镜像，实现环境一致性和便捷部署。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323287</data>
   <data key="d6"></data>
 </node>
 <node id="Linux">
@@ -2479,10 +2481,10 @@
 <node id="钉钉通知">
   <data key="d0">钉钉通知</data>
   <data key="d1">artifact</data>
-  <data key="d2">通过钉钉应用程序发送的实时消息通知，用于推送测试结果。</data>
-  <data key="d3">chunk-6bd4d94bce1ed431abb1a2e97286558f</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf</data>
-  <data key="d5">1767276018</data>
+  <data key="d2">通过钉钉应用程序发送的实时消息通知，用于推送测试结果。&lt;SEP&gt;钉钉通知是该框架在测试完成后自动发送结果反馈的机制。&lt;SEP&gt;钉钉通知是一种通过钉钉机器人发送测试执行结果报告的方法。&lt;SEP&gt;通过钉钉机器人发送测试结果通知的功能。</data>
+  <data key="d3">chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322878</data>
   <data key="d6"></data>
 </node>
 <node id="核心C端App">
@@ -3811,10 +3813,10 @@
 <node id="Monkey压力测试">
   <data key="d0">Monkey压力测试</data>
   <data key="d1">method</data>
-  <data key="d2">Monkey压力测试是模拟用户随机操作以测试系统稳定性的方法。</data>
-  <data key="d3">chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历.pdf</data>
-  <data key="d5">1767319761</data>
+  <data key="d2">Monkey压力测试是模拟用户随机操作以测试系统稳定性的方法。&lt;SEP&gt;Monkey压力测试是一种通过随机操作来发现应用程序潜在问题的测试方法，集成了gremlins.js库。</data>
+  <data key="d3">chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322848</data>
   <data key="d6"></data>
 </node>
 <node id="主流程覆盖率">
@@ -3864,11 +3866,11 @@
 </node>
 <node id="数据库验证">
   <data key="d0">数据库验证</data>
-  <data key="d1">method</data>
-  <data key="d2">数据库验证是接口自动化框架中验证数据持久化的方法。</data>
-  <data key="d3">chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历.pdf</data>
-  <data key="d5">1767319776</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据库验证是接口自动化框架中验证数据持久化的方法。&lt;SEP&gt;在UI自动化测试后，通过查询数据库来验证业务数据是否正确持久化的过程。</data>
+  <data key="d3">chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323392</data>
   <data key="d6"></data>
 </node>
 <node id="Mock服务">
@@ -4184,6 +4186,1878 @@
   <data key="d1">UNKNOWN</data>
   <data key="d4">邱云霞的简历.pdf</data>
   <data key="d5">1767320287</data>
+  <data key="d6"></data>
+</node>
+<node id="Allure报告">
+  <data key="d0">Allure报告</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Allure报告是一个测试报告框架，用于展示测试结果，并可以附加截图、视频等附件。&lt;SEP&gt;Allure报告是一种测试报告工具，用于附加截图等附件以增强测试报告的可视化。&lt;SEP&gt;一种测试报告生成工具，用于生成美观的测试报告。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322828</data>
+  <data key="d6"></data>
+</node>
+<node id="cal_ccoeff_confidence函数">
+  <data key="d0">cal_ccoeff_confidence函数</data>
+  <data key="d1">method</data>
+  <data key="d2">cal_ccoeff_confidence是一个用于计算图像相似度的方法，应用于UI自动化测试中的图像对比验证。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322828</data>
+  <data key="d6"></data>
+</node>
+<node id="UI布局回归测试">
+  <data key="d0">UI布局回归测试</data>
+  <data key="d1">concept</data>
+  <data key="d2">UI布局回归测试是一种测试场景，旨在验证用户界面布局的变更是否引入了回归问题。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322829</data>
+  <data key="d6"></data>
+</node>
+<node id="图表渲染验证">
+  <data key="d0">图表渲染验证</data>
+  <data key="d1">concept</data>
+  <data key="d2">图表渲染验证是一种测试场景，用于确保图表在不同条件下能正确渲染和显示。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322838</data>
+  <data key="d6"></data>
+</node>
+<node id="复杂界面对比">
+  <data key="d0">复杂界面对比</data>
+  <data key="d1">concept</data>
+  <data key="d2">复杂界面对比是一种测试场景，涉及对复杂用户界面元素进行视觉或功能上的比较验证。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322838</data>
+  <data key="d6"></data>
+</node>
+<node id="gremlins.js">
+  <data key="d0">gremlins.js</data>
+  <data key="d1">artifact</data>
+  <data key="d2">gremlins.js是一个JavaScript库，用于在前端页面上执行随机操作以进行压力测试和发现异常。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322843</data>
+  <data key="d6"></data>
+</node>
+<node id="MonkeyPage类">
+  <data key="d0">MonkeyPage类</data>
+  <data key="d1">artifact</data>
+  <data key="d2">MonkeyPage是一个Python类，封装了使用Playwright和gremlins.js进行Monkey测试的页面操作和日志记录功能。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322848</data>
+  <data key="d6"></data>
+</node>
+<node id="数据驱动测试">
+  <data key="d0">数据驱动测试</data>
+  <data key="d1">method</data>
+  <data key="d2">数据驱动测试是一种测试方法，它允许使用来自外部数据源(如CSV、Excel、YAML)的测试数据来参数化测试用例。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322865</data>
+  <data key="d6"></data>
+</node>
+<node id="CSV数据源">
+  <data key="d0">CSV数据源</data>
+  <data key="d1">data</data>
+  <data key="d2">CSV是一种以逗号分隔值的文件格式，用作数据驱动测试中的数据源。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322865</data>
+  <data key="d6"></data>
+</node>
+<node id="Excel数据源">
+  <data key="d0">Excel数据源</data>
+  <data key="d1">data</data>
+  <data key="d2">Excel是一种电子表格文件格式，用作数据驱动测试中的数据源。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322869</data>
+  <data key="d6"></data>
+</node>
+<node id="YAML数据源">
+  <data key="d0">YAML数据源</data>
+  <data key="d1">data</data>
+  <data key="d2">YAML是一种人类可读的数据序列化格式，用作数据驱动测试中的数据源。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322878</data>
+  <data key="d6"></data>
+</node>
+<node id="飞书通知">
+  <data key="d0">飞书通知</data>
+  <data key="d1">method</data>
+  <data key="d2">飞书通知是一种通过飞书机器人发送测试执行结果报告的方法。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322881</data>
+  <data key="d6"></data>
+</node>
+<node id="企业微信通知">
+  <data key="d0">企业微信通知</data>
+  <data key="d1">method</data>
+  <data key="d2">企业微信通知是一种通过企业微信机器人发送测试执行结果报告的方法。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322882</data>
+  <data key="d6"></data>
+</node>
+<node id="自定义Playwright插件">
+  <data key="d0">自定义Playwright插件</data>
+  <data key="d1">artifact</data>
+  <data key="d2">自定义Playwright插件是对官方pytest-playwright插件的重写，旨在提供更灵活的控制，支持失败自动截图、录屏和Trace追踪。&lt;SEP&gt;重写了pytest-playwright插件，增加了额外功能。&lt;SEP&gt;一个重写的pytest-playwright插件，实现了失败自动截图、Trace追踪、视频录制和Allure集成等增强功能。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322882</data>
+  <data key="d6"></data>
+</node>
+<node id="Session级别登录态复用">
+  <data key="d0">Session级别登录态复用</data>
+  <data key="d1">method</data>
+  <data key="d2">Session级别登录态复用是一种使用storage_state保存Cookie以避免在测试中重复登录的技术。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322894</data>
+  <data key="d6"></data>
+</node>
+<node id="AI图像相似度断言">
+  <data key="d0">AI图像相似度断言</data>
+  <data key="d1">method</data>
+  <data key="d2">AI图像相似度断言是一种融合了ORB、pHash和直方图等多种算法来解决UI自动化中复杂界面验证难题的方法。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322894</data>
+  <data key="d6"></data>
+</node>
+<node id="全链路Trace追踪">
+  <data key="d0">全链路Trace追踪</data>
+  <data key="d1">method</data>
+  <data key="d2">全链路Trace追踪是一种在测试失败时自动生成Trace.zip文件以便在Playwright Trace Viewer中回放和调试的技术。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322894</data>
+  <data key="d6"></data>
+</node>
+<node id="多环境配置切换">
+  <data key="d0">多环境配置切换</data>
+  <data key="d1">method</data>
+  <data key="d2">多环境配置切换是一种支持在test、dev、uat等多套环境之间一键切换测试配置的技术。&lt;SEP&gt;一种支持test/dev/uat等多环境一键切换的配置方法，使得同一套测试用例可以在不同环境中进行验证。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322899</data>
+  <data key="d6"></data>
+</node>
+<node id="Docker容器化">
+  <data key="d0">Docker容器化</data>
+  <data key="d1">method</data>
+  <data key="d2">Docker容器化是一种基于微软官方Playwright镜像构建测试环境以保证CI/CD环境一致性的技术。&lt;SEP&gt;一种基于微软官方Playwright镜像构建的容器化方法，用于保证CI/CD环境的一致性。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322910</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest">
+  <data key="d0">pytest</data>
+  <data key="d1">method</data>
+  <data key="d2">pytest是一个Python测试框架，用于运行测试用例。&lt;SEP&gt;pytest是一个Python测试框架，在上下文中用于组织和执行测试用例。&lt;SEP&gt;一个Python测试框架，用于运行测试用例。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322910</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest-playwright">
+  <data key="d0">pytest-playwright</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pytest-playwright是官方提供的用于集成Playwright和pytest的插件，在上下文中被自定义插件重写。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322913</data>
+  <data key="d6"></data>
+</node>
+<node id="ORB算法">
+  <data key="d0">ORB算法</data>
+  <data key="d1">method</data>
+  <data key="d2">ORB是一种用于特征点检测和描述的计算机视觉算法，被集成在AI图像相似度断言中。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322922</data>
+  <data key="d6"></data>
+</node>
+<node id="pHash算法">
+  <data key="d0">pHash算法</data>
+  <data key="d1">method</data>
+  <data key="d2">pHash是一种感知哈希算法，用于图像相似度比较，被集成在AI图像相似度断言中。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322922</data>
+  <data key="d6"></data>
+</node>
+<node id="直方图算法">
+  <data key="d0">直方图算法</data>
+  <data key="d1">method</data>
+  <data key="d2">直方图算法是一种基于颜色或灰度分布的图像对比方法，被集成在AI图像相似度断言中。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322922</data>
+  <data key="d6"></data>
+</node>
+<node id="Playwright Trace Viewer">
+  <data key="d0">Playwright Trace Viewer</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Playwright Trace Viewer是一个用于回放和调试测试执行过程的工具，与全链路Trace追踪生成的Trace.zip文件配合使用。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322925</data>
+  <data key="d6"></data>
+</node>
+<node id="storage_state">
+  <data key="d0">storage_state</data>
+  <data key="d1">data</data>
+  <data key="d2">storage_state是Playwright的功能，用于保存和复用浏览器上下文的状态，如Cookie。&lt;SEP&gt;storage_state是Playwright中用于保存和恢复浏览器上下文状态(如Cookie)的机制，用于实现Session级别登录态复用。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322934</data>
+  <data key="d6"></data>
+</node>
+<node id="CI/CD">
+  <data key="d0">CI/CD</data>
+  <data key="d1">concept</data>
+  <data key="d2">CI/CD代表持续集成和持续交付/部署，是Docker容器化测试环境所要保证一致性的目标流程。&lt;SEP&gt;CI/CD指持续集成和持续交付/部署，该框架支持集成到此流程中。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322934</data>
+  <data key="d6"></data>
+</node>
+<node id="Playwright_Pytest_UI项目">
+  <data key="d0">Playwright_Pytest_UI项目</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个UI自动化测试项目，包含测试用例、页面对象、工具类、插件和配置管理等目录结构。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322934</data>
+  <data key="d6"></data>
+</node>
+<node id="cases目录">
+  <data key="d0">cases目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储测试用例的目录，包含前台UI测试、后台管理测试、Monkey压力测试和定时任务测试等子目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322947</data>
+  <data key="d6"></data>
+</node>
+<node id="playable_fe测试用例">
+  <data key="d0">playable_fe测试用例</data>
+  <data key="d1">artifact</data>
+  <data key="d2">前台UI测试用例，涵盖录屏功能、模板资源、游戏素材、视频编辑器、支付功能和数据分析等模块。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322947</data>
+  <data key="d6"></data>
+</node>
+<node id="000_vrecord测试">
+  <data key="d0">000_vrecord测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">录屏功能测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322947</data>
+  <data key="d6"></data>
+</node>
+<node id="dm测试">
+  <data key="d0">dm测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">模板资源测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322950</data>
+  <data key="d6"></data>
+</node>
+<node id="gm测试">
+  <data key="d0">gm测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">游戏素材测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322958</data>
+  <data key="d6"></data>
+</node>
+<node id="veditor测试">
+  <data key="d0">veditor测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">视频编辑器测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322959</data>
+  <data key="d6"></data>
+</node>
+<node id="payment测试">
+  <data key="d0">payment测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">支付功能测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322961</data>
+  <data key="d6"></data>
+</node>
+<node id="insights测试">
+  <data key="d0">insights测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">数据分析测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322961</data>
+  <data key="d6"></data>
+</node>
+<node id="playable_backend测试用例">
+  <data key="d0">playable_backend测试用例</data>
+  <data key="d1">artifact</data>
+  <data key="d2">后台管理测试用例，包含需求管理测试。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322970</data>
+  <data key="d6"></data>
+</node>
+<node id="demand测试">
+  <data key="d0">demand测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">需求管理测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322970</data>
+  <data key="d6"></data>
+</node>
+<node id="monkey测试">
+  <data key="d0">monkey测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Monkey压力测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322970</data>
+  <data key="d6"></data>
+</node>
+<node id="job测试">
+  <data key="d0">job测试</data>
+  <data key="d1">artifact</data>
+  <data key="d2">定时任务测试用例。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322973</data>
+  <data key="d6"></data>
+</node>
+<node id="pages目录">
+  <data key="d0">pages目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储Page Object页面对象的目录，包含前台、后台和Monkey测试的页面对象。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322976</data>
+  <data key="d6"></data>
+</node>
+<node id="playable_fe页面对象">
+  <data key="d0">playable_fe页面对象</data>
+  <data key="d1">artifact</data>
+  <data key="d2">前台页面对象，包含登录页和参数字典页。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322986</data>
+  <data key="d6"></data>
+</node>
+<node id="login_fe_page.py">
+  <data key="d0">login_fe_page.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">login_fe_page.py是页面对象层中的一个文件，封装了前台登录页面的元素和操作。&lt;SEP&gt;前台登录页的页面对象文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322986</data>
+  <data key="d6"></data>
+</node>
+<node id="parameter_dict_page.py">
+  <data key="d0">parameter_dict_page.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">parameter_dict_page.py是页面对象层中的一个文件，封装了参数字典页面的元素和操作。&lt;SEP&gt;参数字典页的页面对象文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322986</data>
+  <data key="d6"></data>
+</node>
+<node id="playable_backend页面对象">
+  <data key="d0">playable_backend页面对象</data>
+  <data key="d1">artifact</data>
+  <data key="d2">后台页面对象，包含登录页和需求提交页。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322989</data>
+  <data key="d6"></data>
+</node>
+<node id="login_backend_page.py">
+  <data key="d0">login_backend_page.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">后台登录页的页面对象文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322998</data>
+  <data key="d6"></data>
+</node>
+<node id="demand_submit_page.py">
+  <data key="d0">demand_submit_page.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">demand_submit_page.py是页面对象层中的一个文件，封装了需求提交页面的元素和操作。&lt;SEP&gt;需求提交页的页面对象文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322998</data>
+  <data key="d6"></data>
+</node>
+<node id="monkey页面对象">
+  <data key="d0">monkey页面对象</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Monkey测试页面对象。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767322999</data>
+  <data key="d6"></data>
+</node>
+<node id="monkey_fe_page.py">
+  <data key="d0">monkey_fe_page.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">monkey_fe_page.py是页面对象层中的一个文件，封装了前台Monkey测试页面的元素和操作。&lt;SEP&gt;Monkey测试前台页的页面对象文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323002</data>
+  <data key="d6"></data>
+</node>
+<node id="plugins目录">
+  <data key="d0">plugins目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储自定义pytest插件的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323011</data>
+  <data key="d6"></data>
+</node>
+<node id="__init__.py">
+  <data key="d0">__init__.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">定义全局g对象的插件初始化文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323011</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_playwright.py">
+  <data key="d0">pytest_playwright.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Playwright集成插件文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323011</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_base_url_plugin.py">
+  <data key="d0">pytest_base_url_plugin.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">基础URL配置插件文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323015</data>
+  <data key="d6"></data>
+</node>
+<node id="utils目录">
+  <data key="d0">utils目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储工具类的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323025</data>
+  <data key="d6"></data>
+</node>
+<node id="db.py">
+  <data key="d0">db.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">db.py是工具层中的一个文件，封装了数据库操作功能。&lt;SEP&gt;MySQL数据库操作工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323025</data>
+  <data key="d6"></data>
+</node>
+<node id="http_session.py">
+  <data key="d0">http_session.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">HTTP请求封装工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323025</data>
+  <data key="d6"></data>
+</node>
+<node id="log.py">
+  <data key="d0">log.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">日志管理工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323028</data>
+  <data key="d6"></data>
+</node>
+<node id="validata.py">
+  <data key="d0">validata.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">validata.py是工具层中的一个文件，封装了断言功能。&lt;SEP&gt;断言工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323038</data>
+  <data key="d6"></data>
+</node>
+<node id="yaml_util.py">
+  <data key="d0">yaml_util.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">yaml_util.py是工具层中的一个文件，封装了YAML文件处理功能。&lt;SEP&gt;YAML文件操作工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323038</data>
+  <data key="d6"></data>
+</node>
+<node id="rand.py">
+  <data key="d0">rand.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">随机数据生成工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323038</data>
+  <data key="d6"></data>
+</node>
+<node id="handle_util.py">
+  <data key="d0">handle_util.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">handle_util.py是工具层中的一个文件，封装了通用处理功能。&lt;SEP&gt;通用操作封装工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323041</data>
+  <data key="d6"></data>
+</node>
+<node id="handle_excel.py">
+  <data key="d0">handle_excel.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Excel文件处理工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323050</data>
+  <data key="d6"></data>
+</node>
+<node id="handle_console_log.py">
+  <data key="d0">handle_console_log.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">控制台日志处理工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323050</data>
+  <data key="d6"></data>
+</node>
+<node id="create_funtion.py">
+  <data key="d0">create_funtion.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">动态函数创建工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323050</data>
+  <data key="d6"></data>
+</node>
+<node id="report_notify.py">
+  <data key="d0">report_notify.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">测试报告通知工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323053</data>
+  <data key="d6"></data>
+</node>
+<node id="AI_images目录">
+  <data key="d0">AI_images目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储AI图像对比相关文件的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323062</data>
+  <data key="d6"></data>
+</node>
+<node id="image_similarity.py">
+  <data key="d0">image_similarity.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">图像相似度计算工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323062</data>
+  <data key="d6"></data>
+</node>
+<node id="cal_confidence.py">
+  <data key="d0">cal_confidence.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">置信度计算工具类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323062</data>
+  <data key="d6"></data>
+</node>
+<node id="imgs_actual目录">
+  <data key="d0">imgs_actual目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储实际截图的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323065</data>
+  <data key="d6"></data>
+</node>
+<node id="imgs_expect目录">
+  <data key="d0">imgs_expect目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储期望截图的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323074</data>
+  <data key="d6"></data>
+</node>
+<node id="routes目录">
+  <data key="d0">routes目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储路由配置的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323075</data>
+  <data key="d6"></data>
+</node>
+<node id="playturbo.py">
+  <data key="d0">playturbo.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">前台路由定义文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323075</data>
+  <data key="d6"></data>
+</node>
+<node id="data目录">
+  <data key="d0">data目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储测试数据的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323077</data>
+  <data key="d6"></data>
+</node>
+<node id="params.csv">
+  <data key="d0">params.csv</data>
+  <data key="d1">artifact</data>
+  <data key="d2">参数化数据文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323086</data>
+  <data key="d6"></data>
+</node>
+<node id="download目录">
+  <data key="d0">download目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">下载文件存储目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323086</data>
+  <data key="d6"></data>
+</node>
+<node id="auth目录">
+  <data key="d0">auth目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储登录认证缓存的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323087</data>
+  <data key="d6"></data>
+</node>
+<node id="outer_login.json">
+  <data key="d0">outer_login.json</data>
+  <data key="d1">artifact</data>
+  <data key="d2">外部账号登录态缓存文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323089</data>
+  <data key="d6"></data>
+</node>
+<node id="inner_login.json">
+  <data key="d0">inner_login.json</data>
+  <data key="d1">artifact</data>
+  <data key="d2">内部账号登录态缓存文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323101</data>
+  <data key="d6"></data>
+</node>
+<node id="backend_login.json">
+  <data key="d0">backend_login.json</data>
+  <data key="d1">artifact</data>
+  <data key="d2">后台登录态缓存文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323101</data>
+  <data key="d6"></data>
+</node>
+<node id="docker_handle目录">
+  <data key="d0">docker_handle目录</data>
+  <data key="d1">artifact</data>
+  <data key="d2">存储Docker配置的目录。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323101</data>
+  <data key="d6"></data>
+</node>
+<node id="Dockerfile">
+  <data key="d0">Dockerfile</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于构建Docker镜像的配置文件，可以包含安装字体的指令。&lt;SEP&gt;Docker构建文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323104</data>
+  <data key="d6"></data>
+</node>
+<node id="nginx.conf">
+  <data key="d0">nginx.conf</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Nginx配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323114</data>
+  <data key="d6"></data>
+</node>
+<node id="config.py">
+  <data key="d0">config.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">多环境配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323114</data>
+  <data key="d6"></data>
+</node>
+<node id="conftest.py">
+  <data key="d0">conftest.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">conftest.py是pytest的配置文件，用于定义全局的fixture和插件配置。&lt;SEP&gt;conftest.py是Pytest的Fixture配置文件，用于定义测试夹具和共享配置。&lt;SEP&gt;Pytest全局fixture配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323114</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest.ini">
+  <data key="d0">pytest.ini</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pytest.ini是Pytest框架的配置文件，用于配置Pytest引擎。&lt;SEP&gt;Pytest配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323117</data>
+  <data key="d6"></data>
+</node>
+<node id="run.py">
+  <data key="d0">run.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">run.py是位于测试执行层的脚本文件，负责启动测试执行。&lt;SEP&gt;测试执行入口文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323127</data>
+  <data key="d6"></data>
+</node>
+<node id="requirements.txt">
+  <data key="d0">requirements.txt</data>
+  <data key="d1">artifact</data>
+  <data key="d2">依赖管理文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323127</data>
+  <data key="d6"></data>
+</node>
+<node id="gremlins.min.js">
+  <data key="d0">gremlins.min.js</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Monkey测试JS库文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323127</data>
+  <data key="d6"></data>
+</node>
+<node id="多环境配置管理">
+  <data key="d0">多环境配置管理</data>
+  <data key="d1">method</data>
+  <data key="d2">基于类继承实现多环境配置切换的技术实现。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323130</data>
+  <data key="d6"></data>
+</node>
+<node id="TestConfig类">
+  <data key="d0">TestConfig类</data>
+  <data key="d1">artifact</data>
+  <data key="d2">测试环境配置类，定义了测试环境的URL、数据库主机等配置。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323135</data>
+  <data key="d6"></data>
+</node>
+<node id="DevConfig类">
+  <data key="d0">DevConfig类</data>
+  <data key="d1">artifact</data>
+  <data key="d2">开发环境配置类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323135</data>
+  <data key="d6"></data>
+</node>
+<node id="UatConfig类">
+  <data key="d0">UatConfig类</data>
+  <data key="d1">artifact</data>
+  <data key="d2">UAT环境配置类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323135</data>
+  <data key="d6"></data>
+</node>
+<node id="TestConfig">
+  <data key="d0">TestConfig</data>
+  <data key="d1">artifact</data>
+  <data key="d2">TestConfig是用于配置测试环境的配置对象。&lt;SEP&gt;测试环境配置类，定义了FE_URL、BACKEND_URL和MYSQL_HOST等配置项。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323137</data>
+  <data key="d6"></data>
+</node>
+<node id="DevConfig">
+  <data key="d0">DevConfig</data>
+  <data key="d1">artifact</data>
+  <data key="d2">DevConfig是用于配置开发环境的配置对象。&lt;SEP&gt;开发环境配置类，定义了开发环境的FE_URL等配置项。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323143</data>
+  <data key="d6"></data>
+</node>
+<node id="UatConfig">
+  <data key="d0">UatConfig</data>
+  <data key="d1">artifact</data>
+  <data key="d2">UatConfig是用于配置用户验收测试环境的配置对象。&lt;SEP&gt;UAT环境配置类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323144</data>
+  <data key="d6"></data>
+</node>
+<node id="env映射">
+  <data key="d0">env映射</data>
+  <data key="d1">data</data>
+  <data key="d2">一个将环境名称(如"test", "dev", "uat")映射到对应配置类的字典。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323144</data>
+  <data key="d6"></data>
+</node>
+<node id="--env参数">
+  <data key="d0">--env参数</data>
+  <data key="d1">method</data>
+  <data key="d2">用于指定运行测试的环境的命令行参数。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323147</data>
+  <data key="d6"></data>
+</node>
+<node id="is_visible()">
+  <data key="d0">is_visible()</data>
+  <data key="d1">method</data>
+  <data key="d2">Playwright中用于检查元素可见性的方法，有时会返回错误结果。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323156</data>
+  <data key="d6"></data>
+</node>
+<node id="expect断言">
+  <data key="d0">expect断言</data>
+  <data key="d1">method</data>
+  <data key="d2">Playwright中用于替代`is_visible()`的断言方法，例如`expect(locator).to_be_visible()`。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323156</data>
+  <data key="d6"></data>
+</node>
+<node id="等待机制">
+  <data key="d0">等待机制</data>
+  <data key="d1">method</data>
+  <data key="d2">用于处理异步加载和元素状态的方法，例如`page.wait_for_selector(selector, state="visible")`。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323156</data>
+  <data key="d6"></data>
+</node>
+<node id="登录态失效">
+  <data key="d0">登录态失效</data>
+  <data key="d1">concept</data>
+  <data key="d2">指用户会话过期，导致依赖登录状态的测试用例失败的问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323159</data>
+  <data key="d6"></data>
+</node>
+<node id="fixture">
+  <data key="d0">fixture</data>
+  <data key="d1">method</data>
+  <data key="d2">Pytest中的装置，用于设置测试前置和后置条件，可以包含登录态刷新机制。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323168</data>
+  <data key="d6"></data>
+</node>
+<node id="元素定位不稳定">
+  <data key="d0">元素定位不稳定</data>
+  <data key="d1">concept</data>
+  <data key="d2">指由于动态ID、异步加载等原因导致自动化测试中元素定位失败的问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323168</data>
+  <data key="d6"></data>
+</node>
+<node id="语义化定位器">
+  <data key="d0">语义化定位器</data>
+  <data key="d1">method</data>
+  <data key="d2">一种优先使用的元素定位策略，例如`page.get_by_role("button", name="提交")`。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323168</data>
+  <data key="d6"></data>
+</node>
+<node id="XPath">
+  <data key="d0">XPath</data>
+  <data key="d1">method</data>
+  <data key="d2">一种用于元素定位的XML路径语言，可作为兜底定位策略。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323171</data>
+  <data key="d6"></data>
+</node>
+<node id="并发执行资源竞争">
+  <data key="d0">并发执行资源竞争</data>
+  <data key="d1">concept</data>
+  <data key="d2">指多进程执行测试时，共享数据冲突导致的问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323179</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest-xdist">
+  <data key="d0">pytest-xdist</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个Pytest插件，用于实现测试的并行执行，支持`loadscope`等分发模式。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323179</data>
+  <data key="d6"></data>
+</node>
+<node id="单例模式">
+  <data key="d0">单例模式</data>
+  <data key="d1">method</data>
+  <data key="d2">一种设计模式，用于确保数据库连接等资源在多进程环境下只有一个实例。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323180</data>
+  <data key="d6"></data>
+</node>
+<node id="CI环境无头模式字体渲染差异">
+  <data key="d0">CI环境无头模式字体渲染差异</data>
+  <data key="d1">concept</data>
+  <data key="d2">指Linux无头模式下的截图与本地Mac/Windows环境不一致的问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323182</data>
+  <data key="d6"></data>
+</node>
+<node id="文件上传失败">
+  <data key="d0">文件上传失败</data>
+  <data key="d1">concept</data>
+  <data key="d2">指在Docker环境中，本地上传成功的文件上传操作失败的问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323190</data>
+  <data key="d6"></data>
+</node>
+<node id="file_chooser">
+  <data key="d0">file_chooser</data>
+  <data key="d1">method</data>
+  <data key="d2">Playwright中用于处理文件上传的API，例如`page.expect_file_chooser()`。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323191</data>
+  <data key="d6"></data>
+</node>
+<node id="Selenium">
+  <data key="d0">Selenium</data>
+  <data key="d1">artifact</data>
+  <data key="d2">另一个浏览器自动化工具，常被用来与Playwright进行比较。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323191</data>
+  <data key="d6"></data>
+</node>
+<node id="可维护的自动化测试框架">
+  <data key="d0">可维护的自动化测试框架</data>
+  <data key="d1">concept</data>
+  <data key="d2">指设计良好、易于维护的测试框架，通常包含分层设计、POM模式等要素。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323193</data>
+  <data key="d6"></data>
+</node>
+<node id="POM模式">
+  <data key="d0">POM模式</data>
+  <data key="d1">method</data>
+  <data key="d2">页面对象模型，一种将页面元素和操作封装在Page类中的设计模式。&lt;SEP&gt;页面对象模型，一种设计模式，将页面元素和操作封装在Page类中，提高代码可维护性。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323202</data>
+  <data key="d6"></data>
+</node>
+<node id="数据驱动">
+  <data key="d0">数据驱动</data>
+  <data key="d1">method</data>
+  <data key="d2">一种将测试数据与测试代码分离的测试设计方法。&lt;SEP&gt;一种测试方法，将测试数据与测试代码分离，通过外部数据源驱动测试用例执行。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323202</data>
+  <data key="d6"></data>
+</node>
+<node id="微软官方Playwright镜像">
+  <data key="d0">微软官方Playwright镜像</data>
+  <data key="d1">artifact</data>
+  <data key="d2">由微软官方提供的用于构建Docker容器的Playwright基础镜像。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323202</data>
+  <data key="d6"></data>
+</node>
+<node id="CI/CD环境">
+  <data key="d0">CI/CD环境</data>
+  <data key="d1">concept</data>
+  <data key="d2">持续集成和持续部署环境，Docker容器化用于保证其一致性。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323205</data>
+  <data key="d6"></data>
+</node>
+<node id="Session">
+  <data key="d0">Session</data>
+  <data key="d1">data</data>
+  <data key="d2">用户会话数据，过期会导致登录态失效。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323213</data>
+  <data key="d6"></data>
+</node>
+<node id="auth/login.json">
+  <data key="d0">auth/login.json</data>
+  <data key="d1">data</data>
+  <data key="d2">存储认证信息的JSON文件，用于检查登录令牌是否过期。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323213</data>
+  <data key="d6"></data>
+</node>
+<node id="动态ID">
+  <data key="d0">动态ID</data>
+  <data key="d1">concept</data>
+  <data key="d2">导致元素定位不稳定的原因之一，指页面元素的ID属性是动态生成的。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323213</data>
+  <data key="d6"></data>
+</node>
+<node id="异步加载">
+  <data key="d0">异步加载</data>
+  <data key="d1">concept</data>
+  <data key="d2">导致元素定位不稳定的原因之一，指页面内容通过异步请求加载。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323216</data>
+  <data key="d6"></data>
+</node>
+<node id="loadscope模式">
+  <data key="d0">loadscope模式</data>
+  <data key="d1">method</data>
+  <data key="d2">pytest-xdist插件提供的一种测试分发模式，按模块分发以避免资源竞争。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323224</data>
+  <data key="d6"></data>
+</node>
+<node id="ConnectMysql">
+  <data key="d0">ConnectMysql</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个使用单例模式封装的MySQL数据库连接类。&lt;SEP&gt;一个用于连接和操作MySQL数据库的工具类或函数。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323225</data>
+  <data key="d6"></data>
+</node>
+<node id="Linux环境">
+  <data key="d0">Linux环境</data>
+  <data key="d1">location</data>
+  <data key="d2">一种操作系统环境，在CI中常以无头模式运行，可能导致字体渲染差异。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323225</data>
+  <data key="d6"></data>
+</node>
+<node id="Mac/Windows">
+  <data key="d0">Mac/Windows</data>
+  <data key="d1">location</data>
+  <data key="d2">本地开发常用的操作系统环境，其截图可能与CI中的Linux环境不一致。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323227</data>
+  <data key="d6"></data>
+</node>
+<node id="fonts-noto-cjk">
+  <data key="d0">fonts-noto-cjk</data>
+  <data key="d1">artifact</data>
+  <data key="d2">在Dockerfile中安装的字体包，用于解决Linux环境下的字体渲染问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323236</data>
+  <data key="d6"></data>
+</node>
+<node id="CDP协议">
+  <data key="d0">CDP协议</data>
+  <data key="d1">method</data>
+  <data key="d2">Chrome DevTools Protocol，Playwright通过此协议控制浏览器，使其比Selenium更快。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323236</data>
+  <data key="d6"></data>
+</node>
+<node id="Flaky测试">
+  <data key="d0">Flaky测试</data>
+  <data key="d1">concept</data>
+  <data key="d2">指不稳定的测试，Playwright通过自动处理元素状态检查来减少此类测试。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323236</data>
+  <data key="d6"></data>
+</node>
+<node id="Trace功能">
+  <data key="d0">Trace功能</data>
+  <data key="d1">method</data>
+  <data key="d2">Playwright的原生功能，可以录制和回放测试过程，便于调试。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323239</data>
+  <data key="d6"></data>
+</node>
+<node id="网络拦截">
+  <data key="d0">网络拦截</data>
+  <data key="d1">method</data>
+  <data key="d2">Playwright原生支持的功能，可用于Mock和拦截HTTP请求。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323247</data>
+  <data key="d6"></data>
+</node>
+<node id="分层设计">
+  <data key="d0">分层设计</data>
+  <data key="d1">method</data>
+  <data key="d2">一种软件架构模式，将系统分为用例层、页面对象层和工具层，实现关注点分离。&lt;SEP&gt;设计可维护自动化测试框架的要点之一，将用例层、页面对象层、工具层分离。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323247</data>
+  <data key="d6"></data>
+</node>
+<node id="配置外部化">
+  <data key="d0">配置外部化</data>
+  <data key="d1">method</data>
+  <data key="d2">将环境配置信息独立于代码进行管理，便于不同环境的切换。&lt;SEP&gt;设计可维护自动化测试框架的要点之一，将环境配置独立管理。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323248</data>
+  <data key="d6"></data>
+</node>
+<node id="AssertUtils工具类">
+  <data key="d0">AssertUtils工具类</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于封装统一断言的工具类。&lt;SEP&gt;一个封装了统一断言逻辑的Python工具类。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323250</data>
+  <data key="d6"></data>
+</node>
+<node id="日志规范">
+  <data key="d0">日志规范</data>
+  <data key="d1">concept</data>
+  <data key="d2">规定统一的日志格式和级别，确保日志输出的可读性和一致性。&lt;SEP&gt;设计可维护自动化测试框架的要点之一，指统一的日志记录规范。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323259</data>
+  <data key="d6"></data>
+</node>
+<node id="PlayTurbo">
+  <data key="d0">PlayTurbo</data>
+  <data key="d1">organization</data>
+  <data key="d2">PlayTurbo是一个可玩广告创意制作和管理平台，是该自动化测试框架的主要测试对象之一。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323262</data>
+  <data key="d6"></data>
+</node>
+<node id="MindWorks Creative">
+  <data key="d0">MindWorks Creative</data>
+  <data key="d1">organization</data>
+  <data key="d2">MindWorks Creative是一个可玩广告创意制作和管理平台，是该自动化测试框架的主要测试对象之一。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323262</data>
+  <data key="d6"></data>
+</node>
+<node id="PyYAML/CSV/Excel">
+  <data key="d0">PyYAML/CSV/Excel</data>
+  <data key="d1">artifact</data>
+  <data key="d2">PyYAML、CSV和Excel是用于测试数据管理的数据驱动工具。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323271</data>
+  <data key="d6"></data>
+</node>
+<node id="PyMySQL">
+  <data key="d0">PyMySQL</data>
+  <data key="d1">artifact</data>
+  <data key="d2">PyMySQL是一个数据库操作库，版本为1.0.2，用于MySQL数据库操作。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323271</data>
+  <data key="d6"></data>
+</node>
+<node id="Requests">
+  <data key="d0">Requests</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Requests是一个HTTP请求库，版本为2.31.0，用于API接口测试。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323271</data>
+  <data key="d6"></data>
+</node>
+<node id="OpenCV">
+  <data key="d0">OpenCV</data>
+  <data key="d1">artifact</data>
+  <data key="d2">OpenCV是一个图像识别库，版本为4.7.0.72，用于AI图像相似度对比。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323274</data>
+  <data key="d6"></data>
+</node>
+<node id="Faker">
+  <data key="d0">Faker</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Faker是一个数据生成库，版本为19.3.0，用于生成测试数据。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323287</data>
+  <data key="d6"></data>
+</node>
+<node id="DingTalkChatbot">
+  <data key="d0">DingTalkChatbot</data>
+  <data key="d1">artifact</data>
+  <data key="d2">DingTalkChatbot是一个通知库，版本为1.5.7，用于发送钉钉通知。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323287</data>
+  <data key="d6"></data>
+</node>
+<node id="Web UI自动化测试框架">
+  <data key="d0">Web UI自动化测试框架</data>
+  <data key="d1">artifact</data>
+  <data key="d2">这是一个基于Playwright和Pytest构建的自动化测试框架，主要用于PlayTurbo和MindWorks Creative平台的Web UI测试。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323296</data>
+  <data key="d6"></data>
+</node>
+<node id="Page Object Model">
+  <data key="d0">Page Object Model</data>
+  <data key="d1">method</data>
+  <data key="d2">页面对象模型是一种设计模式，用于封装页面元素定位和操作方法，位于框架的页面对象层。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323296</data>
+  <data key="d6"></data>
+</node>
+<node id="可玩广告">
+  <data key="d0">可玩广告</data>
+  <data key="d1">concept</data>
+  <data key="d2">可玩广告是一种互动式广告形式，PlayTurbo和MindWorks Creative平台专注于此类广告的创意制作和管理。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323301</data>
+  <data key="d6"></data>
+</node>
+<node id="回归测试">
+  <data key="d0">回归测试</data>
+  <data key="d1">concept</data>
+  <data key="d2">回归测试是软件测试的一种，该框架通过自动化将其执行时间节省了80%以上。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323303</data>
+  <data key="d6"></data>
+</node>
+<node id="持续集成测试">
+  <data key="d0">持续集成测试</data>
+  <data key="d1">concept</data>
+  <data key="d2">持续集成测试是将自动化测试集成到CI/CD流程中的实践，该框架支持此功能。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323309</data>
+  <data key="d6"></data>
+</node>
+<node id="PyYAML">
+  <data key="d0">PyYAML</data>
+  <data key="d1">artifact</data>
+  <data key="d2">PyYAML是一个用于处理YAML格式文件的Python库，在该框架中用于测试数据管理。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323309</data>
+  <data key="d6"></data>
+</node>
+<node id="CSV">
+  <data key="d0">CSV</data>
+  <data key="d1">artifact</data>
+  <data key="d2">CSV是一种逗号分隔值文件格式，在该框架中用于存储和管理测试数据。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323309</data>
+  <data key="d6"></data>
+</node>
+<node id="Excel">
+  <data key="d0">Excel</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Excel是微软的电子表格软件/文件格式，在该框架中用于测试数据管理。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323311</data>
+  <data key="d6"></data>
+</node>
+<node id="plugins/">
+  <data key="d0">plugins/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">plugins/是一个目录，存放自定义插件层代码，用于扩展Pytest功能。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323317</data>
+  <data key="d6"></data>
+</node>
+<node id="cases/">
+  <data key="d0">cases/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">cases/是一个目录，存放所有测试用例，按模块(如前台、后台、压力测试等)组织。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323317</data>
+  <data key="d6"></data>
+</node>
+<node id="pages/">
+  <data key="d0">pages/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pages/是一个目录，存放页面对象层代码，遵循Page Object Model设计模式。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323317</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/">
+  <data key="d0">utils/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/是一个目录，存放工具层代码，包括数据库操作、HTTP会话、断言、YAML处理等工具。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323319</data>
+  <data key="d6"></data>
+</node>
+<node id="http_session">
+  <data key="d0">http_session</data>
+  <data key="d1">artifact</data>
+  <data key="d2">http_session是工具层中的一个模块，封装了HTTP请求会话功能。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323324</data>
+  <data key="d6"></data>
+</node>
+<node id="playable_fe">
+  <data key="d0">playable_fe</data>
+  <data key="d1">concept</data>
+  <data key="d2">playable_fe指前台测试模块，是测试用例层的一个分类，专注于可玩广告前台的测试。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323324</data>
+  <data key="d6"></data>
+</node>
+<node id="backend">
+  <data key="d0">backend</data>
+  <data key="d1">concept</data>
+  <data key="d2">backend指后台测试模块，是测试用例层的一个分类，专注于平台后台功能的测试。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323324</data>
+  <data key="d6"></data>
+</node>
+<node id="monkey">
+  <data key="d0">monkey</data>
+  <data key="d1">concept</data>
+  <data key="d2">monkey指压力测试模块，是测试用例层的一个分类，专注于进行Monkey压力测试。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323325</data>
+  <data key="d6"></data>
+</node>
+<node id="job">
+  <data key="d0">job</data>
+  <data key="d1">concept</data>
+  <data key="d2">job指Job测试模块，是测试用例层的一个分类，专注于任务或作业的测试。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323330</data>
+  <data key="d6"></data>
+</node>
+<node id="测试执行层">
+  <data key="d0">测试执行层</data>
+  <data key="d1">concept</data>
+  <data key="d2">测试执行层是框架架构中的顶层，包含启动脚本run.py，负责协调测试执行。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323330</data>
+  <data key="d6"></data>
+</node>
+<node id="自定义插件层">
+  <data key="d0">自定义插件层</data>
+  <data key="d1">concept</data>
+  <data key="d2">自定义插件层是框架架构中的一层，位于Pytest引擎和Fixture配置层之间，用于扩展功能。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323330</data>
+  <data key="d6"></data>
+</node>
+<node id="Fixture配置层">
+  <data key="d0">Fixture配置层</data>
+  <data key="d1">concept</data>
+  <data key="d2">Fixture配置层是框架架构中的一层，通过conftest.py文件配置Pytest的测试夹具。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323331</data>
+  <data key="d6"></data>
+</node>
+<node id="测试用例层">
+  <data key="d0">测试用例层</data>
+  <data key="d1">concept</data>
+  <data key="d2">测试用例层是框架架构中的一层，按功能模块组织所有具体的测试用例。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323335</data>
+  <data key="d6"></data>
+</node>
+<node id="页面对象层">
+  <data key="d0">页面对象层</data>
+  <data key="d1">concept</data>
+  <data key="d2">页面对象层是框架架构中的一层，采用Page Object Model模式封装页面逻辑。&lt;SEP&gt;分层设计中的一层，专门用于封装页面元素定位和操作方法。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323336</data>
+  <data key="d6"></data>
+</node>
+<node id="工具层">
+  <data key="d0">工具层</data>
+  <data key="d1">concept</data>
+  <data key="d2">工具层是框架架构中的一层，提供数据库、HTTP、断言、数据处理等通用工具。&lt;SEP&gt;分层设计中的一层，提供通用的辅助工具和函数，如断言、日志、数据库操作等。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323336</data>
+  <data key="d6"></data>
+</node>
+<node id="基础设施层">
+  <data key="d0">基础设施层</data>
+  <data key="d1">concept</data>
+  <data key="d2">基础设施层是框架架构中的底层，提供Docker容器、Allure报告和钉钉通知等支持。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323337</data>
+  <data key="d6"></data>
+</node>
+<node id="统一断言">
+  <data key="d0">统一断言</data>
+  <data key="d1">concept</data>
+  <data key="d2">通过封装AssertUtils工具类来实现断言逻辑的统一管理和复用。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323345</data>
+  <data key="d6"></data>
+</node>
+<node id="测试用例稳定性">
+  <data key="d0">测试用例稳定性</data>
+  <data key="d1">concept</data>
+  <data key="d2">指测试用例能够可靠、一致地执行的能力，涉及等待策略、重试、数据隔离等措施。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323345</data>
+  <data key="d6"></data>
+</node>
+<node id="合理等待">
+  <data key="d0">合理等待</data>
+  <data key="d1">method</data>
+  <data key="d2">在自动化测试中使用显式等待策略，避免使用硬编码的sleep，以提高稳定性和执行效率。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323345</data>
+  <data key="d6"></data>
+</node>
+<node id="重试机制">
+  <data key="d0">重试机制</data>
+  <data key="d1">method</data>
+  <data key="d2">使用pytest-rerunfailures等工具为失败的测试用例提供自动重跑的能力。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323347</data>
+  <data key="d6"></data>
+</node>
+<node id="数据隔离">
+  <data key="d0">数据隔离</data>
+  <data key="d1">method</data>
+  <data key="d2">确保每个测试用例使用独立的数据，避免用例间因共享数据而导致污染或依赖。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323356</data>
+  <data key="d6"></data>
+</node>
+<node id="环境检查">
+  <data key="d0">环境检查</data>
+  <data key="d1">method</data>
+  <data key="d2">在测试执行前验证测试环境的可用性，如数据库连接、服务状态等。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323356</data>
+  <data key="d6"></data>
+</node>
+<node id="用例独立">
+  <data key="d0">用例独立</data>
+  <data key="d1">method</data>
+  <data key="d2">要求测试用例之间没有执行顺序或数据上的依赖关系，可以独立运行。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323357</data>
+  <data key="d6"></data>
+</node>
+<node id="清理机制">
+  <data key="d0">清理机制</data>
+  <data key="d1">method</data>
+  <data key="d2">在测试执行后清理测试过程中创建的数据或状态，确保环境干净。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323359</data>
+  <data key="d6"></data>
+</node>
+<node id="失败自动截图">
+  <data key="d0">失败自动截图</data>
+  <data key="d1">method</data>
+  <data key="d2">在测试用例执行失败时，自动截取当前浏览器页面的功能。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323368</data>
+  <data key="d6"></data>
+</node>
+<node id="Trace追踪">
+  <data key="d0">Trace追踪</data>
+  <data key="d1">method</data>
+  <data key="d2">生成可回放的Trace文件，用于详细记录测试执行步骤，辅助问题定位。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323368</data>
+  <data key="d6"></data>
+</node>
+<node id="视频录制">
+  <data key="d0">视频录制</data>
+  <data key="d1">method</data>
+  <data key="d2">支持为失败的测试用例录制视频回放。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323368</data>
+  <data key="d6"></data>
+</node>
+<node id="Allure集成">
+  <data key="d0">Allure集成</data>
+  <data key="d1">method</data>
+  <data key="d2">将自动化生成的截图、视频、Trace文件等附件自动关联到Allure测试报告中。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323371</data>
+  <data key="d6"></data>
+</node>
+<node id="测试报告实时通知">
+  <data key="d0">测试报告实时通知</data>
+  <data key="d1">concept</data>
+  <data key="d2">在测试执行完成后，通过即时通讯工具(如钉钉)发送测试结果摘要。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323379</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_terminal_summary钩子">
+  <data key="d0">pytest_terminal_summary钩子</data>
+  <data key="d1">method</data>
+  <data key="d2">Pytest框架的一个钩子函数，用于在终端报告生成时执行自定义逻辑，如发送通知。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323380</data>
+  <data key="d6"></data>
+</node>
+<node id="跨域iframe元素处理">
+  <data key="d0">跨域iframe元素处理</data>
+  <data key="d1">concept</data>
+  <data key="d2">指在自动化测试中定位和操作位于跨域iframe内的页面元素的技术。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323380</data>
+  <data key="d6"></data>
+</node>
+<node id="frame_locator">
+  <data key="d0">frame_locator</data>
+  <data key="d1">method</data>
+  <data key="d2">Playwright提供的方法，用于定位iframe框架并进一步定位其中的元素。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323382</data>
+  <data key="d6"></data>
+</node>
+<node id="execute_mysql fixture">
+  <data key="d0">execute_mysql fixture</data>
+  <data key="d1">method</data>
+  <data key="d2">一个Pytest fixture，用于在会话范围内提供MySQL数据库连接，并在用例中注入使用。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323392</data>
+  <data key="d6"></data>
+</node>
+<node id="企业级UI自动化测试框架">
+  <data key="d0">企业级UI自动化测试框架</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个基于Playwright和Pytest构建的、具备分层架构、数据驱动、容器化等特性的高级测试框架。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323392</data>
+  <data key="d6"></data>
+</node>
+<node id="CI/CD流水线">
+  <data key="d0">CI/CD流水线</data>
+  <data key="d1">concept</data>
+  <data key="d2">持续集成和持续交付/部署流程，用于自动化构建、测试和发布软件。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323392</data>
+  <data key="d6"></data>
+</node>
+<node id="AI图像对比">
+  <data key="d0">AI图像对比</data>
+  <data key="d1">method</data>
+  <data key="d2">利用人工智能技术进行图像识别和对比，应用于自动化测试中的视觉验证环节。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323406</data>
+  <data key="d6"></data>
+</node>
+<node id="用例层">
+  <data key="d0">用例层</data>
+  <data key="d1">concept</data>
+  <data key="d2">分层设计中的一层，负责处理具体的测试业务流程和逻辑。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323407</data>
+  <data key="d6"></data>
+</node>
+<node id="Page类">
+  <data key="d0">Page类</data>
+  <data key="d1">concept</data>
+  <data key="d2">在POM模式中，每个页面对应的类，用于封装该页面的元素和操作。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323407</data>
+  <data key="d6"></data>
+</node>
+<node id="测试数据">
+  <data key="d0">测试数据</data>
+  <data key="d1">data</data>
+  <data key="d2">驱动测试用例执行的外部数据，与测试代码分离存放。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323410</data>
+  <data key="d6"></data>
+</node>
+<node id="统一日志格式">
+  <data key="d0">统一日志格式</data>
+  <data key="d1">concept</data>
+  <data key="d2">为日志输出规定的标准化格式，确保所有日志信息结构一致。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323418</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest-rerunfailures">
+  <data key="d0">pytest-rerunfailures</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个Pytest插件，用于为失败的测试用例提供重试机制。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323418</data>
+  <data key="d6"></data>
+</node>
+<node id="钉钉">
+  <data key="d0">钉钉</data>
+  <data key="d1">organization</data>
+  <data key="d2">一个企业级即时通讯工具，在项目中用于接收测试报告的实时通知。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323418</data>
+  <data key="d6"></data>
+</node>
+<node id="ding_ding_notify">
+  <data key="d0">ding_ding_notify</data>
+  <data key="d1">method</data>
+  <data key="d2">一个用于向钉钉群发送通知消息的函数。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323422</data>
+  <data key="d6"></data>
+</node>
+<node id="测试中的应用">
+  <data key="d0">测试中的应用</data>
+  <data key="d1">content</data>
+  <data key="d2">这是一个在测试中使用的应用程序或软件。</data>
+  <data key="d3">chunk-cf594e249f001b800b56f6b7ad4706dc</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323431</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest-playwright插件">
+  <data key="d0">pytest-playwright插件</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pytest-playwright插件是一个自定义插件，用于增强Playwright在pytest中的功能，支持失败自动截图、录制Trace和视频。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323432</data>
+  <data key="d6"></data>
+</node>
+<node id="Page Object Model (POM)">
+  <data key="d0">Page Object Model (POM)</data>
+  <data key="d1">method</data>
+  <data key="d2">Page Object Model是一种设计模式，用于将页面元素定位与测试逻辑分离，提高代码复用性和可维护性。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323432</data>
+  <data key="d6"></data>
+</node>
+<node id="LoginFePage">
+  <data key="d0">LoginFePage</data>
+  <data key="d1">artifact</data>
+  <data key="d2">LoginFePage是一个页面对象类，封装了登录页面的元素定位和操作逻辑。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323435</data>
+  <data key="d6"></data>
+</node>
+<node id="AI图像对比断言">
+  <data key="d0">AI图像对比断言</data>
+  <data key="d1">method</data>
+  <data key="d2">AI图像对比断言是一种融合多种图像相似度算法的技术，用于UI布局回归测试和图表渲染验证。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323444</data>
+  <data key="d6"></data>
+</node>
+<node id="登录态Cookie复用">
+  <data key="d0">登录态Cookie复用</data>
+  <data key="d1">method</data>
+  <data key="d2">登录态Cookie复用是一种利用Playwright的storage_state功能保存和复用登录状态的技术。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323445</data>
+  <data key="d6"></data>
+</node>
+<node id="图像相似度算法">
+  <data key="d0">图像相似度算法</data>
+  <data key="d1">method</data>
+  <data key="d2">图像相似度算法包括ORB特征点匹配、感知哈希算法和直方图对比，用于计算图片相似度。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323445</data>
+  <data key="d6"></data>
+</node>
+<node id="BrowserContext">
+  <data key="d0">BrowserContext</data>
+  <data key="d1">concept</data>
+  <data key="d2">BrowserContext是Playwright中的一个概念，代表一个浏览器上下文实例，可以包含多个页面。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323448</data>
+  <data key="d6"></data>
+</node>
+<node id="Page">
+  <data key="d0">Page</data>
+  <data key="d1">concept</data>
+  <data key="d2">Page是Playwright中的一个概念，代表浏览器中的一个标签页或页面，用于执行页面操作。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323458</data>
+  <data key="d6"></data>
+</node>
+<node id="tracing">
+  <data key="d0">tracing</data>
+  <data key="d1">method</data>
+  <data key="d2">tracing是Playwright的功能，用于记录浏览器操作的追踪信息，便于调试。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323458</data>
+  <data key="d6"></data>
+</node>
+<node id="LoginBackendPage">
+  <data key="d0">LoginBackendPage</data>
+  <data key="d1">artifact</data>
+  <data key="d2">LoginBackendPage是一个页面对象类，封装了后端登录页面的元素定位和操作逻辑。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323458</data>
+  <data key="d6"></data>
+</node>
+<node id="ORB特征点匹配">
+  <data key="d0">ORB特征点匹配</data>
+  <data key="d1">method</data>
+  <data key="d2">ORB特征点匹配是一种图像相似度算法，用于比较两幅图像的特征点。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323461</data>
+  <data key="d6"></data>
+</node>
+<node id="感知哈希算法">
+  <data key="d0">感知哈希算法</data>
+  <data key="d1">method</data>
+  <data key="d2">感知哈希算法是一种图像相似度算法，通过计算图像的哈希值来比较相似度。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323471</data>
+  <data key="d6"></data>
+</node>
+<node id="直方图对比">
+  <data key="d0">直方图对比</data>
+  <data key="d1">method</data>
+  <data key="d2">直方图对比是一种图像相似度算法，通过比较图像的颜色直方图来计算相似度。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323471</data>
+  <data key="d6"></data>
+</node>
+<node id="calc_ccoeff_confidence">
+  <data key="d0">calc_ccoeff_confidence</data>
+  <data key="d1">method</data>
+  <data key="d2">calc_ccoeff_confidence是一个函数，用于计算图像之间的相关系数置信度，作为相似度指标。</data>
+  <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d4">PlayWrightUI 自动化面试.md</data>
+  <data key="d5">1767323471</data>
   <data key="d6"></data>
 </node>
 <edge source="性能测试模块" target="项目管理入口">
@@ -6760,6 +8634,87 @@
   <data key="d12">1767320012</data>
   <data key="d13"></data>
 </edge>
+<edge source="Playwright" target="is_visible()">
+  <data key="d7">1.0</data>
+  <data key="d8">`is_visible()`是Playwright提供的一个方法，但存在返回错误结果的功能缺陷。</data>
+  <data key="d9">元素检测,功能缺陷</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323765</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="Selenium">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright常被与Selenium进行比较，在面试中需要解释选择前者的理由。</data>
+  <data key="d9">工具对比,技术选型</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323802</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="CDP协议">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright通过CDP协议直接控制浏览器，这是其速度比Selenium快的原因之一。</data>
+  <data key="d9">性能优势,技术原理</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323843</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="Flaky测试">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright通过自动处理元素状态检查，有助于减少Flaky测试，提高稳定性。</data>
+  <data key="d9">稳定性,质量提升</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323859</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="Trace功能">
+  <data key="d7">1.0</data>
+  <data key="d8">Trace功能是Playwright内置的，用于录制和回放测试以方便调试。</data>
+  <data key="d9">内置功能,调试辅助</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323868</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="网络拦截">
+  <data key="d7">1.0</data>
+  <data key="d8">网络拦截是Playwright原生支持的功能，增加了测试的灵活性和控制力。</data>
+  <data key="d9">内置功能,测试灵活性</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323877</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该自动化测试框架基于Playwright构建，使用其作为Web自动化测试的核心引擎。</data>
+  <data key="d9">技术栈,核心引擎</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323930</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="企业级UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该测试框架基于Playwright这一现代自动化工具构建，利用了其强大的浏览器控制能力。</data>
+  <data key="d9">基础工具,技术选型</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324056</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright" target="pytest-playwright插件">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest-playwright插件重写了pytest-playwright，为Playwright增加了失败自动截图、录制Trace和视频等功能。</data>
+  <data key="d9">功能增强,插件扩展</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324072</data>
+  <data key="d13"></data>
+</edge>
 <edge source="Pytest" target="移动应用广告归因自动化测试平台">
   <data key="d7">1.0</data>
   <data key="d8">移动应用广告归因自动化测试平台使用Pytest作为测试框架。</data>
@@ -6785,6 +8740,51 @@
   <data key="d10">chunk-c638d946337676dcade3a77177e35589</data>
   <data key="d11">邱云霞的简历.pdf</data>
   <data key="d12">1767320317</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pytest" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该自动化测试框架使用Pytest作为其核心的单元测试框架。</data>
+  <data key="d9">技术栈,测试框架</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323863</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pytest" target="pytest.ini">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest.ini文件用于配置Pytest测试引擎的行为和参数。</data>
+  <data key="d9">引擎配置,配置文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323902</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pytest" target="企业级UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">框架使用Pytest作为测试组织和执行的核心框架，利用了其丰富的插件和fixture机制。</data>
+  <data key="d9">基础框架,技术选型</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324068</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架使用Allure工具来生成美观的测试报告。</data>
+  <data key="d9">可视化,报告生成</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323890</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Jenkins" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该自动化测试框架被集成到Jenkins流水线中，以实现持续集成测试。</data>
+  <data key="d9">持续集成,流水线</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323896</data>
   <data key="d13"></data>
 </edge>
 <edge source="YAML" target="自动化测试实施与维护">
@@ -6866,6 +8866,15 @@
   <data key="d10">chunk-66909c66602f124357c709798f010177</data>
   <data key="d11">邱云霞的简历.pdf</data>
   <data key="d12">1767320274</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker" target="企业级UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架支持通过Docker进行容器化部署，保证了测试环境的一致性和可移植性。</data>
+  <data key="d9">环境一致性,部署方式</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324078</data>
   <data key="d13"></data>
 </edge>
 <edge source="Linux" target="数据库与脚本">
@@ -7109,6 +9118,24 @@
   <data key="d10">chunk-6bd4d94bce1ed431abb1a2e97286558f</data>
   <data key="d11">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf</data>
   <data key="d12">1767276604</data>
+  <data key="d13"></data>
+</edge>
+<edge source="钉钉通知" target="Allure报告">
+  <data key="d7">1.0</data>
+  <data key="d8">钉钉通知功能可以将包含Allure报告内容的测试执行结果发送给团队成员。</data>
+  <data key="d9">报告集成,结果通知</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323500</data>
+  <data key="d13"></data>
+</edge>
+<edge source="钉钉通知" target="Playwright_Pytest_UI项目">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目集成了钉钉通知功能，用于发送测试结果。</data>
+  <data key="d9">通知机制,集成</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323750</data>
   <data key="d13"></data>
 </edge>
 <edge source="小程序" target="全链路质量保障">
@@ -7993,6 +10020,42 @@
   <data key="d12">1767320209</data>
   <data key="d13"></data>
 </edge>
+<edge source="Monkey压力测试" target="gremlins.js">
+  <data key="d7">1.0</data>
+  <data key="d8">Monkey压力测试集成了gremlins.js库，利用其在前端页面执行随机操作的能力来进行压力测试。</data>
+  <data key="d9">压力测试,技术集成</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323483</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Monkey压力测试" target="MonkeyPage类">
+  <data key="d7">1.0</data>
+  <data key="d8">MonkeyPage类是实现Monkey压力测试的具体代码封装，负责注入脚本、监听事件和执行测试。</data>
+  <data key="d9">实现封装,测试执行</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323500</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据库验证" target="execute_mysql fixture">
+  <data key="d7">1.0</data>
+  <data key="d8">在项目中，数据库验证功能通过一个名为execute_mysql的Pytest fixture来提供数据库连接和执行能力。</data>
+  <data key="d9">依赖注入,实现机制</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324027</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据库验证" target="ConnectMysql">
+  <data key="d7">1.0</data>
+  <data key="d8">数据库验证功能依赖于ConnectMysql这个工具来建立与MySQL数据库的连接并执行查询。</data>
+  <data key="d9">技术实现,数据连接</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324057</data>
+  <data key="d13"></data>
+</edge>
 <edge source="自助化环境平台" target="测试脚本">
   <data key="d7">1.0</data>
   <data key="d8">自助化环境平台帮助开发和设计以及测试可以快速访问相关监控平台和测试脚本。</data>
@@ -8090,6 +10153,1536 @@
   <data key="d10">chunk-c638d946337676dcade3a77177e35589</data>
   <data key="d11">邱云霞的简历.pdf</data>
   <data key="d12">1767320334</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure报告" target="飞书通知">
+  <data key="d7">1.0</data>
+  <data key="d8">飞书通知功能可以将包含Allure报告内容的测试执行结果发送给团队成员。</data>
+  <data key="d9">报告集成,结果通知</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure报告" target="企业微信通知">
+  <data key="d7">1.0</data>
+  <data key="d8">企业微信通知功能可以将包含Allure报告内容的测试执行结果发送给团队成员。</data>
+  <data key="d9">报告集成,结果通知</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323527</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure报告" target="自定义Playwright插件">
+  <data key="d7">1.0</data>
+  <data key="d8">自定义Playwright插件支持与Allure报告集成，例如自动附加截图和录屏到报告中。</data>
+  <data key="d9">功能支持,报告集成</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323576</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure报告" target="Playwright_Pytest_UI项目">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目使用Allure报告来生成测试结果报告。</data>
+  <data key="d9">测试报告,生成</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323740</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure报告" target="pytest-playwright插件">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest-playwright插件可以将失败时的截图、Trace和视频自动附加到Allure报告中。</data>
+  <data key="d9">报告集成,附件附加</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324078</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure报告" target="AI图像对比断言">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像对比断言执行时，会将实际截图附加到Allure报告中用于结果对比。</data>
+  <data key="d9">结果展示,附件附加</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324469</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cal_ccoeff_confidence函数" target="AI图像相似度断言">
+  <data key="d7">1.0</data>
+  <data key="d8">cal_ccoeff_confidence函数是实现AI图像相似度断言所依赖的核心算法之一，用于计算图像相似度。</data>
+  <data key="d9">图像验证,算法实现</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323483</data>
+  <data key="d13"></data>
+</edge>
+<edge source="UI布局回归测试" target="AI图像相似度断言">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像相似度断言被应用于UI布局回归测试场景中，用于验证界面布局的正确性。</data>
+  <data key="d9">应用场景,验证方法</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323500</data>
+  <data key="d13"></data>
+</edge>
+<edge source="图表渲染验证" target="AI图像相似度断言">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像相似度断言被应用于图表渲染验证场景中，用于确保图表渲染的准确性。</data>
+  <data key="d9">应用场景,验证方法</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="复杂界面对比" target="AI图像相似度断言">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像相似度断言被应用于复杂界面对比场景中，用于处理复杂UI元素的对比验证。</data>
+  <data key="d9">应用场景,验证方法</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323531</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据驱动测试" target="CSV数据源">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动测试可以使用CSV文件作为数据源，为测试用例提供参数化的测试数据。</data>
+  <data key="d9">参数化,数据支持</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323487</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据驱动测试" target="Excel数据源">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动测试可以使用Excel文件作为数据源，为测试用例提供参数化的测试数据。</data>
+  <data key="d9">参数化,数据支持</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323496</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据驱动测试" target="YAML数据源">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动测试可以使用YAML文件作为数据源，为测试用例提供参数化的测试数据。</data>
+  <data key="d9">参数化,数据支持</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323510</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="全链路Trace追踪">
+  <data key="d7">1.0</data>
+  <data key="d8">自定义Playwright插件实现了全链路Trace追踪功能，能够在测试失败时自动生成追踪文件以辅助调试。</data>
+  <data key="d9">功能支持,调试增强</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323514</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="Session级别登录态复用">
+  <data key="d7">1.0</data>
+  <data key="d8">Session级别登录态复用是自定义Playwright插件提供的一项功能，旨在通过复用登录状态来提升测试执行效率。</data>
+  <data key="d9">性能优化,状态管理</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323531</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="多环境配置切换">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置切换是自定义Playwright插件支持的功能，允许测试用例在不同环境间灵活切换。</data>
+  <data key="d9">环境管理,配置灵活</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323546</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="Docker容器化">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker容器化技术用于部署包含自定义Playwright插件的测试环境，确保CI/CD流程中的环境一致性。</data>
+  <data key="d9">一致性保证,环境部署</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323556</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="pytest-playwright">
+  <data key="d7">1.0</data>
+  <data key="d8">自定义Playwright插件是对官方pytest-playwright插件的重写，旨在提供更灵活的控制和扩展功能。</data>
+  <data key="d9">功能扩展,插件重写</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323587</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="失败自动截图">
+  <data key="d7">1.0</data>
+  <data key="d8">自定义Playwright插件实现了失败时自动截图的功能，极大方便了测试失败问题的快速定位。</data>
+  <data key="d9">功能增强,问题诊断</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324004</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="Trace追踪">
+  <data key="d7">1.0</data>
+  <data key="d8">该插件能够生成Trace文件，提供测试步骤的可视化回放，用于深入分析失败原因。</data>
+  <data key="d9">功能增强,问题诊断</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324015</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="视频录制">
+  <data key="d7">1.0</data>
+  <data key="d8">插件支持为失败用例录制视频，提供了另一种直观的问题复现和诊断方式。</data>
+  <data key="d9">功能增强,问题诊断</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324027</data>
+  <data key="d13"></data>
+</edge>
+<edge source="自定义Playwright插件" target="Allure集成">
+  <data key="d7">1.0</data>
+  <data key="d8">插件将生成的截图、视频等附件自动集成到Allure报告中，丰富了报告内容。</data>
+  <data key="d9">功能增强,报告生成</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324039</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Session级别登录态复用" target="storage_state">
+  <data key="d7">1.0</data>
+  <data key="d8">Session级别登录态复用通过Playwright的storage_state机制来保存和复用登录Cookie状态。</data>
+  <data key="d9">技术实现,状态存储</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323546</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像相似度断言" target="ORB算法">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像相似度断言融合了ORB算法作为其实现图像特征对比的技术之一。</data>
+  <data key="d9">图像处理,算法融合</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323538</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像相似度断言" target="pHash算法">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像相似度断言融合了pHash算法作为其实现图像感知哈希对比的技术之一。</data>
+  <data key="d9">图像处理,算法融合</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323553</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像相似度断言" target="直方图算法">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像相似度断言融合了直方图算法作为其实现图像颜色分布对比的技术之一。</data>
+  <data key="d9">图像处理,算法融合</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323569</data>
+  <data key="d13"></data>
+</edge>
+<edge source="全链路Trace追踪" target="Playwright Trace Viewer">
+  <data key="d7">1.0</data>
+  <data key="d8">全链路Trace追踪功能会生成Trace.zip文件，该文件可以在Playwright Trace Viewer工具中回放以进行调试。</data>
+  <data key="d9">文件生成,调试工具</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323539</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置切换" target="Docker容器化">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置切换和Docker容器化共同服务于保证测试在不同环境(包括CI/CD)下的一致性。</data>
+  <data key="d9">CI/CD,环境一致性</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323756</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker容器化" target="CI/CD">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker容器化技术旨在为基于Playwright的测试提供一致的环境，以集成到CI/CD流程中。</data>
+  <data key="d9">流程集成,环境一致性</data>
+  <data key="d10">chunk-713d53fa915224637d4b450019cfe610</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323576</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker容器化" target="微软官方Playwright镜像">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker容器化是基于微软官方Playwright镜像进行构建的。</data>
+  <data key="d9">依赖关系,构建基础</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323811</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker容器化" target="CI/CD环境">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker容器化的主要价值是保证CI/CD环境的一致性。</data>
+  <data key="d9">环境一致性,目标</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323827</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest" target="--env参数">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest框架支持--env参数来指定运行测试的环境。</data>
+  <data key="d9">命令行选项,支持</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323750</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest" target="TestConfig">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest可以通过--env参数指定使用TestConfig来运行测试环境。</data>
+  <data key="d9">命令行参数,环境配置</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324065</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest" target="DevConfig">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest可以通过--env参数指定使用DevConfig来运行开发环境。</data>
+  <data key="d9">命令行参数,环境配置</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324075</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest" target="UatConfig">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest可以通过--env参数指定使用UatConfig来运行用户验收测试环境。</data>
+  <data key="d9">命令行参数,环境配置</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324092</data>
+  <data key="d13"></data>
+</edge>
+<edge source="storage_state" target="登录态Cookie复用">
+  <data key="d7">1.0</data>
+  <data key="d8">登录态Cookie复用技术利用Playwright的storage_state功能来保存和复用登录状态。</data>
+  <data key="d9">状态管理,登录持久化</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324086</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="cases目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含cases目录，用于存储测试用例。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323559</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="pages目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含pages目录，用于存储页面对象。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323603</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="plugins目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含plugins目录，用于存储自定义插件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323634</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="utils目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含utils目录，用于存储工具类。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323653</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="AI_images目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含AI_images目录，用于存储AI图像对比文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323692</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="routes目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含routes目录，用于存储路由配置。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323716</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Playwright_Pytest_UI项目" target="data目录">
+  <data key="d7">1.0</data>
+  <data key="d8">Playwright_Pytest_UI项目包含data目录，</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323727</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases目录" target="playable_fe测试用例">
+  <data key="d7">1.0</data>
+  <data key="d8">cases目录包含playable_fe测试用例子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323583</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases目录" target="playable_backend测试用例">
+  <data key="d7">1.0</data>
+  <data key="d8">cases目录包含playable_backend测试用例子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323591</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases目录" target="monkey测试">
+  <data key="d7">1.0</data>
+  <data key="d8">cases目录包含monkey测试子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323603</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases目录" target="job测试">
+  <data key="d7">1.0</data>
+  <data key="d8">cases目录包含job测试子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323615</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe测试用例" target="000_vrecord测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe测试用例包含000_vrecord测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323569</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe测试用例" target="dm测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe测试用例包含dm测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323591</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe测试用例" target="gm测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe测试用例包含gm测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323599</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe测试用例" target="veditor测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe测试用例包含veditor测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323612</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe测试用例" target="payment测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe测试用例包含payment测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323621</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe测试用例" target="insights测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe测试用例包含insights测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323633</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_backend测试用例" target="demand测试">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_backend测试用例包含demand测试模块。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323603</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pages目录" target="playable_fe页面对象">
+  <data key="d7">1.0</data>
+  <data key="d8">pages目录包含playable_fe页面对象子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323615</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pages目录" target="playable_backend页面对象">
+  <data key="d7">1.0</data>
+  <data key="d8">pages目录包含playable_backend页面对象子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323634</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pages目录" target="monkey页面对象">
+  <data key="d7">1.0</data>
+  <data key="d8">pages目录包含monkey页面对象子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323649</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe页面对象" target="login_fe_page.py">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe页面对象包含login_fe_page.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323630</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_fe页面对象" target="parameter_dict_page.py">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe页面对象包含parameter_dict_page.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323645</data>
+  <data key="d13"></data>
+</edge>
+<edge source="login_fe_page.py" target="pages/">
+  <data key="d7">1.0</data>
+  <data key="d8">login_fe_page.py是pages/目录下的一个具体页面对象文件。</data>
+  <data key="d9">具体实现,页面文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323932</data>
+  <data key="d13"></data>
+</edge>
+<edge source="parameter_dict_page.py" target="pages/">
+  <data key="d7">1.0</data>
+  <data key="d8">parameter_dict_page.py是pages/目录下的一个具体页面对象文件。</data>
+  <data key="d9">具体实现,页面文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323964</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_backend页面对象" target="login_backend_page.py">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_backend页面对象包含login_backend_page.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323621</data>
+  <data key="d13"></data>
+</edge>
+<edge source="playable_backend页面对象" target="demand_submit_page.py">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_backend页面对象包含demand_submit_page.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323649</data>
+  <data key="d13"></data>
+</edge>
+<edge source="demand_submit_page.py" target="pages/">
+  <data key="d7">1.0</data>
+  <data key="d8">demand_submit_page.py是pages/目录下的一个具体页面对象文件。</data>
+  <data key="d9">具体实现,页面文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323938</data>
+  <data key="d13"></data>
+</edge>
+<edge source="monkey页面对象" target="monkey_fe_page.py">
+  <data key="d7">1.0</data>
+  <data key="d8">monkey页面对象包含monkey_fe_page.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323668</data>
+  <data key="d13"></data>
+</edge>
+<edge source="monkey_fe_page.py" target="pages/">
+  <data key="d7">1.0</data>
+  <data key="d8">monkey_fe_page.py是pages/目录下的一个具体页面对象文件。</data>
+  <data key="d9">具体实现,页面文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323951</data>
+  <data key="d13"></data>
+</edge>
+<edge source="plugins目录" target="__init__.py">
+  <data key="d7">1.0</data>
+  <data key="d8">plugins目录包含__init__.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323649</data>
+  <data key="d13"></data>
+</edge>
+<edge source="plugins目录" target="pytest_playwright.py">
+  <data key="d7">1.0</data>
+  <data key="d8">plugins目录包含pytest_playwright.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323668</data>
+  <data key="d13"></data>
+</edge>
+<edge source="plugins目录" target="pytest_base_url_plugin.py">
+  <data key="d7">1.0</data>
+  <data key="d8">plugins目录包含pytest_base_url_plugin.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323679</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="db.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含db.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323664</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="http_session.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含http_session.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323675</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="log.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含log.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323683</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="validata.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含validata.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323687</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="yaml_util.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含yaml_util.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323692</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="rand.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含rand.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323703</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="handle_util.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含handle_util.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323712</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="handle_excel.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含handle_excel.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323723</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="handle_console_log.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含handle_console_log.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323737</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="create_funtion.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含create_funtion.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323746</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils目录" target="report_notify.py">
+  <data key="d7">1.0</data>
+  <data key="d8">utils目录包含report_notify.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323765</data>
+  <data key="d13"></data>
+</edge>
+<edge source="db.py" target="utils/">
+  <data key="d7">1.0</data>
+  <data key="d8">db.py是utils/目录下的一个工具文件，提供数据库操作功能。</data>
+  <data key="d9">具体功能,工具文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323945</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validata.py" target="utils/">
+  <data key="d7">1.0</data>
+  <data key="d8">validata.py是utils/目录下的一个工具文件，提供断言功能。</data>
+  <data key="d9">具体功能,工具文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323969</data>
+  <data key="d13"></data>
+</edge>
+<edge source="yaml_util.py" target="utils/">
+  <data key="d7">1.0</data>
+  <data key="d8">yaml_util.py是utils/目录下的一个工具文件，提供YAML处理功能。</data>
+  <data key="d9">具体功能,工具文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323984</data>
+  <data key="d13"></data>
+</edge>
+<edge source="handle_util.py" target="utils/">
+  <data key="d7">1.0</data>
+  <data key="d8">handle_util.py是utils/目录下的一个工具文件，提供通用处理功能。</data>
+  <data key="d9">具体功能,工具文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324001</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI_images目录" target="image_similarity.py">
+  <data key="d7">1.0</data>
+  <data key="d8">AI_images目录包含image_similarity.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323700</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI_images目录" target="cal_confidence.py">
+  <data key="d7">1.0</data>
+  <data key="d8">AI_images目录包含cal_confidence.py工具类文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323707</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI_images目录" target="imgs_actual目录">
+  <data key="d7">1.0</data>
+  <data key="d8">AI_images目录包含imgs_actual子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323716</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI_images目录" target="imgs_expect目录">
+  <data key="d7">1.0</data>
+  <data key="d8">AI_images目录包含imgs_expect子目录。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323726</data>
+  <data key="d13"></data>
+</edge>
+<edge source="routes目录" target="playturbo.py">
+  <data key="d7">1.0</data>
+  <data key="d8">routes目录包含playturbo.py文件。</data>
+  <data key="d9">包含,组织结构</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323727</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dockerfile" target="CI环境无头模式字体渲染差异">
+  <data key="d7">1.0</data>
+  <data key="d8">在Dockerfile中安装字体是解决CI环境无头模式字体渲染差异的方案之一。</data>
+  <data key="d9">环境配置,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323790</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dockerfile" target="fonts-noto-cjk">
+  <data key="d7">1.0</data>
+  <data key="d8">在Dockerfile中通过`RUN apt-get install -y fonts-noto-cjk`指令安装字体。</data>
+  <data key="d9">安装指令,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323839</data>
+  <data key="d13"></data>
+</edge>
+<edge source="conftest.py" target="Fixture配置层">
+  <data key="d7">1.0</data>
+  <data key="d8">conftest.py文件是Fixture配置层的核心，用于定义和共享Pytest测试夹具。</data>
+  <data key="d9">夹具定义,配置文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323906</data>
+  <data key="d13"></data>
+</edge>
+<edge source="conftest.py" target="登录态Cookie复用">
+  <data key="d7">1.0</data>
+  <data key="d8">登录态Cookie复用的逻辑在conftest.py文件中通过全局fixture实现。</data>
+  <data key="d9">全局fixture,配置实现</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324101</data>
+  <data key="d13"></data>
+</edge>
+<edge source="run.py" target="测试执行层">
+  <data key="d7">1.0</data>
+  <data key="d8">run.py文件是测试执行层的核心组件，作为整个测试框架的启动和执行入口。</data>
+  <data key="d9">启动脚本,执行入口</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323896</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="TestConfig类">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理通过TestConfig类来实现测试环境的配置。</data>
+  <data key="d9">实现,技术组件</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323740</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="DevConfig类">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理通过DevConfig类来实现开发环境的配置。</data>
+  <data key="d9">实现,技术组件</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323750</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="UatConfig类">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理通过UatConfig类来实现UAT环境的配置。</data>
+  <data key="d9">实现,技术组件</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323773</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="env映射">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理使用env映射来根据命令行参数切换不同的环境配置。</data>
+  <data key="d9">使用,配置切换</data>
+  <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323790</data>
+  <data key="d13"></data>
+</edge>
+<edge source="is_visible()" target="expect断言">
+  <data key="d7">1.0</data>
+  <data key="d8">`expect断言`是解决`is_visible()`方法返回错误结果问题的替代方案。</data>
+  <data key="d9">替代方法,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323780</data>
+  <data key="d13"></data>
+</edge>
+<edge source="等待机制" target="元素定位不稳定">
+  <data key="d7">1.0</data>
+  <data key="d8">使用等待机制是解决元素定位不稳定问题的核心方法之一。</data>
+  <data key="d9">稳定性提升,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323774</data>
+  <data key="d13"></data>
+</edge>
+<edge source="登录态失效" target="fixture">
+  <data key="d7">1.0</data>
+  <data key="d8">在fixture中增加登录态刷新机制是解决登录态失效导致用例失败问题的方案。</data>
+  <data key="d9">状态管理,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323780</data>
+  <data key="d13"></data>
+</edge>
+<edge source="登录态失效" target="Session">
+  <data key="d7">1.0</data>
+  <data key="d8">登录态失效是由于Session过期导致的。</data>
+  <data key="d9">原因,数据过期</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323818</data>
+  <data key="d13"></data>
+</edge>
+<edge source="fixture" target="auth/login.json">
+  <data key="d7">1.0</data>
+  <data key="d8">在fixture的登录态刷新机制中，会检查`auth/login.json`文件中的令牌状态。</data>
+  <data key="d9">数据检查,文件操作</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323818</data>
+  <data key="d13"></data>
+</edge>
+<edge source="元素定位不稳定" target="语义化定位器">
+  <data key="d7">1.0</data>
+  <data key="d8">优先使用语义化定位器是解决元素定位不稳定问题的推荐策略。</data>
+  <data key="d9">定位策略,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323790</data>
+  <data key="d13"></data>
+</edge>
+<edge source="元素定位不稳定" target="XPath">
+  <data key="d7">1.0</data>
+  <data key="d8">XPath可以作为解决元素定位不稳定问题的兜底定位策略。</data>
+  <data key="d9">兜底方案,定位策略</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323811</data>
+  <data key="d13"></data>
+</edge>
+<edge source="元素定位不稳定" target="动态ID">
+  <data key="d7">1.0</data>
+  <data key="d8">动态ID是导致元素定位不稳定的现象之一。</data>
+  <data key="d9">原因,技术挑战</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323827</data>
+  <data key="d13"></data>
+</edge>
+<edge source="元素定位不稳定" target="异步加载">
+  <data key="d7">1.0</data>
+  <data key="d8">异步加载是导致元素定位不稳定的现象之一。</data>
+  <data key="d9">原因,技术挑战</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323840</data>
+  <data key="d13"></data>
+</edge>
+<edge source="并发执行资源竞争" target="pytest-xdist">
+  <data key="d7">1.0</data>
+  <data key="d8">使用pytest-xdist插件的`loadscope`模式是解决并发执行时资源竞争问题的方法。</data>
+  <data key="d9">并行控制,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323781</data>
+  <data key="d13"></data>
+</edge>
+<edge source="并发执行资源竞争" target="单例模式">
+  <data key="d7">1.0</data>
+  <data key="d8">对数据库操作使用单例模式是解决并发执行时资源竞争问题的方案。</data>
+  <data key="d9">解决方案,资源管理</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323799</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest-xdist" target="loadscope模式">
+  <data key="d7">1.0</data>
+  <data key="d8">`loadscope`模式是pytest-xdist插件提供的一种测试分发模式。</data>
+  <data key="d9">功能提供,执行模式</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323827</data>
+  <data key="d13"></data>
+</edge>
+<edge source="单例模式" target="ConnectMysql">
+  <data key="d7">1.0</data>
+  <data key="d8">单例模式在解决资源竞争问题时，以`ConnectMysql`类作为具体实现示例。</data>
+  <data key="d9">代码示例,实现方式</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323833</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CI环境无头模式字体渲染差异" target="Linux环境">
+  <data key="d7">1.0</data>
+  <data key="d8">CI环境无头模式字体渲染差异问题主要发生在Linux环境中。</data>
+  <data key="d9">发生环境,问题场景</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323839</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CI环境无头模式字体渲染差异" target="Mac/Windows">
+  <data key="d7">1.0</data>
+  <data key="d8">Linux环境的截图会与本地Mac/Windows环境的截图进行对比，以发现差异。</data>
+  <data key="d9">对比环境,差异基准</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323853</data>
+  <data key="d13"></data>
+</edge>
+<edge source="文件上传失败" target="file_chooser">
+  <data key="d7">1.0</data>
+  <data key="d8">使用Playwright的`file_chooser` API是解决Docker环境中文件上传失败问题的方案。</data>
+  <data key="d9">API使用,解决方案</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323799</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可维护的自动化测试框架" target="POM模式">
+  <data key="d7">1.0</data>
+  <data key="d8">采用POM模式是设计可维护的自动化测试框架的核心要点之一。</data>
+  <data key="d9">架构模式,设计原则</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323802</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可维护的自动化测试框架" target="数据驱动">
+  <data key="d7">1.0</data>
+  <data key="d8">实施数据驱动是设计可维护的自动化测试框架的重要原则。</data>
+  <data key="d9">测试设计,设计原则</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323818</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可维护的自动化测试框架" target="分层设计">
+  <data key="d7">1.0</data>
+  <data key="d8">分层设计是构建可维护的自动化测试框架的核心设计原则之一。</data>
+  <data key="d9">架构方法,设计原则</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323853</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可维护的自动化测试框架" target="配置外部化">
+  <data key="d7">1.0</data>
+  <data key="d8">配置外部化是设计可维护的自动化测试框架的重要管理原则。</data>
+  <data key="d9">管理方法,设计原则</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323862</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可维护的自动化测试框架" target="AssertUtils工具类">
+  <data key="d7">1.0</data>
+  <data key="d8">封装统一的AssertUtils工具类是实施统一断言这一设计要点的具体手段。</data>
+  <data key="d9">代码封装,实现手段</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323871</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可维护的自动化测试框架" target="日志规范">
+  <data key="d7">1.0</data>
+  <data key="d8">制定统一的日志规范是设计可维护的自动化测试框架的要点，旨在提高可追溯性。</data>
+  <data key="d9">可追溯性,设计原则</data>
+  <data key="d10">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="POM模式" target="Page类">
+  <data key="d7">1.0</data>
+  <data key="d8">POM模式的核心思想是将每个页面的元素定位和操作方法封装在对应的Page类中。</data>
+  <data key="d9">封装,设计模式</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323970</data>
+  <data key="d13"></data>
+</edge>
+<edge source="POM模式" target="企业级UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架遵循POM模式来组织页面代码，提高了测试脚本的可维护性。</data>
+  <data key="d9">架构特性,核心组成</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324039</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据驱动" target="测试数据">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动测试方法强调将测试用例所需的数据从测试脚本代码中分离出来，通过外部文件管理。</data>
+  <data key="d9">分离,测试方法</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323976</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据驱动" target="企业级UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动是该框架支持的重要测试方法，增强了测试的灵活性和可维护性。</data>
+  <data key="d9">架构特性,核心组成</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324048</data>
+  <data key="d13"></data>
+</edge>
+<edge source="分层设计" target="用例层">
+  <data key="d7">1.0</data>
+  <data key="d8">分层设计将系统架构分离为不同的层次，其中用例层负责处理具体的测试业务流程。</data>
+  <data key="d9">关注点分离,架构分层</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323964</data>
+  <data key="d13"></data>
+</edge>
+<edge source="分层设计" target="页面对象层">
+  <data key="d7">1.0</data>
+  <data key="d8">分层设计中的页面对象层专门封装页面元素和操作，实现与业务逻辑的分离。</data>
+  <data key="d9">关注点分离,架构分层</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323975</data>
+  <data key="d13"></data>
+</edge>
+<edge source="分层设计" target="工具层">
+  <data key="d7">1.0</data>
+  <data key="d8">分层设计中的工具层提供通用的辅助功能，如断言、日志、数据库操作等。</data>
+  <data key="d9">关注点分离,架构分层</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323995</data>
+  <data key="d13"></data>
+</edge>
+<edge source="分层设计" target="企业级UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">分层设计是该企业级测试框架的核心架构特性之一，确保了代码结构清晰。</data>
+  <data key="d9">架构特性,核心组成</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324027</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AssertUtils工具类" target="统一断言">
+  <data key="d7">1.0</data>
+  <data key="d8">通过创建统一的AssertUtils工具类来封装所有断言逻辑，提高代码的复用性和可维护性。</data>
+  <data key="d9">代码封装,复用</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323976</data>
+  <data key="d13"></data>
+</edge>
+<edge source="日志规范" target="统一日志格式">
+  <data key="d7">1.0</data>
+  <data key="d8">制定日志规范是为了规定统一的日志输出格式，确保日志信息的结构化和可读性。</data>
+  <data key="d9">可读性,规范制定</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323984</data>
+  <data key="d13"></data>
+</edge>
+<edge source="PlayTurbo" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该自动化测试框架主要用于对PlayTurbo平台进行自动化测试。</data>
+  <data key="d9">应用平台,测试对象</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323871</data>
+  <data key="d13"></data>
+</edge>
+<edge source="PlayTurbo" target="可玩广告">
+  <data key="d7">1.0</data>
+  <data key="d8">PlayTurbo平台是一个专注于可玩广告创意制作和管理系统。</data>
+  <data key="d9">业务领域,产品类型</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323887</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MindWorks Creative" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该自动化测试框架主要用于对MindWorks Creative平台进行自动化测试。</data>
+  <data key="d9">应用平台,测试对象</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323880</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MindWorks Creative" target="可玩广告">
+  <data key="d7">1.0</data>
+  <data key="d8">MindWorks Creative平台是一个专注于可玩广告创意制作和管理系统。</data>
+  <data key="d9">业务领域,产品类型</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323893</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DingTalkChatbot" target="Web UI自动化测试框架">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架使用DingTalkChatbot库在测试完成后自动发送钉钉通知。</data>
+  <data key="d9">即时反馈,结果通知</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323905</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Web UI自动化测试框架" target="回归测试">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架的核心价值之一是提升回归测试效率，节省80%以上的测试时间。</data>
+  <data key="d9">效率提升,质量保障</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323917</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Web UI自动化测试框架" target="持续集成测试">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架支持CI/CD，能够集成到流水线中实现持续集成测试。</data>
+  <data key="d9">流程支持,自动化</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323938</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Web UI自动化测试框架" target="Page Object Model">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架的页面对象层采用了Page Object Model设计模式来封装页面操作。</data>
+  <data key="d9">代码结构,设计模式</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323951</data>
+  <data key="d13"></data>
+</edge>
+<edge source="plugins/" target="自定义插件层">
+  <data key="d7">1.0</data>
+  <data key="d8">plugins/目录存放的代码实现了自定义插件层，用于扩展Pytest框架的功能。</data>
+  <data key="d9">代码目录,功能扩展</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323906</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases/" target="测试用例层">
+  <data key="d7">1.0</data>
+  <data key="d8">cases/目录存放所有测试用例文件，构成了测试用例层。</data>
+  <data key="d9">代码目录,用例存储</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323914</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases/" target="playable_fe">
+  <data key="d7">1.0</data>
+  <data key="d8">playable_fe(前台测试)是cases/目录下的一个测试模块分类。</data>
+  <data key="d9">测试模块,用例分类</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323926</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases/" target="backend">
+  <data key="d7">1.0</data>
+  <data key="d8">backend(后台测试)是cases/目录下的一个测试模块分类。</data>
+  <data key="d9">测试模块,用例分类</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323935</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases/" target="monkey">
+  <data key="d7">1.0</data>
+  <data key="d8">monkey(压力测试)是cases/目录下的一个测试模块分类。</data>
+  <data key="d9">测试模块,用例分类</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323945</data>
+  <data key="d13"></data>
+</edge>
+<edge source="cases/" target="job">
+  <data key="d7">1.0</data>
+  <data key="d8">job(Job测试)是cases/目录下的一个测试模块分类。</data>
+  <data key="d9">测试模块,用例分类</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323957</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pages/" target="页面对象层">
+  <data key="d7">1.0</data>
+  <data key="d8">pages/目录存放所有页面对象文件，构成了页面对象层。</data>
+  <data key="d9">代码目录,页面封装</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323918</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils/" target="工具层">
+  <data key="d7">1.0</data>
+  <data key="d8">utils/目录存放各种工具模块和文件，构成了工具层。</data>
+  <data key="d9">代码目录,工具集合</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323918</data>
+  <data key="d13"></data>
+</edge>
+<edge source="utils/" target="http_session">
+  <data key="d7">1.0</data>
+  <data key="d8">http_session是utils/目录下的一个工具模块，提供HTTP会话功能。</data>
+  <data key="d9">具体功能,工具模块</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323957</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试用例稳定性" target="合理等待">
+  <data key="d7">1.0</data>
+  <data key="d8">使用合理的等待策略是保障测试用例稳定性的关键措施之一，避免因元素加载问题导致的失败。</data>
+  <data key="d9">执行策略,质量保障</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767323985</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试用例稳定性" target="重试机制">
+  <data key="d7">1.0</data>
+  <data key="d8">引入重试机制可以处理测试执行过程中的偶发性失败，从而提高测试套件的整体稳定性。</data>
+  <data key="d9">容错处理,质量保障</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324001</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试用例稳定性" target="数据隔离">
+  <data key="d7">1.0</data>
+  <data key="d8">实施数据隔离确保每个测试用例在独立的数据环境中运行，防止测试间的相互干扰。</data>
+  <data key="d9">环境管理,质量保障</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324012</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试用例稳定性" target="环境检查">
+  <data key="d7">1.0</data>
+  <data key="d8">执行前的环境检查是保证测试用例稳定运行的前提，确保所有依赖服务可用。</data>
+  <data key="d9">前置验证,质量保障</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324021</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试用例稳定性" target="用例独立">
+  <data key="d7">1.0</data>
+  <data key="d8">保持用例独立性是测试设计的重要原则，它使得测试可以任意顺序执行，便于排查问题。</data>
+  <data key="d9">设计原则,质量保障</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324036</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试用例稳定性" target="清理机制">
+  <data key="d7">1.0</data>
+  <data key="d8">建立清理机制可以在测试完成后恢复环境状态，为后续测试执行提供干净的基础。</data>
+  <data key="d9">后置处理,质量保障</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324045</data>
+  <data key="d13"></data>
+</edge>
+<edge source="重试机制" target="pytest-rerunfailures">
+  <data key="d7">1.0</data>
+  <data key="d8">项目中的重试机制是通过集成pytest-rerunfailures这个Pytest插件来实现的。</data>
+  <data key="d9">依赖工具,技术实现</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324048</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试报告实时通知" target="pytest_terminal_summary钩子">
+  <data key="d7">1.0</data>
+  <data key="d8">测试报告实时通知功能是通过实现Pytest的pytest_terminal_summary钩子函数来触发的。</data>
+  <data key="d9">事件触发,实现机制</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324015</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试报告实时通知" target="钉钉">
+  <data key="d7">1.0</data>
+  <data key="d8">测试报告的实时通知功能是通过集成钉钉这个即时通讯工具来实现的。</data>
+  <data key="d9">通知渠道,集成</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324053</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_terminal_summary钩子" target="ding_ding_notify">
+  <data key="d7">1.0</data>
+  <data key="d8">在pytest_terminal_summary钩子函数中，会调用ding_ding_notify函数来发送钉钉通知。</data>
+  <data key="d9">功能调用,消息发送</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324057</data>
+  <data key="d13"></data>
+</edge>
+<edge source="跨域iframe元素处理" target="frame_locator">
+  <data key="d7">1.0</data>
+  <data key="d8">处理跨域iframe中的元素，主要依靠Playwright提供的frame_locator方法进行定位。</data>
+  <data key="d9">技术实现,解决方案</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324021</data>
+  <data key="d13"></data>
+</edge>
+<edge source="企业级UI自动化测试框架" target="CI/CD流水线">
+  <data key="d7">1.0</data>
+  <data key="d8">该框架能够集成到CI/CD流水线中，实现自动化测试的持续执行。</data>
+  <data key="d9">工程实践,自动化集成</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324095</data>
+  <data key="d13"></data>
+</edge>
+<edge source="企业级UI自动化测试框架" target="AI图像对比">
+  <data key="d7">1.0</data>
+  <data key="d8">框架集成了AI图像对比功能，用于执行需要视觉验证的复杂测试场景。</data>
+  <data key="d9">视觉验证,高级功能</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324469</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest-playwright插件" target="BrowserContext">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest-playwright插件在fixture中操作BrowserContext，例如启动tracing和监听新页面。</data>
+  <data key="d9">上下文管理,插件操作</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324102</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest-playwright插件" target="Page">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest-playwright插件通过fixture提供增强的Page对象，支持自动截图和视频录制。</data>
+  <data key="d9">自动化操作,页面管理</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324476</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest-playwright插件" target="tracing">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest-playwright插件根据命令行选项控制tracing的启动和停止，用于失败时记录追踪信息。</data>
+  <data key="d9">性能追踪,调试支持</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324486</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Page Object Model (POM)" target="LoginFePage">
+  <data key="d7">1.0</data>
+  <data key="d8">LoginFePage是Page Object Model设计模式的一个具体实现，用于封装登录页面的元素和操作。</data>
+  <data key="d9">代码封装,设计模式实现</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324079</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像对比断言" target="图像相似度算法">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像对比断言技术融合了ORB特征点匹配、感知哈希算法和直方图对比等多种图像相似度算法。</data>
+  <data key="d9">图像处理,技术融合</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324096</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像对比断言" target="ORB特征点匹配">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像对比断言技术使用ORB特征点匹配作为其融合的相似度算法之一。</data>
+  <data key="d9">相似度计算,算法应用</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324482</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像对比断言" target="感知哈希算法">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像对比断言技术使用感知哈希算法作为其融合的相似度算法之一。</data>
+  <data key="d9">相似度计算,算法应用</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324488</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像对比断言" target="直方图对比">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像对比断言技术使用直方图对比作为其融合的相似度算法之一。</data>
+  <data key="d9">相似度计算,算法应用</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324492</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI图像对比断言" target="calc_ccoeff_confidence">
+  <data key="d7">1.0</data>
+  <data key="d8">AI图像对比断言使用calc_ccoeff_confidence函数来计算最终的图像相似度，并用于断言。</data>
+  <data key="d9">断言判断,结果计算</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324497</data>
+  <data key="d13"></data>
+</edge>
+<edge source="登录态Cookie复用" target="LoginBackendPage">
+  <data key="d7">1.0</data>
+  <data key="d8">登录态Cookie复用的fixture使用LoginBackendPage来执行后端登录操作以获取初始Cookie。</data>
+  <data key="d9">状态获取,登录实现</data>
+  <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
+  <data key="d11">PlayWrightUI 自动化面试.md</data>
+  <data key="d12">1767324476</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

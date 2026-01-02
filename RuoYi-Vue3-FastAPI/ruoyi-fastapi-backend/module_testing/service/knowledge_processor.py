@@ -68,7 +68,7 @@ class KnowledgeProcessor:
             return
         
         self.running = True
-        logger.info('知识库处理器启动')
+        logger.info('✅ 知识库处理器启动，开始监听待处理文件...')
         
         while self.running:
             try:
@@ -76,6 +76,7 @@ class KnowledgeProcessor:
             except Exception as e:
                 logger.error(f'处理文件时发生错误: {e}', exc_info=True)
             
+            # 等待检查间隔
             await asyncio.sleep(self.check_interval)
     
     async def stop(self):
@@ -91,7 +92,7 @@ class KnowledgeProcessor:
                 # 查询 pending 状态的文件
                 query = select(TestKnowledgeFile).where(
                     TestKnowledgeFile.process_status == 'pending'
-                ).limit(5)  # 每次最多处理5个文件
+                ).order_by(TestKnowledgeFile.create_time.asc()).limit(5)  # 每次最多处理5个文件，按创建时间排序
                 
                 result = await db.execute(query)
                 pending_files = result.scalars().all()
@@ -99,14 +100,16 @@ class KnowledgeProcessor:
                 if not pending_files:
                     return
                 
-                logger.info(f'发现 {len(pending_files)} 个待处理文件')
+                logger.info(f'📋 发现 {len(pending_files)} 个待处理文件，开始处理...')
                 
-                # 并发处理文件
-                tasks = [
-                    self._process_single_file(db, file)
-                    for file in pending_files
-                ]
-                await asyncio.gather(*tasks, return_exceptions=True)
+                # 顺序处理文件（避免并发冲突）
+                for file in pending_files:
+                    try:
+                        await self._process_single_file(db, file)
+                    except Exception as e:
+                        logger.error(f'处理文件 {file.file_name} (file_id: {file.file_id}) 时出错: {e}', exc_info=True)
+                        # 继续处理下一个文件
+                        continue
                 
             except Exception as e:
                 logger.error(f'查询待处理文件失败: {e}', exc_info=True)
@@ -136,30 +139,51 @@ class KnowledgeProcessor:
             logger.debug(f'知识库信息: {knowledge.knowledge_name} (Collection: {knowledge.collection_name})')
             
             # 3. 从 MinIO 下载文件
-            logger.debug(f'从 MinIO 下载文件: {file.file_path}')
+            logger.info(f'📥 从存储下载文件: {file.file_path}')
             minio_client = MinioClientManager.get_client()
-            file_content = await minio_client.download_file_async(file.file_path)
+            
+            # 使用 asyncio.to_thread 将同步的 download_file 转换为异步
+            loop = asyncio.get_event_loop()
+            success, file_content = await loop.run_in_executor(
+                None, 
+                minio_client.download_file, 
+                file.file_path
+            )
+            
+            if not success or file_content is None:
+                raise Exception(f'下载文件失败: {file.file_path}')
+            
+            logger.info(f'✅ 文件下载成功，大小: {len(file_content)} 字节')
             
             await KnowledgeFileDao.update_file_status(db, file_id, 'processing', 30)
             await db.commit()
             
             # 4. 上传到 LightRAG
-            logger.debug(f'上传到 LightRAG: {file.file_name}')
+            logger.info(f'📤 上传到 LightRAG: {file.file_name} (workspace: {knowledge.collection_name})')
             lightrag_manager = get_lightrag_manager()
             
-            upload_result = await lightrag_manager.upload_document(
-                collection_name=knowledge.collection_name,
-                file_content=file_content,
-                filename=file.file_name,
-                metadata={
-                    'file_id': file_id,
-                    'knowledge_id': file.knowledge_id,
-                    'file_name': file.file_name,
-                    'file_path': file.file_path
-                }
-            )
-            
-            logger.debug(f'LightRAG 上传结果: {upload_result}')
+            try:
+                upload_result = await lightrag_manager.upload_document(
+                    collection_name=knowledge.collection_name,
+                    file_content=file_content,
+                    filename=file.file_name,
+                    metadata={
+                        'file_id': file_id,
+                        'knowledge_id': file.knowledge_id,
+                        'file_name': file.file_name,
+                        'file_path': file.file_path
+                    }
+                )
+                
+                logger.info(f'✅ LightRAG 上传成功: {upload_result}')
+            except Exception as rag_error:
+                error_msg = str(rag_error)
+                if '502' in error_msg or 'Bad Gateway' in error_msg:
+                    raise Exception(f'LightRAG服务不可用 (502)，请检查服务是否正常运行: {error_msg}')
+                elif 'Connection' in error_msg:
+                    raise Exception(f'无法连接到LightRAG服务，请检查服务地址: {error_msg}')
+                else:
+                    raise Exception(f'LightRAG上传失败: {error_msg}')
             
             # 5. 更新状态为 completed
             doc_id = upload_result.get('doc_id') or upload_result.get('track_id')
@@ -216,13 +240,19 @@ async def start_processor(check_interval: int = 10):
     global _processor
     
     if _processor is not None:
-        logger.warning('处理器已存在')
+        logger.warning('⚠️  处理器已存在，跳过启动')
         return
     
-    _processor = KnowledgeProcessor(check_interval)
-    # 在后台任务中启动，不阻塞
-    asyncio.create_task(_processor.start())
-    logger.info('知识库处理器已在后台启动')
+    try:
+        _processor = KnowledgeProcessor(check_interval)
+        # 在后台任务中启动，不阻塞
+        task = asyncio.create_task(_processor.start())
+        # 等待一小段时间确保任务已启动
+        await asyncio.sleep(0.1)
+        logger.info('✅ 知识库处理器已在后台启动，任务ID: {}'.format(id(task)))
+    except Exception as e:
+        logger.error(f'❌ 启动知识库处理器失败: {e}', exc_info=True)
+        _processor = None
 
 
 async def stop_processor():

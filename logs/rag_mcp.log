@@ -19,18 +19,26 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/02/26 09:53:19] INFO     Starting MCP server 'LightRAG' with server.py:2618
+[01/02/26 11:32:47] INFO     Starting MCP server 'LightRAG' with server.py:2618
                              transport 'sse' on                                
                              http://0.0.0.0:8002/sse                           
-INFO:     Started server process [32884]
+INFO:     Started server process [59500]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
-INFO:     127.0.0.1:49765 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49768 - "POST /messages/?session_id=e97682c6ece043d8bf4b8ee9b7b3421d HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:49773 - "POST /messages/?session_id=e97682c6ece043d8bf4b8ee9b7b3421d HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:49775 - "POST /messages/?session_id=e97682c6ece043d8bf4b8ee9b7b3421d HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:55778 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55783 - "POST /messages/?session_id=e586e75c23d545b69f0718cf25421029 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:55789 - "POST /messages/?session_id=e586e75c23d545b69f0718cf25421029 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:55794 - "POST /messages/?session_id=e586e75c23d545b69f0718cf25421029 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52033 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52035 - "POST /messages/?session_id=c1a6f1d87a244edd88e7bccf9cd16f69 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52037 - "POST /messages/?session_id=c1a6f1d87a244edd88e7bccf9cd16f69 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52039 - "POST /messages/?session_id=c1a6f1d87a244edd88e7bccf9cd16f69 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53806 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53812 - "POST /messages/?session_id=9b400633cfcc47e2855cc198ca8a3943 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53817 - "POST /messages/?session_id=9b400633cfcc47e2855cc198ca8a3943 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53824 - "POST /messages/?session_id=9b400633cfcc47e2855cc198ca8a3943 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:64150 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64152 - "POST /messages/?session_id=c2a84307cf034d36b98fe7f8e081bc7d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:64154 - "POST /messages/?session_id=c2a84307cf034d36b98fe7f8e081bc7d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:64156 - "POST /messages/?session_id=c2a84307cf034d36b98fe7f8e081bc7d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58363 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58368 - "POST /messages/?session_id=9a9b140bc2e04ccb8a3836b63b6728fe HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58373 - "POST /messages/?session_id=9a9b140bc2e04ccb8a3836b63b6728fe HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:58379 - "POST /messages/?session_id=9a9b140bc2e04ccb8a3836b63b6728fe HTTP/1.1" 202 Accepted

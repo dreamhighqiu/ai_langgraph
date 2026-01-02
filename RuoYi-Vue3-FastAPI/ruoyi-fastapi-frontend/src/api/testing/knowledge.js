@@ -133,6 +133,31 @@ export function getKnowledgeRagDocuments(knowledgeId, params) {
   })
 }
 
+// 获取所有项目的文件列表
+export function getAllFiles(query) {
+  const params = {
+    page_num: query?.pageNum ?? query?.page_num ?? 1,
+    page_size: query?.pageSize ?? query?.page_size ?? 10,
+    project_id: query?.projectId ?? query?.project_id,
+    file_name: query?.fileName ?? query?.file_name,
+    process_status: query?.processStatus ?? query?.process_status
+  }
+  return request({
+    url: '/testing/knowledge/files/all',
+    method: 'get',
+    params
+  })
+}
+
+// 获取所有项目的RAG处理后的文档列表
+export function getAllRagDocuments(params) {
+  return request({
+    url: '/testing/knowledge/rag-documents/all',
+    method: 'get',
+    params
+  })
+}
+
 // 知识库查询（RAG）
 export function queryKnowledge(knowledgeId, data) {
   return request({

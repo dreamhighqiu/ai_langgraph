@@ -7,11 +7,19 @@ import json
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
+import logging
 from typing import Any, AsyncIterator, Awaitable, Dict, List, Optional
 
 import httpx
 from dotenv import load_dotenv
 from fastmcp import FastMCP, Context
+
+# Logging setup
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+)
+logger = logging.getLogger("anything_rag_mcp")
 
 
 def _format_json(data: Any) -> str:
@@ -167,6 +175,28 @@ class LightRAGClient:
 
     async def query_data(self, payload: Dict[str, Any]) -> Any:
         return await self._request("POST", "/query/data", json_body=payload)
+
+
+def _is_query_text_empty(result: Dict[str, Any]) -> bool:
+    if not result:
+        return True
+    refs = result.get("references")
+    if refs is None:
+        return True
+    if isinstance(refs, list) and len(refs) == 0:
+        return True
+    return False
+
+
+def _is_query_data_empty(result: Dict[str, Any]) -> bool:
+    if not result:
+        return True
+    data = result.get("data")
+    if not data:
+        return True
+    return not any(
+        data.get(key) for key in ("entities", "relationships", "chunks", "references")
+    )
 
 
 class MCPContext:
@@ -428,7 +458,62 @@ async def query_text(
         only_need_context=only_need_context,
         only_need_prompt=only_need_prompt,
     )
-    return await _execute_request(client.query(payload))
+    try:
+        result = await client.query(payload)
+        logger.info("query_text payload=%s", _format_json(payload))
+        logger.info("query_text result=%s", _format_json(result))
+        if _is_query_text_empty(result):
+            return _format_json({"status": "empty", "message": "无法获取到知识库信息"})
+        return _format_json(result)
+    except Exception as exc:  # pylint: disable=broad-except
+        logger.error("query_text failed: %s", exc, exc_info=True)
+        return f"Error: {exc}"
+
+
+@mcp.tool()
+async def query(
+    query: str,
+    mode: str = "mix",
+    top_k: Optional[int] = 10,
+    chunk_top_k: Optional[int] = 5,
+    response_type: Optional[str] = None,
+    max_entity_tokens: Optional[int] = None,
+    max_relation_tokens: Optional[int] = None,
+    max_total_tokens: Optional[int] = None,
+    hl_keywords: Optional[List[str]] = None,
+    ll_keywords: Optional[List[str]] = None,
+    conversation_history_json: Optional[str] = None,
+    user_prompt: Optional[str] = None,
+    enable_rerank: bool = True,
+    include_references: bool = True,
+    include_chunk_content: bool = False,
+    only_need_context: bool = False,
+    only_need_prompt: bool = False,
+    ctx: Context = None,
+) -> str:
+    """
+    Alias for /query (non-structured response). Kept for compatibility with callers expecting tool name 'query'.
+    """
+    return await query_text(
+        query=query,
+        mode=mode,
+        top_k=top_k,
+        chunk_top_k=chunk_top_k,
+        response_type=response_type,
+        max_entity_tokens=max_entity_tokens,
+        max_relation_tokens=max_relation_tokens,
+        max_total_tokens=max_total_tokens,
+        hl_keywords=hl_keywords,
+        ll_keywords=ll_keywords,
+        conversation_history_json=conversation_history_json,
+        user_prompt=user_prompt,
+        enable_rerank=enable_rerank,
+        include_references=include_references,
+        include_chunk_content=include_chunk_content,
+        only_need_context=only_need_context,
+        only_need_prompt=only_need_prompt,
+        ctx=ctx,
+    )
 
 
 @mcp.tool()
@@ -477,7 +562,16 @@ async def query_data(
         only_need_context=only_need_context,
         only_need_prompt=only_need_prompt,
     )
-    return await _execute_request(client.query_data(payload))
+    try:
+        result = await client.query_data(payload)
+        logger.info("query_data payload=%s", _format_json(payload))
+        logger.info("query_data result=%s", _format_json(result))
+        if _is_query_data_empty(result):
+            return _format_json({"status": "empty", "message": "无法获取到知识库信息"})
+        return _format_json(result)
+    except Exception as exc:  # pylint: disable=broad-except
+        logger.error("query_data failed: %s", exc, exc_info=True)
+        return f"Error: {exc}"
 
 
 def parse_arguments() -> argparse.Namespace:

@@ -82,17 +82,17 @@ INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=Tru
 INFO: Embedding max_token_size: 8192 (from ollama provider default)
 INFO: Reranking is disabled
 INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
-INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 353 nodes, 310 edges
+INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 673 nodes, 625 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [54132]
+INFO: Started server process [50052]
 INFO: Waiting for application startup.
-INFO: [] Process 54132 KV load full_docs with 8 records
-INFO: [] Process 54132 KV load text_chunks with 25 records
-INFO: [] Process 54132 KV load full_entities with 8 records
-INFO: [] Process 54132 KV load full_relations with 8 records
-INFO: [] Process 54132 KV load entity_chunks with 341 records
-INFO: [] Process 54132 KV load relation_chunks with 310 records
+INFO: [] Process 50052 KV load full_docs with 10 records
+INFO: [] Process 50052 KV load text_chunks with 35 records
+INFO: [] Process 50052 KV load full_entities with 10 records
+INFO: [] Process 50052 KV load full_relations with 10 records
+INFO: [] Process 50052 KV load entity_chunks with 661 records
+INFO: [] Process 50052 KV load relation_chunks with 625 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -102,119 +102,61 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 54132 KV load llm_response_cache with 29 records
-INFO: [] Process 54132 doc status load doc_status with 8 records
+INFO: [] Process 50052 KV load llm_response_cache with 51 records
+INFO: [] Process 50052 doc status load doc_status with 10 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:59519 - "GET /auth-status HTTP/1.1" 200
-INFO: 127.0.0.1:64731 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:64731 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:55508 - "GET /auth-status HTTP/1.1" 200
-INFO: 127.0.0.1:55508 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55508 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:55508 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55508 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:63471 - "POST /documents/upload HTTP/1.1" 200
-INFO: Using RAG-Anything multimodal processing for: 邱云霞的简历.pdf
-INFO: RAGAnything initialized with config:
-INFO:   Working directory: ./rag_storage
-INFO:   Parser: docling
-INFO:   Parse method: auto
-INFO:   Multimodal processing - Image: True, Table: True, Equation: True
-INFO:   Max concurrent files: 1
-INFO: RAG-Anything initialized with parser=docling, method=auto, multimodal=True
-INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf
-INFO: Using docling parser with method: auto
-INFO: Detected PDF file, using parser for PDF...
-INFO: 127.0.0.1:53177 - "HEAD /docs HTTP/1.1" 405
-INFO: 127.0.0.1:53196 - "GET /docs HTTP/1.1" 200
-INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf complete! Extracted 107 content blocks
-INFO: Document parsed successfully: 邱云霞的简历.pdf, doc_id=doc-6a481f5411d454c23815eb883f2ef20d, blocks=107
-INFO: Parser 'docling' installation verified
-INFO: Initializing parse cache for pre-provided LightRAG instance
-INFO: [] Process 54132 KV load parse_cache with 15 records
-INFO: Multimodal processors initialized with context support
-INFO: Available processors: ['image', 'table', 'equation', 'generic']
-INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
-INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\邱云霞的简历.pdf (107 items)
-INFO: Content separation complete:
-INFO:   - Text content length: 4765 characters
-INFO:   - Multimodal items count: 0
-INFO: Starting text content insertion into LightRAG...
-INFO: Processing 1 document(s)
-INFO: Extracting stage 1/1: 邱云霞的简历.pdf
-INFO: Processing d-id: doc-6a481f5411d454c23815eb883f2ef20d
-INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+INFO: 127.0.0.1:61593 - "GET /docs HTTP/1.1" 200
+INFO: [] Subgraph query successful | Node count: 673 | Edge count: 625
+INFO: 127.0.0.1:56293 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:56293 - "GET /openapi.json HTTP/1.1" 200
 INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
-INFO: 127.0.0.1:53405 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
-INFO:  == LLM cache == saving: default:extract:d0fdb578ab46eb628d606a98c4caa118
-INFO:  == LLM cache == saving: default:extract:13bb10a1a420dd659c8ddf7f0d1f0c0f
-INFO:  == LLM cache == saving: default:extract:b6dd4fb56608cb51eee5f36c7f01e7f7
-INFO: Chunk 1 of 3 extracted 33 Ent + 22 Rel chunk-c638d946337676dcade3a77177e35589
-INFO:  == LLM cache == saving: default:extract:7484972153f176e3d64bbdc9d1a5ef4a
-WARNING: chunk-66909c66602f124357c709798f010177: Complete delimiter can not be found in extraction result
-WARNING: chunk-66909c66602f124357c709798f010177: LLM output format error; found 4/5 fields on REALTION `UI自动化框架`~`Console日志报错监控`
-INFO:  == LLM cache == saving: default:extract:38bfca864eb4c12e4f20509f23b436ac
-INFO: Chunk 2 of 3 extracted 73 Ent + 46 Rel chunk-66909c66602f124357c709798f010177
-INFO:  == LLM cache == saving: default:extract:0710b032aa12d6ad450cb5f44fd0051f
-WARNING: chunk-d34f4f4096c5c994a4190c333cf5b57f: Complete delimiter can not be found in extraction result
-INFO: Chunk 3 of 3 extracted 62 Ent + 65 Rel chunk-d34f4f4096c5c994a4190c333cf5b57f
-INFO: Merging stage 1/1: 邱云霞的简历.pdf
-INFO: Phase 1: Processing 152 entities from doc-6a481f5411d454c23815eb883f2ef20d (async: 8)
-INFO: Merged: `邱云霞` | 4+1
-INFO: Merged: `高级测试工程师` | 2+1
-INFO: Merged: `广州` | 1+1
-INFO: Merged: `UI自动化框架` | 1+2
-INFO: Merged: `接口自动化框架` | 1+2
-INFO: Merged: `自动化测试体系` | 1+1
-INFO: Merged: `要出发周边游` | 1+1
-INFO: Merged: `汇量科技Mobvista` | 1+1
-INFO: Merged: `订阅计费` | 1+2
-INFO: 127.0.0.1:58970 - "GET /docs HTTP/1.1" 200
-INFO: Merged: `LangChain` | 3+1
-INFO: [] Subgraph query successful | Node count: 365 | Edge count: 310
-INFO: 127.0.0.1:56475 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: Merged: `DeepAgent` | 1+1
-INFO: Merged: `RAG` | 1+1
-INFO: Merged: `MCP` | 2+1
-INFO: Merged: `Python` | 2+1
-INFO: Merged: `React` | 2+2
-INFO: Merged: `TypeScript` | 1+1
-INFO: Merged: `Playwright` | 1+2
-INFO: Merged: `Pytest` | 2+3
-INFO: 127.0.0.1:57177 - "GET /openapi.json HTTP/1.1" 200
-INFO: Merged: `Allure` | 1+2
-INFO: Merged: `Jenkins` | 1+2
-INFO: Merged: `YAML` | 1+2
-INFO: Merged: `Charles` | 2+1
-INFO: Merged: `Postman` | 2+1
-INFO: Merged: `ELK` | 3+1
-INFO: Merged: `Jaeger` | 2+2
-INFO: Merged: `Linux` | 2+1
-INFO: Merged: `Shell` | 1+1
-INFO: Merged: `Docker` | 1+2
-INFO: Merged: `FastAPI` | 4+2
-INFO: Merged: `环境部署平台` | 1+1
-INFO: Merged: `AI赋能平台` | 1+1
-INFO: Merged: `组件化数据集平台` | 1+1
-INFO: Merged: `小程序` | 1+2
-INFO: Merged: `全链路质量保障` | 1+1
-INFO: Merged: `线上缺陷` | 1+1
-INFO: Merged: `API自动化测试框架` | 1+1
-INFO: Merged: `百度糯米App` | 2+1
-INFO: Merged: `百度在线网络技术(北京)有限公司` | 2+1
-INFO: Merged: `测试工程师` | 1+1
-INFO: Merged: `Grafana` | 1+1
-INFO: Merged: `江西理工大学` | 4+1
-INFO: Merged: `英语(六级)` | 1+1
-INFO: Merged: `国家励志奖学金` | 1+1
-INFO: Merged: `优秀毕业生` | 1+1
-INFO: Merged: `一等奖学金` | 1+1
-INFO: Merged: `三等奖学金` | 1+1
-INFO: Merged: `三好学生` | 1+1
-INFO: Phase 2: Processing 129 relations from doc-6a481f5411d454c23815eb883f2ef20d (async: 8)
-INFO: Merged: `邱云霞`~`高级测试工程师` | 1+1
-INFO: Merged: `广州`~`邱云霞` | 1+1
-INFO: Merged: `UI自动化框架`~`邱云霞` | 1+1
-INFO: Merged: `接口自动化框架`~`邱云霞` | 1+1
-INFO: Merged: `要出发周边游`~`邱云霞` | 1+1
+INFO:  == LLM cache == saving: global:keywords:b68fce910a752855a41339bd49e7f26e
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+INFO: Query edges: Playwright testing, Software testing, Automated testing (top_k:40, cosine:0.2)
+INFO: Global query: 47 entites, 40 relations
+INFO: Raw search results: 47 entities, 40 relations, 0 vector chunks
+INFO: After truncation: 47 entities, 40 relations
+INFO: Selecting 19 from 19 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 40 relations
+INFO: Round-robin merged chunks: 19 -> 19 (deduplicated 0)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 47 entities, 40 relations, 19 chunks
+INFO: Final chunks S+F/O: E8/1 E5/2 E6/3 E10/4 E10/5 E8/6 E7/7 E5/8 E8/9 E2/10 E2/11 E5/12 E5/13 E1/14 E2/15 E2/16 E1/17 E1/18 E1/19
+INFO: 127.0.0.1:49672 - "POST /query/stream HTTP/1.1" 200
+INFO: 127.0.0.1:58558 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:58558 - "GET /openapi.json HTTP/1.1" 200
+INFO:  == LLM cache == saving: mix:keywords:ad1aa6a480761aeff0c3f3460077bcbd
+INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 83 relations
+INFO: Query edges: Person, Individual, Identity (top_k:10, cosine:0.2)
+INFO: Global query: 18 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 26 entities, 91 relations, 5 vector chunks
+INFO: After truncation: 26 entities, 91 relations
+INFO: Selecting 13 from 13 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 91 relations
+INFO: Round-robin merged chunks: 18 -> 14 (deduplicated 4)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 26 entities, 91 relations, 5 chunks
+INFO: Final chunks S+F/O: E3/1 E3/2 E8/3 E1/4 C1/5
+INFO:  == LLM cache == saving: mix:query:f1b55865924e96ccdde82ed40b85c733
+INFO: 127.0.0.1:64379 - "POST /query HTTP/1.1" 200
+INFO: 127.0.0.1:51334 - "POST /documents/upload HTTP/1.1" 200
+INFO: Successfully extracted and enqueued file: pytest 接口自动化面试.md
+INFO: Processing 1 document(s)
+INFO: Extracting stage 1/1: pytest 接口自动化面试.md
+INFO: Processing d-id: doc-19b08af7e45ec2e99d072b66272eb956
+INFO: 127.0.0.1:65438 - "POST /documents/upload HTTP/1.1" 200
+INFO: Successfully extracted and enqueued file: 注册登录权限通过：难点项目.md
+INFO: Another process is already processing the document queue. Request queued.
+INFO: 127.0.0.1:53979 - "POST /documents/upload HTTP/1.1" 200
+INFO: Successfully extracted and enqueued file: UI app面试.md
+INFO: Another process is already processing the document queue. Request queued.
+INFO: 127.0.0.1:53981 - "POST /documents/upload HTTP/1.1" 200
+INFO: Successfully extracted and enqueued file: app appium面试项目1-最优.md
+INFO: Another process is already processing the document queue. Request queued.
+INFO:  == LLM cache == saving: default:extract:bc679373381c0c1c60f176f69e2064d0
+INFO:  == LLM cache == saving: default:extract:90a970ac084ef80a29fe1157241b28ee
+INFO:  == LLM cache == saving: mix:keywords:f08a591e12b6529fc93df6dd64b2ff5f
+INFO:  == LLM cache == saving: default:extract:399798bc7da1102d6568035e3381efd8

@@ -3911,5 +3911,1724 @@
     "create_time": 1767320353,
     "update_time": 1767320353,
     "_id": "2010-09 ~ 2014-06<SEP>测试工程师"
+  },
+  "AI图像相似度断言<SEP>cal_ccoeff_confidence函数": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323483,
+    "update_time": 1767323483,
+    "_id": "AI图像相似度断言<SEP>cal_ccoeff_confidence函数"
+  },
+  "Monkey压力测试<SEP>gremlins.js": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323483,
+    "update_time": 1767323483,
+    "_id": "Monkey压力测试<SEP>gremlins.js"
+  },
+  "CSV数据源<SEP>数据驱动测试": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323483,
+    "update_time": 1767323483,
+    "_id": "CSV数据源<SEP>数据驱动测试"
+  },
+  "Excel数据源<SEP>数据驱动测试": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323496,
+    "update_time": 1767323496,
+    "_id": "Excel数据源<SEP>数据驱动测试"
+  },
+  "MonkeyPage类<SEP>Monkey压力测试": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323500,
+    "update_time": 1767323500,
+    "_id": "MonkeyPage类<SEP>Monkey压力测试"
+  },
+  "AI图像相似度断言<SEP>UI布局回归测试": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323500,
+    "update_time": 1767323500,
+    "_id": "AI图像相似度断言<SEP>UI布局回归测试"
+  },
+  "Allure报告<SEP>钉钉通知": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323500,
+    "update_time": 1767323500,
+    "_id": "Allure报告<SEP>钉钉通知"
+  },
+  "YAML数据源<SEP>数据驱动测试": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323510,
+    "update_time": 1767323510,
+    "_id": "YAML数据源<SEP>数据驱动测试"
+  },
+  "Allure报告<SEP>飞书通知": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323514,
+    "update_time": 1767323514,
+    "_id": "Allure报告<SEP>飞书通知"
+  },
+  "AI图像相似度断言<SEP>图表渲染验证": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323514,
+    "update_time": 1767323514,
+    "_id": "AI图像相似度断言<SEP>图表渲染验证"
+  },
+  "全链路Trace追踪<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323514,
+    "update_time": 1767323514,
+    "_id": "全链路Trace追踪<SEP>自定义Playwright插件"
+  },
+  "Allure报告<SEP>企业微信通知": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323527,
+    "update_time": 1767323527,
+    "_id": "Allure报告<SEP>企业微信通知"
+  },
+  "AI图像相似度断言<SEP>复杂界面对比": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323531,
+    "update_time": 1767323531,
+    "_id": "AI图像相似度断言<SEP>复杂界面对比"
+  },
+  "Session级别登录态复用<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323531,
+    "update_time": 1767323531,
+    "_id": "Session级别登录态复用<SEP>自定义Playwright插件"
+  },
+  "AI图像相似度断言<SEP>ORB算法": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323538,
+    "update_time": 1767323538,
+    "_id": "AI图像相似度断言<SEP>ORB算法"
+  },
+  "Playwright Trace Viewer<SEP>全链路Trace追踪": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323538,
+    "update_time": 1767323538,
+    "_id": "Playwright Trace Viewer<SEP>全链路Trace追踪"
+  },
+  "多环境配置切换<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323546,
+    "update_time": 1767323546,
+    "_id": "多环境配置切换<SEP>自定义Playwright插件"
+  },
+  "Session级别登录态复用<SEP>storage_state": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323546,
+    "update_time": 1767323546,
+    "_id": "Session级别登录态复用<SEP>storage_state"
+  },
+  "AI图像相似度断言<SEP>pHash算法": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323553,
+    "update_time": 1767323553,
+    "_id": "AI图像相似度断言<SEP>pHash算法"
+  },
+  "Docker容器化<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323556,
+    "update_time": 1767323556,
+    "_id": "Docker容器化<SEP>自定义Playwright插件"
+  },
+  "Playwright_Pytest_UI项目<SEP>cases目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323556,
+    "update_time": 1767323556,
+    "_id": "Playwright_Pytest_UI项目<SEP>cases目录"
+  },
+  "AI图像相似度断言<SEP>直方图算法": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323569,
+    "update_time": 1767323569,
+    "_id": "AI图像相似度断言<SEP>直方图算法"
+  },
+  "000_vrecord测试<SEP>playable_fe测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323569,
+    "update_time": 1767323569,
+    "_id": "000_vrecord测试<SEP>playable_fe测试用例"
+  },
+  "Allure报告<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323576,
+    "update_time": 1767323576,
+    "_id": "Allure报告<SEP>自定义Playwright插件"
+  },
+  "CI/CD<SEP>Docker容器化": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323576,
+    "update_time": 1767323576,
+    "_id": "CI/CD<SEP>Docker容器化"
+  },
+  "cases目录<SEP>playable_fe测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323583,
+    "update_time": 1767323583,
+    "_id": "cases目录<SEP>playable_fe测试用例"
+  },
+  "pytest-playwright<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-713d53fa915224637d4b450019cfe610"
+    ],
+    "count": 1,
+    "create_time": 1767323587,
+    "update_time": 1767323587,
+    "_id": "pytest-playwright<SEP>自定义Playwright插件"
+  },
+  "dm测试<SEP>playable_fe测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323591,
+    "update_time": 1767323591,
+    "_id": "dm测试<SEP>playable_fe测试用例"
+  },
+  "cases目录<SEP>playable_backend测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323591,
+    "update_time": 1767323591,
+    "_id": "cases目录<SEP>playable_backend测试用例"
+  },
+  "gm测试<SEP>playable_fe测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323599,
+    "update_time": 1767323599,
+    "_id": "gm测试<SEP>playable_fe测试用例"
+  },
+  "demand测试<SEP>playable_backend测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323603,
+    "update_time": 1767323603,
+    "_id": "demand测试<SEP>playable_backend测试用例"
+  },
+  "cases目录<SEP>monkey测试": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323603,
+    "update_time": 1767323603,
+    "_id": "cases目录<SEP>monkey测试"
+  },
+  "Playwright_Pytest_UI项目<SEP>pages目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323603,
+    "update_time": 1767323603,
+    "_id": "Playwright_Pytest_UI项目<SEP>pages目录"
+  },
+  "playable_fe测试用例<SEP>veditor测试": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323612,
+    "update_time": 1767323612,
+    "_id": "playable_fe测试用例<SEP>veditor测试"
+  },
+  "cases目录<SEP>job测试": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323615,
+    "update_time": 1767323615,
+    "_id": "cases目录<SEP>job测试"
+  },
+  "pages目录<SEP>playable_fe页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323615,
+    "update_time": 1767323615,
+    "_id": "pages目录<SEP>playable_fe页面对象"
+  },
+  "payment测试<SEP>playable_fe测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323621,
+    "update_time": 1767323621,
+    "_id": "payment测试<SEP>playable_fe测试用例"
+  },
+  "login_backend_page.py<SEP>playable_backend页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323621,
+    "update_time": 1767323621,
+    "_id": "login_backend_page.py<SEP>playable_backend页面对象"
+  },
+  "login_fe_page.py<SEP>playable_fe页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323630,
+    "update_time": 1767323630,
+    "_id": "login_fe_page.py<SEP>playable_fe页面对象"
+  },
+  "insights测试<SEP>playable_fe测试用例": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323633,
+    "update_time": 1767323633,
+    "_id": "insights测试<SEP>playable_fe测试用例"
+  },
+  "pages目录<SEP>playable_backend页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323633,
+    "update_time": 1767323633,
+    "_id": "pages目录<SEP>playable_backend页面对象"
+  },
+  "Playwright_Pytest_UI项目<SEP>plugins目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323633,
+    "update_time": 1767323633,
+    "_id": "Playwright_Pytest_UI项目<SEP>plugins目录"
+  },
+  "parameter_dict_page.py<SEP>playable_fe页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323645,
+    "update_time": 1767323645,
+    "_id": "parameter_dict_page.py<SEP>playable_fe页面对象"
+  },
+  "demand_submit_page.py<SEP>playable_backend页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323649,
+    "update_time": 1767323649,
+    "_id": "demand_submit_page.py<SEP>playable_backend页面对象"
+  },
+  "monkey页面对象<SEP>pages目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323649,
+    "update_time": 1767323649,
+    "_id": "monkey页面对象<SEP>pages目录"
+  },
+  "__init__.py<SEP>plugins目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323649,
+    "update_time": 1767323649,
+    "_id": "__init__.py<SEP>plugins目录"
+  },
+  "Playwright_Pytest_UI项目<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323649,
+    "update_time": 1767323649,
+    "_id": "Playwright_Pytest_UI项目<SEP>utils目录"
+  },
+  "db.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323664,
+    "update_time": 1767323664,
+    "_id": "db.py<SEP>utils目录"
+  },
+  "monkey_fe_page.py<SEP>monkey页面对象": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323668,
+    "update_time": 1767323668,
+    "_id": "monkey_fe_page.py<SEP>monkey页面对象"
+  },
+  "plugins目录<SEP>pytest_playwright.py": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323668,
+    "update_time": 1767323668,
+    "_id": "plugins目录<SEP>pytest_playwright.py"
+  },
+  "http_session.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323675,
+    "update_time": 1767323675,
+    "_id": "http_session.py<SEP>utils目录"
+  },
+  "plugins目录<SEP>pytest_base_url_plugin.py": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323679,
+    "update_time": 1767323679,
+    "_id": "plugins目录<SEP>pytest_base_url_plugin.py"
+  },
+  "log.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323683,
+    "update_time": 1767323683,
+    "_id": "log.py<SEP>utils目录"
+  },
+  "utils目录<SEP>validata.py": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323687,
+    "update_time": 1767323687,
+    "_id": "utils目录<SEP>validata.py"
+  },
+  "utils目录<SEP>yaml_util.py": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323692,
+    "update_time": 1767323692,
+    "_id": "utils目录<SEP>yaml_util.py"
+  },
+  "AI_images目录<SEP>Playwright_Pytest_UI项目": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323692,
+    "update_time": 1767323692,
+    "_id": "AI_images目录<SEP>Playwright_Pytest_UI项目"
+  },
+  "AI_images目录<SEP>image_similarity.py": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323700,
+    "update_time": 1767323700,
+    "_id": "AI_images目录<SEP>image_similarity.py"
+  },
+  "rand.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323703,
+    "update_time": 1767323703,
+    "_id": "rand.py<SEP>utils目录"
+  },
+  "AI_images目录<SEP>cal_confidence.py": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323707,
+    "update_time": 1767323707,
+    "_id": "AI_images目录<SEP>cal_confidence.py"
+  },
+  "handle_util.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323712,
+    "update_time": 1767323712,
+    "_id": "handle_util.py<SEP>utils目录"
+  },
+  "AI_images目录<SEP>imgs_actual目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323716,
+    "update_time": 1767323716,
+    "_id": "AI_images目录<SEP>imgs_actual目录"
+  },
+  "Playwright_Pytest_UI项目<SEP>routes目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323716,
+    "update_time": 1767323716,
+    "_id": "Playwright_Pytest_UI项目<SEP>routes目录"
+  },
+  "handle_excel.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323723,
+    "update_time": 1767323723,
+    "_id": "handle_excel.py<SEP>utils目录"
+  },
+  "AI_images目录<SEP>imgs_expect目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323726,
+    "update_time": 1767323726,
+    "_id": "AI_images目录<SEP>imgs_expect目录"
+  },
+  "playturbo.py<SEP>routes目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323726,
+    "update_time": 1767323726,
+    "_id": "playturbo.py<SEP>routes目录"
+  },
+  "Playwright_Pytest_UI项目<SEP>data目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323726,
+    "update_time": 1767323726,
+    "_id": "Playwright_Pytest_UI项目<SEP>data目录"
+  },
+  "handle_console_log.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323737,
+    "update_time": 1767323737,
+    "_id": "handle_console_log.py<SEP>utils目录"
+  },
+  "Allure报告<SEP>Playwright_Pytest_UI项目": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323740,
+    "update_time": 1767323740,
+    "_id": "Allure报告<SEP>Playwright_Pytest_UI项目"
+  },
+  "TestConfig类<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323740,
+    "update_time": 1767323740,
+    "_id": "TestConfig类<SEP>多环境配置管理"
+  },
+  "create_funtion.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323746,
+    "update_time": 1767323746,
+    "_id": "create_funtion.py<SEP>utils目录"
+  },
+  "Playwright_Pytest_UI项目<SEP>钉钉通知": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323750,
+    "update_time": 1767323750,
+    "_id": "Playwright_Pytest_UI项目<SEP>钉钉通知"
+  },
+  "DevConfig类<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323750,
+    "update_time": 1767323750,
+    "_id": "DevConfig类<SEP>多环境配置管理"
+  },
+  "--env参数<SEP>pytest": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323750,
+    "update_time": 1767323750,
+    "_id": "--env参数<SEP>pytest"
+  },
+  "Docker容器化<SEP>多环境配置切换": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323750,
+    "update_time": 1767323750,
+    "_id": "Docker容器化<SEP>多环境配置切换"
+  },
+  "report_notify.py<SEP>utils目录": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323765,
+    "update_time": 1767323765,
+    "_id": "report_notify.py<SEP>utils目录"
+  },
+  "Playwright<SEP>is_visible()": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323765,
+    "update_time": 1767323765,
+    "_id": "Playwright<SEP>is_visible()"
+  },
+  "UatConfig类<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323773,
+    "update_time": 1767323773,
+    "_id": "UatConfig类<SEP>多环境配置管理"
+  },
+  "元素定位不稳定<SEP>等待机制": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323773,
+    "update_time": 1767323773,
+    "_id": "元素定位不稳定<SEP>等待机制"
+  },
+  "expect断言<SEP>is_visible()": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323780,
+    "update_time": 1767323780,
+    "_id": "expect断言<SEP>is_visible()"
+  },
+  "fixture<SEP>登录态失效": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323780,
+    "update_time": 1767323780,
+    "_id": "fixture<SEP>登录态失效"
+  },
+  "pytest-xdist<SEP>并发执行资源竞争": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323780,
+    "update_time": 1767323780,
+    "_id": "pytest-xdist<SEP>并发执行资源竞争"
+  },
+  "env映射<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-ee95678b86c9b568620faa3f642a99f2"
+    ],
+    "count": 1,
+    "create_time": 1767323790,
+    "update_time": 1767323790,
+    "_id": "env映射<SEP>多环境配置管理"
+  },
+  "元素定位不稳定<SEP>语义化定位器": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323790,
+    "update_time": 1767323790,
+    "_id": "元素定位不稳定<SEP>语义化定位器"
+  },
+  "CI环境无头模式字体渲染差异<SEP>Dockerfile": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323790,
+    "update_time": 1767323790,
+    "_id": "CI环境无头模式字体渲染差异<SEP>Dockerfile"
+  },
+  "单例模式<SEP>并发执行资源竞争": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323799,
+    "update_time": 1767323799,
+    "_id": "单例模式<SEP>并发执行资源竞争"
+  },
+  "file_chooser<SEP>文件上传失败": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323799,
+    "update_time": 1767323799,
+    "_id": "file_chooser<SEP>文件上传失败"
+  },
+  "Playwright<SEP>Selenium": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323799,
+    "update_time": 1767323799,
+    "_id": "Playwright<SEP>Selenium"
+  },
+  "POM模式<SEP>可维护的自动化测试框架": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323799,
+    "update_time": 1767323799,
+    "_id": "POM模式<SEP>可维护的自动化测试框架"
+  },
+  "XPath<SEP>元素定位不稳定": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323811,
+    "update_time": 1767323811,
+    "_id": "XPath<SEP>元素定位不稳定"
+  },
+  "Docker容器化<SEP>微软官方Playwright镜像": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323811,
+    "update_time": 1767323811,
+    "_id": "Docker容器化<SEP>微软官方Playwright镜像"
+  },
+  "可维护的自动化测试框架<SEP>数据驱动": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323818,
+    "update_time": 1767323818,
+    "_id": "可维护的自动化测试框架<SEP>数据驱动"
+  },
+  "Session<SEP>登录态失效": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323818,
+    "update_time": 1767323818,
+    "_id": "Session<SEP>登录态失效"
+  },
+  "auth/login.json<SEP>fixture": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323818,
+    "update_time": 1767323818,
+    "_id": "auth/login.json<SEP>fixture"
+  },
+  "元素定位不稳定<SEP>动态ID": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323827,
+    "update_time": 1767323827,
+    "_id": "元素定位不稳定<SEP>动态ID"
+  },
+  "CI/CD环境<SEP>Docker容器化": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323827,
+    "update_time": 1767323827,
+    "_id": "CI/CD环境<SEP>Docker容器化"
+  },
+  "loadscope模式<SEP>pytest-xdist": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323827,
+    "update_time": 1767323827,
+    "_id": "loadscope模式<SEP>pytest-xdist"
+  },
+  "ConnectMysql<SEP>单例模式": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323827,
+    "update_time": 1767323827,
+    "_id": "ConnectMysql<SEP>单例模式"
+  },
+  "CI环境无头模式字体渲染差异<SEP>Linux环境": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323839,
+    "update_time": 1767323839,
+    "_id": "CI环境无头模式字体渲染差异<SEP>Linux环境"
+  },
+  "Dockerfile<SEP>fonts-noto-cjk": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323839,
+    "update_time": 1767323839,
+    "_id": "Dockerfile<SEP>fonts-noto-cjk"
+  },
+  "元素定位不稳定<SEP>异步加载": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323839,
+    "update_time": 1767323839,
+    "_id": "元素定位不稳定<SEP>异步加载"
+  },
+  "CDP协议<SEP>Playwright": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323839,
+    "update_time": 1767323839,
+    "_id": "CDP协议<SEP>Playwright"
+  },
+  "CI环境无头模式字体渲染差异<SEP>Mac/Windows": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323853,
+    "update_time": 1767323853,
+    "_id": "CI环境无头模式字体渲染差异<SEP>Mac/Windows"
+  },
+  "分层设计<SEP>可维护的自动化测试框架": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323853,
+    "update_time": 1767323853,
+    "_id": "分层设计<SEP>可维护的自动化测试框架"
+  },
+  "Flaky测试<SEP>Playwright": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323859,
+    "update_time": 1767323859,
+    "_id": "Flaky测试<SEP>Playwright"
+  },
+  "可维护的自动化测试框架<SEP>配置外部化": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323862,
+    "update_time": 1767323862,
+    "_id": "可维护的自动化测试框架<SEP>配置外部化"
+  },
+  "Pytest<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323862,
+    "update_time": 1767323862,
+    "_id": "Pytest<SEP>Web UI自动化测试框架"
+  },
+  "Playwright<SEP>Trace功能": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323868,
+    "update_time": 1767323868,
+    "_id": "Playwright<SEP>Trace功能"
+  },
+  "AssertUtils工具类<SEP>可维护的自动化测试框架": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323871,
+    "update_time": 1767323871,
+    "_id": "AssertUtils工具类<SEP>可维护的自动化测试框架"
+  },
+  "PlayTurbo<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323871,
+    "update_time": 1767323871,
+    "_id": "PlayTurbo<SEP>Web UI自动化测试框架"
+  },
+  "Playwright<SEP>网络拦截": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323877,
+    "update_time": 1767323877,
+    "_id": "Playwright<SEP>网络拦截"
+  },
+  "可维护的自动化测试框架<SEP>日志规范": {
+    "chunk_ids": [
+      "chunk-a170001b91ee547d8ee4bfd173d4248c"
+    ],
+    "count": 1,
+    "create_time": 1767323880,
+    "update_time": 1767323880,
+    "_id": "可维护的自动化测试框架<SEP>日志规范"
+  },
+  "MindWorks Creative<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323880,
+    "update_time": 1767323880,
+    "_id": "MindWorks Creative<SEP>Web UI自动化测试框架"
+  },
+  "PlayTurbo<SEP>可玩广告": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323887,
+    "update_time": 1767323887,
+    "_id": "PlayTurbo<SEP>可玩广告"
+  },
+  "Allure<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323890,
+    "update_time": 1767323890,
+    "_id": "Allure<SEP>Web UI自动化测试框架"
+  },
+  "MindWorks Creative<SEP>可玩广告": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323893,
+    "update_time": 1767323893,
+    "_id": "MindWorks Creative<SEP>可玩广告"
+  },
+  "Jenkins<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323896,
+    "update_time": 1767323896,
+    "_id": "Jenkins<SEP>Web UI自动化测试框架"
+  },
+  "run.py<SEP>测试执行层": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323896,
+    "update_time": 1767323896,
+    "_id": "run.py<SEP>测试执行层"
+  },
+  "Pytest<SEP>pytest.ini": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323902,
+    "update_time": 1767323902,
+    "_id": "Pytest<SEP>pytest.ini"
+  },
+  "DingTalkChatbot<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323905,
+    "update_time": 1767323905,
+    "_id": "DingTalkChatbot<SEP>Web UI自动化测试框架"
+  },
+  "plugins/<SEP>自定义插件层": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323905,
+    "update_time": 1767323905,
+    "_id": "plugins/<SEP>自定义插件层"
+  },
+  "Fixture配置层<SEP>conftest.py": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323905,
+    "update_time": 1767323905,
+    "_id": "Fixture配置层<SEP>conftest.py"
+  },
+  "cases/<SEP>测试用例层": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323914,
+    "update_time": 1767323914,
+    "_id": "cases/<SEP>测试用例层"
+  },
+  "Web UI自动化测试框架<SEP>回归测试": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323917,
+    "update_time": 1767323917,
+    "_id": "Web UI自动化测试框架<SEP>回归测试"
+  },
+  "pages/<SEP>页面对象层": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323917,
+    "update_time": 1767323917,
+    "_id": "pages/<SEP>页面对象层"
+  },
+  "utils/<SEP>工具层": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323917,
+    "update_time": 1767323917,
+    "_id": "utils/<SEP>工具层"
+  },
+  "cases/<SEP>playable_fe": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323926,
+    "update_time": 1767323926,
+    "_id": "cases/<SEP>playable_fe"
+  },
+  "Playwright<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323930,
+    "update_time": 1767323930,
+    "_id": "Playwright<SEP>Web UI自动化测试框架"
+  },
+  "login_fe_page.py<SEP>pages/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323930,
+    "update_time": 1767323930,
+    "_id": "login_fe_page.py<SEP>pages/"
+  },
+  "backend<SEP>cases/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323935,
+    "update_time": 1767323935,
+    "_id": "backend<SEP>cases/"
+  },
+  "Web UI自动化测试框架<SEP>持续集成测试": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323938,
+    "update_time": 1767323938,
+    "_id": "Web UI自动化测试框架<SEP>持续集成测试"
+  },
+  "demand_submit_page.py<SEP>pages/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323938,
+    "update_time": 1767323938,
+    "_id": "demand_submit_page.py<SEP>pages/"
+  },
+  "cases/<SEP>monkey": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323945,
+    "update_time": 1767323945,
+    "_id": "cases/<SEP>monkey"
+  },
+  "db.py<SEP>utils/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323945,
+    "update_time": 1767323945,
+    "_id": "db.py<SEP>utils/"
+  },
+  "Page Object Model<SEP>Web UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323951,
+    "update_time": 1767323951,
+    "_id": "Page Object Model<SEP>Web UI自动化测试框架"
+  },
+  "monkey_fe_page.py<SEP>pages/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323951,
+    "update_time": 1767323951,
+    "_id": "monkey_fe_page.py<SEP>pages/"
+  },
+  "cases/<SEP>job": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323957,
+    "update_time": 1767323957,
+    "_id": "cases/<SEP>job"
+  },
+  "http_session<SEP>utils/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323957,
+    "update_time": 1767323957,
+    "_id": "http_session<SEP>utils/"
+  },
+  "pages/<SEP>parameter_dict_page.py": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323964,
+    "update_time": 1767323964,
+    "_id": "pages/<SEP>parameter_dict_page.py"
+  },
+  "分层设计<SEP>用例层": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323964,
+    "update_time": 1767323964,
+    "_id": "分层设计<SEP>用例层"
+  },
+  "utils/<SEP>validata.py": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323969,
+    "update_time": 1767323969,
+    "_id": "utils/<SEP>validata.py"
+  },
+  "POM模式<SEP>Page类": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323969,
+    "update_time": 1767323969,
+    "_id": "POM模式<SEP>Page类"
+  },
+  "分层设计<SEP>页面对象层": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323975,
+    "update_time": 1767323975,
+    "_id": "分层设计<SEP>页面对象层"
+  },
+  "数据驱动<SEP>测试数据": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323975,
+    "update_time": 1767323975,
+    "_id": "数据驱动<SEP>测试数据"
+  },
+  "AssertUtils工具类<SEP>统一断言": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323975,
+    "update_time": 1767323975,
+    "_id": "AssertUtils工具类<SEP>统一断言"
+  },
+  "utils/<SEP>yaml_util.py": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767323984,
+    "update_time": 1767323984,
+    "_id": "utils/<SEP>yaml_util.py"
+  },
+  "日志规范<SEP>统一日志格式": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323984,
+    "update_time": 1767323984,
+    "_id": "日志规范<SEP>统一日志格式"
+  },
+  "合理等待<SEP>测试用例稳定性": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323984,
+    "update_time": 1767323984,
+    "_id": "合理等待<SEP>测试用例稳定性"
+  },
+  "分层设计<SEP>工具层": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767323995,
+    "update_time": 1767323995,
+    "_id": "分层设计<SEP>工具层"
+  },
+  "handle_util.py<SEP>utils/": {
+    "chunk_ids": [
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+    ],
+    "count": 1,
+    "create_time": 1767324001,
+    "update_time": 1767324001,
+    "_id": "handle_util.py<SEP>utils/"
+  },
+  "测试用例稳定性<SEP>重试机制": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324001,
+    "update_time": 1767324001,
+    "_id": "测试用例稳定性<SEP>重试机制"
+  },
+  "失败自动截图<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324001,
+    "update_time": 1767324001,
+    "_id": "失败自动截图<SEP>自定义Playwright插件"
+  },
+  "数据隔离<SEP>测试用例稳定性": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324012,
+    "update_time": 1767324012,
+    "_id": "数据隔离<SEP>测试用例稳定性"
+  },
+  "Trace追踪<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324015,
+    "update_time": 1767324015,
+    "_id": "Trace追踪<SEP>自定义Playwright插件"
+  },
+  "pytest_terminal_summary钩子<SEP>测试报告实时通知": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324015,
+    "update_time": 1767324015,
+    "_id": "pytest_terminal_summary钩子<SEP>测试报告实时通知"
+  },
+  "测试用例稳定性<SEP>环境检查": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324021,
+    "update_time": 1767324021,
+    "_id": "测试用例稳定性<SEP>环境检查"
+  },
+  "frame_locator<SEP>跨域iframe元素处理": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324021,
+    "update_time": 1767324021,
+    "_id": "frame_locator<SEP>跨域iframe元素处理"
+  },
+  "自定义Playwright插件<SEP>视频录制": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324027,
+    "update_time": 1767324027,
+    "_id": "自定义Playwright插件<SEP>视频录制"
+  },
+  "execute_mysql fixture<SEP>数据库验证": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324027,
+    "update_time": 1767324027,
+    "_id": "execute_mysql fixture<SEP>数据库验证"
+  },
+  "企业级UI自动化测试框架<SEP>分层设计": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324027,
+    "update_time": 1767324027,
+    "_id": "企业级UI自动化测试框架<SEP>分层设计"
+  },
+  "测试用例稳定性<SEP>用例独立": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324036,
+    "update_time": 1767324036,
+    "_id": "测试用例稳定性<SEP>用例独立"
+  },
+  "Allure集成<SEP>自定义Playwright插件": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324039,
+    "update_time": 1767324039,
+    "_id": "Allure集成<SEP>自定义Playwright插件"
+  },
+  "POM模式<SEP>企业级UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324039,
+    "update_time": 1767324039,
+    "_id": "POM模式<SEP>企业级UI自动化测试框架"
+  },
+  "测试用例稳定性<SEP>清理机制": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324045,
+    "update_time": 1767324045,
+    "_id": "测试用例稳定性<SEP>清理机制"
+  },
+  "企业级UI自动化测试框架<SEP>数据驱动": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324048,
+    "update_time": 1767324048,
+    "_id": "企业级UI自动化测试框架<SEP>数据驱动"
+  },
+  "pytest-rerunfailures<SEP>重试机制": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324048,
+    "update_time": 1767324048,
+    "_id": "pytest-rerunfailures<SEP>重试机制"
+  },
+  "测试报告实时通知<SEP>钉钉": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324053,
+    "update_time": 1767324053,
+    "_id": "测试报告实时通知<SEP>钉钉"
+  },
+  "Playwright<SEP>企业级UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324056,
+    "update_time": 1767324056,
+    "_id": "Playwright<SEP>企业级UI自动化测试框架"
+  },
+  "ding_ding_notify<SEP>pytest_terminal_summary钩子": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324056,
+    "update_time": 1767324056,
+    "_id": "ding_ding_notify<SEP>pytest_terminal_summary钩子"
+  },
+  "ConnectMysql<SEP>数据库验证": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324056,
+    "update_time": 1767324056,
+    "_id": "ConnectMysql<SEP>数据库验证"
+  },
+  "TestConfig<SEP>pytest": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324065,
+    "update_time": 1767324065,
+    "_id": "TestConfig<SEP>pytest"
+  },
+  "Pytest<SEP>企业级UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324068,
+    "update_time": 1767324068,
+    "_id": "Pytest<SEP>企业级UI自动化测试框架"
+  },
+  "Playwright<SEP>pytest-playwright插件": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324068,
+    "update_time": 1767324068,
+    "_id": "Playwright<SEP>pytest-playwright插件"
+  },
+  "DevConfig<SEP>pytest": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324075,
+    "update_time": 1767324075,
+    "_id": "DevConfig<SEP>pytest"
+  },
+  "Docker<SEP>企业级UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324078,
+    "update_time": 1767324078,
+    "_id": "Docker<SEP>企业级UI自动化测试框架"
+  },
+  "Allure报告<SEP>pytest-playwright插件": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324078,
+    "update_time": 1767324078,
+    "_id": "Allure报告<SEP>pytest-playwright插件"
+  },
+  "LoginFePage<SEP>Page Object Model (POM)": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324078,
+    "update_time": 1767324078,
+    "_id": "LoginFePage<SEP>Page Object Model (POM)"
+  },
+  "storage_state<SEP>登录态Cookie复用": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324078,
+    "update_time": 1767324078,
+    "_id": "storage_state<SEP>登录态Cookie复用"
+  },
+  "UatConfig<SEP>pytest": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324092,
+    "update_time": 1767324092,
+    "_id": "UatConfig<SEP>pytest"
+  },
+  "CI/CD流水线<SEP>企业级UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324092,
+    "update_time": 1767324092,
+    "_id": "CI/CD流水线<SEP>企业级UI自动化测试框架"
+  },
+  "AI图像对比断言<SEP>图像相似度算法": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324092,
+    "update_time": 1767324092,
+    "_id": "AI图像对比断言<SEP>图像相似度算法"
+  },
+  "conftest.py<SEP>登录态Cookie复用": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324101,
+    "update_time": 1767324101,
+    "_id": "conftest.py<SEP>登录态Cookie复用"
+  },
+  "BrowserContext<SEP>pytest-playwright插件": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324101,
+    "update_time": 1767324101,
+    "_id": "BrowserContext<SEP>pytest-playwright插件"
+  },
+  "AI图像对比<SEP>企业级UI自动化测试框架": {
+    "chunk_ids": [
+      "chunk-337c99f0d9f1f9baf228abe482019a62"
+    ],
+    "count": 1,
+    "create_time": 1767324469,
+    "update_time": 1767324469,
+    "_id": "AI图像对比<SEP>企业级UI自动化测试框架"
+  },
+  "AI图像对比断言<SEP>Allure报告": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324469,
+    "update_time": 1767324469,
+    "_id": "AI图像对比断言<SEP>Allure报告"
+  },
+  "Page<SEP>pytest-playwright插件": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324476,
+    "update_time": 1767324476,
+    "_id": "Page<SEP>pytest-playwright插件"
+  },
+  "LoginBackendPage<SEP>登录态Cookie复用": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324476,
+    "update_time": 1767324476,
+    "_id": "LoginBackendPage<SEP>登录态Cookie复用"
+  },
+  "AI图像对比断言<SEP>ORB特征点匹配": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324482,
+    "update_time": 1767324482,
+    "_id": "AI图像对比断言<SEP>ORB特征点匹配"
+  },
+  "pytest-playwright插件<SEP>tracing": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324486,
+    "update_time": 1767324486,
+    "_id": "pytest-playwright插件<SEP>tracing"
+  },
+  "AI图像对比断言<SEP>感知哈希算法": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324488,
+    "update_time": 1767324488,
+    "_id": "AI图像对比断言<SEP>感知哈希算法"
+  },
+  "AI图像对比断言<SEP>直方图对比": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324492,
+    "update_time": 1767324492,
+    "_id": "AI图像对比断言<SEP>直方图对比"
+  },
+  "AI图像对比断言<SEP>calc_ccoeff_confidence": {
+    "chunk_ids": [
+      "chunk-39fad9ded21346ef1bdb62fc0b2a4e02"
+    ],
+    "count": 1,
+    "create_time": 1767324497,
+    "update_time": 1767324497,
+    "_id": "AI图像对比断言<SEP>calc_ccoeff_confidence"
   }
 }

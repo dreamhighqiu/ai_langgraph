@@ -185,7 +185,7 @@
     }
   },
   "doc-19b08af7e45ec2e99d072b66272eb956": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 6,
     "chunks_list": [
       "chunk-faaf941d4d9f8097309219433b1bd751",
@@ -198,32 +198,57 @@
     "content_summary": "# pytest_yaml_api 接口自动化测试框架 - 面试要点整理\r\n\r\n---\r\n\r\n## 📊 项目概述\r\n\r\n这是一套基于 **Pytest + YAML + Jinja2** 的企业级 API 接口自动化测试框架，实现了**数据驱动**和**关键字驱动**相结合的测试方案，支持多环境切换、数据库校验、Allure报告、WebSocket测试、Mock数据、CI/CD集成等功能。\r\n\r\n### 业务场景\r\n- 支持 Backend（后台管理系统）、Playturbo（创意平台）、Ope...",
     "content_length": 20663,
     "created_at": "2026-01-02T06:20:13.614599+00:00",
-    "updated_at": "2026-01-02T06:20:13.706592+00:00",
+    "updated_at": "2026-01-02T06:49:04.119317+00:00",
     "file_path": "pytest 接口自动化面试.md",
     "track_id": "upload_20260102_142013_ee02cccf",
     "metadata": {
-      "processing_start_time": 1767334813
+      "processing_start_time": 1767334813,
+      "processing_end_time": 1767336544
     }
   },
   "doc-91e3d2ffffcf256e6821ed0e80f2d522": {
-    "status": "pending",
+    "status": "processing",
+    "chunks_count": 6,
+    "chunks_list": [
+      "chunk-c39657fa08399c964a203df2e82c1263",
+      "chunk-d973e3c1f8b6d355334bce00c73ab2fb",
+      "chunk-f4f7fc674344b3648e36b14c5616415b",
+      "chunk-be015d38c77851ce2e3800f4f71195dc",
+      "chunk-f992c31ede844b91fbb3d973a038a2d1",
+      "chunk-8352402b827b053988bbb384d59fe34d"
+    ],
     "content_summary": "# 账户中心一体化项目 - 面试详解\r\n\r\n## 一、项目背景与价值\r\n\r\n### 1.1 项目背景\r\n\r\n面试官您好，我之前主导过一个**\"账户中心一体化\"**项目的测试工作。我们自研的**PlayTurbo创意平台**需要与上游的**XMP投放平台**和下游的**SS素材审核系统**实现账号体系的双向打通。\r\n\r\n**系统角色定位**：\r\n```\r\n┌─────────────────────────────────────────────────────────────────┐\r\n│  ...",
     "content_length": 17538,
     "created_at": "2026-01-02T06:20:16.516805+00:00",
-    "updated_at": "2026-01-02T06:20:16.516805+00:00",
+    "updated_at": "2026-01-02T06:49:04.434308+00:00",
     "file_path": "注册登录权限通过：难点项目.md",
     "track_id": "upload_20260102_142016_a419c985",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1767336544
+    }
   },
   "doc-973d0356010bb23eeb1179a842047c82": {
-    "status": "pending",
+    "status": "processing",
+    "chunks_count": 8,
+    "chunks_list": [
+      "chunk-6875746ff7fb36eb3397de2b5d3efb5a",
+      "chunk-ba5ec16413786ae6baba4f0056b066e9",
+      "chunk-7d75da37e8023862148f8eec91917ddc",
+      "chunk-6aee37ee0be74009a762201db02481a4",
+      "chunk-34109a558c89def6c0cc72e504577cbe",
+      "chunk-5b0ac1197408258234325a10720fc164",
+      "chunk-982ea685baece476c8e392de9eb3b221",
+      "chunk-51c3413fc4dc51405c173dad392dc1c2"
+    ],
     "content_summary": "# MTG 移动广告归因自动化测试框架 - 面试详解\r\n\r\n---\r\n\r\n## 📌 一、项目概述\r\n\r\n### 1.1 项目背景与业务价值\r\n\r\n**业务背景**：在移动广告投放场景中，广告主投放广告后需要验证归因系统是否能正确追踪用户从**点击广告 → 跳转应用商店 → 下载安装应用 → 打开应用**的完整链路。这个归因链路的准确性直接关系到广告收益结算。\r\n\r\n**项目定位**：这是一个**端到端的移动应用广告归因自动化测试平台**，通过自动化手段替代人工测试，实现高效、稳定的归因验证。\r\n...",
     "content_length": 28031,
     "created_at": "2026-01-02T06:20:17.740262+00:00",
-    "updated_at": "2026-01-02T06:20:17.740262+00:00",
+    "updated_at": "2026-01-02T06:49:04.560761+00:00",
     "file_path": "UI app面试.md",
     "track_id": "upload_20260102_142017_04accc5e",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1767336544
+    }
   },
   "doc-13e7049e21c1d035b1d3529823616f19": {
     "status": "pending",
@@ -233,6 +258,16 @@
     "updated_at": "2026-01-02T06:20:18.943499+00:00",
     "file_path": "app appium面试项目1-最优.md",
     "track_id": "upload_20260102_142018_f36e4d62",
+    "chunks_list": []
+  },
+  "doc-4b703df2c66a43420485d6956ceb10c9": {
+    "status": "pending",
+    "content_summary": "# Api- Home 得到首页信息\n  1. [一：请求部分](#一请求部分)\n  2. [二：返回部分](#二返回部分)\n\n> vue 分类页面，得到分类信息的api\nURL: `/cms/home/index`\n格式：`json`\n方式：`get`\n## 一：请求部分\n#### 1.Request Header\n参数名称  | 是否必须  |  类型  |  描述  \n---|---|---|---  \naccess-token  | 必须  |  String  | 从localStor...",
+    "content_length": 8782,
+    "created_at": "2026-01-02T07:18:01.202878+00:00",
+    "updated_at": "2026-01-02T07:18:01.202878+00:00",
+    "file_path": "https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html",
+    "track_id": "insert_20260102_151801_76096384",
     "chunks_list": []
   }
 }

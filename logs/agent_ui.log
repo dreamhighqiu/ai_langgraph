@@ -20,3 +20,8 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET /?assistantId=chat_rag_agent&threadId=a2a22176-4245-4bb9-8475-5428f0d37e38 200 in 413ms
  GET /favicon.ico?favicon.45db1c09.ico 200 in 678ms
  GET / 200 in 512ms
+ GET /?assistantId=chat_rag_agent&threadId=73c73476-c223-4596-bf48-808e8f7842a0 200 in 1027ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 752ms
+ GET /?assistantId=chat_rag_agent&threadId=73c73476-c223-4596-bf48-808e8f7842a0 200 in 521ms
+ GET / 200 in 590ms
+ GET / 200 in 4149ms

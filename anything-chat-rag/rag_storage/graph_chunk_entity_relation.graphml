@@ -1245,11 +1245,11 @@
 </node>
 <node id="数据库">
   <data key="d0">数据库</data>
-  <data key="d1">artifact</data>
-  <data key="d2">存储项目数据的系统，其连接正常是项目列表加载的前提条件。&lt;SEP&gt;数据库是存储项目、需求、脚本、执行记录和报告等数据的系统。</data>
-  <data key="d3">chunk-b19d6ab119a82e6d562645be06d527c2&lt;SEP&gt;chunk-2211cec5f2c2b9cd7b764fdcb1b7fe9b</data>
-  <data key="d4">性能测试模块实施方案.md</data>
-  <data key="d5">1767273410</data>
+  <data key="d1">concept</data>
+  <data key="d2">存储项目数据的系统，其连接正常是项目列表加载的前提条件。&lt;SEP&gt;数据库是存储项目、需求、脚本、执行记录和报告等数据的系统。&lt;SEP&gt;数据库是存储数据的系统，在框架中可以直接查询数据库以获取数据来处理接口依赖。</data>
+  <data key="d3">chunk-b19d6ab119a82e6d562645be06d527c2&lt;SEP&gt;chunk-2211cec5f2c2b9cd7b764fdcb1b7fe9b&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">性能测试模块实施方案.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335394</data>
   <data key="d6"></data>
 </node>
 <node id="gRPC">
@@ -1984,10 +1984,10 @@
 <node id="Python">
   <data key="d0">Python</data>
   <data key="d1">artifact</data>
-  <data key="d2">一种编程语言，在多个项目中作为核心技术栈的一部分被使用。&lt;SEP&gt;Python是一种编程语言，邱云霞在AI辅助测试工具与平台开发中结合使用Python。&lt;SEP&gt;Python是邱云霞在大模型应用开发和自动化测试中使用的编程语言。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319504</data>
+  <data key="d2">一种编程语言，在多个项目中作为核心技术栈的一部分被使用。&lt;SEP&gt;Python是一种编程语言，邱云霞在AI辅助测试工具与平台开发中结合使用Python。&lt;SEP&gt;Python是邱云霞在大模型应用开发和自动化测试中使用的编程语言。&lt;SEP&gt;一种编程语言，在文本中用于编写`runner.py`和`conftest.py`等脚本，实现测试框架的核心逻辑和自定义函数。&lt;SEP&gt;Python是该项目中实现各种自定义函数、插件和工具所使用的编程语言。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335720</data>
   <data key="d6"></data>
 </node>
 <node id="React">
@@ -2040,37 +2040,39 @@
 <node id="Pytest">
   <data key="d0">Pytest</data>
   <data key="d1">artifact</data>
-  <data key="d2">一个Python测试框架，用于编写小型到复杂的测试。&lt;SEP&gt;Pytest是一个Python测试框架，邱云霞在UI和接口自动化框架中都使用了它。&lt;SEP&gt;一个Python测试框架，用于编写和维护自动化测试脚本。&lt;SEP&gt;Pytest是用于编写和运行测试的Python框架。&lt;SEP&gt;Pytest是邱云霞在UI和接口自动化框架中使用的Python测试框架。&lt;SEP&gt;Pytest是一个单元测试框架，版本为7.2.2，作为自动化测试框架的核心测试框架。&lt;SEP&gt;一个功能强大的Python测试框架，支持fixture、参数化、插件等高级特性。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-c638d946337676dcade3a77177e35589&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323260</data>
+  <data key="d2">Pytest 是一个用于 Python 的测试框架，主要用于编写、运行和维护自动化测试脚本，其适用范围从小型测试到复杂的测试场景均可覆盖。该框架功能强大，支持诸如 fixture（夹具）、参数化测试和插件系统等高级特性，从而增强了测试的灵活性和可扩展性。
+
+在具体的应用实践中，Pytest 常被用作自动化测试框架的核心测试引擎或核心测试框架。例如，邱云霞在构建 UI 自动化框架和接口自动化框架时，均采用了 Pytest 作为其测试框架。关于其版本信息，存在不同的描述，包括版本 7.2.2 和版本 8.1.1，这反映了该框架在不同时期或不同项目环境下的使用情况。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-c638d946337676dcade3a77177e35589&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335587</data>
   <data key="d6"></data>
 </node>
 <node id="Allure">
   <data key="d0">Allure</data>
   <data key="d1">artifact</data>
-  <data key="d2">Allure是一个测试报告框架，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Allure是用于生成测试报告的工具。&lt;SEP&gt;Allure是邱云霞在UI和接口自动化框架中使用的测试报告工具。&lt;SEP&gt;Allure是一个报告工具，版本为2.13.1，用于生成美观的测试报告。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323271</data>
+  <data key="d2">Allure是一个测试报告框架，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Allure是用于生成测试报告的工具。&lt;SEP&gt;Allure是邱云霞在UI和接口自动化框架中使用的测试报告工具。&lt;SEP&gt;Allure是一个报告工具，版本为2.13.1，用于生成美观的测试报告。&lt;SEP&gt;Allure是一个测试报告生成工具，版本为2.13.5。&lt;SEP&gt;Allure是一个测试报告框架，用于生成美观详细的测试执行报告。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335578</data>
   <data key="d6"></data>
 </node>
 <node id="Jenkins">
   <data key="d0">Jenkins</data>
   <data key="d1">artifact</data>
-  <data key="d2">Jenkins是一个持续集成工具，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Jenkins是用于持续集成和部署的自动化服务器。&lt;SEP&gt;Jenkins是邱云霞在UI和接口自动化框架中使用的持续集成工具。&lt;SEP&gt;Jenkins是一个持续集成工具，该自动化测试框架被集成到其流水线中。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323296</data>
+  <data key="d2">Jenkins是一个持续集成工具，邱云霞在UI和接口自动化框架中集成了它。&lt;SEP&gt;Jenkins是用于持续集成和部署的自动化服务器。&lt;SEP&gt;Jenkins是邱云霞在UI和接口自动化框架中使用的持续集成工具。&lt;SEP&gt;Jenkins是一个持续集成工具，该自动化测试框架被集成到其流水线中。&lt;SEP&gt;Jenkins是一个CI/CD工具。&lt;SEP&gt;Jenkins是一个开源的持续集成/持续交付工具，在本框架的CI/CD流程中使用。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335584</data>
   <data key="d6"></data>
 </node>
 <node id="YAML">
   <data key="d0">YAML</data>
   <data key="d1">artifact</data>
-  <data key="d2">YAML是一种数据序列化语言，邱云霞在接口自动化框架中用它来管理测试用例。&lt;SEP&gt;一种数据序列化语言，用于管理自动化测试中的测试数据。&lt;SEP&gt;YAML是邱云霞在接口自动化框架中用于管理测试用例的数据格式。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-c638d946337676dcade3a77177e35589</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf</data>
-  <data key="d5">1767319531</data>
+  <data key="d2">YAML是一种数据序列化语言，邱云霞在接口自动化框架中用它来管理测试用例。&lt;SEP&gt;一种数据序列化语言，用于管理自动化测试中的测试数据。&lt;SEP&gt;YAML是邱云霞在接口自动化框架中用于管理测试用例的数据格式。&lt;SEP&gt;YAML是一种数据序列化语言，在本框架中用于编写和解析测试用例。&lt;SEP&gt;一种用于编写配置文件的数据序列化语言，在文本中被广泛用于定义测试用例的配置、变量、请求和验证逻辑。&lt;SEP&gt;YAML是一种数据序列化语言，在项目中作为编写自动化测试用例的主要格式，因其可读性和结构清晰而被选用。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-c638d946337676dcade3a77177e35589&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335720</data>
   <data key="d6"></data>
 </node>
 <node id="Appium">
@@ -2130,10 +2132,10 @@
 <node id="Docker">
   <data key="d0">Docker</data>
   <data key="d1">artifact</data>
-  <data key="d2">Docker是一个容器化平台，邱云霞具备其使用经验，并在自研平台中应用。&lt;SEP&gt;Docker是用于容器化部署的平台。&lt;SEP&gt;Docker是邱云霞具备部署与维护经验的容器化平台。&lt;SEP&gt;Docker是一个容器化技术，用于测试环境的容器化。&lt;SEP&gt;一个容器化平台，用于将测试框架及其依赖打包成镜像，实现环境一致性和便捷部署。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323287</data>
+  <data key="d2">Docker是一个容器化平台，邱云霞具备其使用经验，并在自研平台中应用。&lt;SEP&gt;Docker是用于容器化部署的平台。&lt;SEP&gt;Docker是邱云霞具备部署与维护经验的容器化平台。&lt;SEP&gt;Docker是一个容器化技术，用于测试环境的容器化。&lt;SEP&gt;一个容器化平台，用于将测试框架及其依赖打包成镜像，实现环境一致性和便捷部署。&lt;SEP&gt;Docker是一个容器化平台。&lt;SEP&gt;Docker是一个容器化平台，用于将测试框架及其依赖打包和部署。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335581</data>
   <data key="d6"></data>
 </node>
 <node id="Linux">
@@ -3309,10 +3311,10 @@
 <node id="SQL">
   <data key="d0">SQL</data>
   <data key="d1">artifact</data>
-  <data key="d2">SQL是邱云霞精通的用于数据库查询和操作的语言。</data>
-  <data key="d3">chunk-d34f4f4096c5c994a4190c333cf5b57f</data>
-  <data key="d4">邱云霞的简历.pdf</data>
-  <data key="d5">1767319552</data>
+  <data key="d2">SQL是邱云霞精通的用于数据库查询和操作的语言。&lt;SEP&gt;一种用于管理关系数据库的查询语言，在文本中用于定义数据库集成测试中的查询语句。&lt;SEP&gt;SQL是一种结构化查询语言，框架支持多行字符串，适合编写SQL语句。</data>
+  <data key="d3">chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335368</data>
   <data key="d6"></data>
 </node>
 <node id="自动化管理平台">
@@ -3345,10 +3347,10 @@
 <node id="Swagger">
   <data key="d0">Swagger</data>
   <data key="d1">artifact</data>
-  <data key="d2">Swagger是邱云霞在接口自动化框架中用于一键生成测试用例的API文档工具。</data>
-  <data key="d3">chunk-d34f4f4096c5c994a4190c333cf5b57f</data>
-  <data key="d4">邱云霞的简历.pdf</data>
-  <data key="d5">1767319591</data>
+  <data key="d2">Swagger是邱云霞在接口自动化框架中用于一键生成测试用例的API文档工具。&lt;SEP&gt;Swagger是一种API描述规范，在项目中用于自动解析swagger.json文件以生成YAML格式的测试用例。&lt;SEP&gt;Swagger是一种用于描述和定义RESTful API的规范，框架中的swagger_parser.py工具用于解析它。</data>
+  <data key="d3">chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335397</data>
   <data key="d6"></data>
 </node>
 <node id="App">
@@ -3858,10 +3860,10 @@
 <node id="多维度断言">
   <data key="d0">多维度断言</data>
   <data key="d1">method</data>
-  <data key="d2">多维度断言是接口自动化框架中对响应进行多方面验证的方法。</data>
-  <data key="d3">chunk-66909c66602f124357c709798f010177</data>
-  <data key="d4">邱云霞的简历.pdf</data>
-  <data key="d5">1767319773</data>
+  <data key="d2">多维度断言是接口自动化框架中对响应进行多方面验证的方法。&lt;SEP&gt;多维度断言是一种测试验证方法，包括响应断言、数据库断言、长度断言、类型断言和正则断言。</data>
+  <data key="d3">chunk-66909c66602f124357c709798f010177&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335848</data>
   <data key="d6"></data>
 </node>
 <node id="数据库验证">
@@ -4191,10 +4193,10 @@
 <node id="Allure报告">
   <data key="d0">Allure报告</data>
   <data key="d1">artifact</data>
-  <data key="d2">Allure报告是一个测试报告框架，用于展示测试结果，并可以附加截图、视频等附件。&lt;SEP&gt;Allure报告是一种测试报告工具，用于附加截图等附件以增强测试报告的可视化。&lt;SEP&gt;一种测试报告生成工具，用于生成美观的测试报告。</data>
-  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767322828</data>
+  <data key="d2">Allure报告是一个测试报告框架，用于展示测试结果，并可以附加截图、视频等附件。&lt;SEP&gt;Allure报告是一种测试报告工具，用于附加截图等附件以增强测试报告的可视化。&lt;SEP&gt;一种测试报告生成工具，用于生成美观的测试报告。&lt;SEP&gt;Allure报告是一种测试报告框架，在CI/CD流程中用于生成和展示详细的测试执行结果。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335863</data>
   <data key="d6"></data>
 </node>
 <node id="cal_ccoeff_confidence函数">
@@ -4362,10 +4364,10 @@
 <node id="pytest">
   <data key="d0">pytest</data>
   <data key="d1">method</data>
-  <data key="d2">pytest是一个Python测试框架，用于运行测试用例。&lt;SEP&gt;pytest是一个Python测试框架，在上下文中用于组织和执行测试用例。&lt;SEP&gt;一个Python测试框架，用于运行测试用例。</data>
-  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767322910</data>
+  <data key="d2">pytest是一个Python测试框架，用于运行测试用例。&lt;SEP&gt;pytest是一个Python测试框架，在上下文中用于组织和执行测试用例。&lt;SEP&gt;一个Python测试框架，用于运行测试用例。&lt;SEP&gt;pytest是一个Python测试框架，用于执行测试用例，并支持通过fixture机制注入变量。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335417</data>
   <data key="d6"></data>
 </node>
 <node id="pytest-playwright">
@@ -4425,10 +4427,10 @@
 <node id="CI/CD">
   <data key="d0">CI/CD</data>
   <data key="d1">concept</data>
-  <data key="d2">CI/CD代表持续集成和持续交付/部署，是Docker容器化测试环境所要保证一致性的目标流程。&lt;SEP&gt;CI/CD指持续集成和持续交付/部署，该框架支持集成到此流程中。</data>
-  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767322934</data>
+  <data key="d2">CI/CD代表持续集成和持续交付/部署，是Docker容器化测试环境所要保证一致性的目标流程。&lt;SEP&gt;CI/CD指持续集成和持续交付/部署，该框架支持集成到此流程中。&lt;SEP&gt;CI/CD(持续集成/持续部署)是一种软件开发实践，pytest_yaml_api框架提供完善的CI/CD支持以实现高度自动化。</data>
+  <data key="d3">chunk-713d53fa915224637d4b450019cfe610&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335368</data>
   <data key="d6"></data>
 </node>
 <node id="Playwright_Pytest_UI项目">
@@ -4911,10 +4913,10 @@
 <node id="Dockerfile">
   <data key="d0">Dockerfile</data>
   <data key="d1">artifact</data>
-  <data key="d2">用于构建Docker镜像的配置文件，可以包含安装字体的指令。&lt;SEP&gt;Docker构建文件。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-a170001b91ee547d8ee4bfd173d4248c</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323104</data>
+  <data key="d2">用于构建Docker镜像的配置文件，可以包含安装字体的指令。&lt;SEP&gt;Docker构建文件。&lt;SEP&gt;Dockerfile是用于构建pytest_yaml_api框架Docker容器的配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335285</data>
   <data key="d6"></data>
 </node>
 <node id="nginx.conf">
@@ -4929,28 +4931,28 @@
 <node id="config.py">
   <data key="d0">config.py</data>
   <data key="d1">artifact</data>
-  <data key="d2">多环境配置文件。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323114</data>
+  <data key="d2">多环境配置文件。&lt;SEP&gt;config.py是一个Python配置文件，其中定义了如TestConfig、DevConfig等多环境配置类。&lt;SEP&gt;config.py是pytest_yaml_api框架的多环境配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335271</data>
   <data key="d6"></data>
 </node>
 <node id="conftest.py">
   <data key="d0">conftest.py</data>
   <data key="d1">artifact</data>
-  <data key="d2">conftest.py是pytest的配置文件，用于定义全局的fixture和插件配置。&lt;SEP&gt;conftest.py是Pytest的Fixture配置文件，用于定义测试夹具和共享配置。&lt;SEP&gt;Pytest全局fixture配置文件。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323114</data>
+  <data key="d2">conftest.py是pytest的配置文件，用于定义全局的fixture和插件配置。&lt;SEP&gt;conftest.py是Pytest的Fixture配置文件，用于定义测试夹具和共享配置。&lt;SEP&gt;Pytest全局fixture配置文件。&lt;SEP&gt;一个Python配置文件，用于定义钩子函数(如请求签名)和集成数据生成工具(如Faker库)。&lt;SEP&gt;conftest.py是pytest框架的配置文件，用于定义项目级的fixture和插件，如集成Faker库。&lt;SEP&gt;conftest.py是pytest的全局配置文件，用于添加自定义函数到my_builtins以扩展框架功能。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335217</data>
   <data key="d6"></data>
 </node>
 <node id="pytest.ini">
   <data key="d0">pytest.ini</data>
   <data key="d1">artifact</data>
-  <data key="d2">pytest.ini是Pytest框架的配置文件，用于配置Pytest引擎。&lt;SEP&gt;Pytest配置文件。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323117</data>
+  <data key="d2">pytest.ini是Pytest框架的配置文件，用于配置Pytest引擎。&lt;SEP&gt;Pytest配置文件。&lt;SEP&gt;pytest.ini是Pytest的主配置文件，用于设置测试运行参数。&lt;SEP&gt;pytest.ini是pytest_yaml_api框架的pytest配置文件。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335282</data>
   <data key="d6"></data>
 </node>
 <node id="run.py">
@@ -4983,10 +4985,10 @@
 <node id="多环境配置管理">
   <data key="d0">多环境配置管理</data>
   <data key="d1">method</data>
-  <data key="d2">基于类继承实现多环境配置切换的技术实现。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323130</data>
+  <data key="d2">基于类继承实现多环境配置切换的技术实现。&lt;SEP&gt;多环境配置管理是一种通过config.py等文件管理不同环境(如test、dev)配置的方法。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335448</data>
   <data key="d6"></data>
 </node>
 <node id="TestConfig类">
@@ -5018,20 +5020,20 @@
 </node>
 <node id="TestConfig">
   <data key="d0">TestConfig</data>
-  <data key="d1">artifact</data>
-  <data key="d2">TestConfig是用于配置测试环境的配置对象。&lt;SEP&gt;测试环境配置类，定义了FE_URL、BACKEND_URL和MYSQL_HOST等配置项。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323137</data>
+  <data key="d1">data</data>
+  <data key="d2">TestConfig是用于配置测试环境的配置对象。&lt;SEP&gt;测试环境配置类，定义了FE_URL、BACKEND_URL和MYSQL_HOST等配置项。&lt;SEP&gt;TestConfig是config.py中定义的测试环境配置类，包含BASE_URL、MYSQL_HOST等属性。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335457</data>
   <data key="d6"></data>
 </node>
 <node id="DevConfig">
   <data key="d0">DevConfig</data>
-  <data key="d1">artifact</data>
-  <data key="d2">DevConfig是用于配置开发环境的配置对象。&lt;SEP&gt;开发环境配置类，定义了开发环境的FE_URL等配置项。</data>
-  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323143</data>
+  <data key="d1">data</data>
+  <data key="d2">DevConfig是用于配置开发环境的配置对象。&lt;SEP&gt;开发环境配置类，定义了开发环境的FE_URL等配置项。&lt;SEP&gt;DevConfig是config.py中定义的开发环境配置类。</data>
+  <data key="d3">chunk-ee95678b86c9b568620faa3f642a99f2&lt;SEP&gt;chunk-39fad9ded21346ef1bdb62fc0b2a4e02&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335457</data>
   <data key="d6"></data>
 </node>
 <node id="UatConfig">
@@ -5217,10 +5219,10 @@
 <node id="数据驱动">
   <data key="d0">数据驱动</data>
   <data key="d1">method</data>
-  <data key="d2">一种将测试数据与测试代码分离的测试设计方法。&lt;SEP&gt;一种测试方法，将测试数据与测试代码分离，通过外部数据源驱动测试用例执行。</data>
-  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323202</data>
+  <data key="d2">一种将测试数据与测试代码分离的测试设计方法。&lt;SEP&gt;一种测试方法，将测试数据与测试代码分离，通过外部数据源驱动测试用例执行。&lt;SEP&gt;数据驱动是一种测试方法，将测试数据与测试逻辑分离，通过外部数据源驱动测试执行。&lt;SEP&gt;数据驱动是一种测试方法，将测试数据与测试逻辑分离，pytest_yaml_api框架利用此方法提高用例编写效率。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335359</data>
   <data key="d6"></data>
 </node>
 <node id="微软官方Playwright镜像">
@@ -5243,11 +5245,11 @@
 </node>
 <node id="Session">
   <data key="d0">Session</data>
-  <data key="d1">data</data>
-  <data key="d2">用户会话数据，过期会导致登录态失效。</data>
-  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323213</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用户会话数据，过期会导致登录态失效。&lt;SEP&gt;Session是用于管理HTTP会话状态的机制。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335551</data>
   <data key="d6"></data>
 </node>
 <node id="auth/login.json">
@@ -5288,11 +5290,11 @@
 </node>
 <node id="ConnectMysql">
   <data key="d0">ConnectMysql</data>
-  <data key="d1">artifact</data>
-  <data key="d2">一个使用单例模式封装的MySQL数据库连接类。&lt;SEP&gt;一个用于连接和操作MySQL数据库的工具类或函数。</data>
-  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323225</data>
+  <data key="d1">method</data>
+  <data key="d2">一个使用单例模式封装的MySQL数据库连接类。&lt;SEP&gt;一个用于连接和操作MySQL数据库的工具类或函数。&lt;SEP&gt;ConnectMysql是一个使用单例模式实现的Python类，用于管理数据库连接以避免频繁创建连接导致的性能问题。</data>
+  <data key="d3">chunk-a170001b91ee547d8ee4bfd173d4248c&lt;SEP&gt;chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335842</data>
   <data key="d6"></data>
 </node>
 <node id="Linux环境">
@@ -5424,19 +5426,19 @@
 <node id="PyMySQL">
   <data key="d0">PyMySQL</data>
   <data key="d1">artifact</data>
-  <data key="d2">PyMySQL是一个数据库操作库，版本为1.0.2，用于MySQL数据库操作。</data>
-  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323271</data>
+  <data key="d2">PyMySQL是一个数据库操作库，版本为1.0.2，用于MySQL数据库操作。&lt;SEP&gt;PyMySQL是一个用于连接MySQL数据库的Python库。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335578</data>
   <data key="d6"></data>
 </node>
 <node id="Requests">
   <data key="d0">Requests</data>
   <data key="d1">artifact</data>
-  <data key="d2">Requests是一个HTTP请求库，版本为2.31.0，用于API接口测试。</data>
-  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323271</data>
+  <data key="d2">Requests是一个HTTP请求库，版本为2.31.0，用于API接口测试。&lt;SEP&gt;Requests是一个HTTP客户端库，版本为2.31.0。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335575</data>
   <data key="d6"></data>
 </node>
 <node id="OpenCV">
@@ -5450,11 +5452,11 @@
 </node>
 <node id="Faker">
   <data key="d0">Faker</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Faker是一个数据生成库，版本为19.3.0，用于生成测试数据。</data>
-  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323287</data>
+  <data key="d1">method</data>
+  <data key="d2">Faker是一个数据生成库，版本为19.3.0，用于生成测试数据。&lt;SEP&gt;Faker是一个用于生成假数据的Python库，版本为24.9.0。&lt;SEP&gt;Faker是一个用于生成随机测试数据的Python库，在项目中用于确保测试数据的唯一性。&lt;SEP&gt;Faker是一个用于生成唯一测试数据的工具，用于保证测试用例的独立性。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335203</data>
   <data key="d6"></data>
 </node>
 <node id="DingTalkChatbot">
@@ -5622,10 +5624,10 @@
 <node id="测试执行层">
   <data key="d0">测试执行层</data>
   <data key="d1">concept</data>
-  <data key="d2">测试执行层是框架架构中的顶层，包含启动脚本run.py，负责协调测试执行。</data>
-  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323330</data>
+  <data key="d2">测试执行层是框架架构中的顶层，包含启动脚本run.py，负责协调测试执行。&lt;SEP&gt;测试执行层是pytest_yaml_api框架架构中的一个逻辑层次，由pytest测试引擎及其相关配置(conftest, pytest.ini, 插件, Fixture)构成。</data>
+  <data key="d3">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335833</data>
   <data key="d6"></data>
 </node>
 <node id="自定义插件层">
@@ -5712,10 +5714,10 @@
 <node id="重试机制">
   <data key="d0">重试机制</data>
   <data key="d1">method</data>
-  <data key="d2">使用pytest-rerunfailures等工具为失败的测试用例提供自动重跑的能力。</data>
-  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323347</data>
+  <data key="d2">使用pytest-rerunfailures等工具为失败的测试用例提供自动重跑的能力。&lt;SEP&gt;重试机制支持使用pytest-rerunfailures插件，在测试失败时自动重试，以提高稳定性。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335237</data>
   <data key="d6"></data>
 </node>
 <node id="数据隔离">
@@ -5901,10 +5903,10 @@
 <node id="pytest-rerunfailures">
   <data key="d0">pytest-rerunfailures</data>
   <data key="d1">artifact</data>
-  <data key="d2">一个Pytest插件，用于为失败的测试用例提供重试机制。</data>
-  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d4">PlayWrightUI 自动化面试.md</data>
-  <data key="d5">1767323418</data>
+  <data key="d2">一个Pytest插件，用于为失败的测试用例提供重试机制。&lt;SEP&gt;pytest-rerunfailures是一个pytest插件，用于实现测试失败时的重试机制。</data>
+  <data key="d3">chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d5">1767335377</data>
   <data key="d6"></data>
 </node>
 <node id="钉钉">
@@ -6058,6 +6060,1329 @@
   <data key="d3">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
   <data key="d4">PlayWrightUI 自动化面试.md</data>
   <data key="d5">1767323471</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest fixture">
+  <data key="d0">pytest fixture</data>
+  <data key="d1">method</data>
+  <data key="d2">pytest fixture是一种用于控制测试资源生命周期的机制，通过scope参数可以管理测试数据的创建和清理。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335203</data>
+  <data key="d6"></data>
+</node>
+<node id="setup/teardown">
+  <data key="d0">setup/teardown</data>
+  <data key="d1">method</data>
+  <data key="d2">setup/teardown是用于在测试前后进行准备和清理操作的机制，用于清理测试数据。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335203</data>
+  <data key="d6"></data>
+</node>
+<node id="export机制">
+  <data key="d0">export机制</data>
+  <data key="d1">method</data>
+  <data key="d2">export机制用于在测试用例之间传递必要的数据，支持跨文件或跨模块的变量共享。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335208</data>
+  <data key="d6"></data>
+</node>
+<node id="extract提取">
+  <data key="d0">extract提取</data>
+  <data key="d1">method</data>
+  <data key="d2">extract提取是一种从接口响应中提取特定数据(如ID、token)的方法。&lt;SEP&gt;extract提取是一种从接口响应中提取参数的方法，用于处理同文件内的接口依赖。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335212</data>
+  <data key="d6"></data>
+</node>
+<node id="config.yaml">
+  <data key="d0">config.yaml</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个YAML配置文件，用于持久化存储测试过程中的关键数据，支持跨文件的数据传递。&lt;SEP&gt;config.yaml是一个配置文件，通过rcy()函数读取，用于存储环境配置等信息。&lt;SEP&gt;config.yaml是存储测试环境配置和变量的YAML文件。&lt;SEP&gt;config.yaml是框架数据驱动层的一个配置文件，用于存储测试环境、数据库连接等配置信息。&lt;SEP&gt;config.yaml是一个用于持久化配置数据的YAML文件，用于处理跨模块的接口依赖。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335212</data>
+  <data key="d6"></data>
+</node>
+<node id="validate.py">
+  <data key="d0">validate.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">validate.py是一个Python文件，用于存放自定义的断言方法，以扩展框架的断言功能。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335214</data>
+  <data key="d6"></data>
+</node>
+<node id="env_filter.filters">
+  <data key="d0">env_filter.filters</data>
+  <data key="d1">artifact</data>
+  <data key="d2">env_filter.filters是一个用于注册自定义过滤器的字典，用于扩展Jinja2模板的过滤功能。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335226</data>
+  <data key="d6"></data>
+</node>
+<node id="Hooks">
+  <data key="d0">Hooks</data>
+  <data key="d1">concept</data>
+  <data key="d2">Hooks(钩子函数)是用于扩展框架功能的机制，通过定义函数并注册到my_builtins来实现。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335226</data>
+  <data key="d6"></data>
+</node>
+<node id="try-catch机制">
+  <data key="d0">try-catch机制</data>
+  <data key="d1">method</data>
+  <data key="d2">try-catch机制是一种异常处理方法，用于保证框架的稳定性，提供完善的错误捕获。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335226</data>
+  <data key="d6"></data>
+</node>
+<node id="日志系统">
+  <data key="d0">日志系统</data>
+  <data key="d1">concept</data>
+  <data key="d2">日志系统负责记录详细的执行日志，是保证框架稳定性的重要组成部分。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335231</data>
+  <data key="d6"></data>
+</node>
+<node id="超时控制">
+  <data key="d0">超时控制</data>
+  <data key="d1">method</data>
+  <data key="d2">超时控制主要指HTTP请求超时设置，用于防止请求长时间无响应，保证框架稳定性。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335237</data>
+  <data key="d6"></data>
+</node>
+<node id="Jinja2">
+  <data key="d0">Jinja2</data>
+  <data key="d1">method</data>
+  <data key="d2">Jinja2是一个模板引擎，版本为3.1.3，用于渲染YAML文件中的变量。&lt;SEP&gt;Jinja2是一个模板引擎，在本框架中用于渲染测试用例中的动态参数。&lt;SEP&gt;Jinja2是一个模板引擎，在项目中通过自定义语法和过滤器集成，用于处理YAML文件中的动态变量。&lt;SEP&gt;Jinja2是一个模板引擎，通过AST解析模板字符串并将`${var}`转换为Python表达式执行。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335237</data>
+  <data key="d6"></data>
+</node>
+<node id="AST(抽象语法树)">
+  <data key="d0">AST(抽象语法树)</data>
+  <data key="d1">concept</data>
+  <data key="d2">AST(抽象语法树)是Jinja2用于解析模板字符串的内部数据结构，将模板转换为可执行的表达式。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335237</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest插件机制">
+  <data key="d0">pytest插件机制</data>
+  <data key="d1">concept</data>
+  <data key="d2">pytest插件机制通过hook函数实现，允许开发者扩展pytest的功能，如收集文件或添加报告信息。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335240</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_collect_file">
+  <data key="d0">pytest_collect_file</data>
+  <data key="d1">method</data>
+  <data key="d2">pytest_collect_file是一个pytest hook函数，用于收集YAML文件并将其作为测试模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335255</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_runtest_call">
+  <data key="d0">pytest_runtest_call</data>
+  <data key="d1">method</data>
+  <data key="d2">pytest_runtest_call是一个pytest hook函数，用于在测试调用时动态添加allure报告信息。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335256</data>
+  <data key="d6"></data>
+</node>
+<node id="fixture系统">
+  <data key="d0">fixture系统</data>
+  <data key="d1">concept</data>
+  <data key="d2">fixture系统是pytest用于管理测试资源生命周期的核心机制。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335256</data>
+  <data key="d6"></data>
+</node>
+<node id="YAML转pytest用例">
+  <data key="d0">YAML转pytest用例</data>
+  <data key="d1">method</data>
+  <data key="d2">YAML转pytest用例是一个过程，涉及识别YAML文件、解析内容并动态创建测试函数。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335265</data>
+  <data key="d6"></data>
+</node>
+<node id="types.FunctionType">
+  <data key="d0">types.FunctionType</data>
+  <data key="d1">method</data>
+  <data key="d2">types.FunctionType用于动态创建测试函数，作为将YAML内容转换为可执行测试用例的一部分。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335265</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_yaml_api框架">
+  <data key="d0">pytest_yaml_api框架</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pytest_yaml_api框架是一个企业级接口自动化测试框架，使用YAML编写用例，具有低门槛、高效率、可维护、可扩展、可集成的特点。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335270</data>
+  <data key="d6"></data>
+</node>
+<node id="allRun.py">
+  <data key="d0">allRun.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">allRun.py是pytest_yaml_api框架的主运行入口文件。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335270</data>
+  <data key="d6"></data>
+</node>
+<node id="jenkins.sh">
+  <data key="d0">jenkins.sh</data>
+  <data key="d1">artifact</data>
+  <data key="d2">jenkins.sh是用于Jenkins CI/CD集成的脚本文件。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335282</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/runner.py">
+  <data key="d0">utils/runner.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/runner.py是pytest_yaml_api框架中负责YAML执行引擎的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335285</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/validate.py">
+  <data key="d0">utils/validate.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/validate.py是pytest_yaml_api框架中负责断言校验的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335291</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/extract.py">
+  <data key="d0">utils/extract.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/extract.py是pytest_yaml_api框架中负责参数提取的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335303</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/db.py">
+  <data key="d0">utils/db.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/db.py是pytest_yaml_api框架中负责数据库操作的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335303</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/render_template_obj.py">
+  <data key="d0">utils/render_template_obj.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/render_template_obj.py是pytest_yaml_api框架中负责Jinja2模板渲染的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335303</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/request_session.py">
+  <data key="d0">utils/request_session.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/request_session.py是pytest_yaml_api框架中负责HTTP会话管理的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335307</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/log.py">
+  <data key="d0">utils/log.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/log.py是pytest_yaml_api框架中负责日志处理的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335322</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/report_notify.py">
+  <data key="d0">utils/report_notify.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/report_notify.py是pytest_yaml_api框架中负责报告通知的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335322</data>
+  <data key="d6"></data>
+</node>
+<node id="utils/swagger_parser.py">
+  <data key="d0">utils/swagger_parser.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">utils/swagger_parser.py是pytest_yaml_api框架中负责Swagger解析的工具模块。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335322</data>
+  <data key="d6"></data>
+</node>
+<node id="testcases/backend">
+  <data key="d0">testcases/backend</data>
+  <data key="d1">content</data>
+  <data key="d2">testcases/backend是存放后台管理系统测试用例的目录，包含381个用例。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335323</data>
+  <data key="d6"></data>
+</node>
+<node id="testcases/playturbo">
+  <data key="d0">testcases/playturbo</data>
+  <data key="d1">content</data>
+  <data key="d2">testcases/playturbo是存放创意平台测试用例的目录，包含612个用例。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335326</data>
+  <data key="d6"></data>
+</node>
+<node id="testcases/openapi">
+  <data key="d0">testcases/openapi</data>
+  <data key="d1">content</data>
+  <data key="d2">testcases/openapi是存放开放接口测试用例的目录，包含48个用例。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335326</data>
+  <data key="d6"></data>
+</node>
+<node id="api_mysql/">
+  <data key="d0">api_mysql/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">api_mysql/是存放数据库操作模板的目录。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335326</data>
+  <data key="d6"></data>
+</node>
+<node id="mitmproxy_tool/">
+  <data key="d0">mitmproxy_tool/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">mitmproxy_tool/是存放Mock工具的目录。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335346</data>
+  <data key="d6"></data>
+</node>
+<node id="data/">
+  <data key="d0">data/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">data/是存放测试数据文件的目录。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335346</data>
+  <data key="d6"></data>
+</node>
+<node id="reports/">
+  <data key="d0">reports/</data>
+  <data key="d1">artifact</data>
+  <data key="d2">reports/是存放测试报告的目录。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335349</data>
+  <data key="d6"></data>
+</node>
+<node id="接口自动化测试">
+  <data key="d0">接口自动化测试</data>
+  <data key="d1">concept</data>
+  <data key="d2">接口自动化测试是通过自动化脚本执行接口测试的活动，pytest_yaml_api框架旨在提升其效率和覆盖率。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335349</data>
+  <data key="d6"></data>
+</node>
+<node id="关键字驱动">
+  <data key="d0">关键字驱动</data>
+  <data key="d1">concept</data>
+  <data key="d2">关键字驱动是一种测试方法，使用预定义的关键字来构建测试用例，提高可读性和复用性。&lt;SEP&gt;关键字驱动是一种测试方法，使用预定义的关键字来构建测试步骤，pytest_yaml_api框架结合此方法快速编写用例。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335365</data>
+  <data key="d6"></data>
+</node>
+<node id="插件化设计">
+  <data key="d0">插件化设计</data>
+  <data key="d1">concept</data>
+  <data key="d2">插件化设计是一种软件架构模式，允许通过添加插件来扩展功能，pytest_yaml_api框架采用此设计易于添加新功能。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335365</data>
+  <data key="d6"></data>
+</node>
+<node id="allure">
+  <data key="d0">allure</data>
+  <data key="d1">artifact</data>
+  <data key="d2">allure是一个测试报告框架，用于在YAML用例中标记测试模块(feature)和用例标题(title)。&lt;SEP&gt;allure是一个测试报告框架，pytest_runtest_call hook用于动态向其添加报告信息。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902&lt;SEP&gt;chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335378</data>
+  <data key="d6"></data>
+</node>
+<node id="Module对象">
+  <data key="d0">Module对象</data>
+  <data key="d1">concept</data>
+  <data key="d2">Module对象是Python中表示模块的动态创建对象，在YAML转pytest用例过程中用于存放生成的测试函数。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335378</data>
+  <data key="d6"></data>
+</node>
+<node id="生态兼容性好">
+  <data key="d0">生态兼容性好</data>
+  <data key="d1">concept</data>
+  <data key="d2">生态兼容性好是pytest_yaml_api框架的一个特点，指其能够良好地融入现有的Python和测试生态。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335378</data>
+  <data key="d6"></data>
+</node>
+<node id="多行字符串">
+  <data key="d0">多行字符串</data>
+  <data key="d1">concept</data>
+  <data key="d2">多行字符串是编程语言中一种字符串表示形式，该框架支持此特性，便于编写如SQL等复杂文本。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335384</data>
+  <data key="d6"></data>
+</node>
+<node id="效率提升70%">
+  <data key="d0">效率提升70%</data>
+  <data key="d1">data</data>
+  <data key="d2">效率提升70%是使用pytest_yaml_api框架后，接口自动化测试效率提升的具体量化数据。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335397</data>
+  <data key="d6"></data>
+</node>
+<node id="测试覆盖率提升40%">
+  <data key="d0">测试覆盖率提升40%</data>
+  <data key="d1">data</data>
+  <data key="d2">测试覆盖率提升40%是使用pytest_yaml_api框架后，测试覆盖率提升的具体量化数据。</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335400</data>
+  <data key="d6"></data>
+</node>
+<node id="YAML用例">
+  <data key="d0">YAML用例</data>
+  <data key="d1">content</data>
+  <data key="d2">YAML用例是一种用于数据驱动测试的结构化文件格式，包含配置、变量、钩子、请求、提取和断言等部分。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335400</data>
+  <data key="d6"></data>
+</node>
+<node id="extract.yaml">
+  <data key="d0">extract.yaml</data>
+  <data key="d1">artifact</data>
+  <data key="d2">extract.yaml是一个配置文件，通过ry()函数读取，用于存储参数提取规则等信息。&lt;SEP&gt;extract.yaml是存储参数提取规则的YAML文件。&lt;SEP&gt;extract.yaml是框架数据驱动层的一个文件，用于定义数据提取规则。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335406</data>
+  <data key="d6"></data>
+</node>
+<node id="Jinja2模板引擎">
+  <data key="d0">Jinja2模板引擎</data>
+  <data key="d1">method</data>
+  <data key="d2">Jinja2是一个模板渲染引擎，用于在YAML用例中处理变量替换、函数调用和过滤器应用。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335414</data>
+  <data key="d6"></data>
+</node>
+<node id="my_builtins">
+  <data key="d0">my_builtins</data>
+  <data key="d1">method</data>
+  <data key="d2">my_builtins是一组自定义函数库，包含如rand_str和ftime等工具函数。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335417</data>
+  <data key="d6"></data>
+</node>
+<node id="rcy()函数">
+  <data key="d0">rcy()函数</data>
+  <data key="d1">method</data>
+  <data key="d2">rcy()是一个用于读取config.yaml配置文件的函数。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335424</data>
+  <data key="d6"></data>
+</node>
+<node id="ry()函数">
+  <data key="d0">ry()函数</data>
+  <data key="d1">method</data>
+  <data key="d2">ry()是一个用于读取extract.yaml配置文件的函数。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335426</data>
+  <data key="d6"></data>
+</node>
+<node id="query_sql()函数">
+  <data key="d0">query_sql()函数</data>
+  <data key="d1">method</data>
+  <data key="d2">query_sql()是一个用于执行数据库查询操作的函数。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335429</data>
+  <data key="d6"></data>
+</node>
+<node id="execute_sql()函数">
+  <data key="d0">execute_sql()函数</data>
+  <data key="d1">method</data>
+  <data key="d2">execute_sql()是一个用于执行数据库更新或写入操作的函数。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335432</data>
+  <data key="d6"></data>
+</node>
+<node id="fixture变量">
+  <data key="d0">fixture变量</data>
+  <data key="d1">data</data>
+  <data key="d2">fixture变量是通过pytest fixture机制注入到测试用例中的预定义数据。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335435</data>
+  <data key="d6"></data>
+</node>
+<node id="JMESPath">
+  <data key="d0">JMESPath</data>
+  <data key="d1">method</data>
+  <data key="d2">JMESPath是一种用于从JSON文档中提取数据的查询语言语法。&lt;SEP&gt;JMESPath是一种用于从JSON文档中提取数据的查询语言。&lt;SEP&gt;JMESPath是一种JSON查询语言，是三层数据提取方法中的一种，用于从JSON响应中提取特定数据。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335441</data>
+  <data key="d6"></data>
+</node>
+<node id="JSONPath">
+  <data key="d0">JSONPath</data>
+  <data key="d1">method</data>
+  <data key="d2">JSONPath是一种用于从JSON文档中递归搜索和提取数据的查询语言语法。&lt;SEP&gt;JSONPath是一种用于从JSON文档中提取数据的查询语言。&lt;SEP&gt;JSONPath是一种用于JSON数据的查询语言，是三层数据提取方法中的一种。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335444</data>
+  <data key="d6"></data>
+</node>
+<node id="正则表达式">
+  <data key="d0">正则表达式</data>
+  <data key="d1">method</data>
+  <data key="d2">正则表达式是一种用于模式匹配和文本提取的语法。&lt;SEP&gt;正则表达式是一种文本模式匹配方法，在测试执行流程的提取步骤中用于从响应数据中提取信息。&lt;SEP&gt;正则表达式是一种文本模式匹配工具，是三层数据提取方法中的一种，用于从响应文本中提取数据。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335444</data>
+  <data key="d6"></data>
+</node>
+<node id="断言校验">
+  <data key="d0">断言校验</data>
+  <data key="d1">method</data>
+  <data key="d2">断言校验是测试用例中用于验证响应数据是否符合预期的一系列方法，包括相等、包含、比较等。&lt;SEP&gt;断言校验是框架核心引擎层的一个组件，负责验证接口响应是否符合预期。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335447</data>
+  <data key="d6"></data>
+</node>
+<node id="OnlineConfig">
+  <data key="d0">OnlineConfig</data>
+  <data key="d1">data</data>
+  <data key="d2">OnlineConfig是config.py中定义的线上环境配置类。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335462</data>
+  <data key="d6"></data>
+</node>
+<node id="BASE_URL">
+  <data key="d0">BASE_URL</data>
+  <data key="d1">data</data>
+  <data key="d2">BASE_URL是环境配置中的一个变量，表示API请求的基础URL。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335471</data>
+  <data key="d6"></data>
+</node>
+<node id="MYSQL_HOST">
+  <data key="d0">MYSQL_HOST</data>
+  <data key="d1">data</data>
+  <data key="d2">MYSQL_HOST是环境配置中的一个变量，表示MySQL数据库的主机地址。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335474</data>
+  <data key="d6"></data>
+</node>
+<node id="rand_str">
+  <data key="d0">rand_str</data>
+  <data key="d1">method</data>
+  <data key="d2">rand_str是变量上下文中定义的一个自定义函数，用于生成随机字符串。&lt;SEP&gt;一个定义在`conftest.py`中的自定义函数，使用Faker库生成指定长度的随机字符串。&lt;SEP&gt;rand_str是my_builtins自定义函数库中的一个函数，用于生成随机字符串。&lt;SEP&gt;rand_str是一个自定义函数，使用Faker库生成指定长度的随机字符串，用于创建唯一的测试数据。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335474</data>
+  <data key="d6"></data>
+</node>
+<node id="ftime">
+  <data key="d0">ftime</data>
+  <data key="d1">method</data>
+  <data key="d2">ftime是变量上下文中定义的一个自定义函数，用于格式化时间。&lt;SEP&gt;ftime是my_builtins自定义函数库中的一个函数，用于格式化时间。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335478</data>
+  <data key="d6"></data>
+</node>
+<node id="sign_request">
+  <data key="d0">sign_request</data>
+  <data key="d1">method</data>
+  <data key="d2">sign_request是一个全局钩子函数，用于在发送请求前对请求进行签名处理。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335481</data>
+  <data key="d6"></data>
+</node>
+<node id="hooks">
+  <data key="d0">hooks</data>
+  <data key="d1">method</data>
+  <data key="d2">hooks是测试执行流程中的钩子机制，用于在请求前后执行预处理和后处理操作。&lt;SEP&gt;hooks是YAML用例中定义的全局钩子，用于在请求前后执行特定操作，如sign_request。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335487</data>
+  <data key="d6"></data>
+</node>
+<node id="export">
+  <data key="d0">export</data>
+  <data key="d1">method</data>
+  <data key="d2">export是测试执行流程中的变量导出步骤，将提取的变量导出供后续测试用例使用。&lt;SEP&gt;export是YAML用例中用于声明需要导出到后续步骤或用例的变量列表。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335487</data>
+  <data key="d6"></data>
+</node>
+<node id="validate">
+  <data key="d0">validate</data>
+  <data key="d1">method</data>
+  <data key="d2">validate是测试执行流程中的断言校验步骤，用于验证响应数据是否符合预期。&lt;SEP&gt;validate是YAML用例中的一个部分，包含用于断言校验接口响应的规则列表。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335493</data>
+  <data key="d6"></data>
+</node>
+<node id="eq">
+  <data key="d0">eq</data>
+  <data key="d1">method</data>
+  <data key="d2">eq是断言校验中的一种方法，用于判断两个值是否相等。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335496</data>
+  <data key="d6"></data>
+</node>
+<node id="contains">
+  <data key="d0">contains</data>
+  <data key="d1">method</data>
+  <data key="d2">contains是断言校验中的一种方法，用于判断某个值是否包含另一个值。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335502</data>
+  <data key="d6"></data>
+</node>
+<node id="contained_by">
+  <data key="d0">contained_by</data>
+  <data key="d1">method</data>
+  <data key="d2">contained_by是断言校验中的一种方法，用于判断某个值是否被另一个集合包含。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335502</data>
+  <data key="d6"></data>
+</node>
+<node id="gt">
+  <data key="d0">gt</data>
+  <data key="d1">method</data>
+  <data key="d2">gt是断言校验中的一种方法，用于判断一个值是否大于另一个值。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335508</data>
+  <data key="d6"></data>
+</node>
+<node id="le">
+  <data key="d0">le</data>
+  <data key="d1">method</data>
+  <data key="d2">le是断言校验中的一种方法，用于判断一个值是否小于或等于另一个值。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335515</data>
+  <data key="d6"></data>
+</node>
+<node id="len_eq">
+  <data key="d0">len_eq</data>
+  <data key="d1">method</data>
+  <data key="d2">len_eq是断言校验中的一种方法，用于判断一个对象的长度是否等于指定值。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335515</data>
+  <data key="d6"></data>
+</node>
+<node id="len_gt">
+  <data key="d0">len_gt</data>
+  <data key="d1">method</data>
+  <data key="d2">len_gt是断言校验中的一种方法，用于判断一个对象的长度是否大于指定值。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335515</data>
+  <data key="d6"></data>
+</node>
+<node id="startswith">
+  <data key="d0">startswith</data>
+  <data key="d1">method</data>
+  <data key="d2">startswith是断言校验中的一种方法，用于判断一个字符串是否以指定前缀开头。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335528</data>
+  <data key="d6"></data>
+</node>
+<node id="endswith">
+  <data key="d0">endswith</data>
+  <data key="d1">method</data>
+  <data key="d2">endswith是断言校验中的一种方法，用于判断一个字符串是否以指定后缀结尾。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335531</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest --env">
+  <data key="d0">pytest --env</data>
+  <data key="d1">method</data>
+  <data key="d2">pytest --env是一个命令行参数，用于在执行pytest测试时指定和切换不同的运行环境(如test、dev)。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335541</data>
+  <data key="d6"></data>
+</node>
+<node id="Redis">
+  <data key="d0">Redis</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Redis是一个数据库技术，在技术栈中被列为数据库选项之一。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335545</data>
+  <data key="d6"></data>
+</node>
+<node id="WebSocket">
+  <data key="d0">WebSocket</data>
+  <data key="d1">artifact</data>
+  <data key="d2">WebSocket是一种通信协议，在测试执行流程中用于长连接请求。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335545</data>
+  <data key="d6"></data>
+</node>
+<node id="Mock">
+  <data key="d0">Mock</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Mock是一种测试技术，在技术栈中由mitmproxy工具实现。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335545</data>
+  <data key="d6"></data>
+</node>
+<node id="连接池">
+  <data key="d0">连接池</data>
+  <data key="d1">artifact</data>
+  <data key="d2">连接池是用于管理数据库或网络连接资源的技术组件。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335554</data>
+  <data key="d6"></data>
+</node>
+<node id="连接">
+  <data key="d0">连接</data>
+  <data key="d1">artifact</data>
+  <data key="d2">连接指代网络或数据库的连接实例。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335560</data>
+  <data key="d6"></data>
+</node>
+<node id="客户端">
+  <data key="d0">客户端</data>
+  <data key="d1">artifact</data>
+  <data key="d2">客户端是发起请求或连接的应用端。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335563</data>
+  <data key="d6"></data>
+</node>
+<node id="mitmproxy">
+  <data key="d0">mitmproxy</data>
+  <data key="d1">artifact</data>
+  <data key="d2">mitmproxy是一个用于Mock和拦截HTTP/HTTPS流量的工具。&lt;SEP&gt;mitmproxy是一个用于拦截、检查和修改HTTP/HTTPS流量的工具，在项目中用于实现接口Mock功能。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335563</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_yaml_yoyo">
+  <data key="d0">pytest_yaml_yoyo</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pytest_yaml_yoyo是一个自研的数据驱动测试插件，版本为1.6.8。&lt;SEP&gt;pytest_yaml_yoyo是一个自研的pytest插件，能够将YAML文件自动解析为pytest测试用例。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335572</data>
+  <data key="d6"></data>
+</node>
+<node id="测试执行流程">
+  <data key="d0">测试执行流程</data>
+  <data key="d1">concept</data>
+  <data key="d2">测试执行流程描述了从用例收集到报告生成的完整自动化测试过程。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335588</data>
+  <data key="d6"></data>
+</node>
+<node id="YAML文件">
+  <data key="d0">YAML文件</data>
+  <data key="d1">artifact</data>
+  <data key="d2">YAML文件是存储测试用例和数据驱动配置的文件格式。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335619</data>
+  <data key="d6"></data>
+</node>
+<node id="config配置">
+  <data key="d0">config配置</data>
+  <data key="d1">artifact</data>
+  <data key="d2">config配置包含变量、固件、钩子和导出设置，用于测试环境初始化。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335623</data>
+  <data key="d6"></data>
+</node>
+<node id="变量上下文">
+  <data key="d0">变量上下文</data>
+  <data key="d1">concept</data>
+  <data key="d2">变量上下文是一个存储Python内置函数、自定义函数、环境配置和读取器函数的运行时环境。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335623</data>
+  <data key="d6"></data>
+</node>
+<node id="数据流转">
+  <data key="d0">数据流转</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据流转描述了测试数据从配置文件到变量上下文的传递过程。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335623</data>
+  <data key="d6"></data>
+</node>
+<node id="api分层调用">
+  <data key="d0">api分层调用</data>
+  <data key="d1">concept</data>
+  <data key="d2">api分层调用是测试执行流程中的一种请求类型，指复用公共接口进行API调用。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335653</data>
+  <data key="d6"></data>
+</node>
+<node id="rcy">
+  <data key="d0">rcy</data>
+  <data key="d1">method</data>
+  <data key="d2">rcy是变量上下文中定义的一个函数，用于读取config.yaml配置文件。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335653</data>
+  <data key="d6"></data>
+</node>
+<node id="ry">
+  <data key="d0">ry</data>
+  <data key="d1">method</data>
+  <data key="d2">ry是变量上下文中定义的一个函数，用于读取extract.yaml配置文件。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335653</data>
+  <data key="d6"></data>
+</node>
+<node id="query_sql">
+  <data key="d0">query_sql</data>
+  <data key="d1">method</data>
+  <data key="d2">query_sql是变量上下文中可能包含的一个函数，用于执行SQL查询。&lt;SEP&gt;一个自定义函数，用于执行SQL查询并返回结果，在数据库集成测试的验证逻辑中被调用。</data>
+  <data key="d3">chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335653</data>
+  <data key="d6"></data>
+</node>
+<node id="数据库集成">
+  <data key="d0">数据库集成</data>
+  <data key="d1">method</data>
+  <data key="d2">一种测试配置方法，涉及在YAML配置文件中定义SQL查询变量，并在接口验证中使用数据库查询结果进行对比。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335654</data>
+  <data key="d6"></data>
+</node>
+<node id="Hooks钩子机制">
+  <data key="d0">Hooks钩子机制</data>
+  <data key="d1">method</data>
+  <data key="d2">一种在测试框架中定义和使用钩子函数的方法，用于在请求前或响应后执行自定义处理逻辑，如请求签名和日志记录。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335654</data>
+  <data key="d6"></data>
+</node>
+<node id="WebSocket支持">
+  <data key="d0">WebSocket支持</data>
+  <data key="d1">method</data>
+  <data key="d2">一种测试WebSocket连接和消息交互的配置方法，包括建立连接、发送消息、提取响应数据和验证状态码。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335680</data>
+  <data key="d6"></data>
+</node>
+<node id="文件上传">
+  <data key="d0">文件上传</data>
+  <data key="d1">method</data>
+  <data key="d2">一种测试文件上传接口的配置方法，通过指定文件路径来上传多个文件，并验证接口响应状态码。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335680</data>
+  <data key="d6"></data>
+</node>
+<node id="参数化测试">
+  <data key="d0">参数化测试</data>
+  <data key="d1">method</data>
+  <data key="d2">一种支持使用不同数据集运行同一测试用例的方法，包括列表参数化和字典参数化两种配置方式。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335680</data>
+  <data key="d6"></data>
+</node>
+<node id="全局变量导出">
+  <data key="d0">全局变量导出</data>
+  <data key="d1">method</data>
+  <data key="d2">一种在测试用例间共享数据的方法，允许从一个用例中提取变量并导出为全局变量，供后续用例引用。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335680</data>
+  <data key="d6"></data>
+</node>
+<node id="同一层级变量互相引用">
+  <data key="d0">同一层级变量互相引用</data>
+  <data key="d1">concept</data>
+  <data key="d2">在YAML配置的`variables`部分中，后定义的变量尝试引用先定义的同级变量时可能遇到的渲染问题。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335680</data>
+  <data key="d6"></data>
+</node>
+<node id="函数内嵌套变量引用">
+  <data key="d0">函数内嵌套变量引用</data>
+  <data key="d1">concept</data>
+  <data key="d2">在模板字符串中，一个变量引用内部嵌套了另一个变量引用，需要递归渲染才能正确解析的问题。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335702</data>
+  <data key="d6"></data>
+</node>
+<node id="接口关联与数据传递">
+  <data key="d0">接口关联与数据传递</data>
+  <data key="d1">concept</data>
+  <data key="d2">在自动化测试中，需要将接口A的响应数据传递给接口B使用，可能涉及同文件或跨文件的数据共享需求。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335702</data>
+  <data key="d6"></data>
+</node>
+<node id="动态数据生成">
+  <data key="d0">动态数据生成</data>
+  <data key="d1">method</data>
+  <data key="d2">一种生成具有唯一性测试数据的方法，通过集成Faker库和自定义函数来避免因重复数据导致的测试失败。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335702</data>
+  <data key="d6"></data>
+</node>
+<node id="runner.py">
+  <data key="d0">runner.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个Python脚本文件，其中实现了逐个变量渲染的逻辑，用于解决同一层级变量互相引用的问题。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335702</data>
+  <data key="d6"></data>
+</node>
+<node id="Faker库">
+  <data key="d0">Faker库</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个用于生成伪造测试数据的Python库，支持多种语言和数据类型，常与自定义函数结合使用。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335705</data>
+  <data key="d6"></data>
+</node>
+<node id="generate_md5">
+  <data key="d0">generate_md5</data>
+  <data key="d1">method</data>
+  <data key="d2">一个自定义函数，用于生成数据的MD5签名，在Hooks钩子机制中被`request_sign`函数调用。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335720</data>
+  <data key="d6"></data>
+</node>
+<node id="request_sign">
+  <data key="d0">request_sign</data>
+  <data key="d1">method</data>
+  <data key="d2">一个定义在`conftest.py`中的钩子函数，用于在发送请求前对JSON数据进行签名处理。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335720</data>
+  <data key="d6"></data>
+</node>
+<node id="log_response">
+  <data key="d0">log_response</data>
+  <data key="d1">method</data>
+  <data key="d2">一个钩子函数，用于在收到响应后记录日志，在YAML配置的`hooks`部分被引用。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335720</data>
+  <data key="d6"></data>
+</node>
+<node id="current_time">
+  <data key="d0">current_time</data>
+  <data key="d1">method</data>
+  <data key="d2">一个定义在`conftest.py`中的自定义函数，用于获取当前时间并格式化为指定字符串。&lt;SEP&gt;current_time是一个自定义函数，用于获取当前时间并格式化为指定格式的字符串。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335720</data>
+  <data key="d6"></data>
+</node>
+<node id="render_template_obj">
+  <data key="d0">render_template_obj</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个模板渲染对象，在`runner.py`中用于处理变量替换和模板字符串的渲染。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335744</data>
+  <data key="d6"></data>
+</node>
+<node id="env_filter">
+  <data key="d0">env_filter</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个模板环境过滤器，在解决函数内嵌套变量引用问题时，用于递归渲染嵌套的模板字符串。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335744</data>
+  <data key="d6"></data>
+</node>
+<node id="re.sub">
+  <data key="d0">re.sub</data>
+  <data key="d1">method</data>
+  <data key="d2">Python正则表达式模块的替换方法，在解决函数内嵌套变量引用问题时，用于匹配和替换模板字符串中的变量占位符。</data>
+  <data key="d3">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335744</data>
+  <data key="d6"></data>
+</node>
+<node id="pytest_yaml_api">
+  <data key="d0">pytest_yaml_api</data>
+  <data key="d1">artifact</data>
+  <data key="d2">pytest_yaml_api是一个基于Pytest、YAML和Jinja2的企业级API接口自动化测试框架，支持数据驱动和关键字驱动，具备多环境切换、数据库校验、Allure报告、WebSocket测试、Mock数据、CI/CD集成等功能。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335744</data>
+  <data key="d6"></data>
+</node>
+<node id="Backend">
+  <data key="d0">Backend</data>
+  <data key="d1">content</data>
+  <data key="d2">Backend指后台管理系统业务线，是该框架支持测试的业务场景之一，包含381条测试用例。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335744</data>
+  <data key="d6"></data>
+</node>
+<node id="Playturbo">
+  <data key="d0">Playturbo</data>
+  <data key="d1">content</data>
+  <data key="d2">Playturbo指创意平台业务线，是该框架支持测试的业务场景之一，包含612条测试用例。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335747</data>
+  <data key="d6"></data>
+</node>
+<node id="OpenAPI">
+  <data key="d0">OpenAPI</data>
+  <data key="d1">content</data>
+  <data key="d2">OpenAPI指开放接口业务线，是该框架支持测试的业务场景之一，包含48条测试用例。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335753</data>
+  <data key="d6"></data>
+</node>
+<node id="钉钉/飞书">
+  <data key="d0">钉钉/飞书</data>
+  <data key="d1">artifact</data>
+  <data key="d2">钉钉和飞书是即时通讯和协作平台，用于在测试完成后推送通知。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335753</data>
+  <data key="d6"></data>
+</node>
+<node id="conftest">
+  <data key="d0">conftest</data>
+  <data key="d1">artifact</data>
+  <data key="d2">conftest是Pytest的配置文件，用于定义fixture和插件配置。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335776</data>
+  <data key="d6"></data>
+</node>
+<node id="YAML解析器">
+  <data key="d0">YAML解析器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">YAML解析器是框架核心引擎层的一个组件，负责解析YAML格式的测试用例。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335776</data>
+  <data key="d6"></data>
+</node>
+<node id="Jinja2模板渲染">
+  <data key="d0">Jinja2模板渲染</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Jinja2模板渲染是框架核心引擎层的一个组件，负责处理测试用例中的动态模板。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335776</data>
+  <data key="d6"></data>
+</node>
+<node id="参数提取">
+  <data key="d0">参数提取</data>
+  <data key="d1">artifact</data>
+  <data key="d2">参数提取是框架核心引擎层的一个组件，负责从响应中提取数据供后续测试步骤使用。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335779</data>
+  <data key="d6"></data>
+</node>
+<node id="数据提取">
+  <data key="d0">数据提取</data>
+  <data key="d1">artifact</data>
+  <data key="d2">数据提取是框架核心引擎层的一个组件，负责从各种数据源提取测试数据。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335779</data>
+  <data key="d6"></data>
+</node>
+<node id="api_mysql">
+  <data key="d0">api_mysql</data>
+  <data key="d1">artifact</data>
+  <data key="d2">api_mysql是框架数据驱动层的一个组件或文件，用于处理与MySQL数据库相关的API测试数据。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335782</data>
+  <data key="d6"></data>
+</node>
+<node id="HTTP Session">
+  <data key="d0">HTTP Session</data>
+  <data key="d1">artifact</data>
+  <data key="d2">HTTP Session是框架基础支撑层的一个组件，用于管理HTTP请求会话。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335782</data>
+  <data key="d6"></data>
+</node>
+<node id="MySQL连接池">
+  <data key="d0">MySQL连接池</data>
+  <data key="d1">artifact</data>
+  <data key="d2">MySQL连接池是框架基础支撑层的一个组件，用于管理与MySQL数据库的连接。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335796</data>
+  <data key="d6"></data>
+</node>
+<node id="Redis连接">
+  <data key="d0">Redis连接</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Redis连接是框架基础支撑层的一个组件，用于管理与Redis数据库的连接。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335801</data>
+  <data key="d6"></data>
+</node>
+<node id="WebSocket客户端">
+  <data key="d0">WebSocket客户端</data>
+  <data key="d1">artifact</data>
+  <data key="d2">WebSocket客户端是框架基础支撑层的一个组件，用于进行WebSocket协议测试。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335801</data>
+  <data key="d6"></data>
+</node>
+<node id="Mock mitmproxy">
+  <data key="d0">Mock mitmproxy</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Mock mitmproxy是框架基础支撑层的一个组件，使用mitmproxy工具来模拟(Mock)接口响应。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335805</data>
+  <data key="d6"></data>
+</node>
+<node id="核心引擎层">
+  <data key="d0">核心引擎层</data>
+  <data key="d1">concept</data>
+  <data key="d2">核心引擎层是pytest_yaml_api框架架构中的一个逻辑层次，包含YAML解析器、Jinja2模板渲染、参数提取、断言校验和数据提取等核心处理组件。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335805</data>
+  <data key="d6"></data>
+</node>
+<node id="数据驱动层">
+  <data key="d0">数据驱动层</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据驱动层是pytest_yaml_api框架架构中的一个逻辑层次，负责管理YAML用例、config.yaml、extract.yaml和api_mysql等测试数据源。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335809</data>
+  <data key="d6"></data>
+</node>
+<node id="基础支撑层">
+  <data key="d0">基础支撑层</data>
+  <data key="d1">concept</data>
+  <data key="d2">基础支撑层是pytest_yaml_api框架架构中的一个逻辑层次，提供HTTP Session、MySQL连接池、Redis连接、WebSocket客户端和Mock mitmproxy等底层技术组件支持。</data>
+  <data key="d3">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335815</data>
+  <data key="d6"></data>
+</node>
+<node id="sleep">
+  <data key="d0">sleep</data>
+  <data key="d1">method</data>
+  <data key="d2">sleep是一个关键字，在异步接口测试中用于在轮询查询结果前等待指定的时间。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335842</data>
+  <data key="d6"></data>
+</node>
+<node id="三层数据提取">
+  <data key="d0">三层数据提取</data>
+  <data key="d1">method</data>
+  <data key="d2">三层数据提取是一种从HTTP响应中提取数据的方法，支持JMESPath、JSONPath和正则表达式三种方式。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335844</data>
+  <data key="d6"></data>
+</node>
+<node id="CI/CD集成">
+  <data key="d0">CI/CD集成</data>
+  <data key="d1">method</data>
+  <data key="d2">CI/CD集成指将自动化测试流程与持续集成/持续部署工具链结合，包括Jenkins触发、Docker容器执行、生成报告和通知。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335848</data>
+  <data key="d6"></data>
+</node>
+<node id="测试数据唯一性">
+  <data key="d0">测试数据唯一性</data>
+  <data key="d1">concept</data>
+  <data key="d2">测试数据唯一性是指在自动化测试中确保生成的测试数据不重复，以避免因重复数据导致测试失败的问题。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335859</data>
+  <data key="d6"></data>
+</node>
+<node id="异步接口测试">
+  <data key="d0">异步接口测试</data>
+  <data key="d1">concept</data>
+  <data key="d2">异步接口测试是指对提交后需要轮询查询结果的接口进行测试，通常涉及等待和循环验证状态。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335862</data>
+  <data key="d6"></data>
+</node>
+<node id="数据库单例连接">
+  <data key="d0">数据库单例连接</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据库单例连接是一种设计模式，确保在整个测试过程中只创建一个数据库连接实例，以提升性能。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335862</data>
+  <data key="d6"></data>
+</node>
+<node id="钉钉/飞书通知">
+  <data key="d0">钉钉/飞书通知</data>
+  <data key="d1">method</data>
+  <data key="d2">钉钉/飞书通知是CI/CD流程中的一个环节，用于在测试执行完成后向团队发送消息通知。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335866</data>
+  <data key="d6"></data>
+</node>
+<node id="goc工具">
+  <data key="d0">goc工具</data>
+  <data key="d1">method</data>
+  <data key="d2">goc工具是一个用于统计代码覆盖率的工具，在CI/CD流程中用于支持代码覆盖率统计。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335869</data>
+  <data key="d6"></data>
+</node>
+<node id="MockAPI">
+  <data key="d0">MockAPI</data>
+  <data key="d1">artifact</data>
+  <data key="d2">MockAPI是一个使用mitmproxy实现的类，用于在测试中拦截特定API请求并返回预设的Mock响应数据。</data>
+  <data key="d3">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335883</data>
+  <data key="d6"></data>
+</node>
+<node id="测试用例的独立性">
+  <data key="d0">测试用例的独立性</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d2">Faker通过生成唯一测试数据，帮助保证测试用例之间的独立性，防止数据污染。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335896</data>
+  <data key="d6"></data>
+</node>
+<node id="接口依赖">
+  <data key="d0">接口依赖</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d2">export机制用于在测试步骤或测试文件之间传递必要的数据，以处理接口之间的依赖关系。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335896</data>
+  <data key="d6"></data>
+</node>
+<node id="框架扩展">
+  <data key="d0">框架扩展</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d2">通过在validate.py文件中添加新的断言方法，可以扩展pytest_yaml_api框架的断言功能。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335896</data>
+  <data key="d6"></data>
+</node>
+<node id="框架稳定性">
+  <data key="d0">框架稳定性</data>
+  <data key="d3">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d2">完善的try-catch机制能够捕获和处理执行过程中的异常，防止框架因未处理错误而崩溃。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">pytest 接口自动化面试.md</data>
+  <data key="d5">1767335935</data>
   <data key="d6"></data>
 </node>
 <edge source="性能测试模块" target="项目管理入口">
@@ -8040,6 +9365,15 @@
   <data key="d12">1767273792</data>
   <data key="d13"></data>
 </edge>
+<edge source="数据库" target="接口依赖">
+  <data key="d7">1.0</data>
+  <data key="d8">在处理接口依赖时，框架支持直接查询数据库以获取必要的数据，作为解决依赖的一种方法。</data>
+  <data key="d9">依赖解决,数据获取</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336109</data>
+  <data key="d13"></data>
+</edge>
 <edge source="testing:project:list" target="项目列表">
   <data key="d7">1.0</data>
   <data key="d8">加载项目列表需要拥有 `testing:project:list` 权限。</data>
@@ -8752,12 +10086,12 @@
   <data key="d13"></data>
 </edge>
 <edge source="Pytest" target="pytest.ini">
-  <data key="d7">1.0</data>
-  <data key="d8">pytest.ini文件用于配置Pytest测试引擎的行为和参数。</data>
-  <data key="d9">引擎配置,配置文件</data>
-  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
-  <data key="d11">PlayWrightUI 自动化面试.md</data>
-  <data key="d12">1767323902</data>
+  <data key="d7">2.0</data>
+  <data key="d8">pytest.ini文件用于配置Pytest测试引擎的行为和参数。&lt;SEP&gt;Pytest框架使用pytest.ini文件来配置测试运行的各项参数。</data>
+  <data key="d9">引擎配置,运行设置,配置,配置文件</data>
+  <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a&lt;SEP&gt;chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d12">1767336428</data>
   <data key="d13"></data>
 </edge>
 <edge source="Pytest" target="企业级UI自动化测试框架">
@@ -8769,6 +10103,42 @@
   <data key="d12">1767324068</data>
   <data key="d13"></data>
 </edge>
+<edge source="Pytest" target="YAML文件">
+  <data key="d7">1.0</data>
+  <data key="d8">Pytest测试框架负责识别和收集YAML文件中定义的测试用例。</data>
+  <data key="d9">测试框架,用例识别</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336230</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pytest" target="pytest_yaml_yoyo">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_yoyo插件扩展了Pytest框架的功能，使其支持YAML格式的数据驱动测试。</data>
+  <data key="d9">插件扩展,数据驱动</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336240</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pytest" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架基于Pytest构建，使用其作为核心测试执行引擎。</data>
+  <data key="d9">技术栈,核心引擎</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336388</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Pytest" target="conftest">
+  <data key="d7">1.0</data>
+  <data key="d8">Pytest框架使用conftest.py文件进行fixture和插件配置。</data>
+  <data key="d9">插件管理,配置</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336421</data>
+  <data key="d13"></data>
+</edge>
 <edge source="Allure" target="Web UI自动化测试框架">
   <data key="d7">1.0</data>
   <data key="d8">该框架使用Allure工具来生成美观的测试报告。</data>
@@ -8776,6 +10146,24 @@
   <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767323890</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">Allure在测试执行流程的最后阶段负责生成详细的测试报告。</data>
+  <data key="d9">报告生成,结果可视化</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336309</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Allure" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架集成Allure用于生成详细的测试报告。</data>
+  <data key="d9">报告,测试结果可视化</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336469</data>
   <data key="d13"></data>
 </edge>
 <edge source="Jenkins" target="Web UI自动化测试框架">
@@ -8787,6 +10175,15 @@
   <data key="d12">1767323896</data>
   <data key="d13"></data>
 </edge>
+<edge source="Jenkins" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架可以与Jenkins集成，实现持续集成和持续交付流程。</data>
+  <data key="d9">CI/CD,集成</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336451</data>
+  <data key="d13"></data>
+</edge>
 <edge source="YAML" target="自动化测试实施与维护">
   <data key="d7">1.0</data>
   <data key="d8">在自动化测试实施与维护中，使用YAML来管理测试数据。</data>
@@ -8794,6 +10191,51 @@
   <data key="d10">chunk-c638d946337676dcade3a77177e35589</data>
   <data key="d11">邱云霞的简历.pdf</data>
   <data key="d12">1767320330</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架使用YAML作为编写测试用例的主要数据格式。</data>
+  <data key="d9">技术栈,数据格式</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336399</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML" target="YAML解析器">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML解析器组件负责读取和解析YAML格式的测试用例文件。</data>
+  <data key="d9">数据转换,解析</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336431</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML" target="pytest_yaml_yoyo">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_yoyo插件的核心功能是将YAML格式的文件自动解析并转换为pytest可以执行的测试用例。</data>
+  <data key="d9">插件功能,格式解析</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336502</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML" target="Jinja2">
+  <data key="d7">1.0</data>
+  <data key="d8">Jinja2模板引擎被集成到项目中，用于处理YAML测试用例文件中的动态变量和表达式。</data>
+  <data key="d9">动态渲染,模板引擎</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML" target="Swagger">
+  <data key="d7">1.0</data>
+  <data key="d8">Swagger被用于自动解析API文档，并基于其信息生成YAML格式的测试用例，提升了用例编写效率。</data>
+  <data key="d9">用例转换,自动化生成</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336524</data>
   <data key="d13"></data>
 </edge>
 <edge source="Appium" target="移动应用广告归因自动化测试平台">
@@ -8875,6 +10317,15 @@
   <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767324078</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架支持通过Docker进行容器化部署。</data>
+  <data key="d9">容器化,部署</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336460</data>
   <data key="d13"></data>
 </edge>
 <edge source="Linux" target="数据库与脚本">
@@ -9858,6 +11309,33 @@
   <data key="d12">1767320221</data>
   <data key="d13"></data>
 </edge>
+<edge source="SQL" target="pytest_yaml_api框架">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架支持多行字符串特性，使其特别适合编写和嵌入SQL语句进行测试。</data>
+  <data key="d9">功能适配,语法支持</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336156</data>
+  <data key="d13"></data>
+</edge>
+<edge source="SQL" target="数据库集成">
+  <data key="d7">1.0</data>
+  <data key="d8">数据库集成方法在YAML配置中使用SQL语言来定义查询语句，以从数据库中提取数据用于接口验证。</data>
+  <data key="d9">数据查询,配置使用</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336348</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Swagger" target="utils/swagger_parser.py">
+  <data key="d7">1.0</data>
+  <data key="d8">框架中的utils/swagger_parser.py工具模块专门用于解析Swagger API定义文档。</data>
+  <data key="d9">API定义,工具解析</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336124</data>
+  <data key="d13"></data>
+</edge>
 <edge source="版本测试负责人" target="大版本发布">
   <data key="d7">1.0</data>
   <data key="d8">版本测试负责人累计跟进30+次大版本发布，主导上线前风险评估与质量放行。</data>
@@ -10209,6 +11687,15 @@
   <data key="d12">1767324469</data>
   <data key="d13"></data>
 </edge>
+<edge source="Allure报告" target="CI/CD集成">
+  <data key="d7">1.0</data>
+  <data key="d8">生成Allure报告是CI/CD集成流程中的一个关键环节，用于可视化测试执行的结果。</data>
+  <data key="d9">流程环节,结果输出</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336512</data>
+  <data key="d13"></data>
+</edge>
 <edge source="cal_ccoeff_confidence函数" target="AI图像相似度断言">
   <data key="d7">1.0</data>
   <data key="d8">cal_ccoeff_confidence函数是实现AI图像相似度断言所依赖的核心算法之一，用于计算图像相似度。</data>
@@ -10470,6 +11957,15 @@
   <data key="d12">1767324092</data>
   <data key="d13"></data>
 </edge>
+<edge source="pytest" target="pytest --env">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest框架支持通过 `--env` 命令行参数来接收用户输入，并据此切换测试执行的环境。</data>
+  <data key="d9">命令行交互,环境切换</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336226</data>
+  <data key="d13"></data>
+</edge>
 <edge source="storage_state" target="登录态Cookie复用">
   <data key="d7">1.0</data>
   <data key="d8">登录态Cookie复用技术利用Playwright的storage_state功能来保存和复用登录状态。</data>
@@ -10477,6 +11973,15 @@
   <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767324086</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CI/CD" target="pytest_yaml_api框架">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架提供完善的CI/CD支持，可以无缝集成到自动化构建和部署流程中，实现高度自动化测试。</data>
+  <data key="d9">流程集成,自动化实践</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336131</data>
   <data key="d13"></data>
 </edge>
 <edge source="Playwright_Pytest_UI项目" target="cases目录">
@@ -10974,6 +12479,15 @@
   <data key="d12">1767323839</data>
   <data key="d13"></data>
 </edge>
+<edge source="config.py" target="多环境配置管理">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理的具体实现依赖于config.py这个Python配置文件，其中定义了各个环境的配置类。</data>
+  <data key="d9">代码定义,配置实现</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336220</data>
+  <data key="d13"></data>
+</edge>
 <edge source="conftest.py" target="Fixture配置层">
   <data key="d7">1.0</data>
   <data key="d8">conftest.py文件是Fixture配置层的核心，用于定义和共享Pytest测试夹具。</data>
@@ -10990,6 +12504,33 @@
   <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767324101</data>
+  <data key="d13"></data>
+</edge>
+<edge source="conftest.py" target="框架扩展">
+  <data key="d7">1.0</data>
+  <data key="d8">通过在conftest.py文件中将自定义函数添加到my_builtins，可以为框架扩展新的功能函数。</data>
+  <data key="d9">全局配置,函数注册</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335935</data>
+  <data key="d13"></data>
+</edge>
+<edge source="conftest.py" target="Hooks钩子机制">
+  <data key="d7">1.0</data>
+  <data key="d8">Hooks钩子机制中定义的函数(如`request_sign`)位于`conftest.py`文件中，并在YAML配置中通过`hooks`关键字调用。</data>
+  <data key="d9">函数定义,配置使用</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336309</data>
+  <data key="d13"></data>
+</edge>
+<edge source="conftest.py" target="动态数据生成">
+  <data key="d7">1.0</data>
+  <data key="d8">`动态数据生成`所需的自定义函数(如`rand_str`)和Faker库的初始化通常在`conftest.py`文件中进行定义和集成。</data>
+  <data key="d9">函数定义,库集成</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336348</data>
   <data key="d13"></data>
 </edge>
 <edge source="run.py" target="测试执行层">
@@ -11035,6 +12576,51 @@
   <data key="d10">chunk-ee95678b86c9b568620faa3f642a99f2</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767323790</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="TestConfig">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理机制通过定义TestConfig类来具体配置测试环境的参数。</data>
+  <data key="d9">环境切换,配置定义</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336159</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="DevConfig">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理机制通过定义DevConfig类来具体配置开发环境的参数。</data>
+  <data key="d9">环境切换,配置定义</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336171</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多环境配置管理" target="OnlineConfig">
+  <data key="d7">1.0</data>
+  <data key="d8">多环境配置管理机制通过定义OnlineConfig类来具体配置线上环境的参数。</data>
+  <data key="d9">环境切换,配置定义</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336191</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TestConfig" target="BASE_URL">
+  <data key="d7">1.0</data>
+  <data key="d8">TestConfig配置类中包含BASE_URL这一属性，用于设置测试环境的基础API地址。</data>
+  <data key="d9">属性包含,配置项</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336171</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TestConfig" target="MYSQL_HOST">
+  <data key="d7">1.0</data>
+  <data key="d8">TestConfig配置类中包含MYSQL_HOST这一属性，用于设置测试环境的数据库主机地址。</data>
+  <data key="d9">属性包含,配置项</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336192</data>
   <data key="d13"></data>
 </edge>
 <edge source="is_visible()" target="expect断言">
@@ -11271,6 +12857,33 @@
   <data key="d12">1767324048</data>
   <data key="d13"></data>
 </edge>
+<edge source="数据驱动" target="pytest_yaml_api框架">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架采用数据驱动的测试方法，将测试数据与逻辑分离，显著提升了编写测试用例的效率。</data>
+  <data key="d9">效率提升,测试方法</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335981</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据驱动" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架实现了数据驱动的测试方法，将测试数据与脚本分离。</data>
+  <data key="d9">测试方法,设计模式</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336409</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ConnectMysql" target="数据库单例连接">
+  <data key="d7">1.0</data>
+  <data key="d8">ConnectMysql类通过实现单例模式，解决了“频繁创建数据库连接导致性能问题”，是数据库单例连接概念的具体代码实现。</data>
+  <data key="d9">性能优化,设计模式</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336495</data>
+  <data key="d13"></data>
+</edge>
 <edge source="分层设计" target="用例层">
   <data key="d7">1.0</data>
   <data key="d8">分层设计将系统架构分离为不同的层次，其中用例层负责处理具体的测试业务流程。</data>
@@ -11359,6 +12972,42 @@
   <data key="d10">chunk-5ca6e54835a2ff59d1e59730aafaaf2a</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767323893</data>
+  <data key="d13"></data>
+</edge>
+<edge source="PyMySQL" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">PyMySQL在测试执行流程的断言校验步骤中用于执行数据库查询和验证。</data>
+  <data key="d9">数据库操作,断言校验</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336292</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Requests" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">Requests库在测试执行流程中负责处理HTTP/HTTPS请求。</data>
+  <data key="d9">HTTP客户端,请求处理</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336240</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Faker" target="测试用例的独立性">
+  <data key="d7">1.0</data>
+  <data key="d8">Faker通过生成唯一测试数据，帮助保证测试用例之间的独立性，防止数据污染。</data>
+  <data key="d9">数据生成,测试隔离</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335908</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Faker" target="rand_str">
+  <data key="d7">1.0</data>
+  <data key="d8">rand_str函数内部调用了Faker库来生成随机字符串，Faker为rand_str提供了核心的数据生成能力。</data>
+  <data key="d9">库集成,数据生成</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336480</data>
   <data key="d13"></data>
 </edge>
 <edge source="DingTalkChatbot" target="Web UI自动化测试框架">
@@ -11478,6 +13127,15 @@
   <data key="d12">1767323957</data>
   <data key="d13"></data>
 </edge>
+<edge source="测试执行层" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架包含测试执行层，该层由Pytest测试引擎及其生态系统构成，负责驱动测试运行。</data>
+  <data key="d9">功能模块,架构组成</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336523</data>
+  <data key="d13"></data>
+</edge>
 <edge source="测试用例稳定性" target="合理等待">
   <data key="d7">1.0</data>
   <data key="d8">使用合理的等待策略是保障测试用例稳定性的关键措施之一，避免因元素加载问题导致的失败。</data>
@@ -11533,12 +13191,21 @@
   <data key="d13"></data>
 </edge>
 <edge source="重试机制" target="pytest-rerunfailures">
+  <data key="d7">2.0</data>
+  <data key="d8">项目中的重试机制是通过集成pytest-rerunfailures这个Pytest插件来实现的。&lt;SEP&gt;框架的重试机制依赖于pytest-rerunfailures插件来实现测试失败后的自动重试功能。</data>
+  <data key="d9">依赖工具,功能实现,技术实现,插件依赖</data>
+  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62&lt;SEP&gt;chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">PlayWrightUI 自动化面试.md&lt;SEP&gt;pytest 接口自动化面试.md</data>
+  <data key="d12">1767336105</data>
+  <data key="d13"></data>
+</edge>
+<edge source="重试机制" target="框架稳定性">
   <data key="d7">1.0</data>
-  <data key="d8">项目中的重试机制是通过集成pytest-rerunfailures这个Pytest插件来实现的。</data>
-  <data key="d9">依赖工具,技术实现</data>
-  <data key="d10">chunk-337c99f0d9f1f9baf228abe482019a62</data>
-  <data key="d11">PlayWrightUI 自动化面试.md</data>
-  <data key="d12">1767324048</data>
+  <data key="d8">重试机制在测试失败时自动重新执行，提高了测试套件在面对临时性网络或服务问题时的稳定性。</data>
+  <data key="d9">失败重试,稳定性增强</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335981</data>
   <data key="d13"></data>
 </edge>
 <edge source="测试报告实时通知" target="pytest_terminal_summary钩子">
@@ -11683,6 +13350,924 @@
   <data key="d10">chunk-39fad9ded21346ef1bdb62fc0b2a4e02</data>
   <data key="d11">PlayWrightUI 自动化面试.md</data>
   <data key="d12">1767324476</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest fixture" target="测试用例的独立性">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest fixture通过控制测试资源的生命周期和scope，确保测试用例执行环境的独立性。</data>
+  <data key="d9">生命周期控制,资源管理</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335932</data>
+  <data key="d13"></data>
+</edge>
+<edge source="setup/teardown" target="测试用例的独立性">
+  <data key="d7">1.0</data>
+  <data key="d8">setup/teardown机制在测试前后清理测试数据，为每个测试用例提供干净的执行环境。</data>
+  <data key="d9">数据清理,环境准备</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335944</data>
+  <data key="d13"></data>
+</edge>
+<edge source="export机制" target="接口依赖">
+  <data key="d7">1.0</data>
+  <data key="d8">export机制用于在测试步骤或测试文件之间传递必要的数据，以处理接口之间的依赖关系。</data>
+  <data key="d9">变量共享,数据传递</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335911</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract提取" target="接口依赖">
+  <data key="d7">1.0</data>
+  <data key="d8">extract提取方法从接口响应中获取特定参数，以便在同文件的后续测试步骤中通过`${变量}`引用。</data>
+  <data key="d9">参数获取,响应解析</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335935</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract提取" target="JMESPath">
+  <data key="d7">1.0</data>
+  <data key="d8">extract提取功能支持使用JMESPath语法从接口响应中提取数据。</data>
+  <data key="d9">数据提取,语法支持</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336144</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract提取" target="JSONPath">
+  <data key="d7">1.0</data>
+  <data key="d8">extract提取功能支持使用JSONPath语法从接口响应中递归提取数据。</data>
+  <data key="d9">数据提取,语法支持</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336156</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract提取" target="正则表达式">
+  <data key="d7">1.0</data>
+  <data key="d8">extract提取功能支持使用正则表达式语法从接口响应文本中匹配提取数据。</data>
+  <data key="d9">数据提取,语法支持</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336168</data>
+  <data key="d13"></data>
+</edge>
+<edge source="config.yaml" target="接口依赖">
+  <data key="d7">1.0</data>
+  <data key="d8">config.yaml文件用于持久化存储配置数据，解决跨模块测试时的接口依赖问题。</data>
+  <data key="d9">跨模块共享,配置持久化</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335944</data>
+  <data key="d13"></data>
+</edge>
+<edge source="config.yaml" target="rcy()函数">
+  <data key="d7">1.0</data>
+  <data key="d8">rcy()函数专门用于读取config.yaml文件，以加载环境配置等信息。</data>
+  <data key="d9">文件读取,配置加载</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336131</data>
+  <data key="d13"></data>
+</edge>
+<edge source="config.yaml" target="变量上下文">
+  <data key="d7">1.0</data>
+  <data key="d8">变量上下文通过rcy()函数读取config.yaml文件来初始化测试环境配置。</data>
+  <data key="d9">环境初始化,配置读取</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336280</data>
+  <data key="d13"></data>
+</edge>
+<edge source="config.yaml" target="接口关联与数据传递">
+  <data key="d7">1.0</data>
+  <data key="d8">解决`接口关联与数据传递`问题，特别是跨文件传递时，可以使用`config.yaml`文件来持久化关键数据。</data>
+  <data key="d9">数据持久化,解决方案</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336354</data>
+  <data key="d13"></data>
+</edge>
+<edge source="config.yaml" target="数据驱动层">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动层使用config.yaml文件作为环境配置和数据库连接等信息的来源。</data>
+  <data key="d9">数据源,配置管理</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336444</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate.py" target="框架扩展">
+  <data key="d7">1.0</data>
+  <data key="d8">通过在validate.py文件中添加新的断言方法，可以扩展pytest_yaml_api框架的断言功能。</data>
+  <data key="d9">功能扩展,断言定制</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335911</data>
+  <data key="d13"></data>
+</edge>
+<edge source="env_filter.filters" target="框架扩展">
+  <data key="d7">1.0</data>
+  <data key="d8">通过向env_filter.filters字典注册新的函数，可以为Jinja2模板引擎扩展自定义过滤器。</data>
+  <data key="d9">模板扩展,过滤器注册</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335944</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hooks" target="框架扩展">
+  <data key="d7">1.0</data>
+  <data key="d8">通过定义Hooks函数并注册到my_builtins，可以扩展框架在特定执行点的行为。</data>
+  <data key="d9">行为扩展,钩子函数</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335960</data>
+  <data key="d13"></data>
+</edge>
+<edge source="try-catch机制" target="框架稳定性">
+  <data key="d7">1.0</data>
+  <data key="d8">完善的try-catch机制能够捕获和处理执行过程中的异常，防止框架因未处理错误而崩溃。</data>
+  <data key="d9">异常捕获,错误处理</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335947</data>
+  <data key="d13"></data>
+</edge>
+<edge source="日志系统" target="框架稳定性">
+  <data key="d7">1.0</data>
+  <data key="d8">详细的日志系统记录了框架的执行过程，有助于在出现问题时进行诊断和排查，提升稳定性。</data>
+  <data key="d9">执行追踪,问题诊断</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335963</data>
+  <data key="d13"></data>
+</edge>
+<edge source="超时控制" target="框架稳定性">
+  <data key="d7">1.0</data>
+  <data key="d8">HTTP请求超时设置避免了请求长时间无响应导致的线程阻塞，保证了框架的执行效率和稳定性。</data>
+  <data key="d9">请求管理,防止阻塞</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336090</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Jinja2" target="AST(抽象语法树)">
+  <data key="d7">1.0</data>
+  <data key="d8">Jinja2模板引擎利用AST来解析模板字符串，将`${var}`这样的模板语法转换为可执行的Python表达式。</data>
+  <data key="d9">模板解析,语法转换</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335960</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Jinja2" target="YAML文件">
+  <data key="d7">1.0</data>
+  <data key="d8">Jinja2模板引擎用于渲染YAML文件中的模板语法，将变量替换为实际值。</data>
+  <data key="d9">变量替换,模板渲染</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336239</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Jinja2" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架集成Jinja2模板引擎，用于动态渲染测试用例中的参数。</data>
+  <data key="d9">技术栈,模板渲染</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336404</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Jinja2" target="Jinja2模板渲染">
+  <data key="d7">1.0</data>
+  <data key="d8">Jinja2模板渲染组件利用Jinja2引擎处理测试用例中的模板语法，生成动态数据。</data>
+  <data key="d9">动态内容生成,渲染</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336439</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest插件机制" target="pytest_collect_file">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_collect_file是pytest插件机制中的一个具体hook函数，用于扩展pytest收集测试文件的能力。</data>
+  <data key="d9">功能扩展,钩子实现</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335960</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest插件机制" target="pytest_runtest_call">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_runtest_call是pytest插件机制中的一个具体hook函数，用于在测试执行时动态增强报告信息。</data>
+  <data key="d9">报告增强,钩子实现</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335981</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest插件机制" target="fixture系统">
+  <data key="d7">1.0</data>
+  <data key="d8">fixture系统是pytest插件机制的核心组成部分，专门用于管理测试资源的生命周期。</data>
+  <data key="d9">核心机制,资源管理</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336087</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_collect_file" target="YAML转pytest用例">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML转pytest用例的过程始于pytest_collect_file hook函数，该函数负责识别并收集YAML测试文件。</data>
+  <data key="d9">文件收集,用例转换</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767335981</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_runtest_call" target="allure">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_runtest_call hook函数被用于动态地向allure测试报告框架添加详细的执行信息。</data>
+  <data key="d9">信息增强,报告集成</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336105</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML转pytest用例" target="types.FunctionType">
+  <data key="d7">1.0</data>
+  <data key="d8">在YAML转pytest用例的过程中，使用types.FunctionType来动态创建代表测试用例的Python函数。</data>
+  <data key="d9">函数生成,动态创建</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336087</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML转pytest用例" target="Module对象">
+  <data key="d7">1.0</data>
+  <data key="d8">在YAML转pytest用例的过程中，动态创建的测试函数最终被添加到一个新创建的Module对象中。</data>
+  <data key="d9">动态构建,用例容器</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336108</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api框架" target="关键字驱动">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架结合关键字驱动的测试方法，允许测试人员使用预定义关键字快速构建测试步骤。</data>
+  <data key="d9">快速编写,测试方法</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336090</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api框架" target="插件化设计">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架采用插件化设计，使其能够通过添加插件轻松扩展新功能，保持框架的灵活性和可扩展性。</data>
+  <data key="d9">易于扩展,架构模式</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336108</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api框架" target="生态兼容性好">
+  <data key="d7">1.0</data>
+  <data key="d8">生态兼容性好是pytest_yaml_api框架的核心价值之一，表明它能很好地与现有技术栈协同工作。</data>
+  <data key="d9">框架特性,环境适应</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336144</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api框架" target="效率提升70%">
+  <data key="d7">1.0</data>
+  <data key="d8">使用pytest_yaml_api框架将接口自动化测试的效率提升了70%，这是框架核心价值的具体量化体现。</data>
+  <data key="d9">价值体现,成果量化</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336171</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api框架" target="测试覆盖率提升40%">
+  <data key="d7">1.0</data>
+  <data key="d8">使用pytest_yaml_api框架将测试覆盖率提升了40%，体现了框架对软件质量保障的贡献。</data>
+  <data key="d9">成果量化,质量提升</data>
+  <data key="d10">chunk-13dda3988395fb8ec2feb81109f87902</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336185</data>
+  <data key="d13"></data>
+</edge>
+<edge source="关键字驱动" target="pytest_yaml_api">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架实现了关键字驱动的测试方法，提高用例的可读性和复用性。</data>
+  <data key="d9">测试方法,设计模式</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336416</data>
+  <data key="d13"></data>
+</edge>
+<edge source="allure" target="YAML用例">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML用例的结构中支持allure配置，用于为测试模块和用例标题添加标记，以生成更详细的测试报告。</data>
+  <data key="d9">报告集成,测试标记</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336194</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML用例" target="Jinja2模板引擎">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML用例中的变量引用(如${变量名})需要通过Jinja2模板引擎进行渲染，以生成最终的请求数据。</data>
+  <data key="d9">变量处理,模板渲染</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336131</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML用例" target="hooks">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML用例的结构中包含hooks部分，用于定义在测试流程中全局执行的钩子函数。</data>
+  <data key="d9">全局操作,流程控制</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336205</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML用例" target="export">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML用例的结构中包含export部分，用于声明需要导出到测试会话或其他用例的变量。</data>
+  <data key="d9">变量管理,数据传递</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336212</data>
+  <data key="d13"></data>
+</edge>
+<edge source="YAML用例" target="validate">
+  <data key="d7">1.0</data>
+  <data key="d8">YAML用例的结构中包含validate部分，用于定义对接口响应进行断言校验的规则。</data>
+  <data key="d9">结果验证,质量保障</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336272</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract.yaml" target="ry()函数">
+  <data key="d7">1.0</data>
+  <data key="d8">ry()函数专门用于读取extract.yaml文件，以加载参数提取规则。</data>
+  <data key="d9">文件读取,规则加载</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336140</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract.yaml" target="变量上下文">
+  <data key="d7">1.0</data>
+  <data key="d8">变量上下文通过ry()函数读取extract.yaml文件来获取参数提取规则和数据。</data>
+  <data key="d9">参数提取,数据读取</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336292</data>
+  <data key="d13"></data>
+</edge>
+<edge source="extract.yaml" target="数据驱动层">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动层使用extract.yaml文件来定义如何从响应或数据库中提取数据的规则。</data>
+  <data key="d9">数据源,规则定义</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336457</data>
+  <data key="d13"></data>
+</edge>
+<edge source="my_builtins" target="rand_str">
+  <data key="d7">1.0</data>
+  <data key="d8">rand_str函数是my_builtins自定义函数库中包含的一个具体函数。</data>
+  <data key="d9">函数包含,工具库</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336174</data>
+  <data key="d13"></data>
+</edge>
+<edge source="my_builtins" target="ftime">
+  <data key="d7">1.0</data>
+  <data key="d8">ftime函数是my_builtins自定义函数库中包含的一个具体函数。</data>
+  <data key="d9">函数包含,工具库</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336191</data>
+  <data key="d13"></data>
+</edge>
+<edge source="query_sql()函数" target="断言校验">
+  <data key="d7">1.0</data>
+  <data key="d8">断言校验可以调用query_sql()函数执行数据库查询，并将查询结果与接口响应数据进行对比验证。</data>
+  <data key="d9">数据库集成,数据验证</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336153</data>
+  <data key="d13"></data>
+</edge>
+<edge source="JMESPath" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">JMESPath在测试执行流程的提取步骤中用于从响应数据中提取特定值。</data>
+  <data key="d9">响应处理,数据提取</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336266</data>
+  <data key="d13"></data>
+</edge>
+<edge source="JMESPath" target="三层数据提取">
+  <data key="d7">1.0</data>
+  <data key="d8">JMESPath是三层数据提取方法中支持的一种具体查询语言，用于从JSON响应中提取数据。</data>
+  <data key="d9">技术组成,数据提取方法</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336508</data>
+  <data key="d13"></data>
+</edge>
+<edge source="JSONPath" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">JSONPath在测试执行流程的提取步骤中用于从响应数据中提取特定值。</data>
+  <data key="d9">响应处理,数据提取</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336280</data>
+  <data key="d13"></data>
+</edge>
+<edge source="JSONPath" target="三层数据提取">
+  <data key="d7">1.0</data>
+  <data key="d8">JSONPath是三层数据提取方法中支持的一种具体查询语言，用于从JSON响应中提取数据。</data>
+  <data key="d9">技术组成,数据提取方法</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336520</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">正则表达式在测试执行流程的提取步骤中作为一种方法，用于从响应文本中提取数据。</data>
+  <data key="d9">数据提取,模式匹配</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336321</data>
+  <data key="d13"></data>
+</edge>
+<edge source="正则表达式" target="三层数据提取">
+  <data key="d7">1.0</data>
+  <data key="d8">正则表达式是三层数据提取方法中支持的一种具体技术，用于从响应文本中基于模式匹配提取数据。</data>
+  <data key="d9">技术组成,数据提取方法</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336535</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rand_str" target="动态数据生成">
+  <data key="d7">1.0</data>
+  <data key="d8">动态数据生成方法的一个具体示例是使用`rand_str`函数来生成随机字符串作为测试数据。</data>
+  <data key="d9">函数示例,数据生成</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336364</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rand_str" target="测试数据唯一性">
+  <data key="d7">1.0</data>
+  <data key="d8">rand_str函数被设计用于生成唯一字符串，是解决“测试数据需要唯一性”这一问题的具体技术方案。</data>
+  <data key="d9">数据保障,问题解决</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336489</data>
+  <data key="d13"></data>
+</edge>
+<edge source="sign_request" target="hooks">
+  <data key="d7">1.0</data>
+  <data key="d8">hooks中定义的全局钩子包含sign_request函数，该函数会在请求发送前被调用以进行签名。</data>
+  <data key="d9">请求处理,钩子执行</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336185</data>
+  <data key="d13"></data>
+</edge>
+<edge source="hooks" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">hooks作为测试执行流程中的一个关键概念，提供了在特定阶段执行自定义代码的扩展点。</data>
+  <data key="d9">扩展点,流程控制</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336336</data>
+  <data key="d13"></data>
+</edge>
+<edge source="export" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">export作为测试执行流程中的一个关键步骤，负责将当前用例产生的变量导出，供后续用例使用。</data>
+  <data key="d9">数据传递,用例依赖</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336368</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="eq">
+  <data key="d7">1.0</data>
+  <data key="d8">eq是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">断言类型,相等校验</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336203</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="contains">
+  <data key="d7">1.0</data>
+  <data key="d8">contains是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">包含校验,断言类型</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336209</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="contained_by">
+  <data key="d7">1.0</data>
+  <data key="d8">contained_by是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">断言类型,被包含校验</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336216</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="gt">
+  <data key="d7">1.0</data>
+  <data key="d8">gt是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">大于校验,断言类型</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336219</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="le">
+  <data key="d7">1.0</data>
+  <data key="d8">le是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">小于等于校验,断言类型</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336229</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="len_eq">
+  <data key="d7">1.0</data>
+  <data key="d8">len_eq是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">断言类型,长度相等校验</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336236</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="len_gt">
+  <data key="d7">1.0</data>
+  <data key="d8">len_gt是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">断言类型,长度大于校验</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336252</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="startswith">
+  <data key="d7">1.0</data>
+  <data key="d8">startswith是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">前缀校验,断言类型</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336262</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="endswith">
+  <data key="d7">1.0</data>
+  <data key="d8">endswith是validate断言校验中可使用的一种具体断言方法。</data>
+  <data key="d9">后缀校验,断言类型</data>
+  <data key="d10">chunk-5011e22e4be70add89b59cd7592f5fc5</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336289</data>
+  <data key="d13"></data>
+</edge>
+<edge source="validate" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">validate作为测试执行流程中的一个关键步骤，负责对测试响应进行断言校验以确保质量。</data>
+  <data key="d9">结果验证,质量保障</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336354</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Redis" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">Redis在测试执行流程中可能用于缓存数据或进行数据库断言。</data>
+  <data key="d9">数据存储,数据库操作</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336300</data>
+  <data key="d13"></data>
+</edge>
+<edge source="WebSocket" target="测试执行流程">
+  <data key="d7">1.0</data>
+  <data key="d8">WebSocket协议在测试执行流程中用于处理长连接请求。</data>
+  <data key="d9">通信协议,长连接</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336256</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mock" target="mitmproxy">
+  <data key="d7">1.0</data>
+  <data key="d8">mitmproxy工具用于实现Mock功能，通过拦截和修改HTTP/HTTPS流量来模拟服务。</data>
+  <data key="d9">模拟服务,流量拦截</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336272</data>
+  <data key="d13"></data>
+</edge>
+<edge source="mitmproxy" target="MockAPI">
+  <data key="d7">1.0</data>
+  <data key="d8">MockAPI类是基于mitmproxy工具实现的，利用mitmproxy的流量拦截能力来提供接口Mock支持。</data>
+  <data key="d9">功能实现,工具基础</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336530</data>
+  <data key="d13"></data>
+</edge>
+<edge source="测试执行流程" target="api分层调用">
+  <data key="d7">1.0</data>
+  <data key="d8">api分层调用是测试执行流程中处理请求的一种方式，强调对公共接口的复用。</data>
+  <data key="d9">接口复用,请求类型</data>
+  <data key="d10">chunk-cc64f2121f1f94403bd35559e7d0cb09</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336388</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据库集成" target="同一层级变量互相引用">
+  <data key="d7">1.0</data>
+  <data key="d8">数据库集成的YAML配置示例中，变量定义在同一层级，可能遇到互相引用的问题。</data>
+  <data key="d9">潜在问题,配置示例</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336304</data>
+  <data key="d13"></data>
+</edge>
+<edge source="数据库集成" target="函数内嵌套变量引用">
+  <data key="d7">1.0</data>
+  <data key="d8">`函数内嵌套变量引用`的问题在数据库集成的配置场景中出现，例如在`query_sql`函数参数中嵌套引用SQL变量。</data>
+  <data key="d9">配置示例,问题场景</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336332</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hooks钩子机制" target="request_sign">
+  <data key="d7">1.0</data>
+  <data key="d8">Hooks钩子机制中使用的`request_sign`函数在`conftest.py`中定义，并在YAML配置中通过`hooks`关键字指定为请求前钩子。</data>
+  <data key="d9">函数实现,钩子调用</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336355</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Hooks钩子机制" target="log_response">
+  <data key="d7">1.0</data>
+  <data key="d8">Hooks钩子机制支持响应后处理，`log_response`是其中一种响应后钩子函数，用于记录响应信息。</data>
+  <data key="d9">响应处理,钩子类型</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336371</data>
+  <data key="d13"></data>
+</edge>
+<edge source="WebSocket支持" target="文件上传">
+  <data key="d7">1.0</data>
+  <data key="d8">WebSocket支持和文件上传都是针对特定类型接口(实时通信协议和文件传输)的测试配置方法。</data>
+  <data key="d9">协议测试,接口测试</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336317</data>
+  <data key="d13"></data>
+</edge>
+<edge source="参数化测试" target="全局变量导出">
+  <data key="d7">1.0</data>
+  <data key="d8">参数化测试通过多组数据驱动测试执行，而全局变量导出则管理测试用例间的变量共享，两者共同支持复杂的测试数据流。</data>
+  <data key="d9">变量管理,数据驱动</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336322</data>
+  <data key="d13"></data>
+</edge>
+<edge source="全局变量导出" target="接口关联与数据传递">
+  <data key="d7">1.0</data>
+  <data key="d8">解决`接口关联与数据传递`问题的一种方案是使用`全局变量导出`方法，以实现跨测试用例的数据共享。</data>
+  <data key="d9">数据共享,解决方案</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336336</data>
+  <data key="d13"></data>
+</edge>
+<edge source="同一层级变量互相引用" target="runner.py">
+  <data key="d7">1.0</data>
+  <data key="d8">`同一层级变量互相引用`的问题在`runner.py`脚本中通过实现逐个变量渲染的逻辑得到解决。</data>
+  <data key="d9">实现逻辑,问题解决</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336322</data>
+  <data key="d13"></data>
+</edge>
+<edge source="同一层级变量互相引用" target="render_template_obj">
+  <data key="d7">1.0</data>
+  <data key="d8">解决同一层级变量互相引用问题时，在`runner.py`中使用了`render_template_obj`对象来逐个渲染变量。</data>
+  <data key="d9">工具使用,问题解决</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336371</data>
+  <data key="d13"></data>
+</edge>
+<edge source="函数内嵌套变量引用" target="env_filter">
+  <data key="d7">1.0</data>
+  <data key="d8">解决函数内嵌套变量引用问题时，使用了`env_filter.from_string`方法来递归处理嵌套的模板字符串。</data>
+  <data key="d9">工具使用,问题解决</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336372</data>
+  <data key="d13"></data>
+</edge>
+<edge source="函数内嵌套变量引用" target="re.sub">
+  <data key="d7">1.0</data>
+  <data key="d8">解决函数内嵌套变量引用问题时，使用了`re.sub`方法配合自定义替换函数来匹配和渲染模板字符串中的变量。</data>
+  <data key="d9">方法使用,问题解决</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336395</data>
+  <data key="d13"></data>
+</edge>
+<edge source="动态数据生成" target="Faker库">
+  <data key="d7">1.0</data>
+  <data key="d8">`动态数据生成`方法通过集成`Faker库`来创建具有唯一性的伪造测试数据，以避免数据冲突。</data>
+  <data key="d9">数据生成,集成使用</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336340</data>
+  <data key="d13"></data>
+</edge>
+<edge source="动态数据生成" target="current_time">
+  <data key="d7">1.0</data>
+  <data key="d8">动态数据生成方法的一个具体示例是使用`current_time`函数来生成当前时间戳作为测试数据。</data>
+  <data key="d9">函数示例,数据生成</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336384</data>
+  <data key="d13"></data>
+</edge>
+<edge source="generate_md5" target="request_sign">
+  <data key="d7">1.0</data>
+  <data key="d8">`request_sign`钩子函数在其实现中调用了`generate_md5`函数来为JSON数据生成MD5签名。</data>
+  <data key="d9">函数调用,签名生成</data>
+  <data key="d10">chunk-51ebc07ae94b23e037d6ef90d1ce36d3</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336368</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="Backend">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架支持对Backend(后台管理系统)业务线进行自动化测试。</data>
+  <data key="d9">业务支持,测试覆盖</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336421</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="Playturbo">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架支持对Playturbo(创意平台)业务线进行自动化测试。</data>
+  <data key="d9">业务支持,测试覆盖</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336431</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="OpenAPI">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架支持对OpenAPI(开放接口)业务线进行自动化测试。</data>
+  <data key="d9">业务支持,测试覆盖</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336443</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="钉钉/飞书">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架支持在测试完成后通过钉钉或飞书推送通知。</data>
+  <data key="d9">消息推送,通知</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336476</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="核心引擎层">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架包含核心引擎层，该层负责测试用例的解析、渲染、参数提取和校验等核心逻辑。</data>
+  <data key="d9">功能模块,架构组成</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336486</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="数据驱动层">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架包含数据驱动层，该层负责管理和提供测试用例所需的各种数据源。</data>
+  <data key="d9">功能模块,架构组成</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336501</data>
+  <data key="d13"></data>
+</edge>
+<edge source="pytest_yaml_api" target="基础支撑层">
+  <data key="d7">1.0</data>
+  <data key="d8">pytest_yaml_api框架包含基础支撑层，该层提供网络通信、数据库连接和Mock等底层技术支持。</data>
+  <data key="d9">功能模块,架构组成</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="api_mysql" target="数据驱动层">
+  <data key="d7">1.0</data>
+  <data key="d8">数据驱动层通过api_mysql组件或文件来处理与MySQL数据库交互的测试数据。</data>
+  <data key="d9">数据库操作,数据源</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336466</data>
+  <data key="d13"></data>
+</edge>
+<edge source="HTTP Session" target="基础支撑层">
+  <data key="d7">1.0</data>
+  <data key="d8">基础支撑层提供HTTP Session组件来发送HTTP请求和管理会话状态。</data>
+  <data key="d9">协议支持,通信</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336451</data>
+  <data key="d13"></data>
+</edge>
+<edge source="MySQL连接池" target="基础支撑层">
+  <data key="d7">1.0</data>
+  <data key="d8">基础支撑层提供MySQL连接池组件来高效管理与MySQL数据库的连接。</data>
+  <data key="d9">数据存储,数据库连接</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336460</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Redis连接" target="基础支撑层">
+  <data key="d7">1.0</data>
+  <data key="d8">基础支撑层提供Redis连接组件来管理与Redis缓存数据库的连接。</data>
+  <data key="d9">数据存储,缓存连接</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336469</data>
+  <data key="d13"></data>
+</edge>
+<edge source="WebSocket客户端" target="基础支撑层">
+  <data key="d7">1.0</data>
+  <data key="d8">基础支撑层提供WebSocket客户端组件以支持WebSocket协议的接口测试。</data>
+  <data key="d9">协议支持,通信</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336480</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mock mitmproxy" target="基础支撑层">
+  <data key="d7">1.0</data>
+  <data key="d8">基础支撑层使用Mock mitmproxy组件来拦截和模拟接口响应，辅助测试。</data>
+  <data key="d9">模拟,测试辅助</data>
+  <data key="d10">chunk-faaf941d4d9f8097309219433b1bd751</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336489</data>
+  <data key="d13"></data>
+</edge>
+<edge source="sleep" target="异步接口测试">
+  <data key="d7">1.0</data>
+  <data key="d8">在异步接口测试的解决方案中，sleep关键字被用于在提交任务后等待一段时间，以便后续轮询查询结果。</data>
+  <data key="d9">流程控制,等待机制</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336490</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CI/CD集成" target="钉钉/飞书通知">
+  <data key="d7">1.0</data>
+  <data key="d8">发送钉钉或飞书通知是CI/CD集成流程的最终环节之一，用于将测试结果同步给开发团队。</data>
+  <data key="d9">信息同步,流程环节</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336523</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CI/CD集成" target="goc工具">
+  <data key="d7">1.0</data>
+  <data key="d8">goc工具在CI/CD集成流程中被用于统计代码覆盖率，为软件质量提供度量指标。</data>
+  <data key="d9">流程支持,质量度量</data>
+  <data key="d10">chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
+  <data key="d11">pytest 接口自动化面试.md</data>
+  <data key="d12">1767336539</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

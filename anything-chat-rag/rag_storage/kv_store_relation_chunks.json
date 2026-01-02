@@ -4967,11 +4967,11 @@
   },
   "Pytest<SEP>pytest.ini": {
     "chunk_ids": [
-      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a"
+      "chunk-5ca6e54835a2ff59d1e59730aafaaf2a",
+      "chunk-faaf941d4d9f8097309219433b1bd751"
     ],
-    "count": 1,
-    "create_time": 1767323902,
-    "update_time": 1767323902,
+    "count": 2,
+    "update_time": 1767336428,
     "_id": "Pytest<SEP>pytest.ini"
   },
   "DingTalkChatbot<SEP>Web UI自动化测试框架": {
@@ -5390,11 +5390,11 @@
   },
   "pytest-rerunfailures<SEP>重试机制": {
     "chunk_ids": [
-      "chunk-337c99f0d9f1f9baf228abe482019a62"
+      "chunk-337c99f0d9f1f9baf228abe482019a62",
+      "chunk-13dda3988395fb8ec2feb81109f87902"
     ],
-    "count": 1,
-    "create_time": 1767324048,
-    "update_time": 1767324048,
+    "count": 2,
+    "update_time": 1767336105,
     "_id": "pytest-rerunfailures<SEP>重试机制"
   },
   "测试报告实时通知<SEP>钉钉": {
@@ -5630,5 +5630,1265 @@
     "create_time": 1767324497,
     "update_time": 1767324497,
     "_id": "AI图像对比断言<SEP>calc_ccoeff_confidence"
+  },
+  "Faker<SEP>测试用例的独立性": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335896,
+    "update_time": 1767335896,
+    "_id": "Faker<SEP>测试用例的独立性"
+  },
+  "export机制<SEP>接口依赖": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335896,
+    "update_time": 1767335896,
+    "_id": "export机制<SEP>接口依赖"
+  },
+  "validate.py<SEP>框架扩展": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335896,
+    "update_time": 1767335896,
+    "_id": "validate.py<SEP>框架扩展"
+  },
+  "pytest fixture<SEP>测试用例的独立性": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335929,
+    "update_time": 1767335929,
+    "_id": "pytest fixture<SEP>测试用例的独立性"
+  },
+  "extract提取<SEP>接口依赖": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335932,
+    "update_time": 1767335932,
+    "_id": "extract提取<SEP>接口依赖"
+  },
+  "conftest.py<SEP>框架扩展": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335932,
+    "update_time": 1767335932,
+    "_id": "conftest.py<SEP>框架扩展"
+  },
+  "try-catch机制<SEP>框架稳定性": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335935,
+    "update_time": 1767335935,
+    "_id": "try-catch机制<SEP>框架稳定性"
+  },
+  "setup/teardown<SEP>测试用例的独立性": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335944,
+    "update_time": 1767335944,
+    "_id": "setup/teardown<SEP>测试用例的独立性"
+  },
+  "config.yaml<SEP>接口依赖": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335944,
+    "update_time": 1767335944,
+    "_id": "config.yaml<SEP>接口依赖"
+  },
+  "env_filter.filters<SEP>框架扩展": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335944,
+    "update_time": 1767335944,
+    "_id": "env_filter.filters<SEP>框架扩展"
+  },
+  "AST(抽象语法树)<SEP>Jinja2": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335960,
+    "update_time": 1767335960,
+    "_id": "AST(抽象语法树)<SEP>Jinja2"
+  },
+  "Hooks<SEP>框架扩展": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335960,
+    "update_time": 1767335960,
+    "_id": "Hooks<SEP>框架扩展"
+  },
+  "pytest_collect_file<SEP>pytest插件机制": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335960,
+    "update_time": 1767335960,
+    "_id": "pytest_collect_file<SEP>pytest插件机制"
+  },
+  "日志系统<SEP>框架稳定性": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335960,
+    "update_time": 1767335960,
+    "_id": "日志系统<SEP>框架稳定性"
+  },
+  "pytest_runtest_call<SEP>pytest插件机制": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335981,
+    "update_time": 1767335981,
+    "_id": "pytest_runtest_call<SEP>pytest插件机制"
+  },
+  "YAML转pytest用例<SEP>pytest_collect_file": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335981,
+    "update_time": 1767335981,
+    "_id": "YAML转pytest用例<SEP>pytest_collect_file"
+  },
+  "框架稳定性<SEP>重试机制": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335981,
+    "update_time": 1767335981,
+    "_id": "框架稳定性<SEP>重试机制"
+  },
+  "pytest_yaml_api框架<SEP>数据驱动": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767335981,
+    "update_time": 1767335981,
+    "_id": "pytest_yaml_api框架<SEP>数据驱动"
+  },
+  "fixture系统<SEP>pytest插件机制": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336083,
+    "update_time": 1767336083,
+    "_id": "fixture系统<SEP>pytest插件机制"
+  },
+  "YAML转pytest用例<SEP>types.FunctionType": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336084,
+    "update_time": 1767336084,
+    "_id": "YAML转pytest用例<SEP>types.FunctionType"
+  },
+  "框架稳定性<SEP>超时控制": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336087,
+    "update_time": 1767336087,
+    "_id": "框架稳定性<SEP>超时控制"
+  },
+  "pytest_yaml_api框架<SEP>关键字驱动": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336087,
+    "update_time": 1767336087,
+    "_id": "pytest_yaml_api框架<SEP>关键字驱动"
+  },
+  "allure<SEP>pytest_runtest_call": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336105,
+    "update_time": 1767336105,
+    "_id": "allure<SEP>pytest_runtest_call"
+  },
+  "pytest_yaml_api框架<SEP>插件化设计": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336105,
+    "update_time": 1767336105,
+    "_id": "pytest_yaml_api框架<SEP>插件化设计"
+  },
+  "Module对象<SEP>YAML转pytest用例": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336105,
+    "update_time": 1767336105,
+    "_id": "Module对象<SEP>YAML转pytest用例"
+  },
+  "接口依赖<SEP>数据库": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336105,
+    "update_time": 1767336105,
+    "_id": "接口依赖<SEP>数据库"
+  },
+  "Swagger<SEP>utils/swagger_parser.py": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336124,
+    "update_time": 1767336124,
+    "_id": "Swagger<SEP>utils/swagger_parser.py"
+  },
+  "CI/CD<SEP>pytest_yaml_api框架": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336128,
+    "update_time": 1767336128,
+    "_id": "CI/CD<SEP>pytest_yaml_api框架"
+  },
+  "Jinja2模板引擎<SEP>YAML用例": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336128,
+    "update_time": 1767336128,
+    "_id": "Jinja2模板引擎<SEP>YAML用例"
+  },
+  "config.yaml<SEP>rcy()函数": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336128,
+    "update_time": 1767336128,
+    "_id": "config.yaml<SEP>rcy()函数"
+  },
+  "extract.yaml<SEP>ry()函数": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336140,
+    "update_time": 1767336140,
+    "_id": "extract.yaml<SEP>ry()函数"
+  },
+  "pytest_yaml_api框架<SEP>生态兼容性好": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336144,
+    "update_time": 1767336144,
+    "_id": "pytest_yaml_api框架<SEP>生态兼容性好"
+  },
+  "JMESPath<SEP>extract提取": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336144,
+    "update_time": 1767336144,
+    "_id": "JMESPath<SEP>extract提取"
+  },
+  "query_sql()函数<SEP>断言校验": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336153,
+    "update_time": 1767336153,
+    "_id": "query_sql()函数<SEP>断言校验"
+  },
+  "JSONPath<SEP>extract提取": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336156,
+    "update_time": 1767336156,
+    "_id": "JSONPath<SEP>extract提取"
+  },
+  "SQL<SEP>pytest_yaml_api框架": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336156,
+    "update_time": 1767336156,
+    "_id": "SQL<SEP>pytest_yaml_api框架"
+  },
+  "TestConfig<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336156,
+    "update_time": 1767336156,
+    "_id": "TestConfig<SEP>多环境配置管理"
+  },
+  "extract提取<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336168,
+    "update_time": 1767336168,
+    "_id": "extract提取<SEP>正则表达式"
+  },
+  "pytest_yaml_api框架<SEP>效率提升70%": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336171,
+    "update_time": 1767336171,
+    "_id": "pytest_yaml_api框架<SEP>效率提升70%"
+  },
+  "DevConfig<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336171,
+    "update_time": 1767336171,
+    "_id": "DevConfig<SEP>多环境配置管理"
+  },
+  "BASE_URL<SEP>TestConfig": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336171,
+    "update_time": 1767336171,
+    "_id": "BASE_URL<SEP>TestConfig"
+  },
+  "my_builtins<SEP>rand_str": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336171,
+    "update_time": 1767336171,
+    "_id": "my_builtins<SEP>rand_str"
+  },
+  "pytest_yaml_api框架<SEP>测试覆盖率提升40%": {
+    "chunk_ids": [
+      "chunk-13dda3988395fb8ec2feb81109f87902"
+    ],
+    "count": 1,
+    "create_time": 1767336185,
+    "update_time": 1767336185,
+    "_id": "pytest_yaml_api框架<SEP>测试覆盖率提升40%"
+  },
+  "hooks<SEP>sign_request": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336185,
+    "update_time": 1767336185,
+    "_id": "hooks<SEP>sign_request"
+  },
+  "ftime<SEP>my_builtins": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336191,
+    "update_time": 1767336191,
+    "_id": "ftime<SEP>my_builtins"
+  },
+  "OnlineConfig<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336191,
+    "update_time": 1767336191,
+    "_id": "OnlineConfig<SEP>多环境配置管理"
+  },
+  "MYSQL_HOST<SEP>TestConfig": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336191,
+    "update_time": 1767336191,
+    "_id": "MYSQL_HOST<SEP>TestConfig"
+  },
+  "YAML用例<SEP>allure": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336191,
+    "update_time": 1767336191,
+    "_id": "YAML用例<SEP>allure"
+  },
+  "eq<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336203,
+    "update_time": 1767336203,
+    "_id": "eq<SEP>validate"
+  },
+  "YAML用例<SEP>hooks": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336205,
+    "update_time": 1767336205,
+    "_id": "YAML用例<SEP>hooks"
+  },
+  "contains<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336209,
+    "update_time": 1767336209,
+    "_id": "contains<SEP>validate"
+  },
+  "YAML用例<SEP>export": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336212,
+    "update_time": 1767336212,
+    "_id": "YAML用例<SEP>export"
+  },
+  "contained_by<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336216,
+    "update_time": 1767336216,
+    "_id": "contained_by<SEP>validate"
+  },
+  "gt<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336219,
+    "update_time": 1767336219,
+    "_id": "gt<SEP>validate"
+  },
+  "config.py<SEP>多环境配置管理": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336219,
+    "update_time": 1767336219,
+    "_id": "config.py<SEP>多环境配置管理"
+  },
+  "pytest<SEP>pytest --env": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336226,
+    "update_time": 1767336226,
+    "_id": "pytest<SEP>pytest --env"
+  },
+  "le<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336229,
+    "update_time": 1767336229,
+    "_id": "le<SEP>validate"
+  },
+  "Pytest<SEP>YAML文件": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336229,
+    "update_time": 1767336229,
+    "_id": "Pytest<SEP>YAML文件"
+  },
+  "len_eq<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336236,
+    "update_time": 1767336236,
+    "_id": "len_eq<SEP>validate"
+  },
+  "Jinja2<SEP>YAML文件": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336239,
+    "update_time": 1767336239,
+    "_id": "Jinja2<SEP>YAML文件"
+  },
+  "Pytest<SEP>pytest_yaml_yoyo": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336239,
+    "update_time": 1767336239,
+    "_id": "Pytest<SEP>pytest_yaml_yoyo"
+  },
+  "Requests<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336239,
+    "update_time": 1767336239,
+    "_id": "Requests<SEP>测试执行流程"
+  },
+  "len_gt<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336252,
+    "update_time": 1767336252,
+    "_id": "len_gt<SEP>validate"
+  },
+  "WebSocket<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336256,
+    "update_time": 1767336256,
+    "_id": "WebSocket<SEP>测试执行流程"
+  },
+  "startswith<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336262,
+    "update_time": 1767336262,
+    "_id": "startswith<SEP>validate"
+  },
+  "JMESPath<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336266,
+    "update_time": 1767336266,
+    "_id": "JMESPath<SEP>测试执行流程"
+  },
+  "YAML用例<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336272,
+    "update_time": 1767336272,
+    "_id": "YAML用例<SEP>validate"
+  },
+  "Mock<SEP>mitmproxy": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336272,
+    "update_time": 1767336272,
+    "_id": "Mock<SEP>mitmproxy"
+  },
+  "JSONPath<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336280,
+    "update_time": 1767336280,
+    "_id": "JSONPath<SEP>测试执行流程"
+  },
+  "config.yaml<SEP>变量上下文": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336280,
+    "update_time": 1767336280,
+    "_id": "config.yaml<SEP>变量上下文"
+  },
+  "endswith<SEP>validate": {
+    "chunk_ids": [
+      "chunk-5011e22e4be70add89b59cd7592f5fc5"
+    ],
+    "count": 1,
+    "create_time": 1767336289,
+    "update_time": 1767336289,
+    "_id": "endswith<SEP>validate"
+  },
+  "PyMySQL<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336292,
+    "update_time": 1767336292,
+    "_id": "PyMySQL<SEP>测试执行流程"
+  },
+  "extract.yaml<SEP>变量上下文": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336292,
+    "update_time": 1767336292,
+    "_id": "extract.yaml<SEP>变量上下文"
+  },
+  "Redis<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336300,
+    "update_time": 1767336300,
+    "_id": "Redis<SEP>测试执行流程"
+  },
+  "同一层级变量互相引用<SEP>数据库集成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336304,
+    "update_time": 1767336304,
+    "_id": "同一层级变量互相引用<SEP>数据库集成"
+  },
+  "Allure<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336309,
+    "update_time": 1767336309,
+    "_id": "Allure<SEP>测试执行流程"
+  },
+  "Hooks钩子机制<SEP>conftest.py": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336309,
+    "update_time": 1767336309,
+    "_id": "Hooks钩子机制<SEP>conftest.py"
+  },
+  "WebSocket支持<SEP>文件上传": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336317,
+    "update_time": 1767336317,
+    "_id": "WebSocket支持<SEP>文件上传"
+  },
+  "正则表达式<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336321,
+    "update_time": 1767336321,
+    "_id": "正则表达式<SEP>测试执行流程"
+  },
+  "全局变量导出<SEP>参数化测试": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336321,
+    "update_time": 1767336321,
+    "_id": "全局变量导出<SEP>参数化测试"
+  },
+  "runner.py<SEP>同一层级变量互相引用": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336321,
+    "update_time": 1767336321,
+    "_id": "runner.py<SEP>同一层级变量互相引用"
+  },
+  "函数内嵌套变量引用<SEP>数据库集成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336332,
+    "update_time": 1767336332,
+    "_id": "函数内嵌套变量引用<SEP>数据库集成"
+  },
+  "hooks<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336336,
+    "update_time": 1767336336,
+    "_id": "hooks<SEP>测试执行流程"
+  },
+  "全局变量导出<SEP>接口关联与数据传递": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336336,
+    "update_time": 1767336336,
+    "_id": "全局变量导出<SEP>接口关联与数据传递"
+  },
+  "Faker库<SEP>动态数据生成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336336,
+    "update_time": 1767336336,
+    "_id": "Faker库<SEP>动态数据生成"
+  },
+  "conftest.py<SEP>动态数据生成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336348,
+    "update_time": 1767336348,
+    "_id": "conftest.py<SEP>动态数据生成"
+  },
+  "SQL<SEP>数据库集成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336348,
+    "update_time": 1767336348,
+    "_id": "SQL<SEP>数据库集成"
+  },
+  "config.yaml<SEP>接口关联与数据传递": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336354,
+    "update_time": 1767336354,
+    "_id": "config.yaml<SEP>接口关联与数据传递"
+  },
+  "validate<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336354,
+    "update_time": 1767336354,
+    "_id": "validate<SEP>测试执行流程"
+  },
+  "Hooks钩子机制<SEP>request_sign": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336354,
+    "update_time": 1767336354,
+    "_id": "Hooks钩子机制<SEP>request_sign"
+  },
+  "rand_str<SEP>动态数据生成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336364,
+    "update_time": 1767336364,
+    "_id": "rand_str<SEP>动态数据生成"
+  },
+  "export<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336368,
+    "update_time": 1767336368,
+    "_id": "export<SEP>测试执行流程"
+  },
+  "generate_md5<SEP>request_sign": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336368,
+    "update_time": 1767336368,
+    "_id": "generate_md5<SEP>request_sign"
+  },
+  "Hooks钩子机制<SEP>log_response": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336368,
+    "update_time": 1767336368,
+    "_id": "Hooks钩子机制<SEP>log_response"
+  },
+  "render_template_obj<SEP>同一层级变量互相引用": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336368,
+    "update_time": 1767336368,
+    "_id": "render_template_obj<SEP>同一层级变量互相引用"
+  },
+  "env_filter<SEP>函数内嵌套变量引用": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336368,
+    "update_time": 1767336368,
+    "_id": "env_filter<SEP>函数内嵌套变量引用"
+  },
+  "current_time<SEP>动态数据生成": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336381,
+    "update_time": 1767336381,
+    "_id": "current_time<SEP>动态数据生成"
+  },
+  "api分层调用<SEP>测试执行流程": {
+    "chunk_ids": [
+      "chunk-cc64f2121f1f94403bd35559e7d0cb09"
+    ],
+    "count": 1,
+    "create_time": 1767336384,
+    "update_time": 1767336384,
+    "_id": "api分层调用<SEP>测试执行流程"
+  },
+  "Pytest<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336384,
+    "update_time": 1767336384,
+    "_id": "Pytest<SEP>pytest_yaml_api"
+  },
+  "re.sub<SEP>函数内嵌套变量引用": {
+    "chunk_ids": [
+      "chunk-51ebc07ae94b23e037d6ef90d1ce36d3"
+    ],
+    "count": 1,
+    "create_time": 1767336395,
+    "update_time": 1767336395,
+    "_id": "re.sub<SEP>函数内嵌套变量引用"
+  },
+  "YAML<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336399,
+    "update_time": 1767336399,
+    "_id": "YAML<SEP>pytest_yaml_api"
+  },
+  "Jinja2<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336404,
+    "update_time": 1767336404,
+    "_id": "Jinja2<SEP>pytest_yaml_api"
+  },
+  "pytest_yaml_api<SEP>数据驱动": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336409,
+    "update_time": 1767336409,
+    "_id": "pytest_yaml_api<SEP>数据驱动"
+  },
+  "pytest_yaml_api<SEP>关键字驱动": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336416,
+    "update_time": 1767336416,
+    "_id": "pytest_yaml_api<SEP>关键字驱动"
+  },
+  "Backend<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336421,
+    "update_time": 1767336421,
+    "_id": "Backend<SEP>pytest_yaml_api"
+  },
+  "Pytest<SEP>conftest": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336421,
+    "update_time": 1767336421,
+    "_id": "Pytest<SEP>conftest"
+  },
+  "Playturbo<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336431,
+    "update_time": 1767336431,
+    "_id": "Playturbo<SEP>pytest_yaml_api"
+  },
+  "YAML<SEP>YAML解析器": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336431,
+    "update_time": 1767336431,
+    "_id": "YAML<SEP>YAML解析器"
+  },
+  "Jinja2<SEP>Jinja2模板渲染": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336439,
+    "update_time": 1767336439,
+    "_id": "Jinja2<SEP>Jinja2模板渲染"
+  },
+  "OpenAPI<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336443,
+    "update_time": 1767336443,
+    "_id": "OpenAPI<SEP>pytest_yaml_api"
+  },
+  "config.yaml<SEP>数据驱动层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336443,
+    "update_time": 1767336443,
+    "_id": "config.yaml<SEP>数据驱动层"
+  },
+  "Jenkins<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336451,
+    "update_time": 1767336451,
+    "_id": "Jenkins<SEP>pytest_yaml_api"
+  },
+  "HTTP Session<SEP>基础支撑层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336451,
+    "update_time": 1767336451,
+    "_id": "HTTP Session<SEP>基础支撑层"
+  },
+  "extract.yaml<SEP>数据驱动层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336457,
+    "update_time": 1767336457,
+    "_id": "extract.yaml<SEP>数据驱动层"
+  },
+  "Docker<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336460,
+    "update_time": 1767336460,
+    "_id": "Docker<SEP>pytest_yaml_api"
+  },
+  "MySQL连接池<SEP>基础支撑层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336460,
+    "update_time": 1767336460,
+    "_id": "MySQL连接池<SEP>基础支撑层"
+  },
+  "api_mysql<SEP>数据驱动层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336466,
+    "update_time": 1767336466,
+    "_id": "api_mysql<SEP>数据驱动层"
+  },
+  "Allure<SEP>pytest_yaml_api": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336469,
+    "update_time": 1767336469,
+    "_id": "Allure<SEP>pytest_yaml_api"
+  },
+  "Redis连接<SEP>基础支撑层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336469,
+    "update_time": 1767336469,
+    "_id": "Redis连接<SEP>基础支撑层"
+  },
+  "pytest_yaml_api<SEP>钉钉/飞书": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336476,
+    "update_time": 1767336476,
+    "_id": "pytest_yaml_api<SEP>钉钉/飞书"
+  },
+  "WebSocket客户端<SEP>基础支撑层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336480,
+    "update_time": 1767336480,
+    "_id": "WebSocket客户端<SEP>基础支撑层"
+  },
+  "Faker<SEP>rand_str": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336480,
+    "update_time": 1767336480,
+    "_id": "Faker<SEP>rand_str"
+  },
+  "pytest_yaml_api<SEP>核心引擎层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336486,
+    "update_time": 1767336486,
+    "_id": "pytest_yaml_api<SEP>核心引擎层"
+  },
+  "Mock mitmproxy<SEP>基础支撑层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336489,
+    "update_time": 1767336489,
+    "_id": "Mock mitmproxy<SEP>基础支撑层"
+  },
+  "rand_str<SEP>测试数据唯一性": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336489,
+    "update_time": 1767336489,
+    "_id": "rand_str<SEP>测试数据唯一性"
+  },
+  "sleep<SEP>异步接口测试": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336489,
+    "update_time": 1767336489,
+    "_id": "sleep<SEP>异步接口测试"
+  },
+  "ConnectMysql<SEP>数据库单例连接": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336489,
+    "update_time": 1767336489,
+    "_id": "ConnectMysql<SEP>数据库单例连接"
+  },
+  "pytest_yaml_api<SEP>数据驱动层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336501,
+    "update_time": 1767336501,
+    "_id": "pytest_yaml_api<SEP>数据驱动层"
+  },
+  "YAML<SEP>pytest_yaml_yoyo": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336501,
+    "update_time": 1767336501,
+    "_id": "YAML<SEP>pytest_yaml_yoyo"
+  },
+  "JMESPath<SEP>三层数据提取": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336508,
+    "update_time": 1767336508,
+    "_id": "JMESPath<SEP>三层数据提取"
+  },
+  "pytest_yaml_api<SEP>基础支撑层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336511,
+    "update_time": 1767336511,
+    "_id": "pytest_yaml_api<SEP>基础支撑层"
+  },
+  "Jinja2<SEP>YAML": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336511,
+    "update_time": 1767336511,
+    "_id": "Jinja2<SEP>YAML"
+  },
+  "Allure报告<SEP>CI/CD集成": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336511,
+    "update_time": 1767336511,
+    "_id": "Allure报告<SEP>CI/CD集成"
+  },
+  "JSONPath<SEP>三层数据提取": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336520,
+    "update_time": 1767336520,
+    "_id": "JSONPath<SEP>三层数据提取"
+  },
+  "CI/CD集成<SEP>钉钉/飞书通知": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336523,
+    "update_time": 1767336523,
+    "_id": "CI/CD集成<SEP>钉钉/飞书通知"
+  },
+  "pytest_yaml_api<SEP>测试执行层": {
+    "chunk_ids": [
+      "chunk-faaf941d4d9f8097309219433b1bd751"
+    ],
+    "count": 1,
+    "create_time": 1767336523,
+    "update_time": 1767336523,
+    "_id": "pytest_yaml_api<SEP>测试执行层"
+  },
+  "Swagger<SEP>YAML": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336523,
+    "update_time": 1767336523,
+    "_id": "Swagger<SEP>YAML"
+  },
+  "MockAPI<SEP>mitmproxy": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336523,
+    "update_time": 1767336523,
+    "_id": "MockAPI<SEP>mitmproxy"
+  },
+  "三层数据提取<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336535,
+    "update_time": 1767336535,
+    "_id": "三层数据提取<SEP>正则表达式"
+  },
+  "CI/CD集成<SEP>goc工具": {
+    "chunk_ids": [
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
+    ],
+    "count": 1,
+    "create_time": 1767336535,
+    "update_time": 1767336535,
+    "_id": "CI/CD集成<SEP>goc工具"
   }
 }

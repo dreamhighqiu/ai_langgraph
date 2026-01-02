@@ -188,11 +188,27 @@
         <el-button @click="errorDialogVisible = false">关 闭</el-button>
       </template>
     </el-dialog>
+
+    <!-- 文件预览对话框 -->
+    <el-dialog title="文件预览" v-model="previewVisible" width="80%" append-to-body @close="handlePreviewClose">
+      <iframe
+        v-if="previewUrl"
+        :src="previewUrl"
+        style="width: 100%; height: 70vh; border: none;"
+      ></iframe>
+      <div v-else style="text-align: center; padding: 40px;">
+        <el-icon :size="60" color="#ccc"><Document /></el-icon>
+        <p>无法预览此文件</p>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script setup name="KnowledgeFiles">
 import { listKnowledgeFiles, deleteKnowledgeFile, getKnowledgeStats } from "@/api/testing/knowledge";
+import axios from 'axios';
+import { getToken } from '@/utils/auth';
+import { Document } from '@element-plus/icons-vue';
 
 const { proxy } = getCurrentInstance();
 const router = useRouter();
@@ -206,6 +222,9 @@ const knowledgeName = ref("");
 const errorDialogVisible = ref(false);
 const currentError = ref("");
 const refreshTimer = ref(null);
+const previewVisible = ref(false);
+const previewUrl = ref('');
+const previewBlobUrl = ref(null);
 
 const stats = ref({
   fileCount: 0,
@@ -333,23 +352,160 @@ function refreshStats() {
 }
 
 /** 下载文件 */
-function handleDownload(row) {
-  if (row.fileUrl) {
-    // 直接打开URL下载
-    window.open(row.fileUrl, '_blank');
-  } else {
-    proxy.$modal.msgWarning('文件URL不可用，无法下载');
+async function handleDownload(row) {
+  const fileId = row.fileId;
+  if (!fileId) {
+    proxy.$modal.msgWarning('文件ID不可用，无法下载');
+    return;
+  }
+  
+  try {
+    // 使用axios下载文件，确保触发浏览器下载行为
+    const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
+    const response = await axios({
+      url: `${baseUrl}/testing/knowledge/files/${fileId}/download`,
+      method: 'get',
+      params: { preview: false }, // 明确设置为下载模式
+      responseType: 'blob',
+      headers: {
+        'Authorization': 'Bearer ' + getToken()
+      }
+    });
+    
+    // 从响应头获取文件名，如果没有则使用原始文件名
+    let fileName = row.fileName || 'download';
+    const contentDisposition = response.headers['content-disposition'];
+    if (contentDisposition) {
+      const fileNameMatch = contentDisposition.match(/filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/);
+      if (fileNameMatch && fileNameMatch[1]) {
+        fileName = fileNameMatch[1].replace(/['"]/g, '');
+        // 处理URL编码的文件名
+        try {
+          fileName = decodeURIComponent(fileName);
+        } catch (e) {
+          // 如果解码失败，使用原始值
+        }
+      }
+    }
+    
+    // 创建blob URL并触发下载
+    const blob = response.data;
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+    
+    proxy.$modal.msgSuccess('文件下载成功');
+  } catch (error) {
+    console.error('下载文件失败:', error);
+    if (error.response && error.response.status === 401) {
+      proxy.$modal.msgError('下载文件失败：用户未登录，请先完成登录');
+    } else if (error.response && error.response.status === 404) {
+      proxy.$modal.msgError('下载文件失败：文件不存在');
+    } else {
+      proxy.$modal.msgError('下载文件失败：' + (error.message || '未知错误'));
+    }
   }
 }
 
 /** 预览文件 */
-function handlePreview(row) {
-  if (row.fileUrl) {
-    // 在新窗口打开预览
-    window.open(row.fileUrl, '_blank');
-  } else {
-    proxy.$modal.msgWarning('文件URL不可用，无法预览');
+async function handlePreview(row) {
+  const fileId = row.fileId;
+  if (!fileId) {
+    proxy.$modal.msgWarning('文件ID不可用，无法预览');
+    return;
   }
+  
+  try {
+    // 释放之前的blob URL（如果存在）
+    if (previewBlobUrl.value) {
+      URL.revokeObjectURL(previewBlobUrl.value);
+      previewBlobUrl.value = null;
+    }
+    
+    // 使用axios直接获取文件内容，这样可以获取完整的响应信息（包括响应头）
+    const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
+    const response = await axios({
+      url: `${baseUrl}/testing/knowledge/files/${fileId}/download`,
+      method: 'get',
+      params: { preview: true },
+      responseType: 'blob',
+      headers: {
+        'Authorization': 'Bearer ' + getToken()
+      }
+    });
+    
+    // axios返回的blob响应，response.data是Blob对象，response.headers包含响应头
+    let blob = response.data;
+    let mimeType = blob.type || 'application/octet-stream';
+    
+    // 如果Blob没有type或type不正确，从响应头获取
+    if (!mimeType || mimeType === 'application/octet-stream') {
+      const contentType = response.headers['content-type'];
+      if (contentType) {
+        mimeType = contentType.split(';')[0].trim(); // 移除charset等参数
+      }
+    }
+    
+    // 如果还是没有，根据文件名推断MIME类型
+    if (!mimeType || mimeType === 'application/octet-stream') {
+      const fileName = row.fileName || '';
+      const ext = fileName.toLowerCase().split('.').pop() || '';
+      const mimeMap = {
+        'pdf': 'application/pdf',
+        'txt': 'text/plain',
+        'md': 'text/markdown',
+        'html': 'text/html',
+        'htm': 'text/html',
+        'doc': 'application/msword',
+        'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'xls': 'application/vnd.ms-excel',
+        'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'jpg': 'image/jpeg',
+        'jpeg': 'image/jpeg',
+        'png': 'image/png',
+        'gif': 'image/gif',
+        'json': 'application/json',
+        'xml': 'application/xml',
+      };
+      mimeType = mimeMap[ext] || 'application/octet-stream';
+    }
+    
+    // 如果推断出的类型与Blob类型不同，创建新的Blob以确保正确的MIME类型
+    if (blob.type !== mimeType) {
+      blob = new Blob([blob], { type: mimeType });
+    }
+    
+    // 创建blob URL
+    const blobUrl = URL.createObjectURL(blob);
+    
+    previewBlobUrl.value = blobUrl;
+    previewUrl.value = blobUrl;
+    previewVisible.value = true;
+  } catch (error) {
+    console.error('预览文件失败:', error);
+    // 检查是否是401错误
+    if (error.response && error.response.status === 401) {
+      proxy.$modal.msgError('预览文件失败：用户未登录，请先完成登录');
+    } else if (error.response && error.response.status === 404) {
+      proxy.$modal.msgError('预览文件失败：文件不存在');
+    } else {
+      proxy.$modal.msgError('预览文件失败：' + (error.message || '未知错误'));
+    }
+  }
+}
+
+/** 关闭预览对话框时释放blob URL */
+function handlePreviewClose() {
+  if (previewBlobUrl.value) {
+    URL.revokeObjectURL(previewBlobUrl.value);
+    previewBlobUrl.value = null;
+  }
+  previewUrl.value = '';
 }
 
 /** 判断文件是否可预览 */

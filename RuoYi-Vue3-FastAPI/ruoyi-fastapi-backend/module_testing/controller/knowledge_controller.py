@@ -568,16 +568,44 @@ async def download_file(
             mime_type = mime_map.get(file_ext, 'application/octet-stream')
         
         # 设置响应头
+        # 处理文件名编码，支持中文文件名（RFC 5987）
+        from urllib.parse import quote
+        
+        # 对文件名进行URL编码，用于RFC 5987格式
+        filename_encoded = quote(file_record.file_name, safe='')
+        
+        # 检查文件名是否包含非ASCII字符
+        try:
+            # 尝试编码为ASCII，如果失败则说明包含非ASCII字符
+            file_record.file_name.encode('ascii')
+            # 如果成功，文件名是ASCII安全的，可以直接使用
+            ascii_safe = True
+        except UnicodeEncodeError:
+            # 包含非ASCII字符，需要使用RFC 5987格式
+            ascii_safe = False
+        
         headers = {
             'Content-Type': mime_type,
             'Cache-Control': 'no-cache',
         }
-        if preview:
-            # 预览模式：inline（在浏览器中显示）
-            headers['Content-Disposition'] = f'inline; filename="{file_record.file_name}"'
+        
+        # 构建Content-Disposition头
+        if ascii_safe:
+            # ASCII文件名，使用简单格式
+            if preview:
+                content_disposition = f'inline; filename="{file_record.file_name}"'
+            else:
+                content_disposition = f'attachment; filename="{file_record.file_name}"'
         else:
-            # 下载模式：attachment（下载文件）
-            headers['Content-Disposition'] = f'attachment; filename="{file_record.file_name}"'
+            # 非ASCII文件名，使用RFC 5987格式
+            if preview:
+                content_disposition = f'inline; filename*=UTF-8\'\'{filename_encoded}'
+            else:
+                content_disposition = f'attachment; filename*=UTF-8\'\'{filename_encoded}'
+        
+        # 将Content-Disposition编码为latin-1（HTTP头要求）
+        # 但RFC 5987格式已经是ASCII安全的，所以可以直接使用
+        headers['Content-Disposition'] = content_disposition
         
         # 返回文件内容
         return StreamingResponse(

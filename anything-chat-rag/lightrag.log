@@ -4878,3 +4878,306 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-02 14:25:48,112 - lightrag - INFO - Final chunks S+F/O: E3/1 E3/2 E8/3 E1/4 C1/5
 2026-01-02 14:25:48,155 - lightrag - INFO -  == LLM cache == Query cache hit, using cached response as query result
 2026-01-02 14:25:48,190 - uvicorn.access - INFO - 127.0.0.1:55744 - "POST /query HTTP/1.1" 200
+2026-01-02 14:26:11,031 - lightrag - INFO -  == LLM cache == saving: default:extract:1a934c0c6e09305c8bb95507d2c64ba6
+2026-01-02 14:26:43,151 - lightrag - INFO -  == LLM cache == saving: default:extract:950acb7db2b3738715db4a47ef0c956e
+2026-01-02 14:26:43,155 - lightrag - INFO - Chunk 6 of 6 extracted 59 Ent + 33 Rel chunk-13dda3988395fb8ec2feb81109f87902
+2026-01-02 14:26:43,160 - lightrag - INFO - Merging stage 1/1: pytest 接口自动化面试.md
+2026-01-02 14:26:43,161 - lightrag - INFO - Phase 1: Processing 172 entities from doc-19b08af7e45ec2e99d072b66272eb956 (async: 8)
+2026-01-02 14:26:43,173 - lightrag - INFO - Merged: `Faker` | 1+3
+2026-01-02 14:26:54,960 - lightrag - INFO - Merged: `conftest.py` | 3+3
+2026-01-02 14:27:17,448 - lightrag - INFO - Merged: `重试机制` | 1+1
+2026-01-02 14:27:50,634 - lightrag - INFO -  == LLM cache == saving: mix:keywords:8622892f56929234fab3c0bdfcce34a7
+2026-01-02 14:27:50,910 - lightrag - INFO - Merged: `config.py` | 1+2
+2026-01-02 14:28:02,674 - lightrag - INFO - Merged: `pytest.ini` | 2+2
+2026-01-02 14:28:02,679 - lightrag - INFO - Merged: `Dockerfile` | 2+1
+2026-01-02 14:28:05,848 - lightrag - INFO - Query nodes: PlayWright (top_k:10, cosine:0.2)
+2026-01-02 14:28:58,448 - lightrag - INFO -  == LLM cache == saving: mix:keywords:e1c85aae0ac058f5ec4a451d6cb8f1b3
+2026-01-02 14:29:09,665 - lightrag - INFO - Query nodes: PlayWright, Microsoft, Browser automation, Test framework (top_k:10, cosine:0.2)
+2026-01-02 14:29:15,379 - lightrag - INFO - Merged: `数据驱动` | 2+2
+2026-01-02 14:29:25,491 - lightrag - INFO - Merged: `CI/CD` | 2+1
+2026-01-02 14:29:25,493 - lightrag - INFO - Merged: `SQL` | 1+2
+2026-01-02 14:29:37,908 - lightrag - INFO - Merged: `pytest-rerunfailures` | 1+1
+2026-01-02 14:29:44,541 - uvicorn.access - INFO - 127.0.0.1:49370 - "GET /docs HTTP/1.1" 200
+2026-01-02 14:29:44,837 - uvicorn.access - INFO - 127.0.0.1:64776 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 14:29:50,862 - lightrag - INFO - Merged: `数据库` | 2+1
+2026-01-02 14:29:54,237 - lightrag - INFO - [] Subgraph query successful | Node count: 718 | Edge count: 625
+2026-01-02 14:29:54,326 - uvicorn.access - INFO - 127.0.0.1:57506 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-02 14:29:57,453 - lightrag - INFO - Merged: `Swagger` | 1+2
+2026-01-02 14:30:00,481 - uvicorn.access - INFO - 127.0.0.1:57506 - "GET /docs HTTP/1.1" 200
+2026-01-02 14:30:00,727 - uvicorn.access - INFO - 127.0.0.1:57506 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 14:30:06,329 - lightrag - INFO - [] Subgraph query successful | Node count: 719 | Edge count: 625
+2026-01-02 14:30:06,409 - uvicorn.access - INFO - 127.0.0.1:53221 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-02 14:30:06,422 - lightrag - INFO -  == LLM cache == saving: mix:keywords:10f7fb37997114d80e4b19d94c320f0c
+2026-01-02 14:30:17,632 - lightrag - INFO - Merged: `pytest` | 3+1
+2026-01-02 14:30:17,815 - lightrag - INFO - Query nodes: Playwright framework, End-to-end testing, Cross-browser testing, Web automation (top_k:10, cosine:0.2)
+2026-01-02 14:30:48,089 - lightrag - INFO - Merged: `多环境配置管理` | 1+1
+2026-01-02 14:30:56,854 - lightrag - INFO - Merged: `TestConfig` | 2+1
+2026-01-02 14:30:57,033 - lightrag - INFO - Merged: `DevConfig` | 2+1
+2026-01-02 14:31:02,926 - lightrag - INFO - Query nodes: PlayWright (top_k:10, cosine:0.2)
+2026-01-02 14:31:18,254 - uvicorn.access - INFO - 127.0.0.1:56893 - "POST /documents/upload HTTP/1.1" 200
+2026-01-02 14:31:24,603 - lightrag - INFO - Local query: 10 entites, 24 relations
+2026-01-02 14:31:24,605 - lightrag - INFO - Query edges: UI自动化测试, 测试框架, 软件测试 (top_k:10, cosine:0.2)
+2026-01-02 14:32:14,726 - lightrag - INFO - Query nodes: PlayWright, Microsoft, Browser automation, Test framework (top_k:10, cosine:0.2)
+2026-01-02 14:32:31,273 - lightrag - INFO - Merged: `Session` | 1+1
+2026-01-02 14:32:52,808 - lightrag - INFO - Merged: `Requests` | 1+1
+2026-01-02 14:32:55,932 - lightrag - INFO - Merged: `PyMySQL` | 1+1
+2026-01-02 14:32:58,857 - lightrag - INFO - Merged: `Allure` | 4+2
+2026-01-02 14:33:01,847 - lightrag - INFO - Merged: `Docker` | 5+2
+2026-01-02 14:33:01,848 - lightrag - INFO - Merged: `Jenkins` | 4+2
+2026-01-02 14:33:07,859 - lightrag - INFO -  == LLM cache == saving: default:summary:9a57e5d1514f1552e1ac921254d1825d
+2026-01-02 14:33:07,958 - lightrag - INFO - LLMmrg: `Pytest` | 7+2
+2026-01-02 14:33:07,960 - uvicorn.access - INFO - 127.0.0.1:49967 - "GET /documents/status_counts HTTP/1.1" 200
+2026-01-02 14:33:39,045 - lightrag - ERROR - Error in ollama_embed:  (status code: 502)
+2026-01-02 14:33:39,047 - lightrag - ERROR - Error in ollama_embed:  (status code: 502)
+2026-01-02 14:33:39,051 - lightrag - ERROR - Embedding func: Error in decorated function for task 2845531010624_1136578.843:  (status code: 502)
+2026-01-02 14:33:39,056 - lightrag - ERROR - Embedding func: Error in decorated function for task 2845500139712_1136578.984:  (status code: 502)
+2026-01-02 14:33:43,046 - lightrag - WARNING - VDB entity_upsert attempt 1 failed for Docker:  (status code: 502), retrying...
+2026-01-02 14:33:43,047 - lightrag - WARNING - VDB entity_upsert attempt 1 failed for Jenkins:  (status code: 502), retrying...
+2026-01-02 14:34:24,248 - lightrag - INFO -  == LLM cache == saving: mix:keywords:ea52beb866ddb0b34586be7b213f5754
+2026-01-02 14:34:39,771 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:34:39,992 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:34:39,993 - lightrag - INFO - Raw search results: 22 entities, 34 relations, 5 vector chunks
+2026-01-02 14:34:40,014 - lightrag - INFO - After truncation: 22 entities, 34 relations
+2026-01-02 14:34:40,232 - lightrag - INFO - Selecting 17 from 17 entity-related chunks by vector similarity
+2026-01-02 14:34:40,238 - lightrag - INFO - Find no additional relations-related chunks from 34 relations
+2026-01-02 14:34:40,240 - lightrag - INFO - Round-robin merged chunks: 22 -> 17 (deduplicated 5)
+2026-01-02 14:34:40,254 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:34:40,279 - lightrag - INFO - Final context: 22 entities, 34 relations, 5 chunks
+2026-01-02 14:34:40,281 - lightrag - INFO - Final chunks S+F/O: E5/1 E2/2 E4/3 E3/4 E1/5
+2026-01-02 14:34:48,402 - lightrag - INFO - Query nodes: Playwright, Pytest (top_k:5, cosine:0.2)
+2026-01-02 14:35:20,259 - lightrag - INFO - Merged: `YAML` | 3+3
+2026-01-02 14:35:20,262 - lightrag - INFO - Merged: `Python` | 3+2
+2026-01-02 14:35:47,692 - lightrag - INFO - Local query: 10 entites, 39 relations
+2026-01-02 14:35:47,693 - lightrag - INFO - Query edges: Software testing, Web automation, End-to-end testing (top_k:10, cosine:0.2)
+2026-01-02 14:35:53,404 - lightrag - INFO -  == LLM cache == saving: mix:keywords:d3505bfdecfc6319280625b0fb2f7725
+2026-01-02 14:36:13,235 - lightrag - INFO - Query nodes: Playwright, Pytest (top_k:10, cosine:0.2)
+2026-01-02 14:36:56,121 - lightrag - INFO - Local query: 10 entites, 24 relations
+2026-01-02 14:36:56,122 - lightrag - INFO - Query edges: UI自动化测试, 测试框架, 软件测试 (top_k:10, cosine:0.2)
+2026-01-02 14:37:08,864 - lightrag - INFO - Merged: `测试执行层` | 1+1
+2026-01-02 14:37:08,865 - lightrag - INFO - Query nodes: Playwright, Pytest (top_k:10, cosine:0.2)
+2026-01-02 14:37:22,361 - lightrag - INFO - Merged: `ConnectMysql` | 2+1
+2026-01-02 14:37:28,341 - lightrag - INFO - Merged: `多维度断言` | 1+1
+2026-01-02 14:37:43,087 - lightrag - INFO - Merged: `Allure报告` | 3+1
+2026-01-02 14:38:07,202 - lightrag - INFO - Local query: 5 entites, 20 relations
+2026-01-02 14:38:07,207 - lightrag - INFO - Query edges: UI自动化测试, 测试框架, 软件测试 (top_k:5, cosine:0.2)
+2026-01-02 14:38:10,174 - lightrag - INFO - Local query: 10 entites, 47 relations
+2026-01-02 14:38:10,176 - lightrag - INFO - Query edges: Playwright, Automated testing, Software testing, Test automation (top_k:10, cosine:0.2)
+2026-01-02 14:38:16,400 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:38:16,576 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:38:16,577 - lightrag - INFO - Raw search results: 18 entities, 40 relations, 5 vector chunks
+2026-01-02 14:38:16,587 - lightrag - INFO - After truncation: 18 entities, 40 relations
+2026-01-02 14:38:16,782 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-02 14:38:16,785 - lightrag - INFO - Phase 2: Processing 142 relations from doc-19b08af7e45ec2e99d072b66272eb956 (async: 8)
+2026-01-02 14:38:16,794 - lightrag - INFO - Find no additional relations-related chunks from 40 relations
+2026-01-02 14:38:16,796 - lightrag - INFO - Round-robin merged chunks: 16 -> 16 (deduplicated 0)
+2026-01-02 14:38:16,805 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:38:16,815 - lightrag - INFO - Final context: 18 entities, 40 relations, 5 chunks
+2026-01-02 14:38:16,817 - lightrag - INFO - Final chunks S+F/O: C1/1 E2/1 C1/2 E8/2 C1/3
+2026-01-02 14:38:25,489 - lightrag - INFO -  == LLM cache == saving: mix:keywords:27c2935bc9db9a7d2b8734ffb89b888f
+2026-01-02 14:38:25,495 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:38:25,676 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:38:25,677 - lightrag - INFO - Raw search results: 22 entities, 34 relations, 5 vector chunks
+2026-01-02 14:38:25,688 - lightrag - INFO - After truncation: 22 entities, 34 relations
+2026-01-02 14:38:25,913 - lightrag - INFO - Selecting 17 from 17 entity-related chunks by vector similarity
+2026-01-02 14:38:25,924 - lightrag - INFO - Find no additional relations-related chunks from 34 relations
+2026-01-02 14:38:25,925 - lightrag - INFO - Round-robin merged chunks: 22 -> 17 (deduplicated 5)
+2026-01-02 14:38:25,934 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:38:25,953 - lightrag - INFO - Final context: 22 entities, 34 relations, 5 chunks
+2026-01-02 14:38:25,954 - lightrag - INFO - Final chunks S+F/O: E5/1 E2/2 E4/3 E3/4 E1/5
+2026-01-02 14:38:32,264 - lightrag - INFO - Local query: 10 entites, 39 relations
+2026-01-02 14:38:32,266 - lightrag - INFO - Query edges: Software testing, Web automation, End-to-end testing (top_k:10, cosine:0.2)
+2026-01-02 14:38:39,558 - lightrag - INFO - Query nodes: Playwright, Pytest (top_k:5, cosine:0.2)
+2026-01-02 14:38:49,154 - lightrag - INFO - Global query: 7 entites, 5 relations
+2026-01-02 14:38:49,332 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:38:49,334 - lightrag - INFO - Raw search results: 12 entities, 25 relations, 5 vector chunks
+2026-01-02 14:38:49,341 - lightrag - INFO - After truncation: 12 entities, 25 relations
+2026-01-02 14:38:49,528 - lightrag - INFO - Selecting 14 from 14 entity-related chunks by vector similarity
+2026-01-02 14:38:49,530 - lightrag - INFO - Find no additional relations-related chunks from 25 relations
+2026-01-02 14:38:49,531 - lightrag - INFO - Round-robin merged chunks: 19 -> 14 (deduplicated 5)
+2026-01-02 14:38:49,538 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:38:49,556 - lightrag - INFO - Final context: 12 entities, 25 relations, 5 chunks
+2026-01-02 14:38:49,557 - lightrag - INFO - Final chunks S+F/O: E3/1 E3/2 E2/3 E3/4 E3/5
+2026-01-02 14:39:20,090 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:39:20,260 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:39:20,261 - lightrag - INFO - Raw search results: 17 entities, 50 relations, 5 vector chunks
+2026-01-02 14:39:20,271 - lightrag - INFO - After truncation: 17 entities, 50 relations
+2026-01-02 14:39:20,444 - lightrag - INFO - Selecting 9 from 9 entity-related chunks by vector similarity
+2026-01-02 14:39:20,447 - lightrag - INFO - Find no additional relations-related chunks from 50 relations
+2026-01-02 14:39:20,449 - lightrag - INFO - Round-robin merged chunks: 14 -> 10 (deduplicated 4)
+2026-01-02 14:39:20,456 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:39:20,474 - lightrag - INFO - Final context: 17 entities, 50 relations, 5 chunks
+2026-01-02 14:39:20,475 - lightrag - INFO - Final chunks S+F/O: E4/1 E2/2 E5/3 C1/4 E3/4
+2026-01-02 14:39:26,579 - lightrag - INFO -  == LLM cache == saving: mix:keywords:8d862b2705ab45321d1381469fcbe915
+2026-01-02 14:39:29,487 - lightrag - INFO -  == LLM cache == saving: mix:query:c4c2a63ac9e16a3fe88500f26e054ea1
+2026-01-02 14:39:35,471 - lightrag - INFO -  == LLM cache == saving: mix:query:315f6b49bc713c8e07609f355646aa5f
+2026-01-02 14:39:35,545 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:39:35,723 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:39:35,724 - lightrag - INFO - Raw search results: 18 entities, 40 relations, 5 vector chunks
+2026-01-02 14:39:35,731 - lightrag - INFO - After truncation: 18 entities, 40 relations
+2026-01-02 14:39:35,911 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-02 14:39:35,913 - lightrag - INFO - Find no additional relations-related chunks from 40 relations
+2026-01-02 14:39:35,915 - lightrag - INFO - Round-robin merged chunks: 16 -> 16 (deduplicated 0)
+2026-01-02 14:39:35,924 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:39:35,933 - lightrag - INFO - Final context: 18 entities, 40 relations, 5 chunks
+2026-01-02 14:39:35,934 - lightrag - INFO - Final chunks S+F/O: C1/1 E2/1 C1/2 E8/2 C1/3
+2026-01-02 14:39:38,570 - lightrag - INFO - Query nodes: Playwright, 端到端测试, 跨浏览器测试, 测试框架 (top_k:5, cosine:0.2)
+2026-01-02 14:41:20,292 - lightrag - INFO - Local query: 5 entites, 20 relations
+2026-01-02 14:41:20,293 - lightrag - INFO - Query edges: UI自动化测试框架, 架构设计, 核心组件, 软件测试 (top_k:5, cosine:0.2)
+2026-01-02 14:41:24,055 - lightrag - INFO - Local query: 10 entites, 46 relations
+2026-01-02 14:41:24,058 - lightrag - INFO - Query edges: UI自动化测试, 测试框架, 软件测试 (top_k:10, cosine:0.2)
+2026-01-02 14:41:41,254 - lightrag - INFO - Local query: 10 entites, 46 relations
+2026-01-02 14:41:41,254 - lightrag - INFO - Query edges: UI自动化测试, 测试框架, 软件测试 (top_k:10, cosine:0.2)
+2026-01-02 14:41:45,201 - lightrag - INFO - Merged: `pytest-rerunfailures`~`重试机制` | 1+1
+2026-01-02 14:41:49,190 - lightrag - INFO -  == LLM cache == saving: mix:query:0534f2b84044e6f45aa0ba51bdd0a48c
+2026-01-02 14:41:49,191 - lightrag - INFO - Global query: 7 entites, 5 relations
+2026-01-02 14:41:49,404 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:41:49,405 - lightrag - INFO - Raw search results: 12 entities, 25 relations, 5 vector chunks
+2026-01-02 14:41:49,412 - lightrag - INFO - After truncation: 12 entities, 25 relations
+2026-01-02 14:41:49,639 - lightrag - INFO - Selecting 15 from 15 entity-related chunks by vector similarity
+2026-01-02 14:41:52,358 - lightrag - INFO - Find no additional relations-related chunks from 25 relations
+2026-01-02 14:41:52,359 - lightrag - INFO - Round-robin merged chunks: 20 -> 15 (deduplicated 5)
+2026-01-02 14:41:52,368 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:41:52,399 - lightrag - INFO - Final context: 12 entities, 25 relations, 5 chunks
+2026-01-02 14:41:52,401 - lightrag - INFO - Final chunks S+F/O: E1/1 E3/2 E4/3 E2/4 E2/5
+2026-01-02 14:42:08,049 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:42:08,235 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:42:08,236 - lightrag - INFO - Raw search results: 20 entities, 51 relations, 5 vector chunks
+2026-01-02 14:42:08,260 - lightrag - INFO - After truncation: 20 entities, 51 relations
+2026-01-02 14:42:08,446 - lightrag - INFO - Selecting 15 from 15 entity-related chunks by vector similarity
+2026-01-02 14:42:08,450 - lightrag - INFO - Find no additional relations-related chunks from 51 relations
+2026-01-02 14:42:08,451 - lightrag - INFO - Round-robin merged chunks: 20 -> 15 (deduplicated 5)
+2026-01-02 14:42:08,468 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:42:08,492 - lightrag - INFO - Final context: 20 entities, 51 relations, 5 chunks
+2026-01-02 14:42:08,494 - lightrag - INFO - Final chunks S+F/O: E4/1 E5/2 E4/3 E5/4 E3/5
+2026-01-02 14:42:23,584 - lightrag - INFO - Global query: 12 entites, 10 relations
+2026-01-02 14:42:23,762 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:42:23,763 - lightrag - INFO - Raw search results: 20 entities, 51 relations, 5 vector chunks
+2026-01-02 14:42:23,772 - lightrag - INFO - After truncation: 20 entities, 51 relations
+2026-01-02 14:42:23,952 - lightrag - INFO - Selecting 15 from 15 entity-related chunks by vector similarity
+2026-01-02 14:42:23,960 - lightrag - INFO - Find no additional relations-related chunks from 51 relations
+2026-01-02 14:42:23,962 - lightrag - INFO - Round-robin merged chunks: 20 -> 15 (deduplicated 5)
+2026-01-02 14:42:23,971 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:42:23,989 - lightrag - INFO - Final context: 20 entities, 51 relations, 5 chunks
+2026-01-02 14:42:23,994 - lightrag - INFO - Final chunks S+F/O: E4/1 E4/2 E5/3 E5/4 E3/5
+2026-01-02 14:42:24,148 - lightrag - INFO - Local query: 5 entites, 36 relations
+2026-01-02 14:42:24,149 - lightrag - INFO - Query edges: Playwright自动化框架, 项目背景, 核心价值, 软件测试, 自动化测试 (top_k:5, cosine:0.2)
+2026-01-02 14:42:39,798 - lightrag - INFO - Global query: 6 entites, 5 relations
+2026-01-02 14:42:39,970 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-02 14:42:39,971 - lightrag - INFO - Raw search results: 8 entities, 36 relations, 5 vector chunks
+2026-01-02 14:42:39,979 - lightrag - INFO - After truncation: 8 entities, 36 relations
+2026-01-02 14:42:40,193 - lightrag - INFO - Selecting 16 from 16 entity-related chunks by vector similarity
+2026-01-02 14:42:45,460 - lightrag - INFO - Find no additional relations-related chunks from 36 relations
+2026-01-02 14:42:45,461 - lightrag - INFO - Round-robin merged chunks: 21 -> 16 (deduplicated 5)
+2026-01-02 14:42:45,468 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-02 14:42:45,484 - lightrag - INFO - Final context: 8 entities, 36 relations, 5 chunks
+2026-01-02 14:42:45,487 - lightrag - INFO - Final chunks S+F/O: E3/1 E3/2 E2/3 E1/4 E1/5
+2026-01-02 14:42:51,229 - lightrag - INFO -  == LLM cache == saving: mix:query:7604c59dd2334e3c26345e3c37a960e2
+2026-01-02 14:42:51,352 - lightrag - INFO -  == LLM cache == saving: mix:query:85f58e593bb8f0ec9541734234f387cc
+2026-01-02 14:43:04,055 - lightrag - INFO -  == LLM cache == saving: mix:query:7e66714b6a62d87cc9908c2917bc95dd
+2026-01-02 14:47:08,466 - lightrag - INFO - Merged: `Pytest`~`pytest.ini` | 1+1
+2026-01-02 14:49:04,114 - lightrag - INFO - Phase 3: Updating final 176(172+4) entities and  142 relations from doc-19b08af7e45ec2e99d072b66272eb956
+2026-01-02 14:49:04,117 - lightrag - INFO - Completed merging: 172 entities, 4 extra entities, 142 relations
+2026-01-02 14:49:04,178 - lightrag - INFO - [] Writing graph with 820 nodes, 765 edges
+2026-01-02 14:49:04,373 - lightrag - INFO - In memory DB persist to disk
+2026-01-02 14:49:04,374 - lightrag - INFO - Completed processing file 1/1: pytest 接口自动化面试.md
+2026-01-02 14:49:04,376 - lightrag - INFO - Processing additional documents due to pending request
+2026-01-02 14:49:04,378 - lightrag - INFO - Processing 3 document(s)
+2026-01-02 14:49:04,379 - lightrag - INFO - Extracting stage 1/3: 注册登录权限通过：难点项目.md
+2026-01-02 14:49:04,380 - lightrag - INFO - Processing d-id: doc-91e3d2ffffcf256e6821ed0e80f2d522
+2026-01-02 14:49:04,381 - lightrag - INFO - Extracting stage 2/3: UI app面试.md
+2026-01-02 14:49:04,381 - lightrag - INFO - Processing d-id: doc-973d0356010bb23eeb1179a842047c82
+2026-01-02 14:49:34,383 - uvicorn.access - INFO - 127.0.0.1:49772 - "GET /docs HTTP/1.1" 200
+2026-01-02 14:49:34,465 - lightrag - INFO - [] Subgraph query successful | Node count: 820 | Edge count: 765
+2026-01-02 14:49:34,604 - uvicorn.access - INFO - 127.0.0.1:55121 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-02 14:49:34,616 - uvicorn.access - INFO - 127.0.0.1:59191 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 14:51:58,094 - lightrag - INFO -  == LLM cache == saving: default:extract:b05dedbad267a0bd8f6c431be016f15f
+2026-01-02 14:52:00,894 - lightrag - INFO -  == LLM cache == saving: default:extract:d0672d92303a8b2f1f6172f4646db1ea
+2026-01-02 14:52:09,687 - lightrag - INFO -  == LLM cache == saving: default:extract:679ac72611c6a2022985b03c292a36d4
+2026-01-02 14:52:18,801 - lightrag - INFO -  == LLM cache == saving: default:extract:90dd444aeb1e20359f67001be7bb3a18
+2026-01-02 14:52:25,632 - lightrag - INFO -  == LLM cache == saving: default:extract:650cfc12e9170839fa7c1c9484d6c05e
+2026-01-02 14:52:25,637 - lightrag - INFO - Chunk 1 of 6 extracted 20 Ent + 18 Rel chunk-f4f7fc674344b3648e36b14c5616415b
+2026-01-02 14:52:30,027 - lightrag - INFO -  == LLM cache == saving: default:extract:e1e364aa8d6ccedace2430573beb1805
+2026-01-02 14:52:30,034 - lightrag - INFO - Chunk 2 of 6 extracted 25 Ent + 22 Rel chunk-d973e3c1f8b6d355334bce00c73ab2fb
+2026-01-02 14:52:36,835 - lightrag - INFO -  == LLM cache == saving: default:extract:867ebbc9c2ad09b2d7c9165d19034900
+2026-01-02 14:52:36,841 - lightrag - INFO - Chunk 3 of 6 extracted 20 Ent + 22 Rel chunk-c39657fa08399c964a203df2e82c1263
+2026-01-02 14:52:46,394 - lightrag - INFO -  == LLM cache == saving: default:extract:adff2f73e799eaef57903c31b0db32c2
+2026-01-02 14:52:46,398 - lightrag - INFO - Chunk 4 of 6 extracted 23 Ent + 28 Rel chunk-be015d38c77851ce2e3800f4f71195dc
+2026-01-02 14:53:09,893 - lightrag - INFO -  == LLM cache == saving: default:extract:3eca177a7ab59cb913061d18d759d841
+2026-01-02 14:53:21,847 - lightrag - INFO -  == LLM cache == saving: default:extract:e8f3672323e4f838e6467d9fc932f5cd
+2026-01-02 14:53:44,107 - lightrag - INFO -  == LLM cache == saving: default:extract:90eb01878c706c5d8e8f7867c4f414e7
+2026-01-02 14:53:44,113 - lightrag - INFO - Chunk 5 of 6 extracted 29 Ent + 24 Rel chunk-f992c31ede844b91fbb3d973a038a2d1
+2026-01-02 14:53:51,583 - lightrag - INFO -  == LLM cache == saving: default:extract:93bebcfcc77ccda74d50a7123958ea2f
+2026-01-02 14:53:51,594 - lightrag - INFO - Chunk 6 of 6 extracted 29 Ent + 24 Rel chunk-8352402b827b053988bbb384d59fe34d
+2026-01-02 14:53:51,596 - lightrag - INFO - Merging stage 1/3: 注册登录权限通过：难点项目.md
+2026-01-02 14:53:51,597 - lightrag - INFO - Phase 1: Processing 126 entities from doc-91e3d2ffffcf256e6821ed0e80f2d522 (async: 8)
+2026-01-02 14:53:51,605 - lightrag - INFO - Merged: `PlayTurbo` | 1+4
+2026-01-02 14:55:16,557 - lightrag - INFO -  == LLM cache == saving: default:extract:94ce99c13bb5f6c908d92381d638e482
+2026-01-02 14:55:53,432 - lightrag - INFO -  == LLM cache == saving: default:extract:1479ddeebcfbeb6c6d04d6035cb324df
+2026-01-02 14:56:04,467 - lightrag - INFO -  == LLM cache == saving: default:extract:afd3354b0c0da7da8b7daf00b66bf83f
+2026-01-02 14:56:07,449 - lightrag - INFO -  == LLM cache == saving: default:extract:c42f8ef5bb55472fd1d8892d009674cd
+2026-01-02 14:56:16,191 - lightrag - INFO -  == LLM cache == saving: default:extract:2c117f441807393d3b7ffa5a8a09ead2
+2026-01-02 14:56:28,511 - lightrag - INFO - Chunk 1 of 8 extracted 25 Ent + 21 Rel chunk-ba5ec16413786ae6baba4f0056b066e9
+2026-01-02 14:56:28,565 - lightrag - INFO - Merged: `pytest-xdist` | 1+1
+2026-01-02 14:56:49,925 - lightrag - INFO -  == LLM cache == saving: default:extract:10040629148ff70c92f8ea0e2628c612
+2026-01-02 14:56:49,982 - lightrag - INFO - Chunk 2 of 8 extracted 28 Ent + 31 Rel chunk-7d75da37e8023862148f8eec91917ddc
+2026-01-02 14:57:07,610 - lightrag - INFO -  == LLM cache == saving: default:extract:f529e6aa0df12361ce49cc82e8463b51
+2026-01-02 14:57:07,666 - lightrag - INFO - Chunk 3 of 8 extracted 40 Ent + 34 Rel chunk-6875746ff7fb36eb3397de2b5d3efb5a
+2026-01-02 14:57:32,125 - lightrag - INFO -  == LLM cache == saving: default:extract:27e1ae9d632d2821c37a73f758a1a4c8
+2026-01-02 14:57:32,174 - lightrag - INFO -  == LLM cache == saving: default:extract:7045947b35b6570232afa7bfd277d04a
+2026-01-02 14:57:32,206 - lightrag - INFO - Chunk 4 of 8 extracted 43 Ent + 41 Rel chunk-6aee37ee0be74009a762201db02481a4
+2026-01-02 14:58:28,259 - lightrag - INFO -  == LLM cache == saving: default:extract:b0cd9bf9a0df34df56951c4dfb8afabf
+2026-01-02 14:58:28,675 - lightrag - INFO -  == LLM cache == saving: default:extract:9fe891a8425ee04e79066af06fe6bd08
+2026-01-02 14:58:39,926 - lightrag - INFO - Chunk 5 of 8 extracted 27 Ent + 20 Rel chunk-34109a558c89def6c0cc72e504577cbe
+2026-01-02 14:58:39,932 - lightrag - INFO -  == LLM cache == saving: default:extract:6b6b8857d6018645b47adc9b2551d892
+2026-01-02 14:59:07,686 - lightrag - INFO -  == LLM cache == saving: default:extract:0d21a45159610e2eb04e11eeee0de384
+2026-01-02 14:59:28,638 - lightrag - INFO - Merged: `权限配置` | 1+1
+2026-01-02 14:59:35,617 - lightrag - INFO -  == LLM cache == saving: default:extract:1834654e8d0581f049ade8f38e7e7562
+2026-01-02 14:59:39,432 - lightrag - INFO - Chunk 6 of 8 extracted 45 Ent + 31 Rel chunk-5b0ac1197408258234325a10720fc164
+2026-01-02 14:59:54,262 - lightrag - INFO -  == LLM cache == saving: default:extract:16c7ffefb151ce862d6e2b77042d1b7a
+2026-01-02 15:00:00,114 - lightrag - INFO - Chunk 7 of 8 extracted 39 Ent + 34 Rel chunk-982ea685baece476c8e392de9eb3b221
+2026-01-02 15:00:24,082 - lightrag - INFO - Merged: `OpenAPI` | 1+1
+2026-01-02 15:00:41,740 - lightrag - INFO -  == LLM cache == saving: default:extract:2dbb73b00efb8561eac760ec96a36cea
+2026-01-02 15:00:47,448 - lightrag - INFO - Chunk 8 of 8 extracted 60 Ent + 56 Rel chunk-51c3413fc4dc51405c173dad392dc1c2
+2026-01-02 15:00:47,870 - lightrag - INFO - Merging stage 2/3: UI app面试.md
+2026-01-02 15:00:56,165 - lightrag - INFO - Phase 1: Processing 237 entities from doc-973d0356010bb23eeb1179a842047c82 (async: 8)
+2026-01-02 15:01:15,572 - lightrag - INFO - Merged: `conftest` | 1+1
+2026-01-02 15:01:18,530 - lightrag - INFO - Merged: `runner.py` | 1+3
+2026-01-02 15:01:24,122 - uvicorn.access - INFO - 127.0.0.1:64517 - "GET /docs HTTP/1.1" 200
+2026-01-02 15:01:24,585 - lightrag - INFO - [] Subgraph query successful | Node count: 935 | Edge count: 765
+2026-01-02 15:01:24,696 - uvicorn.access - INFO - 127.0.0.1:55861 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-02 15:01:30,534 - uvicorn.access - INFO - 127.0.0.1:64517 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 15:01:30,671 - lightrag - INFO - Merged: `Mock服务` | 1+1
+2026-01-02 15:01:48,285 - lightrag - INFO - Merged: `Report` | 1+1
+2026-01-02 15:02:57,657 - lightrag - INFO - Phase 2: Processing 136 relations from doc-91e3d2ffffcf256e6821ed0e80f2d522 (async: 8)
+2026-01-02 15:03:09,638 - lightrag - INFO - Merged: `Appium` | 2+4
+2026-01-02 15:03:12,639 - lightrag - INFO - Merged: `SQLAlchemy` | 3+2
+2026-01-02 15:03:15,896 - lightrag - INFO - Merged: `Pytest` | 1+3
+2026-01-02 15:03:27,518 - lightrag - INFO - Merged: `钉钉` | 1+3
+2026-01-02 15:08:00,385 - lightrag - INFO - Merged: `分层设计` | 2+2
+2026-01-02 15:08:03,120 - lightrag - INFO - Merged: `数据驱动` | 4+2
+2026-01-02 15:08:03,478 - lightrag - INFO - Merged: `Android` | 1+1
+2026-01-02 15:08:15,375 - lightrag - INFO - Merged: `iOS` | 1+1
+2026-01-02 15:08:18,051 - lightrag - INFO - Merged: `Amazon` | 1+1
+2026-01-02 15:08:27,205 - lightrag - INFO - Merged: `Python` | 5+2
+2026-01-02 15:08:50,564 - lightrag - INFO - Merged: `超时控制` | 1+2
+2026-01-02 15:09:23,782 - lightrag - INFO - Merged: `PyMySQL` | 2+1
+2026-01-02 15:09:29,805 - lightrag - INFO - Merged: `Selenium` | 1+1
+2026-01-02 15:09:41,666 - lightrag - INFO - Merged: `Loguru` | 1+1
+2026-01-02 15:09:41,763 - lightrag - INFO - Merged: `ADB` | 2+2
+2026-01-02 15:10:20,898 - lightrag - INFO - Chunks appended from relation: `测试数据`
+2026-01-02 15:11:11,715 - lightrag - INFO - Merged: `平台` | 1+1
+2026-01-02 15:12:09,400 - lightrag - INFO - Merged: `重试机制` | 2+1
+2026-01-02 15:12:43,153 - lightrag - INFO - Merged: `XPath` | 1+1
+2026-01-02 15:13:14,578 - lightrag - INFO - Merged: `HTTP请求` | 1+1
+2026-01-02 15:13:55,482 - lightrag - INFO -  == LLM cache == saving: default:summary:d3fb3838a5b738f3179ab979d6862695
+2026-01-02 15:13:55,508 - lightrag - INFO - LLMmrg: `conftest.py` | 6+2
+2026-01-02 15:15:08,369 - lightrag - INFO - Merged: `测试数据` | 1+1
+2026-01-02 15:15:53,957 - lightrag - INFO - Merged: `Allure报告` | 4+1
+2026-01-02 15:16:06,051 - lightrag - INFO - Merged: `pytest-xdist` | 2+1
+2026-01-02 15:16:27,640 - lightrag - INFO -  == LLM cache == saving: default:summary:d78a387d5485a2449db466881cbc7693
+2026-01-02 15:16:27,643 - lightrag - INFO - LLMmrg: `Docker` | 7+1
+2026-01-02 15:18:01,198 - uvicorn.access - INFO - 127.0.0.1:56812 - "POST /documents/text HTTP/1.1" 200
+2026-01-02 15:18:12,236 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-02 15:18:48,870 - lightrag - INFO - Merged: `Monkey压力测试` | 2+1
+2026-01-02 15:19:11,544 - uvicorn.access - INFO - 127.0.0.1:63841 - "POST /documents/text HTTP/1.1" 200
+2026-01-02 15:19:11,690 - lightrag - INFO - Phase 2: Processing 267 relations from doc-973d0356010bb23eeb1179a842047c82 (async: 8)

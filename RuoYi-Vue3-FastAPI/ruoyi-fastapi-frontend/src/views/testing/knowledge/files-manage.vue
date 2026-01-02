@@ -581,29 +581,64 @@ function handlePreviewClose() {
 }
 
 /** 下载文件 */
-function handleDownload(row) {
+async function handleDownload(row) {
   const fileId = row.fileId || row.file_id;
   if (!fileId) {
     proxy.$modal.msgWarning('文件ID不可用，无法下载');
     return;
   }
   
-  let url = row.fileUrl || row.file_url;
-  
-  // 如果没有fileUrl，通过fileId生成URL
-  if (!url) {
+  try {
+    // 使用axios下载文件，确保触发浏览器下载行为
     const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
-    url = `${baseUrl}/testing/knowledge/files/${fileId}/download`;
+    const response = await axios({
+      url: `${baseUrl}/testing/knowledge/files/${fileId}/download`,
+      method: 'get',
+      params: { preview: false }, // 明确设置为下载模式
+      responseType: 'blob',
+      headers: {
+        'Authorization': 'Bearer ' + getToken()
+      }
+    });
+    
+    // 从响应头获取文件名，如果没有则使用原始文件名
+    let fileName = row.fileName || row.file_name || 'download';
+    const contentDisposition = response.headers['content-disposition'];
+    if (contentDisposition) {
+      const fileNameMatch = contentDisposition.match(/filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/);
+      if (fileNameMatch && fileNameMatch[1]) {
+        fileName = fileNameMatch[1].replace(/['"]/g, '');
+        // 处理URL编码的文件名
+        try {
+          fileName = decodeURIComponent(fileName);
+        } catch (e) {
+          // 如果解码失败，使用原始值
+        }
+      }
+    }
+    
+    // 创建blob URL并触发下载
+    const blob = response.data;
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+    
+    proxy.$modal.msgSuccess('文件下载成功');
+  } catch (error) {
+    console.error('下载文件失败:', error);
+    if (error.response && error.response.status === 401) {
+      proxy.$modal.msgError('下载文件失败：用户未登录，请先完成登录');
+    } else if (error.response && error.response.status === 404) {
+      proxy.$modal.msgError('下载文件失败：文件不存在');
+    } else {
+      proxy.$modal.msgError('下载文件失败：' + (error.message || '未知错误'));
+    }
   }
-  
-  // 确保是下载而不是预览
-  if (url.includes('preview=true')) {
-    url = url.replace('preview=true', 'preview=false');
-  } else if (!url.includes('preview=')) {
-    url = url + (url.includes('?') ? '&' : '?') + 'preview=false';
-  }
-  
-  window.open(url, '_blank');
 }
 
 /** 预览RAG文档的原始文件 */

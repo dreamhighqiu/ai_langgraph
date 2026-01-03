@@ -398,7 +398,12 @@ class ScriptService:
                 }
 
             runner = get_k6_runner()
-            virtual_path, actual_path = runner.save_script(script_name, script_content or '')
+            virtual_path, actual_path = runner.save_script(
+                script_name,
+                script_content or '',
+                project_id=script.project_id,
+                requirement_id=script.requirement_id,
+            )
             start_time = datetime.now()
             task_id = runner.submit_and_monitor(virtual_path, execution_id)
 

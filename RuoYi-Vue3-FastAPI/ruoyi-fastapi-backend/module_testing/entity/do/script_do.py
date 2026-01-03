@@ -26,6 +26,11 @@ class TestScript(Base):
         nullable=False,
         comment='项目ID'
     )
+    requirement_id: Mapped[Optional[int]] = mapped_column(
+        Integer,
+        nullable=True,
+        comment='需求ID'
+    )
     script_name: Mapped[str] = mapped_column(
         String(100),
         nullable=False,

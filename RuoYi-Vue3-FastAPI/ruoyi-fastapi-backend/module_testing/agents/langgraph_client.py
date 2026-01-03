@@ -97,6 +97,7 @@ class LangGraphClient:
             
             # 构建请求体
             payload = {
+                "assistant_id": assistant_id,
                 "input": {
                     "messages": [
                         {
@@ -185,6 +186,7 @@ class LangGraphClient:
                     raise Exception("无法创建对话线程")
             
             payload = {
+                "assistant_id": assistant_id,
                 "input": {
                     "messages": [
                         {

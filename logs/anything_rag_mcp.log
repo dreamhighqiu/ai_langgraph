@@ -19,14 +19,14 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/07/26 17:11:09] INFO     Starting MCP server                 server.py:2618
+[01/07/26 17:32:05] INFO     Starting MCP server                 server.py:2618
                              'anything-rag-mcp' with transport                 
                              'sse' on http://0.0.0.0:8006/sse                  
-INFO:     Started server process [87232]
+INFO:     Started server process [78112]
 INFO:     Waiting for application startup.
-2026-01-07 17:11:09,914 [INFO] Starting worker 'caobinbin#87232' with the following tasks:
-2026-01-07 17:11:09,915 [INFO] * trace(message: str, ...)
-2026-01-07 17:11:09,915 [INFO] * fail(message: str, ...)
-2026-01-07 17:11:09,915 [INFO] * sleep(seconds: float, ...)
+2026-01-07 17:32:05,968 [INFO] Starting worker 'caobinbin#78112' with the following tasks:
+2026-01-07 17:32:05,969 [INFO] * trace(message: str, ...)
+2026-01-07 17:32:05,969 [INFO] * fail(message: str, ...)
+2026-01-07 17:32:05,970 [INFO] * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8006 (Press CTRL+C to quit)

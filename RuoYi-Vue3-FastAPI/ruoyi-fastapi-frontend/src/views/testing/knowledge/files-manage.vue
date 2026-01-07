@@ -285,17 +285,17 @@ function getProjectList() {
 /** 项目改变 */
 function handleProjectChange() {
   // 无论是否选择项目，都加载数据（如果未选择项目，显示所有项目的文件）
-  getOriginalFileList();
-  if (activeTab.value === 'rag') {
-    getRagDocumentList();
+    getOriginalFileList();
+    if (activeTab.value === 'rag') {
+      getRagDocumentList();
   }
 }
 
 /** 获取原始文件列表 */
 function getOriginalFileList() {
   loading.value = true;
-  const query = {
-    page_num: originalQueryParams.value.pageNum,
+      const query = {
+        page_num: originalQueryParams.value.pageNum,
     page_size: originalQueryParams.value.pageSize,
     project_id: queryParams.value.projectId || undefined  // 如果未选择项目，传undefined显示所有
   };
@@ -303,20 +303,20 @@ function getOriginalFileList() {
   getAllFiles(query).then(response => {
     if (response.code === 200 && response.data) {
       originalFileList.value = (response.data.rows || []).map(item => ({
-        fileId: item.file_id,
-        fileName: item.file_name,
-        fileType: item.file_type,
-        fileSize: item.file_size,
-        fileUrl: item.file_url,
-        processStatus: item.process_status,
+            fileId: item.file_id,
+            fileName: item.file_name,
+            fileType: item.file_type,
+            fileSize: item.file_size,
+            fileUrl: item.file_url,
+            processStatus: item.process_status,
         createTime: item.create_time,
         projectId: item.project_id,
         projectName: item.project_name,
         knowledgeName: item.knowledge_name
-      }));
+          }));
       originalTotal.value = response.data.total || 0;
-    }
-    loading.value = false;
+        }
+        loading.value = false;
   }).catch(() => {
     loading.value = false;
   });

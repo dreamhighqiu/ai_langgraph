@@ -140,7 +140,7 @@ def create_app() -> FastAPI:
     handle_exception(app)
     # 自动注册路由
     auto_register_routers(app)
-    
+
     # 添加根路径路由
     @app.get("/", include_in_schema=False)
     async def root():

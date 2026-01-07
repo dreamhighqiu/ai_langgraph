@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2026-01-07 17:10:26,044 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2026-01-07 17:31:35,100 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -22,21 +22,21 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2026-01-07 17:10:26,086 - __main__ - INFO - Starting RAG Anything MCP Server...
-2026-01-07 17:10:26,092 - __main__ - INFO - Configuration loaded
-2026-01-07 17:10:26,093 - __main__ - INFO -   LLM Provider: deepseek
-2026-01-07 17:10:26,093 - __main__ - INFO -   LLM Model: deepseek-chat
-2026-01-07 17:10:26,093 - __main__ - INFO -   LLM API Key: ***0749
-2026-01-07 17:10:26,094 - __main__ - INFO -   RAG Parser: docling
-2026-01-07 17:10:26,094 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
-2026-01-07 17:10:26,094 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
-2026-01-07 17:10:26,094 - __main__ - INFO - Creating LLM model function...
-2026-01-07 17:10:26,094 - __main__ - INFO - Creating vision model function...
-2026-01-07 17:10:26,095 - __main__ - INFO - Creating embedding function...
-2026-01-07 17:10:26,095 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2026-01-07 17:10:26,095 - __main__ - INFO - Creating RAGAnything connector...
-2026-01-07 17:10:26,095 - __main__ - INFO - Initializing RAGAnything...
-2026-01-07 17:10:26,095 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
+2026-01-07 17:31:35,125 - __main__ - INFO - Starting RAG Anything MCP Server...
+2026-01-07 17:31:35,128 - __main__ - INFO - Configuration loaded
+2026-01-07 17:31:35,129 - __main__ - INFO -   LLM Provider: deepseek
+2026-01-07 17:31:35,129 - __main__ - INFO -   LLM Model: deepseek-chat
+2026-01-07 17:31:35,129 - __main__ - INFO -   LLM API Key: ***0749
+2026-01-07 17:31:35,129 - __main__ - INFO -   RAG Parser: docling
+2026-01-07 17:31:35,129 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
+2026-01-07 17:31:35,129 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
+2026-01-07 17:31:35,129 - __main__ - INFO - Creating LLM model function...
+2026-01-07 17:31:35,129 - __main__ - INFO - Creating vision model function...
+2026-01-07 17:31:35,129 - __main__ - INFO - Creating embedding function...
+2026-01-07 17:31:35,129 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2026-01-07 17:31:35,129 - __main__ - INFO - Creating RAGAnything connector...
+2026-01-07 17:31:35,129 - __main__ - INFO - Initializing RAGAnything...
+2026-01-07 17:31:35,130 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ../../anything-chat-rag/rag_storage
 INFO:   Parser: docling
@@ -46,12 +46,12 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': '../../anything-chat-rag/rag_storage', 'vector_storage': 'MilvusVectorDBStorage'}
 INFO: [] Loaded graph from ../../anything-chat-rag/rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
-INFO: [] Process 39256 KV load full_docs with 15 records
-INFO: [] Process 39256 KV load text_chunks with 64 records
-INFO: [] Process 39256 KV load full_entities with 15 records
-INFO: [] Process 39256 KV load full_relations with 15 records
-INFO: [] Process 39256 KV load entity_chunks with 1309 records
-INFO: [] Process 39256 KV load relation_chunks with 1348 records
+INFO: [] Process 90136 KV load full_docs with 15 records
+INFO: [] Process 90136 KV load text_chunks with 64 records
+INFO: [] Process 90136 KV load full_entities with 15 records
+INFO: [] Process 90136 KV load full_relations with 15 records
+INFO: [] Process 90136 KV load entity_chunks with 1309 records
+INFO: [] Process 90136 KV load relation_chunks with 1348 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -61,25 +61,25 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 39256 KV load llm_response_cache with 143 records
-INFO: [] Process 39256 doc status load doc_status with 15 records
-INFO: [] Process 39256 KV load parse_cache with 15 records
+INFO: [] Process 90136 KV load llm_response_cache with 143 records
+INFO: [] Process 90136 doc status load doc_status with 15 records
+INFO: [] Process 90136 KV load parse_cache with 15 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2026-01-07 17:11:02,311 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2026-01-07 17:11:02,311 - __main__ - INFO - RAG Anything initialized successfully
-2026-01-07 17:11:02,311 - __main__ - INFO -   Working Directory: ../../anything-chat-rag/rag_storage
-2026-01-07 17:11:02,311 - __main__ - INFO -   Parser: docling
-[01/07/26 17:11:02] INFO     Starting MCP server '但问企业级RAG' server.py:2582
+2026-01-07 17:31:57,180 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2026-01-07 17:31:57,180 - __main__ - INFO - RAG Anything initialized successfully
+2026-01-07 17:31:57,180 - __main__ - INFO -   Working Directory: ../../anything-chat-rag/rag_storage
+2026-01-07 17:31:57,180 - __main__ - INFO -   Parser: docling
+[01/07/26 17:31:57] INFO     Starting MCP server '但问企业级RAG' server.py:2582
                              with transport 'sse' on                           
                              http://0.0.0.0:8001/sse                           
-INFO:     Started server process [39256]
+INFO:     Started server process [90136]
 INFO:     Waiting for application startup.
-2026-01-07 17:11:02,805 - docket.worker - INFO - Starting worker 'caobinbin#39256' with the following tasks:
-2026-01-07 17:11:02,806 - docket.worker - INFO - * trace(message: str, ...)
-2026-01-07 17:11:02,806 - docket.worker - INFO - * fail(message: str, ...)
-2026-01-07 17:11:02,806 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-07 17:31:57,605 - docket.worker - INFO - Starting worker 'caobinbin#90136' with the following tasks:
+2026-01-07 17:31:57,606 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-07 17:31:57,607 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-07 17:31:57,607 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)

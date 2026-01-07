@@ -336,17 +336,20 @@ install_dependencies() {
     uv pip install -e ./anything-chat-rag
     
     # Configure Python path for other modules
+    # NOTE: testing-agents-service has been flattened to a single-level directory:
+    #   from: testing-agents-service/testing-agents-service/src
+    #   to:   testing-agents-service/src
     local site_packages=$("$VENV_PYTHON" -c "import site; print(site.getsitepackages()[0])")
     cat > "$site_packages/ai-langgraph.pth" << EOF
-$PROJECT_ROOT/testing-agents-service/testing-agents-service/src
+$PROJECT_ROOT/testing-agents-service/src
 $PROJECT_ROOT/mcp-server/src
 EOF
     
-    # Ensure mcp-server/src is in Python path (for Windows compatibility)
+    # Ensure testing-agents-service/src 和 mcp-server/src 在 Windows 下也能正常加入 Python path
     if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
         # Convert to Windows path format for .pth file
         local mcp_path_win=$(cygpath -w "$PROJECT_ROOT/mcp-server/src" 2>/dev/null || echo "$PROJECT_ROOT/mcp-server/src")
-        local testing_path_win=$(cygpath -w "$PROJECT_ROOT/testing-agents-service/testing-agents-service/src" 2>/dev/null || echo "$PROJECT_ROOT/testing-agents-service/testing-agents-service/src")
+        local testing_path_win=$(cygpath -w "$PROJECT_ROOT/testing-agents-service/src" 2>/dev/null || echo "$PROJECT_ROOT/testing-agents-service/src")
         cat > "$site_packages/ai-langgraph.pth" << EOF
 $testing_path_win
 $mcp_path_win
@@ -517,7 +520,10 @@ start_anything_rag_mcp() {
 }
 
 start_api_agent_mcp_servers() {
-    local src_dir="$PROJECT_ROOT/testing-agents-service/testing-agents-service/src"
+    # testing-agents-service 目录已从两级变为一级，这里统一使用新的路径
+    # 旧: $PROJECT_ROOT/testing-agents-service/testing-agents-service/src
+    # 新: $PROJECT_ROOT/testing-agents-service/src
+    local src_dir="$PROJECT_ROOT/testing-agents-service/src"
     local services_dir="$src_dir/api_agent/mcp_servers"
     
     print_info "Starting API Agent MCP Servers..."
@@ -738,7 +744,8 @@ start_langgraph_server() {
     print_info "Starting $name..."
     
     # Install Node.js dependencies for automation-quality-mcp if needed
-    local automation_mcp_dir="$PROJECT_ROOT/testing-agents-service/testing-agents-service/src/api_agent/mcp_servers/automation-quality-mcp"
+    # 目录已扁平化为 testing-agents-service/src
+    local automation_mcp_dir="$PROJECT_ROOT/testing-agents-service/src/api_agent/mcp_servers/automation-quality-mcp"
     if [ -d "$automation_mcp_dir" ] && [ ! -d "$automation_mcp_dir/node_modules" ]; then
         print_info "Installing Node.js dependencies for automation-quality-mcp..."
         cd "$automation_mcp_dir"
@@ -750,11 +757,12 @@ start_langgraph_server() {
         cd "$PROJECT_ROOT"
     fi
     
-    cd "$PROJECT_ROOT/testing-agents-service/testing-agents-service"
+    # LangGraph 后端工程根目录也从两级目录改成单一级目录 testing-agents-service
+    cd "$PROJECT_ROOT/testing-agents-service"
     export PATH="$VENV_BIN:$PATH"
     export PYTHONIOENCODING=utf-8
-    # Add testing-agents-service/src to Python path
-    export PYTHONPATH="$PROJECT_ROOT/testing-agents-service/testing-agents-service/src:$PYTHONPATH"
+    # Add testing-agents-service/src to Python path（使用新目录）
+    export PYTHONPATH="$PROJECT_ROOT/testing-agents-service/src:$PYTHONPATH"
     nohup "$VENV_PYTHON" start_server.py > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"

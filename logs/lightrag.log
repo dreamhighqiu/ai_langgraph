@@ -1,0 +1,108 @@
+WARNING:root:>> Forcing workers=1 in uvicorn mode(Ignoring workers=2)
+
+LightRAG log file: D:\yunxia\ai_langgraph\anything-chat-rag\lightrag.log
+
+[36m
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                LightRAG Server v1.4.9.9/0256                 ║
+    ║         Fast, Lightweight RAG Server Implementation          ║
+    ╚══════════════════════════════════════════════════════════════╝
+    [0m
+[35m
+📡 Server Configuration:[0m
+[37m    ├─ Host: [0m[33m0.0.0.0[0m
+[37m    ├─ Port: [0m[33m9621[0m
+[37m    ├─ Workers: [0m[33m1[0m
+[37m    ├─ Timeout: [0m[33m300[0m
+[37m    ├─ CORS Origins: [0m[33m*[0m
+[37m    ├─ SSL Enabled: [0m[33mFalse[0m
+[37m    ├─ Ollama Emulating Model: [0m[33mlightrag:latest[0m
+[37m    ├─ Log Level: [0m[33mINFO[0m
+[37m    ├─ Verbose Debug: [0m[33mFalse[0m
+[37m    ├─ API Key: [0m[33mNot Set[0m
+[37m    └─ JWT Auth: [0m[33mDisabled[0m
+[35m
+📂 Directory Configuration:[0m
+[37m    ├─ Working Directory: [0m[33mD:\yunxia\ai_langgraph\anything-chat-rag\rag_storage[0m
+[37m    └─ Input Directory: [0m[33mD:\yunxia\ai_langgraph\anything-chat-rag\inputs[0m
+[35m
+🤖 LLM Configuration:[0m
+[37m    ├─ Binding: [0m[33mopenai[0m
+[37m    ├─ Host: [0m[33mhttps://api.deepseek.com/v1[0m
+[37m    ├─ Model: [0m[33mdeepseek-chat[0m
+[37m    ├─ Max Async for LLM: [0m[33m4[0m
+[37m    ├─ Summary Context Size: [0m[33m12000[0m
+[37m    ├─ LLM Cache Enabled: [0m[33mTrue[0m
+[37m    └─ LLM Cache for Extraction Enabled: [0m[33mTrue[0m
+[35m
+📊 Embedding Configuration:[0m
+[37m    ├─ Binding: [0m[33mollama[0m
+[37m    ├─ Host: [0m[33mhttp://47.110.95.246:11434[0m
+[37m    ├─ Model: [0m[33mqwen3-embedding:0.6b[0m
+[37m    └─ Dimensions: [0m[33m1024[0m
+[35m
+⚙️ RAG Configuration:[0m
+[37m    ├─ Summary Language: [0m[33mChinese[0m
+[37m    ├─ Entity Types: [0m[33m['Person', 'Creature', 'Organization', 'Location', 'Event', 'Concept', 'Method', 'Content', 'Data', 'Artifact', 'NaturalObject'][0m
+[37m    ├─ Max Parallel Insert: [0m[33m2[0m
+[37m    ├─ Chunk Size: [0m[33m1200[0m
+[37m    ├─ Chunk Overlap Size: [0m[33m100[0m
+[37m    ├─ Cosine Threshold: [0m[33m0.2[0m
+[37m    ├─ Top-K: [0m[33m40[0m
+[37m    └─ Force LLM Summary on Merge: [0m[33m8[0m
+[35m
+💾 Storage Configuration:[0m
+[37m    ├─ KV Storage: [0m[33mJsonKVStorage[0m
+[37m    ├─ Vector Storage: [0m[33mMilvusVectorDBStorage[0m
+[37m    ├─ Graph Storage: [0m[33mNetworkXStorage[0m
+[37m    ├─ Document Status Storage: [0m[33mJsonDocStatusStorage[0m
+[37m    └─ Workspace: [0m[33m-[0m
+[32m
+✨ Server starting up...
+[0m
+[35m
+🌐 Server Access Information:[0m
+[37m    ├─ WebUI (local): [0m[33mhttp://localhost:9621[0m
+[37m    ├─ Remote Access: [0m[33mhttp://<your-ip-address>:9621[0m
+[37m    ├─ API Documentation (local): [0m[33mhttp://localhost:9621/docs[0m
+[37m    └─ Alternative Documentation (local): [0m[33mhttp://localhost:9621/redoc[0m
+[35m
+📝 Note:[0m
+[36m    Since the server is running on 0.0.0.0:
+    - Use 'localhost' or '127.0.0.1' for local access
+    - Use your machine's IP address for remote access
+    - To find your IP address:
+      • Windows: Run 'ipconfig' in terminal
+      • Linux/Mac: Run 'ifconfig' or 'ip addr' in terminal
+    [0m
+INFO: OpenAI LLM Options: {}
+INFO: Ollama Embedding Options: {}
+INFO: Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+INFO: Embedding max_token_size: 8192 (from ollama provider default)
+INFO: Reranking is disabled
+INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
+INFO: RAG-Anything processor created successfully
+INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+INFO: Started server process [81324]
+INFO: Waiting for application startup.
+INFO: [] Process 81324 KV load full_docs with 15 records
+INFO: [] Process 81324 KV load text_chunks with 64 records
+INFO: [] Process 81324 KV load full_entities with 15 records
+INFO: [] Process 81324 KV load full_relations with 15 records
+INFO: [] Process 81324 KV load entity_chunks with 1309 records
+INFO: [] Process 81324 KV load relation_chunks with 1348 records
+INFO: [] VectorDB collection 'entities' exists check: True
+INFO: [] VectorDB Collection 'entities' compatibility validation passed
+INFO: [] Milvus collection 'entities' initialized successfully
+INFO: [] VectorDB collection 'relationships' exists check: True
+INFO: [] VectorDB Collection 'relationships' compatibility validation passed
+INFO: [] Milvus collection 'relationships' initialized successfully
+INFO: [] VectorDB collection 'chunks' exists check: True
+INFO: [] VectorDB Collection 'chunks' compatibility validation passed
+INFO: [] Milvus collection 'chunks' initialized successfully
+INFO: [] Process 81324 KV load llm_response_cache with 143 records
+INFO: [] Process 81324 doc status load doc_status with 15 records
+INFO: Application startup complete.
+INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)

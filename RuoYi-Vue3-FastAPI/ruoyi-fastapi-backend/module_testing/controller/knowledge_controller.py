@@ -592,9 +592,9 @@ async def download_file(
         # 构建Content-Disposition头
         if ascii_safe:
             # ASCII文件名，使用简单格式
-            if preview:
+        if preview:
                 content_disposition = f'inline; filename="{file_record.file_name}"'
-            else:
+        else:
                 content_disposition = f'attachment; filename="{file_record.file_name}"'
         else:
             # 非ASCII文件名，使用RFC 5987格式

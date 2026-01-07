@@ -106,3 +106,21 @@ INFO: [] Process 81324 KV load llm_response_cache with 143 records
 INFO: [] Process 81324 doc status load doc_status with 15 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+INFO: 127.0.0.1:50060 - "GET / HTTP/1.1" 307
+INFO: 127.0.0.1:50060 - "GET /webui HTTP/1.1" 307
+INFO: 127.0.0.1:57274 - "GET /auth-status HTTP/1.1" 200
+INFO: 127.0.0.1:57274 - "GET /docs HTTP/1.1" 200
+INFO: [] Graph truncated: 1321 nodes found, limited to 1000
+INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+INFO: 127.0.0.1:57274 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:57274 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:52782 - "GET /docs HTTP/1.1" 200
+INFO: [] Graph truncated: 1321 nodes found, limited to 1000
+INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+INFO: 127.0.0.1:53455 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:52996 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:53627 - "GET /docs HTTP/1.1" 200
+INFO: [] Graph truncated: 1321 nodes found, limited to 1000
+INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+INFO: 127.0.0.1:49185 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:63086 - "GET /openapi.json HTTP/1.1" 200

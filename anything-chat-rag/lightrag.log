@@ -5672,3 +5672,21 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-07 17:10:16,363 - lightrag - INFO - [] Process 81324 doc status load doc_status with 15 records
 2026-01-07 17:10:16,366 - uvicorn.error - INFO - Application startup complete.
 2026-01-07 17:10:16,369 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-07 17:12:37,577 - uvicorn.access - INFO - 127.0.0.1:50060 - "GET / HTTP/1.1" 307
+2026-01-07 17:12:37,596 - uvicorn.access - INFO - 127.0.0.1:50060 - "GET /webui HTTP/1.1" 307
+2026-01-07 17:12:46,583 - uvicorn.access - INFO - 127.0.0.1:57274 - "GET /auth-status HTTP/1.1" 200
+2026-01-07 17:12:49,044 - uvicorn.access - INFO - 127.0.0.1:57274 - "GET /docs HTTP/1.1" 200
+2026-01-07 17:12:49,126 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 17:12:49,146 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 17:12:49,247 - uvicorn.access - INFO - 127.0.0.1:57274 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 17:12:51,378 - uvicorn.access - INFO - 127.0.0.1:57274 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 17:15:39,384 - uvicorn.access - INFO - 127.0.0.1:52782 - "GET /docs HTTP/1.1" 200
+2026-01-07 17:15:39,410 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 17:15:39,732 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 17:15:39,982 - uvicorn.access - INFO - 127.0.0.1:53455 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 17:15:40,000 - uvicorn.access - INFO - 127.0.0.1:52996 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 17:19:32,135 - uvicorn.access - INFO - 127.0.0.1:53627 - "GET /docs HTTP/1.1" 200
+2026-01-07 17:19:32,162 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 17:19:32,226 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 17:19:32,433 - uvicorn.access - INFO - 127.0.0.1:49185 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 17:19:32,440 - uvicorn.access - INFO - 127.0.0.1:63086 - "GET /openapi.json HTTP/1.1" 200

@@ -23,6 +23,18 @@
       "path": "./src/ui_automation/web_automation_agent.py:agent",
       "description": "UI 自动化测试 Agent，使用 Playwright 进行 Web 自动化测试"
     },
+    "midscene_mcp_agent": {
+      "path": "./src/ui_automation/ui_demo/midscene_mcp_agent.py:agent",
+      "description": "Midscene MCP 演示 Agent，使用 midscene-web MCP 进行浏览器自动化"
+    },
+    "playwright_mcp_agent": {
+      "path": "./src/ui_automation/ui_demo/playwright_mcp_agent.py:agent",
+      "description": "Playwright MCP 演示 Agent，使用 @playwright/mcp 进行浏览器自动化"
+    },
+    "chrome_mcp_agent": {
+      "path": "./src/ui_automation/ui_demo/chrome_mcp_agent.py:agent",
+      "description": "Chrome MCP 演示 Agent，使用 chrome-mcp 实现浏览器自动化与Excalidraw绘图"
+    },
     "chat_rag_agent": {
       "path": "./src/data_agent/chat_rag_agent.py:agent",
       "description": "聊天 RAG Agent，基于 RAG 知识库回答问题"

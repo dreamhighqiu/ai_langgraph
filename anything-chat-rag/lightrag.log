@@ -5490,3 +5490,185 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-03 11:44:26,012 - lightrag - INFO - Final context: 20 chunks
 2026-01-03 11:44:36,621 - lightrag - INFO -  == LLM cache == saving: naive:query:e65ebc8cfb427e3ab77c7a0280fac975
 2026-01-03 11:44:36,681 - uvicorn.access - INFO - 127.0.0.1:60153 - "POST /query HTTP/1.1" 200
+2026-01-07 15:40:44,773 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-07 15:40:44,775 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-07 15:40:48,178 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-07 15:40:48,179 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-07 15:40:48,180 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-07 15:40:48,181 - lightrag - INFO - Reranking is disabled
+2026-01-07 15:40:50,050 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-07 15:40:53,608 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
+2026-01-07 15:40:55,458 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-07 15:40:55,460 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-07 15:40:55,760 - uvicorn.error - INFO - Started server process [78672]
+2026-01-07 15:40:55,760 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-07 15:40:55,768 - lightrag - INFO - [] Process 78672 KV load full_docs with 15 records
+2026-01-07 15:40:55,773 - lightrag - INFO - [] Process 78672 KV load text_chunks with 64 records
+2026-01-07 15:40:55,775 - lightrag - INFO - [] Process 78672 KV load full_entities with 15 records
+2026-01-07 15:40:55,780 - lightrag - INFO - [] Process 78672 KV load full_relations with 15 records
+2026-01-07 15:40:55,786 - lightrag - INFO - [] Process 78672 KV load entity_chunks with 1309 records
+2026-01-07 15:40:55,792 - lightrag - INFO - [] Process 78672 KV load relation_chunks with 1348 records
+2026-01-07 15:40:56,043 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-07 15:40:56,113 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-07 15:40:56,270 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-07 15:40:56,307 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-07 15:40:56,376 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-07 15:40:56,482 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-07 15:40:56,518 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-07 15:40:56,589 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-07 15:40:56,695 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-07 15:40:56,741 - lightrag - INFO - [] Process 78672 KV load llm_response_cache with 143 records
+2026-01-07 15:40:56,743 - lightrag - INFO - [] Process 78672 doc status load doc_status with 15 records
+2026-01-07 15:40:56,746 - uvicorn.error - INFO - Application startup complete.
+2026-01-07 15:40:56,747 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-07 15:50:17,877 - uvicorn.error - INFO - Shutting down
+2026-01-07 15:50:17,985 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-01-07 15:50:17,987 - lightrag - INFO - Successfully finalized 12 storages
+2026-01-07 15:50:17,988 - uvicorn.error - INFO - Application shutdown complete.
+2026-01-07 15:50:17,989 - uvicorn.error - INFO - Finished server process [78672]
+2026-01-07 16:00:18,711 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-07 16:00:18,711 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-07 16:00:21,717 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-07 16:00:21,718 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-07 16:00:21,719 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-07 16:00:21,720 - lightrag - INFO - Reranking is disabled
+2026-01-07 16:00:23,095 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-07 16:00:26,261 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
+2026-01-07 16:00:27,515 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-07 16:00:27,516 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-07 16:00:27,930 - uvicorn.error - INFO - Started server process [76492]
+2026-01-07 16:00:27,931 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-07 16:00:27,941 - lightrag - INFO - [] Process 76492 KV load full_docs with 15 records
+2026-01-07 16:00:27,948 - lightrag - INFO - [] Process 76492 KV load text_chunks with 64 records
+2026-01-07 16:00:27,950 - lightrag - INFO - [] Process 76492 KV load full_entities with 15 records
+2026-01-07 16:00:27,956 - lightrag - INFO - [] Process 76492 KV load full_relations with 15 records
+2026-01-07 16:00:27,966 - lightrag - INFO - [] Process 76492 KV load entity_chunks with 1309 records
+2026-01-07 16:00:27,976 - lightrag - INFO - [] Process 76492 KV load relation_chunks with 1348 records
+2026-01-07 16:00:28,165 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-07 16:00:28,245 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-07 16:00:28,358 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-07 16:00:28,396 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-07 16:00:28,469 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-07 16:00:28,580 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-07 16:00:28,620 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-07 16:00:28,694 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-07 16:00:28,806 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-07 16:00:28,858 - lightrag - INFO - [] Process 76492 KV load llm_response_cache with 143 records
+2026-01-07 16:00:28,860 - lightrag - INFO - [] Process 76492 doc status load doc_status with 15 records
+2026-01-07 16:00:28,865 - uvicorn.error - INFO - Application startup complete.
+2026-01-07 16:00:28,867 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-07 16:00:42,935 - uvicorn.access - INFO - 127.0.0.1:60672 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2026-01-07 16:00:42,949 - uvicorn.access - INFO - 127.0.0.1:49859 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2026-01-07 16:00:44,358 - uvicorn.access - INFO - 127.0.0.1:49859 - "GET /auth-status HTTP/1.1" 200
+2026-01-07 16:00:44,369 - uvicorn.access - INFO - 127.0.0.1:60672 - "GET /webui/favicon.png HTTP/1.1" 304
+2026-01-07 16:00:45,343 - uvicorn.access - INFO - 127.0.0.1:60672 - "GET /docs HTTP/1.1" 200
+2026-01-07 16:00:45,381 - uvicorn.access - INFO - 127.0.0.1:60672 - "GET /webui/assets/index-X6S77QzN.js HTTP/1.1" 200
+2026-01-07 16:00:45,386 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 16:00:45,423 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 16:00:45,574 - uvicorn.access - INFO - 127.0.0.1:49859 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 16:00:45,589 - uvicorn.access - INFO - 127.0.0.1:56942 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 304
+2026-01-07 16:00:45,591 - uvicorn.access - INFO - 127.0.0.1:56406 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 304
+2026-01-07 16:00:46,394 - uvicorn.access - INFO - 127.0.0.1:49859 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 16:01:20,336 - uvicorn.access - INFO - 127.0.0.1:61381 - "GET /docs HTTP/1.1" 200
+2026-01-07 16:01:20,356 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 16:01:20,534 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 16:01:20,680 - uvicorn.access - INFO - 127.0.0.1:61381 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 16:01:20,686 - uvicorn.access - INFO - 127.0.0.1:60828 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 16:03:13,848 - uvicorn.access - INFO - 127.0.0.1:65208 - "GET /docs HTTP/1.1" 200
+2026-01-07 16:03:14,211 - uvicorn.access - INFO - 127.0.0.1:65208 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 16:03:15,775 - uvicorn.access - INFO - 127.0.0.1:65208 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 304
+2026-01-07 16:08:06,270 - uvicorn.access - INFO - 127.0.0.1:51206 - "GET /docs HTTP/1.1" 200
+2026-01-07 16:08:06,294 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 16:08:06,332 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 16:08:06,481 - uvicorn.access - INFO - 127.0.0.1:51206 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 16:08:06,535 - uvicorn.access - INFO - 127.0.0.1:51206 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 16:08:15,097 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+2026-01-07 16:08:29,445 - lightrag - INFO - Query edges: 个人信息, 人物查询 (top_k:40, cosine:0.2)
+2026-01-07 16:08:33,752 - lightrag - INFO - Global query: 57 entites, 40 relations
+2026-01-07 16:08:33,754 - lightrag - INFO - Raw search results: 57 entities, 40 relations, 0 vector chunks
+2026-01-07 16:08:33,800 - lightrag - INFO - After truncation: 57 entities, 40 relations
+2026-01-07 16:08:34,082 - lightrag - INFO - Selecting 32 from 32 entity-related chunks by vector similarity
+2026-01-07 16:08:34,085 - lightrag - INFO - Find no additional relations-related chunks from 40 relations
+2026-01-07 16:08:34,086 - lightrag - INFO - Round-robin merged chunks: 32 -> 32 (deduplicated 0)
+2026-01-07 16:08:34,103 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-07 16:08:34,178 - lightrag - INFO - Final context: 57 entities, 40 relations, 20 chunks
+2026-01-07 16:08:34,180 - lightrag - INFO - Final chunks S+F/O: E7/1 E1/2 E3/3 E1/4 E5/5 E14/6 E4/7 E4/8 E3/9 E3/10 E1/11 E3/12 E2/13 E2/14 E2/15 E1/16 E4/17 E2/18 E1/19 E1/20
+2026-01-07 16:08:34,291 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2026-01-07 16:08:38,766 - uvicorn.access - INFO - 127.0.0.1:50613 - "POST /query/stream HTTP/1.1" 200
+2026-01-07 16:47:32,014 - uvicorn.error - INFO - Shutting down
+2026-01-07 16:47:32,124 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-01-07 16:47:32,129 - lightrag - INFO - Successfully finalized 12 storages
+2026-01-07 16:47:32,131 - uvicorn.error - INFO - Application shutdown complete.
+2026-01-07 16:47:32,133 - uvicorn.error - INFO - Finished server process [76492]
+2026-01-07 16:49:46,422 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-07 16:49:46,422 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-07 16:49:48,307 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-07 16:49:48,307 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-07 16:49:48,308 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-07 16:49:48,309 - lightrag - INFO - Reranking is disabled
+2026-01-07 16:49:49,292 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-07 16:49:51,401 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
+2026-01-07 16:49:52,413 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-07 16:49:52,414 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-07 16:49:52,710 - uvicorn.error - INFO - Started server process [77252]
+2026-01-07 16:49:52,710 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-07 16:49:52,716 - lightrag - INFO - [] Process 77252 KV load full_docs with 15 records
+2026-01-07 16:49:52,722 - lightrag - INFO - [] Process 77252 KV load text_chunks with 64 records
+2026-01-07 16:49:52,724 - lightrag - INFO - [] Process 77252 KV load full_entities with 15 records
+2026-01-07 16:49:52,727 - lightrag - INFO - [] Process 77252 KV load full_relations with 15 records
+2026-01-07 16:49:52,736 - lightrag - INFO - [] Process 77252 KV load entity_chunks with 1309 records
+2026-01-07 16:49:52,744 - lightrag - INFO - [] Process 77252 KV load relation_chunks with 1348 records
+2026-01-07 16:49:52,912 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-07 16:49:52,984 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-07 16:49:53,096 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-07 16:49:53,132 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-07 16:49:53,204 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-07 16:49:53,316 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-07 16:49:53,352 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-07 16:49:53,425 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-07 16:49:53,536 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-07 16:49:53,578 - lightrag - INFO - [] Process 77252 KV load llm_response_cache with 143 records
+2026-01-07 16:49:53,580 - lightrag - INFO - [] Process 77252 doc status load doc_status with 15 records
+2026-01-07 16:49:53,582 - uvicorn.error - INFO - Application startup complete.
+2026-01-07 16:49:53,584 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-07 16:50:10,438 - uvicorn.access - INFO - 127.0.0.1:54283 - "GET /docs HTTP/1.1" 200
+2026-01-07 16:50:10,478 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-07 16:50:10,511 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-07 16:50:10,645 - uvicorn.access - INFO - 127.0.0.1:63773 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-07 16:50:11,498 - uvicorn.access - INFO - 127.0.0.1:63773 - "GET /openapi.json HTTP/1.1" 200
+2026-01-07 17:04:21,087 - uvicorn.error - INFO - Shutting down
+2026-01-07 17:04:21,195 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-01-07 17:04:21,197 - lightrag - INFO - Successfully finalized 12 storages
+2026-01-07 17:04:21,198 - uvicorn.error - INFO - Application shutdown complete.
+2026-01-07 17:04:21,198 - uvicorn.error - INFO - Finished server process [77252]
+2026-01-07 17:10:06,232 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-07 17:10:06,233 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-07 17:10:09,477 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-07 17:10:09,478 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-07 17:10:09,480 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-07 17:10:09,481 - lightrag - INFO - Reranking is disabled
+2026-01-07 17:10:10,806 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-07 17:10:13,863 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
+2026-01-07 17:10:15,044 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-07 17:10:15,046 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-07 17:10:15,444 - uvicorn.error - INFO - Started server process [81324]
+2026-01-07 17:10:15,445 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-07 17:10:15,453 - lightrag - INFO - [] Process 81324 KV load full_docs with 15 records
+2026-01-07 17:10:15,460 - lightrag - INFO - [] Process 81324 KV load text_chunks with 64 records
+2026-01-07 17:10:15,463 - lightrag - INFO - [] Process 81324 KV load full_entities with 15 records
+2026-01-07 17:10:15,469 - lightrag - INFO - [] Process 81324 KV load full_relations with 15 records
+2026-01-07 17:10:15,479 - lightrag - INFO - [] Process 81324 KV load entity_chunks with 1309 records
+2026-01-07 17:10:15,487 - lightrag - INFO - [] Process 81324 KV load relation_chunks with 1348 records
+2026-01-07 17:10:15,663 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-07 17:10:15,750 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-07 17:10:15,862 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-07 17:10:15,900 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-07 17:10:15,973 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-07 17:10:16,085 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-07 17:10:16,122 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-07 17:10:16,196 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-07 17:10:16,309 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-07 17:10:16,360 - lightrag - INFO - [] Process 81324 KV load llm_response_cache with 143 records
+2026-01-07 17:10:16,363 - lightrag - INFO - [] Process 81324 doc status load doc_status with 15 records
+2026-01-07 17:10:16,366 - uvicorn.error - INFO - Application startup complete.
+2026-01-07 17:10:16,369 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)

@@ -20,19 +20,24 @@
 
 
 INFO:__main__:并行执行支持: xdist=False, CPU核心数=16, Allure CLI=False
-[01/03/26 10:59:57] INFO     Starting MCP server 'TestExecutor'  server.py:2618
+[01/07/26 16:52:13] INFO     Starting MCP server 'TestExecutor'  server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8004/sse                           
-INFO:     Started server process [84008]
+INFO:     Started server process [30804]
 INFO:     Waiting for application startup.
-INFO:docket.worker:Starting worker 'caobinbin#84008' with the following tasks:
+INFO:docket.worker:Starting worker 'caobinbin#30804' with the following tasks:
 INFO:docket.worker:* trace(message: str, ...)
 INFO:docket.worker:* fail(message: str, ...)
 INFO:docket.worker:* sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
-INFO:     127.0.0.1:52905 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52911 - "POST /messages/?session_id=c9dbc99eb7ab4f54af1d07104d8b9320 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52917 - "POST /messages/?session_id=c9dbc99eb7ab4f54af1d07104d8b9320 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52923 - "POST /messages/?session_id=c9dbc99eb7ab4f54af1d07104d8b9320 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55380 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55386 - "POST /messages/?session_id=045bf9acdca346c7a04d7fb5d48e724d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55392 - "POST /messages/?session_id=045bf9acdca346c7a04d7fb5d48e724d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55398 - "POST /messages/?session_id=045bf9acdca346c7a04d7fb5d48e724d HTTP/1.1" 202 Accepted
 INFO:mcp.server.lowlevel.server:Processing request of type ListToolsRequest
+INFO:     Shutting down
+ERROR:    Cancel 0 running task(s), timeout graceful shutdown exceeded
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30804]

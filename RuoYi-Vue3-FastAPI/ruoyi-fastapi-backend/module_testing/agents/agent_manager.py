@@ -28,6 +28,30 @@ AGENT_TYPE_MAPPING = {
         'script_extension': '.spec.ts',
         'capabilities': ['脚本生成', 'Playwright测试执行', 'Allure报告', '截图录屏']
     },
+    'midscene_mcp_agent': {
+        'id': 'midscene_mcp_agent',
+        'name': 'Midscene MCP 演示Agent',
+        'description': 'Midscene MCP 演示 Agent，使用 midscene-web MCP 进行浏览器自动化',
+        'test_type': 'ui',
+        'script_extension': '.spec.ts',
+        'capabilities': ['脚本生成', '浏览器自动化', '截图/录屏', 'MCP工具调用']
+    },
+    'playwright_mcp_agent': {
+        'id': 'playwright_mcp_agent',
+        'name': 'Playwright MCP 演示Agent',
+        'description': 'Playwright MCP 演示 Agent，使用 @playwright/mcp 进行浏览器自动化',
+        'test_type': 'ui',
+        'script_extension': '.spec.ts',
+        'capabilities': ['脚本生成', '浏览器自动化', '截图/录屏', 'MCP工具调用']
+    },
+    'chrome_mcp_agent': {
+        'id': 'chrome_mcp_agent',
+        'name': 'Chrome MCP 演示Agent',
+        'description': 'Chrome MCP 演示 Agent，使用 chrome-mcp 实现浏览器自动化与 Excalidraw 绘图',
+        'test_type': 'ui',
+        'script_extension': '.spec.ts',
+        'capabilities': ['脚本生成', '浏览器自动化', 'Excalidraw绘图', 'MCP工具调用']
+    },
     'rest_api_agent': {
         'id': 'rest_api_agent',
         'name': 'REST API测试Agent',

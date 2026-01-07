@@ -7,14 +7,14 @@
    - Network:      http://192.168.1.59:3200
 
  ✓ Starting...
- ✓ Ready in 6.3s
+ ✓ Ready in 4.2s
  ○ Compiling / ...
- ✓ Compiled / in 27.4s
- GET / 200 in 31414ms
+ ✓ Compiled / in 16.3s
+ GET / 200 in 8023ms
  ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
  ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 729ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 1348ms
- GET /?assistantId=chat_rag_agent 200 in 932ms
- GET /?assistantId=ui_automation_agent&threadId=f420966e-d4b5-4453-8dc5-0de6f3b6e21d 200 in 410ms
+ ✓ Compiled /favicon.ico in 1001ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 1538ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 528ms
+[?25h

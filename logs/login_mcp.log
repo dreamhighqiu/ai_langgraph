@@ -19,18 +19,23 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/03/26 10:58:48] INFO     Starting MCP server 'Fecmall Login' server.py:2618
+[01/07/26 16:51:15] INFO     Starting MCP server 'Fecmall Login' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8003/sse                           
-INFO:     Started server process [29096]
+INFO:     Started server process [12364]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-INFO:     127.0.0.1:50700 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50702 - "POST /messages/?session_id=c0235a2c1a32401cbfcd2e3fd0e41f9e HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:50704 - "POST /messages/?session_id=c0235a2c1a32401cbfcd2e3fd0e41f9e HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:50706 - "POST /messages/?session_id=c0235a2c1a32401cbfcd2e3fd0e41f9e HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52903 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52909 - "POST /messages/?session_id=e6bfd43718f548169aed1196d5468127 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52915 - "POST /messages/?session_id=e6bfd43718f548169aed1196d5468127 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:52919 - "POST /messages/?session_id=e6bfd43718f548169aed1196d5468127 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53540 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53542 - "POST /messages/?session_id=bbd2957b5719446d84662cade6f4386d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53544 - "POST /messages/?session_id=bbd2957b5719446d84662cade6f4386d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53546 - "POST /messages/?session_id=bbd2957b5719446d84662cade6f4386d HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55378 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55384 - "POST /messages/?session_id=b589a9486f09480b989bcc040dbe0ff3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55388 - "POST /messages/?session_id=b589a9486f09480b989bcc040dbe0ff3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:55396 - "POST /messages/?session_id=b589a9486f09480b989bcc040dbe0ff3 HTTP/1.1" 202 Accepted
+INFO:     Shutting down
+ERROR:    Cancel 0 running task(s), timeout graceful shutdown exceeded
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [12364]

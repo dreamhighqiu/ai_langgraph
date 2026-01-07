@@ -131,6 +131,10 @@ class LightRAGClient:
             )
             response.raise_for_status()
             result = response.json()
+            # LightRAG /query returns {"response": "...", "references": [...]}
+            # Align to the knowledge module contract by also exposing "answer".
+            if isinstance(result, dict) and 'answer' not in result and 'response' in result:
+                result['answer'] = result.get('response', '')
             logger.info(f'查询成功: {query[:50]}... (workspace: {workspace})')
             return result
         except Exception as e:

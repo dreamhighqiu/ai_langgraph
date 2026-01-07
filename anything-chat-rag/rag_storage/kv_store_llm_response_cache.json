@@ -1666,5 +1666,109 @@
     "create_time": 1767344545,
     "update_time": 1767344545,
     "_id": "mix:keywords:8e74a434c4b68795e673c4196d107faf"
+  },
+  "hybrid:keywords:6b932e3619fe1e0d2b78f73250a8c411": {
+    "return": "{\"high_level_keywords\": [\"\\u6587\\u6863\\u6c47\\u603b\", \"\\u4fe1\\u606f\\u6982\\u62ec\"], \"low_level_keywords\": [\"\\u6587\\u6863\\u5185\\u5bb9\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "汇总下这个文档",
+    "queryparam": {
+      "mode": "hybrid",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767409507,
+    "update_time": 1767409507,
+    "_id": "hybrid:keywords:6b932e3619fe1e0d2b78f73250a8c411"
+  },
+  "hybrid:query:de024623efdbfcaafa27e4ab628b20bf": {
+    "return": "根据提供的上下文，我无法为您汇总一个特定的文档。原因如下：\n\n1.  **上下文内容混杂**：您提供的“上下文”并非一个单一的文档，而是包含了多个不同来源和主题的文档片段、知识图谱数据以及图片分析结果。这些内容涉及：\n    *   **个人学历证明文件**（如教育部学历证书、学位验证报告）。\n    *   **技术项目文档**（如接口自动化测试框架、性能测试模块、UI自动化测试）。\n    *   **API接口文档**。\n    *   **项目难点分析**。\n    *   **图片内容分析**。\n\n2.  **缺乏明确目标**：您的查询“汇总下这个文档”中的“这个文档”在上下文中没有明确的指向。上下文包含了多个独立的文档（如 `pytest 接口自动化面试.md`、`注册登录权限通过：难点项目.md`、`性能测试模块前后端对接分析报告.md` 等），但没有指定需要汇总哪一个。\n\n**为了帮助您，请明确指定您希望汇总的具体文档标题或内容主题。** 例如，您可以询问：\n*   “请汇总 `pytest 接口自动化面试.md` 这个文档的主要内容。”\n*   “根据上下文，总结一下‘注册登录权限通过’这个项目的核心难点和解决方案。”\n*   “`性能测试模块前后端对接分析报告.md` 中提到了哪些待完成的任务？”\n\n一旦您提供了更具体的查询目标，我将能够根据上下文中的相关信息，为您生成一个结构化的摘要。\n\n### References\n\n* [5] pytest 接口自动化面试.md\n* [6] 注册登录权限通过：难点项目.md\n* [8] https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html\n* [9] 性能测试模块前后端对接分析报告.md\n* [10] UI app面试.md",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "汇总下这个文档",
+    "queryparam": {
+      "mode": "hybrid",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "hl_keywords": "文档汇总, 信息概括",
+      "ll_keywords": "文档内容",
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767409546,
+    "update_time": 1767409546,
+    "_id": "hybrid:query:de024623efdbfcaafa27e4ab628b20bf"
+  },
+  "hybrid:keywords:c9a0aef210f1f5603186a798fff09d64": {
+    "return": "{\"high_level_keywords\": [\"International trade\", \"Global economic stability\", \"Economic impact\"], \"low_level_keywords\": [\"Trade agreements\", \"Tariffs\", \"Currency exchange\", \"Imports\", \"Exports\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "??????????",
+    "queryparam": {
+      "mode": "hybrid",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767411814,
+    "update_time": 1767411814,
+    "_id": "hybrid:keywords:c9a0aef210f1f5603186a798fff09d64"
+  },
+  "hybrid:query:58b9f9430f293d49960e123345de421d": {
+    "return": "根据提供的上下文，我无法找到与您查询“??????????”相关的信息。上下文主要包含关于自动化测试框架、电商系统API、货币配置、个人旅行日记和教育证书等文档内容，但没有与您输入的字符序列直接匹配或可解释的信息。\n\n如果您有其他问题，或者能提供更多关于您查询的背景信息，我很乐意根据上下文中的知识为您提供帮助。\n\n### References\n\n* [1] 旅行日记2.pdf\n* [2] UI app面试.md\n* [5] https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html\n* [6] pytest 接口自动化面试.md\n* [7] 注册登录权限通过：难点项目.md",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "??????????",
+    "queryparam": {
+      "mode": "hybrid",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "hl_keywords": "International trade, Global economic stability, Economic impact",
+      "ll_keywords": "Trade agreements, Tariffs, Currency exchange, Imports, Exports",
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767411844,
+    "update_time": 1767411844,
+    "_id": "hybrid:query:58b9f9430f293d49960e123345de421d"
+  },
+  "naive:query:e65ebc8cfb427e3ab77c7a0280fac975": {
+    "return": "根据提供的上下文，我无法找到与您查询“??????????”相关的任何信息。上下文中的文档内容主要包括旅行日记、学历验证报告、技术面试资料和API文档等，但没有包含可以解读或回答您所输入符号的内容。\n\n如果您有其他问题，或者能提供更具体的查询内容，我很乐意根据上下文中的信息为您提供帮助。\n\n### References\n\n* [1] 旅行日记2.pdf\n* [2] 教育部学历证书电子注册备案表_邱云霞 (1).pdf\n* [3] 教育部学籍在线验证报告_邱云霞.pdf\n* [4] 中国高等教育学位在线验证报告_邱云霞.pdf\n* [5] pytest 接口自动化面试.md",
+    "cache_type": "query",
+    "chunk_id": null,
+    "original_prompt": "??????????",
+    "queryparam": {
+      "mode": "naive",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 40,
+      "chunk_top_k": 20,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767411876,
+    "update_time": 1767411876,
+    "_id": "naive:query:e65ebc8cfb427e3ab77c7a0280fac975"
   }
 }

@@ -183,6 +183,12 @@ export const dynamicRoutes = [
         meta: { title: 'RAG 问答', activeMenu: '/knowledge' }
       },
       {
+        path: 'project-chat/:projectId(\\d+)',
+        component: () => import('@/views/testing/knowledge/chat'),
+        name: 'KnowledgeProjectChat',
+        meta: { title: '项目RAG问答', activeMenu: '/knowledge' }
+      },
+      {
         path: 'files',
         component: () => import('@/views/testing/knowledge/files-manage'),
         name: 'KnowledgeFilesManage',
@@ -207,6 +213,12 @@ export const dynamicRoutes = [
         component: () => import('@/views/testing/knowledge/chat'),
         name: 'KnowledgeChatOld',
         meta: { title: 'RAG 问答', activeMenu: '/knowledge' }
+      },
+      {
+        path: 'project-chat/:projectId(\\d+)',
+        component: () => import('@/views/testing/knowledge/chat'),
+        name: 'KnowledgeProjectChatOld',
+        meta: { title: '项目RAG问答', activeMenu: '/knowledge' }
       }
     ]
   }

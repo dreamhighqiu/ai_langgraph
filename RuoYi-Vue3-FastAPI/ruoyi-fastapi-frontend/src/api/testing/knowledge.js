@@ -172,3 +172,17 @@ export function queryKnowledge(knowledgeId, data) {
   })
 }
 
+// 项目知识库查询（RAG）- 针对项目下所有文档
+export function queryProjectKnowledge(projectId, data) {
+  return request({
+    url: '/testing/knowledge/project/' + projectId + '/query',
+    method: 'post',
+    data: {
+      query: data.query,
+      mode: data.mode || 'hybrid',
+      top_k: data.topK ?? data.top_k
+    },
+    timeout: 60000
+  })
+}
+

@@ -2,7 +2,7 @@
   <div class="app-container chat-container">
     <el-page-header @back="goBack">
       <template #content>
-        <span class="text-large font-600 mr-3">RAG 问答 - {{ knowledgeName }}</span>
+        <span class="text-large font-600 mr-3">RAG 问答 - {{ chatTitle }}</span>
       </template>
     </el-page-header>
 
@@ -25,6 +25,11 @@
         <el-radio-button label="global">
           <el-tooltip content="全局知识图检索，综合分析" placement="top">
             <span>全局检索</span>
+          </el-tooltip>
+        </el-radio-button>
+        <el-radio-button label="mix">
+          <el-tooltip content="融合知识图谱检索与向量检索（推荐）" placement="top">
+            <span>融合检索（推荐）</span>
           </el-tooltip>
         </el-radio-button>
         <el-radio-button label="hybrid">
@@ -117,7 +122,7 @@
 </template>
 
 <script setup name="KnowledgeChat">
-import { queryKnowledge } from "@/api/testing/knowledge";
+import { queryKnowledge, queryProjectKnowledge } from "@/api/testing/knowledge";
 import { marked } from 'marked';
 
 const { proxy } = getCurrentInstance();
@@ -126,11 +131,15 @@ const route = useRoute();
 
 const knowledgeId = ref(null);
 const knowledgeName = ref("");
+const projectId = ref(null);
+const projectName = ref("");
 const queryMode = ref("hybrid");
 const inputText = ref("");
 const messages = ref([]);
 const loading = ref(false);
 const messageListRef = ref(null);
+
+const chatTitle = computed(() => projectName.value || knowledgeName.value || "未知");
 
 // 配置 marked（v15+）
 try {
@@ -167,16 +176,17 @@ async function sendMessage() {
 
   try {
     // 调用 API
-    const response = await queryKnowledge(knowledgeId.value, {
-      query: query,
-      mode: queryMode.value
-    });
+    const response = projectId.value
+      ? await queryProjectKnowledge(projectId.value, { query, mode: queryMode.value })
+      : await queryKnowledge(knowledgeId.value, { query, mode: queryMode.value });
+
+    const answer = response?.data?.answer ?? response?.data?.response;
 
     // 添加助手回复
     const assistantMessage = {
       id: Date.now() + 1,
       role: 'assistant',
-      content: response.data.answer || "抱歉，我无法回答这个问题。",
+      content: answer || "抱歉，我无法回答这个问题。",
       time: formatTime(new Date()),
       mode: queryMode.value
     };
@@ -231,7 +241,8 @@ function getModeText(mode) {
     'naive': '快速检索',
     'local': '局部检索',
     'global': '全局检索',
-    'hybrid': '混合检索'
+    'hybrid': '混合检索',
+    'mix': '混合检索（推荐）'
   };
   return modeMap[mode] || mode;
 }
@@ -259,12 +270,16 @@ function clearChat() {
 }
 
 onMounted(() => {
-  // 从路由参数中获取 knowledgeId（路径参数）
+  // 项目问答：优先使用 projectId（路径/查询参数）
+  projectId.value = route.params.projectId || route.query.projectId;
+  projectName.value = route.query.projectName || "";
+
+  // 兼容旧路由：知识库问答
   knowledgeId.value = route.params.knowledgeId || route.query.knowledgeId;
-  knowledgeName.value = route.query.knowledgeName || "未知";
+  knowledgeName.value = route.query.knowledgeName || projectName.value || "未知";
   
-  if (!knowledgeId.value) {
-    proxy.$modal.msgError("缺少知识库ID参数");
+  if (!projectId.value && !knowledgeId.value) {
+    proxy.$modal.msgError("缺少项目ID或知识库ID参数");
     router.back();
   }
 });

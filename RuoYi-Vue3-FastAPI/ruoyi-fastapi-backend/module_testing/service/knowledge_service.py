@@ -653,6 +653,13 @@ class KnowledgeService:
             mode=mode,
             top_k=top_k
         )
+
+        # 统一返回字段：LightRAG 返回 "response"，前端与 VO 约定使用 "answer"
+        if isinstance(result, dict):
+            result.setdefault('query', query)
+            result.setdefault('mode', mode)
+            if 'answer' not in result and 'response' in result:
+                result['answer'] = result.get('response', '')
         
         # 添加知识库信息
         result['knowledge_id'] = knowledge.knowledge_id
@@ -721,6 +728,13 @@ class KnowledgeService:
             mode=mode,
             top_k=top_k
         )
+
+        # 统一返回字段：LightRAG 返回 "response"，前端与 VO 约定使用 "answer"
+        if isinstance(result, dict):
+            result.setdefault('query', query)
+            result.setdefault('mode', mode)
+            if 'answer' not in result and 'response' in result:
+                result['answer'] = result.get('response', '')
         
         # 添加知识库信息
         result['knowledge_id'] = knowledge_id
@@ -731,5 +745,4 @@ class KnowledgeService:
         logger.info(f'查询成功: {knowledge_id}, workspace: {workspace}')
         
         return result
-
 

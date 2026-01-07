@@ -54,6 +54,12 @@
         <el-button type="info" plain icon="Folder" @click="handleViewProjectFiles" v-if="queryParams.projectId" v-hasPermi="['testing:knowledge:list']">查看项目文件</el-button>
       </el-col>
       <el-col :span="1.5">
+        <el-button type="success" plain icon="ChatLineRound" @click="handleProjectChat" v-if="queryParams.projectId" v-hasPermi="['testing:knowledge:query']">项目问答</el-button>
+      </el-col>
+      <el-col :span="1.5">
+        <el-button type="warning" plain icon="Link" @click="openLightRagWebUi" v-if="queryParams.projectId" v-hasPermi="['testing:knowledge:query']">RAG WebUI</el-button>
+      </el-col>
+      <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:knowledge:remove']">删除</el-button>
       </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
@@ -460,12 +466,42 @@ function handleFiles(row) {
 
 /** RAG 问答 */
 function handleChat(row) {
-  router.push({ 
-    path: "/knowledge/chat/" + row.knowledgeId, 
-    query: { 
-      knowledgeName: row.knowledgeName
-    } 
+  handleProjectChat(row);
+}
+
+/** 项目问答（针对当前项目下所有文档） */
+function handleProjectChat(row) {
+  const pid = row?.projectId ?? queryParams.value.projectId;
+  if (!pid) {
+    proxy.$modal.msgWarning('请先选择项目');
+    return;
+  }
+  const pname =
+    row?.projectName ||
+    projectList.value.find(p => p.projectId === pid)?.projectName ||
+    '';
+
+  router.push({
+    path: '/knowledge/project-chat/' + pid,
+    query: {
+      projectId: pid,
+      projectName: pname,
+      knowledgeName: row?.knowledgeName
+    }
   });
+}
+
+/** 打开 LightRAG WebUI（9621/webui） */
+function openLightRagWebUi(row) {
+  const pid = row?.projectId ?? queryParams.value.projectId;
+  if (!pid) {
+    proxy.$modal.msgWarning('请先选择项目');
+    return;
+  }
+
+  const workspace = `project_${pid}`;
+  const url = `http://127.0.0.1:9621/webui/?workspace=${encodeURIComponent(workspace)}`;
+  window.open(url, '_blank');
 }
 
 /** 查看项目文件（按项目层级） */

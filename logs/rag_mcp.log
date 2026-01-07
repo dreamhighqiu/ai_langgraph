@@ -1,0 +1,28 @@
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                        ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                        █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                             │
+│                               FastMCP 2.14.1                                │
+│                                                                             │
+│                                                                             │
+│                   🖥  Server name: LightRAG                                  │
+│                                                                             │
+│                   📦 Transport:   SSE                                       │
+│                   🔗 Server URL:  http://0.0.0.0:8002/sse                   │
+│                                                                             │
+│                   📚 Docs:        https://gofastmcp.com                     │
+│                   🚀 Hosting:     https://fastmcp.cloud                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+[01/07/26 17:11:39] INFO     Starting MCP server 'LightRAG' with server.py:2618
+                             transport 'sse' on                                
+                             http://0.0.0.0:8002/sse                           
+INFO:     Started server process [18644]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)

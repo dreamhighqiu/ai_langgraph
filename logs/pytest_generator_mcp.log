@@ -19,15 +19,10 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/07/26 16:51:40] INFO     Starting MCP server                 server.py:2618
+[01/07/26 17:12:49] INFO     Starting MCP server                 server.py:2618
                              'PytestGenerator' with transport                  
                              'sse' on http://0.0.0.0:8005/sse                  
-INFO:     Started server process [64244]
+INFO:     Started server process [71332]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8005 (Press CTRL+C to quit)
-INFO:     Shutting down
-ERROR:    Cancel 0 running task(s), timeout graceful shutdown exceeded
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [64244]

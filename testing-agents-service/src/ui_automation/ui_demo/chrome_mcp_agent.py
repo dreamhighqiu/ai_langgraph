@@ -1,30 +1,19 @@
 
 
-import asyncio
 import os
-from typing import Any
-# type: ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VHpGNWJ3PT06MDE2ZTAzOGQ=
+from contextlib import asynccontextmanager
+from typing import Any, AsyncIterator
 
+from deepagents import create_deep_agent
 from langchain.agents import AgentState
 from langchain.agents.middleware import before_model
 from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from langchain_mcp_adapters.tools import load_mcp_tools
+from langgraph.pregel import Pregel
 from langgraph.runtime import Runtime
 
-from deepagents import create_deep_agent
-# pylint: disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VHpGNWJ3PT06MDE2ZTAzOGQ=
-
-chrome_client = MultiServerMCPClient({
-        "chrome-mcp-web": {
-            "transport": "http",
-            "url": "http://localhost:12306/mcp",
-        }
-    })
-
-tools = asyncio.run(chrome_client.get_tools())
-os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
-model = init_chat_model("deepseek:deepseek-chat")
-# pylint: disable  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VHpGNWJ3PT06MDE2ZTAzOGQ=
+from ui_automation.config import DEFAULT_CONFIG
 
 system_prompt = """
 ## 角色
@@ -272,10 +261,29 @@ def check_message_limit(state: AgentState, runtime: Runtime) -> dict[str, Any] |
     print(state)
     return None
 
-agent = create_deep_agent(
-    model=model,
-    middleware=[check_message_limit],
-    # system_prompt=system_prompt,
-    tools=tools,
-)
+
+@asynccontextmanager
+async def make_agent() -> AsyncIterator[Pregel]:
+    client = MultiServerMCPClient(
+        {
+            "chrome-mcp-web": {
+                "transport": DEFAULT_CONFIG.chrome_mcp_transport,
+                "url": DEFAULT_CONFIG.chrome_mcp_url,
+            }
+        }
+    )
+
+    async with client.session("chrome-mcp-web") as session:
+        tools = await load_mcp_tools(session)
+        model = init_chat_model(DEFAULT_CONFIG.model_name)
+        agent = create_deep_agent(
+            model=model,
+            middleware=[check_message_limit],
+            # system_prompt=system_prompt,
+            tools=tools,
+        )
+        yield agent
+
+
+agent = make_agent
 # pragma: no cover  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VHpGNWJ3PT06MDE2ZTAzOGQ=

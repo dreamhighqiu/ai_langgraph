@@ -7,30 +7,12 @@
    - Network:      http://192.168.1.59:3200
 
  ✓ Starting...
- ✓ Ready in 2.6s
+ ✓ Ready in 3.9s
  ○ Compiling / ...
- ✓ Compiled / in 23s
- GET / 200 in 6440ms
+ ✓ Compiled / in 15.3s
+ GET / 200 in 1957ms
+ GET / 200 in 339ms
+ GET / 200 in 277ms
+ GET /?assistantId=ui_automation_agent 200 in 452ms
  ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 1799ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 2749ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 847ms
- GET /?assistantId=ui_automation_agent 200 in 1135ms
- GET /?assistantId=ui_automation_agent 200 in 383ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 445ms
- GET /?assistantId=ui_automation_agent 200 in 824ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 655ms
- GET /?assistantId=ui_automation_agent 200 in 1504ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 559ms
- GET /?assistantId=ui_automation_agent 200 in 436ms
- GET /?assistantId=ui_automation_agent 200 in 670ms
- GET /?assistantId=ui_automation_agent 200 in 651ms
- GET /favicon.ico?favicon.45db1c09.ico 200 in 483ms
- GET /?assistantId=ui_automation_agent 200 in 464ms
- GET / 200 in 179ms
- GET / 200 in 2034ms
- GET / 200 in 320ms
- GET / 200 in 557ms
- GET / 200 in 203ms

@@ -15,7 +15,7 @@ interface MarkdownContentProps {
   content: string;
   className?: string;
 }
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TWpoTVpnPT06ZTBlMzk0N2Q=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TWpoTVpnPT06ZTBlMzk0N2Q=
 
 export const MarkdownContent = React.memo<MarkdownContentProps>(
   ({ content, className = "" }) => {

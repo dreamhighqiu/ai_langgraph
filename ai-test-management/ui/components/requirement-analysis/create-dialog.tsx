@@ -25,7 +25,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
-import { toast } from "sonner"
+import { useToast } from "@/components/ui/use-toast"
 
 interface RequirementAnalysisCreateDialogProps {
   open: boolean
@@ -42,6 +42,7 @@ export function RequirementAnalysisCreateDialog({
   onSuccess,
   onOpenChat  // 新增回调
 }: RequirementAnalysisCreateDialogProps) {
+  const { toast } = useToast()
   
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
@@ -99,7 +100,7 @@ export function RequirementAnalysisCreateDialog({
   // 提交表单
   const handleSubmit = async () => {
     if (!formData.title.trim()) {
-      toast.error("请输入需求分析标题")
+      toast({ title: "请输入需求分析标题", variant: "destructive" })
       return
     }
     
@@ -175,7 +176,7 @@ ${formData.use_rag ? "注意：请先使用 rag_query_tool 从知识库检索相
       
       const result = await response.json()
       
-      toast.success("需求分析已创建")
+      toast({ title: "需求分析已创建" })
       
       // 重置表单并关闭对话框
       setFormData({
@@ -192,7 +193,7 @@ ${formData.use_rag ? "注意：请先使用 rag_query_tool 从知识库检索相
       
     } catch (error) {
       console.error("创建需求分析失败:", error)
-      toast.error("创建需求分析失败，请重试")
+      toast({ title: "创建需求分析失败，请重试", variant: "destructive" })
     } finally {
       setLoading(false)
     }

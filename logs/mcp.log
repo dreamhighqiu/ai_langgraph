@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2026-01-08 11:01:01,825 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2026-01-08 15:10:20,275 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -22,21 +22,21 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2026-01-08 11:01:01,864 - __main__ - INFO - Starting RAG Anything MCP Server...
-2026-01-08 11:01:01,870 - __main__ - INFO - Configuration loaded
-2026-01-08 11:01:01,870 - __main__ - INFO -   LLM Provider: deepseek
-2026-01-08 11:01:01,870 - __main__ - INFO -   LLM Model: deepseek-chat
-2026-01-08 11:01:01,870 - __main__ - INFO -   LLM API Key: ***0749
-2026-01-08 11:01:01,870 - __main__ - INFO -   RAG Parser: docling
-2026-01-08 11:01:01,871 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
-2026-01-08 11:01:01,871 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
-2026-01-08 11:01:01,871 - __main__ - INFO - Creating LLM model function...
-2026-01-08 11:01:01,871 - __main__ - INFO - Creating vision model function...
-2026-01-08 11:01:01,871 - __main__ - INFO - Creating embedding function...
-2026-01-08 11:01:01,871 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2026-01-08 11:01:01,871 - __main__ - INFO - Creating RAGAnything connector...
-2026-01-08 11:01:01,872 - __main__ - INFO - Initializing RAGAnything...
-2026-01-08 11:01:01,872 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
+2026-01-08 15:10:20,295 - __main__ - INFO - Starting RAG Anything MCP Server...
+2026-01-08 15:10:20,299 - __main__ - INFO - Configuration loaded
+2026-01-08 15:10:20,299 - __main__ - INFO -   LLM Provider: deepseek
+2026-01-08 15:10:20,299 - __main__ - INFO -   LLM Model: deepseek-chat
+2026-01-08 15:10:20,299 - __main__ - INFO -   LLM API Key: ***0749
+2026-01-08 15:10:20,299 - __main__ - INFO -   RAG Parser: docling
+2026-01-08 15:10:20,299 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
+2026-01-08 15:10:20,299 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
+2026-01-08 15:10:20,299 - __main__ - INFO - Creating LLM model function...
+2026-01-08 15:10:20,299 - __main__ - INFO - Creating vision model function...
+2026-01-08 15:10:20,299 - __main__ - INFO - Creating embedding function...
+2026-01-08 15:10:20,299 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2026-01-08 15:10:20,299 - __main__ - INFO - Creating RAGAnything connector...
+2026-01-08 15:10:20,299 - __main__ - INFO - Initializing RAGAnything...
+2026-01-08 15:10:20,300 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ../../anything-chat-rag/rag_storage
 INFO:   Parser: docling
@@ -46,12 +46,12 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': '../../anything-chat-rag/rag_storage', 'vector_storage': 'MilvusVectorDBStorage'}
 INFO: [] Loaded graph from ../../anything-chat-rag/rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
-INFO: [] Process 64440 KV load full_docs with 15 records
-INFO: [] Process 64440 KV load text_chunks with 64 records
-INFO: [] Process 64440 KV load full_entities with 15 records
-INFO: [] Process 64440 KV load full_relations with 15 records
-INFO: [] Process 64440 KV load entity_chunks with 1309 records
-INFO: [] Process 64440 KV load relation_chunks with 1348 records
+INFO: [] Process 97116 KV load full_docs with 15 records
+INFO: [] Process 97116 KV load text_chunks with 64 records
+INFO: [] Process 97116 KV load full_entities with 15 records
+INFO: [] Process 97116 KV load full_relations with 15 records
+INFO: [] Process 97116 KV load entity_chunks with 1309 records
+INFO: [] Process 97116 KV load relation_chunks with 1348 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -61,28 +61,28 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 64440 KV load llm_response_cache with 143 records
-INFO: [] Process 64440 doc status load doc_status with 15 records
-INFO: [] Process 64440 KV load parse_cache with 15 records
+INFO: [] Process 97116 KV load llm_response_cache with 143 records
+INFO: [] Process 97116 doc status load doc_status with 15 records
+INFO: [] Process 97116 KV load parse_cache with 15 records
 INFO: Multimodal processors initialized with context support
 INFO: Available processors: ['image', 'table', 'equation', 'generic']
 INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
 INFO: LightRAG, parse cache, and multimodal processors initialized
-2026-01-08 11:01:33,531 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
-2026-01-08 11:01:33,531 - __main__ - INFO - RAG Anything initialized successfully
-2026-01-08 11:01:33,531 - __main__ - INFO -   Working Directory: ../../anything-chat-rag/rag_storage
-2026-01-08 11:01:33,531 - __main__ - INFO -   Parser: docling
-[01/08/26 11:01:33] INFO     Starting MCP server '但问企业级RAG' server.py:2582
+2026-01-08 15:10:37,765 - mcp_server_rag_anything.connector - INFO - RAGAnything initialized successfully
+2026-01-08 15:10:37,765 - __main__ - INFO - RAG Anything initialized successfully
+2026-01-08 15:10:37,765 - __main__ - INFO -   Working Directory: ../../anything-chat-rag/rag_storage
+2026-01-08 15:10:37,766 - __main__ - INFO -   Parser: docling
+[01/08/26 15:10:37] INFO     Starting MCP server '但问企业级RAG' server.py:2582
                              with transport 'sse' on                           
                              http://0.0.0.0:8001/sse                           
-INFO:     Started server process [64440]
+INFO:     Started server process [97116]
 INFO:     Waiting for application startup.
-2026-01-08 11:01:33,967 - docket.worker - INFO - Starting worker 'caobinbin#64440' with the following tasks:
-2026-01-08 11:01:33,968 - docket.worker - INFO - * trace(message: str, ...)
-2026-01-08 11:01:33,968 - docket.worker - INFO - * fail(message: str, ...)
-2026-01-08 11:01:33,968 - docket.worker - INFO - * sleep(seconds: float, ...)
+2026-01-08 15:10:38,040 - docket.worker - INFO - Starting worker 'caobinbin#97116' with the following tasks:
+2026-01-08 15:10:38,041 - docket.worker - INFO - * trace(message: str, ...)
+2026-01-08 15:10:38,041 - docket.worker - INFO - * fail(message: str, ...)
+2026-01-08 15:10:38,041 - docket.worker - INFO - * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:49945 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54363 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49867 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60607 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57992 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58988 - "GET /sse HTTP/1.1" 200 OK

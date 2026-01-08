@@ -3,7 +3,7 @@
     "rag": {
       "name": "RAG MCP Server",
       "description": "基于 LightRAG 的知识库检索服务",
-      "url": "http://localhost:8002/sse",
+      "url": "http://localhost:9002/sse",
       "transport": "sse",
       "tools": [
         "rag_query_data",
@@ -14,18 +14,18 @@
         "LIGHTRAG_API_KEY": "",
         "LIGHTRAG_TIMEOUT": "60.0"
       },
-      "startup_command": "cd ../testing-agents-service/src/api_agent/mcp_servers && python rag_mcp_server.py --port 8002 --sse"
+      "startup_command": "cd ../testing-agents-service/src/api_agent/mcp_servers && python rag_mcp_server.py --port 9002 --sse"
     },
     "mindmap": {
       "name": "MindMap MCP Server",
       "description": "思维导图生成服务",
-      "url": "http://localhost:8003/sse",
+      "url": "http://localhost:9003/sse",
       "transport": "sse",
       "tools": [
         "generate_mindmap",
         "export_mindmap"
       ],
-      "startup_command": "git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git && cd YuChenSSR_mindmap-mcp-server && npm install && npm start -- --port 8003"
+      "startup_command": "git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git && cd YuChenSSR_mindmap-mcp-server && npm install && npm start -- --port 9003"
     }
   },
   "integration": {

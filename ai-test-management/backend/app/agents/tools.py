@@ -626,7 +626,7 @@ async def rag_query_tool(
     """
     try:
         # RAG MCP 服务器地址（从环境变量读取）
-        rag_base_url = os.environ.get("RAG_MCP_URL", "http://localhost:8002")
+        rag_base_url = os.environ.get("RAG_MCP_URL", "http://localhost:9002")
         
         logger.info(f"开始 RAG 检索: {query} (模式: {mode})")
         
@@ -948,7 +948,7 @@ async def generate_mindmap_tool(
     """
     try:
         # MindMap MCP 服务器地址（从环境变量读取）
-        mindmap_base_url = os.environ.get("MINDMAP_MCP_URL", "http://localhost:8003")
+        mindmap_base_url = os.environ.get("MINDMAP_MCP_URL", "http://localhost:9003")
         
         logger.info(f"开始生成思维导图: {title} (格式: {format})")
         
@@ -997,7 +997,6 @@ async def generate_mindmap_tool(
 
 # ============ 需求分析工具 ============
 
-@mcp.tool()
 async def save_requirement_analysis_tool(
     project_identifier: str,
     requirement_analysis_id: Optional[str] = None,
@@ -1017,7 +1016,6 @@ async def save_requirement_analysis_tool(
     clarity_score: Optional[float] = None,
     consistency_score: Optional[float] = None,
     rag_context: Optional[dict] = None,
-    ctx: Context = None
 ) -> dict[str, Any]:
     """
     保存需求分析结果到数据库。
@@ -1041,7 +1039,6 @@ async def save_requirement_analysis_tool(
         clarity_score: 清晰度评分（0-100）
         consistency_score: 一致性评分（0-100）
         rag_context: RAG 检索的上下文信息
-        ctx: 上下文对象
     
     Returns:
         包含保存结果的字典
@@ -1101,7 +1098,6 @@ async def save_requirement_analysis_tool(
 
 # ============ 缺陷分析工具 ============
 
-@mcp.tool()
 async def save_defect_analysis_tool(
     project_identifier: str,
     defect_analysis_id: Optional[str] = None,
@@ -1126,7 +1122,6 @@ async def save_defect_analysis_tool(
     priority: Optional[str] = None,
     defect_type: Optional[str] = None,
     rag_context: Optional[dict] = None,
-    ctx: Context = None
 ) -> dict[str, Any]:
     """
     保存缺陷分析结果到数据库。
@@ -1155,7 +1150,6 @@ async def save_defect_analysis_tool(
         priority: 优先级
         defect_type: 缺陷类型
         rag_context: RAG 检索的上下文信息
-        ctx: 上下文对象
     
     Returns:
         包含保存结果的字典

@@ -16,6 +16,7 @@ from langchain.chat_models import init_chat_model
 # pragma: no cover  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UzFsSmNnPT06Mzc2ZWVkNzg=
 
 from app.agents.tools import TESTCASE_TOOLS
+from app.agents.human_in_the_loop_middleware import get_human_in_the_loop_middleware
 
 # 配置 DeepSeek API
 os.environ["DEEPSEEK_API_KEY"] = "sk-8fd3aa4adc4446f4b483c1181dd4fa58"
@@ -118,7 +119,65 @@ create_test_case_tool(
 
 你有以下工具可以使用：
 
-### 1. create_test_case_tool - 创建测试用例
+### 1. rag_query_tool - RAG 知识库检索
+用于从知识库检索相关的上下文信息，帮助生成更准确的测试用例。
+
+**使用场景**：
+- 当用户提到具体的 API 接口名称时
+- 需要了解接口的技术细节、参数格式等
+- 查找历史测试数据和性能基准
+- 了解接口的依赖关系
+
+**参数**：
+- query: 查询描述（如"用户登录接口"、"首页API"）
+- mode: 检索模式（推荐使用 "mix"）
+- top_k: 返回的实体数量（默认10）
+- chunk_top_k: 返回的文本块数量（默认5）
+
+**示例**：
+```python
+# 在生成测试用例前，先检索相关信息
+rag_result = rag_query_tool(
+    query="用户登录接口的详细信息，包括URL、参数、认证方式",
+    mode="mix"
+)
+if rag_result["success"]:
+    context = rag_result["context"]
+    # 使用检索到的上下文信息生成测试用例
+```
+
+### 2. review_test_case_tool - 测试用例评审
+用于提交测试用例进行人工评审，会产生中断让用户参与。
+
+**使用场景**：
+- 生成测试用例后，需要用户确认和评审
+- 对关键功能的测试用例进行质量把关
+- 获取用户的反馈和改进建议
+
+**参数**：
+- test_case_content: 待评审的测试用例内容
+- review_aspects: 评审方面（completeness, accuracy, executability, clarity）
+
+**工作流程**：
+1. 生成测试用例后调用此工具
+2. 系统产生中断，等待用户评审
+3. 用户提供反馈意见
+4. 根据反馈修改测试用例
+
+### 3. generate_mindmap_tool - 生成思维导图
+将测试用例转换为思维导图格式，便于可视化展示。
+
+**使用场景**：
+- 用户请求生成思维导图
+- 需要可视化展示测试用例结构
+- 导出测试用例为思维导图格式
+
+**参数**：
+- title: 思维导图标题
+- content: 测试用例内容
+- format: 输出格式（markdown, mermaid, xmind）
+
+### 4. create_test_case_tool - 创建测试用例
 用于创建新的测试用例，支持两种模板：
 
 **普通测试用例（test_case）**：
@@ -148,10 +207,10 @@ create_test_case_tool(
   background: "Given 用户已注册\\nAnd 用户账号状态正常"
   ```
 
-### 2. update_test_case_tool - 更新测试用例
+### 5. update_test_case_tool - 更新测试用例
 用于更新已有的测试用例，可以更新任何字段。
 
-### 3. batch_create_test_cases_tool - 批量创建测试用例
+### 6. batch_create_test_cases_tool - 批量创建测试用例
 用于一次性创建多个测试用例，提高效率。
 - 适用场景：需要创建多个相关的测试用例时
 - 参数：
@@ -231,18 +290,57 @@ create_test_case_tool(
 
 ## 工作流程
 
+### 标准流程
 1. **接收需求**：用户提供需求文档、用户故事或功能描述
-2. **分析需求**：理解功能点、业务规则、边界条件
-3. **设计测试用例**：
+2. **RAG 检索**（可选）：
+   - 如果用户提到具体的 API 接口或功能模块
+   - 使用 rag_query_tool 检索相关的技术文档和历史数据
+   - 将检索结果作为上下文辅助生成
+3. **分析需求**：理解功能点、业务规则、边界条件
+4. **设计测试用例**：
    - 识别测试场景
    - 确定测试类型和优先级
    - 设计测试步骤或 BDD 场景
    - 添加合适的标签
-4. **创建测试用例**：使用 create_test_case_tool 创建测试用例
+5. **创建测试用例**：使用 create_test_case_tool 创建测试用例
    - ⚠️ **必须使用上下文中的 project_identifier 和 folder_id**
    - ⚠️ **根据 template_type 选择合适的模板格式**
-5. **确认结果**：向用户报告创建的测试用例信息
-6. **迭代优化**：根据用户反馈调整和更新测试用例
+6. **评审确认**（可选）：
+   - 对于关键测试用例，使用 review_test_case_tool 提交评审
+   - 等待用户反馈
+   - 根据反馈修改测试用例
+7. **生成思维导图**（如果需要）：
+   - 如果用户请求，使用 generate_mindmap_tool 生成思维导图
+8. **确认结果**：向用户报告创建的测试用例信息
+9. **迭代优化**：根据用户反馈调整和更新测试用例
+
+### RAG 增强流程
+当用户提到具体的接口或功能时，建议使用以下流程：
+
+1. **识别关键词**：从用户输入中提取接口名称或功能模块
+2. **RAG 检索**：调用 rag_query_tool 获取相关信息
+   ```python
+   rag_result = rag_query_tool(
+       query="<接口名称>的详细信息",
+       mode="mix"
+   )
+   ```
+3. **整合信息**：将 RAG 检索结果与用户输入结合
+4. **生成测试用例**：基于完整的上下文信息生成测试用例
+
+### 评审流程
+对于重要的测试用例，使用评审流程确保质量：
+
+1. **生成初版**：创建测试用例
+2. **提交评审**：调用 review_test_case_tool
+   ```python
+   review_result = review_test_case_tool(
+       test_case_content=<测试用例JSON>,
+       review_aspects=["completeness", "accuracy"]
+   )
+   ```
+3. **等待反馈**：系统中断，等待用户评审
+4. **处理反馈**：根据用户反馈更新测试用例
 
 ## 最佳实践
 
@@ -317,11 +415,17 @@ create_test_case_tool(
 # noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UzFsSmNnPT06Mzc2ZWVkNzg=
 
 
+# 创建 Human-in-the-Loop 中间件实例
+human_in_the_loop_middleware = get_human_in_the_loop_middleware()
+
 # 创建测试用例生成智能体
 agent = create_agent(
     model=llm,
     tools=TESTCASE_TOOLS,
-    middleware=[dynamic_prompt_fn],  # 移除 DocumentParsingMiddleware，改用工具方式
+    middleware=[
+        dynamic_prompt_fn,
+        human_in_the_loop_middleware,  # 添加 Human-in-the-Loop 中间件
+    ],
     name="测试用例生成专家",
     context_schema=TestCaseGeneratorContext,
 )

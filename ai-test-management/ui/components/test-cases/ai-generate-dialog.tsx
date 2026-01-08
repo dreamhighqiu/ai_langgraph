@@ -1,11 +1,4 @@
-/**
- * 版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
- * 
- * 本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
- * 不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
- * 
- * 授权商业应用请联系微信：huice666
- */
+
 // @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YkVWcE5nPT06ZDc5ZGEyYjE=
 
 "use client";
@@ -57,6 +50,7 @@ export function AIGenerateDialog({
   const [prompt, setPrompt] = React.useState("");
   const [count, setCount] = React.useState(5);
   const [template, setTemplate] = React.useState<TestCaseTemplate>("test_case");
+  const [useRag, setUseRag] = React.useState(false);
   const [generating, setGenerating] = React.useState(false);
 
   const handleGenerate = async () => {
@@ -74,12 +68,14 @@ ${prompt.trim()}
 
 生成数量：${count} 个
 模板类型：${template === "test_case" ? "标准测试用例" : template === "test_case_bdd" ? "BDD测试用例" : "其他"}
+${useRag ? "使用 RAG 检索：是（请先从知识库检索相关上下文信息）" : "使用 RAG 检索：否"}
 ${folderId ? `目标文件夹ID：${folderId}` : ""}
 
-请根据以上需求生成测试用例。`;
+请根据以上需求生成测试用例。${useRag ? "注意：请先使用 rag_query_tool 从知识库检索相关信息，然后基于检索结果生成测试用例。" : ""}`;
 
       onOpenChat(chatPrompt);
       setPrompt("");
+      setUseRag(false);
       return;
     }
 
@@ -173,6 +169,28 @@ ${folderId ? `目标文件夹ID：${folderId}` : ""}
             <p className="text-xs text-muted-foreground flex items-start gap-1">
               <span className="text-primary">💡</span>
               <span>描述越详细，生成的测试用例越准确。可以包含功能描述、业务场景、边界条件等信息。</span>
+            </p>
+          </div>
+
+          {/* RAG 检索选项 */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="useRag" className="text-sm font-medium">启用 RAG 上下文检索</Label>
+              <input
+                id="useRag"
+                type="checkbox"
+                checked={useRag}
+                onChange={(e) => setUseRag(e.target.checked)}
+                className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground flex items-start gap-1">
+              <span className="text-primary">💡</span>
+              <span>
+                启用后，AI 会先从知识库检索相关的接口文档、测试数据等信息，
+                然后基于这些上下文生成更准确的测试用例。
+                适用于已有文档的 API 接口测试。
+              </span>
             </p>
           </div>
 

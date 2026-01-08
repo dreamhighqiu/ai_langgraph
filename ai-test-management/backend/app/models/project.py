@@ -85,6 +85,16 @@ class Project(Base, UUIDMixin, TimestampMixin):
         back_populates="project",
         cascade="all, delete-orphan"
     )
+    defect_analyses: Mapped[list["DefectAnalysis"]] = relationship(
+        "DefectAnalysis",
+        back_populates="project",
+        cascade="all, delete-orphan"
+    )
+    requirement_analyses: Mapped[list["RequirementAnalysis"]] = relationship(
+        "RequirementAnalysis",
+        back_populates="project",
+        cascade="all, delete-orphan"
+    )
 
     def __repr__(self) -> str:
         return f"<Project(id={self.id}, identifier={self.identifier}, name={self.name})>"

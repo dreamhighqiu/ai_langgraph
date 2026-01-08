@@ -21,10 +21,21 @@ from app.schemas.requirement_analysis import (
     RequirementAnalysisDownloadResponse
 )
 from app.schemas.enums import RequirementAnalysisStatus
-from app.schemas.common import SuccessResponse, MessageResponse
+from app.schemas.common import SuccessResponse, MessageResponse, Response
 from app.schemas.pagination import PaginatedResponse, PaginationInfo
+from app.utils.exceptions import UnauthorizedException
 
 router = APIRouter(prefix="/requirement-analysis", tags=["需求分析"])
+
+
+async def _get_current_user(
+    service: RequirementAnalysisService,
+    current_user_id: UUID,
+):
+    current_user = await service.user_repository.get_by_id(current_user_id)
+    if not current_user:
+        raise UnauthorizedException()
+    return current_user
 
 
 @router.post(
@@ -37,11 +48,12 @@ router = APIRouter(prefix="/requirement-analysis", tags=["需求分析"])
 async def create_requirement_analysis(
     project_id: UUID,
     data: RequirementAnalysisCreate,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """创建需求分析"""
     service = RequirementAnalysisService(db)
+    current_user = await _get_current_user(service, current_user_id)
     result = await service.create_requirement_analysis(
         project_id=project_id,
         data=data,
@@ -58,11 +70,12 @@ async def create_requirement_analysis(
 )
 async def get_requirement_analysis(
     requirement_analysis_id: UUID,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """获取需求分析详情"""
     service = RequirementAnalysisService(db)
+    current_user = await _get_current_user(service, current_user_id)
     result = await service.get_requirement_analysis(
         requirement_analysis_id=requirement_analysis_id,
         current_user=current_user
@@ -79,11 +92,12 @@ async def get_requirement_analysis(
 async def update_requirement_analysis(
     requirement_analysis_id: UUID,
     data: RequirementAnalysisUpdate,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """更新需求分析"""
     service = RequirementAnalysisService(db)
+    current_user = await _get_current_user(service, current_user_id)
     result = await service.update_requirement_analysis(
         requirement_analysis_id=requirement_analysis_id,
         data=data,
@@ -100,11 +114,12 @@ async def update_requirement_analysis(
 )
 async def delete_requirement_analysis(
     requirement_analysis_id: UUID,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """删除需求分析"""
     service = RequirementAnalysisService(db)
+    current_user = await _get_current_user(service, current_user_id)
     await service.delete_requirement_analysis(
         requirement_analysis_id=requirement_analysis_id,
         current_user=current_user
@@ -119,6 +134,7 @@ async def delete_requirement_analysis(
     description="获取需求分析列表，支持分页和筛选"
 )
 async def list_requirement_analyses(
+    current_user_id: CurrentUserIdDep,
     project_id: Optional[UUID] = Query(None, description="项目 ID"),
     status: Optional[RequirementAnalysisStatus] = Query(None, description="分析状态"),
     owner_id: Optional[UUID] = Query(None, description="负责人 ID"),
@@ -130,7 +146,6 @@ async def list_requirement_analyses(
     order_by: str = Query("created_at", description="排序字段"),
     order_direction: str = Query("desc", regex="^(asc|desc)$", description="排序方向"),
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """获取需求分析列表"""
     service = RequirementAnalysisService(db)
@@ -162,8 +177,8 @@ async def list_requirement_analyses(
 )
 async def get_project_requirement_analyses(
     project_id: UUID,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """获取项目的需求分析列表"""
     service = RequirementAnalysisService(db)
@@ -179,8 +194,8 @@ async def get_project_requirement_analyses(
 )
 async def get_requirement_analysis_statistics(
     project_id: UUID,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """获取需求分析统计信息"""
     service = RequirementAnalysisService(db)
@@ -197,11 +212,12 @@ async def get_requirement_analysis_statistics(
 async def update_requirement_analysis_status(
     requirement_analysis_id: UUID,
     status: RequirementAnalysisStatus,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """更新需求分析状态"""
     service = RequirementAnalysisService(db)
+    current_user = await _get_current_user(service, current_user_id)
     result = await service.update_status(
         requirement_analysis_id=requirement_analysis_id,
         status=status,
@@ -219,11 +235,12 @@ async def update_requirement_analysis_status(
 async def bulk_update_requirement_analysis_status(
     requirement_analysis_ids: List[UUID],
     status: RequirementAnalysisStatus,
+    current_user_id: CurrentUserIdDep,
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """批量更新需求分析状态"""
     service = RequirementAnalysisService(db)
+    current_user = await _get_current_user(service, current_user_id)
     count = await service.bulk_update_status(
         requirement_analysis_ids=requirement_analysis_ids,
         status=status,
@@ -240,10 +257,10 @@ async def bulk_update_requirement_analysis_status(
 )
 async def search_requirement_analyses_by_tags(
     project_id: UUID,
+    current_user_id: CurrentUserIdDep,
     tags: List[str] = Query(..., description="标签列表"),
     match_all: bool = Query(False, description="是否必须匹配所有标签"),
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """根据标签搜索需求分析"""
     service = RequirementAnalysisService(db)
@@ -263,9 +280,9 @@ async def search_requirement_analyses_by_tags(
 )
 async def download_requirement_analysis_report(
     requirement_analysis_id: UUID,
+    current_user_id: CurrentUserIdDep,
     format: str = Query("pdf", regex="^(pdf|word|markdown)$", description="报告格式"),
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """下载需求分析报告"""
     service = RequirementAnalysisService(db)
@@ -284,11 +301,11 @@ async def download_requirement_analysis_report(
 )
 async def trigger_ai_analysis(
     requirement_analysis_id: UUID,
+    current_user_id: CurrentUserIdDep,
     document_content: Optional[str] = None,
     use_rag: bool = Query(False, description="是否使用 RAG 检索"),
     rag_query: Optional[str] = Query(None, description="RAG 检索查询"),
     db: AsyncSession = Depends(get_db),
-    current_user_id: CurrentUserIdDep
 ):
     """触发 AI 智能分析"""
     service = RequirementAnalysisService(db)

@@ -52,7 +52,15 @@ ensure_python_env() {
   
   # 检查是否有服务正在运行（Windows 上更新依赖时需要停止服务以避免文件锁定）
   local running_services=()
+  # 检查主服务
   for name in graph backend ui; do
+    if is_running "${name}"; then
+      running_services+=("${name}")
+    fi
+  done
+  
+  # 检查 MCP 服务（如果存在 PID 文件）
+  for name in rag-mcp mindmap-mcp; do
     if is_running "${name}"; then
       running_services+=("${name}")
     fi
@@ -74,13 +82,45 @@ ensure_python_env() {
     echo "  Using --reinstall to fix corrupted package metadata..."
     (cd "${ROOT}" && uv sync --reinstall)
   else
-    # 正常同步，但如果遇到错误（非警告）会自动重试 --reinstall
-    # 注意：uv sync 可能会显示警告但继续执行，只有真正的错误才会导致失败
-    if ! (cd "${ROOT}" && uv sync 2>&1); then
+    # 正常同步，捕获输出以检查是否有错误
+    local sync_output
+    sync_output=$(cd "${ROOT}" && uv sync 2>&1)
+    local sync_exit_code=$?
+    
+    # 检查输出中是否包含各种错误模式
+    local needs_reinstall=false
+    
+    # 检查文件锁定错误
+    if echo "${sync_output}" | grep -qiE "(拒绝访问|access denied|failed to remove.*os error 5)"; then
+      needs_reinstall=true
+      echo ""
+      echo "⚠️  Warning: File locking detected, stopping all services and retrying..."
+      # 再次检查并停止所有可能运行的服务
+      for name in graph backend ui rag-mcp mindmap-mcp; do
+        if is_running "${name}"; then
+          stop_service "${name}"
+        fi
+      done
+      sleep 3  # 等待文件完全释放
+    # 检查元数据损坏错误
+    elif echo "${sync_output}" | grep -qiE "(Failed to read.*metadata|failed to open file.*METADATA|系统找不到指定的文件|os error 2)"; then
+      needs_reinstall=true
+      echo ""
+      echo "⚠️  Warning: Corrupted package metadata detected, retrying with --reinstall..."
+    # 检查其他错误
+    elif [ ${sync_exit_code} -ne 0 ]; then
+      needs_reinstall=true
       echo ""
       echo "⚠️  Warning: uv sync encountered errors, retrying with --reinstall..."
       echo "   This will fix corrupted package metadata (common on Windows)"
+    fi
+    
+    if [ "$needs_reinstall" = true ]; then
+      echo "   Retrying with --reinstall..."
       (cd "${ROOT}" && uv sync --reinstall)
+    else
+      # 成功，但可能有一些警告，输出信息
+      echo "${sync_output}"
     fi
   fi
 
@@ -99,7 +139,26 @@ ensure_python_env() {
   echo "Using Python at: ${VENV_PY}"
 
   if [ -f "${ROOT}/backend/requirements.txt" ]; then
-    (cd "${ROOT}" && uv pip install -r backend/requirements.txt)
+    # 安装额外的依赖，如果遇到元数据错误则使用 --reinstall
+    # 使用 || true 防止脚本因错误退出
+    local req_output
+    req_output=$(cd "${ROOT}" && uv pip install -r backend/requirements.txt 2>&1) || true
+    local req_exit_code=$?
+    
+    # 检查是否有元数据读取错误
+    if echo "${req_output}" | grep -qiE "(Failed to read.*metadata|failed to open file.*METADATA|系统找不到指定的文件|os error 2)"; then
+      echo ""
+      echo "⚠️  Warning: Corrupted package metadata detected in requirements, retrying with --reinstall..."
+      (cd "${ROOT}" && uv pip install -r backend/requirements.txt --reinstall) || {
+        echo "⚠️  Warning: Some packages may have metadata issues, but continuing..."
+      }
+    elif [ ${req_exit_code} -ne 0 ]; then
+      echo ""
+      echo "⚠️  Warning: Failed to install some requirements, retrying with --reinstall..."
+      (cd "${ROOT}" && uv pip install -r backend/requirements.txt --reinstall) || {
+        echo "⚠️  Warning: Some packages may have installation issues, but continuing..."
+      }
+    fi
   fi
   echo "Python dependencies ready"
 }
@@ -288,7 +347,13 @@ wait_for_service() {
     echo "⚠️  curl not found, skipping health check for ${name}"
     echo "   Waiting ${max_attempts} seconds for service to start..."
     sleep "${max_attempts}"
-    return 0
+    # 检查服务是否还在运行
+    if is_running "${name}"; then
+      return 0
+    else
+      echo "❌ ${name} process died during startup"
+      return 1
+    fi
   fi
 
   echo "Waiting for ${name} to be ready..."
@@ -330,22 +395,35 @@ health_check() {
 }
 
 status() {
+  echo "Service Status:"
+  echo "==============="
   local name
+  local all_running=true
   for name in graph backend ui; do
     if is_running "${name}"; then
       local pid
       pid="$(cat "$(pidfile "${name}")" 2>/dev/null || echo "?")"
-      echo "${name}: running (pid ${pid}), log $(logfile "${name}")"
+      echo "✅ ${name}: running (pid ${pid})"
+      echo "   Log: $(logfile "${name}")"
     else
-      echo "${name}: stopped"
+      echo "❌ ${name}: stopped"
+      all_running=false
     fi
   done
 
   echo ""
-  echo "URLs:"
-  echo "  graph   : http://localhost:${GRAPH_PORT}"
-  echo "  backend : http://localhost:${BACKEND_PORT}"
-  echo "  ui      : http://localhost:${UI_PORT}"
+  echo "Service URLs:"
+  echo "=============="
+  echo "  Graph API   : http://localhost:${GRAPH_PORT}"
+  echo "  Backend API : http://localhost:${BACKEND_PORT}"
+  echo "  UI          : http://localhost:${UI_PORT}"
+  
+  if [ "$all_running" = false ]; then
+    echo ""
+    echo "⚠️  Some services are not running. Check logs above for details."
+    return 1
+  fi
+  return 0
 }
 
 logs() {
@@ -430,23 +508,51 @@ case "${cmd}" in
     run_migrations
     
     # 按依赖顺序启动服务，并等待每个服务就绪
+    local failed_services=()
+    
     # 1. 先启动 Graph API (Backend 依赖它)
     echo ""
     echo "=== Step 1/3: Starting Graph API Service ==="
-    start_graph "${dev}" 1
+    if start_graph "${dev}" 1; then
+      echo "✅ Graph API Service started successfully"
+    else
+      echo "❌ Graph API Service failed to start"
+      failed_services+=("graph")
+    fi
     
     # 2. 再启动 Backend API (UI 依赖它)
     echo ""
     echo "=== Step 2/3: Starting Backend API Service ==="
-    start_backend "${dev}" 1
+    if start_backend "${dev}" 1; then
+      echo "✅ Backend API Service started successfully"
+    else
+      echo "❌ Backend API Service failed to start"
+      failed_services+=("backend")
+    fi
     
     # 3. 最后启动 UI
     echo ""
     echo "=== Step 3/3: Starting UI Service ==="
-    start_ui "${dev}" 1
+    if start_ui "${dev}" 1; then
+      echo "✅ UI Service started successfully"
+    else
+      echo "❌ UI Service failed to start"
+      failed_services+=("ui")
+    fi
     
     echo ""
-    echo "=== All services started ==="
+    echo "=========================================="
+    if [ ${#failed_services[@]} -eq 0 ]; then
+      echo "✅ All services started successfully!"
+    else
+      echo "⚠️  Some services failed to start: ${failed_services[*]}"
+      echo "   Check logs for details:"
+      for name in "${failed_services[@]}"; do
+        echo "     - ${name}: $(logfile "${name}")"
+      done
+    fi
+    echo "=========================================="
+    echo ""
     status
     ;;
   down)

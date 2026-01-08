@@ -22,6 +22,8 @@ pymongo>=4.6.0
 # 工具库
 python-dotenv>=1.0.0
 httpx>=0.26.0
+fastmcp>=0.1.0  # MCP 服务器框架（用于 RAG MCP Server）
+mindmap-mcp-server>=0.1.0  # MindMap MCP 服务器
 
 # PDF 文档解析
 PyPDF2>=3.0.0  # 基础 PDF 解析（备用）

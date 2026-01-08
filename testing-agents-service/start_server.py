@@ -2,104 +2,116 @@
 """
 Simple LangGraph API Server
 
-A minimal script to start the LangGraph API server directly using uvicorn.
+Starts the LangGraph API server directly via uvicorn.
 """
 
+from __future__ import annotations
 
-
+import argparse
+import json
 import os
 import sys
-import json
 from pathlib import Path
-# pragma: no cover  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
+from typing import Optional
 
-def setup_environment():
-    """Setup required environment variables"""
-    # Add src to Python path
+
+def _parse_bool(value: Optional[str], default: bool) -> bool:
+    if value is None:
+        return default
+    normalized = value.strip().lower()
+    if normalized in {"1", "true", "t", "yes", "y", "on"}:
+        return True
+    if normalized in {"0", "false", "f", "no", "n", "off"}:
+        return False
+    return default
+
+
+def _load_graphs() -> dict[str, str]:
+    config_path = Path(__file__).parent / "graph.json"
+    if not config_path.exists():
+        return {}
+    with open(config_path, "r", encoding="utf-8") as file:
+        config = json.load(file)
+    return config.get("graphs", {}) or {}
+
+
+def setup_environment(port: int) -> None:
     src_path = Path(__file__).parent / "src"
     sys.path.insert(0, str(src_path))
-    
-    # Load graphs from graph.json
-    config_path = Path(__file__).parent / "graph.json"
-    graphs = {}
-    
-    if config_path.exists():
-        with open(config_path, 'r', encoding='utf-8') as f:
-            config = json.load(f)
-            graphs = config.get("graphs", {})
-# fmt: off  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
-    
-    # Set environment variables
-    os.environ.update({
-        # Database and storage - 使用自定义 PostgreSQL checkpointer
-        # "POSTGRES_URI": "postgresql://postgres:postgres@localhost:5432/langgraph_checkpointer_db?sslmode=disable",
-        # "REDIS_URI": "redis://localhost:6379",
+
+    env_file = Path(__file__).parent / ".env"
+    if env_file.exists():
+        try:
+            from dotenv import load_dotenv
+
+            load_dotenv(env_file, override=False)
+            print("[OK] Loaded environment from .env")
+        except ImportError:
+            print("[WARN] python-dotenv not installed, skipping .env file")
+
+    graphs = _load_graphs()
+
+    defaults: dict[str, str] = {
         "DATABASE_URI": ":memory:",
         "REDIS_URI": "fake",
-        # "MIGRATIONS_PATH": "/storage/migrations",
         "MIGRATIONS_PATH": "__inmem",
-        # Server configuration
         "ALLOW_PRIVATE_NETWORK": "true",
         "LANGGRAPH_UI_BUNDLER": "true",
         "LANGGRAPH_RUNTIME_EDITION": "inmem",
         "LANGSMITH_LANGGRAPH_API_VARIANT": "local_dev",
         "LANGGRAPH_DISABLE_FILE_PERSISTENCE": "false",
         "LANGGRAPH_ALLOW_BLOCKING": "true",
-        "LANGGRAPH_API_URL": "http://localhost:2025",
-
         "LANGGRAPH_DEFAULT_RECURSION_LIMIT": "200",
-        
-        # Graphs configuration
         "LANGSERVE_GRAPHS": json.dumps(graphs) if graphs else "{}",
-        
-        # Worker configuration
         "N_JOBS_PER_WORKER": "1",
-    })
-    
-    # Load .env file if exists
-    env_file = Path(__file__).parent / ".env"
-    if env_file.exists():
-        try:
-            from dotenv import load_dotenv
-            load_dotenv(env_file)
-            print(f"✅ Loaded environment from .env")
-        except ImportError:
-            print("⚠️  python-dotenv not installed, skipping .env file")
+    }
+    for key, value in defaults.items():
+        os.environ.setdefault(key, value)
 
-def main():
-    """Start the server"""
-    print("🚀 Starting Simple LangGraph API Server...")
-# noqa  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
-    
-    # Setup environment
-    setup_environment()
-    
-    # Print server information
-    print("\n" + "="*60)
-    print("📍 Server URL: http://localhost:2025")
-    print("📚 API Documentation: http://localhost:2025/docs")
-    print("🎨 Studio UI: http://localhost:2025/ui")
-    print("💚 Health Check: http://localhost:2025/ok")
-    print("="*60)
-    
+    os.environ["LANGGRAPH_PORT"] = str(port)
+    os.environ["LANGGRAPH_API_URL"] = f"http://localhost:{port}"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Start LangGraph API server via uvicorn")
+    parser.add_argument("--host", default=os.environ.get("LANGGRAPH_HOST", "0.0.0.0"))
+    parser.add_argument("--port", type=int, default=int(os.environ.get("LANGGRAPH_PORT", "2025")))
+    parser.add_argument(
+        "--reload",
+        default=os.environ.get("LANGGRAPH_RELOAD"),
+        help="Enable auto-reload (true/false). Default: true",
+    )
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    reload_enabled = _parse_bool(args.reload, default=True)
+
+    print("Starting Simple LangGraph API Server...")
+    setup_environment(args.port)
+
+    print("\n" + "=" * 60)
+    print(f"Server URL: http://localhost:{args.port}")
+    print(f"API Documentation: http://localhost:{args.port}/docs")
+    print(f"Studio UI: http://localhost:{args.port}/ui")
+    print(f"Health Check: http://localhost:{args.port}/ok")
+    print("=" * 60)
+
     try:
-        # Import uvicorn after environment setup
         import uvicorn
-        
-        # Start the server directly
+
         uvicorn.run(
             "langgraph_api.server:app",
-            host="0.0.0.0",
-            port=2025,
-            reload=True,
+            host=args.host,
+            port=args.port,
+            reload=reload_enabled,
             access_log=False,
             log_config={
                 "version": 1,
                 "disable_existing_loggers": False,
                 "formatters": {
-                    "default": {
-                        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                    }
+                    "default": {"format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"}
                 },
                 "handlers": {
                     "default": {
@@ -108,25 +120,24 @@ def main():
                         "stream": "ext://sys.stdout",
                     }
                 },
-                "root": {
-                    "level": "INFO",
-                    "handlers": ["default"],
-                },
+                "root": {"level": "INFO", "handlers": ["default"]},
                 "loggers": {
                     "uvicorn": {"level": "INFO"},
                     "uvicorn.error": {"level": "INFO"},
                     "uvicorn.access": {"level": "WARNING"},
-                }
-            }
+                },
+            },
         )
     except KeyboardInterrupt:
-        print("\n🛑 Server stopped by user")
-    except Exception as e:
-        print(f"❌ Server failed to start: {e}")
+        print("\nServer stopped by user")
+    except Exception as exc:
+        print(f"Server failed to start: {exc}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)
-# pylint: disable  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T0hneFRBPT06ODY3ZDc4MWY=
+
 
 if __name__ == "__main__":
     main()
+

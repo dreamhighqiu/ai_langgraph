@@ -96,6 +96,158 @@ print_error() {
     printf "${RED}[X]${NC} %s\n" "$1"
 }
 
+print_access_url() {
+    local label=$1
+    local url=$2
+    if check_http "$url" 2; then
+        printf "  ${GREEN}[OK]${NC} %-22s ${CYAN}%s${NC}\n" "$label" "$url"
+    else
+        printf "  ${RED}[X]${NC}  %-22s ${CYAN}%s${NC}\n" "$label" "$url"
+    fi
+}
+
+# Load environment variables from .env if present (best-effort)
+load_env_file() {
+    if [ -f "$ENV_FILE" ]; then
+        # shellcheck disable=SC1090
+        source "$ENV_FILE"
+    fi
+}
+
+# Get a usable Python executable for helper checks
+get_python_bin() {
+    if [ -n "$VENV_PYTHON" ] && [ -x "$VENV_PYTHON" ]; then
+        echo "$VENV_PYTHON"
+        return 0
+    fi
+    if command -v python3 &> /dev/null; then
+        command -v python3
+        return 0
+    fi
+    if command -v python &> /dev/null; then
+        command -v python
+        return 0
+    fi
+    return 1
+}
+
+# Check if a PID is running (cross-platform best-effort)
+pid_is_running() {
+    local pid=$1
+    if [ -z "$pid" ]; then
+        return 1
+    fi
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        if command -v tasklist &> /dev/null; then
+            # Git Bash/MSYS will path-convert args starting with '/', so exclude conversion.
+            MSYS2_ARG_CONV_EXCL="*" tasklist /FI "PID eq $pid" 2>/dev/null | grep -qE "[[:space:]]$pid[[:space:]]" && return 0 || return 1
+        fi
+        return 1
+    fi
+    kill -0 "$pid" 2>/dev/null && return 0 || return 1
+}
+
+win_taskkill_pid() {
+    local pid=$1
+    if [ -z "$pid" ]; then
+        return 1
+    fi
+    if command -v taskkill &> /dev/null; then
+        MSYS2_ARG_CONV_EXCL="*" taskkill /F /PID "$pid" >/dev/null 2>&1 && return 0 || return 1
+    fi
+    return 1
+}
+
+# Get PID that is listening on a port (best-effort, cross-platform)
+get_pid_by_port() {
+    local port=$1
+    if [ -z "$port" ]; then
+        return 1
+    fi
+
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        local py
+        py="$(get_python_bin)" || return 1
+        "$py" -c "import subprocess, sys
+port=int(sys.argv[1])
+try:
+    p=subprocess.run(['netstat','-ano'], capture_output=True, text=True, shell=True, timeout=5)
+    for line in p.stdout.splitlines():
+        if f':{port}' in line and ('LISTENING' in line or 'LISTEN' in line):
+            parts=line.split()
+            if parts and parts[-1].isdigit() and parts[-1] != '0':
+                print(parts[-1])
+                sys.exit(0)
+except Exception:
+    pass
+sys.exit(1)
+" "$port" 2>/dev/null | tr -d '\r\n ' | head -1
+        return 0
+    fi
+
+    if command -v lsof &> /dev/null; then
+        lsof -ti:"$port" 2>/dev/null | head -1
+        return 0
+    fi
+    return 1
+}
+
+# Check HTTP endpoint is healthy (status 200-399). Works for SSE endpoints too.
+check_http() {
+    local url=$1
+    local timeout=${2:-3}
+    local py
+    py="$(get_python_bin)" || return 1
+
+    "$py" -c "import sys, urllib.request
+url=sys.argv[1]; timeout=float(sys.argv[2])
+try:
+    req=urllib.request.Request(url, headers={'User-Agent':'healthcheck','Accept':'*/*'})
+    resp=urllib.request.urlopen(req, timeout=timeout)
+    code=getattr(resp, 'status', None) or resp.getcode()
+    try: resp.close()
+    except: pass
+    sys.exit(0 if 200 <= int(code) < 400 else 1)
+except Exception:
+    sys.exit(1)
+" "$url" "$timeout" >/dev/null 2>&1
+}
+
+check_http_any() {
+    local timeout=${1:-3}
+    shift || true
+    local url
+    for url in "$@"; do
+        if check_http "$url" "$timeout"; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+# Wait for any of the given URLs to become healthy.
+wait_for_http_any() {
+    local name=$1
+    local max_wait=${2:-60}
+    local timeout_per_try=${3:-3}
+    shift 3 || true
+    local count=0
+
+    print_info "Waiting for $name HTTP readiness..."
+    while [ $count -lt $max_wait ]; do
+        if check_http_any "$timeout_per_try" "$@"; then
+            return 0
+        fi
+        sleep 1
+        count=$((count + 1))
+        if [ $((count % 5)) -eq 0 ]; then
+            printf "."
+        fi
+    done
+    echo ""
+    return 1
+}
+
 # Check if port is occupied (cross-platform)
 check_port() {
     local port=$1
@@ -173,12 +325,10 @@ except:
         
         if [ -n "$pid" ] && [ "$pid" != "0" ]; then
             print_info "Killing process on port $port (PID: $pid)..."
-            if command -v taskkill &> /dev/null; then
-                taskkill /F /PID "$pid" >/dev/null 2>&1 && killed=true
-            else
+            win_taskkill_pid "$pid" && killed=true || {
                 # Fallback: try kill command (Git Bash)
                 kill -9 "$pid" >/dev/null 2>&1 && killed=true
-            fi
+            }
         fi
     else
         # Linux/macOS: use lsof to find PID, then kill
@@ -426,7 +576,14 @@ start_lightrag() {
     cd "$PROJECT_ROOT"
     
     # LightRAG may take longer to initialize (storage initialization)
-    if wait_for_service $port "$name" 90; then
+    if wait_for_http_any "$name" 180 3 \
+        "http://127.0.0.1:$port/openapi.json" \
+        "http://127.0.0.1:$port/docs"; then
+        local real_pid="$(get_pid_by_port "$port")"
+        if [ -n "$real_pid" ]; then
+            pid="$real_pid"
+            echo "$pid" > "$pid_file"
+        fi
         print_success "$name started (PID: $pid, Port: $port)"
         printf "         API Docs: ${CYAN}http://localhost:$port/docs${NC}\n"
     else
@@ -479,7 +636,13 @@ start_mcp_server() {
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
-    if wait_for_service $port "$name"; then
+    if wait_for_http_any "$name" 60 3 \
+        "http://127.0.0.1:$port/sse"; then
+        local real_pid="$(get_pid_by_port "$port")"
+        if [ -n "$real_pid" ]; then
+            pid="$real_pid"
+            echo "$pid" > "$pid_file"
+        fi
         print_success "$name started (PID: $pid, Port: $port)"
     else
         print_error "$name failed to start, check log: $log_file"
@@ -512,10 +675,17 @@ start_anything_rag_mcp() {
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
 
-    if wait_for_service $port "$name" 30; then
+    if wait_for_http_any "$name" 60 3 \
+        "http://127.0.0.1:$port/sse"; then
+        local real_pid="$(get_pid_by_port "$port")"
+        if [ -n "$real_pid" ]; then
+            pid="$real_pid"
+            echo "$pid" > "$pid_file"
+        fi
         print_success "$name started (PID: $pid, Port: $port)"
     else
-        print_warning "$name may not have started properly, check log: $log_file"
+        print_error "$name failed to start, check log: $log_file"
+        return 1
     fi
 }
 
@@ -527,6 +697,7 @@ start_api_agent_mcp_servers() {
     local services_dir="$src_dir/api_agent/mcp_servers"
     
     print_info "Starting API Agent MCP Servers..."
+    local any_failed=false
     
     # Set up environment - must be done before any cd commands
     export PATH="$VENV_BIN:$PATH"
@@ -551,6 +722,7 @@ start_api_agent_mcp_servers() {
     
     if ! ensure_port_free $rag_port "$rag_name"; then
         print_error "Cannot start $rag_name: port $rag_port is occupied and cannot be freed"
+        any_failed=true
     else
         print_info "Starting $rag_name on port $rag_port..."
         # Run from project root with PYTHONPATH set (export already done above)
@@ -560,10 +732,16 @@ start_api_agent_mcp_servers() {
         local rag_pid=$!
         echo $rag_pid > "$rag_pid_file"
         
-        if wait_for_service $rag_port "$rag_name" 30; then
+        if wait_for_http_any "$rag_name" 60 3 "http://127.0.0.1:$rag_port/sse"; then
+            local real_pid="$(get_pid_by_port "$rag_port")"
+            if [ -n "$real_pid" ]; then
+                rag_pid="$real_pid"
+                echo "$rag_pid" > "$rag_pid_file"
+            fi
             print_success "$rag_name started (PID: $rag_pid, Port: $rag_port)"
         else
-            print_warning "$rag_name may not have started properly, check log: $rag_log_file"
+            print_error "$rag_name failed to start, check log: $rag_log_file"
+            any_failed=true
         fi
     fi
     
@@ -575,6 +753,7 @@ start_api_agent_mcp_servers() {
     
     if ! ensure_port_free $login_port "$login_name"; then
         print_warning "Port $login_port is occupied, skipping $login_name"
+        any_failed=true
     else
         print_info "Starting $login_name on port $login_port..."
         # Run from project root with PYTHONPATH set
@@ -583,10 +762,16 @@ start_api_agent_mcp_servers() {
         local login_pid=$!
         echo $login_pid > "$login_pid_file"
         
-        if wait_for_service $login_port "$login_name" 30; then
+        if wait_for_http_any "$login_name" 60 3 "http://127.0.0.1:$login_port/sse"; then
+            local real_pid="$(get_pid_by_port "$login_port")"
+            if [ -n "$real_pid" ]; then
+                login_pid="$real_pid"
+                echo "$login_pid" > "$login_pid_file"
+            fi
             print_success "$login_name started (PID: $login_pid, Port: $login_port)"
         else
-            print_warning "$login_name may not have started properly, check log: $login_log_file"
+            print_error "$login_name failed to start, check log: $login_log_file"
+            any_failed=true
         fi
     fi
     
@@ -598,6 +783,7 @@ start_api_agent_mcp_servers() {
     
     if ! ensure_port_free $pytest_gen_port "$pytest_gen_name"; then
         print_warning "Port $pytest_gen_port is occupied, skipping $pytest_gen_name"
+        any_failed=true
     else
         print_info "Starting $pytest_gen_name on port $pytest_gen_port..."
         # Run from project root with PYTHONPATH set
@@ -606,33 +792,16 @@ start_api_agent_mcp_servers() {
         local pytest_gen_pid=$!
         echo $pytest_gen_pid > "$pytest_gen_pid_file"
         
-        if wait_for_service $pytest_gen_port "$pytest_gen_name" 30; then
+        if wait_for_http_any "$pytest_gen_name" 60 3 "http://127.0.0.1:$pytest_gen_port/sse"; then
+            local real_pid="$(get_pid_by_port "$pytest_gen_port")"
+            if [ -n "$real_pid" ]; then
+                pytest_gen_pid="$real_pid"
+                echo "$pytest_gen_pid" > "$pytest_gen_pid_file"
+            fi
             print_success "$pytest_gen_name started (PID: $pytest_gen_pid, Port: $pytest_gen_port)"
         else
-            print_warning "$pytest_gen_name may not have started properly, check log: $pytest_gen_log_file"
-        fi
-    fi
-    
-    # Start Pytest Generator MCP Server (port 8005 - changed from 8003 to avoid conflict with login_mcp)
-    local pytest_gen_port=8005
-    local pytest_gen_name="Pytest Generator MCP Server"
-    local pytest_gen_pid_file="$PID_DIR/pytest_generator_mcp.pid"
-    local pytest_gen_log_file="$LOG_DIR/pytest_generator_mcp.log"
-    
-    if ! ensure_port_free $pytest_gen_port "$pytest_gen_name"; then
-        print_warning "Port $pytest_gen_port is occupied, skipping $pytest_gen_name"
-    else
-        print_info "Starting $pytest_gen_name on port $pytest_gen_port..."
-        # Run from project root with PYTHONPATH set
-        cd "$PROJECT_ROOT"
-        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m api_agent.mcp_servers.pytest_generator --port $pytest_gen_port > "$pytest_gen_log_file" 2>&1 &
-        local pytest_gen_pid=$!
-        echo $pytest_gen_pid > "$pytest_gen_pid_file"
-        
-        if wait_for_service $pytest_gen_port "$pytest_gen_name" 30; then
-            print_success "$pytest_gen_name started (PID: $pytest_gen_pid, Port: $pytest_gen_port)"
-        else
-            print_warning "$pytest_gen_name may not have started properly, check log: $pytest_gen_log_file"
+            print_error "$pytest_gen_name failed to start, check log: $pytest_gen_log_file"
+            any_failed=true
         fi
     fi
     
@@ -644,6 +813,7 @@ start_api_agent_mcp_servers() {
     
     if ! ensure_port_free $executor_port "$executor_name"; then
         print_warning "Port $executor_port is occupied, skipping $executor_name"
+        any_failed=true
     else
         print_info "Starting $executor_name on port $executor_port..."
         # Run from project root with PYTHONPATH set
@@ -652,44 +822,17 @@ start_api_agent_mcp_servers() {
         local executor_pid=$!
         echo $executor_pid > "$executor_pid_file"
         
-        if wait_for_service $executor_port "$executor_name" 30; then
+        if wait_for_http_any "$executor_name" 60 3 "http://127.0.0.1:$executor_port/sse"; then
+            local real_pid="$(get_pid_by_port "$executor_port")"
+            if [ -n "$real_pid" ]; then
+                executor_pid="$real_pid"
+                echo "$executor_pid" > "$executor_pid_file"
+            fi
             print_success "$executor_name started (PID: $executor_pid, Port: $executor_port)"
         else
-            print_warning "$executor_name may not have started properly, check log: $executor_log_file"
+            print_error "$executor_name failed to start, check log: $executor_log_file"
+            any_failed=true
         fi
-    fi
-    
-    # Start Automation Quality MCP Server (Node.js stdio mode, no port needed)
-    local automation_mcp_name="Automation Quality MCP Server"
-    local automation_mcp_pid_file="$PID_DIR/automation_quality_mcp.pid"
-    local automation_mcp_log_file="$LOG_DIR/automation_quality_mcp.log"
-    local automation_mcp_dir="$services_dir/automation-quality-mcp"
-    
-    if [ ! -d "$automation_mcp_dir" ]; then
-        print_warning "$automation_mcp_name directory not found, skipping"
-    elif [ ! -d "$automation_mcp_dir/node_modules" ]; then
-        print_warning "$automation_mcp_name node_modules not found, installing dependencies..."
-        cd "$automation_mcp_dir"
-        if command -v npm &> /dev/null; then
-            npm install 2>&1 | head -20
-            cd "$PROJECT_ROOT"
-        else
-            print_warning "npm not found, skipping $automation_mcp_name"
-            cd "$PROJECT_ROOT"
-        fi
-    fi
-    
-    if [ -d "$automation_mcp_dir/node_modules" ]; then
-        print_info "Starting $automation_mcp_name (stdio mode)..."
-        cd "$automation_mcp_dir"
-        # Automation Quality MCP uses stdio mode, not SSE, so no port check needed
-        # It will be used via stdio by LangGraph when needed
-        # We can start it in the background for monitoring, but it won't listen on a port
-        nohup node mcpServer.js > "$automation_mcp_log_file" 2>&1 &
-        local automation_mcp_pid=$!
-        echo $automation_mcp_pid > "$automation_mcp_pid_file"
-        print_success "$automation_mcp_name started (PID: $automation_mcp_pid, stdio mode)"
-        cd "$PROJECT_ROOT"
     fi
     
     # Start Automation Quality MCP Server (Node.js stdio mode, no port needed)
@@ -727,10 +870,20 @@ start_api_agent_mcp_servers() {
     
     cd "$PROJECT_ROOT"
     echo ""
+
+    if [ "$any_failed" = true ]; then
+        return 1
+    fi
+    return 0
 }
 
 start_langgraph_server() {
-    local port=2025
+    # Allow overriding LangGraph port via env (useful when 2025 is occupied)
+    if [ -f "$PROJECT_ROOT/.env" ]; then
+        # shellcheck disable=SC1090
+        source "$PROJECT_ROOT/.env"
+    fi
+    local port="${LANGGRAPH_PORT:-2025}"
     local name="LangGraph Server"
     local pid_file="$PID_DIR/langgraph.pid"
     local log_file="$LOG_DIR/langgraph.log"
@@ -763,18 +916,25 @@ start_langgraph_server() {
     export PYTHONIOENCODING=utf-8
     # Add testing-agents-service/src to Python path（使用新目录）
     export PYTHONPATH="$PROJECT_ROOT/testing-agents-service/src:$PYTHONPATH"
-    nohup "$VENV_PYTHON" start_server.py > "$log_file" 2>&1 &
+    nohup "$VENV_PYTHON" start_server.py --port "$port" > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
     # LangGraph may take longer to initialize (graph loading, MCP connections)
-    if wait_for_service $port "$name" 120; then
+    if wait_for_http_any "$name" 300 3 \
+        "http://127.0.0.1:$port/ok" \
+        "http://127.0.0.1:$port/docs"; then
+        local real_pid="$(get_pid_by_port "$port")"
+        if [ -n "$real_pid" ]; then
+            pid="$real_pid"
+            echo "$pid" > "$pid_file"
+        fi
         print_success "$name started (PID: $pid, Port: $port)"
         printf "         API Docs: ${CYAN}http://localhost:$port/docs${NC}\n"
         printf "         Studio:   ${CYAN}http://localhost:$port/ui${NC}\n"
     else
-        print_error "$name failed to start, check log: $log_file"
+        print_error "$name failed to become ready, check log: $log_file"
         return 1
     fi
 }
@@ -815,11 +975,16 @@ start_agent_ui() {
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"
     
-    if wait_for_service $port "$name"; then
+    if wait_for_http_any "$name" 120 3 "http://127.0.0.1:$port/"; then
+        local real_pid="$(get_pid_by_port "$port")"
+        if [ -n "$real_pid" ]; then
+            pid="$real_pid"
+            echo "$pid" > "$pid_file"
+        fi
         print_success "$name started (PID: $pid, Port: $port)"
         printf "         URL: ${CYAN}http://localhost:$port${NC}\n"
     else
-        print_error "$name failed to start, check log: $log_file"
+        print_error "$name failed to become ready, check log: $log_file"
         return 1
     fi
 }
@@ -835,9 +1000,15 @@ stop_service() {
     
     if [ -f "$pid_file" ]; then
         local pid=$(cat "$pid_file")
-        if kill -0 $pid 2>/dev/null; then
-            kill $pid
-            print_success "Stopped $name (PID: $pid)"
+        if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+            if win_taskkill_pid "$pid"; then
+                print_success "Stopped $name (PID: $pid)"
+            fi
+        else
+            if kill -0 $pid 2>/dev/null; then
+                kill $pid
+                print_success "Stopped $name (PID: $pid)"
+            fi
         fi
         rm -f "$pid_file"
     fi
@@ -883,11 +1054,7 @@ except:
             for pid in $pids; do
                 if [ -n "$pid" ] && [ "$pid" != "0" ]; then
                     if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
-                        if command -v taskkill &> /dev/null; then
-                            taskkill /F /PID "$pid" >/dev/null 2>&1
-                        else
-                            kill -9 "$pid" >/dev/null 2>&1
-                        fi
+                        win_taskkill_pid "$pid" || kill -9 "$pid" >/dev/null 2>&1
                     else
                         kill -9 "$pid" >/dev/null 2>&1
                     fi
@@ -899,9 +1066,10 @@ except:
 
 stop_all() {
     print_info "Stopping all services..."
+    load_env_file
     
     stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
-    stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
+    stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" "${LANGGRAPH_PORT:-2025}"
     stop_service "Automation Quality MCP Server" "$PID_DIR/automation_quality_mcp.pid"
     stop_service "Test Executor MCP Server" "$PID_DIR/test_executor_mcp.pid" 8004
     stop_service "Pytest Generator MCP Server" "$PID_DIR/pytest_generator_mcp.pid" 8005
@@ -924,29 +1092,78 @@ show_status() {
     printf "${CYAN}                      Service Status                            ${NC}\n"
     printf "${CYAN}================================================================${NC}\n"
     echo ""
-    
-    local services=(
-        "LightRAG Server:9621"
-        "MCP Server:8001"
-        "Anything RAG MCP Server:8006"
-        "RAG MCP Server:8002"
-        "Login MCP Server:8003"
-        "Test Executor MCP Server:8004"
-        "Pytest Generator MCP Server:8005"
-        "LangGraph Server:2025"
-        "Agent UI:3200"
-    )
-    
-    for service in "${services[@]}"; do
-        local name="${service%%:*}"
-        local port="${service##*:}"
-        
-        if check_port $port; then
-            printf "  ${GREEN}[*]${NC} %-25s ${GREEN}RUNNING${NC} (Port: $port)\n" "$name"
-        else
-            printf "  ${RED}[ ]${NC} %-25s ${RED}STOPPED${NC} (Port: $port)\n" "$name"
+
+    load_env_file
+    local lg_port="${LANGGRAPH_PORT:-2025}"
+
+    show_one_status() {
+        local name=$1
+        local port=$2
+        local pid_file=$3
+        shift 3 || true
+
+        local pid=""
+        if [ -f "$pid_file" ]; then
+            pid="$(cat "$pid_file" 2>/dev/null | tr -d '\r\n ' )"
         fi
-    done
+
+        local port_open=false
+        if check_port "$port"; then
+            port_open=true
+        fi
+
+        local http_ok=false
+        if [ "$port_open" = true ] && check_http_any 2 "$@"; then
+            http_ok=true
+        fi
+
+        local owned=false
+        if [ -n "$pid" ] && pid_is_running "$pid"; then
+            owned=true
+        fi
+
+        local listener_pid=""
+        if [ "$port_open" = true ]; then
+            listener_pid="$(get_pid_by_port "$port" | tr -d '\r\n ')"
+        fi
+
+        if [ "$http_ok" = true ] && [ "$owned" = true ]; then
+            printf "  ${GREEN}[*]${NC} %-25s ${GREEN}READY${NC} (Port: %s, PID: %s)\n" "$name" "$port" "$pid"
+        elif [ "$http_ok" = true ] && [ "$owned" = false ] && [ "$port_open" = true ]; then
+            if [ -n "$listener_pid" ]; then
+                printf "  ${YELLOW}[!]${NC} %-25s ${YELLOW}READY*${NC} (Port: %s, Listener PID: %s)\n" "$name" "$port" "$listener_pid"
+            else
+                printf "  ${YELLOW}[!]${NC} %-25s ${YELLOW}READY*${NC} (Port: %s, not managed by pid file)\n" "$name" "$port"
+            fi
+        elif [ "$port_open" = true ]; then
+            if [ -n "$listener_pid" ]; then
+                printf "  ${YELLOW}[!]${NC} %-25s ${YELLOW}STARTING/UNHEALTHY${NC} (Port: %s, Listener PID: %s)\n" "$name" "$port" "$listener_pid"
+            else
+                printf "  ${YELLOW}[!]${NC} %-25s ${YELLOW}STARTING/UNHEALTHY${NC} (Port: %s)\n" "$name" "$port"
+            fi
+        else
+            printf "  ${RED}[ ]${NC} %-25s ${RED}STOPPED${NC} (Port: %s)\n" "$name" "$port"
+        fi
+    }
+
+    show_one_status "LightRAG Server" 9621 "$PID_DIR/lightrag.pid" \
+        "http://127.0.0.1:9621/openapi.json" "http://127.0.0.1:9621/docs"
+    show_one_status "MCP Server" 8001 "$PID_DIR/mcp.pid" \
+        "http://127.0.0.1:8001/sse"
+    show_one_status "Anything RAG MCP Server" 8006 "$PID_DIR/anything_rag_mcp.pid" \
+        "http://127.0.0.1:8006/sse"
+    show_one_status "RAG MCP Server" 8002 "$PID_DIR/rag_mcp.pid" \
+        "http://127.0.0.1:8002/sse"
+    show_one_status "Login MCP Server" 8003 "$PID_DIR/login_mcp.pid" \
+        "http://127.0.0.1:8003/sse"
+    show_one_status "Test Executor MCP Server" 8004 "$PID_DIR/test_executor_mcp.pid" \
+        "http://127.0.0.1:8004/sse"
+    show_one_status "Pytest Generator MCP Server" 8005 "$PID_DIR/pytest_generator_mcp.pid" \
+        "http://127.0.0.1:8005/sse"
+    show_one_status "LangGraph Server" "$lg_port" "$PID_DIR/langgraph.pid" \
+        "http://127.0.0.1:${lg_port}/ok"
+    show_one_status "Agent UI" 3200 "$PID_DIR/agent_ui.pid" \
+        "http://127.0.0.1:3200/"
     
     echo ""
     printf "${CYAN}================================================================${NC}\n"
@@ -982,7 +1199,11 @@ restart_service() {
             start_api_agent_mcp_servers
             ;;
         langgraph)
-            stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
+            if [ -f "$PROJECT_ROOT/.env" ]; then
+                # shellcheck disable=SC1090
+                source "$PROJECT_ROOT/.env"
+            fi
+            stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" "${LANGGRAPH_PORT:-2025}"
             start_langgraph_server
             ;;
         agent-ui)
@@ -995,7 +1216,7 @@ restart_service() {
             echo "Available services:"
             echo "  lightrag   - LightRAG Server (Port 9621)"
             echo "  mcp        - MCP Server (Port 8001)"
-            echo "  langgraph  - LangGraph Server (Port 2025)"
+            echo "  langgraph  - LangGraph Server (Port 2025, override with LANGGRAPH_PORT)"
             echo "  agent-ui   - Agent UI (Port 3200)"
             exit 1
             ;;
@@ -1031,7 +1252,7 @@ start_single_service() {
             echo "  lightrag      - LightRAG Server (Port 9621)"
             echo "  mcp           - MCP Server (Port 8001)"
             echo "  api-agent-mcp - API Agent MCP Servers (Ports 8002-8004)"
-            echo "  langgraph     - LangGraph Server (Port 2025)"
+            echo "  langgraph     - LangGraph Server (Port 2025, override with LANGGRAPH_PORT)"
             echo "  agent-ui      - Agent UI (Port 3200)"
             exit 1
             ;;
@@ -1059,7 +1280,11 @@ stop_single_service() {
             stop_service "RAG MCP Server" "$PID_DIR/rag_mcp.pid" 8002
             ;;
         langgraph)
-            stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" 2025
+            if [ -f "$PROJECT_ROOT/.env" ]; then
+                # shellcheck disable=SC1090
+                source "$PROJECT_ROOT/.env"
+            fi
+            stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" "${LANGGRAPH_PORT:-2025}"
             ;;
         agent-ui)
             stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
@@ -1077,6 +1302,9 @@ stop_single_service() {
 
 main() {
     local include_frontend=false
+
+    # Load .env once so ports/keys apply consistently across start/stop/status/URLs
+    load_env_file
     
     # Parse arguments
     while [[ $# -gt 0 ]]; do
@@ -1103,7 +1331,7 @@ main() {
                 echo "  lightrag   - LightRAG Server (Port 9621)"
                 echo "  mcp        - MCP Server (Port 8001)"
                 echo "  anything-rag-mcp - LightRAG HTTP MCP Server (Port 8006)"
-                echo "  langgraph  - LangGraph Server (Port 2025)"
+                echo "  langgraph  - LangGraph Server (Port 2025, override with LANGGRAPH_PORT)"
                 echo "  agent-ui   - Agent UI (Port 3200)"
                 exit 1
                 fi
@@ -1148,7 +1376,7 @@ main() {
                 echo "  mcp           - MCP Server (Port 8001)"
                 echo "  anything-rag-mcp - LightRAG HTTP MCP Server (Port 8006)"
                 echo "  api-agent-mcp - API Agent MCP Servers (Ports 8002-8004)"
-                echo "  langgraph     - LangGraph Server (Port 2025)"
+                echo "  langgraph     - LangGraph Server (Port 2025, override with LANGGRAPH_PORT)"
                 echo "  agent-ui      - Agent UI (Port 3200)"
                 echo ""
                 echo "Examples:"
@@ -1169,6 +1397,9 @@ main() {
     done
     
     print_banner
+
+    # Refresh env after venv checks in case uv scripts updated ENV expectations
+    load_env_file
     
     # Check uv
     print_info "Checking uv..."
@@ -1233,7 +1464,7 @@ main() {
         fi
     fi
     
-    # Show status
+    # Show status (HTTP-based)
     show_status
     
     # Report results
@@ -1253,18 +1484,24 @@ main() {
     printf "  View logs:      ${CYAN}tail -f logs/*.log${NC}\n"
     echo ""
     echo "Access URLs:"
-    printf "  LightRAG API:     ${CYAN}http://localhost:9621/docs${NC}\n"
-    printf "  Anything RAG MCP: ${CYAN}http://localhost:8006/sse${NC}\n"
-    printf "  RAG MCP Server:         ${CYAN}http://localhost:8002/sse${NC}\n"
-    printf "  Login MCP Server:      ${CYAN}http://localhost:8003/sse${NC}\n"
-    printf "  Test Executor MCP:      ${CYAN}http://localhost:8004/sse${NC}\n"
-    printf "  Pytest Generator MCP:  ${CYAN}http://localhost:8005/sse${NC}\n"
-    printf "  Automation Quality MCP: ${CYAN}stdio mode (no HTTP)${NC}\n"
-    printf "  LangGraph API:    ${CYAN}http://localhost:2025/docs${NC}\n"
-    printf "  LangGraph Studio: ${CYAN}http://localhost:2025/ui${NC}\n"
+    print_access_url "LightRAG API" "http://127.0.0.1:9621/docs"
+    print_access_url "MCP Server" "http://127.0.0.1:8001/sse"
+    print_access_url "Anything RAG MCP" "http://127.0.0.1:8006/sse"
+    print_access_url "RAG MCP Server" "http://127.0.0.1:8002/sse"
+    print_access_url "Login MCP Server" "http://127.0.0.1:8003/sse"
+    print_access_url "Test Executor MCP" "http://127.0.0.1:8004/sse"
+    print_access_url "Pytest Generator MCP" "http://127.0.0.1:8005/sse"
+    printf "  %-26s %s\n" "Automation Quality MCP" "stdio mode (no HTTP)"
+    print_access_url "LangGraph API" "http://127.0.0.1:${LANGGRAPH_PORT:-2025}/docs"
+    print_access_url "LangGraph Studio" "http://127.0.0.1:${LANGGRAPH_PORT:-2025}/ui"
     if [ "$include_frontend" = true ]; then
-        printf "  Agent UI:         ${CYAN}http://localhost:3200${NC}\n"
+        print_access_url "Agent UI" "http://127.0.0.1:3200/"
     fi
+
+    if [ ${#failed_services[@]} -ne 0 ]; then
+        return 1
+    fi
+    return 0
 }
 
 # Run main program

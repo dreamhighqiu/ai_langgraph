@@ -20,14 +20,19 @@
 
 
 INFO:__main__:并行执行支持: xdist=False, CPU核心数=16, Allure CLI=False
-[01/07/26 17:34:04] INFO     Starting MCP server 'TestExecutor'  server.py:2618
+[01/07/26 18:24:59] INFO     Starting MCP server 'TestExecutor'  server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8004/sse                           
-INFO:     Started server process [67812]
+INFO:     Started server process [92568]
 INFO:     Waiting for application startup.
-INFO:docket.worker:Starting worker 'caobinbin#67812' with the following tasks:
+INFO:docket.worker:Starting worker 'caobinbin#92568' with the following tasks:
 INFO:docket.worker:* trace(message: str, ...)
 INFO:docket.worker:* fail(message: str, ...)
 INFO:docket.worker:* sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52970 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50713 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52071 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62442 - "GET /sse HTTP/1.1" 200 OK

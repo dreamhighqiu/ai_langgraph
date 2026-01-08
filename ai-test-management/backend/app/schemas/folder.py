@@ -1,0 +1,170 @@
+"""
+文件夹相关的 Pydantic 模型
+
+基于 BrowserStack Test Management API 的文件夹接口设计
+参考: https://www.browserstack.com/docs/test-management/api-reference/folders
+"""
+"""
+版权所有 (c) 2023-2026 北京慧测信息技术有限公司(但问智能) 保留所有权利。
+
+本代码版权归北京慧测信息技术有限公司(但问智能)所有，仅用于学习交流目的，未经公司商业授权，
+不得用于任何商业用途，包括但不限于商业环境部署、售卖或以任何形式进行商业获利。违者必究。
+
+授权商业应用请联系微信：huice666
+"""
+
+# pragma: no cover  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhGSFFnPT06M2YxZDBhZmM=
+
+from typing import Optional
+from uuid import UUID
+
+from pydantic import BaseModel, Field
+
+from app.schemas.common import BaseResponse
+
+
+class FolderBase(BaseModel):
+    """文件夹基础模型"""
+    name: str = Field(
+        ...,
+        min_length=1,
+        max_length=255,
+        description="文件夹名称"
+    )
+    description: Optional[str] = Field(
+        default=None,
+        max_length=2000,
+        description="文件夹描述"
+    )
+
+
+class FolderCreate(FolderBase):
+    """
+    创建文件夹请求模型
+    
+    用于创建新文件夹的请求体
+    """
+    parent_id: Optional[UUID] = Field(
+        default=None,
+        description="父文件夹 ID，为空则创建在根目录"
+    )
+
+# fmt: off  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhGSFFnPT06M2YxZDBhZmM=
+
+class FolderUpdate(BaseModel):
+    """
+    更新文件夹请求模型
+    
+    用于更新文件夹信息的请求体
+    """
+    name: Optional[str] = Field(
+        default=None,
+        min_length=1,
+        max_length=255,
+        description="文件夹名称"
+    )
+    description: Optional[str] = Field(
+        default=None,
+        max_length=2000,
+        description="文件夹描述"
+    )
+
+
+class FolderMove(BaseModel):
+    """
+    移动文件夹请求模型
+
+    用于移动文件夹到新位置的请求体
+    参考: https://www.browserstack.com/docs/test-management/api-reference/folders#move-a-folder
+    """
+    parent_id: Optional[UUID] = Field(
+        default=None,
+        description="目标父文件夹 ID，为空则移动到根目录"
+    )
+
+
+class FolderLinks(BaseModel):
+    """
+    文件夹相关链接
+
+    参考 BrowserStack API: 只包含 sub_folders 链接
+    """
+    sub_folders: Optional[str] = Field(
+        default=None,
+        description="子文件夹列表链接"
+    )
+
+
+class FolderInfo(FolderBase):
+    """
+    文件夹信息模型
+
+    用于返回文件夹详细信息
+    参考: https://www.browserstack.com/docs/test-management/api-reference/folders
+
+    显示格式: 直接用例数(总用例数)
+    例如: 2(10) 表示该目录直接有2条用例，该目录及所有子目录共10条用例
+    """
+    id: UUID = Field(..., description="文件夹 ID")
+    parent_id: Optional[UUID] = Field(
+        default=None,
+        description="父文件夹 ID"
+    )
+    direct_cases_count: int = Field(
+        default=0,
+        description="直接在该文件夹中的测试用例数量（不含子文件夹）"
+    )
+    cases_count: int = Field(
+        default=0,
+        description="该文件夹及所有子文件夹的测试用例总数"
+    )
+    sub_folders_count: int = Field(
+        default=0,
+        description="直接子文件夹数量"
+    )
+    links: Optional[FolderLinks] = Field(
+        default=None,
+        description="相关资源链接"
+    )
+
+    class Config:
+        from_attributes = True
+
+# fmt: off  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhGSFFnPT06M2YxZDBhZmM=
+
+class FolderResponse(BaseResponse):
+    """
+    单个文件夹响应模型
+    """
+    success: bool = Field(default=True, description="API 调用成功")
+    folder: FolderInfo = Field(..., description="文件夹信息")
+
+
+class FolderListResponse(BaseResponse):
+    """
+    文件夹列表响应模型
+    """
+    success: bool = Field(default=True, description="API 调用成功")
+    folders: list[FolderInfo] = Field(
+        default_factory=list,
+        description="文件夹列表"
+    )
+
+
+class FolderDeleteResponse(BaseResponse):
+    """
+    删除文件夹响应模型
+    """
+    success: bool = Field(default=True, description="API 调用成功")
+    message: str = Field(..., description="删除结果消息")
+
+
+class FolderMoveResponse(BaseResponse):
+    """
+    移动文件夹响应模型
+    """
+    success: bool = Field(default=True, description="API 调用成功")
+    message: str = Field(..., description="移动结果消息")
+    folder: FolderInfo = Field(..., description="移动后的文件夹信息")
+
+# pragma: no cover  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkhGSFFnPT06M2YxZDBhZmM=

@@ -1,0 +1,17 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "_buildId": "id_MC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xjMlpBPT06NWU1NTdkOTQ=",
+  "graphs": {
+    "testcase_generator_agent": {
+      "path": "./backend/app/agents/testcase_generator.py:agent"
+    }
+  },
+  "_deployId": "id_MS81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xjMlpBPT06NWU1NTdkOTQ=",
+  "env": ".env",
+  "_releaseId": "id_Mi81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xjMlpBPT06NWU1NTdkOTQ=",
+  "image_distro": "wolfi",
+  "_versionId": "id_My81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xjMlpBPT06NWU1NTdkOTQ=",
+  "_buildHash": "NC81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xjMlpBPT06NWU1NTdkOTQ="
+}

@@ -501,7 +501,7 @@ export default function TestCasesPage() {
             )}
           >
             <ClientProvider
-              deploymentUrl={process.env.NEXT_PUBLIC_LANGGRAPH_API_URL || "http://localhost:2025"}
+              deploymentUrl={process.env.NEXT_PUBLIC_LANGGRAPH_API_URL || "http://localhost:2026"}
               apiKey={process.env.NEXT_PUBLIC_LANGSMITH_API_KEY || ""}
             >
               <AIChatContainer

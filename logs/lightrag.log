@@ -85,14 +85,14 @@ INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provi
 INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1321 nodes, 1348 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [93812]
+INFO: Started server process [67820]
 INFO: Waiting for application startup.
-INFO: [] Process 93812 KV load full_docs with 15 records
-INFO: [] Process 93812 KV load text_chunks with 64 records
-INFO: [] Process 93812 KV load full_entities with 15 records
-INFO: [] Process 93812 KV load full_relations with 15 records
-INFO: [] Process 93812 KV load entity_chunks with 1309 records
-INFO: [] Process 93812 KV load relation_chunks with 1348 records
+INFO: [] Process 67820 KV load full_docs with 15 records
+INFO: [] Process 67820 KV load text_chunks with 64 records
+INFO: [] Process 67820 KV load full_entities with 15 records
+INFO: [] Process 67820 KV load full_relations with 15 records
+INFO: [] Process 67820 KV load entity_chunks with 1309 records
+INFO: [] Process 67820 KV load relation_chunks with 1348 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -102,22 +102,15 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 93812 KV load llm_response_cache with 143 records
-INFO: [] Process 93812 doc status load doc_status with 15 records
+INFO: [] Process 67820 KV load llm_response_cache with 143 records
+INFO: [] Process 67820 doc status load doc_status with 15 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:62236 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:53908 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:54353 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:49866 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:54948 - "GET /docs HTTP/1.1" 200
 INFO: [] Graph truncated: 1321 nodes found, limited to 1000
 INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
-INFO: 127.0.0.1:64980 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: 127.0.0.1:64980 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:51775 - "GET /docs HTTP/1.1" 200
-INFO: [] Graph truncated: 1321 nodes found, limited to 1000
-INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
-INFO: 127.0.0.1:51775 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
-INFO: 127.0.0.1:60162 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:52957 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:53438 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:50693 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:58447 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:62306 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:54948 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:54948 - "GET /openapi.json HTTP/1.1" 200

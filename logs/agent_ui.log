@@ -7,12 +7,12 @@
    - Network:      http://192.168.1.59:3200
 
  ✓ Starting...
- ✓ Ready in 3.9s
+ ✓ Ready in 4.4s
  ○ Compiling / ...
- ✓ Compiled / in 15.3s
- GET / 200 in 1957ms
- GET / 200 in 339ms
- GET / 200 in 277ms
- GET /?assistantId=ui_automation_agent 200 in 452ms
+ ✓ Compiled / in 17.4s
+ GET / 200 in 404ms
+ GET / 200 in 341ms
+ GET / 200 in 308ms
+ GET /?assistantId=ui_automation_agent 200 in 548ms
  ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins

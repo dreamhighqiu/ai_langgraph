@@ -292,6 +292,19 @@ start_ui() {
 
       if [ "${need_build}" = "1" ]; then
         echo "Building UI for production..."
+        # Windows 上可能存在文件锁定问题，先清理 .next 目录
+        if [ -d ".next" ]; then
+          echo "Cleaning .next directory to avoid permission issues..."
+          # 在 Windows (Git Bash) 上，使用 rm -rf 可能不够，尝试多次删除
+          rm -rf .next 2>/dev/null || true
+          # 等待一下确保文件解锁（Windows 文件系统需要时间）
+          sleep 2
+          # 如果仍然存在，尝试使用 Windows 命令（如果在 Windows 上）
+          if [ -d ".next" ] && command -v cmd.exe >/dev/null 2>&1; then
+            cmd.exe /c "rmdir /s /q .next" 2>/dev/null || true
+            sleep 1
+          fi
+        fi
         pnpm build
       fi
       # Next.js start 命令使用环境变量 PORT 而不是 -p 参数

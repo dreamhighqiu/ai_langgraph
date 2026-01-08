@@ -144,6 +144,8 @@ start_graph() {
   (
     cd "${ROOT}"
     export PYTHONPATH="${ROOT}/backend:${PYTHONPATH:-}"
+    export PYTHONUTF8=1
+    export PYTHONIOENCODING="utf-8"
     export LANGGRAPH_HOST="${GRAPH_HOST}"
     export LANGGRAPH_PORT="${GRAPH_PORT}"
     export LANGGRAPH_RELOAD="$([ "${dev}" = "1" ] && echo true || echo false)"
@@ -168,6 +170,8 @@ start_backend() {
   (
     cd "${ROOT}/backend"
     export PYTHONPATH="${ROOT}/backend:${PYTHONPATH:-}"
+    export PYTHONUTF8=1
+    export PYTHONIOENCODING="utf-8"
     local -a args
     args=(--host "${BACKEND_HOST}" --port "${BACKEND_PORT}")
     if [ "${dev}" = "1" ]; then
@@ -405,6 +409,9 @@ Notes:
   - If backend/.env is missing, backend/.env.example is copied in its place
   - Dependencies are automatically checked and updated on startup
   - If you see "missing RECORD file" warnings, run: UV_REINSTALL=1 ./deploy.sh up
+  - Optional MCP services (needed for RAG/MindMap features):
+      - RAG MCP (SSE, default :8002): `cd ../testing-agents-service/src/api_agent/mcp_servers && python rag_mcp_server.py --port 8002 --sse`
+      - MindMap MCP (SSE, default :8003): see `ai-test-management/QUICK_START.md`
 EOF
 }
 

@@ -9,7 +9,11 @@ API 路由模块
 
 from fastapi import APIRouter
 
-from .v2 import projects, folders, test_cases, test_runs, test_results, attachments, configurations, test_plans, documents
+from .v2 import (
+    projects, folders, test_cases, test_runs, test_results, attachments, 
+    configurations, test_plans, documents, mindmap, approvals,
+    requirement_analysis, defect_analysis
+)
 
 # 创建 API v2 路由
 api_router = APIRouter(prefix="/api/v2")
@@ -27,6 +31,10 @@ api_router.include_router(attachments.test_result_attachments_router, tags=["附
 api_router.include_router(attachments.attachments_router, tags=["附件管理"])
 api_router.include_router(configurations.router, tags=["配置管理"])
 api_router.include_router(documents.router, tags=["文档管理"])
+api_router.include_router(mindmap.router, tags=["思维导图管理"])
+api_router.include_router(approvals.router, tags=["审批管理"])
+api_router.include_router(requirement_analysis.router, tags=["需求分析"])
+api_router.include_router(defect_analysis.router, tags=["缺陷分析"])
 
 __all__ = ["api_router"]
 # pylint: disable  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V2pWR2FBPT06NDJlY2RkY2U=

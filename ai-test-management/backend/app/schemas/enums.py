@@ -209,3 +209,42 @@ class TestPlanActiveState(str, Enum):
     """
     ACTIVE = "active"   # 活跃状态
     CLOSED = "closed"   # 已关闭
+
+
+class RequirementAnalysisStatus(str, Enum):
+    """
+    需求分析状态
+    
+    用于标识需求分析报告的当前状态
+    """
+    DRAFT = "draft"           # 草稿
+    IN_REVIEW = "in_review"   # 审核中
+    APPROVED = "approved"     # 已批准
+    REJECTED = "rejected"     # 已拒绝
+    ARCHIVED = "archived"     # 已归档
+
+
+class DefectAnalysisStatus(str, Enum):
+    """
+    缺陷分析状态
+    
+    用于标识缺陷分析报告的当前状态
+    """
+    DRAFT = "draft"           # 草稿
+    IN_REVIEW = "in_review"   # 审核中
+    APPROVED = "approved"     # 已批准
+    REJECTED = "rejected"     # 已拒绝
+    ARCHIVED = "archived"     # 已归档
+
+
+class DefectSeverity(str, Enum):
+    """
+    缺陷严重程度
+    
+    用于标识缺陷的严重程度
+    """
+    BLOCKER = "blocker"       # 阻塞级别
+    CRITICAL = "critical"     # 严重
+    MAJOR = "major"           # 主要
+    MINOR = "minor"           # 次要
+    TRIVIAL = "trivial"       # 轻微

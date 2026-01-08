@@ -10,8 +10,14 @@ A minimal script to start the LangGraph API server directly using uvicorn.
 import os
 import sys
 import json
+import io
 from pathlib import Path
 # fmt: off  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y25oWlV3PT06NzU3ODk3NWE=
+
+# Avoid Windows console encoding crashes when printing unicode/emoji.
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 def setup_environment():
     """Setup required environment variables"""

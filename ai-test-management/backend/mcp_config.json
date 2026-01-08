@@ -1,0 +1,51 @@
+{
+  "mcpServers": {
+    "rag": {
+      "name": "RAG MCP Server",
+      "description": "基于 LightRAG 的知识库检索服务",
+      "url": "http://localhost:8002/sse",
+      "transport": "sse",
+      "tools": [
+        "rag_query_data",
+        "rag_query_data_json"
+      ],
+      "env": {
+        "LIGHTRAG_BASE_URL": "http://localhost:9621",
+        "LIGHTRAG_API_KEY": "",
+        "LIGHTRAG_TIMEOUT": "60.0"
+      },
+      "startup_command": "cd ../testing-agents-service/src/api_agent/mcp_servers && python rag_mcp_server.py --port 8002 --sse"
+    },
+    "mindmap": {
+      "name": "MindMap MCP Server",
+      "description": "思维导图生成服务",
+      "url": "http://localhost:8003/sse",
+      "transport": "sse",
+      "tools": [
+        "generate_mindmap",
+        "export_mindmap"
+      ],
+      "startup_command": "git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git && cd YuChenSSR_mindmap-mcp-server && npm install && npm start -- --port 8003"
+    }
+  },
+  "integration": {
+    "rag": {
+      "enabled": true,
+      "auto_retrieve": false,
+      "default_mode": "mix",
+      "top_k": 10,
+      "chunk_top_k": 5
+    },
+    "review": {
+      "enabled": true,
+      "auto_review": false,
+      "review_aspects": ["completeness", "accuracy", "executability", "clarity"]
+    },
+    "mindmap": {
+      "enabled": true,
+      "default_format": "markdown",
+      "supported_formats": ["markdown", "mermaid", "xmind"]
+    }
+  }
+}
+

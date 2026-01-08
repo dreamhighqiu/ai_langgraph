@@ -6,6 +6,12 @@
   "graphs": {
     "testcase_generator_agent": {
       "path": "./backend/app/agents/testcase_generator.py:agent"
+    },
+    "requirement_analyzer_agent": {
+      "path": "./backend/app/agents/requirement_analyzer.py:agent"
+    },
+    "defect_analyzer_agent": {
+      "path": "./backend/app/agents/defect_analyzer.py:agent"
     }
   },
   "_deployId": "id_MS81OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xjMlpBPT06NWU1NTdkOTQ=",

@@ -7,6 +7,7 @@ FastAPI 应用程序入口点
 
 
 from contextlib import asynccontextmanager
+import logging
 from uuid import UUID
 
 from fastapi import FastAPI
@@ -22,6 +23,8 @@ from app.models.base import Base
 from app.models.user import User
 
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VVhZMWVBPT06YmJlZTk1NmI=
+
+logger = logging.getLogger(__name__)
 
 async def ensure_default_user():
     """
@@ -48,9 +51,9 @@ async def ensure_default_user():
             )
             session.add(user)
             await session.commit()
-            print(f"✅ 已创建默认测试用户: {settings.default_user_email}")
+            logger.info("已创建默认测试用户: %s", settings.default_user_email)
         else:
-            print(f"✅ 默认测试用户已存在: {settings.default_user_email}")
+            logger.info("默认测试用户已存在: %s", settings.default_user_email)
 
 
 @asynccontextmanager

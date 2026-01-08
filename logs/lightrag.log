@@ -107,3 +107,18 @@ INFO: [] Process 922136 doc status load doc_status with 15 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
 INFO: 127.0.0.1:56613 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:58446 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:59536 - "POST /documents/paginated HTTP/1.1" 401
+INFO: 127.0.0.1:60332 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 401
+INFO: 127.0.0.1:49737 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:52454 - "POST /documents/paginated HTTP/1.1" 401
+INFO: 127.0.0.1:52454 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 401
+INFO: 127.0.0.1:52454 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+INFO: 127.0.0.1:52454 - "GET /auth-status HTTP/1.1" 200
+INFO: 127.0.0.1:58918 - "GET /docs HTTP/1.1" 200
+INFO: [] Graph truncated: 1321 nodes found, limited to 1000
+INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+INFO: 127.0.0.1:50060 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:59033 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:57196 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:55006 - "GET /docs HTTP/1.1" 200

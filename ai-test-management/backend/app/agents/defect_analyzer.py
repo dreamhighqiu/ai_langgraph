@@ -26,7 +26,7 @@ from app.agents.tools import DEFECT_ANALYSIS_TOOLS
 from app.agents.human_in_the_loop_middleware import get_human_in_the_loop_middleware
 
 # 配置 DeepSeek API
-os.environ["DEEPSEEK_API_KEY"] = "sk-8fd3aa4adc4446f4b483c1181dd4fa58"
+os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 llm = init_chat_model("deepseek:deepseek-chat")
 
 

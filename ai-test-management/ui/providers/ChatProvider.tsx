@@ -1,7 +1,7 @@
 
 
 "use client";
-// @ts-expect-error  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T1ZOWE53PT06MDU3ZTEzNjA=
+// @ts-ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T1ZOWE53PT06MDU3ZTEzNjA=
 
 import { ReactNode, createContext, useContext } from "react";
 import { Assistant } from "@langchain/langgraph-sdk";

@@ -8,7 +8,7 @@ import { Client } from "@langchain/langgraph-sdk";
 interface ClientContextValue {
   client: Client;
 }
-// @ts-expect-error  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1dwcGJRPT06YTU0MjcxOTQ=
+// @ts-ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1dwcGJRPT06YTU0MjcxOTQ=
 
 const ClientContext = createContext<ClientContextValue | null>(null);
 // FIXME  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y1dwcGJRPT06YTU0MjcxOTQ=

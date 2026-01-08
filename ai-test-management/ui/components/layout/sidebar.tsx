@@ -1,5 +1,5 @@
 
-// @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkRkaFZnPT06YjE4ZmQ5NTQ=
+// @ts-ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkRkaFZnPT06YjE4ZmQ5NTQ=
 
 "use client";
 
@@ -163,4 +163,3 @@ export function Sidebar({
   );
 }
 // NOTE  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VkRkaFZnPT06YjE4ZmQ5NTQ=
-

@@ -33,8 +33,8 @@ class Settings(BaseSettings):
     postgres_host: str = "localhost"
     postgres_port: int = 5432
     postgres_user: str = "postgres"
-    postgres_password: str = "postgres"
-    postgres_db: str = "ai_test_management"
+    postgres_password: str = "postgres123"
+    postgres_db: str = "ai_db"
     
     @property
     def postgres_url(self) -> str:
@@ -121,7 +121,7 @@ class Settings(BaseSettings):
     ]
 
     # PDF 解析配置
-    enable_pdf_multimodal: bool = False  # 是否启用 PDF 多模态图片解析（需要配置 DOUBAO_API_KEY）
+    enable_pdf_multimodal: bool = True  # 是否启用 PDF 多模态图片解析（需要配置 DOUBAO_API_KEY）
 
 
 @lru_cache

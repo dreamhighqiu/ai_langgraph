@@ -1,10 +1,10 @@
 
-// @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U2xOelpnPT06NDM3MTMwMmE=
+// @ts-ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U2xOelpnPT06NDM3MTMwMmE=
 
 import useSWRInfinite from "swr/infinite";
 import type { Thread } from "@langchain/langgraph-sdk";
 import { Client } from "@langchain/langgraph-sdk";
-import { getConfig } from "@/lib/langgraph/config";
+import { useQueryState } from "nuqs";
 // eslint-disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U2xOelpnPT06NDM3MTMwMmE=
 
 export interface ThreadItem {
@@ -15,7 +15,7 @@ export interface ThreadItem {
   description: string;
   assistantId?: string;
 }
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U2xOelpnPT06NDM3MTMwMmE=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U2xOelpnPT06NDM3MTMwMmE=
 
 const DEFAULT_PAGE_SIZE = 20;
 // TODO  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U2xOelpnPT06NDM3MTMwMmE=
@@ -24,17 +24,18 @@ export function useThreads(props: {
   status?: Thread["status"];
   limit?: number;
 }) {
+  const [assistantId] = useQueryState("assistantId");
   const pageSize = props.limit || DEFAULT_PAGE_SIZE;
 
   return useSWRInfinite(
     (pageIndex: number, previousPageData: ThreadItem[] | null) => {
-      const config = getConfig();
       const apiKey =
-        config?.langsmithApiKey ||
         process.env.NEXT_PUBLIC_LANGSMITH_API_KEY ||
         "";
+      const deploymentUrl =
+        process.env.NEXT_PUBLIC_LANGGRAPH_API_URL || "http://localhost:2026";
 
-      if (!config) {
+      if (!assistantId) {
         return null;
       }
 
@@ -47,8 +48,8 @@ export function useThreads(props: {
         kind: "threads" as const,
         pageIndex,
         pageSize,
-        deploymentUrl: config.deploymentUrl,
-        assistantId: config.assistantId,
+        deploymentUrl,
+        assistantId,
         apiKey,
         status: props?.status,
       };

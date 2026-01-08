@@ -28,5 +28,4 @@ const TooltipContent = React.forwardRef<
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
-// @ts-expect-error  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YUZrMGVRPT06MTIwNTZhZTA=
-
+// @ts-ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YUZrMGVRPT06MTIwNTZhZTA=

@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import type { TestCaseInfo } from "@/lib/api/types";
-// @ts-expect-error  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFVsSFRBPT06NzAwN2VlNzU=
+// @ts-ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFVsSFRBPT06NzAwN2VlNzU=
 
 interface Scenario {
   name: string;
@@ -184,4 +184,3 @@ export function AIGenerateResultDialog({
   );
 }
 // NOTE  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFVsSFRBPT06NzAwN2VlNzU=
-

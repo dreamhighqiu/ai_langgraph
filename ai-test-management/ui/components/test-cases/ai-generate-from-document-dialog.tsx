@@ -37,7 +37,7 @@ interface AIGenerateFromDocumentDialogProps {
   onSuccess?: (testCases: TestCaseInfo[]) => void;
   onOpenChat?: (prompt: string) => void;
 }
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFdjMmVnPT06OWJlZTUyYWU=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFdjMmVnPT06OWJlZTUyYWU=
 
 export function AIGenerateFromDocumentDialog({
   open,
@@ -441,4 +441,3 @@ ${folderId ? `目标文件夹ID：${folderId}` : ""}
   );
 }
 // TODO  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZFdjMmVnPT06OWJlZTUyYWU=
-

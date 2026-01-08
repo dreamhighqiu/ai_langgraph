@@ -59,7 +59,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { getFolders, moveFolder as moveFolderApi, copyFolder as copyFolderApi, type FolderTreeNode } from "@/lib/api/folders";
 import type { FolderInfo } from "@/lib/api/types";
 import { toast } from "sonner";
-// @ts-expect-error  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Wm5SQldnPT06NjExZmUyOTA=
+// @ts-ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Wm5SQldnPT06NjExZmUyOTA=
 
 interface FolderTreeProps {
   projectId: string;

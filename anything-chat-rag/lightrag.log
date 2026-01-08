@@ -5882,3 +5882,8 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-08 11:07:24,956 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
 2026-01-08 11:07:25,091 - uvicorn.access - INFO - 127.0.0.1:54948 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 2026-01-08 11:07:28,593 - uvicorn.access - INFO - 127.0.0.1:54948 - "GET /openapi.json HTTP/1.1" 200
+2026-01-08 12:53:44,329 - uvicorn.access - INFO - 127.0.0.1:62700 - "GET /docs HTTP/1.1" 200
+2026-01-08 12:53:44,378 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-08 12:53:45,146 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-08 12:53:45,333 - uvicorn.access - INFO - 127.0.0.1:50942 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-08 12:53:45,342 - uvicorn.access - INFO - 127.0.0.1:54159 - "GET /openapi.json HTTP/1.1" 200

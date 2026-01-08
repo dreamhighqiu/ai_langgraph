@@ -4,6 +4,7 @@
 
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 def _env(key: str, default: str = "") -> str:
@@ -23,7 +24,8 @@ class K6Config:
 
     # 工作空间根目录（FilesystemBackend 的根目录）
     # 所有虚拟路径都相对于此目录，如 /k6_scripts/test.js 映射到 {workspace_root}/k6_scripts/test.js
-    workspace_root: str = field(default_factory=lambda: _env("K6_WORKSPACE_ROOT", "."))
+    # Default to the service root (..../testing-agents-service) to avoid relying on process CWD.
+    workspace_root: str = field(default_factory=lambda: _env("K6_WORKSPACE_ROOT", str(Path(__file__).resolve().parents[2])))
 
     # MCP 服务配置
     rag_mcp_url: str = field(default_factory=lambda: _env("K6_RAG_MCP_URL", "http://127.0.0.1:8002/sse"))
@@ -46,4 +48,3 @@ class K6Config:
 
 # 默认配置实例
 DEFAULT_CONFIG = K6Config()
-

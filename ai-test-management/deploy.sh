@@ -8,6 +8,7 @@ LOG_DIR="${RUNTIME_DIR}/logs"
 mkdir -p "$PID_DIR" "$LOG_DIR"
 
 VENV_DIR="${ROOT}/.venv"
+# VENV_PY 将在 ensure_python_env() 中根据实际路径设置
 VENV_PY="${VENV_DIR}/bin/python"
 
 BACKEND_HOST="${BACKEND_HOST:-0.0.0.0}"
@@ -48,10 +49,54 @@ ensure_env_files() {
 
 ensure_python_env() {
   need uv
+  
+  # 检查是否有服务正在运行（Windows 上更新依赖时需要停止服务以避免文件锁定）
+  local running_services=()
+  for name in graph backend ui; do
+    if is_running "${name}"; then
+      running_services+=("${name}")
+    fi
+  done
+  
+  if [ ${#running_services[@]} -gt 0 ]; then
+    echo "⚠️  Warning: The following services are running: ${running_services[*]}"
+    echo "   Stopping them to avoid file locking issues during dependency update..."
+    for name in "${running_services[@]}"; do
+      stop_service "${name}"
+    done
+    sleep 2  # 等待进程完全退出
+  fi
+  
   echo "Installing/updating Python dependencies..."
-  (cd "${ROOT}" && uv sync)
+  # 使用 --reinstall 选项来修复可能损坏的包元数据（Windows 上常见问题）
+  # 这会强制重新安装所有包，但可以解决 "missing RECORD file" 等警告
+  if [ "${UV_REINSTALL:-0}" = "1" ] || [ -n "${UV_FORCE_REINSTALL:-}" ]; then
+    echo "  Using --reinstall to fix corrupted package metadata..."
+    (cd "${ROOT}" && uv sync --reinstall)
+  else
+    # 正常同步，但如果遇到错误（非警告）会自动重试 --reinstall
+    # 注意：uv sync 可能会显示警告但继续执行，只有真正的错误才会导致失败
+    if ! (cd "${ROOT}" && uv sync 2>&1); then
+      echo ""
+      echo "⚠️  Warning: uv sync encountered errors, retrying with --reinstall..."
+      echo "   This will fix corrupted package metadata (common on Windows)"
+      (cd "${ROOT}" && uv sync --reinstall)
+    fi
+  fi
+
+  # 重新检测 Python 路径（Windows 和 Unix 路径不同）
+  if [ -x "${VENV_DIR}/Scripts/python.exe" ]; then
+    VENV_PY="${VENV_DIR}/Scripts/python.exe"
+  elif [ -x "${VENV_DIR}/Scripts/python3.exe" ]; then
+    VENV_PY="${VENV_DIR}/Scripts/python3.exe"
+  elif [ -x "${VENV_DIR}/bin/python" ]; then
+    VENV_PY="${VENV_DIR}/bin/python"
+  elif [ -x "${VENV_DIR}/bin/python3" ]; then
+    VENV_PY="${VENV_DIR}/bin/python3"
+  fi
 
   [ -x "${VENV_PY}" ] || die "uv created no venv at: ${VENV_PY}"
+  echo "Using Python at: ${VENV_PY}"
 
   if [ -f "${ROOT}/backend/requirements.txt" ]; then
     (cd "${ROOT}" && uv pip install -r backend/requirements.txt)
@@ -314,6 +359,26 @@ logs() {
   esac
 }
 
+clean_venv() {
+  echo "Cleaning Python virtual environment..."
+  stop_service ui
+  stop_service backend
+  stop_service graph
+  sleep 2
+  
+  if [ -d "${VENV_DIR}" ]; then
+    echo "Removing ${VENV_DIR}..."
+    rm -rf "${VENV_DIR}"
+  fi
+  
+  if [ -d "${RUNTIME_DIR}" ]; then
+    echo "Removing ${RUNTIME_DIR}..."
+    rm -rf "${RUNTIME_DIR}"
+  fi
+  
+  echo "✅ Cleanup completed"
+}
+
 usage() {
   cat <<'EOF'
 Usage:
@@ -327,9 +392,11 @@ Usage:
   ./deploy.sh deps-ui                 Install/update UI dependencies only
   ./deploy.sh migrate                 Run database migrations
   ./deploy.sh health                  Check health of all services
+  ./deploy.sh clean                   Clean virtual environment and runtime files
 
 Environment overrides:
   BACKEND_HOST BACKEND_PORT GRAPH_HOST GRAPH_PORT UI_HOST UI_PORT
+  UV_REINSTALL=1                      Force reinstall all packages (fixes corrupted metadata)
 
 Notes:
   - Requires: uv, node, pnpm
@@ -337,6 +404,7 @@ Notes:
   - Logs/PIDs are written under: ai-test-management/.runtime/
   - If backend/.env is missing, backend/.env.example is copied in its place
   - Dependencies are automatically checked and updated on startup
+  - If you see "missing RECORD file" warnings, run: UV_REINSTALL=1 ./deploy.sh up
 EOF
 }
 
@@ -401,6 +469,9 @@ case "${cmd}" in
     ;;
   migrate)
     run_migrations
+    ;;
+  clean)
+    clean_venv
     ;;
   health)
     need curl || die "curl is required for health checks"

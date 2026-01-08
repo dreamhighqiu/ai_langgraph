@@ -43,6 +43,7 @@ from deepagents import create_deep_agent
 from deepagents.backends.filesystem import FilesystemBackend
 from ui_automation.config import DEFAULT_CONFIG, UIAutomationConfig
 from ui_automation.prompts import SYSTEM_PROMPT
+from ui_automation.run_storage import build_run_layout, get_current_run_id
 from ui_automation.tools.executor import create_playwright_executor_tool
 from ui_automation.tools.report import create_result_parser_tool
 from ui_automation.tools.script_generator import create_script_save_tool
@@ -67,6 +68,9 @@ def _save_base64_image(base64_data: str, message_id: str, config: UIAutomationCo
     """
     # 创建保存目录（虚拟路径转实际路径）
     images_dir = Path(config.workspace_root) / config.base64_images_dir.lstrip("/")
+    run_id = get_current_run_id(config)
+    if run_id:
+        images_dir = build_run_layout(config, run_id).run_dir_actual / "images"
     images_dir.mkdir(parents=True, exist_ok=True)
 
     # 生成文件名：消息ID_时间戳.png

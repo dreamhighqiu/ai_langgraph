@@ -87,6 +87,16 @@ Thumbs.db
 
 ai-test-management/.runtime/
 
+# UI automation runtime artifacts
+testing-agents-service/.ui_automation/
+testing-agents-service/playwright_reports/
+testing-agents-service/playwright_results/
+testing-agents-service/playwright_scripts/.run_configs/
+testing-agents-service/playwright_scripts/test-results/
+testing-agents-service/playwright_scripts/screenshot_*.png
+testing-agents-service/playwright_scripts/tests/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9]_[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].spec.ts
+testing-agents-service/playwright_scripts/tests/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9]_[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].spec.js
+
 # Git 子项目（使用 submodule 管理）
 #  如果需要作为 submodule，先忽略，然后使用 git submodule add
 #jmeter/

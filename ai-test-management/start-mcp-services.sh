@@ -10,6 +10,21 @@ PID_DIR="${RUNTIME_DIR}/pids"
 LOG_DIR="${RUNTIME_DIR}/logs"
 mkdir -p "$PID_DIR" "$LOG_DIR"
 
+VENV_DIR="${ROOT}/.venv"
+# 检测 Python 路径（Windows 和 Unix 路径不同）
+if [ -x "${VENV_DIR}/Scripts/python.exe" ]; then
+  VENV_PY="${VENV_DIR}/Scripts/python.exe"
+elif [ -x "${VENV_DIR}/Scripts/python3.exe" ]; then
+  VENV_PY="${VENV_DIR}/Scripts/python3.exe"
+elif [ -x "${VENV_DIR}/bin/python" ]; then
+  VENV_PY="${VENV_DIR}/bin/python"
+elif [ -x "${VENV_DIR}/bin/python3" ]; then
+  VENV_PY="${VENV_DIR}/bin/python3"
+else
+  # 如果没有虚拟环境，使用系统 Python
+  VENV_PY="python"
+fi
+
 # MCP 服务配置
 RAG_MCP_PORT="${RAG_MCP_PORT:-9002}"
 MINDMAP_MCP_PORT="${MINDMAP_MCP_PORT:-9003}"
@@ -82,9 +97,33 @@ start_rag_mcp() {
     die "RAG MCP Server not found at: ${rag_server_path}"
   fi
   
-  # 启动服务
+  # 检查并安装必要的依赖（使用 uv）
+  echo "Checking RAG MCP Server dependencies..."
+  local missing_deps=()
+  "${VENV_PY}" -c "import dotenv" 2>/dev/null || missing_deps+=("python-dotenv")
+  "${VENV_PY}" -c "import fastmcp" 2>/dev/null || missing_deps+=("fastmcp")
+  "${VENV_PY}" -c "import httpx" 2>/dev/null || missing_deps+=("httpx")
+  "${VENV_PY}" -c "import pydantic" 2>/dev/null || missing_deps+=("pydantic")
+  
+  if [ ${#missing_deps[@]} -gt 0 ]; then
+    warn "Missing dependencies for RAG MCP Server: ${missing_deps[*]}"
+    echo "Installing required packages using uv..."
+    
+    # 检查是否有 uv
+    if ! command -v uv >/dev/null 2>&1; then
+      die "uv is required but not found. Please install uv first: https://github.com/astral-sh/uv"
+    fi
+    
+    # 使用 uv pip install 安装依赖
+    (cd "${ROOT}" && uv pip install "${missing_deps[@]}" --quiet) || {
+      warn "Failed to install some dependencies. Trying to continue..."
+    }
+  fi
+  
+  # 启动服务（使用项目虚拟环境的 Python）
   cd "$(dirname "${rag_server_path}")"
-  nohup python rag_mcp_server.py --port "${RAG_MCP_PORT}" --sse \
+  export PYTHONPATH="${ROOT}/backend:${PYTHONPATH:-}"
+  nohup "${VENV_PY}" rag_mcp_server.py --port "${RAG_MCP_PORT}" --sse \
     > "$(logfile rag-mcp)" 2>&1 &
   
   local pid=$!
@@ -101,16 +140,56 @@ start_rag_mcp() {
 }
 
 start_mindmap_mcp() {
-  warn "MindMap MCP Server requires manual setup"
-  warn "Please see: ${ROOT}/QUICK_START.md for installation instructions"
-  echo ""
-  echo "  To install:"
-  echo "    cd ${ROOT}"
-  echo "    git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git"
-  echo "    cd YuChenSSR_mindmap-mcp-server"
-  echo "    npm install"
-  echo "    npm start -- --port ${MINDMAP_MCP_PORT}"
-  echo ""
+  if is_running "mindmap-mcp"; then
+    warn "MindMap MCP Server is already running"
+    return 0
+  fi
+  
+  echo "Starting MindMap MCP Server on port ${MINDMAP_MCP_PORT}..."
+  
+  # 检查 MindMap MCP Server 文件
+  local mindmap_server_path="${ROOT}/backend/app/mcp_servers/mindmap_mcp_server.py"
+  if [ ! -f "${mindmap_server_path}" ]; then
+    die "MindMap MCP Server not found at: ${mindmap_server_path}"
+  fi
+  
+  # 检查并安装必要的依赖
+  echo "Checking dependencies for MindMap MCP Server..."
+  if ! "${VENV_PY}" -c "import fastmcp" 2>/dev/null; then
+    echo "Installing fastmcp..."
+    # 尝试使用 uv，如果失败则使用 pip
+    if "${VENV_PY}" -m uv pip install fastmcp 2>/dev/null; then
+      echo "Installed fastmcp using uv"
+    elif "${VENV_PY}" -m pip install fastmcp 2>/dev/null; then
+      echo "Installed fastmcp using pip"
+    else
+      die "Failed to install fastmcp"
+    fi
+  fi
+  
+  # markmap 是可选的，使用 subprocess 方法（npx markmap-cli）
+  # 不需要安装 Python 的 markmap 包
+  
+  # 启动 MindMap MCP Server
+  nohup "${VENV_PY}" "${mindmap_server_path}" --port "${MINDMAP_MCP_PORT}" --sse >"$(logfile mindmap-mcp)" 2>&1 &
+  local pid=$!
+  
+  # 等待进程启动
+  sleep 1
+  if ! kill -0 "${pid}" 2>/dev/null; then
+    die "MindMap MCP Server failed to start. Check logs at: $(logfile mindmap-mcp)"
+  fi
+  
+  write_pid "mindmap-mcp" "${pid}"
+  
+  # 等待服务就绪
+  sleep 2
+  if ! is_running "mindmap-mcp"; then
+    die "MindMap MCP Server failed to start. Check logs at: $(logfile mindmap-mcp)"
+  fi
+  
+  info "MindMap MCP Server started (PID ${pid}), listening on http://localhost:${MINDMAP_MCP_PORT}"
+  info "Logs: $(logfile mindmap-mcp)"
 }
 
 status() {
@@ -119,10 +198,18 @@ status() {
   
   if is_running "rag-mcp"; then
     local pid
-    pid="$(cat "$(pidfile rag-mcp")")"
+    pid="$(cat "$(pidfile rag-mcp)")"
     info "RAG MCP Server: Running (PID ${pid}) on http://localhost:${RAG_MCP_PORT}"
   else
     warn "RAG MCP Server: Not running"
+  fi
+  
+  if is_running "mindmap-mcp"; then
+    local pid
+    pid="$(cat "$(pidfile mindmap-mcp)")"
+    info "MindMap MCP Server: Running (PID ${pid}) on http://localhost:${MINDMAP_MCP_PORT}"
+  else
+    warn "MindMap MCP Server: Not running"
   fi
   
   echo ""
@@ -137,16 +224,16 @@ Usage: $0 <command>
 Commands:
   start         启动所有 MCP 服务
   start-rag     仅启动 RAG MCP 服务
-  start-mindmap 显示 MindMap MCP 启动说明
+  start-mindmap 仅启动 MindMap MCP 服务
   stop          停止所有 MCP 服务
   restart       重启所有 MCP 服务
   status        查看 MCP 服务状态
-  logs [name]   查看服务日志 (rag-mcp)
+  logs [name]   查看服务日志 (rag-mcp, mindmap-mcp)
   help          显示此帮助信息
 
 Environment Variables:
   RAG_MCP_PORT      RAG MCP 端口 (默认: 9002)
-  MINDMAP_MCP_PORT  MindMap MCP 端口 (默认: 8003)
+  MINDMAP_MCP_PORT  MindMap MCP 端口 (默认: 9003)
 
 Examples:
   # 启动 RAG MCP 服务
@@ -181,13 +268,16 @@ case "${cmd}" in
     ;;
   stop)
     stop_service "rag-mcp"
+    stop_service "mindmap-mcp"
     echo ""
     info "All MCP services stopped"
     ;;
   restart)
     stop_service "rag-mcp"
+    stop_service "mindmap-mcp"
     sleep 1
     start_rag_mcp
+    start_mindmap_mcp
     status
     ;;
   status)

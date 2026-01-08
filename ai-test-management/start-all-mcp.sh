@@ -182,51 +182,42 @@ start_mindmap_mcp() {
   title "Step 3/3: Starting MindMap MCP Server"
   echo "Starting MindMap MCP Server on port ${MINDMAP_MCP_PORT}..."
   
-  # 检查 MindMap MCP Server
-  local mindmap_path="${ROOT}/YuChenSSR_mindmap-mcp-server"
-  if [ ! -d "${mindmap_path}" ]; then
-    warn "MindMap MCP Server 未安装"
-    echo ""
-    echo "  请先安装 MindMap MCP Server："
-    echo "    git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git"
-    echo "    cd YuChenSSR_mindmap-mcp-server"
-    echo "    npm install"
-    echo ""
-    read -p "是否自动安装？ (y/N) " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      echo "Cloning MindMap MCP Server..."
-      git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git "${mindmap_path}"
-      cd "${mindmap_path}"
-      echo "Installing dependencies..."
-      npm install
-      cd "${ROOT}"
-      info "MindMap MCP Server installed"
-    else
-      warn "跳过 MindMap MCP Server"
-      return 0
-    fi
+  # 检查 MindMap MCP Server 文件
+  local mindmap_server_path="${ROOT}/backend/app/mcp_servers/mindmap_mcp_server.py"
+  if [ ! -f "${mindmap_server_path}" ]; then
+    die "MindMap MCP Server not found at: ${mindmap_server_path}"
   fi
   
-  # 检查 node_modules
-  if [ ! -d "${mindmap_path}/node_modules" ]; then
-    echo "Installing MindMap MCP dependencies..."
-    cd "${mindmap_path}"
-    npm install
-    cd "${ROOT}"
+  # 检测 Python 路径（Windows 和 Unix 路径不同）
+  VENV_DIR="${ROOT}/.venv"
+  if [ -x "${VENV_DIR}/Scripts/python.exe" ]; then
+    VENV_PY="${VENV_DIR}/Scripts/python.exe"
+  elif [ -x "${VENV_DIR}/Scripts/python3.exe" ]; then
+    VENV_PY="${VENV_DIR}/Scripts/python3.exe"
+  elif [ -x "${VENV_DIR}/bin/python" ]; then
+    VENV_PY="${VENV_DIR}/bin/python"
+  elif [ -x "${VENV_DIR}/bin/python3" ]; then
+    VENV_PY="${VENV_DIR}/bin/python3"
+  else
+    VENV_PY="python"
   fi
   
-  # 启动服务
-  cd "${mindmap_path}"
-  nohup npm start -- --port "${MINDMAP_MCP_PORT}" \
+  # 检查并安装必要的依赖
+  echo "Checking dependencies for MindMap MCP Server..."
+  if ! "${VENV_PY}" -c "import fastmcp" 2>/dev/null; then
+    echo "Installing fastmcp..."
+    "${VENV_PY}" -m uv pip install fastmcp || die "Failed to install fastmcp"
+  fi
+  
+  # 启动 MindMap MCP Server
+  nohup "${VENV_PY}" "${mindmap_server_path}" --port "${MINDMAP_MCP_PORT}" --sse \
     > "$(logfile mindmap-mcp)" 2>&1 &
   
   local pid=$!
   write_pid "mindmap-mcp" "${pid}"
-  cd "${ROOT}"
   
   # 等待服务就绪
-  sleep 3
+  sleep 2
   if ! is_running "mindmap-mcp"; then
     warn "MindMap MCP Server 启动失败，查看日志: $(logfile mindmap-mcp)"
     return 1

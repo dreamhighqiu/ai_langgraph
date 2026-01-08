@@ -22,10 +22,9 @@
       "url": "http://localhost:9003/sse",
       "transport": "sse",
       "tools": [
-        "generate_mindmap",
-        "export_mindmap"
+        "generate_mindmap"
       ],
-      "startup_command": "git clone https://github.com/MCP-Mirror/YuChenSSR_mindmap-mcp-server.git && cd YuChenSSR_mindmap-mcp-server && npm install && npm start -- --port 9003"
+      "startup_command": "cd backend/app/mcp_servers && python mindmap_mcp_server.py --port 9003 --sse"
     }
   },
   "integration": {

@@ -14,8 +14,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.requirement_analysis import RequirementAnalysis
 from app.models.user import User
 from app.repositories.requirement_analysis import RequirementAnalysisRepository
-from app.repositories.user import UserRepository
-from app.repositories.project import ProjectRepository
+from app.repositories.user_repo import UserRepository
+from app.repositories.project_repo import ProjectRepository
 from app.schemas.requirement_analysis import (
     RequirementAnalysisCreate,
     RequirementAnalysisUpdate,
@@ -24,7 +24,7 @@ from app.schemas.requirement_analysis import (
     RequirementAnalysisDownloadResponse
 )
 from app.schemas.enums import RequirementAnalysisStatus
-from app.core.exceptions import (
+from app.utils.exceptions import (
     NotFoundException,
     BadRequestException,
     UnauthorizedException

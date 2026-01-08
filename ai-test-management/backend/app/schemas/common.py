@@ -29,6 +29,13 @@ class SuccessResponse(BaseResponse, Generic[T]):
     data: Optional[T] = Field(default=None, description="响应数据")
 
 
+class Response(BaseResponse, Generic[T]):
+    """通用响应模型（兼容 data + message）"""
+    success: bool = Field(default=True, description="API 调用成功")
+    data: Optional[T] = Field(default=None, description="响应数据")
+    message: Optional[str] = Field(default=None, description="响应消息")
+
+
 class MessageResponse(BaseResponse):
     """消息响应模型"""
     success: bool = Field(default=True, description="API 调用成功")
@@ -83,4 +90,3 @@ class AuditMixin(TimestampMixin):
     """审计信息混入类"""
     created_by: str = Field(..., description="创建者邮箱")
     updated_by: Optional[str] = Field(default=None, description="更新者邮箱")
-

@@ -248,3 +248,32 @@ class DefectSeverity(str, Enum):
     MAJOR = "major"           # 主要
     MINOR = "minor"           # 次要
     TRIVIAL = "trivial"       # 轻微
+
+
+class DefectPriority(str, Enum):
+    """
+    缺陷优先级
+    
+    用于标识缺陷的处理优先级
+    """
+    URGENT = "urgent"   # 紧急
+    HIGH = "high"       # 高
+    MEDIUM = "medium"   # 中
+    LOW = "low"         # 低
+
+
+class DefectType(str, Enum):
+    """
+    缺陷类型
+    
+    用于分类缺陷的类型
+    """
+    FUNCTIONAL = "functional"     # 功能缺陷
+    PERFORMANCE = "performance"   # 性能缺陷
+    SECURITY = "security"         # 安全缺陷
+    USABILITY = "usability"       # 可用性缺陷
+    COMPATIBILITY = "compatibility" # 兼容性缺陷
+    UI = "ui"                     # UI 缺陷
+    DATA = "data"                 # 数据缺陷
+    INTEGRATION = "integration"   # 集成缺陷
+    OTHER = "other"               # 其他类型

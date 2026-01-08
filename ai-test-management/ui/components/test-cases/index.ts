@@ -1,5 +1,5 @@
 
-// @ts-expect-error  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T1hwRGVnPT06ZDg0MTVmYTk=
+// @ts-ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T1hwRGVnPT06ZDg0MTVmYTk=
 
 export { FolderTree } from "./folder-tree";
 export type { FolderTreeRef } from "./folder-tree";
@@ -11,4 +11,3 @@ export { AIGenerateFromDocumentDialog } from "./ai-generate-from-document-dialog
 export { AIGenerateResultDialog } from "./ai-generate-result-dialog";
 export { AIChatDialog } from "./ai-chat-dialog";
 // TODO  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2T1hwRGVnPT06ZDg0MTVmYTk=
-

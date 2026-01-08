@@ -19,20 +19,21 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/08/26 16:15:43] INFO     Starting MCP server 'Fecmall Login' server.py:2618
+[01/08/26 17:52:16] INFO     Starting MCP server 'Fecmall Login' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8003/sse                           
-INFO:     Started server process [687640]
+INFO:     Started server process [934692]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-INFO:     127.0.0.1:57529 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63779 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63781 - "POST /messages/?session_id=6653073a08234e81811878bb875192fa HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:63783 - "POST /messages/?session_id=6653073a08234e81811878bb875192fa HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:63785 - "POST /messages/?session_id=6653073a08234e81811878bb875192fa HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:63795 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63799 - "POST /messages/?session_id=f9b3bc93f3674f0fa1a7a3540f0624a0 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:63806 - "POST /messages/?session_id=f9b3bc93f3674f0fa1a7a3540f0624a0 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:63811 - "POST /messages/?session_id=f9b3bc93f3674f0fa1a7a3540f0624a0 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:56281 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58281 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51088 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51090 - "POST /messages/?session_id=c53e880a76604a2cb36104a97bdff5b4 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51090 - "POST /messages/?session_id=c53e880a76604a2cb36104a97bdff5b4 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51090 - "POST /messages/?session_id=c53e880a76604a2cb36104a97bdff5b4 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52477 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52484 - "POST /messages/?session_id=ccecac73c61c4ce2b45302ea6304f44c HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52484 - "POST /messages/?session_id=ccecac73c61c4ce2b45302ea6304f44c HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:52484 - "POST /messages/?session_id=ccecac73c61c4ce2b45302ea6304f44c HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:54388 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58787 - "GET /sse HTTP/1.1" 200 OK

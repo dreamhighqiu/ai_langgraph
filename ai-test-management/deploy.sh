@@ -281,6 +281,9 @@ start_ui() {
       local need_build=0
       if [ ! -d ".next" ]; then
         need_build=1
+      elif [ ! -f ".next/BUILD_ID" ]; then
+        # `.next` 目录存在但缺少生产构建产物时，`next start` 会直接失败
+        need_build=1
       elif [ -f "package.json" ] && [ "package.json" -nt ".next" ]; then
         need_build=1
       elif [ -f "pnpm-lock.yaml" ] && [ "pnpm-lock.yaml" -nt ".next" ]; then
@@ -291,7 +294,8 @@ start_ui() {
         echo "Building UI for production..."
         pnpm build
       fi
-      nohup pnpm start -- -p "${UI_PORT}" >"$(logfile ui)" 2>&1 &
+      # Next.js start 命令使用环境变量 PORT 而不是 -p 参数
+      PORT="${UI_PORT}" nohup pnpm start >"$(logfile ui)" 2>&1 &
     fi
     write_pid ui "$!"
   )
@@ -508,7 +512,7 @@ case "${cmd}" in
     run_migrations
     
     # 按依赖顺序启动服务，并等待每个服务就绪
-    local failed_services=()
+    failed_services=()
     
     # 1. 先启动 Graph API (Backend 依赖它)
     echo ""

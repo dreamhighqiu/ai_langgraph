@@ -102,14 +102,14 @@ const priorityLabels: Record<Priority, string> = {
   medium: "中",
   low: "低",
 };
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WTFKc2RnPT06YWUyZjkxNmE=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WTFKc2RnPT06YWUyZjkxNmE=
 
 const statusLabels: Record<TestCaseState, string> = {
   active: "激活",
   draft: "草稿",
   deprecated: "废弃",
 };
-// @ts-expect-error  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WTFKc2RnPT06YWUyZjkxNmE=
+// @ts-ignore  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WTFKc2RnPT06YWUyZjkxNmE=
 
 export function TestCaseList({
   testCases,
@@ -610,4 +610,3 @@ export function TestCaseList({
     </div>
   );
 }
-

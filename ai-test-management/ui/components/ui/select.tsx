@@ -6,7 +6,7 @@ import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
-// @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xkeVRRPT06YzE4NGE2NGI=
+// @ts-ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xkeVRRPT06YzE4NGE2NGI=
 
 const Select = SelectPrimitive.Root;
 const SelectGroup = SelectPrimitive.Group;
@@ -145,7 +145,7 @@ const SelectSeparator = React.forwardRef<
   />
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
-// @ts-expect-error  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xkeVRRPT06YzE4NGE2NGI=
+// @ts-ignore  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2Y2xkeVRRPT06YzE4NGE2NGI=
 
 export {
   Select,
@@ -159,4 +159,3 @@ export {
   SelectScrollUpButton,
   SelectScrollDownButton,
 };
-

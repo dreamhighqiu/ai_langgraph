@@ -46,5 +46,4 @@ const ResizableHandle = ({
 );
 
 export { ResizablePanelGroup, ResizablePanel, ResizableHandle };
-// @ts-expect-error  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U1hGT2R3PT06MTFjZmIzYTA=
-
+// @ts-ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U1hGT2R3PT06MTFjZmIzYTA=

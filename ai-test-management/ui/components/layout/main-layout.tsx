@@ -1,5 +1,5 @@
 
-// @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TUhaMFRRPT06MTkzYWRhNzI=
+// @ts-ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TUhaMFRRPT06MTkzYWRhNzI=
 
 "use client";
 // eslint-disable  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TUhaMFRRPT06MTkzYWRhNzI=
@@ -83,4 +83,4 @@ export function MainLayout({ children, title, headerContent }: MainLayoutProps) 
   );
 }
 
-// @ts-expect-error  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TUhaMFRRPT06MTkzYWRhNzI=
+// @ts-ignore  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2TUhaMFRRPT06MTkzYWRhNzI=

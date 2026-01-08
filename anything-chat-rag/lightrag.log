@@ -6005,3 +6005,18 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-08 17:42:26,932 - uvicorn.error - INFO - Application startup complete.
 2026-01-08 17:42:26,934 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
 2026-01-08 17:42:27,112 - uvicorn.access - INFO - 127.0.0.1:56613 - "GET /docs HTTP/1.1" 200
+2026-01-08 17:53:26,531 - uvicorn.access - INFO - 127.0.0.1:58446 - "GET /docs HTTP/1.1" 200
+2026-01-08 17:53:26,561 - uvicorn.access - INFO - 127.0.0.1:59536 - "POST /documents/paginated HTTP/1.1" 401
+2026-01-08 17:53:26,571 - uvicorn.access - INFO - 127.0.0.1:60332 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 401
+2026-01-08 17:53:32,337 - uvicorn.access - INFO - 127.0.0.1:49737 - "GET /docs HTTP/1.1" 200
+2026-01-08 17:53:32,524 - uvicorn.access - INFO - 127.0.0.1:52454 - "POST /documents/paginated HTTP/1.1" 401
+2026-01-08 17:53:32,709 - uvicorn.access - INFO - 127.0.0.1:52454 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 401
+2026-01-08 17:53:34,099 - uvicorn.access - INFO - 127.0.0.1:52454 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2026-01-08 17:53:34,721 - uvicorn.access - INFO - 127.0.0.1:52454 - "GET /auth-status HTTP/1.1" 200
+2026-01-08 17:53:50,351 - uvicorn.access - INFO - 127.0.0.1:58918 - "GET /docs HTTP/1.1" 200
+2026-01-08 17:53:50,578 - lightrag - INFO - [] Graph truncated: 1321 nodes found, limited to 1000
+2026-01-08 17:53:50,653 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
+2026-01-08 17:53:50,884 - uvicorn.access - INFO - 127.0.0.1:50060 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-08 17:55:30,999 - uvicorn.access - INFO - 127.0.0.1:59033 - "GET /openapi.json HTTP/1.1" 200
+2026-01-08 18:07:05,416 - uvicorn.access - INFO - 127.0.0.1:57196 - "GET /openapi.json HTTP/1.1" 200
+2026-01-08 19:18:51,609 - uvicorn.access - INFO - 127.0.0.1:55006 - "GET /docs HTTP/1.1" 200

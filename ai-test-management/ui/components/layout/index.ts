@@ -1,5 +1,5 @@
 
-// @ts-expect-error  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UmtoMlVRPT06YzQyZjJlMjY=
+// @ts-ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2UmtoMlVRPT06YzQyZjJlMjY=
 
 export { Sidebar } from "./sidebar";
 export { Header } from "./header";

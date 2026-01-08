@@ -16,7 +16,7 @@ import type { UseStreamThread } from "@langchain/langgraph-sdk/react";
 import type { TodoItem } from "@/lib/langgraph/types";
 import { useClient } from "@/providers/ClientProvider";
 import { useQueryState } from "nuqs";
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VG1kSlRnPT06NmFiNDYyZDA=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VG1kSlRnPT06NmFiNDYyZDA=
 
 export type StateType = {
   messages: Message[];

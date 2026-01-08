@@ -40,5 +40,4 @@ function Badge({ className, variant, ...props }: BadgeProps) {
 }
 
 export { Badge, badgeVariants };
-// @ts-expect-error  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V21GNlJ3PT06ZWM0Zjk0MWI=
-
+// @ts-ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2V21GNlJ3PT06ZWM0Zjk0MWI=

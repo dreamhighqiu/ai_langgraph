@@ -1,5 +1,5 @@
 
-// @ts-expect-error  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdwMWJ3PT06YjY2MTRiMDY=
+// @ts-ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdwMWJ3PT06YjY2MTRiMDY=
 
 "use client"
 
@@ -8,7 +8,7 @@ import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
 import { Circle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-// @ts-expect-error  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdwMWJ3PT06YjY2MTRiMDY=
+// @ts-ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdwMWJ3PT06YjY2MTRiMDY=
 
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,

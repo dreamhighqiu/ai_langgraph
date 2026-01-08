@@ -1,45 +1,37 @@
-"""Playwright脚本执行工具."""
+"""Playwright script execution tool.
 
+Key behaviors:
+- Each execution is isolated into a per-run directory under `playwright_reports/report_<run_id>`.
+- The HTML report is generated into that same directory (so it's never empty).
+- Screenshots/traces/videos/etc. are written under `artifacts/` inside the run directory.
+- The test script is copied into `playwright_scripts/tests` before running.
+"""
 
+from __future__ import annotations
 
 import json
 import os
 import platform
 import subprocess
-import uuid
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from langchain_core.tools import StructuredTool, BaseTool
+from langchain_core.tools import BaseTool, StructuredTool
 
-from ui_automation.config import UIAutomationConfig, DEFAULT_CONFIG
-
-# pylint: disable  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZERGcVJRPT06MDUyMGE3M2M=
-
-def _resolve_virtual_path(virtual_path: str, workspace_root: str) -> Path:
-    """将虚拟路径解析为实际文件系统路径."""
-    relative_path = virtual_path.lstrip("/")
-    return Path(workspace_root).resolve() / relative_path
-
-
-def _to_virtual_path(results_dir: str, result_name: str) -> str:
-    """生成虚拟路径."""
-    if not results_dir.startswith("/"):
-        results_dir = "/" + results_dir
-    results_dir = results_dir.rstrip("/")
-    return f"{results_dir}/{result_name}"
+from ui_automation.config import DEFAULT_CONFIG, UIAutomationConfig
+from ui_automation.run_storage import (
+    build_run_layout,
+    extract_run_id,
+    generate_run_id,
+    set_current_run_id,
+    join_virtual,
+    resolve_virtual_path,
+    sanitize_basename,
+    to_posix_path,
+)
 
 
 def create_playwright_executor_tool(config: UIAutomationConfig | None = None) -> BaseTool:
-    """创建Playwright脚本执行工具.
-
-    Args:
-        config: UI自动化配置
-
-    Returns:
-        Playwright执行工具
-    """
     cfg = config or DEFAULT_CONFIG
 
     def run_playwright_script(
@@ -48,189 +40,278 @@ def create_playwright_executor_tool(config: UIAutomationConfig | None = None) ->
         headless: bool | None = None,
         reporter: str = "html,json",
     ) -> str:
-        """执行Playwright测试脚本.
-
-        Args:
-            script_path: Playwright脚本虚拟路径（以 / 开头，如 /playwright_scripts/tests/test.spec.ts）
-            browser: 浏览器类型（chromium/firefox/webkit），默认使用配置中的浏览器
-            headless: 是否无头模式，默认使用配置中的设置
-            reporter: 报告格式（html/json/list/dot/line），可以组合使用，用逗号分隔
-
-        Returns:
-            测试结果（JSON格式）
-        """
-        # 将虚拟路径解析为实际路径
-        actual_script_path = _resolve_virtual_path(script_path, cfg.workspace_root)
-
+        actual_script_path = resolve_virtual_path(script_path, cfg.workspace_root)
         if not actual_script_path.exists():
-            return json.dumps({
-                "success": False,
-                "error": f"脚本文件不存在: {script_path}",
-                "actual_path": str(actual_script_path),
-            }, ensure_ascii=False, indent=2)
+            return json.dumps(
+                {
+                    "success": False,
+                    "error": f"脚本文件不存在: {script_path}",
+                    "actual_path": str(actual_script_path),
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
 
-        # 确定 Playwright 项目的工作目录
-        # 如果脚本在 playwright_scripts 目录下，使用该目录作为工作目录
-        playwright_cwd = Path(cfg.workspace_root).resolve()
-        if "playwright_scripts" in actual_script_path.parts:
-            # 找到 playwright_scripts 目录
-            for i, part in enumerate(actual_script_path.parts):
-                if part == "playwright_scripts":
-                    playwright_cwd = Path(*actual_script_path.parts[:i+1])
-                    break
+        run_id = (
+            extract_run_id(actual_script_path.name)
+            or extract_run_id(str(actual_script_path.parent))
+            or generate_run_id()
+        )
+        set_current_run_id(cfg, run_id)
+        layout = build_run_layout(cfg, run_id)
+        layout.run_dir_actual.mkdir(parents=True, exist_ok=True)
+        layout.report_dir_actual.mkdir(parents=True, exist_ok=True)
+        layout.artifacts_dir_actual.mkdir(parents=True, exist_ok=True)
 
-        # 确保结果目录存在
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        result_id = str(uuid.uuid4())[:8]
-# type: ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZERGcVJRPT06MDUyMGE3M2M=
-        
-        # JSON结果文件
-        json_result_name = f"result_{timestamp}_{result_id}.json"
-        virtual_json_path = _to_virtual_path(cfg.results_dir, json_result_name)
-        actual_json_path = _resolve_virtual_path(virtual_json_path, cfg.workspace_root)
-        actual_json_path.parent.mkdir(parents=True, exist_ok=True)
+        # Ensure the script is present in the run directory too (for auditing/debugging).
+        run_script_name = actual_script_path.name
+        if not extract_run_id(run_script_name):
+            base = sanitize_basename(run_script_name)
+            ext = ""
+            if base.endswith(".spec.ts"):
+                base = base[: -len(".spec.ts")]
+                ext = ".spec.ts"
+            elif base.endswith(".spec.js"):
+                base = base[: -len(".spec.js")]
+                ext = ".spec.js"
+            if not base:
+                base = "test"
+            if not ext:
+                ext = ".spec.ts"
+            run_script_name = f"{base}_{run_id}{ext}"
 
-        # HTML报告目录
-        html_report_name = f"report_{timestamp}_{result_id}"
-        virtual_html_path = _to_virtual_path(cfg.reports_dir, html_report_name)
-        actual_html_path = _resolve_virtual_path(virtual_html_path, cfg.workspace_root)
-        actual_html_path.mkdir(parents=True, exist_ok=True)
+        run_script_actual = layout.run_dir_actual / run_script_name
+        if run_script_actual.resolve() != actual_script_path.resolve():
+            run_script_actual.write_bytes(actual_script_path.read_bytes())
 
-        # 构建Playwright命令
-        # 在 Windows 上，如果使用 npx，需要使用 npx.cmd
+        playwright_project_dir = _find_playwright_project_dir(cfg, actual_script_path)
+        tests_dir = playwright_project_dir / "tests"
+        tests_dir.mkdir(parents=True, exist_ok=True)
+
+        executable_script_actual = tests_dir / run_script_name
+        executable_script_actual.write_bytes(run_script_actual.read_bytes())
+        executable_script_virtual = join_virtual(cfg.scripts_dir, run_script_name)
+
+        # Prepare a run-specific Playwright config under playwright_scripts, so module resolution works.
+        run_config_path = _write_run_config(
+            playwright_project_dir=playwright_project_dir,
+            report_dir_actual=layout.report_dir_actual,
+            artifacts_dir_actual=layout.artifacts_dir_actual,
+            json_output_file_actual=layout.result_json_actual,
+        )
+
+        # Build Playwright command
         playwright_binary = cfg.playwright_binary
         if platform.system() == "Windows" and playwright_binary == "npx":
             playwright_binary = "npx.cmd"
 
         cmd = [playwright_binary] + cfg.playwright_args
-        
-        # 添加浏览器参数
+        cmd.extend(["-c", str(run_config_path)])
+
         browser_type = browser or cfg.default_browser
         cmd.extend(["--project", browser_type])
-        
-        # 添加headless参数
+
         is_headless = headless if headless is not None else cfg.default_headless
         if not is_headless:
             cmd.append("--headed")
-        
-        # 准备环境变量用于 reporter 输出路径
-        env = os.environ.copy()
 
-        # 添加reporter参数
-        # 对于 json 和 html reporter，使用环境变量设置输出路径
-        reporters = reporter.split(",")
-        for rep in reporters:
-            rep = rep.strip()
-            if rep == "html":
-                # HTML reporter 使用 outputFolder 选项
-                try:
-                    relative_html_path = os.path.relpath(actual_html_path, playwright_cwd)
-                    # 转换为正斜杠格式（Playwright 在 Windows 上也接受）
-                    relative_html_path = relative_html_path.replace("\\", "/")
-                    cmd.extend(["--reporter", f"html={relative_html_path}"])
-                except ValueError:
-                    # 如果无法计算相对路径，使用绝对路径并转换为正斜杠
-                    abs_path = str(actual_html_path).replace("\\", "/")
-                    cmd.extend(["--reporter", f"html={abs_path}"])
-            elif rep == "json":
-                # JSON reporter 使用环境变量设置输出文件
-                try:
-                    relative_json_path = os.path.relpath(actual_json_path, playwright_cwd)
-                    # 转换为正斜杠格式
-                    relative_json_path = relative_json_path.replace("\\", "/")
-                    env["PLAYWRIGHT_JSON_OUTPUT_FILE"] = relative_json_path
-                except ValueError:
-                    # 如果无法计算相对路径，使用绝对路径
-                    abs_path = str(actual_json_path).replace("\\", "/")
-                    env["PLAYWRIGHT_JSON_OUTPUT_FILE"] = abs_path
-                cmd.extend(["--reporter", "json"])
-            else:
-                cmd.extend(["--reporter", rep])
-# noqa  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZERGcVJRPT06MDUyMGE3M2M=
+        # Force at least html+json for non-empty report + machine-readable result.
+        requested_reporters = [r.strip() for r in (reporter or "").split(",") if r.strip()]
+        reporter_used = ",".join(sorted(set(requested_reporters + ["html", "json"])))
 
-        # 添加脚本路径（相对于工作目录）
+        # Only run the single file we prepared in tests/.
+        # Note: `--project` accepts multiple values, so we must use `--` to end option parsing.
+        cmd.append("--")
         try:
-            relative_script_path = actual_script_path.relative_to(playwright_cwd)
-            # 转换为正斜杠格式（Playwright 在 Windows 上也接受）
-            script_path_str = str(relative_script_path).replace("\\", "/")
-            cmd.append(script_path_str)
+            relative_script = executable_script_actual.relative_to(playwright_project_dir)
+            cmd.append(str(relative_script).replace("\\", "/"))
         except ValueError:
-            # 如果无法计算相对路径，使用绝对路径并转换为正斜杠
-            script_path_str = str(actual_script_path).replace("\\", "/")
-            cmd.append(script_path_str)
+            cmd.append(str(executable_script_actual).replace("\\", "/"))
 
+        env = os.environ.copy()
         try:
-            # 执行Playwright（使用 playwright_cwd 作为工作目录）
             result = subprocess.run(
                 cmd,
                 capture_output=True,
                 text=True,
-                encoding='utf-8',  # 在 Windows 上使用 UTF-8 编码
-                errors='replace',  # 遇到无法解码的字符时替换
-                timeout=600,  # 10分钟超时
-                cwd=str(playwright_cwd),
-                env=env,  # 传递环境变量（包含 PLAYWRIGHT_JSON_OUTPUT_FILE）
+                encoding="utf-8",
+                errors="replace",
+                timeout=600,
+                cwd=str(playwright_project_dir),
+                env=env,
+            )
+        except subprocess.TimeoutExpired:
+            return json.dumps(
+                {
+                    "success": False,
+                    "error": "Playwright 执行超时（10分钟）",
+                    "script_path": script_path,
+                    "run_id": run_id,
+                    "run_dir": layout.run_dir_virtual,
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        except FileNotFoundError:
+            return json.dumps(
+                {
+                    "success": False,
+                    "error": f"Playwright 未安装或路径错误: {cfg.playwright_binary}",
+                    "script_path": script_path,
+                    "run_id": run_id,
+                    "run_dir": layout.run_dir_virtual,
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        except Exception as exc:
+            return json.dumps(
+                {
+                    "success": False,
+                    "error": str(exc),
+                    "script_path": script_path,
+                    "run_id": run_id,
+                    "run_dir": layout.run_dir_virtual,
+                },
+                ensure_ascii=False,
+                indent=2,
             )
 
-            # 解析结果
-            output = {
-                "success": result.returncode == 0,
-                "script_path": script_path,
-                "browser": browser_type,
-                "headless": is_headless,
-                "json_result": virtual_json_path if actual_json_path.exists() else None,
-                "html_report": virtual_html_path if actual_html_path.exists() else None,
-                "stdout": result.stdout,
-                "stderr": result.stderr,
-                "return_code": result.returncode,
-            }
+        # Copy result json into the legacy global results dir for backward compatibility.
+        global_result_virtual = join_virtual(cfg.results_dir, f"result_{run_id}.json")
+        global_result_actual = resolve_virtual_path(global_result_virtual, cfg.workspace_root)
+        if layout.result_json_actual.exists():
+            global_result_actual.parent.mkdir(parents=True, exist_ok=True)
+            global_result_actual.write_bytes(layout.result_json_actual.read_bytes())
 
-            # 如果有JSON结果文件，读取并解析
-            if actual_json_path.exists():
-                try:
-                    with open(actual_json_path, "r", encoding="utf-8") as f:
-                        test_results = json.load(f)
-                        output["summary"] = _extract_summary(test_results)
-                except Exception as e:
-                    output["parse_error"] = str(e)
+        index_html = layout.report_dir_actual / "index.html"
+        html_report_ok = index_html.exists()
 
-            return json.dumps(output, ensure_ascii=False, indent=2)
+        # Convenience entrypoint: keep `/playwright_reports/report_<run_id>/index.html`
+        # as a stable path that redirects to `/report/index.html`.
+        root_index = layout.run_dir_actual / "index.html"
+        if html_report_ok:
+            try:
+                root_index.write_text(
+                    "<!doctype html><meta charset=\"utf-8\" />"
+                    "<meta http-equiv=\"refresh\" content=\"0; url=./report/index.html\" />"
+                    "<title>Playwright Report</title>",
+                    encoding="utf-8",
+                )
+            except Exception:
+                pass
 
-        except subprocess.TimeoutExpired:
-            return json.dumps({
-                "success": False,
-                "error": "Playwright执行超时（>10分钟）",
-                "script_path": script_path,
-            }, ensure_ascii=False, indent=2)
-        except FileNotFoundError:
-            return json.dumps({
-                "success": False,
-                "error": f"Playwright未安装或路径错误: {cfg.playwright_binary}",
-                "script_path": script_path,
-            }, ensure_ascii=False, indent=2)
-        except Exception as e:
-            return json.dumps({
-                "success": False,
-                "error": str(e),
-                "script_path": script_path,
-            }, ensure_ascii=False, indent=2)
+        output: dict[str, Any] = {
+            "success": result.returncode == 0,
+            "run_id": run_id,
+            "run_dir": layout.run_dir_virtual,
+            "script_path": script_path,
+            "executed_script": executable_script_virtual,
+            "browser": browser_type,
+            "headless": is_headless,
+            "reporter_requested": reporter,
+            "reporter_used": reporter_used,
+            "json_result_run": join_virtual(layout.run_dir_virtual, layout.result_json_actual.name)
+            if layout.result_json_actual.exists()
+            else None,
+            "json_result_global": global_result_virtual if global_result_actual.exists() else None,
+            "html_report_dir": layout.report_dir_virtual,
+            "html_report_index": join_virtual(layout.report_dir_virtual, "index.html") if html_report_ok else None,
+            "html_report_root_index": join_virtual(layout.run_dir_virtual, "index.html") if html_report_ok else None,
+            "artifacts_dir": join_virtual(layout.run_dir_virtual, "artifacts"),
+            "command": " ".join(cmd),
+            "return_code": result.returncode,
+            "stdout": result.stdout,
+            "stderr": result.stderr,
+        }
+
+        if layout.result_json_actual.exists():
+            try:
+                with open(layout.result_json_actual, "r", encoding="utf-8") as f:
+                    test_results = json.load(f)
+                output["summary"] = _extract_summary(test_results)
+            except Exception as exc:
+                output["parse_error"] = str(exc)
+
+        return json.dumps(output, ensure_ascii=False, indent=2)
 
     return StructuredTool.from_function(
         name="run_playwright_script",
         func=run_playwright_script,
-        description="""执行Playwright测试脚本。
-参数：
-- script_path: 脚本虚拟路径（必需，如 /playwright_scripts/test.spec.ts）
-- browser: 浏览器类型（可选，chromium/firefox/webkit，默认chromium）
-- headless: 是否无头模式（可选，默认True）
-- reporter: 报告格式（可选，默认 'html,json'，可选 html/json/list/dot/line）
-
-返回JSON格式的测试结果，包括成功状态、结果文件路径、测试摘要等。""",
+        description=(
+            "执行 Playwright 测试脚本（会按单次对话/run隔离输出目录）。\n"
+            "参数:\n"
+            "- script_path: 脚本虚拟路径（如 /playwright_scripts/tests/test_xxx.spec.ts 或 /playwright_reports/report_xxx/test_xxx.spec.ts）\n"
+            "- browser: chromium/firefox/webkit（可选）\n"
+            "- headless: 是否无头（可选，默认按配置）\n"
+            "- reporter: 期望 reporter（可选，默认 html,json；实际会强制包含 html+json 以保证报告不为空）\n"
+            "返回: JSON（包含 run_dir/report/index.html、result.json、artifacts 目录等路径）。"
+        ),
     )
 
 
+def _find_playwright_project_dir(cfg: UIAutomationConfig, actual_script_path: Path) -> Path:
+    parts = list(actual_script_path.resolve().parts)
+    if "playwright_scripts" in parts:
+        idx = parts.index("playwright_scripts")
+        return Path(*parts[: idx + 1])
+
+    candidate = Path(cfg.workspace_root).resolve() / "playwright_scripts"
+    if candidate.exists():
+        return candidate
+
+    raise FileNotFoundError(f"playwright_scripts directory not found (workspace_root={cfg.workspace_root})")
+
+
+def _write_run_config(
+    playwright_project_dir: Path,
+    report_dir_actual: Path,
+    artifacts_dir_actual: Path,
+    json_output_file_actual: Path,
+) -> Path:
+    config_dir = playwright_project_dir / ".run_configs"
+    config_dir.mkdir(parents=True, exist_ok=True)
+
+    # Use a stable filename so repeated retries reuse the same config for the same run dir.
+    # Note: run_id is embedded in the run_dir name already; use the folder name here too.
+    config_path = config_dir / f"{report_dir_actual.parent.name}.config.cjs"
+
+    report_dir_posix = to_posix_path(report_dir_actual)
+    artifacts_dir_posix = to_posix_path(artifacts_dir_actual)
+    json_output_posix = to_posix_path(json_output_file_actual)
+
+    # Config file must live under playwright_scripts so `@playwright/test` resolves from node_modules.
+    config_content = f"""\
+const path = require('path');
+const {{ defineConfig, devices }} = require('@playwright/test');
+
+module.exports = defineConfig({{
+  testDir: path.resolve(__dirname, '..', 'tests'),
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  outputDir: {json.dumps(artifacts_dir_posix)},
+  reporter: [
+    ['html', {{ outputFolder: {json.dumps(report_dir_posix)}, open: 'never' }}],
+    ['json', {{ outputFile: {json.dumps(json_output_posix)} }}],
+  ],
+  use: {{
+    trace: 'on-first-retry',
+  }},
+  projects: [
+    {{ name: 'chromium', use: {{ ...devices['Desktop Chrome'] }} }},
+    {{ name: 'firefox', use: {{ ...devices['Desktop Firefox'] }} }},
+    {{ name: 'webkit', use: {{ ...devices['Desktop Safari'] }} }},
+  ],
+}});
+"""
+
+    config_path.write_text(config_content, encoding="utf-8")
+    return config_path
+
+
 def _extract_summary(test_results: dict[str, Any]) -> dict[str, Any]:
-    """从Playwright JSON结果中提取摘要信息."""
     summary = {
         "total": 0,
         "passed": 0,
@@ -238,28 +319,27 @@ def _extract_summary(test_results: dict[str, Any]) -> dict[str, Any]:
         "skipped": 0,
         "duration": 0,
     }
-# pragma: no cover  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZERGcVJRPT06MDUyMGE3M2M=
-    
-    # Playwright JSON格式解析
+
     if "suites" in test_results:
         for suite in test_results.get("suites", []):
             _count_tests(suite, summary)
-    
+
     if "stats" in test_results:
         stats = test_results["stats"]
-        summary.update({
-            "total": stats.get("expected", 0) + stats.get("unexpected", 0) + stats.get("skipped", 0),
-            "passed": stats.get("expected", 0),
-            "failed": stats.get("unexpected", 0),
-            "skipped": stats.get("skipped", 0),
-            "duration": stats.get("duration", 0),
-        })
-    
+        summary.update(
+            {
+                "total": stats.get("expected", 0) + stats.get("unexpected", 0) + stats.get("skipped", 0),
+                "passed": stats.get("expected", 0),
+                "failed": stats.get("unexpected", 0),
+                "skipped": stats.get("skipped", 0),
+                "duration": stats.get("duration", 0),
+            }
+        )
+
     return summary
 
 
-def _count_tests(suite: dict, summary: dict) -> None:
-    """递归统计测试用例."""
+def _count_tests(suite: dict[str, Any], summary: dict[str, Any]) -> None:
     for spec in suite.get("specs", []):
         for test in spec.get("tests", []):
             summary["total"] += 1
@@ -272,8 +352,6 @@ def _count_tests(suite: dict, summary: dict) -> None:
                 elif status == "skipped":
                     summary["skipped"] += 1
                 summary["duration"] += result.get("duration", 0)
-    
-    # 递归处理子suite
+
     for sub_suite in suite.get("suites", []):
         _count_tests(sub_suite, summary)
-

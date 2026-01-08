@@ -4,6 +4,7 @@
 
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 def _env(key: str, default: str = "") -> str:
@@ -34,7 +35,8 @@ class UIAutomationConfig:
 
     # 工作空间根目录（FilesystemBackend 的根目录）
     # 所有虚拟路径都相对于此目录，如 /playwright_scripts/test.spec.ts 映射到 {workspace_root}/playwright_scripts/test.spec.ts
-    workspace_root: str = field(default_factory=lambda: _env("UI_WORKSPACE_ROOT", "."))
+    # Default to the service root (..../testing-agents-service) to avoid relying on process CWD.
+    workspace_root: str = field(default_factory=lambda: _env("UI_WORKSPACE_ROOT", str(Path(__file__).resolve().parents[2])))
 
     # MCP 服务配置
     # mcp-chrome 服务器配置
@@ -74,4 +76,3 @@ class UIAutomationConfig:
 
 # 默认配置实例
 DEFAULT_CONFIG = UIAutomationConfig()
-

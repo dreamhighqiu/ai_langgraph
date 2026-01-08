@@ -20,6 +20,7 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
+        extra="ignore",  # 忽略未定义的字段，避免 LANGGRAPH_* 等变量导致验证错误
     )
     
     # 应用基础配置

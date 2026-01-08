@@ -1,64 +1,28 @@
-"""Playwright脚本生成和保存工具."""
+"""Playwright test script generator + saver.
 
+This tool saves the generated script into a run-scoped folder under
+`playwright_reports/report_<run_id>` and also copies it into the executable
+Playwright `tests` directory (`playwright_scripts/tests`) so it can be executed.
+"""
 
+from __future__ import annotations
 
-import os
-from datetime import datetime
-from pathlib import Path
 from typing import Literal
-# pragma: no cover  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U21rNFNRPT06N2IyNjI4NGY=
 
-from langchain_core.tools import StructuredTool, BaseTool
+from langchain_core.tools import BaseTool, StructuredTool
 
-from ui_automation.config import UIAutomationConfig, DEFAULT_CONFIG
-
-
-def _resolve_virtual_path(virtual_path: str, workspace_root: str) -> Path:
-    """将虚拟路径解析为实际文件系统路径.
-
-    虚拟路径以 / 开头，例如 /playwright_scripts/test.spec.ts
-    映射到 {workspace_root}/playwright_scripts/test.spec.ts
-
-    Args:
-        virtual_path: 虚拟路径（以 / 开头）
-        workspace_root: 工作空间根目录
-
-    Returns:
-        实际文件系统路径
-    """
-    # 移除开头的 /
-    relative_path = virtual_path.lstrip("/")
-    return Path(workspace_root).resolve() / relative_path
-
-# pragma: no cover  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U21rNFNRPT06N2IyNjI4NGY=
-
-def _to_virtual_path(scripts_dir: str, script_name: str) -> str:
-    """生成虚拟路径.
-
-    Args:
-        scripts_dir: 虚拟脚本目录（如 /playwright_scripts）
-        script_name: 脚本名称
-
-    Returns:
-        虚拟路径（如 /playwright_scripts/test.spec.ts）
-    """
-    # 确保目录以 / 开头
-    if not scripts_dir.startswith("/"):
-        scripts_dir = "/" + scripts_dir
-    # 移除末尾的 /
-    scripts_dir = scripts_dir.rstrip("/")
-    return f"{scripts_dir}/{script_name}"
+from ui_automation.config import DEFAULT_CONFIG, UIAutomationConfig
+from ui_automation.run_storage import (
+    build_run_layout,
+    generate_run_id,
+    set_current_run_id,
+    join_virtual,
+    resolve_virtual_path,
+    sanitize_basename,
+)
 
 
 def create_script_save_tool(config: UIAutomationConfig | None = None) -> BaseTool:
-    """创建Playwright脚本保存工具.
-
-    Args:
-        config: UI自动化配置
-
-    Returns:
-        脚本保存工具
-    """
     cfg = config or DEFAULT_CONFIG
 
     def save_playwright_script(
@@ -66,52 +30,53 @@ def create_script_save_tool(config: UIAutomationConfig | None = None) -> BaseToo
         script_name: str = "",
         language: Literal["typescript", "javascript"] = "typescript",
     ) -> str:
-        """保存Playwright测试脚本到文件.
-
-        Args:
-            script_content: Playwright脚本内容
-            script_name: 脚本名称（可选，默认自动生成）
-            language: 脚本语言（typescript 或 javascript）
-
-        Returns:
-            保存的脚本虚拟路径（以 / 开头）
-        """
-        # 确定文件扩展名
         ext = ".spec.ts" if language == "typescript" else ".spec.js"
-# pylint: disable  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U21rNFNRPT06N2IyNjI4NGY=
-        
-        # 生成脚本名称
-        if not script_name:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            script_name = f"test_{timestamp}{ext}"
-        elif not (script_name.endswith(".spec.ts") or script_name.endswith(".spec.js")):
-            script_name = f"{script_name}{ext}"
 
-        # 生成虚拟路径
-        virtual_path = _to_virtual_path(cfg.scripts_dir, script_name)
+        run_id = generate_run_id()
+        set_current_run_id(cfg, run_id)
+        layout = build_run_layout(cfg, run_id)
+        layout.run_dir_actual.mkdir(parents=True, exist_ok=True)
+        layout.report_dir_actual.mkdir(parents=True, exist_ok=True)
+        layout.artifacts_dir_actual.mkdir(parents=True, exist_ok=True)
 
-        # 解析为实际路径
-        actual_path = _resolve_virtual_path(virtual_path, cfg.workspace_root)
+        base = sanitize_basename(script_name)
+        if base.endswith(".spec.ts"):
+            base = base[: -len(".spec.ts")]
+        elif base.endswith(".spec.js"):
+            base = base[: -len(".spec.js")]
+        if not base:
+            base = "test"
 
-        # 确保目录存在
-        actual_path.parent.mkdir(parents=True, exist_ok=True)
+        filename = f"{base}_{run_id}{ext}"
 
-        # 保存脚本
-        actual_path.write_text(script_content, encoding="utf-8")
+        run_script_virtual = join_virtual(layout.run_dir_virtual, filename)
+        run_script_actual = resolve_virtual_path(run_script_virtual, cfg.workspace_root)
+        run_script_actual.write_text(script_content, encoding="utf-8")
 
-        # 返回虚拟路径（用于 deepagents 的文件系统工具）
-        return f"✅ Playwright脚本已保存到: {virtual_path}\n实际路径: {actual_path}"
+        executable_virtual = join_virtual(cfg.scripts_dir, filename)
+        executable_actual = resolve_virtual_path(executable_virtual, cfg.workspace_root)
+        executable_actual.parent.mkdir(parents=True, exist_ok=True)
+        executable_actual.write_text(script_content, encoding="utf-8")
+
+        return (
+            "✅ Playwright脚本已保存（按单次对话/run隔离）\n"
+            f"run_id: {run_id}\n"
+            f"run_dir: {layout.run_dir_virtual}\n"
+            f"script: {run_script_virtual}\n"
+            f"executable_copy: {executable_virtual}\n"
+            f"script_actual: {run_script_actual}\n"
+            f"executable_actual: {executable_actual}"
+        )
 
     return StructuredTool.from_function(
         name="save_playwright_script",
         func=save_playwright_script,
-        description="""保存Playwright测试脚本到文件。
-参数：
-- script_content: Playwright脚本内容（必需）
-- script_name: 脚本名称（可选，默认自动生成时间戳名称）
-- language: 脚本语言，可选 'typescript' 或 'javascript'（默认 typescript）
-
-返回虚拟路径（如 /playwright_scripts/test.spec.ts）和实际文件系统路径。""",
+        description=(
+            "保存 Playwright 测试脚本到单次对话(run)目录，并 copy 到 Playwright 可执行的 tests 目录。\n"
+            "参数:\n"
+            "- script_content: 脚本内容（必填）\n"
+            "- script_name: 脚本名（可选）\n"
+            "- language: 'typescript' 或 'javascript'（默认 typescript）\n"
+            "返回: run_id、run_dir、脚本保存路径、可执行 copy 路径。"
+        ),
     )
-
-# noqa  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U21rNFNRPT06N2IyNjI4NGY=

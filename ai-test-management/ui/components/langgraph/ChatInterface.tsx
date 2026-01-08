@@ -65,7 +65,7 @@ const getStatusIcon = (status: TodoItem["status"], className?: string) => {
       );
   }
 };
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0hKa05nPT06YjUxN2E0OWM=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0hKa05nPT06YjUxN2E0OWM=
 
 export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant, initialPrompt }) => {
   const [metaOpen, setMetaOpen] = useState<"tasks" | "files" | null>(null);
@@ -602,6 +602,6 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant, initia
     </div>
   );
 });
-// @ts-expect-error  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0hKa05nPT06YjUxN2E0OWM=
+// @ts-ignore  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0hKa05nPT06YjUxN2E0OWM=
 
 ChatInterface.displayName = "ChatInterface";

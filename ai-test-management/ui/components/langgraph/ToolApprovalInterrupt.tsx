@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Check, X, Pencil } from "lucide-react";
 import type { ActionRequest, ReviewConfig } from "@/lib/langgraph/types";
 import { cn } from "@/lib/utils";
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VTNNM2RnPT06ZTUxMjg5OTU=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VTNNM2RnPT06ZTUxMjg5OTU=
 
 interface ToolApprovalInterruptProps {
   actionRequest: ActionRequest;

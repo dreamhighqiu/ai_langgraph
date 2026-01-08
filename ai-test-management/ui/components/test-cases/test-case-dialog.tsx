@@ -1,5 +1,5 @@
 
-// @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkVWRk9BPT06MDMzNGI2NjQ=
+// @ts-ignore  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkVWRk9BPT06MDMzNGI2NjQ=
 
 "use client";
 
@@ -48,7 +48,7 @@ interface TestCaseDialogProps {
 // FIXME  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkVWRk9BPT06MDMzNGI2NjQ=
 
 type AutomationStatus = "not_automated" | "automated" | "automation_candidate";
-// @ts-expect-error  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkVWRk9BPT06MDMzNGI2NjQ=
+// @ts-ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2WkVWRk9BPT06MDMzNGI2NjQ=
 
 const defaultFormData: TestCaseCreate = {
   name: "",

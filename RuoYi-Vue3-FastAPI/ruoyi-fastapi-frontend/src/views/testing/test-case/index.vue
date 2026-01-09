@@ -389,41 +389,71 @@ const loadProjects = async () => {
     const res = await listAllProject('0')
     projectList.value = res.data || []
     if (projectList.value.length > 0) {
-      currentProjectId.value = projectList.value[0].project_id
-      await loadFolderTree()
-      await getList()
+      // 确保 project_id 是数字类型
+      const firstProjectId = Number(projectList.value[0].project_id)
+      if (!isNaN(firstProjectId) && firstProjectId > 0) {
+        currentProjectId.value = firstProjectId
+        await loadFolderTree()
+        await getList()
+      } else {
+        console.error('无效的项目ID:', projectList.value[0].project_id)
+        proxy.$modal.msgWarning('项目数据异常，请刷新页面重试')
+      }
+    } else {
+      console.warn('项目列表为空')
     }
   } catch (error) {
     console.error('加载项目失败:', error)
     // 如果是用户未登录错误，给出友好提示
     if (error?.message?.includes('用户信息为空') || error?.message?.includes('登录')) {
       proxy.$modal.msgWarning('请先登录后再访问此页面')
+    } else {
+      proxy.$modal.msgError('加载项目失败: ' + (error?.message || '未知错误'))
     }
   }
 }
 
 // 加载文件夹树
 const loadFolderTree = async () => {
-  if (!currentProjectId.value) return
+  if (!currentProjectId.value) {
+    console.warn('项目ID为空，跳过加载文件夹树')
+    return
+  }
   try {
-    const res = await getFolderTree(currentProjectId.value)
+    // 确保 projectId 是数字类型
+    const projectId = Number(currentProjectId.value)
+    if (isNaN(projectId) || projectId <= 0) {
+      console.error('无效的项目ID:', currentProjectId.value)
+      return
+    }
+    const res = await getFolderTree(projectId)
     folderTree.value = res.data || []
   } catch (error) {
     console.error('加载文件夹失败:', error)
     // 忽略用户信息错误（在 loadProjects 中已处理）
-    if (!error?.message?.includes('用户信息为空')) {
-      proxy.$modal.msgError('加载文件夹失败')
+    if (!error?.message?.includes('用户信息为空') && !error?.message?.includes('项目ID不能为空')) {
+      proxy.$modal.msgError('加载文件夹失败: ' + (error?.message || '未知错误'))
     }
   }
 }
 
 // 加载测试用例列表
 const getList = async () => {
-  if (!currentProjectId.value) return
+  if (!currentProjectId.value) {
+    console.warn('项目ID为空，跳过加载测试用例列表')
+    return
+  }
   loading.value = true
   try {
-    queryParams.projectId = currentProjectId.value
-    queryParams.folderId = currentFolderId.value
+    // 确保 projectId 是数字类型
+    const projectId = Number(currentProjectId.value)
+    if (isNaN(projectId) || projectId <= 0) {
+      console.error('无效的项目ID:', currentProjectId.value)
+      loading.value = false
+      return
+    }
+    queryParams.projectId = projectId
+    queryParams.folderId = currentFolderId.value ? Number(currentFolderId.value) : null
     const res = await listTestCase(queryParams)
     testCaseList.value = res.data?.records || res.data?.rows || []
     total.value = res.data?.total || 0
@@ -431,7 +461,7 @@ const getList = async () => {
     console.error('加载列表失败:', error)
     // 忽略用户信息错误（在 loadProjects 中已处理）
     if (!error?.message?.includes('用户信息为空')) {
-      proxy.$modal.msgError('加载测试用例失败')
+      proxy.$modal.msgError('加载测试用例失败: ' + (error?.message || '未知错误'))
     }
   } finally {
     loading.value = false

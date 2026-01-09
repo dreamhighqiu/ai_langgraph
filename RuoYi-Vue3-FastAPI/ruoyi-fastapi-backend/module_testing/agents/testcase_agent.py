@@ -23,8 +23,11 @@ from module_testing.agents.tools import (
     create_test_case_tool,
     update_test_case_tool,
     batch_create_test_cases_tool,
-    rag_query_tool
+    rag_query_tool,
+    review_test_case_tool,
+    generate_mindmap_tool
 )
+from module_testing.agents.document_parser import parse_document_from_url
 
 
 @dataclass
@@ -50,12 +53,15 @@ class TestCaseAgent:
             streaming=True
         )
         
-        # 定义工具列表
+        # 定义工具列表（与参考项目保持一致）
         self.tools = [
             create_test_case_tool,
             update_test_case_tool,
             batch_create_test_cases_tool,
-            rag_query_tool
+            parse_document_from_url,  # 文档解析工具
+            rag_query_tool,  # RAG 检索工具
+            review_test_case_tool,  # 评审工具（需要人工参与）
+            generate_mindmap_tool,  # 思维导图生成工具
         ]
         
         # 绑定工具到 LLM
@@ -148,32 +154,91 @@ create_test_case_tool(
 
 你有以下工具可以使用：
 
-### 1. rag_query_tool - RAG 知识库检索
-用于从知识库检索相关的上下文信息，帮助生成更准确的测试用例。
+### 1. parse_document_from_url - 文档解析工具（重要！）
+**这是从文档生成测试用例的必需工具，必须优先使用！**
+
+用于从 URL 下载并解析文档内容（PDF、图片、TXT 等），提取文档中的关键信息。
 
 **使用场景**：
-- 当用户提到具体的 API 接口名称时
-- 需要了解接口的技术细节、参数格式等
-- 查找历史测试数据和性能基准
+- **当用户提供文档 URL 或文件信息时，必须首先调用此工具解析文档**
+- 支持 PDF、图片（OCR）、TXT 等多种格式
+- 解析后的内容将用于生成测试用例
 
-### 2. create_test_case_tool - 创建测试用例
+**参数**：
+- url: 文档的 URL（通常是 MinIO 预签名 URL）
+- document_type: 文档 MIME 类型（可选，自动检测）
+
+**示例**：
+```python
+# 当用户提供文档 URL 时，必须先解析文档
+result = await parse_document_from_url(
+    url="http://example.com/document.pdf",
+    document_type="application/pdf"
+)
+if result["success"]:
+    document_content = result["content"]
+    # 基于解析的内容生成测试用例
+```
+
+**⚠️ 重要提示**：
+- 如果用户提到文档 URL 或文件信息，**必须首先调用此工具解析文档**
+- 不要跳过文档解析步骤直接生成测试用例
+- 解析失败时，向用户说明原因并提供建议
+
+### 2. rag_query_tool - RAG 知识库检索（可选）
+用于从知识库检索相关的上下文信息，帮助生成更准确的测试用例。
+
+**使用场景**（仅在以下情况使用）：
+- 用户明确要求使用 RAG 检索
+- 需要了解具体的 API 接口技术细节、参数格式等
+- 查找历史测试数据和性能基准
+- **注意：如果用户没有明确要求，不要默认调用此工具**
+
+**参数**：
+- query: 查询描述（如"用户登录接口"、"首页API"）
+- mode: 检索模式（推荐使用 "mix"）
+- top_k: 返回的实体数量（默认10）
+- chunk_top_k: 返回的文本块数量（默认5）
+
+**⚠️ 重要提示**：
+- **RAG 检索是可选的，不是默认流程**
+- 只有在用户明确要求或确实需要额外上下文信息时才使用
+- 不要在没有文档 URL 的情况下默认调用 RAG
+
+### 3. create_test_case_tool - 创建测试用例
 用于创建新的测试用例。
 
-### 3. update_test_case_tool - 更新测试用例
+### 4. update_test_case_tool - 更新测试用例
 用于更新已有的测试用例。
 
-### 4. batch_create_test_cases_tool - 批量创建测试用例
+### 5. batch_create_test_cases_tool - 批量创建测试用例
 用于一次性创建多个测试用例，提高效率。
 
 ## 工作流程
 
-### 标准流程
-1. **接收需求**：用户提供需求文档、用户故事或功能描述
-2. **RAG 检索**（可选）：如果用户提到具体的 API 接口或功能模块，使用 rag_query_tool 检索相关信息
+### 从文档生成测试用例的标准流程（重要！）
+1. **接收需求**：用户提供文档 URL 或文件信息
+2. **解析文档**（必需）：**必须首先调用 parse_document_from_url 工具解析文档内容**
+3. **提取信息**：从解析的文档内容中提取关键功能点、业务规则、测试场景
+4. **RAG 检索**（可选）：**仅在用户明确要求或需要额外上下文时使用 rag_query_tool**
+5. **分析需求**：理解功能点、业务规则、边界条件
+6. **设计测试用例**：识别测试场景，确定测试类型和优先级
+7. **创建测试用例**：使用工具创建测试用例（必须使用上下文中的 project_id）
+8. **确认结果**：向用户报告创建的测试用例信息
+
+### 从文本描述生成测试用例的流程
+1. **接收需求**：用户提供需求文档、用户故事或功能描述（文本形式）
+2. **RAG 检索**（可选）：如果用户明确要求或提到具体的 API 接口，使用 rag_query_tool 检索相关信息
 3. **分析需求**：理解功能点、业务规则、边界条件
 4. **设计测试用例**：识别测试场景，确定测试类型和优先级
 5. **创建测试用例**：使用工具创建测试用例（必须使用上下文中的 project_id）
 6. **确认结果**：向用户报告创建的测试用例信息
+
+**⚠️ 关键原则**：
+- **有文档 URL → 必须先解析文档，不要跳过**
+- **没有文档 URL → 不要调用 parse_document_from_url**
+- **RAG 检索是可选的，不要默认调用**
+- **用户明确要求使用 RAG 时才调用 rag_query_tool**
 
 现在，请等待用户的需求，然后开始你的工作！
 """

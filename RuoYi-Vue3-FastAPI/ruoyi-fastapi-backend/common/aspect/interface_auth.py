@@ -31,7 +31,7 @@ class CheckUserInterfaceAuth:
         )
         try:
             current_user = RequestContext.get_current_user()
-        except (LoginException, AttributeError, ValueError):
+        except (LoginException, AttributeError, ValueError, TypeError):
             # 如果用户信息还未设置到上下文，尝试从请求中获取 token 并验证用户
             # 这解决了 FastAPI 依赖执行顺序问题：dependencies 在函数参数依赖之前执行
             token = request.headers.get('Authorization')
@@ -39,9 +39,15 @@ class CheckUserInterfaceAuth:
                 raise LoginException(data='', message='当前用户信息为空，请检查是否已登录')
             try:
                 # 直接调用 LoginService 获取用户信息并设置到上下文
+                # 注意：LoginService.get_current_user 需要 token 参数，这里需要从 header 中提取
+                if token.startswith('Bearer '):
+                    token = token[7:]
                 current_user = await LoginService.get_current_user(request, token, db)
-            except Exception:
-                raise LoginException(data='', message='当前用户信息为空，请检查是否已登录')
+            except Exception as e:
+                # 记录详细错误信息以便调试
+                import traceback
+                traceback.print_exc()
+                raise LoginException(data='', message=f'当前用户信息为空，请检查是否已登录: {str(e)}')
         user_auth_list = current_user.permissions
         if '*:*:*' in user_auth_list:
             return True

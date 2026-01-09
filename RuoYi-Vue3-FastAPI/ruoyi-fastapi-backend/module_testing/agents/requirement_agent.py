@@ -22,6 +22,7 @@ from module_testing.agents.tools import (
     save_requirement_analysis_tool,
     rag_query_tool
 )
+from module_testing.agents.document_parser import parse_document_from_url
 
 
 @dataclass
@@ -45,10 +46,11 @@ class RequirementAnalysisAgent:
             streaming=True
         )
         
-        # 定义工具列表
+        # 定义工具列表（与参考项目保持一致）
         self.tools = [
             save_requirement_analysis_tool,
-            rag_query_tool
+            parse_document_from_url,  # 文档解析工具
+            rag_query_tool,  # RAG 检索工具
         ]
         
         # 绑定工具到 LLM

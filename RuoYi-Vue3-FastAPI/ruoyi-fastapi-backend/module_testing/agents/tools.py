@@ -29,6 +29,55 @@ def get_api_url(path: str) -> str:
     return f"{API_BASE_URL}{path}"
 
 
+def get_current_user_id() -> int:
+    """
+    获取当前用户ID（从 RequestContext 获取）
+    
+    用于工具函数中获取当前登录用户ID，避免 HTTP 认证问题。
+    
+    Returns:
+        int: 当前用户ID，如果无法获取则返回默认值 1（系统用户）
+    """
+    try:
+        from common.context import RequestContext
+        current_user = RequestContext.get_current_user()
+        if current_user and hasattr(current_user, 'user_id'):
+            return current_user.user_id
+        elif current_user and hasattr(current_user, 'user') and current_user.user:
+            return current_user.user.user_id
+        else:
+            logger.warning("无法获取当前用户ID，使用默认值 1")
+            return 1
+    except Exception as e:
+        logger.warning(f"获取当前用户ID失败: {str(e)}，使用默认值 1")
+        return 1
+
+
+def _normalize_mcp_sse_url(url: str) -> str:
+    """
+    规范化 MCP SSE 服务 URL。
+
+    兼容传入 base host（如 http://localhost:9002）或完整 SSE 路径（如 http://localhost:9002/sse）。
+    """
+    normalized = (url or "").strip().rstrip("/")
+    if not normalized:
+        return "/sse"
+    return normalized if normalized.endswith("/sse") else f"{normalized}/sse"
+
+
+def _pick_mcp_tool(tools: list, tool_name: str):
+    """从 MCP tools 列表中选取指定工具（兼容带前缀的名称）。"""
+    for tool in tools:
+        name = getattr(tool, "name", "") or ""
+        if name == tool_name:
+            return tool
+    for tool in tools:
+        name = getattr(tool, "name", "") or ""
+        if name.endswith(tool_name) or name.endswith(f".{tool_name}") or name.endswith(f"__{tool_name}"):
+            return tool
+    return None
+
+
 async def make_http_request(
     method: str,
     url: str,
@@ -407,35 +456,39 @@ async def batch_create_test_cases_tool(
 ) -> Dict[str, Any]:
     """
     批量创建测试用例工具（直接调用 Service 层）
-    
+
     该工具可以一次性创建多个测试用例，提高效率。
     每个测试用例的参数与 create_test_case_tool 相同。
 
     Args:
         project_id: 项目ID（必填，从上下文自动获取）
-        test_cases: 测试用例列表，每个元素包含以下字段：
+        test_cases: 测试用例列表，每个元素是一个包含测试用例信息的字典，包含以下字段：
             - name: 测试用例名称（必填）
             - description: 测试用例描述（可选）
             - preconditions: 前置条件（可选）
             - priority: 优先级（可选，默认 medium）
+            - status: 状态（可选，默认 draft）
             - case_type: 测试类型（可选，默认 functional）
-            - test_case_steps: 测试步骤列表（可选）
             - tags: 标签列表（可选）
             - template: 模板类型（可选，默认 test_case）
-            - feature: BDD Feature（可选）
-            - scenario: BDD Scenario（可选）
+            - test_case_steps: 测试步骤列表（可选）
+            - feature: BDD Feature 描述（可选）
+            - scenario: BDD Scenario 描述（可选）
+            - background: BDD Background 描述（可选）
         folder_id: 文件夹ID（可选，从上下文自动获取）
 
     Returns:
         dict: 包含批量创建结果的字典
-            - success: bool, 是否成功
+            - success: 是否成功
             - data: 包含成功和失败的统计信息
                 - total: 总数
                 - succeeded: 成功数量
                 - failed: 失败数量
-                - results: 每个测试用例的创建结果
+                - results: 每个测试用例的创建结果列表
+            - error: 错误信息（如果失败）
 
     Examples:
+        # 批量创建多个测试用例
         result = await batch_create_test_cases_tool(
             project_id=1,
             folder_id=10,
@@ -445,7 +498,7 @@ async def batch_create_test_cases_tool(
                     "description": "描述1",
                     "priority": "high",
                     "test_case_steps": [
-                        {"step": "步骤1", "expected": "结果1"}
+                        {"step": "步骤1", "result": "结果1"}
                     ]
                 },
                 {
@@ -453,8 +506,14 @@ async def batch_create_test_cases_tool(
                     "description": "描述2",
                     "priority": "medium",
                     "test_case_steps": [
-                        {"step": "步骤1", "expected": "结果1"}
+                        {"step": "步骤1", "result": "结果1"}
                     ]
+                },
+                {
+                    "name": "BDD 测试用例",
+                    "template": "test_case_bdd",
+                    "feature": "用户登录",
+                    "scenario": "成功登录"
                 }
             ]
         )
@@ -584,119 +643,369 @@ async def batch_create_test_cases_tool(
 @tool
 async def rag_query_tool(
     query: str,
-    top_k: int = 5,
+    mode: str = "mix",
+    top_k: int = 10,
+    chunk_top_k: int = 5,
+    enable_rerank: bool = True,
 ) -> Dict[str, Any]:
     """
-    RAG 知识库检索工具
-
-    从知识库检索相关的上下文信息，帮助生成更准确的测试用例。
-
+    从 RAG 知识库检索相关上下文信息
+    
+    该工具调用 RAG MCP 服务器，从知识库中检索与查询相关的信息。
+    主要用于：
+    - 检索 API 接口的详细信息（URL、参数、认证方式等）
+    - 查找接口的使用示例和测试数据
+    - 获取历史测试记录和基准值
+    - 了解接口的依赖关系
+    
     Args:
-        query: 查询描述
-        top_k: 返回的结果数量
-
+        query: 查询描述（如"获取首页信息接口"、"用户登录API"）
+        mode: 检索模式，可选值：
+            - mix (推荐): 结合知识图谱和向量检索
+            - local: 获取直接相关的实体和关系
+            - naive: 仅使用向量相似性搜索
+            - global: 探索知识图谱中的全局关系
+            - hybrid: 结合本地和全局检索
+        top_k: 返回的顶部实体/关系数量（默认10）
+        chunk_top_k: 返回的文本块数量（默认5）
+        enable_rerank: 是否启用重排序（默认True）
+    
     Returns:
         dict: 包含检索结果的字典
+            - success: bool, 是否成功
+            - context: str, 检索到的上下文信息
+            - entities: list, 相关实体列表
+            - chunks: list, 相关文本块列表
+            - error: str, 错误信息（如果失败）
+    
+    Examples:
+        >>> result = await rag_query_tool("用户登录接口的详细信息")
+        >>> if result["success"]:
+        >>>     print(result["context"])
     """
     try:
-        # 构建 API URL
-        url = get_api_url("/api/testing/knowledge/query")
-
-        # 发送 HTTP POST 请求
-        response_data = await make_http_request(
-            method="POST",
-            url=url,
-            json_data={
-                "query": query,
-                "top_k": top_k
-            },
+        import os
+        # RAG MCP 服务器地址（从环境变量读取）；默认使用 SSE 传输
+        rag_mcp_url = _normalize_mcp_sse_url(
+            os.environ.get("RAG_MCP_URL", "http://localhost:9002/sse")
         )
 
-        return {
-            "success": True,
-            "data": response_data.get("data"),
-            "context": response_data.get("data", {}).get("context", ""),
-            "message": "RAG 检索成功"
-        }
+        logger.info(f"开始 RAG 检索: {query} (模式: {mode})")
 
+        from langchain_mcp_adapters.client import MultiServerMCPClient
+
+        mcp_client = MultiServerMCPClient(
+            {
+                "rag": {
+                    "url": rag_mcp_url,
+                    "transport": "sse",
+                }
+            }
+        )
+        mcp_tools = list(await mcp_client.get_tools())
+        tool = _pick_mcp_tool(mcp_tools, "rag_query_data_json") or _pick_mcp_tool(
+            mcp_tools, "rag_query_data"
+        )
+
+        if tool is None:
+            return {
+                "success": False,
+                "error": "未找到 RAG MCP 工具（rag_query_data_json / rag_query_data）",
+                "context": "",
+                "entities": [],
+                "chunks": [],
+                "metadata": {},
+            }
+
+        raw = await tool.ainvoke(
+            {
+                "query": query,
+                "mode": mode,
+                "top_k": top_k,
+                "chunk_top_k": chunk_top_k,
+                "enable_rerank": enable_rerank,
+            }
+        )
+
+        tool_name = str(getattr(tool, "name", "") or "")
+        if tool_name == "rag_query_data_json" or (isinstance(raw, str) and raw.strip().startswith("{")):
+            # JSON 格式响应
+            import json
+            try:
+                if isinstance(raw, str):
+                    result = json.loads(raw)
+                else:
+                    result = raw
+                
+                if result.get("status") == "failure":
+                    return {
+                        "success": False,
+                        "error": result.get("message", "RAG 检索失败"),
+                        "context": "",
+                        "entities": [],
+                        "chunks": [],
+                        "metadata": {},
+                    }
+                
+                data = result.get("data", {})
+                context_parts = []
+                
+                # 构建上下文文本
+                if data.get("entities"):
+                    context_parts.append(f"实体 ({len(data['entities'])} 个):")
+                    for entity in data["entities"][:5]:
+                        context_parts.append(f"  - {entity.get('entity_name', '')}: {entity.get('description', '')}")
+                
+                if data.get("chunks"):
+                    context_parts.append(f"\n相关文档片段 ({len(data['chunks'])} 个):")
+                    for chunk in data["chunks"][:3]:
+                        content = chunk.get("content", "")[:200]
+                        context_parts.append(f"  - {content}...")
+                
+                context_text = "\n".join(context_parts) if context_parts else "未找到相关信息"
+                
+                return {
+                    "success": True,
+                    "context": context_text,
+                    "entities": data.get("entities", []),
+                    "chunks": data.get("chunks", []),
+                    "metadata": result.get("metadata", {}),
+                    "message": "RAG 检索成功"
+                }
+            except json.JSONDecodeError:
+                # 如果不是 JSON，当作文本处理
+                return {
+                    "success": True,
+                    "context": str(raw),
+                    "entities": [],
+                    "chunks": [],
+                    "metadata": {},
+                    "message": "RAG 检索成功"
+                }
+        else:
+            # 文本格式响应
+            return {
+                "success": True,
+                "context": str(raw),
+                "entities": [],
+                "chunks": [],
+                "metadata": {},
+                "message": "RAG 检索成功"
+            }
+
+    except httpx.HTTPError as e:
+        logger.error(f"RAG MCP 服务请求失败: {e}")
+        return {
+            "success": False,
+            "error": f"RAG MCP 服务请求失败: {str(e)}",
+            "context": "",
+            "entities": [],
+            "chunks": [],
+            "metadata": {},
+        }
     except Exception as e:
-        logger.error(f"RAG 检索失败: {str(e)}")
+        logger.error(f"RAG 检索失败: {str(e)}", exc_info=True)
         return {
             "success": False,
             "error": str(e),
-            "message": f"RAG 检索失败: {str(e)}",
-            "context": ""
+            "context": "",
+            "entities": [],
+            "chunks": [],
+            "metadata": {},
+            "message": f"RAG 检索失败: {str(e)}"
         }
 
 
 @tool
 async def save_requirement_analysis_tool(
     project_id: int,
-    title: str,
-    executive_summary: str,
-    functional_requirements: str,
+    requirement_analysis_id: Optional[int] = None,
+    analysis_name: Optional[str] = None,
+    executive_summary: Optional[str] = None,
+    functional_requirements: Optional[str] = None,
     non_functional_requirements: Optional[str] = None,
-    user_stories: Optional[str] = None,
-    acceptance_criteria: Optional[str] = None,
-    constraints: Optional[str] = None,
-    module: Optional[str] = None,
+    user_stories: Optional[List[Dict[str, Any]]] = None,
+    acceptance_criteria: Optional[List[Dict[str, Any]]] = None,
+    dependencies: Optional[List[Dict[str, Any]]] = None,
+    risks: Optional[List[Dict[str, Any]]] = None,
+    recommendations: Optional[List[Dict[str, Any]]] = None,
+    priority_analysis: Optional[Dict[str, Any]] = None,
+    effort_estimation: Optional[Dict[str, Any]] = None,
+    quality_completeness: Optional[float] = None,
+    quality_clarity: Optional[float] = None,
+    quality_consistency: Optional[float] = None,
+    quality_testability: Optional[float] = None,
+    quality_overall: Optional[float] = None,
+    rag_context: Optional[str] = None,
+    use_rag: int = 0,
+    mindmap_data: Optional[Dict[str, Any]] = None,
+    mindmap_url: Optional[str] = None,
+    tags: Optional[List[str]] = None,
+    status: str = "completed",
 ) -> Dict[str, Any]:
     """
-    保存需求分析工具
-
+    保存需求分析结果到数据库。
+    
+    该工具直接调用需求分析 Service 来保存分析结果，绕过 HTTP 认证。
+    支持创建新需求和更新现有需求。
+    
     Args:
         project_id: 项目ID（必填，从上下文自动获取）
-        title: 需求分析标题
+        requirement_analysis_id: 需求分析 ID（更新时必填，创建时留空）
+        analysis_name: 需求分析名称/标题
         executive_summary: 需求概述
-        functional_requirements: 功能需求
-        non_functional_requirements: 非功能需求
-        user_stories: 用户故事
-        acceptance_criteria: 验收标准
-        constraints: 约束条件
-        module: 所属模块
-
+        functional_requirements: 功能需求分析（JSON 字符串或文本）
+        non_functional_requirements: 非功能需求分析（JSON 字符串或文本）
+        user_stories: 用户故事列表，每个元素包含：
+            - story_id: 故事ID（可选）
+            - title: 故事标题
+            - description: 故事描述
+            - acceptance_criteria: 验收标准
+            - priority: 优先级
+        acceptance_criteria: 验收标准列表，每个元素包含：
+            - criterion_id: 标准ID（可选）
+            - description: 标准描述
+            - priority: 优先级
+        dependencies: 依赖关系列表，每个元素包含：
+            - dependency_id: 依赖ID（可选）
+            - type: 依赖类型（前置/后置/并行）
+            - description: 依赖描述
+            - related_requirement: 相关需求
+        risks: 风险评估列表，每个元素包含：
+            - risk_id: 风险ID（可选）
+            - type: 风险类型
+            - description: 风险描述
+            - probability: 发生概率
+            - impact: 影响程度
+            - mitigation: 缓解措施
+        recommendations: 建议和改进意见列表，每个元素包含：
+            - recommendation_id: 建议ID（可选）
+            - type: 建议类型
+            - description: 建议描述
+            - priority: 优先级
+        priority_analysis: 优先级分析字典，包含：
+            - high_priority: 高优先级需求列表
+            - medium_priority: 中优先级需求列表
+            - low_priority: 低优先级需求列表
+            - rationale: 优先级判断依据
+        effort_estimation: 工作量评估字典，包含：
+            - total_effort: 总工作量（人天）
+            - breakdown: 工作量分解
+            - assumptions: 评估假设
+        quality_completeness: 完整性评分（0-100）
+        quality_clarity: 清晰度评分（0-100）
+        quality_consistency: 一致性评分（0-100）
+        quality_testability: 可测试性评分（0-100）
+        quality_overall: 总体质量评分（0-100）
+        rag_context: RAG 检索的上下文信息（JSON 字符串）
+        use_rag: 是否使用 RAG（0=否，1=是）
+        mindmap_data: 思维导图数据（JSON 对象）
+        mindmap_url: 思维导图图片 URL
+        tags: 标签列表
+        status: 状态（draft/analyzing/completed/failed，默认 completed）
+    
     Returns:
         dict: 包含保存结果的字典
+            - success: bool, 是否成功
+            - requirement_analysis_id: int, 需求分析 ID
+            - analysis_name: str, 分析名称
+            - message: str, 提示消息
+            - error: str, 错误信息（如果失败）
+    
+    Examples:
+        # 创建新需求分析
+        result = await save_requirement_analysis_tool(
+            project_id=1,
+            analysis_name="用户登录功能需求分析",
+            executive_summary="分析用户登录功能的需求...",
+            functional_requirements='{"login_methods": ["username", "email"]}',
+            quality_overall=85.5
+        )
+        
+        # 更新现有需求分析
+        result = await save_requirement_analysis_tool(
+            project_id=1,
+            requirement_analysis_id=123,
+            analysis_name="更新后的分析名称",
+            quality_overall=90.0
+        )
     """
     try:
-        # 构建请求数据
-        request_data = {
-            "project_id": project_id,
-            "title": title,
-            "executive_summary": executive_summary,
-            "functional_requirements": functional_requirements,
-        }
-
-        # 添加可选字段
-        if non_functional_requirements:
-            request_data["non_functional_requirements"] = non_functional_requirements
-        if user_stories:
-            request_data["user_stories"] = user_stories
-        if acceptance_criteria:
-            request_data["acceptance_criteria"] = acceptance_criteria
-        if constraints:
-            request_data["constraints"] = constraints
-        if module:
-            request_data["module"] = module
-
-        # 构建 API URL
-        url = get_api_url("/api/testing/requirement-analyses")
-
-        # 发送 HTTP POST 请求
-        response_data = await make_http_request(
-            method="POST",
-            url=url,
-            json_data=request_data,
+        import json
+        from module_testing.service.requirement_analysis_service import RequirementAnalysisService
+        from module_testing.entity.vo.requirement_analysis_vo import RequirementAnalysisVO
+        from config.get_db import get_db_session
+        
+        # 参数验证
+        if not project_id:
+            return {
+                "success": False,
+                "error": "project_id 是必填参数，请确保从上下文中获取",
+                "message": "保存需求分析失败：缺少项目ID"
+            }
+        
+        if not analysis_name and not requirement_analysis_id:
+            return {
+                "success": False,
+                "error": "创建新需求分析时，analysis_name 是必填参数",
+                "message": "保存需求分析失败：缺少分析名称"
+            }
+        
+        # 获取当前用户ID
+        user_id = get_current_user_id()
+        
+        # 构建 VO 对象
+        requirement_vo = RequirementAnalysisVO(
+            project_id=project_id,
+            requirement_name=analysis_name or f"需求分析_{requirement_analysis_id}",
+            requirement_type="functional",  # 默认功能需求
+            priority="medium",  # 默认中等优先级
+            status=status,
+            module=None,  # 可以从上下文获取
+            description=executive_summary,
+            acceptance_criteria=json.dumps(acceptance_criteria, ensure_ascii=False) if acceptance_criteria else None,
+            functional_requirements=json.dumps(functional_requirements, ensure_ascii=False) if isinstance(functional_requirements, dict) else functional_requirements,
+            non_functional_requirements=json.dumps(non_functional_requirements, ensure_ascii=False) if isinstance(non_functional_requirements, dict) else non_functional_requirements,
+            business_rules=None,  # 可以从其他字段映射
+            dependencies=json.dumps(dependencies, ensure_ascii=False) if dependencies else None,
+            stakeholders=None,  # 可以从其他字段映射
         )
-
-        return {
-            "success": True,
-            "data": response_data.get("data"),
-            "message": f"需求分析 {response_data.get('data', {}).get('id')} 保存成功"
-        }
-
+        
+        # 调用 Service 保存需求分析
+        service = RequirementAnalysisService()
+        
+        async with get_db_session() as db:
+            if requirement_analysis_id:
+                # 更新现有需求分析
+                result = await service.update_requirement(
+                    db, requirement_analysis_id, requirement_vo, user_id
+                )
+                logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.requirement_identifier}")
+                
+                return {
+                    "success": True,
+                    "requirement_analysis_id": requirement_analysis_id,
+                    "analysis_name": result.requirement_name,
+                    "requirement_identifier": result.requirement_identifier,
+                    "message": f"✅ 需求分析 '{result.requirement_name}' (ID: {requirement_analysis_id}) 更新成功"
+                }
+            else:
+                # 创建新需求分析
+                result = await service.create_requirement(
+                    db, requirement_vo, user_id
+                )
+                logger.info(f"AI 成功创建需求分析: {result.requirement_identifier} - {result.requirement_name} (ID: {result.requirement_id})")
+                
+                return {
+                    "success": True,
+                    "requirement_analysis_id": result.requirement_id,
+                    "analysis_name": result.requirement_name,
+                    "requirement_identifier": result.requirement_identifier,
+                    "message": f"✅ 需求分析 '{result.requirement_name}' (ID: {result.requirement_id}, 标识: {result.requirement_identifier}) 创建成功"
+                }
+    
     except Exception as e:
-        logger.error(f"保存需求分析失败: {str(e)}")
+        logger.error(f"保存需求分析失败: {str(e)}", exc_info=True)
         return {
             "success": False,
             "error": str(e),
@@ -707,80 +1016,232 @@ async def save_requirement_analysis_tool(
 @tool
 async def save_defect_analysis_tool(
     project_id: int,
-    title: str,
-    executive_summary: str,
-    root_cause_analysis: str,
-    impact_analysis: str,
-    reproduction_steps: Optional[str] = None,
-    affected_modules: Optional[str] = None,
-    fix_recommendations: Optional[str] = None,
-    testing_suggestions: Optional[str] = None,
-    prevention_measures: Optional[str] = None,
-    priority: str = "medium",
+    defect_analysis_id: Optional[int] = None,
+    analysis_name: Optional[str] = None,
+    defect_title: Optional[str] = None,
+    defect_description: Optional[str] = None,
+    executive_summary: Optional[str] = None,
+    root_cause_analysis: Optional[Dict[str, Any]] = None,
+    impact_analysis: Optional[Dict[str, Any]] = None,
+    reproduction_steps: Optional[List[Dict[str, Any]]] = None,
+    affected_modules: Optional[List[str]] = None,
+    fix_suggestions: Optional[List[Dict[str, Any]]] = None,
+    test_suggestions: Optional[List[Dict[str, Any]]] = None,
+    prevention_measures: Optional[List[Dict[str, Any]]] = None,
+    similar_defects: Optional[List[Dict[str, Any]]] = None,
     severity: str = "medium",
+    priority: str = "medium",
+    defect_type: Optional[str] = None,
+    category: Optional[str] = None,
+    affected_phase: Optional[str] = None,
+    detection_phase: Optional[str] = None,
+    fix_status: Optional[str] = None,
+    fix_time_estimate: Optional[str] = None,
+    rag_context: Optional[str] = None,
+    use_rag: int = 0,
+    mindmap_data: Optional[Dict[str, Any]] = None,
+    mindmap_url: Optional[str] = None,
+    tags: Optional[List[str]] = None,
+    status: str = "completed",
+    knowledge_id: Optional[int] = None,
+    defect_id: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
-    保存缺陷分析工具
-
+    保存缺陷分析结果到数据库。
+    
+    该工具直接调用缺陷分析 Service 来保存分析结果，绕过 HTTP 认证。
+    支持创建新缺陷分析和更新现有缺陷分析。
+    
     Args:
         project_id: 项目ID（必填，从上下文自动获取）
-        title: 缺陷分析标题
+        defect_analysis_id: 缺陷分析 ID（更新时必填，创建时留空）
+        analysis_name: 缺陷分析名称/标题
+        defect_title: 缺陷标题
+        defect_description: 缺陷描述
         executive_summary: 缺陷概述
-        root_cause_analysis: 根本原因分析
-        impact_analysis: 影响分析
-        reproduction_steps: 复现步骤
-        affected_modules: 受影响模块
-        fix_recommendations: 修复建议
-        testing_suggestions: 测试建议
-        prevention_measures: 预防措施
-        priority: 优先级
-        severity: 严重程度
-
+        root_cause_analysis: 根本原因分析字典，包含：
+            - primary_cause: 主要原因
+            - contributing_factors: 促成因素列表
+            - analysis_method: 分析方法
+            - evidence: 证据
+        impact_analysis: 影响分析字典，包含：
+            - affected_areas: 受影响区域列表
+            - severity_level: 严重程度级别
+            - business_impact: 业务影响
+            - technical_impact: 技术影响
+            - user_impact: 用户影响
+        reproduction_steps: 复现步骤列表，每个元素包含：
+            - step_number: 步骤编号
+            - description: 步骤描述
+            - expected_result: 预期结果
+            - actual_result: 实际结果
+        affected_modules: 受影响模块列表（字符串列表）
+        fix_suggestions: 修复建议列表，每个元素包含：
+            - suggestion_id: 建议ID（可选）
+            - description: 建议描述
+            - priority: 优先级
+            - estimated_effort: 预估工作量
+        test_suggestions: 测试建议列表，每个元素包含：
+            - suggestion_id: 建议ID（可选）
+            - test_type: 测试类型
+            - description: 测试建议描述
+            - priority: 优先级
+        prevention_measures: 预防措施列表，每个元素包含：
+            - measure_id: 措施ID（可选）
+            - type: 措施类型
+            - description: 措施描述
+            - implementation: 实施方法
+        similar_defects: 相似缺陷列表，每个元素包含：
+            - defect_id: 缺陷ID
+            - similarity_score: 相似度评分
+            - description: 相似性描述
+        severity: 严重程度（critical/high/medium/low，默认 medium）
+        priority: 优先级（urgent/high/medium/low，默认 medium）
+        defect_type: 缺陷类型（functional/performance/security/ui/compatibility等）
+        category: 详细分类
+        affected_phase: 影响阶段（requirements/design/development/testing/deployment）
+        detection_phase: 发现阶段（requirements/design/development/testing/deployment/production）
+        fix_status: 修复状态（pending/in_progress/fixed/verified，可选）
+        fix_time_estimate: 预计修复时间（如 "2 days"）
+        rag_context: RAG 检索的上下文信息（JSON 字符串）
+        use_rag: 是否使用 RAG（0=否，1=是）
+        mindmap_data: 思维导图数据（JSON 对象）
+        mindmap_url: 思维导图图片 URL
+        tags: 标签列表
+        status: 状态（draft/analyzing/completed/failed，默认 completed）
+        knowledge_id: 关联知识库ID（可选）
+        defect_id: 关联缺陷ID（可选）
+    
     Returns:
         dict: 包含保存结果的字典
+            - success: bool, 是否成功
+            - defect_analysis_id: int, 缺陷分析 ID
+            - analysis_name: str, 分析名称
+            - message: str, 提示消息
+            - error: str, 错误信息（如果失败）
+    
+    Examples:
+        # 创建新缺陷分析
+        result = await save_defect_analysis_tool(
+            project_id=1,
+            analysis_name="用户登录失败缺陷分析",
+            defect_title="用户登录时出现500错误",
+            executive_summary="分析用户登录功能出现的500错误...",
+            root_cause_analysis={
+                "primary_cause": "数据库连接超时",
+                "contributing_factors": ["高并发", "连接池配置不当"]
+            },
+            severity="high",
+            priority="urgent"
+        )
+        
+        # 更新现有缺陷分析
+        result = await save_defect_analysis_tool(
+            project_id=1,
+            defect_analysis_id=123,
+            fix_status="fixed",
+            fix_time_estimate="1 day"
+        )
     """
     try:
-        # 构建请求数据
-        request_data = {
+        import json
+        from module_testing.service.defect_analysis_service import DefectAnalysisService
+        from config.get_db import get_db_session
+        
+        # 参数验证
+        if not project_id:
+            return {
+                "success": False,
+                "error": "project_id 是必填参数，请确保从上下文中获取",
+                "message": "保存缺陷分析失败：缺少项目ID"
+            }
+        
+        if not analysis_name and not defect_analysis_id:
+            return {
+                "success": False,
+                "error": "创建新缺陷分析时，analysis_name 是必填参数",
+                "message": "保存缺陷分析失败：缺少分析名称"
+            }
+        
+        # 获取当前用户ID
+        user_id = get_current_user_id()
+        
+        # 构建分析数据字典
+        analysis_data = {
             "project_id": project_id,
-            "title": title,
+            "analysis_name": analysis_name or f"缺陷分析_{defect_analysis_id}",
+            "defect_title": defect_title,
+            "defect_description": defect_description,
             "executive_summary": executive_summary,
+            "severity": severity,
+            "priority": priority,
+            "defect_type": defect_type,
+            "category": category,
+            "affected_phase": affected_phase,
+            "detection_phase": detection_phase,
             "root_cause_analysis": root_cause_analysis,
             "impact_analysis": impact_analysis,
-            "priority": priority,
-            "severity": severity,
+            "reproduction_steps": reproduction_steps,
+            "affected_modules": affected_modules,
+            "fix_suggestions": fix_suggestions,
+            "test_suggestions": test_suggestions,
+            "prevention_measures": prevention_measures,
+            "similar_defects": similar_defects,
+            "use_rag": use_rag,
+            "rag_context": rag_context,
+            "mindmap_data": mindmap_data,
+            "mindmap_url": mindmap_url,
+            "status": status,
+            "knowledge_id": knowledge_id,
+            "defect_id": defect_id,
+            "tags": tags,
+            "fix_status": fix_status,
+            "fix_time_estimate": fix_time_estimate,
         }
-
-        # 添加可选字段
-        if reproduction_steps:
-            request_data["reproduction_steps"] = reproduction_steps
-        if affected_modules:
-            request_data["affected_modules"] = affected_modules
-        if fix_recommendations:
-            request_data["fix_recommendations"] = fix_recommendations
-        if testing_suggestions:
-            request_data["testing_suggestions"] = testing_suggestions
-        if prevention_measures:
-            request_data["prevention_measures"] = prevention_measures
-
-        # 构建 API URL
-        url = get_api_url("/api/testing/defect-analyses")
-
-        # 发送 HTTP POST 请求
-        response_data = await make_http_request(
-            method="POST",
-            url=url,
-            json_data=request_data,
-        )
-
-        return {
-            "success": True,
-            "data": response_data.get("data"),
-            "message": f"缺陷分析 {response_data.get('data', {}).get('id')} 保存成功"
-        }
-
+        
+        # 移除 None 值
+        analysis_data = {k: v for k, v in analysis_data.items() if v is not None}
+        
+        # 调用 Service 保存缺陷分析
+        service = DefectAnalysisService()
+        
+        async with get_db_session() as db:
+            if defect_analysis_id:
+                # 更新现有缺陷分析
+                result = await service.update_analysis(
+                    db, defect_analysis_id, analysis_data, str(user_id)
+                )
+                if not result:
+                    return {
+                        "success": False,
+                        "error": f"缺陷分析 {defect_analysis_id} 不存在",
+                        "message": f"更新缺陷分析失败：缺陷分析 {defect_analysis_id} 不存在"
+                    }
+                
+                logger.info(f"AI 成功更新缺陷分析: {defect_analysis_id} - {result.analysis_name}")
+                
+                return {
+                    "success": True,
+                    "defect_analysis_id": defect_analysis_id,
+                    "analysis_name": result.analysis_name,
+                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功"
+                }
+            else:
+                # 创建新缺陷分析
+                result = await service.create_analysis(
+                    db, analysis_data, str(user_id)
+                )
+                logger.info(f"AI 成功创建缺陷分析: {result.analysis_id} - {result.analysis_name}")
+                
+                return {
+                    "success": True,
+                    "defect_analysis_id": result.analysis_id,
+                    "analysis_name": result.analysis_name,
+                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功"
+                }
+    
     except Exception as e:
-        logger.error(f"保存缺陷分析失败: {str(e)}")
+        logger.error(f"保存缺陷分析失败: {str(e)}", exc_info=True)
         return {
             "success": False,
             "error": str(e),
@@ -795,8 +1256,7 @@ from module_testing.agents.human_in_the_loop import review_test_case_tool
 
 # 文档解析工具
 from module_testing.agents.document_parser import (
-    parse_document_from_url,
-    parse_document_content
+    parse_document_from_url
 )
 
 
@@ -811,72 +1271,100 @@ async def generate_mindmap_tool(
     """
     生成思维导图工具
     
-    将测试用例或需求内容转换为思维导图格式。
+    将测试用例内容转换为思维导图格式，便于可视化和理解。
+    支持多种输出格式。
     
     Args:
         title: 思维导图标题
-        content: 要转换的内容（测试用例、需求等）
-        format: 输出格式（markdown, mermaid, xmind）
-        
+        content: 要转换的内容（测试用例、测试计划等）
+        format: 输出格式，可选值：
+            - markdown: Markdown 格式（默认）
+            - mermaid: Mermaid 图表格式
+            - html: HTML 格式（通过 MCP 服务器生成）
+    
     Returns:
         dict: 包含生成结果的字典
             - success: bool, 是否成功
             - mindmap_content: str, 思维导图内容
             - format: str, 输出格式
+            - download_url: str, 下载链接（如果支持）
+            - error: str, 错误信息（如果失败）
     """
     try:
-        if format == "markdown":
-            # 生成 Markdown 格式的思维导图
-            mindmap = f"# {title}\n\n"
-            
-            # 解析内容生成树状结构
-            lines = content.strip().split('\n')
-            for line in lines:
-                stripped = line.strip()
-                if stripped:
-                    # 根据缩进生成层级
-                    indent_level = (len(line) - len(stripped)) // 2
-                    prefix = "  " * indent_level + "- "
-                    mindmap += f"{prefix}{stripped}\n"
-            
-            return {
-                "success": True,
-                "mindmap_content": mindmap,
-                "format": "markdown",
-                "message": "思维导图生成成功"
+        import os
+        mindmap_mcp_url = _normalize_mcp_sse_url(
+            os.environ.get("MINDMAP_MCP_URL", "http://localhost:9003/sse")
+        )
+
+        logger.info(f"开始生成思维导图: {title} (格式: {format})")
+
+        from langchain_mcp_adapters.client import MultiServerMCPClient
+
+        mcp_client = MultiServerMCPClient(
+            {
+                "mindmap": {
+                    "url": mindmap_mcp_url,
+                    "transport": "sse",
+                }
             }
-        
-        elif format == "mermaid":
-            # 生成 Mermaid 格式
-            mermaid = f"mindmap\n  root(({title}))\n"
-            
-            lines = content.strip().split('\n')
-            for line in lines:
-                stripped = line.strip()
-                if stripped:
-                    indent_level = (len(line) - len(stripped)) // 2 + 2
-                    indent = "  " * indent_level
-                    mermaid += f"{indent}{stripped}\n"
-            
-            return {
-                "success": True,
-                "mindmap_content": mermaid,
-                "format": "mermaid",
-                "message": "思维导图生成成功"
+        )
+        mcp_tools = list(await mcp_client.get_tools())
+        tool = _pick_mcp_tool(mcp_tools, "generate_mindmap")
+        if tool is None:
+            # 如果 MCP 服务不可用，使用简单的 Markdown 格式
+            logger.warning("未找到 MindMap MCP 工具（generate_mindmap），使用简单格式")
+            if format == "markdown":
+                mindmap = f"# {title}\n\n"
+                lines = content.strip().split('\n')
+                for line in lines:
+                    stripped = line.strip()
+                    if stripped:
+                        indent_level = (len(line) - len(stripped)) // 2
+                        prefix = "  " * indent_level + "- "
+                        mindmap += f"{prefix}{stripped}\n"
+                
+                return {
+                    "success": True,
+                    "mindmap_content": mindmap,
+                    "format": "markdown",
+                    "message": "思维导图生成成功（使用简单格式）"
+                }
+            else:
+                return {
+                    "success": False,
+                    "error": "未找到 MindMap MCP 工具（generate_mindmap）",
+                    "message": "未找到 MindMap MCP 工具，请确保 MCP 服务已启动"
+                }
+
+        markdown = f"# {title}\n\n{content}"
+        html = await tool.ainvoke(
+            {
+                "markdown": markdown,
+                "return_type": "html",
+                "toolbar": True,
             }
-        
-        else:
-            return {
-                "success": False,
-                "error": f"不支持的格式: {format}",
-                "message": f"不支持的格式: {format}。支持: markdown, mermaid"
-            }
-            
-    except Exception as e:
-        logger.error(f"生成思维导图失败: {str(e)}")
+        )
+
+        return {
+            "success": True,
+            "mindmap_content": str(html),
+            "format": "html",
+            "download_url": None,
+            "message": "思维导图生成成功",
+        }
+    
+    except httpx.HTTPError as e:
+        logger.error(f"MindMap 服务请求失败: {e}")
         return {
             "success": False,
-            "error": str(e),
-            "message": f"生成思维导图失败: {str(e)}"
+            "error": f"MindMap 服务请求失败: {str(e)}",
+            "message": f"MindMap 服务请求失败: {str(e)}"
+        }
+    except Exception as e:
+        logger.error(f"思维导图生成失败: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": f"思维导图生成失败: {str(e)}",
+            "message": f"思维导图生成失败: {str(e)}"
         }
 

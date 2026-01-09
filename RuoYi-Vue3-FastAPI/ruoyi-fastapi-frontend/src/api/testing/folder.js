@@ -2,10 +2,14 @@ import request from '@/utils/request'
 
 // 查询文件夹树
 export function getFolderTree(projectId) {
+  // 确保 projectId 是有效的数字
+  if (!projectId || projectId === null || projectId === undefined) {
+    return Promise.reject(new Error('项目ID不能为空'))
+  }
   return request({
     url: '/api/testing/folder/tree',
     method: 'get',
-    params: { projectId }
+    params: { projectId: Number(projectId) }
   })
 }
 

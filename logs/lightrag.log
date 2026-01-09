@@ -314,3 +314,18 @@ INFO: [] Writing graph with 1353 nodes, 1374 edges
 INFO: In memory DB persist to disk
 INFO: Completed processing file 1/1: Offer Letter-邱云霞.pdf
 INFO: Enqueued document processing pipeline stopped
+ERROR: Error /documents/upload: 邱云霞扫描回复.jpg: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+INFO: 127.0.0.1:53154 - "POST /documents/upload HTTP/1.1" 500
+INFO: 127.0.0.1:55052 - "POST /documents/paginated HTTP/1.1" 401
+INFO: 127.0.0.1:55052 - "GET /auth-status HTTP/1.1" 200
+INFO: 127.0.0.1:55052 - "GET /docs HTTP/1.1" 200
+INFO: [] Graph truncated: 1353 nodes found, limited to 1000
+INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1204
+INFO: 127.0.0.1:55052 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+INFO: 127.0.0.1:55052 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:60405 - "POST /documents/upload HTTP/1.1" 200

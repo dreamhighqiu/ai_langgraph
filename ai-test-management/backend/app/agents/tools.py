@@ -23,8 +23,8 @@ _pdf_processor = PDFProcessor(enable_cache=True)
 
 # ============ 配置 ============
 
-# API 基础 URL（从环境变量读取）
-API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8000")
+# API 基础 URL（从环境变量读取，默认使用 8080 端口）
+API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8080")
 API_PREFIX = settings.api_prefix  # /api/v2
 
 # HTTP 请求超时时间（从环境变量读取）

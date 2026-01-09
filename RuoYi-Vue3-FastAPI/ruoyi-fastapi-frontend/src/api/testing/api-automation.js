@@ -10,7 +10,7 @@ import request from '@/utils/request'
  */
 export function getAPIRequirementList(query) {
   return request({
-    url: '/testing/requirement/list',
+    url: '/api/testing/requirement/list',
     method: 'get',
     params: {
       ...query,
@@ -34,7 +34,7 @@ export function getAPIRequirement(id) {
  */
 export function addAPIRequirement(data) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'post',
     data: {
       ...data,
@@ -48,7 +48,7 @@ export function addAPIRequirement(data) {
  */
 export function updateAPIRequirement(data) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'put',
     data
   })
@@ -59,7 +59,7 @@ export function updateAPIRequirement(data) {
  */
 export function delAPIRequirement(ids) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'delete',
     data: { requirement_ids: ids }
   })
@@ -105,7 +105,7 @@ export function analyzeAPIRequirement(requirementId) {
  */
 export function getRestAPIScriptList(query) {
   return request({
-    url: '/testing/script/list',
+    url: '/api/testing/script/list',
     method: 'get',
     params: {
       ...query,
@@ -129,7 +129,7 @@ export function getRestAPIScript(id) {
  */
 export function addRestAPIScript(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'post',
     data: {
       ...data,
@@ -143,7 +143,7 @@ export function addRestAPIScript(data) {
  */
 export function updateRestAPIScript(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'put',
     data
   })
@@ -154,7 +154,7 @@ export function updateRestAPIScript(data) {
  */
 export function delRestAPIScript(ids) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'delete',
     data: { script_ids: ids }
   })
@@ -188,7 +188,7 @@ export function executeRestAPIScript(scriptId, config) {
  */
 export function getRestAPIExecutionList(query) {
   return request({
-    url: '/testing/execution/list',
+    url: '/api/testing/execution/list',
     method: 'get',
     params: {
       ...query,
@@ -234,7 +234,7 @@ export function retryRestAPIExecution(id) {
  */
 export function getRestAPIReportList(query) {
   return request({
-    url: '/testing/report/list',
+    url: '/api/testing/report/list',
     method: 'get',
     params: {
       ...query,
@@ -279,7 +279,7 @@ export function downloadRestAPIReport(id) {
  */
 export function delRestAPIReport(ids) {
   return request({
-    url: '/testing/report',
+    url: '/api/testing/report',
     method: 'delete',
     data: { report_ids: ids }
   })
@@ -300,7 +300,7 @@ export function exportRestAPIReportHtml(id) {
  */
 export function exportPostmanCollection(scriptIds) {
   return request({
-    url: '/testing/script/export/postman',
+    url: '/api/testing/script/export/postman',
     method: 'post',
     data: { script_ids: scriptIds },
     responseType: 'blob'
@@ -312,7 +312,7 @@ export function exportPostmanCollection(scriptIds) {
  */
 export function importFromSwagger(swaggerUrl) {
   return request({
-    url: '/testing/script/import/swagger',
+    url: '/api/testing/script/import/swagger',
     method: 'post',
     data: { swagger_url: swaggerUrl }
   })

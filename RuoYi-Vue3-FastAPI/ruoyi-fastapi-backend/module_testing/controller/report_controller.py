@@ -25,7 +25,7 @@ from utils.log_util import logger
 from utils.response_util import ResponseUtil
 
 report_controller = APIRouterPro(
-    prefix='/testing/report',
+    prefix='/api/testing/report',
     order_num=53,
     tags=['测试管理-报告管理'],
     dependencies=[PreAuthDependency()],

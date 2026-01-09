@@ -27,7 +27,7 @@ from utils.log_util import logger
 from utils.response_util import ResponseUtil
 
 project_controller = APIRouterPro(
-    prefix='/testing/project',
+    prefix='/api/testing/project',
     order_num=50,
     tags=['测试管理-项目管理'],
     dependencies=[PreAuthDependency()],

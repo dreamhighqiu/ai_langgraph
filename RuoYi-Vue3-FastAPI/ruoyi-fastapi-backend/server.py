@@ -140,6 +140,9 @@ def create_app() -> FastAPI:
     handle_exception(app)
     # 自动注册路由
     auto_register_routers(app)
+    # 手动注册测试模块路由（因为它在 router.py 中，不在 controller 目录）
+    from module_testing.router import testing_router
+    app.include_router(testing_router)
 
     # 添加根路径路由
     @app.get("/", include_in_schema=False)

@@ -123,6 +123,17 @@ class OpenAISettings(BaseSettings):
     openai_model: str = 'qwen2.5:7b'
 
 
+class LLMSettings(BaseSettings):
+    """
+    LLM 大模型配置 (通用)
+    """
+
+    llm_api_key: str = 'sk-0292e5a35e064f6f86169a20e39f0749'
+    llm_base_url: str = 'https://api.deepseek.com/v1'
+    llm_model_name: str = 'deepseek-chat'
+    llm_temperature: float = 0.7
+
+
 class StorageSettings(BaseSettings):
     """
     本地存储配置
@@ -270,6 +281,12 @@ class GetConfig:
         """
         return OpenAISettings()
 
+    def get_llm_config(self) -> LLMSettings:
+        """
+        获取LLM配置
+        """
+        return LLMSettings()
+
     def get_storage_config(self) -> StorageSettings:
         """
         获取存储配置
@@ -345,6 +362,8 @@ LangGraphConfig = get_config.get_langgraph_config()
 OllamaConfig = get_config.get_ollama_config()
 # OpenAI配置
 OpenAIConfig = get_config.get_openai_config()
+# LLM配置
+LLMConfig = get_config.get_llm_config()
 # 存储配置
 StorageConfig = get_config.get_storage_config()
 # 代码生成配置

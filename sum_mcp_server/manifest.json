@@ -1,0 +1,84 @@
+{
+  "purpose": "Mirror & index MCP servers in this repo for unified management",
+  "note": "This is a copy of sources; large/sensitive files (e.g. .env, node_modules) may be excluded.",
+  "services": [
+    {
+      "name": "ai-test-management: mindmap",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/ai-test-management/backend/app/mcp_servers/mindmap_mcp_server.py"
+    },
+    {
+      "name": "ai-test-management: mcp_config",
+      "type": "config",
+      "entrypoint": "sum_mcp_server/ai-test-management/backend/mcp_config.json"
+    },
+    {
+      "name": "ruoyi-fastapi-backend: rag",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/RuoYi-Vue3-FastAPI/ruoyi-fastapi-backend/mcp_servers/rag_mcp_server.py"
+    },
+    {
+      "name": "ruoyi-fastapi-backend: mindmap",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/RuoYi-Vue3-FastAPI/ruoyi-fastapi-backend/mcp_servers/mindmap_mcp_server.py"
+    },
+    {
+      "name": "testing-agents-service(api_agent): rag",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/rag_mcp_server.py"
+    },
+    {
+      "name": "testing-agents-service(api_agent): login",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/login_mcp_server.py"
+    },
+    {
+      "name": "testing-agents-service(api_agent): pytest_generator",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/pytest_generator.py"
+    },
+    {
+      "name": "testing-agents-service(api_agent): test_executor",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/test_executor.py"
+    },
+    {
+      "name": "testing-agents-service(api_agent): automation-quality-mcp",
+      "type": "node",
+      "transport": "stdio",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/automation-quality-mcp/mcpServer.js"
+    },
+    {
+      "name": "testing-agents-service(k6_agent): rag",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/k6_agent/mcp_servers/rag_mcp_server.py"
+    },
+    {
+      "name": "testing-agents-service(k6_agent): login",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/testing-agents-service/src/k6_agent/mcp_servers/login_mcp_server.py"
+    },
+    {
+      "name": "anything_rag_mcp",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/anything_rag_mcp/server.py"
+    },
+    {
+      "name": "mcp-server: mcp_server_rag_anything",
+      "type": "python",
+      "transport": "sse",
+      "entrypoint": "sum_mcp_server/mcp-server/src/mcp_server_rag_anything/server.py"
+    }
+  ]
+}
+

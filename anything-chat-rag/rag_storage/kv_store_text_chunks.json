@@ -860,5 +860,43 @@
     "create_time": 1767950972,
     "update_time": 1767951062,
     "_id": "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+  },
+  "chunk-68c1b1946824940414776d960a0b4d4c": {
+    "tokens": 122,
+    "content": "大学英语四级考试 成绩报告单\n\nR\n\nCET\n\n姓名：邱云霞\n\n学校：江西理工大学南昌校区\n\n院（系）：机电工程系\n\n准考证号：360450112104603\n\n身份证号：360428199008212245\n\n考试时间：\n\n2011年12月\n\n总分：429\n\n成绩单编号：112136045000321\n\n委托发布单位：全国大学英语网、六级考试委员会\n\n考委会网址：www.cet.edu.cn\n\n82\n\n学\n\n教育部高等教育司",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-7fa9816cdcac1c71d99ea4796d96fad8",
+    "file_path": "Scan_4级.pdf",
+    "llm_cache_list": [
+      "default:extract:8bf8125ce961ce3bbdb4a0c69dc572fa",
+      "default:extract:0770744ce72b72f734702b1995bf3c94"
+    ],
+    "create_time": 1767957287,
+    "update_time": 1767957337,
+    "_id": "chunk-68c1b1946824940414776d960a0b4d4c"
+  },
+  "chunk-8bd1b337f05103a241fe67d5c26c47c3": {
+    "tokens": 129,
+    "content": "\nImage Content Analysis:\nImage Path: D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\Scan_05-01-2026_1441\\docling\\images\\image_0.png\nCaptions: None\nFootnotes: None\n\nVisual Analysis: {'type': 'image', 'img_path': 'D:\\\\yunxia\\\\ai_langgraph\\\\anything-chat-rag\\\\parser_output\\\\Scan_05-01-2026_1441\\\\docling\\\\images\\\\image_0.png', 'image_caption': '', 'image_footnote': '', 'page_idx': 0}",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-c81106b3f41c6870a8cc1644a1022194",
+    "file_path": "Scan_05-01-2026_1441.pdf",
+    "llm_cache_list": [],
+    "update_time": 1767957317,
+    "_id": "chunk-8bd1b337f05103a241fe67d5c26c47c3"
+  },
+  "chunk-f95fd1b8895ad34d800ea206260e0ea5": {
+    "tokens": 161,
+    "content": "? 身份证正反面复印件；\n\n? 学历、学位证书复印件；\n\n离职证明原件；\n\n? 入职体检报告电子件；\n\n? 本人任意银行卡复印件；\n\n三、 注意事项\n\n1、若您的个人信息不真实或入职体检结果不合格，公司将有权不予聘用。\n\n2、我们希望您能接受本邀请函，请您尽快确认并在2个工作日回复！\n\n预祝你在斑马技术服务公司工作顺利！\n\n签铭：邱霞\n\n日期：2026、1.5\n\nCAREERTEMO\n\nACANEERSEATHUACOPANY\n\n上海科之锐人才咨询有限公司 二〇二六年一月",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-c81106b3f41c6870a8cc1644a1022194",
+    "file_path": "Scan_05-01-2026_1441.pdf",
+    "llm_cache_list": [
+      "default:extract:f7b573bf301c233cfe3b345e4e527b87",
+      "default:extract:a0764d8c0f93ece85421051e4d59cc07"
+    ],
+    "create_time": 1767957382,
+    "update_time": 1767957431,
+    "_id": "chunk-f95fd1b8895ad34d800ea206260e0ea5"
   }
 }

@@ -150,7 +150,7 @@ async def query_folder_list(
 
 @router.get("/tree", summary="获取文件夹树", dependencies=[UserInterfaceAuthDependency('testing:folder:list')])
 async def get_folder_tree(
-    projectId: int = Query(..., description="项目ID", ge=1),
+    projectId: Optional[int] = Query(None, description="项目ID", ge=1),
     db: AsyncSession = Depends(get_db),
     current_user = Depends(LoginService.get_current_user)
 ):
@@ -158,10 +158,10 @@ async def get_folder_tree(
     try:
         # 参数验证
         if not projectId or projectId <= 0:
-            return ResponseUtil.failure(msg="项目ID无效")
+            return ResponseUtil.failure(msg="项目ID无效，请先选择项目")
         
         tree = await folder_service.get_folder_tree(db, projectId)
-        return ResponseUtil.success(data=tree)
+        return ResponseUtil.success(data=tree if tree else [])
     except ValueError as e:
         logger.error(f"获取文件夹树失败: {str(e)}")
         return ResponseUtil.failure(msg=str(e))

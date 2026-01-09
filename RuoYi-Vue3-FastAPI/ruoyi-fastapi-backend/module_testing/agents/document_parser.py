@@ -20,8 +20,12 @@ from typing import Optional, Dict, Any
 
 import httpx
 from langchain_core.tools import tool
+from dotenv import load_dotenv
 
 from utils.log_util import logger
+
+# 加载环境变量（确保 .env 文件中的配置被读取）
+load_dotenv()
 
 # PDF 内容缓存，避免重复解析同一个文件
 _pdf_cache = {}
@@ -136,7 +140,10 @@ def extract_pdf_text(pdf_data: bytes, filename: str = "unknown.pdf", cache: Opti
                     from langchain.chat_models import init_chat_model
 
                     # 使用豆包模型进行图片解析
-                    doubao_api_key = os.getenv("DOUBAO_API_KEY", "")
+                    # 重新加载环境变量，确保获取最新配置
+                    load_dotenv(override=True)
+                    doubao_api_key = os.getenv("DOUBAO_API_KEY", "") or os.getenv("doubao_api_key", "")
+                    logger.info(f"PDF多模态解析 - 检查 DOUBAO_API_KEY: {'已配置' if doubao_api_key else '未配置'}")
                     if doubao_api_key:
                         image_llm = init_chat_model("doubao:doubao-vision", api_key=doubao_api_key)
                         image_parser = LLMImageBlobParser(model=image_llm)
@@ -312,15 +319,22 @@ async def parse_document_from_url(
             logger.info(f"检测到图片文件，尝试使用视觉模型解析: {url}")
             
             # 检查是否配置了视觉模型（豆包）
-            doubao_api_key = os.getenv("DOUBAO_API_KEY", "")
+            # 重新加载环境变量，确保获取最新配置
+            load_dotenv(override=True)
+            doubao_api_key = os.getenv("DOUBAO_API_KEY", "") or os.getenv("doubao_api_key", "")
+            
+            logger.info(f"检查 DOUBAO_API_KEY: {'已配置' if doubao_api_key else '未配置'} (长度: {len(doubao_api_key) if doubao_api_key else 0})")
+            
             if doubao_api_key:
                 try:
                     from langchain_community.document_loaders.parsers import LLMImageBlobParser
                     from langchain.chat_models import init_chat_model
                     from langchain_core.document_loaders import Blob
                     
+                    logger.info("开始初始化豆包视觉模型...")
                     # 初始化豆包视觉模型
                     image_llm = init_chat_model("doubao:doubao-vision", api_key=doubao_api_key)
+                    logger.info("豆包视觉模型初始化成功")
                     image_parser = LLMImageBlobParser(model=image_llm)
                     
                     # 创建 Blob 对象（LLMImageBlobParser 需要 Blob 对象）

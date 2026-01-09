@@ -164,7 +164,7 @@
         <el-form-item label="父文件夹" prop="parentId">
           <el-tree-select
             v-model="folderForm.parentId"
-            :data="folderTree"
+            :data="folderTree || []"
             :props="{ label: 'folder_name', value: 'folder_id', children: 'children' }"
             placeholder="选择父文件夹（可选）"
             clearable
@@ -308,7 +308,7 @@
 </template>
 
 <script setup name="TestCase">
-import { ref, reactive, onMounted, computed } from 'vue'
+import { ref, reactive, onMounted, computed, nextTick } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Document, Folder, Plus, Delete, MagicStick, ArrowDown, Upload, ChatDotRound } from '@element-plus/icons-vue'
 import { listTestCase, getTestCase, addTestCase, updateTestCase, delTestCase } from '@/api/testing/testCase'
@@ -417,6 +417,7 @@ const loadProjects = async () => {
 const loadFolderTree = async () => {
   if (!currentProjectId.value) {
     console.warn('项目ID为空，跳过加载文件夹树')
+    folderTree.value = [] // 确保设置为空数组
     return
   }
   try {
@@ -424,15 +425,22 @@ const loadFolderTree = async () => {
     const projectId = Number(currentProjectId.value)
     if (isNaN(projectId) || projectId <= 0) {
       console.error('无效的项目ID:', currentProjectId.value)
+      folderTree.value = [] // 确保设置为空数组
       return
     }
     const res = await getFolderTree(projectId)
-    folderTree.value = res.data || []
+    folderTree.value = Array.isArray(res.data) ? res.data : []
   } catch (error) {
     console.error('加载文件夹失败:', error)
+    folderTree.value = [] // 确保设置为空数组，避免后续操作出错
     // 忽略用户信息错误（在 loadProjects 中已处理）
     if (!error?.message?.includes('用户信息为空') && !error?.message?.includes('项目ID不能为空')) {
-      proxy.$modal.msgError('加载文件夹失败: ' + (error?.message || '未知错误'))
+      // 422错误通常是参数验证失败，不显示错误提示，只记录日志
+      if (error?.response?.status === 422) {
+        console.warn('文件夹树加载失败（参数验证失败）:', error?.response?.data)
+      } else {
+        proxy.$modal.msgError('加载文件夹失败: ' + (error?.message || '未知错误'))
+      }
     }
   }
 }
@@ -509,21 +517,29 @@ const handleAddFolder = () => {
 
 // 提交文件夹
 const submitFolderForm = async () => {
+  // 验证项目ID
+  if (!currentProjectId.value || currentProjectId.value <= 0) {
+    proxy.$modal.msgWarning('请先选择项目')
+    return
+  }
+  
   const valid = await proxy.$refs.folderFormRef?.validate()
   if (!valid) return
 
   try {
     await addFolder({
       project_id: currentProjectId.value,
-      parent_id: folderForm.parentId,
+      parent_id: folderForm.parentId || null,
       folder_name: folderForm.folderName,
-      description: folderForm.description
+      description: folderForm.description || ''
     })
     proxy.$modal.msgSuccess('创建成功')
     folderDialogVisible.value = false
     await loadFolderTree()
   } catch (error) {
     console.error('创建文件夹失败:', error)
+    const errorMsg = error?.response?.data?.msg || error?.message || '创建文件夹失败'
+    proxy.$modal.msgError(errorMsg)
   }
 }
 
@@ -651,16 +667,27 @@ const submitCaseForm = async () => {
 // 删除
 const handleDelete = async (row) => {
   const caseIds = row?.case_id ? [row.case_id] : ids.value
+  if (!caseIds || caseIds.length === 0) {
+    proxy.$modal.msgWarning('请选择要删除的测试用例')
+    return
+  }
   try {
     await ElMessageBox.confirm(`确认删除选中的 ${caseIds.length} 条测试用例?`, '警告', { type: 'warning' })
     for (const id of caseIds) {
+      if (!id) {
+        console.warn('跳过无效的用例ID:', id)
+        continue
+      }
       await delTestCase(id)
     }
     proxy.$modal.msgSuccess('删除成功')
-    getList()
+    await getList()
+    await loadFolderTree() // 刷新文件夹树，更新用例数量
   } catch (error) {
     if (error !== 'cancel') {
       console.error('删除失败:', error)
+      const errorMsg = error?.response?.data?.msg || error?.message || '删除失败'
+      proxy.$modal.msgError(errorMsg)
     }
   }
 }
@@ -698,8 +725,12 @@ const openAIDocDialog = () => {
 
 // 处理打开AI聊天（从对话框）
 const handleOpenAIChat = (prompt) => {
+  // 先设置初始提示词
   aiInitialPrompt.value = prompt
-  aiChatVisible.value = true
+  // 然后打开抽屉（确保提示词已设置）
+  nextTick(() => {
+    aiChatVisible.value = true
+  })
 }
 
 // AI生成成功回调

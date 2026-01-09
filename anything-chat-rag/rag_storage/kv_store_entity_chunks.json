@@ -573,10 +573,11 @@
       "chunk-b094f2251c462d742b75af5cb10c1643",
       "chunk-79be94d8c3833dcb484c8e1712014160",
       "chunk-d34f4f4096c5c994a4190c333cf5b57f",
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
+      "chunk-68c1b1946824940414776d960a0b4d4c"
     ],
-    "count": 6,
-    "update_time": 1767951062,
+    "count": 7,
+    "update_time": 1767957337,
     "_id": "邱云霞"
   },
   "江西理工大学": {
@@ -640,11 +641,11 @@
   },
   "注意事项": {
     "chunk_ids": [
-      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46",
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
     ],
-    "count": 1,
-    "create_time": 1767254619,
-    "update_time": 1767254619,
+    "count": 2,
+    "update_time": 1767957445,
     "_id": "注意事项"
   },
   "更新日期": {
@@ -721,11 +722,11 @@
   },
   "机电工程系": {
     "chunk_ids": [
-      "chunk-e409dd2e4a0fd1ff8186e4b449f5afba"
+      "chunk-e409dd2e4a0fd1ff8186e4b449f5afba",
+      "chunk-68c1b1946824940414776d960a0b4d4c"
     ],
-    "count": 1,
-    "create_time": 1767273174,
-    "update_time": 1767273174,
+    "count": 2,
+    "update_time": 1767957337,
     "_id": "机电工程系"
   },
   "验证报告在线查验网址": {
@@ -12129,11 +12130,11 @@
   },
   "上海科之锐人才咨询有限公司": {
     "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
     ],
-    "count": 1,
-    "create_time": 1767951062,
-    "update_time": 1767951062,
+    "count": 2,
+    "update_time": 1767957431,
     "_id": "上海科之锐人才咨询有限公司"
   },
   "高级软件测试工程师": {
@@ -12354,20 +12355,20 @@
   },
   "个人信息": {
     "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
     ],
-    "count": 1,
-    "create_time": 1767951087,
-    "update_time": 1767951087,
+    "count": 2,
+    "update_time": 1767957441,
     "_id": "个人信息"
   },
   "入职体检结果": {
     "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
     ],
-    "count": 1,
-    "create_time": 1767951091,
-    "update_time": 1767951091,
+    "count": 2,
+    "update_time": 1767957445,
     "_id": "入职体检结果"
   },
   "邀请函": {
@@ -12405,5 +12406,221 @@
     "create_time": 1767951122,
     "update_time": 1767951122,
     "_id": "公司"
+  },
+  "大学英语四级考试": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957337,
+    "update_time": 1767957337,
+    "_id": "大学英语四级考试"
+  },
+  "江西理工大学南昌校区": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957337,
+    "update_time": 1767957337,
+    "_id": "江西理工大学南昌校区"
+  },
+  "全国大学英语四、六级考试委员会": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957337,
+    "update_time": 1767957337,
+    "_id": "全国大学英语四、六级考试委员会"
+  },
+  "教育部高等教育司": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957337,
+    "update_time": 1767957337,
+    "_id": "教育部高等教育司"
+  },
+  "成绩报告单": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957338,
+    "update_time": 1767957338,
+    "_id": "成绩报告单"
+  },
+  "总分429": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957338,
+    "update_time": 1767957338,
+    "_id": "总分429"
+  },
+  "考试时间2011年12月": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957344,
+    "update_time": 1767957344,
+    "_id": "考试时间2011年12月"
+  },
+  "准考证号360450112104603": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957346,
+    "update_time": 1767957346,
+    "_id": "准考证号360450112104603"
+  },
+  "身份证号360428199008212245": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957347,
+    "update_time": 1767957347,
+    "_id": "身份证号360428199008212245"
+  },
+  "成绩单编号112136045000321": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957348,
+    "update_time": 1767957348,
+    "_id": "成绩单编号112136045000321"
+  },
+  "考委会网址www.cet.edu.cn": {
+    "chunk_ids": [
+      "chunk-68c1b1946824940414776d960a0b4d4c"
+    ],
+    "count": 1,
+    "create_time": 1767957348,
+    "update_time": 1767957348,
+    "_id": "考委会网址www.cet.edu.cn"
+  },
+  "斑马技术服务公司": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957431,
+    "update_time": 1767957431,
+    "_id": "斑马技术服务公司"
+  },
+  "邱霞": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957431,
+    "update_time": 1767957431,
+    "_id": "邱霞"
+  },
+  "身份证": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957431,
+    "update_time": 1767957431,
+    "_id": "身份证"
+  },
+  "学历证书": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957431,
+    "update_time": 1767957431,
+    "_id": "学历证书"
+  },
+  "学位证书": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957431,
+    "update_time": 1767957431,
+    "_id": "学位证书"
+  },
+  "离职证明": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957431,
+    "update_time": 1767957431,
+    "_id": "离职证明"
+  },
+  "入职体检报告": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957433,
+    "update_time": 1767957433,
+    "_id": "入职体检报告"
+  },
+  "银行卡": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957441,
+    "update_time": 1767957441,
+    "_id": "银行卡"
+  },
+  "入职邀请函": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957441,
+    "update_time": 1767957441,
+    "_id": "入职邀请函"
+  },
+  "CAREERTEMO": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957445,
+    "update_time": 1767957445,
+    "_id": "CAREERTEMO"
+  },
+  "ACANEERSEATHUACOPANY": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957445,
+    "update_time": 1767957445,
+    "_id": "ACANEERSEATHUACOPANY"
+  },
+  "2个工作日": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957445,
+    "update_time": 1767957445,
+    "_id": "2个工作日"
+  },
+  "2026年1月5日": {
+    "chunk_ids": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
+    "count": 1,
+    "create_time": 1767957445,
+    "update_time": 1767957445,
+    "_id": "2026年1月5日"
   }
 }

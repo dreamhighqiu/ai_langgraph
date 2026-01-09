@@ -15,7 +15,6 @@ from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langgraph.prebuilt import ToolNode
-from langgraph.checkpoint.memory import MemorySaver
 
 from config.env import LLMConfig
 from utils.log_util import logger
@@ -58,11 +57,8 @@ class RequirementAnalysisAgent:
         # 构建 LangGraph
         self.graph = self._build_graph()
         
-        # 内存检查点
-        self.memory = MemorySaver()
-        
-        # 编译 graph
-        self.app = self.graph.compile(checkpointer=self.memory)
+        # 编译 graph（不使用自定义 checkpointer，LangGraph API 会自动处理）
+        self.app = self.graph.compile()
         
         logger.info("需求分析智能体初始化完成")
     

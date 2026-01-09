@@ -572,10 +572,11 @@
       "chunk-e409dd2e4a0fd1ff8186e4b449f5afba",
       "chunk-b094f2251c462d742b75af5cb10c1643",
       "chunk-79be94d8c3833dcb484c8e1712014160",
-      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
     ],
-    "count": 5,
-    "update_time": 1767319408,
+    "count": 6,
+    "update_time": 1767951062,
     "_id": "邱云霞"
   },
   "江西理工大学": {
@@ -12116,5 +12117,293 @@
     "create_time": 1767341458,
     "update_time": 1767341458,
     "_id": "Product Image Cache"
+  },
+  "斑马技术服务(广州)有限公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951062,
+    "update_time": 1767951062,
+    "_id": "斑马技术服务(广州)有限公司"
+  },
+  "上海科之锐人才咨询有限公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951062,
+    "update_time": 1767951062,
+    "_id": "上海科之锐人才咨询有限公司"
+  },
+  "高级软件测试工程师": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951062,
+    "update_time": 1767951062,
+    "_id": "高级软件测试工程师"
+  },
+  "广州黄埔区云升科学园B2栋6楼": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951062,
+    "update_time": 1767951062,
+    "_id": "广州黄埔区云升科学园B2栋6楼"
+  },
+  "劳动合同": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951062,
+    "update_time": 1767951062,
+    "_id": "劳动合同"
+  },
+  "试用期": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951062,
+    "update_time": 1767951062,
+    "_id": "试用期"
+  },
+  "入职时间": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951064,
+    "update_time": 1767951064,
+    "_id": "入职时间"
+  },
+  "基本工资": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951070,
+    "update_time": 1767951070,
+    "_id": "基本工资"
+  },
+  "年终奖": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951072,
+    "update_time": 1767951072,
+    "_id": "年终奖"
+  },
+  "五险一金": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951073,
+    "update_time": 1767951073,
+    "_id": "五险一金"
+  },
+  "补充医疗保险": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951073,
+    "update_time": 1767951073,
+    "_id": "补充医疗保险"
+  },
+  "带薪年假": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951075,
+    "update_time": 1767951075,
+    "_id": "带薪年假"
+  },
+  "入职手续": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951075,
+    "update_time": 1767951075,
+    "_id": "入职手续"
+  },
+  "录用通知书": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951075,
+    "update_time": 1767951075,
+    "_id": "录用通知书"
+  },
+  "外包形式": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951076,
+    "update_time": 1767951076,
+    "_id": "外包形式"
+  },
+  "合同期": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951079,
+    "update_time": 1767951079,
+    "_id": "合同期"
+  },
+  "加班": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951079,
+    "update_time": 1767951079,
+    "_id": "加班"
+  },
+  "五险一金缴纳地区": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951079,
+    "update_time": 1767951079,
+    "_id": "五险一金缴纳地区"
+  },
+  "五险一金缴纳基数": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951079,
+    "update_time": 1767951079,
+    "_id": "五险一金缴纳基数"
+  },
+  "节假日福利": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951083,
+    "update_time": 1767951083,
+    "_id": "节假日福利"
+  },
+  "年度健康体检": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951083,
+    "update_time": 1767951083,
+    "_id": "年度健康体检"
+  },
+  "身份证正反面复印件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951083,
+    "update_time": 1767951083,
+    "_id": "身份证正反面复印件"
+  },
+  "学历、学位证书复印件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951084,
+    "update_time": 1767951084,
+    "_id": "学历、学位证书复印件"
+  },
+  "离职证明原件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951087,
+    "update_time": 1767951087,
+    "_id": "离职证明原件"
+  },
+  "入职体检报告电子件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951087,
+    "update_time": 1767951087,
+    "_id": "入职体检报告电子件"
+  },
+  "本人任意银行卡复印件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951087,
+    "update_time": 1767951087,
+    "_id": "本人任意银行卡复印件"
+  },
+  "个人信息": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951087,
+    "update_time": 1767951087,
+    "_id": "个人信息"
+  },
+  "入职体检结果": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951091,
+    "update_time": 1767951091,
+    "_id": "入职体检结果"
+  },
+  "邀请函": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951091,
+    "update_time": 1767951091,
+    "_id": "邀请函"
+  },
+  "薪资": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951109,
+    "update_time": 1767951109,
+    "_id": "薪资"
+  },
+  "福利": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951111,
+    "update_time": 1767951111,
+    "_id": "福利"
+  },
+  "公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951122,
+    "update_time": 1767951122,
+    "_id": "公司"
   }
 }

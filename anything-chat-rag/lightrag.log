@@ -6073,3 +6073,38 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-09 13:04:32,739 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1206
 2026-01-09 13:04:32,887 - uvicorn.access - INFO - 127.0.0.1:54140 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 2026-01-09 13:04:40,545 - uvicorn.access - INFO - 127.0.0.1:54140 - "GET /openapi.json HTTP/1.1" 200
+2026-01-09 17:28:50,132 - uvicorn.access - INFO - 127.0.0.1:57992 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 17:28:53,154 - uvicorn.access - INFO - 127.0.0.1:49771 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 17:28:53,155 - lightrag - INFO - Using RAG-Anything multimodal processing for: Offer Letter-邱云霞.pdf
+2026-01-09 17:28:53,158 - lightrag - INFO - RAGAnything initialized with config:
+2026-01-09 17:28:53,160 - lightrag - INFO -   Working directory: ./rag_storage
+2026-01-09 17:28:53,160 - lightrag - INFO -   Parser: docling
+2026-01-09 17:28:53,161 - lightrag - INFO -   Parse method: auto
+2026-01-09 17:28:53,161 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2026-01-09 17:28:53,161 - lightrag - INFO -   Max concurrent files: 1
+2026-01-09 17:28:53,162 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2026-01-09 17:28:53,164 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Offer Letter-邱云霞.pdf
+2026-01-09 17:28:53,165 - lightrag - INFO - Using docling parser with method: auto
+2026-01-09 17:28:53,165 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2026-01-09 17:29:31,352 - lightrag - ERROR - Error during parsing with docling parser: Command '['docling', '--output', 'parser_output\\Offer Letter-邱云霞\\docling', '--to', 'json', 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\inputs\\Offer Letter-邱云霞.pdf']' returned non-zero exit status 1.
+2026-01-09 17:29:31,353 - lightrag - ERROR - Error processing document with RAG-Anything: Command '['docling', '--output', 'parser_output\\Offer Letter-邱云霞\\docling', '--to', 'json', 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\inputs\\Offer Letter-邱云霞.pdf']' returned non-zero exit status 1.
+2026-01-09 17:29:31,353 - lightrag - WARNING - RAG-Anything processing failed for Offer Letter-邱云霞.pdf, falling back to standard processing
+2026-01-09 17:29:31,877 - lightrag - INFO - Successfully extracted and enqueued file: Offer Letter-邱云霞.pdf
+2026-01-09 17:29:31,880 - lightrag - INFO - Processing 1 document(s)
+2026-01-09 17:29:31,880 - lightrag - INFO - Extracting stage 1/1: Offer Letter-邱云霞.pdf
+2026-01-09 17:29:31,881 - lightrag - INFO - Processing d-id: doc-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-09 17:29:32,216 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+2026-01-09 17:29:45,781 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2026-01-09 17:30:23,974 - lightrag - INFO -  == LLM cache == saving: default:extract:65bd9e817a9e27d5e5983f914a6ad442
+2026-01-09 17:31:02,744 - lightrag - INFO -  == LLM cache == saving: default:extract:a8d4e8f30e48d8c9e1861723567756a2
+2026-01-09 17:31:02,745 - lightrag - INFO - Chunk 1 of 1 extracted 30 Ent + 26 Rel chunk-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-09 17:31:02,747 - lightrag - INFO - Merging stage 1/1: Offer Letter-邱云霞.pdf
+2026-01-09 17:31:02,747 - lightrag - INFO - Phase 1: Processing 30 entities from doc-a4d91a61d9cca0476fb39d1c2fced927 (async: 8)
+2026-01-09 17:31:02,750 - lightrag - INFO - Merged: `邱云霞` | 5+1
+2026-01-09 17:31:34,605 - lightrag - INFO - Phase 2: Processing 26 relations from doc-a4d91a61d9cca0476fb39d1c2fced927 (async: 8)
+2026-01-09 17:32:16,572 - lightrag - INFO - Phase 3: Updating final 33(30+3) entities and  26 relations from doc-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-09 17:32:16,573 - lightrag - INFO - Completed merging: 30 entities, 3 extra entities, 26 relations
+2026-01-09 17:32:16,649 - lightrag - INFO - [] Writing graph with 1353 nodes, 1374 edges
+2026-01-09 17:32:16,739 - lightrag - INFO - In memory DB persist to disk
+2026-01-09 17:32:16,740 - lightrag - INFO - Completed processing file 1/1: Offer Letter-邱云霞.pdf
+2026-01-09 17:32:16,740 - lightrag - INFO - Enqueued document processing pipeline stopped

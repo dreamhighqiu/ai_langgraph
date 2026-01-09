@@ -12144,5 +12144,239 @@
     "create_time": 1767341697,
     "update_time": 1767341697,
     "_id": "CNY<SEP>Currency Configuration"
+  },
+  "斑马技术服务(广州)有限公司<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951094,
+    "update_time": 1767951094,
+    "_id": "斑马技术服务(广州)有限公司<SEP>邱云霞"
+  },
+  "邱云霞<SEP>高级软件测试工程师": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951096,
+    "update_time": 1767951096,
+    "_id": "邱云霞<SEP>高级软件测试工程师"
+  },
+  "劳动合同<SEP>斑马技术服务(广州)有限公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951096,
+    "update_time": 1767951096,
+    "_id": "劳动合同<SEP>斑马技术服务(广州)有限公司"
+  },
+  "斑马技术服务(广州)有限公司<SEP>补充医疗保险": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951099,
+    "update_time": 1767951099,
+    "_id": "斑马技术服务(广州)有限公司<SEP>补充医疗保险"
+  },
+  "劳动合同<SEP>试用期": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951099,
+    "update_time": 1767951099,
+    "_id": "劳动合同<SEP>试用期"
+  },
+  "广州黄埔区云升科学园B2栋6楼<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951101,
+    "update_time": 1767951101,
+    "_id": "广州黄埔区云升科学园B2栋6楼<SEP>邱云霞"
+  },
+  "上海科之锐人才咨询有限公司<SEP>录用通知书": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951101,
+    "update_time": 1767951101,
+    "_id": "上海科之锐人才咨询有限公司<SEP>录用通知书"
+  },
+  "带薪年假<SEP>斑马技术服务(广州)有限公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951106,
+    "update_time": 1767951106,
+    "_id": "带薪年假<SEP>斑马技术服务(广州)有限公司"
+  },
+  "劳动合同<SEP>合同期": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951106,
+    "update_time": 1767951106,
+    "_id": "劳动合同<SEP>合同期"
+  },
+  "基本工资<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951109,
+    "update_time": 1767951109,
+    "_id": "基本工资<SEP>邱云霞"
+  },
+  "加班<SEP>薪资": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951109,
+    "update_time": 1767951109,
+    "_id": "加班<SEP>薪资"
+  },
+  "外包形式<SEP>斑马技术服务(广州)有限公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951111,
+    "update_time": 1767951111,
+    "_id": "外包形式<SEP>斑马技术服务(广州)有限公司"
+  },
+  "福利<SEP>节假日福利": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951111,
+    "update_time": 1767951111,
+    "_id": "福利<SEP>节假日福利"
+  },
+  "五险一金<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951113,
+    "update_time": 1767951113,
+    "_id": "五险一金<SEP>邱云霞"
+  },
+  "年度健康体检<SEP>福利": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951117,
+    "update_time": 1767951117,
+    "_id": "年度健康体检<SEP>福利"
+  },
+  "入职手续<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951119,
+    "update_time": 1767951119,
+    "_id": "入职手续<SEP>邱云霞"
+  },
+  "五险一金<SEP>五险一金缴纳地区": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951119,
+    "update_time": 1767951119,
+    "_id": "五险一金<SEP>五险一金缴纳地区"
+  },
+  "入职手续<SEP>身份证正反面复印件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951122,
+    "update_time": 1767951122,
+    "_id": "入职手续<SEP>身份证正反面复印件"
+  },
+  "个人信息<SEP>公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951122,
+    "update_time": 1767951122,
+    "_id": "个人信息<SEP>公司"
+  },
+  "五险一金<SEP>五险一金缴纳基数": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951124,
+    "update_time": 1767951124,
+    "_id": "五险一金<SEP>五险一金缴纳基数"
+  },
+  "入职手续<SEP>学历、学位证书复印件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951125,
+    "update_time": 1767951125,
+    "_id": "入职手续<SEP>学历、学位证书复印件"
+  },
+  "邀请函<SEP>邱云霞": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951125,
+    "update_time": 1767951125,
+    "_id": "邀请函<SEP>邱云霞"
+  },
+  "入职体检结果<SEP>公司": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951129,
+    "update_time": 1767951129,
+    "_id": "入职体检结果<SEP>公司"
+  },
+  "入职手续<SEP>离职证明原件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951130,
+    "update_time": 1767951130,
+    "_id": "入职手续<SEP>离职证明原件"
+  },
+  "入职体检报告电子件<SEP>入职手续": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951132,
+    "update_time": 1767951132,
+    "_id": "入职体检报告电子件<SEP>入职手续"
+  },
+  "入职手续<SEP>本人任意银行卡复印件": {
+    "chunk_ids": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "count": 1,
+    "create_time": 1767951134,
+    "update_time": 1767951134,
+    "_id": "入职手续<SEP>本人任意银行卡复印件"
   }
 }

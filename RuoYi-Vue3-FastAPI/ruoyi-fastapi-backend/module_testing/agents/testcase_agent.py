@@ -16,7 +16,6 @@ from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langgraph.prebuilt import ToolNode
-from langgraph.checkpoint.memory import MemorySaver
 
 from config.env import LLMConfig
 from utils.log_util import logger
@@ -32,8 +31,9 @@ from module_testing.agents.tools import (
 class TestCaseGeneratorContext:
     """测试用例生成器上下文"""
     project_id: int
+    folder_id: Optional[int] = None
     module: Optional[str] = None
-    template_type: str = "normal"  # normal 或 bdd
+    template_type: str = "test_case"  # test_case 或 test_case_bdd
 
 
 class TestCaseAgent:
@@ -64,17 +64,15 @@ class TestCaseAgent:
         # 构建 LangGraph
         self.graph = self._build_graph()
         
-        # 内存检查点
-        self.memory = MemorySaver()
-        
-        # 编译 graph
-        self.app = self.graph.compile(checkpointer=self.memory)
+        # 编译 graph（不使用自定义 checkpointer，LangGraph API 会自动处理）
+        self.app = self.graph.compile()
         
         logger.info("测试用例生成智能体初始化完成")
     
     def _build_system_prompt(self, context: TestCaseGeneratorContext) -> str:
         """构建系统提示词"""
         project_id = context.project_id
+        folder_id = context.folder_id
         module = context.module or "未指定"
         template_type = context.template_type
         
@@ -84,17 +82,35 @@ class TestCaseAgent:
 **系统已自动配置以下参数，调用工具时必须使用这些值：**
 
 - **项目ID (project_id)**: `{project_id}`
+- **文件夹ID (folder_id)**: `{folder_id or "未指定（将创建到项目根目录）"}`
 - **模块名称 (module)**: `{module}`
-- **默认模板类型 (template_type)**: `{template_type}`
+- **默认模板类型 (template)**: `{template_type}`
 
 **⚠️ 调用工具时的关键注意事项：**
 
-1. **必须使用上述参数**：创建测试用例时，`project_id` 必须使用上面显示的值
+1. **必须使用上述参数**：创建测试用例时，`project_id` 必须使用 `{project_id}`，`folder_id` 使用 `{folder_id}` 或不传（创建到根目录）
 2. **不要询问用户**：这些参数已由系统自动传入，不需要用户手动提供
 3. **模板类型**：
-   - 如果 template_type 是 `normal`，创建普通测试用例
-   - 如果 template_type 是 `bdd`，创建 BDD 测试用例
+   - 如果 template 是 `test_case`，创建普通测试用例（使用 test_case_steps）
+   - 如果 template 是 `test_case_bdd`，创建 BDD 测试用例（使用 feature/scenario/background）
    - 用户可以在对话中要求使用特定模板，但默认使用上述值
+
+**✅ 正确的工具调用示例：**
+```python
+create_test_case_tool(
+    project_id={project_id},  # 使用上下文中的值
+    folder_id={folder_id},    # 使用上下文中的值（可选）
+    name="用户登录功能测试",
+    description="验证用户登录功能",
+    template="{template_type}",
+    ...
+)
+```
+
+**❌ 错误的做法：**
+- 不要询问用户 "请提供项目ID"
+- 不要使用硬编码的值
+- 不要忽略上下文中的参数
 """
         
         system_prompt = f"""# 测试用例生成专家
@@ -173,12 +189,14 @@ class TestCaseAgent:
             # 从配置中获取上下文
             context = config.get("configurable", {})
             project_id = context.get("project_id", 0)
+            folder_id = context.get("folder_id")
             module = context.get("module")
-            template_type = context.get("template_type", "normal")
+            template_type = context.get("template_type", "test_case")
 
             # 构建上下文对象
             ctx = TestCaseGeneratorContext(
                 project_id=project_id,
+                folder_id=folder_id,
                 module=module,
                 template_type=template_type
             )
@@ -222,8 +240,9 @@ class TestCaseAgent:
         self,
         user_input: str,
         project_id: int,
+        folder_id: Optional[int] = None,
         module: Optional[str] = None,
-        template_type: str = "normal",
+        template_type: str = "test_case",
         thread_id: Optional[str] = None
     ):
         """
@@ -232,6 +251,7 @@ class TestCaseAgent:
         Args:
             user_input: 用户输入
             project_id: 项目ID
+            folder_id: 文件夹ID
             module: 模块名称
             template_type: 模板类型
             thread_id: 线程ID（用于会话管理）
@@ -241,6 +261,7 @@ class TestCaseAgent:
             "configurable": {
                 "thread_id": thread_id or "default",
                 "project_id": project_id,
+                "folder_id": folder_id,
                 "module": module,
                 "template_type": template_type
             }
@@ -322,20 +343,35 @@ def _create_langgraph_app_for_api():
         # 从配置中获取上下文
         ctx = config.get("configurable", {})
         project_id = ctx.get("project_id", 0)
+        folder_id = ctx.get("folder_id")
         module = ctx.get("module", "未指定")
-        template_type = ctx.get("template_type", "normal")
+        template_type = ctx.get("template_type", "test_case")
         
         system_prompt = f"""# 测试用例生成专家
 
 你是一位专业的软件测试工程师，擅长根据需求生成高质量的测试用例。
 
-## 当前上下文
-- 项目ID: {project_id}
-- 模块: {module}
-- 模板类型: {template_type}
+## 🎯 当前上下文信息（重要！调用工具时必须使用这些值）
+
+- **项目ID (project_id)**: `{project_id}`
+- **文件夹ID (folder_id)**: `{folder_id or "未指定"}`
+- **模块名称 (module)**: `{module}`
+- **模板类型 (template)**: `{template_type}`
 
 ## 工具使用说明
-调用工具时必须使用上述 project_id 参数。
+
+**⚠️ 关键：调用工具时必须使用上述参数值！不要询问用户。**
+
+正确示例：
+```python
+create_test_case_tool(
+    project_id={project_id},
+    folder_id={folder_id},
+    name="用户登录功能测试",
+    template="{template_type}",
+    ...
+)
+```
 
 ## 测试用例设计原则
 1. 覆盖正常流程和异常流程

@@ -26,9 +26,18 @@ class TestCaseService:
         self, 
         db: AsyncSession, 
         test_case_vo: TestCaseCreateVO,
-        user_name: str
+        user_name: str,
+        auto_commit: bool = True
     ) -> TestCaseDO:
-        """创建测试用例"""
+        """
+        创建测试用例
+        
+        Args:
+            db: 数据库会话
+            test_case_vo: 测试用例创建 VO
+            user_name: 创建者用户名
+            auto_commit: 是否自动提交事务（默认 True，工具调用时设为 False）
+        """
         try:
             # 生成用例标识符
             identifier = await self.test_case_dao.get_next_identifier(db, test_case_vo.project_id)
@@ -85,13 +94,17 @@ class TestCaseService:
             if test_case_vo.folder_id:
                 await self.folder_dao.increment_case_count(db, test_case_vo.folder_id, 1)
             
-            await db.commit()
+            # 只有在 auto_commit=True 时才提交（用于 HTTP 请求场景）
+            # 工具调用时 auto_commit=False，由 get_db_session() 上下文管理器处理 commit
+            if auto_commit:
+                await db.commit()
             
-            logger.info(f"创建测试用例成功: {identifier}")
+            logger.info(f"创建测试用例成功: {identifier} (用户: {user_name})")
             return result
             
         except Exception as e:
-            await db.rollback()
+            if auto_commit:
+                await db.rollback()
             logger.error(f"创建测试用例失败: {str(e)}")
             raise
 

@@ -886,6 +886,7 @@ case "${1:-help}" in
     backend) start_backend ;;
     frontend) start_frontend ;;
     langgraph) start_langgraph ;;
+    mcp) start_mcp_services ;;
     all) start_all ;;
     restart) restart_all ;;
     stop) stop_all ;;

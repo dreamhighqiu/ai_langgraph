@@ -344,5 +344,24 @@
       "processing_start_time": 1767957382,
       "processing_end_time": 1767957478
     }
+  },
+  "doc-f1fff04f1907ceef2945d91abc146ec6": {
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d",
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "content_summary": "一、算法备案 \r\nDify工作流 体验网址：\r\nhttp://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS\r\nhttp://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS\r\n# 加在工作流回复的最后一行：以上内容由AI生成\r\n# 免责声明：本网页所有内容由百寻智能问答+AI 生成\r\n隐私协议（用于算法备案）：http://www.baixunsz.com/dn/aiprivacy.html\r\n隐私协议（用于建友官网）：h...",
+    "content_length": 3900,
+    "created_at": "2026-01-09T13:23:18.806997+00:00",
+    "updated_at": "2026-01-09T13:33:02.336003+00:00",
+    "file_path": "重要信息.txt",
+    "track_id": "upload_20260109_212318_a0951f17",
+    "metadata": {
+      "processing_start_time": 1767964998,
+      "processing_end_time": 1767965582
+    }
   }
 }

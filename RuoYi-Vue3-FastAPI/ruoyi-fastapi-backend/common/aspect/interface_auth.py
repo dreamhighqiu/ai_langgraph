@@ -1,10 +1,13 @@
 from typing import Union
 
 from fastapi import Depends, Request, params
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from common.context import RequestContext
-from exceptions.exception import PermissionException
+from exceptions.exception import PermissionException, LoginException
 from utils.dependency_util import DependencyUtil
+from module_admin.service.login_service import LoginService
+from config.get_db import get_db
 
 
 class CheckUserInterfaceAuth:
@@ -22,11 +25,23 @@ class CheckUserInterfaceAuth:
         self.perm = perm
         self.is_strict = is_strict
 
-    def __call__(self, request: Request) -> bool:
+    async def __call__(self, request: Request, db: AsyncSession = Depends(get_db)) -> bool:
         DependencyUtil.check_exclude_routes(
             request, err_msg='当前路由不在认证规则内，不可使用CheckUserInterfaceAuth依赖项'
         )
-        current_user = RequestContext.get_current_user()
+        try:
+            current_user = RequestContext.get_current_user()
+        except (LoginException, AttributeError, ValueError):
+            # 如果用户信息还未设置到上下文，尝试从请求中获取 token 并验证用户
+            # 这解决了 FastAPI 依赖执行顺序问题：dependencies 在函数参数依赖之前执行
+            token = request.headers.get('Authorization')
+            if not token:
+                raise LoginException(data='', message='当前用户信息为空，请检查是否已登录')
+            try:
+                # 直接调用 LoginService 获取用户信息并设置到上下文
+                current_user = await LoginService.get_current_user(request, token, db)
+            except Exception:
+                raise LoginException(data='', message='当前用户信息为空，请检查是否已登录')
         user_auth_list = current_user.permissions
         if '*:*:*' in user_auth_list:
             return True

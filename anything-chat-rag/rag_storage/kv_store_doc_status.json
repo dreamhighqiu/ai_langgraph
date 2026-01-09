@@ -292,5 +292,22 @@
       "processing_start_time": 1767341107,
       "processing_end_time": 1767341702
     }
+  },
+  "doc-a4d91a61d9cca0476fb39d1c2fced927": {
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+    ],
+    "content_summary": "录取通知书\n邱云霞女士，您好：\n恭喜您通过斑马技术服务（广州）有限公司的面试 ，我们将采用外包的形式与您正\n式签订劳动合同。\n一． 以下是本公司与您协议的录用条件：\n1、 职位：\n1） 您的任职职务： 高级软件测试工程师\n2） 工作及报道地点：广州黄埔区云升科学园B2栋6楼\n2、 合同条款：\n1） 合同期 ：3年\n2） 试用期： 6个月，试用期全额发薪\n3） 入职时间 ：2026/1/12\n3、 薪资：\n1）基本工资：税前23000元\n2）年终奖：工作满一年发放13 薪\n3）加班按照法定调休或者...",
+    "content_length": 561,
+    "created_at": "2026-01-09T09:29:31.868320+00:00",
+    "updated_at": "2026-01-09T09:32:16.573553+00:00",
+    "file_path": "Offer Letter-邱云霞.pdf",
+    "track_id": "upload_20260109_172853_9fb7f5ee",
+    "metadata": {
+      "processing_start_time": 1767950972,
+      "processing_end_time": 1767951136
+    }
   }
 }

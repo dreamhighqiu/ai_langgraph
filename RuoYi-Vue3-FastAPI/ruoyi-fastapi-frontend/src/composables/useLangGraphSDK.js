@@ -233,13 +233,37 @@ export function useLangGraphSDK(options = {}) {
           id: uuidv4(),
           type: 'human',
           content: content.trim()
-        }],
-        context: {
-          project_identifier: String(projectId || ''),
-          folder_id: String(folderId || ''),
-          template_type: templateType
-        }
+        }]
       }
+      
+      // 构建配置，包含上下文 - 参照 ai-test-management 实现
+      // 注意：project_id 和 folder_id 都必须传递给 LangGraph Agent
+      const runConfig = {
+        configurable: {
+          // 项目和文件夹 ID（用于测试用例创建）
+          project_id: projectId || 0,
+          folder_id: folderId || null,
+          // 模板类型
+          template_type: templateType,
+          // 兼容字符串标识符格式
+          project_identifier: String(projectId || ''),
+        },
+        recursion_limit: 100,
+        ...(currentAssistant.value?.config || {})
+      }
+      
+      console.log('[LangGraph] 配置信息:', {
+        project_id: projectId,
+        folder_id: folderId,
+        template_type: templateType
+      })
+      
+      console.log('[LangGraph] 发送消息:', {
+        threadId: threadId.value,
+        assistantId: currentAssistant.value?.assistant_id || assistantId,
+        input,
+        config: runConfig
+      })
       
       // 使用流式 API
       const streamResponse = client.runs.stream(
@@ -247,10 +271,7 @@ export function useLangGraphSDK(options = {}) {
         currentAssistant.value?.assistant_id || assistantId,
         {
           input,
-          config: {
-            ...(currentAssistant.value?.config || {}),
-            recursion_limit: 100
-          },
+          config: runConfig,
           streamMode: 'messages'
         }
       )
@@ -259,7 +280,31 @@ export function useLangGraphSDK(options = {}) {
       for await (const chunk of streamResponse) {
         if (abortController?.signal.aborted) break
         
-        handleStreamChunk(chunk, aiMessage)
+        console.log('[LangGraph] 收到 chunk:', JSON.stringify(chunk).substring(0, 500))
+        
+        // LangGraph SDK 返回的 chunk 格式可能是:
+        // 1. { event: 'messages', data: [...] }
+        // 2. 直接是消息数组 [...]
+        // 3. { messages: [...] }
+        
+        if (chunk) {
+          if (chunk.event && chunk.data) {
+            // 格式 1: 有 event 包装
+            handleStreamChunk(chunk, aiMessage)
+          } else if (Array.isArray(chunk)) {
+            // 格式 2: 直接是消息数组
+            processMessageData(chunk, aiMessage)
+          } else if (chunk.messages) {
+            // 格式 3: 有 messages 字段
+            processMessageData(chunk.messages, aiMessage)
+          } else if (chunk.content !== undefined) {
+            // 直接是单个消息对象
+            processMessageData([chunk], aiMessage)
+          } else {
+            // 其他格式，尝试作为事件处理
+            handleStreamChunk(chunk, aiMessage)
+          }
+        }
       }
       
       // 完成后触发回调
@@ -395,6 +440,7 @@ export function useLangGraphSDK(options = {}) {
       // 更新 AI 消息内容
       if (content && msg.type !== 'tool') {
         aiMessage.content = content
+        console.log('[Stream] 更新消息内容:', content.substring(0, 100))
       }
       
       // 处理 tool_calls
@@ -411,6 +457,7 @@ export function useLangGraphSDK(options = {}) {
               args: tc.args || {},
               status: 'running'
             })
+            console.log('[Stream] 添加工具调用:', tc.name)
           }
         })
       }
@@ -419,19 +466,25 @@ export function useLangGraphSDK(options = {}) {
       if (msg.additional_kwargs?.tool_calls) {
         msg.additional_kwargs.tool_calls.forEach(tc => {
           const existingTC = aiMessage.toolCalls.find(t => t.id === tc.id)
-          if (existingTC) {
-            existingTC.args = tc.function?.arguments 
+          let args = {}
+          try {
+            args = tc.function?.arguments 
               ? JSON.parse(tc.function.arguments) 
-              : existingTC.args
+              : (tc.args || {})
+          } catch {
+            args = tc.args || {}
+          }
+          
+          if (existingTC) {
+            existingTC.args = args
           } else {
             aiMessage.toolCalls.push({
               id: tc.id || `tool_${Date.now()}`,
               name: tc.function?.name || tc.name,
-              args: tc.function?.arguments 
-                ? JSON.parse(tc.function.arguments) 
-                : (tc.args || {}),
+              args,
               status: 'running'
             })
+            console.log('[Stream] 添加工具调用 (from additional_kwargs):', tc.function?.name || tc.name)
           }
         })
       }
@@ -443,14 +496,22 @@ export function useLangGraphSDK(options = {}) {
         if (tc) {
           tc.status = 'completed'
           tc.result = msg.content
+          console.log('[Stream] 工具调用完成:', tc.name)
         }
       }
       
       // 处理 response_metadata
       if (msg.response_metadata) {
-        // 可以从这里获取 token 使用信息等
         console.log('[Stream] response_metadata:', msg.response_metadata)
       }
+    }
+    
+    // 强制触发 Vue 响应式更新
+    // 通过替换整个消息数组来触发更新
+    const idx = messages.value.findIndex(m => m.id === aiMessage.id)
+    if (idx !== -1) {
+      messages.value[idx] = { ...aiMessage }
+      messages.value = [...messages.value]
     }
   }
   

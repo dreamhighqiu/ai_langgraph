@@ -109,7 +109,7 @@ async def create_test_case_tool(
     Args:
         project_id: 项目ID（必填，从上下文自动获取）
         name: 测试用例名称（必填）
-        folder_id: 文件夹ID（可选，从上下文自动获取）
+        folder_id: 文件夹ID（可选，从上下文自动获取，如不传则创建到项目根目录）
         description: 测试用例描述
         module: 所属模块
         case_type: 测试类型（functional, regression, smoke, performance, security等）
@@ -160,26 +160,57 @@ async def create_test_case_tool(
         )
     """
     try:
+        # 参数验证
+        if not project_id:
+            return {
+                "success": False,
+                "error": "project_id 是必填参数，请确保从上下文中获取",
+                "message": "创建测试用例失败：缺少项目ID"
+            }
+        
+        if not name:
+            return {
+                "success": False,
+                "error": "name 是必填参数",
+                "message": "创建测试用例失败：缺少测试用例名称"
+            }
+        
         # 直接调用 Service 层，绕过 HTTP 认证
         from module_testing.service.test_case_service import TestCaseService
-        from module_testing.entity.vo.test_case_vo import TestCaseCreateVO
+        from module_testing.entity.vo.test_case_vo import TestCaseCreateVO, TestCaseStepVO
         from config.get_db import get_db_session
+        
+        # 处理测试步骤 - 转换为 VO 对象
+        processed_steps = None
+        if test_case_steps:
+            processed_steps = []
+            for idx, step in enumerate(test_case_steps, start=1):
+                if isinstance(step, dict):
+                    # 兼容多种格式：step/expected 或 action/expected 或 action/result
+                    action = step.get('step') or step.get('action', '')
+                    expected = step.get('expected') or step.get('result', '')
+                    processed_steps.append(TestCaseStepVO(
+                        step_number=idx,
+                        action=action,
+                        expected=expected
+                    ))
         
         # 构建 VO 对象
         test_case_vo = TestCaseCreateVO(
             case_name=name,
             project_id=project_id,
-            folder_id=folder_id,
+            folder_id=folder_id if folder_id else None,
             description=description,
             module=module,
             case_type=case_type,
             priority=priority,
             status=status,
             preconditions=preconditions,
-            expected_result=expected_result,
+            expected_results=expected_result,
             test_data=test_data,
             tags=tags,
             template=template,
+            test_case_steps=processed_steps,
         )
         
         # 根据模板类型添加相应字段
@@ -190,17 +221,21 @@ async def create_test_case_tool(
                 test_case_vo.scenario = scenario
             if background:
                 test_case_vo.background = background
-        else:
-            if test_case_steps:
-                test_case_vo.test_case_steps = test_case_steps
         
         # 调用 Service 创建测试用例
         service = TestCaseService()
         
         async with get_db_session() as db:
+            # 使用固定的 AI 创建者标识
+            # auto_commit=False 让 get_db_session() 的上下文管理器处理 commit
             result = await service.create_test_case(
-                db, test_case_vo, "ai_agent"  # 使用 ai_agent 作为创建者
+                db, test_case_vo, "AI助手", auto_commit=False
             )
+            
+            # 确保数据已刷新（在 commit 之前）
+            await db.flush()
+            
+            logger.info(f"AI 成功创建测试用例: {result.case_identifier} - {name} (ID: {result.case_id})")
             
             return {
                 "success": True,
@@ -209,7 +244,7 @@ async def create_test_case_tool(
                     "case_identifier": result.case_identifier,
                     "case_name": result.case_name,
                 },
-                "message": f"测试用例 '{name}' (ID: {result.case_id}) 创建成功"
+                "message": f"✅ 测试用例 '{name}' (ID: {result.case_id}, 标识: {result.case_identifier}) 创建成功"
             }
 
     except Exception as e:
@@ -219,7 +254,7 @@ async def create_test_case_tool(
         return {
             "success": False,
             "error": str(e),
-            "message": f"创建测试用例失败: {str(e)}"
+            "message": f"❌ 创建测试用例失败: {str(e)}"
         }
 
 
@@ -433,7 +468,7 @@ async def batch_create_test_cases_tool(
             }
         
         from module_testing.service.test_case_service import TestCaseService
-        from module_testing.entity.vo.test_case_vo import TestCaseCreateVO
+        from module_testing.entity.vo.test_case_vo import TestCaseCreateVO, TestCaseStepVO
         from config.get_db import get_db_session
         
         results = []
@@ -456,6 +491,21 @@ async def batch_create_test_cases_tool(
                         failed += 1
                         continue
                     
+                    # 处理测试步骤 - 转换为 VO 对象
+                    raw_steps = tc.get("test_case_steps")
+                    processed_steps = None
+                    if raw_steps:
+                        processed_steps = []
+                        for idx, step in enumerate(raw_steps, start=1):
+                            if isinstance(step, dict):
+                                action = step.get('step') or step.get('action', '')
+                                expected = step.get('expected') or step.get('result', '')
+                                processed_steps.append(TestCaseStepVO(
+                                    step_number=idx,
+                                    action=action,
+                                    expected=expected
+                                ))
+                    
                     # 构建 VO 对象
                     test_case_vo = TestCaseCreateVO(
                         case_name=name,
@@ -467,20 +517,26 @@ async def batch_create_test_cases_tool(
                         priority=tc.get("priority", "medium"),
                         status=tc.get("status", "draft"),
                         preconditions=tc.get("preconditions"),
-                        expected_result=tc.get("expected_result"),
+                        expected_results=tc.get("expected_result"),
                         test_data=tc.get("test_data"),
                         tags=tc.get("tags"),
                         template=tc.get("template", "test_case"),
-                        test_case_steps=tc.get("test_case_steps"),
+                        test_case_steps=processed_steps,
                         feature=tc.get("feature"),
                         scenario=tc.get("scenario"),
                         background=tc.get("background"),
                     )
                     
                     # 调用 Service 创建
+                    # auto_commit=False 让 get_db_session() 的上下文管理器处理 commit
                     result = await service.create_test_case(
-                        db, test_case_vo, "ai_agent"
+                        db, test_case_vo, "AI助手", auto_commit=False
                     )
+                    
+                    # 确保数据已刷新
+                    await db.flush()
+                    
+                    logger.info(f"AI 批量创建测试用例成功: {result.case_identifier} - {name} (ID: {result.case_id})")
                     
                     results.append({
                         "index": index,
@@ -490,7 +546,7 @@ async def batch_create_test_cases_tool(
                             "case_id": result.case_id,
                             "case_identifier": result.case_identifier,
                         },
-                        "message": f"测试用例 '{name}' 创建成功"
+                        "message": f"✅ 测试用例 '{name}' 创建成功"
                     })
                     succeeded += 1
                         

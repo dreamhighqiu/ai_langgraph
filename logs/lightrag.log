@@ -118,3 +118,199 @@ INFO: [] Graph truncated: 1321 nodes found, limited to 1000
 INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1206
 INFO: 127.0.0.1:54140 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 INFO: 127.0.0.1:54140 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:57992 - "POST /documents/upload HTTP/1.1" 200
+INFO: 127.0.0.1:49771 - "POST /documents/upload HTTP/1.1" 200
+INFO: Using RAG-Anything multimodal processing for: Offer Letter-邱云霞.pdf
+INFO: RAGAnything initialized with config:
+INFO:   Working directory: ./rag_storage
+INFO:   Parser: docling
+INFO:   Parse method: auto
+INFO:   Multimodal processing - Image: True, Table: True, Equation: True
+INFO:   Max concurrent files: 1
+INFO: RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Offer Letter-邱云霞.pdf
+INFO: Using docling parser with method: auto
+INFO: Detected PDF file, using parser for PDF...
+ERROR:root:Error running docling command: Command '['docling', '--output', 'parser_output\\Offer Letter-邱云霞\\docling', '--to', 'json', 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\inputs\\Offer Letter-邱云霞.pdf']' returned non-zero exit status 1.
+ERROR:root:Error details: 2026-01-09 17:29:15,603 - INFO - Loading plugin 'docling_defaults'
+2026-01-09 17:29:15,622 - INFO - Registered ocr engines: ['auto', 'easyocr', 'ocrmac', 'rapidocr', 'tesserocr', 'tesseract']
+2026-01-09 17:29:15,656 - INFO - paths: [WindowsPath('C:/Users/98214/AppData/Local/Temp/tmpdj2eyp8i/Offer Letter-邱云霞.pdf')]
+2026-01-09 17:29:15,661 - INFO - detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-01-09 17:29:15,820 - INFO - Going to convert document batch...
+2026-01-09 17:29:15,821 - INFO - Initializing pipeline for StandardPdfPipeline with options hash 73feb5715d2fe489cffae32cb6ca262c
+2026-01-09 17:29:15,872 - INFO - Loading plugin 'docling_defaults'
+2026-01-09 17:29:15,900 - INFO - Registered picture descriptions: ['vlm', 'api']
+2026-01-09 17:29:15,955 - INFO - rapidocr cannot be used because onnxruntime is not installed.
+2026-01-09 17:29:15,956 - INFO - easyocr cannot be used because it is not installed.
+2026-01-09 17:29:16,674 - INFO - Accelerator device: 'cpu'
+[32m[INFO] 2026-01-09 17:29:16,707 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-01-09 17:29:16,740 [RapidOCR] device_config.py:50: Using CPU device[0m
+[32m[INFO] 2026-01-09 17:29:16,796 [RapidOCR] download_file.py:60: File exists and is valid: D:\yunxia\ai_langgraph\.venv\Lib\site-packages\rapidocr\models\ch_PP-OCRv4_det_infer.pth[0m
+[32m[INFO] 2026-01-09 17:29:16,797 [RapidOCR] main.py:50: Using D:\yunxia\ai_langgraph\.venv\Lib\site-packages\rapidocr\models\ch_PP-OCRv4_det_infer.pth[0m
+[32m[INFO] 2026-01-09 17:29:17,336 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-01-09 17:29:17,337 [RapidOCR] device_config.py:50: Using CPU device[0m
+[32m[INFO] 2026-01-09 17:29:17,346 [RapidOCR] download_file.py:60: File exists and is valid: D:\yunxia\ai_langgraph\.venv\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_infer.pth[0m
+[32m[INFO] 2026-01-09 17:29:17,346 [RapidOCR] main.py:50: Using D:\yunxia\ai_langgraph\.venv\Lib\site-packages\rapidocr\models\ch_ptocr_mobile_v2.0_cls_infer.pth[0m
+[32m[INFO] 2026-01-09 17:29:17,448 [RapidOCR] base.py:22: Using engine_name: torch[0m
+[32m[INFO] 2026-01-09 17:29:17,448 [RapidOCR] device_config.py:50: Using CPU device[0m
+[32m[INFO] 2026-01-09 17:29:17,524 [RapidOCR] download_file.py:60: File exists and is valid: D:\yunxia\ai_langgraph\.venv\Lib\site-packages\rapidocr\models\ch_PP-OCRv4_rec_infer.pth[0m
+[32m[INFO] 2026-01-09 17:29:17,526 [RapidOCR] main.py:50: Using D:\yunxia\ai_langgraph\.venv\Lib\site-packages\rapidocr\models\ch_PP-OCRv4_rec_infer.pth[0m
+2026-01-09 17:29:18,180 - INFO - Auto OCR model selected rapidocr with torch.
+2026-01-09 17:29:18,272 - INFO - Loading plugin 'docling_defaults'
+2026-01-09 17:29:18,287 - INFO - Registered layout engines: ['docling_layout_default', 'docling_experimental_table_crops_layout']
+2026-01-09 17:29:18,306 - INFO - Accelerator device: 'cpu'
+D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\98214\.cache\huggingface\hub\models--docling-project--docling-layout-heron. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\cli\main.py", line 882, in convert
+    export_documents(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\cli\main.py", line 216, in export_documents
+    for conv_res in conv_results:
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\document_converter.py", line 368, in convert_all
+    for conv_res in conv_res_iter:
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\document_converter.py", line 467, in _convert
+    for item in map(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\document_converter.py", line 514, in _process_document
+    conv_res = self._execute_pipeline(in_doc, raises_on_error=raises_on_error)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\document_converter.py", line 535, in _execute_pipeline
+    pipeline = self._get_pipeline(in_doc.format)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\document_converter.py", line 497, in _get_pipeline
+    self.initialized_pipelines[cache_key] = pipeline_class(
+                                            ^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\pipeline\standard_pdf_pipeline.py", line 422, in __init__
+    self._init_models()
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\pipeline\standard_pdf_pipeline.py", line 444, in _init_models
+    self.layout_model = layout_factory.create_instance(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\models\factories\base_factory.py", line 57, in create_instance
+    return _cls(options=options, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\models\layout_model.py", line 66, in __init__
+    self.download_models(layout_model_config=layout_model_config)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\models\layout_model.py", line 100, in download_models
+    return download_hf_model(
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\models\utils\hf_model_download.py", line 20, in download_hf_model
+    download_path = snapshot_download(
+                    ^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\_snapshot_download.py", line 332, in snapshot_download
+    thread_map(
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\tqdm\contrib\concurrent.py", line 69, in thread_map
+    return _executor_map(ThreadPoolExecutor, fn, *iterables, **tqdm_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\tqdm\contrib\concurrent.py", line 51, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, chunksize=chunksize), **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\tqdm\std.py", line 1169, in __iter__
+    for obj in iterable:
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\_snapshot_download.py", line 306, in _inner_hf_hub_download
+    return hf_hub_download(
+           ^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1181, in _hf_hub_download_to_cache_dir
+    _create_symlink(blob_path, pointer_path, new_blob=True)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 731, in _create_symlink
+    os.symlink(src_rel_or_abs, abs_dst)
+OSError: [WinError 1314] 客户端没有所需的特权。: '..\\..\\blobs\\1a0c4a3e81c728750e87f171e4fb124bad48dcfe' -> 'C:\\Users\\98214\\.cache\\huggingface\\hub\\models--docling-project--docling-layout-heron\\snapshots\\54100edecdceb65a9d8204d2478ac4cc8d4ca68b\\README.md'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\shutil.py", line 632, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\98214\\AppData\\Local\\Temp\\tmpdj2eyp8i\\Offer Letter-邱云霞.pdf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\yunxia\ai_langgraph\.venv\Scripts\docling.exe\__main__.py", line 10, in <module>
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\typer\main.py", line 325, in __call__
+    raise e
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\typer\main.py", line 308, in __call__
+    return get_command(self)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\click\core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\typer\core.py", line 719, in main
+    return _main(
+           ^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\typer\core.py", line 192, in _main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\click\core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\click\core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\typer\main.py", line 685, in wrapper
+    return callback(**use_params)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\docling\cli\main.py", line 559, in convert
+    with tempfile.TemporaryDirectory() as tempdir:
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\shutil.py", line 787, in rmtree
+    return _rmtree_unsafe(path, onerror)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\shutil.py", line 634, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "C:\Users\98214\AppData\Roaming\uv\python\cpython-3.11.13-windows-x86_64-none\Lib\tempfile.py", line 893, in onerror
+    _os.unlink(path)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'C:\\Users\\98214\\AppData\\Local\\Temp\\tmpdj2eyp8i\\Offer Letter-邱云霞.pdf'
+
+ERROR:root:Error in parse_pdf: Command '['docling', '--output', 'parser_output\\Offer Letter-邱云霞\\docling', '--to', 'json', 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\inputs\\Offer Letter-邱云霞.pdf']' returned non-zero exit status 1.
+ERROR: Error during parsing with docling parser: Command '['docling', '--output', 'parser_output\\Offer Letter-邱云霞\\docling', '--to', 'json', 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\inputs\\Offer Letter-邱云霞.pdf']' returned non-zero exit status 1.
+ERROR: Error processing document with RAG-Anything: Command '['docling', '--output', 'parser_output\\Offer Letter-邱云霞\\docling', '--to', 'json', 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\inputs\\Offer Letter-邱云霞.pdf']' returned non-zero exit status 1.
+WARNING: RAG-Anything processing failed for Offer Letter-邱云霞.pdf, falling back to standard processing
+INFO: Successfully extracted and enqueued file: Offer Letter-邱云霞.pdf
+INFO: Processing 1 document(s)
+INFO: Extracting stage 1/1: Offer Letter-邱云霞.pdf
+INFO: Processing d-id: doc-a4d91a61d9cca0476fb39d1c2fced927
+INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+INFO:  == LLM cache == saving: default:extract:65bd9e817a9e27d5e5983f914a6ad442
+INFO:  == LLM cache == saving: default:extract:a8d4e8f30e48d8c9e1861723567756a2
+INFO: Chunk 1 of 1 extracted 30 Ent + 26 Rel chunk-a4d91a61d9cca0476fb39d1c2fced927
+INFO: Merging stage 1/1: Offer Letter-邱云霞.pdf
+INFO: Phase 1: Processing 30 entities from doc-a4d91a61d9cca0476fb39d1c2fced927 (async: 8)
+INFO: Merged: `邱云霞` | 5+1
+INFO: Phase 2: Processing 26 relations from doc-a4d91a61d9cca0476fb39d1c2fced927 (async: 8)
+INFO: Phase 3: Updating final 33(30+3) entities and  26 relations from doc-a4d91a61d9cca0476fb39d1c2fced927
+INFO: Completed merging: 30 entities, 3 extra entities, 26 relations
+INFO: [] Writing graph with 1353 nodes, 1374 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: Offer Letter-邱云霞.pdf
+INFO: Enqueued document processing pipeline stopped

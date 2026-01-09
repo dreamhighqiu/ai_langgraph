@@ -250,38 +250,80 @@ def get_hitl_manager() -> HumanInTheLoopManager:
 
 # ============ 工具函数 ============
 
+from langchain_core.tools import tool
+
+@tool
 async def review_test_case_tool(
     test_case_content: str,
     review_aspects: Optional[List[str]] = None,
-    thread_id: str = ""
 ) -> Dict[str, Any]:
     """
     测试用例评审工具（需要人工参与）
     
     该工具用于对生成的测试用例进行评审，会产生中断点让用户参与评审。
+    评审方面包括：
+    - completeness: 完整性 - 测试用例是否覆盖所有必要场景
+    - accuracy: 准确性 - 测试步骤和预期结果是否准确
+    - executability: 可执行性 - 测试用例是否可以实际执行
+    - clarity: 清晰度 - 描述是否清晰易懂
     
     Args:
-        test_case_content: 待评审的测试用例内容（JSON 格式字符串）
-        review_aspects: 需要评审的方面
-        thread_id: 对话线程 ID
-        
+        test_case_content: 待评审的测试用例内容（JSON 格式字符串或文本描述）
+        review_aspects: 需要评审的方面列表（可选）
+            可选值：["completeness", "accuracy", "executability", "clarity"]
+    
     Returns:
-        dict: 包含评审请求的字典
+        dict: 包含评审结果的字典
+            - success: bool, 是否成功
+            - requires_human_input: bool, 是否需要人工输入
+            - review_request: dict, 评审请求详情
+            - message: str, 提示消息
     """
     review_aspects = review_aspects or ["completeness", "accuracy", "executability", "clarity"]
     
-    manager = get_hitl_manager()
-    interrupt = manager.create_review_interrupt(
-        test_case_content=test_case_content,
-        review_aspects=review_aspects,
-        thread_id=thread_id
-    )
+    # 验证评审方面
+    valid_aspects = ["completeness", "accuracy", "executability", "clarity"]
+    invalid_aspects = [a for a in review_aspects if a not in valid_aspects]
+    if invalid_aspects:
+        logger.warning(f"发现无效的评审方面: {invalid_aspects}，将被忽略")
+        review_aspects = [a for a in review_aspects if a in valid_aspects]
     
+    logger.info(f"准备提交测试用例评审，评审方面: {review_aspects}")
+    
+    # 解析测试用例内容（如果是 JSON 字符串）
+    try:
+        if isinstance(test_case_content, str) and test_case_content.strip().startswith('{'):
+            test_case_data = json.loads(test_case_content)
+            test_case_name = test_case_data.get('name', '未命名测试用例')
+        else:
+            test_case_name = "测试用例"
+    except json.JSONDecodeError:
+        test_case_name = "测试用例"
+    
+    # 构建评审请求
+    review_request = {
+        "type": "test_case_review",
+        "test_case_name": test_case_name,
+        "content": test_case_content,
+        "aspects": review_aspects,
+        "aspect_descriptions": {
+            "completeness": "测试用例是否覆盖所有必要场景（正常流程、异常流程、边界条件）",
+            "accuracy": "测试步骤和预期结果是否准确、清晰",
+            "executability": "测试用例是否可以实际执行，前置条件是否完整",
+            "clarity": "测试用例描述是否清晰易懂，术语使用是否准确",
+        },
+        "instructions": f"请评审以下测试用例 \"{test_case_name}\"，关注以下方面：\n" + 
+                        "\n".join([f"- {aspect}" for aspect in review_aspects]) +
+                        f"\n\n测试用例内容：\n{test_case_content}",
+    }
+    
+    # 返回评审请求，包含 requires_human_input 标志
+    # Human-in-the-Loop 中间件会检测这个标志并产生中断
     return {
         "success": True,
         "requires_human_input": True,
-        "interrupt": interrupt.to_dict(),
-        "message": f"测试用例已提交评审，等待用户反馈...",
-        "pending": True
+        "review_request": review_request,
+        "message": f"测试用例 \"{test_case_name}\" 已提交评审，等待用户反馈...",
+        "pending": True,
     }
 

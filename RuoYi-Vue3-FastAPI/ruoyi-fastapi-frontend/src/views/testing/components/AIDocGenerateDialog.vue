@@ -74,6 +74,15 @@
         <div class="form-tip">提供额外的上下文信息，帮助 AI 更好地理解您的需求</div>
       </el-form-item>
 
+      <!-- RAG 检索选项 -->
+      <el-form-item label="启用 RAG 检索">
+        <el-switch v-model="form.useRag" />
+        <div class="form-tip" style="margin-top: 8px">
+          <el-icon><InfoFilled /></el-icon>
+          启用后，AI 会先从知识库检索相关的接口文档、测试数据等信息，然后结合文档内容生成更准确的测试用例。适用于已有文档的 API 接口测试。
+        </div>
+      </el-form-item>
+
       <!-- 模板选择 -->
       <el-row :gutter="20">
         <el-col :span="12">
@@ -125,7 +134,7 @@
 <script setup>
 import { ref, reactive, computed, watch, nextTick } from 'vue'
 import { ElMessage } from 'element-plus'
-import { Upload, UploadFilled, CircleCheck, MagicStick, Document } from '@element-plus/icons-vue'
+import { Upload, UploadFilled, CircleCheck, MagicStick, Document, InfoFilled } from '@element-plus/icons-vue'
 import { uploadDocumentForAI } from '@/api/testing/document'
 
 const props = defineProps({
@@ -159,7 +168,8 @@ const form = reactive({
   files: [],
   additionalNotes: '',
   template: 'test_case',
-  count: 5
+  count: 5,
+  useRag: false
 })
 
 // 表单验证规则
@@ -248,9 +258,10 @@ ${form.additionalNotes}
   
   prompt += `生成数量：${form.count} 个
 模板类型：${form.template === 'test_case' ? '标准测试用例' : 'BDD测试用例'}
+使用 RAG 检索：${form.useRag ? '是' : '否'}
 ${props.folderId ? `目标文件夹ID：${props.folderId}` : ''}
 
-请先使用 parse_document_from_url 工具解析文档内容，提取关键功能点和测试场景，然后生成完整的测试用例。`
+请先使用 parse_document_from_url 工具解析文档内容，提取关键功能点和测试场景。${form.useRag ? '然后使用 rag_query_tool 从知识库检索相关的接口文档、测试数据等信息，结合文档内容和检索结果生成完整的测试用例。' : '然后基于解析的文档内容生成完整的测试用例。'}`
   
   return prompt
 }
@@ -305,6 +316,7 @@ const resetForm = () => {
   form.additionalNotes = ''
   form.template = 'test_case'
   form.count = 5
+  form.useRag = false
   uploadedFiles.value = []
 }
 

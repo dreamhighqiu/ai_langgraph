@@ -6108,3 +6108,18 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-09 17:32:16,739 - lightrag - INFO - In memory DB persist to disk
 2026-01-09 17:32:16,740 - lightrag - INFO - Completed processing file 1/1: Offer Letter-邱云霞.pdf
 2026-01-09 17:32:16,740 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-09 17:50:56,659 - lightrag - ERROR - Error /documents/upload: 邱云霞扫描回复.jpg: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+2026-01-09 17:50:56,664 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+2026-01-09 17:50:56,666 - uvicorn.access - INFO - 127.0.0.1:53154 - "POST /documents/upload HTTP/1.1" 500
+2026-01-09 17:53:50,611 - uvicorn.access - INFO - 127.0.0.1:55052 - "POST /documents/paginated HTTP/1.1" 401
+2026-01-09 17:53:50,686 - uvicorn.access - INFO - 127.0.0.1:55052 - "GET /auth-status HTTP/1.1" 200
+2026-01-09 17:53:51,480 - uvicorn.access - INFO - 127.0.0.1:55052 - "GET /docs HTTP/1.1" 200
+2026-01-09 17:53:51,546 - lightrag - INFO - [] Graph truncated: 1353 nodes found, limited to 1000
+2026-01-09 17:53:51,573 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1204
+2026-01-09 17:53:51,671 - uvicorn.access - INFO - 127.0.0.1:55052 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-09 17:53:53,110 - uvicorn.access - INFO - 127.0.0.1:55052 - "GET /openapi.json HTTP/1.1" 200
+2026-01-09 18:13:08,875 - uvicorn.access - INFO - 127.0.0.1:60405 - "POST /documents/upload HTTP/1.1" 200

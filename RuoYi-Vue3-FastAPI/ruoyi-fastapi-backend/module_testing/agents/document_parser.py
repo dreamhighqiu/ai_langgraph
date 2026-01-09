@@ -1,403 +1,232 @@
 """
 文档解析工具
 
-参照 ai-test-management 项目实现
+严格参照 ai-test-management 项目实现
 支持 PDF、图片、TXT 等多种格式的文档解析
 
 关键功能：
-1. PDF 文档解析（支持表格提取）
-2. 图片 OCR 识别
+1. PDF 文档解析（使用 PyMuPDF4LLM，支持表格和多模态图片解析）
+2. 图片处理（返回提示信息，让视觉模型处理）
 3. 文本文件解析
 4. URL 下载和解析
 """
+
 import os
+import tempfile
+import logging
 import hashlib
-from io import BytesIO
-from typing import Optional, Dict, Any, List
-from dataclasses import dataclass
-from functools import lru_cache
+import time
+from typing import Optional, Dict, Any
 
 import httpx
 from langchain_core.tools import tool
 
 from utils.log_util import logger
 
+# PDF 内容缓存，避免重复解析同一个文件
+_pdf_cache = {}
 
-@dataclass
-class ParsedDocument:
-    """解析后的文档"""
-    content: str
-    document_type: str
-    metadata: Dict[str, Any]
-    success: bool
-    error: Optional[str] = None
-    
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "content": self.content,
-            "document_type": self.document_type,
-            "metadata": self.metadata,
-            "success": self.success,
-            "error": self.error
-        }
+
+def _safe_delete_temp_file(file_path: str, max_retries: int = 3, delay: float = 0.1):
+    """
+    安全删除临时文件，处理Windows文件锁定问题
+
+    Args:
+        file_path: 要删除的文件路径
+        max_retries: 最大重试次数
+        delay: 重试间隔（秒）
+    """
+    if not os.path.exists(file_path):
+        return
+
+    for attempt in range(max_retries):
+        try:
+            os.unlink(file_path)
+            logger.debug(f"临时文件已删除: {file_path}")
+            return
+        except PermissionError as e:
+            if attempt < max_retries - 1:
+                logger.debug(f"删除临时文件失败（尝试 {attempt + 1}/{max_retries}），等待后重试: {e}")
+                time.sleep(delay)
+            else:
+                logger.warning(f"无法删除临时文件（已重试{max_retries}次），文件将由系统清理: {file_path}")
+        except Exception as e:
+            logger.warning(f"删除临时文件时发生异常: {e}")
+            break
 
 
 class PDFProcessor:
-    """PDF 文档处理器"""
+    """PDF 处理器类"""
     
     def __init__(self, enable_cache: bool = True):
-        """
-        初始化 PDF 处理器
-        
-        Args:
-            enable_cache: 是否启用缓存
-        """
         self.enable_cache = enable_cache
-        self._cache: Dict[str, str] = {}
+        self.cache = _pdf_cache if enable_cache else {}
     
-    def _get_cache_key(self, content: bytes) -> str:
-        """生成缓存键"""
-        return hashlib.md5(content).hexdigest()
-    
-    def extract_text(self, pdf_content: bytes, filename: str = "document.pdf") -> str:
-        """
-        从 PDF 中提取文本
-        
-        Args:
-            pdf_content: PDF 文件内容
-            filename: 文件名（用于日志）
-            
-        Returns:
-            str: 提取的文本内容
-        """
-        # 检查缓存
-        if self.enable_cache:
-            cache_key = self._get_cache_key(pdf_content)
-            if cache_key in self._cache:
-                logger.info(f"使用缓存的 PDF 解析结果: {filename}")
-                return self._cache[cache_key]
-        
-        text_content = ""
-        
-        # 方法1: 尝试使用 pymupdf4llm（支持更好的表格提取）
-        try:
-            import pymupdf4llm
-            import fitz
-            
-            doc = fitz.open(stream=pdf_content, filetype="pdf")
-            text_content = pymupdf4llm.to_markdown(doc)
-            doc.close()
-            
-            logger.info(f"使用 pymupdf4llm 成功解析 PDF: {filename}")
-            
-        except ImportError:
-            logger.warning("pymupdf4llm 未安装，尝试使用 PyPDF2")
-            
-            # 方法2: 使用 PyPDF2
-            try:
-                from PyPDF2 import PdfReader
-                
-                reader = PdfReader(BytesIO(pdf_content))
-                pages_text = []
-                
-                for i, page in enumerate(reader.pages):
-                    page_text = page.extract_text()
-                    if page_text:
-                        pages_text.append(f"--- 第 {i + 1} 页 ---\n{page_text}")
-                
-                text_content = "\n\n".join(pages_text)
-                logger.info(f"使用 PyPDF2 成功解析 PDF: {filename}")
-                
-            except ImportError:
-                logger.warning("PyPDF2 未安装，尝试使用 pdfplumber")
-                
-                # 方法3: 使用 pdfplumber
-                try:
-                    import pdfplumber
-                    
-                    with pdfplumber.open(BytesIO(pdf_content)) as pdf:
-                        pages_text = []
-                        for i, page in enumerate(pdf.pages):
-                            page_text = page.extract_text()
-                            if page_text:
-                                pages_text.append(f"--- 第 {i + 1} 页 ---\n{page_text}")
-                        
-                        text_content = "\n\n".join(pages_text)
-                    
-                    logger.info(f"使用 pdfplumber 成功解析 PDF: {filename}")
-                    
-                except ImportError:
-                    raise ImportError("请安装 PDF 解析库: pip install pymupdf4llm PyPDF2 pdfplumber")
-        
-        except Exception as e:
-            logger.error(f"PDF 解析失败: {e}")
-            raise
-        
-        # 存入缓存
-        if self.enable_cache and text_content:
-            self._cache[cache_key] = text_content
-        
-        return text_content
+    def extract_text(self, pdf_data: bytes, filename: str = "unknown.pdf") -> str:
+        """从PDF字节数据中提取文本"""
+        return extract_pdf_text(pdf_data, filename, self.cache if self.enable_cache else None)
     
     def clear_cache(self):
-        """清除缓存"""
-        self._cache.clear()
-
-
-class ImageProcessor:
-    """图片处理器"""
+        """清空缓存"""
+        if self.enable_cache:
+            self.cache.clear()
     
-    def __init__(self):
-        """初始化图片处理器"""
-        self._ocr_available = None
-    
-    def check_ocr_available(self) -> bool:
-        """检查 OCR 是否可用"""
-        if self._ocr_available is not None:
-            return self._ocr_available
-        
-        try:
-            import pytesseract
-            from PIL import Image
-            self._ocr_available = True
-        except ImportError:
-            self._ocr_available = False
-        
-        return self._ocr_available
-    
-    def extract_text(self, image_content: bytes, filename: str = "image.png") -> str:
-        """
-        从图片中提取文本（OCR）
-        
-        Args:
-            image_content: 图片内容
-            filename: 文件名
-            
-        Returns:
-            str: 提取的文本
-        """
-        if not self.check_ocr_available():
-            return f"[图片文件: {filename}]\n\n提示：OCR 功能不可用，请安装 pytesseract 和 pillow\n或使用支持视觉的大模型分析此图片。"
-        
-        try:
-            import pytesseract
-            from PIL import Image
-            
-            image = Image.open(BytesIO(image_content))
-            text = pytesseract.image_to_string(image, lang='chi_sim+eng')
-            
-            logger.info(f"使用 OCR 成功解析图片: {filename}")
-            return text
-            
-        except Exception as e:
-            logger.error(f"图片 OCR 失败: {e}")
-            return f"[图片文件: {filename}]\n\nOCR 解析失败: {str(e)}"
-    
-    def get_image_info(self, image_content: bytes, filename: str = "image.png") -> Dict[str, Any]:
-        """获取图片信息"""
-        try:
-            from PIL import Image
-            
-            image = Image.open(BytesIO(image_content))
-            return {
-                "filename": filename,
-                "format": image.format,
-                "mode": image.mode,
-                "width": image.width,
-                "height": image.height,
-                "size_bytes": len(image_content)
-            }
-        except Exception as e:
-            return {
-                "filename": filename,
-                "error": str(e),
-                "size_bytes": len(image_content)
-            }
-
-
-class DocumentParser:
-    """文档解析器"""
-    
-    def __init__(self, enable_cache: bool = True):
-        """
-        初始化文档解析器
-        
-        Args:
-            enable_cache: 是否启用缓存
-        """
-        self.pdf_processor = PDFProcessor(enable_cache=enable_cache)
-        self.image_processor = ImageProcessor()
-    
-    async def parse_from_url(
-        self,
-        url: str,
-        document_type: Optional[str] = None,
-        timeout: float = 60.0
-    ) -> ParsedDocument:
-        """
-        从 URL 下载并解析文档
-        
-        Args:
-            url: 文档 URL
-            document_type: 文档类型（可选，自动检测）
-            timeout: 下载超时时间
-            
-        Returns:
-            ParsedDocument: 解析结果
-        """
-        try:
-            logger.info(f"开始下载文档: {url}")
-            
-            # 下载文档
-            async with httpx.AsyncClient(timeout=timeout) as client:
-                response = await client.get(url)
-                response.raise_for_status()
-            
-            content = response.content
-            content_type = document_type or response.headers.get("content-type", "")
-            
-            # 从 URL 获取文件名
-            filename = url.split("/")[-1].split("?")[0] or "document"
-            
-            logger.info(f"文档下载完成，大小: {len(content)} 字节，类型: {content_type}")
-            
-            return await self.parse_content(content, content_type, filename)
-            
-        except httpx.HTTPError as e:
-            logger.error(f"文档下载失败: {e}")
-            return ParsedDocument(
-                content="",
-                document_type="unknown",
-                metadata={"url": url},
-                success=False,
-                error=f"文档下载失败: {str(e)}"
-            )
-        except Exception as e:
-            logger.error(f"文档解析失败: {e}")
-            return ParsedDocument(
-                content="",
-                document_type="unknown",
-                metadata={"url": url},
-                success=False,
-                error=f"文档解析失败: {str(e)}"
-            )
-    
-    async def parse_content(
-        self,
-        content: bytes,
-        content_type: str,
-        filename: str = "document"
-    ) -> ParsedDocument:
-        """
-        解析文档内容
-        
-        Args:
-            content: 文档内容
-            content_type: 内容类型
-            filename: 文件名
-            
-        Returns:
-            ParsedDocument: 解析结果
-        """
-        metadata = {
-            "filename": filename,
-            "content_type": content_type,
-            "size_bytes": len(content)
+    def get_cache_stats(self) -> dict:
+        """获取缓存统计信息"""
+        return {
+            "cache_enabled": self.enable_cache,
+            "cached_files": len(self.cache) if self.enable_cache else 0,
+            "cache_keys": list(self.cache.keys()) if self.enable_cache else []
         }
-        
-        # 检测文档类型
-        is_pdf = (
-            content_type == "application/pdf" or 
-            filename.lower().endswith(".pdf") or
-            content[:4] == b'%PDF'
-        )
-        
-        is_image = (
-            content_type.startswith("image/") or
-            any(filename.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp"])
-        )
-        
-        is_text = (
-            content_type == "text/plain" or
-            filename.lower().endswith(".txt") or
-            content_type.startswith("text/")
-        )
-        
+
+
+def extract_pdf_text(pdf_data: bytes, filename: str = "unknown.pdf", cache: Optional[dict] = None) -> str:
+    """
+    从PDF字节数据中提取文本，使用缓存避免重复解析
+
+    提取方法：
+    1. PyMuPDF4LLM (推荐): 支持表格提取和多模态图片解析
+       安装: pip install -qU langchain-community langchain-pymupdf4llm
+    2. PyPDF2 (备用): 基础文本提取
+       安装: pip install PyPDF2
+
+    Args:
+        pdf_data: PDF文件的字节数据
+        filename: 文件名（用于日志和缓存）
+        cache: 可选的缓存字典
+
+    Returns:
+        str: 提取的文本内容
+    """
+    # 生成PDF数据的哈希值作为缓存键
+    pdf_hash = hashlib.md5(pdf_data).hexdigest()
+    cache_key = f"{filename}_{pdf_hash}"
+
+    # 检查缓存
+    if cache is not None and cache_key in cache:
+        logger.info(f"从缓存中获取PDF内容: {filename}")
+        return cache[cache_key]
+
+    # 创建临时文件（Windows需要先关闭文件句柄才能被其他程序访问）
+    temp_file = tempfile.NamedTemporaryFile(suffix='.pdf', delete=False)
+    try:
+        temp_file.write(pdf_data)
+        temp_file.flush()  # 确保数据写入磁盘
+        os.fsync(temp_file.fileno())  # 强制同步到磁盘
+        temp_file_path = temp_file.name
+    finally:
+        temp_file.close()  # 显式关闭文件句柄，释放文件锁
+
+    text_content = ""
+
+    try:
+        # 优先尝试使用 PyMuPDF4LLM (功能更强大)
+        logger.info(f"使用 PyMuPDF4LLM 解析PDF: {filename}")
+
         try:
-            if is_pdf:
-                text = self.pdf_processor.extract_text(content, filename)
-                return ParsedDocument(
-                    content=text,
-                    document_type="pdf",
-                    metadata=metadata,
-                    success=True
-                )
-            
-            elif is_image:
-                # 获取图片信息
-                image_info = self.image_processor.get_image_info(content, filename)
-                metadata.update(image_info)
-                
-                # 尝试 OCR
-                text = self.image_processor.extract_text(content, filename)
-                
-                return ParsedDocument(
-                    content=text,
-                    document_type="image",
-                    metadata=metadata,
-                    success=True
-                )
-            
-            elif is_text:
-                # 尝试多种编码
-                for encoding in ['utf-8', 'gbk', 'gb2312', 'latin-1']:
-                    try:
-                        text = content.decode(encoding)
-                        metadata["encoding"] = encoding
-                        break
-                    except UnicodeDecodeError:
-                        continue
-                else:
-                    text = content.decode('utf-8', errors='replace')
-                    metadata["encoding"] = "utf-8 (with errors)"
-                
-                return ParsedDocument(
-                    content=text,
-                    document_type="text",
-                    metadata=metadata,
-                    success=True
-                )
-            
+            from langchain_pymupdf4llm import PyMuPDF4LLMLoader
+
+            # 检查是否启用多模态图片解析
+            # 从环境变量读取配置
+            enable_multimodal = os.getenv("ENABLE_PDF_MULTIMODAL", "false").lower() == "true"
+
+            if enable_multimodal:
+                try:
+                    from langchain_community.document_loaders.parsers import LLMImageBlobParser
+                    from langchain.chat_models import init_chat_model
+
+                    # 使用豆包模型进行图片解析
+                    doubao_api_key = os.getenv("DOUBAO_API_KEY", "")
+                    if doubao_api_key:
+                        image_llm = init_chat_model("doubao:doubao-vision", api_key=doubao_api_key)
+                        image_parser = LLMImageBlobParser(model=image_llm)
+
+                        loader = PyMuPDF4LLMLoader(
+                            temp_file_path,
+                            mode="single",
+                            extract_images=True,
+                            images_parser=image_parser,
+                            table_strategy="lines"
+                        )
+                        logger.info("启用多模态图片解析")
+                    else:
+                        logger.warning("未配置 DOUBAO_API_KEY，禁用图片解析")
+                        loader = PyMuPDF4LLMLoader(
+                            temp_file_path,
+                            mode="single",
+                            table_strategy="lines"
+                        )
+                except ImportError as e:
+                    logger.warning(f"多模态依赖未安装，使用基础模式: {e}")
+                    loader = PyMuPDF4LLMLoader(
+                        temp_file_path,
+                        mode="single",
+                        table_strategy="lines"
+                    )
             else:
-                return ParsedDocument(
-                    content="",
-                    document_type="unsupported",
-                    metadata=metadata,
-                    success=False,
-                    error=f"不支持的文档类型: {content_type}。支持的类型: PDF, 图片, 文本"
+                # 基础模式：只提取文本和表格
+                loader = PyMuPDF4LLMLoader(
+                    temp_file_path,
+                    mode="single",
+                    table_strategy="lines"
                 )
-                
-        except Exception as e:
-            logger.error(f"文档解析失败: {e}")
-            return ParsedDocument(
-                content="",
-                document_type="unknown",
-                metadata=metadata,
-                success=False,
-                error=f"文档解析失败: {str(e)}"
-            )
+
+            documents = loader.load()
+
+            if documents:
+                text_content = documents[0].page_content
+                logger.info(f"PyMuPDF4LLM 解析成功，内容长度: {len(text_content)} 字符")
+            else:
+                text_content = "PDF文件解析后内容为空"
+
+        except ImportError:
+            logger.warning("PyMuPDF4LLM 未安装，尝试使用 PyPDF2")
+            raise  # 继续到备用方法
+
+    except Exception as e:
+        # 备用方法：使用 PyPDF2
+        logger.warning(f"PyMuPDF4LLM 解析失败: {e}，尝试使用 PyPDF2")
+
+        try:
+            from PyPDF2 import PdfReader
+            import io
+
+            pdf_file = io.BytesIO(pdf_data)
+            reader = PdfReader(pdf_file)
+
+            # 提取所有页面的文本
+            text_parts = []
+            for page_num, page in enumerate(reader.pages, 1):
+                text = page.extract_text()
+                if text.strip():
+                    text_parts.append(f"### 第 {page_num} 页\n\n{text.strip()}")
+
+            if text_parts:
+                text_content = "\n\n".join(text_parts)
+                logger.info(f"PyPDF2 解析成功，内容长度: {len(text_content)} 字符")
+            else:
+                text_content = "PDF文档解析成功，但未提取到文本内容。可能是扫描版PDF。"
+
+        except ImportError:
+            text_content = "错误: 未安装 PDF 解析库。请安装: pip install PyPDF2 或 pip install langchain-pymupdf4llm"
+        except Exception as e2:
+            logger.error(f"PyPDF2 解析也失败: {e2}")
+            text_content = f"PDF文件处理出错: {str(e2)}"
+
+    finally:
+        # 清理临时文件（Windows上可能需要重试）
+        _safe_delete_temp_file(temp_file_path)
+
+    # 缓存结果
+    if cache is not None and text_content:
+        cache[cache_key] = text_content
+        logger.info(f"PDF内容已缓存: {filename}")
+
+    return text_content
 
 
-# 全局实例
-_document_parser: Optional[DocumentParser] = None
-
-
-def get_document_parser() -> DocumentParser:
-    """获取文档解析器单例"""
-    global _document_parser
-    if _document_parser is None:
-        _document_parser = DocumentParser()
-    return _document_parser
+# 初始化 PDF 处理器（全局单例，启用缓存）
+_pdf_processor = PDFProcessor(enable_cache=True)
 
 
 # ============ 工具函数 ============
@@ -405,69 +234,98 @@ def get_document_parser() -> DocumentParser:
 @tool
 async def parse_document_from_url(
     url: str,
-    document_type: Optional[str] = None
+    document_type: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     从 URL 下载并解析文档内容
-    
-    支持的文档类型：
-    - PDF: 使用 pymupdf4llm/PyPDF2/pdfplumber 解析
-    - 图片: 使用 OCR 提取文字（需要安装 pytesseract）
-    - 文本: 自动检测编码并解析
-    
+
+    支持的文档类型:
+    - PDF: 使用 PyMuPDF4LLM (支持表格) 或 PyPDF2 (备用)
+    - 图片: 返回图片信息，需要配合视觉模型使用
+    - TXT: 纯文本解析
+
     Args:
-        url: 文档的 URL（通常是 MinIO 预签名 URL）
-        document_type: 文档 MIME 类型（可选，自动检测）
-        
+        url: 文档的 URL (通常是 MinIO 预签名 URL)
+        document_type: 文档 MIME 类型 (可选，用于优化解析策略)
+
     Returns:
         dict: 包含解析结果的字典
             - success: bool, 是否成功
             - content: str, 解析的文本内容
             - document_type: str, 文档类型
-            - metadata: dict, 文档元信息
-            - error: str, 错误信息（如果失败）
-    
+            - error: str, 错误信息 (如果失败)
+
     Examples:
         >>> result = await parse_document_from_url("http://example.com/doc.pdf")
         >>> if result["success"]:
         >>>     print(result["content"])
     """
-    parser = get_document_parser()
-    result = await parser.parse_from_url(url, document_type)
-    return result.to_dict()
-
-
-@tool
-async def parse_document_content(
-    content_base64: str,
-    content_type: str,
-    filename: str = "document"
-) -> Dict[str, Any]:
-    """
-    解析 Base64 编码的文档内容
-    
-    Args:
-        content_base64: Base64 编码的文档内容
-        content_type: 内容类型
-        filename: 文件名
-        
-    Returns:
-        dict: 解析结果
-    """
-    import base64
-    
     try:
-        content = base64.b64decode(content_base64)
-    except Exception as e:
+        logger.info(f"开始解析文档: {url} (类型: {document_type})")
+
+        # 下载文档
+        async with httpx.AsyncClient() as client:
+            response = await client.get(url, timeout=60.0)
+            response.raise_for_status()
+
+        content_data = response.content
+        detected_type = document_type or response.headers.get("content-type", "")
+
+        logger.info(f"文档下载完成，大小: {len(content_data)} 字节，类型: {detected_type}")
+
+        # 根据文档类型选择解析方法
+        if detected_type == "application/pdf" or url.lower().endswith(".pdf"):
+            # PDF 文档解析
+            text_content = _pdf_processor.extract_text(content_data, filename="document.pdf")
+
+            return {
+                "success": True,
+                "content": text_content,
+                "document_type": "pdf",
+                "size_bytes": len(content_data),
+            }
+
+        elif detected_type.startswith("image/") or any(url.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp"]):
+            # 图片文件 - 返回提示信息，让视觉模型处理
+            return {
+                "success": True,
+                "content": f"这是一张图片文件。\n\n图片URL: {url}\n\n请使用支持视觉的模型来分析这张图片的内容。",
+                "document_type": "image",
+                "image_url": url,
+                "size_bytes": len(content_data),
+            }
+
+        elif detected_type == "text/plain" or url.lower().endswith(".txt"):
+            # 纯文本文件
+            try:
+                text = content_data.decode('utf-8')
+            except UnicodeDecodeError:
+                text = content_data.decode('gbk', errors='ignore')
+
+            return {
+                "success": True,
+                "content": text,
+                "document_type": "text",
+                "size_bytes": len(content_data),
+            }
+
+        else:
+            # 不支持的文档类型
+            return {
+                "success": False,
+                "error": f"不支持的文档类型: {detected_type}。建议将文档转换为 PDF 或 TXT 格式。",
+                "document_type": detected_type,
+            }
+
+    except httpx.HTTPError as e:
+        logger.error(f"下载文档失败: {e}")
         return {
             "success": False,
-            "error": f"Base64 解码失败: {str(e)}",
-            "content": "",
-            "document_type": "unknown",
-            "metadata": {}
+            "error": f"文档下载失败: {str(e)}",
         }
-    
-    parser = get_document_parser()
-    result = await parser.parse_content(content, content_type, filename)
-    return result.to_dict()
-
+    except Exception as e:
+        logger.error(f"文档解析失败: {e}", exc_info=True)
+        return {
+            "success": False,
+            "error": f"文档解析失败: {str(e)}",
+        }

@@ -62,7 +62,8 @@ AI智能测试平台 - 本地开发部署脚本
   backend     启动后端服务
   frontend    启动前端服务
   langgraph   启动 LangGraph AI 服务 (端口 2027)
-  all         启动所有本地服务 (前端+后端+LangGraph)
+  mcp         启动 MCP 服务 (RAG MCP + MindMap MCP)
+  all         启动所有本地服务 (前端+后端+LangGraph+MCP)
   stop        停止所有本地服务
   status      查看服务状态
   db          初始化数据库
@@ -555,6 +556,38 @@ start_langgraph() {
     cd ..
 }
 
+# 启动 MCP 服务
+start_mcp_services() {
+    local force_restart=${1:-false}  # 是否强制重启
+    
+    print_info "启动 MCP 服务..."
+    
+    # 检查 MCP 启动脚本是否存在
+    if [ ! -f "start-mcp-services.sh" ]; then
+        print_warning "MCP 启动脚本不存在，跳过 MCP 服务启动"
+        return 0
+    fi
+    
+    # 确保脚本有执行权限
+    chmod +x start-mcp-services.sh 2>/dev/null || true
+    
+    # 如果强制重启，先停止
+    if [ "$force_restart" = "true" ]; then
+        print_info "停止现有 MCP 服务..."
+        ./start-mcp-services.sh stop 2>/dev/null || true
+        sleep 1
+    fi
+    
+    # 启动 MCP 服务
+    if ./start-mcp-services.sh start; then
+        print_success "MCP 服务启动成功"
+        echo "  🔍 RAG MCP: http://localhost:9002"
+        echo "  🗺️  MindMap MCP: http://localhost:9003"
+    else
+        print_warning "MCP 服务启动失败，但不影响主服务运行"
+    fi
+}
+
 # 启动所有服务
 start_all() {
     local force_restart=${1:-false}  # 是否强制重启
@@ -579,6 +612,8 @@ start_all() {
     start_frontend "$force_restart"
     echo ""
     start_langgraph "$force_restart"
+    echo ""
+    start_mcp_services "$force_restart"
     
     echo ""
     echo "========================================"
@@ -590,6 +625,8 @@ start_all() {
     echo "  🔧 后端: http://localhost:9099/dev-api"
     echo "  📚 文档: http://localhost:9099/dev-api/docs"
     echo "  🤖 LangGraph: http://localhost:2027 (AI 智能体)"
+    echo "  🔍 RAG MCP: http://localhost:9002"
+    echo "  🗺️  MindMap MCP: http://localhost:9003"
     echo ""
     echo "远程服务 ($REMOTE_SERVER):"
     echo "  MySQL:        ${REMOTE_SERVER}:3306"
@@ -732,6 +769,13 @@ stop_all() {
         rm -f .runtime/pids/langgraph.pid
     fi
     
+    # 停止 MCP 服务
+    if [ -f "start-mcp-services.sh" ]; then
+        print_info "停止 MCP 服务..."
+        chmod +x start-mcp-services.sh 2>/dev/null || true
+        ./start-mcp-services.sh stop 2>/dev/null || true
+    fi
+    
     # 2. 强制清理端口占用（确保端口被释放）
     echo ""
     print_info "检查并清理端口占用..."
@@ -745,6 +789,10 @@ stop_all() {
     
     # 清理 LangGraph 端口 2027
     kill_port 2027 "LangGraph"
+    
+    # 清理 MCP 服务端口
+    kill_port 9002 "RAG MCP"
+    kill_port 9003 "MindMap MCP"
     
     # 3. 清理 PID 文件
     rm -f .pids/backend.pid .pids/frontend.pid 2>/dev/null
@@ -810,6 +858,17 @@ show_status() {
         fi
     else
         print_warning "LangGraph: 未启动"
+    fi
+    
+    # MCP 服务
+    echo ""
+    echo "========== MCP 服务状态 =========="
+    echo ""
+    if [ -f "start-mcp-services.sh" ]; then
+        chmod +x start-mcp-services.sh 2>/dev/null || true
+        ./start-mcp-services.sh status 2>/dev/null || print_warning "MCP 服务状态检查失败"
+    else
+        print_warning "MCP 启动脚本不存在"
     fi
     
     echo ""

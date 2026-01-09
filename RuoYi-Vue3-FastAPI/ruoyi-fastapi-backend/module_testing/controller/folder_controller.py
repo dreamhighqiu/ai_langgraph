@@ -27,12 +27,12 @@ folder_service = FolderService()
 async def create_folder(
     folder_vo: FolderCreateVO,
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """创建文件夹"""
     try:
         result = await folder_service.create_folder(
-            db, folder_vo, current_user.get('user_name', 'system')
+            db, folder_vo, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -54,12 +54,12 @@ async def update_folder(
     folder_vo: FolderUpdateVO,
     folder_id: int = Path(..., description="文件夹ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """更新文件夹"""
     try:
         result = await folder_service.update_folder(
-            db, folder_id, folder_vo, current_user.get('user_name', 'system')
+            db, folder_id, folder_vo, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -78,7 +78,7 @@ async def update_folder(
 async def delete_folder(
     folder_id: int = Path(..., description="文件夹ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """删除文件夹"""
     try:
@@ -98,7 +98,7 @@ async def delete_folder(
 async def get_folder(
     folder_id: int = Path(..., description="文件夹ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """获取文件夹详情"""
     try:
@@ -121,7 +121,7 @@ async def query_folder_list(
     page_num: int = Query(1, description="页码"),
     page_size: int = Query(10, description="每页数量"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """查询文件夹列表"""
     try:
@@ -152,7 +152,7 @@ async def query_folder_list(
 async def get_folder_tree(
     projectId: int = Query(..., description="项目ID", alias="projectId"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """获取文件夹树结构"""
     try:
@@ -168,13 +168,13 @@ async def get_folder_tree(
 async def move_folder(
     move_vo: FolderMoveVO,
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """移动文件夹到指定目录"""
     try:
         result = await folder_service.move_folder(
             db, move_vo.folder_id, move_vo.target_parent_id, 
-            current_user.get('user_name', 'system')
+            current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -194,7 +194,7 @@ async def get_children(
     project_id: int = Path(..., description="项目ID"),
     parent_id: Optional[int] = Query(None, description="父文件夹ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """获取指定父文件夹下的子文件夹"""
     try:

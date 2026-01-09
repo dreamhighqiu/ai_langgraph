@@ -28,7 +28,7 @@ async def create_bug_report(
     """创建缺陷报告"""
     try:
         result = await bug_report_service.create_bug_report(
-            db, bug_report_vo, current_user['user_id']
+            db, bug_report_vo, current_user.user.user_id if current_user.user else None
         )
         
         # 保存到MinIO
@@ -55,7 +55,7 @@ async def update_bug_report(
     """更新缺陷报告"""
     try:
         result = await bug_report_service.update_bug_report(
-            db, bug_id, bug_report_vo, current_user['user_id']
+            db, bug_id, bug_report_vo, current_user.user.user_id if current_user.user else None
         )
         
         # 更新MinIO中的文件
@@ -180,7 +180,7 @@ async def ai_generate_bug_report(
             )
             
             result = await bug_report_service.create_bug_report(
-                db, bug_report_vo, current_user['user_id']
+                db, bug_report_vo, current_user.user.user_id if current_user.user else None
             )
             
             # 保存到MinIO

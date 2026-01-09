@@ -85,7 +85,7 @@ async def create_defect_analysis(
     """创建缺陷分析"""
     try:
         result = await defect_service.create_analysis(
-            db, request.dict(), current_user['user_id']
+            db, request.dict(), current_user.user.user_id if current_user.user else None
         )
         
         return ResponseUtil.success(data={
@@ -108,7 +108,7 @@ async def update_defect_analysis(
     """更新缺陷分析"""
     try:
         result = await defect_service.update_analysis(
-            db, analysis_id, request.dict(exclude_unset=True), current_user['user_id']
+            db, analysis_id, request.dict(exclude_unset=True), current_user.user.user_id if current_user.user else None
         )
         
         if result:

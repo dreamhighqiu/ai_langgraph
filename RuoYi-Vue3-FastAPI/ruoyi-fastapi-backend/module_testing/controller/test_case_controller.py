@@ -27,12 +27,12 @@ test_case_service = TestCaseService()
 async def create_test_case(
     test_case_vo: TestCaseCreateVO,
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """创建测试用例"""
     try:
         result = await test_case_service.create_test_case(
-            db, test_case_vo, current_user.get('user_name', 'system')
+            db, test_case_vo, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -51,12 +51,12 @@ async def update_test_case(
     test_case_vo: TestCaseUpdateVO,
     case_id: int = Path(..., description="测试用例ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """更新测试用例"""
     try:
         result = await test_case_service.update_test_case(
-            db, case_id, test_case_vo, current_user.get('user_name', 'system')
+            db, case_id, test_case_vo, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -83,7 +83,7 @@ async def query_test_case_list(
     page_num: int = Query(1, description="页码"),
     page_size: int = Query(10, description="每页数量"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """查询测试用例列表"""
     try:
@@ -117,7 +117,7 @@ async def query_test_case_list(
 async def get_test_case(
     case_id: int = Path(..., description="测试用例ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """获取测试用例详情"""
     try:
@@ -136,7 +136,7 @@ async def get_test_case(
 async def delete_test_case(
     case_ids: str = Path(..., description="测试用例ID，多个用逗号分隔"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """删除测试用例（支持批量）"""
     try:
@@ -158,12 +158,12 @@ async def delete_test_case(
 async def batch_create_test_cases(
     test_cases: List[TestCaseCreateVO] = Body(..., description="测试用例列表"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """批量创建测试用例"""
     try:
         results = await test_case_service.batch_create_test_cases(
-            db, test_cases, current_user.get('user_name', 'system')
+            db, test_cases, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -182,12 +182,12 @@ async def move_test_case(
     case_id: int = Path(..., description="测试用例ID"),
     folder_id: Optional[int] = Body(None, embed=True, description="目标文件夹ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """移动测试用例到指定文件夹"""
     try:
         result = await test_case_service.move_test_case(
-            db, case_id, folder_id, current_user.get('user_name', 'system')
+            db, case_id, folder_id, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -208,12 +208,12 @@ async def copy_test_case(
     case_id: int = Path(..., description="测试用例ID"),
     folder_id: Optional[int] = Body(None, embed=True, description="目标文件夹ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """复制测试用例"""
     try:
         result = await test_case_service.copy_test_case(
-            db, case_id, folder_id, current_user.get('user_name', 'system')
+            db, case_id, folder_id, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(data={
@@ -234,12 +234,12 @@ async def change_status(
     case_id: int = Path(..., description="测试用例ID"),
     status: str = Body(..., embed=True, description="状态"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """修改测试用例状态"""
     try:
         result = await test_case_service.change_status(
-            db, case_id, status, current_user.get('user_name', 'system')
+            db, case_id, status, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(msg="修改状态成功")
@@ -255,7 +255,7 @@ async def change_status(
 async def count_by_project(
     project_id: int = Path(..., description="项目ID"),
     db: AsyncSession = Depends(get_db),
-    current_user: dict = Depends(LoginService.get_current_user)
+    current_user = Depends(LoginService.get_current_user)
 ):
     """统计项目下的测试用例数量"""
     try:

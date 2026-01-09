@@ -30,7 +30,7 @@ async def create_requirement(
     """创建需求分析"""
     try:
         result = await requirement_service.create_requirement(
-            db, requirement_vo, current_user['user_id']
+            db, requirement_vo, current_user.user.user_id if current_user.user else None
         )
         
         # 保存到MinIO
@@ -57,7 +57,7 @@ async def update_requirement(
     """更新需求分析"""
     try:
         result = await requirement_service.update_requirement(
-            db, requirement_id, requirement_vo, current_user['user_id']
+            db, requirement_id, requirement_vo, current_user.user.user_id if current_user.user else None
         )
         
         # 更新MinIO中的文件
@@ -184,7 +184,7 @@ async def ai_generate_requirement(
             )
             
             result = await requirement_service.create_requirement(
-                db, requirement_vo, current_user['user_id']
+                db, requirement_vo, current_user.user.user_id if current_user.user else None
             )
             
             # 保存到MinIO

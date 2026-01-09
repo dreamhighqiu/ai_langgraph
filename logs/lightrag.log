@@ -329,3 +329,41 @@ INFO: [] Subgraph query successful | Node count: 1000 | Edge count: 1204
 INFO: 127.0.0.1:55052 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 INFO: 127.0.0.1:55052 - "GET /openapi.json HTTP/1.1" 200
 INFO: 127.0.0.1:60405 - "POST /documents/upload HTTP/1.1" 200
+ERROR: Error /documents/upload: 测试.jpg: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+INFO: 127.0.0.1:49706 - "POST /documents/upload HTTP/1.1" 500
+INFO:  == LLM cache == saving: mix:keywords:f10d7c66ebeb1ea91f87e9a50faafa73
+INFO: Query nodes: 测试用例, 功能测试用例, 接口测试用例, 测试场景设计 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 11 relations
+INFO: Query edges: 测试用例设计, 功能测试, 接口测试, 测试场景 (top_k:10, cosine:0.2)
+INFO: Global query: 19 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 25 entities, 17 relations, 5 vector chunks
+INFO: After truncation: 25 entities, 17 relations
+INFO: Selecting 19 from 19 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 17 relations
+INFO: Round-robin merged chunks: 24 -> 24 (deduplicated 0)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 25 entities, 17 relations, 5 chunks
+INFO: Final chunks S+F/O: C1/1 E1/1 C1/2 E1/2 C1/3
+INFO: 127.0.0.1:56802 - "POST /query/data HTTP/1.1" 200
+INFO: Naive query: 3 chunks (chunk_top_k:3 cosine:0.2)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 3 chunks
+INFO: 127.0.0.1:61383 - "POST /query/data HTTP/1.1" 200
+ERROR: Error /documents/upload: 测试.jpg: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+INFO: 127.0.0.1:65253 - "POST /documents/upload HTTP/1.1" 500
+INFO: 127.0.0.1:62601 - "POST /documents/upload HTTP/1.1" 200
+INFO: Using RAG-Anything multimodal processing for: Scan_4级.pdf
+INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_4级.pdf
+INFO: Using docling parser with method: auto
+INFO: Detected PDF file, using parser for PDF...

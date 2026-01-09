@@ -6123,3 +6123,139 @@ fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: (
 2026-01-09 17:53:51,671 - uvicorn.access - INFO - 127.0.0.1:55052 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 2026-01-09 17:53:53,110 - uvicorn.access - INFO - 127.0.0.1:55052 - "GET /openapi.json HTTP/1.1" 200
 2026-01-09 18:13:08,875 - uvicorn.access - INFO - 127.0.0.1:60405 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 18:56:32,107 - lightrag - ERROR - Error /documents/upload: 测试.jpg: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+2026-01-09 18:56:32,109 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+2026-01-09 18:56:32,111 - uvicorn.access - INFO - 127.0.0.1:49706 - "POST /documents/upload HTTP/1.1" 500
+2026-01-09 18:56:50,563 - lightrag - INFO -  == LLM cache == saving: mix:keywords:f10d7c66ebeb1ea91f87e9a50faafa73
+2026-01-09 18:56:57,275 - lightrag - INFO - Query nodes: 测试用例, 功能测试用例, 接口测试用例, 测试场景设计 (top_k:10, cosine:0.2)
+2026-01-09 18:56:59,469 - lightrag - INFO - Local query: 10 entites, 11 relations
+2026-01-09 18:56:59,470 - lightrag - INFO - Query edges: 测试用例设计, 功能测试, 接口测试, 测试场景 (top_k:10, cosine:0.2)
+2026-01-09 18:57:01,632 - lightrag - INFO - Global query: 19 entites, 10 relations
+2026-01-09 18:57:01,834 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 18:57:01,835 - lightrag - INFO - Raw search results: 25 entities, 17 relations, 5 vector chunks
+2026-01-09 18:57:01,850 - lightrag - INFO - After truncation: 25 entities, 17 relations
+2026-01-09 18:57:02,026 - lightrag - INFO - Selecting 19 from 19 entity-related chunks by vector similarity
+2026-01-09 18:57:02,027 - lightrag - INFO - Find no additional relations-related chunks from 17 relations
+2026-01-09 18:57:02,027 - lightrag - INFO - Round-robin merged chunks: 24 -> 24 (deduplicated 0)
+2026-01-09 18:57:02,030 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 18:57:02,039 - lightrag - INFO - Final context: 25 entities, 17 relations, 5 chunks
+2026-01-09 18:57:02,040 - lightrag - INFO - Final chunks S+F/O: C1/1 E1/1 C1/2 E1/2 C1/3
+2026-01-09 18:57:02,078 - uvicorn.access - INFO - 127.0.0.1:56802 - "POST /query/data HTTP/1.1" 200
+2026-01-09 18:57:13,969 - lightrag - INFO - Naive query: 3 chunks (chunk_top_k:3 cosine:0.2)
+2026-01-09 18:57:13,971 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 18:57:13,978 - lightrag - INFO - Final context: 3 chunks
+2026-01-09 18:57:13,980 - uvicorn.access - INFO - 127.0.0.1:61383 - "POST /query/data HTTP/1.1" 200
+2026-01-09 19:11:48,438 - lightrag - ERROR - Error /documents/upload: 测试.jpg: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+2026-01-09 19:11:48,439 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+2026-01-09 19:11:48,439 - uvicorn.access - INFO - 127.0.0.1:65253 - "POST /documents/upload HTTP/1.1" 500
+2026-01-09 19:12:49,781 - uvicorn.access - INFO - 127.0.0.1:62601 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 19:12:49,782 - lightrag - INFO - Using RAG-Anything multimodal processing for: Scan_4级.pdf
+2026-01-09 19:12:49,782 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_4级.pdf
+2026-01-09 19:12:49,783 - lightrag - INFO - Using docling parser with method: auto
+2026-01-09 19:12:49,783 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2026-01-09 19:13:16,808 - lightrag - INFO -  == LLM cache == saving: mix:keywords:f6b79b46eed5a61342cb521bcdc4d058
+2026-01-09 19:13:21,514 - lightrag - INFO - Query nodes: URL, 参数, 认证方式, 返回结果 (top_k:10, cosine:0.2)
+2026-01-09 19:13:26,047 - lightrag - INFO - Local query: 10 entites, 14 relations
+2026-01-09 19:13:26,047 - lightrag - INFO - Query edges: 用户登录接口, 接口详细信息, API 文档 (top_k:10, cosine:0.2)
+2026-01-09 19:13:29,295 - lightrag - INFO - Global query: 18 entites, 10 relations
+2026-01-09 19:13:29,468 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 19:13:29,469 - lightrag - INFO - Raw search results: 27 entities, 23 relations, 5 vector chunks
+2026-01-09 19:13:29,475 - lightrag - INFO - After truncation: 27 entities, 23 relations
+2026-01-09 19:13:29,657 - lightrag - INFO - Selecting 12 from 12 entity-related chunks by vector similarity
+2026-01-09 19:13:29,659 - lightrag - INFO - Find no additional relations-related chunks from 23 relations
+2026-01-09 19:13:29,661 - lightrag - INFO - Round-robin merged chunks: 17 -> 16 (deduplicated 1)
+2026-01-09 19:13:29,669 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 19:13:29,684 - lightrag - INFO - Final context: 27 entities, 23 relations, 5 chunks
+2026-01-09 19:13:29,684 - lightrag - INFO - Final chunks S+F/O: C1/1 E13/1 C1/2 E1/2 C1/3
+2026-01-09 19:13:29,712 - uvicorn.access - INFO - 127.0.0.1:57552 - "POST /query/data HTTP/1.1" 200
+2026-01-09 19:13:31,134 - lightrag - INFO -  == LLM cache == saving: mix:keywords:b0a932f6b6ee46e660094bb9ccbc9cc0
+2026-01-09 19:13:34,347 - lightrag - INFO - Query nodes: 用户注册, API参数, 认证 (top_k:10, cosine:0.2)
+2026-01-09 19:13:37,543 - lightrag - INFO - Local query: 10 entites, 9 relations
+2026-01-09 19:13:37,543 - lightrag - INFO - Query edges: 用户注册功能, 接口API, 参数, 认证方式 (top_k:10, cosine:0.2)
+2026-01-09 19:13:41,959 - lightrag - INFO - Global query: 16 entites, 10 relations
+2026-01-09 19:13:42,109 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 19:13:42,111 - lightrag - INFO - Raw search results: 24 entities, 15 relations, 5 vector chunks
+2026-01-09 19:13:42,123 - lightrag - INFO - After truncation: 24 entities, 15 relations
+2026-01-09 19:13:42,268 - lightrag - INFO - Selecting 10 from 10 entity-related chunks by vector similarity
+2026-01-09 19:13:42,271 - lightrag - INFO - Find no additional relations-related chunks from 15 relations
+2026-01-09 19:13:42,272 - lightrag - INFO - Round-robin merged chunks: 15 -> 15 (deduplicated 0)
+2026-01-09 19:13:42,278 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 19:13:42,287 - lightrag - INFO - Final context: 24 entities, 15 relations, 5 chunks
+2026-01-09 19:13:42,288 - lightrag - INFO - Final chunks S+F/O: C1/1 E6/1 C1/2 E4/2 C1/3
+2026-01-09 19:13:42,348 - uvicorn.access - INFO - 127.0.0.1:57232 - "POST /query/data HTTP/1.1" 200
+2026-01-09 19:13:42,387 - lightrag - INFO - Naive query: 3 chunks (chunk_top_k:3 cosine:0.2)
+2026-01-09 19:13:42,389 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 19:13:42,395 - lightrag - INFO - Final context: 3 chunks
+2026-01-09 19:13:42,399 - uvicorn.access - INFO - 127.0.0.1:52667 - "POST /query/data HTTP/1.1" 200
+2026-01-09 19:13:51,550 - uvicorn.access - INFO - 127.0.0.1:53596 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 19:13:51,552 - lightrag - INFO - Using RAG-Anything multimodal processing for: Scan_05-01-2026_1441.pdf
+2026-01-09 19:13:51,553 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_05-01-2026_1441.pdf
+2026-01-09 19:13:51,556 - lightrag - INFO - Using docling parser with method: auto
+2026-01-09 19:13:51,563 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2026-01-09 19:13:56,305 - lightrag - INFO - Naive query: 4 chunks (chunk_top_k:4 cosine:0.2)
+2026-01-09 19:13:56,306 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 19:13:56,319 - lightrag - INFO - Final context: 4 chunks
+2026-01-09 19:13:56,321 - uvicorn.access - INFO - 127.0.0.1:51737 - "POST /query/data HTTP/1.1" 200
+2026-01-09 19:14:30,914 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_4级.pdf complete! Extracted 22 content blocks
+2026-01-09 19:14:30,915 - lightrag - INFO - Document parsed successfully: Scan_4级.pdf, doc_id=doc-7fa9816cdcac1c71d99ea4796d96fad8, blocks=22
+2026-01-09 19:14:46,960 - lightrag - INFO - Parser 'docling' installation verified
+2026-01-09 19:14:46,960 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2026-01-09 19:14:46,974 - lightrag - INFO - [] Process 1414212 KV load parse_cache with 15 records
+2026-01-09 19:14:46,982 - lightrag - INFO - Multimodal processors initialized with context support
+2026-01-09 19:14:46,983 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2026-01-09 19:14:46,984 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2026-01-09 19:14:46,985 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_4级.pdf (22 items)
+2026-01-09 19:14:46,990 - lightrag - INFO - Content separation complete:
+2026-01-09 19:14:46,990 - lightrag - INFO -   - Text content length: 215 characters
+2026-01-09 19:14:46,991 - lightrag - INFO -   - Multimodal items count: 5
+2026-01-09 19:14:46,994 - lightrag - INFO -   - Multimodal type distribution: {'image': 3, 'table': 2}
+2026-01-09 19:14:46,996 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2026-01-09 19:14:46,996 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:14:46,996 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:14:46,999 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:14:47,000 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:14:47,000 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2026-01-09 19:14:47,005 - lightrag - INFO - Starting text content insertion into LightRAG...
+2026-01-09 19:14:47,030 - lightrag - INFO - Processing 1 document(s)
+2026-01-09 19:14:47,031 - lightrag - INFO - Extracting stage 1/1: Scan_4级.pdf
+2026-01-09 19:14:47,031 - lightrag - INFO - Processing d-id: doc-7fa9816cdcac1c71d99ea4796d96fad8
+2026-01-09 19:15:07,078 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_05-01-2026_1441.pdf complete! Extracted 15 content blocks
+2026-01-09 19:15:07,085 - lightrag - INFO - Stored parsing result in cache: 9b701594192cba2fa2193b992044c755
+2026-01-09 19:15:07,085 - lightrag - INFO - Document parsed successfully: Scan_05-01-2026_1441.pdf, doc_id=doc-c81106b3f41c6870a8cc1644a1022194, blocks=15
+2026-01-09 19:15:07,085 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\Scan_05-01-2026_1441.pdf (15 items)
+2026-01-09 19:15:07,085 - lightrag - INFO - Content separation complete:
+2026-01-09 19:15:07,086 - lightrag - INFO -   - Text content length: 238 characters
+2026-01-09 19:15:07,086 - lightrag - INFO -   - Multimodal items count: 1
+2026-01-09 19:15:07,086 - lightrag - INFO -   - Multimodal type distribution: {'image': 1}
+2026-01-09 19:15:07,087 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2026-01-09 19:15:07,088 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:15:07,088 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:15:07,089 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:15:07,089 - lightrag - INFO - Content source set with format: minerU
+2026-01-09 19:15:07,089 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2026-01-09 19:15:07,091 - lightrag - INFO - Starting text content insertion into LightRAG...
+2026-01-09 19:15:07,100 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-09 19:15:07,100 - lightrag - INFO - Text content insertion complete
+2026-01-09 19:15:07,101 - lightrag - INFO - Starting multimodal content processing...
+2026-01-09 19:15:07,101 - lightrag - INFO - Starting to process 1 multimodal content items
+2026-01-09 19:15:10,072 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176795730978206a9ddacc34765855f5d3132a5b7606a3f60e9', 'param': '', 'type': 'Not Found'}}
+2026-01-09 19:15:10,074 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 02176795730978206a9ddacc34765855f5d3132a5b7606a3f60e9', 'param': '', 'type': 'Not Found'}}
+2026-01-09 19:15:10,075 - lightrag - INFO - Multimodal chunk generation progress: 1/1 (100.0%)
+2026-01-09 19:15:10,076 - lightrag - INFO - Generated descriptions for 1/1 multimodal items using correct processors
+2026-01-09 19:15:16,840 - lightrag - ERROR - Error in multimodal processing: cannot import name 'get_pipeline_status_lock' from 'lightrag.kg.shared_storage' (D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\shared_storage.py)
+2026-01-09 19:15:16,840 - lightrag - WARNING - Falling back to individual multimodal processing
+2026-01-09 19:15:16,841 - lightrag - INFO - Processing item 1/1: image content
+2026-01-09 19:15:17,821 - lightrag - ERROR - OpenAI API Call Failed,
+Model: doubao-seed-1-6-vision-250815,
+Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767957317572725a4f42d8843cc933295ed532bbcfab9dbf14', 'param': '', 'type': 'Not Found'}}
+2026-01-09 19:15:17,822 - lightrag - ERROR - Error generating image description: Error code: 404 - {'error': {'code': 'ModelNotOpen', 'message': 'Your account %!s(int64=2102782457) has not activated the model doubao-seed-1-6-vision-250815. Please activate the model service in the Ark Console. Request id: 021767957317572725a4f42d8843cc933295ed532bbcfab9dbf14', 'param': '', 'type': 'Not Found'}}

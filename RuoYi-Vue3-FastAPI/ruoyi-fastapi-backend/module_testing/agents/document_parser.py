@@ -237,28 +237,50 @@ async def parse_document_from_url(
     document_type: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
-    从 URL 下载并解析文档内容
+    从 URL 下载并解析文档内容（支持 PDF、图片、TXT 等多种格式）
+
+    这是从文档生成测试用例的核心工具，必须优先使用！
 
     支持的文档类型:
-    - PDF: 使用 PyMuPDF4LLM (支持表格) 或 PyPDF2 (备用)
-    - 图片: 返回图片信息，需要配合视觉模型使用
+    - PDF: 使用 PyMuPDF4LLM (支持表格和多模态图片) 或 PyPDF2 (备用)
+    - 图片: 自动使用视觉模型（如豆包 Vision）解析图片内容，提取文字和功能描述
+        - 支持格式: JPG, JPEG, PNG, GIF, WEBP, BMP
+        - 如果配置了 DOUBAO_API_KEY，会自动使用视觉模型解析
+        - 如果未配置，会返回图片URL供视觉模型使用
     - TXT: 纯文本解析
 
     Args:
         url: 文档的 URL (通常是 MinIO 预签名 URL)
-        document_type: 文档 MIME 类型 (可选，用于优化解析策略)
+        document_type: 文档 MIME 类型 (可选，自动检测)
 
     Returns:
         dict: 包含解析结果的字典
             - success: bool, 是否成功
-            - content: str, 解析的文本内容
-            - document_type: str, 文档类型
+            - content: str, 解析的文本内容（图片会包含解析的文字描述）
+            - document_type: str, 文档类型 (pdf/image/text)
+            - image_url: str, 图片URL（仅图片类型）
+            - parsed: bool, 是否已解析（仅图片类型，True表示已用视觉模型解析）
+            - size_bytes: int, 文件大小（字节）
             - error: str, 错误信息 (如果失败)
 
     Examples:
+        # 解析 PDF 文档
         >>> result = await parse_document_from_url("http://example.com/doc.pdf")
         >>> if result["success"]:
         >>>     print(result["content"])
+        
+        # 解析图片（会自动使用视觉模型）
+        >>> result = await parse_document_from_url("http://example.com/image.png")
+        >>> if result["success"]:
+        >>>     if result.get("parsed"):
+        >>>         print("图片已解析:", result["content"])
+        >>>     else:
+        >>>         print("图片URL:", result["image_url"])
+    
+    Important:
+        - 当用户提供文档URL时，必须首先调用此工具解析文档
+        - 图片文件会自动尝试使用视觉模型解析，提取文字和功能描述
+        - 解析后的内容将用于生成测试用例
     """
     try:
         logger.info(f"开始解析文档: {url} (类型: {document_type})")
@@ -285,15 +307,95 @@ async def parse_document_from_url(
                 "size_bytes": len(content_data),
             }
 
-        elif detected_type.startswith("image/") or any(url.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp"]):
-            # 图片文件 - 返回提示信息，让视觉模型处理
-            return {
-                "success": True,
-                "content": f"这是一张图片文件。\n\n图片URL: {url}\n\n请使用支持视觉的模型来分析这张图片的内容。",
-                "document_type": "image",
-                "image_url": url,
-                "size_bytes": len(content_data),
-            }
+        elif detected_type.startswith("image/") or any(url.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp"]):
+            # 图片文件 - 尝试使用视觉模型解析
+            logger.info(f"检测到图片文件，尝试使用视觉模型解析: {url}")
+            
+            # 检查是否配置了视觉模型（豆包）
+            doubao_api_key = os.getenv("DOUBAO_API_KEY", "")
+            if doubao_api_key:
+                try:
+                    from langchain_community.document_loaders.parsers import LLMImageBlobParser
+                    from langchain.chat_models import init_chat_model
+                    from langchain_core.document_loaders import Blob
+                    
+                    # 初始化豆包视觉模型
+                    image_llm = init_chat_model("doubao:doubao-vision", api_key=doubao_api_key)
+                    image_parser = LLMImageBlobParser(model=image_llm)
+                    
+                    # 创建 Blob 对象（LLMImageBlobParser 需要 Blob 对象）
+                    # 根据文件扩展名确定 MIME 类型
+                    mime_type = detected_type if detected_type.startswith("image/") else f"image/{url.split('.')[-1].lower()}"
+                    if mime_type == "image/":
+                        mime_type = "image/png"  # 默认
+                    
+                    blob = Blob(
+                        data=content_data,
+                        mime_type=mime_type,
+                        path=url
+                    )
+                    
+                    # 使用视觉模型解析图片
+                    logger.info("使用豆包视觉模型解析图片内容...")
+                    parsed_result = image_parser.parse(blob)
+                    
+                    if parsed_result and hasattr(parsed_result, 'page_content'):
+                        image_content = parsed_result.page_content
+                        logger.info(f"图片解析成功，内容长度: {len(image_content)} 字符")
+                        
+                        return {
+                            "success": True,
+                            "content": f"图片解析结果：\n\n{image_content}\n\n图片URL: {url}",
+                            "document_type": "image",
+                            "image_url": url,
+                            "size_bytes": len(content_data),
+                            "parsed": True,
+                        }
+                    else:
+                        logger.warning("视觉模型解析返回空结果")
+                        # 回退到提示信息
+                        return {
+                            "success": True,
+                            "content": f"这是一张图片文件。\n\n图片URL: {url}\n\n已尝试使用视觉模型解析，但未获取到内容。请直接基于图片URL进行分析。",
+                            "document_type": "image",
+                            "image_url": url,
+                            "size_bytes": len(content_data),
+                            "parsed": False,
+                        }
+                        
+                except ImportError as e:
+                    logger.warning(f"视觉模型依赖未安装: {e}")
+                    # 回退到提示信息
+                    return {
+                        "success": True,
+                        "content": f"这是一张图片文件。\n\n图片URL: {url}\n\n注意：视觉模型解析功能未启用（缺少依赖或配置）。请使用支持视觉的模型来分析这张图片的内容，或提供图片的文字描述。",
+                        "document_type": "image",
+                        "image_url": url,
+                        "size_bytes": len(content_data),
+                        "parsed": False,
+                    }
+                except Exception as e:
+                    logger.error(f"图片解析失败: {e}", exc_info=True)
+                    # 回退到提示信息
+                    return {
+                        "success": True,
+                        "content": f"这是一张图片文件。\n\n图片URL: {url}\n\n图片解析过程中出现错误: {str(e)}。请使用支持视觉的模型来分析这张图片的内容，或提供图片的文字描述。",
+                        "document_type": "image",
+                        "image_url": url,
+                        "size_bytes": len(content_data),
+                        "parsed": False,
+                    }
+            else:
+                # 未配置视觉模型，返回提示信息
+                logger.info("未配置 DOUBAO_API_KEY，返回图片URL供视觉模型使用")
+                return {
+                    "success": True,
+                    "content": f"这是一张图片文件。\n\n图片URL: {url}\n\n注意：当前未配置视觉模型（DOUBAO_API_KEY），无法自动解析图片内容。\n\n请使用支持视觉的模型来分析这张图片的内容，或提供图片的文字描述。\n\n如果图片包含文字内容，建议：\n1. 使用支持视觉的模型（如 GPT-4 Vision、豆包 Vision）直接分析图片\n2. 或者提供图片的文字描述，我可以基于描述生成测试用例",
+                    "document_type": "image",
+                    "image_url": url,
+                    "size_bytes": len(content_data),
+                    "parsed": False,
+                }
 
         elif detected_type == "text/plain" or url.lower().endswith(".txt"):
             # 纯文本文件

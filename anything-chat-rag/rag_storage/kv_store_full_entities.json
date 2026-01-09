@@ -1655,5 +1655,14 @@
     "create_time": 1767951136,
     "update_time": 1767951136,
     "_id": "doc-a4d91a61d9cca0476fb39d1c2fced927"
+  },
+  "doc-c81106b3f41c6870a8cc1644a1022194": {
+    "entity_names": [
+      "image_16103ef1487dd7fd5276abf7185faaa7"
+    ],
+    "count": 1,
+    "update_time": 1767957316,
+    "create_time": 1767957316,
+    "_id": "doc-c81106b3f41c6870a8cc1644a1022194"
   }
 }

@@ -286,7 +286,7 @@ async def save_analysis_result(
             similar_defects=request.similar_defects
         )
         
-        result = await analysis_service.create_analysis(db, vo, current_user.get('user_name', 'system'))
+        result = await analysis_service.create_analysis(db, vo, current_user.user_name or 'system')
         
         return ResponseUtil.success(
             data={'analysis_id': result.analysis_id},

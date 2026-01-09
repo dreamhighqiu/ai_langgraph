@@ -233,7 +233,7 @@ async def batch_create_from_ai(
         
         # 批量创建
         results = await test_case_service.batch_create_test_cases(
-            db, test_case_vos, current_user.get('user_name', 'system')
+            db, test_case_vos, current_user.user_name or 'system'
         )
         
         return ResponseUtil.success(

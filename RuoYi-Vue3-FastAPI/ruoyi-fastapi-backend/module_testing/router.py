@@ -9,6 +9,9 @@ from module_testing.controller.requirement_analysis_controller import router as 
 from module_testing.controller.ai_chat_controller_langgraph import router as ai_chat_router
 from module_testing.controller.defect_analysis_controller import router as defect_analysis_router
 from module_testing.controller.folder_controller import router as folder_router
+from module_testing.controller.ai_testcase_controller import router as ai_testcase_router
+from module_testing.controller.ai_requirement_controller import router as ai_requirement_router
+from module_testing.controller.ai_defect_controller import router as ai_defect_router
 
 
 # 创建测试模块主路由（添加 /api 前缀以匹配前端请求）
@@ -21,5 +24,8 @@ testing_router.include_router(bug_report_router)
 testing_router.include_router(requirement_router)  # 需求分析
 testing_router.include_router(ai_chat_router)  # AI 聊天接口
 testing_router.include_router(defect_analysis_router)  # 缺陷分析接口
+testing_router.include_router(ai_testcase_router)  # AI 测试用例生成
+testing_router.include_router(ai_requirement_router)  # AI 需求分析
+testing_router.include_router(ai_defect_router)  # AI 缺陷分析
 
 __all__ = ['testing_router']

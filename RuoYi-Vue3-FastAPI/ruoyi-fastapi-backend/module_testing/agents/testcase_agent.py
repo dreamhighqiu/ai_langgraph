@@ -270,3 +270,104 @@ def get_testcase_agent() -> TestCaseAgent:
         _testcase_agent = TestCaseAgent()
     return _testcase_agent
 
+
+# ============================================
+# LangGraph CLI 导出 (用于 langgraph.json)
+# ============================================
+
+def _create_langgraph_app_for_api():
+    """
+    创建 LangGraph 应用实例（供 LangGraph API 使用）
+    
+    注意：LangGraph API 会自动处理持久化，不需要自定义 checkpointer
+    """
+    from langchain_openai import ChatOpenAI
+    from langgraph.graph import StateGraph, MessagesState, START, END
+    from langgraph.prebuilt import ToolNode
+    from config.env import LLMConfig
+    from module_testing.agents.tools import (
+        create_test_case_tool,
+        update_test_case_tool,
+        batch_create_test_cases_tool,
+        rag_query_tool
+    )
+    
+    # 初始化 LLM
+    llm = ChatOpenAI(
+        model=LLMConfig.llm_model_name,
+        api_key=LLMConfig.llm_api_key,
+        base_url=LLMConfig.llm_base_url,
+        temperature=LLMConfig.llm_temperature,
+        streaming=True
+    )
+    
+    # 定义工具列表
+    tools = [
+        create_test_case_tool,
+        update_test_case_tool,
+        batch_create_test_cases_tool,
+        rag_query_tool
+    ]
+    
+    # 绑定工具到 LLM
+    llm_with_tools = llm.bind_tools(tools)
+    
+    # 构建 workflow
+    workflow = StateGraph(MessagesState)
+    
+    def call_model(state: MessagesState, config):
+        """调用模型"""
+        from langchain_core.runnables import RunnableConfig
+        
+        # 从配置中获取上下文
+        ctx = config.get("configurable", {})
+        project_id = ctx.get("project_id", 0)
+        module = ctx.get("module", "未指定")
+        template_type = ctx.get("template_type", "normal")
+        
+        system_prompt = f"""# 测试用例生成专家
+
+你是一位专业的软件测试工程师，擅长根据需求生成高质量的测试用例。
+
+## 当前上下文
+- 项目ID: {project_id}
+- 模块: {module}
+- 模板类型: {template_type}
+
+## 工具使用说明
+调用工具时必须使用上述 project_id 参数。
+
+## 测试用例设计原则
+1. 覆盖正常流程和异常流程
+2. 覆盖边界条件
+3. 测试用例名称清晰
+4. 预期结果明确可验证
+"""
+        messages = [{"role": "system", "content": system_prompt}] + state["messages"]
+        response = llm_with_tools.invoke(messages)
+        return {"messages": [response]}
+    
+    def should_continue(state: MessagesState):
+        """判断是否继续执行"""
+        messages = state["messages"]
+        last_message = messages[-1]
+        if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+            return "tools"
+        return END
+    
+    # 添加节点
+    workflow.add_node("agent", call_model)
+    workflow.add_node("tools", ToolNode(tools))
+    
+    # 添加边
+    workflow.add_edge(START, "agent")
+    workflow.add_conditional_edges("agent", should_continue, ["tools", END])
+    workflow.add_edge("tools", "agent")
+    
+    # 编译时不使用 checkpointer（LangGraph API 会自动处理）
+    return workflow.compile()
+
+# 导出给 LangGraph CLI 使用
+# langgraph.json 中配置: "path": "./module_testing/agents/testcase_agent.py:agent"
+agent = _create_langgraph_app_for_api()
+

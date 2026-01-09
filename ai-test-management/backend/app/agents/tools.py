@@ -38,6 +38,30 @@ def get_api_url(path: str) -> str:
     """构建完整的 API URL"""
     return f"{API_BASE_URL}{API_PREFIX}{path}"
 
+def _normalize_mcp_sse_url(url: str) -> str:
+    """
+    规范化 MCP SSE 服务 URL。
+
+    兼容传入 base host（如 http://localhost:9002）或完整 SSE 路径（如 http://localhost:9002/sse）。
+    """
+    normalized = (url or "").strip().rstrip("/")
+    if not normalized:
+        return "/sse"
+    return normalized if normalized.endswith("/sse") else f"{normalized}/sse"
+
+
+def _pick_mcp_tool(tools: list[Any], tool_name: str) -> Any:
+    """从 MCP tools 列表中选取指定工具（兼容带前缀的名称）。"""
+    for tool in tools:
+        name = getattr(tool, "name", "") or ""
+        if name == tool_name:
+            return tool
+    for tool in tools:
+        name = getattr(tool, "name", "") or ""
+        if name.endswith(tool_name) or name.endswith(f".{tool_name}") or name.endswith(f"__{tool_name}"):
+            return tool
+    return None
+
 
 async def make_http_request(
     method: str,
@@ -218,8 +242,15 @@ async def create_test_case_tool(
             if test_case_steps is not None:
                 request_data["test_case_steps"] = test_case_steps
 
-        # 构建 API URL（需要包含 project_identifier 路径参数）
-        url = get_api_url(f"/projects/{project_identifier}/folders/{folder_id}/test-cases")
+        # 构建 API URL
+        # folder_id 为空时，避免出现 /folders//test-cases 导致 404（路由不匹配）
+        normalized_folder_id = (folder_id or "").strip()
+        if normalized_folder_id:
+            url = get_api_url(
+                f"/projects/{project_identifier}/folders/{normalized_folder_id}/test-cases"
+            )
+        else:
+            url = get_api_url(f"/projects/{project_identifier}/test-cases")
 
         # 不需要查询参数，project_identifier 已经在路径中
         params = None
@@ -625,77 +656,87 @@ async def rag_query_tool(
         >>>     print(result["context"])
     """
     try:
-        # RAG MCP 服务器地址（从环境变量读取）
-        rag_base_url = os.environ.get("RAG_MCP_URL", "http://localhost:9002")
-        
+        # RAG MCP 服务器地址（从环境变量读取）；默认使用 SSE 传输
+        # mcp_config.json 默认是 http://localhost:9002/sse
+        rag_mcp_url = _normalize_mcp_sse_url(
+            os.environ.get("RAG_MCP_URL", "http://localhost:9002/sse")
+        )
+
         logger.info(f"开始 RAG 检索: {query} (模式: {mode})")
-        
-        # 调用 RAG MCP 服务器
-        request_body = {
-            "query": query,
-            "mode": mode,
-            "top_k": top_k,
-            "chunk_top_k": chunk_top_k,
-            "enable_rerank": enable_rerank,
-            "include_references": True,
-            "include_chunk_content": True,
-        }
-        
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            # 调用 RAG 工具
-            # 注意：这里假设 RAG MCP 服务器提供了 REST API 端点
-            # 实际使用时可能需要通过 MCP 协议调用
-            response = await client.post(
-                f"{rag_base_url}/rag/query",
-                json=request_body
-            )
-            response.raise_for_status()
-            rag_response = response.json()
-        
-        # 解析 RAG 响应
-        if rag_response.get("status") == "success":
-            data = rag_response.get("data", {})
-            entities = data.get("entities", [])
-            chunks = data.get("chunks", [])
-            
-            # 构建上下文文本
-            context_parts = []
-            
-            # 添加文本块内容
-            if chunks:
-                context_parts.append("## 相关文档信息")
-                for i, chunk in enumerate(chunks[:3], 1):
-                    content = chunk.get("content", "")
-                    if content:
-                        context_parts.append(f"\n### 文档片段 {i}")
-                        context_parts.append(content)
-            
-            # 添加实体信息
-            if entities:
-                context_parts.append("\n## 相关实体")
-                for entity in entities[:5]:
-                    name = entity.get("entity_name", "")
-                    desc = entity.get("description", "")
-                    if name:
-                        context_parts.append(f"- **{name}**: {desc}")
-            
-            context_text = "\n".join(context_parts)
-            
+
+        from langchain_mcp_adapters.client import MultiServerMCPClient
+
+        mcp_client = MultiServerMCPClient(
+            {
+                "rag": {
+                    "url": rag_mcp_url,
+                    "transport": "sse",
+                }
+            }
+        )
+        mcp_tools = list(await mcp_client.get_tools())
+        tool = _pick_mcp_tool(mcp_tools, "rag_query_data_json") or _pick_mcp_tool(
+            mcp_tools, "rag_query_data"
+        )
+
+        if tool is None:
+            return {
+                "success": False,
+                "error": "未找到 RAG MCP 工具（rag_query_data_json / rag_query_data）",
+                "context": "",
+            }
+
+        raw = await tool.ainvoke(
+            {
+                "query": query,
+                "mode": mode,
+                "top_k": top_k,
+                "chunk_top_k": chunk_top_k,
+                "enable_rerank": enable_rerank,
+            }
+        )
+
+        tool_name = str(getattr(tool, "name", "") or "")
+        if tool_name == "rag_query_data_json" or tool_name.endswith("rag_query_data_json"):
+            import json
+
+            parsed = json.loads(raw)
+            if parsed.get("status") != "success":
+                return {
+                    "success": False,
+                    "error": parsed.get("message", "RAG 检索失败"),
+                    "context": "",
+                }
+
+            data = parsed.get("data") or {}
+            entities = data.get("entities") or []
+            chunks = data.get("chunks") or []
+
+            context_text = "\n\n".join(
+                [
+                    c.get("content", "")
+                    for c in chunks
+                    if isinstance(c, dict) and c.get("content")
+                ]
+            ).strip()
+
             logger.info(f"RAG 检索成功，找到 {len(entities)} 个实体和 {len(chunks)} 个文本块")
-            
             return {
                 "success": True,
                 "context": context_text,
                 "entities": entities,
                 "chunks": chunks,
-                "metadata": rag_response.get("metadata", {}),
+                "metadata": parsed.get("metadata", {}) or {},
             }
-        else:
-            return {
-                "success": False,
-                "error": rag_response.get("message", "RAG 检索失败"),
-                "context": "",
-            }
+
+        # 文本版本：直接作为上下文返回
+        return {
+            "success": True,
+            "context": str(raw),
+            "entities": [],
+            "chunks": [],
+            "metadata": {},
+        }
     
     except httpx.HTTPError as e:
         logger.error(f"RAG 服务请求失败: {e}")
@@ -947,39 +988,46 @@ async def generate_mindmap_tool(
         ... )
     """
     try:
-        # MindMap MCP 服务器地址（从环境变量读取）
-        mindmap_base_url = os.environ.get("MINDMAP_MCP_URL", "http://localhost:9003")
-        
+        mindmap_mcp_url = _normalize_mcp_sse_url(
+            os.environ.get("MINDMAP_MCP_URL", "http://localhost:9003/sse")
+        )
+
         logger.info(f"开始生成思维导图: {title} (格式: {format})")
-        
-        # 调用 MindMap MCP 服务器
-        request_body = {
-            "title": title,
-            "content": content,
-            "format": format,
-        }
-        
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            response = await client.post(
-                f"{mindmap_base_url}/mindmap/generate",
-                json=request_body
-            )
-            response.raise_for_status()
-            mindmap_response = response.json()
-        
-        if mindmap_response.get("success"):
-            return {
-                "success": True,
-                "mindmap_content": mindmap_response.get("mindmap_content", ""),
-                "format": format,
-                "download_url": mindmap_response.get("download_url"),
-                "message": f"思维导图生成成功 (格式: {format})",
+
+        from langchain_mcp_adapters.client import MultiServerMCPClient
+
+        mcp_client = MultiServerMCPClient(
+            {
+                "mindmap": {
+                    "url": mindmap_mcp_url,
+                    "transport": "sse",
+                }
             }
-        else:
+        )
+        mcp_tools = list(await mcp_client.get_tools())
+        tool = _pick_mcp_tool(mcp_tools, "generate_mindmap")
+        if tool is None:
             return {
                 "success": False,
-                "error": mindmap_response.get("error", "思维导图生成失败"),
+                "error": "未找到 MindMap MCP 工具（generate_mindmap）",
             }
+
+        markdown = f"# {title}\n\n{content}"
+        html = await tool.ainvoke(
+            {
+                "markdown": markdown,
+                "return_type": "html",
+                "toolbar": True,
+            }
+        )
+
+        return {
+            "success": True,
+            "mindmap_content": str(html),
+            "format": "html",
+            "download_url": None,
+            "message": "思维导图生成成功",
+        }
     
     except httpx.HTTPError as e:
         logger.error(f"MindMap 服务请求失败: {e}")

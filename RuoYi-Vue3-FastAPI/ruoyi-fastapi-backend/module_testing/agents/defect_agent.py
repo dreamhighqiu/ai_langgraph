@@ -247,3 +247,93 @@ def get_defect_agent() -> DefectAnalysisAgent:
         _defect_agent = DefectAnalysisAgent()
     return _defect_agent
 
+
+# ============================================
+# LangGraph CLI 导出 (用于 langgraph.json)
+# ============================================
+
+def _create_langgraph_app_for_api():
+    """
+    创建 LangGraph 应用实例（供 LangGraph API 使用）
+    
+    注意：LangGraph API 会自动处理持久化，不需要自定义 checkpointer
+    """
+    from langchain_openai import ChatOpenAI
+    from langgraph.graph import StateGraph, MessagesState, START, END
+    from langgraph.prebuilt import ToolNode
+    from config.env import LLMConfig
+    from module_testing.agents.tools import (
+        save_defect_analysis_tool,
+        rag_query_tool
+    )
+    
+    # 初始化 LLM
+    llm = ChatOpenAI(
+        model=LLMConfig.llm_model_name,
+        api_key=LLMConfig.llm_api_key,
+        base_url=LLMConfig.llm_base_url,
+        temperature=LLMConfig.llm_temperature,
+        streaming=True
+    )
+    
+    # 定义工具列表
+    tools = [
+        save_defect_analysis_tool,
+        rag_query_tool
+    ]
+    
+    # 绑定工具到 LLM
+    llm_with_tools = llm.bind_tools(tools)
+    
+    # 构建 workflow
+    workflow = StateGraph(MessagesState)
+    
+    def call_model(state: MessagesState, config):
+        """调用模型"""
+        # 从配置中获取上下文
+        ctx = config.get("configurable", {})
+        project_id = ctx.get("project_id", 0)
+        module = ctx.get("module", "未指定")
+        
+        system_prompt = f"""# 缺陷分析专家
+
+你是一位专业的缺陷分析师，擅长分析缺陷报告，进行根本原因分析、影响分析、修复建议等。
+
+## 当前上下文
+- 项目ID: {project_id}
+- 模块: {module}
+
+## 分析原则
+1. 识别缺陷根本原因
+2. 评估影响范围
+3. 提供修复建议
+4. 建议预防措施
+"""
+        messages = [{"role": "system", "content": system_prompt}] + state["messages"]
+        response = llm_with_tools.invoke(messages)
+        return {"messages": [response]}
+    
+    def should_continue(state: MessagesState):
+        """判断是否继续执行"""
+        messages = state["messages"]
+        last_message = messages[-1]
+        if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+            return "tools"
+        return END
+    
+    # 添加节点
+    workflow.add_node("agent", call_model)
+    workflow.add_node("tools", ToolNode(tools))
+    
+    # 添加边
+    workflow.add_edge(START, "agent")
+    workflow.add_conditional_edges("agent", should_continue, ["tools", END])
+    workflow.add_edge("tools", "agent")
+    
+    # 编译时不使用 checkpointer（LangGraph API 会自动处理）
+    return workflow.compile()
+
+# 导出给 LangGraph CLI 使用
+# langgraph.json 中配置: "path": "./module_testing/agents/defect_agent.py:agent"
+agent = _create_langgraph_app_for_api()
+

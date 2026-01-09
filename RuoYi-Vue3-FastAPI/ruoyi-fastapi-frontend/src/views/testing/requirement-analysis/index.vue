@@ -150,70 +150,14 @@
       </div>
     </el-drawer>
 
-    <!-- 编辑对话框 -->
-    <el-dialog
+    <!-- 创建/编辑对话框 -->
+    <RequirementCreateDialog
       v-model="dialogVisible"
-      :title="currentId ? '编辑需求分析' : '新建需求分析'"
-      width="800px"
-      :close-on-click-modal="false"
-    >
-      <el-form ref="formRef" :model="form" :rules="rules" label-width="100px">
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="项目" prop="projectId">
-              <el-select v-model="form.projectId" placeholder="选择项目" style="width: 100%">
-                <el-option
-                  v-for="item in projectList"
-                  :key="item.projectId"
-                  :label="item.projectName"
-                  :value="item.projectId"
-                />
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="12">
-            <el-form-item label="需求类型" prop="requirementType">
-              <el-select v-model="form.requirementType" placeholder="选择类型" style="width: 100%">
-                <el-option label="功能需求" value="functional" />
-                <el-option label="性能需求" value="performance" />
-                <el-option label="安全需求" value="security" />
-                <el-option label="接口需求" value="interface" />
-                <el-option label="业务需求" value="business" />
-              </el-select>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="需求名称" prop="requirementName">
-              <el-input v-model="form.requirementName" placeholder="请输入需求名称" />
-            </el-form-item>
-          </el-col>
-          <el-col :span="12">
-            <el-form-item label="优先级" prop="priority">
-              <el-select v-model="form.priority" placeholder="选择优先级" style="width: 100%">
-                <el-option label="高" value="high" />
-                <el-option label="中" value="medium" />
-                <el-option label="低" value="low" />
-              </el-select>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-form-item label="所属模块" prop="module">
-          <el-input v-model="form.module" placeholder="请输入所属模块" />
-        </el-form-item>
-        <el-form-item label="需求描述" prop="description">
-          <el-input v-model="form.description" type="textarea" :rows="4" placeholder="请输入需求描述" />
-        </el-form-item>
-        <el-form-item label="验收标准" prop="acceptanceCriteria">
-          <el-input v-model="form.acceptanceCriteria" type="textarea" :rows="3" placeholder="请输入验收标准" />
-        </el-form-item>
-      </el-form>
-      <template #footer>
-        <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="submitForm" :loading="submitting">确定</el-button>
-      </template>
-    </el-dialog>
+      :edit-data="editData"
+      :default-project-id="queryParams.projectId"
+      @open-chat="handleOpenChat"
+      @success="handleFormSuccess"
+    />
 
     <!-- AI 对话抽屉 -->
     <AIChatDrawer
@@ -234,6 +178,7 @@ import { DocumentCopy, MagicStick } from '@element-plus/icons-vue'
 import { listRequirementAnalysis, getRequirementAnalysis, addRequirementAnalysis, updateRequirementAnalysis, delRequirementAnalysis } from '@/api/testing/requirementAnalysis'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
+import RequirementCreateDialog from '@/views/testing/components/RequirementCreateDialog.vue'
 
 const { proxy } = getCurrentInstance()
 
@@ -250,6 +195,7 @@ const dialogVisible = ref(false)
 const aiChatVisible = ref(false)
 const currentDetail = ref(null)
 const currentId = ref(null)
+const editData = ref(null)
 const submitting = ref(false)
 const aiInitialPrompt = ref('')
 
@@ -319,11 +265,31 @@ const handleSelectionChange = (selection) => {
 
 const handleAdd = () => {
   currentId.value = null
-  resetForm()
+  editData.value = null
   dialogVisible.value = true
 }
 
 const handleUpdate = async (row) => {
+  currentId.value = row.requirement_id
+  try {
+    const res = await getRequirementAnalysis(row.requirement_id)
+    editData.value = res.data
+    dialogVisible.value = true
+  } catch (error) {
+    console.error('加载详情失败:', error)
+  }
+}
+
+const handleFormSuccess = () => {
+  getList()
+}
+
+const handleOpenChat = (prompt) => {
+  aiInitialPrompt.value = prompt
+  aiChatVisible.value = true
+}
+
+const handleUpdateOld = async (row) => {
   currentId.value = row.requirement_id
   try {
     const res = await getRequirementAnalysis(row.requirement_id)

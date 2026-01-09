@@ -100,7 +100,7 @@ class LangGraphSettings(BaseSettings):
     LangGraph AI服务配置
     """
 
-    langgraph_api_url: str = 'http://127.0.0.1:2025'
+    langgraph_api_url: str = 'http://127.0.0.1:2027'
     langgraph_api_key: str = ''
 
 

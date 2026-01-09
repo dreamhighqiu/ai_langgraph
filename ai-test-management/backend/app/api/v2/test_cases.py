@@ -230,6 +230,35 @@ async def get_test_case(
 # ============ 创建测试用例接口 ============
 
 @router.post(
+    "/test-cases",
+    response_model=SuccessResponse[TestCaseInfo],
+    status_code=status.HTTP_201_CREATED,
+    summary="创建测试用例（可选文件夹）",
+    description="在项目下创建新的测试用例；如提供 folder_id 则创建到指定文件夹，否则创建为未归档用例",
+)
+async def create_test_case(
+    project_identifier: str,
+    data: TestCaseCreate,
+    service: TestCaseServiceDep,
+    current_user_id: CurrentUserIdDep,
+    db: DbSessionDep,
+    folder_id: Optional[UUID] = Query(
+        default=None,
+        description="所属文件夹 ID（可选）",
+    ),
+) -> SuccessResponse[TestCaseInfo]:
+    """创建测试用例（可选文件夹）"""
+    test_case = await service.create_test_case(
+        project_identifier,
+        data,
+        current_user_id,
+        folder_id=folder_id,
+    )
+    await db.commit()
+    return SuccessResponse(success=True, data=test_case)
+
+
+@router.post(
     "/folders/{folder_id}/test-cases",
     response_model=SuccessResponse[TestCaseInfo],
     status_code=status.HTTP_201_CREATED,

@@ -260,6 +260,16 @@ async def stream_message(request: StreamMessageRequest):
     """
     流式发送消息给 Agent（SSE）
     用于前端实时展示 AI 响应
+    
+    支持的事件类型：
+    - thread_id: 线程ID
+    - content: 文本内容
+    - tool_call: 工具调用开始
+    - tool_result: 工具调用结果
+    - todos: 任务列表更新
+    - files: 文件列表更新
+    - interrupt: 中断请求
+    - error: 错误信息
     """
     try:
         client = get_langgraph_client()
@@ -286,6 +296,8 @@ async def stream_message(request: StreamMessageRequest):
                 # 发送 thread_id
                 yield f"data: {json.dumps({'type': 'thread_id', 'thread_id': thread_id})}\n\n"
                 
+                accumulated_content = ""
+                
                 # 调用 Agent
                 async for chunk in client.stream_agent(
                     assistant_id=request.assistant_id,
@@ -293,20 +305,67 @@ async def stream_message(request: StreamMessageRequest):
                     thread_id=thread_id,
                     config=config
                 ):
-                    # 处理不同类型的消息
+                    # 处理错误
                     if 'error' in chunk:
                         yield f"data: {json.dumps({'type': 'error', 'error': chunk['error']})}\n\n"
+                        continue
+                    
+                    # 处理消息内容
+                    if 'messages' in chunk and isinstance(chunk['messages'], list):
+                        for msg in chunk['messages']:
+                            if msg.get('type') == 'ai' or msg.get('role') == 'assistant':
+                                content = msg.get('content', '')
+                                # 处理复杂的 content 格式
+                                if isinstance(content, list):
+                                    for item in content:
+                                        if isinstance(item, dict):
+                                            if item.get('type') == 'text':
+                                                text = item.get('text', '')
+                                                if text and text != accumulated_content:
+                                                    new_content = text[len(accumulated_content):] if text.startswith(accumulated_content) else text
+                                                    if new_content:
+                                                        yield f"data: {json.dumps({'type': 'content', 'content': new_content})}\n\n"
+                                                        accumulated_content = text
+                                            elif item.get('type') == 'tool_use':
+                                                yield f"data: {json.dumps({'type': 'tool_call', 'id': item.get('id', ''), 'name': item.get('name', ''), 'args': item.get('input', {})})}\n\n"
+                                elif isinstance(content, str) and content:
+                                    if content != accumulated_content:
+                                        new_content = content[len(accumulated_content):] if content.startswith(accumulated_content) else content
+                                        if new_content:
+                                            yield f"data: {json.dumps({'type': 'content', 'content': new_content})}\n\n"
+                                            accumulated_content = content
+                                
+                                # 处理工具调用
+                                tool_calls = msg.get('tool_calls', [])
+                                for tc in tool_calls:
+                                    yield f"data: {json.dumps({'type': 'tool_call', 'id': tc.get('id', ''), 'name': tc.get('name', ''), 'args': tc.get('args', {})})}\n\n"
+                            
+                            elif msg.get('type') == 'tool' or msg.get('role') == 'tool':
+                                yield f"data: {json.dumps({'type': 'tool_result', 'id': msg.get('tool_call_id', ''), 'name': msg.get('name', ''), 'result': msg.get('content', '')})}\n\n"
+                    
+                    # 处理直接的 content
                     elif 'content' in chunk:
                         yield f"data: {json.dumps({'type': 'content', 'content': chunk['content']})}\n\n"
-                    elif 'tool_call' in chunk:
-                        yield f"data: {json.dumps({'type': 'tool_call', 'name': chunk.get('name', ''), 'args': chunk.get('args', {})})}\n\n"
-                    elif 'tool_result' in chunk:
+                    
+                    # 处理工具调用
+                    elif 'tool_call' in chunk or chunk.get('type') == 'tool_call':
+                        yield f"data: {json.dumps({'type': 'tool_call', 'id': chunk.get('id', ''), 'name': chunk.get('name', ''), 'args': chunk.get('args', {})})}\n\n"
+                    
+                    # 处理工具结果
+                    elif 'tool_result' in chunk or chunk.get('type') == 'tool_result':
                         yield f"data: {json.dumps({'type': 'tool_result', 'name': chunk.get('name', ''), 'result': chunk.get('result', '')})}\n\n"
-                    else:
-                        # 默认作为内容处理
-                        content = chunk.get('messages', [{}])[-1].get('content', '') if isinstance(chunk.get('messages'), list) else str(chunk)
-                        if content:
-                            yield f"data: {json.dumps({'type': 'content', 'content': content})}\n\n"
+                    
+                    # 处理 todos
+                    elif 'todos' in chunk:
+                        yield f"data: {json.dumps({'type': 'todos', 'todos': chunk['todos']})}\n\n"
+                    
+                    # 处理 files
+                    elif 'files' in chunk:
+                        yield f"data: {json.dumps({'type': 'files', 'files': chunk['files']})}\n\n"
+                    
+                    # 处理中断
+                    elif 'interrupt' in chunk:
+                        yield f"data: {json.dumps({'type': 'interrupt', 'value': chunk['interrupt']})}\n\n"
                 
                 yield "data: [DONE]\n\n"
                 

@@ -239,3 +239,93 @@ def get_requirement_agent() -> RequirementAnalysisAgent:
         _requirement_agent = RequirementAnalysisAgent()
     return _requirement_agent
 
+
+# ============================================
+# LangGraph CLI 导出 (用于 langgraph.json)
+# ============================================
+
+def _create_langgraph_app_for_api():
+    """
+    创建 LangGraph 应用实例（供 LangGraph API 使用）
+    
+    注意：LangGraph API 会自动处理持久化，不需要自定义 checkpointer
+    """
+    from langchain_openai import ChatOpenAI
+    from langgraph.graph import StateGraph, MessagesState, START, END
+    from langgraph.prebuilt import ToolNode
+    from config.env import LLMConfig
+    from module_testing.agents.tools import (
+        save_requirement_analysis_tool,
+        rag_query_tool
+    )
+    
+    # 初始化 LLM
+    llm = ChatOpenAI(
+        model=LLMConfig.llm_model_name,
+        api_key=LLMConfig.llm_api_key,
+        base_url=LLMConfig.llm_base_url,
+        temperature=LLMConfig.llm_temperature,
+        streaming=True
+    )
+    
+    # 定义工具列表
+    tools = [
+        save_requirement_analysis_tool,
+        rag_query_tool
+    ]
+    
+    # 绑定工具到 LLM
+    llm_with_tools = llm.bind_tools(tools)
+    
+    # 构建 workflow
+    workflow = StateGraph(MessagesState)
+    
+    def call_model(state: MessagesState, config):
+        """调用模型"""
+        # 从配置中获取上下文
+        ctx = config.get("configurable", {})
+        project_id = ctx.get("project_id", 0)
+        module = ctx.get("module", "未指定")
+        
+        system_prompt = f"""# 需求分析专家
+
+你是一位专业的需求分析师，擅长分析需求文档，提取功能需求、非功能需求、验收标准等。
+
+## 当前上下文
+- 项目ID: {project_id}
+- 模块: {module}
+
+## 分析原则
+1. 识别功能需求和非功能需求
+2. 提取验收标准
+3. 识别潜在风险和依赖
+4. 提出澄清问题
+"""
+        messages = [{"role": "system", "content": system_prompt}] + state["messages"]
+        response = llm_with_tools.invoke(messages)
+        return {"messages": [response]}
+    
+    def should_continue(state: MessagesState):
+        """判断是否继续执行"""
+        messages = state["messages"]
+        last_message = messages[-1]
+        if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+            return "tools"
+        return END
+    
+    # 添加节点
+    workflow.add_node("agent", call_model)
+    workflow.add_node("tools", ToolNode(tools))
+    
+    # 添加边
+    workflow.add_edge(START, "agent")
+    workflow.add_conditional_edges("agent", should_continue, ["tools", END])
+    workflow.add_edge("tools", "agent")
+    
+    # 编译时不使用 checkpointer（LangGraph API 会自动处理）
+    return workflow.compile()
+
+# 导出给 LangGraph CLI 使用
+# langgraph.json 中配置: "path": "./module_testing/agents/requirement_agent.py:agent"
+agent = _create_langgraph_app_for_api()
+

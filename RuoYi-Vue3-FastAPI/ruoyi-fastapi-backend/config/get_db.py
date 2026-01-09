@@ -1,4 +1,5 @@
 from collections.abc import AsyncGenerator
+from contextlib import asynccontextmanager
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -14,6 +15,29 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
     """
     async with AsyncSessionLocal() as current_db:
         yield current_db
+
+
+@asynccontextmanager
+async def get_db_session() -> AsyncGenerator[AsyncSession, None]:
+    """
+    获取数据库会话的上下文管理器
+    
+    用于在非 FastAPI 依赖注入的场景中获取数据库会话，
+    例如在 LangGraph 工具函数中使用。
+    
+    Usage:
+        async with get_db_session() as db:
+            result = await service.create_something(db, ...)
+    
+    :return: AsyncSession
+    """
+    async with AsyncSessionLocal() as session:
+        try:
+            yield session
+            await session.commit()
+        except Exception:
+            await session.rollback()
+            raise
 
 
 async def init_create_table() -> None:

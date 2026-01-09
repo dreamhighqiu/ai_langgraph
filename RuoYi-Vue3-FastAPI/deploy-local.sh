@@ -44,6 +44,7 @@ AI智能测试平台 - 本地开发部署脚本
   本地服务:
     - 前端: http://localhost:5173
     - 后端: http://localhost:9099
+    - LangGraph API: http://localhost:2027 (AI智能体)
     
   远程服务 ($REMOTE_SERVER):
     - MySQL:  3306
@@ -60,7 +61,8 @@ AI智能测试平台 - 本地开发部署脚本
   check       检查远程服务连接
   backend     启动后端服务
   frontend    启动前端服务
-  all         启动所有本地服务
+  langgraph   启动 LangGraph AI 服务 (端口 2027)
+  all         启动所有本地服务 (前端+后端+LangGraph)
   stop        停止所有本地服务
   status      查看服务状态
   db          初始化数据库
@@ -71,6 +73,7 @@ AI智能测试平台 - 本地开发部署脚本
   ./deploy-local.sh init       # 初始化环境
   ./deploy-local.sh check      # 检查远程服务
   ./deploy-local.sh all        # 启动本地服务
+  ./deploy-local.sh langgraph  # 仅启动 LangGraph 服务
   ./deploy-local.sh restart    # 重启所有服务
 "
 }
@@ -453,6 +456,105 @@ start_frontend() {
     cd ..
 }
 
+# 启动 LangGraph 服务
+start_langgraph() {
+    local force_restart=${1:-false}  # 是否强制重启
+    
+    print_info "启动 LangGraph AI 服务 (端口: 2027)..."
+    
+    # 创建目录
+    mkdir -p logs .pids .runtime/pids .runtime/logs
+    
+    # 检查是否已运行
+    if [ -f ".runtime/pids/langgraph.pid" ]; then
+        pid=$(cat .runtime/pids/langgraph.pid)
+        if kill -0 $pid 2>/dev/null; then
+            if [ "$force_restart" = "true" ]; then
+                print_info "强制重启：停止旧进程 (PID: $pid)..."
+                kill $pid 2>/dev/null || true
+                sleep 1
+                if kill -0 $pid 2>/dev/null; then
+                    kill -9 $pid 2>/dev/null || true
+                fi
+                rm -f .runtime/pids/langgraph.pid
+                # 清理端口
+                kill_port 2027 "LangGraph"
+            else
+                print_warning "LangGraph 服务已在运行 (PID: $pid)"
+                return
+            fi
+        else
+            rm -f .runtime/pids/langgraph.pid
+        fi
+    fi
+    
+    cd $BACKEND_DIR
+    
+    # 检查虚拟环境
+    if [ ! -d ".venv" ]; then
+        print_error "虚拟环境不存在，请先运行: ./deploy-local.sh init"
+        cd ..
+        return 1
+    fi
+    
+    # 激活虚拟环境
+    activate_venv
+    export APP_ENV=dev
+    export PYTHONPATH="${PWD}:${PYTHONPATH:-}"
+    
+    # 检查 langgraph 是否安装
+    if ! python -c "import langgraph" 2>/dev/null; then
+        print_warning "langgraph 未安装，正在安装..."
+        uv pip install langgraph langgraph-cli[inmem] langgraph-sdk
+    fi
+    
+    # 检查 langgraph.json 配置文件
+    if [ ! -f "langgraph.json" ]; then
+        print_error "langgraph.json 配置文件不存在"
+        cd ..
+        return 1
+    fi
+    
+    # 设置 LangGraph 端口环境变量
+    export LANGGRAPH_PORT=2027
+    
+    # 启动 LangGraph API 服务（使用启动脚本）
+    print_info "启动 LangGraph API..."
+    if [ -f "start_langgraph_server.py" ]; then
+        nohup python start_langgraph_server.py > ../.runtime/logs/langgraph.log 2>&1 &
+    else
+        # 备用方案：直接使用 langgraph dev 命令
+        nohup python -m langgraph dev --host 0.0.0.0 --port 2027 --config langgraph.json > ../.runtime/logs/langgraph.log 2>&1 &
+    fi
+    langgraph_pid=$!
+    echo $langgraph_pid > ../.runtime/pids/langgraph.pid
+    
+    # 等待启动
+    sleep 5
+    
+    # 检查进程
+    if kill -0 $langgraph_pid 2>/dev/null; then
+        # 检查端口
+        sleep 2
+        if nc -z localhost 2027 2>/dev/null || timeout 1 bash -c "echo >/dev/tcp/localhost/2027" 2>/dev/null; then
+            print_success "LangGraph 服务启动成功 ✅"
+            echo "  🌐 地址: http://localhost:2027"
+            echo "  📚 文档: http://localhost:2027/docs"
+            echo "  🔧 PID:  $langgraph_pid"
+            echo "  📝 日志: .runtime/logs/langgraph.log"
+        else
+            print_warning "进程已启动但端口未监听，请查看日志"
+            tail -20 ../.runtime/logs/langgraph.log 2>/dev/null
+        fi
+    else
+        print_error "LangGraph 启动失败，请查看日志: .runtime/logs/langgraph.log"
+        tail -30 ../.runtime/logs/langgraph.log 2>/dev/null || print_error "日志文件不存在"
+        rm -f ../.runtime/pids/langgraph.pid
+    fi
+    
+    cd ..
+}
+
 # 启动所有服务
 start_all() {
     local force_restart=${1:-false}  # 是否强制重启
@@ -461,7 +563,7 @@ start_all() {
     echo ""
     
     # 先停止已运行的服务（如果存在）
-    if [ "$force_restart" = "true" ] || [ -f ".pids/backend.pid" ] || [ -f ".pids/frontend.pid" ]; then
+    if [ "$force_restart" = "true" ] || [ -f ".pids/backend.pid" ] || [ -f ".pids/frontend.pid" ] || [ -f ".runtime/pids/langgraph.pid" ]; then
         print_info "检查并停止已运行的服务..."
         stop_all
         sleep 2
@@ -470,11 +572,13 @@ start_all() {
         force_restart="true"
     fi
     
-    mkdir -p logs .pids
+    mkdir -p logs .pids .runtime/pids .runtime/logs
     
     start_backend "$force_restart"
     echo ""
     start_frontend "$force_restart"
+    echo ""
+    start_langgraph "$force_restart"
     
     echo ""
     echo "========================================"
@@ -485,6 +589,7 @@ start_all() {
     echo "  🌐 前端: http://localhost:5173"
     echo "  🔧 后端: http://localhost:9099/dev-api"
     echo "  📚 文档: http://localhost:9099/dev-api/docs"
+    echo "  🤖 LangGraph: http://localhost:2027 (AI 智能体)"
     echo ""
     echo "远程服务 ($REMOTE_SERVER):"
     echo "  MySQL:        ${REMOTE_SERVER}:3306"
@@ -613,6 +718,20 @@ stop_all() {
         rm -f .pids/frontend.pid
     fi
     
+    # 停止 LangGraph
+    if [ -f ".runtime/pids/langgraph.pid" ]; then
+        pid=$(cat .runtime/pids/langgraph.pid)
+        if kill -0 $pid 2>/dev/null; then
+            kill $pid 2>/dev/null || true
+            sleep 1
+            if kill -0 $pid 2>/dev/null; then
+                kill -9 $pid 2>/dev/null || true
+            fi
+            print_success "LangGraph 服务已停止 (PID: $pid)"
+        fi
+        rm -f .runtime/pids/langgraph.pid
+    fi
+    
     # 2. 强制清理端口占用（确保端口被释放）
     echo ""
     print_info "检查并清理端口占用..."
@@ -624,8 +743,12 @@ stop_all() {
     kill_port 5173 "前端"
     kill_port 5174 "前端备用"
     
+    # 清理 LangGraph 端口 2027
+    kill_port 2027 "LangGraph"
+    
     # 3. 清理 PID 文件
     rm -f .pids/backend.pid .pids/frontend.pid 2>/dev/null
+    rm -f .runtime/pids/langgraph.pid 2>/dev/null
     
     echo ""
     print_success "本地服务已全部停止，端口已释放"
@@ -677,6 +800,18 @@ show_status() {
         print_warning "前端: 未启动"
     fi
     
+    # LangGraph
+    if [ -f ".runtime/pids/langgraph.pid" ]; then
+        pid=$(cat .runtime/pids/langgraph.pid)
+        if kill -0 $pid 2>/dev/null; then
+            print_success "LangGraph: 运行中 (PID: $pid) - http://localhost:2027"
+        else
+            print_error "LangGraph: 已停止"
+        fi
+    else
+        print_warning "LangGraph: 未启动"
+    fi
+    
     echo ""
     echo "========== 远程服务状态 ($REMOTE_SERVER) =========="
     echo ""
@@ -691,6 +826,7 @@ case "${1:-help}" in
     db) init_database ;;
     backend) start_backend ;;
     frontend) start_frontend ;;
+    langgraph) start_langgraph ;;
     all) start_all ;;
     restart) restart_all ;;
     stop) stop_all ;;

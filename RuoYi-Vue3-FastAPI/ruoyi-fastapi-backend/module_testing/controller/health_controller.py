@@ -74,7 +74,7 @@ async def health_check(
     result["milvus"] = {"ok": _check_tcp(MilvusConfig.milvus_host, MilvusConfig.milvus_port)}
 
     # LangGraph
-    lg_host, lg_port = _parse_host_port(LangGraphConfig.langgraph_api_url, 2025)
+    lg_host, lg_port = _parse_host_port(LangGraphConfig.langgraph_api_url, 2027)
     result["langgraph"] = {"ok": _check_tcp(lg_host, lg_port)}
 
     # Ollama / OpenAI 兼容

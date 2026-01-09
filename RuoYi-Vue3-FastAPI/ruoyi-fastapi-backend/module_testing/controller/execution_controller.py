@@ -25,7 +25,7 @@ from utils.log_util import logger
 from utils.response_util import ResponseUtil
 
 execution_controller = APIRouterPro(
-    prefix='/testing/execution',
+    prefix='/api/testing/execution',
     order_num=52,
     tags=['测试管理-执行监控'],
     dependencies=[PreAuthDependency()],

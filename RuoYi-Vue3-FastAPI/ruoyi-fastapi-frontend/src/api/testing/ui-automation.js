@@ -10,7 +10,7 @@ import request from '@/utils/request'
  */
 export function getUIRequirementList(query) {
   return request({
-    url: '/testing/requirement/list',
+    url: '/api/testing/requirement/list',
     method: 'get',
     params: {
       ...query,
@@ -34,7 +34,7 @@ export function getUIRequirement(id) {
  */
 export function addUIRequirement(data) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'post',
     data: {
       ...data,
@@ -48,7 +48,7 @@ export function addUIRequirement(data) {
  */
 export function updateUIRequirement(data) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'put',
     data
   })
@@ -59,7 +59,7 @@ export function updateUIRequirement(data) {
  */
 export function delUIRequirement(ids) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'delete',
     data: { requirement_ids: ids }
   })
@@ -103,7 +103,7 @@ export function analyzeUIRequirement(requirementId) {
  */
 export function getPlaywrightScriptList(query) {
   return request({
-    url: '/testing/script/list',
+    url: '/api/testing/script/list',
     method: 'get',
     params: {
       ...query,
@@ -127,7 +127,7 @@ export function getPlaywrightScript(id) {
  */
 export function addPlaywrightScript(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'post',
     data: {
       ...data,
@@ -141,7 +141,7 @@ export function addPlaywrightScript(data) {
  */
 export function updatePlaywrightScript(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'put',
     data
   })
@@ -152,7 +152,7 @@ export function updatePlaywrightScript(data) {
  */
 export function delPlaywrightScript(ids) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'delete',
     data: { script_ids: ids }
   })
@@ -186,7 +186,7 @@ export function executePlaywrightScript(scriptId, config) {
  */
 export function getPlaywrightExecutionList(query) {
   return request({
-    url: '/testing/execution/list',
+    url: '/api/testing/execution/list',
     method: 'get',
     params: {
       ...query,
@@ -232,7 +232,7 @@ export function retryPlaywrightExecution(id) {
  */
 export function getPlaywrightReportList(query) {
   return request({
-    url: '/testing/report/list',
+    url: '/api/testing/report/list',
     method: 'get',
     params: {
       ...query,
@@ -287,7 +287,7 @@ export function downloadPlaywrightReport(id) {
  */
 export function delPlaywrightReport(ids) {
   return request({
-    url: '/testing/report',
+    url: '/api/testing/report',
     method: 'delete',
     data: { report_ids: ids }
   })

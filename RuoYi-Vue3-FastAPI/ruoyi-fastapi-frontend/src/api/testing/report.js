@@ -9,7 +9,7 @@ import request from '@/utils/request'
  */
 export function listReport(query) {
   return request({
-    url: '/testing/report/list',
+    url: '/api/testing/report/list',
     method: 'get',
     params: {
       report_name: query.report_name,
@@ -75,7 +75,7 @@ export function generateHtmlReport(executionId) {
  */
 export function compareReports(data) {
   return request({
-    url: '/testing/report/compare',
+    url: '/api/testing/report/compare',
     method: 'post',
     data: {
       report_ids: data.report_ids
@@ -100,7 +100,7 @@ export function exportReportPdf(reportId) {
  */
 export function getReportStatistics() {
   return request({
-    url: '/testing/report/statistics',
+    url: '/api/testing/report/statistics',
     method: 'get'
   })
 }

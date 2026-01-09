@@ -17,7 +17,7 @@ import request from '@/utils/request'
  */
 export function listRequirement(query) {
   return request({
-    url: '/testing/requirement/list',
+    url: '/api/testing/requirement/list',
     method: 'get',
     params: {
       requirement_name: query.requirementName,
@@ -151,7 +151,7 @@ export function analyzeRequirement(requirementId, analyzeType = 'feasibility') {
  */
 export function getRequirementStatistics(projectId) {
   return request({
-    url: '/testing/requirement/statistics',
+    url: '/api/testing/requirement/statistics',
     method: 'get',
     params: { project_id: projectId }
   })

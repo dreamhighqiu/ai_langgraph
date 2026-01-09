@@ -30,7 +30,7 @@ from utils.log_util import logger
 from utils.response_util import ResponseUtil
 
 script_controller = APIRouterPro(
-    prefix='/testing/script',
+    prefix='/api/testing/script',
     order_num=51,
     tags=['测试管理-脚本管理'],
     dependencies=[PreAuthDependency()],

@@ -10,7 +10,7 @@ export function listKnowledge(query) {
     status: query?.status
   }
   return request({
-    url: '/testing/knowledge/list',
+    url: '/api/testing/knowledge/list',
     method: 'get',
     params
   })
@@ -19,7 +19,7 @@ export function listKnowledge(query) {
 // 查询知识库详情
 export function getKnowledge(knowledgeId) {
   return request({
-    url: '/testing/knowledge/' + knowledgeId,
+    url: '/api/testing/knowledge/' + knowledgeId,
     method: 'get'
   })
 }
@@ -27,7 +27,7 @@ export function getKnowledge(knowledgeId) {
 // 新增知识库
 export function createKnowledge(data) {
   return request({
-    url: '/testing/knowledge/create',
+    url: '/api/testing/knowledge/create',
     method: 'post',
     data: {
       project_id: data.projectId,
@@ -41,7 +41,7 @@ export function createKnowledge(data) {
 // 修改知识库
 export function updateKnowledge(data) {
   return request({
-    url: '/testing/knowledge/update',
+    url: '/api/testing/knowledge/update',
     method: 'put',
     data: {
       knowledge_id: data.knowledgeId,
@@ -58,7 +58,7 @@ export function deleteKnowledge(knowledgeIds) {
   // 如果是数组，转换为逗号分隔的字符串
   const ids = Array.isArray(knowledgeIds) ? knowledgeIds.join(',') : knowledgeIds;
   return request({
-    url: '/testing/knowledge/' + ids,
+    url: '/api/testing/knowledge/' + ids,
     method: 'delete'
   })
 }
@@ -66,7 +66,7 @@ export function deleteKnowledge(knowledgeIds) {
 // 获取知识库统计信息
 export function getKnowledgeStats(knowledgeId) {
   return request({
-    url: '/testing/knowledge/' + knowledgeId + '/stats',
+    url: '/api/testing/knowledge/' + knowledgeId + '/stats',
     method: 'get'
   })
 }
@@ -74,7 +74,7 @@ export function getKnowledgeStats(knowledgeId) {
 // 上传文件到知识库
 export function uploadKnowledgeFile(knowledgeId, formData) {
   return request({
-    url: '/testing/knowledge/' + knowledgeId + '/files/upload',
+    url: '/api/testing/knowledge/' + knowledgeId + '/files/upload',
     method: 'post',
     data: formData,
     headers: {
@@ -93,7 +93,7 @@ export function listKnowledgeFiles(knowledgeId, query) {
     process_status: query?.processStatus ?? query?.process_status
   }
   return request({
-    url: '/testing/knowledge/' + knowledgeId + '/files',
+    url: '/api/testing/knowledge/' + knowledgeId + '/files',
     method: 'get',
     params
   })
@@ -102,7 +102,7 @@ export function listKnowledgeFiles(knowledgeId, query) {
 // 删除知识库文件
 export function deleteKnowledgeFile(fileId) {
   return request({
-    url: '/testing/knowledge/files/' + fileId,
+    url: '/api/testing/knowledge/files/' + fileId,
     method: 'delete'
   })
 }
@@ -110,7 +110,7 @@ export function deleteKnowledgeFile(fileId) {
 // 获取文件下载URL
 export function getFileDownloadUrl(fileId) {
   return request({
-    url: '/testing/knowledge/files/' + fileId + '/download',
+    url: '/api/testing/knowledge/files/' + fileId + '/download',
     method: 'get'
   })
 }
@@ -118,7 +118,7 @@ export function getFileDownloadUrl(fileId) {
 // 获取项目RAG处理后的文档列表
 export function getProjectRagDocuments(projectId, params) {
   return request({
-    url: '/testing/knowledge/project/' + projectId + '/rag-documents',
+    url: '/api/testing/knowledge/project/' + projectId + '/rag-documents',
     method: 'get',
     params
   })
@@ -127,7 +127,7 @@ export function getProjectRagDocuments(projectId, params) {
 // 获取知识库RAG处理后的文档列表
 export function getKnowledgeRagDocuments(knowledgeId, params) {
   return request({
-    url: '/testing/knowledge/' + knowledgeId + '/rag-documents',
+    url: '/api/testing/knowledge/' + knowledgeId + '/rag-documents',
     method: 'get',
     params
   })
@@ -143,7 +143,7 @@ export function getAllFiles(query) {
     process_status: query?.processStatus ?? query?.process_status
   }
   return request({
-    url: '/testing/knowledge/files/all',
+    url: '/api/testing/knowledge/files/all',
     method: 'get',
     params
   })
@@ -152,7 +152,7 @@ export function getAllFiles(query) {
 // 获取所有项目的RAG处理后的文档列表
 export function getAllRagDocuments(params) {
   return request({
-    url: '/testing/knowledge/rag-documents/all',
+    url: '/api/testing/knowledge/rag-documents/all',
     method: 'get',
     params
   })
@@ -161,7 +161,7 @@ export function getAllRagDocuments(params) {
 // 知识库查询（RAG）
 export function queryKnowledge(knowledgeId, data) {
   return request({
-    url: '/testing/knowledge/' + knowledgeId + '/query',
+    url: '/api/testing/knowledge/' + knowledgeId + '/query',
     method: 'post',
     data: {
       query: data.query,
@@ -175,7 +175,7 @@ export function queryKnowledge(knowledgeId, data) {
 // 项目知识库查询（RAG）- 针对项目下所有文档
 export function queryProjectKnowledge(projectId, data) {
   return request({
-    url: '/testing/knowledge/project/' + projectId + '/query',
+    url: '/api/testing/knowledge/project/' + projectId + '/query',
     method: 'post',
     data: {
       query: data.query,

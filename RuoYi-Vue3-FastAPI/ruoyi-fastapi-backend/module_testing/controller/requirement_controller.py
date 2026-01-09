@@ -29,7 +29,7 @@ from module_testing.service.requirement_service import RequirementService
 
 
 requirement_controller = APIRouterPro(
-    prefix='/testing/requirement',
+    prefix='/api/testing/requirement',
     order_num=25,
     tags=['测试管理-需求管理'],
     dependencies=[PreAuthDependency()],

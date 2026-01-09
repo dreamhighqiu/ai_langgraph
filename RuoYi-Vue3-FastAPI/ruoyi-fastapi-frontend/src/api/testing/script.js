@@ -10,7 +10,7 @@ import request from '@/utils/request'
  */
 export function listScript(query) {
   return request({
-    url: '/testing/script/list',
+    url: '/api/testing/script/list',
     method: 'get',
     params: {
       script_name: query.script_name,
@@ -104,7 +104,7 @@ export function delScript(scriptIds) {
  */
 export function generateScript(data) {
   return request({
-    url: '/testing/script/generate',
+    url: '/api/testing/script/generate',
     method: 'post',
     data: {
       script_name: data.script_name,
@@ -125,7 +125,7 @@ export function generateScript(data) {
  */
 export function executeScript(data) {
   return request({
-    url: '/testing/script/execute',
+    url: '/api/testing/script/execute',
     method: 'post',
     data: {
       script_id: data.script_id,
@@ -151,7 +151,7 @@ export function getScriptVersions(scriptId) {
  */
 export function validateScript(data) {
   return request({
-    url: '/testing/script/validate',
+    url: '/api/testing/script/validate',
     method: 'post',
     data: {
       script_type: data.script_type,

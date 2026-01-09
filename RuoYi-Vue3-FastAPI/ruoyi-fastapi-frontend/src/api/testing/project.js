@@ -14,7 +14,7 @@ export function listProject(query) {
     page_size: query?.pageSize ?? query?.page_size ?? 10
   }
   return request({
-    url: '/testing/project/list',
+    url: '/api/testing/project/list',
     method: 'get',
     params
   })
@@ -23,7 +23,7 @@ export function listProject(query) {
 // 查询所有项目(下拉选择用)
 export function listAllProject(status) {
   return request({
-    url: '/testing/project/all',
+    url: '/api/testing/project/all',
     method: 'get',
     params: { status }
   })
@@ -32,7 +32,7 @@ export function listAllProject(status) {
 // 查询项目详情
 export function getProject(projectId) {
   return request({
-    url: '/testing/project/' + projectId,
+    url: '/api/testing/project/' + projectId,
     method: 'get'
   })
 }
@@ -40,7 +40,7 @@ export function getProject(projectId) {
 // 新增项目
 export function addProject(data) {
   return request({
-    url: '/testing/project',
+    url: '/api/testing/project',
     method: 'post',
     data: {
       project_name: data.projectName,
@@ -55,7 +55,7 @@ export function addProject(data) {
 // 修改项目
 export function updateProject(data) {
   return request({
-    url: '/testing/project',
+    url: '/api/testing/project',
     method: 'put',
     data: {
       project_id: data.projectId,
@@ -71,7 +71,7 @@ export function updateProject(data) {
 // 删除项目
 export function delProject(projectIds) {
   return request({
-    url: '/testing/project/' + projectIds,
+    url: '/api/testing/project/' + projectIds,
     method: 'delete'
   })
 }
@@ -79,7 +79,7 @@ export function delProject(projectIds) {
 // 修改项目状态
 export function changeProjectStatus(projectId, status) {
   return request({
-    url: '/testing/project/changeStatus',
+    url: '/api/testing/project/changeStatus',
     method: 'put',
     // Backend expects snake_case keys
     data: { project_id: projectId, status: status }

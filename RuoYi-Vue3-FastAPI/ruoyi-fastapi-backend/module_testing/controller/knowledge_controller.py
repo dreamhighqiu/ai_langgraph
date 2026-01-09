@@ -43,7 +43,7 @@ from utils.log_util import logger
 from utils.response_util import ResponseUtil
 
 knowledge_controller = APIRouterPro(
-    prefix='/testing/knowledge',
+    prefix='/api/testing/knowledge',
     tags=['知识库管理'],
     dependencies=[PreAuthDependency()],
     auto_register=True,
@@ -592,9 +592,9 @@ async def download_file(
         # 构建Content-Disposition头
         if ascii_safe:
             # ASCII文件名，使用简单格式
-        if preview:
+            if preview:
                 content_disposition = f'inline; filename="{file_record.file_name}"'
-        else:
+            else:
                 content_disposition = f'attachment; filename="{file_record.file_name}"'
         else:
             # 非ASCII文件名，使用RFC 5987格式
@@ -1146,5 +1146,4 @@ async def get_knowledge_rag_documents(
     except Exception as e:
         logger.error(f'获取RAG文档列表失败: {e}', exc_info=True)
         return ResponseUtil.error(msg=f'查询失败: {str(e)}')
-
 

@@ -510,7 +510,7 @@ kill_port() {
     # 检测系统类型
     if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "mingw"* ]] || [[ "$OSTYPE" == "cygwin"* ]]; then
         # Windows (Git Bash / MSYS2) - netstat 输出全部状态，避免遗漏
-        local pids=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u)
+        local pids=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u || true)
         local killed=0
         if [ -n "$pids" ]; then
             print_info "发现占用端口 $port 的进程: $pids"
@@ -541,7 +541,7 @@ kill_port() {
             fi
         fi
         # 兜底：再用 netstat 逐个 taskkill，确保清理
-        local pids2=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u)
+        local pids2=$(netstat -ano 2>/dev/null | grep ":${port}" | awk '{print $5}' | sort -u || true)
         if [ -n "$pids2" ]; then
             print_info "兜底清理端口 $port: $pids2"
             for pid in $pids2; do

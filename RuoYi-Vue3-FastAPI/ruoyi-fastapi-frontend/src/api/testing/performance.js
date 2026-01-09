@@ -10,7 +10,7 @@ import request from '@/utils/request'
  */
 export function getPerformanceRequirementList(query) {
   return request({
-    url: '/testing/requirement/list',
+    url: '/api/testing/requirement/list',
     method: 'get',
     params: {
       ...query,
@@ -34,7 +34,7 @@ export function getPerformanceRequirement(id) {
  */
 export function addPerformanceRequirement(data) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'post',
     data: {
       ...data,
@@ -48,7 +48,7 @@ export function addPerformanceRequirement(data) {
  */
 export function updatePerformanceRequirement(data) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'put',
     data
   })
@@ -59,7 +59,7 @@ export function updatePerformanceRequirement(data) {
  */
 export function delPerformanceRequirement(ids) {
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'delete',
     data: { requirement_ids: ids }
   })
@@ -107,7 +107,7 @@ export function analyzePerformanceRequirement(requirementId) {
  */
 export function getK6ScriptList(query) {
   return request({
-    url: '/testing/script/list',
+    url: '/api/testing/script/list',
     method: 'get',
     params: {
       ...query,
@@ -131,7 +131,7 @@ export function getK6Script(id) {
  */
 export function addK6Script(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'post',
     data: {
       ...data,
@@ -145,7 +145,7 @@ export function addK6Script(data) {
  */
 export function updateK6Script(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'put',
     data
   })
@@ -156,7 +156,7 @@ export function updateK6Script(data) {
  */
 export function delK6Script(ids) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'delete',
     data: { script_ids: ids }
   })
@@ -187,7 +187,7 @@ export function executeK6Script(scriptId, config) {
  */
 export function getK6ExecutionList(query) {
   return request({
-    url: '/testing/execution/list',
+    url: '/api/testing/execution/list',
     method: 'get',
     params: {
       ...query,
@@ -233,7 +233,7 @@ export function retryK6Execution(id) {
  */
 export function getK6ReportList(query) {
   return request({
-    url: '/testing/report/list',
+    url: '/api/testing/report/list',
     method: 'get',
     params: {
       ...query,
@@ -268,7 +268,7 @@ export function downloadK6Report(id) {
  */
 export function delK6Report(ids) {
   return request({
-    url: '/testing/report',
+    url: '/api/testing/report',
     method: 'delete',
     data: { report_ids: ids }
   })

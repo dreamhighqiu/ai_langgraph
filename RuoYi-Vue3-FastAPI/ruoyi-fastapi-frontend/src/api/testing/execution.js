@@ -9,7 +9,7 @@ import request from '@/utils/request'
  */
 export function listExecution(query) {
   return request({
-    url: '/testing/execution/list',
+    url: '/api/testing/execution/list',
     method: 'get',
     params: {
       script_id: query.script_id,
@@ -42,7 +42,7 @@ export function getExecution(executionId) {
  */
 export function cancelExecution(data) {
   return request({
-    url: '/testing/execution/cancel',
+    url: '/api/testing/execution/cancel',
     method: 'post',
     data: {
       execution_id: data.execution_id
@@ -67,7 +67,7 @@ export function retryExecution(executionId) {
  */
 export function getExecutionStatistics(days = 7) {
   return request({
-    url: '/testing/execution/statistics',
+    url: '/api/testing/execution/statistics',
     method: 'get',
     params: { days }
   })

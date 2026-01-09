@@ -261,7 +261,7 @@ async def create_test_case_tool(
             template=template,
             test_case_steps=processed_steps,
         )
-        
+            
         # 根据模板类型添加相应字段
         if template == "test_case_bdd":
             if feature:
@@ -285,16 +285,16 @@ async def create_test_case_tool(
             await db.flush()
             
             logger.info(f"AI 成功创建测试用例: {result.case_identifier} - {name} (ID: {result.case_id})")
-            
-            return {
-                "success": True,
+        
+        return {
+            "success": True,
                 "data": {
                     "case_id": result.case_id,
                     "case_identifier": result.case_identifier,
                     "case_name": result.case_name,
                 },
                 "message": f"✅ 测试用例 '{name}' (ID: {result.case_id}, 标识: {result.case_identifier}) 创建成功"
-            }
+        }
 
     except Exception as e:
         logger.error(f"创建测试用例失败: {str(e)}")
@@ -380,7 +380,7 @@ async def update_test_case_tool(
         
         # 构建更新 VO，只包含非 None 的字段
         update_data = {}
-        
+
         if name is not None:
             update_data["case_name"] = name
         if description is not None:
@@ -422,22 +422,22 @@ async def update_test_case_tool(
 
         # 创建 VO 对象
         test_case_vo = TestCaseUpdateVO(**update_data)
-        
+
         # 调用 Service 更新测试用例
         service = TestCaseService()
         
         async with get_db_session() as db:
             result = await service.update_test_case(
                 db, case_id, test_case_vo, "ai_agent"
-            )
-            
-            return {
-                "success": True,
+        )
+
+        return {
+            "success": True,
                 "data": {
                     "case_id": result.case_id,
                 },
-                "message": f"测试用例 {case_id} 更新成功"
-            }
+            "message": f"测试用例 {case_id} 更新成功"
+        }
 
     except Exception as e:
         logger.error(f"更新测试用例失败: {str(e)}")
@@ -456,7 +456,7 @@ async def batch_create_test_cases_tool(
 ) -> Dict[str, Any]:
     """
     批量创建测试用例工具（直接调用 Service 层）
-
+    
     该工具可以一次性创建多个测试用例，提高效率。
     每个测试用例的参数与 create_test_case_tool 相同。
 
@@ -608,7 +608,7 @@ async def batch_create_test_cases_tool(
                         "message": f"✅ 测试用例 '{name}' 创建成功"
                     })
                     succeeded += 1
-                        
+                    
                 except Exception as e:
                     results.append({
                         "index": index,
@@ -657,7 +657,7 @@ async def rag_query_tool(
     - 查找接口的使用示例和测试数据
     - 获取历史测试记录和基准值
     - 了解接口的依赖关系
-    
+
     Args:
         query: 查询描述（如"获取首页信息接口"、"用户登录API"）
         mode: 检索模式，可选值：
@@ -669,7 +669,7 @@ async def rag_query_tool(
         top_k: 返回的顶部实体/关系数量（默认10）
         chunk_top_k: 返回的文本块数量（默认5）
         enable_rerank: 是否启用重排序（默认True）
-    
+
     Returns:
         dict: 包含检索结果的字典
             - success: bool, 是否成功
@@ -790,8 +790,8 @@ async def rag_query_tool(
                 "entities": [],
                 "chunks": [],
                 "metadata": {},
-                "message": "RAG 检索成功"
-            }
+            "message": "RAG 检索成功"
+        }
 
     except httpx.HTTPError as e:
         logger.error(f"RAG MCP 服务请求失败: {e}")
@@ -848,7 +848,7 @@ async def save_requirement_analysis_tool(
     
     该工具直接调用需求分析 Service 来保存分析结果，绕过 HTTP 认证。
     支持创建新需求和更新现有需求。
-    
+
     Args:
         project_id: 项目ID（必填，从上下文自动获取）
         requirement_analysis_id: 需求分析 ID（更新时必填，创建时留空）
@@ -903,7 +903,7 @@ async def save_requirement_analysis_tool(
         mindmap_url: 思维导图图片 URL
         tags: 标签列表
         status: 状态（draft/analyzing/completed/failed，默认 completed）
-    
+
     Returns:
         dict: 包含保存结果的字典
             - success: bool, 是否成功
@@ -949,8 +949,8 @@ async def save_requirement_analysis_tool(
                 "success": False,
                 "error": "创建新需求分析时，analysis_name 是必填参数",
                 "message": "保存需求分析失败：缺少分析名称"
-            }
-        
+        }
+
         # 获取当前用户ID
         user_id = get_current_user_id()
         
@@ -981,9 +981,9 @@ async def save_requirement_analysis_tool(
                     db, requirement_analysis_id, requirement_vo, user_id
                 )
                 logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.requirement_identifier}")
-                
-                return {
-                    "success": True,
+
+        return {
+            "success": True,
                     "requirement_analysis_id": requirement_analysis_id,
                     "analysis_name": result.requirement_name,
                     "requirement_identifier": result.requirement_identifier,
@@ -1002,8 +1002,8 @@ async def save_requirement_analysis_tool(
                     "analysis_name": result.requirement_name,
                     "requirement_identifier": result.requirement_identifier,
                     "message": f"✅ 需求分析 '{result.requirement_name}' (ID: {result.requirement_id}, 标识: {result.requirement_identifier}) 创建成功"
-                }
-    
+        }
+
     except Exception as e:
         logger.error(f"保存需求分析失败: {str(e)}", exc_info=True)
         return {
@@ -1051,7 +1051,7 @@ async def save_defect_analysis_tool(
     
     该工具直接调用缺陷分析 Service 来保存分析结果，绕过 HTTP 认证。
     支持创建新缺陷分析和更新现有缺陷分析。
-    
+
     Args:
         project_id: 项目ID（必填，从上下文自动获取）
         defect_analysis_id: 缺陷分析 ID（更新时必填，创建时留空）
@@ -1111,7 +1111,7 @@ async def save_defect_analysis_tool(
         status: 状态（draft/analyzing/completed/failed，默认 completed）
         knowledge_id: 关联知识库ID（可选）
         defect_id: 关联缺陷ID（可选）
-    
+
     Returns:
         dict: 包含保存结果的字典
             - success: bool, 是否成功
@@ -1219,9 +1219,9 @@ async def save_defect_analysis_tool(
                     }
                 
                 logger.info(f"AI 成功更新缺陷分析: {defect_analysis_id} - {result.analysis_name}")
-                
-                return {
-                    "success": True,
+
+        return {
+            "success": True,
                     "defect_analysis_id": defect_analysis_id,
                     "analysis_name": result.analysis_name,
                     "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功"
@@ -1238,8 +1238,8 @@ async def save_defect_analysis_tool(
                     "defect_analysis_id": result.analysis_id,
                     "analysis_name": result.analysis_name,
                     "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功"
-                }
-    
+        }
+
     except Exception as e:
         logger.error(f"保存缺陷分析失败: {str(e)}", exc_info=True)
         return {
@@ -1281,7 +1281,7 @@ async def generate_mindmap_tool(
             - markdown: Markdown 格式（默认）
             - mermaid: Mermaid 图表格式
             - html: HTML 格式（通过 MCP 服务器生成）
-    
+        
     Returns:
         dict: 包含生成结果的字典
             - success: bool, 是否成功
@@ -1313,22 +1313,22 @@ async def generate_mindmap_tool(
         if tool is None:
             # 如果 MCP 服务不可用，使用简单的 Markdown 格式
             logger.warning("未找到 MindMap MCP 工具（generate_mindmap），使用简单格式")
-            if format == "markdown":
-                mindmap = f"# {title}\n\n"
-                lines = content.strip().split('\n')
-                for line in lines:
-                    stripped = line.strip()
-                    if stripped:
-                        indent_level = (len(line) - len(stripped)) // 2
-                        prefix = "  " * indent_level + "- "
-                        mindmap += f"{prefix}{stripped}\n"
-                
-                return {
-                    "success": True,
-                    "mindmap_content": mindmap,
-                    "format": "markdown",
+        if format == "markdown":
+            mindmap = f"# {title}\n\n"
+            lines = content.strip().split('\n')
+            for line in lines:
+                stripped = line.strip()
+                if stripped:
+                    indent_level = (len(line) - len(stripped)) // 2
+                    prefix = "  " * indent_level + "- "
+                    mindmap += f"{prefix}{stripped}\n"
+            
+            return {
+                "success": True,
+                "mindmap_content": mindmap,
+                "format": "markdown",
                     "message": "思维导图生成成功（使用简单格式）"
-                }
+            }
             else:
                 return {
                     "success": False,
@@ -1344,9 +1344,9 @@ async def generate_mindmap_tool(
                 "toolbar": True,
             }
         )
-
-        return {
-            "success": True,
+            
+            return {
+                "success": True,
             "mindmap_content": str(html),
             "format": "html",
             "download_url": None,

@@ -27,9 +27,25 @@ class FolderService:
     ) -> FolderDO:
         """创建文件夹"""
         try:
+            # 验证项目ID
+            if not folder_vo.project_id or folder_vo.project_id <= 0:
+                raise ValueError("项目ID无效，请先选择项目")
+            
+            # 验证文件夹名称
+            if not folder_vo.folder_name or not folder_vo.folder_name.strip():
+                raise ValueError("文件夹名称不能为空")
+            
+            # 如果指定了父文件夹，验证父文件夹是否存在且属于同一项目
+            if folder_vo.parent_id:
+                parent_folder = await self.folder_dao.select_by_id(db, folder_vo.parent_id)
+                if not parent_folder:
+                    raise ValueError(f"父文件夹不存在: {folder_vo.parent_id}")
+                if parent_folder.project_id != folder_vo.project_id:
+                    raise ValueError("父文件夹不属于当前项目")
+            
             # 检查同级目录下是否有同名文件夹
             existing = await self.folder_dao.select_by_project_and_name(
-                db, folder_vo.project_id, folder_vo.folder_name, folder_vo.parent_id
+                db, folder_vo.project_id, folder_vo.folder_name.strip(), folder_vo.parent_id
             )
             if existing:
                 raise ValueError(f"同级目录下已存在同名文件夹: {folder_vo.folder_name}")
@@ -37,8 +53,8 @@ class FolderService:
             # 创建文件夹对象
             folder_do = FolderDO(
                 project_id=folder_vo.project_id,
-                parent_id=folder_vo.parent_id,
-                folder_name=folder_vo.folder_name,
+                parent_id=folder_vo.parent_id if folder_vo.parent_id else None,
+                folder_name=folder_vo.folder_name.strip(),
                 description=folder_vo.description,
                 sort_order=folder_vo.sort_order or 0,
                 case_count=0,
@@ -64,12 +80,16 @@ class FolderService:
             
             await db.commit()
             
-            logger.info(f"创建文件夹成功: {folder_vo.folder_name}")
+            logger.info(f"创建文件夹成功: {folder_vo.folder_name} (项目ID: {folder_vo.project_id})")
             return result
             
+        except ValueError as e:
+            await db.rollback()
+            logger.warning(f"创建文件夹验证失败: {str(e)}")
+            raise
         except Exception as e:
             await db.rollback()
-            logger.error(f"创建文件夹失败: {str(e)}")
+            logger.error(f"创建文件夹失败: {str(e)}", exc_info=True)
             raise
 
     async def update_folder(
@@ -176,28 +196,39 @@ class FolderService:
 
     async def get_folder_tree(self, db: AsyncSession, project_id: int) -> List[Dict[str, Any]]:
         """获取文件夹树"""
-        # 获取所有文件夹
-        all_folders = await self.folder_dao.select_all_by_project(db, project_id)
-        
-        # 构建ID到文件夹的映射
-        folder_map = {f.folder_id: f.to_dict() for f in all_folders}
-        
-        # 构建树结构
-        root_folders = []
-        for folder in all_folders:
-            folder_dict = folder_map[folder.folder_id]
-            folder_dict['children'] = []
+        try:
+            # 获取所有文件夹
+            all_folders = await self.folder_dao.select_all_by_project(db, project_id)
             
-            if folder.parent_id is None:
-                root_folders.append(folder_dict)
-            else:
-                parent = folder_map.get(folder.parent_id)
-                if parent:
-                    if 'children' not in parent:
-                        parent['children'] = []
-                    parent['children'].append(folder_dict)
-        
-        return root_folders
+            # 如果没有文件夹，返回空列表
+            if not all_folders:
+                return []
+            
+            # 构建ID到文件夹的映射
+            folder_map = {f.folder_id: f.to_dict() for f in all_folders}
+            
+            # 构建树结构
+            root_folders = []
+            for folder in all_folders:
+                folder_dict = folder_map.get(folder.folder_id)
+                if not folder_dict:
+                    continue
+                    
+                folder_dict['children'] = []
+                
+                if folder.parent_id is None:
+                    root_folders.append(folder_dict)
+                else:
+                    parent = folder_map.get(folder.parent_id)
+                    if parent:
+                        if 'children' not in parent:
+                            parent['children'] = []
+                        parent['children'].append(folder_dict)
+            
+            return root_folders
+        except Exception as e:
+            logger.error(f"构建文件夹树失败: {str(e)}", exc_info=True)
+            raise ValueError(f"构建文件夹树失败: {str(e)}")
 
     async def move_folder(
         self,

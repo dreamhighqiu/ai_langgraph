@@ -311,7 +311,7 @@
     }
   },
   "doc-7fa9816cdcac1c71d99ea4796d96fad8": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
       "chunk-68c1b1946824940414776d960a0b4d4c"
@@ -319,21 +319,30 @@
     "content_summary": "大学英语四级考试 成绩报告单\n\nR\n\nCET\n\n姓名：邱云霞\n\n学校：江西理工大学南昌校区\n\n院（系）：机电工程系\n\n准考证号：360450112104603\n\n身份证号：360428199008212245\n\n考试时间：\n\n2011年12月\n\n总分：429\n\n成绩单编号：112136045000321\n\n委托发布单位：全国大学英语网、六级考试委员会\n\n考委会网址：www.cet.edu.cn\n\n82\n\n学\n\n教育部高等教育司",
     "content_length": 215,
     "created_at": "2026-01-09T11:14:47.007118+00:00",
-    "updated_at": "2026-01-09T11:14:47.071547+00:00",
+    "updated_at": "2026-01-09T19:24:08+00:00",
     "file_path": "Scan_4级.pdf",
     "track_id": "insert_20260109_191447_50a30d8a",
     "metadata": {
-      "processing_start_time": 1767957287
-    }
+      "processing_start_time": 1767957287,
+      "processing_end_time": 1767957381
+    },
+    "multimodal_processed": true
   },
   "doc-c81106b3f41c6870a8cc1644a1022194": {
-    "status": "pending",
+    "status": "processed",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+    ],
     "content_summary": "? 身份证正反面复印件；\n\n? 学历、学位证书复印件；\n\n离职证明原件；\n\n? 入职体检报告电子件；\n\n? 本人任意银行卡复印件；\n\n三、 注意事项\n\n1、若您的个人信息不真实或入职体检结果不合格，公司将有权不予聘用。\n\n2、我们希望您能接受本邀请函，请您尽快确认并在2个工作日回复！\n\n预祝你在斑马技术服务公司工作顺利！\n\n签铭：邱霞\n\n日期：2026、1.5\n\nCAREERTEMO\n\nACANEERSEATHUACOPANY\n\n上海科之锐人才咨询有限公司 二〇二六年一月",
     "content_length": 238,
     "created_at": "2026-01-09T11:15:07.092018+00:00",
-    "updated_at": "2026-01-09T11:15:07.092018+00:00",
+    "updated_at": "2026-01-09T11:17:58.449415+00:00",
     "file_path": "Scan_05-01-2026_1441.pdf",
     "track_id": "insert_20260109_191507_40560ba6",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1767957382,
+      "processing_end_time": 1767957478
+    }
   }
 }

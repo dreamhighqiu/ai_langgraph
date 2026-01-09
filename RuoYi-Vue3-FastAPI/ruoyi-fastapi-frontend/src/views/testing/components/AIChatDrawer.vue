@@ -466,21 +466,26 @@ const formatTime = (timestamp) => {
 // 监听打开
 watch(visible, async (val) => {
   if (val) {
-    // 初始化
-    if (!chat.threadId.value) {
+    // 如果有新的初始提示词，强制创建新线程
+    if (props.initialPrompt && props.initialPrompt.trim()) {
+      // 创建新线程，确保每次从文档生成都是新对话
       await chat.createThread()
-    }
-    
-    // 发送初始提示词（只发送一次）
-    if (props.initialPrompt && !initialPromptSent.value && chat.messages.value.length === 0) {
-      initialPromptSent.value = true
+      initialPromptSent.value = false
+      
+      // 发送初始提示词
       nextTick(() => {
         inputMessage.value = props.initialPrompt
+        initialPromptSent.value = true
         // 延迟发送，确保组件完全初始化
         setTimeout(() => {
-          handleSend()
-        }, 100)
+        handleSend()
+        }, 200)
       })
+    } else {
+      // 没有初始提示词时，如果还没有线程，创建新线程
+      if (!chat.threadId.value) {
+        await chat.createThread()
+      }
     }
   } else {
     // 关闭时重置状态
@@ -488,10 +493,19 @@ watch(visible, async (val) => {
   }
 })
 
-// 监听初始提示词变化
-watch(() => props.initialPrompt, (newVal) => {
-  if (newVal) {
+// 监听初始提示词变化（当从外部传入新的提示词时）
+watch(() => props.initialPrompt, async (newVal, oldVal) => {
+  // 如果抽屉已打开，且有新的提示词（且与旧的不同），创建新线程并发送
+  if (visible.value && newVal && newVal.trim() && newVal !== oldVal) {
+    await chat.createThread()
     initialPromptSent.value = false
+    nextTick(() => {
+      inputMessage.value = newVal
+      initialPromptSent.value = true
+      setTimeout(() => {
+        handleSend()
+      }, 200)
+    })
   }
 })
 

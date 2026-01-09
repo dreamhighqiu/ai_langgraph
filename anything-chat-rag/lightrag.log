@@ -6381,3 +6381,65 @@ Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpe
 2026-01-09 20:35:15,252 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1209
 2026-01-09 20:35:15,459 - uvicorn.access - INFO - 127.0.0.1:54582 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
 2026-01-09 20:35:15,476 - uvicorn.access - INFO - 127.0.0.1:58877 - "GET /openapi.json HTTP/1.1" 200
+2026-01-09 21:22:26,953 - uvicorn.access - INFO - 127.0.0.1:52312 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 21:23:18,786 - uvicorn.access - INFO - 127.0.0.1:55272 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 21:23:18,827 - lightrag - INFO - Successfully extracted and enqueued file: 重要信息.txt
+2026-01-09 21:23:18,838 - lightrag - INFO - Processing 1 document(s)
+2026-01-09 21:23:18,840 - lightrag - INFO - Extracting stage 1/1: 重要信息.txt
+2026-01-09 21:23:18,840 - lightrag - INFO - Processing d-id: doc-f1fff04f1907ceef2945d91abc146ec6
+2026-01-09 21:24:28,170 - lightrag - INFO -  == LLM cache == saving: default:extract:4e0597d1a34cc6a3279c90c838199d53
+2026-01-09 21:24:36,112 - lightrag - INFO -  == LLM cache == saving: default:extract:728a2f4e02df811aef2d2ea29261397a
+2026-01-09 21:24:36,115 - lightrag - INFO - Chunk 1 of 3 extracted 7 Ent + 5 Rel chunk-508db58a2a7942df34569046bec9d997
+2026-01-09 21:24:59,833 - lightrag - INFO -  == LLM cache == saving: default:extract:d6fa3007f778c413cf8325202cca2da8
+2026-01-09 21:25:03,313 - lightrag - INFO -  == LLM cache == saving: default:extract:63b1de7340846fd7271cb0b41dad3b3d
+2026-01-09 21:25:25,064 - lightrag - INFO -  == LLM cache == saving: default:extract:967979ba6f7a5733c4ca50654dcf6fee
+2026-01-09 21:25:25,073 - lightrag - INFO - Chunk 2 of 3 extracted 25 Ent + 21 Rel chunk-ceb60f16f40b6c7d09158715156ee744
+2026-01-09 21:25:38,682 - lightrag - INFO -  == LLM cache == saving: mix:keywords:a272972331c48242fabb3439bd0a9c89
+2026-01-09 21:25:43,016 - lightrag - INFO - Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+2026-01-09 21:25:47,538 - lightrag - INFO - Local query: 10 entites, 96 relations
+2026-01-09 21:25:47,541 - lightrag - INFO - Query edges: 简历信息, 个人信息汇总, 个人履历 (top_k:10, cosine:0.2)
+2026-01-09 21:25:51,855 - lightrag - INFO - Global query: 18 entites, 10 relations
+2026-01-09 21:25:52,062 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 21:25:52,064 - lightrag - INFO - Raw search results: 27 entities, 105 relations, 5 vector chunks
+2026-01-09 21:25:52,093 - lightrag - INFO - After truncation: 27 entities, 105 relations
+2026-01-09 21:25:52,319 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-09 21:25:52,324 - lightrag - INFO - Find no additional relations-related chunks from 105 relations
+2026-01-09 21:25:52,326 - lightrag - INFO - Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+2026-01-09 21:25:52,342 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 21:25:52,357 - lightrag - INFO - Final context: 27 entities, 105 relations, 5 chunks
+2026-01-09 21:25:52,359 - lightrag - INFO - Final chunks S+F/O: E3/1 E8/2 E3/3 E1/4 E5/5
+2026-01-09 21:25:52,453 - uvicorn.access - INFO - 127.0.0.1:54528 - "POST /query/data HTTP/1.1" 200
+2026-01-09 21:26:01,641 - lightrag - INFO -  == LLM cache == saving: default:extract:0d71889d3b60033543998db4bcb0a24a
+2026-01-09 21:26:01,647 - lightrag - INFO - Chunk 3 of 3 extracted 37 Ent + 27 Rel chunk-e3c13875720cef2444bbacaa549d5b1d
+2026-01-09 21:26:01,653 - lightrag - INFO - Merging stage 1/1: 重要信息.txt
+2026-01-09 21:26:01,654 - lightrag - INFO - Phase 1: Processing 63 entities from doc-f1fff04f1907ceef2945d91abc146ec6 (async: 8)
+2026-01-09 21:26:13,026 - uvicorn.access - INFO - 127.0.0.1:65425 - "GET /auth-status HTTP/1.1" 200
+2026-01-09 21:26:22,111 - uvicorn.access - INFO - 127.0.0.1:54589 - "GET /docs HTTP/1.1" 200
+2026-01-09 21:26:22,180 - lightrag - INFO - [] Graph truncated: 1391 nodes found, limited to 1000
+2026-01-09 21:26:22,239 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1209
+2026-01-09 21:26:22,357 - uvicorn.access - INFO - 127.0.0.1:52142 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-09 21:26:29,338 - uvicorn.access - INFO - 127.0.0.1:63823 - "GET /openapi.json HTTP/1.1" 200
+2026-01-09 21:26:58,672 - lightrag - INFO - Merged: `用户` | 2+1
+2026-01-09 21:29:02,767 - lightrag - INFO - Phase 2: Processing 51 relations from doc-f1fff04f1907ceef2945d91abc146ec6 (async: 8)
+2026-01-09 21:33:02,326 - lightrag - INFO - Phase 3: Updating final 63(63+0) entities and  51 relations from doc-f1fff04f1907ceef2945d91abc146ec6
+2026-01-09 21:33:02,333 - lightrag - INFO - Completed merging: 63 entities, 0 extra entities, 51 relations
+2026-01-09 21:33:02,513 - lightrag - INFO - [] Writing graph with 1445 nodes, 1453 edges
+2026-01-09 21:33:02,726 - lightrag - INFO - In memory DB persist to disk
+2026-01-09 21:33:02,732 - lightrag - INFO - Completed processing file 1/1: 重要信息.txt
+2026-01-09 21:33:02,736 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-09 21:38:20,416 - uvicorn.access - INFO - 127.0.0.1:61653 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 21:39:01,112 - lightrag - INFO -  == LLM cache == saving: mix:keywords:41263c7bd25fb818415c95edc811b645
+2026-01-09 21:39:06,258 - lightrag - INFO - Query nodes: 邱云霞, API, 接口 (top_k:10, cosine:0.2)
+2026-01-09 21:39:10,183 - lightrag - INFO - Local query: 10 entites, 103 relations
+2026-01-09 21:39:10,184 - lightrag - INFO - Query edges: 简历信息, 接口文档, API文档, 测试数据, 获取简历 (top_k:10, cosine:0.2)
+2026-01-09 21:39:14,091 - lightrag - INFO - Global query: 18 entites, 10 relations
+2026-01-09 21:39:14,254 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 21:39:14,257 - lightrag - INFO - Raw search results: 28 entities, 113 relations, 5 vector chunks
+2026-01-09 21:39:14,290 - lightrag - INFO - After truncation: 28 entities, 113 relations
+2026-01-09 21:39:14,500 - lightrag - INFO - Selecting 23 from 23 entity-related chunks by vector similarity
+2026-01-09 21:39:14,514 - lightrag - INFO - Find no additional relations-related chunks from 113 relations
+2026-01-09 21:39:14,514 - lightrag - INFO - Round-robin merged chunks: 28 -> 26 (deduplicated 2)
+2026-01-09 21:39:14,531 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 21:39:14,539 - lightrag - INFO - Final context: 28 entities, 113 relations, 5 chunks
+2026-01-09 21:39:14,541 - lightrag - INFO - Final chunks S+F/O: E5/1 C1/2 E1/2 C1/3 E1/3
+2026-01-09 21:39:14,613 - uvicorn.access - INFO - 127.0.0.1:53840 - "POST /query/data HTTP/1.1" 200

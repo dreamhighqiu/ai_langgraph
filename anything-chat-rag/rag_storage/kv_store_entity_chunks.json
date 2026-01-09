@@ -7883,11 +7883,11 @@
   "用户": {
     "chunk_ids": [
       "chunk-8352402b827b053988bbb384d59fe34d",
-      "chunk-f992c31ede844b91fbb3d973a038a2d1"
+      "chunk-f992c31ede844b91fbb3d973a038a2d1",
+      "chunk-508db58a2a7942df34569046bec9d997"
     ],
-    "count": 2,
-    "create_time": 1767336988,
-    "update_time": 1767336988,
+    "count": 3,
+    "update_time": 1767965218,
     "_id": "用户"
   },
   "平台": {
@@ -12622,5 +12622,569 @@
     "create_time": 1767957445,
     "update_time": 1767957445,
     "_id": "2026年1月5日"
+  },
+  "健康管理计划": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "健康管理计划"
+  },
+  "监测指标": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "监测指标"
+  },
+  "监测频率": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "监测频率"
+  },
+  "监测方法": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "监测方法"
+  },
+  "目标值/范围": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "目标值/范围"
+  },
+  "数据记录与反馈机制": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "数据记录与反馈机制"
+  },
+  "标准化结构": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 2,
+    "create_time": 1767965161,
+    "update_time": 1767965161,
+    "_id": "标准化结构"
+  },
+  "目标设定": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965167,
+    "update_time": 1767965167,
+    "_id": "目标设定"
+  },
+  "行动计划": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965182,
+    "update_time": 1767965182,
+    "_id": "行动计划"
+  },
+  "监测与反馈": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965182,
+    "update_time": 1767965182,
+    "_id": "监测与反馈"
+  },
+  "支持机制": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965182,
+    "update_time": 1767965182,
+    "_id": "支持机制"
+  },
+  "风险管理": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965189,
+    "update_time": 1767965189,
+    "_id": "风险管理"
+  },
+  "45岁男性患者": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965189,
+    "update_time": 1767965189,
+    "_id": "45岁男性患者"
+  },
+  "左磺酸氨氯地平片": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965189,
+    "update_time": 1767965189,
+    "_id": "左磺酸氨氯地平片"
+  },
+  "饮食建议输入参数": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965189,
+    "update_time": 1767965189,
+    "_id": "饮食建议输入参数"
+  },
+  "运动建议输入参数": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965189,
+    "update_time": 1767965189,
+    "_id": "运动建议输入参数"
+  },
+  "智能体": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 2,
+    "create_time": 1767965200,
+    "update_time": 1767965200,
+    "_id": "智能体"
+  },
+  "个性化月报": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 2,
+    "create_time": 1767965200,
+    "update_time": 1767965200,
+    "_id": "个性化月报"
+  },
+  "提示词": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997",
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 3,
+    "create_time": 1767965200,
+    "update_time": 1767965200,
+    "_id": "提示词"
+  },
+  "BMI": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965200,
+    "update_time": 1767965200,
+    "_id": "BMI"
+  },
+  "血压": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965209,
+    "update_time": 1767965209,
+    "_id": "血压"
+  },
+  "原发性高血压": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965209,
+    "update_time": 1767965209,
+    "_id": "原发性高血压"
+  },
+  "生活方式干预": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 2,
+    "create_time": 1767965209,
+    "update_time": 1767965209,
+    "_id": "生活方式干预"
+  },
+  "用户健康信息": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965209,
+    "update_time": 1767965209,
+    "_id": "用户健康信息"
+  },
+  "请求参数示例": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965218,
+    "update_time": 1767965218,
+    "_id": "请求参数示例"
+  },
+  "健康信息": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767965218,
+    "update_time": 1767965218,
+    "_id": "健康信息"
+  },
+  "附件内容": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767965218,
+    "update_time": 1767965218,
+    "_id": "附件内容"
+  },
+  "详细输出示例": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767965218,
+    "update_time": 1767965218,
+    "_id": "详细输出示例"
+  },
+  "Dify工作流": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965229,
+    "update_time": 1767965229,
+    "_id": "Dify工作流"
+  },
+  "百寻智能问答+AI": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965229,
+    "update_time": 1767965229,
+    "_id": "百寻智能问答+AI"
+  },
+  "算法备案": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965229,
+    "update_time": 1767965229,
+    "_id": "算法备案"
+  },
+  "隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965229,
+    "update_time": 1767965229,
+    "_id": "隐私协议"
+  },
+  "建友官网": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965239,
+    "update_time": 1767965239,
+    "_id": "建友官网"
+  },
+  "AI服务器": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965239,
+    "update_time": 1767965239,
+    "_id": "AI服务器"
+  },
+  "Dify服务器": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965239,
+    "update_time": 1767965239,
+    "_id": "Dify服务器"
+  },
+  "RAGFlow服务器": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965239,
+    "update_time": 1767965239,
+    "_id": "RAGFlow服务器"
+  },
+  "小季": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965248,
+    "update_time": 1767965248,
+    "_id": "小季"
+  },
+  "移动云": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965248,
+    "update_time": 1767965248,
+    "_id": "移动云"
+  },
+  "腾讯云": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965248,
+    "update_time": 1767965248,
+    "_id": "腾讯云"
+  },
+  "敏感词API": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965248,
+    "update_time": 1767965248,
+    "_id": "敏感词API"
+  },
+  "敏感词参考源码": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965263,
+    "update_time": 1767965263,
+    "_id": "敏感词参考源码"
+  },
+  "健康数据管理类APP": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965263,
+    "update_time": 1767965263,
+    "_id": "健康数据管理类APP"
+  },
+  "健康信息咨询类APP": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965263,
+    "update_time": 1767965263,
+    "_id": "健康信息咨询类APP"
+  },
+  "健康方式养成类APP": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965263,
+    "update_time": 1767965263,
+    "_id": "健康方式养成类APP"
+  },
+  "问诊类APP": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965279,
+    "update_time": 1767965279,
+    "_id": "问诊类APP"
+  },
+  "AI医生智能体": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965279,
+    "update_time": 1767965279,
+    "_id": "AI医生智能体"
+  },
+  "健康计划智能体": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965279,
+    "update_time": 1767965279,
+    "_id": "健康计划智能体"
+  },
+  "个性化健康管理方案": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965279,
+    "update_time": 1767965279,
+    "_id": "个性化健康管理方案"
+  },
+  "36.133.145.37": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965293,
+    "update_time": 1767965293,
+    "_id": "36.133.145.37"
+  },
+  "aic.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965293,
+    "update_time": 1767965293,
+    "_id": "aic.baixunsz.com"
+  },
+  "43.136.98.40": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965293,
+    "update_time": 1767965293,
+    "_id": "43.136.98.40"
+  },
+  "rag.gdzky.cn": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965293,
+    "update_time": 1767965293,
+    "_id": "rag.gdzky.cn"
+  },
+  "http://sw.baixunsz.com/sensitive/replace": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965308,
+    "update_time": 1767965308,
+    "_id": "http://sw.baixunsz.com/sensitive/replace"
+  },
+  "http://sw.baixunsz.com/sensitive/filter": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965308,
+    "update_time": 1767965308,
+    "_id": "http://sw.baixunsz.com/sensitive/filter"
+  },
+  "http://sw.baixunsz.com/sensitive/findall": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965308,
+    "update_time": 1767965308,
+    "_id": "http://sw.baixunsz.com/sensitive/findall"
+  },
+  "http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965308,
+    "update_time": 1767965308,
+    "_id": "http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS"
+  },
+  "http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965322,
+    "update_time": 1767965322,
+    "_id": "http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS"
+  },
+  "http://www.baixunsz.com/dn/aiprivacy.html": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965322,
+    "update_time": 1767965322,
+    "_id": "http://www.baixunsz.com/dn/aiprivacy.html"
+  },
+  "https://www.iot08.com/dn/aiprivacy.html": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965322,
+    "update_time": 1767965322,
+    "_id": "https://www.iot08.com/dn/aiprivacy.html"
+  },
+  "https://github.com/xiaoxuan6/sensitive-api": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965322,
+    "update_time": 1767965322,
+    "_id": "https://github.com/xiaoxuan6/sensitive-api"
+  },
+  "产品应用集成": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965335,
+    "update_time": 1767965335,
+    "_id": "产品应用集成"
+  },
+  "日常监测体系": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965335,
+    "update_time": 1767965335,
+    "_id": "日常监测体系"
   }
 }

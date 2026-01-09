@@ -12630,5 +12630,466 @@
     "create_time": 1767957476,
     "update_time": 1767957476,
     "_id": "2个工作日<SEP>入职邀请函"
+  },
+  "健康管理计划<SEP>监测指标": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965342,
+    "update_time": 1767965342,
+    "_id": "健康管理计划<SEP>监测指标"
+  },
+  "标准化结构<SEP>目标设定": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965342,
+    "update_time": 1767965342,
+    "_id": "标准化结构<SEP>目标设定"
+  },
+  "标准化结构<SEP>行动计划": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965350,
+    "update_time": 1767965350,
+    "_id": "标准化结构<SEP>行动计划"
+  },
+  "健康管理计划<SEP>监测频率": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965353,
+    "update_time": 1767965353,
+    "_id": "健康管理计划<SEP>监测频率"
+  },
+  "标准化结构<SEP>监测与反馈": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965357,
+    "update_time": 1767965357,
+    "_id": "标准化结构<SEP>监测与反馈"
+  },
+  "健康管理计划<SEP>监测方法": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965361,
+    "update_time": 1767965361,
+    "_id": "健康管理计划<SEP>监测方法"
+  },
+  "支持机制<SEP>标准化结构": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965367,
+    "update_time": 1767965367,
+    "_id": "支持机制<SEP>标准化结构"
+  },
+  "健康管理计划<SEP>目标值/范围": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965374,
+    "update_time": 1767965374,
+    "_id": "健康管理计划<SEP>目标值/范围"
+  },
+  "个性化月报<SEP>智能体": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 2,
+    "create_time": 1767965374,
+    "update_time": 1767965374,
+    "_id": "个性化月报<SEP>智能体"
+  },
+  "标准化结构<SEP>风险管理": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965385,
+    "update_time": 1767965385,
+    "_id": "标准化结构<SEP>风险管理"
+  },
+  "提示词<SEP>智能体": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744",
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 2,
+    "create_time": 1767965391,
+    "update_time": 1767965391,
+    "_id": "提示词<SEP>智能体"
+  },
+  "健康管理计划<SEP>数据记录与反馈机制": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965391,
+    "update_time": 1767965391,
+    "_id": "健康管理计划<SEP>数据记录与反馈机制"
+  },
+  "健康管理计划<SEP>标准化结构": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965405,
+    "update_time": 1767965405,
+    "_id": "健康管理计划<SEP>标准化结构"
+  },
+  "智能体<SEP>用户健康信息": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965405,
+    "update_time": 1767965405,
+    "_id": "智能体<SEP>用户健康信息"
+  },
+  "用户健康信息<SEP>请求参数示例": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965416,
+    "update_time": 1767965416,
+    "_id": "用户健康信息<SEP>请求参数示例"
+  },
+  "45岁男性患者<SEP>健康管理计划": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965420,
+    "update_time": 1767965420,
+    "_id": "45岁男性患者<SEP>健康管理计划"
+  },
+  "健康信息<SEP>用户": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767965420,
+    "update_time": 1767965420,
+    "_id": "健康信息<SEP>用户"
+  },
+  "个性化月报<SEP>附件内容": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767965431,
+    "update_time": 1767965431,
+    "_id": "个性化月报<SEP>附件内容"
+  },
+  "45岁男性患者<SEP>左磺酸氨氯地平片": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965436,
+    "update_time": 1767965436,
+    "_id": "45岁男性患者<SEP>左磺酸氨氯地平片"
+  },
+  "提示词<SEP>详细输出示例": {
+    "chunk_ids": [
+      "chunk-508db58a2a7942df34569046bec9d997"
+    ],
+    "count": 1,
+    "create_time": 1767965436,
+    "update_time": 1767965436,
+    "_id": "提示词<SEP>详细输出示例"
+  },
+  "Dify工作流<SEP>百寻智能问答+AI": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965436,
+    "update_time": 1767965436,
+    "_id": "Dify工作流<SEP>百寻智能问答+AI"
+  },
+  "算法备案<SEP>隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965451,
+    "update_time": 1767965451,
+    "_id": "算法备案<SEP>隐私协议"
+  },
+  "45岁男性患者<SEP>原发性高血压": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965456,
+    "update_time": 1767965456,
+    "_id": "45岁男性患者<SEP>原发性高血压"
+  },
+  "AI服务器<SEP>小季": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965456,
+    "update_time": 1767965456,
+    "_id": "AI服务器<SEP>小季"
+  },
+  "Dify服务器<SEP>移动云": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965456,
+    "update_time": 1767965456,
+    "_id": "Dify服务器<SEP>移动云"
+  },
+  "建友官网<SEP>隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965467,
+    "update_time": 1767965467,
+    "_id": "建友官网<SEP>隐私协议"
+  },
+  "RAGFlow服务器<SEP>腾讯云": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965467,
+    "update_time": 1767965467,
+    "_id": "RAGFlow服务器<SEP>腾讯云"
+  },
+  "45岁男性患者<SEP>BMI": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965476,
+    "update_time": 1767965476,
+    "_id": "45岁男性患者<SEP>BMI"
+  },
+  "敏感词API<SEP>敏感词参考源码": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965476,
+    "update_time": 1767965476,
+    "_id": "敏感词API<SEP>敏感词参考源码"
+  },
+  "AI医生智能体<SEP>提示词": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965476,
+    "update_time": 1767965476,
+    "_id": "AI医生智能体<SEP>提示词"
+  },
+  "45岁男性患者<SEP>血压": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965491,
+    "update_time": 1767965491,
+    "_id": "45岁男性患者<SEP>血压"
+  },
+  "36.133.145.37<SEP>Dify服务器": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965491,
+    "update_time": 1767965491,
+    "_id": "36.133.145.37<SEP>Dify服务器"
+  },
+  "健康计划智能体<SEP>提示词": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965501,
+    "update_time": 1767965501,
+    "_id": "健康计划智能体<SEP>提示词"
+  },
+  "43.136.98.40<SEP>RAGFlow服务器": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965501,
+    "update_time": 1767965501,
+    "_id": "43.136.98.40<SEP>RAGFlow服务器"
+  },
+  "45岁男性患者<SEP>生活方式干预": {
+    "chunk_ids": [
+      "chunk-ceb60f16f40b6c7d09158715156ee744"
+    ],
+    "count": 1,
+    "create_time": 1767965510,
+    "update_time": 1767965510,
+    "_id": "45岁男性患者<SEP>生活方式干预"
+  },
+  "Dify服务器<SEP>aic.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965510,
+    "update_time": 1767965510,
+    "_id": "Dify服务器<SEP>aic.baixunsz.com"
+  },
+  "http://sw.baixunsz.com/sensitive/replace<SEP>敏感词API": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965510,
+    "update_time": 1767965510,
+    "_id": "http://sw.baixunsz.com/sensitive/replace<SEP>敏感词API"
+  },
+  "个性化健康管理方案<SEP>健康计划智能体": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965524,
+    "update_time": 1767965524,
+    "_id": "个性化健康管理方案<SEP>健康计划智能体"
+  },
+  "RAGFlow服务器<SEP>rag.gdzky.cn": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965524,
+    "update_time": 1767965524,
+    "_id": "RAGFlow服务器<SEP>rag.gdzky.cn"
+  },
+  "http://sw.baixunsz.com/sensitive/filter<SEP>敏感词API": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965534,
+    "update_time": 1767965534,
+    "_id": "http://sw.baixunsz.com/sensitive/filter<SEP>敏感词API"
+  },
+  "Dify工作流<SEP>http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965534,
+    "update_time": 1767965534,
+    "_id": "Dify工作流<SEP>http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS"
+  },
+  "http://www.baixunsz.com/dn/aiprivacy.html<SEP>隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965534,
+    "update_time": 1767965534,
+    "_id": "http://www.baixunsz.com/dn/aiprivacy.html<SEP>隐私协议"
+  },
+  "个性化健康管理方案<SEP>健康数据管理类APP": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965549,
+    "update_time": 1767965549,
+    "_id": "个性化健康管理方案<SEP>健康数据管理类APP"
+  },
+  "https://github.com/xiaoxuan6/sensitive-api<SEP>敏感词参考源码": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965549,
+    "update_time": 1767965549,
+    "_id": "https://github.com/xiaoxuan6/sensitive-api<SEP>敏感词参考源码"
+  },
+  "http://sw.baixunsz.com/sensitive/findall<SEP>敏感词API": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965558,
+    "update_time": 1767965558,
+    "_id": "http://sw.baixunsz.com/sensitive/findall<SEP>敏感词API"
+  },
+  "https://www.iot08.com/dn/aiprivacy.html<SEP>隐私协议": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965558,
+    "update_time": 1767965558,
+    "_id": "https://www.iot08.com/dn/aiprivacy.html<SEP>隐私协议"
+  },
+  "Dify工作流<SEP>http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965558,
+    "update_time": 1767965558,
+    "_id": "Dify工作流<SEP>http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS"
+  },
+  "个性化健康管理方案<SEP>产品应用集成": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965566,
+    "update_time": 1767965566,
+    "_id": "个性化健康管理方案<SEP>产品应用集成"
+  },
+  "个性化健康管理方案<SEP>生活方式干预": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965570,
+    "update_time": 1767965570,
+    "_id": "个性化健康管理方案<SEP>生活方式干预"
+  },
+  "个性化健康管理方案<SEP>日常监测体系": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965573,
+    "update_time": 1767965573,
+    "_id": "个性化健康管理方案<SEP>日常监测体系"
+  },
+  "个性化健康管理方案<SEP>标准化结构": {
+    "chunk_ids": [
+      "chunk-e3c13875720cef2444bbacaa549d5b1d"
+    ],
+    "count": 1,
+    "create_time": 1767965578,
+    "update_time": 1767965578,
+    "_id": "个性化健康管理方案<SEP>标准化结构"
   }
 }

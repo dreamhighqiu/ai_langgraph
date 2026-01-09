@@ -737,6 +737,31 @@ async def rag_query_tool(
                 else:
                     result = raw
                 
+                # 检查 result 是否是字典类型
+                if not isinstance(result, dict):
+                    # 如果 result 是 list 或其他类型，尝试转换或返回错误
+                    logger.warning(f"RAG 工具返回了非字典类型: {type(result)}, 值: {result}")
+                    if isinstance(result, list):
+                        # 如果是列表，尝试提取信息
+                        return {
+                            "success": True,
+                            "context": "\n".join([str(item) for item in result[:5]]),
+                            "entities": [],
+                            "chunks": [],
+                            "metadata": {},
+                            "message": "RAG 检索成功（返回列表格式）"
+                        }
+                    else:
+                        # 其他类型，转换为字符串
+                        return {
+                            "success": True,
+                            "context": str(result),
+                            "entities": [],
+                            "chunks": [],
+                            "metadata": {},
+                            "message": "RAG 检索成功（非标准格式）"
+                        }
+                
                 if result.get("status") == "failure":
                     return {
                         "success": False,
@@ -748,39 +773,58 @@ async def rag_query_tool(
                     }
                 
                 data = result.get("data", {})
+                if not isinstance(data, dict):
+                    data = {}
+                
                 context_parts = []
                 
                 # 构建上下文文本
-                if data.get("entities"):
-                    context_parts.append(f"实体 ({len(data['entities'])} 个):")
-                    for entity in data["entities"][:5]:
-                        context_parts.append(f"  - {entity.get('entity_name', '')}: {entity.get('description', '')}")
+                entities = data.get("entities", [])
+                if entities and isinstance(entities, list):
+                    context_parts.append(f"实体 ({len(entities)} 个):")
+                    for entity in entities[:5]:
+                        if isinstance(entity, dict):
+                            context_parts.append(f"  - {entity.get('entity_name', '')}: {entity.get('description', '')}")
                 
-                if data.get("chunks"):
-                    context_parts.append(f"\n相关文档片段 ({len(data['chunks'])} 个):")
-                    for chunk in data["chunks"][:3]:
-                        content = chunk.get("content", "")[:200]
-                        context_parts.append(f"  - {content}...")
+                chunks = data.get("chunks", [])
+                if chunks and isinstance(chunks, list):
+                    context_parts.append(f"\n相关文档片段 ({len(chunks)} 个):")
+                    for chunk in chunks[:3]:
+                        if isinstance(chunk, dict):
+                            content = chunk.get("content", "")[:200]
+                            context_parts.append(f"  - {content}...")
                 
                 context_text = "\n".join(context_parts) if context_parts else "未找到相关信息"
                 
                 return {
                     "success": True,
                     "context": context_text,
-                    "entities": data.get("entities", []),
-                    "chunks": data.get("chunks", []),
-                    "metadata": result.get("metadata", {}),
+                    "entities": entities if isinstance(entities, list) else [],
+                    "chunks": chunks if isinstance(chunks, list) else [],
+                    "metadata": result.get("metadata", {}) if isinstance(result.get("metadata"), dict) else {},
                     "message": "RAG 检索成功"
                 }
-            except json.JSONDecodeError:
+            except json.JSONDecodeError as e:
                 # 如果不是 JSON，当作文本处理
+                logger.warning(f"RAG JSON 解析失败: {e}, raw: {raw}")
                 return {
                     "success": True,
                     "context": str(raw),
                     "entities": [],
                     "chunks": [],
                     "metadata": {},
-                    "message": "RAG 检索成功"
+                    "message": "RAG 检索成功（文本格式）"
+                }
+            except Exception as e:
+                # 捕获其他异常
+                logger.error(f"RAG 数据处理异常: {e}, raw type: {type(raw)}, raw: {raw}", exc_info=True)
+                return {
+                    "success": False,
+                    "error": f"RAG 数据处理失败: {str(e)}",
+                    "context": "",
+                    "entities": [],
+                    "chunks": [],
+                    "metadata": {},
                 }
         else:
             # 文本格式响应

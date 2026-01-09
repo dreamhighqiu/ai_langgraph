@@ -7751,10 +7751,10 @@
 <node id="用户">
   <data key="d0">用户</data>
   <data key="d1">person</data>
-  <data key="d2">用户是系统的使用者，在创意平台注册账号，其账号和权限会同步到XMP和SS。&lt;SEP&gt;在平台注册并使用服务的个体，其账号信息、权限和操作行为是系统集成测试的核心对象。</data>
-  <data key="d3">chunk-8352402b827b053988bbb384d59fe34d&lt;SEP&gt;chunk-f992c31ede844b91fbb3d973a038a2d1</data>
-  <data key="d4">注册登录权限通过：难点项目.md</data>
-  <data key="d5">1767336992</data>
+  <data key="d2">用户是系统的使用者，在创意平台注册账号，其账号和权限会同步到XMP和SS。&lt;SEP&gt;在平台注册并使用服务的个体，其账号信息、权限和操作行为是系统集成测试的核心对象。&lt;SEP&gt;用户是提供健康信息并期望获得个性化月报的个人。</data>
+  <data key="d3">chunk-8352402b827b053988bbb384d59fe34d&lt;SEP&gt;chunk-f992c31ede844b91fbb3d973a038a2d1&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d4">注册登录权限通过：难点项目.md&lt;SEP&gt;重要信息.txt</data>
+  <data key="d5">1767965218</data>
   <data key="d6"></data>
 </node>
 <node id="平台">
@@ -12416,6 +12416,604 @@
   <data key="d3">chunk-f95fd1b8895ad34d800ea206260e0ea5</data>
   <data key="d4">Scan_05-01-2026_1441.pdf</data>
   <data key="d5">1767957448</data>
+  <data key="d6"></data>
+</node>
+<node id="image_ece4133402ba99e9c8b363142ca5d64e">
+  <data key="d0">image_ece4133402ba99e9c8b363142ca5d64e</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\Scan_4级\\</data>
+  <data key="d3">chunk-07dcc723651238f3d056e430f19af310</data>
+  <data key="d4">Scan_4级.pdf</data>
+  <data key="d5">1767957604</data>
+</node>
+<node id="image_41ebe201ebbf5fd533a42bb21f96c92f">
+  <data key="d0">image_41ebe201ebbf5fd533a42bb21f96c92f</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\Scan_4级\\</data>
+  <data key="d3">chunk-4b0227f05f24f485c4a4c238430bb0de</data>
+  <data key="d4">Scan_4级.pdf</data>
+  <data key="d5">1767957614</data>
+</node>
+<node id="table_6b3ae5ed922b72ac23929509b2b4cb96">
+  <data key="d0">table_6b3ae5ed922b72ac23929509b2b4cb96</data>
+  <data key="d1">table</data>
+  <data key="d2">Table content: {'type': 'table', 'img_path': '', 'table_caption': '', 'table_footnote': '', 'table_body': [], 'page</data>
+  <data key="d3">chunk-a435b5986262daca20b709cb699bcfda</data>
+  <data key="d4">Scan_4级.pdf</data>
+  <data key="d5">1767957622</data>
+</node>
+<node id="table_dbced379657976ac430d512f8f37828a">
+  <data key="d0">table_dbced379657976ac430d512f8f37828a</data>
+  <data key="d1">table</data>
+  <data key="d2">Table content: {'type': 'table', 'img_path': '', 'table_caption': '', 'table_footnote': '', 'table_body': {'table_c</data>
+  <data key="d3">chunk-47730ef561ffca327daadbb63f5a16a6</data>
+  <data key="d4">Scan_4级.pdf</data>
+  <data key="d5">1767957732</data>
+</node>
+<node id="image_49a143438a1f198903eb692cb30044c8">
+  <data key="d0">image_49a143438a1f198903eb692cb30044c8</data>
+  <data key="d1">image</data>
+  <data key="d2">Image content: {'type': 'image', 'img_path': 'D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\Scan_4级\\</data>
+  <data key="d3">chunk-0f276721e8223a726f04ffb8af736e6e</data>
+  <data key="d4">Scan_4级.pdf</data>
+  <data key="d5">1767957840</data>
+</node>
+<node id="健康管理计划">
+  <data key="d0">健康管理计划</data>
+  <data key="d1">concept</data>
+  <data key="d2">一个为期一年的健康管理计划，旨在通过生活方式干预来管理健康，特别是针对高血压等慢性病。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965161</data>
+  <data key="d6"></data>
+</node>
+<node id="监测指标">
+  <data key="d0">监测指标</data>
+  <data key="d1">data</data>
+  <data key="d2">在健康管理计划中需要追踪的数据，包括血压、心率、睡眠时长/质量、饮食记录和主观感受等。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965161</data>
+  <data key="d6"></data>
+</node>
+<node id="监测频率">
+  <data key="d0">监测频率</data>
+  <data key="d1">method</data>
+  <data key="d2">规定数据收集的时间间隔，例如每日、每周或每月。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965161</data>
+  <data key="d6"></data>
+</node>
+<node id="监测方法">
+  <data key="d0">监测方法</data>
+  <data key="d1">method</data>
+  <data key="d2">明确收集数据的具体手段，如使用指定产品、自我记录或问卷评估。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965167</data>
+  <data key="d6"></data>
+</node>
+<node id="目标值/范围">
+  <data key="d0">目标值/范围</data>
+  <data key="d1">data</data>
+  <data key="d2">为健康指标设定的具体数值目标或可接受的范围。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965167</data>
+  <data key="d6"></data>
+</node>
+<node id="数据记录与反馈机制">
+  <data key="d0">数据记录与反馈机制</data>
+  <data key="d1">method</data>
+  <data key="d2">用于记录数据和提供反馈的系统或流程，例如使用APP日志或生成定期健康报告。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965169</data>
+  <data key="d6"></data>
+</node>
+<node id="标准化结构">
+  <data key="d0">标准化结构</data>
+  <data key="d1">concept</data>
+  <data key="d2">健康管理方案需要遵循的框架，包含目标设定、行动计划、监测与反馈、支持机制和风险管理等部分。&lt;SEP&gt;标准化结构是健康管理方案需要遵循的框架要求，确保方案包含必要的组成部分。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965170</data>
+  <data key="d6"></data>
+</node>
+<node id="目标设定">
+  <data key="d0">目标设定</data>
+  <data key="d1">concept</data>
+  <data key="d2">制定清晰、可量化且有时限的短期和长期健康目标。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965172</data>
+  <data key="d6"></data>
+</node>
+<node id="行动计划">
+  <data key="d0">行动计划</data>
+  <data key="d1">concept</data>
+  <data key="d2">分阶段(如启动期、维持期)的具体行动步骤，明确做什么、怎么做和何时做。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965182</data>
+  <data key="d6"></data>
+</node>
+<node id="监测与反馈">
+  <data key="d0">监测与反馈</data>
+  <data key="d1">concept</data>
+  <data key="d2">定期评估进展并根据监测数据和用户反馈动态调整方案的过程。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965182</data>
+  <data key="d6"></data>
+</node>
+<node id="支持机制">
+  <data key="d0">支持机制</data>
+  <data key="d1">concept</data>
+  <data key="d2">为用户提供持续支持的方式，如推送健康教育内容、提供线上/线下咨询或建立社群支持。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965184</data>
+  <data key="d6"></data>
+</node>
+<node id="风险管理">
+  <data key="d0">风险管理</data>
+  <data key="d1">concept</data>
+  <data key="d2">针对潜在风险(如运动损伤、依从性差、指标异常)制定的应对预案。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965189</data>
+  <data key="d6"></data>
+</node>
+<node id="45岁男性患者">
+  <data key="d0">45岁男性患者</data>
+  <data key="d1">person</data>
+  <data key="d2">一位45岁男性，有3年原发性高血压病史，身高170cm，体重75kg(BMI 26，超重)，当前血压140/90 mmHg(临界值)，正在服用左磺酸氨氯地平片(每日1片)。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965189</data>
+  <data key="d6"></data>
+</node>
+<node id="左磺酸氨氯地平片">
+  <data key="d0">左磺酸氨氯地平片</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一种用于治疗高血压的药物，该患者每日服用一片。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965189</data>
+  <data key="d6"></data>
+</node>
+<node id="饮食建议输入参数">
+  <data key="d0">饮食建议输入参数</data>
+  <data key="d1">data</data>
+  <data key="d2">用于生成个性化饮食建议所需的一组用户参数，包括年龄、性别、身高、体重、活动水平、健康目标、饮食偏好、食物过敏、当前饮食习惯、每日热量摄入和营养素分布。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965194</data>
+  <data key="d6"></data>
+</node>
+<node id="运动建议输入参数">
+  <data key="d0">运动建议输入参数</data>
+  <data key="d1">data</data>
+  <data key="d2">用于生成个性化运动建议所需的一组用户参数，包括年龄、性别、体重、身高、健康状况、运动经验水平、当前运动频率、运动类型、每次运动时长、运动强度和用户目标。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965194</data>
+  <data key="d6"></data>
+</node>
+<node id="智能体">
+  <data key="d0">智能体</data>
+  <data key="d1">concept</data>
+  <data key="d2">智能体是一个根据用户健康信息生成个性化月报的自动化系统。&lt;SEP&gt;一个根据用户提供的健康信息输出个性化月报的AI系统。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965200</data>
+  <data key="d6"></data>
+</node>
+<node id="个性化月报">
+  <data key="d0">个性化月报</data>
+  <data key="d1">content</data>
+  <data key="d2">个性化月报是根据用户健康信息定制的月度报告，其格式参照附件内容。&lt;SEP&gt;智能体根据用户健康信息生成的月度报告，格式参照附件内容。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965200</data>
+  <data key="d6"></data>
+</node>
+<node id="提示词">
+  <data key="d0">提示词</data>
+  <data key="d1">content</data>
+  <data key="d2">提示词是用于指导智能体根据用户健康信息生成个性化月报的指令集。&lt;SEP&gt;提示词是用于指导AI生成特定内容(如健康管理方案)的文本指令或参考模板。&lt;SEP&gt;用于指导或实现智能体功能的文本指令。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997&lt;SEP&gt;chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965200</data>
+  <data key="d6"></data>
+</node>
+<node id="BMI">
+  <data key="d0">BMI</data>
+  <data key="d1">data</data>
+  <data key="d2">身体质量指数，用于评估体重状况。在示例中，45岁男性患者的BMI为26，属于超重范围。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965203</data>
+  <data key="d6"></data>
+</node>
+<node id="血压">
+  <data key="d0">血压</data>
+  <data key="d1">data</data>
+  <data key="d2">血液对血管壁的压力。在示例中，45岁男性患者的当前血压为140/90 mmHg，处于临界高血压值。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965209</data>
+  <data key="d6"></data>
+</node>
+<node id="原发性高血压">
+  <data key="d0">原发性高血压</data>
+  <data key="d1">concept</data>
+  <data key="d2">一种病因尚未完全明确的慢性高血压疾病。示例中的45岁男性患者有3年原发性高血压病史。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965209</data>
+  <data key="d6"></data>
+</node>
+<node id="生活方式干预">
+  <data key="d0">生活方式干预</data>
+  <data key="d1">method</data>
+  <data key="d2">通过调整饮食、运动等生活习惯来改善健康状况的方法。是45岁男性患者健康管理计划的核心诉求。&lt;SEP&gt;生活方式干预是健康管理方案的一个核心模块，主要包括饮食和运动方面的个性化建议。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965211</data>
+  <data key="d6"></data>
+</node>
+<node id="用户健康信息">
+  <data key="d0">用户健康信息</data>
+  <data key="d1">data</data>
+  <data key="d2">用户提供的个人基本健康数据、病史和诉求等。是智能体生成个性化月报的输入依据。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965211</data>
+  <data key="d6"></data>
+</node>
+<node id="请求参数示例">
+  <data key="d0">请求参数示例</data>
+  <data key="d1">data</data>
+  <data key="d2">一个JSON格式的数据结构示例，包含了用户信息`user_info`和用户标识`user`，用于向智能体发起请求。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965218</data>
+  <data key="d6"></data>
+</node>
+<node id="健康信息">
+  <data key="d0">健康信息</data>
+  <data key="d1">data</data>
+  <data key="d2">健康信息是用户提供的用于生成个性化月报的个人健康相关数据。</data>
+  <data key="d3">chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965218</data>
+  <data key="d6"></data>
+</node>
+<node id="附件内容">
+  <data key="d0">附件内容</data>
+  <data key="d1">content</data>
+  <data key="d2">附件内容是作为个性化月报格式参照的文档或模板。</data>
+  <data key="d3">chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965221</data>
+  <data key="d6"></data>
+</node>
+<node id="详细输出示例">
+  <data key="d0">详细输出示例</data>
+  <data key="d1">content</data>
+  <data key="d2">详细输出示例是提示词要求的一部分，用于展示智能体应如何生成个性化月报。</data>
+  <data key="d3">chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965221</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify工作流">
+  <data key="d0">Dify工作流</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Dify工作流是一个AI工作流系统，提供在线体验网址，用于生成内容，并在回复末尾添加免责声明。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965229</data>
+  <data key="d6"></data>
+</node>
+<node id="百寻智能问答+AI">
+  <data key="d0">百寻智能问答+AI</data>
+  <data key="d1">organization</data>
+  <data key="d2">百寻智能问答+AI是生成网页内容的AI系统，其生成的内容附有免责声明。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965229</data>
+  <data key="d6"></data>
+</node>
+<node id="算法备案">
+  <data key="d0">算法备案</data>
+  <data key="d1">concept</data>
+  <data key="d2">算法备案是一个流程，需要提供隐私协议等文档以满足监管要求。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965229</data>
+  <data key="d6"></data>
+</node>
+<node id="隐私协议">
+  <data key="d0">隐私协议</data>
+  <data key="d1">content</data>
+  <data key="d2">隐私协议是用于算法备案和官网的法律文档，规定了数据使用和保护条款。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965232</data>
+  <data key="d6"></data>
+</node>
+<node id="建友官网">
+  <data key="d0">建友官网</data>
+  <data key="d1">artifact</data>
+  <data key="d2">建友官网是一个网站，其使用的隐私协议与算法备案的隐私协议内容相关。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965239</data>
+  <data key="d6"></data>
+</node>
+<node id="AI服务器">
+  <data key="d0">AI服务器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">AI服务器是运行AI应用(如Dify和RAGFlow)的物理或虚拟服务器。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965239</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify服务器">
+  <data key="d0">Dify服务器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Dify服务器是部署在移动云上的CPU服务器，IP地址为36.133.145.37，域名为aic.baixunsz.com。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965239</data>
+  <data key="d6"></data>
+</node>
+<node id="RAGFlow服务器">
+  <data key="d0">RAGFlow服务器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">RAGFlow服务器是部署在腾讯云上的GPU服务器，IP地址为43.136.98.40，域名为rag.gdzky.cn。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965241</data>
+  <data key="d6"></data>
+</node>
+<node id="小季">
+  <data key="d0">小季</data>
+  <data key="d1">person</data>
+  <data key="d2">小季是负责管理AI服务器(包括Dify和RAGFlow服务器)的人员。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965248</data>
+  <data key="d6"></data>
+</node>
+<node id="移动云">
+  <data key="d0">移动云</data>
+  <data key="d1">organization</data>
+  <data key="d2">移动云是提供云计算服务的平台，Dify服务器部署于此。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965248</data>
+  <data key="d6"></data>
+</node>
+<node id="腾讯云">
+  <data key="d0">腾讯云</data>
+  <data key="d1">organization</data>
+  <data key="d2">腾讯云是提供云计算服务的平台，RAGFlow服务器部署于此。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965248</data>
+  <data key="d6"></data>
+</node>
+<node id="敏感词API">
+  <data key="d0">敏感词API</data>
+  <data key="d1">artifact</data>
+  <data key="d2">敏感词API是一组提供敏感词处理功能(如替换、过滤、检查)的HTTP接口，基于开源代码部署。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965250</data>
+  <data key="d6"></data>
+</node>
+<node id="敏感词参考源码">
+  <data key="d0">敏感词参考源码</data>
+  <data key="d1">content</data>
+  <data key="d2">敏感词参考源码是位于GitHub上的开源代码仓库，为敏感词API的实现提供了基础。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965263</data>
+  <data key="d6"></data>
+</node>
+<node id="健康数据管理类APP">
+  <data key="d0">健康数据管理类APP</data>
+  <data key="d1">concept</data>
+  <data key="d2">健康数据管理类APP是通过记录和分析用户健康数据来提供评估、建议和定制方案的应用程序类别。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965264</data>
+  <data key="d6"></data>
+</node>
+<node id="健康信息咨询类APP">
+  <data key="d0">健康信息咨询类APP</data>
+  <data key="d1">concept</data>
+  <data key="d2">健康信息咨询类APP是提供健康信息、自诊工具和在线问诊功能的应用程序类别。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965264</data>
+  <data key="d6"></data>
+</node>
+<node id="健康方式养成类APP">
+  <data key="d0">健康方式养成类APP</data>
+  <data key="d1">concept</data>
+  <data key="d2">健康方式养成类APP是专注于饮食和运动习惯养成的应用程序类别。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965268</data>
+  <data key="d6"></data>
+</node>
+<node id="问诊类APP">
+  <data key="d0">问诊类APP</data>
+  <data key="d1">concept</data>
+  <data key="d2">问诊类APP是提供一对一付费个性化健康管理服务的应用程序类别，在中国普及率低。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965279</data>
+  <data key="d6"></data>
+</node>
+<node id="AI医生智能体">
+  <data key="d0">AI医生智能体</data>
+  <data key="d1">artifact</data>
+  <data key="d2">AI医生智能体是一个能够处理用户健康查询(如分科建议)的AI系统，通过特定API接口接收请求。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965279</data>
+  <data key="d6"></data>
+</node>
+<node id="健康计划智能体">
+  <data key="d0">健康计划智能体</data>
+  <data key="d1">artifact</data>
+  <data key="d2">健康计划智能体是一个基于用户综合健康数据生成个性化、结构化健康管理方案的AI系统。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965279</data>
+  <data key="d6"></data>
+</node>
+<node id="个性化健康管理方案">
+  <data key="d0">个性化健康管理方案</data>
+  <data key="d1">concept</data>
+  <data key="d2">个性化健康管理方案是基于用户数据设计的整合了产品应用、生活方式干预和日常监测的结构化计划。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965282</data>
+  <data key="d6"></data>
+</node>
+<node id="36.133.145.37">
+  <data key="d0">36.133.145.37</data>
+  <data key="d1">data</data>
+  <data key="d2">36.133.145.37是Dify服务器的IP地址，对应域名aic.baixunsz.com。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965293</data>
+  <data key="d6"></data>
+</node>
+<node id="aic.baixunsz.com">
+  <data key="d0">aic.baixunsz.com</data>
+  <data key="d1">data</data>
+  <data key="d2">aic.baixunsz.com是Dify服务器对应的域名。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965293</data>
+  <data key="d6"></data>
+</node>
+<node id="43.136.98.40">
+  <data key="d0">43.136.98.40</data>
+  <data key="d1">data</data>
+  <data key="d2">43.136.98.40是RAGFlow服务器的IP地址，对应域名rag.gdzky.cn。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965293</data>
+  <data key="d6"></data>
+</node>
+<node id="rag.gdzky.cn">
+  <data key="d0">rag.gdzky.cn</data>
+  <data key="d1">data</data>
+  <data key="d2">rag.gdzky.cn是RAGFlow服务器对应的域名。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965296</data>
+  <data key="d6"></data>
+</node>
+<node id="http://sw.baixunsz.com/sensitive/replace">
+  <data key="d0">http://sw.baixunsz.com/sensitive/replace</data>
+  <data key="d1">data</data>
+  <data key="d2">http://sw.baixunsz.com/sensitive/replace是用于替换敏感词的API端点URL。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965308</data>
+  <data key="d6"></data>
+</node>
+<node id="http://sw.baixunsz.com/sensitive/filter">
+  <data key="d0">http://sw.baixunsz.com/sensitive/filter</data>
+  <data key="d1">data</data>
+  <data key="d2">http://sw.baixunsz.com/sensitive/filter是用于过滤敏感词的API端点URL。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965308</data>
+  <data key="d6"></data>
+</node>
+<node id="http://sw.baixunsz.com/sensitive/findall">
+  <data key="d0">http://sw.baixunsz.com/sensitive/findall</data>
+  <data key="d1">data</data>
+  <data key="d2">http://sw.baixunsz.com/sensitive/findall是用于检查文本中是否包含敏感词的API端点URL。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965308</data>
+  <data key="d6"></data>
+</node>
+<node id="http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS">
+  <data key="d0">http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS</data>
+  <data key="d1">data</data>
+  <data key="d2">http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS是访问Dify工作流的体验网址之一。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965311</data>
+  <data key="d6"></data>
+</node>
+<node id="http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS">
+  <data key="d0">http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS</data>
+  <data key="d1">data</data>
+  <data key="d2">http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS是访问Dify工作流的另一个体验网址，使用IP地址。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965322</data>
+  <data key="d6"></data>
+</node>
+<node id="http://www.baixunsz.com/dn/aiprivacy.html">
+  <data key="d0">http://www.baixunsz.com/dn/aiprivacy.html</data>
+  <data key="d1">data</data>
+  <data key="d2">http://www.baixunsz.com/dn/aiprivacy.html是用于算法备案的隐私协议的具体URL。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965322</data>
+  <data key="d6"></data>
+</node>
+<node id="https://www.iot08.com/dn/aiprivacy.html">
+  <data key="d0">https://www.iot08.com/dn/aiprivacy.html</data>
+  <data key="d1">data</data>
+  <data key="d2">https://www.iot08.com/dn/aiprivacy.html是用于建友官网的隐私协议的具体URL。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965322</data>
+  <data key="d6"></data>
+</node>
+<node id="https://github.com/xiaoxuan6/sensitive-api">
+  <data key="d0">https://github.com/xiaoxuan6/sensitive-api</data>
+  <data key="d1">data</data>
+  <data key="d2">https://github.com/xiaoxuan6/sensitive-api是敏感词参考源码在GitHub上的具体仓库URL。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965325</data>
+  <data key="d6"></data>
+</node>
+<node id="产品应用集成">
+  <data key="d0">产品应用集成</data>
+  <data key="d1">concept</data>
+  <data key="d2">产品应用集成是健康管理方案的一个核心模块，涉及推荐和整合具体的健康管理工具。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965335</data>
+  <data key="d6"></data>
+</node>
+<node id="日常监测体系">
+  <data key="d0">日常监测体系</data>
+  <data key="d1">concept</data>
+  <data key="d2">日常监测体系是健康管理方案的一个核心模块，定义了关键指标、监测频率和方法以及反馈机制。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d4">重要信息.txt</data>
+  <data key="d5">1767965335</data>
   <data key="d6"></data>
 </node>
 <edge source="性能测试模块" target="项目管理入口">
@@ -21355,6 +21953,15 @@
   <data key="d12">1767338538</data>
   <data key="d13"></data>
 </edge>
+<edge source="用户" target="健康信息">
+  <data key="d7">1.0</data>
+  <data key="d8">用户向智能体提供其个人健康信息，作为生成月报的基础数据。</data>
+  <data key="d9">信息输入,数据提供</data>
+  <data key="d10">chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965421</data>
+  <data key="d13"></data>
+</edge>
 <edge source="trace_id" target="全链路追踪">
   <data key="d7">1.0</data>
   <data key="d8">trace_id被用于实现全链路追踪。</data>
@@ -25034,6 +25641,456 @@
   <data key="d10">chunk-f95fd1b8895ad34d800ea206260e0ea5</data>
   <data key="d11">Scan_05-01-2026_1441.pdf</data>
   <data key="d12">1767957476</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="监测指标">
+  <data key="d7">1.0</data>
+  <data key="d8">健康管理计划需要追踪特定的监测指标来评估用户的健康状况。</data>
+  <data key="d9">健康评估,数据追踪</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965342</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="监测频率">
+  <data key="d7">1.0</data>
+  <data key="d8">健康管理计划规定了收集监测指标的频率。</data>
+  <data key="d9">执行规范,时间管理</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965353</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="监测方法">
+  <data key="d7">1.0</data>
+  <data key="d8">健康管理计划明确了收集监测指标的具体方法。</data>
+  <data key="d9">执行规范,数据收集</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965361</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="目标值/范围">
+  <data key="d7">1.0</data>
+  <data key="d8">健康管理计划为监测指标设定了目标值或范围。</data>
+  <data key="d9">目标管理,绩效评估</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965374</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="数据记录与反馈机制">
+  <data key="d7">1.0</data>
+  <data key="d8">健康管理计划建立了数据记录和反馈机制以支持方案调整。</data>
+  <data key="d9">信息管理,持续改进</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965391</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="标准化结构">
+  <data key="d7">1.0</data>
+  <data key="d8">健康管理计划需要遵循一个标准化的结构来确保完整性和可执行性。</data>
+  <data key="d9">方案构成,框架设计</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965405</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康管理计划" target="45岁男性患者">
+  <data key="d7">1.0</data>
+  <data key="d8">为该45岁男性高血压患者制定的是一年期基于生活方式干预的健康管理计划。</data>
+  <data key="d9">个性化定制,需求满足</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965420</data>
+  <data key="d13"></data>
+</edge>
+<edge source="标准化结构" target="目标设定">
+  <data key="d7">1.0</data>
+  <data key="d8">目标设定是健康管理方案标准化结构中的一个核心组成部分。</data>
+  <data key="d9">组成部分,规划</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965346</data>
+  <data key="d13"></data>
+</edge>
+<edge source="标准化结构" target="行动计划">
+  <data key="d7">1.0</data>
+  <data key="d8">行动计划是健康管理方案标准化结构中的一个核心组成部分。</data>
+  <data key="d9">执行,组成部分</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965350</data>
+  <data key="d13"></data>
+</edge>
+<edge source="标准化结构" target="监测与反馈">
+  <data key="d7">1.0</data>
+  <data key="d8">监测与反馈是健康管理方案标准化结构中的一个核心组成部分。</data>
+  <data key="d9">组成部分,评估</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965357</data>
+  <data key="d13"></data>
+</edge>
+<edge source="标准化结构" target="支持机制">
+  <data key="d7">1.0</data>
+  <data key="d8">支持机制是健康管理方案标准化结构中的一个核心组成部分。</data>
+  <data key="d9">组成部分,辅助</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965367</data>
+  <data key="d13"></data>
+</edge>
+<edge source="标准化结构" target="风险管理">
+  <data key="d7">1.0</data>
+  <data key="d8">风险管理是健康管理方案标准化结构中的一个核心组成部分。</data>
+  <data key="d9">组成部分,预防</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965385</data>
+  <data key="d13"></data>
+</edge>
+<edge source="标准化结构" target="个性化健康管理方案">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化健康管理方案需要遵循“标准化结构”作为其设计框架和规范。</data>
+  <data key="d9">方案框架,设计规范</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965578</data>
+  <data key="d13"></data>
+</edge>
+<edge source="45岁男性患者" target="左磺酸氨氯地平片">
+  <data key="d7">1.0</data>
+  <data key="d8">该45岁男性患者正在服用左磺酸氨氯地平片来控制高血压。</data>
+  <data key="d9">疾病管理,药物治疗</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965436</data>
+  <data key="d13"></data>
+</edge>
+<edge source="45岁男性患者" target="原发性高血压">
+  <data key="d7">1.0</data>
+  <data key="d8">该45岁男性患者被诊断为患有原发性高血压，病史为3年。</data>
+  <data key="d9">疾病诊断,病史</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965456</data>
+  <data key="d13"></data>
+</edge>
+<edge source="45岁男性患者" target="BMI">
+  <data key="d7">1.0</data>
+  <data key="d8">根据该患者的身高和体重计算得出其BMI为26，属于超重。</data>
+  <data key="d9">指标计算,身体评估</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965476</data>
+  <data key="d13"></data>
+</edge>
+<edge source="45岁男性患者" target="血压">
+  <data key="d7">1.0</data>
+  <data key="d8">该患者的当前血压测量值为140/90 mmHg，处于临界高血压状态。</data>
+  <data key="d9">健康监测,指标测量</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965491</data>
+  <data key="d13"></data>
+</edge>
+<edge source="45岁男性患者" target="生活方式干预">
+  <data key="d7">1.0</data>
+  <data key="d8">该患者的核心诉求是基于生活方式干预来制定健康管理计划。</data>
+  <data key="d9">治疗诉求,管理方法</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965510</data>
+  <data key="d13"></data>
+</edge>
+<edge source="智能体" target="个性化月报">
+  <data key="d7">2.0</data>
+  <data key="d8">智能体根据用户的健康信息，生成一份格式参照附件的个性化月报。&lt;SEP&gt;智能体的核心功能是根据用户健康信息生成个性化的月报。</data>
+  <data key="d9">信息生成,内容生成,功能输出,报告输出</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965374</data>
+  <data key="d13"></data>
+</edge>
+<edge source="智能体" target="提示词">
+  <data key="d7">2.0</data>
+  <data key="d8">智能体依据一套特定的提示词来执行其根据健康信息生成月报的功能。&lt;SEP&gt;提示词用于搭建和实现该智能体的功能。</data>
+  <data key="d9">功能实现,指令控制,指令遵循</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965391</data>
+  <data key="d13"></data>
+</edge>
+<edge source="智能体" target="用户健康信息">
+  <data key="d7">1.0</data>
+  <data key="d8">智能体需要接收用户健康信息作为输入，才能生成个性化的月报。</data>
+  <data key="d9">数据处理,输入依赖</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965405</data>
+  <data key="d13"></data>
+</edge>
+<edge source="个性化月报" target="附件内容">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化月报的格式和结构是参照附件内容来设计和生成的。</data>
+  <data key="d9">格式参照,模板依据</data>
+  <data key="d10">chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965431</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词" target="详细输出示例">
+  <data key="d7">1.0</data>
+  <data key="d8">提示词中要求包含一个详细的输出示例，以指导智能体生成月报。</data>
+  <data key="d9">内容包含,示例要求</data>
+  <data key="d10">chunk-508db58a2a7942df34569046bec9d997</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965436</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词" target="AI医生智能体">
+  <data key="d7">1.0</data>
+  <data key="d8">AI医生智能体的功能和行为可能受到预设提示词或指令的指导，用于处理用户查询。</data>
+  <data key="d9">功能指导,输入处理</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965477</data>
+  <data key="d13"></data>
+</edge>
+<edge source="提示词" target="健康计划智能体">
+  <data key="d7">1.0</data>
+  <data key="d8">健康计划智能体根据详细的提示词指令来生成个性化的健康管理方案。</data>
+  <data key="d9">指令遵循,方案生成</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965501</data>
+  <data key="d13"></data>
+</edge>
+<edge source="生活方式干预" target="个性化健康管理方案">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化健康管理方案包含“生活方式干预”作为一个核心构成模块。</data>
+  <data key="d9">方案构成,模块整合</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965570</data>
+  <data key="d13"></data>
+</edge>
+<edge source="用户健康信息" target="请求参数示例">
+  <data key="d7">1.0</data>
+  <data key="d8">请求参数示例中的`inputs.user_info`字段包含了结构化的用户健康信息。</data>
+  <data key="d9">数据封装,请求格式</data>
+  <data key="d10">chunk-ceb60f16f40b6c7d09158715156ee744</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965416</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify工作流" target="百寻智能问答+AI">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify工作流生成的内容由百寻智能问答+AI负责，并在末尾添加了相应的免责声明。</data>
+  <data key="d9">免责声明,内容生成</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965436</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify工作流" target="http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS">
+  <data key="d7">1.0</data>
+  <data key="d8">用户可以通过URL http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS在线体验Dify工作流。</data>
+  <data key="d9">在线体验,访问入口</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965534</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify工作流" target="http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS">
+  <data key="d7">1.0</data>
+  <data key="d8">用户也可以通过URL http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS在线体验Dify工作流。</data>
+  <data key="d9">在线体验,访问入口</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965558</data>
+  <data key="d13"></data>
+</edge>
+<edge source="算法备案" target="隐私协议">
+  <data key="d7">1.0</data>
+  <data key="d8">进行算法备案需要提供隐私协议作为必要的法律合规文件。</data>
+  <data key="d9">合规要求,法律文档</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965451</data>
+  <data key="d13"></data>
+</edge>
+<edge source="隐私协议" target="建友官网">
+  <data key="d7">1.0</data>
+  <data key="d8">建友官网使用隐私协议来规范其网站上的用户数据保护行为。</data>
+  <data key="d9">用户数据保护,网站合规</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965467</data>
+  <data key="d13"></data>
+</edge>
+<edge source="隐私协议" target="http://www.baixunsz.com/dn/aiprivacy.html">
+  <data key="d7">1.0</data>
+  <data key="d8">用于算法备案的隐私协议的具体内容位于URL http://www.baixunsz.com/dn/aiprivacy.html。</data>
+  <data key="d9">具体内容,在线文档</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965539</data>
+  <data key="d13"></data>
+</edge>
+<edge source="隐私协议" target="https://www.iot08.com/dn/aiprivacy.html">
+  <data key="d7">1.0</data>
+  <data key="d8">用于建友官网的隐私协议的具体内容位于URL https://www.iot08.com/dn/aiprivacy.html。</data>
+  <data key="d9">具体内容,在线文档</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965558</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI服务器" target="小季">
+  <data key="d7">1.0</data>
+  <data key="d8">小季负责管理和维护AI服务器，包括Dify和RAGFlow服务器。</data>
+  <data key="d9">资源托管,运维管理</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965457</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify服务器" target="移动云">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify服务器具体部署在移动云提供的云计算平台上。</data>
+  <data key="d9">云服务,服务器部署</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965461</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify服务器" target="36.133.145.37">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify服务器使用IP地址36.133.145.37进行网络访问。</data>
+  <data key="d9">地址映射,网络标识</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965491</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify服务器" target="aic.baixunsz.com">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify服务器通过域名aic.baixunsz.com对外提供服务。</data>
+  <data key="d9">域名解析,网络访问</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow服务器" target="腾讯云">
+  <data key="d7">1.0</data>
+  <data key="d8">RAGFlow服务器具体部署在腾讯云提供的云计算平台上。</data>
+  <data key="d9">云服务,服务器部署</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965468</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow服务器" target="43.136.98.40">
+  <data key="d7">1.0</data>
+  <data key="d8">RAGFlow服务器使用IP地址43.136.98.40进行网络访问。</data>
+  <data key="d9">地址映射,网络标识</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965501</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow服务器" target="rag.gdzky.cn">
+  <data key="d7">1.0</data>
+  <data key="d8">RAGFlow服务器通过域名rag.gdzky.cn对外提供服务。</data>
+  <data key="d9">域名解析,网络访问</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965524</data>
+  <data key="d13"></data>
+</edge>
+<edge source="敏感词API" target="敏感词参考源码">
+  <data key="d7">1.0</data>
+  <data key="d8">敏感词API的功能实现基于GitHub上开源的敏感词参考源码。</data>
+  <data key="d9">代码基础,功能实现</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965476</data>
+  <data key="d13"></data>
+</edge>
+<edge source="敏感词API" target="http://sw.baixunsz.com/sensitive/replace">
+  <data key="d7">1.0</data>
+  <data key="d8">敏感词API提供了具体的替换功能端点http://sw.baixunsz.com/sensitive/replace。</data>
+  <data key="d9">功能端点,服务提供</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965511</data>
+  <data key="d13"></data>
+</edge>
+<edge source="敏感词API" target="http://sw.baixunsz.com/sensitive/filter">
+  <data key="d7">1.0</data>
+  <data key="d8">敏感词API提供了具体的过滤功能端点http://sw.baixunsz.com/sensitive/filter。</data>
+  <data key="d9">功能端点,服务提供</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965534</data>
+  <data key="d13"></data>
+</edge>
+<edge source="敏感词API" target="http://sw.baixunsz.com/sensitive/findall">
+  <data key="d7">1.0</data>
+  <data key="d8">敏感词API提供了具体的检查功能端点http://sw.baixunsz.com/sensitive/findall。</data>
+  <data key="d9">功能端点,服务提供</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965558</data>
+  <data key="d13"></data>
+</edge>
+<edge source="敏感词参考源码" target="https://github.com/xiaoxuan6/sensitive-api">
+  <data key="d7">1.0</data>
+  <data key="d8">敏感词参考源码存储在GitHub仓库https://github.com/xiaoxuan6/sensitive-api中。</data>
+  <data key="d9">代码仓库,开源项目</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965550</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康数据管理类APP" target="个性化健康管理方案">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化健康管理方案会整合健康数据管理类APP作为其产品应用模块的一部分。</data>
+  <data key="d9">工具整合,数据应用</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965549</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康计划智能体" target="个性化健康管理方案">
+  <data key="d7">1.0</data>
+  <data key="d8">健康计划智能体的核心功能是生成基于用户数据的个性化健康管理方案。</data>
+  <data key="d9">核心产出,目标交付物</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965524</data>
+  <data key="d13"></data>
+</edge>
+<edge source="个性化健康管理方案" target="产品应用集成">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化健康管理方案包含“产品应用集成”作为一个核心构成模块。</data>
+  <data key="d9">方案构成,模块整合</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965566</data>
+  <data key="d13"></data>
+</edge>
+<edge source="个性化健康管理方案" target="日常监测体系">
+  <data key="d7">1.0</data>
+  <data key="d8">个性化健康管理方案包含“日常监测体系”作为一个核心构成模块。</data>
+  <data key="d9">方案构成,模块整合</data>
+  <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
+  <data key="d11">重要信息.txt</data>
+  <data key="d12">1767965573</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

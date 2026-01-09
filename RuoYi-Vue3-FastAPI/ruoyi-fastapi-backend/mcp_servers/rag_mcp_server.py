@@ -537,115 +537,115 @@ async def rag_query_data(
         return f"❌ 查询失败：{str(e)}"
 
 
-@mcp.tool()
-async def rag_query_data_json(
-    query: str,
-    mode: str = "mix",
-    top_k: int = 10,
-    chunk_top_k: int = 5,
-    max_entity_tokens: Optional[int] = None,
-    max_relation_tokens: Optional[int] = None,
-    max_total_tokens: Optional[int] = None,
-    hl_keywords: Optional[List[str]] = None,
-    ll_keywords: Optional[List[str]] = None,
-    enable_rerank: bool = True,
-    ctx: Context = None
-) -> str:
-    """
-    高级数据检索端点（JSON 格式输出），用于结构化 RAG 分析。
+# @mcp.tool()
+# async def rag_query_data_json(
+#     query: str,
+#     mode: str = "mix",
+#     top_k: int = 10,
+#     chunk_top_k: int = 5,
+#     max_entity_tokens: Optional[int] = None,
+#     max_relation_tokens: Optional[int] = None,
+#     max_total_tokens: Optional[int] = None,
+#     hl_keywords: Optional[List[str]] = None,
+#     ll_keywords: Optional[List[str]] = None,
+#     enable_rerank: bool = True,
+#     ctx: Context = None
+# ) -> str:
+#     """
+#     高级数据检索端点（JSON 格式输出），用于结构化 RAG 分析。
 
-    与 rag_query_data 功能相同，但返回原始 JSON 格式数据，
-    便于程序化处理和系统集成。
+#     与 rag_query_data 功能相同，但返回原始 JSON 格式数据，
+#     便于程序化处理和系统集成。
 
-    参数：
-        query: 要分析的搜索查询（至少3个字符）
-        mode: 检索策略 (local, global, hybrid, naive, mix, bypass)
-        top_k: 要检索的顶部实体/关系数量
-        chunk_top_k: 要检索的文本块数量
-        max_entity_tokens: 实体上下文的令牌限制
-        max_relation_tokens: 关系上下文的令牌限制
-        max_total_tokens: 检索的总体令牌预算
-        hl_keywords: 高级别关键词列表
-        ll_keywords: 低级别关键词列表
-        enable_rerank: 是否启用重排序
+#     参数：
+#         query: 要分析的搜索查询（至少3个字符）
+#         mode: 检索策略 (local, global, hybrid, naive, mix, bypass)
+#         top_k: 要检索的顶部实体/关系数量
+#         chunk_top_k: 要检索的文本块数量
+#         max_entity_tokens: 实体上下文的令牌限制
+#         max_relation_tokens: 关系上下文的令牌限制
+#         max_total_tokens: 检索的总体令牌预算
+#         hl_keywords: 高级别关键词列表
+#         ll_keywords: 低级别关键词列表
+#         enable_rerank: 是否启用重排序
 
-    返回：
-        JSON 格式的结构化响应
-    """
-    client = ctx.request_context.lifespan_context.client
+#     返回：
+#         JSON 格式的结构化响应
+#     """
+#     client = ctx.request_context.lifespan_context.client
 
-    # 验证模式
-    valid_modes = ["local", "global", "hybrid", "naive", "mix", "bypass"]
-    if mode not in valid_modes:
-        return json.dumps({
-            "status": "failure",
-            "message": f"无效的查询模式：{mode}。有效模式：{valid_modes}",
-            "data": None,
-            "metadata": None
-        }, ensure_ascii=False, indent=2)
+#     # 验证模式
+#     valid_modes = ["local", "global", "hybrid", "naive", "mix", "bypass"]
+#     if mode not in valid_modes:
+#         return json.dumps({
+#             "status": "failure",
+#             "message": f"无效的查询模式：{mode}。有效模式：{valid_modes}",
+#             "data": None,
+#             "metadata": None
+#         }, ensure_ascii=False, indent=2)
 
-    try:
-        response = await client.query_data(
-            query=query,
-            mode=mode,  # type: ignore
-            top_k=top_k,
-            chunk_top_k=chunk_top_k,
-            max_entity_tokens=max_entity_tokens,
-            max_relation_tokens=max_relation_tokens,
-            max_total_tokens=max_total_tokens,
-            hl_keywords=hl_keywords,
-            ll_keywords=ll_keywords,
-            enable_rerank=enable_rerank,
-            include_references=True,
-            include_chunk_content=True
-        )
+#     try:
+#         response = await client.query_data(
+#             query=query,
+#             mode=mode,  # type: ignore
+#             top_k=top_k,
+#             chunk_top_k=chunk_top_k,
+#             max_entity_tokens=max_entity_tokens,
+#             max_relation_tokens=max_relation_tokens,
+#             max_total_tokens=max_total_tokens,
+#             hl_keywords=hl_keywords,
+#             ll_keywords=ll_keywords,
+#             enable_rerank=enable_rerank,
+#             include_references=True,
+#             include_chunk_content=True
+#         )
 
-        # 转换为字典
-        result = {
-            "status": response.status,
-            "message": response.message,
-            "data": None,
-            "metadata": None
-        }
+#         # 转换为字典
+#         result = {
+#             "status": response.status,
+#             "message": response.message,
+#             "data": None,
+#             "metadata": None
+#         }
 
-        if response.data:
-            result["data"] = {
-                "entities": [e.model_dump() for e in response.data.entities],
-                "relationships": [r.model_dump() for r in response.data.relationships],
-                "chunks": [c.model_dump() for c in response.data.chunks],
-                "references": [ref.model_dump() for ref in response.data.references]
-            }
+#         if response.data:
+#             result["data"] = {
+#                 "entities": [e.model_dump() for e in response.data.entities],
+#                 "relationships": [r.model_dump() for r in response.data.relationships],
+#                 "chunks": [c.model_dump() for c in response.data.chunks],
+#                 "references": [ref.model_dump() for ref in response.data.references]
+#             }
 
-        if response.metadata:
-            result["metadata"] = {
-                "query_mode": response.metadata.query_mode,
-                "keywords": response.metadata.keywords.model_dump() if response.metadata.keywords else None,
-                "processing_info": response.metadata.processing_info.model_dump() if response.metadata.processing_info else None
-            }
+#         if response.metadata:
+#             result["metadata"] = {
+#                 "query_mode": response.metadata.query_mode,
+#                 "keywords": response.metadata.keywords.model_dump() if response.metadata.keywords else None,
+#                 "processing_info": response.metadata.processing_info.model_dump() if response.metadata.processing_info else None
+#             }
 
-        return json.dumps(result, ensure_ascii=False, indent=2)
+#         return json.dumps(result, ensure_ascii=False, indent=2)
 
-    except ValueError as e:
-        return json.dumps({
-            "status": "failure",
-            "message": f"参数错误：{str(e)}",
-            "data": None,
-            "metadata": None
-        }, ensure_ascii=False, indent=2)
-    except RuntimeError as e:
-        return json.dumps({
-            "status": "failure",
-            "message": f"服务器错误：{str(e)}",
-            "data": None,
-            "metadata": None
-        }, ensure_ascii=False, indent=2)
-    except Exception as e:
-        return json.dumps({
-            "status": "failure",
-            "message": f"查询失败：{str(e)}",
-            "data": None,
-            "metadata": None
-        }, ensure_ascii=False, indent=2)
+#     except ValueError as e:
+#         return json.dumps({
+#             "status": "failure",
+#             "message": f"参数错误：{str(e)}",
+#             "data": None,
+#             "metadata": None
+#         }, ensure_ascii=False, indent=2)
+#     except RuntimeError as e:
+#         return json.dumps({
+#             "status": "failure",
+#             "message": f"服务器错误：{str(e)}",
+#             "data": None,
+#             "metadata": None
+#         }, ensure_ascii=False, indent=2)
+#     except Exception as e:
+#         return json.dumps({
+#             "status": "failure",
+#             "message": f"查询失败：{str(e)}",
+#             "data": None,
+#             "metadata": None
+#         }, ensure_ascii=False, indent=2)
 
 
 # ============================================================================

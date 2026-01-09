@@ -981,9 +981,9 @@ async def save_requirement_analysis_tool(
                     db, requirement_analysis_id, requirement_vo, user_id
                 )
                 logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.requirement_identifier}")
-
-        return {
-            "success": True,
+                
+                return {
+                    "success": True,
                     "requirement_analysis_id": requirement_analysis_id,
                     "analysis_name": result.requirement_name,
                     "requirement_identifier": result.requirement_identifier,
@@ -1002,7 +1002,7 @@ async def save_requirement_analysis_tool(
                     "analysis_name": result.requirement_name,
                     "requirement_identifier": result.requirement_identifier,
                     "message": f"✅ 需求分析 '{result.requirement_name}' (ID: {result.requirement_id}, 标识: {result.requirement_identifier}) 创建成功"
-        }
+                }
 
     except Exception as e:
         logger.error(f"保存需求分析失败: {str(e)}", exc_info=True)
@@ -1219,9 +1219,9 @@ async def save_defect_analysis_tool(
                     }
                 
                 logger.info(f"AI 成功更新缺陷分析: {defect_analysis_id} - {result.analysis_name}")
-
-        return {
-            "success": True,
+                
+                return {
+                    "success": True,
                     "defect_analysis_id": defect_analysis_id,
                     "analysis_name": result.analysis_name,
                     "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功"
@@ -1238,7 +1238,7 @@ async def save_defect_analysis_tool(
                     "defect_analysis_id": result.analysis_id,
                     "analysis_name": result.analysis_name,
                     "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功"
-        }
+                }
 
     except Exception as e:
         logger.error(f"保存缺陷分析失败: {str(e)}", exc_info=True)
@@ -1310,10 +1310,12 @@ async def generate_mindmap_tool(
         )
         mcp_tools = list(await mcp_client.get_tools())
         tool = _pick_mcp_tool(mcp_tools, "generate_mindmap")
-        if tool is None:
-            # 如果 MCP 服务不可用，使用简单的 Markdown 格式
-            logger.warning("未找到 MindMap MCP 工具（generate_mindmap），使用简单格式")
+        
         if format == "markdown":
+            # 如果 MCP 服务不可用，使用简单的 Markdown 格式
+            if tool is None:
+                logger.warning("未找到 MindMap MCP 工具（generate_mindmap），使用简单格式")
+            
             mindmap = f"# {title}\n\n"
             lines = content.strip().split('\n')
             for line in lines:
@@ -1327,31 +1329,33 @@ async def generate_mindmap_tool(
                 "success": True,
                 "mindmap_content": mindmap,
                 "format": "markdown",
-                    "message": "思维导图生成成功（使用简单格式）"
+                "message": "思维导图生成成功（使用简单格式）"
             }
-            else:
+        else:
+            # 非 markdown 格式需要 MCP 工具
+            if tool is None:
                 return {
                     "success": False,
                     "error": "未找到 MindMap MCP 工具（generate_mindmap）",
                     "message": "未找到 MindMap MCP 工具，请确保 MCP 服务已启动"
                 }
-
-        markdown = f"# {title}\n\n{content}"
-        html = await tool.ainvoke(
-            {
-                "markdown": markdown,
-                "return_type": "html",
-                "toolbar": True,
-            }
-        )
+            
+            markdown = f"# {title}\n\n{content}"
+            html = await tool.ainvoke(
+                {
+                    "markdown": markdown,
+                    "return_type": "html",
+                    "toolbar": True,
+                }
+            )
             
             return {
                 "success": True,
-            "mindmap_content": str(html),
-            "format": "html",
-            "download_url": None,
-            "message": "思维导图生成成功",
-        }
+                "mindmap_content": str(html),
+                "format": "html",
+                "download_url": None,
+                "message": "思维导图生成成功",
+            }
     
     except httpx.HTTPError as e:
         logger.error(f"MindMap 服务请求失败: {e}")

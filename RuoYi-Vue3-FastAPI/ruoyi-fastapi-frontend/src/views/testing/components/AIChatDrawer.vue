@@ -55,7 +55,7 @@
           </div>
           <div class="thread-list">
             <div
-              v-for="thread in threads.threads.value"
+              v-for="thread in threadList"
               :key="thread.id"
               :class="['thread-item', { active: thread.id === chat.threadId.value }]"
               @click="handleSelectThread(thread)"
@@ -64,7 +64,7 @@
               <div class="thread-time">{{ formatTime(thread.updatedAt) }}</div>
               <el-badge v-if="thread.hasInterrupt" is-dot class="interrupt-badge" />
             </div>
-            <el-empty v-if="!threads.threads.value.length" description="暂无历史对话" :image-size="60" />
+            <el-empty v-if="!threadList.length" description="暂无历史对话" :image-size="60" />
           </div>
         </div>
 
@@ -239,7 +239,7 @@ import {
   Operation, Warning, List, Close, Document, Check, Loading, Clock
 } from '@element-plus/icons-vue'
 import { marked } from 'marked'
-import { useLangGraphChat, useLangGraphThreads } from '@/composables/useLangGraphChat'
+import { useLangGraphSDK } from '@/composables/useLangGraphSDK'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
@@ -260,17 +260,14 @@ const visible = computed({
   set: (val) => emit('update:modelValue', val)
 })
 
-// 使用 LangGraph Chat Composable
-const chat = useLangGraphChat({
+// 使用 LangGraph SDK Composable（直接连接 LangGraph API）
+const chat = useLangGraphSDK({
   assistantId: props.assistantId,
   projectId: props.projectId,
   folderId: props.folderId,
-  onTestCaseCreated: () => emit('message-sent', { created: true })
-})
-
-// 使用 Thread 列表 Composable
-const threads = useLangGraphThreads({
-  assistantId: props.assistantId
+  templateType: 'test_case',
+  onTestCaseCreated: () => emit('message-sent', { created: true }),
+  onHistoryRevalidate: () => fetchThreadList()
 })
 
 // 本地状态
@@ -281,6 +278,8 @@ const threadPanelVisible = ref(false)
 const activeMetaTab = ref('tasks')
 const fileDialogVisible = ref(false)
 const currentFile = ref({ path: '', content: '' })
+const threadList = ref([])
+const initialPromptSent = ref(false)
 
 // 快捷提示
 const quickPrompts = computed(() => {
@@ -306,6 +305,16 @@ const quickPrompts = computed(() => {
   }
   return prompts
 })
+
+// 获取线程列表
+const fetchThreadList = async () => {
+  try {
+    const list = await chat.listThreads(20)
+    threadList.value = list
+  } catch (e) {
+    console.error('获取线程列表失败:', e)
+  }
+}
 
 // 发送消息
 const handleSend = async () => {
@@ -334,7 +343,7 @@ const handleNewThread = async () => {
 const toggleThreadPanel = () => {
   threadPanelVisible.value = !threadPanelVisible.value
   if (threadPanelVisible.value) {
-    threads.fetchThreads()
+    fetchThreadList()
   }
 }
 
@@ -392,7 +401,8 @@ const formatToolName = (name) => {
     'rag_query': 'RAG 知识检索',
     'save_requirement_analysis': '保存需求分析',
     'save_defect_analysis': '保存缺陷分析',
-    'generate_mindmap': '生成思维导图'
+    'generate_mindmap': '生成思维导图',
+    'parse_document_from_url': '解析文档内容'
   }
   return nameMap[name] || name
 }
@@ -454,17 +464,34 @@ const formatTime = (timestamp) => {
 }
 
 // 监听打开
-watch(visible, (val) => {
+watch(visible, async (val) => {
   if (val) {
+    // 初始化
     if (!chat.threadId.value) {
-      chat.createThread()
+      await chat.createThread()
     }
-    if (props.initialPrompt) {
+    
+    // 发送初始提示词（只发送一次）
+    if (props.initialPrompt && !initialPromptSent.value && chat.messages.value.length === 0) {
+      initialPromptSent.value = true
       nextTick(() => {
         inputMessage.value = props.initialPrompt
-        handleSend()
+        // 延迟发送，确保组件完全初始化
+        setTimeout(() => {
+          handleSend()
+        }, 100)
       })
     }
+  } else {
+    // 关闭时重置状态
+    initialPromptSent.value = false
+  }
+})
+
+// 监听初始提示词变化
+watch(() => props.initialPrompt, (newVal) => {
+  if (newVal) {
+    initialPromptSent.value = false
   }
 })
 

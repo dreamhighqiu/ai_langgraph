@@ -80,10 +80,14 @@ class LangGraphClient:
         同步调用 Agent 并等待结果
         
         Args:
-            assistant_id: Agent ID (如 k6_agent, ui_automation_agent, rest_api_agent)
+            assistant_id: Agent ID (如 testcase_generator_agent, requirement_analyzer_agent)
             message: 用户消息/需求描述
             thread_id: 可选的线程ID，用于维持对话上下文
-            config: 可选的配置参数
+            config: 可选的配置参数，包含：
+                - project_id: 项目ID
+                - folder_id: 文件夹ID
+                - template: 模板类型
+                - use_rag: 是否使用RAG
             
         Returns:
             包含 Agent 响应的字典
@@ -95,6 +99,16 @@ class LangGraphClient:
                 if not thread_id:
                     raise Exception("无法创建对话线程")
             
+            # 构建 context 对象，用于传递给 Agent
+            context = {}
+            if config:
+                if config.get('project_id'):
+                    context['project_id'] = config['project_id']
+                if config.get('folder_id'):
+                    context['folder_id'] = config['folder_id']
+                if config.get('template'):
+                    context['template_type'] = config['template']
+            
             # 构建请求体
             payload = {
                 "assistant_id": assistant_id,
@@ -104,14 +118,20 @@ class LangGraphClient:
                             "role": "user",
                             "content": message
                         }
-                    ]
+                    ],
+                    # 传递 context 到 Agent
+                    "context": context
                 },
-                "config": config or {},
+                "config": {
+                    "configurable": context,
+                    **(config or {})
+                },
                 "stream_mode": "values"
             }
             
             logger.info(f"调用Agent [{assistant_id}] - Thread [{thread_id}]")
             logger.debug(f"请求消息: {message[:200]}...")
+            logger.debug(f"Context: {context}")
             
             async with httpx.AsyncClient(timeout=self.timeout) as client:
                 response = await client.post(
@@ -130,13 +150,21 @@ class LangGraphClient:
                     last_message = messages[-1]
                     content = last_message.get('content', '')
                     
+                    # 处理复杂的 content 格式
+                    if isinstance(content, list):
+                        content = ''.join([
+                            c.get('text', '') if isinstance(c, dict) else str(c) 
+                            for c in content
+                        ])
+                    
                     return {
                         'success': True,
                         'content': content,
                         'thread_id': thread_id,
                         'assistant_id': assistant_id,
                         'messages': messages,
-                        'metadata': result.get('metadata', {})
+                        'metadata': result.get('metadata', {}),
+                        'context': context
                     }
                 else:
                     return {
@@ -174,7 +202,11 @@ class LangGraphClient:
             assistant_id: Agent ID
             message: 用户消息
             thread_id: 可选的线程ID
-            config: 可选的配置参数
+            config: 可选的配置参数，包含：
+                - project_id: 项目ID
+                - folder_id: 文件夹ID
+                - template: 模板类型
+                - use_rag: 是否使用RAG
             
         Yields:
             Agent 的流式响应
@@ -185,6 +217,16 @@ class LangGraphClient:
                 if not thread_id:
                     raise Exception("无法创建对话线程")
             
+            # 构建 context 对象
+            context = {}
+            if config:
+                if config.get('project_id'):
+                    context['project_id'] = config['project_id']
+                if config.get('folder_id'):
+                    context['folder_id'] = config['folder_id']
+                if config.get('template'):
+                    context['template_type'] = config['template']
+            
             payload = {
                 "assistant_id": assistant_id,
                 "input": {
@@ -193,13 +235,18 @@ class LangGraphClient:
                             "role": "user",
                             "content": message
                         }
-                    ]
+                    ],
+                    "context": context
                 },
-                "config": config or {},
+                "config": {
+                    "configurable": context,
+                    **(config or {})
+                },
                 "stream_mode": "messages"
             }
             
             logger.info(f"流式调用Agent [{assistant_id}] - Thread [{thread_id}]")
+            logger.debug(f"Context: {context}")
             
             async with httpx.AsyncClient(timeout=self.timeout) as client:
                 async with client.stream(
@@ -216,6 +263,8 @@ class LangGraphClient:
                             if data and data != "[DONE]":
                                 try:
                                     chunk = json.loads(data)
+                                    # 添加 thread_id 到每个 chunk
+                                    chunk['thread_id'] = thread_id
                                     yield chunk
                                 except json.JSONDecodeError:
                                     continue

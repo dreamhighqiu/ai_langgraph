@@ -60,3 +60,41 @@ export function downloadRequirement(requirementId, format = 'json') {
     params: { format }
   })
 }
+
+// ==================== AI 需求分析相关 API ====================
+
+// AI 分析需求（新版）
+export function aiAnalyzeRequirement(data) {
+  return request({
+    url: '/api/testing/ai-requirement/analyze',
+    method: 'post',
+    data: data
+  })
+}
+
+// AI 生成测试点
+export function aiGenerateTestPoints(data) {
+  return request({
+    url: '/api/testing/ai-requirement/generate-test-points',
+    method: 'post',
+    data: data
+  })
+}
+
+// 保存需求分析结果
+export function saveRequirementAnalysisResult(data) {
+  return request({
+    url: '/api/testing/ai-requirement/save-analysis',
+    method: 'post',
+    data: data
+  })
+}
+
+// 获取需求分析历史
+export function getRequirementAnalysisHistory(params) {
+  return request({
+    url: '/api/testing/ai-requirement/history',
+    method: 'get',
+    params: params
+  })
+}

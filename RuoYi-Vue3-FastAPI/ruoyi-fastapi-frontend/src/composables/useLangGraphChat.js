@@ -9,7 +9,7 @@ import { ref, computed, onUnmounted } from 'vue'
 
 // LangGraph 配置
 const LANGGRAPH_CONFIG = {
-  baseUrl: import.meta.env?.VITE_LANGGRAPH_API_URL || 'http://localhost:2024',
+  baseUrl: import.meta.env?.VITE_LANGGRAPH_API_URL || 'http://localhost:2027',
   agents: {
     testcase_generator_agent: {
       name: 'testcase_generator_agent',

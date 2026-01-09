@@ -47,10 +47,29 @@
             <p class="subtitle">Test Case Management - 管理和组织测试用例，支持AI智能生成</p>
           </div>
           <div class="header-actions">
-            <el-button type="success" @click="openAIChat" v-hasPermi="['testing:testcase:add']">
-              <el-icon><MagicStick /></el-icon>
-              AI 生成用例
-            </el-button>
+            <el-dropdown @command="handleAICommand" v-hasPermi="['testing:testcase:add']">
+              <el-button type="success">
+                <el-icon><MagicStick /></el-icon>
+                AI 生成用例
+                <el-icon class="el-icon--right"><ArrowDown /></el-icon>
+              </el-button>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item command="generate">
+                    <el-icon><MagicStick /></el-icon>
+                    AI 生成
+                  </el-dropdown-item>
+                  <el-dropdown-item command="document">
+                    <el-icon><Upload /></el-icon>
+                    从文档生成
+                  </el-dropdown-item>
+                  <el-dropdown-item command="chat" divided>
+                    <el-icon><ChatDotRound /></el-icon>
+                    AI 对话助手
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
           </div>
         </div>
       </el-card>
@@ -264,7 +283,26 @@
       assistant-name="AI 用例生成"
       :project-id="currentProjectId"
       :folder-id="currentFolderId"
+      :initial-prompt="aiInitialPrompt"
       @message-sent="handleAIMessageSent"
+    />
+
+    <!-- AI 生成测试用例对话框 -->
+    <AIGenerateDialog
+      v-model="aiGenerateDialogVisible"
+      :project-id="currentProjectId"
+      :folder-id="currentFolderId"
+      @open-chat="handleOpenAIChat"
+      @success="handleAIGenerateSuccess"
+    />
+
+    <!-- AI 从文档生成测试用例对话框 -->
+    <AIDocGenerateDialog
+      v-model="aiDocDialogVisible"
+      :project-id="currentProjectId"
+      :folder-id="currentFolderId"
+      @open-chat="handleOpenAIChat"
+      @success="handleAIGenerateSuccess"
     />
   </div>
 </template>
@@ -272,11 +310,13 @@
 <script setup name="TestCase">
 import { ref, reactive, onMounted, computed } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Document, Folder, Plus, Delete, MagicStick } from '@element-plus/icons-vue'
+import { Document, Folder, Plus, Delete, MagicStick, ArrowDown, Upload, ChatDotRound } from '@element-plus/icons-vue'
 import { listTestCase, getTestCase, addTestCase, updateTestCase, delTestCase } from '@/api/testing/testCase'
 import { getFolderTree, addFolder, updateFolder } from '@/api/testing/folder'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
+import AIGenerateDialog from '@/views/testing/components/AIGenerateDialog.vue'
+import AIDocGenerateDialog from '@/views/testing/components/AIDocGenerateDialog.vue'
 
 const { proxy } = getCurrentInstance()
 
@@ -298,6 +338,9 @@ const currentDetail = ref(null)
 const detailVisible = ref(false)
 const folderDialogVisible = ref(false)
 const aiChatVisible = ref(false)
+const aiGenerateDialogVisible = ref(false)
+const aiDocDialogVisible = ref(false)
+const aiInitialPrompt = ref('')
 const isEditing = ref(false)
 const submitting = ref(false)
 
@@ -352,6 +395,10 @@ const loadProjects = async () => {
     }
   } catch (error) {
     console.error('加载项目失败:', error)
+    // 如果是用户未登录错误，给出友好提示
+    if (error?.message?.includes('用户信息为空') || error?.message?.includes('登录')) {
+      proxy.$modal.msgWarning('请先登录后再访问此页面')
+    }
   }
 }
 
@@ -363,6 +410,10 @@ const loadFolderTree = async () => {
     folderTree.value = res.data || []
   } catch (error) {
     console.error('加载文件夹失败:', error)
+    // 忽略用户信息错误（在 loadProjects 中已处理）
+    if (!error?.message?.includes('用户信息为空')) {
+      proxy.$modal.msgError('加载文件夹失败')
+    }
   }
 }
 
@@ -378,6 +429,10 @@ const getList = async () => {
     total.value = res.data?.total || 0
   } catch (error) {
     console.error('加载列表失败:', error)
+    // 忽略用户信息错误（在 loadProjects 中已处理）
+    if (!error?.message?.includes('用户信息为空')) {
+      proxy.$modal.msgError('加载测试用例失败')
+    }
   } finally {
     loading.value = false
   }
@@ -580,9 +635,46 @@ const handleDelete = async (row) => {
   }
 }
 
+// AI 命令处理
+const handleAICommand = (command) => {
+  switch (command) {
+    case 'generate':
+      openAIGenerateDialog()
+      break
+    case 'document':
+      openAIDocDialog()
+      break
+    case 'chat':
+      openAIChat()
+      break
+  }
+}
+
 // AI 对话
 const openAIChat = () => {
+  aiInitialPrompt.value = ''
   aiChatVisible.value = true
+}
+
+// 打开AI生成对话框
+const openAIGenerateDialog = () => {
+  aiGenerateDialogVisible.value = true
+}
+
+// 打开AI从文档生成对话框
+const openAIDocDialog = () => {
+  aiDocDialogVisible.value = true
+}
+
+// 处理打开AI聊天（从对话框）
+const handleOpenAIChat = (prompt) => {
+  aiInitialPrompt.value = prompt
+  aiChatVisible.value = true
+}
+
+// AI生成成功回调
+const handleAIGenerateSuccess = () => {
+  getList()
 }
 
 const handleAIMessageSent = (data) => {

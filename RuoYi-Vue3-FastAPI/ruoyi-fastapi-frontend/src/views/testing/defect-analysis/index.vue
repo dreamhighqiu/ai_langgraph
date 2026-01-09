@@ -181,78 +181,14 @@
       </div>
     </el-drawer>
 
-    <!-- 编辑对话框 -->
-    <el-dialog
+    <!-- 创建/编辑对话框 -->
+    <DefectCreateDialog
       v-model="dialogVisible"
-      :title="currentId ? '编辑缺陷分析' : '新建缺陷分析'"
-      width="800px"
-      :close-on-click-modal="false"
-    >
-      <el-form ref="formRef" :model="form" :rules="rules" label-width="100px">
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <el-form-item label="项目" prop="projectId">
-              <el-select v-model="form.projectId" placeholder="选择项目" style="width: 100%">
-                <el-option
-                  v-for="item in projectList"
-                  :key="item.projectId"
-                  :label="item.projectName"
-                  :value="item.projectId"
-                />
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="12">
-            <el-form-item label="分析名称" prop="analysisName">
-              <el-input v-model="form.analysisName" placeholder="请输入分析名称" />
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-form-item label="缺陷标题" prop="defectTitle">
-          <el-input v-model="form.defectTitle" placeholder="请输入缺陷标题" />
-        </el-form-item>
-        <el-form-item label="缺陷描述" prop="defectDescription">
-          <el-input v-model="form.defectDescription" type="textarea" :rows="4" placeholder="请输入缺陷描述" />
-        </el-form-item>
-        <el-row :gutter="20">
-          <el-col :span="8">
-            <el-form-item label="严重程度" prop="severity">
-              <el-select v-model="form.severity" placeholder="选择严重程度" style="width: 100%">
-                <el-option label="致命" value="critical" />
-                <el-option label="严重" value="high" />
-                <el-option label="一般" value="medium" />
-                <el-option label="轻微" value="low" />
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="8">
-            <el-form-item label="优先级" prop="priority">
-              <el-select v-model="form.priority" placeholder="选择优先级" style="width: 100%">
-                <el-option label="紧急" value="urgent" />
-                <el-option label="高" value="high" />
-                <el-option label="中" value="medium" />
-                <el-option label="低" value="low" />
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="8">
-            <el-form-item label="缺陷类型" prop="defectType">
-              <el-select v-model="form.defectType" placeholder="选择类型" style="width: 100%">
-                <el-option label="功能缺陷" value="functional" />
-                <el-option label="性能问题" value="performance" />
-                <el-option label="安全漏洞" value="security" />
-                <el-option label="UI问题" value="ui" />
-                <el-option label="兼容性" value="compatibility" />
-              </el-select>
-            </el-form-item>
-          </el-col>
-        </el-row>
-      </el-form>
-      <template #footer>
-        <el-button @click="dialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="submitForm" :loading="submitting">确定</el-button>
-      </template>
-    </el-dialog>
+      :edit-data="editData"
+      :default-project-id="queryParams.projectId"
+      @open-chat="handleOpenChat"
+      @success="handleFormSuccess"
+    />
 
     <!-- AI 对话抽屉 -->
     <AIChatDrawer
@@ -273,6 +209,7 @@ import { Warning, MagicStick } from '@element-plus/icons-vue'
 import { listDefectAnalysis, getDefectAnalysis, addDefectAnalysis, updateDefectAnalysis, delDefectAnalysis } from '@/api/testing/defectAnalysis'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
+import DefectCreateDialog from '@/views/testing/components/DefectCreateDialog.vue'
 
 const { proxy } = getCurrentInstance()
 
@@ -289,6 +226,7 @@ const dialogVisible = ref(false)
 const aiChatVisible = ref(false)
 const currentDetail = ref(null)
 const currentId = ref(null)
+const editData = ref(null)
 const submitting = ref(false)
 const aiInitialPrompt = ref('')
 
@@ -359,7 +297,7 @@ const handleSelectionChange = (selection) => {
 
 const handleAdd = () => {
   currentId.value = null
-  resetForm()
+  editData.value = null
   dialogVisible.value = true
 }
 
@@ -367,18 +305,20 @@ const handleUpdate = async (row) => {
   currentId.value = row.analysis_id
   try {
     const res = await getDefectAnalysis(row.analysis_id)
-    const data = res.data
-    form.projectId = data.project_id
-    form.analysisName = data.analysis_name
-    form.defectTitle = data.defect_title
-    form.defectDescription = data.defect_description
-    form.severity = data.severity
-    form.priority = data.priority
-    form.defectType = data.defect_type
+    editData.value = res.data
     dialogVisible.value = true
   } catch (error) {
     console.error('加载详情失败:', error)
   }
+}
+
+const handleFormSuccess = () => {
+  getList()
+}
+
+const handleOpenChat = (prompt) => {
+  aiInitialPrompt.value = prompt
+  aiChatVisible.value = true
 }
 
 const handleDetail = async (row) => {

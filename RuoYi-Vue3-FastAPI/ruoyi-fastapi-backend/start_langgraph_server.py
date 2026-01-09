@@ -25,8 +25,8 @@ def setup_environment():
     # 确保项目根目录在 Python 路径中
     sys.path.insert(0, str(project_root))
     
-    # 加载 graphs 配置
-    config_path = project_root / "module_testing" / "agents" / "graph.json"
+    # 加载 graphs 配置（从根目录的 langgraph.json 加载）
+    config_path = project_root / "langgraph.json"
     graphs = {}
     
     if config_path.exists():
@@ -37,11 +37,21 @@ def setup_environment():
             for name in graphs.keys():
                 print(f"   - {name}")
     else:
-        print("⚠️ 未找到 graph.json 配置文件")
+        # 尝试从旧路径加载
+        old_config_path = project_root / "module_testing" / "agents" / "graph.json"
+        if old_config_path.exists():
+            with open(old_config_path, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+                graphs = config.get("graphs", {})
+                print(f"✅ 从旧路径加载了 {len(graphs)} 个 Agent 配置")
+                for name in graphs.keys():
+                    print(f"   - {name}")
+        else:
+            print("⚠️ 未找到 langgraph.json 配置文件")
     
-    # 从环境变量读取配置
+    # 从环境变量读取配置（默认端口改为 2027）
     host = os.getenv("LANGGRAPH_HOST", "0.0.0.0")
-    port = int(os.getenv("LANGGRAPH_PORT", "2025"))
+    port = int(os.getenv("LANGGRAPH_PORT", "2027"))
     api_url = os.getenv("LANGGRAPH_API_URL", f"http://localhost:{port}")
     
     # 设置 LangGraph 环境变量

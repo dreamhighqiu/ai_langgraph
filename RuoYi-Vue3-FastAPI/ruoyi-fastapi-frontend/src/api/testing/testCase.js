@@ -86,3 +86,41 @@ export function getProjectTestCaseStats(projectId) {
     method: 'get'
   })
 }
+
+// ==================== AI 生成测试用例相关 API ====================
+
+// AI 生成测试用例
+export function aiGenerateTestCase(data) {
+  return request({
+    url: '/api/testing/ai-testcase/generate',
+    method: 'post',
+    data: data
+  })
+}
+
+// AI 从文档生成测试用例
+export function aiGenerateFromDoc(data) {
+  return request({
+    url: '/api/testing/ai-testcase/generate-from-doc',
+    method: 'post',
+    data: data
+  })
+}
+
+// 批量创建 AI 生成的测试用例
+export function batchCreateFromAI(data) {
+  return request({
+    url: '/api/testing/ai-testcase/batch-create',
+    method: 'post',
+    data: data
+  })
+}
+
+// 获取 AI 生成建议
+export function getAISuggestions(projectId, context) {
+  return request({
+    url: '/api/testing/ai-testcase/suggestions',
+    method: 'get',
+    params: { project_id: projectId, context }
+  })
+}

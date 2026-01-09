@@ -5519,5 +5519,97 @@
     "create_time": 1767254046,
     "update_time": 1767254046,
     "_id": "2c3003b6da8735e60e81463856a9cf16"
+  },
+  "9b701594192cba2fa2193b992044c755": {
+    "content_list": [
+      {
+        "type": "text",
+        "text": "? 身份证正反面复印件；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "? 学历、学位证书复印件；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "离职证明原件；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "? 入职体检报告电子件；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "? 本人任意银行卡复印件；",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "三、 注意事项",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "1、若您的个人信息不真实或入职体检结果不合格，公司将有权不予聘用。",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "2、我们希望您能接受本邀请函，请您尽快确认并在2个工作日回复！",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "预祝你在斑马技术服务公司工作顺利！",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "签铭：邱霞",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "日期：2026、1.5",
+        "page_idx": 0
+      },
+      {
+        "type": "image",
+        "img_path": "D:\\yunxia\\ai_langgraph\\anything-chat-rag\\parser_output\\Scan_05-01-2026_1441\\docling\\images\\image_0.png",
+        "image_caption": "",
+        "image_footnote": "",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "CAREERTEMO",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "ACANEERSEATHUACOPANY",
+        "page_idx": 0
+      },
+      {
+        "type": "text",
+        "text": "上海科之锐人才咨询有限公司 二〇二六年一月",
+        "page_idx": 0
+      }
+    ],
+    "doc_id": "doc-c81106b3f41c6870a8cc1644a1022194",
+    "mtime": 1767957231.549699,
+    "parse_config": {
+      "parser": "docling",
+      "parse_method": "auto"
+    },
+    "cached_at": 1767957307.0786343,
+    "cache_version": "1.0",
+    "create_time": 1767957307,
+    "update_time": 1767957307,
+    "_id": "9b701594192cba2fa2193b992044c755"
   }
 }

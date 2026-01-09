@@ -1790,5 +1790,65 @@
     "create_time": 1767951062,
     "update_time": 1767951062,
     "_id": "default:extract:a8d4e8f30e48d8c9e1861723567756a2"
+  },
+  "mix:keywords:f10d7c66ebeb1ea91f87e9a50faafa73": {
+    "return": "{\"high_level_keywords\": [\"\\u6d4b\\u8bd5\\u7528\\u4f8b\\u8bbe\\u8ba1\", \"\\u529f\\u80fd\\u6d4b\\u8bd5\", \"\\u63a5\\u53e3\\u6d4b\\u8bd5\", \"\\u6d4b\\u8bd5\\u573a\\u666f\"], \"low_level_keywords\": [\"\\u6d4b\\u8bd5\\u7528\\u4f8b\", \"\\u529f\\u80fd\\u6d4b\\u8bd5\\u7528\\u4f8b\", \"\\u63a5\\u53e3\\u6d4b\\u8bd5\\u7528\\u4f8b\", \"\\u6d4b\\u8bd5\\u573a\\u666f\\u8bbe\\u8ba1\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "测试用例设计 功能测试 接口测试 测试场景",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767956210,
+    "update_time": 1767956210,
+    "_id": "mix:keywords:f10d7c66ebeb1ea91f87e9a50faafa73"
+  },
+  "mix:keywords:f6b79b46eed5a61342cb521bcdc4d058": {
+    "return": "{\"high_level_keywords\": [\"\\u7528\\u6237\\u767b\\u5f55\\u63a5\\u53e3\", \"\\u63a5\\u53e3\\u8be6\\u7ec6\\u4fe1\\u606f\", \"API \\u6587\\u6863\"], \"low_level_keywords\": [\"URL\", \"\\u53c2\\u6570\", \"\\u8ba4\\u8bc1\\u65b9\\u5f0f\", \"\\u8fd4\\u56de\\u7ed3\\u679c\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "用户登录接口的详细信息，包括URL、参数、认证方式、返回结果",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767957196,
+    "update_time": 1767957196,
+    "_id": "mix:keywords:f6b79b46eed5a61342cb521bcdc4d058"
+  },
+  "mix:keywords:b0a932f6b6ee46e660094bb9ccbc9cc0": {
+    "return": "{\"high_level_keywords\": [\"\\u7528\\u6237\\u6ce8\\u518c\\u529f\\u80fd\", \"\\u63a5\\u53e3API\", \"\\u53c2\\u6570\", \"\\u8ba4\\u8bc1\\u65b9\\u5f0f\"], \"low_level_keywords\": [\"\\u7528\\u6237\\u6ce8\\u518c\", \"API\\u53c2\\u6570\", \"\\u8ba4\\u8bc1\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "用户注册功能接口 API 参数 认证方式",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1767957211,
+    "update_time": 1767957211,
+    "_id": "mix:keywords:b0a932f6b6ee46e660094bb9ccbc9cc0"
   }
 }

@@ -2013,19 +2013,19 @@
 <node id="Dify">
   <data key="d0">Dify</data>
   <data key="d1">artifact</data>
-  <data key="d2">一个AI应用开发平台或工具，属于技术栈的一部分。&lt;SEP&gt;Dify是一个低代码平台，其工作流被集成到智能测试平台中。&lt;SEP&gt;Dify是一个AI应用开发平台，邱云霞具备其部署与落地经验以赋能测试领域。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d5a659de14ee61f2da2e8322c8a7e3fc</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf</data>
-  <data key="d5">1767275775</data>
+  <data key="d2">一个AI应用开发平台或工具，属于技术栈的一部分。&lt;SEP&gt;Dify是一个低代码平台，其工作流被集成到智能测试平台中。&lt;SEP&gt;Dify是一个AI应用开发平台，邱云霞具备其部署与落地经验以赋能测试领域。&lt;SEP&gt;一个AI应用开发平台，文中提到了其部署配置和访问地址。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d5a659de14ee61f2da2e8322c8a7e3fc&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970057</data>
   <data key="d6"></data>
 </node>
 <node id="RAGFlow">
   <data key="d0">RAGFlow</data>
-  <data key="d1">method</data>
-  <data key="d2">RAGFlow是一个AI应用开发平台，邱云霞具备其部署与落地经验以赋能测试领域。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf</data>
-  <data key="d5">1767275775</data>
+  <data key="d1">artifact</data>
+  <data key="d2">RAGFlow是一个AI应用开发平台，邱云霞具备其部署与落地经验以赋能测试领域。&lt;SEP&gt;一个知识库与RAG(检索增强生成)平台，文中提到了其访问地址。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970059</data>
   <data key="d6"></data>
 </node>
 <node id="Playwright">
@@ -6599,10 +6599,10 @@
 <node id="正则表达式">
   <data key="d0">正则表达式</data>
   <data key="d1">method</data>
-  <data key="d2">正则表达式是一种用于模式匹配和文本提取的语法。&lt;SEP&gt;正则表达式是一种文本模式匹配方法，在测试执行流程的提取步骤中用于从响应数据中提取信息。&lt;SEP&gt;正则表达式是一种文本模式匹配工具，是三层数据提取方法中的一种，用于从响应文本中提取数据。</data>
-  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f</data>
-  <data key="d4">pytest 接口自动化面试.md</data>
-  <data key="d5">1767335444</data>
+  <data key="d2">正则表达式是一种用于模式匹配和文本提取的语法。&lt;SEP&gt;正则表达式是一种文本模式匹配方法，在测试执行流程的提取步骤中用于从响应数据中提取信息。&lt;SEP&gt;正则表达式是一种文本模式匹配工具，是三层数据提取方法中的一种，用于从响应文本中提取数据。&lt;SEP&gt;用于文本匹配和替换的一种方法，在清理`cleaned_answer`时被使用。</data>
+  <data key="d3">chunk-5011e22e4be70add89b59cd7592f5fc5&lt;SEP&gt;chunk-cc64f2121f1f94403bd35559e7d0cb09&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">pytest 接口自动化面试.md&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970074</data>
   <data key="d6"></data>
 </node>
 <node id="断言校验">
@@ -7751,10 +7751,10 @@
 <node id="用户">
   <data key="d0">用户</data>
   <data key="d1">person</data>
-  <data key="d2">用户是系统的使用者，在创意平台注册账号，其账号和权限会同步到XMP和SS。&lt;SEP&gt;在平台注册并使用服务的个体，其账号信息、权限和操作行为是系统集成测试的核心对象。&lt;SEP&gt;用户是提供健康信息并期望获得个性化月报的个人。</data>
-  <data key="d3">chunk-8352402b827b053988bbb384d59fe34d&lt;SEP&gt;chunk-f992c31ede844b91fbb3d973a038a2d1&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
-  <data key="d4">注册登录权限通过：难点项目.md&lt;SEP&gt;重要信息.txt</data>
-  <data key="d5">1767965218</data>
+  <data key="d2">用户是系统的使用者，在创意平台注册账号，其账号和权限会同步到XMP和SS。&lt;SEP&gt;在平台注册并使用服务的个体，其账号信息、权限和操作行为是系统集成测试的核心对象。&lt;SEP&gt;用户是提供健康信息并期望获得个性化月报的个人。&lt;SEP&gt;正在执行健康计划(如减肥、控糖、降压等)并记录每日关键指标的个人。</data>
+  <data key="d3">chunk-8352402b827b053988bbb384d59fe34d&lt;SEP&gt;chunk-f992c31ede844b91fbb3d973a038a2d1&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997&lt;SEP&gt;chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">注册登录权限通过：难点项目.md&lt;SEP&gt;重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970103</data>
   <data key="d6"></data>
 </node>
 <node id="平台">
@@ -10828,11 +10828,11 @@
 </node>
 <node id="Git">
   <data key="d0">Git</data>
-  <data key="d1">artifact</data>
-  <data key="d2">Git是一个版本控制系统，测试工程师熟悉其代码版本管理与协作流程。</data>
-  <data key="d3">chunk-c423d61c859757d64bf4db5be9f230dc</data>
-  <data key="d4">app appium面试项目1-最优.md</data>
-  <data key="d5">1767339639</data>
+  <data key="d1">method</data>
+  <data key="d2">Git是一个版本控制系统，测试工程师熟悉其代码版本管理与协作流程。&lt;SEP&gt;Git是一个分布式版本控制系统，用于跟踪代码更改、协作和管理项目历史。&lt;SEP&gt;Git是一个版本控制系统，在Dify版本更新流程中用于切换代码标签和拉取更新。</data>
+  <data key="d3">chunk-c423d61c859757d64bf4db5be9f230dc&lt;SEP&gt;chunk-f730138d1d5be6aebb11d5b5f886f0e9&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">app appium面试项目1-最优.md&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767969993</data>
   <data key="d6"></data>
 </node>
 <node id="Monkey">
@@ -12604,11 +12604,11 @@
 </node>
 <node id="智能体">
   <data key="d0">智能体</data>
-  <data key="d1">concept</data>
-  <data key="d2">智能体是一个根据用户健康信息生成个性化月报的自动化系统。&lt;SEP&gt;一个根据用户提供的健康信息输出个性化月报的AI系统。</data>
-  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997</data>
-  <data key="d4">重要信息.txt</data>
-  <data key="d5">1767965200</data>
+  <data key="d1">artifact</data>
+  <data key="d2">智能体是一个根据用户健康信息生成个性化月报的自动化系统。&lt;SEP&gt;一个根据用户提供的健康信息输出个性化月报的AI系统。&lt;SEP&gt;能够根据背景信息和用户输入决定是否启动联网搜索功能的AI实体。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-508db58a2a7942df34569046bec9d997&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970077</data>
   <data key="d6"></data>
 </node>
 <node id="个性化月报">
@@ -12641,10 +12641,10 @@
 <node id="血压">
   <data key="d0">血压</data>
   <data key="d1">data</data>
-  <data key="d2">血液对血管壁的压力。在示例中，45岁男性患者的当前血压为140/90 mmHg，处于临界高血压值。</data>
-  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744</data>
-  <data key="d4">重要信息.txt</data>
-  <data key="d5">1767965209</data>
+  <data key="d2">血液对血管壁的压力。在示例中，45岁男性患者的当前血压为140/90 mmHg，处于临界高血压值。&lt;SEP&gt;一项健康指标，目标值为120/80 mmHg，当前值为120/80 mmHg。</data>
+  <data key="d3">chunk-ceb60f16f40b6c7d09158715156ee744&lt;SEP&gt;chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767969890</data>
   <data key="d6"></data>
 </node>
 <node id="原发性高血压">
@@ -12794,19 +12794,19 @@
 <node id="移动云">
   <data key="d0">移动云</data>
   <data key="d1">organization</data>
-  <data key="d2">移动云是提供云计算服务的平台，Dify服务器部署于此。</data>
-  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
-  <data key="d4">重要信息.txt</data>
-  <data key="d5">1767965248</data>
+  <data key="d2">移动云是提供云计算服务的平台，Dify服务器部署于此。&lt;SEP&gt;移动云是一家云服务提供商，其80、8080、443、8443端口需要ICP备案后才能从公网访问。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970200</data>
   <data key="d6"></data>
 </node>
 <node id="腾讯云">
   <data key="d0">腾讯云</data>
   <data key="d1">organization</data>
-  <data key="d2">腾讯云是提供云计算服务的平台，RAGFlow服务器部署于此。</data>
-  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
-  <data key="d4">重要信息.txt</data>
-  <data key="d5">1767965248</data>
+  <data key="d2">腾讯云是提供云计算服务的平台，RAGFlow服务器部署于此。&lt;SEP&gt;腾讯云是一家云服务提供商，RAGFlow GPU服务器部署在其平台上。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970245</data>
   <data key="d6"></data>
 </node>
 <node id="敏感词API">
@@ -12902,10 +12902,10 @@
 <node id="aic.baixunsz.com">
   <data key="d0">aic.baixunsz.com</data>
   <data key="d1">data</data>
-  <data key="d2">aic.baixunsz.com是Dify服务器对应的域名。</data>
-  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
-  <data key="d4">重要信息.txt</data>
-  <data key="d5">1767965293</data>
+  <data key="d2">aic.baixunsz.com是Dify服务器对应的域名。&lt;SEP&gt;这是指向IP 36.133.145.37的域名，拥有SSL证书，用于访问旧版Dify服务器。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970234</data>
   <data key="d6"></data>
 </node>
 <node id="43.136.98.40">
@@ -12920,10 +12920,10 @@
 <node id="rag.gdzky.cn">
   <data key="d0">rag.gdzky.cn</data>
   <data key="d1">data</data>
-  <data key="d2">rag.gdzky.cn是RAGFlow服务器对应的域名。</data>
-  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
-  <data key="d4">重要信息.txt</data>
-  <data key="d5">1767965296</data>
+  <data key="d2">rag.gdzky.cn是RAGFlow服务器对应的域名。&lt;SEP&gt;这是指向IP 43.136.98.40的域名，是访问RAGFlow Web界面的唯一方式。&lt;SEP&gt;rag.gdzky.cn是一个域名，作为RAGFlow API服务的部署地址。</data>
+  <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d&lt;SEP&gt;chunk-f730138d1d5be6aebb11d5b5f886f0e9&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">重要信息.txt&lt;SEP&gt;文档.txt</data>
+  <data key="d5">1767970027</data>
   <data key="d6"></data>
 </node>
 <node id="http://sw.baixunsz.com/sensitive/replace">
@@ -13014,6 +13014,1446 @@
   <data key="d3">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
   <data key="d4">重要信息.txt</data>
   <data key="d5">1767965335</data>
+  <data key="d6"></data>
+</node>
+<node id="健康计划">
+  <data key="d0">健康计划</data>
+  <data key="d1">concept</data>
+  <data key="d2">用户正在执行的一项计划，可能涉及减肥、控糖、降压等健康目标。&lt;SEP&gt;用户正在执行的计划，可能包括减肥、减脂、控糖或降血压等目标，需要每日记录打卡数据。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969880</data>
+  <data key="d6"></data>
+</node>
+<node id="激励总结语">
+  <data key="d0">激励总结语</data>
+  <data key="d1">content</data>
+  <data key="d2">由健康教练根据用户打卡数据生成的个性化、充满力量的激励性文本。&lt;SEP&gt;根据用户每日健康打卡数据生成的、旨在鼓励用户继续坚持的总结性文字。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969880</data>
+  <data key="d6"></data>
+</node>
+<node id="用户打卡数据">
+  <data key="d0">用户打卡数据</data>
+  <data key="d1">data</data>
+  <data key="d2">用户记录的每日健康指标数据，包括关键指标总结和详细健康指标。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969883</data>
+  <data key="d6"></data>
+</node>
+<node id="关键指标总结">
+  <data key="d0">关键指标总结</data>
+  <data key="d1">data</data>
+  <data key="d2">打卡数据中的汇总部分，包括每日消耗卡路里、累计消耗卡路里、每日摄入卡路里、累计摄入卡路里、每日睡眠时间、累计睡眠时间。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969885</data>
+  <data key="d6"></data>
+</node>
+<node id="详细健康指标">
+  <data key="d0">详细健康指标</data>
+  <data key="d1">data</data>
+  <data key="d2">打卡数据中的详细部分，列出了血糖、血压、体重、睡眠、卡路里、步数等指标的目标值、历史最高值、历史最低值和当前值。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969888</data>
+  <data key="d6"></data>
+</node>
+<node id="血糖">
+  <data key="d0">血糖</data>
+  <data key="d1">data</data>
+  <data key="d2">一项健康指标，目标值为9.0 mmol/L，当前值为8.0 mmol/L。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969888</data>
+  <data key="d6"></data>
+</node>
+<node id="体重">
+  <data key="d0">体重</data>
+  <data key="d1">data</data>
+  <data key="d2">一项健康指标，目标值为50 kg，当前值为48 kg。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969890</data>
+  <data key="d6"></data>
+</node>
+<node id="睡眠">
+  <data key="d0">睡眠</data>
+  <data key="d1">data</data>
+  <data key="d2">一项健康指标，目标值为8小时20分，当前值为10小时30分。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969908</data>
+  <data key="d6"></data>
+</node>
+<node id="卡路里">
+  <data key="d0">卡路里</data>
+  <data key="d1">data</data>
+  <data key="d2">一项健康指标，目标值为2000千卡，当前值为2000千卡。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969908</data>
+  <data key="d6"></data>
+</node>
+<node id="步数">
+  <data key="d0">步数</data>
+  <data key="d1">data</data>
+  <data key="d2">一项健康指标，目标值为5000步，当前值为10000步。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969927</data>
+  <data key="d6"></data>
+</node>
+<node id="多通道PPG 100HZ">
+  <data key="d0">多通道PPG 100HZ</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一种数据采集设备或技术，用于采集生理信号。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969927</data>
+  <data key="d6"></data>
+</node>
+<node id="单导联ECG">
+  <data key="d0">单导联ECG</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一种数据采集设备或技术，用于采集心电信号。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969927</data>
+  <data key="d6"></data>
+</node>
+<node id="人工智能中医大模型平台">
+  <data key="d0">人工智能中医大模型平台</data>
+  <data key="d1">method</data>
+  <data key="d2">一个平台，利用采集的PPG和ECG数据，通过人工智能模型对人体五脏功能指标和检测指标进行客观评价。&lt;SEP&gt;用于处理ECG采集数据，并对人体五脏功能与检测指标进行客观评价的平台。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969929</data>
+  <data key="d6"></data>
+</node>
+<node id="中医未病健康报告">
+  <data key="d0">中医未病健康报告</data>
+  <data key="d1">content</data>
+  <data key="d2">由手机小程序出具的报告，基于人工智能中医大模型平台的分析结果。&lt;SEP&gt;基于ECG数据分析和人工智能中医大模型平台评估结果，在手机小程序上出具的健康报告。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969944</data>
+  <data key="d6"></data>
+</node>
+<node id="百川智能">
+  <data key="d0">百川智能</data>
+  <data key="d1">organization</data>
+  <data key="d2">一家提供AI模型服务的公司，其平台网址为https://platform.baichuan-ai.com/console/apikey。&lt;SEP&gt;提供AI模型平台服务的组织，其平台网址为https://platform.baichuan-ai.com/console/apikey。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969944</data>
+  <data key="d6"></data>
+</node>
+<node id="Baichuan-M2-Plus">
+  <data key="d0">Baichuan-M2-Plus</data>
+  <data key="d1">artifact</data>
+  <data key="d2">百川智能提供的一个AI模型名称。&lt;SEP&gt;百川智能提供的一个AI模型。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969946</data>
+  <data key="d6"></data>
+</node>
+<node id="砖瓦">
+  <data key="d0">砖瓦</data>
+  <data key="d1">concept</data>
+  <data key="d2">在激励总结语中可能使用的比喻，用于象征构成长期目标的微小但坚实的努力。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969954</data>
+  <data key="d6"></data>
+</node>
+<node id="加油证据">
+  <data key="d0">加油证据</data>
+  <data key="d1">concept</data>
+  <data key="d2">在激励总结语中可能使用的比喻，指代用户记录下来的“小成功”，作为未来激励自己的凭证。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969965</data>
+  <data key="d6"></data>
+</node>
+<node id="小成功">
+  <data key="d0">小成功</data>
+  <data key="d1">concept</data>
+  <data key="d2">用户在日常健康计划执行中取得的微小成就，是激励总结语强调的核心价值。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969980</data>
+  <data key="d6"></data>
+</node>
+<node id="热量缺口">
+  <data key="d0">热量缺口</data>
+  <data key="d1">concept</data>
+  <data key="d2">在减肥或减脂计划中，指消耗的卡路里超过摄入的卡路里，是达成目标的关键指标。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969982</data>
+  <data key="d6"></data>
+</node>
+<node id="示例1：全面达标，重点表扬运动">
+  <data key="d0">示例1：全面达标，重点表扬运动</data>
+  <data key="d1">content</data>
+  <data key="d2">一个激励总结语的示例，展示了当用户所有健康指标都达标时，如何重点表扬运动成就。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969982</data>
+  <data key="d6"></data>
+</node>
+<node id="示例2：某项未达标(如卡路里)，鼓励为主">
+  <data key="d0">示例2：某项未达标(如卡路里)，鼓励为主</data>
+  <data key="d1">content</data>
+  <data key="d2">一个激励总结语的示例，展示了当用户某项指标未达标时，如何以鼓励而非批评的方式进行总结。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969985</data>
+  <data key="d6"></data>
+</node>
+<node id="示例3：针对减肥计划，突出热量缺口">
+  <data key="d0">示例3：针对减肥计划，突出热量缺口</data>
+  <data key="d1">content</data>
+  <data key="d2">一个激励总结语的示例，专门针对减肥计划，强调用户创造了“热量缺口”。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969985</data>
+  <data key="d6"></data>
+</node>
+<node id="示例4：针对睡眠和压力管理">
+  <data key="d0">示例4：针对睡眠和压力管理</data>
+  <data key="d1">content</data>
+  <data key="d2">一个激励总结语的示例，专门针对睡眠和压力管理，表扬用户获得了高质量的睡眠。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969987</data>
+  <data key="d6"></data>
+</node>
+<node id="API url">
+  <data key="d0">API url</data>
+  <data key="d1">data</data>
+  <data key="d2">百川智能平台提供的API接口地址，用于调用其AI模型服务。</data>
+  <data key="d3">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969988</data>
+  <data key="d6"></data>
+</node>
+<node id="Docker Compose">
+  <data key="d0">Docker Compose</data>
+  <data key="d1">method</data>
+  <data key="d2">Docker Compose是一个用于定义和运行多容器Docker应用程序的工具，通过YAML文件配置服务。&lt;SEP&gt;Docker Compose是一个用于定义和运行多容器Docker应用程序的工具，在启动脚本中用于管理Dify容器。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969988</data>
+  <data key="d6"></data>
+</node>
+<node id="Docker Compose.yaml">
+  <data key="d0">Docker Compose.yaml</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Docker Compose.yaml是一个YAML配置文件，用于定义Docker Compose应用程序的服务、网络和卷。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969992</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify_docker">
+  <data key="d0">Dify_docker</data>
+  <data key="d1">project</data>
+  <data key="d2">Dify_docker是Docker Compose命令中指定的项目名称，用于管理特定的Docker应用程序栈。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969992</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Stash">
+  <data key="d0">Git Stash</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Stash是一个Git命令，用于临时保存本地未提交的修改，以便切换到其他分支或标签。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969994</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Fetch">
+  <data key="d0">Git Fetch</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Fetch是一个Git命令，用于从远程仓库下载对象和引用，但不合并到当前工作区。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969997</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Tag">
+  <data key="d0">Git Tag</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Tag是一个Git命令，用于列出、创建、删除或验证标签对象，标签通常用于标记发布点。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969997</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Checkout">
+  <data key="d0">Git Checkout</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Checkout是一个Git命令，用于切换分支或恢复工作树文件到指定版本。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969997</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Status">
+  <data key="d0">Git Status</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Status是一个Git命令，用于显示工作目录和暂存区的状态，例如哪些文件被修改。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767969999</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Pull">
+  <data key="d0">Git Pull</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Pull是一个Git命令，用于从远程仓库获取并集成更改到当前分支。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970001</data>
+  <data key="d6"></data>
+</node>
+<node id="Git Stash Pop">
+  <data key="d0">Git Stash Pop</data>
+  <data key="d1">method</data>
+  <data key="d2">Git Stash Pop是一个Git命令，用于恢复最近一次通过 `git stash` 保存的修改，并将其从存储列表中移除。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970002</data>
+  <data key="d6"></data>
+</node>
+<node id="Tag 1.8.1">
+  <data key="d0">Tag 1.8.1</data>
+  <data key="d1">data</data>
+  <data key="d2">Tag 1.8.1是Git仓库中的一个特定版本标签，用于标记代码库的某个发布状态。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970002</data>
+  <data key="d6"></data>
+</node>
+<node id="RAGFlow API">
+  <data key="d0">RAGFlow API</data>
+  <data key="d1">method</data>
+  <data key="d2">RAGFlow API是一组用于与RAGFlow系统交互的应用程序编程接口，支持聊天、检索等功能。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970003</data>
+  <data key="d6"></data>
+</node>
+<node id="API Key">
+  <data key="d0">API Key</data>
+  <data key="d1">data</data>
+  <data key="d2">API Key是用于访问阿里云百炼服务的身份验证密钥，文本中提供了两个示例密钥。&lt;SEP&gt;API Key是一个用于认证和授权访问特定API的密钥字符串。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970004</data>
+  <data key="d6"></data>
+</node>
+<node id="海实利">
+  <data key="d0">海实利</data>
+  <data key="d1">organization</data>
+  <data key="d2">海实利是一个组织或项目名称，在上下文中作为RAGFlow API测试的一个用例，涉及无知识图谱的聊天。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970007</data>
+  <data key="d6"></data>
+</node>
+<node id="知识图谱">
+  <data key="d0">知识图谱</data>
+  <data key="d1">concept</data>
+  <data key="d2">知识图谱是一种结构化的知识表示形式，用于增强信息检索和问答系统的能力。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970008</data>
+  <data key="d6"></data>
+</node>
+<node id="API URL">
+  <data key="d0">API URL</data>
+  <data key="d1">data</data>
+  <data key="d2">用于调用“健康计划-激励总结语”工作流的应用程序接口地址：http://aid.baixunsz.com:8012/v1/workflows/run。&lt;SEP&gt;API URL是用于访问特定API端点的统一资源定位符。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9&lt;SEP&gt;chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970008</data>
+  <data key="d6"></data>
+</node>
+<node id="Chat ID">
+  <data key="d0">Chat ID</data>
+  <data key="d1">data</data>
+  <data key="d2">Chat ID是一个唯一标识符，用于在聊天API中指定特定的聊天会话或配置。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970008</data>
+  <data key="d6"></data>
+</node>
+<node id="渔业养殖">
+  <data key="d0">渔业养殖</data>
+  <data key="d1">organization</data>
+  <data key="d2">渔业养殖是一个组织或项目名称，在上下文中作为RAGFlow API测试的一个用例，涉及无知识图谱的问答。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970011</data>
+  <data key="d6"></data>
+</node>
+<node id="聊天接口">
+  <data key="d0">聊天接口</data>
+  <data key="d1">method</data>
+  <data key="d2">聊天接口是RAGFlow API中用于处理用户对话的特定端点，支持返回引用信息。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970011</data>
+  <data key="d6"></data>
+</node>
+<node id="Session ID">
+  <data key="d0">Session ID</data>
+  <data key="d1">data</data>
+  <data key="d2">Session ID是一个唯一标识符，用于在聊天API中跟踪和管理用户会话。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970011</data>
+  <data key="d6"></data>
+</node>
+<node id="引用信息">
+  <data key="d0">引用信息</data>
+  <data key="d1">content</data>
+  <data key="d2">引用信息是API响应中返回的、用于支持答案的源文档片段或元数据。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970013</data>
+  <data key="d6"></data>
+</node>
+<node id="引用图片">
+  <data key="d0">引用图片</data>
+  <data key="d1">content</data>
+  <data key="d2">引用图片是API响应中返回的、与答案相关的图像内容，可通过特定URL访问。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970015</data>
+  <data key="d6"></data>
+</node>
+<node id="Image ID">
+  <data key="d0">Image ID</data>
+  <data key="d1">data</data>
+  <data key="d2">Image ID是一个唯一标识符，用于在API中定位和检索特定的引用图片。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970016</data>
+  <data key="d6"></data>
+</node>
+<node id="检索上下文接口">
+  <data key="d0">检索上下文接口</data>
+  <data key="d1">method</data>
+  <data key="d2">检索上下文接口是RAGFlow API中的一个端点，用于根据问题检索相关文档内容。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970016</data>
+  <data key="d6"></data>
+</node>
+<node id="Dataset ID">
+  <data key="d0">Dataset ID</data>
+  <data key="d1">data</data>
+  <data key="d2">Dataset ID是一个唯一标识符，用于在检索API中指定要查询的知识库数据集。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970017</data>
+  <data key="d6"></data>
+</node>
+<node id="Document ID">
+  <data key="d0">Document ID</data>
+  <data key="d1">data</data>
+  <data key="d2">Document ID是一个唯一标识符，用于在检索API中指定要查询的特定文档。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970022</data>
+  <data key="d6"></data>
+</node>
+<node id="会话管理接口">
+  <data key="d0">会话管理接口</data>
+  <data key="d1">method</data>
+  <data key="d2">会话管理接口是RAGFlow API中用于管理聊天会话的端点。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970023</data>
+  <data key="d6"></data>
+</node>
+<node id="Infiniflow">
+  <data key="d0">Infiniflow</data>
+  <data key="d1">organization</data>
+  <data key="d2">Infiniflow是RAGFlow项目的开发组织，其代码托管在GitHub上。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970024</data>
+  <data key="d6"></data>
+</node>
+<node id="GitHub">
+  <data key="d0">GitHub</data>
+  <data key="d1">organization</data>
+  <data key="d2">GitHub是一个基于Web的代码托管和版本控制平台，用于协作开发软件项目。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970026</data>
+  <data key="d6"></data>
+</node>
+<node id="传染性造血器官坏死病">
+  <data key="d0">传染性造血器官坏死病</data>
+  <data key="d1">concept</data>
+  <data key="d2">传染性造血器官坏死病是一种鱼类疾病，在API测试中被用作示例查询内容。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970033</data>
+  <data key="d6"></data>
+</node>
+<node id="川菜馆">
+  <data key="d0">川菜馆</data>
+  <data key="d1">organization</data>
+  <data key="d2">川菜馆是一种餐饮企业类型，在API测试中被用作示例查询的上下文。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970033</data>
+  <data key="d6"></data>
+</node>
+<node id="成都">
+  <data key="d0">成都</data>
+  <data key="d1">location</data>
+  <data key="d2">成都是中国四川省的一个城市，在API测试中被用作示例查询中的经营地点。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970033</data>
+  <data key="d6"></data>
+</node>
+<node id="Docker Compose Down">
+  <data key="d0">Docker Compose Down</data>
+  <data key="d1">method</data>
+  <data key="d2">Docker Compose Down是一个命令，用于停止并移除由Docker Compose启动的容器、网络、卷和镜像。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970036</data>
+  <data key="d6"></data>
+</node>
+<node id="Docker Compose Up">
+  <data key="d0">Docker Compose Up</data>
+  <data key="d1">method</data>
+  <data key="d2">Docker Compose Up是一个命令，用于根据配置文件创建并启动所有定义的服务容器。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970039</data>
+  <data key="d6"></data>
+</node>
+<node id="API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm">
+  <data key="d0">API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm</data>
+  <data key="d1">data</data>
+  <data key="d2">API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm是一个具体的密钥字符串，用于访问RAGFlow API。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970043</data>
+  <data key="d6"></data>
+</node>
+<node id="Chat ID f18b15f8a1a411f0b99b0242c0a89006">
+  <data key="d0">Chat ID f18b15f8a1a411f0b99b0242c0a89006</data>
+  <data key="d1">data</data>
+  <data key="d2">Chat ID f18b15f8a1a411f0b99b0242c0a89006是一个具体的标识符，用于指定海实利测试中的聊天会话。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970043</data>
+  <data key="d6"></data>
+</node>
+<node id="Chat ID 8a1edc92a1a411f0b0ea0242c0a89006">
+  <data key="d0">Chat ID 8a1edc92a1a411f0b0ea0242c0a89006</data>
+  <data key="d1">data</data>
+  <data key="d2">Chat ID 8a1edc92a1a411f0b0ea0242c0a89006是一个具体的标识符，用于指定渔业养殖测试中的聊天会话。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970045</data>
+  <data key="d6"></data>
+</node>
+<node id="Session ID b06badb8a34c11f0a9d20242c0a8a006">
+  <data key="d0">Session ID b06badb8a34c11f0a9d20242c0a8a006</data>
+  <data key="d1">data</data>
+  <data key="d2">Session ID b06badb8a34c11f0a9d20242c0a8a006是一个具体的标识符，在聊天接口的第二次请求中用于跟踪会话。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970045</data>
+  <data key="d6"></data>
+</node>
+<node id="Dataset ID ea5142baa11511f083560242c0a89006">
+  <data key="d0">Dataset ID ea5142baa11511f083560242c0a89006</data>
+  <data key="d1">data</data>
+  <data key="d2">Dataset ID ea5142baa11511f083560242c0a89006是一个具体的标识符，在检索上下文接口中用于指定查询的数据集。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970045</data>
+  <data key="d6"></data>
+</node>
+<node id="document_app.py">
+  <data key="d0">document_app.py</data>
+  <data key="d1">artifact</data>
+  <data key="d2">document_app.py是RAGFlow项目中的一个Python源代码文件，实现了图片接口等功能。</data>
+  <data key="d3">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970051</data>
+  <data key="d6"></data>
+</node>
+<node id="ECG采集数据">
+  <data key="d0">ECG采集数据</data>
+  <data key="d1">data</data>
+  <data key="d2">通过人工智能中医大模型平台对人体心藏、脾藏、肾藏、肝藏、肺藏的14大项功能指标和19项检测指标进行客观评价的数据。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970051</data>
+  <data key="d6"></data>
+</node>
+<node id="手机小程序">
+  <data key="d0">手机小程序</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于出具中医未病健康报告的移动应用程序。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970053</data>
+  <data key="d6"></data>
+</node>
+<node id="AI健康助手">
+  <data key="d0">AI健康助手</data>
+  <data key="d1">artifact</data>
+  <data key="d2">根据用户问题和答案生成健康计划调查问卷的智能助手。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970054</data>
+  <data key="d6"></data>
+</node>
+<node id="健康计划调查问卷">
+  <data key="d0">健康计划调查问卷</data>
+  <data key="d1">content</data>
+  <data key="d2">AI健康助手生成的，旨在从心血管(血压)、血糖、减重、睡眠等方面收集用户信息以制定健康计划的问卷。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970056</data>
+  <data key="d6"></data>
+</node>
+<node id="食材集采数字化平台智能助手">
+  <data key="d0">食材集采数字化平台智能助手</data>
+  <data key="d1">artifact</data>
+  <data key="d2">致力于为用户提供高效、精准的食材推荐和管理服务的智能助手。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970059</data>
+  <data key="d6"></data>
+</node>
+<node id="DeepSeek">
+  <data key="d0">DeepSeek</data>
+  <data key="d1">organization</data>
+  <data key="d2">提供AI模型API服务的组织，文中提到了其官网API地址和密钥。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970059</data>
+  <data key="d6"></data>
+</node>
+<node id="华为云">
+  <data key="d0">华为云</data>
+  <data key="d1">organization</data>
+  <data key="d2">提供云计算服务的组织，文中提到了其提供的DeepSeek-V3和DeepSeek-R1模型服务。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970063</data>
+  <data key="d6"></data>
+</node>
+<node id="阿里云百炼">
+  <data key="d0">阿里云百炼</data>
+  <data key="d1">organization</data>
+  <data key="d2">提供AI模型API服务的组织，文中提到了其API地址和密钥。&lt;SEP&gt;阿里云百炼是阿里云提供的一个模型市场平台，提供API服务。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260&lt;SEP&gt;chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970064</data>
+  <data key="d6"></data>
+</node>
+<node id="docker-compose">
+  <data key="d0">docker-compose</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于定义和运行多容器Docker应用程序的工具。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970064</data>
+  <data key="d6"></data>
+</node>
+<node id="docker">
+  <data key="d0">docker</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于开发、发布和运行应用程序的容器化平台。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970065</data>
+  <data key="d6"></data>
+</node>
+<node id="TencentCloudADP">
+  <data key="d0">TencentCloudADP</data>
+  <data key="d1">organization</data>
+  <data key="d2">GitHub上的一个组织或用户，其项目地址为https://github.com/TencentCloudADP/youtu-graphrag。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970068</data>
+  <data key="d6"></data>
+</node>
+<node id="youtu-graphrag">
+  <data key="d0">youtu-graphrag</data>
+  <data key="d1">artifact</data>
+  <data key="d2">TencentCloudADP在GitHub上的一个项目或仓库。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970068</data>
+  <data key="d6"></data>
+</node>
+<node id="Json在线解析">
+  <data key="d0">Json在线解析</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一个在线工具，网址为https://www.sojson.com/simple_json.html，用于解析JSON数据。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970069</data>
+  <data key="d6"></data>
+</node>
+<node id="量化">
+  <data key="d0">量化</data>
+  <data key="d1">concept</data>
+  <data key="d2">一个概念或项目，文中链接指向https://gitee.com/dromara/northstar，可能与量化交易或分析相关。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970069</data>
+  <data key="d6"></data>
+</node>
+<node id="northstar">
+  <data key="d0">northstar</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Gitee上的一个项目，地址为https://gitee.com/dromara/northstar，与“量化”概念相关联。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970073</data>
+  <data key="d6"></data>
+</node>
+<node id="cleaned_answer">
+  <data key="d0">cleaned_answer</data>
+  <data key="d1">data</data>
+  <data key="d2">通过正则表达式处理后的答案文本，是数据处理过程中的一个中间变量。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970073</data>
+  <data key="d6"></data>
+</node>
+<node id="联网搜索功能">
+  <data key="d0">联网搜索功能</data>
+  <data key="d1">function</data>
+  <data key="d2">智能体根据用户问题是否与最近时间相关而决定是否需要启动的一项功能。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970074</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify .env文件">
+  <data key="d0">Dify .env文件</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Dify平台的配置文件，其中包含SERVICE_API_URL、APP_API_URL等配置项。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970077</data>
+  <data key="d6"></data>
+</node>
+<node id="DeepSeek-V3">
+  <data key="d0">DeepSeek-V3</data>
+  <data key="d1">artifact</data>
+  <data key="d2">华为云提供的DeepSeek模型的一个版本。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970078</data>
+  <data key="d6"></data>
+</node>
+<node id="DeepSeek-R1">
+  <data key="d0">DeepSeek-R1</data>
+  <data key="d1">artifact</data>
+  <data key="d2">华为云提供的DeepSeek模型的另一个版本。</data>
+  <data key="d3">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970079</data>
+  <data key="d6"></data>
+</node>
+<node id="肖总">
+  <data key="d0">肖总</data>
+  <data key="d1">person</data>
+  <data key="d2">肖总是Sensi.AI产品的相关方，负责提供产品资料并需要确认实现方案的核心要点。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970082</data>
+  <data key="d6"></data>
+</node>
+<node id="Sensi.AI产品">
+  <data key="d0">Sensi.AI产品</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Sensi.AI产品是一个涉及音频传感器和惯性传感器融合的智能产品，需要制定初步实现方案。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970082</data>
+  <data key="d6"></data>
+</node>
+<node id="音频传感器">
+  <data key="d0">音频传感器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">音频传感器是一种用于识别声音的硬件设备，其识别模型通常部署在云端，但方案中寻求轻量级模型以嵌入设备。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970082</data>
+  <data key="d6"></data>
+</node>
+<node id="惯性LSMC传感器">
+  <data key="d0">惯性LSMC传感器</data>
+  <data key="d1">artifact</data>
+  <data key="d2">惯性LSMC传感器(如LSM6DS3TR-C)是一种用于检测运动(如跌倒)的传感器，其数据处理方式(特征提取或直接输出判断)需要确认。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970084</data>
+  <data key="d6"></data>
+</node>
+<node id="毫米波雷达">
+  <data key="d0">毫米波雷达</data>
+  <data key="d1">artifact</data>
+  <data key="d2">毫米波雷达是一种传感器，在上下文中可能与惯性传感器功能类似，用于监测，需要确认其与惯性传感器是否为同一设备。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970086</data>
+  <data key="d6"></data>
+</node>
+<node id="段总">
+  <data key="d0">段总</data>
+  <data key="d1">person</data>
+  <data key="d2">段总代表一种技术实现模式，其音频传感器识别模型通常在云端部署，作为方案设计的参考。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970086</data>
+  <data key="d6"></data>
+</node>
+<node id="轻量级模型">
+  <data key="d0">轻量级模型</data>
+  <data key="d1">method</data>
+  <data key="d2">轻量级模型是一种可以嵌入到本地设备中运行的机器学习模型，是音频传感器识别方案的技术难点和需求。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970087</data>
+  <data key="d6"></data>
+</node>
+<node id="四类意图数据集">
+  <data key="d0">四类意图数据集</data>
+  <data key="d1">data</data>
+  <data key="d2">四类意图数据集包含设置闹钟、打电话、播放音乐、关机四类意图，每类有300-500条数据，用于训练意图识别模型。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970088</data>
+  <data key="d6"></data>
+</node>
+<node id="意图识别模型">
+  <data key="d0">意图识别模型</data>
+  <data key="d1">artifact</data>
+  <data key="d2">意图识别模型是基于构建的数据集进行训练的机器学习模型，用于识别用户指令的意图，并需要处理未定义的意图。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970088</data>
+  <data key="d6"></data>
+</node>
+<node id="Rasa框架">
+  <data key="d0">Rasa框架</data>
+  <data key="d1">method</data>
+  <data key="d2">Rasa框架是一个用于构建对话AI的开源工具，在上下文中通过Docker容器和命令行用于意图识别模型的测试流程。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970091</data>
+  <data key="d6"></data>
+</node>
+<node id="运动建议生成系统">
+  <data key="d0">运动建议生成系统</data>
+  <data key="d1">method</data>
+  <data key="d2">运动建议生成系统是一个基于用户个人信息和运动数据，通过特定提示词(Instruction)生成个性化运动建议和计划的流程。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970091</data>
+  <data key="d6"></data>
+</node>
+<node id="可量化的指标">
+  <data key="d0">可量化的指标</data>
+  <data key="d1">concept</data>
+  <data key="d2">可量化的指标是运动建议输出中必须包含的数值化目标，如运动步数，要求数值精确且格式规范。&lt;SEP&gt;健康计划输出中必须包含的精确数值指标，如每日及各餐应摄入的卡路里，数值不能是区间。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f&lt;SEP&gt;chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970092</data>
+  <data key="d6"></data>
+</node>
+<node id="LSM6DS3TR-C">
+  <data key="d0">LSM6DS3TR-C</data>
+  <data key="d1">artifact</data>
+  <data key="d2">LSM6DS3TR-C是资料中提到的一款具体的惯性传感器型号，用于识别跌倒。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970093</data>
+  <data key="d6"></data>
+</node>
+<node id="设置闹钟(set_alarm)">
+  <data key="d0">设置闹钟(set_alarm)</data>
+  <data key="d1">data</data>
+  <data key="d2">设置闹钟是四类意图数据集中的一类意图数据，用于训练模型识别用户设置闹钟的指令。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970095</data>
+  <data key="d6"></data>
+</node>
+<node id="打电话(call)">
+  <data key="d0">打电话(call)</data>
+  <data key="d1">data</data>
+  <data key="d2">打电话是四类意图数据集中的一类意图数据，用于训练模型识别用户打电话的指令。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970095</data>
+  <data key="d6"></data>
+</node>
+<node id="播放音乐(play_music)">
+  <data key="d0">播放音乐(play_music)</data>
+  <data key="d1">data</data>
+  <data key="d2">播放音乐是四类意图数据集中的一类意图数据，用于训练模型识别用户播放音乐的指令。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970097</data>
+  <data key="d6"></data>
+</node>
+<node id="关机(shutdown)">
+  <data key="d0">关机(shutdown)</data>
+  <data key="d1">data</data>
+  <data key="d2">关机是四类意图数据集中的一类意图数据，用于训练模型识别用户关机指令。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970098</data>
+  <data key="d6"></data>
+</node>
+<node id="意图识别流程">
+  <data key="d0">意图识别流程</data>
+  <data key="d1">method</data>
+  <data key="d2">意图识别流程描述了进入特定Docker容器，激活环境并启动Rasa shell以测试意图识别模型的具体操作步骤。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970099</data>
+  <data key="d6"></data>
+</node>
+<node id="运动建议-json-上线提示词">
+  <data key="d0">运动建议-json-上线提示词</data>
+  <data key="d1">content</data>
+  <data key="d2">运动建议-json-上线提示词是一个结构化的XML指令，用于指导基于用户数据生成个性化运动建议和计划。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970099</data>
+  <data key="d6"></data>
+</node>
+<node id="示例JSON">
+  <data key="d0">示例JSON</data>
+  <data key="d1">content</data>
+  <data key="d2">示例JSON是运动建议生成系统输出格式的参考示例，展示了包含可量化指标和运动建议的正确JSON结构。</data>
+  <data key="d3">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970101</data>
+  <data key="d6"></data>
+</node>
+<node id="健康教练">
+  <data key="d0">健康教练</data>
+  <data key="d1">person</data>
+  <data key="d2">一位专业、温暖且善于激励人心的健康教练，负责根据用户的健康计划打卡数据生成激励总结语。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970102</data>
+  <data key="d6"></data>
+</node>
+<node id="打卡数据">
+  <data key="d0">打卡数据</data>
+  <data key="d1">data</data>
+  <data key="d2">用户每日记录的健康计划关键指标数据，是生成激励总结语的基础。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970103</data>
+  <data key="d6"></data>
+</node>
+<node id="API key">
+  <data key="d0">API key</data>
+  <data key="d1">data</data>
+  <data key="d2">用于访问“健康计划-激励总结语”工作流的应用程序接口密钥：app-gfSj34d8c4CB59zNXP4rGG9C。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970109</data>
+  <data key="d6"></data>
+</node>
+<node id="网页端体验">
+  <data key="d0">网页端体验</data>
+  <data key="d1">data</data>
+  <data key="d2">“健康计划-激励总结语”工作流的网页端访问地址：http://36.134.164.80:8012/workflow/X4GhMNU50hRRAQ58。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970110</data>
+  <data key="d6"></data>
+</node>
+<node id="示例">
+  <data key="d0">示例</data>
+  <data key="d1">content</data>
+  <data key="d2">提供的一个JSON格式示例，展示了“可量化的指标”、“饮食建议”和“饮食计划”应如何正确格式化输出。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970121</data>
+  <data key="d6"></data>
+</node>
+<node id="饮食建议">
+  <data key="d0">饮食建议</data>
+  <data key="d1">concept</data>
+  <data key="d2">基于用户个人信息及饮食数据，为其提供合理的饮食建议和制定详细的饮食计划。&lt;SEP&gt;健康计划输出中应列出的具体、可执行的饮食调整建议，如增加蛋白质摄入、减少精制糖等。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3&lt;SEP&gt;chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970121</data>
+  <data key="d6"></data>
+</node>
+<node id="饮食计划">
+  <data key="d0">饮食计划</data>
+  <data key="d1">concept</data>
+  <data key="d2">健康计划输出中应提供的一份详细的每日饮食计划，包括每餐的食物种类和份量。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970168</data>
+  <data key="d6"></data>
+</node>
+<node id="输出格式">
+  <data key="d0">输出格式</data>
+  <data key="d1">concept</data>
+  <data key="d2">对健康计划输出提出的严格要求，包括必须为有效JSON对象、数值不能是区间、单位后无补充内容等。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970183</data>
+  <data key="d6"></data>
+</node>
+<node id="JSON对象">
+  <data key="d0">JSON对象</data>
+  <data key="d1">data</data>
+  <data key="d2">健康计划输出必须遵循的数据交换格式，确保输出为有效结构。</data>
+  <data key="d3">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970196</data>
+  <data key="d6"></data>
+</node>
+<node id="API Base URL">
+  <data key="d0">API Base URL</data>
+  <data key="d1">data</data>
+  <data key="d2">API Base URL是阿里云百炼API服务的端点地址，为https://dashscope.aliyuncs.com/compatible-mode/v1。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970196</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify CPU服务器(移动云，旧版)">
+  <data key="d0">Dify CPU服务器(移动云，旧版)</data>
+  <data key="d1">artifact</data>
+  <data key="d2">这是一台部署在移动云上的服务器，IP为36.133.145.37，用于运行旧版Dify应用，映射了9080和444端口。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970233</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify Web网址(旧版)">
+  <data key="d0">Dify Web网址(旧版)</data>
+  <data key="d1">data</data>
+  <data key="d2">这是访问旧版Dify应用的用户界面地址，可通过域名和端口(9080)访问。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970234</data>
+  <data key="d6"></data>
+</node>
+<node id="启动脚本(旧版Dify)">
+  <data key="d0">启动脚本(旧版Dify)</data>
+  <data key="d1">content</data>
+  <data key="d2">这是一个位于“/home/dify/docker/run.txt”的文件，包含了用于管理旧版Dify容器(停止、启动、重启)的Docker Compose命令。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970236</data>
+  <data key="d6"></data>
+</node>
+<node id="RAGFlow GPU服务器(腾讯云)">
+  <data key="d0">RAGFlow GPU服务器(腾讯云)</data>
+  <data key="d1">artifact</data>
+  <data key="d2">这是一台部署在腾讯云上的GPU服务器，IP为43.136.98.40，用于运行RAGFlow应用，开放了80和9380端口。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970237</data>
+  <data key="d6"></data>
+</node>
+<node id="RAGFlow Web网址">
+  <data key="d0">RAGFlow Web网址</data>
+  <data key="d1">data</data>
+  <data key="d2">这是访问RAGFlow应用的用户界面地址，只能通过域名http://rag.gdzky.cn访问。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970237</data>
+  <data key="d6"></data>
+</node>
+<node id="启动命令(RAGFlow)">
+  <data key="d0">启动命令(RAGFlow)</data>
+  <data key="d1">content</data>
+  <data key="d2">这是一个位于“/home/ubuntu/ragflow_new/start.txt”的文件，包含了用于管理RAGFlow容器(删除、重建、查看日志等)的Docker命令。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970239</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify CPU服务器(移动云，新版)">
+  <data key="d0">Dify CPU服务器(移动云，新版)</data>
+  <data key="d1">artifact</data>
+  <data key="d2">这是一台部署在移动云上的服务器，IP为36.134.164.80，用于运行新版Dify应用，映射了8012和5443端口。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970240</data>
+  <data key="d6"></data>
+</node>
+<node id="aid.baixunsz.com">
+  <data key="d0">aid.baixunsz.com</data>
+  <data key="d1">data</data>
+  <data key="d2">这是指向IP 36.134.164.80的域名，拥有SSL证书，用于访问新版Dify服务器。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970241</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify Web网址(新版)">
+  <data key="d0">Dify Web网址(新版)</data>
+  <data key="d1">data</data>
+  <data key="d2">这是访问新版Dify应用的用户界面地址，可通过域名和端口(8012, 5443)或IP和8012端口访问。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970242</data>
+  <data key="d6"></data>
+</node>
+<node id="启动脚本(新版Dify)">
+  <data key="d0">启动脚本(新版Dify)</data>
+  <data key="d1">content</data>
+  <data key="d2">这是一个用于管理新版Dify容器的脚本，包含停止和启动Docker Compose服务的命令。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970243</data>
+  <data key="d6"></data>
+</node>
+<node id="Dify版本更新">
+  <data key="d0">Dify版本更新</data>
+  <data key="d1">method</data>
+  <data key="d2">这是一套用于更新部署在服务器上的Dify应用版本的Git和Docker命令流程。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970244</data>
+  <data key="d6"></data>
+</node>
+<node id="ICP备案">
+  <data key="d0">ICP备案</data>
+  <data key="d1">concept</data>
+  <data key="d2">ICP备案是中国大陆的一项网站管理规定，移动云特定端口的公网访问需要先完成此备案。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970246</data>
+  <data key="d6"></data>
+</node>
+<node id="端口(80, 8080, 443, 8443)">
+  <data key="d0">端口(80, 8080, 443, 8443)</data>
+  <data key="d1">concept</data>
+  <data key="d2">这些是网络端口号，在移动云上需要完成ICP备案后才能允许公网访问，因此部署服务时应避开这些端口。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970248</data>
+  <data key="d6"></data>
+</node>
+<node id="SSL证书">
+  <data key="d0">SSL证书</data>
+  <data key="d1">artifact</data>
+  <data key="d2">SSL证书用于启用HTTPS安全连接，域名aic.baixunsz.com和aid.baixunsz.com都配置了SSL证书。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970249</data>
+  <data key="d6"></data>
+</node>
+<node id="域名映射">
+  <data key="d0">域名映射</data>
+  <data key="d1">concept</data>
+  <data key="d2">域名映射指将域名(如aic.baixunsz.com)解析到特定IP地址的过程，是服务器网络访问的基础。</data>
+  <data key="d3">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970249</data>
+  <data key="d6"></data>
+</node>
+<node id="有氧运动">
+  <data key="d0">有氧运动</data>
+  <data key="d1">concept</data>
+  <data key="d2">一种运动类型，建议每周进行3-4次，每次30-40分钟，中等强度，有助于安全减脂并提高心肺耐力。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970252</data>
+  <data key="d6"></data>
+</node>
+<node id="力量训练">
+  <data key="d0">力量训练</data>
+  <data key="d1">concept</data>
+  <data key="d2">一种运动类型，建议每周进行2-3次，针对主要肌群，每次20-30分钟，使用自重或轻重量，以增加肌肉量和基础代谢率。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970252</data>
+  <data key="d6"></data>
+</node>
+<node id="每日步行目标">
+  <data key="d0">每日步行目标</data>
+  <data key="d1">concept</data>
+  <data key="d2">每日确保完成8000步的步行目标，以增加日常活动量，促进热量消耗，并改善整体健康。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970252</data>
+  <data key="d6"></data>
+</node>
+<node id="热身">
+  <data key="d0">热身</data>
+  <data key="d1">concept</data>
+  <data key="d2">每次运动前进行5-10分钟的热身，如动态拉伸或慢走，以预防受伤并提高灵活性。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970256</data>
+  <data key="d6"></data>
+</node>
+<node id="运动后拉伸">
+  <data key="d0">运动后拉伸</data>
+  <data key="d1">concept</data>
+  <data key="d2">运动后进行5-10分钟的静态拉伸，以预防受伤并提高灵活性。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970256</data>
+  <data key="d6"></data>
+</node>
+<node id="低冲击活动">
+  <data key="d0">低冲击活动</data>
+  <data key="d1">concept</data>
+  <data key="d2">针对有关节问题的用户，建议优先选择游泳或骑行等低冲击活动，避免高强度冲击运动。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970258</data>
+  <data key="d6"></data>
+</node>
+<node id="一周运动计划">
+  <data key="d0">一周运动计划</data>
+  <data key="d1">content</data>
+  <data key="d2">一份详细的每周运动安排，包含从星期一到星期日的具体运动类型、时长和注意事项。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970259</data>
+  <data key="d6"></data>
+</node>
+<node id="星期一">
+  <data key="d0">星期一</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：有氧运动(快走30分钟，中等强度)。注意事项包括热身和运动后拉伸。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970259</data>
+  <data key="d6"></data>
+</node>
+<node id="星期二">
+  <data key="d0">星期二</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：力量训练(全身练习，包括深蹲、俯卧撑、仰卧起坐)。注意事项包括热身和使用自重。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970263</data>
+  <data key="d6"></data>
+</node>
+<node id="星期三">
+  <data key="d0">星期三</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：有氧运动(跑步或骑行30分钟，中等强度)。注意事项包括热身和运动后拉伸。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970263</data>
+  <data key="d6"></data>
+</node>
+<node id="星期四">
+  <data key="d0">星期四</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：休息或轻度活动(散步20分钟，低强度)。注意事项是保持放松以促进恢复。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970263</data>
+  <data key="d6"></data>
+</node>
+<node id="星期五">
+  <data key="d0">星期五</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：力量训练(核心和上肢练习，包括平板支撑、哑铃推举)。注意事项包括热身和控制强度。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970265</data>
+  <data key="d6"></data>
+</node>
+<node id="星期六">
+  <data key="d0">星期六</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：有氧运动(游泳或椭圆机30分钟，中等强度)。注意事项包括热身和运动后拉伸。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970266</data>
+  <data key="d6"></data>
+</node>
+<node id="星期日">
+  <data key="d0">星期日</data>
+  <data key="d1">content</data>
+  <data key="d2">运动计划：休息日，完全休息或进行轻度伸展。注意事项是确保身体恢复。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970268</data>
+  <data key="d6"></data>
+</node>
+<node id="可量化指标">
+  <data key="d0">可量化指标</data>
+  <data key="d1">data</data>
+  <data key="d2">基于用户健康数据计算并设定的目标，包括每日应摄入卡路里及各餐次应摄入卡路里。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970268</data>
+  <data key="d6"></data>
+</node>
+<node id="初级运动者">
+  <data key="d0">初级运动者</data>
+  <data key="d1">person</data>
+  <data key="d2">有氧运动适合初级运动者，有助于他们避免过度疲劳。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970268</data>
+  <data key="d6"></data>
+</node>
+<node id="深蹲">
+  <data key="d0">深蹲</data>
+  <data key="d1">method</data>
+  <data key="d2">力量训练中针对主要肌群的练习动作之一。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970271</data>
+  <data key="d6"></data>
+</node>
+<node id="俯卧撑">
+  <data key="d0">俯卧撑</data>
+  <data key="d1">method</data>
+  <data key="d2">力量训练中针对主要肌群的练习动作之一。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970271</data>
+  <data key="d6"></data>
+</node>
+<node id="仰卧起坐">
+  <data key="d0">仰卧起坐</data>
+  <data key="d1">method</data>
+  <data key="d2">力量训练中针对主要肌群的练习动作之一。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970271</data>
+  <data key="d6"></data>
+</node>
+<node id="平板支撑">
+  <data key="d0">平板支撑</data>
+  <data key="d1">method</data>
+  <data key="d2">力量训练中核心和上肢练习的动作之一。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970274</data>
+  <data key="d6"></data>
+</node>
+<node id="哑铃推举">
+  <data key="d0">哑铃推举</data>
+  <data key="d1">method</data>
+  <data key="d2">力量训练中核心和上肢练习的动作之一。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970275</data>
+  <data key="d6"></data>
+</node>
+<node id="动态拉伸">
+  <data key="d0">动态拉伸</data>
+  <data key="d1">method</data>
+  <data key="d2">运动前热身的一种方式。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970275</data>
+  <data key="d6"></data>
+</node>
+<node id="静态拉伸">
+  <data key="d0">静态拉伸</data>
+  <data key="d1">method</data>
+  <data key="d2">运动后拉伸的一种方式。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970275</data>
+  <data key="d6"></data>
+</node>
+<node id="游泳">
+  <data key="d0">游泳</data>
+  <data key="d1">method</data>
+  <data key="d2">一种低冲击有氧运动，适合有关节问题的用户。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970278</data>
+  <data key="d6"></data>
+</node>
+<node id="骑行">
+  <data key="d0">骑行</data>
+  <data key="d1">method</data>
+  <data key="d2">一种低冲击有氧运动，适合有关节问题的用户。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970278</data>
+  <data key="d6"></data>
+</node>
+<node id="椭圆机">
+  <data key="d0">椭圆机</data>
+  <data key="d1">artifact</data>
+  <data key="d2">一种有氧运动器械，用于星期六的有氧运动计划。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970279</data>
+  <data key="d6"></data>
+</node>
+<node id="每日应摄入卡路里">
+  <data key="d0">每日应摄入卡路里</data>
+  <data key="d1">data</data>
+  <data key="d2">基于用户健康数据计算出的每日总热量摄入目标。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970279</data>
+  <data key="d6"></data>
+</node>
+<node id="早上应摄入卡路里">
+  <data key="d0">早上应摄入卡路里</data>
+  <data key="d1">data</data>
+  <data key="d2">基于用户健康数据计算出的早餐热量摄入目标。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970282</data>
+  <data key="d6"></data>
+</node>
+<node id="中午应摄入卡路里">
+  <data key="d0">中午应摄入卡路里</data>
+  <data key="d1">data</data>
+  <data key="d2">基于用户健康数据计算出的午餐热量摄入目标。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970282</data>
+  <data key="d6"></data>
+</node>
+<node id="晚上应摄入卡路里">
+  <data key="d0">晚上应摄入卡路里</data>
+  <data key="d1">data</data>
+  <data key="d2">基于用户健康数据计算出的晚餐热量摄入目标。</data>
+  <data key="d3">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d4">文档.txt</data>
+  <data key="d5">1767970282</data>
   <data key="d6"></data>
 </node>
 <edge source="性能测试模块" target="项目管理入口">
@@ -15786,6 +17226,24 @@
   <data key="d10">chunk-d34f4f4096c5c994a4190c333cf5b57f</data>
   <data key="d11">邱云霞的简历.pdf</data>
   <data key="d12">1767320012</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify" target="docker-compose">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify平台可以使用docker-compose工具进行容器化部署和管理。</data>
+  <data key="d9">应用容器化,部署工具</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970335</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify" target="Dify .env文件">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify平台的运行依赖于其.env配置文件中的各项参数设置。</data>
+  <data key="d9">环境设置,配置管理</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970347</data>
   <data key="d13"></data>
 </edge>
 <edge source="Playwright" target="is_visible()">
@@ -20846,6 +22304,15 @@
   <data key="d12">1767336535</data>
   <data key="d13"></data>
 </edge>
+<edge source="正则表达式" target="cleaned_answer">
+  <data key="d7">1.0</data>
+  <data key="d8">使用正则表达式对原始答案进行清理，生成`cleaned_answer`。</data>
+  <data key="d9">数据清洗,文本处理</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970351</data>
+  <data key="d13"></data>
+</edge>
 <edge source="rand_str" target="动态数据生成">
   <data key="d7">1.0</data>
   <data key="d8">动态数据生成方法的一个具体示例是使用`rand_str`函数来生成随机字符串作为测试数据。</data>
@@ -21960,6 +23427,24 @@
   <data key="d10">chunk-508db58a2a7942df34569046bec9d997</data>
   <data key="d11">重要信息.txt</data>
   <data key="d12">1767965421</data>
+  <data key="d13"></data>
+</edge>
+<edge source="用户" target="健康计划">
+  <data key="d7">1.0</data>
+  <data key="d8">用户正在执行一项健康计划，并为此记录每日的打卡数据。</data>
+  <data key="d9">参与,执行</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970377</data>
+  <data key="d13"></data>
+</edge>
+<edge source="用户" target="打卡数据">
+  <data key="d7">1.0</data>
+  <data key="d8">用户记录并提供了每日的健康计划关键指标数据。</data>
+  <data key="d9">提供,记录</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970387</data>
   <data key="d13"></data>
 </edge>
 <edge source="trace_id" target="全链路追踪">
@@ -24572,6 +26057,24 @@
   <data key="d12">1767340950</data>
   <data key="d13"></data>
 </edge>
+<edge source="Git" target="Tag 1.8.1">
+  <data key="d7">1.0</data>
+  <data key="d8">Git被用于切换到代码库的特定版本标签 `1.8.1`。</data>
+  <data key="d9">代码切换,版本控制</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970302</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Git" target="Dify版本更新">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify版本更新的流程中使用了Git命令来获取和切换不同版本的代码。</data>
+  <data key="d9">代码管理,版本控制</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970430</data>
+  <data key="d13"></data>
+</edge>
 <edge source="Monkey" target="应用稳定性测试">
   <data key="d7">1.0</data>
   <data key="d8">Monkey工具被用于应用稳定性测试中，执行压力测试以验证应用在随机事件下的表现。</data>
@@ -25832,6 +27335,15 @@
   <data key="d12">1767965405</data>
   <data key="d13"></data>
 </edge>
+<edge source="智能体" target="联网搜索功能">
+  <data key="d7">1.0</data>
+  <data key="d8">智能体负责根据问题的时间相关性判断并决定是否启动联网搜索功能。</data>
+  <data key="d9">功能决策,条件触发</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970347</data>
+  <data key="d13"></data>
+</edge>
 <edge source="个性化月报" target="附件内容">
   <data key="d7">1.0</data>
   <data key="d8">个性化月报的格式和结构是参照附件内容来设计和生成的。</data>
@@ -26012,6 +27524,42 @@
   <data key="d12">1767965524</data>
   <data key="d13"></data>
 </edge>
+<edge source="移动云" target="Dify CPU服务器(移动云，旧版)">
+  <data key="d7">1.0</data>
+  <data key="d8">旧版Dify应用被部署在移动云提供的服务器上。</data>
+  <data key="d9">云主机,服务部署</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970395</data>
+  <data key="d13"></data>
+</edge>
+<edge source="移动云" target="Dify CPU服务器(移动云，新版)">
+  <data key="d7">1.0</data>
+  <data key="d8">新版Dify应用同样托管在移动云提供的服务器基础设施上。</data>
+  <data key="d9">基础设施,托管服务</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970409</data>
+  <data key="d13"></data>
+</edge>
+<edge source="移动云" target="端口(80, 8080, 443, 8443)">
+  <data key="d7">1.0</data>
+  <data key="d8">移动云对80、8080、443、8443端口实施了访问限制，要求先完成ICP备案。</data>
+  <data key="d9">网络策略,访问限制</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970419</data>
+  <data key="d13"></data>
+</edge>
+<edge source="腾讯云" target="RAGFlow GPU服务器(腾讯云)">
+  <data key="d7">1.0</data>
+  <data key="d8">RAGFlow GPU服务器部署在腾讯云提供的云主机上。</data>
+  <data key="d9">云主机,服务部署</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970422</data>
+  <data key="d13"></data>
+</edge>
 <edge source="敏感词API" target="敏感词参考源码">
   <data key="d7">1.0</data>
   <data key="d8">敏感词API的功能实现基于GitHub上开源的敏感词参考源码。</data>
@@ -26091,6 +27639,978 @@
   <data key="d10">chunk-e3c13875720cef2444bbacaa549d5b1d</data>
   <data key="d11">重要信息.txt</data>
   <data key="d12">1767965573</data>
+  <data key="d13"></data>
+</edge>
+<edge source="aic.baixunsz.com" target="Dify Web网址(旧版)">
+  <data key="d7">1.0</data>
+  <data key="d8">Dify Web网址由域名aic.baixunsz.com和特定端口(9080)组成，是应用的访问入口。</data>
+  <data key="d9">服务入口,网址构成</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970401</data>
+  <data key="d13"></data>
+</edge>
+<edge source="aic.baixunsz.com" target="Dify CPU服务器(移动云，旧版)">
+  <data key="d7">1.0</data>
+  <data key="d8">域名aic.baixunsz.com被映射到该服务器的IP地址，用于网络访问。</data>
+  <data key="d9">域名解析,网络访问</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970409</data>
+  <data key="d13"></data>
+</edge>
+<edge source="aic.baixunsz.com" target="SSL证书">
+  <data key="d7">1.0</data>
+  <data key="d8">域名aic.baixunsz.com配置了SSL证书，以支持HTTPS安全访问。</data>
+  <data key="d9">HTTPS,安全连接</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970424</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rag.gdzky.cn" target="RAGFlow API">
+  <data key="d7">1.0</data>
+  <data key="d8">RAGFlow API服务被部署在域名 `rag.gdzky.cn` 上，所有API请求都指向该地址。</data>
+  <data key="d9">API访问,服务部署</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970322</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rag.gdzky.cn" target="RAGFlow GPU服务器(腾讯云)">
+  <data key="d7">1.0</data>
+  <data key="d8">域名rag.gdzky.cn专门绑定到这台RAGFlow服务器，是其Web服务的唯一访问点。</data>
+  <data key="d9">专属访问,域名绑定</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970406</data>
+  <data key="d13"></data>
+</edge>
+<edge source="rag.gdzky.cn" target="RAGFlow Web网址">
+  <data key="d7">1.0</data>
+  <data key="d8">RAGFlow Web网址直接使用域名rag.gdzky.cn，指向应用的用户登录界面。</data>
+  <data key="d9">服务链接,用户界面</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970413</data>
+  <data key="d13"></data>
+</edge>
+<edge source="健康计划" target="用户打卡数据">
+  <data key="d7">1.0</data>
+  <data key="d8">健康计划的执行情况通过用户每日记录的打卡数据进行跟踪和评估。</data>
+  <data key="d9">执行跟踪,数据记录</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970287</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="用户打卡数据">
+  <data key="d7">1.0</data>
+  <data key="d8">激励总结语是根据用户提供的打卡数据生成，旨在对用户的努力给予反馈和鼓励。</data>
+  <data key="d9">内容生成,反馈激励</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970294</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="小成功">
+  <data key="d7">1.0</data>
+  <data key="d8">激励总结语的撰写核心是将用户当天的行动与长期目标联系起来，并强调“小成功”的价值。</data>
+  <data key="d9">价值强调,内容核心</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970296</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="砖瓦">
+  <data key="d7">1.0</data>
+  <data key="d8">在撰写激励总结语时，可以使用“砖瓦”等比喻来形象化地描述微小努力对长期目标的贡献。</data>
+  <data key="d9">修辞运用,比喻象征</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970299</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="加油证据">
+  <data key="d7">1.0</data>
+  <data key="d8">在撰写激励总结语时，可以使用“加油证据”等比喻来鼓励用户记录成就作为未来的动力。</data>
+  <data key="d9">修辞运用,比喻象征</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970304</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="示例1：全面达标，重点表扬运动">
+  <data key="d7">1.0</data>
+  <data key="d8">该示例是激励总结语的一种具体表现形式，用于示范如何撰写全面达标情况下的鼓励文字。</data>
+  <data key="d9">内容示范,示例说明</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970308</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="示例2：某项未达标(如卡路里)，鼓励为主">
+  <data key="d7">1.0</data>
+  <data key="d8">该示例是激励总结语的一种具体表现形式，用于示范如何处理某项指标未达标的情况。</data>
+  <data key="d9">内容示范,示例说明</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970312</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="示例3：针对减肥计划，突出热量缺口">
+  <data key="d7">1.0</data>
+  <data key="d8">该示例是激励总结语的一种具体表现形式，专门针对减肥计划并强调热量缺口。</data>
+  <data key="d9">内容示范,示例说明</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970319</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="示例4：针对睡眠和压力管理">
+  <data key="d7">1.0</data>
+  <data key="d8">该示例是激励总结语的一种具体表现形式，专门针对睡眠和压力管理的成就进行表扬。</data>
+  <data key="d9">内容示范,示例说明</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970325</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="健康教练">
+  <data key="d7">1.0</data>
+  <data key="d8">健康教练根据用户的打卡数据，生成个性化的激励总结语。</data>
+  <data key="d9">个性化,生成</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970372</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="打卡数据">
+  <data key="d7">1.0</data>
+  <data key="d8">激励总结语是基于用户的健康计划打卡数据生成的，用于总结用户当日的亮点和努力。</data>
+  <data key="d9">基于,总结</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970381</data>
+  <data key="d13"></data>
+</edge>
+<edge source="激励总结语" target="API URL">
+  <data key="d7">1.0</data>
+  <data key="d8">通过指定的API URL可以调用工作流服务来生成激励总结语。</data>
+  <data key="d9">服务,调用</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970387</data>
+  <data key="d13"></data>
+</edge>
+<edge source="多通道PPG 100HZ" target="人工智能中医大模型平台">
+  <data key="d7">1.0</data>
+  <data key="d8">多通道PPG 100HZ采集的数据被输入到人工智能中医大模型平台进行分析。</data>
+  <data key="d9">数据采集,输入源</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970288</data>
+  <data key="d13"></data>
+</edge>
+<edge source="单导联ECG" target="人工智能中医大模型平台">
+  <data key="d7">1.0</data>
+  <data key="d8">单导联ECG采集的数据被输入到人工智能中医大模型平台进行分析。</data>
+  <data key="d9">数据采集,输入源</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970292</data>
+  <data key="d13"></data>
+</edge>
+<edge source="人工智能中医大模型平台" target="中医未病健康报告">
+  <data key="d7">2.0</data>
+  <data key="d8">人工智能中医大模型平台对采集的数据进行分析后，生成中医未病健康报告。&lt;SEP&gt;人工智能中医大模型平台的分析结果用于在手机小程序上生成中医未病健康报告。</data>
+  <data key="d9">健康分析,分析生成,报告生成,结果输出</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970295</data>
+  <data key="d13"></data>
+</edge>
+<edge source="人工智能中医大模型平台" target="ECG采集数据">
+  <data key="d7">1.0</data>
+  <data key="d8">ECG采集数据通过人工智能中医大模型平台进行处理和分析，以评估人体健康状况。</data>
+  <data key="d9">健康评估,数据处理</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970330</data>
+  <data key="d13"></data>
+</edge>
+<edge source="中医未病健康报告" target="手机小程序">
+  <data key="d7">1.0</data>
+  <data key="d8">中医未病健康报告通过手机小程序向用户出具和展示。</data>
+  <data key="d9">内容交付,应用平台</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970332</data>
+  <data key="d13"></data>
+</edge>
+<edge source="百川智能" target="Baichuan-M2-Plus">
+  <data key="d7">2.0</data>
+  <data key="d8">百川智能提供了名为Baichuan-M2-Plus的AI模型。&lt;SEP&gt;百川智能提供了名为Baichuan-M2-Plus的AI模型服务。</data>
+  <data key="d9">技术服务,模型提供</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227&lt;SEP&gt;chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970289</data>
+  <data key="d13"></data>
+</edge>
+<edge source="百川智能" target="API url">
+  <data key="d7">1.0</data>
+  <data key="d8">百川智能通过其平台提供了API接口地址，供开发者调用其AI模型。</data>
+  <data key="d9">技术服务,接口提供</data>
+  <data key="d10">chunk-6f413192b6712442310ab83e47795227</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970298</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker Compose" target="Docker Compose.yaml">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker Compose使用Docker Compose.yaml文件来定义和配置多容器应用程序的服务。</data>
+  <data key="d9">容器编排,配置管理</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970299</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker Compose" target="Dify_docker">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker Compose通过指定项目名称 `dify_docker` 来管理对应的Docker应用程序栈。</data>
+  <data key="d9">服务部署,项目管理</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970302</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker Compose" target="Docker Compose Down">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker Compose工具通过执行 `docker-compose down` 命令来停止和清理运行中的服务。</data>
+  <data key="d9">容器管理,服务停止</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970319</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker Compose" target="Docker Compose Up">
+  <data key="d7">1.0</data>
+  <data key="d8">Docker Compose工具通过执行 `docker-compose up` 命令来构建和启动定义的服务。</data>
+  <data key="d9">容器管理,服务启动</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970325</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Docker Compose" target="启动脚本(旧版Dify)">
+  <data key="d7">1.0</data>
+  <data key="d8">启动脚本中的命令使用Docker Compose工具来编排和管理Dify的容器。</data>
+  <data key="d9">容器编排,工具使用</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970426</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow API" target="API Key">
+  <data key="d7">1.0</data>
+  <data key="d8">访问RAGFlow API需要使用特定的API Key进行身份验证。</data>
+  <data key="d9">访问控制,身份验证</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970304</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow API" target="海实利">
+  <data key="d7">1.0</data>
+  <data key="d8">海实利作为测试用例，用于验证RAGFlow API在无知识图谱场景下的聊天功能。</data>
+  <data key="d9">API测试,功能验证</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970310</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow API" target="渔业养殖">
+  <data key="d7">1.0</data>
+  <data key="d8">渔业养殖作为测试用例，用于验证RAGFlow API在无知识图谱场景下的问答功能。</data>
+  <data key="d9">API测试,问答系统</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970314</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API Key" target="阿里云百炼">
+  <data key="d7">1.0</data>
+  <data key="d8">访问阿里云百炼的API服务需要使用有效的API Key进行身份验证。</data>
+  <data key="d9">访问控制,身份验证</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970405</data>
+  <data key="d13"></data>
+</edge>
+<edge source="海实利" target="API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm">
+  <data key="d7">1.0</data>
+  <data key="d8">在针对海实利的API测试中，使用特定的API Key `ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm` 进行认证。</data>
+  <data key="d9">API访问,身份验证</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970321</data>
+  <data key="d13"></data>
+</edge>
+<edge source="海实利" target="Chat ID f18b15f8a1a411f0b99b0242c0a89006">
+  <data key="d7">1.0</data>
+  <data key="d8">在海实利的API测试中，使用特定的Chat ID `f18b15f8a1a411f0b99b0242c0a89006` 来定位聊天配置。</data>
+  <data key="d9">API配置,会话标识</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970329</data>
+  <data key="d13"></data>
+</edge>
+<edge source="API URL" target="API key">
+  <data key="d7">1.0</data>
+  <data key="d8">API key用于认证和访问指定的API URL以调用服务。</data>
+  <data key="d9">认证,访问</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970395</data>
+  <data key="d13"></data>
+</edge>
+<edge source="渔业养殖" target="Chat ID 8a1edc92a1a411f0b0ea0242c0a89006">
+  <data key="d7">1.0</data>
+  <data key="d8">在渔业养殖的API测试中，使用特定的Chat ID `8a1edc92a1a411f0b0ea0242c0a89006` 来定位聊天配置。</data>
+  <data key="d9">API配置,会话标识</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970323</data>
+  <data key="d13"></data>
+</edge>
+<edge source="聊天接口" target="Session ID">
+  <data key="d7">1.0</data>
+  <data key="d8">聊天接口使用Session ID来唯一标识和管理用户的多轮对话会话。</data>
+  <data key="d9">会话管理,状态跟踪</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970308</data>
+  <data key="d13"></data>
+</edge>
+<edge source="聊天接口" target="引用信息">
+  <data key="d7">1.0</data>
+  <data key="d8">聊天接口在响应中可以返回引用信息，以提供答案的来源依据。</data>
+  <data key="d9">信息溯源,答案支持</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970314</data>
+  <data key="d13"></data>
+</edge>
+<edge source="聊天接口" target="Session ID b06badb8a34c11f0a9d20242c0a8a006">
+  <data key="d7">1.0</data>
+  <data key="d8">在聊天接口的第二次请求中，使用具体的Session ID `b06badb8a34c11f0a9d20242c0a8a006` 来关联之前的会话。</data>
+  <data key="d9">会话跟踪,连续对话</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970326</data>
+  <data key="d13"></data>
+</edge>
+<edge source="引用图片" target="Image ID">
+  <data key="d7">1.0</data>
+  <data key="d8">引用图片通过其唯一的Image ID在指定的URL路径下被访问和获取。</data>
+  <data key="d9">内容访问,资源标识</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970312</data>
+  <data key="d13"></data>
+</edge>
+<edge source="引用图片" target="document_app.py">
+  <data key="d7">1.0</data>
+  <data key="d8">引用图片的访问接口功能在RAGFlow项目的 `document_app.py` 源代码文件中实现。</data>
+  <data key="d9">功能实现,源码关联</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970329</data>
+  <data key="d13"></data>
+</edge>
+<edge source="检索上下文接口" target="Dataset ID">
+  <data key="d7">1.0</data>
+  <data key="d8">检索上下文接口使用Dataset ID来指定从哪个知识库数据集中检索相关信息。</data>
+  <data key="d9">数据查询,知识库检索</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970315</data>
+  <data key="d13"></data>
+</edge>
+<edge source="检索上下文接口" target="Dataset ID ea5142baa11511f083560242c0a89006">
+  <data key="d7">1.0</data>
+  <data key="d8">在检索上下文接口的请求中，使用具体的Dataset ID `ea5142baa11511f083560242c0a89006` 作为查询参数。</data>
+  <data key="d9">参数指定,数据查询</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970326</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Infiniflow" target="GitHub">
+  <data key="d7">1.0</data>
+  <data key="d8">Infiniflow组织将RAGFlow项目的源代码托管在GitHub平台上。</data>
+  <data key="d9">代码托管,开源协作</data>
+  <data key="d10">chunk-f730138d1d5be6aebb11d5b5f886f0e9</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970317</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI健康助手" target="健康计划调查问卷">
+  <data key="d7">1.0</data>
+  <data key="d8">AI健康助手负责生成健康计划调查问卷，以收集用户健康信息。</data>
+  <data key="d9">信息收集,内容生成</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970333</data>
+  <data key="d13"></data>
+</edge>
+<edge source="AI健康助手" target="食材集采数字化平台智能助手">
+  <data key="d7">1.0</data>
+  <data key="d8">两者均为在不同领域(食材采购与健康管理)提供智能辅助服务的AI应用。</data>
+  <data key="d9">智能服务,领域应用</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970343</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DeepSeek" target="华为云">
+  <data key="d7">1.0</data>
+  <data key="d8">华为云提供了DeepSeek模型的商用API服务，表明两者存在服务合作关系。</data>
+  <data key="d9">云平台合作,模型服务</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970338</data>
+  <data key="d13"></data>
+</edge>
+<edge source="DeepSeek" target="阿里云百炼">
+  <data key="d7">1.0</data>
+  <data key="d8">阿里云百炼平台提供了兼容DeepSeek模型的API服务。</data>
+  <data key="d9">API服务,模型接入</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970346</data>
+  <data key="d13"></data>
+</edge>
+<edge source="华为云" target="DeepSeek-V3">
+  <data key="d7">1.0</data>
+  <data key="d8">华为云提供了DeepSeek-V3模型的商用API服务。</data>
+  <data key="d9">模型服务,版本提供</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970351</data>
+  <data key="d13"></data>
+</edge>
+<edge source="华为云" target="DeepSeek-R1">
+  <data key="d7">1.0</data>
+  <data key="d8">华为云提供了DeepSeek-R1模型的商用API服务。</data>
+  <data key="d9">模型服务,版本提供</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970360</data>
+  <data key="d13"></data>
+</edge>
+<edge source="阿里云百炼" target="API Base URL">
+  <data key="d7">1.0</data>
+  <data key="d8">阿里云百炼平台通过指定的API Base URL提供其API服务。</data>
+  <data key="d9">API访问,服务端点</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970395</data>
+  <data key="d13"></data>
+</edge>
+<edge source="docker-compose" target="docker">
+  <data key="d7">1.0</data>
+  <data key="d8">docker-compose是建立在docker平台之上的容器编排工具。</data>
+  <data key="d9">容器编排,工具依赖</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970345</data>
+  <data key="d13"></data>
+</edge>
+<edge source="TencentCloudADP" target="youtu-graphrag">
+  <data key="d7">1.0</data>
+  <data key="d8">TencentCloudADP在GitHub上托管了名为youtu-graphrag的项目。</data>
+  <data key="d9">代码仓库,项目托管</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970341</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Json在线解析" target="cleaned_answer">
+  <data key="d7">1.0</data>
+  <data key="d8">Json在线解析工具可能用于处理或验证类似`cleaned_answer`这样的数据。</data>
+  <data key="d9">工具辅助,数据处理</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970342</data>
+  <data key="d13"></data>
+</edge>
+<edge source="量化" target="northstar">
+  <data key="d7">1.0</data>
+  <data key="d8">“量化”这一概念通过northstar项目具体实现或关联。</data>
+  <data key="d9">概念实现,项目关联</data>
+  <data key="d10">chunk-2309688baefacf34329b80e3d86a7260</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970343</data>
+  <data key="d13"></data>
+</edge>
+<edge source="肖总" target="Sensi.AI产品">
+  <data key="d7">1.0</data>
+  <data key="d8">肖总提供了Sensi.AI产品的资料，并需要确认基于该产品的传感器融合实现方案的核心要点。</data>
+  <data key="d9">产品管理,需求确认</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970354</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Sensi.AI产品" target="音频传感器">
+  <data key="d7">1.0</data>
+  <data key="d8">Sensi.AI产品的初步实现方案计划使用音频传感器作为其感知组件之一。</data>
+  <data key="d9">技术方案,硬件组成</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970362</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Sensi.AI产品" target="惯性LSMC传感器">
+  <data key="d7">1.0</data>
+  <data key="d8">Sensi.AI产品的初步实现方案计划使用惯性LSMC传感器作为其感知组件之一，用于跌倒识别。</data>
+  <data key="d9">技术方案,硬件组成</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970372</data>
+  <data key="d13"></data>
+</edge>
+<edge source="音频传感器" target="轻量级模型">
+  <data key="d7">1.0</data>
+  <data key="d8">音频传感器识别模型需要从云端部署模式转变为找到并嵌入轻量级模型到设备中，这是方案的核心难点。</data>
+  <data key="d9">技术实现,模型部署</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970355</data>
+  <data key="d13"></data>
+</edge>
+<edge source="惯性LSMC传感器" target="毫米波雷达">
+  <data key="d7">1.0</data>
+  <data key="d8">需要确认惯性传感器与毫米波雷达是否为同一种传感器，这关系到数据获取和融合方案的设计。</data>
+  <data key="d9">功能对比,设备辨析</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970355</data>
+  <data key="d13"></data>
+</edge>
+<edge source="惯性LSMC传感器" target="LSM6DS3TR-C">
+  <data key="d7">1.0</data>
+  <data key="d8">LSM6DS3TR-C是惯性LSMC传感器的一个具体型号实例，在资料中被提及用于跌倒识别。</data>
+  <data key="d9">具体型号,设备实例</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970366</data>
+  <data key="d13"></data>
+</edge>
+<edge source="四类意图数据集" target="意图识别模型">
+  <data key="d7">1.0</data>
+  <data key="d8">四类意图数据集是用于训练意图识别模型的基础数据。</data>
+  <data key="d9">数据训练,模型开发</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970357</data>
+  <data key="d13"></data>
+</edge>
+<edge source="四类意图数据集" target="设置闹钟(set_alarm)">
+  <data key="d7">1.0</data>
+  <data key="d8">设置闹钟(set_alarm)是构成四类意图数据集的其中一个具体意图类别和数据子集。</data>
+  <data key="d9">意图类别,数据组成</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970364</data>
+  <data key="d13"></data>
+</edge>
+<edge source="四类意图数据集" target="打电话(call)">
+  <data key="d7">1.0</data>
+  <data key="d8">打电话(call)是构成四类意图数据集的其中一个具体意图类别和数据子集。</data>
+  <data key="d9">意图类别,数据组成</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970372</data>
+  <data key="d13"></data>
+</edge>
+<edge source="四类意图数据集" target="播放音乐(play_music)">
+  <data key="d7">1.0</data>
+  <data key="d8">播放音乐(play_music)是构成四类意图数据集的其中一个具体意图类别和数据子集。</data>
+  <data key="d9">意图类别,数据组成</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970381</data>
+  <data key="d13"></data>
+</edge>
+<edge source="四类意图数据集" target="关机(shutdown)">
+  <data key="d7">1.0</data>
+  <data key="d8">关机(shutdown)是构成四类意图数据集的其中一个具体意图类别和数据子集。</data>
+  <data key="d9">意图类别,数据组成</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970387</data>
+  <data key="d13"></data>
+</edge>
+<edge source="意图识别模型" target="Rasa框架">
+  <data key="d7">1.0</data>
+  <data key="d8">训练好的意图识别模型在Rasa框架环境中通过特定命令进行交互测试。</data>
+  <data key="d9">技术工具,模型测试</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970363</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Rasa框架" target="意图识别流程">
+  <data key="d7">1.0</data>
+  <data key="d8">意图识别流程文档提供了在Rasa框架的Docker环境中激活和测试模型的具体命令行操作。</data>
+  <data key="d9">操作指南,测试环境</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970368</data>
+  <data key="d13"></data>
+</edge>
+<edge source="运动建议生成系统" target="可量化的指标">
+  <data key="d7">1.0</data>
+  <data key="d8">运动建议生成系统在输出时必须包含符合严格格式要求的可量化的指标。</data>
+  <data key="d9">目标设定,输出规范</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970361</data>
+  <data key="d13"></data>
+</edge>
+<edge source="运动建议生成系统" target="运动建议-json-上线提示词">
+  <data key="d7">1.0</data>
+  <data key="d8">运动建议生成系统的运行逻辑和输出格式由“运动建议-json-上线提示词”这一结构化内容定义。</data>
+  <data key="d9">生成规则,系统指令</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970368</data>
+  <data key="d13"></data>
+</edge>
+<edge source="运动建议生成系统" target="示例JSON">
+  <data key="d7">1.0</data>
+  <data key="d8">示例JSON为运动建议生成系统的输出提供了必须遵循的格式规范和内容范例。</data>
+  <data key="d9">格式参考,输出规范</data>
+  <data key="d10">chunk-4e84c2a87f980319bb386cc588050a5f</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970377</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可量化的指标" target="示例">
+  <data key="d7">1.0</data>
+  <data key="d8">示例中展示了“可量化的指标”应如何正确格式化为非区间数值。</data>
+  <data key="d9">展示,规范</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970385</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可量化的指标" target="输出格式">
+  <data key="d7">1.0</data>
+  <data key="d8">输出格式要求“可量化的指标”中的数值不能是区间，单位后不能有补充内容。</data>
+  <data key="d9">定义,约束</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970391</data>
+  <data key="d13"></data>
+</edge>
+<edge source="示例" target="饮食建议">
+  <data key="d7">1.0</data>
+  <data key="d8">示例中展示了“饮食建议”应如何具体、可执行地列出。</data>
+  <data key="d9">展示,规范</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970391</data>
+  <data key="d13"></data>
+</edge>
+<edge source="示例" target="饮食计划">
+  <data key="d7">1.0</data>
+  <data key="d8">示例中展示了“饮食计划”应如何详细地提供每日每餐安排。</data>
+  <data key="d9">展示,规范</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970400</data>
+  <data key="d13"></data>
+</edge>
+<edge source="饮食建议" target="可量化指标">
+  <data key="d7">1.0</data>
+  <data key="d8">饮食建议的输出要求中包含基于用户健康数据计算的可量化指标。</data>
+  <data key="d9">数据支撑,目标设定</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970440</data>
+  <data key="d13"></data>
+</edge>
+<edge source="输出格式" target="JSON对象">
+  <data key="d7">1.0</data>
+  <data key="d8">输出格式要求整个健康计划输出必须是一个有效的JSON对象。</data>
+  <data key="d9">定义,要求</data>
+  <data key="d10">chunk-bf198db84b05ba7e966f6a3a02b2f9f3</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970400</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify CPU服务器(移动云，旧版)" target="启动脚本(旧版Dify)">
+  <data key="d7">1.0</data>
+  <data key="d8">该服务器上存放着用于控制和管理Dify应用容器的启动脚本。</data>
+  <data key="d9">容器控制,运维管理</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970419</data>
+  <data key="d13"></data>
+</edge>
+<edge source="RAGFlow GPU服务器(腾讯云)" target="启动命令(RAGFlow)">
+  <data key="d7">1.0</data>
+  <data key="d8">该服务器上保存了用于启动、停止和管理RAGFlow容器的操作命令集。</data>
+  <data key="d9">应用维护,操作指令</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970414</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify CPU服务器(移动云，新版)" target="aid.baixunsz.com">
+  <data key="d7">1.0</data>
+  <data key="d8">域名aid.baixunsz.com被解析到这台新版Dify服务器的IP地址。</data>
+  <data key="d9">地址映射,网络标识</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970422</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify CPU服务器(移动云，新版)" target="启动脚本(新版Dify)">
+  <data key="d7">1.0</data>
+  <data key="d8">该服务器使用特定的启动脚本来管理新版Dify的Docker容器。</data>
+  <data key="d9">服务管理,部署脚本</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970428</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Dify CPU服务器(移动云，新版)" target="Dify版本更新">
+  <data key="d7">1.0</data>
+  <data key="d8">在这台服务器上可以执行一套特定的命令流程来更新Dify应用的版本。</data>
+  <data key="d9">升级流程,软件维护</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970438</data>
+  <data key="d13"></data>
+</edge>
+<edge source="aid.baixunsz.com" target="Dify Web网址(新版)">
+  <data key="d7">1.0</data>
+  <data key="d8">通过域名aid.baixunsz.com结合不同的端口(8012, 5443)可以访问新版Dify的Web服务。</data>
+  <data key="d9">服务端口,访问路径</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970414</data>
+  <data key="d13"></data>
+</edge>
+<edge source="aid.baixunsz.com" target="SSL证书">
+  <data key="d7">1.0</data>
+  <data key="d8">域名aid.baixunsz.com也配置了SSL证书，确保通信安全。</data>
+  <data key="d9">加密传输,网络安全</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970429</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ICP备案" target="端口(80, 8080, 443, 8443)">
+  <data key="d7">1.0</data>
+  <data key="d8">在移动云上，对指定端口的公网访问需要以完成ICP备案为前提条件。</data>
+  <data key="d9">前置条件,合规要求</data>
+  <data key="d10">chunk-70b0b9f3442a156cf0ec2283cb079a6c</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970426</data>
+  <data key="d13"></data>
+</edge>
+<edge source="有氧运动" target="力量训练">
+  <data key="d7">1.0</data>
+  <data key="d8">有氧运动和力量训练被结合建议，共同支持长期减脂目标。</data>
+  <data key="d9">减脂目标,运动组合</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970430</data>
+  <data key="d13"></data>
+</edge>
+<edge source="力量训练" target="深蹲">
+  <data key="d7">1.0</data>
+  <data key="d8">力量训练计划中包含深蹲作为练习动作。</data>
+  <data key="d9">动作示例,训练包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970441</data>
+  <data key="d13"></data>
+</edge>
+<edge source="力量训练" target="俯卧撑">
+  <data key="d7">1.0</data>
+  <data key="d8">力量训练计划中包含俯卧撑作为练习动作。</data>
+  <data key="d9">动作示例,训练包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970447</data>
+  <data key="d13"></data>
+</edge>
+<edge source="力量训练" target="仰卧起坐">
+  <data key="d7">1.0</data>
+  <data key="d8">力量训练计划中包含仰卧起坐作为练习动作。</data>
+  <data key="d9">动作示例,训练包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970454</data>
+  <data key="d13"></data>
+</edge>
+<edge source="力量训练" target="平板支撑">
+  <data key="d7">1.0</data>
+  <data key="d8">力量训练计划中包含平板支撑作为练习动作。</data>
+  <data key="d9">动作示例,训练包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970462</data>
+  <data key="d13"></data>
+</edge>
+<edge source="力量训练" target="哑铃推举">
+  <data key="d7">1.0</data>
+  <data key="d8">力量训练计划中包含哑铃推举作为练习动作。</data>
+  <data key="d9">动作示例,训练包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970470</data>
+  <data key="d13"></data>
+</edge>
+<edge source="热身" target="动态拉伸">
+  <data key="d7">1.0</data>
+  <data key="d8">热身可以通过动态拉伸来实现。</data>
+  <data key="d9">方法实现,组成部分</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970450</data>
+  <data key="d13"></data>
+</edge>
+<edge source="运动后拉伸" target="静态拉伸">
+  <data key="d7">1.0</data>
+  <data key="d8">运动后拉伸可以通过静态拉伸来实现。</data>
+  <data key="d9">方法实现,组成部分</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970454</data>
+  <data key="d13"></data>
+</edge>
+<edge source="低冲击活动" target="游泳">
+  <data key="d7">1.0</data>
+  <data key="d8">游泳是低冲击活动的一种具体选择。</data>
+  <data key="d9">具体选项,活动类型</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970458</data>
+  <data key="d13"></data>
+</edge>
+<edge source="低冲击活动" target="骑行">
+  <data key="d7">1.0</data>
+  <data key="d8">骑行是低冲击活动的一种具体选择。</data>
+  <data key="d9">具体选项,活动类型</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970467</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期一">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期一的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970431</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期二">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期二的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970437</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期三">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期三的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970441</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期四">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期四的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970446</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期五">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期五的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970449</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期六">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期六的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970458</data>
+  <data key="d13"></data>
+</edge>
+<edge source="一周运动计划" target="星期日">
+  <data key="d7">1.0</data>
+  <data key="d8">一周运动计划中包含了星期日的详细运动安排。</data>
+  <data key="d9">日程安排,计划包含</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970467</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可量化指标" target="每日应摄入卡路里">
+  <data key="d7">1.0</data>
+  <data key="d8">可量化指标中包含每日应摄入卡路里这一具体数据项。</data>
+  <data key="d9">指标包含,数据项</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970463</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可量化指标" target="早上应摄入卡路里">
+  <data key="d7">1.0</data>
+  <data key="d8">可量化指标中包含早上应摄入卡路里这一具体数据项。</data>
+  <data key="d9">指标包含,数据项</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970470</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可量化指标" target="中午应摄入卡路里">
+  <data key="d7">1.0</data>
+  <data key="d8">可量化指标中包含中午应摄入卡路里这一具体数据项。</data>
+  <data key="d9">指标包含,数据项</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970475</data>
+  <data key="d13"></data>
+</edge>
+<edge source="可量化指标" target="晚上应摄入卡路里">
+  <data key="d7">1.0</data>
+  <data key="d8">可量化指标中包含晚上应摄入卡路里这一具体数据项。</data>
+  <data key="d9">指标包含,数据项</data>
+  <data key="d10">chunk-00f75f56709838e6d3ee19b75315c102</data>
+  <data key="d11">文档.txt</data>
+  <data key="d12">1767970479</data>
   <data key="d13"></data>
 </edge>
 </graph></graphml>

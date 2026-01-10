@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDao
 from module_testing.entity.do.requirement_analysis_do import RequirementAnalysisDO
 from module_testing.entity.vo.requirement_analysis_vo import RequirementAnalysisVO, RequirementAnalysisQueryVO
+from module_testing.service.report_template_service import get_report_template_service
 from utils.log_util import logger
 from utils.minio_util import MinioUtil
 
@@ -23,30 +24,21 @@ class RequirementAnalysisService:
         self, 
         db: AsyncSession, 
         requirement_vo: RequirementAnalysisVO,
-        user_id: int
+        user_id: str
     ) -> RequirementAnalysisDO:
         """创建需求分析"""
         try:
-            # 生成需求标识符
-            identifier = await self.requirement_dao.get_next_identifier(db, requirement_vo.project_id)
-            
-            # 创建DO对象
+            # 创建DO对象 - 使用正确的字段名
             requirement_do = RequirementAnalysisDO(
                 project_id=requirement_vo.project_id,
-                requirement_identifier=identifier,
-                requirement_name=requirement_vo.requirement_name,
-                requirement_type=requirement_vo.requirement_type,
-                priority=requirement_vo.priority,
-                status=requirement_vo.status or 'draft',
-                module=requirement_vo.module,
-                description=requirement_vo.description,
-                acceptance_criteria=requirement_vo.acceptance_criteria,
+                analysis_name=requirement_vo.requirement_name,  # 映射到 analysis_name
+                executive_summary=requirement_vo.description,  # 描述映射到 executive_summary
                 functional_requirements=requirement_vo.functional_requirements,
                 non_functional_requirements=requirement_vo.non_functional_requirements,
-                business_rules=requirement_vo.business_rules,
+                acceptance_criteria=requirement_vo.acceptance_criteria,
                 dependencies=requirement_vo.dependencies,
-                stakeholders=requirement_vo.stakeholders,
-                created_by=user_id,
+                status=requirement_vo.status or 'draft',
+                create_by=str(user_id),  # 使用 create_by 而不是 created_by
                 create_time=datetime.now()
             )
             
@@ -54,7 +46,7 @@ class RequirementAnalysisService:
             result = await self.requirement_dao.insert(db, requirement_do)
             await db.commit()
             
-            logger.info(f"创建需求分析成功: {identifier}")
+            logger.info(f"创建需求分析成功: {result.analysis_id}")
             return result
             
         except Exception as e:
@@ -67,7 +59,7 @@ class RequirementAnalysisService:
         db: AsyncSession,
         requirement_id: int,
         requirement_vo: RequirementAnalysisVO,
-        user_id: int
+        user_id: str
     ) -> RequirementAnalysisDO:
         """更新需求分析"""
         try:
@@ -75,19 +67,15 @@ class RequirementAnalysisService:
             if not requirement:
                 raise ValueError(f"需求分析不存在: {requirement_id}")
             
-            # 更新字段
-            requirement.requirement_name = requirement_vo.requirement_name
-            requirement.requirement_type = requirement_vo.requirement_type
-            requirement.priority = requirement_vo.priority
-            requirement.status = requirement_vo.status
-            requirement.module = requirement_vo.module
-            requirement.description = requirement_vo.description
+            # 更新字段 - 使用正确的字段名
+            requirement.analysis_name = requirement_vo.requirement_name  # 映射到 analysis_name
+            requirement.executive_summary = requirement_vo.description  # 描述映射到 executive_summary
+            requirement.status = requirement_vo.status or requirement.status
             requirement.acceptance_criteria = requirement_vo.acceptance_criteria
             requirement.functional_requirements = requirement_vo.functional_requirements
             requirement.non_functional_requirements = requirement_vo.non_functional_requirements
-            requirement.business_rules = requirement_vo.business_rules
             requirement.dependencies = requirement_vo.dependencies
-            requirement.stakeholders = requirement_vo.stakeholders
+            requirement.update_by = str(user_id)
             requirement.update_time = datetime.now()
             
             result = await self.requirement_dao.update(db, requirement)
@@ -131,18 +119,74 @@ class RequirementAnalysisService:
             query_vo.page_size
         )
 
+    async def generate_and_upload_report(
+        self,
+        db: AsyncSession,
+        analysis_id: int,
+        template_name: Optional[str] = None
+    ) -> Optional[str]:
+        """
+        生成需求分析报告并上传到MinIO，更新数据库中的report_url
+        
+        Args:
+            db: 数据库会话
+            analysis_id: 需求分析ID (analysis_id)
+            template_name: 模板文件名，默认为 None（使用默认模板）
+        
+        Returns:
+            str: 报告URL，如果失败返回 None
+        """
+        try:
+            requirement = await self.requirement_dao.select_by_id(db, analysis_id)
+            if not requirement:
+                logger.error(f"需求分析不存在: {analysis_id}")
+                return None
+            
+            # 使用模板服务生成报告
+            template_service = get_report_template_service()
+            content = template_service.generate_requirement_analysis_report(
+                requirement,
+                template_name or 'requirement_analysis_report.md.jinja2'
+            )
+            
+            # 上传到MinIO
+            from datetime import datetime
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            file_name = f"requirement_analysis_{requirement.analysis_id}_{timestamp}.md"
+            object_name = f"requirements/{requirement.project_id}/reports/{file_name}"
+            
+            url = await self.minio_util.upload_file(
+                bucket_name="testing",
+                object_name=object_name,
+                file_content=content.encode('utf-8'),
+                content_type="text/markdown; charset=utf-8"
+            )
+            
+            # 更新数据库中的report_url
+            requirement.report_url = url
+            await self.requirement_dao.update(db, requirement)
+            await db.commit()
+            
+            logger.info(f"需求分析报告生成并上传成功: {object_name}, URL: {url}")
+            return url
+            
+        except Exception as e:
+            logger.error(f"生成需求分析报告失败: {str(e)}", exc_info=True)
+            await db.rollback()
+            return None
+
     async def save_to_minio(
         self,
         requirement: RequirementAnalysisDO,
         file_format: str = 'json'
     ) -> str:
-        """保存需求分析到MinIO"""
+        """保存需求分析到MinIO（保留旧方法以兼容）"""
         try:
             # 生成文件内容
             content = self._generate_file_content(requirement, file_format)
             
             # 上传到MinIO
-            file_name = f"requirement_{requirement.requirement_identifier}.{file_format}"
+            file_name = f"requirement_{requirement.analysis_id}.{file_format}"
             object_name = f"requirements/{requirement.project_id}/{file_name}"
             
             url = await self.minio_util.upload_file(
@@ -159,54 +203,27 @@ class RequirementAnalysisService:
             logger.error(f"保存需求分析到MinIO失败: {str(e)}")
             raise
 
+    def _generate_report_content(self, requirement: RequirementAnalysisDO) -> str:
+        """
+        生成需求分析报告内容（Markdown格式）
+        
+        注意：此方法已废弃，请使用 ReportTemplateService 生成报告
+        保留此方法仅用于向后兼容
+        """
+        template_service = get_report_template_service()
+        return template_service.generate_requirement_analysis_report(requirement)
+
     def _generate_file_content(self, requirement: RequirementAnalysisDO, file_format: str) -> str:
-        """生成文件内容"""
+        """生成文件内容（保留旧方法以兼容）"""
         if file_format == 'json':
             import json
             return json.dumps({
-                'requirement_identifier': requirement.requirement_identifier,
-                'requirement_name': requirement.requirement_name,
-                'requirement_type': requirement.requirement_type,
-                'priority': requirement.priority,
-                'status': requirement.status,
-                'module': requirement.module,
-                'description': requirement.description,
-                'acceptance_criteria': requirement.acceptance_criteria,
-                'functional_requirements': requirement.functional_requirements,
-                'non_functional_requirements': requirement.non_functional_requirements,
-                'business_rules': requirement.business_rules,
-                'dependencies': requirement.dependencies,
-                'stakeholders': requirement.stakeholders
+                'analysis_id': requirement.analysis_id,
+                'analysis_name': requirement.analysis_name,
+                'project_id': requirement.project_id,
+                'executive_summary': requirement.executive_summary,
             }, ensure_ascii=False, indent=2)
         else:
-            # Markdown格式
-            return f"""# 需求分析: {requirement.requirement_name}
-
-**需求编号**: {requirement.requirement_identifier}
-**需求类型**: {requirement.requirement_type}
-**优先级**: {requirement.priority}
-**状态**: {requirement.status}
-**所属模块**: {requirement.module or '无'}
-
-## 需求描述
-{requirement.description or '无'}
-
-## 验收标准
-{requirement.acceptance_criteria or '无'}
-
-## 功能需求
-{requirement.functional_requirements or '无'}
-
-## 非功能需求
-{requirement.non_functional_requirements or '无'}
-
-## 业务规则
-{requirement.business_rules or '无'}
-
-## 依赖关系
-{requirement.dependencies or '无'}
-
-## 相关干系人
-{requirement.stakeholders or '无'}
-"""
+            # 使用新的报告生成方法
+            return self._generate_report_content(requirement)
 

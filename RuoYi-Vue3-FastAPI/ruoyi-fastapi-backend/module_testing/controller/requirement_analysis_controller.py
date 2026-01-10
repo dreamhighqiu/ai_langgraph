@@ -2,8 +2,9 @@
 需求分析控制器
 """
 from typing import Optional
-from fastapi import APIRouter, Depends, Query, Path
+from fastapi import APIRouter, Depends, Query, Path, Response
 from sqlalchemy.ext.asyncio import AsyncSession
+import httpx
 
 from module_testing.service.requirement_analysis_service import RequirementAnalysisService
 from module_testing.service.ai_service import AIGenerationService
@@ -208,26 +209,54 @@ async def ai_generate_requirement(
         return ResponseUtil.failure(msg=f"AI生成需求分析失败: {str(e)}")
 
 
-@router.get("/download/{requirement_id}", summary="下载需求分析")
+@router.get("/download/{requirement_id}", summary="下载需求分析报告")
 async def download_requirement(
     requirement_id: int = Path(..., description="需求ID"),
-    format: str = Query('json', description="文件格式 json/markdown"),
+    format: str = Query('markdown', description="文件格式 json/markdown"),
     db: AsyncSession = Depends(get_db),
     current_user: dict = Depends(LoginService.get_current_user)
 ):
-    """下载需求分析"""
+    """下载需求分析报告（代理下载，确保正确的编码）"""
     try:
         requirement = await requirement_service.get_requirement(db, requirement_id)
         if not requirement:
             return ResponseUtil.failure(msg="需求分析不存在")
         
+        # 优先使用report_url，如果没有则生成
+        if requirement.report_url and format == 'markdown':
+            report_url = requirement.report_url
+        else:
         # 生成下载URL
-        minio_url = await requirement_service.save_to_minio(requirement, format)
+            report_url = await requirement_service.save_to_minio(requirement, format)
         
-        return ResponseUtil.success(data={
-            'download_url': minio_url,
-            'file_name': f"requirement_{requirement.requirement_identifier}.{format}"
-        }, msg="生成下载链接成功")
+        if not report_url:
+            return ResponseUtil.failure(msg="该需求分析还没有生成报告")
+        
+        # 从MinIO下载文件
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.get(report_url)
+            response.raise_for_status()
+            content = response.content
+        
+        # 确保内容是UTF-8编码的字符串
+        try:
+            content_str = content.decode('utf-8')
+        except UnicodeDecodeError:
+            # 如果解码失败，尝试其他编码
+            content_str = content.decode('gbk', errors='ignore')
+        
+        # 返回文件，设置正确的Content-Type和编码
+        file_name = f"requirement_analysis_{requirement_id}.{format}"
+        media_type = "text/markdown; charset=utf-8" if format == 'markdown' else "application/json; charset=utf-8"
+        
+        return Response(
+            content=content_str.encode('utf-8'),
+            media_type=media_type,
+            headers={
+                "Content-Disposition": f'attachment; filename="{file_name}"',
+                "Content-Type": media_type
+            }
+        )
         
     except Exception as e:
         logger.error(f"下载需求分析失败: {str(e)}")

@@ -66,6 +66,12 @@
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:defect:remove']">删除</el-button>
       </el-col>
+      <el-col :span="1.5">
+        <el-button type="success" plain icon="ChatDotRound" @click="openAIAssistant">
+          <el-icon><ChatDotRound /></el-icon>
+          AI 助手
+        </el-button>
+      </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -102,10 +108,19 @@
       <el-table-column label="创建时间" align="center" width="160">
         <template #default="scope">{{ scope.row.create_time }}</template>
       </el-table-column>
-      <el-table-column label="操作" align="center" width="200">
+      <el-table-column label="操作" align="center" width="250">
         <template #default="scope">
           <el-button link type="primary" icon="View" @click="handleDetail(scope.row)">详情</el-button>
           <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['testing:defect:edit']">编辑</el-button>
+          <el-button 
+            v-if="scope.row.report_url" 
+            link 
+            type="success" 
+            icon="Download" 
+            @click="handleDownload(scope.row)"
+          >
+            下载
+          </el-button>
           <el-button link type="danger" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['testing:defect:remove']">删除</el-button>
         </template>
       </el-table-column>
@@ -205,7 +220,7 @@
 <script setup name="DefectAnalysis">
 import { ref, reactive, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Warning, MagicStick } from '@element-plus/icons-vue'
+import { Warning, MagicStick, ChatDotRound, Download } from '@element-plus/icons-vue'
 import { listDefectAnalysis, getDefectAnalysis, addDefectAnalysis, updateDefectAnalysis, delDefectAnalysis } from '@/api/testing/defectAnalysis'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
@@ -316,8 +331,24 @@ const handleFormSuccess = () => {
   getList()
 }
 
-const handleOpenChat = (prompt) => {
-  aiInitialPrompt.value = prompt
+const handleOpenChat = (data) => {
+  // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
+  if (typeof data === 'object' && data.prompt) {
+    aiInitialPrompt.value = data.prompt
+    // 如果传递了 projectId，更新 queryParams
+    if (data.projectId) {
+      queryParams.projectId = data.projectId
+    }
+  } else {
+    aiInitialPrompt.value = data
+  }
+  
+  // 验证 projectId 是否有效
+  if (!queryParams.projectId || queryParams.projectId === 0) {
+    ElMessage.warning('请先选择项目！缺陷分析功能需要指定项目ID。')
+    return
+  }
+  
   aiChatVisible.value = true
 }
 
@@ -379,6 +410,11 @@ const submitForm = async () => {
   }
 }
 
+const openAIAssistant = () => {
+  aiInitialPrompt.value = ''
+  aiChatVisible.value = true
+}
+
 const openAIChat = () => {
   aiInitialPrompt.value = ''
   aiChatVisible.value = true
@@ -426,6 +462,31 @@ const formatContent = (content) => {
     return '<pre>' + JSON.stringify(content, null, 2) + '</pre>'
   }
   return content.replace(/\n/g, '<br>')
+}
+
+// 下载报告
+const handleDownload = async (row) => {
+  if (!row.report_url && !row.analysis_id) {
+    ElMessage.warning('该缺陷分析还没有生成报告')
+    return
+  }
+  
+  try {
+    // 使用后端代理下载接口，确保正确的编码
+    const downloadUrl = `/testing/defect-analysis/download/${row.analysis_id}`
+    // 创建隐藏的a标签下载
+    const link = document.createElement('a')
+    link.href = downloadUrl
+    link.download = `defect_analysis_${row.analysis_id}.md`
+    link.style.display = 'none'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    ElMessage.success('开始下载报告')
+  } catch (error) {
+    console.error('下载失败:', error)
+    ElMessage.error('下载失败')
+  }
 }
 
 onMounted(async () => {

@@ -363,5 +363,28 @@
       "processing_start_time": 1767964998,
       "processing_end_time": 1767965582
     }
+  },
+  "doc-d88fa0ead2a1278c43aaa1eefc2e62b3": {
+    "status": "processed",
+    "chunks_count": 7,
+    "chunks_list": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f",
+      "chunk-00f75f56709838e6d3ee19b75315c102",
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3",
+      "chunk-6f413192b6712442310ab83e47795227",
+      "chunk-2309688baefacf34329b80e3d86a7260",
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c",
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "content_summary": "肖总，关于上次您发的Sensi.AI产品，以及结合提供的一些资料，我们写了一个初步的实现方案（音频传感器+惯性LSMC传感器融合），现有如下核心要点需要进一步确认：\r\n1. 音频传感器识别模型，如段总那种一般是在云端实现，我们难点还是要找到轻量级模型且能嵌入设备中。\r\n2. 资料中提到的用惯性传感器（如LSM6DS3TR-C）识别跌倒，是否也要提取特征然后建模，还是这种传感器已经帮我们做好了这一步，它直接输出跌倒判断？另外，惯性传感器和您说的毫米波雷达是同一个吗？\r\n3. 目前这两个传感器（音频...",
+    "content_length": 13841,
+    "created_at": "2026-01-09T14:39:23.480985+00:00",
+    "updated_at": "2026-01-09T14:54:42.985937+00:00",
+    "file_path": "文档.txt",
+    "track_id": "upload_20260109_223923_595a85f9",
+    "metadata": {
+      "processing_start_time": 1767969563,
+      "processing_end_time": 1767970482
+    }
   }
 }

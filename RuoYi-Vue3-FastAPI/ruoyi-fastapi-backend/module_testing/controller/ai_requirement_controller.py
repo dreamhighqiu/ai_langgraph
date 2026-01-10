@@ -268,3 +268,30 @@ async def get_analysis_history(
         logger.error(f"获取需求分析历史失败: {str(e)}")
         return ResponseUtil.failure(msg=f"获取需求分析历史失败: {str(e)}")
 
+
+@router.get("/templates", summary="获取报告模板列表", dependencies=[UserInterfaceAuthDependency('testing:requirement:list')])
+async def get_report_templates(
+    current_user: dict = Depends(LoginService.get_current_user)
+):
+    """
+    获取需求分析报告模板列表
+    
+    返回可用的报告模板列表。
+    """
+    try:
+        from module_testing.service.report_template_service import get_report_template_service
+        
+        template_service = get_report_template_service()
+        templates = template_service.list_templates()
+        
+        return ResponseUtil.success(
+            data={
+                'requirement_analysis': templates.get('requirement_analysis', []),
+                'defect_analysis': templates.get('defect_analysis', [])
+            },
+            msg="获取模板列表成功"
+        )
+        
+    except Exception as e:
+        logger.error(f"获取报告模板列表失败: {str(e)}")
+        return ResponseUtil.failure(msg=f"获取报告模板列表失败: {str(e)}")

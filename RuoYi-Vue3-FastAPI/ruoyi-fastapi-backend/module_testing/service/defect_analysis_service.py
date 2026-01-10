@@ -9,7 +9,9 @@ import json
 
 from module_testing.entity.do.defect_analysis_do import DefectAnalysisDO
 from module_testing.dao.defect_analysis_dao import DefectAnalysisDAO
+from module_testing.service.report_template_service import get_report_template_service
 from utils.log_util import logger
+from utils.minio_util import MinioUtil
 
 
 class DefectAnalysisService:
@@ -17,6 +19,7 @@ class DefectAnalysisService:
 
     def __init__(self):
         self.dao = DefectAnalysisDAO()
+        self.minio_util = MinioUtil()
 
     async def create_analysis(
         self,
@@ -160,4 +163,70 @@ class DefectAnalysisService:
         except Exception as e:
             logger.error(f"查询缺陷分析列表失败: {str(e)}")
             raise
+
+    async def generate_and_upload_report(
+        self,
+        db: AsyncSession,
+        analysis_id: int,
+        template_name: Optional[str] = None
+    ) -> Optional[str]:
+        """
+        生成缺陷分析报告并上传到MinIO，更新数据库中的report_url
+        
+        Args:
+            db: 数据库会话
+            analysis_id: 缺陷分析ID
+            template_name: 模板文件名，默认为 None（使用默认模板）
+        
+        Returns:
+            str: 报告URL，如果失败返回 None
+        """
+        try:
+            analysis = await self.dao.get_by_id(db, analysis_id)
+            if not analysis:
+                logger.error(f"缺陷分析不存在: {analysis_id}")
+                return None
+            
+            # 使用模板服务生成报告
+            template_service = get_report_template_service()
+            content = template_service.generate_defect_analysis_report(
+                analysis,
+                template_name or 'defect_analysis_report.md.jinja2'
+            )
+            
+            # 上传到MinIO
+            from datetime import datetime
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            file_name = f"defect_analysis_{analysis.analysis_id}_{timestamp}.md"
+            object_name = f"defects/{analysis.project_id}/reports/{file_name}"
+            
+            url = await self.minio_util.upload_file(
+                bucket_name="testing",
+                object_name=object_name,
+                file_content=content.encode('utf-8'),
+                content_type="text/markdown; charset=utf-8"
+            )
+            
+            # 更新数据库中的report_url
+            analysis.report_url = url
+            await db.commit()
+            await db.refresh(analysis)
+            
+            logger.info(f"缺陷分析报告生成并上传成功: {object_name}, URL: {url}")
+            return url
+            
+        except Exception as e:
+            logger.error(f"生成缺陷分析报告失败: {str(e)}", exc_info=True)
+            await db.rollback()
+            return None
+
+    def _generate_report_content(self, analysis: DefectAnalysisDO) -> str:
+        """
+        生成缺陷分析报告内容（Markdown格式）
+        
+        注意：此方法已废弃，请使用 ReportTemplateService 生成报告
+        保留此方法仅用于向后兼容
+        """
+        template_service = get_report_template_service()
+        return template_service.generate_defect_analysis_report(analysis)
 

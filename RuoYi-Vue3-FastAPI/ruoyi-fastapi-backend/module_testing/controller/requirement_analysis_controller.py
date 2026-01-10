@@ -242,7 +242,6 @@ async def download_requirement(
                 object_name = requirement.report_url.split('/requirements/')[1]
             else:
                 # 如果无法解析，尝试重新生成报告
-                from utils.log_util import logger
                 logger.warning(f"无法解析report_url: {requirement.report_url}，尝试重新生成报告")
                 report_url = await requirement_service.generate_and_upload_report(db, requirement_id)
                 if not report_url:
@@ -258,29 +257,33 @@ async def download_requirement(
             else:
                 return ResponseUtil.failure(msg="无法解析报告URL")
         
-        # 使用MinioClientManager下载文件
+        # 使用MinIO客户端直接下载
         minio_client = MinioClientManager.get_client()
-        success, content = await minio_client.download_file_async(requirement.report_url)
+        object_path = f"minio://{bucket_name}/{object_name}"
+        success, content = minio_client.download_file(object_path)
+        
         if not success or not content:
-            return ResponseUtil.failure(msg="报告文件不存在或下载失败")
+            logger.error(f"从MinIO下载文件失败: {object_path}")
+            return ResponseUtil.failure(msg="下载报告失败，文件不存在或已删除")
         
         # 确保内容是UTF-8编码的字符串
         try:
-            content_str = content.decode('utf-8')
+            if isinstance(content, bytes):
+                content_str = content.decode('utf-8')
+            else:
+                content_str = str(content)
         except UnicodeDecodeError:
             # 如果解码失败，尝试其他编码
             content_str = content.decode('gbk', errors='ignore')
         
         # 返回文件，设置正确的Content-Type和编码
-        file_name = f"requirement_analysis_{requirement_id}.{format}"
-        media_type = "text/markdown; charset=utf-8" if format == 'markdown' else "application/json; charset=utf-8"
-        
+        file_name = f"requirement_analysis_{requirement_id}.md"
         return Response(
             content=content_str.encode('utf-8'),
-            media_type=media_type,
+            media_type="text/markdown; charset=utf-8",
             headers={
                 "Content-Disposition": f'attachment; filename="{file_name}"',
-                "Content-Type": media_type
+                "Content-Type": "text/markdown; charset=utf-8"
             }
         )
         

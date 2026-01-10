@@ -42,7 +42,7 @@ def _normalize_mcp_sse_url(url: str) -> str:
     """
     规范化 MCP SSE 服务 URL。
 
-    兼容传入 base host（如 http://localhost:9002）或完整 SSE 路径（如 http://localhost:9002/sse）。
+    兼容传入 base host（如 http://localhost:8002）或完整 SSE 路径（如 http://localhost:8002/sse）。
     """
     normalized = (url or "").strip().rstrip("/")
     if not normalized:
@@ -657,9 +657,9 @@ async def rag_query_tool(
     """
     try:
         # RAG MCP 服务器地址（从环境变量读取）；默认使用 SSE 传输
-        # mcp_config.json 默认是 http://localhost:9002/sse
+        # mcp_config.json 默认是 http://localhost:8002/sse
         rag_mcp_url = _normalize_mcp_sse_url(
-            os.environ.get("RAG_MCP_URL", "http://localhost:9002/sse")
+            os.environ.get("RAG_MCP_URL", "http://localhost:8002/sse")
         )
 
         logger.info(f"开始 RAG 检索: {query} (模式: {mode})")
@@ -989,7 +989,7 @@ async def generate_mindmap_tool(
     """
     try:
         mindmap_mcp_url = _normalize_mcp_sse_url(
-            os.environ.get("MINDMAP_MCP_URL", "http://localhost:9003/sse")
+            os.environ.get("MINDMAP_MCP_URL", "http://localhost:8007/sse")
         )
 
         logger.info(f"开始生成思维导图: {title} (格式: {format})")

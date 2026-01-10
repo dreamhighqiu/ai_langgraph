@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, Response
-from fastapi.exceptions import HTTPException
+from fastapi.exceptions import HTTPException, RequestValidationError
 from pydantic_validation_decorator import FieldValidationError
 
 from exceptions.exception import (
@@ -40,6 +40,21 @@ def handle_exception(app: FastAPI) -> None:
     async def field_validation_error_handler(request: Request, exc: FieldValidationError) -> Response:
         logger.warning(exc.message)
         return ResponseUtil.failure(msg=exc.message)
+
+    # 处理 FastAPI 请求验证错误
+    @app.exception_handler(RequestValidationError)
+    async def request_validation_error_handler(request: Request, exc: RequestValidationError) -> Response:
+        """处理 FastAPI 请求参数验证错误"""
+        error_messages = []
+        if exc.errors():
+            for error in exc.errors():
+                loc = " -> ".join(str(l) for l in error.get("loc", []))
+                msg = error.get("msg", "参数验证失败")
+                error_messages.append(f"{loc}: {msg}")
+        
+        error_msg = "; ".join(error_messages) if error_messages else "请求参数验证失败"
+        logger.warning(f"请求参数验证失败: {error_msg}")
+        return ResponseUtil.failure(msg=error_msg)
 
     # 自定义权限检验异常
     @app.exception_handler(PermissionException)

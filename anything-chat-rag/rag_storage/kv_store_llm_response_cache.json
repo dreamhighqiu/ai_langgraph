@@ -2190,5 +2190,105 @@
     "create_time": 1767972401,
     "update_time": 1767972401,
     "_id": "mix:keywords:cc7ce7716c3e1e240d26f45cce0d9b02"
+  },
+  "mix:keywords:a4509f45cc015dd32479cd513c6aae8b": {
+    "return": "{\"high_level_keywords\": [\"\\u7528\\u6237\\u767b\\u5f55\\u529f\\u80fd\\u9700\\u6c42\", \"\\u8eab\\u4efd\\u9a8c\\u8bc1\", \"\\u7cfb\\u7edf\\u767b\\u5f55\\u6d41\\u7a0b\", \"\\u8d26\\u6237\\u5b89\\u5168\\u673a\\u5236\"], \"low_level_keywords\": [\"\\u7528\\u6237\\u540d\\u767b\\u5f55\", \"\\u90ae\\u7bb1\\u767b\\u5f55\", \"\\u624b\\u673a\\u53f7\\u767b\\u5f55\", \"\\u5bc6\\u7801\\u53ef\\u89c1\\u9690\\u85cf\\u5207\\u6362\", \"\\u8bb0\\u4f4f\\u6211\\u529f\\u80fd\", \"\\u767b\\u5f55\\u5931\\u8d25\\u63d0\\u793a\", \"\\u8d26\\u53f7\\u9501\\u5b9a\\u673a\\u5236\", \"\\u7b2c\\u4e09\\u65b9\\u767b\\u5f55\", \"\\u5fae\\u4fe1\\u767b\\u5f55\", \"QQ\\u767b\\u5f55\", \"\\u9489\\u9489\\u767b\\u5f55\", \"\\u767b\\u5f55\\u540e\\u8df3\\u8f6c\", \"\\u5fd8\\u8bb0\\u5bc6\\u7801\\u529f\\u80fd\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "用户登录功能需求：用户名/邮箱/手机号登录、密码可见隐藏切换、记住我功能、登录失败提示、账号锁定机制、第三方登录（微信QQ钉钉）、登录后跳转、忘记密码功能",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768043787,
+    "update_time": 1768043787,
+    "_id": "mix:keywords:a4509f45cc015dd32479cd513c6aae8b"
+  },
+  "mix:keywords:fbf6f0f579b0d60263e12acf6851634f": {
+    "return": "{\"high_level_keywords\": [\"\\u7528\\u6237\\u767b\\u5f55\\u529f\\u80fd\\u9700\\u6c42\", \"\\u767b\\u5f55\\u7cfb\\u7edf\\u8bbe\\u8ba1\", \"\\u8eab\\u4efd\\u9a8c\\u8bc1\", \"\\u8d26\\u6237\\u5b89\\u5168\", \"\\u7528\\u6237\\u754c\\u9762\\u529f\\u80fd\"], \"low_level_keywords\": [\"\\u7528\\u6237\\u540d\\u767b\\u5f55\", \"\\u90ae\\u7bb1\\u767b\\u5f55\", \"\\u624b\\u673a\\u53f7\\u767b\\u5f55\", \"\\u5bc6\\u7801\\u53ef\\u89c1\\u9690\\u85cf\\u5207\\u6362\", \"\\u8bb0\\u4f4f\\u6211\\u9009\\u9879\", \"\\u767b\\u5f55\\u5931\\u8d25\\u9519\\u8bef\\u63d0\\u793a\", \"\\u8fde\\u7eed\\u767b\\u5f55\\u5931\\u8d25\\u9501\\u5b9a\\u8d26\\u53f7\", \"\\u7b2c\\u4e09\\u65b9\\u8d26\\u53f7\\u767b\\u5f55\", \"\\u5fae\\u4fe1\\u767b\\u5f55\", \"QQ\\u767b\\u5f55\", \"\\u9489\\u9489\\u767b\\u5f55\", \"\\u767b\\u5f55\\u540e\\u8df3\\u8f6c\", \"\\u5fd8\\u8bb0\\u5bc6\\u7801\\u529f\\u80fd\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "用户登录功能需求：用户名/邮箱/手机号登录、密码可见隐藏切换、记住我选项、登录失败错误提示、连续登录失败锁定账号、第三方账号登录（微信QQ钉钉）、登录后跳转、忘记密码功能",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768043953,
+    "update_time": 1768043953,
+    "_id": "mix:keywords:fbf6f0f579b0d60263e12acf6851634f"
+  },
+  "mix:keywords:db4d8e88554f621132e20cf42c351263": {
+    "return": "{\"high_level_keywords\": [\"\\u7b80\\u5386\", \"\\u4e2a\\u4eba\\u5c65\\u5386\", \"\\u804c\\u4e1a\\u80cc\\u666f\"], \"low_level_keywords\": [\"\\u90b1\\u4e91\\u971e\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "邱云霞简历",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768049613,
+    "update_time": 1768049613,
+    "_id": "mix:keywords:db4d8e88554f621132e20cf42c351263"
+  },
+  "mix:keywords:e7e0172e999220279a5380cfb8e4187b": {
+    "return": "{\"high_level_keywords\": [\"\\u7b80\\u5386\\u4fe1\\u606f\", \"\\u4e2a\\u4eba\\u5c65\\u5386\", \"\\u804c\\u4e1a\\u80cc\\u666f\"], \"low_level_keywords\": [\"\\u90b1\\u4e91\\u971e\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "邱云霞简历信息",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768049838,
+    "update_time": 1768049838,
+    "_id": "mix:keywords:e7e0172e999220279a5380cfb8e4187b"
+  },
+  "mix:keywords:acca23890da0389b0583e5ae58936bad": {
+    "return": "{\"high_level_keywords\": [\"\\u7528\\u6237\\u767b\\u5f55\\u529f\\u80fd\\u9700\\u6c42\", \"\\u7cfb\\u7edf\\u767b\\u5f55\", \"\\u7528\\u6237\\u8ba4\\u8bc1\"], \"low_level_keywords\": [\"\\u7528\\u6237\\u540d\", \"\\u90ae\\u7bb1\", \"\\u624b\\u673a\\u53f7\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "用户登录功能需求：用户可以通过用户名/邮箱/手机号登录系统",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768050313,
+    "update_time": 1768050313,
+    "_id": "mix:keywords:acca23890da0389b0583e5ae58936bad"
   }
 }

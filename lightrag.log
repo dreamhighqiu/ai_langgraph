@@ -1,0 +1,38 @@
+2026-01-10 20:33:19,146 - lightrag - INFO - Ollama LLM Options: {}
+2026-01-10 20:33:19,147 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-10 20:33:22,590 - lightrag - INFO - Embedding config: binding=ollama model=bge-m3:latest embedding_dim=1024 max_token_size=8192
+2026-01-10 20:33:22,592 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-10 20:33:22,595 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-10 20:33:22,598 - lightrag - INFO - Reranking is disabled
+2026-01-10 20:33:22,598 - lightrag - INFO - Vision model initialized: mistral-nemo:latest using ollama provider
+2026-01-10 20:33:23,986 - lightrag - INFO - [] Created new empty graph file: D:\yunxia\ai_langgraph\rag_storage\graph_chunk_entity_relation.graphml
+2026-01-10 20:33:24,014 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-10 20:33:24,015 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model mistral-nemo:latest
+2026-01-10 20:33:24,491 - uvicorn.error - INFO - Started server process [961368]
+2026-01-10 20:33:24,492 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-10 20:33:24,494 - lightrag - INFO - [] Process 961368 KV load full_docs with 0 records
+2026-01-10 20:33:24,497 - lightrag - INFO - [] Process 961368 KV load text_chunks with 0 records
+2026-01-10 20:33:24,499 - lightrag - INFO - [] Process 961368 KV load full_entities with 0 records
+2026-01-10 20:33:24,500 - lightrag - INFO - [] Process 961368 KV load full_relations with 0 records
+2026-01-10 20:33:24,502 - lightrag - INFO - [] Process 961368 KV load entity_chunks with 0 records
+2026-01-10 20:33:24,504 - lightrag - INFO - [] Process 961368 KV load relation_chunks with 0 records
+2026-01-10 20:33:24,505 - lightrag - INFO - [] Process 961368 KV load llm_response_cache with 0 records
+2026-01-10 20:33:24,507 - lightrag - INFO - [] Process 961368 doc status load doc_status with 0 records
+2026-01-10 20:33:24,508 - uvicorn.error - INFO - Application startup complete.
+2026-01-10 20:33:24,511 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-10 20:33:24,791 - uvicorn.access - INFO - 127.0.0.1:52241 - "GET /docs HTTP/1.1" 200
+2026-01-10 20:34:30,890 - uvicorn.access - INFO - 127.0.0.1:63791 - "GET /docs HTTP/1.1" 200
+2026-01-10 20:37:31,701 - uvicorn.access - INFO - 127.0.0.1:57004 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2026-01-10 20:37:31,702 - uvicorn.access - INFO - 127.0.0.1:60518 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2026-01-10 20:37:32,281 - uvicorn.access - INFO - 127.0.0.1:57004 - "GET /docs HTTP/1.1" 200
+2026-01-10 20:37:32,304 - lightrag - INFO - [] Subgraph query successful | Node count: 0 | Edge count: 0
+2026-01-10 20:37:32,306 - uvicorn.access - INFO - 127.0.0.1:59847 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-10 20:37:32,308 - uvicorn.access - INFO - 127.0.0.1:57004 - "GET /webui/assets/index-X6S77QzN.js HTTP/1.1" 200
+2026-01-10 20:37:32,333 - uvicorn.access - INFO - 127.0.0.1:57004 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2026-01-10 20:37:32,335 - uvicorn.access - INFO - 127.0.0.1:60518 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2026-01-10 20:37:32,368 - uvicorn.access - INFO - 127.0.0.1:60518 - "GET /webui/favicon.png HTTP/1.1" 200
+2026-01-10 20:37:32,978 - uvicorn.access - INFO - 127.0.0.1:60518 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 20:37:54,897 - uvicorn.access - INFO - 127.0.0.1:51592 - "GET /docs HTTP/1.1" 200
+2026-01-10 20:37:55,026 - uvicorn.access - INFO - 127.0.0.1:51592 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 20:37:57,314 - uvicorn.access - INFO - 127.0.0.1:51592 - "GET /docs HTTP/1.1" 200
+2026-01-10 20:37:57,411 - uvicorn.access - INFO - 127.0.0.1:51592 - "GET /openapi.json HTTP/1.1" 200

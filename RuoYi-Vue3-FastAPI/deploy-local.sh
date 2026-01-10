@@ -581,8 +581,8 @@ start_mcp_services() {
     # 启动 MCP 服务
     if ./start-mcp-services.sh start; then
         print_success "MCP 服务启动成功"
-        echo "  🔍 RAG MCP: http://localhost:9002"
-        echo "  🗺️  MindMap MCP: http://localhost:9003"
+        echo "  🔍 RAG MCP: http://localhost:8002"
+        echo "  🗺️  MindMap MCP: http://localhost:8007"
     else
         print_warning "MCP 服务启动失败，但不影响主服务运行"
     fi
@@ -625,8 +625,8 @@ start_all() {
     echo "  🔧 后端: http://localhost:9099/dev-api"
     echo "  📚 文档: http://localhost:9099/dev-api/docs"
     echo "  🤖 LangGraph: http://localhost:2027 (AI 智能体)"
-    echo "  🔍 RAG MCP: http://localhost:9002"
-    echo "  🗺️  MindMap MCP: http://localhost:9003"
+    echo "  🔍 RAG MCP: http://localhost:8002"
+    echo "  🗺️  MindMap MCP: http://localhost:8007"
     echo ""
     echo "远程服务 ($REMOTE_SERVER):"
     echo "  MySQL:        ${REMOTE_SERVER}:3306"

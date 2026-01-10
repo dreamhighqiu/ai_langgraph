@@ -5,7 +5,7 @@
  * 
  * 参照: ai-test-management/ui/hooks/useChat.ts
  */
-import { ref, computed, onUnmounted, watch } from 'vue'
+import { ref, computed, onUnmounted, watch, unref } from 'vue'
 import { Client } from '@langchain/langgraph-sdk'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -69,6 +69,27 @@ export function useLangGraphSDK(options = {}) {
     onTestCaseCreated, 
     onHistoryRevalidate 
   } = options
+  
+  // 添加日志：检查接收到的参数
+  console.log('[useLangGraphSDK] 初始化，接收参数:', {
+    assistantId,
+    projectId: projectId,
+    'projectId type': typeof projectId,
+    'projectId.value': projectId?.value,
+    'unref(projectId)': unref(projectId),
+    folderId,
+    templateType
+  })
+  
+  // 监听 projectId 的变化（如果是 ref/computed）
+  if (projectId && typeof projectId === 'object' && 'value' in projectId) {
+    watch(projectId, (newVal, oldVal) => {
+      console.log('[useLangGraphSDK] 🔄 projectId 变化:', {
+        旧值: oldVal,
+        新值: newVal
+      })
+    }, { immediate: true })
+  }
   
   // LangGraph Client
   const client = createLangGraphClient()
@@ -151,14 +172,27 @@ export function useLangGraphSDK(options = {}) {
    */
   async function createThread(metadata = {}) {
     try {
+      // 使用 unref 来获取实际值，避免传递 computed/ref 对象导致循环引用
+      const actualProjectId = unref(projectId)
+      const actualFolderId = unref(folderId)
+      
+      console.log('[useLangGraphSDK] createThread:', {
+        assistantId,
+        actualProjectId,
+        actualFolderId,
+        metadata
+      })
+      
       const thread = await client.threads.create({
         metadata: {
           assistantId,
-          projectId,
-          folderId,
+          projectId: actualProjectId,
+          folderId: actualFolderId,
           ...metadata
         }
       })
+      
+      console.log('[useLangGraphSDK] ✅ Thread 创建成功:', thread.thread_id)
       
       threadId.value = thread.thread_id
       messages.value = []
@@ -237,12 +271,33 @@ export function useLangGraphSDK(options = {}) {
       }
       
       // 验证 projectId 是否有效（对于需求分析和缺陷分析，projectId 是必需的）
-      const requiresProjectId = assistantId.includes('requirement') || assistantId.includes('defect')
-      const validProjectId = projectId && projectId !== 0 && projectId !== '0' && projectId !== ''
+      const requiresProjectId = assistantId.includes('requirement') || assistantId.includes('defect') || assistantId.includes('testcase')
+      
+      // 使用 unref 来获取 projectId 的实际值（支持 ref/computed）
+      const actualProjectId = unref(projectId)
+      const actualFolderId = unref(folderId)
+      const actualTemplateType = unref(templateType)
+      
+      console.log('[useLangGraphSDK] sendMessage 参数:', {
+        assistantId,
+        actualProjectId,
+        actualFolderId,
+        actualTemplateType,
+        requiresProjectId
+      })
+      
+      const validProjectId = actualProjectId && actualProjectId !== 0 && actualProjectId !== '0' && actualProjectId !== ''
       
       if (requiresProjectId && !validProjectId) {
-        throw new Error('请先选择项目！需求分析和缺陷分析功能需要指定项目ID。')
+        console.error('[useLangGraphSDK] ❌ projectId 验证失败:', {
+          actualProjectId,
+          validProjectId,
+          requiresProjectId
+        })
+        throw new Error('请先选择项目！测试用例生成、需求分析和缺陷分析功能需要指定项目ID。')
       }
+      
+      console.log('[useLangGraphSDK] ✅ projectId 验证通过:', actualProjectId)
       
       // 构建配置，包含上下文 - 参照 ai-test-management 实现
       // 注意：project_id 和 folder_id 都必须传递给 LangGraph Agent
@@ -250,12 +305,12 @@ export function useLangGraphSDK(options = {}) {
         configurable: {
           // 项目和文件夹 ID（用于测试用例创建）
           // 如果 projectId 无效，对于需要项目ID的助手，抛出错误；对于不需要的，使用 null
-          project_id: validProjectId ? Number(projectId) : (requiresProjectId ? null : 0),
-          folder_id: folderId ? Number(folderId) : null,
+          project_id: validProjectId ? Number(actualProjectId) : (requiresProjectId ? null : 0),
+          folder_id: actualFolderId ? Number(actualFolderId) : null,
           // 模板类型
-          template_type: templateType,
+          template_type: actualTemplateType,
           // 兼容字符串标识符格式
-          project_identifier: validProjectId ? String(projectId) : '',
+          project_identifier: validProjectId ? String(actualProjectId) : '',
           // 模块名称（用于需求分析和缺陷分析）
           module: null
         },
@@ -264,9 +319,9 @@ export function useLangGraphSDK(options = {}) {
       }
       
       console.log('[LangGraph] 配置信息:', {
-        project_id: projectId,
-        folder_id: folderId,
-        template_type: templateType
+        project_id: actualProjectId,
+        folder_id: actualFolderId,
+        template_type: actualTemplateType
       })
       
       console.log('[LangGraph] 发送消息:', {
@@ -277,9 +332,17 @@ export function useLangGraphSDK(options = {}) {
       })
       
       // 使用流式 API
+      // 注意：第二个参数应该是 graph ID（assistantId），而不是 assistant UUID
+      console.log('[useLangGraphSDK] 调用 stream API:', {
+        thread_id: threadId.value,
+        assistant_id_raw: assistantId,
+        assistant_id_from_object: currentAssistant.value?.assistant_id,
+        using: assistantId  // 使用原始的 graph ID
+      })
+      
       const streamResponse = client.runs.stream(
         threadId.value,
-        currentAssistant.value?.assistant_id || assistantId,
+        assistantId,  // 直接使用 graph ID，而不是 assistant UUID
         {
           input,
           config: runConfig,

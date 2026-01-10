@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from module_testing.dao.folder_dao import FolderDao
 from module_testing.entity.do.folder_do import FolderDO
 from module_testing.entity.vo.folder_vo import (
-    FolderCreateVO, FolderUpdateVO, FolderQueryVO, FolderTreeNodeVO
+    FolderCreateVO, FolderUpdateVO, FolderTreeNodeVO
 )
 from utils.log_util import logger
 
@@ -180,20 +180,6 @@ class FolderService:
         """获取文件夹详情"""
         return await self.folder_dao.select_by_id(db, folder_id)
 
-    async def query_folder_list(
-        self,
-        db: AsyncSession,
-        query_vo: FolderQueryVO
-    ) -> tuple[List[FolderDO], int]:
-        """查询文件夹列表"""
-        query_params = query_vo.model_dump(exclude_none=True, exclude={'page_num', 'page_size'})
-        return await self.folder_dao.select_list(
-            db,
-            query_params,
-            query_vo.page_num,
-            query_vo.page_size
-        )
-
     async def get_folder_tree(self, db: AsyncSession, project_id: int) -> List[Dict[str, Any]]:
         """获取文件夹树"""
         try:
@@ -229,79 +215,4 @@ class FolderService:
         except Exception as e:
             logger.error(f"构建文件夹树失败: {str(e)}", exc_info=True)
             raise ValueError(f"构建文件夹树失败: {str(e)}")
-
-    async def move_folder(
-        self,
-        db: AsyncSession,
-        folder_id: int,
-        target_parent_id: Optional[int],
-        user_name: str
-    ) -> FolderDO:
-        """移动文件夹"""
-        try:
-            folder = await self.folder_dao.select_by_id(db, folder_id)
-            if not folder:
-                raise ValueError(f"文件夹不存在: {folder_id}")
-            
-            # 检查目标是否是自己的子文件夹
-            if target_parent_id:
-                target = await self.folder_dao.select_by_id(db, target_parent_id)
-                if not target:
-                    raise ValueError(f"目标文件夹不存在: {target_parent_id}")
-                if target.project_id != folder.project_id:
-                    raise ValueError("不能移动到其他项目")
-                
-                # 检查目标是否是当前文件夹的子孙
-                current_id = target_parent_id
-                while current_id:
-                    if current_id == folder_id:
-                        raise ValueError("不能将文件夹移动到自己的子目录中")
-                    parent = await self.folder_dao.select_by_id(db, current_id)
-                    current_id = parent.parent_id if parent else None
-            
-            # 检查目标目录下是否有同名文件夹
-            existing = await self.folder_dao.select_by_project_and_name(
-                db, folder.project_id, folder.folder_name, target_parent_id
-            )
-            if existing and existing.folder_id != folder_id:
-                raise ValueError(f"目标目录下已存在同名文件夹: {folder.folder_name}")
-            
-            old_parent_id = folder.parent_id
-            folder.parent_id = target_parent_id
-            folder.update_by = user_name
-            folder.update_time = datetime.now()
-            
-            # 更新路径
-            folder.folder_path = await self.folder_dao.get_folder_path(db, folder_id)
-            
-            await self.folder_dao.update(db, folder)
-            
-            # 更新原父文件夹的子文件夹数量
-            if old_parent_id:
-                child_count = await self.folder_dao.count_by_parent(db, old_parent_id, folder.project_id)
-                await self.folder_dao.update_child_count(db, old_parent_id, child_count)
-            
-            # 更新新父文件夹的子文件夹数量
-            if target_parent_id:
-                child_count = await self.folder_dao.count_by_parent(db, target_parent_id, folder.project_id)
-                await self.folder_dao.update_child_count(db, target_parent_id, child_count)
-            
-            await db.commit()
-            
-            logger.info(f"移动文件夹成功: {folder_id} -> {target_parent_id}")
-            return folder
-            
-        except Exception as e:
-            await db.rollback()
-            logger.error(f"移动文件夹失败: {str(e)}")
-            raise
-
-    async def get_children(
-        self, 
-        db: AsyncSession, 
-        project_id: int, 
-        parent_id: Optional[int] = None
-    ) -> List[FolderDO]:
-        """获取子文件夹列表"""
-        return await self.folder_dao.select_children(db, parent_id, project_id)
 

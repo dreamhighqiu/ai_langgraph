@@ -1,84 +1,115 @@
 {
-  "purpose": "Mirror & index MCP servers in this repo for unified management",
-  "note": "This is a copy of sources; large/sensitive files (e.g. .env, node_modules) may be excluded.",
+  "version": 1,
+  "purpose": "Unified MCP management for this monorepo",
   "services": [
     {
-      "name": "ai-test-management: mindmap",
+      "id": "lightrag_api",
+      "name": "LightRAG API (anything-chat-rag)",
+      "type": "python",
+      "transport": "http",
+      "default_port": 9621,
+      "entrypoint": "sum_mcp_server/servers/lightrag_api.py",
+      "args": ["--host", "0.0.0.0", "--port", "{port}"],
+      "pid_file": ".pids/lightrag_api.pid",
+      "log_file": "logs/lightrag_api.log",
+      "health_url": "http://127.0.0.1:{port}/docs"
+    },
+    {
+      "id": "rag_anything",
+      "name": "RAG Anything MCP (mcp-server)",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/ai-test-management/backend/app/mcp_servers/mindmap_mcp_server.py"
+      "default_port": 8001,
+      "entrypoint": "sum_mcp_server/servers/rag_anything_mcp.py",
+      "args": ["--sse", "--host", "0.0.0.0", "--port", "{port}"],
+      "pid_file": ".pids/rag_anything_mcp.pid",
+      "log_file": "logs/rag_anything_mcp.log",
+      "env": {
+        "RAG_PARSER": "auto",
+        "RAG_PARSE_METHOD": "auto",
+        "RAG_WORKING_DIR": "./rag_storage"
+      }
     },
     {
-      "name": "ai-test-management: mcp_config",
-      "type": "config",
-      "entrypoint": "sum_mcp_server/ai-test-management/backend/mcp_config.json"
-    },
-    {
-      "name": "ruoyi-fastapi-backend: rag",
+      "id": "api_rag",
+      "name": "LightRAG RAG MCP (api_agent)",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/RuoYi-Vue3-FastAPI/ruoyi-fastapi-backend/mcp_servers/rag_mcp_server.py"
+      "default_port": 8002,
+      "entrypoint": "sum_mcp_server/servers/api_rag_mcp.py",
+      "args": ["--sse", "--port", "{port}"],
+      "pid_file": ".pids/rag_mcp.pid",
+      "log_file": "logs/rag_mcp.log",
+      "env": {
+        "LIGHTRAG_BASE_URL": "http://localhost:9621",
+        "LIGHTRAG_API_KEY": "",
+        "LIGHTRAG_TIMEOUT": "60.0"
+      }
     },
     {
-      "name": "ruoyi-fastapi-backend: mindmap",
+      "id": "api_login",
+      "name": "Fecmall Login MCP (api_agent)",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/RuoYi-Vue3-FastAPI/ruoyi-fastapi-backend/mcp_servers/mindmap_mcp_server.py"
+      "default_port": 8003,
+      "entrypoint": "sum_mcp_server/servers/api_login_mcp.py",
+      "args": ["--sse", "--port", "{port}"],
+      "pid_file": ".pids/login_mcp.pid",
+      "log_file": "logs/login_mcp.log"
     },
     {
-      "name": "testing-agents-service(api_agent): rag",
+      "id": "api_test_executor",
+      "name": "Test Executor MCP (api_agent)",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/rag_mcp_server.py"
+      "default_port": 8004,
+      "entrypoint": "sum_mcp_server/servers/api_test_executor_mcp.py",
+      "args": ["--sse", "--port", "{port}"],
+      "pid_file": ".pids/test_executor_mcp.pid",
+      "log_file": "logs/test_executor_mcp.log"
     },
     {
-      "name": "testing-agents-service(api_agent): login",
+      "id": "api_pytest_generator",
+      "name": "Pytest Generator MCP (api_agent)",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/login_mcp_server.py"
+      "default_port": 8005,
+      "entrypoint": "sum_mcp_server/servers/api_pytest_generator_mcp.py",
+      "args": ["--sse", "--port", "{port}", "--output-dir", "generated_tests"],
+      "pid_file": ".pids/pytest_generator_mcp.pid",
+      "log_file": "logs/pytest_generator_mcp.log"
     },
     {
-      "name": "testing-agents-service(api_agent): pytest_generator",
+      "id": "anything_rag_http",
+      "name": "Anything RAG MCP (LightRAG HTTP wrapper)",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/pytest_generator.py"
+      "default_port": 8006,
+      "entrypoint": "sum_mcp_server/servers/anything_rag_http_mcp.py",
+      "args": ["--transport", "sse", "--host", "0.0.0.0", "--port", "{port}"],
+      "pid_file": ".pids/anything_rag_mcp.pid",
+      "log_file": "logs/anything_rag_mcp.log"
     },
     {
-      "name": "testing-agents-service(api_agent): test_executor",
+      "id": "mindmap",
+      "name": "MindMap MCP",
       "type": "python",
       "transport": "sse",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/test_executor.py"
+      "default_port": 8007,
+      "entrypoint": "sum_mcp_server/servers/mindmap_mcp_server.py",
+      "args": ["--sse", "--host", "0.0.0.0", "--port", "{port}"],
+      "pid_file": ".pids/mindmap_mcp.pid",
+      "log_file": "logs/mindmap_mcp.log"
     },
     {
-      "name": "testing-agents-service(api_agent): automation-quality-mcp",
+      "id": "automation_quality",
+      "name": "Automation Quality MCP (Node, stdio)",
       "type": "node",
       "transport": "stdio",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/api_agent/mcp_servers/automation-quality-mcp/mcpServer.js"
-    },
-    {
-      "name": "testing-agents-service(k6_agent): rag",
-      "type": "python",
-      "transport": "sse",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/k6_agent/mcp_servers/rag_mcp_server.py"
-    },
-    {
-      "name": "testing-agents-service(k6_agent): login",
-      "type": "python",
-      "transport": "sse",
-      "entrypoint": "sum_mcp_server/testing-agents-service/src/k6_agent/mcp_servers/login_mcp_server.py"
-    },
-    {
-      "name": "anything_rag_mcp",
-      "type": "python",
-      "transport": "sse",
-      "entrypoint": "sum_mcp_server/anything_rag_mcp/server.py"
-    },
-    {
-      "name": "mcp-server: mcp_server_rag_anything",
-      "type": "python",
-      "transport": "sse",
-      "entrypoint": "sum_mcp_server/mcp-server/src/mcp_server_rag_anything/server.py"
+      "auto_start": false,
+      "entrypoint": "sum_mcp_server/servers/automation_quality_mcp.js",
+      "pid_file": ".pids/automation_quality_mcp.pid",
+      "log_file": "logs/automation_quality_mcp.log"
     }
   ]
 }
-

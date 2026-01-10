@@ -188,7 +188,7 @@
 </template>
 
 <script setup name="RequirementAnalysis">
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, watch } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { DocumentCopy, MagicStick, ChatDotRound, Download } from '@element-plus/icons-vue'
 import { listRequirementAnalysis, getRequirementAnalysis, addRequirementAnalysis, updateRequirementAnalysis, delRequirementAnalysis } from '@/api/testing/requirementAnalysis'
@@ -241,13 +241,35 @@ const rules = {
 
 const loadProjects = async () => {
   try {
+    console.log('[RequirementAnalysis] 开始加载项目列表...')
     const res = await listAllProject('0')
+    console.log('[RequirementAnalysis] 项目列表响应:', res)
+    
     projectList.value = (res.data || []).map(item => ({
       projectId: item.project_id,
       projectName: item.project_name
     }))
+    
+    console.log('[RequirementAnalysis] 处理后的项目列表:', projectList.value)
+    console.log('[RequirementAnalysis] 当前 queryParams.projectId:', queryParams.projectId)
+    
+    // 如果当前没有选择项目且项目列表不为空，自动选择第一个项目
+    if (!queryParams.projectId && projectList.value.length > 0) {
+      const firstProjectId = projectList.value[0].projectId
+      console.log('[RequirementAnalysis] 准备自动选择项目，firstProjectId:', firstProjectId, 'type:', typeof firstProjectId)
+      
+      if (firstProjectId && firstProjectId > 0) {
+        queryParams.projectId = firstProjectId
+        console.log('[RequirementAnalysis] ✅ 已自动选择第一个项目:', firstProjectId)
+      } else {
+        console.warn('[RequirementAnalysis] ⚠️ 第一个项目ID无效:', firstProjectId)
+      }
+    } else {
+      console.log('[RequirementAnalysis] 跳过自动选择项目。原因：', !queryParams.projectId ? '项目列表为空' : '已有选中项目')
+    }
   } catch (error) {
-    console.error('加载项目失败:', error)
+    console.error('[RequirementAnalysis] ❌ 加载项目失败:', error)
+    ElMessage.error('加载项目列表失败，请刷新页面重试')
   }
 }
 
@@ -270,7 +292,16 @@ const handleQuery = () => {
 }
 
 const resetQuery = () => {
+  // 保存当前选中的项目ID
+  const currentProjectId = queryParams.projectId
+  console.log('[RequirementAnalysis] resetQuery: 保存项目ID', currentProjectId)
+  
   proxy.resetForm('queryRef')
+  
+  // 恢复项目ID
+  queryParams.projectId = currentProjectId
+  console.log('[RequirementAnalysis] resetQuery: 恢复项目ID', queryParams.projectId)
+  
   handleQuery()
 }
 
@@ -303,23 +334,26 @@ const handleFormSuccess = () => {
 const requirementDialogRef = ref(null)
 
 const handleOpenChat = (data) => {
+  console.log('[RequirementAnalysis] handleOpenChat 被调用，参数:', data)
+  console.log('[RequirementAnalysis] 当前 queryParams.projectId:', queryParams.projectId)
+  
   // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
   if (typeof data === 'object' && data.prompt) {
     aiInitialPrompt.value = data.prompt
-    // 如果传递了 projectId，更新 queryParams
-    if (data.projectId) {
-      queryParams.projectId = data.projectId
-    }
+    // 不再修改 queryParams.projectId，直接使用页面已选择的项目
+    console.log('[RequirementAnalysis] 从对话框接收到 projectId:', data.projectId, '但使用页面的:', queryParams.projectId)
   } else {
     aiInitialPrompt.value = data
   }
   
   // 验证 projectId 是否有效
   if (!queryParams.projectId || queryParams.projectId === 0) {
-    ElMessage.warning('请先选择项目！需求分析功能需要指定项目ID。')
+    console.warn('[RequirementAnalysis] ⚠️ queryParams.projectId 无效，无法打开AI对话')
+    ElMessage.warning('请先在搜索栏中选择项目！需求分析功能需要指定项目ID。')
     return
   }
   
+  console.log('[RequirementAnalysis] ✅ 验证通过，打开AI对话，projectId:', queryParams.projectId)
   aiChatVisible.value = true
 }
 
@@ -410,11 +444,34 @@ const submitForm = async () => {
 }
 
 const openAIAssistant = () => {
+  console.log('[RequirementAnalysis] openAIAssistant 被调用')
+  console.log('[RequirementAnalysis] 当前 queryParams.projectId:', queryParams.projectId, 'type:', typeof queryParams.projectId)
+  
+  // 验证是否已选择项目
+  if (!queryParams.projectId || queryParams.projectId === 0) {
+    console.warn('[RequirementAnalysis] ⚠️ 项目ID无效，无法打开AI助手')
+    ElMessage.warning('请先在搜索栏中选择项目！需求分析功能需要指定项目ID。')
+    return
+  }
+  
+  console.log('[RequirementAnalysis] ✅ 项目ID验证通过，打开AI助手')
   aiInitialPrompt.value = ''
   aiChatVisible.value = true
 }
 
 const openAIChat = () => {
+  console.log('[RequirementAnalysis] openAIChat 被调用')
+  console.log('[RequirementAnalysis] 当前 queryParams.projectId:', queryParams.projectId, 'type:', typeof queryParams.projectId)
+  console.log('[RequirementAnalysis] 项目列表长度:', projectList.value.length)
+  
+  // 验证是否已选择项目
+  if (!queryParams.projectId || queryParams.projectId === 0) {
+    console.warn('[RequirementAnalysis] ⚠️ 项目ID无效，无法打开AI对话')
+    ElMessage.warning('请先在搜索栏中选择项目！需求分析功能需要指定项目ID。')
+    return
+  }
+  
+  console.log('[RequirementAnalysis] ✅ 项目ID验证通过，打开AI对话')
   aiInitialPrompt.value = ''
   aiChatVisible.value = true
 }
@@ -483,9 +540,21 @@ const handleDownload = async (row) => {
   }
 }
 
+// 监听 queryParams.projectId 的变化，用于调试
+watch(() => queryParams.projectId, (newVal, oldVal) => {
+  console.log('[RequirementAnalysis] 🔄 queryParams.projectId 发生变化:', {
+    旧值: oldVal,
+    新值: newVal,
+    调用栈: new Error().stack
+  })
+}, { immediate: true })
+
 onMounted(async () => {
+  console.log('[RequirementAnalysis] onMounted 开始执行')
   await loadProjects()
+  console.log('[RequirementAnalysis] loadProjects 完成后，queryParams.projectId:', queryParams.projectId)
   await getList()
+  console.log('[RequirementAnalysis] getList 完成后，queryParams.projectId:', queryParams.projectId)
 })
 </script>
 

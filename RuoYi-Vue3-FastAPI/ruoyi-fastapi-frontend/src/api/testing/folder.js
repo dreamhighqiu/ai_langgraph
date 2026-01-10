@@ -13,23 +13,6 @@ export function getFolderTree(projectId) {
   })
 }
 
-// 查询文件夹列表
-export function listFolder(query) {
-  return request({
-    url: '/api/testing/folder/list',
-    method: 'get',
-    params: query
-  })
-}
-
-// 查询文件夹详细
-export function getFolder(folderId) {
-  return request({
-    url: '/api/testing/folder/' + folderId,
-    method: 'get'
-  })
-}
-
 // 新增文件夹
 export function addFolder(data) {
   return request({
@@ -40,9 +23,9 @@ export function addFolder(data) {
 }
 
 // 修改文件夹
-export function updateFolder(data) {
+export function updateFolder(folderId, data) {
   return request({
-    url: '/api/testing/folder',
+    url: '/api/testing/folder/' + folderId,
     method: 'put',
     data: data
   })
@@ -53,14 +36,5 @@ export function delFolder(folderId) {
   return request({
     url: '/api/testing/folder/' + folderId,
     method: 'delete'
-  })
-}
-
-// 移动文件夹
-export function moveFolder(folderId, targetParentId) {
-  return request({
-    url: '/api/testing/folder/move',
-    method: 'put',
-    data: { folderId, targetParentId }
   })
 }

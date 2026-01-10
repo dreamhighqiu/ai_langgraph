@@ -28,10 +28,10 @@ class K6Config:
     workspace_root: str = field(default_factory=lambda: _env("K6_WORKSPACE_ROOT", str(Path(__file__).resolve().parents[2])))
 
     # MCP 服务配置
-    rag_mcp_url: str = field(default_factory=lambda: _env("K6_RAG_MCP_URL", "http://127.0.0.1:8002/sse"))
+    rag_mcp_url: str = field(default_factory=lambda: _env("K6_RAG_MCP_URL", "http://127.0.0.1:8012/sse"))
     chart_mcp_command: str = field(default_factory=lambda: _env("K6_CHART_MCP_COMMAND", "npx"))
     chart_mcp_args: list[str] = field(default_factory=lambda: ["-y", "@antv/mcp-server-chart"])
-    login_mcp_url: str = field(default_factory=lambda: _env("K6_LOGIN_MCP_URL", "http://127.0.0.1:8003/sse"))
+    login_mcp_url: str = field(default_factory=lambda: _env("K6_LOGIN_MCP_URL", "http://127.0.0.1:8013/sse"))
 
     # K6 执行配置
     k6_binary: str = field(default_factory=lambda: _env("K6_BINARY", "k6"))

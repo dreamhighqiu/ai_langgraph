@@ -19,21 +19,16 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/10/26 19:03:26] INFO     Starting MCP server 'Fecmall Login' server.py:2618
+[01/10/26 20:41:27] INFO     Starting MCP server 'Fecmall Login' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8003/sse                           
-INFO:     Started server process [811760]
+INFO:     Started server process [941068]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-INFO:     127.0.0.1:57033 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64303 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64305 - "POST /messages/?session_id=b3dc430a54874a0aa3bbc06751a00657 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64307 - "POST /messages/?session_id=b3dc430a54874a0aa3bbc06751a00657 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64309 - "POST /messages/?session_id=b3dc430a54874a0aa3bbc06751a00657 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:54186 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54194 - "POST /messages/?session_id=792afba8be0c4dc4b94c0f45bade18f5 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:54202 - "POST /messages/?session_id=792afba8be0c4dc4b94c0f45bade18f5 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:54207 - "POST /messages/?session_id=792afba8be0c4dc4b94c0f45bade18f5 HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:57517 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58970 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54879 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50308 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60219 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50229 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63522 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50416 - "GET /sse HTTP/1.1" 200 OK

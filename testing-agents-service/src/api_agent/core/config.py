@@ -72,7 +72,7 @@ class MCPServerConfig(BaseModel):
         description="Pytest生成器主机"
     )
     pytest_generator_port: int = Field(
-        default=8003,
+        default=8005,
         ge=1,
         le=65535,
         description="Pytest生成器端口"
@@ -225,7 +225,7 @@ class AgentConfig(BaseModel):
                 max_tokens=int(os.getenv("LLM_MAX_TOKENS", "4096"))
             ),
             mcp_servers=MCPServerConfig(
-                pytest_generator_port=int(os.getenv("PYTEST_GENERATOR_PORT", "8003")),
+                pytest_generator_port=int(os.getenv("PYTEST_GENERATOR_PORT", "8005")),
                 test_executor_port=int(os.getenv("TEST_EXECUTOR_PORT", "8004")),
                 rag_server_port=int(os.getenv("RAG_SERVER_PORT", "8002"))
             ),
@@ -260,4 +260,3 @@ def get_config() -> AgentConfig:
 def reset_config():
     """重置配置缓存"""
     get_config.cache_clear()
-

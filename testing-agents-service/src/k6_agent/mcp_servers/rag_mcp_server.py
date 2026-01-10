@@ -353,8 +353,8 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[RAGContext]:
     base_url = config.get("lightrag_base_url", "http://localhost:9621")
     
     # 打印连接信息（用于调试）
-    print(f"🔗 Connecting to LightRAG server: {base_url}")
-    print(f"   ⚠️  确保该 LightRAG 服务器已配置 Milvus 向量存储")
+    print(f"Connecting to LightRAG server: {base_url}")
+    print("   WARNING: 确保该 LightRAG 服务器已配置 Milvus 向量存储")
 
     client = LightRAGClient(
         base_url=base_url,
@@ -498,7 +498,7 @@ async def rag_query_data(
 
             # 关系信息
             output += f"\n{'='*80}\n"
-            output += f"🔗 关系 ({len(data.relationships)} 个)\n"
+            output += f"关系 ({len(data.relationships)} 个)\n"
             output += f"{'='*80}\n"
             if data.relationships:
                 for i, rel in enumerate(data.relationships[:10], 1):
@@ -719,7 +719,7 @@ def parse_arguments():
         help="启用 SSE 模式"
     )
     parser.add_argument(
-        "--port", type=int, default=8002,
+        "--port", type=int, default=8012,
         help="SSE 服务器端口号"
     )
     return parser.parse_args()
@@ -756,10 +756,10 @@ def main():
     }
     
     # 打印配置信息（用于调试）
-    print(f"🔗 LightRAG MCP Server Configuration:")
+    print("LightRAG MCP Server Configuration:")
     print(f"   LightRAG URL: {lightrag_url}")
     print(f"   Timeout: {mcp.config['timeout']}s")
-    print(f"   ⚠️  确保 LightRAG 服务器 ({lightrag_url}) 已配置 Milvus 向量存储")
+    print(f"   WARNING: 确保 LightRAG 服务器 ({lightrag_url}) 已配置 Milvus 向量存储")
 
     if args.sse:
         mcp.run(transport="sse", port=args.port, host="0.0.0.0")

@@ -19,21 +19,15 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/10/26 19:03:04] INFO     Starting MCP server 'LightRAG' with server.py:2618
+[01/10/26 20:40:40] INFO     Starting MCP server 'LightRAG' with server.py:2618
                              transport 'sse' on                                
                              http://0.0.0.0:8002/sse                           
-INFO:     Started server process [1276548]
+INFO:     Started server process [942220]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
-INFO:     127.0.0.1:56981 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64260 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64262 - "POST /messages/?session_id=f8d907b3449c4cdbaa1bfa54bf929e0f HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64264 - "POST /messages/?session_id=f8d907b3449c4cdbaa1bfa54bf929e0f HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:64266 - "POST /messages/?session_id=f8d907b3449c4cdbaa1bfa54bf929e0f HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:54187 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54193 - "POST /messages/?session_id=a2789dea3bae4e8ba106f5ad4ee04dcd HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:54198 - "POST /messages/?session_id=a2789dea3bae4e8ba106f5ad4ee04dcd HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:54204 - "POST /messages/?session_id=a2789dea3bae4e8ba106f5ad4ee04dcd HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:57510 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58969 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51414 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54868 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50228 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55430 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50415 - "GET /sse HTTP/1.1" 200 OK

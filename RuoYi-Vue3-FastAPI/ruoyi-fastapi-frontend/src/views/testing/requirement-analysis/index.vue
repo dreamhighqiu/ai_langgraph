@@ -7,12 +7,6 @@
           <h2><el-icon><DocumentCopy /></el-icon> 需求分析管理</h2>
           <p class="subtitle">Requirement Analysis - AI智能分析需求文档，提取关键信息和测试点</p>
         </div>
-        <div class="header-actions">
-          <el-button type="primary" @click="openAIChat" v-hasPermi="['testing:requirement:add']">
-            <el-icon><MagicStick /></el-icon>
-            AI 智能分析
-          </el-button>
-        </div>
       </div>
     </el-card>
 
@@ -53,16 +47,13 @@
     <!-- 操作按钮 -->
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
-        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:requirement:add']">新增</el-button>
+        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:requirement:add']">AI 智能分析</el-button>
+      </el-col>
+      <el-col :span="1.5">
+        <el-button type="primary" plain icon="MagicStick" @click="openAIChat" v-hasPermi="['testing:requirement:add']">AI 助手</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:requirement:remove']">删除</el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button type="success" plain icon="ChatDotRound" @click="openAIAssistant">
-          <el-icon><ChatDotRound /></el-icon>
-          AI 助手
-        </el-button>
       </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>

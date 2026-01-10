@@ -200,15 +200,25 @@ class DefectAnalysisService:
             file_name = f"defect_analysis_{analysis.analysis_id}_{timestamp}.md"
             object_name = f"defects/{analysis.project_id}/reports/{file_name}"
             
-            url = await self.minio_util.upload_file(
+            # 直接上传文件，不生成预签名URL
+            # 确保存储桶存在
+            self.minio_util.create_bucket("testing")
+            
+            # 上传文件
+            from io import BytesIO
+            file_stream = BytesIO(content.encode('utf-8'))
+            self.minio_util.client.put_object(
                 bucket_name="testing",
                 object_name=object_name,
-                file_content=content.encode('utf-8'),
+                data=file_stream,
+                length=len(content.encode('utf-8')),
                 content_type="text/markdown; charset=utf-8"
             )
             
-            # 更新数据库中的report_url
-            analysis.report_url = url
+            # 更新数据库中的report_url - 存储minio://格式的路径，而不是预签名URL
+            # 这样可以通过代理下载接口永久访问，不依赖预签名URL的时效性
+            minio_path = f"minio://testing/{object_name}"
+            analysis.report_url = minio_path
             await db.commit()
             await db.refresh(analysis)
             

@@ -209,7 +209,7 @@
       </el-form>
       <template #footer>
         <el-button @click="showEnvDialog = false">关闭</el-button>
-      </el-template>
+      </template>
     </el-dialog>
   </div>
 </template>

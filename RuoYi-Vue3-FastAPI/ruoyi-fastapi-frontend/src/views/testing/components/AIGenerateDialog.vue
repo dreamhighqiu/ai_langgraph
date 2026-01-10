@@ -41,6 +41,16 @@
 
     <!-- 表单 -->
     <el-form ref="formRef" :model="form" :rules="rules" label-width="130px">
+      <el-form-item label="项目" prop="projectId" required>
+        <el-select v-model="form.projectId" placeholder="选择项目" style="width: 100%">
+          <el-option
+            v-for="item in projectList"
+            :key="item.project_id"
+            :label="item.project_name"
+            :value="item.project_id"
+          />
+        </el-select>
+      </el-form-item>
       <el-form-item label="功能描述" prop="prompt" required>
         <el-input
           v-model="form.prompt"
@@ -113,9 +123,10 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, computed, watch, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import { MagicStick, CircleCheck, InfoFilled } from '@element-plus/icons-vue'
+import { listAllProject } from '@/api/testing/project'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
@@ -136,9 +147,11 @@ const formRef = ref(null)
 
 // 状态
 const generating = ref(false)
+const projectList = ref([])
 
 // 表单数据
 const form = reactive({
+  projectId: null,
   prompt: '',
   template: 'test_case',
   count: 5,
@@ -147,10 +160,25 @@ const form = reactive({
 
 // 表单验证规则
 const rules = {
+  projectId: [{ required: true, message: '请选择项目', trigger: 'change' }],
   prompt: [
     { required: true, message: '请输入功能描述', trigger: 'blur' },
     { min: 5, message: '描述至少需要5个字符', trigger: 'blur' }
   ]
+}
+
+// 加载项目列表
+const loadProjects = async () => {
+  try {
+    const res = await listAllProject('0')
+    projectList.value = res.data || []
+    // 如果props中有projectId，设置为默认值
+    if (props.projectId && !form.projectId) {
+      form.projectId = props.projectId
+    }
+  } catch (error) {
+    console.error('加载项目列表失败:', error)
+  }
 }
 
 // 快捷建议
@@ -195,7 +223,7 @@ ${form.prompt.trim()}
     // 触发打开AI聊天，传递 prompt、projectId 和 useRag
     emit('open-chat', {
       prompt: chatPrompt,
-      projectId: props.projectId,
+      projectId: form.projectId,
       useRag: form.useRag
     })
     
@@ -208,6 +236,7 @@ ${form.prompt.trim()}
 
 // 重置表单
 const resetForm = () => {
+  form.projectId = props.projectId || null
   form.prompt = ''
   form.template = 'test_case'
   form.count = 5
@@ -221,9 +250,16 @@ const handleClose = () => {
 
 // 监听对话框打开
 watch(visible, (val) => {
-  if (!val) {
+  if (val) {
+    loadProjects()
+  } else {
     resetForm()
   }
+})
+
+// 组件挂载时加载项目列表
+onMounted(() => {
+  loadProjects()
 })
 </script>
 

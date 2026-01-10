@@ -27,6 +27,17 @@
 
     <!-- 表单 -->
     <el-form ref="formRef" :model="form" :rules="rules" label-width="100px">
+      <!-- 项目选择 -->
+      <el-form-item label="项目" prop="projectId" required>
+        <el-select v-model="form.projectId" placeholder="选择项目" style="width: 100%">
+          <el-option
+            v-for="item in projectList"
+            :key="item.project_id"
+            :label="item.project_name"
+            :value="item.project_id"
+          />
+        </el-select>
+      </el-form-item>
       <!-- 文件上传 -->
       <el-form-item label="上传文件" prop="files" required>
         <el-upload
@@ -132,15 +143,15 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch, nextTick } from 'vue'
+import { ref, reactive, computed, watch, nextTick, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Upload, UploadFilled, CircleCheck, MagicStick, Document, InfoFilled } from '@element-plus/icons-vue'
 import { uploadDocumentForAI } from '@/api/testing/document'
+import { listAllProject } from '@/api/testing/project'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
-  projectId: { type: Number, default: null },
-  folderId: { type: Number, default: null }
+  projectId: { type: Number, default: null }
 })
 
 const emit = defineEmits(['update:modelValue', 'open-chat', 'success'])
@@ -159,12 +170,14 @@ const uploadRef = ref(null)
 const uploading = ref(false)
 const generating = ref(false)
 const uploadedFiles = ref([]) // 已上传到 MinIO 的文件信息
+const projectList = ref([])
 
 // 接受的文件类型
 const acceptTypes = '.jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.txt'
 
 // 表单数据
 const form = reactive({
+  projectId: null,
   files: [],
   additionalNotes: '',
   template: 'test_case',
@@ -174,9 +187,24 @@ const form = reactive({
 
 // 表单验证规则
 const rules = {
+  projectId: [{ required: true, message: '请选择项目', trigger: 'change' }],
   files: [
     { type: 'array', required: true, message: '请上传至少一个文件', trigger: 'change' }
   ]
+}
+
+// 加载项目列表
+const loadProjects = async () => {
+  try {
+    const res = await listAllProject('0')
+    projectList.value = res.data || []
+    // 如果props中有projectId，设置为默认值
+    if (props.projectId && !form.projectId) {
+      form.projectId = props.projectId
+    }
+  } catch (error) {
+    console.error('加载项目列表失败:', error)
+  }
 }
 
 // 文件上传前验证
@@ -207,7 +235,7 @@ const uploadFilesToMinIO = async () => {
       
       ElMessage.info(`正在上传文件: ${file.name}...`)
       
-      const result = await uploadDocumentForAI(props.projectId, file)
+      const result = await uploadDocumentForAI(form.projectId, file)
       
       if (result.success) {
         uploadedFiles.value.push(result.data)
@@ -259,7 +287,6 @@ ${form.additionalNotes}
   prompt += `生成数量：${form.count} 个
 模板类型：${form.template === 'test_case' ? '标准测试用例' : 'BDD测试用例'}
 使用 RAG 检索：${form.useRag ? '是' : '否'}
-${props.folderId ? `目标文件夹ID：${props.folderId}` : ''}
 
 请先使用 parse_document_from_url 工具解析文档内容，提取关键功能点和测试场景。${form.useRag ? '然后使用 rag_query_tool 从知识库检索相关的接口文档、测试数据等信息，结合文档内容和检索结果生成完整的测试用例。' : '然后基于解析的文档内容生成完整的测试用例。'}`
   
@@ -268,8 +295,17 @@ ${props.folderId ? `目标文件夹ID：${props.folderId}` : ''}
 
 // 生成测试用例
 const handleGenerate = async () => {
+  // 验证表单
+  const valid = await formRef.value?.validate()
+  if (!valid) return
+  
   if (form.files.length === 0) {
     ElMessage.error('请上传至少一个文件')
+    return
+  }
+  
+  if (!form.projectId) {
+    ElMessage.error('请选择项目')
     return
   }
 
@@ -296,7 +332,7 @@ const handleGenerate = async () => {
     // 3. 触发打开 AI 聊天对话框，传递 prompt 和 projectId
     emit('open-chat', {
       prompt: chatPrompt,
-      projectId: props.projectId
+      projectId: form.projectId
     })
     
     // 4. 重置表单并关闭对话框
@@ -315,6 +351,7 @@ const handleGenerate = async () => {
 
 // 重置表单
 const resetForm = () => {
+  form.projectId = props.projectId || null
   form.files = []
   form.additionalNotes = ''
   form.template = 'test_case'
@@ -330,9 +367,16 @@ const handleClose = () => {
 
 // 监听对话框打开
 watch(visible, (val) => {
-  if (!val) {
+  if (val) {
+    loadProjects()
+  } else {
     resetForm()
   }
+})
+
+// 组件挂载时加载项目列表
+onMounted(() => {
+  loadProjects()
 })
 </script>
 

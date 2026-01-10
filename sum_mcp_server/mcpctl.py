@@ -30,6 +30,7 @@ class Service:
     entrypoint: str
     default_port: int | None
     port_env: str | None
+    fixed_port: bool
     args: list[str]
     pid_file: str
     log_file: str
@@ -64,6 +65,7 @@ def _load_manifest() -> list[Service]:
                 entrypoint=item["entrypoint"],
                 default_port=item.get("default_port"),
                 port_env=item.get("port_env"),
+                fixed_port=bool(item.get("fixed_port", False)),
                 args=list(item.get("args", [])),
                 pid_file=item["pid_file"],
                 log_file=item["log_file"],
@@ -376,6 +378,8 @@ def _remove_meta(service: Service) -> None:
 def _desired_port(service: Service) -> int | None:
     if service.default_port is None:
         return None
+    if service.fixed_port:
+        return int(service.default_port)
     # Highest priority: MCPCTL_PORT_<ID>
     env_key = f"MCPCTL_PORT_{service.id.upper()}"
     raw = os.environ.get(env_key)
@@ -526,8 +530,14 @@ def _start_one(
     wait_s: float,
 ) -> int | None:
     ports = ports or {}
-    if port is None:
-        port = _desired_port(service)
+    desired = _desired_port(service)
+    if service.fixed_port:
+        if port is not None and desired is not None and int(port) != int(desired):
+            raise SystemExit(f"{service.id} uses fixed port {desired}; refusing requested port {port}")
+        port = desired
+    else:
+        if port is None:
+            port = desired
 
     if port is not None:
         if _is_port_open(int(port)):
@@ -538,7 +548,7 @@ def _start_one(
                 for pid in sorted(pids):
                     _kill_pid_tree(pid)
                 time.sleep(0.4)
-            elif auto_port:
+            elif auto_port and not service.fixed_port:
                 avoid = set(ports.values())
                 new_port = _find_free_port(int(port), avoid=avoid)
                 print(f"[INFO] {service.id} port {port} is busy, switching to {new_port}")
@@ -897,6 +907,9 @@ def main(argv: list[str] | None = None) -> int:
         # Pre-resolve ports for template expansion like {lightrag_api.port}.
         ports: dict[str, int] = {}
         for svc in selected:
+            if args.port is not None and svc.fixed_port:
+                fixed = _desired_port(svc)
+                raise SystemExit(f"{svc.id} uses fixed port {fixed}; do not use --port")
             desired = int(args.port) if args.port is not None else _desired_port(svc)
             if desired is not None:
                 if desired in ports.values():

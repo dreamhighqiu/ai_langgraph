@@ -7,12 +7,6 @@
           <h2><el-icon><Warning /></el-icon> 缺陷分析管理</h2>
           <p class="subtitle">Defect Analysis - AI智能分析缺陷，提供根因分析和修复建议</p>
         </div>
-        <div class="header-actions">
-          <el-button type="primary" @click="openAIChat" v-hasPermi="['testing:defect:add']">
-            <el-icon><MagicStick /></el-icon>
-            AI 智能分析
-          </el-button>
-        </div>
       </div>
     </el-card>
 
@@ -61,16 +55,13 @@
     <!-- 操作按钮 -->
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
-        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:defect:add']">新增</el-button>
+        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:defect:add']">AI 智能分析</el-button>
+      </el-col>
+      <el-col :span="1.5">
+        <el-button type="primary" plain icon="MagicStick" @click="openAIChat" v-hasPermi="['testing:defect:add']">AI 助手</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:defect:remove']">删除</el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button type="success" plain icon="ChatDotRound" @click="openAIAssistant">
-          <el-icon><ChatDotRound /></el-icon>
-          AI 助手
-        </el-button>
       </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
@@ -172,8 +163,28 @@
 
         <el-divider content-position="left">复现步骤</el-divider>
         <div class="section-content">
-          <ol v-if="currentDetail.reproduction_steps?.length">
-            <li v-for="(step, i) in currentDetail.reproduction_steps" :key="i">{{ step }}</li>
+          <ol v-if="currentDetail.reproduction_steps?.length" class="reproduction-steps">
+            <li v-for="(step, i) in currentDetail.reproduction_steps" :key="i" class="step-item">
+              <template v-if="typeof step === 'object' && step !== null">
+                <div class="step-content">
+                  <div class="step-number">{{ step.step_number || (i + 1) }}</div>
+                  <div class="step-details">
+                    <div v-if="step.description || step.action" class="step-description">
+                      <strong>操作：</strong>{{ step.description || step.action }}
+                    </div>
+                    <div v-if="step.expected_result" class="step-expected">
+                      <strong>预期结果：</strong>{{ step.expected_result }}
+                    </div>
+                    <div v-if="step.actual_result" class="step-actual">
+                      <strong>实际结果：</strong>{{ step.actual_result }}
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <template v-else>
+                {{ step }}
+              </template>
+            </li>
           </ol>
           <span v-else class="no-content">暂无内容</span>
         </div>
@@ -606,6 +617,60 @@ onMounted(async () => {
     border-radius: 4px;
     line-height: 1.8;
     min-height: 40px;
+
+    &.reproduction-steps {
+      padding: 0;
+      background: transparent;
+
+      .step-item {
+        margin-bottom: 16px;
+        padding: 12px;
+        background: #fff;
+        border-radius: 4px;
+        border-left: 3px solid #409eff;
+
+        .step-content {
+          display: flex;
+          gap: 12px;
+
+          .step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            background: #409eff;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+          }
+
+          .step-details {
+            flex: 1;
+
+            .step-description,
+            .step-expected,
+            .step-actual {
+              margin-bottom: 8px;
+              line-height: 1.6;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              strong {
+                color: #606266;
+                margin-right: 8px;
+              }
+            }
+
+            .step-actual {
+              color: #f56c6c;
+            }
+          }
+        }
+      }
+    }
 
     ol, ul {
       margin: 0;

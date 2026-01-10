@@ -232,7 +232,7 @@ const { queryParams, form, rules } = toRefs(data);
 
 // 计算上传地址和请求头
 const uploadUrl = computed(() => {
-  return import.meta.env.VITE_APP_BASE_API + `/testing/knowledge/${form.value.knowledgeId}/files/upload`;
+  return import.meta.env.VITE_APP_BASE_API + `/api/testing/knowledge/${form.value.knowledgeId}/files/upload`;
 });
 
 const uploadHeaders = computed(() => {
@@ -457,7 +457,7 @@ function handleUploadError() {
 /** 查看文件列表 */
 function handleFiles(row) {
   router.push({ 
-    path: "/knowledge/files/" + row.knowledgeId, 
+    path: "/testing/knowledge/files/" + row.knowledgeId, 
     query: { 
       knowledgeName: row.knowledgeName
     } 
@@ -482,7 +482,7 @@ function handleProjectChat(row) {
     '';
 
   router.push({
-    path: '/knowledge/project-chat/' + pid,
+    path: '/testing/knowledge/project-chat/' + pid,
     query: {
       projectId: pid,
       projectName: pname,

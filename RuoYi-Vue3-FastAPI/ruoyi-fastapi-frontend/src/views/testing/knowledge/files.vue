@@ -363,7 +363,7 @@ async function handleDownload(row) {
     // 使用axios下载文件，确保触发浏览器下载行为
     const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
     const response = await axios({
-      url: `${baseUrl}/testing/knowledge/files/${fileId}/download`,
+      url: `${baseUrl}/api/testing/knowledge/files/${fileId}/download`,
       method: 'get',
       params: { preview: false }, // 明确设置为下载模式
       responseType: 'blob',
@@ -430,7 +430,7 @@ async function handlePreview(row) {
     // 使用axios直接获取文件内容，这样可以获取完整的响应信息（包括响应头）
     const baseUrl = import.meta.env.VITE_APP_BASE_API || '';
     const response = await axios({
-      url: `${baseUrl}/testing/knowledge/files/${fileId}/download`,
+      url: `${baseUrl}/api/testing/knowledge/files/${fileId}/download`,
       method: 'get',
       params: { preview: true },
       responseType: 'blob',

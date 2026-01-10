@@ -1115,18 +1115,30 @@ async def save_requirement_analysis_tool(
                 functional_req_data["priority_analysis"] = priority_analysis
             elif isinstance(priority_analysis, str):
                 try:
-                    functional_req_data["priority_analysis"] = json.loads(priority_analysis)
-                except:
+                    # 尝试解析JSON字符串（支持包含换行符的格式）
+                    parsed = json.loads(priority_analysis.strip())
+                    functional_req_data["priority_analysis"] = parsed
+                except (json.JSONDecodeError, ValueError) as e:
+                    logger.warning(f"解析 priority_analysis JSON 失败: {str(e)}，将作为文本内容保存")
                     functional_req_data["priority_analysis"] = {"content": priority_analysis}
+            else:
+                # 其他类型直接保存
+                functional_req_data["priority_analysis"] = priority_analysis
         
         if effort_estimation:
             if isinstance(effort_estimation, dict):
                 functional_req_data["effort_estimation"] = effort_estimation
             elif isinstance(effort_estimation, str):
                 try:
-                    functional_req_data["effort_estimation"] = json.loads(effort_estimation)
-                except:
+                    # 尝试解析JSON字符串（支持包含换行符的格式）
+                    parsed = json.loads(effort_estimation.strip())
+                    functional_req_data["effort_estimation"] = parsed
+                except (json.JSONDecodeError, ValueError) as e:
+                    logger.warning(f"解析 effort_estimation JSON 失败: {str(e)}，将作为文本内容保存")
                     functional_req_data["effort_estimation"] = {"content": effort_estimation}
+            else:
+                # 其他类型直接保存
+                functional_req_data["effort_estimation"] = effort_estimation
         
         # 处理其他列表字段
         processed_user_stories = json.dumps(user_stories, ensure_ascii=False) if user_stories else None
@@ -1208,7 +1220,10 @@ async def save_requirement_analysis_tool(
                     logger.warning("生成需求分析报告失败（不影响保存）", exc_info=True)
                 
                 # 统一提交所有数据库更改（包括保存和报告生成）
+                await db.flush()
                 await db.commit()
+                # 重新查询对象以确保数据一致性
+                result = await service.get_requirement(db, requirement_analysis_id)
 
                 return {
                     "success": True,
@@ -1269,7 +1284,10 @@ async def save_requirement_analysis_tool(
                     logger.warning("生成需求分析报告失败（不影响保存）", exc_info=True)
                 
                 # 统一提交所有数据库更改（包括保存和报告生成）
+                await db.flush()
                 await db.commit()
+                # 重新查询对象以确保数据一致性
+                result = await service.get_requirement(db, result.analysis_id)
                 
                 return {
                     "success": True,
@@ -1296,8 +1314,8 @@ async def save_defect_analysis_tool(
     defect_title: Optional[str] = None,
     defect_description: Optional[str] = None,
     executive_summary: Optional[str] = None,
-    root_cause_analysis: Optional[Union[Dict[str, Any], str]] = None,
-    impact_analysis: Optional[Union[Dict[str, Any], str]] = None,
+    root_cause_analysis: Optional[Any] = None,
+    impact_analysis: Optional[Any] = None,
     reproduction_steps: Optional[List[Dict[str, Any]]] = None,
     affected_modules: Optional[List[str]] = None,
     fix_suggestions: Optional[List[Dict[str, Any]]] = None,
@@ -1451,10 +1469,14 @@ async def save_defect_analysis_tool(
                 processed_root_cause = root_cause_analysis
             elif isinstance(root_cause_analysis, str):
                 try:
-                    processed_root_cause = json.loads(root_cause_analysis)
-                except:
+                    # 尝试解析JSON字符串（支持包含换行符的格式）
+                    parsed = json.loads(root_cause_analysis.strip())
+                    processed_root_cause = parsed
+                except (json.JSONDecodeError, ValueError) as e:
+                    logger.warning(f"解析 root_cause_analysis JSON 失败: {str(e)}，将作为文本内容保存")
                     processed_root_cause = {"content": root_cause_analysis}
             else:
+                # 其他类型直接保存
                 processed_root_cause = root_cause_analysis
         
         processed_impact = None
@@ -1463,10 +1485,14 @@ async def save_defect_analysis_tool(
                 processed_impact = impact_analysis
             elif isinstance(impact_analysis, str):
                 try:
-                    processed_impact = json.loads(impact_analysis)
-                except:
+                    # 尝试解析JSON字符串（支持包含换行符的格式）
+                    parsed = json.loads(impact_analysis.strip())
+                    processed_impact = parsed
+                except (json.JSONDecodeError, ValueError) as e:
+                    logger.warning(f"解析 impact_analysis JSON 失败: {str(e)}，将作为文本内容保存")
                     processed_impact = {"content": impact_analysis}
             else:
+                # 其他类型直接保存
                 processed_impact = impact_analysis
         
         # 处理列表字段：转换为 JSON 字符串

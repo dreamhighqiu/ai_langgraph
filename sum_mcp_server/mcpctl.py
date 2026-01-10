@@ -13,6 +13,7 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
+import shutil
 from typing import Any, Iterable
 
 
@@ -148,15 +149,19 @@ def _expand_with_deps(services: list[Service], root_ids: list[str]) -> list[Serv
     return [by_id[sid] for sid in visited]
 
 
-def _get_python_exe() -> Path:
+def _get_python_exe_for(repo_root: Path) -> Path:
     candidates = [
-        REPO_ROOT / ".venv" / "Scripts" / "python.exe",
-        REPO_ROOT / ".venv" / "bin" / "python",
+        repo_root / ".venv" / "Scripts" / "python.exe",
+        repo_root / ".venv" / "bin" / "python",
     ]
     for candidate in candidates:
         if candidate.exists():
             return candidate
     return Path(sys.executable)
+
+
+def _get_python_exe() -> Path:
+    return _get_python_exe_for(REPO_ROOT)
 
 
 def _is_port_open(port: int, host: str = "127.0.0.1") -> bool:
@@ -692,6 +697,113 @@ def _status_one(service: Service) -> dict[str, Any]:
         "log": str(service.log_path),
     }
 
+def _rm_tree(path: Path) -> None:
+    if not path.exists():
+        return
+    shutil.rmtree(path, ignore_errors=False)
+
+
+def _sync_tree(src: Path, dst: Path) -> None:
+    if not src.exists():
+        raise SystemExit(f"Missing source: {src}")
+    if dst.exists():
+        _rm_tree(dst)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(src, dst)
+
+
+def _vendorize(*, repo_root: Path, vendor_dir: Path) -> None:
+    vendor_dir.mkdir(parents=True, exist_ok=True)
+
+    print("[1/5] Sync lightrag -> vendor/lightrag")
+    _sync_tree(repo_root / "anything-chat-rag" / "lightrag", vendor_dir / "lightrag")
+
+    print("[2/5] Sync lightrag_webui -> vendor/lightrag_webui")
+    _sync_tree(repo_root / "anything-chat-rag" / "lightrag_webui", vendor_dir / "lightrag_webui")
+
+    print("[3/5] Sync raganything -> vendor/raganything")
+    _sync_tree(repo_root / "anything-chat-rag" / "raganything", vendor_dir / "raganything")
+
+    print("[4/5] Sync mcp_server_rag_anything -> vendor/mcp_server_rag_anything")
+    _sync_tree(
+        repo_root / "mcp-server" / "src" / "mcp_server_rag_anything",
+        vendor_dir / "mcp_server_rag_anything",
+    )
+
+    print("[5/5] Sync automation-quality-mcp -> vendor/automation-quality-mcp")
+    aq_src = repo_root / "testing-agents-service" / "src" / "api_agent" / "mcp_servers" / "automation-quality-mcp"
+    aq_dst = vendor_dir / "automation-quality-mcp"
+    if aq_dst.exists():
+        _rm_tree(aq_dst)
+    aq_dst.mkdir(parents=True, exist_ok=True)
+
+    _sync_tree(aq_src / "src", aq_dst / "src")
+    for filename in [
+        "mcpServer.js",
+        "run-server.js",
+        "cli.js",
+        "browserControl.js",
+        "package.json",
+        "package-lock.json",
+        "README.md",
+    ]:
+        src_file = aq_src / filename
+        if not src_file.exists():
+            raise SystemExit(f"Missing source file: {src_file}")
+        shutil.copy2(src_file, aq_dst / filename)
+
+    print(f"[OK] vendor sync complete: {vendor_dir}")
+
+
+def _bundle(*, repo_root: Path, out_dir: Path) -> None:
+    target = repo_root / out_dir
+    if target.exists():
+        _rm_tree(target)
+    target.mkdir(parents=True, exist_ok=True)
+
+    print(f"[1/3] Copy sum_mcp_server -> {out_dir.as_posix()}")
+    shutil.copytree(repo_root / "sum_mcp_server", target / "sum_mcp_server")
+
+    print("[2/3] Vendorize deps into bundle")
+    _vendorize(repo_root=repo_root, vendor_dir=target / "sum_mcp_server" / "vendor")
+
+    print("[3/3] Done")
+    print(f"Bundle ready: {target}")
+    print("Run:")
+    print(f"  cd {target}")
+    print("  python sum_mcp_server/mcpctl.py start --all")
+
+
+def _run_checked(cmd: list[str], *, cwd: Path | None = None, env: dict[str, str] | None = None) -> None:
+    print(f"[RUN] {_format_cmd(cmd)}")
+    subprocess.check_call(cmd, cwd=str(cwd) if cwd else None, env=env)
+
+
+def _setup_backend(*, repo_root: Path) -> None:
+    python_exe = _get_python_exe_for(repo_root)
+    req = repo_root / "sum_mcp_server" / "requirements.txt"
+    if not req.exists():
+        raise SystemExit(f"Missing requirements file: {req}")
+    _run_checked([str(python_exe), "-m", "pip", "install", "-r", str(req)])
+
+
+def _setup_frontend(*, repo_root: Path) -> None:
+    npm = shutil.which("npm")
+    if not npm:
+        raise SystemExit("Cannot find 'npm' on PATH. Install Node.js (includes npm).")
+
+    candidates = [
+        repo_root / "sum_mcp_server" / "vendor" / "lightrag_webui",
+        repo_root / "anything-chat-rag" / "lightrag_webui",
+    ]
+    webui_dir = next((p for p in candidates if (p / "package.json").exists()), None)
+    if webui_dir is None:
+        raise SystemExit("Cannot find lightrag_webui. Run `mcpctl vendorize` first or keep anything-chat-rag present.")
+
+    # Install deps + build into ../lightrag/api/webui (as configured by Vite).
+    _run_checked([npm, "ci"], cwd=webui_dir)
+    _run_checked([npm, "run", "build-no-bun"], cwd=webui_dir)
+
 
 def _select_services(all_services: list[Service], ids: list[str]) -> list[Service]:
     by_id = {svc.id: svc for svc in all_services}
@@ -737,6 +849,18 @@ def main(argv: list[str] | None = None) -> int:
     restart_p.add_argument("--wait", type=float, default=8.0, help="Wait seconds for /sse health (default: 8)")
 
     sub.add_parser("doctor", help="Check config/vendor/ports and print suggestions")
+
+    vendorize_p = sub.add_parser("vendorize", help="Sync vendored deps from monorepo into sum_mcp_server/vendor")
+    vendorize_p.add_argument("--repo-root", type=str, default=str(REPO_ROOT), help="Monorepo root path")
+
+    bundle_p = sub.add_parser("bundle", help="Build a standalone deployment bundle (includes vendorized deps)")
+    bundle_p.add_argument("--repo-root", type=str, default=str(REPO_ROOT), help="Monorepo root path")
+    bundle_p.add_argument("--out-dir", type=str, default="dist/sum_mcp_bundle", help="Output directory (relative to repo root)")
+
+    setup_p = sub.add_parser("setup", help="One-shot setup for deployment (backend pip + frontend build)")
+    setup_p.add_argument("--repo-root", type=str, default=str(REPO_ROOT), help="Monorepo root path")
+    setup_p.add_argument("--backend", action="store_true", help="Setup backend only (pip install)")
+    setup_p.add_argument("--frontend", action="store_true", help="Setup frontend only (npm ci + build)")
 
     args = parser.parse_args(argv)
 
@@ -891,12 +1015,38 @@ def main(argv: list[str] | None = None) -> int:
         vendor = REPO_ROOT / "sum_mcp_server" / "vendor"
         needed = [
             ("lightrag", vendor / "lightrag"),
+            ("lightrag_webui", vendor / "lightrag_webui"),
             ("raganything", vendor / "raganything"),
             ("mcp_server_rag_anything", vendor / "mcp_server_rag_anything"),
             ("automation-quality-mcp", vendor / "automation-quality-mcp"),
         ]
         for name, path in needed:
             print(f"- vendor {name}: {'OK' if path.exists() else 'MISSING'} ({path})")
+        return 0
+
+    if args.cmd == "vendorize":
+        repo_root = Path(args.repo_root).resolve()
+        _vendorize(repo_root=repo_root, vendor_dir=REPO_ROOT / "sum_mcp_server" / "vendor")
+        return 0
+
+    if args.cmd == "bundle":
+        repo_root = Path(args.repo_root).resolve()
+        out_dir = Path(args.out_dir)
+        _bundle(repo_root=repo_root, out_dir=out_dir)
+        return 0
+
+    if args.cmd == "setup":
+        repo_root = Path(args.repo_root).resolve()
+        do_backend = bool(args.backend)
+        do_frontend = bool(args.frontend)
+        if not do_backend and not do_frontend:
+            do_backend = True
+            do_frontend = True
+
+        if do_backend:
+            _setup_backend(repo_root=repo_root)
+        if do_frontend:
+            _setup_frontend(repo_root=repo_root)
         return 0
 
     raise SystemExit("Unhandled command")

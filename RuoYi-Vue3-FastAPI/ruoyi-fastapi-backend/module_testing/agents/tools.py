@@ -8,7 +8,7 @@
 """
 
 import httpx
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Union
 from langchain_core.tools import tool
 
 from config.env import AppConfig
@@ -969,8 +969,8 @@ async def save_requirement_analysis_tool(
     dependencies: Optional[List[Dict[str, Any]]] = None,
     risks: Optional[List[Dict[str, Any]]] = None,
     recommendations: Optional[List[Dict[str, Any]]] = None,
-    priority_analysis: Optional[Dict[str, Any]] = None,
-    effort_estimation: Optional[Dict[str, Any]] = None,
+    priority_analysis: Optional[Any] = None,
+    effort_estimation: Optional[Any] = None,
     quality_completeness: Optional[float] = None,
     quality_clarity: Optional[float] = None,
     quality_consistency: Optional[float] = None,
@@ -1023,15 +1023,17 @@ async def save_requirement_analysis_tool(
             - type: 建议类型
             - description: 建议描述
             - priority: 优先级
-        priority_analysis: 优先级分析字典，包含：
+        priority_analysis: 优先级分析字典或JSON字符串，包含：
             - high_priority: 高优先级需求列表
             - medium_priority: 中优先级需求列表
             - low_priority: 低优先级需求列表
             - rationale: 优先级判断依据
-        effort_estimation: 工作量评估字典，包含：
+            注意：可以传入字典对象或JSON字符串，函数会自动处理
+        effort_estimation: 工作量评估字典或JSON字符串，包含：
             - total_effort: 总工作量（人天）
             - breakdown: 工作量分解
             - assumptions: 评估假设
+            注意：可以传入字典对象或JSON字符串，函数会自动处理
         quality_completeness: 完整性评分（0-100）
         quality_clarity: 清晰度评分（0-100）
         quality_consistency: 一致性评分（0-100）
@@ -1294,8 +1296,8 @@ async def save_defect_analysis_tool(
     defect_title: Optional[str] = None,
     defect_description: Optional[str] = None,
     executive_summary: Optional[str] = None,
-    root_cause_analysis: Optional[Dict[str, Any]] = None,
-    impact_analysis: Optional[Dict[str, Any]] = None,
+    root_cause_analysis: Optional[Union[Dict[str, Any], str]] = None,
+    impact_analysis: Optional[Union[Dict[str, Any], str]] = None,
     reproduction_steps: Optional[List[Dict[str, Any]]] = None,
     affected_modules: Optional[List[str]] = None,
     fix_suggestions: Optional[List[Dict[str, Any]]] = None,
@@ -1332,17 +1334,19 @@ async def save_defect_analysis_tool(
         defect_title: 缺陷标题
         defect_description: 缺陷描述
         executive_summary: 缺陷概述
-        root_cause_analysis: 根本原因分析字典，包含：
+        root_cause_analysis: 根本原因分析字典或JSON字符串，包含：
             - primary_cause: 主要原因
             - contributing_factors: 促成因素列表
             - analysis_method: 分析方法
             - evidence: 证据
-        impact_analysis: 影响分析字典，包含：
+            注意：可以传入字典对象或JSON字符串，函数会自动处理
+        impact_analysis: 影响分析字典或JSON字符串，包含：
             - affected_areas: 受影响区域列表
             - severity_level: 严重程度级别
             - business_impact: 业务影响
             - technical_impact: 技术影响
             - user_impact: 用户影响
+            注意：可以传入字典对象或JSON字符串，函数会自动处理
         reproduction_steps: 复现步骤列表，每个元素包含：
             - step_number: 步骤编号
             - description: 步骤描述
@@ -1533,6 +1537,9 @@ async def save_defect_analysis_tool(
                     report_url = await service.generate_and_upload_report(db, defect_analysis_id)
                     if report_url:
                         logger.info(f"缺陷分析报告生成成功: {report_url}")
+                        # 如果是minio://格式，转换为代理下载链接
+                        if report_url.startswith('minio://'):
+                            report_url = f"/testing/defect-analysis/download/{defect_analysis_id}"
                 except Exception as e:
                     logger.warning(f"生成缺陷分析报告失败（不影响保存）: {str(e)}")
                 
@@ -1541,7 +1548,7 @@ async def save_defect_analysis_tool(
                     "defect_analysis_id": defect_analysis_id,
                     "analysis_name": result.analysis_name,
                     "report_url": report_url,
-                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功" + (f"，报告已生成: {report_url}" if report_url else "")
+                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功" + (f"，报告已生成，可通过下载按钮下载" if report_url else "")
                 }
             else:
                 # 创建新缺陷分析
@@ -1556,6 +1563,9 @@ async def save_defect_analysis_tool(
                     report_url = await service.generate_and_upload_report(db, result.analysis_id)
                     if report_url:
                         logger.info(f"缺陷分析报告生成成功: {report_url}")
+                        # 如果是minio://格式，转换为代理下载链接
+                        if report_url.startswith('minio://'):
+                            report_url = f"/testing/defect-analysis/download/{result.analysis_id}"
                 except Exception as e:
                     logger.warning(f"生成缺陷分析报告失败（不影响保存）: {str(e)}")
                 
@@ -1564,8 +1574,8 @@ async def save_defect_analysis_tool(
                     "defect_analysis_id": result.analysis_id,
                     "analysis_name": result.analysis_name,
                     "report_url": report_url,
-                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功" + (f"，报告已生成: {report_url}" if report_url else "")
-        }
+                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功" + (f"，报告已生成，可通过下载按钮下载" if report_url else "")
+                }
 
     except Exception as e:
         logger.error(f"保存缺陷分析失败: {str(e)}", exc_info=True)
@@ -1732,10 +1742,13 @@ async def generate_defect_analysis_report_tool(
             
             if report_url:
                 logger.info(f"缺陷分析报告生成成功: {defect_analysis_id}, URL: {report_url}")
+                # 如果是minio://格式，转换为代理下载链接
+                if report_url.startswith('minio://'):
+                    report_url = f"/testing/defect-analysis/download/{defect_analysis_id}"
                 return {
                     "success": True,
                     "report_url": report_url,
-                    "message": f"✅ 缺陷分析报告生成成功，URL: {report_url}"
+                    "message": f"✅ 缺陷分析报告生成成功，可通过下载按钮下载"
                 }
             else:
                 return {

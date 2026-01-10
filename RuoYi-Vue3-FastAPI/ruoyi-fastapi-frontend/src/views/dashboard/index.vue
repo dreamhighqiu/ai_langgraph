@@ -1,738 +1,514 @@
 <template>
-  <div>
-    <div class="pageHeaderContent">
-      <div class="avatar">
-        <a-avatar size="large" :src="currentUser.avatar" />
-      </div>
-      <div class="content">
-        <div class="contentTitle">
-          早安，
-          {{ currentUser.name }}
-          ，祝你开心每一天！
+  <div class="app-container dashboard">
+    <el-card shadow="never" class="welcome-card" v-loading="loading">
+      <div class="welcome">
+        <div class="welcome-left">
+          <div class="welcome-title">质量看板</div>
+          <div class="welcome-subtitle">
+            <span class="muted">欢迎回来，</span>{{ displayName }}
+            <span class="muted">｜近</span>{{ days }}<span class="muted">天质量概览</span>
+          </div>
         </div>
-        <div>{{ currentUser.title }} |{{ currentUser.group }}</div>
-      </div>
-      <div class="extraContent">
-        <div class="statItem">
-          <a-statistic title="项目数" :value="56" />
-        </div>
-        <div class="statItem">
-          <a-statistic title="团队内排名" :value="8" suffix="/ 24" />
-        </div>
-        <div class="statItem">
-          <a-statistic title="项目访问" :value="2223" />
+        <div class="welcome-right">
+          <el-select v-model="days" size="small" style="width: 120px" @change="load">
+            <el-option v-for="opt in dayOptions" :key="opt.value" :label="opt.label" :value="opt.value" />
+          </el-select>
+          <el-button size="small" type="primary" @click="load" :loading="loading">刷新</el-button>
         </div>
       </div>
-    </div>
 
-    <div style="padding: 10px">
-      <a-row :gutter="24">
-        <a-col :xl="16" :lg="24" :md="24" :sm="24" :xs="24">
-          <a-card
-            class="projectList"
-            :style="{ marginBottom: '24px' }"
-            title="进行中的项目"
-            :bordered="false"
-            :loading="false"
-            :body-style="{ padding: 0 }"
-          >
-            <template #extra>
-              <a href=""> <span style="color: #1890ff">全部项目</span> </a>
-            </template>
-            <a-card-grid
-              v-for="item in projectNotice"
-              :key="item.id"
-              class="projectGrid"
-            >
-              <a-card
-                :body-style="{ padding: 0 }"
-                style="box-shadow: none"
-                :bordered="false"
-              >
-                <a-card-meta :description="item.description" class="w-full">
-                  <template #title>
-                    <div class="cardTitle">
-                      <a-avatar size="small" :src="item.logo" />
-                      <a :href="item.href">
-                        {{ item.title }}
-                      </a>
-                    </div>
-                  </template>
-                </a-card-meta>
-                <div class="projectItemContent">
-                  <a :href="item.memberLink">
-                    {{ item.member || "" }}
-                  </a>
-                  <span class="datetime" ml-2 :title="item.updatedAt">
-                    {{ item.updatedAt }}
-                  </span>
-                </div>
-              </a-card>
-            </a-card-grid>
-          </a-card>
-          <a-card
-            :body-style="{ padding: 0 }"
-            :bordered="false"
-            class="activeCard"
-            title="动态"
-            :loading="false"
-          >
-            <a-list :data-source="activities" class="activitiesList">
-              <template #renderItem="{ item }">
-                <a-list-item :key="item.id">
-                  <a-list-item-meta>
-                    <template #title>
-                      <span>
-                        <a class="username">{{ item.user.name }}</a
-                        >&nbsp;
-                        <span class="event">
-                          <span>{{ item.template1 }}</span
-                          >&nbsp;
-                          <a href="" style="color: #1890ff">
-                            {{ item?.group?.name }} </a
-                          >&nbsp; <span>{{ item.template2 }}</span
-                          >&nbsp;
-                          <a href="" style="color: #1890ff">
-                            {{ item?.project?.name }}
-                          </a>
-                        </span>
-                      </span>
-                    </template>
-                    <template #avatar>
-                      <a-avatar :src="item.user.avatar" />
-                    </template>
-                    <template #description>
-                      <span class="datetime" :title="item.updatedAt">
-                        {{ item.updatedAt }}
-                      </span>
-                    </template>
-                  </a-list-item-meta>
-                </a-list-item>
+      <el-row :gutter="12" class="kpi-row">
+        <el-col :xs="12" :sm="8" :lg="4">
+          <div class="kpi-card" @click="go('/testing/project')">
+            <div class="kpi-label">项目</div>
+            <div class="kpi-value">{{ kpi.projects }}</div>
+          </div>
+        </el-col>
+        <el-col :xs="12" :sm="8" :lg="4">
+          <div class="kpi-card" @click="go('/testing/script')">
+            <div class="kpi-label">脚本</div>
+            <div class="kpi-value">{{ kpi.scripts }}</div>
+          </div>
+        </el-col>
+        <el-col :xs="12" :sm="8" :lg="4">
+          <div class="kpi-card" @click="go('/testing/test-case')">
+            <div class="kpi-label">用例</div>
+            <div class="kpi-value">{{ kpi.test_cases }}</div>
+          </div>
+        </el-col>
+        <el-col :xs="12" :sm="8" :lg="4">
+          <div class="kpi-card" @click="go('/testing/requirement')">
+            <div class="kpi-label">需求</div>
+            <div class="kpi-value">{{ kpi.requirements }}</div>
+          </div>
+        </el-col>
+        <el-col :xs="12" :sm="8" :lg="4">
+          <div class="kpi-card danger" @click="go('/testing/bug-report')">
+            <div class="kpi-label">未关闭缺陷</div>
+            <div class="kpi-value">{{ kpi.bugs_open }}</div>
+          </div>
+        </el-col>
+        <el-col :xs="12" :sm="8" :lg="4">
+          <div class="kpi-card">
+            <div class="kpi-label">执行成功率</div>
+            <div class="kpi-value">
+              {{ kpi.executions.success_rate }}<span class="kpi-unit">%</span>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+
+      <div class="kpi-footer">
+        <div class="kpi-footer-item">
+          <span class="muted">近{{ days }}天执行</span>
+          <span class="strong">{{ kpi.executions.total }}</span>
+        </div>
+        <div class="kpi-footer-item">
+          <span class="muted">成功</span>
+          <span class="strong success">{{ kpi.executions.success }}</span>
+        </div>
+        <div class="kpi-footer-item">
+          <span class="muted">失败</span>
+          <span class="strong danger">{{ kpi.executions.failed }}</span>
+        </div>
+        <div class="kpi-footer-item">
+          <span class="muted">运行中</span>
+          <span class="strong warn">{{ kpi.executions.running }}</span>
+        </div>
+      </div>
+    </el-card>
+
+    <el-row :gutter="12" class="mt-3">
+      <el-col :xs="24" :lg="16">
+        <el-card shadow="never" class="chart-card">
+          <template #header>
+            <div class="card-header">
+              <span>执行趋势</span>
+              <span class="muted">近{{ days }}天</span>
+            </div>
+          </template>
+          <div ref="trendRef" class="chart" />
+        </el-card>
+      </el-col>
+      <el-col :xs="24" :lg="8">
+        <el-card shadow="never" class="chart-card">
+          <template #header>
+            <div class="card-header">
+              <span>缺陷状态</span>
+              <span class="muted">全量统计</span>
+            </div>
+          </template>
+          <div ref="bugRef" class="chart" />
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <el-row :gutter="12" class="mt-3">
+      <el-col :xs="24" :lg="16">
+        <el-card shadow="never">
+          <template #header>
+            <div class="card-header">
+              <span>最近执行</span>
+              <el-button link type="primary" @click="go('/testing/execution')">进入执行监控</el-button>
+            </div>
+          </template>
+          <el-table :data="recentExecutions" size="small" style="width: 100%">
+            <el-table-column label="时间" min-width="160">
+              <template #default="{ row }">
+                <span>{{ formatTime(row.create_time) }}</span>
               </template>
-            </a-list>
-          </a-card>
-        </a-col>
-        <a-col :xl="8" :lg="24" :md="24" :sm="24" :xs="24">
-          <a-card
-            :style="{ marginBottom: '24px' }"
-            title="快速开始 / 便捷导航"
-            :bordered="false"
-            :body-style="{ padding: 0 }"
-          >
-            <EditableLinkGroup />
-          </a-card>
-          <a-card
-            :style="{ marginBottom: '24px' }"
-            :bordered="false"
-            title="XX 指数"
-          >
-            <div class="chart">
-              <div ref="radarContainer" />
+            </el-table-column>
+            <el-table-column prop="project_name" label="项目" min-width="140" show-overflow-tooltip />
+            <el-table-column prop="script_name" label="脚本" min-width="180" show-overflow-tooltip />
+            <el-table-column label="状态" width="100">
+              <template #default="{ row }">
+                <el-tag :type="statusTagType(row.execution_status)" effect="light">
+                  {{ statusText(row.execution_status) }}
+                </el-tag>
+              </template>
+            </el-table-column>
+            <el-table-column label="耗时" width="90" align="right">
+              <template #default="{ row }">{{ formatDuration(row.duration) }}</template>
+            </el-table-column>
+          </el-table>
+          <div v-if="!recentExecutions.length && !loading" class="empty-hint">暂无执行记录</div>
+        </el-card>
+      </el-col>
+      <el-col :xs="24" :lg="8">
+        <el-card shadow="never">
+          <template #header>
+            <div class="card-header">
+              <span>快捷入口</span>
             </div>
-          </a-card>
-          <a-card
-            :body-style="{ paddingTop: '12px', paddingBottom: '12px' }"
-            :bordered="false"
-            title="团队"
-          >
-            <div class="members">
-              <a-row :gutter="48">
-                <a-col
-                  v-for="item in projectNotice"
-                  :key="`members-item-${item.id}`"
-                  :span="12"
-                >
-                  <a :href="item.href">
-                    <a-avatar :src="item.logo" size="small" />
-                    <span class="member">{{ item.member }}</span>
-                  </a>
-                </a-col>
-              </a-row>
+          </template>
+          <div class="quick-actions">
+            <el-button @click="go('/testing/project')" plain>项目管理</el-button>
+            <el-button @click="go('/testing/test-case')" plain>用例管理</el-button>
+            <el-button @click="go('/testing/script')" plain>脚本中心</el-button>
+            <el-button @click="go('/testing/execution')" type="primary">执行监控</el-button>
+            <el-button @click="go('/testing/report')" plain>测试报告</el-button>
+            <el-button @click="go('/testing/bug-report')" plain>缺陷管理</el-button>
+          </div>
+          <div class="health">
+            <div class="health-title">稳定性</div>
+            <el-progress :percentage="kpi.executions.success_rate || 0" :stroke-width="10" :show-text="false" />
+            <div class="health-metrics">
+              <div class="health-metric">
+                <div class="muted">成功</div>
+                <div class="strong success">{{ kpi.executions.success }}</div>
+              </div>
+              <div class="health-metric">
+                <div class="muted">失败</div>
+                <div class="strong danger">{{ kpi.executions.failed }}</div>
+              </div>
+              <div class="health-metric">
+                <div class="muted">运行中</div>
+                <div class="strong warn">{{ kpi.executions.running }}</div>
+              </div>
             </div>
-          </a-card>
-        </a-col>
-      </a-row>
-    </div>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
-<script>
-import {
-  Statistic,
-  Row,
-  Col,
-  Card,
-  CardGrid,
-  CardMeta,
-  List,
-  ListItem,
-  ListItemMeta,
-  Avatar,
-} from "ant-design-vue";
-import 'ant-design-vue/dist/reset.css';
+<script setup name="DashBoard">
+import * as echarts from 'echarts'
+import { getDashboardSummary } from '@/api/testing/dashboard'
+import useUserStore from '@/store/modules/user'
 
-export default {
-  components: {
-    AStatistic: Statistic,
-    ARow: Row,
-    ACol: Col,
-    ACard: Card,
-    ACardGrid: CardGrid,
-    ACardMeta: CardMeta,
-    AList: List,
-    AListItem: ListItem,
-    AListItemMeta: ListItemMeta,
-    AAvatar: Avatar,
-  },
-};
-</script>
+const router = useRouter()
+const { proxy } = getCurrentInstance()
+const userStore = useUserStore()
 
+const loading = ref(false)
+const days = ref(7)
+const dayOptions = [
+  { label: '近7天', value: 7 },
+  { label: '近14天', value: 14 },
+  { label: '近30天', value: 30 }
+]
 
-<script setup>
-import { Radar } from "@antv/g2plot";
-import EditableLinkGroup from "./editable-link-group.vue";
+const kpi = reactive({
+  projects: 0,
+  scripts: 0,
+  test_cases: 0,
+  requirements: 0,
+  bugs_open: 0,
+  executions: {
+    total: 0,
+    success: 0,
+    failed: 0,
+    running: 0,
+    success_rate: 0
+  }
+})
 
-defineOptions({
-  name: "DashBoard",
-});
+const executionTrend = ref([])
+const bugStatus = ref({})
+const recentExecutions = ref([])
 
-const currentUser = {
-  avatar: "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png",
-  name: "吴彦祖",
-  userid: "00000001",
-  email: "antdesign@alipay.com",
-  signature: "海纳百川，有容乃大",
-  title: "交互专家",
-  group: "蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED",
-};
+const trendRef = ref(null)
+const bugRef = ref(null)
+let trendChart
+let bugChart
 
-const projectNotice = [
-  {
-    id: "xxx1",
-    title: "Alipay",
-    logo: "https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png",
-    description: "那是一种内在的东西，他们到达不了，也无法触及的",
-    updatedAt: "几秒前",
-    member: "科学搬砖组",
-    href: "",
-    memberLink: "",
-  },
-  {
-    id: "xxx2",
-    title: "Angular",
-    logo: "https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png",
-    description: "希望是一个好东西，也许是最好的，好东西是不会消亡的",
-    updatedAt: "6 年前",
-    member: "全组都是吴彦祖",
-    href: "",
-    memberLink: "",
-  },
-  {
-    id: "xxx3",
-    title: "Ant Design",
-    logo: "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png",
-    description: "城镇中有那么多的酒馆，她却偏偏走进了我的酒馆",
-    updatedAt: "几秒前",
-    member: "中二少女团",
-    href: "",
-    memberLink: "",
-  },
-  {
-    id: "xxx4",
-    title: "Ant Design Pro",
-    logo: "https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png",
-    description: "那时候我只会想自己想要什么，从不想自己拥有什么",
-    updatedAt: "6 年前",
-    member: "程序员日常",
-    href: "",
-    memberLink: "",
-  },
-  {
-    id: "xxx5",
-    title: "Bootstrap",
-    logo: "https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png",
-    description:
-      "凛冬将至",
-    updatedAt: "6 年前",
-    member: "高逼格设计天团",
-    href: "",
-    memberLink: "",
-  },
-  {
-    id: "xxx6",
-    title: "React",
-    logo: "https://gw.alipayobjects.com/zos/rmsportal/kZzEzemZyKLKFsojXItE.png",
-    description: "生命就像一盒巧克力，结果往往出人意料",
-    updatedAt: "6 年前",
-    member: "骗你来学计算机",
-    href: "",
-    memberLink: "",
-  },
-];
+const displayName = computed(() => userStore.nickName || userStore.name || '用户')
 
-const activities = [
-  {
-    id: "trend-1",
-    updatedAt: "几秒前",
-    user: {
-      name: "曲丽丽",
-      avatar:
-        "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png",
-    },
-    group: {
-      name: "高逼格设计天团",
-      link: "http://github.com/",
-    },
-    project: {
-      name: "六月迭代",
-      link: "http://github.com/",
-    },
-    template1: "在",
-    template2: "新建项目",
-  },
-  {
-    id: "trend-2",
-    updatedAt: "几秒前",
-    user: {
-      name: "付小小",
-      avatar:
-        "https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png",
-    },
-    group: {
-      name: "高逼格设计天团",
-      link: "http://github.com/",
-    },
-    project: {
-      name: "六月迭代",
-      link: "http://github.com/",
-    },
-    template1: "在",
-    template2: "新建项目",
-  },
-  {
-    id: "trend-3",
-    updatedAt: "几秒前",
-    user: {
-      name: "林东东",
-      avatar:
-        "https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png",
-    },
-    group: {
-      name: "中二少女团",
-      link: "http://github.com/",
-    },
-    project: {
-      name: "六月迭代",
-      link: "http://github.com/",
-    },
-    template1: "在",
-    template2: "新建项目",
-  },
-  {
-    id: "trend-4",
-    updatedAt: "几秒前",
-    user: {
-      name: "周星星",
-      avatar:
-        "https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png",
-    },
-    group: {
-      name: "5 月日常迭代",
-      link: "http://github.com/",
-    },
-    template1: "将",
-    template2: "更新至已发布状态",
-  },
-  {
-    id: "trend-5",
-    updatedAt: "几秒前",
-    user: {
-      name: "朱偏右",
-      avatar:
-        "https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png",
-    },
-    group: {
-      name: "工程效能",
-      link: "http://github.com/",
-    },
-    project: {
-      name: "留言",
-      link: "http://github.com/",
-    },
-    template1: "在",
-    template2: "发布了",
-  },
-  {
-    id: "trend-6",
-    updatedAt: "几秒前",
-    user: {
-      name: "乐哥",
-      avatar:
-        "https://gw.alipayobjects.com/zos/rmsportal/jZUIxmJycoymBprLOUbT.png",
-    },
-    group: {
-      name: "程序员日常",
-      link: "http://github.com/",
-    },
-    project: {
-      name: "品牌迭代",
-      link: "http://github.com/",
-    },
-    template1: "在",
-    template2: "新建项目",
-  },
-];
+function go(path) {
+  router.push(path)
+}
 
-const radarContainer = ref();
-const radarData = [
-  {
-    name: "个人",
-    label: "引用",
-    value: 10,
-  },
-  {
-    name: "个人",
-    label: "口碑",
-    value: 8,
-  },
-  {
-    name: "个人",
-    label: "产量",
-    value: 4,
-  },
-  {
-    name: "个人",
-    label: "贡献",
-    value: 5,
-  },
-  {
-    name: "个人",
-    label: "热度",
-    value: 7,
-  },
-  {
-    name: "团队",
-    label: "引用",
-    value: 3,
-  },
-  {
-    name: "团队",
-    label: "口碑",
-    value: 9,
-  },
-  {
-    name: "团队",
-    label: "产量",
-    value: 6,
-  },
-  {
-    name: "团队",
-    label: "贡献",
-    value: 3,
-  },
-  {
-    name: "团队",
-    label: "热度",
-    value: 1,
-  },
-  {
-    name: "部门",
-    label: "引用",
-    value: 4,
-  },
-  {
-    name: "部门",
-    label: "口碑",
-    value: 1,
-  },
-  {
-    name: "部门",
-    label: "产量",
-    value: 6,
-  },
-  {
-    name: "部门",
-    label: "贡献",
-    value: 5,
-  },
-  {
-    name: "部门",
-    label: "热度",
-    value: 7,
-  },
-];
-let radar;
+function formatTime(val) {
+  if (!val) return '-'
+  return proxy?.parseTime ? proxy.parseTime(val, '{y}-{m}-{d} {h}:{i}') : String(val)
+}
+
+function formatDuration(seconds) {
+  if (seconds === undefined || seconds === null || seconds === '') return '-'
+  const s = Number(seconds)
+  if (Number.isNaN(s)) return '-'
+  if (s < 60) return `${Math.round(s)}s`
+  const m = Math.floor(s / 60)
+  const r = Math.round(s % 60)
+  return `${m}m ${r}s`
+}
+
+function statusText(status) {
+  const map = {
+    pending: '待执行',
+    running: '运行中',
+    success: '成功',
+    failed: '失败',
+    cancelled: '已取消'
+  }
+  return map[status] || status || '-'
+}
+
+function statusTagType(status) {
+  if (status === 'success') return 'success'
+  if (status === 'failed') return 'danger'
+  if (status === 'running') return 'warning'
+  if (status === 'pending') return 'info'
+  return 'info'
+}
+
+async function load() {
+  loading.value = true
+  try {
+    const res = await getDashboardSummary(days.value)
+    const data = res?.data || {}
+
+    const nextKpi = data.kpi || {}
+    kpi.projects = Number(nextKpi.projects || 0)
+    kpi.scripts = Number(nextKpi.scripts || 0)
+    kpi.test_cases = Number(nextKpi.test_cases || 0)
+    kpi.requirements = Number(nextKpi.requirements || 0)
+    kpi.bugs_open = Number(nextKpi.bugs_open || 0)
+
+    const exec = nextKpi.executions || {}
+    kpi.executions.total = Number(exec.total || 0)
+    kpi.executions.success = Number(exec.success || 0)
+    kpi.executions.failed = Number(exec.failed || 0)
+    kpi.executions.running = Number(exec.running || 0)
+    kpi.executions.success_rate = Number(exec.success_rate || 0)
+
+    executionTrend.value = Array.isArray(data.execution_trend) ? data.execution_trend : []
+    bugStatus.value = data.bug_status || {}
+    recentExecutions.value = Array.isArray(data.recent_executions) ? data.recent_executions : []
+
+    await nextTick()
+    renderCharts()
+  } finally {
+    loading.value = false
+  }
+}
+
+function renderCharts() {
+  if (trendRef.value) {
+    if (!trendChart) trendChart = echarts.init(trendRef.value)
+    const x = executionTrend.value.map((i) => i.date)
+    const success = executionTrend.value.map((i) => Number(i.success || 0))
+    const failed = executionTrend.value.map((i) => Number(i.failed || 0))
+    const total = executionTrend.value.map((i) => Number(i.total || 0))
+    trendChart.setOption({
+      tooltip: { trigger: 'axis' },
+      grid: { left: 40, right: 20, top: 30, bottom: 30 },
+      legend: { data: ['成功', '失败', '总执行'] },
+      xAxis: { type: 'category', data: x, axisTick: { show: false } },
+      yAxis: { type: 'value' },
+      series: [
+        { name: '成功', type: 'bar', stack: 'run', data: success, barMaxWidth: 18, itemStyle: { color: '#16a34a' } },
+        { name: '失败', type: 'bar', stack: 'run', data: failed, barMaxWidth: 18, itemStyle: { color: '#ef4444' } },
+        { name: '总执行', type: 'line', data: total, smooth: true, itemStyle: { color: '#3b82f6' } }
+      ]
+    })
+  }
+
+  if (bugRef.value) {
+    if (!bugChart) bugChart = echarts.init(bugRef.value)
+    const entries = Object.entries(bugStatus.value || {})
+      .map(([name, value]) => ({ name, value: Number(value || 0) }))
+      .filter((i) => i.value > 0)
+
+    bugChart.setOption({
+      tooltip: { trigger: 'item' },
+      legend: { bottom: 0 },
+      series: [
+        {
+          type: 'pie',
+          radius: ['40%', '70%'],
+          label: { show: entries.length > 0, formatter: '{b}: {c}' },
+          emphasis: { label: { show: true, fontWeight: 'bold' } },
+          data: entries.length ? entries : [{ name: '暂无数据', value: 0 }]
+        }
+      ]
+    })
+  }
+
+  window.addEventListener('resize', handleResize, { passive: true })
+}
+
+function handleResize() {
+  trendChart?.resize?.()
+  bugChart?.resize?.()
+}
+
 onMounted(() => {
-  radar = new Radar(radarContainer.value, {
-    data: radarData,
-    xField: "label",
-    yField: "value",
-    seriesField: "name",
-    point: {
-      size: 4,
-    },
-    legend: {
-      layout: "horizontal",
-      position: "bottom",
-    },
-  });
-  radar.render();
-});
+  load()
+})
 
 onBeforeUnmount(() => {
-  radar?.destroy?.();
-});
+  window.removeEventListener('resize', handleResize)
+  trendChart?.dispose?.()
+  bugChart?.dispose?.()
+})
 </script>
 
-<style scoped lang="less">
-.textOverflow() {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-break: break-all;
-}
+<style scoped lang="scss">
+.dashboard {
+  .welcome-card {
+    border-radius: 10px;
+  }
 
-// mixins for clearfix
-// ------------------------
-.clearfix() {
-  zoom: 1;
-  &::before,
-  &::after {
-    display: table;
-    content: " ";
-  }
-  &::after {
-    clear: both;
-    height: 0;
-    font-size: 0;
-    visibility: hidden;
-  }
-}
-
-.activitiesList {
-  padding: 0 24px 8px 24px;
-  .username {
-    color: rgba(0, 0, 0, 0.65);
-  }
-  .event {
-    font-weight: normal;
-  }
-}
-
-.pageHeaderContent {
-  display: flex;
-  padding: 12px;
-  margin-bottom: 24px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  .avatar {
-    flex: 0 1 72px;
-    & > span {
-      display: block;
-      width: 72px;
-      height: 72px;
-      border-radius: 72px;
-    }
-  }
-  .content {
-    position: relative;
-    top: 4px;
-    flex: 1 1 auto;
-    margin-left: 24px;
-    color: rgba(0, 0, 0, 0.45);
-    line-height: 22px;
-    .contentTitle {
-      margin-bottom: 12px;
-      color: rgba(0, 0, 0, 0.85);
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 28px;
-    }
-  }
-}
-
-.extraContent {
-  .clearfix();
-
-  float: right;
-  white-space: nowrap;
-  .statItem {
-    position: relative;
-    display: inline-block;
-    padding: 0 32px;
-    > p:first-child {
-      margin-bottom: 4px;
-      color: rgba(0, 0, 0, 0.45);
-      font-size: 14px;
-      line-height: 22px;
-    }
-    > p {
-      margin: 0;
-      color: rgba(0, 0, 0, 0.85);
-      font-size: 30px;
-      line-height: 38px;
-      > span {
-        color: rgba(0, 0, 0, 0.45);
-        font-size: 20px;
-      }
-    }
-    &::after {
-      position: absolute;
-      top: 8px;
-      right: 0;
-      width: 1px;
-      height: 40px;
-      background-color: #e8e8e8;
-      content: "";
-    }
-    &:last-child {
-      padding-right: 0;
-      &::after {
-        display: none;
-      }
-    }
-  }
-}
-
-.members {
-  a {
-    display: block;
-    height: 24px;
-    margin: 12px 0;
-    color: rgba(0, 0, 0, 0.65);
-    transition: all 0.3s;
-    .textOverflow();
-    .member {
-      margin-left: 12px;
-      font-size: 14px;
-      line-height: 24px;
-      vertical-align: top;
-    }
-    &:hover {
-      color: #1890ff;
-    }
-  }
-}
-
-.projectList {
-  :deep(.ant-card-meta-description) {
-    height: 44px;
-    overflow: hidden;
-    color: rgba(0, 0, 0, 0.45);
-    line-height: 22px;
-  }
-  .cardTitle {
-    font-size: 0;
-    a {
-      display: inline-block;
-      height: 24px;
-      margin-left: 12px;
-      color: rgba(0, 0, 0, 0.85);
-      font-size: 14px;
-      line-height: 24px;
-      vertical-align: top;
-      &:hover {
-        color: #1890ff;
-      }
-    }
-  }
-  .projectGrid {
-    width: 33.33%;
-  }
-  .projectItemContent {
+  .welcome {
     display: flex;
-    flex-basis: 100%;
-    height: 20px;
-    margin-top: 8px;
-    overflow: hidden;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .welcome-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.2px;
+  }
+
+  .welcome-subtitle {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #334155;
+  }
+
+  .muted {
+    color: #64748b;
+  }
+
+  .strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .success {
+    color: #16a34a;
+  }
+
+  .danger {
+    color: #ef4444;
+  }
+
+  .warn {
+    color: #f59e0b;
+  }
+
+  .kpi-row {
+    margin-top: 6px;
+  }
+
+  .kpi-card {
+    cursor: pointer;
+    user-select: none;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      border-color: #c7d2fe;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    &.danger {
+      border-color: #fecaca;
+    }
+  }
+
+  .kpi-label {
     font-size: 12px;
-    line-height: 20px;
-    .textOverflow();
-    a {
-      display: inline-block;
-      flex: 1 1 0;
-      color: rgba(0, 0, 0, 0.45);
-      .textOverflow();
-      &:hover {
-        color: #1890ff;
-      }
-    }
-    .datetime {
-      flex: 0 0 auto;
-      float: right;
-      color: rgba(0, 0, 0, 0.25);
-    }
+    color: #64748b;
+    margin-bottom: 6px;
   }
-}
 
-.datetime {
-  color: rgba(0, 0, 0, 0.25);
-}
+  .kpi-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+  }
 
-@media screen and (max-width: 1200px) and (min-width: 992px) {
-  .activeCard {
-    margin-bottom: 24px;
+  .kpi-unit {
+    font-size: 12px;
+    margin-left: 2px;
+    color: #64748b;
+    font-weight: 600;
   }
-  .members {
-    margin-bottom: 0;
-  }
-  .extraContent {
-    margin-left: -44px;
-    .statItem {
-      padding: 0 16px;
-    }
-  }
-}
 
-@media screen and (max-width: 992px) {
-  .activeCard {
-    margin-bottom: 24px;
+  .kpi-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #e2e8f0;
   }
-  .members {
-    margin-bottom: 0;
-  }
-  .extraContent {
-    float: none;
-    margin-right: 0;
-    .statItem {
-      padding: 0 16px;
-      text-align: left;
-      &::after {
-        display: none;
-      }
-    }
-  }
-}
 
-@media screen and (max-width: 768px) {
-  .extraContent {
-    margin-left: -16px;
+  .kpi-footer-item {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    font-size: 12px;
   }
-  .projectList {
-    .projectGrid {
-      width: 50%;
-    }
-  }
-}
 
-@media screen and (max-width: 576px) {
-  .pageHeaderContent {
-    display: block;
-    .content {
-      margin-left: 0;
-    }
+  .chart-card {
+    border-radius: 10px;
   }
-  .extraContent {
-    .statItem {
-      float: none;
-    }
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .projectList {
-    .projectGrid {
-      width: 100%;
-    }
+  .chart {
+    height: 320px;
+    width: 100%;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+  }
+
+  .quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .health {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #e2e8f0;
+  }
+
+  .health-title {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+  }
+
+  .health-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .health-metric {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+  }
+
+  .empty-hint {
+    padding: 12px 0 6px;
+    color: #94a3b8;
+    font-size: 12px;
+    text-align: center;
   }
 }
 </style>
+

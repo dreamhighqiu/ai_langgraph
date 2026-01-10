@@ -1,9 +1,19 @@
 <template>
-  <div class="app-container test-case-container">
-    <!-- 左侧文件夹树 -->
-    <div class="folder-tree-panel">
-      <div class="panel-header">
-        <el-select v-model="currentProjectId" placeholder="选择项目" size="small" @change="handleProjectChange">
+  <div class="app-container">
+    <!-- 页面标题 -->
+    <el-card class="header-card mb-4">
+      <div class="header-content">
+        <div>
+          <h2><el-icon><Document /></el-icon> 测试用例管理</h2>
+          <p class="subtitle">Test Case Management - 管理和组织测试用例，支持AI智能生成</p>
+        </div>
+      </div>
+    </el-card>
+
+    <!-- 搜索表单 -->
+    <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" label-width="80px">
+      <el-form-item label="项目" prop="projectId">
+        <el-select v-model="queryParams.projectId" placeholder="选择项目" clearable style="width: 200px" @change="handleProjectChange">
           <el-option
             v-for="item in projectList"
             :key="item.project_id"
@@ -11,176 +21,110 @@
             :value="item.project_id"
           />
         </el-select>
-      </div>
-      <div class="panel-content">
-        <el-tree
-          ref="folderTreeRef"
-          :data="folderTree"
-          node-key="folder_id"
-          :props="{ label: 'folder_name', children: 'children' }"
-          highlight-current
-          default-expand-all
-          @node-click="handleFolderClick"
-        >
-          <template #default="{ node, data }">
-            <span class="folder-node">
-              <el-icon><Folder /></el-icon>
-              <span class="folder-name">{{ node.label }}</span>
-              <span class="folder-count" v-if="data.case_count">({{ data.case_count }})</span>
-            </span>
-          </template>
-        </el-tree>
-        <el-empty v-if="!folderTree.length" description="暂无文件夹" :image-size="60" />
-      </div>
-      <div class="panel-footer">
-        <el-button type="primary" size="small" :icon="Plus" @click="handleAddFolder">新建文件夹</el-button>
-      </div>
-    </div>
+      </el-form-item>
+      <el-form-item label="用例名称" prop="caseName">
+        <el-input v-model="queryParams.caseName" placeholder="请输入用例名称" clearable @keyup.enter="handleQuery" />
+      </el-form-item>
+      <el-form-item label="优先级" prop="priority">
+        <el-select v-model="queryParams.priority" placeholder="选择优先级" clearable style="width: 120px">
+          <el-option label="高" value="high" />
+          <el-option label="中" value="medium" />
+          <el-option label="低" value="low" />
+        </el-select>
+      </el-form-item>
+      <el-form-item label="状态" prop="status">
+        <el-select v-model="queryParams.status" placeholder="选择状态" clearable style="width: 120px">
+          <el-option label="草稿" value="draft" />
+          <el-option label="待评审" value="pending" />
+          <el-option label="已通过" value="approved" />
+          <el-option label="已废弃" value="deprecated" />
+        </el-select>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" icon="Search" @click="handleQuery">搜索</el-button>
+        <el-button icon="Refresh" @click="resetQuery">重置</el-button>
+      </el-form-item>
+    </el-form>
 
-    <!-- 右侧测试用例列表 -->
-    <div class="test-case-panel">
-      <!-- 页面标题 -->
-      <el-card class="header-card">
-        <div class="header-content">
-          <div>
-            <h2><el-icon><Document /></el-icon> 测试用例管理</h2>
-            <p class="subtitle">Test Case Management - 管理和组织测试用例，支持AI智能生成</p>
-          </div>
-          <div class="header-actions">
-            <el-dropdown @command="handleAICommand" v-hasPermi="['testing:testcase:add']">
-              <el-button type="success">
+    <!-- 操作按钮 -->
+    <el-row :gutter="10" class="mb8">
+      <el-col :span="1.5">
+        <el-dropdown @command="handleAICommand" v-hasPermi="['testing:testcase:add']">
+          <el-button type="primary" plain>
+            <el-icon><MagicStick /></el-icon>
+            AI 生成测试
+            <el-icon class="el-icon--right"><ArrowDown /></el-icon>
+          </el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item command="generate">
                 <el-icon><MagicStick /></el-icon>
-                AI 生成用例
-                <el-icon class="el-icon--right"><ArrowDown /></el-icon>
-              </el-button>
-              <template #dropdown>
-                <el-dropdown-menu>
-                  <el-dropdown-item command="generate">
-                    <el-icon><MagicStick /></el-icon>
-                    AI 生成
-                  </el-dropdown-item>
-                  <el-dropdown-item command="document">
-                    <el-icon><Upload /></el-icon>
-                    从文档生成
-                  </el-dropdown-item>
-                  <el-dropdown-item command="chat" divided>
-                    <el-icon><ChatDotRound /></el-icon>
-                    AI 对话助手
-                  </el-dropdown-item>
-                </el-dropdown-menu>
-              </template>
-            </el-dropdown>
-          </div>
-        </div>
-      </el-card>
-
-      <!-- 搜索表单 -->
-      <el-form :model="queryParams" ref="queryRef" :inline="true" v-show="showSearch" class="search-form">
-        <el-form-item label="用例名称" prop="caseName">
-          <el-input v-model="queryParams.caseName" placeholder="请输入用例名称" clearable @keyup.enter="handleQuery" />
-        </el-form-item>
-        <el-form-item label="优先级" prop="priority">
-          <el-select v-model="queryParams.priority" placeholder="选择优先级" clearable style="width: 120px">
-            <el-option label="高" value="high" />
-            <el-option label="中" value="medium" />
-            <el-option label="低" value="low" />
-          </el-select>
-        </el-form-item>
-        <el-form-item label="状态" prop="status">
-          <el-select v-model="queryParams.status" placeholder="选择状态" clearable style="width: 120px">
-            <el-option label="草稿" value="draft" />
-            <el-option label="待评审" value="pending" />
-            <el-option label="已通过" value="approved" />
-            <el-option label="已废弃" value="deprecated" />
-          </el-select>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" icon="Search" @click="handleQuery">搜索</el-button>
-          <el-button icon="Refresh" @click="resetQuery">重置</el-button>
-        </el-form-item>
-      </el-form>
-
-      <!-- 操作按钮 -->
-      <el-row :gutter="10" class="mb8">
-        <el-col :span="1.5">
-          <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:testcase:add']">新增</el-button>
-        </el-col>
-        <el-col :span="1.5">
-          <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:testcase:remove']">删除</el-button>
-        </el-col>
-        <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
-      </el-row>
-
-      <!-- 表格 -->
-      <el-table v-loading="loading" :data="testCaseList" @selection-change="handleSelectionChange" border>
-        <el-table-column type="selection" width="50" align="center" />
-        <el-table-column label="用例名称" align="left" min-width="200" :show-overflow-tooltip="true">
-          <template #default="scope">
-            <el-link type="primary" @click="handleDetail(scope.row)">{{ scope.row.case_name }}</el-link>
+                AI 生成
+              </el-dropdown-item>
+              <el-dropdown-item command="document">
+                <el-icon><Upload /></el-icon>
+                从文档生成
+              </el-dropdown-item>
+            </el-dropdown-menu>
           </template>
-        </el-table-column>
-        <el-table-column label="用例类型" align="center" width="100">
-          <template #default="scope">
-            <el-tag type="info" size="small">{{ getCaseTypeLabel(scope.row.case_type) }}</el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="优先级" align="center" width="80">
-          <template #default="scope">
-            <el-tag :type="getPriorityType(scope.row.priority)" size="small">{{ getPriorityLabel(scope.row.priority) }}</el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="状态" align="center" width="90">
-          <template #default="scope">
-            <el-tag :type="getStatusType(scope.row.status)" size="small">{{ getStatusLabel(scope.row.status) }}</el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="创建人" align="center" prop="create_by" width="100" />
-        <el-table-column label="创建时间" align="center" prop="create_time" width="160" />
-        <el-table-column label="操作" align="center" width="200">
-          <template #default="scope">
-            <el-button link type="primary" icon="View" @click="handleDetail(scope.row)">详情</el-button>
-            <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['testing:testcase:edit']">编辑</el-button>
-            <el-button link type="danger" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['testing:testcase:remove']">删除</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
+        </el-dropdown>
+      </el-col>
+      <el-col :span="1.5">
+        <el-button type="primary" plain icon="Plus" @click="handleAdd" v-hasPermi="['testing:testcase:add']">手动录入</el-button>
+      </el-col>
+      <el-col :span="1.5">
+        <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:testcase:remove']">删除</el-button>
+      </el-col>
+      <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
+    </el-row>
 
-      <!-- 分页 -->
-      <pagination
-        v-show="total > 0"
-        :total="total"
-        v-model:page="queryParams.pageNum"
-        v-model:limit="queryParams.pageSize"
-        @pagination="getList"
-      />
-    </div>
+    <!-- 表格 -->
+    <el-table v-loading="loading" :data="testCaseList" @selection-change="handleSelectionChange" border>
+      <el-table-column type="selection" width="50" align="center" />
+      <el-table-column label="用例名称" align="left" min-width="200" :show-overflow-tooltip="true">
+        <template #default="scope">
+          <el-link type="primary" @click="handleDetail(scope.row)">{{ scope.row.case_name }}</el-link>
+        </template>
+      </el-table-column>
+      <el-table-column label="项目" align="center" width="120">
+        <template #default="scope">
+          {{ getProjectName(scope.row.project_id) }}
+        </template>
+      </el-table-column>
+      <el-table-column label="用例类型" align="center" width="100">
+        <template #default="scope">
+          <el-tag type="info" size="small">{{ getCaseTypeLabel(scope.row.case_type) }}</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column label="优先级" align="center" width="80">
+        <template #default="scope">
+          <el-tag :type="getPriorityType(scope.row.priority)" size="small">{{ getPriorityLabel(scope.row.priority) }}</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column label="状态" align="center" width="90">
+        <template #default="scope">
+          <el-tag :type="getStatusType(scope.row.status)" size="small">{{ getStatusLabel(scope.row.status) }}</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column label="创建人" align="center" prop="create_by" width="100" />
+      <el-table-column label="创建时间" align="center" prop="create_time" width="160" />
+      <el-table-column label="操作" align="center" width="200">
+        <template #default="scope">
+          <el-button link type="primary" icon="View" @click="handleDetail(scope.row)">详情</el-button>
+          <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['testing:testcase:edit']">编辑</el-button>
+          <el-button link type="danger" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['testing:testcase:remove']">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
 
-    <!-- 文件夹编辑对话框 -->
-    <el-dialog v-model="folderDialogVisible" :title="currentFolderId ? '编辑文件夹' : '新建文件夹'" width="500px">
-      <el-form ref="folderFormRef" :model="folderForm" :rules="folderRules" label-width="100px">
-        <el-form-item label="文件夹名称" prop="folderName">
-          <el-input v-model="folderForm.folderName" placeholder="请输入文件夹名称" />
-        </el-form-item>
-        <el-form-item label="父文件夹" prop="parentId">
-          <el-tree-select
-            v-model="folderForm.parentId"
-            :data="folderTree || []"
-            :props="{ label: 'folder_name', value: 'folder_id', children: 'children' }"
-            placeholder="选择父文件夹（可选）"
-            clearable
-            check-strictly
-            style="width: 100%"
-          />
-        </el-form-item>
-        <el-form-item label="描述" prop="description">
-          <el-input v-model="folderForm.description" type="textarea" :rows="3" placeholder="请输入描述" />
-        </el-form-item>
-      </el-form>
-      <template #footer>
-        <el-button @click="folderDialogVisible = false">取消</el-button>
-        <el-button type="primary" @click="submitFolderForm">确定</el-button>
-      </template>
-    </el-dialog>
+    <!-- 分页 -->
+    <pagination
+      v-show="total > 0"
+      :total="total"
+      v-model:page="queryParams.pageNum"
+      v-model:limit="queryParams.pageSize"
+      @pagination="getList"
+    />
 
     <!-- 测试用例详情/编辑抽屉 -->
     <el-drawer
@@ -224,6 +168,16 @@
       <!-- 编辑表单 -->
       <div v-else class="edit-form">
         <el-form ref="caseFormRef" :model="caseForm" :rules="caseRules" label-width="100px">
+          <el-form-item label="项目" prop="projectId" required>
+            <el-select v-model="caseForm.projectId" placeholder="选择项目" style="width: 100%">
+              <el-option
+                v-for="item in projectList"
+                :key="item.project_id"
+                :label="item.project_name"
+                :value="item.project_id"
+              />
+            </el-select>
+          </el-form-item>
           <el-form-item label="用例名称" prop="caseName">
             <el-input v-model="caseForm.caseName" placeholder="请输入用例名称" />
           </el-form-item>
@@ -281,8 +235,7 @@
       v-model="aiChatVisible"
       assistant-id="testcase_generator_agent"
       assistant-name="AI 用例生成"
-      :project-id="currentProjectId"
-      :folder-id="currentFolderId"
+      :project-id="queryParams.projectId"
       :initial-prompt="aiInitialPrompt"
       @message-sent="handleAIMessageSent"
     />
@@ -290,8 +243,7 @@
     <!-- AI 生成测试用例对话框 -->
     <AIGenerateDialog
       v-model="aiGenerateDialogVisible"
-      :project-id="currentProjectId"
-      :folder-id="currentFolderId"
+      :project-id="queryParams.projectId"
       @open-chat="handleOpenAIChat"
       @success="handleAIGenerateSuccess"
     />
@@ -299,8 +251,7 @@
     <!-- AI 从文档生成测试用例对话框 -->
     <AIDocGenerateDialog
       v-model="aiDocDialogVisible"
-      :project-id="currentProjectId"
-      :folder-id="currentFolderId"
+      :project-id="queryParams.projectId"
       @open-chat="handleOpenAIChat"
       @success="handleAIGenerateSuccess"
     />
@@ -310,9 +261,8 @@
 <script setup name="TestCase">
 import { ref, reactive, onMounted, computed, nextTick } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Document, Folder, Plus, Delete, MagicStick, ArrowDown, Upload, ChatDotRound } from '@element-plus/icons-vue'
+import { Document, Plus, Delete, MagicStick, ArrowDown, Upload, ChatDotRound } from '@element-plus/icons-vue'
 import { listTestCase, getTestCase, addTestCase, updateTestCase, delTestCase } from '@/api/testing/testCase'
-import { getFolderTree, addFolder, updateFolder } from '@/api/testing/folder'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
 import AIGenerateDialog from '@/views/testing/components/AIGenerateDialog.vue'
@@ -325,18 +275,14 @@ const loading = ref(false)
 const showSearch = ref(true)
 const testCaseList = ref([])
 const projectList = ref([])
-const folderTree = ref([])
 const total = ref(0)
 const ids = ref([])
 const multiple = ref(true)
 
-const currentProjectId = ref(null)
-const currentFolderId = ref(null)
 const currentCaseId = ref(null)
 const currentDetail = ref(null)
 
 const detailVisible = ref(false)
-const folderDialogVisible = ref(false)
 const aiChatVisible = ref(false)
 const aiGenerateDialogVisible = ref(false)
 const aiDocDialogVisible = ref(false)
@@ -344,32 +290,19 @@ const aiInitialPrompt = ref('')
 const isEditing = ref(false)
 const submitting = ref(false)
 
-const folderTreeRef = ref(null)
-
 // 查询参数
 const queryParams = reactive({
   pageNum: 1,
   pageSize: 10,
   projectId: null,
-  folderId: null,
   caseName: '',
   priority: '',
   status: ''
 })
 
-// 文件夹表单
-const folderForm = reactive({
-  folderName: '',
-  parentId: null,
-  description: ''
-})
-
-const folderRules = {
-  folderName: [{ required: true, message: '请输入文件夹名称', trigger: 'blur' }]
-}
-
 // 测试用例表单
 const caseForm = reactive({
+  projectId: null,
   caseName: '',
   caseType: 'functional',
   priority: 'medium',
@@ -379,6 +312,7 @@ const caseForm = reactive({
 })
 
 const caseRules = {
+  projectId: [{ required: true, message: '请选择项目', trigger: 'change' }],
   caseName: [{ required: true, message: '请输入用例名称', trigger: 'blur' }],
   caseType: [{ required: true, message: '请选择用例类型', trigger: 'change' }]
 }
@@ -392,8 +326,7 @@ const loadProjects = async () => {
       // 确保 project_id 是数字类型
       const firstProjectId = Number(projectList.value[0].project_id)
       if (!isNaN(firstProjectId) && firstProjectId > 0) {
-        currentProjectId.value = firstProjectId
-        await loadFolderTree()
+        queryParams.projectId = firstProjectId
         await getList()
       } else {
         console.error('无效的项目ID:', projectList.value[0].project_id)
@@ -413,55 +346,14 @@ const loadProjects = async () => {
   }
 }
 
-// 加载文件夹树
-const loadFolderTree = async () => {
-  if (!currentProjectId.value) {
-    console.warn('项目ID为空，跳过加载文件夹树')
-    folderTree.value = [] // 确保设置为空数组
-    return
-  }
-  try {
-    // 确保 projectId 是数字类型
-    const projectId = Number(currentProjectId.value)
-    if (isNaN(projectId) || projectId <= 0) {
-      console.error('无效的项目ID:', currentProjectId.value)
-      folderTree.value = [] // 确保设置为空数组
-      return
-    }
-    const res = await getFolderTree(projectId)
-    folderTree.value = Array.isArray(res.data) ? res.data : []
-  } catch (error) {
-    console.error('加载文件夹失败:', error)
-    folderTree.value = [] // 确保设置为空数组，避免后续操作出错
-    // 忽略用户信息错误（在 loadProjects 中已处理）
-    if (!error?.message?.includes('用户信息为空') && !error?.message?.includes('项目ID不能为空')) {
-      // 422错误通常是参数验证失败，不显示错误提示，只记录日志
-      if (error?.response?.status === 422) {
-        console.warn('文件夹树加载失败（参数验证失败）:', error?.response?.data)
-      } else {
-        proxy.$modal.msgError('加载文件夹失败: ' + (error?.message || '未知错误'))
-      }
-    }
-  }
-}
-
 // 加载测试用例列表
 const getList = async () => {
-  if (!currentProjectId.value) {
-    console.warn('项目ID为空，跳过加载测试用例列表')
-    return
-  }
   loading.value = true
   try {
     // 确保 projectId 是数字类型
-    const projectId = Number(currentProjectId.value)
-    if (isNaN(projectId) || projectId <= 0) {
-      console.error('无效的项目ID:', currentProjectId.value)
-      loading.value = false
-      return
+    if (queryParams.projectId) {
+      queryParams.projectId = Number(queryParams.projectId)
     }
-    queryParams.projectId = projectId
-    queryParams.folderId = currentFolderId.value ? Number(currentFolderId.value) : null
     const res = await listTestCase(queryParams)
     testCaseList.value = res.data?.records || res.data?.rows || []
     total.value = res.data?.total || 0
@@ -478,16 +370,8 @@ const getList = async () => {
 
 // 项目切换
 const handleProjectChange = async () => {
-  currentFolderId.value = null
-  await loadFolderTree()
-  await getList()
-}
-
-// 文件夹点击
-const handleFolderClick = (data) => {
-  currentFolderId.value = data.folder_id
   queryParams.pageNum = 1
-  getList()
+  await getList()
 }
 
 // 搜索
@@ -507,64 +391,12 @@ const handleSelectionChange = (selection) => {
   multiple.value = !selection.length
 }
 
-// 新增文件夹
-const handleAddFolder = () => {
-  folderForm.folderName = ''
-  folderForm.parentId = currentFolderId.value
-  folderForm.description = ''
-  folderDialogVisible.value = true
-}
-
-// 提交文件夹
-const submitFolderForm = async () => {
-  // 验证项目ID
-  if (!currentProjectId.value || currentProjectId.value <= 0) {
-    proxy.$modal.msgWarning('请先选择项目')
-    return
-  }
-  
-  const valid = await proxy.$refs.folderFormRef?.validate()
-  if (!valid) return
-
-  try {
-    await addFolder({
-      project_id: currentProjectId.value,
-      parent_id: folderForm.parentId || null,
-      folder_name: folderForm.folderName,
-      description: folderForm.description || ''
-    })
-    proxy.$modal.msgSuccess('创建成功')
-    folderDialogVisible.value = false
-    await loadFolderTree()
-  } catch (error) {
-    console.error('创建文件夹失败:', error)
-    // 处理各种错误格式
-    let errorMsg = '创建文件夹失败'
-    if (error?.response?.data) {
-      const data = error.response.data
-      // 处理 FastAPI 验证错误格式 {detail: [...]}
-      if (data.detail && Array.isArray(data.detail) && data.detail.length > 0) {
-        const firstError = data.detail[0]
-        if (typeof firstError === 'object' && firstError.msg) {
-          const loc = firstError.loc ? firstError.loc.join(' -> ') : ''
-          errorMsg = `${loc}: ${firstError.msg}`
-        } else if (typeof firstError === 'string') {
-          errorMsg = firstError
-        }
-      } else if (data.msg) {
-        errorMsg = data.msg
-      } else if (data.message) {
-        errorMsg = data.message
-      }
-    } else if (error?.message) {
-      errorMsg = error.message
-    }
-    proxy.$modal.msgError(errorMsg)
-  }
-}
-
 // 新增测试用例
 const handleAdd = () => {
+  if (!projectList.value || projectList.value.length === 0) {
+    proxy.$modal.msgWarning('请先加载项目列表')
+    return
+  }
   currentCaseId.value = null
   currentDetail.value = null
   resetCaseForm()
@@ -599,6 +431,7 @@ const handleDetail = async (row) => {
 // 开始编辑
 const startEdit = (data) => {
   currentCaseId.value = data.case_id
+  caseForm.projectId = data.project_id || queryParams.projectId
   caseForm.caseName = data.case_name
   caseForm.caseType = data.case_type || 'functional'
   caseForm.priority = data.priority || 'medium'
@@ -620,6 +453,7 @@ const cancelEdit = () => {
 }
 
 const resetCaseForm = () => {
+  caseForm.projectId = queryParams.projectId || null
   caseForm.caseName = ''
   caseForm.caseType = 'functional'
   caseForm.priority = 'medium'
@@ -657,9 +491,13 @@ const submitCaseForm = async () => {
 
   submitting.value = true
   try {
+    if (!caseForm.projectId) {
+      proxy.$modal.msgWarning('请选择项目')
+      submitting.value = false
+      return
+    }
     const submitData = {
-      project_id: currentProjectId.value,
-      folder_id: currentFolderId.value,
+      project_id: caseForm.projectId,
       case_name: caseForm.caseName,
       case_type: caseForm.caseType,
       priority: caseForm.priority,
@@ -702,7 +540,6 @@ const handleDelete = async (row) => {
     }
     proxy.$modal.msgSuccess('删除成功')
     await getList()
-    await loadFolderTree() // 刷新文件夹树，更新用例数量
   } catch (error) {
     if (error !== 'cancel') {
       console.error('删除失败:', error)
@@ -720,9 +557,6 @@ const handleAICommand = (command) => {
       break
     case 'document':
       openAIDocDialog()
-      break
-    case 'chat':
-      openAIChat()
       break
   }
 }
@@ -748,8 +582,8 @@ const handleOpenAIChat = (data) => {
   // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
   if (typeof data === 'object' && data.prompt) {
     aiInitialPrompt.value = data.prompt
-    // 如果传递了 projectId，更新 currentProjectId（虽然通常不需要，因为已有选择）
-    if (data.projectId && data.projectId !== currentProjectId.value) {
+    // 如果传递了 projectId，更新 queryParams.projectId（虽然通常不需要，因为已有选择）
+    if (data.projectId && data.projectId !== queryParams.projectId) {
       console.warn('传入的 projectId 与当前选择的项目不一致')
     }
   } else {
@@ -757,8 +591,8 @@ const handleOpenAIChat = (data) => {
   }
   
   // 验证 projectId 是否有效
-  if (!currentProjectId.value || currentProjectId.value === 0) {
-    proxy.$modal.msgWarning('请先选择项目！测试用例生成功能需要指定项目ID。')
+  if (!queryParams.projectId || queryParams.projectId === 0) {
+    proxy.$modal.msgWarning('请先在搜索栏中选择项目！测试用例生成功能需要指定项目ID。')
     return
   }
   
@@ -780,6 +614,11 @@ const handleAIMessageSent = (data) => {
 }
 
 // 工具函数
+const getProjectName = (projectId) => {
+  const project = projectList.value.find(p => p.project_id === projectId)
+  return project?.project_name || '-'
+}
+
 const getCaseTypeLabel = (type) => {
   const map = { functional: '功能测试', performance: '性能测试', security: '安全测试', api: '接口测试', ui: 'UI测试' }
   return map[type] || type
@@ -811,94 +650,35 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.test-case-container {
-  display: flex;
-  gap: 16px;
-  height: calc(100vh - 100px);
-}
+.header-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin-bottom: 16px;
 
-.folder-tree-panel {
-  width: 280px;
-  min-width: 280px;
-  background: white;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  .panel-header {
-    padding: 12px;
-    border-bottom: 1px solid #ebeef5;
-  }
-
-  .panel-content {
-    flex: 1;
-    overflow: auto;
-    padding: 12px;
-
-    .folder-node {
+    h2 {
+      margin: 0;
       display: flex;
       align-items: center;
-      gap: 6px;
-
-      .folder-name {
-        flex: 1;
-      }
-
-      .folder-count {
-        color: #909399;
-        font-size: 12px;
-      }
+      gap: 10px;
+      font-size: 24px;
     }
-  }
 
-  .panel-footer {
-    padding: 12px;
-    border-top: 1px solid #ebeef5;
-    text-align: center;
-  }
-}
-
-.test-case-panel {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  .header-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    margin-bottom: 16px;
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      h2 {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 22px;
-      }
-
-      .subtitle {
-        margin: 6px 0 0 0;
-        opacity: 0.9;
-        font-size: 13px;
-      }
-
-      .header-actions .el-button {
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: white;
-      }
+    .subtitle {
+      margin: 8px 0 0 0;
+      opacity: 0.9;
+      font-size: 14px;
     }
-  }
 
-  .search-form {
-    margin-bottom: 12px;
+    .header-actions .el-button {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+    }
   }
 }
 

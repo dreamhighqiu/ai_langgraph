@@ -370,7 +370,7 @@ const visible = computed({
 })
 
 // 状态
-const isAIMode = ref(false)
+const isAIMode = ref(true) // 默认显示 AI 智能分析 tab
 const generating = ref(false)
 const submitting = ref(false)
 const uploading = ref(false)
@@ -968,7 +968,7 @@ watch(visible, (val) => {
     loadProjects()
     loadTemplates()
     if (props.editData) {
-      isAIMode.value = false
+      isAIMode.value = false // 编辑模式使用手动录入
       // 填充编辑数据
       manualForm.projectId = props.editData.project_id
       manualForm.analysisName = props.editData.analysis_name
@@ -992,6 +992,7 @@ watch(visible, (val) => {
           ? JSON.stringify(props.editData.fix_suggestions, null, 2) 
           : (props.editData.fix_suggestions || ''))
     } else {
+      isAIMode.value = true // 新建模式默认使用 AI 智能分析
       resetForms()
     }
   }

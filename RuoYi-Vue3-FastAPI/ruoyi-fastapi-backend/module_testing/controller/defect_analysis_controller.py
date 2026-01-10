@@ -204,7 +204,7 @@ async def download_defect_report(
     db: AsyncSession = Depends(get_db),
     current_user: dict = Depends(LoginService.get_current_user)
 ):
-    """下载缺陷分析报告（代理下载，确保正确的编码）"""
+    """下载缺陷分析报告（从MinIO直接下载，确保正确的编码）"""
     try:
         analysis = await defect_service.get_analysis(db, analysis_id)
         if not analysis:
@@ -213,15 +213,55 @@ async def download_defect_report(
         if not analysis.report_url:
             return ResponseUtil.failure(msg="该缺陷分析还没有生成报告")
         
-        # 从MinIO下载文件
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.get(analysis.report_url)
-            response.raise_for_status()
-            content = response.content
+        # 从MinIO直接下载文件
+        from module_testing.storage.minio_client import MinioClientManager
+        
+        # 解析report_url获取bucket和object_name
+        # report_url可能是预签名URL或minio://bucket/path格式
+        if analysis.report_url.startswith('minio://'):
+            # 格式: minio://bucket/path
+            path_parts = analysis.report_url[8:].split('/', 1)
+            bucket_name = path_parts[0]
+            object_name = path_parts[1] if len(path_parts) > 1 else ''
+        elif 'defects/' in analysis.report_url:
+            # 从URL中提取路径
+            # 例如: http://.../defects/8/reports/defect_analysis_6_20260110_225128.md
+            bucket_name = "testing"
+            # 提取defects/之后的部分
+            if '/defects/' in analysis.report_url:
+                object_name = analysis.report_url.split('/defects/')[1]
+            else:
+                # 如果无法解析，尝试重新生成报告
+                logger.warning(f"无法解析report_url: {analysis.report_url}，尝试重新生成报告")
+                report_url = await defect_service.generate_report(db, analysis_id)
+                if not report_url:
+                    return ResponseUtil.failure(msg="报告生成失败")
+                # 递归调用自己
+                return await download_defect_report(analysis_id, db, current_user)
+        else:
+            # 尝试从MinIO直接下载（使用MinIO客户端）
+            bucket_name = "testing"
+            # 从URL中提取文件名
+            if '/reports/' in analysis.report_url:
+                object_name = 'defects/' + analysis.report_url.split('/reports/')[1]
+            else:
+                return ResponseUtil.failure(msg="无法解析报告路径")
+        
+        # 使用MinIO客户端直接下载
+        minio_client = MinioClientManager.get_client()
+        object_path = f"minio://{bucket_name}/{object_name}"
+        success, content = minio_client.download_file(object_path)
+        
+        if not success or not content:
+            logger.error(f"从MinIO下载文件失败: {object_path}")
+            return ResponseUtil.failure(msg="下载报告失败，文件不存在或已删除")
         
         # 确保内容是UTF-8编码的字符串
         try:
-            content_str = content.decode('utf-8')
+            if isinstance(content, bytes):
+                content_str = content.decode('utf-8')
+            else:
+                content_str = str(content)
         except UnicodeDecodeError:
             # 如果解码失败，尝试其他编码
             content_str = content.decode('gbk', errors='ignore')
@@ -238,6 +278,6 @@ async def download_defect_report(
         )
         
     except Exception as e:
-        logger.error(f"下载缺陷分析报告失败: {str(e)}")
+        logger.error(f"下载缺陷分析报告失败: {str(e)}", exc_info=True)
         return ResponseUtil.failure(msg=f"下载缺陷分析报告失败: {str(e)}")
 

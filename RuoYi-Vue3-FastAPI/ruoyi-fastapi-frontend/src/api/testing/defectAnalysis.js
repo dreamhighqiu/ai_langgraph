@@ -90,6 +90,14 @@ export function getDefectAnalysisHistory(params) {
   })
 }
 
+// 获取报告模板列表
+export function getReportTemplates() {
+  return request({
+    url: '/api/testing/ai-defect/templates',
+    method: 'get'
+  })
+}
+
 // 生成回归测试用例
 export function generateRegressionCases(data) {
   return request({

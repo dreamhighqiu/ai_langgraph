@@ -98,3 +98,11 @@ export function getRequirementAnalysisHistory(params) {
     params: params
   })
 }
+
+// 获取报告模板列表
+export function getReportTemplates() {
+  return request({
+    url: '/api/testing/ai-requirement/templates',
+    method: 'get'
+  })
+}

@@ -717,125 +717,205 @@ async def rag_query_tool(
                 "metadata": {},
             }
 
-        raw = await tool.ainvoke(
-            {
-                "query": query,
-                "mode": mode,
-                "top_k": top_k,
-                "chunk_top_k": chunk_top_k,
-                "enable_rerank": enable_rerank,
+        try:
+            raw = await tool.ainvoke(
+                {
+                    "query": query,
+                    "mode": mode,
+                    "top_k": top_k,
+                    "chunk_top_k": chunk_top_k,
+                    "enable_rerank": enable_rerank,
+                }
+            )
+        except Exception as invoke_error:
+            # 捕获工具调用异常
+            error_msg = str(invoke_error)
+            logger.error(f"RAG 工具调用异常: {error_msg}", exc_info=True)
+            # 如果是TaskGroup错误，提取更详细的错误信息
+            if "TaskGroup" in error_msg or "sub-exception" in error_msg:
+                error_msg = f"RAG服务内部错误: {error_msg}。请检查RAG服务是否正常运行，或联系管理员。"
+            return {
+                "success": False,
+                "error": error_msg,
+                "context": "",
+                "entities": [],
+                "chunks": [],
+                "metadata": {},
+                "message": f"RAG 检索失败: {error_msg}"
             }
-        )
 
-        tool_name = str(getattr(tool, "name", "") or "")
-        if tool_name == "rag_query_data_json" or (isinstance(raw, str) and raw.strip().startswith("{")):
-            # JSON 格式响应
-            import json
-            try:
-                if isinstance(raw, str):
-                    result = json.loads(raw)
-                else:
-                    result = raw
-                
-                # 检查 result 是否是字典类型
-                if not isinstance(result, dict):
-                    # 如果 result 是 list 或其他类型，尝试转换或返回错误
-                    logger.warning(f"RAG 工具返回了非字典类型: {type(result)}, 值: {result}")
-                    if isinstance(result, list):
-                        # 如果是列表，尝试提取信息
-                        return {
-                            "success": True,
-                            "context": "\n".join([str(item) for item in result[:5]]),
-                            "entities": [],
-                            "chunks": [],
-                            "metadata": {},
-                            "message": "RAG 检索成功（返回列表格式）"
-                        }
-                    else:
-                        # 其他类型，转换为字符串
-                        return {
-                            "success": True,
-                            "context": str(result),
-                            "entities": [],
-                            "chunks": [],
-                            "metadata": {},
-                            "message": "RAG 检索成功（非标准格式）"
-                        }
-                
-                if result.get("status") == "failure":
-                    return {
-                        "success": False,
-                        "error": result.get("message", "RAG 检索失败"),
-                        "context": "",
-                        "entities": [],
-                        "chunks": [],
-                        "metadata": {},
-                    }
-                
-                data = result.get("data", {})
-                if not isinstance(data, dict):
-                    data = {}
-                
-                context_parts = []
-                
-                # 构建上下文文本
-                entities = data.get("entities", [])
-                if entities and isinstance(entities, list):
-                    context_parts.append(f"实体 ({len(entities)} 个):")
-                    for entity in entities[:5]:
-                        if isinstance(entity, dict):
-                            context_parts.append(f"  - {entity.get('entity_name', '')}: {entity.get('description', '')}")
-                
-                chunks = data.get("chunks", [])
-                if chunks and isinstance(chunks, list):
-                    context_parts.append(f"\n相关文档片段 ({len(chunks)} 个):")
-                    for chunk in chunks[:3]:
-                        if isinstance(chunk, dict):
-                            content = chunk.get("content", "")[:200]
-                            context_parts.append(f"  - {content}...")
-                
-                context_text = "\n".join(context_parts) if context_parts else "未找到相关信息"
-                
-                return {
-                    "success": True,
-                    "context": context_text,
-                    "entities": entities if isinstance(entities, list) else [],
-                    "chunks": chunks if isinstance(chunks, list) else [],
-                    "metadata": result.get("metadata", {}) if isinstance(result.get("metadata"), dict) else {},
-                    "message": "RAG 检索成功"
-                }
-            except json.JSONDecodeError as e:
-                # 如果不是 JSON，当作文本处理
-                logger.warning(f"RAG JSON 解析失败: {e}, raw: {raw}")
-                return {
-                    "success": True,
-                    "context": str(raw),
-                    "entities": [],
-                    "chunks": [],
-                    "metadata": {},
-                    "message": "RAG 检索成功（文本格式）"
-                }
-            except Exception as e:
-                # 捕获其他异常
-                logger.error(f"RAG 数据处理异常: {e}, raw type: {type(raw)}, raw: {raw}", exc_info=True)
+        # 简化处理逻辑：统一处理返回结果
+        import json
+        
+        # 1. 如果返回的是字符串，尝试解析为JSON
+        if isinstance(raw, str):
+            raw_str = raw.strip()
+            
+            # 检查是否以错误标识开头
+            if raw_str.startswith("❌"):
+                error_msg = raw_str.replace("❌", "").strip()
+                if "TaskGroup" in error_msg or "sub-exception" in error_msg:
+                    error_msg = f"RAG服务内部错误: {error_msg}。请检查RAG服务是否正常运行，或联系管理员。"
                 return {
                     "success": False,
-                    "error": f"RAG 数据处理失败: {str(e)}",
+                    "error": error_msg,
                     "context": "",
                     "entities": [],
                     "chunks": [],
                     "metadata": {},
+                    "message": f"RAG 检索失败: {error_msg}"
                 }
+            
+            # 尝试解析为JSON（如果是JSON格式）
+            if raw_str.startswith("{") or raw_str.startswith("["):
+                try:
+                    result = json.loads(raw_str)
+                    # 如果是JSON对象，按JSON格式处理
+                    if isinstance(result, dict):
+                        # 检查status字段
+                        if result.get("status") == "failure":
+                            error_msg = result.get("message", "RAG 检索失败")
+                            if "TaskGroup" in error_msg or "sub-exception" in error_msg:
+                                error_msg = f"RAG服务内部错误: {error_msg}。请检查RAG服务是否正常运行，或联系管理员。"
+                            return {
+                                "success": False,
+                                "error": error_msg,
+                                "context": "",
+                                "entities": [],
+                                "chunks": [],
+                                "metadata": {},
+                                "message": f"RAG 检索失败: {error_msg}"
+                            }
+                        
+                        # 提取数据
+                        data = result.get("data", {})
+                        entities = data.get("entities", []) if isinstance(data, dict) else []
+                        chunks = data.get("chunks", []) if isinstance(data, dict) else []
+                        
+                        # 构建上下文
+                        context_parts = []
+                        if entities:
+                            context_parts.append(f"实体 ({len(entities)} 个):")
+                            for entity in entities[:5]:
+                                if isinstance(entity, dict):
+                                    context_parts.append(f"  - {entity.get('entity_name', '')}: {entity.get('description', '')}")
+                        
+                        if chunks:
+                            context_parts.append(f"\n相关文档片段 ({len(chunks)} 个):")
+                            for chunk in chunks[:3]:
+                                if isinstance(chunk, dict):
+                                    content = chunk.get("content", "")[:200]
+                                    context_parts.append(f"  - {content}...")
+                        
+                        context_text = "\n".join(context_parts) if context_parts else "未找到相关信息"
+                        
+                        return {
+                            "success": True,
+                            "context": context_text,
+                            "entities": entities if isinstance(entities, list) else [],
+                            "chunks": chunks if isinstance(chunks, list) else [],
+                            "metadata": result.get("metadata", {}) if isinstance(result.get("metadata"), dict) else {},
+                            "message": "RAG 检索成功"
+                        }
+                    elif isinstance(result, list):
+                        # 如果是列表，转换为文本
+                        return {
+                            "success": True,
+                            "context": "\n".join([str(item) for item in result[:10]]),
+                            "entities": [],
+                            "chunks": [],
+                            "metadata": {},
+                            "message": "RAG 检索成功"
+                        }
+                except json.JSONDecodeError:
+                    # 不是有效的JSON，当作文本处理
+                    pass
+            
+            # 2. 文本格式响应（rag_query_data返回的格式化文本）
+            # 检查是否明确包含错误标识（以❌开头或包含明确的错误关键词）
+            if raw_str.startswith("❌") or raw_str.startswith("错误") or "查询失败" in raw_str or "服务器错误" in raw_str or "参数错误" in raw_str:
+                # 提取错误信息
+                error_msg = raw_str.replace("❌", "").strip()
+                if "TaskGroup" in error_msg or "sub-exception" in error_msg:
+                    error_msg = f"RAG服务内部错误: {error_msg}。请检查RAG服务是否正常运行，或联系管理员。"
+                return {
+                    "success": False,
+                    "error": error_msg,
+                    "context": "",
+                    "entities": [],
+                    "chunks": [],
+                    "metadata": {},
+                    "message": f"RAG 检索失败: {error_msg}"
+                }
+            
+            # 正常文本响应，直接使用（rag_query_data返回的格式化文本）
+            return {
+                "success": True,
+                "context": raw_str,
+                "entities": [],
+                "chunks": [],
+                "metadata": {},
+                "message": "RAG 检索成功"
+            }
+        
+        # 3. 如果返回的是字典或其他对象
+        elif isinstance(raw, dict):
+            # 检查status字段
+            if raw.get("status") == "failure":
+                error_msg = raw.get("message", "RAG 检索失败")
+                if "TaskGroup" in error_msg or "sub-exception" in error_msg:
+                    error_msg = f"RAG服务内部错误: {error_msg}。请检查RAG服务是否正常运行，或联系管理员。"
+                return {
+                    "success": False,
+                    "error": error_msg,
+                    "context": "",
+                    "entities": [],
+                    "chunks": [],
+                    "metadata": {},
+                    "message": f"RAG 检索失败: {error_msg}"
+                }
+            
+            # 提取数据
+            data = raw.get("data", {})
+            entities = data.get("entities", []) if isinstance(data, dict) else []
+            chunks = data.get("chunks", []) if isinstance(data, dict) else []
+            
+            # 构建上下文
+            context_parts = []
+            if entities:
+                context_parts.append(f"实体 ({len(entities)} 个):")
+                for entity in entities[:5]:
+                    if isinstance(entity, dict):
+                        context_parts.append(f"  - {entity.get('entity_name', '')}: {entity.get('description', '')}")
+            
+            if chunks:
+                context_parts.append(f"\n相关文档片段 ({len(chunks)} 个):")
+                for chunk in chunks[:3]:
+                    if isinstance(chunk, dict):
+                        content = chunk.get("content", "")[:200]
+                        context_parts.append(f"  - {content}...")
+            
+            context_text = "\n".join(context_parts) if context_parts else "未找到相关信息"
+            
+            return {
+                "success": True,
+                "context": context_text,
+                "entities": entities if isinstance(entities, list) else [],
+                "chunks": chunks if isinstance(chunks, list) else [],
+                "metadata": raw.get("metadata", {}) if isinstance(raw.get("metadata"), dict) else {},
+                "message": "RAG 检索成功"
+            }
+        
+        # 4. 其他类型，转换为字符串
         else:
-            # 文本格式响应
             return {
                 "success": True,
                 "context": str(raw),
                 "entities": [],
                 "chunks": [],
                 "metadata": {},
-            "message": "RAG 检索成功"
-        }
+                "message": "RAG 检索成功"
+            }
 
     except httpx.HTTPError as e:
         logger.error(f"RAG MCP 服务请求失败: {e}")
@@ -980,11 +1060,12 @@ async def save_requirement_analysis_tool(
         from module_testing.entity.vo.requirement_analysis_vo import RequirementAnalysisVO
         from config.get_db import get_db_session
         
-        # 参数验证
-        if not project_id:
+        # 参数验证 - 检查project_id是否为None、0或空值
+        if project_id is None or project_id == 0 or project_id == '':
+            logger.warning(f"保存需求分析失败：project_id无效 (值: {project_id}, 类型: {type(project_id)})")
             return {
                 "success": False,
-                "error": "project_id 是必填参数，请确保从上下文中获取",
+                "error": f"project_id 是必填参数，当前值为: {project_id}。请确保从上下文中正确获取项目ID（project_id应该是一个大于0的整数）。",
                 "message": "保存需求分析失败：缺少项目ID"
             }
         
@@ -1024,29 +1105,46 @@ async def save_requirement_analysis_tool(
                 result = await service.update_requirement(
                     db, requirement_analysis_id, requirement_vo, user_id
                 )
-                logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.requirement_identifier}")
+                logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.analysis_name}")
                 
+                # 生成报告并上传到MinIO
+                try:
+                    report_url = await service.generate_and_upload_report(db, requirement_analysis_id)
+                    if report_url:
+                        logger.info(f"需求分析报告生成成功: {report_url}")
+                except Exception as e:
+                    logger.warning(f"生成需求分析报告失败（不影响保存）: {str(e)}")
+
                 return {
                     "success": True,
                     "requirement_analysis_id": requirement_analysis_id,
-                    "analysis_name": result.requirement_name,
-                    "requirement_identifier": result.requirement_identifier,
-                    "message": f"✅ 需求分析 '{result.requirement_name}' (ID: {requirement_analysis_id}) 更新成功"
+                    "analysis_name": result.analysis_name,
+                    "report_url": report_url if 'report_url' in locals() else None,
+                    "message": f"✅ 需求分析 '{result.analysis_name}' (ID: {requirement_analysis_id}) 更新成功" + (f"，报告已生成: {report_url}" if 'report_url' in locals() and report_url else "")
                 }
             else:
                 # 创建新需求分析
                 result = await service.create_requirement(
                     db, requirement_vo, user_id
                 )
-                logger.info(f"AI 成功创建需求分析: {result.requirement_identifier} - {result.requirement_name} (ID: {result.requirement_id})")
+                logger.info(f"AI 成功创建需求分析: {result.analysis_name} (ID: {result.analysis_id})")
+                
+                # 生成报告并上传到MinIO
+                report_url = None
+                try:
+                    report_url = await service.generate_and_upload_report(db, result.analysis_id)
+                    if report_url:
+                        logger.info(f"需求分析报告生成成功: {report_url}")
+                except Exception as e:
+                    logger.warning(f"生成需求分析报告失败（不影响保存）: {str(e)}")
                 
                 return {
                     "success": True,
-                    "requirement_analysis_id": result.requirement_id,
-                    "analysis_name": result.requirement_name,
-                    "requirement_identifier": result.requirement_identifier,
-                    "message": f"✅ 需求分析 '{result.requirement_name}' (ID: {result.requirement_id}, 标识: {result.requirement_identifier}) 创建成功"
-                }
+                    "requirement_analysis_id": result.analysis_id,
+                    "analysis_name": result.analysis_name,
+                    "report_url": report_url,
+                    "message": f"✅ 需求分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功" + (f"，报告已生成: {report_url}" if report_url else "")
+        }
 
     except Exception as e:
         logger.error(f"保存需求分析失败: {str(e)}", exc_info=True)
@@ -1192,11 +1290,12 @@ async def save_defect_analysis_tool(
         from module_testing.service.defect_analysis_service import DefectAnalysisService
         from config.get_db import get_db_session
         
-        # 参数验证
-        if not project_id:
+        # 参数验证 - 检查project_id是否为None、0或空值
+        if project_id is None or project_id == 0 or project_id == '':
+            logger.warning(f"保存缺陷分析失败：project_id无效 (值: {project_id}, 类型: {type(project_id)})")
             return {
                 "success": False,
-                "error": "project_id 是必填参数，请确保从上下文中获取",
+                "error": f"project_id 是必填参数，当前值为: {project_id}。请确保从上下文中正确获取项目ID（project_id应该是一个大于0的整数）。",
                 "message": "保存缺陷分析失败：缺少项目ID"
             }
         
@@ -1263,12 +1362,22 @@ async def save_defect_analysis_tool(
                     }
                 
                 logger.info(f"AI 成功更新缺陷分析: {defect_analysis_id} - {result.analysis_name}")
+
+                # 生成报告并上传到MinIO
+                report_url = None
+                try:
+                    report_url = await service.generate_and_upload_report(db, defect_analysis_id)
+                    if report_url:
+                        logger.info(f"缺陷分析报告生成成功: {report_url}")
+                except Exception as e:
+                    logger.warning(f"生成缺陷分析报告失败（不影响保存）: {str(e)}")
                 
                 return {
                     "success": True,
                     "defect_analysis_id": defect_analysis_id,
                     "analysis_name": result.analysis_name,
-                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功"
+                    "report_url": report_url,
+                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {defect_analysis_id}) 更新成功" + (f"，报告已生成: {report_url}" if report_url else "")
                 }
             else:
                 # 创建新缺陷分析
@@ -1277,12 +1386,22 @@ async def save_defect_analysis_tool(
                 )
                 logger.info(f"AI 成功创建缺陷分析: {result.analysis_id} - {result.analysis_name}")
                 
+                # 生成报告并上传到MinIO
+                report_url = None
+                try:
+                    report_url = await service.generate_and_upload_report(db, result.analysis_id)
+                    if report_url:
+                        logger.info(f"缺陷分析报告生成成功: {report_url}")
+                except Exception as e:
+                    logger.warning(f"生成缺陷分析报告失败（不影响保存）: {str(e)}")
+                
                 return {
                     "success": True,
                     "defect_analysis_id": result.analysis_id,
                     "analysis_name": result.analysis_name,
-                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功"
-                }
+                    "report_url": report_url,
+                    "message": f"✅ 缺陷分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功" + (f"，报告已生成: {report_url}" if report_url else "")
+        }
 
     except Exception as e:
         logger.error(f"保存缺陷分析失败: {str(e)}", exc_info=True)
@@ -1302,6 +1421,172 @@ from module_testing.agents.human_in_the_loop import review_test_case_tool
 from module_testing.agents.document_parser import (
     parse_document_from_url
 )
+
+
+# ============ 报告生成工具 ============
+
+@tool
+async def generate_requirement_analysis_report_tool(
+    requirement_analysis_id: int,
+    template_name: Optional[str] = None,
+    project_id: Optional[int] = None
+) -> Dict[str, Any]:
+    """
+    生成需求分析报告工具
+    
+    基于模板生成需求分析报告，并上传到 MinIO。
+    
+    Args:
+        requirement_analysis_id: 需求分析ID（必填）
+        template_name: 模板文件名，默认为 None（使用默认模板）
+        project_id: 项目ID（可选，如果提供会用于验证）
+    
+    Returns:
+        dict: 包含生成结果的字典
+            - success: bool, 是否成功
+            - report_url: str, 报告URL
+            - message: str, 提示消息
+            - error: str, 错误信息（如果失败）
+    """
+    try:
+        from module_testing.service.requirement_analysis_service import RequirementAnalysisService
+        from config.get_db import get_db_session
+        
+        if not requirement_analysis_id:
+            return {
+                "success": False,
+                "error": "requirement_analysis_id 是必填参数",
+                "message": "生成报告失败：缺少需求分析ID"
+            }
+        
+        service = RequirementAnalysisService()
+        
+        async with get_db_session() as db:
+            # 验证需求分析是否存在
+            requirement = await service.get_requirement(db, requirement_analysis_id)
+            if not requirement:
+                return {
+                    "success": False,
+                    "error": f"需求分析 {requirement_analysis_id} 不存在",
+                    "message": f"生成报告失败：需求分析 {requirement_analysis_id} 不存在"
+                }
+            
+            # 如果提供了 project_id，验证是否匹配
+            if project_id and requirement.project_id != project_id:
+                return {
+                    "success": False,
+                    "error": "项目ID不匹配",
+                    "message": "生成报告失败：项目ID不匹配"
+                }
+            
+            # 生成报告并上传
+            report_url = await service.generate_and_upload_report(
+                db, requirement_analysis_id, template_name
+            )
+            
+            if report_url:
+                logger.info(f"需求分析报告生成成功: {requirement_analysis_id}, URL: {report_url}")
+                return {
+                    "success": True,
+                    "report_url": report_url,
+                    "message": f"✅ 需求分析报告生成成功，URL: {report_url}"
+                }
+            else:
+                return {
+                    "success": False,
+                    "error": "报告生成失败",
+                    "message": "生成报告失败：无法生成或上传报告"
+                }
+                
+    except Exception as e:
+        logger.error(f"生成需求分析报告失败: {str(e)}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"生成报告失败: {str(e)}"
+        }
+
+
+@tool
+async def generate_defect_analysis_report_tool(
+    defect_analysis_id: int,
+    template_name: Optional[str] = None,
+    project_id: Optional[int] = None
+) -> Dict[str, Any]:
+    """
+    生成缺陷分析报告工具
+    
+    基于模板生成缺陷分析报告，并上传到 MinIO。
+    
+    Args:
+        defect_analysis_id: 缺陷分析ID（必填）
+        template_name: 模板文件名，默认为 None（使用默认模板）
+        project_id: 项目ID（可选，如果提供会用于验证）
+    
+    Returns:
+        dict: 包含生成结果的字典
+            - success: bool, 是否成功
+            - report_url: str, 报告URL
+            - message: str, 提示消息
+            - error: str, 错误信息（如果失败）
+    """
+    try:
+        from module_testing.service.defect_analysis_service import DefectAnalysisService
+        from config.get_db import get_db_session
+        
+        if not defect_analysis_id:
+            return {
+                "success": False,
+                "error": "defect_analysis_id 是必填参数",
+                "message": "生成报告失败：缺少缺陷分析ID"
+            }
+        
+        service = DefectAnalysisService()
+        
+        async with get_db_session() as db:
+            # 验证缺陷分析是否存在
+            analysis = await service.get_analysis(db, defect_analysis_id)
+            if not analysis:
+                return {
+                    "success": False,
+                    "error": f"缺陷分析 {defect_analysis_id} 不存在",
+                    "message": f"生成报告失败：缺陷分析 {defect_analysis_id} 不存在"
+                }
+            
+            # 如果提供了 project_id，验证是否匹配
+            if project_id and analysis.get('project_id') != project_id:
+                return {
+                    "success": False,
+                    "error": "项目ID不匹配",
+                    "message": "生成报告失败：项目ID不匹配"
+                }
+            
+            # 生成报告并上传
+            report_url = await service.generate_and_upload_report(
+                db, defect_analysis_id, template_name
+            )
+            
+            if report_url:
+                logger.info(f"缺陷分析报告生成成功: {defect_analysis_id}, URL: {report_url}")
+                return {
+                    "success": True,
+                    "report_url": report_url,
+                    "message": f"✅ 缺陷分析报告生成成功，URL: {report_url}"
+                }
+            else:
+                return {
+                    "success": False,
+                    "error": "报告生成失败",
+                    "message": "生成报告失败：无法生成或上传报告"
+                }
+                
+    except Exception as e:
+        logger.error(f"生成缺陷分析报告失败: {str(e)}", exc_info=True)
+        return {
+            "success": False,
+            "error": str(e),
+            "message": f"生成报告失败: {str(e)}"
+        }
 
 
 # ============ 思维导图生成工具 ============
@@ -1359,22 +1644,40 @@ async def generate_mindmap_tool(
             # 如果 MCP 服务不可用，使用简单的 Markdown 格式
             if tool is None:
                 logger.warning("未找到 MindMap MCP 工具（generate_mindmap），使用简单格式")
-            
-            mindmap = f"# {title}\n\n"
-            lines = content.strip().split('\n')
-            for line in lines:
-                stripped = line.strip()
-                if stripped:
-                    indent_level = (len(line) - len(stripped)) // 2
-                    prefix = "  " * indent_level + "- "
-                    mindmap += f"{prefix}{stripped}\n"
-            
-            return {
-                "success": True,
-                "mindmap_content": mindmap,
-                "format": "markdown",
-                "message": "思维导图生成成功（使用简单格式）"
-            }
+                
+                mindmap = f"# {title}\n\n"
+                lines = content.strip().split('\n')
+                for line in lines:
+                    stripped = line.strip()
+                    if stripped:
+                        indent_level = (len(line) - len(stripped)) // 2
+                        prefix = "  " * indent_level + "- "
+                        mindmap += f"{prefix}{stripped}\n"
+                
+                return {
+                    "success": True,
+                    "mindmap_content": mindmap,
+                    "format": "markdown",
+                    "message": "思维导图生成成功（使用简单格式）"
+                }
+            else:
+                # 使用 MCP 工具生成 Markdown 格式
+                markdown = f"# {title}\n\n{content}"
+                html = await tool.ainvoke(
+                    {
+                        "markdown": markdown,
+                        "return_type": "markdown",
+                        "toolbar": True,
+                    }
+                )
+                
+                return {
+                    "success": True,
+                    "mindmap_content": str(html),
+                    "format": "markdown",
+                    "download_url": None,
+                    "message": "思维导图生成成功",
+                }
         else:
             # 非 markdown 格式需要 MCP 工具
             if tool is None:
@@ -1383,7 +1686,7 @@ async def generate_mindmap_tool(
                     "error": "未找到 MindMap MCP 工具（generate_mindmap）",
                     "message": "未找到 MindMap MCP 工具，请确保 MCP 服务已启动"
                 }
-            
+
             markdown = f"# {title}\n\n{content}"
             html = await tool.ainvoke(
                 {

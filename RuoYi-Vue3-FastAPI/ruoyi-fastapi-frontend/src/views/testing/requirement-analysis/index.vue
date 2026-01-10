@@ -58,6 +58,12 @@
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:requirement:remove']">删除</el-button>
       </el-col>
+      <el-col :span="1.5">
+        <el-button type="success" plain icon="ChatDotRound" @click="openAIAssistant">
+          <el-icon><ChatDotRound /></el-icon>
+          AI 助手
+        </el-button>
+      </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -91,10 +97,19 @@
       <el-table-column label="创建时间" align="center" width="160">
         <template #default="scope">{{ scope.row.create_time }}</template>
       </el-table-column>
-      <el-table-column label="操作" align="center" width="200">
+      <el-table-column label="操作" align="center" width="250">
         <template #default="scope">
           <el-button link type="primary" icon="View" @click="handleDetail(scope.row)">详情</el-button>
           <el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)" v-hasPermi="['testing:requirement:edit']">编辑</el-button>
+          <el-button 
+            v-if="scope.row.report_url" 
+            link 
+            type="success" 
+            icon="Download" 
+            @click="handleDownload(scope.row)"
+          >
+            下载
+          </el-button>
           <el-button link type="danger" icon="Delete" @click="handleDelete(scope.row)" v-hasPermi="['testing:requirement:remove']">删除</el-button>
         </template>
       </el-table-column>
@@ -152,6 +167,7 @@
 
     <!-- 创建/编辑对话框 -->
     <RequirementCreateDialog
+      ref="requirementDialogRef"
       v-model="dialogVisible"
       :edit-data="editData"
       :default-project-id="queryParams.projectId"
@@ -174,7 +190,7 @@
 <script setup name="RequirementAnalysis">
 import { ref, reactive, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { DocumentCopy, MagicStick } from '@element-plus/icons-vue'
+import { DocumentCopy, MagicStick, ChatDotRound, Download } from '@element-plus/icons-vue'
 import { listRequirementAnalysis, getRequirementAnalysis, addRequirementAnalysis, updateRequirementAnalysis, delRequirementAnalysis } from '@/api/testing/requirementAnalysis'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
@@ -284,8 +300,26 @@ const handleFormSuccess = () => {
   getList()
 }
 
-const handleOpenChat = (prompt) => {
-  aiInitialPrompt.value = prompt
+const requirementDialogRef = ref(null)
+
+const handleOpenChat = (data) => {
+  // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
+  if (typeof data === 'object' && data.prompt) {
+    aiInitialPrompt.value = data.prompt
+    // 如果传递了 projectId，更新 queryParams
+    if (data.projectId) {
+      queryParams.projectId = data.projectId
+    }
+  } else {
+    aiInitialPrompt.value = data
+  }
+  
+  // 验证 projectId 是否有效
+  if (!queryParams.projectId || queryParams.projectId === 0) {
+    ElMessage.warning('请先选择项目！需求分析功能需要指定项目ID。')
+    return
+  }
+  
   aiChatVisible.value = true
 }
 
@@ -375,6 +409,11 @@ const submitForm = async () => {
   }
 }
 
+const openAIAssistant = () => {
+  aiInitialPrompt.value = ''
+  aiChatVisible.value = true
+}
+
 const openAIChat = () => {
   aiInitialPrompt.value = ''
   aiChatVisible.value = true
@@ -415,6 +454,33 @@ const formatMarkdown = (text) => {
   if (!text) return '<span style="color: #999">暂无内容</span>'
   if (typeof text === 'object') return '<pre>' + JSON.stringify(text, null, 2) + '</pre>'
   return text.replace(/\n/g, '<br>')
+}
+
+// 下载报告
+const handleDownload = async (row) => {
+  // 使用analysis_id（数据库字段名）
+  const analysisId = row.analysis_id || row.requirement_id
+  if (!row.report_url && !analysisId) {
+    ElMessage.warning('该需求分析还没有生成报告')
+    return
+  }
+  
+  try {
+    // 使用后端代理下载接口，确保正确的编码
+    const downloadUrl = `/testing/requirement/download/${analysisId}?format=markdown`
+    // 创建隐藏的a标签下载
+    const link = document.createElement('a')
+    link.href = downloadUrl
+    link.download = `requirement_analysis_${analysisId}.md`
+    link.style.display = 'none'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    ElMessage.success('开始下载报告')
+  } catch (error) {
+    console.error('下载失败:', error)
+    ElMessage.error('下载失败')
+  }
 }
 
 onMounted(async () => {

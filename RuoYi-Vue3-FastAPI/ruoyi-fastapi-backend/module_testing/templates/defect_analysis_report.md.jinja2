@@ -1,0 +1,241 @@
+# 缺陷分析报告
+
+## 基本信息
+
+- **分析ID**: {{ analysis.analysis_id }}
+- **分析名称**: {{ analysis.analysis_name }}
+- **项目ID**: {{ analysis.project_id }}
+- **缺陷标题**: {{ analysis.defect_title or '无' }}
+- **严重程度**: {{ analysis.severity or 'medium' }}
+- **优先级**: {{ analysis.priority or 'medium' }}
+- **缺陷类型**: {{ analysis.defect_type or '未知' }}
+{% if analysis.category %}
+- **详细分类**: {{ analysis.category }}
+{% endif %}
+{% if analysis.affected_phase %}
+- **影响阶段**: {{ analysis.affected_phase }}
+{% endif %}
+{% if analysis.detection_phase %}
+- **发现阶段**: {{ analysis.detection_phase }}
+{% endif %}
+- **状态**: {{ analysis.status or 'draft' }}
+- **创建时间**: {{ analysis.create_time.strftime('%Y-%m-%d %H:%M:%S') if analysis.create_time else '未知' }}
+- **创建者**: {{ analysis.create_by or '未知' }}
+
+---
+
+## 缺陷描述
+
+{{ analysis.defect_description or '无' }}
+
+---
+
+## 缺陷概述
+
+{{ analysis.executive_summary or '暂无概述' }}
+
+---
+
+## 根本原因分析
+
+{% if root_cause_analysis %}
+{% if root_cause_analysis is mapping %}
+{% if root_cause_analysis.get('primary_cause') %}
+### 主要原因
+{{ root_cause_analysis.get('primary_cause') }}
+
+{% endif %}
+{% if root_cause_analysis.get('contributing_factors') %}
+### 促成因素
+{% for factor in root_cause_analysis.get('contributing_factors', []) %}
+- {{ factor }}
+{% endfor %}
+
+{% endif %}
+{% if root_cause_analysis.get('analysis_method') %}
+### 分析方法
+{{ root_cause_analysis.get('analysis_method') }}
+
+{% endif %}
+{% if root_cause_analysis.get('evidence') %}
+### 证据
+{{ root_cause_analysis.get('evidence') }}
+
+{% endif %}
+{% else %}
+{{ root_cause_analysis }}
+{% endif %}
+{% else %}
+暂无根本原因分析
+{% endif %}
+
+---
+
+## 影响分析
+
+{% if impact_analysis %}
+{% if impact_analysis is mapping %}
+{% if impact_analysis.get('affected_areas') %}
+### 受影响区域
+{% for area in impact_analysis.get('affected_areas', []) %}
+- {{ area }}
+{% endfor %}
+
+{% endif %}
+{% if impact_analysis.get('severity_level') %}
+### 严重程度级别
+{{ impact_analysis.get('severity_level') }}
+
+{% endif %}
+{% if impact_analysis.get('business_impact') %}
+### 业务影响
+{{ impact_analysis.get('business_impact') }}
+
+{% endif %}
+{% if impact_analysis.get('technical_impact') %}
+### 技术影响
+{{ impact_analysis.get('technical_impact') }}
+
+{% endif %}
+{% if impact_analysis.get('user_impact') %}
+### 用户影响
+{{ impact_analysis.get('user_impact') }}
+
+{% endif %}
+{% else %}
+{{ impact_analysis }}
+{% endif %}
+{% else %}
+暂无影响分析
+{% endif %}
+
+---
+
+## 复现步骤
+
+{% if reproduction_steps %}
+{% for step in reproduction_steps %}
+### 步骤 {{ step.get('step_number', loop.index) if step is mapping else loop.index }}
+
+{% if step is mapping %}
+- **描述**: {{ step.get('description', '无') }}
+- **预期结果**: {{ step.get('expected_result', '无') }}
+- **实际结果**: {{ step.get('actual_result', '无') }}
+{% else %}
+{{ step }}
+{% endif %}
+
+{% endfor %}
+{% else %}
+暂无复现步骤
+{% endif %}
+
+---
+
+## 受影响模块
+
+{% if affected_modules %}
+{% if affected_modules is iterable and affected_modules is not string %}
+{% for module in affected_modules %}
+- {{ module }}
+{% endfor %}
+{% else %}
+{{ affected_modules }}
+{% endif %}
+{% else %}
+暂无受影响模块
+{% endif %}
+
+---
+
+## 修复建议
+
+{% if fix_suggestions %}
+{% for suggestion in fix_suggestions %}
+{% if suggestion is mapping %}
+{{ loop.index }}. **{{ suggestion.get('description', '无') }}**
+   - 优先级: {{ suggestion.get('priority', '无') }}
+{% if suggestion.get('estimated_effort') %}
+   - 预估工作量: {{ suggestion.get('estimated_effort') }}
+{% endif %}
+{% else %}
+{{ loop.index }}. {{ suggestion }}
+{% endif %}
+{% endfor %}
+{% else %}
+暂无修复建议
+{% endif %}
+
+---
+
+## 测试建议
+
+{% if test_suggestions %}
+{% for suggestion in test_suggestions %}
+{% if suggestion is mapping %}
+{{ loop.index }}. **{{ suggestion.get('test_type', '未知类型') }}**: {{ suggestion.get('description', '无') }}
+   - 优先级: {{ suggestion.get('priority', '无') }}
+{% else %}
+{{ loop.index }}. {{ suggestion }}
+{% endif %}
+{% endfor %}
+{% else %}
+暂无测试建议
+{% endif %}
+
+---
+
+## 预防措施
+
+{% if prevention_measures %}
+{% for measure in prevention_measures %}
+{% if measure is mapping %}
+{{ loop.index }}. **{{ measure.get('type', '未知类型') }}**: {{ measure.get('description', '无') }}
+{% if measure.get('implementation') %}
+   - 实施方法: {{ measure.get('implementation') }}
+{% endif %}
+{% else %}
+{{ loop.index }}. {{ measure }}
+{% endif %}
+{% endfor %}
+{% else %}
+暂无预防措施
+{% endif %}
+
+---
+
+## 相似缺陷
+
+{% if similar_defects %}
+{% for defect in similar_defects %}
+{% if defect is mapping %}
+{{ loop.index }}. 缺陷ID: {{ defect.get('defect_id', '未知') }}
+   - 相似度: {{ defect.get('similarity_score', '未知') }}
+   - 描述: {{ defect.get('description', '无') }}
+{% else %}
+{{ loop.index }}. {{ defect }}
+{% endif %}
+{% endfor %}
+{% else %}
+暂无相似缺陷
+{% endif %}
+
+---
+
+{% if analysis.use_rag %}
+## RAG检索信息
+
+本分析使用了RAG知识库检索功能。
+
+{% if analysis.rag_context %}
+**检索上下文**:
+```
+{{ analysis.rag_context[:500] }}{% if analysis.rag_context|length > 500 %}...{% endif %}
+```
+{% endif %}
+{% endif %}
+
+---
+
+*报告生成时间: {{ report_time }}*
+

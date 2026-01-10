@@ -54,6 +54,9 @@ class RequirementAnalysisDO(Base):
     mindmap_data = Column(Text, comment='思维导图数据(JSON)')
     mindmap_url = Column(String(500), comment='思维导图图片URL')
     
+    # 报告
+    report_url = Column(String(500), comment='分析报告URL')
+    
     # 状态字段
     status = Column(String(20), default='draft', comment='状态(draft/analyzing/completed/failed)')
     process_status = Column(String(20), comment='处理状态(pending/processing/completed/failed)')
@@ -96,6 +99,7 @@ class RequirementAnalysisDO(Base):
             'rag_context': self.rag_context,
             'mindmap_data': json.loads(self.mindmap_data) if self.mindmap_data else {},
             'mindmap_url': self.mindmap_url,
+            'report_url': self.report_url,
             'status': self.status,
             'process_status': self.process_status,
             'error_message': self.error_message,

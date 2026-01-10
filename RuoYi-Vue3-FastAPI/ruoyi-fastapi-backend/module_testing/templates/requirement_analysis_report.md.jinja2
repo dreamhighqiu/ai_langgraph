@@ -1,0 +1,204 @@
+# 需求分析报告
+
+## 基本信息
+
+- **分析ID**: {{ analysis.analysis_id }}
+- **分析名称**: {{ analysis.analysis_name }}
+- **项目ID**: {{ analysis.project_id }}
+- **状态**: {{ analysis.status or 'draft' }}
+- **创建时间**: {{ analysis.create_time.strftime('%Y-%m-%d %H:%M:%S') if analysis.create_time else '未知' }}
+- **创建者**: {{ analysis.create_by or '未知' }}
+{% if analysis.module %}
+- **所属模块**: {{ analysis.module }}
+{% endif %}
+
+---
+
+## 需求概述
+
+{{ analysis.executive_summary or '暂无概述' }}
+
+---
+
+## 功能需求
+
+{% if functional_requirements %}
+{% if functional_requirements is mapping %}
+{% for key, value in functional_requirements.items() %}
+### {{ key }}
+{{ value }}
+
+{% endfor %}
+{% else %}
+{{ functional_requirements }}
+{% endif %}
+{% else %}
+暂无功能需求
+{% endif %}
+
+---
+
+## 非功能需求
+
+{% if non_functional_requirements %}
+{% if non_functional_requirements is mapping %}
+{% for key, value in non_functional_requirements.items() %}
+### {{ key }}
+{{ value }}
+
+{% endfor %}
+{% else %}
+{{ non_functional_requirements }}
+{% endif %}
+{% else %}
+暂无非功能需求
+{% endif %}
+
+---
+
+## 用户故事
+
+{% if user_stories %}
+{% for story in user_stories %}
+### 用户故事 {{ loop.index }}
+
+{% if story is mapping %}
+- **标题**: {{ story.get('title', '无') }}
+- **描述**: {{ story.get('description', '无') }}
+- **验收标准**: {{ story.get('acceptance_criteria', '无') }}
+- **优先级**: {{ story.get('priority', '无') }}
+{% else %}
+{{ story }}
+{% endif %}
+
+{% endfor %}
+{% else %}
+暂无用户故事
+{% endif %}
+
+---
+
+## 验收标准
+
+{% if acceptance_criteria %}
+{% if acceptance_criteria is mapping %}
+{% for key, value in acceptance_criteria.items() %}
+- **{{ key }}**: {{ value }}
+{% endfor %}
+{% elif acceptance_criteria is iterable and acceptance_criteria is not string %}
+{% for criterion in acceptance_criteria %}
+{% if criterion is mapping %}
+{{ loop.index }}. {{ criterion.get('description', '无') }} (优先级: {{ criterion.get('priority', '无') }})
+{% else %}
+{{ loop.index }}. {{ criterion }}
+{% endif %}
+{% endfor %}
+{% else %}
+{{ acceptance_criteria }}
+{% endif %}
+{% else %}
+暂无验收标准
+{% endif %}
+
+---
+
+## 依赖关系
+
+{% if dependencies %}
+{% if dependencies is iterable and dependencies is not string %}
+{% for dep in dependencies %}
+{% if dep is mapping %}
+{{ loop.index }}. **{{ dep.get('type', '未知') }}**: {{ dep.get('description', '无') }}
+{% if dep.get('related_requirement') %}
+   - 相关需求: {{ dep.get('related_requirement') }}
+{% endif %}
+{% else %}
+{{ loop.index }}. {{ dep }}
+{% endif %}
+{% endfor %}
+{% else %}
+{{ dependencies }}
+{% endif %}
+{% else %}
+暂无依赖关系
+{% endif %}
+
+---
+
+## 风险评估
+
+{% if risks %}
+{% if risks is iterable and risks is not string %}
+{% for risk in risks %}
+### 风险 {{ loop.index }}: {{ risk.get('type', '未知') if risk is mapping else '未知' }}
+
+{% if risk is mapping %}
+- **描述**: {{ risk.get('description', '无') }}
+- **发生概率**: {{ risk.get('probability', '未知') }}
+- **影响程度**: {{ risk.get('impact', '未知') }}
+- **缓解措施**: {{ risk.get('mitigation', '无') }}
+{% else %}
+{{ risk }}
+{% endif %}
+
+{% endfor %}
+{% else %}
+{{ risks }}
+{% endif %}
+{% else %}
+暂无风险评估
+{% endif %}
+
+---
+
+## 改进建议
+
+{% if recommendations %}
+{% if recommendations is iterable and recommendations is not string %}
+{% for rec in recommendations %}
+{% if rec is mapping %}
+{{ loop.index }}. **{{ rec.get('type', '未知') }}**: {{ rec.get('description', '无') }} (优先级: {{ rec.get('priority', '无') }})
+{% else %}
+{{ loop.index }}. {{ rec }}
+{% endif %}
+{% endfor %}
+{% else %}
+{{ recommendations }}
+{% endif %}
+{% else %}
+暂无改进建议
+{% endif %}
+
+---
+
+## 质量评分
+
+{% if analysis.quality_overall is not none %}
+- **完整性**: {{ analysis.quality_completeness or 0 }}/100
+- **清晰度**: {{ analysis.quality_clarity or 0 }}/100
+- **一致性**: {{ analysis.quality_consistency or 0 }}/100
+- **可测试性**: {{ analysis.quality_testability or 0 }}/100
+- **总体评分**: {{ analysis.quality_overall }}/100
+{% else %}
+暂无质量评分
+{% endif %}
+
+---
+
+{% if analysis.use_rag %}
+## RAG检索信息
+
+本分析使用了RAG知识库检索功能。
+
+{% if analysis.rag_context %}
+**检索上下文**:
+```
+{{ analysis.rag_context[:500] }}{% if analysis.rag_context|length > 500 %}...{% endif %}
+```
+{% endif %}
+{% endif %}
+
+---
+
+*报告生成时间: {{ report_time }}*
+

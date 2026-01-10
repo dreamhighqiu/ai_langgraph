@@ -13091,5 +13091,1087 @@
     "create_time": 1767965578,
     "update_time": 1767965578,
     "_id": "个性化健康管理方案<SEP>标准化结构"
+  },
+  "健康计划<SEP>用户打卡数据": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970287,
+    "update_time": 1767970287,
+    "_id": "健康计划<SEP>用户打卡数据"
+  },
+  "人工智能中医大模型平台<SEP>多通道PPG 100HZ": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970287,
+    "update_time": 1767970287,
+    "_id": "人工智能中医大模型平台<SEP>多通道PPG 100HZ"
+  },
+  "Baichuan-M2-Plus<SEP>百川智能": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227",
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 2,
+    "create_time": 1767970287,
+    "update_time": 1767970287,
+    "_id": "Baichuan-M2-Plus<SEP>百川智能"
+  },
+  "人工智能中医大模型平台<SEP>单导联ECG": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970292,
+    "update_time": 1767970292,
+    "_id": "人工智能中医大模型平台<SEP>单导联ECG"
+  },
+  "激励总结语<SEP>用户打卡数据": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970294,
+    "update_time": 1767970294,
+    "_id": "激励总结语<SEP>用户打卡数据"
+  },
+  "中医未病健康报告<SEP>人工智能中医大模型平台": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227",
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 2,
+    "create_time": 1767970295,
+    "update_time": 1767970295,
+    "_id": "中医未病健康报告<SEP>人工智能中医大模型平台"
+  },
+  "小成功<SEP>激励总结语": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970296,
+    "update_time": 1767970296,
+    "_id": "小成功<SEP>激励总结语"
+  },
+  "API url<SEP>百川智能": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970298,
+    "update_time": 1767970298,
+    "_id": "API url<SEP>百川智能"
+  },
+  "激励总结语<SEP>砖瓦": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970299,
+    "update_time": 1767970299,
+    "_id": "激励总结语<SEP>砖瓦"
+  },
+  "Docker Compose<SEP>Docker Compose.yaml": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970299,
+    "update_time": 1767970299,
+    "_id": "Docker Compose<SEP>Docker Compose.yaml"
+  },
+  "Dify_docker<SEP>Docker Compose": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970302,
+    "update_time": 1767970302,
+    "_id": "Dify_docker<SEP>Docker Compose"
+  },
+  "Git<SEP>Tag 1.8.1": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970302,
+    "update_time": 1767970302,
+    "_id": "Git<SEP>Tag 1.8.1"
+  },
+  "加油证据<SEP>激励总结语": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970304,
+    "update_time": 1767970304,
+    "_id": "加油证据<SEP>激励总结语"
+  },
+  "API Key<SEP>RAGFlow API": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970304,
+    "update_time": 1767970304,
+    "_id": "API Key<SEP>RAGFlow API"
+  },
+  "激励总结语<SEP>示例1：全面达标，重点表扬运动": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970308,
+    "update_time": 1767970308,
+    "_id": "激励总结语<SEP>示例1：全面达标，重点表扬运动"
+  },
+  "Session ID<SEP>聊天接口": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970308,
+    "update_time": 1767970308,
+    "_id": "Session ID<SEP>聊天接口"
+  },
+  "RAGFlow API<SEP>海实利": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970310,
+    "update_time": 1767970310,
+    "_id": "RAGFlow API<SEP>海实利"
+  },
+  "激励总结语<SEP>示例2：某项未达标(如卡路里)，鼓励为主": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970312,
+    "update_time": 1767970312,
+    "_id": "激励总结语<SEP>示例2：某项未达标(如卡路里)，鼓励为主"
+  },
+  "Image ID<SEP>引用图片": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970312,
+    "update_time": 1767970312,
+    "_id": "Image ID<SEP>引用图片"
+  },
+  "引用信息<SEP>聊天接口": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970314,
+    "update_time": 1767970314,
+    "_id": "引用信息<SEP>聊天接口"
+  },
+  "RAGFlow API<SEP>渔业养殖": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970314,
+    "update_time": 1767970314,
+    "_id": "RAGFlow API<SEP>渔业养殖"
+  },
+  "Dataset ID<SEP>检索上下文接口": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970314,
+    "update_time": 1767970314,
+    "_id": "Dataset ID<SEP>检索上下文接口"
+  },
+  "GitHub<SEP>Infiniflow": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970314,
+    "update_time": 1767970314,
+    "_id": "GitHub<SEP>Infiniflow"
+  },
+  "激励总结语<SEP>示例3：针对减肥计划，突出热量缺口": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970319,
+    "update_time": 1767970319,
+    "_id": "激励总结语<SEP>示例3：针对减肥计划，突出热量缺口"
+  },
+  "Docker Compose<SEP>Docker Compose Down": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970319,
+    "update_time": 1767970319,
+    "_id": "Docker Compose<SEP>Docker Compose Down"
+  },
+  "API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm<SEP>海实利": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970321,
+    "update_time": 1767970321,
+    "_id": "API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm<SEP>海实利"
+  },
+  "RAGFlow API<SEP>rag.gdzky.cn": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970322,
+    "update_time": 1767970322,
+    "_id": "RAGFlow API<SEP>rag.gdzky.cn"
+  },
+  "Chat ID 8a1edc92a1a411f0b0ea0242c0a89006<SEP>渔业养殖": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970322,
+    "update_time": 1767970322,
+    "_id": "Chat ID 8a1edc92a1a411f0b0ea0242c0a89006<SEP>渔业养殖"
+  },
+  "Docker Compose<SEP>Docker Compose Up": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970325,
+    "update_time": 1767970325,
+    "_id": "Docker Compose<SEP>Docker Compose Up"
+  },
+  "激励总结语<SEP>示例4：针对睡眠和压力管理": {
+    "chunk_ids": [
+      "chunk-6f413192b6712442310ab83e47795227"
+    ],
+    "count": 1,
+    "create_time": 1767970325,
+    "update_time": 1767970325,
+    "_id": "激励总结语<SEP>示例4：针对睡眠和压力管理"
+  },
+  "Session ID b06badb8a34c11f0a9d20242c0a8a006<SEP>聊天接口": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970325,
+    "update_time": 1767970325,
+    "_id": "Session ID b06badb8a34c11f0a9d20242c0a8a006<SEP>聊天接口"
+  },
+  "Dataset ID ea5142baa11511f083560242c0a89006<SEP>检索上下文接口": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970325,
+    "update_time": 1767970325,
+    "_id": "Dataset ID ea5142baa11511f083560242c0a89006<SEP>检索上下文接口"
+  },
+  "Chat ID f18b15f8a1a411f0b99b0242c0a89006<SEP>海实利": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970329,
+    "update_time": 1767970329,
+    "_id": "Chat ID f18b15f8a1a411f0b99b0242c0a89006<SEP>海实利"
+  },
+  "document_app.py<SEP>引用图片": {
+    "chunk_ids": [
+      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
+    ],
+    "count": 1,
+    "create_time": 1767970329,
+    "update_time": 1767970329,
+    "_id": "document_app.py<SEP>引用图片"
+  },
+  "ECG采集数据<SEP>人工智能中医大模型平台": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970329,
+    "update_time": 1767970329,
+    "_id": "ECG采集数据<SEP>人工智能中医大模型平台"
+  },
+  "中医未病健康报告<SEP>手机小程序": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970332,
+    "update_time": 1767970332,
+    "_id": "中医未病健康报告<SEP>手机小程序"
+  },
+  "AI健康助手<SEP>健康计划调查问卷": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970332,
+    "update_time": 1767970332,
+    "_id": "AI健康助手<SEP>健康计划调查问卷"
+  },
+  "Dify<SEP>docker-compose": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970335,
+    "update_time": 1767970335,
+    "_id": "Dify<SEP>docker-compose"
+  },
+  "DeepSeek<SEP>华为云": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970338,
+    "update_time": 1767970338,
+    "_id": "DeepSeek<SEP>华为云"
+  },
+  "TencentCloudADP<SEP>youtu-graphrag": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970341,
+    "update_time": 1767970341,
+    "_id": "TencentCloudADP<SEP>youtu-graphrag"
+  },
+  "Json在线解析<SEP>cleaned_answer": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970342,
+    "update_time": 1767970342,
+    "_id": "Json在线解析<SEP>cleaned_answer"
+  },
+  "AI健康助手<SEP>食材集采数字化平台智能助手": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970343,
+    "update_time": 1767970343,
+    "_id": "AI健康助手<SEP>食材集采数字化平台智能助手"
+  },
+  "northstar<SEP>量化": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970343,
+    "update_time": 1767970343,
+    "_id": "northstar<SEP>量化"
+  },
+  "docker<SEP>docker-compose": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970345,
+    "update_time": 1767970345,
+    "_id": "docker<SEP>docker-compose"
+  },
+  "DeepSeek<SEP>阿里云百炼": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970345,
+    "update_time": 1767970345,
+    "_id": "DeepSeek<SEP>阿里云百炼"
+  },
+  "智能体<SEP>联网搜索功能": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970345,
+    "update_time": 1767970345,
+    "_id": "智能体<SEP>联网搜索功能"
+  },
+  "Dify<SEP>Dify .env文件": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970345,
+    "update_time": 1767970345,
+    "_id": "Dify<SEP>Dify .env文件"
+  },
+  "cleaned_answer<SEP>正则表达式": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970351,
+    "update_time": 1767970351,
+    "_id": "cleaned_answer<SEP>正则表达式"
+  },
+  "DeepSeek-V3<SEP>华为云": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970351,
+    "update_time": 1767970351,
+    "_id": "DeepSeek-V3<SEP>华为云"
+  },
+  "Sensi.AI产品<SEP>肖总": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970351,
+    "update_time": 1767970351,
+    "_id": "Sensi.AI产品<SEP>肖总"
+  },
+  "轻量级模型<SEP>音频传感器": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970355,
+    "update_time": 1767970355,
+    "_id": "轻量级模型<SEP>音频传感器"
+  },
+  "惯性LSMC传感器<SEP>毫米波雷达": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970355,
+    "update_time": 1767970355,
+    "_id": "惯性LSMC传感器<SEP>毫米波雷达"
+  },
+  "四类意图数据集<SEP>意图识别模型": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970355,
+    "update_time": 1767970355,
+    "_id": "四类意图数据集<SEP>意图识别模型"
+  },
+  "DeepSeek-R1<SEP>华为云": {
+    "chunk_ids": [
+      "chunk-2309688baefacf34329b80e3d86a7260"
+    ],
+    "count": 1,
+    "create_time": 1767970360,
+    "update_time": 1767970360,
+    "_id": "DeepSeek-R1<SEP>华为云"
+  },
+  "可量化的指标<SEP>运动建议生成系统": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970360,
+    "update_time": 1767970360,
+    "_id": "可量化的指标<SEP>运动建议生成系统"
+  },
+  "Sensi.AI产品<SEP>音频传感器": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970362,
+    "update_time": 1767970362,
+    "_id": "Sensi.AI产品<SEP>音频传感器"
+  },
+  "Rasa框架<SEP>意图识别模型": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970362,
+    "update_time": 1767970362,
+    "_id": "Rasa框架<SEP>意图识别模型"
+  },
+  "四类意图数据集<SEP>设置闹钟(set_alarm)": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970362,
+    "update_time": 1767970362,
+    "_id": "四类意图数据集<SEP>设置闹钟(set_alarm)"
+  },
+  "LSM6DS3TR-C<SEP>惯性LSMC传感器": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970366,
+    "update_time": 1767970366,
+    "_id": "LSM6DS3TR-C<SEP>惯性LSMC传感器"
+  },
+  "Rasa框架<SEP>意图识别流程": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970368,
+    "update_time": 1767970368,
+    "_id": "Rasa框架<SEP>意图识别流程"
+  },
+  "运动建议-json-上线提示词<SEP>运动建议生成系统": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970368,
+    "update_time": 1767970368,
+    "_id": "运动建议-json-上线提示词<SEP>运动建议生成系统"
+  },
+  "四类意图数据集<SEP>打电话(call)": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970372,
+    "update_time": 1767970372,
+    "_id": "四类意图数据集<SEP>打电话(call)"
+  },
+  "Sensi.AI产品<SEP>惯性LSMC传感器": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970372,
+    "update_time": 1767970372,
+    "_id": "Sensi.AI产品<SEP>惯性LSMC传感器"
+  },
+  "健康教练<SEP>激励总结语": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970372,
+    "update_time": 1767970372,
+    "_id": "健康教练<SEP>激励总结语"
+  },
+  "示例JSON<SEP>运动建议生成系统": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970377,
+    "update_time": 1767970377,
+    "_id": "示例JSON<SEP>运动建议生成系统"
+  },
+  "健康计划<SEP>用户": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970377,
+    "update_time": 1767970377,
+    "_id": "健康计划<SEP>用户"
+  },
+  "四类意图数据集<SEP>播放音乐(play_music)": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970381,
+    "update_time": 1767970381,
+    "_id": "四类意图数据集<SEP>播放音乐(play_music)"
+  },
+  "打卡数据<SEP>激励总结语": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970381,
+    "update_time": 1767970381,
+    "_id": "打卡数据<SEP>激励总结语"
+  },
+  "可量化的指标<SEP>示例": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970385,
+    "update_time": 1767970385,
+    "_id": "可量化的指标<SEP>示例"
+  },
+  "关机(shutdown)<SEP>四类意图数据集": {
+    "chunk_ids": [
+      "chunk-4e84c2a87f980319bb386cc588050a5f"
+    ],
+    "count": 1,
+    "create_time": 1767970387,
+    "update_time": 1767970387,
+    "_id": "关机(shutdown)<SEP>四类意图数据集"
+  },
+  "API URL<SEP>激励总结语": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970387,
+    "update_time": 1767970387,
+    "_id": "API URL<SEP>激励总结语"
+  },
+  "打卡数据<SEP>用户": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970387,
+    "update_time": 1767970387,
+    "_id": "打卡数据<SEP>用户"
+  },
+  "示例<SEP>饮食建议": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970391,
+    "update_time": 1767970391,
+    "_id": "示例<SEP>饮食建议"
+  },
+  "可量化的指标<SEP>输出格式": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970391,
+    "update_time": 1767970391,
+    "_id": "可量化的指标<SEP>输出格式"
+  },
+  "API URL<SEP>API key": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970395,
+    "update_time": 1767970395,
+    "_id": "API URL<SEP>API key"
+  },
+  "API Base URL<SEP>阿里云百炼": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970395,
+    "update_time": 1767970395,
+    "_id": "API Base URL<SEP>阿里云百炼"
+  },
+  "Dify CPU服务器(移动云，旧版)<SEP>移动云": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970395,
+    "update_time": 1767970395,
+    "_id": "Dify CPU服务器(移动云，旧版)<SEP>移动云"
+  },
+  "示例<SEP>饮食计划": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970400,
+    "update_time": 1767970400,
+    "_id": "示例<SEP>饮食计划"
+  },
+  "JSON对象<SEP>输出格式": {
+    "chunk_ids": [
+      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+    ],
+    "count": 1,
+    "create_time": 1767970400,
+    "update_time": 1767970400,
+    "_id": "JSON对象<SEP>输出格式"
+  },
+  "Dify Web网址(旧版)<SEP>aic.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970400,
+    "update_time": 1767970400,
+    "_id": "Dify Web网址(旧版)<SEP>aic.baixunsz.com"
+  },
+  "API Key<SEP>阿里云百炼": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970405,
+    "update_time": 1767970405,
+    "_id": "API Key<SEP>阿里云百炼"
+  },
+  "RAGFlow GPU服务器(腾讯云)<SEP>rag.gdzky.cn": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970405,
+    "update_time": 1767970405,
+    "_id": "RAGFlow GPU服务器(腾讯云)<SEP>rag.gdzky.cn"
+  },
+  "Dify CPU服务器(移动云，旧版)<SEP>aic.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970409,
+    "update_time": 1767970409,
+    "_id": "Dify CPU服务器(移动云，旧版)<SEP>aic.baixunsz.com"
+  },
+  "Dify CPU服务器(移动云，新版)<SEP>移动云": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970409,
+    "update_time": 1767970409,
+    "_id": "Dify CPU服务器(移动云，新版)<SEP>移动云"
+  },
+  "RAGFlow Web网址<SEP>rag.gdzky.cn": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970413,
+    "update_time": 1767970413,
+    "_id": "RAGFlow Web网址<SEP>rag.gdzky.cn"
+  },
+  "RAGFlow GPU服务器(腾讯云)<SEP>启动命令(RAGFlow)": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970413,
+    "update_time": 1767970413,
+    "_id": "RAGFlow GPU服务器(腾讯云)<SEP>启动命令(RAGFlow)"
+  },
+  "Dify Web网址(新版)<SEP>aid.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970413,
+    "update_time": 1767970413,
+    "_id": "Dify Web网址(新版)<SEP>aid.baixunsz.com"
+  },
+  "Dify CPU服务器(移动云，旧版)<SEP>启动脚本(旧版Dify)": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970419,
+    "update_time": 1767970419,
+    "_id": "Dify CPU服务器(移动云，旧版)<SEP>启动脚本(旧版Dify)"
+  },
+  "移动云<SEP>端口(80, 8080, 443, 8443)": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970419,
+    "update_time": 1767970419,
+    "_id": "移动云<SEP>端口(80, 8080, 443, 8443)"
+  },
+  "Dify CPU服务器(移动云，新版)<SEP>aid.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970422,
+    "update_time": 1767970422,
+    "_id": "Dify CPU服务器(移动云，新版)<SEP>aid.baixunsz.com"
+  },
+  "RAGFlow GPU服务器(腾讯云)<SEP>腾讯云": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970422,
+    "update_time": 1767970422,
+    "_id": "RAGFlow GPU服务器(腾讯云)<SEP>腾讯云"
+  },
+  "SSL证书<SEP>aic.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970424,
+    "update_time": 1767970424,
+    "_id": "SSL证书<SEP>aic.baixunsz.com"
+  },
+  "ICP备案<SEP>端口(80, 8080, 443, 8443)": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970426,
+    "update_time": 1767970426,
+    "_id": "ICP备案<SEP>端口(80, 8080, 443, 8443)"
+  },
+  "Docker Compose<SEP>启动脚本(旧版Dify)": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970426,
+    "update_time": 1767970426,
+    "_id": "Docker Compose<SEP>启动脚本(旧版Dify)"
+  },
+  "Dify CPU服务器(移动云，新版)<SEP>启动脚本(新版Dify)": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970428,
+    "update_time": 1767970428,
+    "_id": "Dify CPU服务器(移动云，新版)<SEP>启动脚本(新版Dify)"
+  },
+  "SSL证书<SEP>aid.baixunsz.com": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970428,
+    "update_time": 1767970428,
+    "_id": "SSL证书<SEP>aid.baixunsz.com"
+  },
+  "Dify版本更新<SEP>Git": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970428,
+    "update_time": 1767970428,
+    "_id": "Dify版本更新<SEP>Git"
+  },
+  "力量训练<SEP>有氧运动": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970428,
+    "update_time": 1767970428,
+    "_id": "力量训练<SEP>有氧运动"
+  },
+  "一周运动计划<SEP>星期一": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970428,
+    "update_time": 1767970428,
+    "_id": "一周运动计划<SEP>星期一"
+  },
+  "一周运动计划<SEP>星期二": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970437,
+    "update_time": 1767970437,
+    "_id": "一周运动计划<SEP>星期二"
+  },
+  "Dify CPU服务器(移动云，新版)<SEP>Dify版本更新": {
+    "chunk_ids": [
+      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+    ],
+    "count": 1,
+    "create_time": 1767970438,
+    "update_time": 1767970438,
+    "_id": "Dify CPU服务器(移动云，新版)<SEP>Dify版本更新"
+  },
+  "可量化指标<SEP>饮食建议": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970440,
+    "update_time": 1767970440,
+    "_id": "可量化指标<SEP>饮食建议"
+  },
+  "一周运动计划<SEP>星期三": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970441,
+    "update_time": 1767970441,
+    "_id": "一周运动计划<SEP>星期三"
+  },
+  "力量训练<SEP>深蹲": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970441,
+    "update_time": 1767970441,
+    "_id": "力量训练<SEP>深蹲"
+  },
+  "一周运动计划<SEP>星期四": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970446,
+    "update_time": 1767970446,
+    "_id": "一周运动计划<SEP>星期四"
+  },
+  "俯卧撑<SEP>力量训练": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970447,
+    "update_time": 1767970447,
+    "_id": "俯卧撑<SEP>力量训练"
+  },
+  "一周运动计划<SEP>星期五": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970449,
+    "update_time": 1767970449,
+    "_id": "一周运动计划<SEP>星期五"
+  },
+  "动态拉伸<SEP>热身": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970449,
+    "update_time": 1767970449,
+    "_id": "动态拉伸<SEP>热身"
+  },
+  "仰卧起坐<SEP>力量训练": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970454,
+    "update_time": 1767970454,
+    "_id": "仰卧起坐<SEP>力量训练"
+  },
+  "运动后拉伸<SEP>静态拉伸": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970454,
+    "update_time": 1767970454,
+    "_id": "运动后拉伸<SEP>静态拉伸"
+  },
+  "一周运动计划<SEP>星期六": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970458,
+    "update_time": 1767970458,
+    "_id": "一周运动计划<SEP>星期六"
+  },
+  "低冲击活动<SEP>游泳": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970458,
+    "update_time": 1767970458,
+    "_id": "低冲击活动<SEP>游泳"
+  },
+  "力量训练<SEP>平板支撑": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970462,
+    "update_time": 1767970462,
+    "_id": "力量训练<SEP>平板支撑"
+  },
+  "可量化指标<SEP>每日应摄入卡路里": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970462,
+    "update_time": 1767970462,
+    "_id": "可量化指标<SEP>每日应摄入卡路里"
+  },
+  "低冲击活动<SEP>骑行": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970467,
+    "update_time": 1767970467,
+    "_id": "低冲击活动<SEP>骑行"
+  },
+  "一周运动计划<SEP>星期日": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970467,
+    "update_time": 1767970467,
+    "_id": "一周运动计划<SEP>星期日"
+  },
+  "力量训练<SEP>哑铃推举": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970470,
+    "update_time": 1767970470,
+    "_id": "力量训练<SEP>哑铃推举"
+  },
+  "可量化指标<SEP>早上应摄入卡路里": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970470,
+    "update_time": 1767970470,
+    "_id": "可量化指标<SEP>早上应摄入卡路里"
+  },
+  "中午应摄入卡路里<SEP>可量化指标": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970475,
+    "update_time": 1767970475,
+    "_id": "中午应摄入卡路里<SEP>可量化指标"
+  },
+  "可量化指标<SEP>晚上应摄入卡路里": {
+    "chunk_ids": [
+      "chunk-00f75f56709838e6d3ee19b75315c102"
+    ],
+    "count": 1,
+    "create_time": 1767970479,
+    "update_time": 1767970479,
+    "_id": "可量化指标<SEP>晚上应摄入卡路里"
   }
 }

@@ -260,12 +260,31 @@ const visible = computed({
   set: (val) => emit('update:modelValue', val)
 })
 
+// 验证 projectId（对于需求分析和缺陷分析是必需的）
+const requiresProjectId = computed(() => {
+  return props.assistantId.includes('requirement') || props.assistantId.includes('defect')
+})
+
+const validProjectId = computed(() => {
+  return props.projectId && props.projectId !== 0 && props.projectId !== '0' && props.projectId !== null && props.projectId !== undefined
+})
+
 // 使用 LangGraph SDK Composable（直接连接 LangGraph API）
 const chat = useLangGraphSDK({
   assistantId: props.assistantId,
-  projectId: props.projectId,
+  projectId: validProjectId.value ? props.projectId : null,
   folderId: props.folderId,
-  templateType: 'test_case',
+  templateType: computed(() => {
+    // 根据 assistantId 确定模板类型
+    if (props.assistantId.includes('testcase')) {
+      return 'test_case'
+    } else if (props.assistantId.includes('requirement')) {
+      return 'requirement_analysis'
+    } else if (props.assistantId.includes('defect')) {
+      return 'defect_analysis'
+    }
+    return null
+  }),
   onTestCaseCreated: () => emit('message-sent', { created: true }),
   onHistoryRevalidate: () => fetchThreadList()
 })
@@ -321,9 +340,21 @@ const handleSend = async () => {
   const message = inputMessage.value.trim()
   if (!message) return
   
+  // 验证 projectId（对于需求分析和缺陷分析是必需的）
+  if (requiresProjectId.value && !validProjectId.value) {
+    ElMessage.warning('请先选择项目！需求分析和缺陷分析功能需要指定项目ID。')
+    return
+  }
+  
   inputMessage.value = ''
-  await chat.sendMessage(message)
-  scrollToBottom()
+  
+  try {
+    await chat.sendMessage(message)
+    scrollToBottom()
+  } catch (err) {
+    console.error('发送消息失败:', err)
+    ElMessage.error(err.message || '发送消息失败，请检查项目ID是否正确')
+  }
 }
 
 // 发送快捷提示
@@ -466,6 +497,16 @@ const formatTime = (timestamp) => {
 // 监听打开
 watch(visible, async (val) => {
   if (val) {
+    // 验证 projectId（对于需求分析和缺陷分析是必需的）
+    if (requiresProjectId.value && !validProjectId.value) {
+      ElMessage.warning('请先选择项目！需求分析和缺陷分析功能需要指定项目ID。')
+      // 延迟关闭抽屉，让用户看到提示
+      setTimeout(() => {
+        visible.value = false
+      }, 2000)
+      return
+    }
+    
     // 如果有新的初始提示词，强制创建新线程
     if (props.initialPrompt && props.initialPrompt.trim()) {
       // 创建新线程，确保每次从文档生成都是新对话
@@ -497,6 +538,12 @@ watch(visible, async (val) => {
 watch(() => props.initialPrompt, async (newVal, oldVal) => {
   // 如果抽屉已打开，且有新的提示词（且与旧的不同），创建新线程并发送
   if (visible.value && newVal && newVal.trim() && newVal !== oldVal) {
+    // 验证 projectId（对于需求分析和缺陷分析是必需的）
+    if (requiresProjectId.value && !validProjectId.value) {
+      ElMessage.warning('请先选择项目！需求分析和缺陷分析功能需要指定项目ID。')
+      return
+    }
+    
     await chat.createThread()
     initialPromptSent.value = false
     nextTick(() => {
@@ -712,14 +759,93 @@ watch(() => chat.messages.value.length, scrollToBottom)
         }
 
         .message-text {
-          padding: 12px 16px;
+          padding: 10px 14px;
           line-height: 1.6;
           word-break: break-word;
+          font-size: 14px;
 
-          :deep(p) { margin: 0 0 8px; &:last-child { margin-bottom: 0; } }
-          :deep(pre) { background: #f5f7fa; padding: 12px; border-radius: 4px; overflow-x: auto; margin: 8px 0; }
-          :deep(code) { background: rgba(0, 0, 0, 0.06); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-          :deep(ul), :deep(ol) { padding-left: 20px; margin: 8px 0; }
+          :deep(p) { 
+            margin: 0 0 6px; 
+            font-size: 14px;
+            &:last-child { margin-bottom: 0; } 
+          }
+          :deep(h1) { font-size: 20px; margin: 12px 0 8px; font-weight: 600; }
+          :deep(h2) { font-size: 18px; margin: 10px 0 6px; font-weight: 600; }
+          :deep(h3) { font-size: 16px; margin: 8px 0 4px; font-weight: 600; }
+          :deep(h4) { font-size: 15px; margin: 6px 0 4px; font-weight: 500; }
+          :deep(pre) { 
+            background: #f5f7fa; 
+            padding: 10px; 
+            border-radius: 4px; 
+            overflow-x: auto; 
+            margin: 6px 0; 
+            font-size: 13px;
+          }
+          :deep(code) { 
+            background: rgba(0, 0, 0, 0.06); 
+            padding: 2px 6px; 
+            border-radius: 3px; 
+            font-size: 13px; 
+            font-family: 'Courier New', monospace;
+          }
+          :deep(ul), :deep(ol) { 
+            padding-left: 20px; 
+            margin: 6px 0; 
+            font-size: 14px;
+          }
+          :deep(li) {
+            margin: 4px 0;
+            font-size: 14px;
+          }
+          :deep(blockquote) {
+            border-left: 3px solid #409eff;
+            padding-left: 12px;
+            margin: 8px 0;
+            color: #606266;
+            font-style: italic;
+          }
+          :deep(strong) {
+            font-weight: 600;
+            color: #303133;
+          }
+          :deep(em) {
+            font-style: italic;
+            color: #606266;
+          }
+          :deep(a) {
+            color: #409eff;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          :deep(table) {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 13px;
+            th, td {
+              border: 1px solid #ebeef5;
+              padding: 6px 10px;
+              text-align: left;
+            }
+            th {
+              background: #f5f7fa;
+              font-weight: 600;
+            }
+          }
+          :deep(img) {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 8px 0;
+          }
+          // 支持emoji和特殊字符
+          :deep(.emoji) {
+            font-size: 18px;
+            vertical-align: middle;
+            margin: 0 2px;
+          }
         }
 
         .tool-calls {

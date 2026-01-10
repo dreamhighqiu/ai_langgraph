@@ -236,17 +236,28 @@ export function useLangGraphSDK(options = {}) {
         }]
       }
       
+      // 验证 projectId 是否有效（对于需求分析和缺陷分析，projectId 是必需的）
+      const requiresProjectId = assistantId.includes('requirement') || assistantId.includes('defect')
+      const validProjectId = projectId && projectId !== 0 && projectId !== '0' && projectId !== ''
+      
+      if (requiresProjectId && !validProjectId) {
+        throw new Error('请先选择项目！需求分析和缺陷分析功能需要指定项目ID。')
+      }
+      
       // 构建配置，包含上下文 - 参照 ai-test-management 实现
       // 注意：project_id 和 folder_id 都必须传递给 LangGraph Agent
       const runConfig = {
         configurable: {
           // 项目和文件夹 ID（用于测试用例创建）
-          project_id: projectId || 0,
-          folder_id: folderId || null,
+          // 如果 projectId 无效，对于需要项目ID的助手，抛出错误；对于不需要的，使用 null
+          project_id: validProjectId ? Number(projectId) : (requiresProjectId ? null : 0),
+          folder_id: folderId ? Number(folderId) : null,
           // 模板类型
           template_type: templateType,
           // 兼容字符串标识符格式
-          project_identifier: String(projectId || ''),
+          project_identifier: validProjectId ? String(projectId) : '',
+          // 模块名称（用于需求分析和缺陷分析）
+          module: null
         },
         recursion_limit: 100,
         ...(currentAssistant.value?.config || {})
@@ -277,8 +288,19 @@ export function useLangGraphSDK(options = {}) {
       )
       
       // 处理流式响应
+      try {
       for await (const chunk of streamResponse) {
-        if (abortController?.signal.aborted) break
+          // 检查是否已取消
+          if (abortController?.signal.aborted) {
+            console.log('[LangGraph] 流式响应已取消')
+            break
+          }
+          
+          // 如果isLoading已经被设置为false（通过stopStream），也停止处理
+          if (!isLoading.value) {
+            console.log('[LangGraph] 流式响应已停止')
+            break
+          }
         
         console.log('[LangGraph] 收到 chunk:', JSON.stringify(chunk).substring(0, 500))
         
@@ -306,13 +328,25 @@ export function useLangGraphSDK(options = {}) {
           }
         }
       }
+      } catch (streamError) {
+        // 如果是取消操作，不报错
+        if (streamError.name === 'AbortError' || abortController?.signal.aborted) {
+          console.log('[LangGraph] 流式响应被用户取消')
+          aiMessage.content += '\n\n[已停止]'
+        } else {
+          throw streamError
+        }
+      }
       
+      // 只有在未取消的情况下才触发回调
+      if (!abortController?.signal.aborted && isLoading.value) {
       // 完成后触发回调
       onTestCaseCreated?.()
       onHistoryRevalidate?.()
+      }
       
     } catch (e) {
-      if (e.name !== 'AbortError') {
+      if (e.name !== 'AbortError' && !abortController?.signal.aborted) {
         console.error('发送消息失败:', e)
         error.value = e.message
         
@@ -519,11 +553,19 @@ export function useLangGraphSDK(options = {}) {
    * 停止流式响应
    */
   function stopStream() {
+    console.log('[LangGraph] 用户请求停止流式响应')
     if (abortController) {
       abortController.abort()
       abortController = null
     }
     isLoading.value = false
+    // 更新最后一条AI消息，添加停止标记
+    if (messages.value.length > 0) {
+      const lastMessage = messages.value[messages.value.length - 1]
+      if (lastMessage.type === 'ai' && lastMessage.content && !lastMessage.content.includes('[已停止]')) {
+        lastMessage.content += '\n\n[已停止]'
+      }
+    }
   }
   
   /**

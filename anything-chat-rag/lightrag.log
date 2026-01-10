@@ -6443,3 +6443,215 @@ Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpe
 2026-01-09 21:39:14,539 - lightrag - INFO - Final context: 28 entities, 113 relations, 5 chunks
 2026-01-09 21:39:14,541 - lightrag - INFO - Final chunks S+F/O: E5/1 C1/2 E1/2 C1/3 E1/3
 2026-01-09 21:39:14,613 - uvicorn.access - INFO - 127.0.0.1:53840 - "POST /query/data HTTP/1.1" 200
+2026-01-09 21:46:18,989 - lightrag - INFO -  == LLM cache == saving: mix:keywords:561c1d8be58df7d057766e3224a38266
+2026-01-09 21:46:24,967 - lightrag - INFO - Query nodes: 订单, 状态, 导出, 通知 (top_k:8, cosine:0.2)
+2026-01-09 21:46:29,367 - lightrag - INFO - Local query: 8 entites, 14 relations
+2026-01-09 21:46:29,370 - lightrag - INFO - Query edges: 订单管理系统, 订单状态管理, 订单导出功能, 订单通知系统 (top_k:8, cosine:0.2)
+2026-01-09 21:46:34,025 - lightrag - INFO - Global query: 15 entites, 8 relations
+2026-01-09 21:46:34,184 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 21:46:34,186 - lightrag - INFO - Raw search results: 20 entities, 19 relations, 5 vector chunks
+2026-01-09 21:46:34,194 - lightrag - INFO - After truncation: 20 entities, 19 relations
+2026-01-09 21:46:34,361 - lightrag - INFO - Selecting 14 from 14 entity-related chunks by vector similarity
+2026-01-09 21:46:34,366 - lightrag - INFO - Find no additional relations-related chunks from 19 relations
+2026-01-09 21:46:34,367 - lightrag - INFO - Round-robin merged chunks: 19 -> 16 (deduplicated 3)
+2026-01-09 21:46:34,375 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 21:46:34,397 - lightrag - INFO - Final context: 20 entities, 19 relations, 5 chunks
+2026-01-09 21:46:34,400 - lightrag - INFO - Final chunks S+F/O: E2/1 C1/2 E4/2 E2/3 C1/4
+2026-01-09 21:46:34,471 - uvicorn.access - INFO - 127.0.0.1:54660 - "POST /query/data HTTP/1.1" 200
+2026-01-09 21:46:55,141 - lightrag - INFO -  == LLM cache == saving: mix:keywords:65a912be9891b875dd1e3a55b276ae7d
+2026-01-09 21:46:59,559 - lightrag - INFO - Query nodes: 订单, 取消, 退款, 申请, Excel, 导出 (top_k:6, cosine:0.2)
+2026-01-09 21:47:04,636 - lightrag - INFO - Local query: 6 entites, 6 relations
+2026-01-09 21:47:04,639 - lightrag - INFO - Query edges: 订单状态流转, 订单取消流程, 退款申请流程, Excel导出功能 (top_k:6, cosine:0.2)
+2026-01-09 21:47:09,186 - lightrag - INFO - Global query: 12 entites, 6 relations
+2026-01-09 21:47:09,345 - lightrag - INFO - Naive query: 4 chunks (chunk_top_k:4 cosine:0.2)
+2026-01-09 21:47:09,346 - lightrag - INFO - Raw search results: 17 entities, 11 relations, 4 vector chunks
+2026-01-09 21:47:09,363 - lightrag - INFO - After truncation: 17 entities, 11 relations
+2026-01-09 21:47:09,532 - lightrag - INFO - Selecting 10 from 10 entity-related chunks by vector similarity
+2026-01-09 21:47:09,540 - lightrag - INFO - Find no additional relations-related chunks from 11 relations
+2026-01-09 21:47:09,541 - lightrag - INFO - Round-robin merged chunks: 14 -> 12 (deduplicated 2)
+2026-01-09 21:47:09,556 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 21:47:09,580 - lightrag - INFO - Final context: 17 entities, 11 relations, 4 chunks
+2026-01-09 21:47:09,582 - lightrag - INFO - Final chunks S+F/O: E1/1 E2/2 C1/3 E2/3
+2026-01-09 21:47:09,675 - uvicorn.access - INFO - 127.0.0.1:51159 - "POST /query/data HTTP/1.1" 200
+2026-01-09 22:34:48,931 - uvicorn.access - INFO - 127.0.0.1:57966 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 22:39:20,264 - uvicorn.access - INFO - 127.0.0.1:60506 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 22:39:23,466 - uvicorn.access - INFO - 127.0.0.1:62932 - "POST /documents/upload HTTP/1.1" 200
+2026-01-09 22:39:23,498 - lightrag - INFO - Successfully extracted and enqueued file: 文档.txt
+2026-01-09 22:39:23,504 - lightrag - INFO - Processing 1 document(s)
+2026-01-09 22:39:23,505 - lightrag - INFO - Extracting stage 1/1: 文档.txt
+2026-01-09 22:39:23,507 - lightrag - INFO - Processing d-id: doc-d88fa0ead2a1278c43aaa1eefc2e62b3
+2026-01-09 22:42:15,131 - lightrag - INFO -  == LLM cache == saving: default:extract:555fc285fb7e34e0d91cfb88ee67cd81
+2026-01-09 22:42:26,079 - lightrag - INFO -  == LLM cache == saving: default:extract:d9f8b61ad076ce683acde9e46ec4a7d1
+2026-01-09 22:42:27,392 - lightrag - INFO -  == LLM cache == saving: default:extract:cba70cc0f7aa8ab7d0ab394bf5b825fa
+2026-01-09 22:42:27,394 - lightrag - INFO -  == LLM cache == saving: default:extract:c845838216c051ea0bf056dd2d87223a
+2026-01-09 22:42:33,848 - lightrag - INFO -  == LLM cache == saving: default:extract:417cfcf6db686b1a346be0d1921719e9
+2026-01-09 22:42:33,850 - lightrag - INFO - Chunk 1 of 7 extracted 14 Ent + 11 Rel chunk-bf198db84b05ba7e966f6a3a02b2f9f3
+2026-01-09 22:42:56,661 - lightrag - INFO -  == LLM cache == saving: default:extract:3d98a453dbe618ff754a8d8607fdd803
+2026-01-09 22:42:56,663 - lightrag - INFO - Chunk 2 of 7 extracted 26 Ent + 14 Rel chunk-6f413192b6712442310ab83e47795227
+2026-01-09 22:42:57,767 - lightrag - INFO -  == LLM cache == saving: default:extract:be2ee363f176a38d9b905c49b54e3040
+2026-01-09 22:42:57,775 - lightrag - INFO - Chunk 3 of 7 extracted 20 Ent + 16 Rel chunk-4e84c2a87f980319bb386cc588050a5f
+2026-01-09 22:43:02,512 - lightrag - INFO -  == LLM cache == saving: default:extract:402d0f5dddc43d0e99792a7ab87aa270
+2026-01-09 22:43:02,516 - lightrag - INFO - Chunk 4 of 7 extracted 31 Ent + 22 Rel chunk-00f75f56709838e6d3ee19b75315c102
+2026-01-09 22:43:10,487 - lightrag - INFO -  == LLM cache == saving: default:extract:0e0fe93760e62266555c419333293e37
+2026-01-09 22:43:39,530 - lightrag - INFO -  == LLM cache == saving: default:extract:7768353a1e47ba9343be285b1a7f4741
+2026-01-09 22:43:39,536 - lightrag - INFO - Chunk 5 of 7 extracted 28 Ent + 18 Rel chunk-2309688baefacf34329b80e3d86a7260
+2026-01-09 22:43:51,591 - lightrag - INFO -  == LLM cache == saving: default:extract:aaf885263098b1bea68fba8c2eba879d
+2026-01-09 22:44:03,431 - lightrag - INFO -  == LLM cache == saving: default:extract:49c628dcfd81b851bdbbc68992fe3b52
+2026-01-09 22:44:16,254 - lightrag - INFO -  == LLM cache == saving: default:extract:acb6809def325fe94ad3a381987eeea2
+2026-01-09 22:44:16,256 - lightrag - INFO - Chunk 6 of 7 extracted 24 Ent + 21 Rel chunk-70b0b9f3442a156cf0ec2283cb079a6c
+2026-01-09 22:44:40,876 - lightrag - INFO -  == LLM cache == saving: default:extract:d86e1ca20c78b4cbcc6dc839c368f6b1
+2026-01-09 22:44:40,879 - lightrag - INFO - Chunk 7 of 7 extracted 42 Ent + 20 Rel chunk-f730138d1d5be6aebb11d5b5f886f0e9
+2026-01-09 22:44:40,880 - lightrag - INFO - Merging stage 1/1: 文档.txt
+2026-01-09 22:44:40,881 - lightrag - INFO - Phase 1: Processing 171 entities from doc-d88fa0ead2a1278c43aaa1eefc2e62b3 (async: 8)
+2026-01-09 22:44:48,202 - lightrag - INFO - Merged: `血压` | 1+1
+2026-01-09 22:45:06,394 - lightrag - WARNING - VDB entity_upsert attempt 1 failed for 健康计划: <MilvusException: (code=65535, message=stack trace: /workspace/source/pkg/tracer/stack_trace.go:51 github.com/milvus-io/milvus/pkg/tracer.StackTrace
+/workspace/source/internal/util/grpcclient/client.go:555 github.com/milvus-io/milvus/internal/util/grpcclient.(*ClientBase[...]).Call
+/workspace/source/internal/util/grpcclient/client.go:569 github.com/milvus-io/milvus/internal/util/grpcclient.(*ClientBase[...]).ReCall
+/workspace/source/internal/distributed/rootcoord/client/client.go:107 github.com/milvus-io/milvus/internal/distributed/rootcoord/client.wrapGrpcCall[...]
+/workspace/source/internal/distributed/rootcoord/client/client.go:308 github.com/milvus-io/milvus/internal/distributed/rootcoord/client.(*Client).AllocTimestamp
+/workspace/source/internal/proxy/timestamp.go:60 github.com/milvus-io/milvus/internal/proxy.(*timestampAllocator).alloc
+/workspace/source/internal/proxy/timestamp.go:85 github.com/milvus-io/milvus/internal/proxy.(*timestampAllocator).AllocOne
+/workspace/source/internal/proxy/task_scheduler.go:185 github.com/milvus-io/milvus/internal/proxy.(*baseTaskQueue).Enqueue
+/workspace/source/internal/proxy/task_scheduler.go:258 github.com/milvus-io/milvus/internal/proxy.(*dmTaskQueue).Enqueue
+/workspace/source/internal/proxy/impl.go:2780 github.com/milvus-io/milvus/internal/proxy.(*Proxy).Upsert: rpc error: code = DeadlineExceeded desc = context deadline exceeded)>, retrying...
+2026-01-09 22:45:21,888 - lightrag - WARNING - VDB entity_upsert attempt 1 failed for 详细健康指标: <MilvusException: (code=65535, message=stack trace: /workspace/source/pkg/tracer/stack_trace.go:51 github.com/milvus-io/milvus/pkg/tracer.StackTrace
+/workspace/source/internal/util/grpcclient/client.go:555 github.com/milvus-io/milvus/internal/util/grpcclient.(*ClientBase[...]).Call
+/workspace/source/internal/util/grpcclient/client.go:569 github.com/milvus-io/milvus/internal/util/grpcclient.(*ClientBase[...]).ReCall
+/workspace/source/internal/distributed/rootcoord/client/client.go:107 github.com/milvus-io/milvus/internal/distributed/rootcoord/client.wrapGrpcCall[...]
+/workspace/source/internal/distributed/rootcoord/client/client.go:308 github.com/milvus-io/milvus/internal/distributed/rootcoord/client.(*Client).AllocTimestamp
+/workspace/source/internal/proxy/timestamp.go:60 github.com/milvus-io/milvus/internal/proxy.(*timestampAllocator).alloc
+/workspace/source/internal/proxy/timestamp.go:85 github.com/milvus-io/milvus/internal/proxy.(*timestampAllocator).AllocOne
+/workspace/source/internal/proxy/task_scheduler.go:185 github.com/milvus-io/milvus/internal/proxy.(*baseTaskQueue).Enqueue
+/workspace/source/internal/proxy/task_scheduler.go:258 github.com/milvus-io/milvus/internal/proxy.(*dmTaskQueue).Enqueue
+/workspace/source/internal/proxy/impl.go:2780 github.com/milvus-io/milvus/internal/proxy.(*Proxy).Upsert: rpc error: code = DeadlineExceeded desc = context deadline exceeded)>, retrying...
+2026-01-09 22:46:32,782 - lightrag - INFO - Merged: `Git` | 1+2
+2026-01-09 22:47:06,888 - lightrag - INFO - Merged: `rag.gdzky.cn` | 1+2
+2026-01-09 22:47:36,394 - lightrag - INFO - Merged: `Dify` | 3+1
+2026-01-09 22:47:39,550 - lightrag - INFO - Merged: `RAGFlow` | 1+1
+2026-01-09 22:47:53,948 - lightrag - INFO - Merged: `正则表达式` | 3+1
+2026-01-09 22:47:57,803 - lightrag - INFO - Merged: `智能体` | 2+1
+2026-01-09 22:48:23,837 - lightrag - INFO - Merged: `用户` | 3+1
+2026-01-09 22:49:54,538 - lightrag - WARNING - VDB entity_upsert attempt 1 failed for 用户: <MilvusException: (code=65535, message=stack trace: /workspace/source/pkg/tracer/stack_trace.go:51 github.com/milvus-io/milvus/pkg/tracer.StackTrace
+/workspace/source/internal/util/grpcclient/client.go:555 github.com/milvus-io/milvus/internal/util/grpcclient.(*ClientBase[...]).Call
+/workspace/source/internal/util/grpcclient/client.go:569 github.com/milvus-io/milvus/internal/util/grpcclient.(*ClientBase[...]).ReCall
+/workspace/source/internal/distributed/rootcoord/client/client.go:107 github.com/milvus-io/milvus/internal/distributed/rootcoord/client.wrapGrpcCall[...]
+/workspace/source/internal/distributed/rootcoord/client/client.go:308 github.com/milvus-io/milvus/internal/distributed/rootcoord/client.(*Client).AllocTimestamp
+/workspace/source/internal/proxy/timestamp.go:60 github.com/milvus-io/milvus/internal/proxy.(*timestampAllocator).alloc
+/workspace/source/internal/proxy/timestamp.go:85 github.com/milvus-io/milvus/internal/proxy.(*timestampAllocator).AllocOne
+/workspace/source/internal/proxy/task_scheduler.go:185 github.com/milvus-io/milvus/internal/proxy.(*baseTaskQueue).Enqueue
+/workspace/source/internal/proxy/task_scheduler.go:258 github.com/milvus-io/milvus/internal/proxy.(*dmTaskQueue).Enqueue
+/workspace/source/internal/proxy/impl.go:2780 github.com/milvus-io/milvus/internal/proxy.(*Proxy).Upsert: rpc error: code = DeadlineExceeded desc = context deadline exceeded)>, retrying...
+2026-01-09 22:50:00,579 - lightrag - INFO - Merged: `移动云` | 1+1
+2026-01-09 22:50:34,545 - lightrag - INFO - Merged: `aic.baixunsz.com` | 1+1
+2026-01-09 22:50:45,903 - lightrag - INFO - Merged: `腾讯云` | 1+1
+2026-01-09 22:51:27,730 - lightrag - INFO - Phase 2: Processing 120 relations from doc-d88fa0ead2a1278c43aaa1eefc2e62b3 (async: 8)
+2026-01-09 22:54:42,983 - lightrag - INFO - Phase 3: Updating final 171(171+0) entities and  120 relations from doc-d88fa0ead2a1278c43aaa1eefc2e62b3
+2026-01-09 22:54:42,984 - lightrag - INFO - Completed merging: 171 entities, 0 extra entities, 120 relations
+2026-01-09 22:54:43,222 - lightrag - INFO - [] Writing graph with 1605 nodes, 1573 edges
+2026-01-09 22:54:43,395 - lightrag - INFO - In memory DB persist to disk
+2026-01-09 22:54:43,396 - lightrag - INFO - Completed processing file 1/1: 文档.txt
+2026-01-09 22:54:43,397 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-09 23:20:39,833 - uvicorn.access - INFO - 127.0.0.1:50886 - "GET /docs HTTP/1.1" 200
+2026-01-09 23:20:39,848 - lightrag - INFO - [] Graph truncated: 1605 nodes found, limited to 1000
+2026-01-09 23:20:39,867 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1198
+2026-01-09 23:20:39,952 - uvicorn.access - INFO - 127.0.0.1:64171 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-09 23:20:39,984 - uvicorn.access - INFO - 127.0.0.1:64171 - "GET /openapi.json HTTP/1.1" 200
+2026-01-09 23:26:41,470 - lightrag - INFO -  == LLM cache == saving: mix:keywords:cc7ce7716c3e1e240d26f45cce0d9b02
+2026-01-09 23:26:49,749 - lightrag - INFO - Query nodes: 用户名登录, 邮箱登录, 手机号登录, 密码可见隐藏切换, 记住我功能, 登录失败错误提示, 连续登录失败锁定, 第三方登录, 微信登录, QQ登录, 钉钉登录, 登录后跳转, 忘记密码功能 (top_k:10, cosine:0.2)
+2026-01-09 23:26:53,314 - lightrag - INFO - Local query: 10 entites, 8 relations
+2026-01-09 23:26:53,314 - lightrag - INFO - Query edges: 用户登录功能需求, 身份验证, 系统登录, 用户认证流程 (top_k:10, cosine:0.2)
+2026-01-09 23:26:55,401 - lightrag - INFO - Global query: 18 entites, 10 relations
+2026-01-09 23:26:55,704 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-09 23:26:55,706 - lightrag - INFO - Raw search results: 26 entities, 15 relations, 5 vector chunks
+2026-01-09 23:26:55,716 - lightrag - INFO - After truncation: 26 entities, 15 relations
+2026-01-09 23:26:56,127 - lightrag - INFO - Selecting 15 from 15 entity-related chunks by vector similarity
+2026-01-09 23:26:56,128 - lightrag - INFO - Find no additional relations-related chunks from 15 relations
+2026-01-09 23:26:56,129 - lightrag - INFO - Round-robin merged chunks: 20 -> 18 (deduplicated 2)
+2026-01-09 23:26:56,133 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-09 23:26:56,145 - lightrag - INFO - Final context: 26 entities, 15 relations, 5 chunks
+2026-01-09 23:26:56,146 - lightrag - INFO - Final chunks S+F/O: C1/1 E2/1 E2/2 E2/3 C1/4
+2026-01-09 23:26:56,179 - uvicorn.access - INFO - 127.0.0.1:62916 - "POST /query/data HTTP/1.1" 200
+2026-01-09 23:35:51,604 - uvicorn.access - INFO - 127.0.0.1:53493 - "GET /docs HTTP/1.1" 200
+2026-01-09 23:35:51,627 - lightrag - INFO - [] Graph truncated: 1605 nodes found, limited to 1000
+2026-01-09 23:35:51,649 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1198
+2026-01-09 23:35:51,732 - uvicorn.access - INFO - 127.0.0.1:54246 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-09 23:35:52,095 - uvicorn.access - INFO - 127.0.0.1:54246 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 18:47:22,860 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-10 18:47:22,861 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-10 18:47:23,693 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-10 18:47:23,693 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-10 18:47:23,693 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-10 18:47:23,693 - lightrag - INFO - Reranking is disabled
+2026-01-10 18:47:24,455 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-10 18:47:27,505 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
+2026-01-10 18:47:29,304 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-10 18:47:29,305 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-10 18:47:29,737 - uvicorn.error - INFO - Started server process [929716]
+2026-01-10 18:47:29,737 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-10 18:47:29,748 - lightrag - INFO - [] Process 929716 KV load full_docs with 20 records
+2026-01-10 18:47:29,756 - lightrag - INFO - [] Process 929716 KV load text_chunks with 83 records
+2026-01-10 18:47:29,760 - lightrag - INFO - [] Process 929716 KV load full_entities with 20 records
+2026-01-10 18:47:29,764 - lightrag - INFO - [] Process 929716 KV load full_relations with 20 records
+2026-01-10 18:47:29,772 - lightrag - INFO - [] Process 929716 KV load entity_chunks with 1587 records
+2026-01-10 18:47:29,784 - lightrag - INFO - [] Process 929716 KV load relation_chunks with 1573 records
+2026-01-10 18:47:30,004 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-10 18:47:30,075 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-10 18:47:30,184 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-10 18:47:30,219 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-10 18:47:30,290 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-10 18:47:30,397 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-10 18:47:30,434 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-10 18:47:30,502 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-10 18:47:30,606 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-10 18:47:30,666 - lightrag - INFO - [] Process 929716 KV load llm_response_cache with 177 records
+2026-01-10 18:47:30,670 - lightrag - INFO - [] Process 929716 doc status load doc_status with 20 records
+2026-01-10 18:47:30,674 - uvicorn.error - INFO - Application startup complete.
+2026-01-10 18:47:30,677 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-10 18:47:30,811 - uvicorn.access - INFO - 127.0.0.1:51547 - "GET /docs HTTP/1.1" 200
+2026-01-10 18:48:47,136 - uvicorn.access - INFO - 127.0.0.1:52175 - "GET /auth-status HTTP/1.1" 200
+2026-01-10 18:48:50,039 - uvicorn.access - INFO - 127.0.0.1:52175 - "GET /docs HTTP/1.1" 200
+2026-01-10 18:48:50,403 - lightrag - INFO - [] Graph truncated: 1605 nodes found, limited to 1000
+2026-01-10 18:48:50,437 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1198
+2026-01-10 18:48:50,549 - uvicorn.access - INFO - 127.0.0.1:52175 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-10 18:52:00,241 - uvicorn.access - INFO - 127.0.0.1:60551 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 18:52:49,765 - uvicorn.access - INFO - 127.0.0.1:60441 - "GET /docs HTTP/1.1" 200
+2026-01-10 18:55:21,960 - uvicorn.access - INFO - 127.0.0.1:58000 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 18:55:23,754 - uvicorn.access - INFO - 127.0.0.1:58000 - "GET /docs HTTP/1.1" 200
+2026-01-10 18:55:23,766 - lightrag - INFO - [] Graph truncated: 1605 nodes found, limited to 1000
+2026-01-10 18:55:23,831 - lightrag - INFO - [] Subgraph query successful | Node count: 1000 | Edge count: 1198
+2026-01-10 18:55:24,012 - uvicorn.access - INFO - 127.0.0.1:50447 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-01-10 18:55:24,029 - uvicorn.access - INFO - 127.0.0.1:57074 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 19:01:37,593 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-10 19:01:37,593 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-10 19:01:38,397 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-10 19:01:38,398 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-10 19:01:38,400 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-10 19:01:38,401 - lightrag - INFO - Reranking is disabled
+2026-01-10 19:01:40,124 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-10 19:01:43,122 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
+2026-01-10 19:01:44,712 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-10 19:01:44,713 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-10 19:01:45,119 - uvicorn.error - INFO - Started server process [844524]
+2026-01-10 19:01:45,120 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-10 19:01:45,129 - lightrag - INFO - [] Process 844524 KV load full_docs with 20 records
+2026-01-10 19:01:45,136 - lightrag - INFO - [] Process 844524 KV load text_chunks with 83 records
+2026-01-10 19:01:45,139 - lightrag - INFO - [] Process 844524 KV load full_entities with 20 records
+2026-01-10 19:01:45,144 - lightrag - INFO - [] Process 844524 KV load full_relations with 20 records
+2026-01-10 19:01:45,152 - lightrag - INFO - [] Process 844524 KV load entity_chunks with 1587 records
+2026-01-10 19:01:45,163 - lightrag - INFO - [] Process 844524 KV load relation_chunks with 1573 records
+2026-01-10 19:01:45,377 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-10 19:01:45,454 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-10 19:01:45,567 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-10 19:01:45,607 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-10 19:01:45,683 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-10 19:01:45,798 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-10 19:01:45,836 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-10 19:01:45,911 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-10 19:01:46,024 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-10 19:01:46,139 - lightrag - INFO - [] Process 844524 KV load llm_response_cache with 177 records
+2026-01-10 19:01:46,142 - lightrag - INFO - [] Process 844524 doc status load doc_status with 20 records
+2026-01-10 19:01:46,146 - uvicorn.error - INFO - Application startup complete.
+2026-01-10 19:01:46,148 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-10 19:01:46,250 - uvicorn.access - INFO - 127.0.0.1:56063 - "GET /docs HTTP/1.1" 200
+2026-01-10 19:07:12,216 - uvicorn.access - INFO - 127.0.0.1:57470 - "GET /openapi.json HTTP/1.1" 200
+2026-01-10 19:07:54,311 - uvicorn.access - INFO - 127.0.0.1:58960 - "GET /docs HTTP/1.1" 200

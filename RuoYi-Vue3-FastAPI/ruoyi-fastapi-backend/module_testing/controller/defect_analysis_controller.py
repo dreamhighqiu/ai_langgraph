@@ -2,9 +2,10 @@
 缺陷分析控制器
 """
 from typing import Optional
-from fastapi import APIRouter, Depends, Query, Path
+from fastapi import APIRouter, Depends, Query, Path, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
+import httpx
 
 from module_testing.service.defect_analysis_service import DefectAnalysisService
 from config.get_db import get_db
@@ -151,9 +152,9 @@ async def get_defect_analysis(
     try:
         result = await defect_service.get_analysis(db, analysis_id)
         if result:
-            return success(data=result)
+            return ResponseUtil.success(data=result)
         else:
-            return error(msg="缺陷分析不存在")
+            return ResponseUtil.failure(msg="缺陷分析不存在")
     except Exception as e:
         logger.error(f"获取缺陷分析详情失败: {str(e)}")
         return ResponseUtil.failure(msg=f"获取缺陷分析详情失败: {str(e)}")
@@ -195,4 +196,48 @@ async def query_defect_analysis_list(
     except Exception as e:
         logger.error(f"查询缺陷分析列表失败: {str(e)}")
         return ResponseUtil.failure(msg=f"查询缺陷分析列表失败: {str(e)}")
+
+
+@router.get("/download/{analysis_id}", summary="下载缺陷分析报告")
+async def download_defect_report(
+    analysis_id: int = Path(..., description="缺陷分析ID"),
+    db: AsyncSession = Depends(get_db),
+    current_user: dict = Depends(LoginService.get_current_user)
+):
+    """下载缺陷分析报告（代理下载，确保正确的编码）"""
+    try:
+        analysis = await defect_service.get_analysis(db, analysis_id)
+        if not analysis:
+            return ResponseUtil.failure(msg="缺陷分析不存在")
+        
+        if not analysis.report_url:
+            return ResponseUtil.failure(msg="该缺陷分析还没有生成报告")
+        
+        # 从MinIO下载文件
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.get(analysis.report_url)
+            response.raise_for_status()
+            content = response.content
+        
+        # 确保内容是UTF-8编码的字符串
+        try:
+            content_str = content.decode('utf-8')
+        except UnicodeDecodeError:
+            # 如果解码失败，尝试其他编码
+            content_str = content.decode('gbk', errors='ignore')
+        
+        # 返回文件，设置正确的Content-Type和编码
+        file_name = f"defect_analysis_{analysis_id}.md"
+        return Response(
+            content=content_str.encode('utf-8'),
+            media_type="text/markdown; charset=utf-8",
+            headers={
+                "Content-Disposition": f'attachment; filename="{file_name}"',
+                "Content-Type": "text/markdown; charset=utf-8"
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"下载缺陷分析报告失败: {str(e)}")
+        return ResponseUtil.failure(msg=f"下载缺陷分析报告失败: {str(e)}")
 

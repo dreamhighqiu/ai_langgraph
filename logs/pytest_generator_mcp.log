@@ -19,13 +19,13 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/09/26 11:20:39] INFO     Starting MCP server                 server.py:2618
+[01/10/26 19:03:47] INFO     Starting MCP server                 server.py:2618
                              'PytestGenerator' with transport                  
                              'sse' on http://0.0.0.0:8005/sse                  
-INFO:     Started server process [1415592]
+INFO:     Started server process [55728]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8005 (Press CTRL+C to quit)
-INFO:     127.0.0.1:54677 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58582 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50232 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63936 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58798 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58974 - "GET /sse HTTP/1.1" 200 OK

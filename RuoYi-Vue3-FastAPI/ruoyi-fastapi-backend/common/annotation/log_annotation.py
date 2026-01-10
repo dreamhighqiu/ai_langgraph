@@ -61,10 +61,28 @@ class Log:
             func_path = self._get_decorator_func_path(func)
             # 获取上下文信息
             request_name_list = get_function_parameters_name_by_type(func, Request)
-            request = get_function_parameters_value_by_name(func, request_name_list[0], *args, **kwargs)
+            if not request_name_list:
+                # 如果函数没有 Request 参数，尝试从 kwargs 中获取
+                request = kwargs.get('request')
+                if not request:
+                    # 如果还是无法获取 Request，记录警告并跳过日志记录，直接执行函数
+                    logger.warning(f"函数 {func.__name__} 没有 Request 参数，跳过日志记录")
+                    return await func(*args, **kwargs)
+            else:
+                request = get_function_parameters_value_by_name(func, request_name_list[0], *args, **kwargs)
+            
             DependencyUtil.check_exclude_routes(request, err_msg='当前路由不在认证规则内，不可使用Log装饰器')
+            
             session_name_list = get_function_parameters_name_by_type(func, AsyncSession)
-            query_db = get_function_parameters_value_by_name(func, session_name_list[0], *args, **kwargs)
+            if not session_name_list:
+                # 如果函数没有 AsyncSession 参数，尝试从 kwargs 中获取
+                query_db = kwargs.get('db')
+                if not query_db:
+                    # 如果还是无法获取数据库会话，记录警告并跳过日志记录，直接执行函数
+                    logger.warning(f"函数 {func.__name__} 没有 AsyncSession 参数，跳过日志记录")
+                    return await func(*args, **kwargs)
+            else:
+                query_db = get_function_parameters_value_by_name(func, session_name_list[0], *args, **kwargs)
             request_method = request.method
             user_agent = request.headers.get('User-Agent')
             # 获取操作类型

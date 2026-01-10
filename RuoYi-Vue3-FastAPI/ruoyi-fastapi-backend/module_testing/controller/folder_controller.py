@@ -2,7 +2,7 @@
 文件夹控制器
 """
 from typing import Optional
-from fastapi import APIRouter, Depends, Query, Path
+from fastapi import APIRouter, Depends, Query, Path, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from module_testing.service.folder_service import FolderService
@@ -25,6 +25,7 @@ folder_service = FolderService()
 @router.post("", summary="创建文件夹", dependencies=[UserInterfaceAuthDependency('testing:folder:add')])
 @Log(title='文件夹管理', business_type=BusinessType.INSERT)
 async def create_folder(
+    request: Request,
     folder_vo: FolderCreateVO,
     db: AsyncSession = Depends(get_db),
     current_user = Depends(LoginService.get_current_user)
@@ -51,6 +52,7 @@ async def create_folder(
 @router.put("/{folder_id}", summary="更新文件夹", dependencies=[UserInterfaceAuthDependency('testing:folder:edit')])
 @Log(title='文件夹管理', business_type=BusinessType.UPDATE)
 async def update_folder(
+    request: Request,
     folder_vo: FolderUpdateVO,
     folder_id: int = Path(..., description="文件夹ID"),
     db: AsyncSession = Depends(get_db),
@@ -76,6 +78,7 @@ async def update_folder(
 @router.delete("/{folder_id}", summary="删除文件夹", dependencies=[UserInterfaceAuthDependency('testing:folder:remove')])
 @Log(title='文件夹管理', business_type=BusinessType.DELETE)
 async def delete_folder(
+    request: Request,
     folder_id: int = Path(..., description="文件夹ID"),
     db: AsyncSession = Depends(get_db),
     current_user = Depends(LoginService.get_current_user)

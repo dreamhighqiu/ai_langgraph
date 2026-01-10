@@ -19,19 +19,17 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/10/26 20:40:06] INFO     Starting MCP server                 server.py:2618
+[01/10/26 21:58:54] INFO     Starting MCP server                 server.py:2618
                              'anything-rag-mcp' with transport                 
                              'sse' on http://0.0.0.0:8006/sse                  
-INFO:     Started server process [948992]
+INFO:     Started server process [447584]
 INFO:     Waiting for application startup.
-2026-01-10 20:40:07,051 [INFO] Starting worker 'caobinbin#948992' with the following tasks:
-2026-01-10 20:40:07,051 [INFO] * trace(message: str, ...)
-2026-01-10 20:40:07,051 [INFO] * fail(message: str, ...)
-2026-01-10 20:40:07,051 [INFO] * sleep(seconds: float, ...)
+2026-01-10 21:58:55,030 [INFO] Starting worker 'caobinbin#447584' with the following tasks:
+2026-01-10 21:58:55,031 [INFO] * trace(message: str, ...)
+2026-01-10 21:58:55,031 [INFO] * fail(message: str, ...)
+2026-01-10 21:58:55,032 [INFO] * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8006 (Press CTRL+C to quit)
-INFO:     127.0.0.1:63534 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54874 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50232 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56550 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50411 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64115 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58124 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49216 - "GET /sse HTTP/1.1" 200 OK

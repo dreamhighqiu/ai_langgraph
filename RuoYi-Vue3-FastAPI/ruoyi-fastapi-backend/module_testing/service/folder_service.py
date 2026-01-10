@@ -68,7 +68,7 @@ class FolderService:
             # 保存到数据库
             result = await self.folder_dao.insert(db, folder_do)
             
-            # 更新文件夹路径
+            # 在 commit 之前更新文件夹路径（避免延迟加载问题）
             folder_path = await self.folder_dao.get_folder_path(db, result.folder_id)
             result.folder_path = folder_path
             await self.folder_dao.update(db, result)
@@ -78,7 +78,15 @@ class FolderService:
                 child_count = await self.folder_dao.count_by_parent(db, folder_vo.parent_id, folder_vo.project_id)
                 await self.folder_dao.update_child_count(db, folder_vo.parent_id, child_count)
             
+            # 在 commit 之前刷新并提取所有需要的属性，避免延迟加载问题
+            await db.flush()
+            folder_id = result.folder_id
+            folder_name = result.folder_name
+            
             await db.commit()
+            
+            # commit 后重新查询获取完整对象（如果需要返回）
+            result = await self.folder_dao.select_by_id(db, folder_id)
             
             logger.info(f"创建文件夹成功: {folder_vo.folder_name} (项目ID: {folder_vo.project_id})")
             return result
@@ -127,11 +135,15 @@ class FolderService:
             folder.update_by = user_name
             folder.update_time = datetime.now()
             
-            # 更新路径
+            # 在 commit 之前更新路径（避免延迟加载问题）
             folder.folder_path = await self.folder_dao.get_folder_path(db, folder_id)
             
             result = await self.folder_dao.update(db, folder)
+            await db.flush()
             await db.commit()
+            
+            # commit 后重新查询获取完整对象
+            result = await self.folder_dao.select_by_id(db, folder_id)
             
             logger.info(f"更新文件夹成功: {folder_id}")
             return result

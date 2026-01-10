@@ -4,6 +4,7 @@
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 import json
+import asyncio
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from module_testing.dao.test_case_dao import TestCaseDao
@@ -39,8 +40,25 @@ class TestCaseService:
             auto_commit: 是否自动提交事务（默认 True，工具调用时设为 False）
         """
         try:
-            # 生成用例标识符
-            identifier = await self.test_case_dao.get_next_identifier(db, test_case_vo.project_id)
+            # 生成用例标识符（添加重试机制，防止连接丢失）
+            max_retries = 2
+            identifier = None
+            last_error = None
+            for attempt in range(max_retries):
+                try:
+                    identifier = await self.test_case_dao.get_next_identifier(db, test_case_vo.project_id)
+                    break
+                except Exception as e:
+                    last_error = e
+                    if attempt < max_retries - 1:
+                        logger.warning(f"获取用例标识符失败（尝试 {attempt + 1}/{max_retries}），重试中: {str(e)}")
+                        await asyncio.sleep(0.2)  # 短暂等待后重试
+                    else:
+                        logger.error(f"获取用例标识符失败，已重试 {max_retries} 次: {str(e)}")
+                        raise
+            
+            if not identifier:
+                raise ValueError(f"无法生成用例标识符: {last_error}")
             
             # 处理测试步骤
             test_case_steps = None

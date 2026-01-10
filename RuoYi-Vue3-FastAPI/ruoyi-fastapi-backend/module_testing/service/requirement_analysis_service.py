@@ -165,14 +165,16 @@ class RequirementAnalysisService:
             # 更新数据库中的report_url
             requirement.report_url = url
             await self.requirement_dao.update(db, requirement)
-            await db.commit()
+            # 注意：不在这里 commit，让调用者管理事务
+            # await db.commit()  # 移除，由调用者管理
             
             logger.info(f"需求分析报告生成并上传成功: {object_name}, URL: {url}")
             return url
             
         except Exception as e:
-            logger.error(f"生成需求分析报告失败: {str(e)}", exc_info=True)
-            await db.rollback()
+            logger.exception("生成需求分析报告失败")
+            # 注意：不在这里 rollback，让调用者管理事务
+            # await db.rollback()  # 移除，由调用者管理
             return None
 
     async def save_to_minio(

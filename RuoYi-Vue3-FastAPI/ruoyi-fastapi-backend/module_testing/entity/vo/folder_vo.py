@@ -24,22 +24,6 @@ class FolderUpdateVO(BaseModel):
     remark: Optional[str] = Field(None, description="备注")
 
 
-class FolderMoveVO(BaseModel):
-    """移动文件夹请求"""
-    folder_id: int = Field(..., description="文件夹ID")
-    target_parent_id: Optional[int] = Field(None, description="目标父文件夹ID，为空表示移到根目录")
-
-
-class FolderQueryVO(BaseModel):
-    """查询文件夹请求"""
-    project_id: Optional[int] = Field(None, description="项目ID")
-    parent_id: Optional[int] = Field(None, description="父文件夹ID")
-    folder_name: Optional[str] = Field(None, description="文件夹名称(模糊查询)")
-    status: Optional[str] = Field(None, description="状态")
-    page_num: int = Field(1, ge=1, description="页码")
-    page_size: int = Field(10, ge=1, le=100, description="每页数量")
-
-
 class FolderTreeNodeVO(BaseModel):
     """文件夹树节点"""
     folder_id: int

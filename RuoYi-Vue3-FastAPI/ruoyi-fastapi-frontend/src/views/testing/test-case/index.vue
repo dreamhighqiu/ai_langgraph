@@ -538,7 +538,27 @@ const submitFolderForm = async () => {
     await loadFolderTree()
   } catch (error) {
     console.error('创建文件夹失败:', error)
-    const errorMsg = error?.response?.data?.msg || error?.message || '创建文件夹失败'
+    // 处理各种错误格式
+    let errorMsg = '创建文件夹失败'
+    if (error?.response?.data) {
+      const data = error.response.data
+      // 处理 FastAPI 验证错误格式 {detail: [...]}
+      if (data.detail && Array.isArray(data.detail) && data.detail.length > 0) {
+        const firstError = data.detail[0]
+        if (typeof firstError === 'object' && firstError.msg) {
+          const loc = firstError.loc ? firstError.loc.join(' -> ') : ''
+          errorMsg = `${loc}: ${firstError.msg}`
+        } else if (typeof firstError === 'string') {
+          errorMsg = firstError
+        }
+      } else if (data.msg) {
+        errorMsg = data.msg
+      } else if (data.message) {
+        errorMsg = data.message
+      }
+    } else if (error?.message) {
+      errorMsg = error.message
+    }
     proxy.$modal.msgError(errorMsg)
   }
 }
@@ -724,9 +744,24 @@ const openAIDocDialog = () => {
 }
 
 // 处理打开AI聊天（从对话框）
-const handleOpenAIChat = (prompt) => {
-  // 先设置初始提示词
-  aiInitialPrompt.value = prompt
+const handleOpenAIChat = (data) => {
+  // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
+  if (typeof data === 'object' && data.prompt) {
+    aiInitialPrompt.value = data.prompt
+    // 如果传递了 projectId，更新 currentProjectId（虽然通常不需要，因为已有选择）
+    if (data.projectId && data.projectId !== currentProjectId.value) {
+      console.warn('传入的 projectId 与当前选择的项目不一致')
+    }
+  } else {
+    aiInitialPrompt.value = data
+  }
+  
+  // 验证 projectId 是否有效
+  if (!currentProjectId.value || currentProjectId.value === 0) {
+    proxy.$modal.msgWarning('请先选择项目！测试用例生成功能需要指定项目ID。')
+    return
+  }
+  
   // 然后打开抽屉（确保提示词已设置）
   nextTick(() => {
     aiChatVisible.value = true

@@ -57,7 +57,7 @@ def _normalize_mcp_sse_url(url: str) -> str:
     """
     规范化 MCP SSE 服务 URL。
 
-    兼容传入 base host（如 http://localhost:9002）或完整 SSE 路径（如 http://localhost:9002/sse）。
+    兼容传入 base host（如 http://localhost:8002）或完整 SSE 路径（如 http://localhost:8002/sse）。
     """
     normalized = (url or "").strip().rstrip("/")
     if not normalized:
@@ -209,11 +209,12 @@ async def create_test_case_tool(
         )
     """
     try:
-        # 参数验证
-        if not project_id:
+        # 参数验证 - 检查project_id是否为None、0或空值
+        if project_id is None or project_id == 0 or project_id == '':
+            logger.warning(f"创建测试用例失败：project_id无效 (值: {project_id}, 类型: {type(project_id)})")
             return {
                 "success": False,
-                "error": "project_id 是必填参数，请确保从上下文中获取",
+                "error": f"project_id 是必填参数，当前值为: {project_id}。请确保从上下文中正确获取项目ID（project_id应该是一个大于0的整数）。",
                 "message": "创建测试用例失败：缺少项目ID"
             }
         
@@ -519,6 +520,15 @@ async def batch_create_test_cases_tool(
         )
     """
     try:
+        # 参数验证 - 检查project_id是否为None、0或空值
+        if project_id is None or project_id == 0 or project_id == '':
+            logger.warning(f"批量创建测试用例失败：project_id无效 (值: {project_id}, 类型: {type(project_id)})")
+            return {
+                "success": False,
+                "error": f"project_id 是必填参数，当前值为: {project_id}。请确保从上下文中正确获取项目ID（project_id应该是一个大于0的整数）。",
+                "message": "批量创建测试用例失败：缺少项目ID"
+            }
+        
         if not test_cases:
             return {
                 "success": False,
@@ -687,7 +697,7 @@ async def rag_query_tool(
         import os
         # RAG MCP 服务器地址（从环境变量读取）；默认使用 SSE 传输
         rag_mcp_url = _normalize_mcp_sse_url(
-            os.environ.get("RAG_MCP_URL", "http://localhost:9002/sse")
+            os.environ.get("RAG_MCP_URL", "http://localhost:8002/sse")
         )
 
         logger.info(f"开始 RAG 检索: {query} (模式: {mode})")
@@ -1079,6 +1089,44 @@ async def save_requirement_analysis_tool(
         # 获取当前用户ID
         user_id = get_current_user_id()
         
+        # 处理 functional_requirements：合并 priority_analysis 和 effort_estimation
+        functional_req_data = {}
+        if isinstance(functional_requirements, dict):
+            functional_req_data = functional_requirements
+        elif isinstance(functional_requirements, str):
+            try:
+                functional_req_data = json.loads(functional_requirements)
+            except:
+                functional_req_data = {"content": functional_requirements}
+        else:
+            functional_req_data = {}
+        
+        # 合并 priority_analysis 和 effort_estimation 到 functional_requirements
+        if priority_analysis:
+            if isinstance(priority_analysis, dict):
+                functional_req_data["priority_analysis"] = priority_analysis
+            elif isinstance(priority_analysis, str):
+                try:
+                    functional_req_data["priority_analysis"] = json.loads(priority_analysis)
+                except:
+                    functional_req_data["priority_analysis"] = {"content": priority_analysis}
+        
+        if effort_estimation:
+            if isinstance(effort_estimation, dict):
+                functional_req_data["effort_estimation"] = effort_estimation
+            elif isinstance(effort_estimation, str):
+                try:
+                    functional_req_data["effort_estimation"] = json.loads(effort_estimation)
+                except:
+                    functional_req_data["effort_estimation"] = {"content": effort_estimation}
+        
+        # 处理其他列表字段
+        processed_user_stories = json.dumps(user_stories, ensure_ascii=False) if user_stories else None
+        processed_acceptance_criteria = json.dumps(acceptance_criteria, ensure_ascii=False) if acceptance_criteria else None
+        processed_dependencies = json.dumps(dependencies, ensure_ascii=False) if dependencies else None
+        processed_risks = json.dumps(risks, ensure_ascii=False) if risks else None
+        processed_recommendations = json.dumps(recommendations, ensure_ascii=False) if recommendations else None
+        
         # 构建 VO 对象
         requirement_vo = RequirementAnalysisVO(
             project_id=project_id,
@@ -1088,11 +1136,11 @@ async def save_requirement_analysis_tool(
             status=status,
             module=None,  # 可以从上下文获取
             description=executive_summary,
-            acceptance_criteria=json.dumps(acceptance_criteria, ensure_ascii=False) if acceptance_criteria else None,
-            functional_requirements=json.dumps(functional_requirements, ensure_ascii=False) if isinstance(functional_requirements, dict) else functional_requirements,
+            acceptance_criteria=processed_acceptance_criteria,
+            functional_requirements=json.dumps(functional_req_data, ensure_ascii=False) if functional_req_data else None,
             non_functional_requirements=json.dumps(non_functional_requirements, ensure_ascii=False) if isinstance(non_functional_requirements, dict) else non_functional_requirements,
             business_rules=None,  # 可以从其他字段映射
-            dependencies=json.dumps(dependencies, ensure_ascii=False) if dependencies else None,
+            dependencies=processed_dependencies,
             stakeholders=None,  # 可以从其他字段映射
         )
         
@@ -1105,6 +1153,41 @@ async def save_requirement_analysis_tool(
                 result = await service.update_requirement(
                     db, requirement_analysis_id, requirement_vo, user_id
                 )
+                
+                # 直接更新额外字段（user_stories, risks, recommendations等）
+                from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDAO
+                dao = RequirementAnalysisDAO()
+                requirement_do = await dao.select_by_id(db, requirement_analysis_id)
+                if requirement_do:
+                    if processed_user_stories:
+                        requirement_do.user_stories = processed_user_stories
+                    if processed_risks:
+                        requirement_do.risks = processed_risks
+                    if processed_recommendations:
+                        requirement_do.recommendations = processed_recommendations
+                    if quality_completeness is not None:
+                        requirement_do.quality_completeness = quality_completeness
+                    if quality_clarity is not None:
+                        requirement_do.quality_clarity = quality_clarity
+                    if quality_consistency is not None:
+                        requirement_do.quality_consistency = quality_consistency
+                    if quality_testability is not None:
+                        requirement_do.quality_testability = quality_testability
+                    if quality_overall is not None:
+                        requirement_do.quality_overall = quality_overall
+                    if rag_context:
+                        requirement_do.rag_context = rag_context
+                    if use_rag is not None:
+                        requirement_do.use_rag = use_rag
+                    if mindmap_data:
+                        requirement_do.mindmap_data = json.dumps(mindmap_data, ensure_ascii=False)
+                    if mindmap_url:
+                        requirement_do.mindmap_url = mindmap_url
+                    if tags:
+                        requirement_do.tags = ','.join(tags) if isinstance(tags, list) else str(tags)
+                    await dao.update(db, requirement_do)
+                    await db.commit()
+                
                 logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.analysis_name}")
                 
                 # 生成报告并上传到MinIO
@@ -1127,6 +1210,41 @@ async def save_requirement_analysis_tool(
                 result = await service.create_requirement(
                     db, requirement_vo, user_id
                 )
+                
+                # 直接更新额外字段
+                from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDAO
+                dao = RequirementAnalysisDAO()
+                requirement_do = await dao.select_by_id(db, result.analysis_id)
+                if requirement_do:
+                    if processed_user_stories:
+                        requirement_do.user_stories = processed_user_stories
+                    if processed_risks:
+                        requirement_do.risks = processed_risks
+                    if processed_recommendations:
+                        requirement_do.recommendations = processed_recommendations
+                    if quality_completeness is not None:
+                        requirement_do.quality_completeness = quality_completeness
+                    if quality_clarity is not None:
+                        requirement_do.quality_clarity = quality_clarity
+                    if quality_consistency is not None:
+                        requirement_do.quality_consistency = quality_consistency
+                    if quality_testability is not None:
+                        requirement_do.quality_testability = quality_testability
+                    if quality_overall is not None:
+                        requirement_do.quality_overall = quality_overall
+                    if rag_context:
+                        requirement_do.rag_context = rag_context
+                    if use_rag is not None:
+                        requirement_do.use_rag = use_rag
+                    if mindmap_data:
+                        requirement_do.mindmap_data = json.dumps(mindmap_data, ensure_ascii=False)
+                    if mindmap_url:
+                        requirement_do.mindmap_url = mindmap_url
+                    if tags:
+                        requirement_do.tags = ','.join(tags) if isinstance(tags, list) else str(tags)
+                    await dao.update(db, requirement_do)
+                    await db.commit()
+                
                 logger.info(f"AI 成功创建需求分析: {result.analysis_name} (ID: {result.analysis_id})")
                 
                 # 生成报告并上传到MinIO
@@ -1144,7 +1262,7 @@ async def save_requirement_analysis_tool(
                     "analysis_name": result.analysis_name,
                     "report_url": report_url,
                     "message": f"✅ 需求分析 '{result.analysis_name}' (ID: {result.analysis_id}) 创建成功" + (f"，报告已生成: {report_url}" if report_url else "")
-        }
+                }
 
     except Exception as e:
         logger.error(f"保存需求分析失败: {str(e)}", exc_info=True)
@@ -1309,6 +1427,39 @@ async def save_defect_analysis_tool(
         # 获取当前用户ID
         user_id = get_current_user_id()
         
+        # 处理 root_cause_analysis 和 impact_analysis：确保它们是字典格式
+        processed_root_cause = None
+        if root_cause_analysis:
+            if isinstance(root_cause_analysis, dict):
+                processed_root_cause = root_cause_analysis
+            elif isinstance(root_cause_analysis, str):
+                try:
+                    processed_root_cause = json.loads(root_cause_analysis)
+                except:
+                    processed_root_cause = {"content": root_cause_analysis}
+            else:
+                processed_root_cause = root_cause_analysis
+        
+        processed_impact = None
+        if impact_analysis:
+            if isinstance(impact_analysis, dict):
+                processed_impact = impact_analysis
+            elif isinstance(impact_analysis, str):
+                try:
+                    processed_impact = json.loads(impact_analysis)
+                except:
+                    processed_impact = {"content": impact_analysis}
+            else:
+                processed_impact = impact_analysis
+        
+        # 处理列表字段：转换为 JSON 字符串
+        processed_reproduction_steps = json.dumps(reproduction_steps, ensure_ascii=False) if reproduction_steps else None
+        processed_fix_suggestions = json.dumps(fix_suggestions, ensure_ascii=False) if fix_suggestions else None
+        processed_test_suggestions = json.dumps(test_suggestions, ensure_ascii=False) if test_suggestions else None
+        processed_prevention_measures = json.dumps(prevention_measures, ensure_ascii=False) if prevention_measures else None
+        processed_similar_defects = json.dumps(similar_defects, ensure_ascii=False) if similar_defects else None
+        processed_affected_modules = json.dumps(affected_modules, ensure_ascii=False) if affected_modules else None
+        
         # 构建分析数据字典
         analysis_data = {
             "project_id": project_id,
@@ -1322,14 +1473,14 @@ async def save_defect_analysis_tool(
             "category": category,
             "affected_phase": affected_phase,
             "detection_phase": detection_phase,
-            "root_cause_analysis": root_cause_analysis,
-            "impact_analysis": impact_analysis,
-            "reproduction_steps": reproduction_steps,
-            "affected_modules": affected_modules,
-            "fix_suggestions": fix_suggestions,
-            "test_suggestions": test_suggestions,
-            "prevention_measures": prevention_measures,
-            "similar_defects": similar_defects,
+            "root_cause_analysis": processed_root_cause,
+            "impact_analysis": processed_impact,
+            "reproduction_steps": processed_reproduction_steps,
+            "affected_modules": processed_affected_modules,
+            "fix_suggestions": processed_fix_suggestions,
+            "test_suggestions": processed_test_suggestions,
+            "prevention_measures": processed_prevention_measures,
+            "similar_defects": processed_similar_defects,
             "use_rag": use_rag,
             "rag_context": rag_context,
             "mindmap_data": mindmap_data,
@@ -1622,7 +1773,7 @@ async def generate_mindmap_tool(
     try:
         import os
         mindmap_mcp_url = _normalize_mcp_sse_url(
-            os.environ.get("MINDMAP_MCP_URL", "http://localhost:9003/sse")
+            os.environ.get("MINDMAP_MCP_URL", "http://localhost:8007/sse")
         )
 
         logger.info(f"开始生成思维导图: {title} (格式: {format})")
@@ -1718,4 +1869,3 @@ async def generate_mindmap_tool(
             "error": f"思维导图生成失败: {str(e)}",
             "message": f"思维导图生成失败: {str(e)}"
         }
-

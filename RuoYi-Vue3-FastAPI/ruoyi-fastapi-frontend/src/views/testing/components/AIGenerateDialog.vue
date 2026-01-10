@@ -149,7 +149,7 @@ const form = reactive({
 const rules = {
   prompt: [
     { required: true, message: '请输入功能描述', trigger: 'blur' },
-    { min: 10, message: '描述至少需要10个字符', trigger: 'blur' }
+    { min: 5, message: '描述至少需要5个字符', trigger: 'blur' }
   ]
 }
 
@@ -170,32 +170,41 @@ const applyQuickSuggestion = (item) => {
   form.prompt = item.prompt
 }
 
-// 生成测试用例
-const handleGenerate = async () => {
-  const valid = await formRef.value?.validate()
-  if (!valid) return
+  // 生成测试用例
+  const handleGenerate = async () => {
+    const valid = await formRef.value?.validate()
+    if (!valid) return
 
-  // 构建聊天提示词，交给AI对话界面处理
-  const chatPrompt = `请帮我生成测试用例。
+    // 构建聊天提示词，交给AI对话界面处理
+    // 如果启用了 RAG，在 prompt 中明确要求使用 RAG 检索
+    const ragInstruction = form.useRag 
+      ? '\n\n⚠️ 重要：用户已明确要求使用 RAG 检索功能。请务必先调用 rag_query_tool 从知识库检索相关信息，然后基于检索结果生成测试用例。'
+      : ''
+    
+    const chatPrompt = `请帮我生成测试用例。
 
 需求描述：
 ${form.prompt.trim()}
 
 生成数量：${form.count} 个
 模板类型：${form.template === 'test_case' ? '标准测试用例' : 'BDD测试用例'}
-使用 RAG 检索：${form.useRag ? '是' : '否'}
+使用 RAG 检索：${form.useRag ? '是' : '否'}${ragInstruction}
 
 请根据以上需求生成测试用例。`
 
-  // 触发打开AI聊天
-  emit('open-chat', chatPrompt)
-  
-  // 重置表单
-  resetForm()
-  
-  // 关闭对话框
-  visible.value = false
-}
+    // 触发打开AI聊天，传递 prompt、projectId 和 useRag
+    emit('open-chat', {
+      prompt: chatPrompt,
+      projectId: props.projectId,
+      useRag: form.useRag
+    })
+    
+    // 重置表单
+    resetForm()
+    
+    // 关闭对话框
+    visible.value = false
+  }
 
 // 重置表单
 const resetForm = () => {

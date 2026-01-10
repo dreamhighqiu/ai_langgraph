@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\sum_mcp_server\servers\k6_rag_mcp.py", line 13, in <module>
+    main()
+  File "D:\yunxia\ai_langgraph\testing-agents-service\src\k6_agent\mcp_servers\rag_mcp_server.py", line 759, in main
+    print(f"\U0001f517 LightRAG MCP Server Configuration:")
+UnicodeEncodeError: 'gbk' codec can't encode character '\U0001f517' in position 0: illegal multibyte sequence
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                        ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │
+│                        █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │
+│                                                                             │
+│                               FastMCP 2.14.1                                │
+│                                                                             │
+│                                                                             │
+│                   🖥  Server name: LightRAG                                  │
+│                                                                             │
+│                   📦 Transport:   SSE                                       │
+│                   🔗 Server URL:  http://0.0.0.0:8012/sse                   │
+│                                                                             │
+│                   📚 Docs:        https://gofastmcp.com                     │
+│                   🚀 Hosting:     https://fastmcp.cloud                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+[01/10/26 19:56:18] INFO     Starting MCP server 'LightRAG' with server.py:2618
+                             transport 'sse' on                                
+                             http://0.0.0.0:8012/sse                           
+INFO:     Started server process [312456]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8012 (Press CTRL+C to quit)
+🔗 LightRAG MCP Server Configuration:
+   LightRAG URL: http://localhost:9621
+   Timeout: 60.0s
+   ⚠️  确保 LightRAG 服务器 (http://localhost:9621) 已配置 Milvus 向量存储
+🔗 Connecting to LightRAG server: http://localhost:9621
+   ⚠️  确保该 LightRAG 服务器已配置 Milvus 向量存储
+INFO:     127.0.0.1:61031 - "GET /sse HTTP/1.1" 200 OK

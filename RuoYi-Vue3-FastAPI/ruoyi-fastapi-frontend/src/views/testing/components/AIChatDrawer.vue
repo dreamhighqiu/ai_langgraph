@@ -262,17 +262,39 @@ const visible = computed({
 
 // 验证 projectId（对于需求分析和缺陷分析是必需的）
 const requiresProjectId = computed(() => {
-  return props.assistantId.includes('requirement') || props.assistantId.includes('defect')
+  return props.assistantId.includes('requirement') || props.assistantId.includes('defect') || props.assistantId.includes('testcase')
 })
 
 const validProjectId = computed(() => {
-  return props.projectId && props.projectId !== 0 && props.projectId !== '0' && props.projectId !== null && props.projectId !== undefined
+  const result = props.projectId && props.projectId !== 0 && props.projectId !== '0' && props.projectId !== null && props.projectId !== undefined
+  console.log('[AIChatDrawer] validProjectId computed:', {
+    'props.projectId': props.projectId,
+    'result': result
+  })
+  return result
 })
+
+// 监听 props.projectId 的变化
+watch(() => props.projectId, (newVal, oldVal) => {
+  console.log('[AIChatDrawer] 🔄 props.projectId 变化:', {
+    旧值: oldVal,
+    新值: newVal,
+    'validProjectId': validProjectId.value
+  })
+}, { immediate: true })
 
 // 使用 LangGraph SDK Composable（直接连接 LangGraph API）
 const chat = useLangGraphSDK({
   assistantId: props.assistantId,
-  projectId: validProjectId.value ? props.projectId : null,
+  projectId: computed(() => {
+    const id = validProjectId.value ? props.projectId : null
+    console.log('[AIChatDrawer] projectId computed:', {
+      'props.projectId': props.projectId,
+      'validProjectId': validProjectId.value,
+      '返回值': id
+    })
+    return id
+  }),
   folderId: props.folderId,
   templateType: computed(() => {
     // 根据 assistantId 确定模板类型

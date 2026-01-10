@@ -293,8 +293,11 @@ const handleGenerate = async () => {
       return
     }
     
-    // 3. 触发打开 AI 聊天对话框
-    emit('open-chat', chatPrompt)
+    // 3. 触发打开 AI 聊天对话框，传递 prompt 和 projectId
+    emit('open-chat', {
+      prompt: chatPrompt,
+      projectId: props.projectId
+    })
     
     // 4. 重置表单并关闭对话框
     resetForm()

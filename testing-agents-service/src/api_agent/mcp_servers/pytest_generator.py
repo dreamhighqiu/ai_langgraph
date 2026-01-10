@@ -610,7 +610,7 @@ def main():
         help="默认输出目录"
     )
     parser.add_argument(
-        "--port", type=int, default=8003,
+        "--port", type=int, default=8005,
         help="SSE服务器端口号"
     )
     parser.add_argument(

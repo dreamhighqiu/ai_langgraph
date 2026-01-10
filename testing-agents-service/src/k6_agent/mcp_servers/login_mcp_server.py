@@ -285,7 +285,7 @@ def parse_arguments():
         help="启用 SSE 模式"
     )
     parser.add_argument(
-        "--port", type=int, default=8003,
+        "--port", type=int, default=8013,
         help="SSE 服务器端口号"
     )
     return parser.parse_args()

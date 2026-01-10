@@ -26,8 +26,8 @@ else
 fi
 
 # MCP 服务配置
-RAG_MCP_PORT="${RAG_MCP_PORT:-9002}"
-MINDMAP_MCP_PORT="${MINDMAP_MCP_PORT:-9003}"
+RAG_MCP_PORT="${RAG_MCP_PORT:-8002}"
+MINDMAP_MCP_PORT="${MINDMAP_MCP_PORT:-8007}"
 
 # 颜色输出
 GREEN='\033[0;32m'
@@ -298,4 +298,3 @@ case "${cmd}" in
     die "Unknown command: ${cmd}"
     ;;
 esac
-

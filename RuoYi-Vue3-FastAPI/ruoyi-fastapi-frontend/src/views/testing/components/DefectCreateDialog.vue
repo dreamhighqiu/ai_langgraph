@@ -420,12 +420,16 @@ const aiRules = {
   projectId: [{ required: true, message: '请选择项目', trigger: 'change' }],
   title: [
     { 
-      required: true, 
+      required: false, 
       message: '请输入缺陷标题', 
       trigger: 'blur',
       validator: (rule, value, callback) => {
-        if (aiForm.inputMode === 'text' && (!value || value.trim().length === 0)) {
-          callback(new Error('请输入缺陷标题'))
+        if (aiForm.inputMode === 'text') {
+          if (!value || value.trim().length === 0) {
+            callback(new Error('请输入缺陷标题'))
+          } else {
+            callback()
+          }
         } else {
           callback()
         }
@@ -434,12 +438,18 @@ const aiRules = {
   ],
   description: [
     { 
-      required: true, 
+      required: false, 
       message: '请输入缺陷描述', 
       trigger: 'blur',
       validator: (rule, value, callback) => {
-        if (aiForm.inputMode === 'text' && (!value || value.trim().length < 20)) {
-          callback(new Error('描述至少需要20个字符'))
+        if (aiForm.inputMode === 'text') {
+          if (!value || value.trim().length === 0) {
+            callback(new Error('请输入缺陷描述'))
+          } else if (value.trim().length < 1) {
+            callback(new Error('描述至少需要1个字符'))
+          } else {
+            callback()
+          }
         } else {
           callback()
         }
@@ -986,6 +996,28 @@ watch(visible, (val) => {
     }
   }
 })
+
+// 监听 defaultProjectId 的变化，自动更新表单中的项目ID
+watch(() => props.defaultProjectId, (newVal, oldVal) => {
+  console.log('[DefectCreateDialog] defaultProjectId 变化:', { 旧值: oldVal, 新值: newVal })
+  
+  // 只在 newVal 有效且不为 0 时更新
+  if (newVal && newVal !== 0 && newVal !== '0') {
+    if (!aiForm.projectId || aiForm.projectId === null || aiForm.projectId === 0) {
+      aiForm.projectId = newVal
+      console.log('[DefectCreateDialog] ✅ 设置 aiForm.projectId =', newVal)
+    } else {
+      console.log('[DefectCreateDialog] ⏭️ aiForm.projectId 已有值，跳过:', aiForm.projectId)
+    }
+    
+    if (!manualForm.projectId || manualForm.projectId === null || manualForm.projectId === 0) {
+      manualForm.projectId = newVal
+      console.log('[DefectCreateDialog] ✅ 设置 manualForm.projectId =', newVal)
+    }
+  } else {
+    console.warn('[DefectCreateDialog] ⚠️ defaultProjectId 无效，不更新表单:', newVal)
+  }
+}, { immediate: true })
 </script>
 
 <style scoped lang="scss">

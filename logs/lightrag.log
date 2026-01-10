@@ -85,14 +85,14 @@ INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provi
 INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [1119400]
+INFO: Started server process [375672]
 INFO: Waiting for application startup.
-INFO: [] Process 1119400 KV load full_docs with 20 records
-INFO: [] Process 1119400 KV load text_chunks with 83 records
-INFO: [] Process 1119400 KV load full_entities with 20 records
-INFO: [] Process 1119400 KV load full_relations with 20 records
-INFO: [] Process 1119400 KV load entity_chunks with 1587 records
-INFO: [] Process 1119400 KV load relation_chunks with 1573 records
+INFO: [] Process 375672 KV load full_docs with 20 records
+INFO: [] Process 375672 KV load text_chunks with 83 records
+INFO: [] Process 375672 KV load full_entities with 20 records
+INFO: [] Process 375672 KV load full_relations with 20 records
+INFO: [] Process 375672 KV load entity_chunks with 1587 records
+INFO: [] Process 375672 KV load relation_chunks with 1573 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -102,50 +102,10 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 1119400 KV load llm_response_cache with 179 records
-INFO: [] Process 1119400 doc status load doc_status with 20 records
+INFO: [] Process 375672 KV load llm_response_cache with 182 records
+INFO: [] Process 375672 doc status load doc_status with 20 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:54765 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:57708 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55162 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:59185 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55457 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55457 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:59121 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:54866 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50226 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:57484 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:60741 - "GET /docs HTTP/1.1" 200
-INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
-INFO:  == LLM cache == saving: mix:keywords:db4d8e88554f621132e20cf42c351263
-INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
-INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 96 relations
-INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
-INFO: Global query: 15 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 24 entities, 105 relations, 5 vector chunks
-INFO: After truncation: 24 entities, 105 relations
-INFO: Selecting 11 from 11 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 105 relations
-INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 24 entities, 105 relations, 5 chunks
-INFO: Final chunks S+F/O: E3/1 E8/2 E3/3 E1/4 E6/5
-INFO: 127.0.0.1:63946 - "POST /query/data HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:e7e0172e999220279a5380cfb8e4187b
-INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 96 relations
-INFO: Query edges: 简历信息, 个人履历, 职业背景 (top_k:10, cosine:0.2)
-INFO: Global query: 15 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 24 entities, 105 relations, 5 vector chunks
-INFO: After truncation: 24 entities, 105 relations
-INFO: Selecting 11 from 11 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 105 relations
-INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 24 entities, 105 relations, 5 chunks
-INFO: Final chunks S+F/O: E3/1 E3/2 E8/3 E1/4 E1/5
-INFO: 127.0.0.1:62103 - "POST /query/data HTTP/1.1" 200
+INFO: 127.0.0.1:56463 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:62298 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:49205 - "GET /docs HTTP/1.1" 200

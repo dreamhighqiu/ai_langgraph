@@ -2,7 +2,7 @@
 测试用例控制器
 """
 from typing import Optional, List
-from fastapi import APIRouter, Depends, Query, Path, Body
+from fastapi import APIRouter, Depends, Query, Path, Body, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from module_testing.service.test_case_service import TestCaseService
@@ -134,6 +134,7 @@ async def get_test_case(
 @router.delete("/{case_ids}", summary="删除测试用例", dependencies=[UserInterfaceAuthDependency('testing:testcase:remove')])
 @Log(title='测试用例管理', business_type=BusinessType.DELETE)
 async def delete_test_case(
+    request: Request,
     case_ids: str = Path(..., description="测试用例ID，多个用逗号分隔"),
     db: AsyncSession = Depends(get_db),
     current_user = Depends(LoginService.get_current_user)

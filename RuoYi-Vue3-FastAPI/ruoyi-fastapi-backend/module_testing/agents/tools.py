@@ -285,16 +285,22 @@ async def create_test_case_tool(
             # 确保数据已刷新（在 commit 之前）
             await db.flush()
             
-            logger.info(f"AI 成功创建测试用例: {result.case_identifier} - {name} (ID: {result.case_id})")
+            # 在会话关闭前提取所有需要的属性，避免延迟加载问题
+            case_id = result.case_id
+            case_identifier = result.case_identifier
+            case_name = result.case_name
+            
+            logger.info(f"AI 成功创建测试用例: {case_identifier} - {name} (ID: {case_id})")
         
+        # 在 async with 块外返回，确保会话已关闭
         return {
             "success": True,
-                "data": {
-                    "case_id": result.case_id,
-                    "case_identifier": result.case_identifier,
-                    "case_name": result.case_name,
-                },
-                "message": f"✅ 测试用例 '{name}' (ID: {result.case_id}, 标识: {result.case_identifier}) 创建成功"
+            "data": {
+                "case_id": case_id,
+                "case_identifier": case_identifier,
+                "case_name": case_name,
+            },
+            "message": f"✅ 测试用例 '{name}' (ID: {case_id}, 标识: {case_identifier}) 创建成功"
         }
 
     except Exception as e:
@@ -1186,24 +1192,28 @@ async def save_requirement_analysis_tool(
                     if tags:
                         requirement_do.tags = ','.join(tags) if isinstance(tags, list) else str(tags)
                     await dao.update(db, requirement_do)
-                    await db.commit()
+                    # 注意：不在这里 commit，在报告生成后统一提交
                 
                 logger.info(f"AI 成功更新需求分析: {requirement_analysis_id} - {result.analysis_name}")
                 
-                # 生成报告并上传到MinIO
+                # 生成报告并上传到MinIO（在同一个数据库会话中）
+                report_url = None
                 try:
                     report_url = await service.generate_and_upload_report(db, requirement_analysis_id)
                     if report_url:
                         logger.info(f"需求分析报告生成成功: {report_url}")
                 except Exception as e:
-                    logger.warning(f"生成需求分析报告失败（不影响保存）: {str(e)}")
+                    logger.warning("生成需求分析报告失败（不影响保存）", exc_info=True)
+                
+                # 统一提交所有数据库更改（包括保存和报告生成）
+                await db.commit()
 
                 return {
                     "success": True,
                     "requirement_analysis_id": requirement_analysis_id,
                     "analysis_name": result.analysis_name,
-                    "report_url": report_url if 'report_url' in locals() else None,
-                    "message": f"✅ 需求分析 '{result.analysis_name}' (ID: {requirement_analysis_id}) 更新成功" + (f"，报告已生成: {report_url}" if 'report_url' in locals() and report_url else "")
+                    "report_url": report_url,
+                    "message": f"✅ 需求分析 '{result.analysis_name}' (ID: {requirement_analysis_id}) 更新成功" + (f"，报告已生成: {report_url}" if report_url else "")
                 }
             else:
                 # 创建新需求分析
@@ -1243,18 +1253,21 @@ async def save_requirement_analysis_tool(
                     if tags:
                         requirement_do.tags = ','.join(tags) if isinstance(tags, list) else str(tags)
                     await dao.update(db, requirement_do)
-                    await db.commit()
+                    # 注意：不在这里 commit，在报告生成后统一提交
                 
                 logger.info(f"AI 成功创建需求分析: {result.analysis_name} (ID: {result.analysis_id})")
                 
-                # 生成报告并上传到MinIO
+                # 生成报告并上传到MinIO（在同一个数据库会话中）
                 report_url = None
                 try:
                     report_url = await service.generate_and_upload_report(db, result.analysis_id)
                     if report_url:
                         logger.info(f"需求分析报告生成成功: {report_url}")
                 except Exception as e:
-                    logger.warning(f"生成需求分析报告失败（不影响保存）: {str(e)}")
+                    logger.warning("生成需求分析报告失败（不影响保存）", exc_info=True)
+                
+                # 统一提交所有数据库更改（包括保存和报告生成）
+                await db.commit()
                 
                 return {
                     "success": True,

@@ -8,6 +8,7 @@
       "type": "python",
       "transport": "http",
       "default_port": 9621,
+      "port_env": "LIGHTRAG_API_PORT",
       "entrypoint": "sum_mcp_server/servers/lightrag_api.py",
       "args": ["--host", "0.0.0.0", "--port", "{port}"],
       "pid_file": ".pids/lightrag_api.pid",
@@ -20,6 +21,8 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8001,
+      "port_env": "SERVER_PORT",
+      "depends_on": ["lightrag_api"],
       "entrypoint": "sum_mcp_server/servers/rag_anything_mcp.py",
       "args": ["--sse", "--host", "0.0.0.0", "--port", "{port}"],
       "pid_file": ".pids/rag_anything_mcp.pid",
@@ -36,12 +39,14 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8002,
+      "port_env": "RAG_MCP_PORT",
+      "depends_on": ["lightrag_api"],
       "entrypoint": "sum_mcp_server/servers/api_rag_mcp.py",
       "args": ["--sse", "--port", "{port}"],
       "pid_file": ".pids/rag_mcp.pid",
       "log_file": "logs/rag_mcp.log",
       "env": {
-        "LIGHTRAG_BASE_URL": "http://localhost:9621",
+        "LIGHTRAG_BASE_URL": "http://127.0.0.1:{lightrag_api.port}",
         "LIGHTRAG_API_KEY": "",
         "LIGHTRAG_TIMEOUT": "60.0"
       }
@@ -52,6 +57,7 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8003,
+      "port_env": "LOGIN_MCP_PORT",
       "entrypoint": "sum_mcp_server/servers/api_login_mcp.py",
       "args": ["--sse", "--port", "{port}"],
       "pid_file": ".pids/login_mcp.pid",
@@ -63,6 +69,7 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8004,
+      "port_env": "TEST_EXECUTOR_MCP_PORT",
       "entrypoint": "sum_mcp_server/servers/api_test_executor_mcp.py",
       "args": ["--sse", "--port", "{port}"],
       "pid_file": ".pids/test_executor_mcp.pid",
@@ -74,6 +81,7 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8005,
+      "port_env": "PYTEST_GENERATOR_MCP_PORT",
       "entrypoint": "sum_mcp_server/servers/api_pytest_generator_mcp.py",
       "args": ["--sse", "--port", "{port}", "--output-dir", "generated_tests"],
       "pid_file": ".pids/pytest_generator_mcp.pid",
@@ -85,10 +93,17 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8006,
+      "port_env": "ANYTHING_RAG_MCP_PORT",
+      "depends_on": ["lightrag_api"],
       "entrypoint": "sum_mcp_server/servers/anything_rag_http_mcp.py",
       "args": ["--transport", "sse", "--host", "0.0.0.0", "--port", "{port}"],
       "pid_file": ".pids/anything_rag_mcp.pid",
-      "log_file": "logs/anything_rag_mcp.log"
+      "log_file": "logs/anything_rag_mcp.log",
+      "env": {
+        "LIGHTRAG_BASE_URL": "http://127.0.0.1:{lightrag_api.port}",
+        "LIGHTRAG_API_KEY": "",
+        "LIGHTRAG_TIMEOUT": "60.0"
+      }
     },
     {
       "id": "mindmap",
@@ -96,6 +111,7 @@
       "type": "python",
       "transport": "sse",
       "default_port": 8007,
+      "port_env": "MINDMAP_MCP_PORT",
       "entrypoint": "sum_mcp_server/servers/mindmap_mcp_server.py",
       "args": ["--sse", "--host", "0.0.0.0", "--port", "{port}"],
       "pid_file": ".pids/mindmap_mcp.pid",

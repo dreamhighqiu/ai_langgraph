@@ -1,7 +1,79 @@
+# sum_mcp_server standalone dependencies
+#
+# Goal: allow deploying `sum_mcp_server` as a standalone bundle that includes vendored
+# `lightrag/`, `raganything/`, and `mcp_server_rag_anything/`.
+
+# ===== MCP runtime =====
 fastmcp>=2.14.1
 httpx>=0.28.1
+httpcore>=1.0.0
 python-dotenv>=1.0.0
 pydantic>=2.0.0
 psutil>=5.9.0
+
+# ===== Web (LightRAG API) =====
 fastapi>=0.110.0
 uvicorn[standard]>=0.27.0
+gunicorn>=23.0.0
+python-multipart>=0.0.21
+aiohttp>=3.0.0
+aiofiles>=25.1.0
+
+# ===== LightRAG core =====
+configparser>=7.0.0
+future>=1.0.0
+json-repair>=0.50.0
+nano-vectordb>=0.0.4
+networkx>=3.0.0
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0,<3.0.0
+pipmaster>=0.3.0
+pypinyin>=0.50.0
+tenacity>=9.0.0
+tiktoken>=0.8.0
+xlsxwriter>=3.1.0
+pytz>=2024.0
+google-api-core>=2.0.0,<3.0.0
+google-genai>=1.0.0,<2.0.0
+
+# ===== Auth/crypto (LightRAG API optional deps) =====
+passlib[bcrypt]>=1.7.4,<2.0.0
+PyJWT>=2.8.0,<3.0.0
+python-jose[cryptography]>=3.3.0,<4.0.0
+distro>=1.9.0,<2.0.0
+ascii-colors>=0.1.0,<1.0.0
+jiter>=0.10.0,<1.0.0
+
+# ===== Document processing =====
+openpyxl>=3.0.0,<4.0.0
+pycryptodome>=3.0.0,<4.0.0
+pypdf>=6.1.0,<7.0.0
+python-docx>=0.8.11,<2.0.0
+python-pptx>=0.6.21,<2.0.0
+docling>=2.61.2
+
+# ===== RAG Anything MCP (langchain/langgraph stack) =====
+langgraph>=1.0.5,<2.0.0
+langchain>=1.2.0,<2.0.0
+langchain-core>=0.3.0,<2.0.0
+langchain-community>=0.3.0,<1.0.0
+langchain-deepseek>=1.0.1,<2.0.0
+langchain-milvus>=0.3.0,<1.0.0
+langchain-ollama>=1.0.0,<2.0.0
+
+# ===== Common LLM providers (optional, but commonly used) =====
+openai>=2.0.0,<3.0.0
+anthropic>=0.18.0,<1.0.0
+ollama>=0.6.0,<1.0.0
+
+# ===== Storage backends (optional, enable via env config) =====
+pymilvus>=2.6.2,<3.0.0
+neo4j>=5.0.0,<7.0.0
+qdrant-client>=1.11.0,<2.0.0
+pymongo>=4.0.0,<5.0.0
+redis>=5.0.0,<8.0.0
+minio>=7.0.0,<8.0.0
+asyncpg>=0.29.0,<1.0.0
+sqlalchemy>=2.0.0,<3.0.0
+pymysql>=1.1.0,<2.0.0
+

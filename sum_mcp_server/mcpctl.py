@@ -4,12 +4,14 @@ import argparse
 import json
 import os
 import platform
+import re
 import signal
 import socket
 import subprocess
 import sys
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -26,12 +28,14 @@ class Service:
     transport: str
     entrypoint: str
     default_port: int | None
+    port_env: str | None
     args: list[str]
     pid_file: str
     log_file: str
     env: dict[str, str]
     health_url: str | None = None
     auto_start: bool = True
+    depends_on: list[str] = field(default_factory=list)
 
     @property
     def entrypoint_path(self) -> Path:
@@ -58,15 +62,90 @@ def _load_manifest() -> list[Service]:
                 transport=item.get("transport", ""),
                 entrypoint=item["entrypoint"],
                 default_port=item.get("default_port"),
+                port_env=item.get("port_env"),
                 args=list(item.get("args", [])),
                 pid_file=item["pid_file"],
                 log_file=item["log_file"],
                 env=dict(item.get("env", {})),
                 health_url=item.get("health_url"),
                 auto_start=bool(item.get("auto_start", True)),
+                depends_on=list(item.get("depends_on", [])),
             )
         )
     return services
+
+
+def _load_dotenv_files() -> None:
+    try:
+        from dotenv import load_dotenv  # type: ignore
+    except Exception:
+        return
+
+    # Prefer sum_mcp_server/.env, fallback to repo root .env
+    sum_env = REPO_ROOT / "sum_mcp_server" / ".env"
+    root_env = REPO_ROOT / ".env"
+    if sum_env.exists():
+        load_dotenv(sum_env, override=False)
+    if root_env.exists():
+        load_dotenv(root_env, override=False)
+
+
+def _toposort_services(services: list[Service], *, only_auto_start: bool) -> list[Service]:
+    selected = [svc for svc in services if (svc.auto_start or not only_auto_start)]
+    by_id = {svc.id: svc for svc in selected}
+
+    # Build graph (deps -> svc)
+    indegree: dict[str, int] = {svc.id: 0 for svc in selected}
+    outgoing: dict[str, set[str]] = {svc.id: set() for svc in selected}
+
+    for svc in selected:
+        deps = svc.depends_on or []
+        for dep in deps:
+            if dep not in by_id:
+                # If dependency exists in manifest but is filtered out, treat as error
+                # because startup order would be invalid.
+                raise SystemExit(f"Service '{svc.id}' depends on missing service '{dep}'")
+            outgoing[dep].add(svc.id)
+            indegree[svc.id] += 1
+
+    queue = [svc_id for svc_id, deg in indegree.items() if deg == 0]
+    queue.sort()
+    ordered_ids: list[str] = []
+
+    while queue:
+        current = queue.pop(0)
+        ordered_ids.append(current)
+        for nxt in sorted(outgoing[current]):
+            indegree[nxt] -= 1
+            if indegree[nxt] == 0:
+                queue.append(nxt)
+                queue.sort()
+
+    if len(ordered_ids) != len(selected):
+        remaining = [svc_id for svc_id, deg in indegree.items() if deg > 0]
+        raise SystemExit(f"Dependency cycle detected among: {', '.join(sorted(remaining))}")
+
+    return [by_id[svc_id] for svc_id in ordered_ids]
+
+
+def _expand_with_deps(services: list[Service], root_ids: list[str]) -> list[Service]:
+    by_id = {svc.id: svc for svc in services}
+    visited: set[str] = set()
+
+    def dfs(svc_id: str) -> None:
+        if svc_id in visited:
+            return
+        svc = by_id.get(svc_id)
+        if not svc:
+            raise SystemExit(f"Unknown service id: {svc_id}")
+        visited.add(svc_id)
+        for dep in svc.depends_on or []:
+            dfs(dep)
+
+    for rid in root_ids:
+        dfs(rid)
+
+    return [by_id[sid] for sid in visited]
 
 
 def _get_python_exe() -> Path:
@@ -259,9 +338,108 @@ def _format_cmd(cmd: list[str]) -> str:
     return " ".join([json.dumps(c, ensure_ascii=False) if " " in c else c for c in cmd])
 
 
-def _build_command(service: Service, port: int | None) -> tuple[list[str], dict[str, str]]:
+def _meta_path(service: Service) -> Path:
+    # Keep pid file as-is for compatibility; store richer metadata alongside it.
+    return service.pid_path.with_suffix(".json")
+
+
+def _read_meta(service: Service) -> dict[str, Any] | None:
+    path = _meta_path(service)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _write_meta(service: Service, payload: dict[str, Any]) -> None:
+    path = _meta_path(service)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _remove_meta(service: Service) -> None:
+    try:
+        _meta_path(service).unlink(missing_ok=True)  # py3.8+: missing_ok
+    except TypeError:
+        p = _meta_path(service)
+        if p.exists():
+            p.unlink()
+
+
+def _desired_port(service: Service) -> int | None:
+    if service.default_port is None:
+        return None
+    # Highest priority: MCPCTL_PORT_<ID>
+    env_key = f"MCPCTL_PORT_{service.id.upper()}"
+    raw = os.environ.get(env_key)
+    if raw:
+        return int(raw)
+    # Next: manifest-provided port env name
+    if service.port_env:
+        raw = os.environ.get(service.port_env)
+        if raw:
+            return int(raw)
+    return int(service.default_port)
+
+
+def _find_free_port(start_port: int, *, avoid: set[int] | None = None) -> int:
+    avoid = avoid or set()
+    port = int(start_port)
+    while 1 <= port <= 65535:
+        if port not in avoid and not _is_port_open(port):
+            return port
+        port += 1
+    raise SystemExit("Unable to find a free TCP port")
+
+
+_TEMPLATE_RE = re.compile(r"\{([^{}]+)\}")
+
+
+def _expand_templates(
+    value: str,
+    *,
+    service: Service,
+    this_port: int | None,
+    ports: dict[str, int],
+    env: dict[str, str],
+) -> str:
+    def repl(match: re.Match[str]) -> str:
+        token = match.group(1).strip()
+        if token in ("port", "this.port"):
+            if this_port is None:
+                raise SystemExit(f"{service.id} requires a port but none was provided")
+            return str(int(this_port))
+        if token.endswith(".port"):
+            dep_id = token[: -len(".port")]
+            if dep_id not in ports:
+                raise SystemExit(f"Template requires unknown port: {token} (missing '{dep_id}')")
+            return str(int(ports[dep_id]))
+        if token.startswith("env:"):
+            var = token[len("env:") :].strip()
+            return str(env.get(var, ""))
+        return match.group(0)
+
+    if "{" not in value:
+        return value
+    return _TEMPLATE_RE.sub(repl, value)
+
+
+def _build_command(
+    service: Service,
+    port: int | None,
+    *,
+    ports: dict[str, int] | None = None,
+) -> tuple[list[str], dict[str, str]]:
+    ports = ports or {}
     env = os.environ.copy()
-    env.update(service.env)
+    # Expand env templates after merging; allow referencing other ports.
+    for k, v in service.env.items():
+        # Do not override user-provided environment values.
+        if env.get(k):
+            continue
+        env[k] = _expand_templates(v, service=service, this_port=port, ports=ports, env=env)
     if service.type == "python":
         env.setdefault("PYTHONUTF8", "1")
         env.setdefault("PYTHONIOENCODING", "utf-8")
@@ -280,14 +458,9 @@ def _build_command(service: Service, port: int | None) -> tuple[list[str], dict[
         prefix = os.pathsep.join(str(p) for p in candidate_paths)
         env["PYTHONPATH"] = prefix if not existing else prefix + os.pathsep + existing
 
-    args: list[str] = []
-    for part in service.args:
-        if part == "{port}":
-            if port is None:
-                raise SystemExit(f"{service.id} requires a port but none was provided")
-            args.append(str(port))
-        else:
-            args.append(part)
+    args: list[str] = [
+        _expand_templates(part, service=service, this_port=port, ports=ports, env=env) for part in service.args
+    ]
 
     if service.type == "python":
         python_exe = _get_python_exe()
@@ -321,34 +494,71 @@ def _remove_pid(pid_path: Path) -> None:
         if pid_path.exists():
             pid_path.unlink()
 
+def _tail_text_file(path: Path, *, max_lines: int = 80, max_bytes: int = 64_000) -> str:
+    if not path.exists():
+        return ""
+    try:
+        data = path.read_bytes()
+        if len(data) > max_bytes:
+            data = data[-max_bytes:]
+        text = data.decode("utf-8", errors="ignore")
+        lines = text.splitlines()
+        return "\n".join(lines[-max_lines:])
+    except Exception:
+        try:
+            return path.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            return ""
 
-def _start_one(service: Service, port: int | None, *, kill_port: bool, wait_s: float) -> None:
+
+def _start_one(
+    service: Service,
+    port: int | None,
+    *,
+    ports: dict[str, int] | None = None,
+    kill_port: bool,
+    auto_port: bool,
+    wait_s: float,
+) -> int | None:
+    ports = ports or {}
     if port is None:
-        port = service.default_port
+        port = _desired_port(service)
 
     if port is not None:
         if _is_port_open(int(port)):
-            if not kill_port:
+            if kill_port:
+                pids = _pids_listening_on_port(int(port))
+                if not pids:
+                    raise SystemExit(f"Port {port} is in use but could not resolve PID(s).")
+                for pid in sorted(pids):
+                    _kill_pid_tree(pid)
+                time.sleep(0.4)
+            elif auto_port:
+                avoid = set(ports.values())
+                new_port = _find_free_port(int(port), avoid=avoid)
+                print(f"[INFO] {service.id} port {port} is busy, switching to {new_port}")
+                port = new_port
+            else:
                 raise SystemExit(
-                    f"Port {port} is already in use. Use --kill-port to terminate the process occupying it."
+                    f"Port {port} is already in use. Use --kill-port to terminate the process occupying it, "
+                    "or use --auto-port to pick a free port."
                 )
-            pids = _pids_listening_on_port(int(port))
-            if not pids:
-                raise SystemExit(f"Port {port} is in use but could not resolve PID(s).")
-            for pid in sorted(pids):
-                _kill_pid_tree(pid)
-            time.sleep(0.4)
 
     # If pid file exists and process alive, do not start twice
     existing_pid = _read_pid(service.pid_path)
     if existing_pid and _pid_exists(existing_pid):
         print(f"[SKIP] {service.id} already running (PID {existing_pid})")
-        return
+        return port
 
     service.log_path.parent.mkdir(parents=True, exist_ok=True)
     log_handle = service.log_path.open("a", encoding="utf-8", errors="ignore")
 
-    cmd, env = _build_command(service, port)
+    # Ensure this service's port is available to template expansion for dependents.
+    if port is not None:
+        ports = dict(ports)
+        ports[service.id] = int(port)
+
+    cmd, env = _build_command(service, port, ports=ports)
     creationflags = 0
     if platform.system().lower().startswith("win"):
         creationflags = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
@@ -368,7 +578,25 @@ def _start_one(service: Service, port: int | None, *, kill_port: bool, wait_s: f
         pass
     effective_pid = int(proc.pid)
     _write_pid(service.pid_path, effective_pid)
+    _write_meta(
+        service,
+        {
+            "id": service.id,
+            "pid": effective_pid,
+            "port": int(port) if port is not None else None,
+            "started_at": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "cmd": cmd,
+        },
+    )
     print(f"[OK] started {service.id} (PID {proc.pid}) :: {_format_cmd(cmd)}")
+
+    # Quick fail-fast: if process exits immediately, surface logs.
+    time.sleep(0.2)
+    if not _pid_exists(effective_pid):
+        tail = _tail_text_file(service.log_path, max_lines=120)
+        if tail:
+            print(f"[ERROR] {service.id} exited immediately. Log tail:\n{tail}")
+        raise SystemExit(f"Failed to start {service.id} (process exited immediately)")
 
     if wait_s > 0 and port is not None:
         if service.health_url:
@@ -385,9 +613,25 @@ def _start_one(service: Service, port: int | None, *, kill_port: bool, wait_s: f
                 if len(listener_pids) == 1:
                     effective_pid = next(iter(listener_pids))
                     _write_pid(service.pid_path, effective_pid)
+                    _write_meta(
+                        service,
+                        {
+                            "id": service.id,
+                            "pid": int(effective_pid),
+                            "port": int(port),
+                            "started_at": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+                            "cmd": cmd,
+                        },
+                    )
                 return
+            if not _pid_exists(effective_pid):
+                tail = _tail_text_file(service.log_path, max_lines=120)
+                if tail:
+                    print(f"[ERROR] {service.id} exited. Log tail:\n{tail}")
+                raise SystemExit(f"Failed to start {service.id} (process exited)")
             time.sleep(0.3)
         print(f"[WARN] {service.id} not responding yet: {url}")
+    return port
 
 
 def _stop_one(service: Service) -> None:
@@ -404,8 +648,10 @@ def _stop_one(service: Service) -> None:
     else:
         print(f"[SKIP] {service.id} not running (no live pid)")
         _remove_pid(service.pid_path)
+        _remove_meta(service)
         return
     _remove_pid(service.pid_path)
+    _remove_meta(service)
     if ok:
         print(f"[OK] stopped {service.id} (PID {pid})")
     else:
@@ -414,11 +660,14 @@ def _stop_one(service: Service) -> None:
 
 def _status_one(service: Service) -> dict[str, Any]:
     pid = _read_pid(service.pid_path)
+    meta = _read_meta(service) or {}
     running = False
     if pid:
         running = _pid_exists(pid)
 
-    port = service.default_port
+    port = meta.get("port")
+    if port is None:
+        port = _desired_port(service)
     http_ok = None
     if port is not None:
         if service.health_url:
@@ -456,6 +705,7 @@ def _select_services(all_services: list[Service], ids: list[str]) -> list[Servic
 
 
 def main(argv: list[str] | None = None) -> int:
+    _load_dotenv_files()
     services = _load_manifest()
     _validate_unique_ports(services)
 
@@ -467,8 +717,10 @@ def main(argv: list[str] | None = None) -> int:
     start_p = sub.add_parser("start", help="Start MCP service(s)")
     start_p.add_argument("id", nargs="?", help="Service id")
     start_p.add_argument("--all", action="store_true", help="Start all services")
+    start_p.add_argument("--with-deps", action="store_true", help="Start dependencies first (single service only)")
     start_p.add_argument("--port", type=int, help="Override port (single service only)")
     start_p.add_argument("--kill-port", action="store_true", help="Kill process occupying the port")
+    start_p.add_argument("--auto-port", action="store_true", help="Pick a free port if the desired port is busy")
     start_p.add_argument("--wait", type=float, default=8.0, help="Wait seconds for /sse health (default: 8)")
 
     stop_p = sub.add_parser("stop", help="Stop MCP service(s)")
@@ -477,11 +729,26 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("status", help="Show MCP status")
 
+    restart_p = sub.add_parser("restart", help="Restart MCP service(s)")
+    restart_p.add_argument("id", nargs="?", help="Service id")
+    restart_p.add_argument("--all", action="store_true", help="Restart all services")
+    restart_p.add_argument("--kill-port", action="store_true", help="Kill process occupying the port")
+    restart_p.add_argument("--auto-port", action="store_true", help="Pick a free port if the desired port is busy")
+    restart_p.add_argument("--wait", type=float, default=8.0, help="Wait seconds for /sse health (default: 8)")
+
+    sub.add_parser("doctor", help="Check config/vendor/ports and print suggestions")
+
     args = parser.parse_args(argv)
 
     if args.cmd == "list":
         for svc in services:
-            port = f":{svc.default_port}" if svc.default_port else ""
+            effective = _desired_port(svc)
+            port = ""
+            if effective is not None:
+                if svc.default_port is not None and int(effective) != int(svc.default_port):
+                    port = f":{effective} (default {svc.default_port})"
+                else:
+                    port = f":{effective}"
             suffix = "" if svc.auto_start else " (manual)"
             print(f"- {svc.id}{port} [{svc.type}/{svc.transport}] {svc.name}{suffix}")
         return 0
@@ -489,19 +756,56 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "start":
         if not args.all and not args.id:
             raise SystemExit("Provide <id> or use --all")
-        selected = [svc for svc in services if svc.auto_start] if args.all else _select_services(services, [args.id])
+        if args.all:
+            selected = _toposort_services(services, only_auto_start=True)
+        else:
+            if args.with_deps:
+                expanded = _expand_with_deps(services, [args.id])
+                # Keep only expanded set but start by dependency order
+                expanded_ids = {s.id for s in expanded}
+                ordered = _toposort_services(services, only_auto_start=False)
+                selected = [s for s in ordered if s.id in expanded_ids]
+            else:
+                selected = _select_services(services, [args.id])
         if args.port is not None and args.all:
             raise SystemExit("--port can only be used when starting a single service")
 
+        # Pre-resolve ports for template expansion like {lightrag_api.port}.
+        ports: dict[str, int] = {}
         for svc in selected:
-            port = int(args.port) if args.port is not None else svc.default_port
-            _start_one(svc, port, kill_port=bool(args.kill_port), wait_s=float(args.wait))
+            desired = int(args.port) if args.port is not None else _desired_port(svc)
+            if desired is not None:
+                if desired in ports.values():
+                    if bool(args.auto_port):
+                        desired = _find_free_port(desired, avoid=set(ports.values()))
+                    else:
+                        clashing = [sid for sid, p in ports.items() if p == desired]
+                        raise SystemExit(
+                            f"Duplicate desired port {desired} for {svc.id} (already used by {', '.join(clashing)}). "
+                            "Fix env overrides or use --auto-port."
+                        )
+                ports[svc.id] = int(desired)
+        for svc in selected:
+            desired = int(args.port) if args.port is not None else ports.get(svc.id)
+            started_port = _start_one(
+                svc,
+                desired,
+                ports=ports,
+                kill_port=bool(args.kill_port),
+                auto_port=bool(args.auto_port),
+                wait_s=float(args.wait),
+            )
+            if started_port is not None:
+                ports[svc.id] = int(started_port)
         return 0
 
     if args.cmd == "stop":
         if not args.all and not args.id:
             raise SystemExit("Provide <id> or use --all")
-        selected = services if args.all else _select_services(services, [args.id])
+        if args.all:
+            selected = list(reversed(_toposort_services(services, only_auto_start=False)))
+        else:
+            selected = _select_services(services, [args.id])
         for svc in selected:
             _stop_one(svc)
         return 0
@@ -517,6 +821,82 @@ def main(argv: list[str] | None = None) -> int:
                     print(f"[OK] {row['id']} running (PID {row['pid']}) :{row['port']} ({suffix})")
             else:
                 print(f"[X]  {row['id']} stopped")
+        return 0
+
+    if args.cmd == "restart":
+        if not args.all and not args.id:
+            raise SystemExit("Provide <id> or use --all")
+        if args.all:
+            stop_list = list(reversed(_toposort_services(services, only_auto_start=False)))
+            start_list = _toposort_services(services, only_auto_start=True)
+        else:
+            stop_list = _select_services(services, [args.id])
+            start_list = _select_services(services, [args.id])
+
+        for svc in stop_list:
+            _stop_one(svc)
+
+        ports: dict[str, int] = {}
+        for svc in start_list:
+            desired = _desired_port(svc)
+            if desired is not None:
+                if desired in ports.values():
+                    if bool(args.auto_port):
+                        desired = _find_free_port(desired, avoid=set(ports.values()))
+                    else:
+                        clashing = [sid for sid, p in ports.items() if p == desired]
+                        raise SystemExit(
+                            f"Duplicate desired port {desired} for {svc.id} (already used by {', '.join(clashing)}). "
+                            "Fix env overrides or use --auto-port."
+                        )
+                ports[svc.id] = int(desired)
+        for svc in start_list:
+            desired = ports.get(svc.id)
+            started_port = _start_one(
+                svc,
+                desired,
+                ports=ports,
+                kill_port=bool(args.kill_port),
+                auto_port=bool(args.auto_port),
+                wait_s=float(args.wait),
+            )
+            if started_port is not None:
+                ports[svc.id] = int(started_port)
+        return 0
+
+    if args.cmd == "doctor":
+        # Effective ports (including env overrides)
+        effective_ports: dict[int, list[str]] = {}
+        for svc in services:
+            p = _desired_port(svc)
+            if p is None:
+                continue
+            effective_ports.setdefault(int(p), []).append(svc.id)
+        dup = {p: ids for p, ids in effective_ports.items() if len(ids) > 1}
+        if dup:
+            print("[X] Duplicate effective ports (env overrides caused conflict):")
+            for p, ids in sorted(dup.items()):
+                print(f"  {p}: {', '.join(sorted(ids))}")
+        else:
+            print("[OK] No duplicate effective ports")
+
+        for svc in services:
+            p = _desired_port(svc)
+            if p is None:
+                continue
+            busy = _is_port_open(int(p))
+            tag = "BUSY" if busy else "FREE"
+            print(f"- port {p:>5} {tag} :: {svc.id}")
+
+        vendor = REPO_ROOT / "sum_mcp_server" / "vendor"
+        needed = [
+            ("lightrag", vendor / "lightrag"),
+            ("raganything", vendor / "raganything"),
+            ("mcp_server_rag_anything", vendor / "mcp_server_rag_anything"),
+            ("automation-quality-mcp", vendor / "automation-quality-mcp"),
+        ]
+        for name, path in needed:
+            print(f"- vendor {name}: {'OK' if path.exists() else 'MISSING'} ({path})")
         return 0
 
     raise SystemExit("Unhandled command")

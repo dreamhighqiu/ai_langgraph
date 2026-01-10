@@ -212,31 +212,57 @@ async def ai_generate_requirement(
 @router.get("/download/{requirement_id}", summary="下载需求分析报告")
 async def download_requirement(
     requirement_id: int = Path(..., description="需求ID"),
-    format: str = Query('markdown', description="文件格式 json/markdown"),
     db: AsyncSession = Depends(get_db),
     current_user: dict = Depends(LoginService.get_current_user)
 ):
-    """下载需求分析报告（代理下载，确保正确的编码）"""
+    """下载需求分析报告（从MinIO直接下载，确保正确的编码）"""
     try:
         requirement = await requirement_service.get_requirement(db, requirement_id)
         if not requirement:
             return ResponseUtil.failure(msg="需求分析不存在")
         
-        # 优先使用report_url，如果没有则生成
-        if requirement.report_url and format == 'markdown':
-            report_url = requirement.report_url
-        else:
-        # 生成下载URL
-            report_url = await requirement_service.save_to_minio(requirement, format)
-        
-        if not report_url:
+        if not requirement.report_url:
             return ResponseUtil.failure(msg="该需求分析还没有生成报告")
         
-        # 从MinIO下载文件
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.get(report_url)
-            response.raise_for_status()
-            content = response.content
+        # 从MinIO直接下载文件
+        from module_testing.storage.minio_client import MinioClientManager
+        
+        # 解析report_url获取bucket和object_name
+        # report_url可能是预签名URL或minio://bucket/path格式
+        if requirement.report_url.startswith('minio://'):
+            # 格式: minio://bucket/path
+            path_parts = requirement.report_url[8:].split('/', 1)
+            bucket_name = path_parts[0]
+            object_name = path_parts[1] if len(path_parts) > 1 else ''
+        elif 'requirements/' in requirement.report_url:
+            # 从URL中提取路径
+            bucket_name = "testing"
+            # 提取requirements/之后的部分
+            if '/requirements/' in requirement.report_url:
+                object_name = requirement.report_url.split('/requirements/')[1]
+            else:
+                # 如果无法解析，尝试重新生成报告
+                from utils.log_util import logger
+                logger.warning(f"无法解析report_url: {requirement.report_url}，尝试重新生成报告")
+                report_url = await requirement_service.generate_and_upload_report(db, requirement_id)
+                if not report_url:
+                    return ResponseUtil.failure(msg="报告生成失败")
+                # 递归调用自己
+                return await download_requirement(requirement_id, db, current_user)
+        else:
+            # 可能是预签名URL，尝试从MinIO下载
+            bucket_name = "testing"
+            # 尝试从URL中提取object_name
+            if '/requirements/' in requirement.report_url:
+                object_name = requirement.report_url.split('/requirements/')[1].split('?')[0]
+            else:
+                return ResponseUtil.failure(msg="无法解析报告URL")
+        
+        # 使用MinioClientManager下载文件
+        minio_client = MinioClientManager.get_client()
+        success, content = await minio_client.download_file_async(requirement.report_url)
+        if not success or not content:
+            return ResponseUtil.failure(msg="报告文件不存在或下载失败")
         
         # 确保内容是UTF-8编码的字符串
         try:

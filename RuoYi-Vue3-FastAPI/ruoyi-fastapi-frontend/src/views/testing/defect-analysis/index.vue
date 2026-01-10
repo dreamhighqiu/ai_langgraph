@@ -74,6 +74,11 @@
           <el-link type="primary" @click="handleDetail(scope.row)">{{ scope.row.analysis_name }}</el-link>
         </template>
       </el-table-column>
+      <el-table-column label="项目" align="center" width="120">
+        <template #default="scope">
+          {{ getProjectName(scope.row.project_id) }}
+        </template>
+      </el-table-column>
       <el-table-column label="缺陷标题" align="left" min-width="180" :show-overflow-tooltip="true">
         <template #default="scope">{{ scope.row.defect_title }}</template>
       </el-table-column>
@@ -522,6 +527,13 @@ const getStatusType = (status) => {
 const getStatusLabel = (status) => {
   const map = { draft: '草稿', analyzing: '分析中', completed: '已完成', failed: '失败' }
   return map[status] || status
+}
+
+// 获取项目名称
+const getProjectName = (projectId) => {
+  if (!projectId) return '-'
+  const project = projectList.value.find(p => p.projectId === projectId)
+  return project?.projectName || '-'
 }
 
 const formatContent = (content) => {

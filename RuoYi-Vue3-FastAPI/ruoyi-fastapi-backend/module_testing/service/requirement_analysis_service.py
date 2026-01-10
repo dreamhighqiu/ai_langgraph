@@ -134,7 +134,7 @@ class RequirementAnalysisService:
             template_name: 模板文件名，默认为 None（使用默认模板）
         
         Returns:
-            str: 报告URL，如果失败返回 None
+            str: 报告代理下载URL，如果失败返回 None
         """
         try:
             requirement = await self.requirement_dao.select_by_id(db, analysis_id)
@@ -151,30 +151,40 @@ class RequirementAnalysisService:
             
             # 上传到MinIO
             from datetime import datetime
+            from io import BytesIO
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             file_name = f"requirement_analysis_{requirement.analysis_id}_{timestamp}.md"
             object_name = f"requirements/{requirement.project_id}/reports/{file_name}"
             
-            url = await self.minio_util.upload_file(
+            # 直接上传文件，不生成预签名URL
+            # 确保存储桶存在
+            self.minio_util.create_bucket("testing")
+            
+            # 上传文件
+            file_stream = BytesIO(content.encode('utf-8'))
+            self.minio_util.client.put_object(
                 bucket_name="testing",
                 object_name=object_name,
-                file_content=content.encode('utf-8'),
+                data=file_stream,
+                length=len(content.encode('utf-8')),
                 content_type="text/markdown; charset=utf-8"
             )
             
-            # 更新数据库中的report_url
-            requirement.report_url = url
+            # 更新数据库中的report_url - 存储minio://格式的路径，而不是预签名URL
+            # 这样可以通过代理下载接口永久访问，不依赖预签名URL的时效性
+            minio_path = f"minio://testing/{object_name}"
+            requirement.report_url = minio_path
             await self.requirement_dao.update(db, requirement)
             # 注意：不在这里 commit，让调用者管理事务
-            # await db.commit()  # 移除，由调用者管理
             
-            logger.info(f"需求分析报告生成并上传成功: {object_name}, URL: {url}")
-            return url
+            # 返回代理下载URL
+            proxy_url = f"/testing/requirement-analysis/download/{analysis_id}"
+            logger.info(f"需求分析报告生成并上传成功: {object_name}, 代理URL: {proxy_url}")
+            return proxy_url
             
         except Exception as e:
-            logger.exception("生成需求分析报告失败")
-            # 注意：不在这里 rollback，让调用者管理事务
-            # await db.rollback()  # 移除，由调用者管理
+            logger.error(f"生成需求分析报告失败: {str(e)}", exc_info=True)
+            await db.rollback()
             return None
 
     async def save_to_minio(

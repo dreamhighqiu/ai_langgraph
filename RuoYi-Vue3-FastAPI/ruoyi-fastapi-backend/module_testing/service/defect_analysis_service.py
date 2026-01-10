@@ -219,11 +219,13 @@ class DefectAnalysisService:
             # 这样可以通过代理下载接口永久访问，不依赖预签名URL的时效性
             minio_path = f"minio://testing/{object_name}"
             analysis.report_url = minio_path
-            await db.commit()
-            await db.refresh(analysis)
+            await self.dao.update(db, analysis)
+            # 注意：不在这里 commit，让调用者管理事务
             
-            logger.info(f"缺陷分析报告生成并上传成功: {object_name}, URL: {url}")
-            return url
+            # 返回代理下载URL
+            proxy_url = f"/testing/defect-analysis/download/{analysis_id}"
+            logger.info(f"缺陷分析报告生成并上传成功: {object_name}, 代理URL: {proxy_url}")
+            return proxy_url
             
         except Exception as e:
             logger.error(f"生成缺陷分析报告失败: {str(e)}", exc_info=True)

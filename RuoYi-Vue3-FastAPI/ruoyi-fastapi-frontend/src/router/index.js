@@ -200,8 +200,21 @@ export const dynamicRoutes = [
     path: '/testing/knowledge',
     component: Layout,
     hidden: true,
+    redirect: '/testing/knowledge/index',
     permissions: ['testing:knowledge:list'],
     children: [
+      {
+        path: 'index',
+        component: () => import('@/views/testing/knowledge/index'),
+        name: 'KnowledgeIndexOld',
+        meta: { title: '知识库列表', activeMenu: '/knowledge' }
+      },
+      {
+        path: 'files',
+        component: () => import('@/views/testing/knowledge/files-manage'),
+        name: 'KnowledgeFilesManageOld',
+        meta: { title: '文件管理', activeMenu: '/knowledge' }
+      },
       {
         path: 'files/:knowledgeId(\\d+)',
         component: () => import('@/views/testing/knowledge/files'),

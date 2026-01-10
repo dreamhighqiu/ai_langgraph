@@ -124,3 +124,25 @@ export function getAISuggestions(projectId, context) {
     params: { project_id: projectId, context }
   })
 }
+
+// ==================== 导出相关 API ====================
+
+// 导出测试用例为Excel
+export function exportTestCaseToExcel(params) {
+  return request({
+    url: '/api/testing/test-case/export/excel',
+    method: 'get',
+    params: params,
+    responseType: 'blob'
+  })
+}
+
+// 导出测试用例为XMind
+export function exportTestCaseToXMind(params) {
+  return request({
+    url: '/api/testing/test-case/export/xmind',
+    method: 'get',
+    params: params,
+    responseType: 'blob'
+  })
+}

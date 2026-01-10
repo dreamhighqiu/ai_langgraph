@@ -2,13 +2,15 @@
 测试用例控制器
 """
 from typing import Optional, List
-from fastapi import APIRouter, Depends, Query, Path, Body, Request
+from fastapi import APIRouter, Depends, Query, Path, Body, Request, Response
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from module_testing.service.test_case_service import TestCaseService
+from module_testing.service.test_case_export_service import TestCaseExportService
 from module_testing.entity.vo.test_case_vo import (
     TestCaseCreateVO, TestCaseUpdateVO, TestCaseQueryVO, TestCaseAIGenerateVO
 )
+from module_testing.dao.project_dao import ProjectDAO
 from config.get_db import get_db
 from module_admin.service.login_service import LoginService
 from common.annotation.log_annotation import Log
@@ -20,6 +22,7 @@ from utils.log_util import logger
 
 router = APIRouter(prefix="/testing/test-case", tags=["测试用例管理"])
 test_case_service = TestCaseService()
+export_service = TestCaseExportService()
 
 
 @router.post("", summary="创建测试用例", dependencies=[UserInterfaceAuthDependency('testing:testcase:add')])
@@ -265,3 +268,156 @@ async def count_by_project(
     except Exception as e:
         logger.error(f"统计失败: {str(e)}")
         return ResponseUtil.failure(msg=f"统计失败: {str(e)}")
+
+
+@router.get("/export/excel", summary="导出测试用例为Excel", dependencies=[UserInterfaceAuthDependency('testing:testcase:export')])
+async def export_test_cases_to_excel(
+    project_id: Optional[int] = Query(None, description="项目ID"),
+    folder_id: Optional[int] = Query(None, description="文件夹ID"),
+    case_name: Optional[str] = Query(None, description="用例名称"),
+    case_type: Optional[str] = Query(None, description="用例类型"),
+    status: Optional[str] = Query(None, description="状态"),
+    priority: Optional[str] = Query(None, description="优先级"),
+    tags: Optional[str] = Query(None, description="标签"),
+    case_ids: Optional[str] = Query(None, description="用例ID列表，多个用逗号分隔"),
+    db: AsyncSession = Depends(get_db),
+    current_user = Depends(LoginService.get_current_user)
+):
+    """导出测试用例为Excel格式"""
+    try:
+        # 构建查询条件
+        if case_ids:
+            # 如果指定了用例ID列表，直接查询这些用例
+            id_list = [int(id.strip()) for id in case_ids.split(',') if id.strip()]
+            test_cases = []
+            for case_id in id_list:
+                test_case = await test_case_service.get_test_case(db, case_id)
+                if test_case:
+                    test_cases.append(test_case)
+        else:
+            # 否则使用查询条件
+            query_vo = TestCaseQueryVO(
+                project_id=project_id,
+                folder_id=folder_id,
+                case_name=case_name,
+                case_type=case_type,
+                status=status,
+                priority=priority,
+                tags=tags,
+                page_num=1,
+                page_size=10000  # 导出时获取所有数据
+            )
+            records, _ = await test_case_service.query_test_case_list(db, query_vo)
+            test_cases = records
+        
+        if not test_cases:
+            return ResponseUtil.failure(msg="没有可导出的测试用例")
+        
+        # 获取项目名称
+        project_name = "测试项目"
+        if project_id:
+            project = await ProjectDAO.get_by_id(db, project_id)
+            if project:
+                project_name = project.project_name
+        
+        # 导出Excel
+        excel_file = export_service.export_to_excel(test_cases, project_name)
+        
+        # 生成文件名
+        from datetime import datetime
+        from urllib.parse import quote
+        import base64
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"测试用例_{project_name}_{timestamp}.xlsx"
+        # 使用RFC 5987格式编码文件名，支持中文
+        encoded_filename = quote(filename.encode('utf-8'), safe='')
+        
+        # 返回文件
+        return Response(
+            content=excel_file.read(),
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={
+                "Content-Disposition": f'attachment; filename*=UTF-8\'\'{encoded_filename}',
+                "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"导出Excel失败: {str(e)}", exc_info=True)
+        return ResponseUtil.failure(msg=f"导出Excel失败: {str(e)}")
+
+
+@router.get("/export/xmind", summary="导出测试用例为XMind", dependencies=[UserInterfaceAuthDependency('testing:testcase:export')])
+async def export_test_cases_to_xmind(
+    project_id: Optional[int] = Query(None, description="项目ID"),
+    folder_id: Optional[int] = Query(None, description="文件夹ID"),
+    case_name: Optional[str] = Query(None, description="用例名称"),
+    case_type: Optional[str] = Query(None, description="用例类型"),
+    status: Optional[str] = Query(None, description="状态"),
+    priority: Optional[str] = Query(None, description="优先级"),
+    tags: Optional[str] = Query(None, description="标签"),
+    case_ids: Optional[str] = Query(None, description="用例ID列表，多个用逗号分隔"),
+    db: AsyncSession = Depends(get_db),
+    current_user = Depends(LoginService.get_current_user)
+):
+    """导出测试用例为XMind格式"""
+    try:
+        # 构建查询条件
+        if case_ids:
+            # 如果指定了用例ID列表，直接查询这些用例
+            id_list = [int(id.strip()) for id in case_ids.split(',') if id.strip()]
+            test_cases = []
+            for case_id in id_list:
+                test_case = await test_case_service.get_test_case(db, case_id)
+                if test_case:
+                    test_cases.append(test_case)
+        else:
+            # 否则使用查询条件
+            query_vo = TestCaseQueryVO(
+                project_id=project_id,
+                folder_id=folder_id,
+                case_name=case_name,
+                case_type=case_type,
+                status=status,
+                priority=priority,
+                tags=tags,
+                page_num=1,
+                page_size=10000  # 导出时获取所有数据
+            )
+            records, _ = await test_case_service.query_test_case_list(db, query_vo)
+            test_cases = records
+        
+        if not test_cases:
+            return ResponseUtil.failure(msg="没有可导出的测试用例")
+        
+        # 获取项目名称
+        project_name = "测试项目"
+        if project_id:
+            project = await ProjectDAO.get_by_id(db, project_id)
+            if project:
+                project_name = project.project_name
+        
+        # 导出XMind
+        xmind_file = export_service.export_to_xmind(test_cases, project_name)
+        
+        # 生成文件名
+        from datetime import datetime
+        from urllib.parse import quote
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"测试用例_{project_name}_{timestamp}.xmind"
+        # 使用RFC 5987格式编码文件名，支持中文
+        encoded_filename = quote(filename.encode('utf-8'), safe='')
+        
+        # 返回文件
+        return Response(
+            content=xmind_file.read(),
+            media_type="application/x-xmind",
+            headers={
+                "Content-Disposition": f'attachment; filename*=UTF-8\'\'{encoded_filename}',
+                "Content-Type": "application/x-xmind"
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"导出XMind失败: {str(e)}", exc_info=True)
+        return ResponseUtil.failure(msg=f"导出XMind失败: {str(e)}")

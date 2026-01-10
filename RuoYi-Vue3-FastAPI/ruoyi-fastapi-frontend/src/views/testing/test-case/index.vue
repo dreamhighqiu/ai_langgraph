@@ -75,6 +75,27 @@
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:testcase:remove']">删除</el-button>
       </el-col>
+      <el-col :span="1.5">
+        <el-dropdown @command="handleExportCommand" v-hasPermi="['testing:testcase:export']">
+          <el-button type="success" plain>
+            <el-icon><Download /></el-icon>
+            导出
+            <el-icon class="el-icon--right"><ArrowDown /></el-icon>
+          </el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item command="excel">
+                <el-icon><Document /></el-icon>
+                导出为Excel
+              </el-dropdown-item>
+              <el-dropdown-item command="xmind">
+                <el-icon><Files /></el-icon>
+                导出为XMind
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -261,8 +282,8 @@
 <script setup name="TestCase">
 import { ref, reactive, onMounted, computed, nextTick } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Document, Plus, Delete, MagicStick, ArrowDown, Upload, ChatDotRound } from '@element-plus/icons-vue'
-import { listTestCase, getTestCase, addTestCase, updateTestCase, delTestCase } from '@/api/testing/testCase'
+import { Document, Plus, Delete, MagicStick, ArrowDown, Upload, ChatDotRound, Download, Files } from '@element-plus/icons-vue'
+import { listTestCase, getTestCase, addTestCase, updateTestCase, delTestCase, exportTestCaseToExcel, exportTestCaseToXMind } from '@/api/testing/testCase'
 import { listAllProject } from '@/api/testing/project'
 import AIChatDrawer from '@/views/testing/components/AIChatDrawer.vue'
 import AIGenerateDialog from '@/views/testing/components/AIGenerateDialog.vue'
@@ -558,6 +579,59 @@ const handleAICommand = (command) => {
     case 'document':
       openAIDocDialog()
       break
+  }
+}
+
+// 导出命令处理
+const handleExportCommand = async (command) => {
+  try {
+    // 构建导出参数
+    const exportParams = {
+      project_id: queryParams.projectId || null,
+      case_name: queryParams.caseName || null,
+      case_type: queryParams.caseType || null,
+      status: queryParams.status || null,
+      priority: queryParams.priority || null,
+      tags: queryParams.tags || null
+    }
+    
+    // 如果选中了用例，只导出选中的
+    if (ids.value && ids.value.length > 0) {
+      exportParams.case_ids = ids.value.join(',')
+    }
+    
+    let response
+    let filename
+    let contentType
+    
+    if (command === 'excel') {
+      response = await exportTestCaseToExcel(exportParams)
+      filename = `测试用例_${new Date().toISOString().slice(0, 10)}.xlsx`
+      contentType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    } else if (command === 'xmind') {
+      response = await exportTestCaseToXMind(exportParams)
+      filename = `测试用例_${new Date().toISOString().slice(0, 10)}.xmind`
+      contentType = 'application/x-xmind'
+    } else {
+      return
+    }
+    
+    // 创建下载链接
+    const blob = new Blob([response], { type: contentType })
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    window.URL.revokeObjectURL(url)
+    
+    proxy.$modal.msgSuccess('导出成功')
+  } catch (error) {
+    console.error('导出失败:', error)
+    const errorMsg = error?.response?.data?.msg || error?.message || '导出失败'
+    proxy.$modal.msgError(errorMsg)
   }
 }
 

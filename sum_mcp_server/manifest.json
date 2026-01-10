@@ -16,6 +16,26 @@
       "health_url": "http://127.0.0.1:{port}/docs"
     },
     {
+      "id": "lightrag_webui_dev",
+      "name": "LightRAG WebUI (Vite dev/preview)",
+      "type": "python",
+      "transport": "http",
+      "auto_start": false,
+      "default_port": 9622,
+      "port_env": "LIGHTRAG_WEBUI_PORT",
+      "depends_on": ["lightrag_api"],
+      "entrypoint": "sum_mcp_server/servers/lightrag_webui_dev.py",
+      "args": ["--host", "0.0.0.0", "--port", "{port}", "--mode", "dev"],
+      "pid_file": ".pids/lightrag_webui_dev.pid",
+      "log_file": "logs/lightrag_webui_dev.log",
+      "health_url": "http://127.0.0.1:{port}/webui/",
+      "env": {
+        "VITE_API_PROXY": "true",
+        "VITE_API_ENDPOINTS": "/api,/docs,/redoc,/openapi.json,/static",
+        "VITE_BACKEND_URL": "http://127.0.0.1:{lightrag_api.port}"
+      }
+    },
+    {
       "id": "rag_anything",
       "name": "RAG Anything MCP (mcp-server)",
       "type": "python",

@@ -19,13 +19,13 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/10/26 21:59:16] INFO     Starting MCP server 'Fecmall Login' server.py:2618
+[01/11/26 15:37:15] INFO     Starting MCP server 'Fecmall Login' server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8003/sse                           
-INFO:     Started server process [369688]
+INFO:     Started server process [800852]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-INFO:     127.0.0.1:57396 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57761 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49218 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49812 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64495 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53404 - "GET /sse HTTP/1.1" 200 OK

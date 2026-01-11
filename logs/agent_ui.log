@@ -7,9 +7,10 @@
    - Network:      http://192.168.1.59:3200
 
  ✓ Starting...
- ✓ Ready in 2.6s
+ ✓ Ready in 5.5s
  ○ Compiling / ...
- ✓ Compiled / in 8.7s
- GET / 200 in 2566ms
- GET / 200 in 149ms
- GET / 200 in 146ms
+ ✓ Compiled / in 18.7s
+ GET / 200 in 3421ms
+ GET / 200 in 569ms
+ GET / 200 in 547ms
+ GET / 200 in 397ms

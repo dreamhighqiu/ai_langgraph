@@ -20,17 +20,22 @@
 
 
 INFO:__main__:并行执行支持: xdist=False, CPU核心数=16, Allure CLI=False
-[01/10/26 21:59:45] INFO     Starting MCP server 'TestExecutor'  server.py:2618
+[01/11/26 15:38:14] INFO     Starting MCP server 'TestExecutor'  server.py:2618
                              with transport 'sse' on                           
                              http://0.0.0.0:8004/sse                           
-INFO:     Started server process [370408]
+INFO:     Started server process [783672]
 INFO:     Waiting for application startup.
-INFO:docket.worker:Starting worker 'caobinbin#370408' with the following tasks:
+INFO:docket.worker:Starting worker 'caobinbin#783672' with the following tasks:
 INFO:docket.worker:* trace(message: str, ...)
 INFO:docket.worker:* fail(message: str, ...)
 INFO:docket.worker:* sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
-INFO:     127.0.0.1:59111 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58962 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56639 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64381 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61060 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61064 - "POST /messages/?session_id=47c96239e96243c8b8047f5fc525c19e HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61068 - "POST /messages/?session_id=47c96239e96243c8b8047f5fc525c19e HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61074 - "POST /messages/?session_id=47c96239e96243c8b8047f5fc525c19e HTTP/1.1" 202 Accepted
+INFO:mcp.server.lowlevel.server:Processing request of type ListToolsRequest
+INFO:     127.0.0.1:51042 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62893 - "GET /sse HTTP/1.1" 200 OK

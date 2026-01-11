@@ -85,14 +85,14 @@ INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provi
 INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [375672]
+INFO: Started server process [1276124]
 INFO: Waiting for application startup.
-INFO: [] Process 375672 KV load full_docs with 20 records
-INFO: [] Process 375672 KV load text_chunks with 83 records
-INFO: [] Process 375672 KV load full_entities with 20 records
-INFO: [] Process 375672 KV load full_relations with 20 records
-INFO: [] Process 375672 KV load entity_chunks with 1587 records
-INFO: [] Process 375672 KV load relation_chunks with 1573 records
+INFO: [] Process 1276124 KV load full_docs with 20 records
+INFO: [] Process 1276124 KV load text_chunks with 83 records
+INFO: [] Process 1276124 KV load full_entities with 20 records
+INFO: [] Process 1276124 KV load full_relations with 20 records
+INFO: [] Process 1276124 KV load entity_chunks with 1587 records
+INFO: [] Process 1276124 KV load relation_chunks with 1573 records
 INFO: [] VectorDB collection 'entities' exists check: True
 INFO: [] VectorDB Collection 'entities' compatibility validation passed
 INFO: [] Milvus collection 'entities' initialized successfully
@@ -102,10 +102,10 @@ INFO: [] Milvus collection 'relationships' initialized successfully
 INFO: [] VectorDB collection 'chunks' exists check: True
 INFO: [] VectorDB Collection 'chunks' compatibility validation passed
 INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 375672 KV load llm_response_cache with 182 records
-INFO: [] Process 375672 doc status load doc_status with 20 records
+INFO: [] Process 1276124 KV load llm_response_cache with 182 records
+INFO: [] Process 1276124 doc status load doc_status with 20 records
 INFO: Application startup complete.
 INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:56463 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:62298 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:49205 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:50564 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:60536 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:52404 - "GET /docs HTTP/1.1" 200

@@ -19,17 +19,27 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/10/26 21:58:54] INFO     Starting MCP server                 server.py:2618
+[01/11/26 15:36:29] INFO     Starting MCP server                 server.py:2618
                              'anything-rag-mcp' with transport                 
                              'sse' on http://0.0.0.0:8006/sse                  
-INFO:     Started server process [447584]
+INFO:     Started server process [824924]
 INFO:     Waiting for application startup.
-2026-01-10 21:58:55,030 [INFO] Starting worker 'caobinbin#447584' with the following tasks:
-2026-01-10 21:58:55,031 [INFO] * trace(message: str, ...)
-2026-01-10 21:58:55,031 [INFO] * fail(message: str, ...)
-2026-01-10 21:58:55,032 [INFO] * sleep(seconds: float, ...)
+2026-01-11 15:36:29,753 [INFO] Starting worker 'caobinbin#824924' with the following tasks:
+2026-01-11 15:36:29,753 [INFO] * trace(message: str, ...)
+2026-01-11 15:36:29,754 [INFO] * fail(message: str, ...)
+2026-01-11 15:36:29,754 [INFO] * sleep(seconds: float, ...)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8006 (Press CTRL+C to quit)
-INFO:     127.0.0.1:64115 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58124 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49216 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50703 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63319 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63322 - "POST /messages/?session_id=2306ff8ee96e4032b440f1d1d1d710c3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:63324 - "POST /messages/?session_id=2306ff8ee96e4032b440f1d1d1d710c3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:63326 - "POST /messages/?session_id=2306ff8ee96e4032b440f1d1d1d710c3 HTTP/1.1" 202 Accepted
+2026-01-11 15:40:54,323 [INFO] Processing request of type ListToolsRequest
+INFO:     127.0.0.1:61550 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61552 - "POST /messages/?session_id=d2adebae3bdf4756b0a31fee4e817481 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61554 - "POST /messages/?session_id=d2adebae3bdf4756b0a31fee4e817481 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61556 - "POST /messages/?session_id=d2adebae3bdf4756b0a31fee4e817481 HTTP/1.1" 202 Accepted
+2026-01-11 15:41:34,656 [INFO] Processing request of type ListToolsRequest
+INFO:     127.0.0.1:49676 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53398 - "GET /sse HTTP/1.1" 200 OK

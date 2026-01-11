@@ -105,8 +105,10 @@ class TestCaseExportService:
             
             # 填充数据
             for row_idx, test_case in enumerate(test_cases, start=header_row + 1):
-                # 解析测试步骤
+                # 解析测试步骤和预期结果，分别存储
                 test_steps = []
+                expected_results = []
+                
                 if test_case.test_case_steps:
                     try:
                         steps_data = json.loads(test_case.test_case_steps) if isinstance(test_case.test_case_steps, str) else test_case.test_case_steps
@@ -118,16 +120,18 @@ class TestCaseExportService:
                                     expected = step.get('expected') or step.get('expected_result') or step.get('step_expected') or ''
                                     
                                     if action or expected:
-                                        step_text = f"{idx}. {action}"
-                                        if expected:
-                                            step_text += f"\n   预期结果: {expected}"
-                                        test_steps.append(step_text)
+                                        # 步骤和预期结果分开存储
+                                        test_steps.append(f"{idx}. {action}" if action else f"{idx}. ")
+                                        expected_results.append(f"{idx}. {expected}" if expected else f"{idx}. ")
                                 elif isinstance(step, str):
                                     # 如果是字符串，直接使用
                                     test_steps.append(f"{idx}. {step}")
+                                    expected_results.append(f"{idx}. ")
                     except Exception as e:
                         logger.warning(f"解析测试步骤失败: {str(e)}, 原始数据: {test_case.test_case_steps}")
+                
                 steps_text = "\n".join(test_steps) if test_steps else ""
+                expected_text = "\n".join(expected_results) if expected_results else ""
                 
                 # 解析标签
                 tags = []
@@ -191,8 +195,8 @@ class TestCaseExportService:
                     status_text,
                     exec_status_text,
                     test_case.preconditions or "",
-                    steps_text,
-                    test_case.expected_results or "",
+                    steps_text,  # 测试步骤
+                    expected_text,  # 预期结果（与步骤一一对应）
                     test_case.test_data or "",
                     tags_text,
                     test_case.create_by or "",
@@ -334,27 +338,41 @@ class TestCaseExportService:
                     note_text.append(f"描述: {test_case.description}")
                 if test_case.preconditions:
                     note_text.append(f"前置条件: {test_case.preconditions}")
-                if test_case.test_case_steps:
-                    try:
-                        steps_data = json.loads(test_case.test_case_steps) if isinstance(test_case.test_case_steps, str) else test_case.test_case_steps
-                        if isinstance(steps_data, list):
-                            steps_text = []
-                            for step in steps_data:
-                                if isinstance(step, dict):
-                                    step_num = step.get('step_number', '')
-                                    step_desc = step.get('step_description', '')
-                                    step_expected = step.get('expected_result', '')
-                                    steps_text.append(f"{step_num}. {step_desc}\n   预期: {step_expected}")
-                            if steps_text:
-                                note_text.append("测试步骤:\n" + "\n".join(steps_text))
-                    except:
-                        pass
-                if test_case.expected_results:
-                    note_text.append(f"预期结果: {test_case.expected_results}")
                 if test_case.test_data:
                     note_text.append(f"测试数据: {test_case.test_data}")
                 
-                notes_content.text = "\n\n".join(note_text)
+                notes_content.text = "\n\n".join(note_text) if note_text else "无"
+                
+                # 添加测试步骤作为子主题（步骤和预期结果一一对应）
+                if test_case.test_case_steps:
+                    try:
+                        steps_data = json.loads(test_case.test_case_steps) if isinstance(test_case.test_case_steps, str) else test_case.test_case_steps
+                        if isinstance(steps_data, list) and steps_data:
+                            # 创建测试步骤父节点
+                            steps_children = ET.SubElement(case_topic, 'children')
+                            steps_topics = ET.SubElement(steps_children, 'topics', {'type': 'attached'})
+                            
+                            for idx, step in enumerate(steps_data, start=1):
+                                if isinstance(step, dict):
+                                    # 支持多种字段名格式
+                                    action = step.get('action') or step.get('step_description') or step.get('step_action') or ''
+                                    expected = step.get('expected') or step.get('expected_result') or step.get('step_expected') or ''
+                                    
+                                    if action or expected:
+                                        # 创建步骤节点
+                                        step_topic = ET.SubElement(steps_topics, 'topic', {'id': f'step-{test_case.case_id}-{idx}'})
+                                        step_title = ET.SubElement(step_topic, 'title')
+                                        step_title.text = f"步骤{idx}: {action if action else '(无)'}"
+                                        
+                                        # 如果有预期结果，添加为子节点
+                                        if expected:
+                                            expected_children = ET.SubElement(step_topic, 'children')
+                                            expected_topics = ET.SubElement(expected_children, 'topics', {'type': 'attached'})
+                                            expected_topic = ET.SubElement(expected_topics, 'topic', {'id': f'expected-{test_case.case_id}-{idx}'})
+                                            expected_title = ET.SubElement(expected_topic, 'title')
+                                            expected_title.text = f"预期结果: {expected}"
+                    except Exception as e:
+                        logger.warning(f"解析XMind测试步骤失败: {str(e)}, 原始数据: {test_case.test_case_steps}")
                 
                 # 添加标签
                 if test_case.tags:

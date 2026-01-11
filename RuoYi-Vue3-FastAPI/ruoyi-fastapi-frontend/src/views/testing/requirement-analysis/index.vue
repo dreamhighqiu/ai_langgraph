@@ -55,6 +55,9 @@
       <el-col :span="1.5">
         <el-button type="danger" plain icon="Delete" :disabled="multiple" @click="handleDelete" v-hasPermi="['testing:requirement:remove']">删除</el-button>
       </el-col>
+      <el-col :span="1.5">
+        <el-button type="success" plain icon="Download" @click="handleExport" v-hasPermi="['testing:requirement:export']">导出</el-button>
+      </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -389,6 +392,31 @@ const handleDelete = async (row) => {
     if (error !== 'cancel') {
       console.error('删除失败:', error)
     }
+  }
+}
+
+// 导出Excel
+const handleExport = async () => {
+  try {
+    // 构建导出参数
+    const exportParams = {
+      project_id: queryParams.projectId || null,
+      analysis_name: queryParams.analysisName || null,
+      status: queryParams.status || null
+    }
+    
+    // 如果选中了记录，只导出选中的
+    if (ids.value && ids.value.length > 0) {
+      exportParams.requirement_ids = ids.value.join(',')
+    }
+    
+    // 调用后端导出接口（需要添加）
+    proxy.$modal.msgWarning('需求分析导出功能开发中...')
+    
+  } catch (error) {
+    console.error('导出失败:', error)
+    const errorMsg = error?.response?.data?.msg || error?.message || '导出失败'
+    proxy.$modal.msgError(errorMsg)
   }
 }
 

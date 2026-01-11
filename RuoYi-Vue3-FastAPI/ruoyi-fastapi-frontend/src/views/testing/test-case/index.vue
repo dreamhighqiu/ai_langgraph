@@ -122,6 +122,16 @@
           <el-tag :type="getPriorityType(scope.row.priority)" size="small">{{ getPriorityLabel(scope.row.priority) }}</el-tag>
         </template>
       </el-table-column>
+      <el-table-column label="测试步骤" align="left" min-width="250" :show-overflow-tooltip="true">
+        <template #default="scope">
+          {{ formatStepsForList(scope.row.test_case_steps) }}
+        </template>
+      </el-table-column>
+      <el-table-column label="预期结果" align="left" min-width="250" :show-overflow-tooltip="true">
+        <template #default="scope">
+          {{ formatExpectedForList(scope.row.test_case_steps) }}
+        </template>
+      </el-table-column>
       <el-table-column label="状态" align="center" width="90">
         <template #default="scope">
           <el-tag :type="getStatusType(scope.row.status)" size="small">{{ getStatusLabel(scope.row.status) }}</el-tag>
@@ -402,7 +412,14 @@ const handleQuery = () => {
 }
 
 const resetQuery = () => {
+  // 保存当前选中的项目ID
+  const currentProjectId = queryParams.projectId
+  
   proxy.resetForm('queryRef')
+  
+  // 恢复项目ID
+  queryParams.projectId = currentProjectId
+  
   handleQuery()
 }
 
@@ -503,6 +520,34 @@ const parseSteps = (steps) => {
   } catch {
     return []
   }
+}
+
+// 格式化步骤用于列表显示
+const formatStepsForList = (steps) => {
+  const parsedSteps = parseSteps(steps)
+  if (!parsedSteps || parsedSteps.length === 0) return '无'
+  
+  return parsedSteps
+    .map((step, index) => {
+      const action = step.action || step.step_description || step.step_action || ''
+      return `${index + 1}. ${action}`
+    })
+    .filter(s => s.length > 3) // 过滤掉空步骤（只有序号的）
+    .join('; ')
+}
+
+// 格式化预期结果用于列表显示
+const formatExpectedForList = (steps) => {
+  const parsedSteps = parseSteps(steps)
+  if (!parsedSteps || parsedSteps.length === 0) return '无'
+  
+  return parsedSteps
+    .map((step, index) => {
+      const expected = step.expected || step.expected_result || step.step_expected || ''
+      return `${index + 1}. ${expected}`
+    })
+    .filter(s => s.length > 3) // 过滤掉空预期结果（只有序号的）
+    .join('; ')
 }
 
 // 提交测试用例

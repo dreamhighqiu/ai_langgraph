@@ -65,6 +65,10 @@
 <script setup name="UIAutomationExecution">
 import { ref, reactive, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
+import { listUIExecutions } from '@/api/testing/uiAutomation'
+
+const router = useRouter()
 
 const loading = ref(false)
 const total = ref(0)
@@ -78,9 +82,48 @@ const queryParams = reactive({
   status: undefined
 })
 
-function getList() {
-  executionList.value = []
-  total.value = 0
+async function getList() {
+  loading.value = true
+  try {
+    const response = await listUIExecutions(queryParams)
+    console.log('[Execution] API响应:', response)
+    
+    // 后端返回格式: { code: 200, data: { rows: [...], total: ... } } 或 { code: 200, rows: [...], total: ... }
+    const data = response.data || response
+    
+    if (response.code === 200 || !response.code) {
+      executionList.value = (data.rows || data.list || []).map(item => ({
+        executionId: item.execution_id || item.executionId,
+        scriptId: item.script_id || item.scriptId,
+        scriptName: item.script_name || item.scriptName,
+        executionType: item.execution_type || item.executionType,
+        status: String(item.status || item.execution_status || ''),
+        browser: item.browser,
+        headless: item.headless,
+        startTime: item.start_time || item.startTime,
+        endTime: item.end_time || item.endTime,
+        duration: item.duration,
+        result: item.result,
+        errorMessage: item.error_message || item.errorMessage,
+        executor: item.executor,
+        createTime: item.create_time || item.createTime
+      }))
+      total.value = data.total || 0
+      console.log('[Execution] 加载成功:', executionList.value.length, '条记录，总数:', total.value)
+    } else {
+      console.error('[Execution] API返回错误:', response)
+      ElMessage.error(response.msg || '获取执行列表失败')
+      executionList.value = []
+      total.value = 0
+    }
+  } catch (error) {
+    console.error('[Execution] 获取执行列表失败:', error)
+    ElMessage.error('获取执行列表失败: ' + (error.msg || error.message || '未知错误'))
+    executionList.value = []
+    total.value = 0
+  } finally {
+    loading.value = false
+  }
 }
 
 function handleQuery() {
@@ -95,15 +138,21 @@ function resetQuery() {
 }
 
 function handleView(row) {
-  ElMessage.info('查看执行日志')
+  router.push({
+    path: '/testing/ui-automation/execution',
+    query: { executionId: row.executionId }
+  })
 }
 
 function handleReport(row) {
-  ElMessage.info('查看测试报告')
+  router.push({
+    path: '/testing/ui-automation/report',
+    query: { executionId: row.executionId }
+  })
 }
 
 function handleCancel(row) {
-  ElMessage.info('取消执行')
+  ElMessage.info('取消执行功能开发中...')
 }
 
 onMounted(() => {

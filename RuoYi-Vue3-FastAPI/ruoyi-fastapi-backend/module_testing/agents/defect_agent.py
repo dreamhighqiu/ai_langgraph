@@ -204,6 +204,7 @@ class DefectAnalysisAgent:
 - mode: 检索模式（推荐使用 "mix"）
 - top_k: 返回的实体数量（默认10）
 - chunk_top_k: 返回的文本块数量（默认5）
+- **project_id: 项目ID（必填！必须使用上下文中的 project_id，当前值：{project_id}）** - 传递项目ID可以确保只检索该项目知识库的内容，提高检索效率和准确性。如果不传递，将进行全局检索（可能较慢且不准确）
 
 **⚠️ 重要提示**：
 - **RAG 检索是可选的，不是默认流程**
@@ -368,6 +369,10 @@ class DefectAnalysisAgent:
             project_id = context.get("project_id", 0)
             module = context.get("module")
 
+            # 设置工具上下文，使 rag_query_tool 能够自动获取 project_id
+            from module_testing.agents.tools import set_tool_context
+            set_tool_context(project_id if project_id > 0 else None)
+
             # 构建上下文对象
             ctx = DefectAnalyzerContext(
                 project_id=project_id,
@@ -398,9 +403,66 @@ class DefectAnalysisAgent:
             # 否则结束
             return END
 
+        # 创建自定义工具节点，自动注入 project_id
+        def call_tools(state: MessagesState, config: RunnableConfig):
+            """调用工具，自动注入 project_id"""
+            from langgraph.prebuilt import ToolNode
+            
+            # 从 config 中获取 project_id
+            context = config.get("configurable", {})
+            project_id = context.get("project_id", 0)
+            
+            # 创建工具包装器，自动注入 project_id 到 rag_query_tool
+            wrapped_tools = []
+            for tool in self.tools:
+                if tool.name == "rag_query_tool":
+                    # 为 rag_query_tool 创建包装器
+                    from langchain_core.tools import tool
+                    from functools import partial
+                    
+                    async def wrapped_rag_query(query: str, mode: str = "mix", top_k: int = 10, 
+                                               chunk_top_k: int = 5, enable_rerank: bool = True,
+                                               project_id_param: Optional[int] = None):
+                        # 如果调用时没有传递 project_id，使用 config 中的值
+                        final_project_id = project_id_param if project_id_param is not None else (project_id if project_id > 0 else None)
+                        from module_testing.agents.tools import rag_query_tool
+                        return await rag_query_tool(
+                            query=query,
+                            mode=mode,
+                            top_k=top_k,
+                            chunk_top_k=chunk_top_k,
+                            enable_rerank=enable_rerank,
+                            project_id=final_project_id
+                        )
+                    
+                    # 创建新的工具对象
+                    wrapped_tool = tool(wrapped_rag_query)
+                    wrapped_tool.name = "rag_query_tool"
+                    wrapped_tool.description = tool.description
+                    wrapped_tools.append(wrapped_tool)
+                else:
+                    wrapped_tools.append(tool)
+            
+            # 使用包装后的工具创建 ToolNode
+            tool_node = ToolNode(wrapped_tools)
+            return tool_node.invoke(state, config)
+        
+        # 创建自定义工具节点，在调用前设置上下文
+        def call_tools(state: MessagesState, config: RunnableConfig):
+            """调用工具，自动设置上下文"""
+            # 从配置中获取 project_id 并设置到工具上下文
+            context = config.get("configurable", {})
+            project_id = context.get("project_id", 0)
+            from module_testing.agents.tools import set_tool_context
+            set_tool_context(project_id if project_id > 0 else None)
+            
+            # 使用标准的 ToolNode
+            tool_node = ToolNode(self.tools)
+            return tool_node.invoke(state, config)
+        
         # 添加节点
         workflow.add_node("agent", call_model)
-        workflow.add_node("tools", ToolNode(self.tools))
+        workflow.add_node("tools", call_tools)
 
         # 添加边
         workflow.add_edge(START, "agent")

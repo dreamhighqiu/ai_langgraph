@@ -874,21 +874,25 @@ watch(visible, async (val) => {
       return
     }
     
+    // 等待一个 tick，确保 props.initialPrompt 已经更新
+    await nextTick()
+    
     // 如果有新的初始提示词，强制创建新线程
     if (props.initialPrompt && props.initialPrompt.trim()) {
+      console.log('[AIChatDrawer] 检测到初始提示词，准备发送:', props.initialPrompt.substring(0, 100) + '...')
       // 创建新线程，确保每次从文档生成都是新对话
       await chat.createThread()
       initialPromptSent.value = false
       
       // 发送初始提示词
-      nextTick(() => {
-        inputMessage.value = props.initialPrompt
-        initialPromptSent.value = true
-        // 延迟发送，确保组件完全初始化
-        setTimeout(() => {
+      await nextTick()
+      inputMessage.value = props.initialPrompt
+      initialPromptSent.value = true
+      // 延迟发送，确保组件完全初始化
+      setTimeout(() => {
+        console.log('[AIChatDrawer] 发送初始提示词')
         handleSend()
-        }, 200)
-      })
+      }, 300)
     } else {
       // 没有初始提示词时，如果还没有线程，创建新线程
       if (!chat.threadId.value) {
@@ -903,6 +907,14 @@ watch(visible, async (val) => {
 
 // 监听初始提示词变化（当从外部传入新的提示词时）
 watch(() => props.initialPrompt, async (newVal, oldVal) => {
+  console.log('[AIChatDrawer] initialPrompt 变化:', {
+    oldVal: oldVal?.substring(0, 50) + '...',
+    newVal: newVal?.substring(0, 50) + '...',
+    visible: visible.value,
+    hasContent: newVal && newVal.trim(),
+    isDifferent: newVal !== oldVal
+  })
+  
   // 如果抽屉已打开，且有新的提示词（且与旧的不同），创建新线程并发送
   if (visible.value && newVal && newVal.trim() && newVal !== oldVal) {
     // 验证 projectId（对于需求分析和缺陷分析是必需的）
@@ -911,15 +923,16 @@ watch(() => props.initialPrompt, async (newVal, oldVal) => {
       return
     }
     
+    console.log('[AIChatDrawer] 抽屉已打开且有新提示词，创建新线程并发送')
     await chat.createThread()
     initialPromptSent.value = false
-    nextTick(() => {
-      inputMessage.value = newVal
-      initialPromptSent.value = true
-      setTimeout(() => {
-        handleSend()
-      }, 200)
-    })
+    await nextTick()
+    inputMessage.value = newVal
+    initialPromptSent.value = true
+    setTimeout(() => {
+      console.log('[AIChatDrawer] 发送更新的初始提示词')
+      handleSend()
+    }, 300)
   }
 })
 

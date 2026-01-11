@@ -8,11 +8,25 @@
 """
 
 import httpx
+import threading
 from typing import Optional, Dict, Any, List, Union
 from langchain_core.tools import tool
 
 from config.env import AppConfig
 from utils.log_util import logger
+
+# ============ 工具上下文管理 ============
+
+# 使用线程局部变量存储当前工具调用的上下文（project_id）
+_tool_context = threading.local()
+
+def set_tool_context(project_id: Optional[int] = None):
+    """设置工具调用上下文（project_id）"""
+    _tool_context.project_id = project_id
+
+def get_tool_context() -> Optional[int]:
+    """获取工具调用上下文（project_id）"""
+    return getattr(_tool_context, 'project_id', None)
 
 
 # ============ 配置 ============
@@ -663,6 +677,7 @@ async def rag_query_tool(
     top_k: int = 10,
     chunk_top_k: int = 5,
     enable_rerank: bool = True,
+    project_id: Optional[int] = None,
 ) -> Dict[str, Any]:
     """
     从 RAG 知识库检索相关上下文信息
@@ -685,6 +700,7 @@ async def rag_query_tool(
         top_k: 返回的顶部实体/关系数量（默认10）
         chunk_top_k: 返回的文本块数量（默认5）
         enable_rerank: 是否启用重排序（默认True）
+        project_id: 项目ID（可选，从上下文自动获取）。如果提供，将只检索该项目知识库的内容，提高检索效率和准确性。如果不提供，将进行全局检索（可能较慢）。
 
     Returns:
         dict: 包含检索结果的字典
@@ -695,7 +711,7 @@ async def rag_query_tool(
             - error: str, 错误信息（如果失败）
     
     Examples:
-        >>> result = await rag_query_tool("用户登录接口的详细信息")
+        >>> result = await rag_query_tool("用户登录接口的详细信息", project_id=1)
         >>> if result["success"]:
         >>>     print(result["context"])
     """
@@ -706,7 +722,17 @@ async def rag_query_tool(
             os.environ.get("RAG_MCP_URL", "http://localhost:8002/sse")
         )
 
-        logger.info(f"开始 RAG 检索: {query} (模式: {mode})")
+        # 如果调用时没有传递 project_id，尝试从工具上下文获取
+        if project_id is None or project_id == 0:
+            project_id = get_tool_context()
+        
+        # 生成 workspace（如果提供了 project_id）
+        workspace = None
+        if project_id and project_id > 0:
+            workspace = f"project_{project_id}"
+            logger.info(f"开始 RAG 检索: {query} (模式: {mode}, workspace: {workspace}, project_id: {project_id})")
+        else:
+            logger.warning(f"开始 RAG 检索: {query} (模式: {mode}, 全局检索 - 未提供 project_id)")
 
         from langchain_mcp_adapters.client import MultiServerMCPClient
 
@@ -733,16 +759,21 @@ async def rag_query_tool(
                 "metadata": {},
             }
 
+        # 构建工具调用参数
+        tool_params = {
+            "query": query,
+            "mode": mode,
+            "top_k": top_k,
+            "chunk_top_k": chunk_top_k,
+            "enable_rerank": enable_rerank,
+        }
+        
+        # 如果提供了 workspace，添加到参数中
+        if workspace:
+            tool_params["workspace"] = workspace
+
         try:
-            raw = await tool.ainvoke(
-                {
-                    "query": query,
-                    "mode": mode,
-                    "top_k": top_k,
-                    "chunk_top_k": chunk_top_k,
-                    "enable_rerank": enable_rerank,
-                }
-            )
+            raw = await tool.ainvoke(tool_params)
         except Exception as invoke_error:
             # 捕获工具调用异常
             error_msg = str(invoke_error)

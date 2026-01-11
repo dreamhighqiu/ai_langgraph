@@ -182,7 +182,7 @@
 </template>
 
 <script setup name="RequirementAnalysis">
-import { ref, reactive, onMounted, watch } from 'vue'
+import { ref, reactive, onMounted, watch, nextTick } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { DocumentCopy, MagicStick, ChatDotRound, Download } from '@element-plus/icons-vue'
 import { listRequirementAnalysis, getRequirementAnalysis, addRequirementAnalysis, updateRequirementAnalysis, delRequirementAnalysis } from '@/api/testing/requirementAnalysis'
@@ -327,18 +327,9 @@ const handleFormSuccess = () => {
 
 const requirementDialogRef = ref(null)
 
-const handleOpenChat = (data) => {
+const handleOpenChat = async (data) => {
   console.log('[RequirementAnalysis] handleOpenChat 被调用，参数:', data)
   console.log('[RequirementAnalysis] 当前 queryParams.projectId:', queryParams.projectId)
-  
-  // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
-  if (typeof data === 'object' && data.prompt) {
-    aiInitialPrompt.value = data.prompt
-    // 不再修改 queryParams.projectId，直接使用页面已选择的项目
-    console.log('[RequirementAnalysis] 从对话框接收到 projectId:', data.projectId, '但使用页面的:', queryParams.projectId)
-  } else {
-    aiInitialPrompt.value = data
-  }
   
   // 验证 projectId 是否有效
   if (!queryParams.projectId || queryParams.projectId === 0) {
@@ -347,7 +338,20 @@ const handleOpenChat = (data) => {
     return
   }
   
-  console.log('[RequirementAnalysis] ✅ 验证通过，打开AI对话，projectId:', queryParams.projectId)
+  // 支持传递对象（包含 prompt 和 projectId）或字符串（仅 prompt）
+  if (typeof data === 'object' && data.prompt) {
+    aiInitialPrompt.value = data.prompt
+    // 不再修改 queryParams.projectId，直接使用页面已选择的项目
+    console.log('[RequirementAnalysis] 从对话框接收到 projectId:', data.projectId, '但使用页面的:', queryParams.projectId)
+  } else {
+    aiInitialPrompt.value = data || ''
+  }
+  
+  console.log('[RequirementAnalysis] ✅ 验证通过，准备打开AI对话')
+  console.log('[RequirementAnalysis] initialPrompt 内容:', aiInitialPrompt.value.substring(0, 100) + '...')
+  
+  // 使用 nextTick 确保 initialPrompt 已更新后再打开抽屉
+  await nextTick()
   aiChatVisible.value = true
 }
 

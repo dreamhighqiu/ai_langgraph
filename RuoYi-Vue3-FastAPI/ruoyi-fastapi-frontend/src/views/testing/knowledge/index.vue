@@ -860,14 +860,27 @@ async function handleViewFiles(row) {
 async function getFilesList() {
   filesLoading.value = true
   try {
-    const response = await getFileList(filesQueryParams.knowledgeId, filesQueryParams)
-    // 后端返回格式: {code: 200, data: {rows: [...], total: ...}}
-    filesList.value = response.data?.rows || []
-    filesTotal.value = response.data?.total || 0
-    console.log('文件列表加载成功:', filesList.value.length, '个文件')
+    // 转换参数格式：前端使用驼峰，后端使用下划线
+    const params = {
+      page_num: filesQueryParams.pageNum,
+      page_size: filesQueryParams.pageSize,
+      file_name: filesQueryParams.fileName,
+      process_status: filesQueryParams.processStatus
+    }
+    // 移除 undefined 值
+    Object.keys(params).forEach(key => params[key] === undefined && delete params[key])
+    
+    const response = await getFileList(filesQueryParams.knowledgeId, params)
+    // 后端返回格式: {code: 200, data: {rows: [...], total: ...}} 或 {code: 200, rows: [...], total: ...}
+    const data = response.data || response
+    filesList.value = data.rows || data.list || []
+    filesTotal.value = data.total || 0
+    console.log('文件列表加载成功:', filesList.value.length, '个文件，总数:', filesTotal.value)
   } catch (error) {
     console.error('查询文件列表失败:', error)
     ElMessage.error('查询文件列表失败')
+    filesList.value = []
+    filesTotal.value = 0
   } finally {
     filesLoading.value = false
   }

@@ -80,6 +80,10 @@ class ExecutionDAO:
         
         if query.script_id:
             conditions.append(TestExecution.script_id == query.script_id)
+        if query.script_type:
+            conditions.append(TestScript.script_type == query.script_type)
+        if query.project_id:
+            conditions.append(TestProject.project_id == query.project_id)
         if query.execution_status:
             conditions.append(TestExecution.execution_status == query.execution_status)
         if query.execution_type:
@@ -92,7 +96,12 @@ class ExecutionDAO:
             conditions.append(TestExecution.create_time <= query.end_time)
         
         # 查询总数
-        count_query = select(func.count(TestExecution.execution_id))
+        count_query = (
+            select(func.count(TestExecution.execution_id))
+            .select_from(TestExecution)
+            .join(TestScript, TestExecution.script_id == TestScript.script_id)
+            .join(TestProject, TestScript.project_id == TestProject.project_id)
+        )
         if conditions:
             count_query = count_query.where(and_(*conditions))
         total_result = await db.execute(count_query)

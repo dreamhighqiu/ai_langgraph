@@ -12288,5 +12288,1505 @@
     "create_time": 1768127891,
     "update_time": 1768127891,
     "_id": "--trusted-host<SEP>pip"
+  },
+  "parse_txt函数<SEP>requestJson": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130260,
+    "update_time": 1768130260,
+    "_id": "parse_txt函数<SEP>requestJson"
+  },
+  "calculate_rri函数<SEP>df": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130260,
+    "update_time": 1768130260,
+    "_id": "calculate_rri函数<SEP>df"
+  },
+  "calculate_rri函数<SEP>fs": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130265,
+    "update_time": 1768130265,
+    "_id": "calculate_rri函数<SEP>fs"
+  },
+  "dataList<SEP>parse_txt函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130266,
+    "update_time": 1768130266,
+    "_id": "dataList<SEP>parse_txt函数"
+  },
+  "ppg_peak_inds<SEP>scipy.signal.find_peaks": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130266,
+    "update_time": 1768130266,
+    "_id": "ppg_peak_inds<SEP>scipy.signal.find_peaks"
+  },
+  "parse_txt函数<SEP>ppg_data": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130269,
+    "update_time": 1768130269,
+    "_id": "parse_txt函数<SEP>ppg_data"
+  },
+  "calculate_rri函数<SEP>scipy.signal.find_peaks": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130270,
+    "update_time": 1768130270,
+    "_id": "calculate_rri函数<SEP>scipy.signal.find_peaks"
+  },
+  "parse_txt函数<SEP>timestamp": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130272,
+    "update_time": 1768130272,
+    "_id": "parse_txt函数<SEP>timestamp"
+  },
+  "calculate_rri函数<SEP>ppg_peak_inds": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130273,
+    "update_time": 1768130273,
+    "_id": "calculate_rri函数<SEP>ppg_peak_inds"
+  },
+  "predict_result<SEP>predict函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130273,
+    "update_time": 1768130273,
+    "_id": "predict_result<SEP>predict函数"
+  },
+  "DataFrame<SEP>parse_txt函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130276,
+    "update_time": 1768130276,
+    "_id": "DataFrame<SEP>parse_txt函数"
+  },
+  "json<SEP>requestJson": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130276,
+    "update_time": 1768130276,
+    "_id": "json<SEP>requestJson"
+  },
+  "RRI<SEP>calculate_rri函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130279,
+    "update_time": 1768130279,
+    "_id": "RRI<SEP>calculate_rri函数"
+  },
+  "__main__<SEP>file_path": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130279,
+    "update_time": 1768130279,
+    "_id": "__main__<SEP>file_path"
+  },
+  "parse_txt函数<SEP>ppg_rawData": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130282,
+    "update_time": 1768130282,
+    "_id": "parse_txt函数<SEP>ppg_rawData"
+  },
+  "RRIdata<SEP>calculate_rri函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130284,
+    "update_time": 1768130284,
+    "_id": "RRIdata<SEP>calculate_rri函数"
+  },
+  "__main__<SEP>data": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130284,
+    "update_time": 1768130284,
+    "_id": "__main__<SEP>data"
+  },
+  "predict函数<SEP>rri_num": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e",
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 2,
+    "update_time": 1768133174,
+    "_id": "predict函数<SEP>rri_num"
+  },
+  "__main__<SEP>parse_txt函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130289,
+    "update_time": 1768130289,
+    "_id": "__main__<SEP>parse_txt函数"
+  },
+  "RRIdata<SEP>predict函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130290,
+    "update_time": 1768130290,
+    "_id": "RRIdata<SEP>predict函数"
+  },
+  "__main__<SEP>calculate_rri函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130292,
+    "update_time": 1768130292,
+    "_id": "__main__<SEP>calculate_rri函数"
+  },
+  "__main__<SEP>predict函数": {
+    "chunk_ids": [
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
+    ],
+    "count": 1,
+    "create_time": 1768130295,
+    "update_time": 1768130295,
+    "_id": "__main__<SEP>predict函数"
+  },
+  "Model_Return_Dict<SEP>Start_Time": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133078,
+    "update_time": 1768133078,
+    "_id": "Model_Return_Dict<SEP>Start_Time"
+  },
+  "KNN<SEP>Testset_Dict": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133078,
+    "update_time": 1768133078,
+    "_id": "KNN<SEP>Testset_Dict"
+  },
+  "Finish_Time<SEP>Model_Return_Dict": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133082,
+    "update_time": 1768133082,
+    "_id": "Finish_Time<SEP>Model_Return_Dict"
+  },
+  "Testset_Dict<SEP>Y_Pred_Knn": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133082,
+    "update_time": 1768133082,
+    "_id": "Testset_Dict<SEP>Y_Pred_Knn"
+  },
+  "Model_Return_Dict<SEP>Run_Time": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133085,
+    "update_time": 1768133085,
+    "_id": "Model_Return_Dict<SEP>Run_Time"
+  },
+  "RRIdata<SEP>time列": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133085,
+    "update_time": 1768133085,
+    "_id": "RRIdata<SEP>time列"
+  },
+  "Emo_Index<SEP>Testset_Dict": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133088,
+    "update_time": 1768133088,
+    "_id": "Emo_Index<SEP>Testset_Dict"
+  },
+  "Code<SEP>Model_Return_Dict": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133089,
+    "update_time": 1768133089,
+    "_id": "Code<SEP>Model_Return_Dict"
+  },
+  "RRI<SEP>RRIdata": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133090,
+    "update_time": 1768133090,
+    "_id": "RRI<SEP>RRIdata"
+  },
+  "Model_Return_Dict<SEP>Msg": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133094,
+    "update_time": 1768133094,
+    "_id": "Model_Return_Dict<SEP>Msg"
+  },
+  "SDANN<SEP>time_domain_features": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133094,
+    "update_time": 1768133094,
+    "_id": "SDANN<SEP>time_domain_features"
+  },
+  "RRI<SEP>remove_outliers函数": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133094,
+    "update_time": 1768133094,
+    "_id": "RRI<SEP>remove_outliers函数"
+  },
+  "Model_Return_Dict<SEP>Predict_Result": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133098,
+    "update_time": 1768133098,
+    "_id": "Model_Return_Dict<SEP>Predict_Result"
+  },
+  "SDNN Index<SEP>time_domain_features": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133100,
+    "update_time": 1768133100,
+    "_id": "SDNN Index<SEP>time_domain_features"
+  },
+  "RRI<SEP>interpolate_nan_values函数": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133100,
+    "update_time": 1768133100,
+    "_id": "RRI<SEP>interpolate_nan_values函数"
+  },
+  "Exception<SEP>Model_Return_Dict": {
+    "chunk_ids": [
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
+    "count": 1,
+    "create_time": 1768133103,
+    "update_time": 1768133103,
+    "_id": "Exception<SEP>Model_Return_Dict"
+  },
+  "hrv_features<SEP>time_domain_features": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133105,
+    "update_time": 1768133105,
+    "_id": "hrv_features<SEP>time_domain_features"
+  },
+  "RRI<SEP>remove_ectopic_beats函数": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133106,
+    "update_time": 1768133106,
+    "_id": "RRI<SEP>remove_ectopic_beats函数"
+  },
+  "hrvFeature<SEP>obj_dict": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133106,
+    "update_time": 1768133106,
+    "_id": "hrvFeature<SEP>obj_dict"
+  },
+  "frequency_domain_features<SEP>hrv_features": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133110,
+    "update_time": 1768133110,
+    "_id": "frequency_domain_features<SEP>hrv_features"
+  },
+  "X_test<SEP>hrvFeature": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133113,
+    "update_time": 1768133113,
+    "_id": "X_test<SEP>hrvFeature"
+  },
+  "X_train<SEP>scaler": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133113,
+    "update_time": 1768133113,
+    "_id": "X_train<SEP>scaler"
+  },
+  "csi_cvi_features<SEP>hrv_features": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133118,
+    "update_time": 1768133118,
+    "_id": "csi_cvi_features<SEP>hrv_features"
+  },
+  "clf_svm<SEP>emo_index_list_1": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133118,
+    "update_time": 1768133118,
+    "_id": "clf_svm<SEP>emo_index_list_1"
+  },
+  "X_test<SEP>scaler": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133121,
+    "update_time": 1768133121,
+    "_id": "X_test<SEP>scaler"
+  },
+  "clf_knn<SEP>emo_index_list_2": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133121,
+    "update_time": 1768133121,
+    "_id": "clf_knn<SEP>emo_index_list_2"
+  },
+  "hrv_features<SEP>poincare_plot_features": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133124,
+    "update_time": 1768133124,
+    "_id": "hrv_features<SEP>poincare_plot_features"
+  },
+  "clf_svm<SEP>testset_dict": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133124,
+    "update_time": 1768133124,
+    "_id": "clf_svm<SEP>testset_dict"
+  },
+  "StandardScaler<SEP>scaler": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133127,
+    "update_time": 1768133127,
+    "_id": "StandardScaler<SEP>scaler"
+  },
+  "hrv_features<SEP>sampen": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133128,
+    "update_time": 1768133128,
+    "_id": "hrv_features<SEP>sampen"
+  },
+  "np (NumPy)<SEP>sdann": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133130,
+    "update_time": 1768133130,
+    "_id": "np (NumPy)<SEP>sdann"
+  },
+  "clf_knn<SEP>testset_dict": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133130,
+    "update_time": 1768133130,
+    "_id": "clf_knn<SEP>testset_dict"
+  },
+  "clf_svm<SEP>joblib": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133130,
+    "update_time": 1768133130,
+    "_id": "clf_svm<SEP>joblib"
+  },
+  "hrvFeature<SEP>pd (pandas)": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133135,
+    "update_time": 1768133135,
+    "_id": "hrvFeature<SEP>pd (pandas)"
+  },
+  "hrv_features<SEP>obj_dict": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133136,
+    "update_time": 1768133136,
+    "_id": "hrv_features<SEP>obj_dict"
+  },
+  "X_train<SEP>parent_dir": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133136,
+    "update_time": 1768133136,
+    "_id": "X_train<SEP>parent_dir"
+  },
+  "clf_knn<SEP>joblib": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133140,
+    "update_time": 1768133140,
+    "_id": "clf_knn<SEP>joblib"
+  },
+  "np (NumPy)<SEP>sdnn_index": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133140,
+    "update_time": 1768133140,
+    "_id": "np (NumPy)<SEP>sdnn_index"
+  },
+  "clf_svm<SEP>parent_dir": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133143,
+    "update_time": 1768133143,
+    "_id": "clf_svm<SEP>parent_dir"
+  },
+  "model_return_dict<SEP>start_time": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133146,
+    "update_time": 1768133146,
+    "_id": "model_return_dict<SEP>start_time"
+  },
+  "clf_knn<SEP>parent_dir": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133146,
+    "update_time": 1768133146,
+    "_id": "clf_knn<SEP>parent_dir"
+  },
+  "clf_svm<SEP>stress_index": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133146,
+    "update_time": 1768133146,
+    "_id": "clf_svm<SEP>stress_index"
+  },
+  "RR间期数据<SEP>predict函数": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133150,
+    "update_time": 1768133150,
+    "_id": "RR间期数据<SEP>predict函数"
+  },
+  "finish_time<SEP>model_return_dict": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133150,
+    "update_time": 1768133150,
+    "_id": "finish_time<SEP>model_return_dict"
+  },
+  "HRVanalysis<SEP>remove_outliers": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133150,
+    "update_time": 1768133150,
+    "_id": "HRVanalysis<SEP>remove_outliers"
+  },
+  "clf_knn<SEP>emotion_index": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133154,
+    "update_time": 1768133154,
+    "_id": "clf_knn<SEP>emotion_index"
+  },
+  "clf_svm<SEP>tired_index": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133154,
+    "update_time": 1768133154,
+    "_id": "clf_svm<SEP>tired_index"
+  },
+  "HRVanalysis<SEP>remove_ectopic_beats": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133157,
+    "update_time": 1768133157,
+    "_id": "HRVanalysis<SEP>remove_ectopic_beats"
+  },
+  "affect<SEP>clf_knn": {
+    "chunk_ids": [
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435"
+    ],
+    "count": 1,
+    "create_time": 1768133158,
+    "update_time": 1768133158,
+    "_id": "affect<SEP>clf_knn"
+  },
+  "RR间期数据<SEP>心率变异性特征": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133158,
+    "update_time": 1768133158,
+    "_id": "RR间期数据<SEP>心率变异性特征"
+  },
+  "KNeighborsRegressor<SEP>Scikit-learn": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133158,
+    "update_time": 1768133158,
+    "_id": "KNeighborsRegressor<SEP>Scikit-learn"
+  },
+  "HRVanalysis<SEP>interpolate_nan_values": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133162,
+    "update_time": 1768133162,
+    "_id": "HRVanalysis<SEP>interpolate_nan_values"
+  },
+  "Scikit-learn<SEP>StandardScaler": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133164,
+    "update_time": 1768133164,
+    "_id": "Scikit-learn<SEP>StandardScaler"
+  },
+  "predict函数<SEP>模型": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133164,
+    "update_time": 1768133164,
+    "_id": "predict函数<SEP>模型"
+  },
+  "NumPy<SEP>Python": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133164,
+    "update_time": 1768133164,
+    "_id": "NumPy<SEP>Python"
+  },
+  "HRVanalysis<SEP>get_time_domain_features": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133168,
+    "update_time": 1768133168,
+    "_id": "HRVanalysis<SEP>get_time_domain_features"
+  },
+  "Pandas<SEP>Python": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133169,
+    "update_time": 1768133169,
+    "_id": "Pandas<SEP>Python"
+  },
+  "remove_outliers<SEP>离群值处理": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133169,
+    "update_time": 1768133169,
+    "_id": "remove_outliers<SEP>离群值处理"
+  },
+  "Malik方法<SEP>remove_ectopic_beats": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133169,
+    "update_time": 1768133169,
+    "_id": "Malik方法<SEP>remove_ectopic_beats"
+  },
+  "HRVanalysis<SEP>get_frequency_domain_features": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133173,
+    "update_time": 1768133173,
+    "_id": "HRVanalysis<SEP>get_frequency_domain_features"
+  },
+  "5分钟节段<SEP>RR间期数据": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133174,
+    "update_time": 1768133174,
+    "_id": "5分钟节段<SEP>RR间期数据"
+  },
+  "Python<SEP>Scikit-learn": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133174,
+    "update_time": 1768133174,
+    "_id": "Python<SEP>Scikit-learn"
+  },
+  "OS<SEP>当前目录": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133174,
+    "update_time": 1768133174,
+    "_id": "OS<SEP>当前目录"
+  },
+  "HRVanalysis<SEP>get_csi_cvi_features": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133180,
+    "update_time": 1768133180,
+    "_id": "HRVanalysis<SEP>get_csi_cvi_features"
+  },
+  "OS<SEP>父目录": {
+    "chunk_ids": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c"
+    ],
+    "count": 1,
+    "create_time": 1768133182,
+    "update_time": 1768133182,
+    "_id": "OS<SEP>父目录"
+  },
+  "数值波动<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-0c0dec85ab2cc9317d8545d78e3b12ff"
+    ],
+    "count": 1,
+    "create_time": 1768133520,
+    "update_time": 1768133520,
+    "_id": "数值波动<SEP>数据序列"
+  },
+  "时间序列数据<SEP>时间戳": {
+    "chunk_ids": [
+      "chunk-981d1ee30730a556ec125ed91c548341"
+    ],
+    "count": 1,
+    "create_time": 1768133520,
+    "update_time": 1768133520,
+    "_id": "时间序列数据<SEP>时间戳"
+  },
+  "峰值<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-0c0dec85ab2cc9317d8545d78e3b12ff",
+      "chunk-f0d16591b23714a69f1677a098a57f0f",
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 3,
+    "create_time": 1768133523,
+    "update_time": 1768133523,
+    "_id": "峰值<SEP>数据序列"
+  },
+  "时间序列数据<SEP>频率": {
+    "chunk_ids": [
+      "chunk-981d1ee30730a556ec125ed91c548341"
+    ],
+    "count": 1,
+    "create_time": 1768133525,
+    "update_time": 1768133525,
+    "_id": "时间序列数据<SEP>频率"
+  },
+  "数据序列<SEP>谷值": {
+    "chunk_ids": [
+      "chunk-0c0dec85ab2cc9317d8545d78e3b12ff",
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 2,
+    "create_time": 1768133526,
+    "update_time": 1768133526,
+    "_id": "数据序列<SEP>谷值"
+  },
+  "数值序列<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-981d1ee30730a556ec125ed91c548341"
+    ],
+    "count": 1,
+    "create_time": 1768133527,
+    "update_time": 1768133527,
+    "_id": "数值序列<SEP>时间序列数据"
+  },
+  "数据点<SEP>测量值": {
+    "chunk_ids": [
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 1,
+    "create_time": 1768133527,
+    "update_time": 1768133527,
+    "_id": "数据点<SEP>测量值"
+  },
+  "峰值<SEP>谷值": {
+    "chunk_ids": [
+      "chunk-0c0dec85ab2cc9317d8545d78e3b12ff",
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 2,
+    "create_time": 1768133530,
+    "update_time": 1768133530,
+    "_id": "峰值<SEP>谷值"
+  },
+  "JSON对象<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-981d1ee30730a556ec125ed91c548341"
+    ],
+    "count": 1,
+    "create_time": 1768133531,
+    "update_time": 1768133531,
+    "_id": "JSON对象<SEP>时间序列数据"
+  },
+  "数据序列<SEP>数据点": {
+    "chunk_ids": [
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 1,
+    "create_time": 1768133531,
+    "update_time": 1768133531,
+    "_id": "数据序列<SEP>数据点"
+  },
+  "峰值<SEP>波动模式": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133535,
+    "update_time": 1768133535,
+    "_id": "峰值<SEP>波动模式"
+  },
+  "数值范围<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 1,
+    "create_time": 1768133537,
+    "update_time": 1768133537,
+    "_id": "数值范围<SEP>数据序列"
+  },
+  "波动模式<SEP>谷值": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133538,
+    "update_time": 1768133538,
+    "_id": "波动模式<SEP>谷值"
+  },
+  "数据范围<SEP>时间序列": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133538,
+    "update_time": 1768133538,
+    "_id": "数据范围<SEP>时间序列"
+  },
+  "数据序列<SEP>数据趋势": {
+    "chunk_ids": [
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 1,
+    "create_time": 1768133541,
+    "update_time": 1768133541,
+    "_id": "数据序列<SEP>数据趋势"
+  },
+  "数据趋势<SEP>时间序列": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133543,
+    "update_time": 1768133543,
+    "_id": "数据趋势<SEP>时间序列"
+  },
+  "数据序列<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-f0d16591b23714a69f1677a098a57f0f"
+    ],
+    "count": 1,
+    "create_time": 1768133543,
+    "update_time": 1768133543,
+    "_id": "数据序列<SEP>时间序列数据"
+  },
+  "数据序列<SEP>波动模式": {
+    "chunk_ids": [
+      "chunk-f0d16591b23714a69f1677a098a57f0f",
+      "chunk-3f92675dde68759d74c1bb25d487d1c4",
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 3,
+    "create_time": 1768133546,
+    "update_time": 1768133546,
+    "_id": "数据序列<SEP>波动模式"
+  },
+  "1360<SEP>1362": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133546,
+    "update_time": 1768133546,
+    "_id": "1360<SEP>1362"
+  },
+  "局部变化<SEP>数据趋势": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133548,
+    "update_time": 1768133548,
+    "_id": "局部变化<SEP>数据趋势"
+  },
+  "数值变化<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-05f780d4ca6d0d5e5b4440e2043d9e44"
+    ],
+    "count": 1,
+    "create_time": 1768133549,
+    "update_time": 1768133549,
+    "_id": "数值变化<SEP>数据序列"
+  },
+  "1363<SEP>1364": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133549,
+    "update_time": 1768133549,
+    "_id": "1363<SEP>1364"
+  },
+  "局部变化<SEP>峰值": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133552,
+    "update_time": 1768133552,
+    "_id": "局部变化<SEP>峰值"
+  },
+  "数值点<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133553,
+    "update_time": 1768133553,
+    "_id": "数值点<SEP>数据序列"
+  },
+  "1364<SEP>1365": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133554,
+    "update_time": 1768133554,
+    "_id": "1364<SEP>1365"
+  },
+  "1362<SEP>1363": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133554,
+    "update_time": 1768133554,
+    "_id": "1362<SEP>1363"
+  },
+  "局部变化<SEP>谷值": {
+    "chunk_ids": [
+      "chunk-3f92675dde68759d74c1bb25d487d1c4"
+    ],
+    "count": 1,
+    "create_time": 1768133554,
+    "update_time": 1768133554,
+    "_id": "局部变化<SEP>谷值"
+  },
+  "1365<SEP>1367": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133559,
+    "update_time": 1768133559,
+    "_id": "1365<SEP>1367"
+  },
+  "1361<SEP>1362": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133561,
+    "update_time": 1768133561,
+    "_id": "1361<SEP>1362"
+  },
+  "1368<SEP>1369": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133561,
+    "update_time": 1768133561,
+    "_id": "1368<SEP>1369"
+  },
+  "1366<SEP>1367": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133563,
+    "update_time": 1768133563,
+    "_id": "1366<SEP>1367"
+  },
+  "1360<SEP>1361": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133565,
+    "update_time": 1768133565,
+    "_id": "1360<SEP>1361"
+  },
+  "1370<SEP>1371": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133565,
+    "update_time": 1768133565,
+    "_id": "1370<SEP>1371"
+  },
+  "1367<SEP>1368": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133567,
+    "update_time": 1768133567,
+    "_id": "1367<SEP>1368"
+  },
+  "1372<SEP>1374": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133567,
+    "update_time": 1768133567,
+    "_id": "1372<SEP>1374"
+  },
+  "1359<SEP>1360": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133569,
+    "update_time": 1768133569,
+    "_id": "1359<SEP>1360"
+  },
+  "1369<SEP>1370": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133569,
+    "update_time": 1768133569,
+    "_id": "1369<SEP>1370"
+  },
+  "1373<SEP>1374": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133572,
+    "update_time": 1768133572,
+    "_id": "1373<SEP>1374"
+  },
+  "1371<SEP>1372": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133572,
+    "update_time": 1768133572,
+    "_id": "1371<SEP>1372"
+  },
+  "1375<SEP>1376": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133572,
+    "update_time": 1768133572,
+    "_id": "1375<SEP>1376"
+  },
+  "1358<SEP>1359": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133579,
+    "update_time": 1768133579,
+    "_id": "1358<SEP>1359"
+  },
+  "1378<SEP>1380": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133579,
+    "update_time": 1768133579,
+    "_id": "1378<SEP>1380"
+  },
+  "1374<SEP>1375": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133582,
+    "update_time": 1768133582,
+    "_id": "1374<SEP>1375"
+  },
+  "1381<SEP>1383": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133582,
+    "update_time": 1768133582,
+    "_id": "1381<SEP>1383"
+  },
+  "1384<SEP>1387": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133582,
+    "update_time": 1768133582,
+    "_id": "1384<SEP>1387"
+  },
+  "1376<SEP>1378": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133586,
+    "update_time": 1768133586,
+    "_id": "1376<SEP>1378"
+  },
+  "1380<SEP>1381": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133587,
+    "update_time": 1768133587,
+    "_id": "1380<SEP>1381"
+  },
+  "1388<SEP>1389": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133587,
+    "update_time": 1768133587,
+    "_id": "1388<SEP>1389"
+  },
+  "1386<SEP>1387": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133590,
+    "update_time": 1768133590,
+    "_id": "1386<SEP>1387"
+  },
+  "1383<SEP>1384": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133590,
+    "update_time": 1768133590,
+    "_id": "1383<SEP>1384"
+  },
+  "1391<SEP>1392": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133590,
+    "update_time": 1768133590,
+    "_id": "1391<SEP>1392"
+  },
+  "1390<SEP>1392": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133594,
+    "update_time": 1768133594,
+    "_id": "1390<SEP>1392"
+  },
+  "1389<SEP>1391": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133594,
+    "update_time": 1768133594,
+    "_id": "1389<SEP>1391"
+  },
+  "1393<SEP>1394": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133594,
+    "update_time": 1768133594,
+    "_id": "1393<SEP>1394"
+  },
+  "1386<SEP>1388": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133598,
+    "update_time": 1768133598,
+    "_id": "1386<SEP>1388"
+  },
+  "1395<SEP>1397": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133598,
+    "update_time": 1768133598,
+    "_id": "1395<SEP>1397"
+  },
+  "1399<SEP>1400": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133601,
+    "update_time": 1768133601,
+    "_id": "1399<SEP>1400"
+  },
+  "1401<SEP>1402": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133602,
+    "update_time": 1768133602,
+    "_id": "1401<SEP>1402"
+  },
+  "1393<SEP>1395": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133603,
+    "update_time": 1768133603,
+    "_id": "1393<SEP>1395"
+  },
+  "1397<SEP>1399": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133603,
+    "update_time": 1768133603,
+    "_id": "1397<SEP>1399"
+  },
+  "1402<SEP>1403": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133606,
+    "update_time": 1768133606,
+    "_id": "1402<SEP>1403"
+  },
+  "1360<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133606,
+    "update_time": 1768133606,
+    "_id": "1360<SEP>数据序列"
+  },
+  "1392<SEP>1393": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133609,
+    "update_time": 1768133609,
+    "_id": "1392<SEP>1393"
+  },
+  "1400<SEP>1402": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133610,
+    "update_time": 1768133610,
+    "_id": "1400<SEP>1402"
+  },
+  "1411<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133612,
+    "update_time": 1768133612,
+    "_id": "1411<SEP>数据序列"
+  },
+  "1390<SEP>1393": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133612,
+    "update_time": 1768133612,
+    "_id": "1390<SEP>1393"
+  },
+  "1400<SEP>1401": {
+    "chunk_ids": [
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd"
+    ],
+    "count": 1,
+    "create_time": 1768133614,
+    "update_time": 1768133614,
+    "_id": "1400<SEP>1401"
+  },
+  "数值数据点<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-3450c7761460298d4487d71908766857"
+    ],
+    "count": 1,
+    "create_time": 1768133616,
+    "update_time": 1768133616,
+    "_id": "数值数据点<SEP>数据序列"
+  },
+  "数据序列<SEP>时间序列": {
+    "chunk_ids": [
+      "chunk-3450c7761460298d4487d71908766857"
+    ],
+    "count": 1,
+    "create_time": 1768133618,
+    "update_time": 1768133618,
+    "_id": "数据序列<SEP>时间序列"
+  },
+  "数值范围<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133618,
+    "update_time": 1768133618,
+    "_id": "数值范围<SEP>时间序列数据"
+  },
+  "上升趋势<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133622,
+    "update_time": 1768133622,
+    "_id": "上升趋势<SEP>时间序列数据"
+  },
+  "1552<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-80e97285ff5dc03c76c343b4c509f00e"
+    ],
+    "count": 1,
+    "create_time": 1768133623,
+    "update_time": 1768133623,
+    "_id": "1552<SEP>数据序列"
+  },
+  "数据点<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133625,
+    "update_time": 1768133625,
+    "_id": "数据点<SEP>时间序列数据"
+  },
+  "1408<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-80e97285ff5dc03c76c343b4c509f00e"
+    ],
+    "count": 1,
+    "create_time": 1768133626,
+    "update_time": 1768133626,
+    "_id": "1408<SEP>数据序列"
+  },
+  "下降趋势<SEP>数据序列": {
+    "chunk_ids": [
+      "chunk-80e97285ff5dc03c76c343b4c509f00e"
+    ],
+    "count": 1,
+    "create_time": 1768133628,
+    "update_time": 1768133628,
+    "_id": "下降趋势<SEP>数据序列"
+  },
+  "数据序列<SEP>起始值": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133630,
+    "update_time": 1768133630,
+    "_id": "数据序列<SEP>起始值"
+  },
+  "下降趋势<SEP>时间序列数据": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133630,
+    "update_time": 1768133630,
+    "_id": "下降趋势<SEP>时间序列数据"
+  },
+  "数据序列<SEP>结束值": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133634,
+    "update_time": 1768133634,
+    "_id": "数据序列<SEP>结束值"
+  },
+  "数据序列<SEP>测量过程": {
+    "chunk_ids": [
+      "chunk-6f98f107b6edf9f138b223711e1ba808"
+    ],
+    "count": 1,
+    "create_time": 1768133636,
+    "update_time": 1768133636,
+    "_id": "数据序列<SEP>测量过程"
   }
 }

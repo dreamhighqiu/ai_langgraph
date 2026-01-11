@@ -1990,10 +1990,10 @@
   <data key="d1">method</data>
   <data key="d2">Python是一种广泛应用于软件开发，特别是自动化测试与人工智能领域的编程语言。在多个项目中，它作为核心技术栈和主开发语言被使用，用于构建自动化测试框架、编写测试脚本以及开发各种自定义函数、插件和工具。例如，在具体实施中，Python被用于编写`runner.py`和`conftest.py`等脚本，以实现测试框架的核心逻辑与自定义功能，同时也用于实现如依赖注入等高级功能。
 
-在特定技术人员的实践中，例如邱云霞，Python被结合应用于AI辅助测试工具与平台开发、大模型应用开发以及自动化测试工作。测试工程师通常需要熟练掌握Python，以进行代码编写、调试和自动化测试脚本的开发。此外，Python也得到了如Appium等测试框架的支持，可作为其客户端语言使用。总体而言，Python是实现自动化测试框架核心功能、开发相关脚本和工具的关键编程语言。</data>
-  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f&lt;SEP&gt;chunk-982ea685baece476c8e392de9eb3b221&lt;SEP&gt;chunk-ba5ec16413786ae6baba4f0056b066e9&lt;SEP&gt;chunk-b559945802babfdc36ceec04fc080bab&lt;SEP&gt;chunk-746c17817a94afbddfaa78320eea3d51&lt;SEP&gt;chunk-c423d61c859757d64bf4db5be9f230dc</data>
-  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md&lt;SEP&gt;UI app面试.md&lt;SEP&gt;app appium面试项目1-最优.md</data>
-  <data key="d5">1767339295</data>
+在特定技术人员的实践中，例如邱云霞，Python被结合应用于AI辅助测试工具与平台开发、大模型应用开发以及自动化测试工作。测试工程师通常需要熟练掌握Python，以进行代码编写、调试和自动化测试脚本的开发。此外，Python也得到了如Appium等测试框架的支持，可作为其客户端语言使用。总体而言，Python是实现自动化测试框架核心功能、开发相关脚本和工具的关键编程语言。&lt;SEP&gt;Python是一种编程语言，用于编写数据处理和机器学习相关的脚本。</data>
+  <data key="d3">chunk-79be94d8c3833dcb484c8e1712014160&lt;SEP&gt;chunk-6bd4d94bce1ed431abb1a2e97286558f&lt;SEP&gt;chunk-d34f4f4096c5c994a4190c333cf5b57f&lt;SEP&gt;chunk-51ebc07ae94b23e037d6ef90d1ce36d3&lt;SEP&gt;chunk-ea32f04b7a2a69bf2d5001ed6446140f&lt;SEP&gt;chunk-982ea685baece476c8e392de9eb3b221&lt;SEP&gt;chunk-ba5ec16413786ae6baba4f0056b066e9&lt;SEP&gt;chunk-b559945802babfdc36ceec04fc080bab&lt;SEP&gt;chunk-746c17817a94afbddfaa78320eea3d51&lt;SEP&gt;chunk-c423d61c859757d64bf4db5be9f230dc&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf&lt;SEP&gt;邱云霞的简历.pdf&lt;SEP&gt;pytest 接口自动化面试.md&lt;SEP&gt;UI app面试.md&lt;SEP&gt;app appium面试项目1-最优.md&lt;SEP&gt;predict_model.py</data>
+  <data key="d5">1768133020</data>
   <data key="d6"></data>
 </node>
 <node id="React">
@@ -11594,10 +11594,10 @@
 <node id="data">
   <data key="d0">data</data>
   <data key="d1">data</data>
-  <data key="d2">API返回的详细数据数组，包含如productList等信息。</data>
-  <data key="d3">chunk-9cb899e308a92c7e2db3b9cf95b937d2</data>
-  <data key="d4">https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html</data>
-  <data key="d5">1767341312</data>
+  <data key="d2">API返回的详细数据数组，包含如productList等信息。&lt;SEP&gt;data是通过`json.load(file)`从文件中加载的JSON数据，随后作为参数传递给parse_txt函数。</data>
+  <data key="d3">chunk-9cb899e308a92c7e2db3b9cf95b937d2&lt;SEP&gt;chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">https://www.fecmall.com/doc/fecshop-guide/develop/cn-2.0/guide-fecmall-server-api-home.html&lt;SEP&gt;parse_txt.py</data>
+  <data key="d5">1768130227</data>
   <data key="d6"></data>
 </node>
 <node id="productList">
@@ -12155,6 +12155,2899 @@
   <data key="d3">chunk-01801f933216cfe71c2b179bcba43ce7</data>
   <data key="d4">Python依赖包安装命令.txt</data>
   <data key="d5">1768127880</data>
+  <data key="d6"></data>
+</node>
+<node id="parse_txt函数">
+  <data key="d0">parse_txt函数</data>
+  <data key="d1">method</data>
+  <data key="d2">parse_txt函数是一个用于解析JSON请求数据并提取PPG原始数据的Python函数，它处理包含时间戳和数据列表的JSON对象，并返回一个包含PPG原始数据的DataFrame。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130054</data>
+  <data key="d6"></data>
+</node>
+<node id="requestJson">
+  <data key="d0">requestJson</data>
+  <data key="d1">data</data>
+  <data key="d2">requestJson是一个包含数据列表的JSON对象，其中每个条目都有'timestamp'和'data'字段，作为parse_txt函数的输入。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130054</data>
+  <data key="d6"></data>
+</node>
+<node id="dataList">
+  <data key="d0">dataList</data>
+  <data key="d1">data</data>
+  <data key="d2">dataList是requestJson中的一个键，其值是一个列表，列表中的每个元素都是一个包含'timestamp'和'data'字段的字典。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130054</data>
+  <data key="d6"></data>
+</node>
+<node id="ppg_data">
+  <data key="d0">ppg_data</data>
+  <data key="d1">data</data>
+  <data key="d2">ppg_data是一个列表，用于存储从requestJson的dataList中提取的'data'字段值。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130056</data>
+  <data key="d6"></data>
+</node>
+<node id="timestamp">
+  <data key="d0">timestamp</data>
+  <data key="d1">data</data>
+  <data key="d2">timestamp是一个列表，用于存储从requestJson的dataList中提取的'timestamp'字段值。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130056</data>
+  <data key="d6"></data>
+</node>
+<node id="DataFrame">
+  <data key="d0">DataFrame</data>
+  <data key="d1">data</data>
+  <data key="d2">DataFrame是pandas库中的一种数据结构，用于以表格形式存储和操作数据。在代码中，它被用来存储时间戳和PPG数据，并进行去重操作。&lt;SEP&gt;DataFrame是Pandas库中的一种二维表格数据结构，用于存储和操作数据。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">parse_txt.py&lt;SEP&gt;predict_model.py</data>
+  <data key="d5">1768133047</data>
+  <data key="d6"></data>
+</node>
+<node id="ppg_rawData">
+  <data key="d0">ppg_rawData</data>
+  <data key="d1">data</data>
+  <data key="d2">ppg_rawData是一个列表，存储了从原始数据字符串按逗号分割并转换为整数后得到的PPG原始数值序列。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130057</data>
+  <data key="d6"></data>
+</node>
+<node id="calculate_rri函数">
+  <data key="d0">calculate_rri函数</data>
+  <data key="d1">method</data>
+  <data key="d2">calculate_rri函数是一个用于基于PPG原始数据计算RR间期的Python函数，它使用scipy.signal.find_peaks检测PPG波峰，并根据波峰间隔计算RRI。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130058</data>
+  <data key="d6"></data>
+</node>
+<node id="df">
+  <data key="d0">df</data>
+  <data key="d1">data</data>
+  <data key="d2">df是calculate_rri函数的输入参数，是一个包含'ppg_rawData'列的DataFrame，代表PPG原始数据。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130187</data>
+  <data key="d6"></data>
+</node>
+<node id="fs">
+  <data key="d0">fs</data>
+  <data key="d1">data</data>
+  <data key="d2">fs是calculate_rri函数的输入参数，代表采样频率，用于将索引差转换为以毫秒为单位的RRI。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130187</data>
+  <data key="d6"></data>
+</node>
+<node id="scipy.signal.find_peaks">
+  <data key="d0">scipy.signal.find_peaks</data>
+  <data key="d1">method</data>
+  <data key="d2">scipy.signal.find_peaks是SciPy库中的一个函数，用于在一维数组中寻找局部最大值(波峰)。在代码中用于检测PPG信号的波峰。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130189</data>
+  <data key="d6"></data>
+</node>
+<node id="peak_inds">
+  <data key="d0">peak_inds</data>
+  <data key="d1">data</data>
+  <data key="d2">peak_inds是scipy.signal.find_peaks函数的返回值，是一个包含波峰索引的元组。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130191</data>
+  <data key="d6"></data>
+</node>
+<node id="ppg_peak_inds">
+  <data key="d0">ppg_peak_inds</data>
+  <data key="d1">data</data>
+  <data key="d2">ppg_peak_inds是从peak_inds中提取的波峰索引数组，用于后续计算RRI。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130191</data>
+  <data key="d6"></data>
+</node>
+<node id="RRI">
+  <data key="d0">RRI</data>
+  <data key="d1">data</data>
+  <data key="d2">RRI代表RR间期，是连续两个PPG波峰之间的时间间隔，以毫秒为单位，是心率变异性分析的关键指标。&lt;SEP&gt;RRI(R-R间期)是心电信号中相邻R波之间的时间间隔，是计算心率变异性(HRV)的基础数据。&lt;SEP&gt;RRI是心电信号中连续R波之间的时间间隔，是心率变异性分析的基础数据。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e&lt;SEP&gt;chunk-0c6b9bc52d436bdf3a3bd09fa2b29435&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">parse_txt.py&lt;SEP&gt;predict_model.py</data>
+  <data key="d5">1768132972</data>
+  <data key="d6"></data>
+</node>
+<node id="RRIdata">
+  <data key="d0">RRIdata</data>
+  <data key="d1">data</data>
+  <data key="d2">RRIdata是一个DataFrame，包含计算得到的'RRI'列以及后续计算出的'time'列，'time'列是RRI的累积和(以秒为单位)。&lt;SEP&gt;RRIdata是一个包含心电信号RRI(R-R间期)和时间数据的DataFrame。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e&lt;SEP&gt;chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">parse_txt.py&lt;SEP&gt;predict_model.py</data>
+  <data key="d5">1768132389</data>
+  <data key="d6"></data>
+</node>
+<node id="predict函数">
+  <data key="d0">predict函数</data>
+  <data key="d1">method</data>
+  <data key="d2">predict函数是从predict_model模块导入的，用于基于RRIdata进行情绪指数预测。&lt;SEP&gt;predict函数是一个自定义的Python函数，用于基于输入的心率间期数据进行模型预测。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">parse_txt.py&lt;SEP&gt;predict_model.py</data>
+  <data key="d5">1768133043</data>
+  <data key="d6"></data>
+</node>
+<node id="predict_result">
+  <data key="d0">predict_result</data>
+  <data key="d1">data</data>
+  <data key="d2">predict_result是调用predict函数后得到的结果，代表情绪指数模型的预测输出。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130216</data>
+  <data key="d6"></data>
+</node>
+<node id="json">
+  <data key="d0">json</data>
+  <data key="d1">content</data>
+  <data key="d2">json是Python标准库中的一个模块，用于编码和解码JSON数据。在代码中用于从文件加载JSON数据。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130218</data>
+  <data key="d6"></data>
+</node>
+<node id="numpy">
+  <data key="d0">numpy</data>
+  <data key="d1">content</data>
+  <data key="d2">numpy是一个用于科学计算的Python库，提供了强大的多维数组对象和相关的数学函数。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130219</data>
+  <data key="d6"></data>
+</node>
+<node id="pandas">
+  <data key="d0">pandas</data>
+  <data key="d1">content</data>
+  <data key="d2">pandas是一个提供高性能、易用数据结构和数据分析工具的Python库，在代码中广泛用于数据处理。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130220</data>
+  <data key="d6"></data>
+</node>
+<node id="scipy.signal">
+  <data key="d0">scipy.signal</data>
+  <data key="d1">content</data>
+  <data key="d2">scipy.signal是SciPy库中用于信号处理的子模块，提供了包括find_peaks在内的多种信号处理函数。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130221</data>
+  <data key="d6"></data>
+</node>
+<node id="predict_model">
+  <data key="d0">predict_model</data>
+  <data key="d1">content</data>
+  <data key="d2">predict_model是一个Python模块，其中包含了用于预测情绪指数的predict函数，通过`from predict_model import predict`语句导入。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130222</data>
+  <data key="d6"></data>
+</node>
+<node id="rri_num">
+  <data key="d0">rri_num</data>
+  <data key="d1">data</data>
+  <data key="d2">rri_num是predict函数的一个参数，在代码调用中设置为60，可能用于指定用于预测的RRI数据点数量。&lt;SEP&gt;rri_num是一个参数，用于定义每个数据片段包含的RRI数量。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">parse_txt.py&lt;SEP&gt;predict_model.py</data>
+  <data key="d5">1768133061</data>
+  <data key="d6"></data>
+</node>
+<node id="__main__">
+  <data key="d0">__main__</data>
+  <data key="d1">concept</data>
+  <data key="d2">__main__是Python中的一个特殊变量，当模块作为主程序直接运行时，其值为`'__main__'`，用于控制代码的执行入口。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130224</data>
+  <data key="d6"></data>
+</node>
+<node id="file_path">
+  <data key="d0">file_path</data>
+  <data key="d1">data</data>
+  <data key="d2">file_path是一个字符串变量，存储了JSON数据文件的路径('../test_1min.json')，用于读取数据。</data>
+  <data key="d3">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d4">parse_txt.py</data>
+  <data key="d5">1768130226</data>
+  <data key="d6"></data>
+</node>
+<node id="Testset_Dict">
+  <data key="d0">Testset_Dict</data>
+  <data key="d1">data</data>
+  <data key="d2">Testset_Dict是一个字典，用于存储模型预测的结果，包括不同情感索引对应的KNN预测值。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131277</data>
+  <data key="d6"></data>
+</node>
+<node id="Model_Return_Dict">
+  <data key="d0">Model_Return_Dict</data>
+  <data key="d1">data</data>
+  <data key="d2">Model_Return_Dict是一个字典，用于存储模型运行的元数据和结果，包括开始时间、结束时间、运行时长、状态码、消息和预测结果。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131277</data>
+  <data key="d6"></data>
+</node>
+<node id="KNN">
+  <data key="d0">KNN</data>
+  <data key="d1">method</data>
+  <data key="d2">KNN是一种机器学习方法，在本上下文中被用于对情感数据进行预测。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131278</data>
+  <data key="d6"></data>
+</node>
+<node id="Start_Time">
+  <data key="d0">Start_Time</data>
+  <data key="d1">data</data>
+  <data key="d2">Start_Time记录了模型预测过程的开始时间。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131278</data>
+  <data key="d6"></data>
+</node>
+<node id="Finish_Time">
+  <data key="d0">Finish_Time</data>
+  <data key="d1">data</data>
+  <data key="d2">Finish_Time记录了模型预测过程的完成时间，格式为 'YYYY-MM-DD HH:MM:SS'。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131279</data>
+  <data key="d6"></data>
+</node>
+<node id="Run_Time">
+  <data key="d0">Run_Time</data>
+  <data key="d1">data</data>
+  <data key="d2">Run_Time记录了模型预测过程的总运行时长，以秒为单位并保留两位小数。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131279</data>
+  <data key="d6"></data>
+</node>
+<node id="Code">
+  <data key="d0">Code</data>
+  <data key="d1">data</data>
+  <data key="d2">Code是一个状态码，用于指示模型预测过程的执行结果(例如，1表示成功，-1表示失败)。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131279</data>
+  <data key="d6"></data>
+</node>
+<node id="Msg">
+  <data key="d0">Msg</data>
+  <data key="d1">content</data>
+  <data key="d2">Msg是一条消息，用于描述模型预测过程的执行状态(例如，'success' 或具体的错误信息)。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768131280</data>
+  <data key="d6"></data>
+</node>
+<node id="Predict_Result">
+  <data key="d0">Predict_Result</data>
+  <data key="d1">data</data>
+  <data key="d2">Predict_Result是模型预测的最终输出结果，存储在Testset_Dict中。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132384</data>
+  <data key="d6"></data>
+</node>
+<node id="Exception">
+  <data key="d0">Exception</data>
+  <data key="d1">concept</data>
+  <data key="d2">Exception指在代码执行过程中发生的错误或异常情况，会被捕获并处理。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132385</data>
+  <data key="d6"></data>
+</node>
+<node id="Y_Pred_Knn">
+  <data key="d0">Y_Pred_Knn</data>
+  <data key="d1">data</data>
+  <data key="d2">Y_Pred_Knn是KNN模型对特定情感索引进行预测后输出的预测值。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132385</data>
+  <data key="d6"></data>
+</node>
+<node id="Emo_Index">
+  <data key="d0">Emo_Index</data>
+  <data key="d1">data</data>
+  <data key="d2">Emo_Index是一个情感索引标识符，用于区分不同的情感类别或数据子集。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132386</data>
+  <data key="d6"></data>
+</node>
+<node id="Arg1">
+  <data key="d0">Arg1</data>
+  <data key="d1">data</data>
+  <data key="d2">Arg1是一个被注释掉的参数，可能代表输入数据的路径或其他配置信息。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132388</data>
+  <data key="d6"></data>
+</node>
+<node id="Time_Module">
+  <data key="d0">Time_Module</data>
+  <data key="d1">artifact</data>
+  <data key="d2">Time_Module是Python编程语言中用于处理时间相关操作的标准库模块。</data>
+  <data key="d3">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132389</data>
+  <data key="d6"></data>
+</node>
+<node id="time列">
+  <data key="d0">time列</data>
+  <data key="d1">data</data>
+  <data key="d2">time列是RRIdata中的一个数据列，其值为RRI/1000的累加和，用于时间分段。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132390</data>
+  <data key="d6"></data>
+</node>
+<node id="remove_outliers函数">
+  <data key="d0">remove_outliers函数</data>
+  <data key="d1">method</data>
+  <data key="d2">remove_outliers函数是一个用于从R-R间期列表中删除离群值(超出指定高低阈值范围的值)的方法。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132972</data>
+  <data key="d6"></data>
+</node>
+<node id="interpolate_nan_values函数">
+  <data key="d0">interpolate_nan_values函数</data>
+  <data key="d1">method</data>
+  <data key="d2">interpolate_nan_values函数是一个使用线性插值等方法替换R-R间期列表中NaN值的方法。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132974</data>
+  <data key="d6"></data>
+</node>
+<node id="remove_ectopic_beats函数">
+  <data key="d0">remove_ectopic_beats函数</data>
+  <data key="d1">method</data>
+  <data key="d2">remove_ectopic_beats函数是一个采用Malik方法从R-R间期心电信号中删除异常值(异位搏动)的方法。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132974</data>
+  <data key="d6"></data>
+</node>
+<node id="hrv_features">
+  <data key="d0">hrv_features</data>
+  <data key="d1">data</data>
+  <data key="d2">hrv_features是一个列表，包含计算得到的所有心率变异性(HRV)特征，包括时域、频域、非线性等特征。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132974</data>
+  <data key="d6"></data>
+</node>
+<node id="time_domain_features">
+  <data key="d0">time_domain_features</data>
+  <data key="d1">data</data>
+  <data key="d2">time_domain_features是一个字典，存储HRV的时域特征，如SDANN和SDNN Index。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132974</data>
+  <data key="d6"></data>
+</node>
+<node id="frequency_domain_features">
+  <data key="d0">frequency_domain_features</data>
+  <data key="d1">data</data>
+  <data key="d2">frequency_domain_features是一个字典，存储HRV的频域特征。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132976</data>
+  <data key="d6"></data>
+</node>
+<node id="csi_cvi_features">
+  <data key="d0">csi_cvi_features</data>
+  <data key="d1">data</data>
+  <data key="d2">csi_cvi_features是一个字典，存储HRV的CSI和CVI等非线性特征。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132976</data>
+  <data key="d6"></data>
+</node>
+<node id="poincare_plot_features">
+  <data key="d0">poincare_plot_features</data>
+  <data key="d1">data</data>
+  <data key="d2">poincare_plot_features是一个字典，存储基于庞加莱图的HRV非线性特征。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132983</data>
+  <data key="d6"></data>
+</node>
+<node id="sampen">
+  <data key="d0">sampen</data>
+  <data key="d1">data</data>
+  <data key="d2">sampen(样本熵)是HRV的一个非线性特征，用于度量时间序列的复杂性。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132985</data>
+  <data key="d6"></data>
+</node>
+<node id="obj_dict">
+  <data key="d0">obj_dict</data>
+  <data key="d1">data</data>
+  <data key="d2">obj_dict是一个字典，用于临时存储所有计算出的HRV特征，以便后续转换为DataFrame。&lt;SEP&gt;obj_dict是一个字典，用于存储从RR间期数据中提取的HRV特征等数据。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132988</data>
+  <data key="d6"></data>
+</node>
+<node id="hrvFeature">
+  <data key="d0">hrvFeature</data>
+  <data key="d1">data</data>
+  <data key="d2">hrvFeature是一个DataFrame，由obj_dict转换而来，包含了所有计算好的HRV特征。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132989</data>
+  <data key="d6"></data>
+</node>
+<node id="X_test">
+  <data key="d0">X_test</data>
+  <data key="d1">data</data>
+  <data key="d2">X_test是从hrvFeature中提取的特征矩阵，用于情绪指数模型的预测输入。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132989</data>
+  <data key="d6"></data>
+</node>
+<node id="X_train">
+  <data key="d0">X_train</data>
+  <data key="d1">data</data>
+  <data key="d2">X_train是从训练数据文件加载的标准化训练特征矩阵，用于拟合标准化器。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132989</data>
+  <data key="d6"></data>
+</node>
+<node id="scaler">
+  <data key="d0">scaler</data>
+  <data key="d1">method</data>
+  <data key="d2">scaler是一个StandardScaler对象，用于对测试特征数据进行标准化处理。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132991</data>
+  <data key="d6"></data>
+</node>
+<node id="emo_index_list_1">
+  <data key="d0">emo_index_list_1</data>
+  <data key="d1">data</data>
+  <data key="d2">emo_index_list_1是一个列表，包含使用SVM模型预测的情绪指数名称，如'stress_index'和'tired_index'。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132991</data>
+  <data key="d6"></data>
+</node>
+<node id="emo_index_list_2">
+  <data key="d0">emo_index_list_2</data>
+  <data key="d1">data</data>
+  <data key="d2">emo_index_list_2是一个列表，包含使用KNN模型预测的情绪指数名称，如'emotion_index'和'affect'。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132995</data>
+  <data key="d6"></data>
+</node>
+<node id="testset_dict">
+  <data key="d0">testset_dict</data>
+  <data key="d1">data</data>
+  <data key="d2">testset_dict是一个字典，用于存储不同情绪指数模型的预测结果。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132996</data>
+  <data key="d6"></data>
+</node>
+<node id="clf_svm">
+  <data key="d0">clf_svm</data>
+  <data key="d1">method</data>
+  <data key="d2">clf_svm是从文件加载的支持向量机(SVM)模型，用于预测压力指数和疲劳指数。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132996</data>
+  <data key="d6"></data>
+</node>
+<node id="clf_knn">
+  <data key="d0">clf_knn</data>
+  <data key="d1">method</data>
+  <data key="d2">clf_knn是从文件加载的K最近邻(KNN)模型，用于预测情绪指数和情感指数。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768132999</data>
+  <data key="d6"></data>
+</node>
+<node id="model_return_dict">
+  <data key="d0">model_return_dict</data>
+  <data key="d1">data</data>
+  <data key="d2">model_return_dict是一个字典，用于存储模型运行的元信息，如开始时间和结束时间。&lt;SEP&gt;model_return_dict是一个字典，用于存储predict函数的返回值。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133001</data>
+  <data key="d6"></data>
+</node>
+<node id="SDANN">
+  <data key="d0">SDANN</data>
+  <data key="d1">concept</data>
+  <data key="d2">SDANN是心率变异性(HRV)的一个时域特征，表示5分钟节段平均窦性R-R间期的标准差。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133001</data>
+  <data key="d6"></data>
+</node>
+<node id="SDNN Index">
+  <data key="d0">SDNN Index</data>
+  <data key="d1">concept</data>
+  <data key="d2">SDNN Index是心率变异性(HRV)的一个时域特征，表示5分钟节段窦性R-R间期标准差的平均值。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133002</data>
+  <data key="d6"></data>
+</node>
+<node id="StandardScaler">
+  <data key="d0">StandardScaler</data>
+  <data key="d1">method</data>
+  <data key="d2">StandardScaler是scikit-learn库中的标准化工具，用于对特征进行缩放。&lt;SEP&gt;StandardScaler是一个用于数据标准化的类，通过移除均值并缩放到单位方差来标准化特征。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133005</data>
+  <data key="d6"></data>
+</node>
+<node id="joblib">
+  <data key="d0">joblib</data>
+  <data key="d1">method</data>
+  <data key="d2">joblib是一个用于在Python中保存和加载机器学习模型的工具库。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133005</data>
+  <data key="d6"></data>
+</node>
+<node id="np (NumPy)">
+  <data key="d0">np (NumPy)</data>
+  <data key="d1">method</data>
+  <data key="d2">np (NumPy)是一个用于科学计算的Python库，提供了数组操作和数学函数。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133009</data>
+  <data key="d6"></data>
+</node>
+<node id="pd (pandas)">
+  <data key="d0">pd (pandas)</data>
+  <data key="d1">method</data>
+  <data key="d2">pd (pandas)是一个用于数据操作和分析的Python库，提供了DataFrame等数据结构。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133009</data>
+  <data key="d6"></data>
+</node>
+<node id="parent_dir">
+  <data key="d0">parent_dir</data>
+  <data key="d1">location</data>
+  <data key="d2">parent_dir是一个目录路径变量，指向包含训练数据和模型文件的父目录。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133009</data>
+  <data key="d6"></data>
+</node>
+<node id="trainData">
+  <data key="d0">trainData</data>
+  <data key="d1">data</data>
+  <data key="d2">trainData是一个.npy文件，包含用于训练标准化器的特征数据。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133013</data>
+  <data key="d6"></data>
+</node>
+<node id="stress_index">
+  <data key="d0">stress_index</data>
+  <data key="d1">concept</data>
+  <data key="d2">stress_index(压力指数)是通过SVM模型预测的一个情绪状态指标。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133013</data>
+  <data key="d6"></data>
+</node>
+<node id="tired_index">
+  <data key="d0">tired_index</data>
+  <data key="d1">concept</data>
+  <data key="d2">tired_index(疲劳指数)是通过SVM模型预测的一个情绪状态指标。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133014</data>
+  <data key="d6"></data>
+</node>
+<node id="emotion_index">
+  <data key="d0">emotion_index</data>
+  <data key="d1">concept</data>
+  <data key="d2">emotion_index(情绪指数)是通过KNN模型预测的一个情绪状态指标。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133014</data>
+  <data key="d6"></data>
+</node>
+<node id="affect">
+  <data key="d0">affect</data>
+  <data key="d1">concept</data>
+  <data key="d2">affect(情感指数)是通过KNN模型预测的一个情绪状态指标。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133018</data>
+  <data key="d6"></data>
+</node>
+<node id="start_time">
+  <data key="d0">start_time</data>
+  <data key="d1">data</data>
+  <data key="d2">start_time是模型处理流程开始的时间点。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133018</data>
+  <data key="d6"></data>
+</node>
+<node id="finish_time">
+  <data key="d0">finish_time</data>
+  <data key="d1">data</data>
+  <data key="d2">finish_time是模型处理流程完成的时间点。</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133018</data>
+  <data key="d6"></data>
+</node>
+<node id="NumPy">
+  <data key="d0">NumPy</data>
+  <data key="d1">method</data>
+  <data key="d2">NumPy是Python的一个库，用于科学计算，支持大型多维数组和矩阵运算。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133022</data>
+  <data key="d6"></data>
+</node>
+<node id="Pandas">
+  <data key="d0">Pandas</data>
+  <data key="d1">method</data>
+  <data key="d2">Pandas是Python的一个库，提供数据结构和数据分析工具，用于处理表格数据。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133023</data>
+  <data key="d6"></data>
+</node>
+<node id="Scikit-learn">
+  <data key="d0">Scikit-learn</data>
+  <data key="d1">method</data>
+  <data key="d2">Scikit-learn是Python的一个机器学习库，提供了KNeighborsRegressor等算法和StandardScaler等预处理工具。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133025</data>
+  <data key="d6"></data>
+</node>
+<node id="Joblib">
+  <data key="d0">Joblib</data>
+  <data key="d1">method</data>
+  <data key="d2">Joblib是Python的一个库，用于将Python对象保存到磁盘或从磁盘加载，常用于模型持久化。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133025</data>
+  <data key="d6"></data>
+</node>
+<node id="HRVanalysis">
+  <data key="d0">HRVanalysis</data>
+  <data key="d1">method</data>
+  <data key="d2">HRVanalysis是一个Python库，专门用于心率变异性分析，提供多种特征提取功能。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133025</data>
+  <data key="d6"></data>
+</node>
+<node id="KNeighborsRegressor">
+  <data key="d0">KNeighborsRegressor</data>
+  <data key="d1">method</data>
+  <data key="d2">KNeighborsRegressor是scikit-learn库中的k近邻回归算法，用于基于邻居的预测。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133029</data>
+  <data key="d6"></data>
+</node>
+<node id="remove_outliers">
+  <data key="d0">remove_outliers</data>
+  <data key="d1">method</data>
+  <data key="d2">remove_outliers是HRVanalysis库中的函数，用于从RR间期数据中移除离群值。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133031</data>
+  <data key="d6"></data>
+</node>
+<node id="remove_ectopic_beats">
+  <data key="d0">remove_ectopic_beats</data>
+  <data key="d1">method</data>
+  <data key="d2">remove_ectopic_beats是HRVanalysis库中的函数，用于从RR间期数据中移除异位搏动。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133031</data>
+  <data key="d6"></data>
+</node>
+<node id="interpolate_nan_values">
+  <data key="d0">interpolate_nan_values</data>
+  <data key="d1">method</data>
+  <data key="d2">interpolate_nan_values是HRVanalysis库中的函数，用于对数据中的NaN值进行插值。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133032</data>
+  <data key="d6"></data>
+</node>
+<node id="get_time_domain_features">
+  <data key="d0">get_time_domain_features</data>
+  <data key="d1">method</data>
+  <data key="d2">get_time_domain_features是HRVanalysis库中的函数，用于提取时域心率变异性特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133035</data>
+  <data key="d6"></data>
+</node>
+<node id="get_geometrical_features">
+  <data key="d0">get_geometrical_features</data>
+  <data key="d1">method</data>
+  <data key="d2">get_geometrical_features是HRVanalysis库中的函数，用于提取几何心率变异性特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133035</data>
+  <data key="d6"></data>
+</node>
+<node id="get_frequency_domain_features">
+  <data key="d0">get_frequency_domain_features</data>
+  <data key="d1">method</data>
+  <data key="d2">get_frequency_domain_features是HRVanalysis库中的函数，用于提取频域心率变异性特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133036</data>
+  <data key="d6"></data>
+</node>
+<node id="get_csi_cvi_features">
+  <data key="d0">get_csi_cvi_features</data>
+  <data key="d1">method</data>
+  <data key="d2">get_csi_cvi_features是HRVanalysis库中的函数，用于提取非线性域的心率变异性特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133036</data>
+  <data key="d6"></data>
+</node>
+<node id="get_poincare_plot_features">
+  <data key="d0">get_poincare_plot_features</data>
+  <data key="d1">method</data>
+  <data key="d2">get_poincare_plot_features是HRVanalysis库中的函数，用于提取庞加莱图心率变异性特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133041</data>
+  <data key="d6"></data>
+</node>
+<node id="get_sampen">
+  <data key="d0">get_sampen</data>
+  <data key="d1">method</data>
+  <data key="d2">get_sampen是HRVanalysis库中的函数，用于计算样本熵。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133042</data>
+  <data key="d6"></data>
+</node>
+<node id="OS">
+  <data key="d0">OS</data>
+  <data key="d1">method</data>
+  <data key="d2">OS是Python的标准库，提供与操作系统交互的功能，如文件路径操作。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133042</data>
+  <data key="d6"></data>
+</node>
+<node id="RR间期数据">
+  <data key="d0">RR间期数据</data>
+  <data key="d1">data</data>
+  <data key="d2">RR间期数据是心电信号中连续R波之间的时间间隔，是心率变异性分析的基础数据。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133046</data>
+  <data key="d6"></data>
+</node>
+<node id="心率变异性特征">
+  <data key="d0">心率变异性特征</data>
+  <data key="d1">data</data>
+  <data key="d2">心率变异性特征是从RR间期数据中提取的，用于评估自主神经系统功能的指标，包括时域、频域和非线性特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133047</data>
+  <data key="d6"></data>
+</node>
+<node id="模型">
+  <data key="d0">模型</data>
+  <data key="d1">artifact</data>
+  <data key="d2">模型指训练好的机器学习模型，在predict函数中被加载用于对新数据进行预测。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133048</data>
+  <data key="d6"></data>
+</node>
+<node id="离群值">
+  <data key="d0">离群值</data>
+  <data key="d1">concept</data>
+  <data key="d2">离群值指数据中明显偏离其他观测值的点，在心率变异性分析中需要被识别和处理。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133048</data>
+  <data key="d6"></data>
+</node>
+<node id="异位搏动">
+  <data key="d0">异位搏动</data>
+  <data key="d1">concept</data>
+  <data key="d2">异位搏动是心脏电活动中的异常搏动，在RR间期数据中表现为异常间隔，需要被移除。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133052</data>
+  <data key="d6"></data>
+</node>
+<node id="线性插值">
+  <data key="d0">线性插值</data>
+  <data key="d1">method</data>
+  <data key="d2">线性插值是一种数据处理方法，用于估计缺失值，在心率变异性分析中用于填充被移除的异常值。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133054</data>
+  <data key="d6"></data>
+</node>
+<node id="时域分析">
+  <data key="d0">时域分析</data>
+  <data key="d1">method</data>
+  <data key="d2">时域分析是心率变异性分析的一种方法，用于在时间维度上统计RR间期的特征。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133054</data>
+  <data key="d6"></data>
+</node>
+<node id="频域分析">
+  <data key="d0">频域分析</data>
+  <data key="d1">method</data>
+  <data key="d2">频域分析是心率变异性分析的一种方法，通过频谱分析来评估自主神经系统的平衡。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133056</data>
+  <data key="d6"></data>
+</node>
+<node id="非线性分析">
+  <data key="d0">非线性分析</data>
+  <data key="d1">method</data>
+  <data key="d2">非线性分析是心率变异性分析的一种方法，用于揭示RR间期序列的复杂性和不规则性。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133059</data>
+  <data key="d6"></data>
+</node>
+<node id="样本熵">
+  <data key="d0">样本熵</data>
+  <data key="d1">data</data>
+  <data key="d2">样本熵是一种衡量时间序列复杂性的非线性指标，用于心率变异性分析。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133059</data>
+  <data key="d6"></data>
+</node>
+<node id="庞加莱图">
+  <data key="d0">庞加莱图</data>
+  <data key="d1">method</data>
+  <data key="d2">庞加莱图是一种用于可视化心率变异性的非线性方法，通过绘制连续的RR间期来揭示其动态特性。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133061</data>
+  <data key="d6"></data>
+</node>
+<node id="离群值处理">
+  <data key="d0">离群值处理</data>
+  <data key="d1">method</data>
+  <data key="d2">离群值处理是数据预处理步骤，通过设定高低阈值(如300ms和2000ms)来识别并移除RR间期数据中的异常值。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133061</data>
+  <data key="d6"></data>
+</node>
+<node id="Malik方法">
+  <data key="d0">Malik方法</data>
+  <data key="d1">method</data>
+  <data key="d2">Malik方法是HRVanalysis库中remove_ectopic_beats函数使用的一种特定算法，用于检测和移除RR间期序列中的异位搏动。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133063</data>
+  <data key="d6"></data>
+</node>
+<node id="5分钟节段">
+  <data key="d0">5分钟节段</data>
+  <data key="d1">concept</data>
+  <data key="d2">5分钟节段是将RR间期数据按5分钟时长进行分割的概念，用于计算特定时间段内的统计特征，如平均值和标准差。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133066</data>
+  <data key="d6"></data>
+</node>
+<node id="rr_mean_5m">
+  <data key="d0">rr_mean_5m</data>
+  <data key="d1">data</data>
+  <data key="d2">rr_mean_5m是计划计算但未在给定代码中完成的一个数据变量，旨在存储每5分钟节段的窦性R-R间期平均值。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133068</data>
+  <data key="d6"></data>
+</node>
+<node id="rr_std_5m">
+  <data key="d0">rr_std_5m</data>
+  <data key="d1">data</data>
+  <data key="d2">rr_std_5m是计划计算但未在给定代码中完成的一个数据变量，旨在存储每5分钟节段的窦性R-R间期标准差。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133073</data>
+  <data key="d6"></data>
+</node>
+<node id="当前目录">
+  <data key="d0">当前目录</data>
+  <data key="d1">data</data>
+  <data key="d2">当前目录指正在执行的Python脚本文件所在的文件系统路径。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133074</data>
+  <data key="d6"></data>
+</node>
+<node id="父目录">
+  <data key="d0">父目录</data>
+  <data key="d1">data</data>
+  <data key="d2">父目录指当前目录的上一级目录路径。</data>
+  <data key="d3">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133075</data>
+  <data key="d6"></data>
+</node>
+<node id="sdann">
+  <data key="d0">sdann</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d2">NumPy的np.std函数被用于计算SDANN值。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133130</data>
+  <data key="d6"></data>
+</node>
+<node id="sdnn_index">
+  <data key="d0">sdnn_index</data>
+  <data key="d3">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d2">NumPy的np.mean函数被用于计算SDNN Index值。</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">predict_model.py</data>
+  <data key="d5">1768133140</data>
+  <data key="d6"></data>
+</node>
+<node id="数值波动">
+  <data key="d0">数值波动</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据序列中数值随时间或位置变化而上升和下降的模式。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133253</data>
+  <data key="d6"></data>
+</node>
+<node id="峰值">
+  <data key="d0">峰值</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中出现的局部最大值点，例如数值1435。&lt;SEP&gt;序列中出现的较高数值点，如1448，代表数据在特定时刻达到的局部最大值。&lt;SEP&gt;数据序列中出现的局部最大值点，例如数值1447。&lt;SEP&gt;数据序列在约1643处达到峰值。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-3f92675dde68759d74c1bb25d487d1c4&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133254</data>
+  <data key="d6"></data>
+</node>
+<node id="谷值">
+  <data key="d0">谷值</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中出现的局部最小值点，例如数值137。&lt;SEP&gt;序列中出现的较低数值点，如1425，代表数据在特定时刻达到的局部最小值。&lt;SEP&gt;数据序列中出现的局部最小值点，例如数值1411。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133256</data>
+  <data key="d6"></data>
+</node>
+<node id="1398">
+  <data key="d0">1398</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中一个频繁出现的数值，在序列开头多次重复出现。&lt;SEP&gt;一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1398是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133256</data>
+  <data key="d6"></data>
+</node>
+<node id="1435">
+  <data key="d0">1435</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中达到的一个峰值数值。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133258</data>
+  <data key="d6"></data>
+</node>
+<node id="137">
+  <data key="d0">137</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列末尾出现的一个较低数值，接近序列的终点。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133259</data>
+  <data key="d6"></data>
+</node>
+<node id="时间或位置索引">
+  <data key="d0">时间或位置索引</data>
+  <data key="d1">concept</data>
+  <data key="d2">隐含的数据点顺序，表示每个数值在序列中的先后位置。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133259</data>
+  <data key="d6"></data>
+</node>
+<node id="时间序列数据">
+  <data key="d0">时间序列数据</data>
+  <data key="d1">data</data>
+  <data key="d2">这是一组表示随时间变化的数值序列，数值范围在1337到1412之间，可能代表某种测量值或指标。&lt;SEP&gt;按时间顺序排列的数值数据，可能代表传感器读数、股票价格或其他随时间变化的指标。&lt;SEP&gt;这是一组按顺序排列的数值，可能代表随时间变化的测量值，如温度、股价或传感器读数。&lt;SEP&gt;这是一组时间序列数据，包含一系列数值和对应的时间戳。</data>
+  <data key="d3">chunk-981d1ee30730a556ec125ed91c548341&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-502447bef719690dfaf911d9ccf7593d&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133263</data>
+  <data key="d6"></data>
+</node>
+<node id="时间戳">
+  <data key="d0">时间戳</data>
+  <data key="d1">data</data>
+  <data key="d2">时间戳1761809748000标记了该时间序列数据的记录时间点。</data>
+  <data key="d3">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133264</data>
+  <data key="d6"></data>
+</node>
+<node id="频率">
+  <data key="d0">频率</data>
+  <data key="d1">data</data>
+  <data key="d2">数据的频率为88，可能表示数据采集或更新的速率。</data>
+  <data key="d3">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133266</data>
+  <data key="d6"></data>
+</node>
+<node id="数值序列">
+  <data key="d0">数值序列</data>
+  <data key="d1">data</data>
+  <data key="d2">输入文本包含一系列以逗号分隔的数值，从1363开始，到1399结束，呈现波动变化。&lt;SEP&gt;输入文本中包含的一系列连续的数值数据点。&lt;SEP&gt;输入文本中包含一个由逗号分隔的长串数值序列，从1626开始，最终到1584结束。</data>
+  <data key="d3">chunk-981d1ee30730a556ec125ed91c548341&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b&lt;SEP&gt;chunk-502447bef719690dfaf911d9ccf7593d</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133267</data>
+  <data key="d6"></data>
+</node>
+<node id="JSON对象">
+  <data key="d0">JSON对象</data>
+  <data key="d1">artifact</data>
+  <data key="d2">输入文本的结构类似于一个JSON对象，包含"timestamp"和"frequency"字段。</data>
+  <data key="d3">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133267</data>
+  <data key="d6"></data>
+</node>
+<node id="1438">
+  <data key="d0">1438</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133267</data>
+  <data key="d6"></data>
+</node>
+<node id="1440">
+  <data key="d0">1440</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133271</data>
+  <data key="d6"></data>
+</node>
+<node id="1439">
+  <data key="d0">1439</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133271</data>
+  <data key="d6"></data>
+</node>
+<node id="1441">
+  <data key="d0">1441</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1441是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133272</data>
+  <data key="d6"></data>
+</node>
+<node id="1442">
+  <data key="d0">1442</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133272</data>
+  <data key="d6"></data>
+</node>
+<node id="数据序列">
+  <data key="d0">数据序列</data>
+  <data key="d1">data</data>
+  <data key="d2">**数据序列**是一个由逗号分隔的数字序列，代表一系列连续的数值数据点或观测结果。它通常表现为一个包含多个数值的数据集，这些数值描述了某种测量值随时间或特定条件变化的情况，因此常被视为时间序列数据。
+
+该序列中的数值呈现波动变化，不同描述中提到的具体范围有所差异，但总体上集中在相近的区间内。例如，部分描述指出数值范围大致在1370至1435之间，或1425至1448之间波动，也有描述提到数值在1411到1447之间波动。此外，有一条描述特别指出该序列记录了一个从1552开始逐渐下降至1408的变化趋势，这进一步说明了序列可能捕捉到某种指标的先升后降或阶段性下降过程。
+
+综上所述，数据序列本质上是记录连续数值观测结果的结构化数据，其数值具体范围和变化趋势可能因观测时段、条件或测量对象的不同而有所差异，但核心特征是一致的：即它是一个反映动态变化的数值序列。</data>
+  <data key="d3">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-05f780d4ca6d0d5e5b4440e2043d9e44&lt;SEP&gt;chunk-3f92675dde68759d74c1bb25d487d1c4&lt;SEP&gt;chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-3450c7761460298d4487d71908766857&lt;SEP&gt;chunk-80e97285ff5dc03c76c343b4c509f00e&lt;SEP&gt;chunk-80b33f0c11ecf27b8bc0626deded6819&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133276</data>
+  <data key="d6"></data>
+</node>
+<node id="1443">
+  <data key="d0">1443</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133277</data>
+  <data key="d6"></data>
+</node>
+<node id="1445">
+  <data key="d0">1445</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133277</data>
+  <data key="d6"></data>
+</node>
+<node id="1444">
+  <data key="d0">1444</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1444是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133277</data>
+  <data key="d6"></data>
+</node>
+<node id="1447">
+  <data key="d0">1447</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1447是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133281</data>
+  <data key="d6"></data>
+</node>
+<node id="1446">
+  <data key="d0">1446</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133281</data>
+  <data key="d6"></data>
+</node>
+<node id="1448">
+  <data key="d0">1448</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133283</data>
+  <data key="d6"></data>
+</node>
+<node id="1437">
+  <data key="d0">1437</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1437是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133283</data>
+  <data key="d6"></data>
+</node>
+<node id="1449">
+  <data key="d0">1449</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133285</data>
+  <data key="d6"></data>
+</node>
+<node id="1450">
+  <data key="d0">1450</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133285</data>
+  <data key="d6"></data>
+</node>
+<node id="1451">
+  <data key="d0">1451</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1451是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133287</data>
+  <data key="d6"></data>
+</node>
+<node id="1452">
+  <data key="d0">1452</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133287</data>
+  <data key="d6"></data>
+</node>
+<node id="1453">
+  <data key="d0">1453</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133287</data>
+  <data key="d6"></data>
+</node>
+<node id="1454">
+  <data key="d0">1454</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1454是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133290</data>
+  <data key="d6"></data>
+</node>
+<node id="1455">
+  <data key="d0">1455</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133292</data>
+  <data key="d6"></data>
+</node>
+<node id="1457">
+  <data key="d0">1457</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133293</data>
+  <data key="d6"></data>
+</node>
+<node id="1456">
+  <data key="d0">1456</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1456是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133297</data>
+  <data key="d6"></data>
+</node>
+<node id="1458">
+  <data key="d0">1458</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133297</data>
+  <data key="d6"></data>
+</node>
+<node id="1459">
+  <data key="d0">1459</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133300</data>
+  <data key="d6"></data>
+</node>
+<node id="1460">
+  <data key="d0">1460</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1460是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133300</data>
+  <data key="d6"></data>
+</node>
+<node id="1461">
+  <data key="d0">1461</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133302</data>
+  <data key="d6"></data>
+</node>
+<node id="1463">
+  <data key="d0">1463</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133302</data>
+  <data key="d6"></data>
+</node>
+<node id="1462">
+  <data key="d0">1462</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133302</data>
+  <data key="d6"></data>
+</node>
+<node id="1464">
+  <data key="d0">1464</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1464是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133302</data>
+  <data key="d6"></data>
+</node>
+<node id="1465">
+  <data key="d0">1465</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。&lt;SEP&gt;1465是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133308</data>
+  <data key="d6"></data>
+</node>
+<node id="1466">
+  <data key="d0">1466</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字是输入文本中重复出现的一个数据点，是数字序列的一部分。</data>
+  <data key="d3">chunk-83ab84c1823105c5c8d9cf016047ee7e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133308</data>
+  <data key="d6"></data>
+</node>
+<node id="测量值">
+  <data key="d0">测量值</data>
+  <data key="d1">data</data>
+  <data key="d2">序列中的每个单独数值，代表在特定时间点或条件下的测量结果，例如1416、1417等。</data>
+  <data key="d3">chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133310</data>
+  <data key="d6"></data>
+</node>
+<node id="数据点">
+  <data key="d0">数据点</data>
+  <data key="d1">data</data>
+  <data key="d2">构成数据序列的基本单位，每个数据点对应一个具体的数值，并按顺序排列。&lt;SEP&gt;构成整个时间序列的每一个独立数值。</data>
+  <data key="d3">chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133312</data>
+  <data key="d6"></data>
+</node>
+<node id="数值范围">
+  <data key="d0">数值范围</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中数值的变化范围，从最小值1411到最大值1447。&lt;SEP&gt;数据序列中的数值范围大约从1459到1643。</data>
+  <data key="d3">chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133312</data>
+  <data key="d6"></data>
+</node>
+<node id="数据趋势">
+  <data key="d0">数据趋势</data>
+  <data key="d1">concept</data>
+  <data key="d2">序列数值整体上在特定范围内(如1425-1448)上下波动，显示出一定的趋势性。&lt;SEP&gt;数据序列整体呈现出的上升、下降或波动的变化模式，例如序列后期呈现上升趋势。</data>
+  <data key="d3">chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133312</data>
+  <data key="d6"></data>
+</node>
+<node id="波动模式">
+  <data key="d0">波动模式</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据序列呈现出上升、下降和平台期的周期性或趋势性变化。&lt;SEP&gt;数据序列中数值反复上升和下降的变化规律。&lt;SEP&gt;数据序列呈现出先上升、达到峰值、然后下降的整体趋势。</data>
+  <data key="d3">chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-3f92675dde68759d74c1bb25d487d1c4&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133315</data>
+  <data key="d6"></data>
+</node>
+<node id="数值变化">
+  <data key="d0">数值变化</data>
+  <data key="d1">concept</data>
+  <data key="d2">该概念描述了数据序列中数值的增减和波动现象。&lt;SEP&gt;序列中数值随时间发生的上升或下降趋势。</data>
+  <data key="d3">chunk-05f780d4ca6d0d5e5b4440e2043d9e44&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133315</data>
+  <data key="d6"></data>
+</node>
+<node id="数值点">
+  <data key="d0">数值点</data>
+  <data key="d1">data</data>
+  <data key="d2">序列中的每个单独数字代表一个数据点，例如1430、1448等，它们共同构成了整体的数据模式。</data>
+  <data key="d3">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133318</data>
+  <data key="d6"></data>
+</node>
+<node id="时间序列">
+  <data key="d0">时间序列</data>
+  <data key="d1">data</data>
+  <data key="d2">该数字序列呈现波动变化，可能代表某种随时间变化的测量值，如传感器读数、股票价格或生理指标。&lt;SEP&gt;输入文本是一串以逗号分隔的数值，代表一个按时间顺序排列的数据序列。</data>
+  <data key="d3">chunk-3f92675dde68759d74c1bb25d487d1c4&lt;SEP&gt;chunk-3450c7761460298d4487d71908766857</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133318</data>
+  <data key="d6"></data>
+</node>
+<node id="数据范围">
+  <data key="d0">数据范围</data>
+  <data key="d1">concept</data>
+  <data key="d2">序列中数值的最小值约为1425，最大值约为1448，定义了数据的波动范围。</data>
+  <data key="d3">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133318</data>
+  <data key="d6"></data>
+</node>
+<node id="局部变化">
+  <data key="d0">局部变化</data>
+  <data key="d1">concept</data>
+  <data key="d2">序列中存在频繁的数值增减，例如从1448下降到1447，或从1425上升到1426，代表短期的数据波动。</data>
+  <data key="d3">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133320</data>
+  <data key="d6"></data>
+</node>
+<node id="1360">
+  <data key="d0">1360</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，出现在序列的开头。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133323</data>
+  <data key="d6"></data>
+</node>
+<node id="1362">
+  <data key="d0">1362</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133323</data>
+  <data key="d6"></data>
+</node>
+<node id="1363">
+  <data key="d0">1363</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133324</data>
+  <data key="d6"></data>
+</node>
+<node id="1364">
+  <data key="d0">1364</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;1364是一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133324</data>
+  <data key="d6"></data>
+</node>
+<node id="1365">
+  <data key="d0">1365</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;1365是一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133328</data>
+  <data key="d6"></data>
+</node>
+<node id="1361">
+  <data key="d0">1361</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133328</data>
+  <data key="d6"></data>
+</node>
+<node id="1359">
+  <data key="d0">1359</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133329</data>
+  <data key="d6"></data>
+</node>
+<node id="1358">
+  <data key="d0">1358</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133330</data>
+  <data key="d6"></data>
+</node>
+<node id="1367">
+  <data key="d0">1367</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1367是一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133330</data>
+  <data key="d6"></data>
+</node>
+<node id="1366">
+  <data key="d0">1366</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;1366是一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133334</data>
+  <data key="d6"></data>
+</node>
+<node id="1368">
+  <data key="d0">1368</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1368是一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133334</data>
+  <data key="d6"></data>
+</node>
+<node id="1369">
+  <data key="d0">1369</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1369是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133334</data>
+  <data key="d6"></data>
+</node>
+<node id="1370">
+  <data key="d0">1370</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1370是一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133336</data>
+  <data key="d6"></data>
+</node>
+<node id="1371">
+  <data key="d0">1371</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1371是一个数据点，在序列中多次出现，数值相对较低。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133339</data>
+  <data key="d6"></data>
+</node>
+<node id="1372">
+  <data key="d0">1372</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1372是一个数据点，在序列中多次出现，常与1373交替出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133339</data>
+  <data key="d6"></data>
+</node>
+<node id="1374">
+  <data key="d0">1374</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1374是一个数据点，出现在序列的开头，并多次重复出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133340</data>
+  <data key="d6"></data>
+</node>
+<node id="1373">
+  <data key="d0">1373</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1373是一个频繁出现的数据点，紧随1374之后，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133340</data>
+  <data key="d6"></data>
+</node>
+<node id="1375">
+  <data key="d0">1375</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1375是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133341</data>
+  <data key="d6"></data>
+</node>
+<node id="1376">
+  <data key="d0">1376</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1376是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133345</data>
+  <data key="d6"></data>
+</node>
+<node id="1378">
+  <data key="d0">1378</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中多次出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133345</data>
+  <data key="d6"></data>
+</node>
+<node id="1380">
+  <data key="d0">1380</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1380是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133345</data>
+  <data key="d6"></data>
+</node>
+<node id="1381">
+  <data key="d0">1381</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中出现，代表一个具体的数值。&lt;SEP&gt;一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1381是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133348</data>
+  <data key="d6"></data>
+</node>
+<node id="1383">
+  <data key="d0">1383</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1383是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133348</data>
+  <data key="d6"></data>
+</node>
+<node id="1384">
+  <data key="d0">1384</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133349</data>
+  <data key="d6"></data>
+</node>
+<node id="1387">
+  <data key="d0">1387</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1387是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133351</data>
+  <data key="d6"></data>
+</node>
+<node id="1386">
+  <data key="d0">1386</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1386是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133351</data>
+  <data key="d6"></data>
+</node>
+<node id="1388">
+  <data key="d0">1388</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1388是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133353</data>
+  <data key="d6"></data>
+</node>
+<node id="1389">
+  <data key="d0">1389</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1389是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133355</data>
+  <data key="d6"></data>
+</node>
+<node id="1391">
+  <data key="d0">1391</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1391是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133356</data>
+  <data key="d6"></data>
+</node>
+<node id="1392">
+  <data key="d0">1392</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1392是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133356</data>
+  <data key="d6"></data>
+</node>
+<node id="1390">
+  <data key="d0">1390</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1390是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133359</data>
+  <data key="d6"></data>
+</node>
+<node id="1393">
+  <data key="d0">1393</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1393是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133359</data>
+  <data key="d6"></data>
+</node>
+<node id="1394">
+  <data key="d0">1394</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1394是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133359</data>
+  <data key="d6"></data>
+</node>
+<node id="1395">
+  <data key="d0">1395</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133362</data>
+  <data key="d6"></data>
+</node>
+<node id="1397">
+  <data key="d0">1397</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1397是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133362</data>
+  <data key="d6"></data>
+</node>
+<node id="1399">
+  <data key="d0">1399</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1399是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133365</data>
+  <data key="d6"></data>
+</node>
+<node id="1400">
+  <data key="d0">1400</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133365</data>
+  <data key="d6"></data>
+</node>
+<node id="1402">
+  <data key="d0">1402</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1402是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133365</data>
+  <data key="d6"></data>
+</node>
+<node id="1401">
+  <data key="d0">1401</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1401是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133367</data>
+  <data key="d6"></data>
+</node>
+<node id="1403">
+  <data key="d0">1403</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1403是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133370</data>
+  <data key="d6"></data>
+</node>
+<node id="1405">
+  <data key="d0">1405</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1405是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133370</data>
+  <data key="d6"></data>
+</node>
+<node id="1406">
+  <data key="d0">1406</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133370</data>
+  <data key="d6"></data>
+</node>
+<node id="1408">
+  <data key="d0">1408</data>
+  <data key="d1">data</data>
+  <data key="d2">这是数据序列的结束值。&lt;SEP&gt;一个数据点，在序列中出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1408是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-80e97285ff5dc03c76c343b4c509f00e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133371</data>
+  <data key="d6"></data>
+</node>
+<node id="1410">
+  <data key="d0">1410</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1410是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133375</data>
+  <data key="d6"></data>
+</node>
+<node id="1409">
+  <data key="d0">1409</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1409是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133375</data>
+  <data key="d6"></data>
+</node>
+<node id="1411">
+  <data key="d0">1411</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1411是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133376</data>
+  <data key="d6"></data>
+</node>
+<node id="1413">
+  <data key="d0">1413</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1413是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133376</data>
+  <data key="d6"></data>
+</node>
+<node id="1414">
+  <data key="d0">1414</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1414是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133379</data>
+  <data key="d6"></data>
+</node>
+<node id="1415">
+  <data key="d0">1415</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1415是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133379</data>
+  <data key="d6"></data>
+</node>
+<node id="1416">
+  <data key="d0">1416</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1416是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133381</data>
+  <data key="d6"></data>
+</node>
+<node id="1418">
+  <data key="d0">1418</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1418是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133381</data>
+  <data key="d6"></data>
+</node>
+<node id="1419">
+  <data key="d0">1419</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1419是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133384</data>
+  <data key="d6"></data>
+</node>
+<node id="1421">
+  <data key="d0">1421</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133384</data>
+  <data key="d6"></data>
+</node>
+<node id="1420">
+  <data key="d0">1420</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133386</data>
+  <data key="d6"></data>
+</node>
+<node id="1417">
+  <data key="d0">1417</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1417是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133387</data>
+  <data key="d6"></data>
+</node>
+<node id="1412">
+  <data key="d0">1412</data>
+  <data key="d1">data</data>
+  <data key="d2">一个数据点，在序列中多次出现。&lt;SEP&gt;1412是一个数据点，在序列中后期频繁出现。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd&lt;SEP&gt;chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133389</data>
+  <data key="d6"></data>
+</node>
+<node id="逗号分隔符">
+  <data key="d0">逗号分隔符</data>
+  <data key="d1">artifact</data>
+  <data key="d2">用于分隔数据序列中各个数字的标点符号。</data>
+  <data key="d3">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133389</data>
+  <data key="d6"></data>
+</node>
+<node id="1377">
+  <data key="d0">1377</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中频繁出现，代表一个具体的数值。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1377是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133391</data>
+  <data key="d6"></data>
+</node>
+<node id="1379">
+  <data key="d0">1379</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中出现，代表一个具体的数值。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1379是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133391</data>
+  <data key="d6"></data>
+</node>
+<node id="1385">
+  <data key="d0">1385</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1385是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133391</data>
+  <data key="d6"></data>
+</node>
+<node id="1396">
+  <data key="d0">1396</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1396是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133395</data>
+  <data key="d6"></data>
+</node>
+<node id="1407">
+  <data key="d0">1407</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1407是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133396</data>
+  <data key="d6"></data>
+</node>
+<node id="1404">
+  <data key="d0">1404</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1404是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133396</data>
+  <data key="d6"></data>
+</node>
+<node id="1382">
+  <data key="d0">1382</data>
+  <data key="d1">data</data>
+  <data key="d2">该数值序列中的一个数据点，在序列中出现，代表一个具体的数值。&lt;SEP&gt;数据序列中的一个具体数值点，代表某个时间点的测量值。&lt;SEP&gt;1382是一个数据点，在序列中后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f&lt;SEP&gt;chunk-9063cefe96982cfabb2207c251ed8f8b&lt;SEP&gt;chunk-c54d3481d05989580b3bc907ec8ea31b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133399</data>
+  <data key="d6"></data>
+</node>
+<node id="1422">
+  <data key="d0">1422</data>
+  <data key="d1">data</data>
+  <data key="d2">1422是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133400</data>
+  <data key="d6"></data>
+</node>
+<node id="1426">
+  <data key="d0">1426</data>
+  <data key="d1">data</data>
+  <data key="d2">1426是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133400</data>
+  <data key="d6"></data>
+</node>
+<node id="1428">
+  <data key="d0">1428</data>
+  <data key="d1">data</data>
+  <data key="d2">1428是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133401</data>
+  <data key="d6"></data>
+</node>
+<node id="1432">
+  <data key="d0">1432</data>
+  <data key="d1">data</data>
+  <data key="d2">1432是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133402</data>
+  <data key="d6"></data>
+</node>
+<node id="1436">
+  <data key="d0">1436</data>
+  <data key="d1">data</data>
+  <data key="d2">1436是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133403</data>
+  <data key="d6"></data>
+</node>
+<node id="1469">
+  <data key="d0">1469</data>
+  <data key="d1">data</data>
+  <data key="d2">1469是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133406</data>
+  <data key="d6"></data>
+</node>
+<node id="1472">
+  <data key="d0">1472</data>
+  <data key="d1">data</data>
+  <data key="d2">1472是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133406</data>
+  <data key="d6"></data>
+</node>
+<node id="1476">
+  <data key="d0">1476</data>
+  <data key="d1">data</data>
+  <data key="d2">1476是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133406</data>
+  <data key="d6"></data>
+</node>
+<node id="1477">
+  <data key="d0">1477</data>
+  <data key="d1">data</data>
+  <data key="d2">1477是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133408</data>
+  <data key="d6"></data>
+</node>
+<node id="1481">
+  <data key="d0">1481</data>
+  <data key="d1">data</data>
+  <data key="d2">1481是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133411</data>
+  <data key="d6"></data>
+</node>
+<node id="1483">
+  <data key="d0">1483</data>
+  <data key="d1">data</data>
+  <data key="d2">1483是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133411</data>
+  <data key="d6"></data>
+</node>
+<node id="1487">
+  <data key="d0">1487</data>
+  <data key="d1">data</data>
+  <data key="d2">1487是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133411</data>
+  <data key="d6"></data>
+</node>
+<node id="1489">
+  <data key="d0">1489</data>
+  <data key="d1">data</data>
+  <data key="d2">1489是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133412</data>
+  <data key="d6"></data>
+</node>
+<node id="1491">
+  <data key="d0">1491</data>
+  <data key="d1">data</data>
+  <data key="d2">1491是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133417</data>
+  <data key="d6"></data>
+</node>
+<node id="1495">
+  <data key="d0">1495</data>
+  <data key="d1">data</data>
+  <data key="d2">1495是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133417</data>
+  <data key="d6"></data>
+</node>
+<node id="1501">
+  <data key="d0">1501</data>
+  <data key="d1">data</data>
+  <data key="d2">1501是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133417</data>
+  <data key="d6"></data>
+</node>
+<node id="1504">
+  <data key="d0">1504</data>
+  <data key="d1">data</data>
+  <data key="d2">1504是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133418</data>
+  <data key="d6"></data>
+</node>
+<node id="1507">
+  <data key="d0">1507</data>
+  <data key="d1">data</data>
+  <data key="d2">1507是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133422</data>
+  <data key="d6"></data>
+</node>
+<node id="1511">
+  <data key="d0">1511</data>
+  <data key="d1">data</data>
+  <data key="d2">1511是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133422</data>
+  <data key="d6"></data>
+</node>
+<node id="1513">
+  <data key="d0">1513</data>
+  <data key="d1">data</data>
+  <data key="d2">1513是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133423</data>
+  <data key="d6"></data>
+</node>
+<node id="1516">
+  <data key="d0">1516</data>
+  <data key="d1">data</data>
+  <data key="d2">1516是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133424</data>
+  <data key="d6"></data>
+</node>
+<node id="1519">
+  <data key="d0">1519</data>
+  <data key="d1">data</data>
+  <data key="d2">1519是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133428</data>
+  <data key="d6"></data>
+</node>
+<node id="1520">
+  <data key="d0">1520</data>
+  <data key="d1">data</data>
+  <data key="d2">1520是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133428</data>
+  <data key="d6"></data>
+</node>
+<node id="1524">
+  <data key="d0">1524</data>
+  <data key="d1">data</data>
+  <data key="d2">1524是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133428</data>
+  <data key="d6"></data>
+</node>
+<node id="1525">
+  <data key="d0">1525</data>
+  <data key="d1">data</data>
+  <data key="d2">1525是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133429</data>
+  <data key="d6"></data>
+</node>
+<node id="1527">
+  <data key="d0">1527</data>
+  <data key="d1">data</data>
+  <data key="d2">1527是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133432</data>
+  <data key="d6"></data>
+</node>
+<node id="1531">
+  <data key="d0">1531</data>
+  <data key="d1">data</data>
+  <data key="d2">1531是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133432</data>
+  <data key="d6"></data>
+</node>
+<node id="1532">
+  <data key="d0">1532</data>
+  <data key="d1">data</data>
+  <data key="d2">1532是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133433</data>
+  <data key="d6"></data>
+</node>
+<node id="1533">
+  <data key="d0">1533</data>
+  <data key="d1">data</data>
+  <data key="d2">1533是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133434</data>
+  <data key="d6"></data>
+</node>
+<node id="1534">
+  <data key="d0">1534</data>
+  <data key="d1">data</data>
+  <data key="d2">1534是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133437</data>
+  <data key="d6"></data>
+</node>
+<node id="1535">
+  <data key="d0">1535</data>
+  <data key="d1">data</data>
+  <data key="d2">1535是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133437</data>
+  <data key="d6"></data>
+</node>
+<node id="1537">
+  <data key="d0">1537</data>
+  <data key="d1">data</data>
+  <data key="d2">1537是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133438</data>
+  <data key="d6"></data>
+</node>
+<node id="1538">
+  <data key="d0">1538</data>
+  <data key="d1">data</data>
+  <data key="d2">1538是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133438</data>
+  <data key="d6"></data>
+</node>
+<node id="1536">
+  <data key="d0">1536</data>
+  <data key="d1">data</data>
+  <data key="d2">1536是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133442</data>
+  <data key="d6"></data>
+</node>
+<node id="1530">
+  <data key="d0">1530</data>
+  <data key="d1">data</data>
+  <data key="d2">1530是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133442</data>
+  <data key="d6"></data>
+</node>
+<node id="1539">
+  <data key="d0">1539</data>
+  <data key="d1">data</data>
+  <data key="d2">1539是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133442</data>
+  <data key="d6"></data>
+</node>
+<node id="1541">
+  <data key="d0">1541</data>
+  <data key="d1">data</data>
+  <data key="d2">1541是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133445</data>
+  <data key="d6"></data>
+</node>
+<node id="1543">
+  <data key="d0">1543</data>
+  <data key="d1">data</data>
+  <data key="d2">1543是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133445</data>
+  <data key="d6"></data>
+</node>
+<node id="1546">
+  <data key="d0">1546</data>
+  <data key="d1">data</data>
+  <data key="d2">1546是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133449</data>
+  <data key="d6"></data>
+</node>
+<node id="1548">
+  <data key="d0">1548</data>
+  <data key="d1">data</data>
+  <data key="d2">1548是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133449</data>
+  <data key="d6"></data>
+</node>
+<node id="1550">
+  <data key="d0">1550</data>
+  <data key="d1">data</data>
+  <data key="d2">1550是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133449</data>
+  <data key="d6"></data>
+</node>
+<node id="1551">
+  <data key="d0">1551</data>
+  <data key="d1">data</data>
+  <data key="d2">1551是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133450</data>
+  <data key="d6"></data>
+</node>
+<node id="1553">
+  <data key="d0">1553</data>
+  <data key="d1">data</data>
+  <data key="d2">1553是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133455</data>
+  <data key="d6"></data>
+</node>
+<node id="1555">
+  <data key="d0">1555</data>
+  <data key="d1">data</data>
+  <data key="d2">1555是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133455</data>
+  <data key="d6"></data>
+</node>
+<node id="1559">
+  <data key="d0">1559</data>
+  <data key="d1">data</data>
+  <data key="d2">1559是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133455</data>
+  <data key="d6"></data>
+</node>
+<node id="1561">
+  <data key="d0">1561</data>
+  <data key="d1">data</data>
+  <data key="d2">1561是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133456</data>
+  <data key="d6"></data>
+</node>
+<node id="1563">
+  <data key="d0">1563</data>
+  <data key="d1">data</data>
+  <data key="d2">1563是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133460</data>
+  <data key="d6"></data>
+</node>
+<node id="1564">
+  <data key="d0">1564</data>
+  <data key="d1">data</data>
+  <data key="d2">1564是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133460</data>
+  <data key="d6"></data>
+</node>
+<node id="1565">
+  <data key="d0">1565</data>
+  <data key="d1">data</data>
+  <data key="d2">1565是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133461</data>
+  <data key="d6"></data>
+</node>
+<node id="1566">
+  <data key="d0">1566</data>
+  <data key="d1">data</data>
+  <data key="d2">1566是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133462</data>
+  <data key="d6"></data>
+</node>
+<node id="1568">
+  <data key="d0">1568</data>
+  <data key="d1">data</data>
+  <data key="d2">1568是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133465</data>
+  <data key="d6"></data>
+</node>
+<node id="1569">
+  <data key="d0">1569</data>
+  <data key="d1">data</data>
+  <data key="d2">1569是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133465</data>
+  <data key="d6"></data>
+</node>
+<node id="1571">
+  <data key="d0">1571</data>
+  <data key="d1">data</data>
+  <data key="d2">1571是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133465</data>
+  <data key="d6"></data>
+</node>
+<node id="1573">
+  <data key="d0">1573</data>
+  <data key="d1">data</data>
+  <data key="d2">1573是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133467</data>
+  <data key="d6"></data>
+</node>
+<node id="1575">
+  <data key="d0">1575</data>
+  <data key="d1">data</data>
+  <data key="d2">1575是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133467</data>
+  <data key="d6"></data>
+</node>
+<node id="1574">
+  <data key="d0">1574</data>
+  <data key="d1">data</data>
+  <data key="d2">1574是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133471</data>
+  <data key="d6"></data>
+</node>
+<node id="1576">
+  <data key="d0">1576</data>
+  <data key="d1">data</data>
+  <data key="d2">1576是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133472</data>
+  <data key="d6"></data>
+</node>
+<node id="1577">
+  <data key="d0">1577</data>
+  <data key="d1">data</data>
+  <data key="d2">1577是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133472</data>
+  <data key="d6"></data>
+</node>
+<node id="1578">
+  <data key="d0">1578</data>
+  <data key="d1">data</data>
+  <data key="d2">1578是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133475</data>
+  <data key="d6"></data>
+</node>
+<node id="1580">
+  <data key="d0">1580</data>
+  <data key="d1">data</data>
+  <data key="d2">1580是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133475</data>
+  <data key="d6"></data>
+</node>
+<node id="1579">
+  <data key="d0">1579</data>
+  <data key="d1">data</data>
+  <data key="d2">1579是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133476</data>
+  <data key="d6"></data>
+</node>
+<node id="1582">
+  <data key="d0">1582</data>
+  <data key="d1">data</data>
+  <data key="d2">1582是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133477</data>
+  <data key="d6"></data>
+</node>
+<node id="1584">
+  <data key="d0">1584</data>
+  <data key="d1">data</data>
+  <data key="d2">1584是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133477</data>
+  <data key="d6"></data>
+</node>
+<node id="1585">
+  <data key="d0">1585</data>
+  <data key="d1">data</data>
+  <data key="d2">1585是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133482</data>
+  <data key="d6"></data>
+</node>
+<node id="1589">
+  <data key="d0">1589</data>
+  <data key="d1">data</data>
+  <data key="d2">1589是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133482</data>
+  <data key="d6"></data>
+</node>
+<node id="1592">
+  <data key="d0">1592</data>
+  <data key="d1">data</data>
+  <data key="d2">1592是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133482</data>
+  <data key="d6"></data>
+</node>
+<node id="1594">
+  <data key="d0">1594</data>
+  <data key="d1">data</data>
+  <data key="d2">1594是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133483</data>
+  <data key="d6"></data>
+</node>
+<node id="1597">
+  <data key="d0">1597</data>
+  <data key="d1">data</data>
+  <data key="d2">1597是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133486</data>
+  <data key="d6"></data>
+</node>
+<node id="1603">
+  <data key="d0">1603</data>
+  <data key="d1">data</data>
+  <data key="d2">1603是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133487</data>
+  <data key="d6"></data>
+</node>
+<node id="1606">
+  <data key="d0">1606</data>
+  <data key="d1">data</data>
+  <data key="d2">1606是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133487</data>
+  <data key="d6"></data>
+</node>
+<node id="1608">
+  <data key="d0">1608</data>
+  <data key="d1">data</data>
+  <data key="d2">1608是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133488</data>
+  <data key="d6"></data>
+</node>
+<node id="1610">
+  <data key="d0">1610</data>
+  <data key="d1">data</data>
+  <data key="d2">1610是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133491</data>
+  <data key="d6"></data>
+</node>
+<node id="1615">
+  <data key="d0">1615</data>
+  <data key="d1">data</data>
+  <data key="d2">1615是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133491</data>
+  <data key="d6"></data>
+</node>
+<node id="1617">
+  <data key="d0">1617</data>
+  <data key="d1">data</data>
+  <data key="d2">1617是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133491</data>
+  <data key="d6"></data>
+</node>
+<node id="1619">
+  <data key="d0">1619</data>
+  <data key="d1">data</data>
+  <data key="d2">1619是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133493</data>
+  <data key="d6"></data>
+</node>
+<node id="1621">
+  <data key="d0">1621</data>
+  <data key="d1">data</data>
+  <data key="d2">1621是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133496</data>
+  <data key="d6"></data>
+</node>
+<node id="1623">
+  <data key="d0">1623</data>
+  <data key="d1">data</data>
+  <data key="d2">1623是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133496</data>
+  <data key="d6"></data>
+</node>
+<node id="1626">
+  <data key="d0">1626</data>
+  <data key="d1">data</data>
+  <data key="d2">1626是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133496</data>
+  <data key="d6"></data>
+</node>
+<node id="1627">
+  <data key="d0">1627</data>
+  <data key="d1">data</data>
+  <data key="d2">1627是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133497</data>
+  <data key="d6"></data>
+</node>
+<node id="1630">
+  <data key="d0">1630</data>
+  <data key="d1">data</data>
+  <data key="d2">1630是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133500</data>
+  <data key="d6"></data>
+</node>
+<node id="1631">
+  <data key="d0">1631</data>
+  <data key="d1">data</data>
+  <data key="d2">1631是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133500</data>
+  <data key="d6"></data>
+</node>
+<node id="1629">
+  <data key="d0">1629</data>
+  <data key="d1">data</data>
+  <data key="d2">1629是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133501</data>
+  <data key="d6"></data>
+</node>
+<node id="1628">
+  <data key="d0">1628</data>
+  <data key="d1">data</data>
+  <data key="d2">1628是一个数据点，在序列后期频繁出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133502</data>
+  <data key="d6"></data>
+</node>
+<node id="1625">
+  <data key="d0">1625</data>
+  <data key="d1">data</data>
+  <data key="d2">1625是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133505</data>
+  <data key="d6"></data>
+</node>
+<node id="1624">
+  <data key="d0">1624</data>
+  <data key="d1">data</data>
+  <data key="d2">1624是一个数据点，在序列后期出现。</data>
+  <data key="d3">chunk-e6687e8da0f2e8d771804eb624eaae2f</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133505</data>
+  <data key="d6"></data>
+</node>
+<node id="时间点">
+  <data key="d0">时间点</data>
+  <data key="d1">concept</data>
+  <data key="d2">序列中每个数值对应的测量时刻。</data>
+  <data key="d3">chunk-9063cefe96982cfabb2207c251ed8f8b</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133505</data>
+  <data key="d6"></data>
+</node>
+<node id="数值数据点">
+  <data key="d0">数值数据点</data>
+  <data key="d1">data</data>
+  <data key="d2">文本中包含一系列具体的数值，如1397, 1396, 1395等，这些是构成数据序列的具体数据点。</data>
+  <data key="d3">chunk-3450c7761460298d4487d71908766857</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133507</data>
+  <data key="d6"></data>
+</node>
+<node id="1552">
+  <data key="d0">1552</data>
+  <data key="d1">data</data>
+  <data key="d2">这是数据序列的起始值。</data>
+  <data key="d3">chunk-80e97285ff5dc03c76c343b4c509f00e</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133510</data>
+  <data key="d6"></data>
+</node>
+<node id="下降趋势">
+  <data key="d0">下降趋势</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据序列整体呈现从高值向低值递减的变化模式。&lt;SEP&gt;数据序列在达到峰值后呈现出明显的数值下降趋势。</data>
+  <data key="d3">chunk-80e97285ff5dc03c76c343b4c509f00e&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133510</data>
+  <data key="d6"></data>
+</node>
+<node id="数值观测">
+  <data key="d0">数值观测</data>
+  <data key="d1">data</data>
+  <data key="d2">该文本包含一系列连续的数值，如1453、1452、1450等，代表具体的观测数据点。</data>
+  <data key="d3">chunk-80b33f0c11ecf27b8bc0626deded6819</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133510</data>
+  <data key="d6"></data>
+</node>
+<node id="起始值">
+  <data key="d0">起始值</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列的起始值为1461。</data>
+  <data key="d3">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133511</data>
+  <data key="d6"></data>
+</node>
+<node id="结束值">
+  <data key="d0">结束值</data>
+  <data key="d1">data</data>
+  <data key="d2">数据序列的结束值为1534。</data>
+  <data key="d3">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133515</data>
+  <data key="d6"></data>
+</node>
+<node id="测量过程">
+  <data key="d0">测量过程</data>
+  <data key="d1">method</data>
+  <data key="d2">通过连续记录一系列数值来生成该数据序列。</data>
+  <data key="d3">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133515</data>
+  <data key="d6"></data>
+</node>
+<node id="上升趋势">
+  <data key="d0">上升趋势</data>
+  <data key="d1">concept</data>
+  <data key="d2">数据序列在初始阶段呈现出明显的数值增长趋势。</data>
+  <data key="d3">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d4">test_1min.json</data>
+  <data key="d5">1768133515</data>
   <data key="d6"></data>
 </node>
 <edge source="性能测试模块" target="项目管理入口">
@@ -14774,6 +17667,33 @@
   <data key="d11">chunk-c423d61c859757d64bf4db5be9f230dc</data>
   <data key="d12">app appium面试项目1-最优.md</data>
   <data key="d13">1767340557</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Python" target="NumPy">
+  <data key="d8">1.0</data>
+  <data key="d9">NumPy库是在Python编程语言环境中使用的，为其提供数值计算能力。</data>
+  <data key="d10">库依赖,编程语言</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133164</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Python" target="Pandas">
+  <data key="d8">1.0</data>
+  <data key="d9">Pandas库是在Python编程语言环境中使用的，为其提供数据分析和处理能力。</data>
+  <data key="d10">库依赖,编程语言</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133169</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Python" target="Scikit-learn">
+  <data key="d8">1.0</data>
+  <data key="d9">Scikit-learn库是在Python编程语言环境中使用的，为其提供机器学习算法和工具。</data>
+  <data key="d10">库依赖,编程语言</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133177</data>
   <data key="d14"></data>
 </edge>
 <edge source="React" target="大模型(LLM)应用开发能力">
@@ -24082,6 +27002,15 @@
   <data key="d13">1767341508</data>
   <data key="d14"></data>
 </edge>
+<edge source="data" target="__main__">
+  <data key="d8">1.0</data>
+  <data key="d9">在主程序(__main__)中，使用json模块和file_path加载JSON文件，将结果存储在data变量中。</data>
+  <data key="d10">数据加载,文件读取</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130285</data>
+  <data key="d14"></data>
+</edge>
 <edge source="productList" target="productList.one">
   <data key="d8">1.0</data>
   <data key="d9">productList数组包含名为`one`的产品对象。</data>
@@ -24431,6 +27360,1464 @@
   <data key="d11">chunk-01801f933216cfe71c2b179bcba43ce7</data>
   <data key="d12">Python依赖包安装命令.txt</data>
   <data key="d13">1768127891</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="requestJson">
+  <data key="d8">1.0</data>
+  <data key="d9">parse_txt函数接收requestJson作为输入参数，从中提取数据以进行处理。</data>
+  <data key="d10">数据处理,输入参数</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130260</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="dataList">
+  <data key="d8">1.0</data>
+  <data key="d9">parse_txt函数从requestJson中获取'dataList'键对应的值，以遍历其中的数据条目。</data>
+  <data key="d10">数据提取,键值访问</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130266</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="ppg_data">
+  <data key="d8">1.0</data>
+  <data key="d9">parse_txt函数遍历dataList，将每个条目的'data'字段值添加到ppg_data列表中。</data>
+  <data key="d10">列表填充,数据收集</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130269</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="timestamp">
+  <data key="d8">1.0</data>
+  <data key="d9">parse_txt函数遍历dataList，将每个条目的'timestamp'字段值添加到timestamp列表中。</data>
+  <data key="d10">列表填充,数据收集</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130272</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="DataFrame">
+  <data key="d8">1.0</data>
+  <data key="d9">parse_txt函数使用pandas的DataFrame将timestamp和ppg_data列表组合成一个结构化的表格，并进行去重操作。</data>
+  <data key="d10">数据存储,数据结构化</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130276</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="ppg_rawData">
+  <data key="d8">1.0</data>
+  <data key="d9">parse_txt函数将DataFrame中的'ppg_data'字符串按逗号分割并转换为整数列表，最终生成ppg_rawData列表并封装成DataFrame返回。</data>
+  <data key="d10">数据转换,结果生成</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130282</data>
+  <data key="d14"></data>
+</edge>
+<edge source="parse_txt函数" target="__main__">
+  <data key="d8">1.0</data>
+  <data key="d9">在主程序(__main__)中，调用parse_txt函数，并将加载的data作为参数传入以开始数据处理流程。</data>
+  <data key="d10">函数调用,数据处理</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130289</data>
+  <data key="d14"></data>
+</edge>
+<edge source="requestJson" target="json">
+  <data key="d8">1.0</data>
+  <data key="d9">在主程序中，使用json模块从文件加载数据，生成requestJson对象，作为parse_txt函数的输入。</data>
+  <data key="d10">数据加载,文件读取</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130276</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="df">
+  <data key="d8">1.0</data>
+  <data key="d9">calculate_rri函数接收包含PPG原始数据的DataFrame(df)作为主要输入。</data>
+  <data key="d10">数据处理,输入参数</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130262</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="fs">
+  <data key="d8">1.0</data>
+  <data key="d9">calculate_rri函数接收采样频率(fs)作为参数，用于将索引差转换为实际时间。</data>
+  <data key="d10">参数配置,输入参数</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130265</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="scipy.signal.find_peaks">
+  <data key="d8">1.0</data>
+  <data key="d9">calculate_rri函数调用scipy.signal.find_peaks来检测PPG信号中的波峰位置。</data>
+  <data key="d10">功能调用,波峰检测</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130270</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="ppg_peak_inds">
+  <data key="d8">1.0</data>
+  <data key="d9">calculate_rri函数使用ppg_peak_inds数组来计算连续波峰之间的时间间隔，即RRI。</data>
+  <data key="d10">数据计算,输入数据</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130273</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="RRI">
+  <data key="d8">1.0</data>
+  <data key="d9">calculate_rri函数基于ppg_peak_inds计算RR间期，并将结果存储在名为'RRI'的列表中。</data>
+  <data key="d10">指标计算,结果生成</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130279</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="RRIdata">
+  <data key="d8">1.0</data>
+  <data key="d9">calculate_rri函数将计算出的RRI列表转换为DataFrame，并进一步计算'time'列，最终返回RRIdata这个DataFrame。</data>
+  <data key="d10">数据封装,结果输出</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130284</data>
+  <data key="d14"></data>
+</edge>
+<edge source="calculate_rri函数" target="__main__">
+  <data key="d8">1.0</data>
+  <data key="d9">在主程序(__main__)中，调用calculate_rri函数，将parse_txt返回的DataFrame和采样频率fs=88作为参数，计算RRI。</data>
+  <data key="d10">函数调用,指标计算</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130292</data>
+  <data key="d14"></data>
+</edge>
+<edge source="scipy.signal.find_peaks" target="ppg_peak_inds">
+  <data key="d8">1.0</data>
+  <data key="d9">scipy.signal.find_peaks函数返回的peak_inds包含波峰索引，ppg_peak_inds被赋值为其中的索引数组。</data>
+  <data key="d10">索引提取,结果输出</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130266</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RRI" target="RRIdata">
+  <data key="d8">1.0</data>
+  <data key="d9">RRIdata包含RRI数据列，RRI是计算所有心率变异性特征的基础原始信号。</data>
+  <data key="d10">信号基础,数据包含</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133091</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RRI" target="remove_outliers函数">
+  <data key="d8">1.0</data>
+  <data key="d9">remove_outliers函数对原始的RRI列表进行处理，删除不符合生理范围(300-2000毫秒)的离群值，为后续分析准备干净数据。</data>
+  <data key="d10">数据预处理,质量控制</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133097</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RRI" target="interpolate_nan_values函数">
+  <data key="d8">1.0</data>
+  <data key="d9">interpolate_nan_values函数对包含NaN值的RRI序列进行线性插值，以填补因删除离群值或异位搏动而产生的数据空缺。</data>
+  <data key="d10">插值处理,数据修复</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133102</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RRI" target="remove_ectopic_beats函数">
+  <data key="d8">1.0</data>
+  <data key="d9">remove_ectopic_beats函数使用Malik方法识别并移除RRI序列中的异位搏动(异常值)，以提取代表正常窦性心律的NN间期。</data>
+  <data key="d10">信号处理,异常检测</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133106</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RRIdata" target="predict函数">
+  <data key="d8">1.0</data>
+  <data key="d9">predict函数接收RRIdata作为输入，用于情绪指数模型的预测。</data>
+  <data key="d10">模型预测,输入数据</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130290</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RRIdata" target="time列">
+  <data key="d8">1.0</data>
+  <data key="d9">time列是RRIdata DataFrame中的一个关键数据列，其值由RRI数据计算得出，用于后续时间分段分析。</data>
+  <data key="d10">数据组成,时间序列</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133085</data>
+  <data key="d14"></data>
+</edge>
+<edge source="predict函数" target="predict_result">
+  <data key="d8">1.0</data>
+  <data key="d9">predict函数执行预测后，将结果存储在predict_result中。</data>
+  <data key="d10">结果输出,预测值</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130273</data>
+  <data key="d14"></data>
+</edge>
+<edge source="predict函数" target="rri_num">
+  <data key="d8">2.0</data>
+  <data key="d9">在调用predict函数时，参数rri_num被设置为60，作为模型预测的配置参数之一。&lt;SEP&gt;predict函数接收rri_num作为参数，用于决定如何将输入的RR间期数据分割成多个片段进行处理。</data>
+  <data key="d10">函数参数,参数传递,数据分割,模型配置</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e&lt;SEP&gt;chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">parse_txt.py&lt;SEP&gt;predict_model.py</data>
+  <data key="d13">1768133174</data>
+  <data key="d14"></data>
+</edge>
+<edge source="predict函数" target="__main__">
+  <data key="d8">1.0</data>
+  <data key="d9">在主程序(__main__)中，调用predict函数，将calculate_rri返回的RRIdata和参数rri_num=60传入，进行情绪预测。</data>
+  <data key="d10">函数调用,模型预测</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130295</data>
+  <data key="d14"></data>
+</edge>
+<edge source="predict函数" target="RR间期数据">
+  <data key="d8">1.0</data>
+  <data key="d9">predict函数接收RR间期数据作为输入，以进行后续的特征提取和模型预测。</data>
+  <data key="d10">数据处理,模型输入</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133150</data>
+  <data key="d14"></data>
+</edge>
+<edge source="predict函数" target="模型">
+  <data key="d8">1.0</data>
+  <data key="d9">predict函数在内部会加载并使用预训练的机器学习模型对提取的特征进行预测。</data>
+  <data key="d10">函数调用,模型应用</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133164</data>
+  <data key="d14"></data>
+</edge>
+<edge source="__main__" target="file_path">
+  <data key="d8">1.0</data>
+  <data key="d9">在主程序(__main__)中，定义了file_path变量来指定要读取的JSON文件路径。</data>
+  <data key="d10">文件操作,路径定义</data>
+  <data key="d11">chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e</data>
+  <data key="d12">parse_txt.py</data>
+  <data key="d13">1768130280</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Testset_Dict" target="KNN">
+  <data key="d8">1.0</data>
+  <data key="d9">Testset_Dict中存储了使用KNN方法对不同情感索引进行预测的结果。</data>
+  <data key="d10">方法使用,预测应用</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133079</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Testset_Dict" target="Y_Pred_Knn">
+  <data key="d8">1.0</data>
+  <data key="d9">Testset_Dict存储了KNN模型对每个情感索引的预测结果Y_Pred_Knn。</data>
+  <data key="d10">数据存储,预测结果</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133082</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Testset_Dict" target="Emo_Index">
+  <data key="d8">1.0</data>
+  <data key="d9">Testset_Dict使用情感索引Emo_Index作为键来组织存储不同的预测结果。</data>
+  <data key="d10">数据组织,键值对</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133089</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Start_Time">
+  <data key="d8">1.0</data>
+  <data key="d9">Model_Return_Dict包含了模型运行的开始时间Start_Time。</data>
+  <data key="d10">元数据记录,时间戳</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133078</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Finish_Time">
+  <data key="d8">1.0</data>
+  <data key="d9">Model_Return_Dict包含了模型运行的完成时间Finish_Time。</data>
+  <data key="d10">元数据记录,时间戳</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133082</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Run_Time">
+  <data key="d8">1.0</data>
+  <data key="d9">Model_Return_Dict包含了模型运行的总时长Run_Time，由开始时间和结束时间计算得出。</data>
+  <data key="d10">性能指标,计算</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133085</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Code">
+  <data key="d8">1.0</data>
+  <data key="d9">Model_Return_Dict包含了一个状态码Code，用于指示模型预测过程的成功或失败。</data>
+  <data key="d10">执行结果,状态指示</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133090</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Msg">
+  <data key="d8">1.0</data>
+  <data key="d9">Model_Return_Dict包含了一条消息Msg，用于描述模型预测过程的执行状态或错误信息。</data>
+  <data key="d10">信息反馈,状态描述</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133094</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Predict_Result">
+  <data key="d8">1.0</data>
+  <data key="d9">Model_Return_Dict包含了模型预测的最终结果Predict_Result，该结果存储在Testset_Dict中。</data>
+  <data key="d10">数据输出,结果存储</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133099</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Model_Return_Dict" target="Exception">
+  <data key="d8">1.0</data>
+  <data key="d9">当发生Exception时，Model_Return_Dict中的状态码和消息会被更新以反映错误。</data>
+  <data key="d10">流程控制,错误处理</data>
+  <data key="d11">chunk-28c28b6bfb03338cd097bb678b3d4bed</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133103</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrv_features" target="time_domain_features">
+  <data key="d8">1.0</data>
+  <data key="d9">time_domain_features作为HRV特征的一个类别，被包含在hrv_features列表中。</data>
+  <data key="d10">特征集合,组成部分</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133105</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrv_features" target="frequency_domain_features">
+  <data key="d8">1.0</data>
+  <data key="d9">frequency_domain_features作为HRV特征的一个类别，被包含在hrv_features列表中。</data>
+  <data key="d10">特征集合,组成部分</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133112</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrv_features" target="csi_cvi_features">
+  <data key="d8">1.0</data>
+  <data key="d9">csi_cvi_features作为HRV特征的一个类别，被包含在hrv_features列表中。</data>
+  <data key="d10">特征集合,组成部分</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133118</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrv_features" target="poincare_plot_features">
+  <data key="d8">1.0</data>
+  <data key="d9">poincare_plot_features作为HRV特征的一个类别，被包含在hrv_features列表中。</data>
+  <data key="d10">特征集合,组成部分</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133124</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrv_features" target="sampen">
+  <data key="d8">1.0</data>
+  <data key="d9">sampen作为HRV的一个非线性特征，被包含在hrv_features列表中。</data>
+  <data key="d10">特征集合,组成部分</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133130</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrv_features" target="obj_dict">
+  <data key="d8">1.0</data>
+  <data key="d9">所有从hrv_features列表中计算出的特征被整合到obj_dict字典中，以便后续转换为结构化的DataFrame。</data>
+  <data key="d10">存储准备,数据整合</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133137</data>
+  <data key="d14"></data>
+</edge>
+<edge source="time_domain_features" target="SDANN">
+  <data key="d8">1.0</data>
+  <data key="d9">SDANN作为HRV时域特征之一，被计算并存储在time_domain_features字典中。</data>
+  <data key="d10">指标包含,特征计算</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133095</data>
+  <data key="d14"></data>
+</edge>
+<edge source="time_domain_features" target="SDNN Index">
+  <data key="d8">1.0</data>
+  <data key="d9">SDNN Index作为HRV时域特征之一，被计算并存储在time_domain_features字典中。</data>
+  <data key="d10">指标包含,特征计算</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133100</data>
+  <data key="d14"></data>
+</edge>
+<edge source="obj_dict" target="hrvFeature">
+  <data key="d8">1.0</data>
+  <data key="d9">hrvFeature DataFrame由obj_dict字典转换而来，使HRV特征以表格形式组织。</data>
+  <data key="d10">数据转换,结构化</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133106</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrvFeature" target="X_test">
+  <data key="d8">1.0</data>
+  <data key="d9">X_test特征矩阵是从hrvFeature DataFrame中提取所有列的数据形成的，作为机器学习模型的输入。</data>
+  <data key="d10">模型输入,特征提取</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133115</data>
+  <data key="d14"></data>
+</edge>
+<edge source="hrvFeature" target="pd (pandas)">
+  <data key="d8">1.0</data>
+  <data key="d9">pandas的pd.DataFrame函数被用于将obj_dict字典转换为hrvFeature DataFrame。</data>
+  <data key="d10">工具使用,数据转换</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133136</data>
+  <data key="d14"></data>
+</edge>
+<edge source="X_test" target="scaler">
+  <data key="d8">1.0</data>
+  <data key="d9">scaler使用从X_train学到的参数对X_test特征数据进行标准化处理，使其与训练数据分布一致。</data>
+  <data key="d10">数据预处理,标准化变换</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133121</data>
+  <data key="d14"></data>
+</edge>
+<edge source="X_train" target="scaler">
+  <data key="d8">1.0</data>
+  <data key="d9">scaler标准化器使用X_train训练数据进行拟合，以获取均值和标准差等参数。</data>
+  <data key="d10">标准化拟合,模型训练</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133115</data>
+  <data key="d14"></data>
+</edge>
+<edge source="X_train" target="parent_dir">
+  <data key="d8">1.0</data>
+  <data key="d9">X_train训练数据通过np.load函数从parent_dir指定的路径下的文件加载。</data>
+  <data key="d10">数据路径,文件加载</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133137</data>
+  <data key="d14"></data>
+</edge>
+<edge source="scaler" target="StandardScaler">
+  <data key="d8">1.0</data>
+  <data key="d9">scaler是StandardScaler类的一个实例，用于执行具体的特征标准化操作。</data>
+  <data key="d10">工具创建,类实例化</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133128</data>
+  <data key="d14"></data>
+</edge>
+<edge source="emo_index_list_1" target="clf_svm">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_svm模型被用于对emo_index_list_1中列出的情绪指数(压力指数、疲劳指数)进行预测。</data>
+  <data key="d10">模型应用,目标预测</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133118</data>
+  <data key="d14"></data>
+</edge>
+<edge source="emo_index_list_2" target="clf_knn">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_knn模型被用于对emo_index_list_2中列出的情绪指数(情绪指数、情感指数)进行预测。</data>
+  <data key="d10">模型应用,目标预测</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133122</data>
+  <data key="d14"></data>
+</edge>
+<edge source="testset_dict" target="clf_svm">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_svm模型对压力指数和疲劳指数的预测结果被写入testset_dict字典中。</data>
+  <data key="d10">结果存储,预测输出</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133124</data>
+  <data key="d14"></data>
+</edge>
+<edge source="testset_dict" target="clf_knn">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_knn模型对情绪指数和情感指数的预测结果被写入testset_dict字典中。</data>
+  <data key="d10">结果存储,预测输出</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133132</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_svm" target="joblib">
+  <data key="d8">1.0</data>
+  <data key="d9">joblib.load函数被用于从磁盘文件加载训练好的SVM模型clf_svm。</data>
+  <data key="d10">工具使用,模型加载</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133132</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_svm" target="parent_dir">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_svm模型文件通过joblib从parent_dir指定的路径下的文件加载。</data>
+  <data key="d10">文件加载,模型路径</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133143</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_svm" target="stress_index">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_svm模型被专门用于预测stress_index(压力指数)。</data>
+  <data key="d10">模型预测,目标变量</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133147</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_svm" target="tired_index">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_svm模型被专门用于预测tired_index(疲劳指数)。</data>
+  <data key="d10">模型预测,目标变量</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133154</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_knn" target="joblib">
+  <data key="d8">1.0</data>
+  <data key="d9">joblib.load函数被用于从磁盘文件加载训练好的KNN模型clf_knn。</data>
+  <data key="d10">工具使用,模型加载</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133140</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_knn" target="parent_dir">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_knn模型文件通过joblib从parent_dir指定的路径下的文件加载。</data>
+  <data key="d10">文件加载,模型路径</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133147</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_knn" target="emotion_index">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_knn模型被专门用于预测emotion_index(情绪指数)。</data>
+  <data key="d10">模型预测,目标变量</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133154</data>
+  <data key="d14"></data>
+</edge>
+<edge source="clf_knn" target="affect">
+  <data key="d8">1.0</data>
+  <data key="d9">clf_knn模型被专门用于预测affect(情感指数)。</data>
+  <data key="d10">模型预测,目标变量</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133158</data>
+  <data key="d14"></data>
+</edge>
+<edge source="model_return_dict" target="start_time">
+  <data key="d8">1.0</data>
+  <data key="d9">模型流程的开始时间被记录在model_return_dict字典中。</data>
+  <data key="d10">元数据记录,时间信息</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133146</data>
+  <data key="d14"></data>
+</edge>
+<edge source="model_return_dict" target="finish_time">
+  <data key="d8">1.0</data>
+  <data key="d9">模型流程的完成时间被记录在model_return_dict字典中。</data>
+  <data key="d10">元数据记录,时间信息</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133151</data>
+  <data key="d14"></data>
+</edge>
+<edge source="StandardScaler" target="Scikit-learn">
+  <data key="d8">1.0</data>
+  <data key="d9">StandardScaler是Scikit-learn库提供的一个数据标准化预处理工具。</data>
+  <data key="d10">库组件,数据预处理</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133164</data>
+  <data key="d14"></data>
+</edge>
+<edge source="np (NumPy)" target="sdann">
+  <data key="d8">1.0</data>
+  <data key="d9">NumPy的np.std函数被用于计算SDANN值。</data>
+  <data key="d10">工具使用,数学计算</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133135</data>
+  <data key="d14"></data>
+</edge>
+<edge source="np (NumPy)" target="sdnn_index">
+  <data key="d8">1.0</data>
+  <data key="d9">NumPy的np.mean函数被用于计算SDNN Index值。</data>
+  <data key="d10">工具使用,数学计算</data>
+  <data key="d11">chunk-0c6b9bc52d436bdf3a3bd09fa2b29435</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133144</data>
+  <data key="d14"></data>
+</edge>
+<edge source="Scikit-learn" target="KNeighborsRegressor">
+  <data key="d8">1.0</data>
+  <data key="d9">KNeighborsRegressor算法是Scikit-learn机器学习库提供的一个回归模型组件。</data>
+  <data key="d10">库组件,算法提供</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133159</data>
+  <data key="d14"></data>
+</edge>
+<edge source="HRVanalysis" target="remove_outliers">
+  <data key="d8">1.0</data>
+  <data key="d9">remove_outliers函数是HRVanalysis库的一部分，用于对RR间期数据进行离群值移除的预处理。</data>
+  <data key="d10">库函数,数据预处理</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133152</data>
+  <data key="d14"></data>
+</edge>
+<edge source="HRVanalysis" target="remove_ectopic_beats">
+  <data key="d8">1.0</data>
+  <data key="d9">remove_ectopic_beats函数是HRVanalysis库的一部分，用于从RR间期数据中移除异位搏动。</data>
+  <data key="d10">库函数,数据预处理</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133157</data>
+  <data key="d14"></data>
+</edge>
+<edge source="HRVanalysis" target="interpolate_nan_values">
+  <data key="d8">1.0</data>
+  <data key="d9">interpolate_nan_values函数是HRVanalysis库的一部分，用于对处理后的RR间期数据中的NaN值进行插值填充。</data>
+  <data key="d10">库函数,数据填充</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133162</data>
+  <data key="d14"></data>
+</edge>
+<edge source="HRVanalysis" target="get_time_domain_features">
+  <data key="d8">1.0</data>
+  <data key="d9">get_time_domain_features函数是HRVanalysis库的一部分，用于从处理后的RR间期数据中提取时域心率变异性特征。</data>
+  <data key="d10">库函数,特征提取</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133168</data>
+  <data key="d14"></data>
+</edge>
+<edge source="HRVanalysis" target="get_frequency_domain_features">
+  <data key="d8">1.0</data>
+  <data key="d9">get_frequency_domain_features函数是HRVanalysis库的一部分，用于从处理后的RR间期数据中提取频域心率变异性特征。</data>
+  <data key="d10">库函数,特征提取</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133174</data>
+  <data key="d14"></data>
+</edge>
+<edge source="HRVanalysis" target="get_csi_cvi_features">
+  <data key="d8">1.0</data>
+  <data key="d9">get_csi_cvi_features函数是HRVanalysis库的一部分，用于从处理后的RR间期数据中提取非线性域的心率变异性特征。</data>
+  <data key="d10">库函数,特征提取</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133180</data>
+  <data key="d14"></data>
+</edge>
+<edge source="remove_outliers" target="离群值处理">
+  <data key="d8">1.0</data>
+  <data key="d9">remove_outliers函数具体实现了离群值处理方法，通过设定高低阈值来清理RR间期数据。</data>
+  <data key="d10">函数实现,方法应用</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133170</data>
+  <data key="d14"></data>
+</edge>
+<edge source="remove_ectopic_beats" target="Malik方法">
+  <data key="d8">1.0</data>
+  <data key="d9">remove_ectopic_beats函数在调用时指定使用Malik方法来识别和移除RR间期数据中的异位搏动。</data>
+  <data key="d10">函数实现,算法应用</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133172</data>
+  <data key="d14"></data>
+</edge>
+<edge source="OS" target="当前目录">
+  <data key="d8">1.0</data>
+  <data key="d9">OS库的函数被用于获取当前正在执行的Python脚本所在的目录路径。</data>
+  <data key="d10">库函数,路径获取</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133178</data>
+  <data key="d14"></data>
+</edge>
+<edge source="OS" target="父目录">
+  <data key="d8">1.0</data>
+  <data key="d9">OS库的函数被用于基于当前目录路径推导出其父目录的路径。</data>
+  <data key="d10">库函数,路径操作</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133182</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RR间期数据" target="心率变异性特征">
+  <data key="d8">1.0</data>
+  <data key="d9">心率变异性特征是通过对RR间期数据进行一系列分析处理(如时域、频域、非线性分析)后提取得到的。</data>
+  <data key="d10">数据来源,特征生成</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133158</data>
+  <data key="d14"></data>
+</edge>
+<edge source="RR间期数据" target="5分钟节段">
+  <data key="d8">1.0</data>
+  <data key="d9">RR间期数据可以按5分钟时长被分割成多个节段，以便进行基于固定时间窗口的特征分析。</data>
+  <data key="d10">数据分割,时间窗口</data>
+  <data key="d11">chunk-139d46957ae2ad18faf0be4a67a5755c</data>
+  <data key="d12">predict_model.py</data>
+  <data key="d13">1768133174</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数值波动" target="数据序列">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列整体呈现出数值波动的模式。</data>
+  <data key="d10">变化特征,数据模式</data>
+  <data key="d11">chunk-0c0dec85ab2cc9317d8545d78e3b12ff</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133520</data>
+  <data key="d14"></data>
+</edge>
+<edge source="峰值" target="数据序列">
+  <data key="d8">3.0</data>
+  <data key="d9">数据序列中包含多个峰值点，如1435。&lt;SEP&gt;数据序列中包含多个峰值，代表数据的局部高点。&lt;SEP&gt;数据序列在演变过程中达到了峰值约1643。</data>
+  <data key="d10">包含,包含关系,数据构成,数据点,最高点,特征点</data>
+  <data key="d11">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133523</data>
+  <data key="d14"></data>
+</edge>
+<edge source="峰值" target="谷值">
+  <data key="d8">2.0</data>
+  <data key="d9">峰值和谷值是数据序列中相反趋势的极值点，共同构成波动。&lt;SEP&gt;峰值和谷值是数据序列中相互对比的极值点，共同描述了数据的波动情况。</data>
+  <data key="d10">对比,对比关系,极值点</data>
+  <data key="d11">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133530</data>
+  <data key="d14"></data>
+</edge>
+<edge source="峰值" target="波动模式">
+  <data key="d8">1.0</data>
+  <data key="d9">波动模式中包含峰值，峰值是模式中向上转折的关键特征点。</data>
+  <data key="d10">包含,特征点</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133535</data>
+  <data key="d14"></data>
+</edge>
+<edge source="峰值" target="局部变化">
+  <data key="d8">1.0</data>
+  <data key="d9">局部变化中的上升过程最终可能产生峰值。</data>
+  <data key="d10">产生,转折点</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133552</data>
+  <data key="d14"></data>
+</edge>
+<edge source="谷值" target="数据序列">
+  <data key="d8">2.0</data>
+  <data key="d9">数据序列中包含多个谷值点，如137。&lt;SEP&gt;数据序列中包含多个谷值，代表数据的局部低点。</data>
+  <data key="d10">包含,包含关系,数据点,特征点</data>
+  <data key="d11">chunk-0c0dec85ab2cc9317d8545d78e3b12ff&lt;SEP&gt;chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133526</data>
+  <data key="d14"></data>
+</edge>
+<edge source="谷值" target="波动模式">
+  <data key="d8">1.0</data>
+  <data key="d9">波动模式中包含谷值，谷值是模式中向下转折的关键特征点。</data>
+  <data key="d10">包含,特征点</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133538</data>
+  <data key="d14"></data>
+</edge>
+<edge source="谷值" target="局部变化">
+  <data key="d8">1.0</data>
+  <data key="d9">局部变化中的下降过程最终可能产生谷值。</data>
+  <data key="d10">产生,转折点</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133555</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="时间戳">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列数据与一个特定的时间戳相关联，该时间戳记录了数据的产生时刻。</data>
+  <data key="d10">数据记录,时间标记</data>
+  <data key="d11">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133520</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="频率">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列数据具有一个频率属性，该属性描述了数据的采集或更新速率。</data>
+  <data key="d10">数据属性,采集速率</data>
+  <data key="d11">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133525</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="数值序列">
+  <data key="d8">1.0</data>
+  <data key="d9">数值序列构成了时间序列数据的主体内容。</data>
+  <data key="d10">数据组成,核心内容</data>
+  <data key="d11">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133527</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="JSON对象">
+  <data key="d8">1.0</data>
+  <data key="d9">JSON对象作为一个数据结构，封装了时间序列数据及其元数据(时间戳和频率)。</data>
+  <data key="d10">数据封装,结构描述</data>
+  <data key="d11">chunk-981d1ee30730a556ec125ed91c548341</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133531</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="数据序列">
+  <data key="d8">1.0</data>
+  <data key="d9">该数据序列是时间序列数据的一个实例。</data>
+  <data key="d10">属于,类别</data>
+  <data key="d11">chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133543</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="数值范围">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列数据中的所有数值都落在特定的数值范围内。</data>
+  <data key="d10">数据属性,范围界定</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133619</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="上升趋势">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列数据在前期表现出上升趋势。</data>
+  <data key="d10">数据特征,趋势描述</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133622</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="数据点">
+  <data key="d8">1.0</data>
+  <data key="d9">众多数据点按顺序排列，共同构成了时间序列数据。</data>
+  <data key="d10">构成整体,组成部分</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133625</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列数据" target="下降趋势">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列数据在后期表现出下降趋势。</data>
+  <data key="d10">数据特征,趋势描述</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133630</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="数据点">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列由多个数据点按顺序排列组成。</data>
+  <data key="d10">包含,组成</data>
+  <data key="d11">chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133531</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="数值范围">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列具有特定的数值变化范围，描述了其数据的上下限。</data>
+  <data key="d10">变化范围,属性</data>
+  <data key="d11">chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133537</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="数据趋势">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列的整体变化可以通过数据趋势来描述和分析。</data>
+  <data key="d10">描述,模式</data>
+  <data key="d11">chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133541</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="波动模式">
+  <data key="d8">3.0</data>
+  <data key="d9">数据序列的整体变化展现了特定的波动模式，如周期性起伏。&lt;SEP&gt;数据序列的数值变化展现出特定的波动模式。&lt;SEP&gt;数据序列的整体变化遵循先上升后下降的波动模式。</data>
+  <data key="d10">体现,展现,数据特征,特征,趋势描述</data>
+  <data key="d11">chunk-f0d16591b23714a69f1677a098a57f0f&lt;SEP&gt;chunk-3f92675dde68759d74c1bb25d487d1c4&lt;SEP&gt;chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133546</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="数值变化">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列中的数值呈现出上升和下降的波动趋势，反映了被测量对象的状态变化。</data>
+  <data key="d10">数据波动,趋势分析</data>
+  <data key="d11">chunk-05f780d4ca6d0d5e5b4440e2043d9e44</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133549</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="数值点">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列由一系列连续的数值点构成，每个数值点是序列的基本组成单元。</data>
+  <data key="d10">包含,组成</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133553</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="1360">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列以数字1360开始。</data>
+  <data key="d10">包含,起始点</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133606</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="1411">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列以数字1411结束。</data>
+  <data key="d10">包含,结束点</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133612</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="数值数据点">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列由多个具体的数值数据点组成。</data>
+  <data key="d10">数据组成,集合</data>
+  <data key="d11">chunk-3450c7761460298d4487d71908766857</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133616</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="时间序列">
+  <data key="d8">1.0</data>
+  <data key="d9">该数据序列可以被解释为一个时间序列，反映了某个指标随时间的变化趋势。</data>
+  <data key="d10">数据表示,潜在含义</data>
+  <data key="d11">chunk-3450c7761460298d4487d71908766857</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133618</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="1552">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列以数值1552作为其起始点。</data>
+  <data key="d10">包含,起始点</data>
+  <data key="d11">chunk-80e97285ff5dc03c76c343b4c509f00e</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133623</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="1408">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列以数值1408作为其结束点。</data>
+  <data key="d10">包含,结束点</data>
+  <data key="d11">chunk-80e97285ff5dc03c76c343b4c509f00e</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133626</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="下降趋势">
+  <data key="d8">1.0</data>
+  <data key="d9">该数据序列的整体特征表现为一个下降趋势。</data>
+  <data key="d10">变化模式,数据特征</data>
+  <data key="d11">chunk-80e97285ff5dc03c76c343b4c509f00e</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133628</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="起始值">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列以起始值1461开始。</data>
+  <data key="d10">数据构成,起始点</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133630</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="结束值">
+  <data key="d8">1.0</data>
+  <data key="d9">数据序列以结束值1534结束。</data>
+  <data key="d10">数据构成,终点</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133634</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据序列" target="测量过程">
+  <data key="d8">1.0</data>
+  <data key="d9">通过测量过程连续记录，生成了该数据序列。</data>
+  <data key="d10">生成方法,结果产出</data>
+  <data key="d11">chunk-6f98f107b6edf9f138b223711e1ba808</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133636</data>
+  <data key="d14"></data>
+</edge>
+<edge source="测量值" target="数据点">
+  <data key="d8">1.0</data>
+  <data key="d9">每个数据点都承载着一个具体的测量值。</data>
+  <data key="d10">具体表现,实例</data>
+  <data key="d11">chunk-f0d16591b23714a69f1677a098a57f0f</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133528</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据趋势" target="时间序列">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列的整体数值变化展现出了宏观的数据趋势。</data>
+  <data key="d10">宏观特征,展现</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133543</data>
+  <data key="d14"></data>
+</edge>
+<edge source="数据趋势" target="局部变化">
+  <data key="d8">1.0</data>
+  <data key="d9">宏观的数据趋势是由许多具体的、短期的局部变化所构成的。</data>
+  <data key="d10">包含,微观构成</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133548</data>
+  <data key="d14"></data>
+</edge>
+<edge source="时间序列" target="数据范围">
+  <data key="d8">1.0</data>
+  <data key="d9">时间序列的数值变化被限定在由最小值和最大值构成的数据范围之内。</data>
+  <data key="d10">定义,边界</data>
+  <data key="d11">chunk-3f92675dde68759d74c1bb25d487d1c4</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133538</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1360" target="1362">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1360和1362在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133546</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1360" target="1361">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1361和1360在序列中相邻出现。&lt;SEP&gt;数据点1360和1361在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133565</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1360" target="1359">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1360和1359在序列中相邻出现。&lt;SEP&gt;数据点1359和1360在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133569</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1362" target="1363">
+  <data key="d8">3.0</data>
+  <data key="d9">数据点1362和1363在序列中相邻出现。&lt;SEP&gt;数据点1363和1362在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133555</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1362" target="1361">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1362和1361在序列中相邻出现。&lt;SEP&gt;数据点1361和1362在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133561</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1363" target="1364">
+  <data key="d8">3.0</data>
+  <data key="d9">数据点1363和1364在序列中相邻出现。&lt;SEP&gt;数据点1364和1363在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133550</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1364" target="1365">
+  <data key="d8">3.0</data>
+  <data key="d9">数据点1364和1365在序列中相邻出现。&lt;SEP&gt;数据点1365和1364在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133554</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1365" target="1367">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1365和1367在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133559</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1359" target="1358">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1359和1358在序列中相邻出现。&lt;SEP&gt;数据点1358和1359在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133579</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1367" target="1366">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1367和1366在序列中相邻出现。&lt;SEP&gt;数据点1366和1367在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133563</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1367" target="1368">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1367和1368在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133567</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1368" target="1369">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1368和1369在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133561</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1369" target="1370">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1369和1370在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133570</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1370" target="1371">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1370和1371在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133565</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1371" target="1372">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1371和1372在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133572</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1372" target="1374">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1372和1374在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133567</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1374" target="1373">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1374和1373在序列中相邻出现。&lt;SEP&gt;数据点1373和1374在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133572</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1374" target="1375">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1374和1375在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133582</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1375" target="1376">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1375和1376在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133572</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1376" target="1378">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1376和1378在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133586</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1378" target="1380">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1378和1380在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133579</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1380" target="1381">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1380和1381在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133587</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1381" target="1383">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1381和1383在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133582</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1383" target="1384">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1383和1384在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133590</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1384" target="1387">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1384和1387在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133582</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1387" target="1386">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1387和1386在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133590</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1386" target="1388">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1386和1388在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133598</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1388" target="1389">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1388和1389在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133588</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1389" target="1391">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1389和1391在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133594</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1391" target="1392">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1391和1392在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133590</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1392" target="1390">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1392和1390在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133594</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1392" target="1393">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1393和1392在序列中相邻出现。&lt;SEP&gt;数据点1392和1393在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133609</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1390" target="1393">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1390和1393在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133612</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1393" target="1394">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1393和1394在序列中相邻出现。&lt;SEP&gt;数据点1394和1393在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133596</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1393" target="1395">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1393和1395在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133603</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1395" target="1397">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1395和1397在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133598</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1397" target="1399">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1397和1399在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133604</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1399" target="1400">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1399和1400在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133601</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1400" target="1402">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1400和1402在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133610</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1400" target="1401">
+  <data key="d8">1.0</data>
+  <data key="d9">数据点1401和1400在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133614</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1402" target="1401">
+  <data key="d8">3.0</data>
+  <data key="d9">数据点1402和1401在序列中相邻出现。&lt;SEP&gt;数据点1401和1402在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133602</data>
+  <data key="d14"></data>
+</edge>
+<edge source="1402" target="1403">
+  <data key="d8">2.0</data>
+  <data key="d9">数据点1402和1403在序列中相邻出现。&lt;SEP&gt;数据点1403和1402在序列中相邻出现。</data>
+  <data key="d10">序列,相邻</data>
+  <data key="d11">chunk-06e376ab3c075299bb3c0eb1d17db9cd</data>
+  <data key="d12">test_1min.json</data>
+  <data key="d13">1768133606</data>
   <data key="d14"></data>
 </edge>
 </graph></graphml>

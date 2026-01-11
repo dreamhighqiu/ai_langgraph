@@ -295,8 +295,25 @@ const rules = {
 function getList() {
   loading.value = true
   listRequirement(queryParams.value).then(response => {
-    requirementList.value = response.data.rows
-    total.value = response.data.total
+    const rows = response?.rows || response?.data?.rows || []
+    total.value = response?.total ?? response?.data?.total ?? 0
+    requirementList.value = (rows || []).map(item => ({
+      requirementId: item.requirement_id,
+      projectId: item.project_id,
+      requirementName: item.requirement_name,
+      requirementType: item.requirement_type,
+      description: item.description,
+      acceptanceCriteria: item.acceptance_criteria,
+      priority: item.priority,
+      status: item.status,
+      tags: item.tags || [],
+      attachments: item.attachments,
+      createBy: item.create_by,
+      createTime: item.create_time,
+      updateBy: item.update_by,
+      updateTime: item.update_time,
+      remark: item.remark
+    }))
     loading.value = false
   })
 }
@@ -332,8 +349,21 @@ function handleUpdate(row) {
   reset()
   const requirementId = row.requirementId || ids.value[0]
   getRequirement(requirementId).then(response => {
-    form.value = response.data
-    acceptanceCriteriaText.value = JSON.stringify(response.data.acceptanceCriteria || {}, null, 2)
+    const raw = response?.data || response
+    form.value = {
+      requirementId: raw.requirement_id,
+      projectId: raw.project_id,
+      requirementName: raw.requirement_name,
+      requirementType: raw.requirement_type,
+      description: raw.description,
+      acceptanceCriteria: raw.acceptance_criteria,
+      priority: raw.priority,
+      status: raw.status,
+      tags: raw.tags || [],
+      attachments: raw.attachments,
+      remark: raw.remark
+    }
+    acceptanceCriteriaText.value = JSON.stringify(form.value.acceptanceCriteria || {}, null, 2)
     open.value = true
     title.value = '修改需求'
   })
@@ -380,7 +410,7 @@ function submitForm() {
           proxy.$modal.msgSuccess('新增成功')
           open.value = false
           getList()
-          emit('requirement-created', response.data)
+          emit('requirement-created', response?.data || response)
         })
       }
     }

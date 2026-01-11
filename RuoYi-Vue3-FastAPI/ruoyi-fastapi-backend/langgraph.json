@@ -3,6 +3,9 @@
     "."
   ],
   "graphs": {
+    "ui_automation_agent": {
+      "path": "./module_ui_testing/agents/ui_automation_agent.py:agent"
+    },
     "testcase_generator_agent": {
       "path": "./module_testing/agents/testcase_agent.py:agent"
     },
@@ -13,7 +16,7 @@
       "path": "./module_testing/agents/defect_agent.py:agent"
     }
   },
-  "env": ".env.dev",
+  "env": ".env",
   "image_distro": "wolfi"
 }
 

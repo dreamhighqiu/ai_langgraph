@@ -595,3 +595,210 @@ ERROR: Error in multimodal processing: <MilvusException: (code=1100, message=the
 WARNING: Falling back to individual multimodal processing
 INFO: Processing item 1/1: table content
 ERROR: Error generating table description: 'NoneType' object is not callable
+INFO: 127.0.0.1:50802 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:50802 - "GET /openapi.json HTTP/1.1" 200
+INFO:  == LLM cache == saving: default:extract:2fa22593f60af704833bf0fcb636bd18
+INFO:  == LLM cache == saving: default:extract:d74be80bca3349a84fbfb0291f0b09fe
+INFO: Chunk 1 of 1 extracted 26 Ent + 22 Rel chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e
+INFO: Merging stage 1/1: parse_txt.py
+INFO: Phase 1: Processing 26 entities from doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e (async: 8)
+2026-01-11 19:14:31,818 [ERROR][handler]: RPC error: [upsert_rows], <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>, <Time:{'RPC start': '2026-01-11 19:14:31.521654', 'RPC error': '2026-01-11 19:14:31.818883'}>
+Traceback:
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 263, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 322, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 196, in handler
+    raise e from e
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 166, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 946, in upsert_rows
+    check_status(response.status)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\utils.py", line 66, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+ (decorators.py:267)
+ERROR: Error processing table content: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+INFO: Individual multimodal content processing complete
+INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx
+INFO: Document processing complete: hrvFeature.xlsx, doc_id=doc-77a68dcbd899140c79ca1e36cc21d512
+INFO: RAG-Anything processing completed successfully: hrvFeature.xlsx, doc_id=doc-77a68dcbd899140c79ca1e36cc21d512
+INFO: Another process is already processing the document queue. Request queued.
+2026-01-11 19:16:19,211 [ERROR][handler]: RPC error: [upsert_rows], <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>, <Time:{'RPC start': '2026-01-11 19:16:15.673986', 'RPC error': '2026-01-11 19:16:19.210442'}>
+Traceback:
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 263, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 322, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 196, in handler
+    raise e from e
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 166, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 946, in upsert_rows
+    check_status(response.status)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\utils.py", line 66, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+ (decorators.py:267)
+ERROR: Error storing chunks to storage: <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+ERROR: Error in multimodal processing: <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+WARNING: Falling back to individual multimodal processing
+INFO: Processing item 1/1: table content
+ERROR: Error generating table description: 'NoneType' object is not callable
+INFO: 127.0.0.1:52163 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:63922 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:63922 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:63922 - "GET /openapi.json HTTP/1.1" 200
+INFO: Merged: `data` | 1+1
+ERROR: Error in ollama_embed: do embedding request: Post "http://127.0.0.1:35857/embedding": EOF (status code: 400)
+ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
+ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
+ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
+ERROR: Embedding func: Error in decorated function for task 1975782409024_1931216.187: do embedding request: Post "http://127.0.0.1:35857/embedding": EOF (status code: 400)
+ERROR: Embedding func: Error in decorated function for task 1975757895232_1931218.843: llama runner process no longer running: -1 (status code: 400)
+ERROR: Embedding func: Error in decorated function for task 1975713846592_1931219.781: llama runner process no longer running: -1 (status code: 400)
+ERROR: Embedding func: Error in decorated function for task 1975721434688_1931217.156: llama runner process no longer running: -1 (status code: 400)
+WARNING: VDB entity_upsert attempt 1 failed for rri_num: do embedding request: Post "http://127.0.0.1:35857/embedding": EOF (status code: 400), retrying...
+WARNING: VDB entity_upsert attempt 1 failed for file_path: llama runner process no longer running: -1 (status code: 400), retrying...
+WARNING: VDB entity_upsert attempt 1 failed for data: llama runner process no longer running: -1 (status code: 400), retrying...
+WARNING: VDB entity_upsert attempt 1 failed for __main__: llama runner process no longer running: -1 (status code: 400), retrying...
+ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
+ERROR: Embedding func: Error in decorated function for task 1975760191104_1931178.843: llama runner process no longer running: -1 (status code: 400)
+ERROR: Error processing table content: llama runner process no longer running: -1 (status code: 400)
+ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
+INFO: Individual multimodal content processing complete
+INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx
+INFO: Document processing complete: ppg_rawData.xlsx, doc_id=doc-164685717f59d29b3b53aa5c25a959d0
+INFO: RAG-Anything processing completed successfully: ppg_rawData.xlsx, doc_id=doc-164685717f59d29b3b53aa5c25a959d0
+INFO: Another process is already processing the document queue. Request queued.
+INFO: Phase 2: Processing 22 relations from doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e (async: 8)
+INFO: Phase 3: Updating final 26(26+0) entities and  22 relations from doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e
+INFO: Completed merging: 26 entities, 0 extra entities, 22 relations
+INFO: [] Writing graph with 1373 nodes, 1386 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: parse_txt.py
+INFO: Processing additional documents due to pending request
+INFO: Processing 3 document(s)
+INFO: Extracting stage 1/3: predict_model.py
+INFO: Processing d-id: doc-fba9cf55995b3864eb745c3dc9defb26
+INFO: Extracting stage 2/3: test_5min.json
+INFO: Processing d-id: doc-83cda2f9c9ee56f5068a89ea3d3b46b6
+INFO:  == LLM cache == saving: default:extract:c98b5f00c63a9b666df0fe3be5e7a0d1
+INFO:  == LLM cache == saving: default:extract:d2811f1b52c8b1292925118054eb703c
+INFO: Chunk 1 of 3 extracted 14 Ent + 10 Rel chunk-28c28b6bfb03338cd097bb678b3d4bed
+INFO:  == LLM cache == saving: default:extract:ed7f8eb10e42bbb48e83d983aad35ed5
+INFO:  == LLM cache == saving: default:extract:f0cea1fe7b9ee82122c1e606d937aaff
+INFO:  == LLM cache == saving: default:extract:1cf937e692f186f950be55b8a6c12683
+INFO: Chunk 2 of 3 extracted 42 Ent + 20 Rel chunk-139d46957ae2ad18faf0be4a67a5755c
+INFO:  == LLM cache == saving: default:extract:051100380b4fc972c028d967d22d3653
+INFO: Chunk 3 of 3 extracted 37 Ent + 36 Rel chunk-0c6b9bc52d436bdf3a3bd09fa2b29435
+INFO: Merging stage 1/3: predict_model.py
+INFO: Phase 1: Processing 89 entities from doc-fba9cf55995b3864eb745c3dc9defb26 (async: 8)
+WARNING: Embedding func: Worker timeout for task 1975787273472_1931290.281 after 2000s
+WARNING: Embedding func: Worker timeout for task 1975787271936_1931290.281 after 2000s
+WARNING: Embedding func: Worker timeout for task 1975787272896_1931290.281 after 2000s
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
+    raise TimeoutError(f"{queue_name}: {str(e)}")
+TimeoutError: Embedding func: Worker execution timeout after 2000s
+
+ERROR: Failed to extract document 2/3: test_5min.json
+INFO: Extracting stage 3/3: test_1min.json
+INFO: Processing d-id: doc-0989ce40bee2370260c4b5fc538df68f
+INFO: Merged: `RRIdata` | 1+1
+INFO: Merged: `RRI` | 1+2
+INFO:  == LLM cache == saving: default:extract:84a33b18dadb32f15c752563dd5c9c7c
+INFO:  == LLM cache == saving: default:extract:8875c2df7a1b167e95896c06b7642f23
+INFO:  == LLM cache == saving: default:extract:9c0b39d7cf5b251230e4f3e8eb14dba1
+INFO:  == LLM cache == saving: default:extract:e31cfa52a5a42fc213819f2c0cda3004
+INFO:  == LLM cache == saving: default:extract:cc831c928fa58aa99c1f08328b98626b
+INFO:  == LLM cache == saving: default:extract:9be1f890c9d13d825627dc0d744ffdb8
+INFO: Chunk 1 of 15 extracted 2 Ent + 0 Rel chunk-502447bef719690dfaf911d9ccf7593d
+INFO: Chunk 2 of 15 extracted 2 Ent + 1 Rel chunk-05f780d4ca6d0d5e5b4440e2043d9e44
+INFO:  == LLM cache == saving: default:extract:0e0d823cb7663f335da463dab78cfbd9
+INFO: Chunk 3 of 15 extracted 3 Ent + 2 Rel chunk-3450c7761460298d4487d71908766857
+INFO:  == LLM cache == saving: default:extract:e81db2ff2827eb9b0c8772c9d57823bf
+INFO: Chunk 4 of 15 extracted 8 Ent + 4 Rel chunk-0c0dec85ab2cc9317d8545d78e3b12ff
+INFO: Merged: `Python` | 1+1
+INFO:  == LLM cache == saving: default:extract:e0a092671eee4b7e6520574e36b9f873
+INFO:  == LLM cache == saving: default:extract:b9b48aecce9e0f7f9ecf38ff27e3645d
+INFO:  == LLM cache == saving: default:extract:a8ee461e98f10a47c0e6e177d82be2d0
+INFO: Merged: `predict函数` | 1+1
+INFO: Merged: `DataFrame` | 1+1
+INFO:  == LLM cache == saving: default:extract:8e6fad99cf6308d1421b2f3a099312cd
+INFO: Chunk 5 of 15 extracted 9 Ent + 9 Rel chunk-3f92675dde68759d74c1bb25d487d1c4
+INFO:  == LLM cache == saving: default:extract:44267d064d4265ccd9ccc1a2f70d46d0
+INFO: Chunk 6 of 15 extracted 9 Ent + 9 Rel chunk-f0d16591b23714a69f1677a098a57f0f
+INFO: Merged: `rri_num` | 1+1
+INFO:  == LLM cache == saving: default:extract:72d93c7f467b9f8d19753b235a48732f
+INFO:  == LLM cache == saving: default:extract:985bae96c9392f11685b3401fcbc2c72
+INFO:  == LLM cache == saving: default:extract:743795b53af563b996f6fb997d292991
+INFO: Chunk 7 of 15 extracted 26 Ent + 0 Rel chunk-c54d3481d05989580b3bc907ec8ea31b
+INFO: Phase 2: Processing 66 relations from doc-fba9cf55995b3864eb745c3dc9defb26 (async: 8)
+INFO:  == LLM cache == saving: default:extract:1eca7e6fe5e5ed1993798465fdc23420
+INFO: Chunk 8 of 15 extracted 2 Ent + 0 Rel chunk-80b33f0c11ecf27b8bc0626deded6819
+INFO:  == LLM cache == saving: default:extract:27df696c1cded9c25e3712484db1bdc5
+INFO:  == LLM cache == saving: default:extract:7ddec5dde2478c62832103232a29d489
+INFO:  == LLM cache == saving: default:extract:383d6375fcedb79925057d5bded19b53
+INFO: Chunk 9 of 15 extracted 4 Ent + 3 Rel chunk-80e97285ff5dc03c76c343b4c509f00e
+INFO:  == LLM cache == saving: default:extract:d0f037b1cc2ae9a00b686f40d257ce6a
+INFO:  == LLM cache == saving: default:extract:c30b1cf342717c42f128f038177c4256
+INFO:  == LLM cache == saving: default:extract:c3e1dddcd372b154d72c63c2c88936e4
+INFO: Chunk 10 of 15 extracted 11 Ent + 9 Rel chunk-6f98f107b6edf9f138b223711e1ba808
+INFO: Chunk 11 of 15 extracted 31 Ent + 0 Rel chunk-83ab84c1823105c5c8d9cf016047ee7e
+INFO:  == LLM cache == saving: default:extract:b6ddb0e9d87f36c84b90e6596a5d1f91
+INFO:  == LLM cache == saving: default:extract:b6c58f7820cc530f757daebf43d06d77
+WARNING: chunk-06e376ab3c075299bb3c0eb1d17db9cd: Complete delimiter can not be found in extraction result
+WARNING: chunk-06e376ab3c075299bb3c0eb1d17db9cd: LLM output format error; found 2/5 fields on REALTION `1402`~`N/A`
+INFO:  == LLM cache == saving: default:extract:14c0fccd9837fe0efc0773e320df31c1
+INFO: Chunk 12 of 15 extracted 5 Ent + 4 Rel chunk-981d1ee30730a556ec125ed91c548341
+INFO:  == LLM cache == saving: default:extract:3fa83fd8aaa04ad624951a06099dde6b
+INFO: Chunk 13 of 15 extracted 59 Ent + 57 Rel chunk-06e376ab3c075299bb3c0eb1d17db9cd
+INFO:  == LLM cache == saving: default:extract:ca04facaed8aa31dcdc154b81029d9ca
+INFO: Chunk 14 of 15 extracted 47 Ent + 0 Rel chunk-9063cefe96982cfabb2207c251ed8f8b
+INFO: Merged: `predict函数`~`rri_num` | 1+1
+INFO: Phase 3: Updating final 91(89+2) entities and  66 relations from doc-fba9cf55995b3864eb745c3dc9defb26
+INFO: Completed merging: 89 entities, 2 extra entities, 66 relations
+INFO: [] Writing graph with 1458 nodes, 1451 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/3: predict_model.py
+INFO:  == LLM cache == saving: default:extract:2eb51a876403ed3d203a12025b702a87
+WARNING: chunk-e6687e8da0f2e8d771804eb624eaae2f: Complete delimiter can not be found in extraction result
+WARNING: chunk-e6687e8da0f2e8d771804eb624eaae2f: LLM output format error; found 3/4 feilds on ENTITY `1613` @ `Data`
+INFO:  == LLM cache == saving: default:extract:5a855954ca1d08ffe137148c43651e6b
+INFO: Chunk 15 of 15 extracted 146 Ent + 0 Rel chunk-e6687e8da0f2e8d771804eb624eaae2f
+INFO: Merging stage 3/3: test_1min.json
+INFO: Phase 1: Processing 211 entities from doc-0989ce40bee2370260c4b5fc538df68f (async: 8)
+INFO:  == LLM cache == saving: default:summary:39fd98afae1863cdb5cb973a7467545e
+INFO: LLMmrg: `数据序列` | 0+11
+INFO: Phase 2: Processing 79 relations from doc-0989ce40bee2370260c4b5fc538df68f (async: 8)
+INFO: Phase 3: Updating final 211(211+0) entities and  79 relations from doc-0989ce40bee2370260c4b5fc538df68f
+INFO: Completed merging: 211 entities, 0 extra entities, 79 relations
+INFO: [] Writing graph with 1669 nodes, 1530 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 3/3: test_1min.json
+INFO: Enqueued document processing pipeline stopped
+INFO: 127.0.0.1:65474 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:65474 - "GET /openapi.json HTTP/1.1" 200

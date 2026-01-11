@@ -78,13 +78,23 @@ class ReportDAO:
             conditions.append(TestReport.report_name.like(f'%{query.report_name}%'))
         if query.report_type:
             conditions.append(TestReport.report_type == query.report_type)
+        if query.script_type:
+            conditions.append(TestScript.script_type == query.script_type)
+        if query.project_id:
+            conditions.append(TestProject.project_id == query.project_id)
         if query.begin_time:
             conditions.append(TestReport.create_time >= query.begin_time)
         if query.end_time:
             conditions.append(TestReport.create_time <= query.end_time)
         
         # 查询总数
-        count_query = select(func.count(TestReport.report_id))
+        count_query = (
+            select(func.count(TestReport.report_id))
+            .select_from(TestReport)
+            .join(TestExecution, TestReport.execution_id == TestExecution.execution_id)
+            .join(TestScript, TestExecution.script_id == TestScript.script_id)
+            .join(TestProject, TestScript.project_id == TestProject.project_id)
+        )
         if conditions:
             count_query = count_query.where(and_(*conditions))
         total_result = await db.execute(count_query)

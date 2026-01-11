@@ -572,12 +572,10 @@
       "chunk-e409dd2e4a0fd1ff8186e4b449f5afba",
       "chunk-b094f2251c462d742b75af5cb10c1643",
       "chunk-79be94d8c3833dcb484c8e1712014160",
-      "chunk-d34f4f4096c5c994a4190c333cf5b57f",
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
-      "chunk-68c1b1946824940414776d960a0b4d4c"
+      "chunk-d34f4f4096c5c994a4190c333cf5b57f"
     ],
-    "count": 7,
-    "update_time": 1767957337,
+    "count": 5,
+    "update_time": 1768127694,
     "_id": "邱云霞"
   },
   "江西理工大学": {
@@ -641,11 +639,10 @@
   },
   "注意事项": {
     "chunk_ids": [
-      "chunk-e61a1731aec9cf18fadf61cb57ca5b46",
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+      "chunk-e61a1731aec9cf18fadf61cb57ca5b46"
     ],
-    "count": 2,
-    "update_time": 1767957445,
+    "count": 1,
+    "update_time": 1768127725,
     "_id": "注意事项"
   },
   "更新日期": {
@@ -722,11 +719,10 @@
   },
   "机电工程系": {
     "chunk_ids": [
-      "chunk-e409dd2e4a0fd1ff8186e4b449f5afba",
-      "chunk-68c1b1946824940414776d960a0b4d4c"
+      "chunk-e409dd2e4a0fd1ff8186e4b449f5afba"
     ],
-    "count": 2,
-    "update_time": 1767957337,
+    "count": 1,
+    "update_time": 1768127694,
     "_id": "机电工程系"
   },
   "验证报告在线查验网址": {
@@ -1959,20 +1955,18 @@
     "chunk_ids": [
       "chunk-79be94d8c3833dcb484c8e1712014160",
       "chunk-6bd4d94bce1ed431abb1a2e97286558f",
-      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc",
-      "chunk-2309688baefacf34329b80e3d86a7260"
+      "chunk-d5a659de14ee61f2da2e8322c8a7e3fc"
     ],
-    "count": 4,
-    "update_time": 1767970056,
+    "count": 3,
+    "update_time": 1768127718,
     "_id": "Dify"
   },
   "RAGFlow": {
     "chunk_ids": [
-      "chunk-79be94d8c3833dcb484c8e1712014160",
-      "chunk-2309688baefacf34329b80e3d86a7260"
+      "chunk-79be94d8c3833dcb484c8e1712014160"
     ],
-    "count": 2,
-    "update_time": 1767970059,
+    "count": 1,
+    "update_time": 1768127704,
     "_id": "RAGFlow"
   },
   "Playwright": {
@@ -5037,11 +5031,11 @@
   },
   "requirements.txt": {
     "chunk_ids": [
-      "chunk-ee95678b86c9b568620faa3f642a99f2"
+      "chunk-ee95678b86c9b568620faa3f642a99f2",
+      "chunk-01801f933216cfe71c2b179bcba43ce7"
     ],
-    "count": 1,
-    "create_time": 1767323127,
-    "update_time": 1767323127,
+    "count": 2,
+    "update_time": 1768127880,
     "_id": "requirements.txt"
   },
   "gremlins.min.js": {
@@ -6706,11 +6700,10 @@
     "chunk_ids": [
       "chunk-5011e22e4be70add89b59cd7592f5fc5",
       "chunk-cc64f2121f1f94403bd35559e7d0cb09",
-      "chunk-ea32f04b7a2a69bf2d5001ed6446140f",
-      "chunk-2309688baefacf34329b80e3d86a7260"
+      "chunk-ea32f04b7a2a69bf2d5001ed6446140f"
     ],
-    "count": 4,
-    "update_time": 1767970073,
+    "count": 3,
+    "update_time": 1768127704,
     "_id": "正则表达式"
   },
   "断言校验": {
@@ -7883,12 +7876,10 @@
   "用户": {
     "chunk_ids": [
       "chunk-8352402b827b053988bbb384d59fe34d",
-      "chunk-f992c31ede844b91fbb3d973a038a2d1",
-      "chunk-508db58a2a7942df34569046bec9d997",
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
+      "chunk-f992c31ede844b91fbb3d973a038a2d1"
     ],
-    "count": 4,
-    "update_time": 1767970102,
+    "count": 2,
+    "update_time": 1768127722,
     "_id": "用户"
   },
   "平台": {
@@ -11035,12 +11026,10 @@
   },
   "Git": {
     "chunk_ids": [
-      "chunk-c423d61c859757d64bf4db5be9f230dc",
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
+      "chunk-c423d61c859757d64bf4db5be9f230dc"
     ],
-    "count": 3,
-    "update_time": 1767969992,
+    "count": 1,
+    "update_time": 1768127704,
     "_id": "Git"
   },
   "Monkey": {
@@ -12121,2525 +12110,193 @@
     "update_time": 1767341458,
     "_id": "Product Image Cache"
   },
-  "斑马技术服务(广州)有限公司": {
+  "/trainData": {
     "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767951062,
-    "update_time": 1767951062,
-    "_id": "斑马技术服务(广州)有限公司"
+    "create_time": 1768127806,
+    "update_time": 1768127806,
+    "_id": "/trainData"
   },
-  "上海科之锐人才咨询有限公司": {
+  "/model": {
     "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
-    "count": 2,
-    "update_time": 1767957431,
-    "_id": "上海科之锐人才咨询有限公司"
-  },
-  "高级软件测试工程师": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951062,
-    "update_time": 1767951062,
-    "_id": "高级软件测试工程师"
-  },
-  "广州黄埔区云升科学园B2栋6楼": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951062,
-    "update_time": 1767951062,
-    "_id": "广州黄埔区云升科学园B2栋6楼"
-  },
-  "劳动合同": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951062,
-    "update_time": 1767951062,
-    "_id": "劳动合同"
-  },
-  "试用期": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951062,
-    "update_time": 1767951062,
-    "_id": "试用期"
-  },
-  "入职时间": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951064,
-    "update_time": 1767951064,
-    "_id": "入职时间"
-  },
-  "基本工资": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951070,
-    "update_time": 1767951070,
-    "_id": "基本工资"
-  },
-  "年终奖": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951072,
-    "update_time": 1767951072,
-    "_id": "年终奖"
-  },
-  "五险一金": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951073,
-    "update_time": 1767951073,
-    "_id": "五险一金"
-  },
-  "补充医疗保险": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951073,
-    "update_time": 1767951073,
-    "_id": "补充医疗保险"
-  },
-  "带薪年假": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951075,
-    "update_time": 1767951075,
-    "_id": "带薪年假"
-  },
-  "入职手续": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951075,
-    "update_time": 1767951075,
-    "_id": "入职手续"
-  },
-  "录用通知书": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951075,
-    "update_time": 1767951075,
-    "_id": "录用通知书"
-  },
-  "外包形式": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951076,
-    "update_time": 1767951076,
-    "_id": "外包形式"
-  },
-  "合同期": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951079,
-    "update_time": 1767951079,
-    "_id": "合同期"
-  },
-  "加班": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951079,
-    "update_time": 1767951079,
-    "_id": "加班"
-  },
-  "五险一金缴纳地区": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951079,
-    "update_time": 1767951079,
-    "_id": "五险一金缴纳地区"
-  },
-  "五险一金缴纳基数": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951079,
-    "update_time": 1767951079,
-    "_id": "五险一金缴纳基数"
-  },
-  "节假日福利": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951083,
-    "update_time": 1767951083,
-    "_id": "节假日福利"
-  },
-  "年度健康体检": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951083,
-    "update_time": 1767951083,
-    "_id": "年度健康体检"
-  },
-  "身份证正反面复印件": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951083,
-    "update_time": 1767951083,
-    "_id": "身份证正反面复印件"
-  },
-  "学历、学位证书复印件": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951084,
-    "update_time": 1767951084,
-    "_id": "学历、学位证书复印件"
-  },
-  "离职证明原件": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951087,
-    "update_time": 1767951087,
-    "_id": "离职证明原件"
-  },
-  "入职体检报告电子件": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951087,
-    "update_time": 1767951087,
-    "_id": "入职体检报告电子件"
-  },
-  "本人任意银行卡复印件": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951087,
-    "update_time": 1767951087,
-    "_id": "本人任意银行卡复印件"
-  },
-  "个人信息": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 2,
-    "update_time": 1767957441,
-    "_id": "个人信息"
-  },
-  "入职体检结果": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927",
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 2,
-    "update_time": 1767957445,
-    "_id": "入职体检结果"
-  },
-  "邀请函": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951091,
-    "update_time": 1767951091,
-    "_id": "邀请函"
-  },
-  "薪资": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951109,
-    "update_time": 1767951109,
-    "_id": "薪资"
-  },
-  "福利": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951111,
-    "update_time": 1767951111,
-    "_id": "福利"
-  },
-  "公司": {
-    "chunk_ids": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
-    ],
-    "count": 1,
-    "create_time": 1767951122,
-    "update_time": 1767951122,
-    "_id": "公司"
-  },
-  "大学英语四级考试": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957337,
-    "update_time": 1767957337,
-    "_id": "大学英语四级考试"
-  },
-  "江西理工大学南昌校区": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957337,
-    "update_time": 1767957337,
-    "_id": "江西理工大学南昌校区"
-  },
-  "全国大学英语四、六级考试委员会": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957337,
-    "update_time": 1767957337,
-    "_id": "全国大学英语四、六级考试委员会"
-  },
-  "教育部高等教育司": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957337,
-    "update_time": 1767957337,
-    "_id": "教育部高等教育司"
-  },
-  "成绩报告单": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957338,
-    "update_time": 1767957338,
-    "_id": "成绩报告单"
-  },
-  "总分429": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957338,
-    "update_time": 1767957338,
-    "_id": "总分429"
-  },
-  "考试时间2011年12月": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957344,
-    "update_time": 1767957344,
-    "_id": "考试时间2011年12月"
-  },
-  "准考证号360450112104603": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957346,
-    "update_time": 1767957346,
-    "_id": "准考证号360450112104603"
-  },
-  "身份证号360428199008212245": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957347,
-    "update_time": 1767957347,
-    "_id": "身份证号360428199008212245"
-  },
-  "成绩单编号112136045000321": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957348,
-    "update_time": 1767957348,
-    "_id": "成绩单编号112136045000321"
-  },
-  "考委会网址www.cet.edu.cn": {
-    "chunk_ids": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
-    ],
-    "count": 1,
-    "create_time": 1767957348,
-    "update_time": 1767957348,
-    "_id": "考委会网址www.cet.edu.cn"
-  },
-  "斑马技术服务公司": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957431,
-    "update_time": 1767957431,
-    "_id": "斑马技术服务公司"
-  },
-  "邱霞": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957431,
-    "update_time": 1767957431,
-    "_id": "邱霞"
-  },
-  "身份证": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957431,
-    "update_time": 1767957431,
-    "_id": "身份证"
-  },
-  "学历证书": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957431,
-    "update_time": 1767957431,
-    "_id": "学历证书"
-  },
-  "学位证书": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957431,
-    "update_time": 1767957431,
-    "_id": "学位证书"
-  },
-  "离职证明": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957431,
-    "update_time": 1767957431,
-    "_id": "离职证明"
-  },
-  "入职体检报告": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957433,
-    "update_time": 1767957433,
-    "_id": "入职体检报告"
-  },
-  "银行卡": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957441,
-    "update_time": 1767957441,
-    "_id": "银行卡"
-  },
-  "入职邀请函": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957441,
-    "update_time": 1767957441,
-    "_id": "入职邀请函"
-  },
-  "CAREERTEMO": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957445,
-    "update_time": 1767957445,
-    "_id": "CAREERTEMO"
-  },
-  "ACANEERSEATHUACOPANY": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957445,
-    "update_time": 1767957445,
-    "_id": "ACANEERSEATHUACOPANY"
-  },
-  "2个工作日": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957445,
-    "update_time": 1767957445,
-    "_id": "2个工作日"
-  },
-  "2026年1月5日": {
-    "chunk_ids": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
-    ],
-    "count": 1,
-    "create_time": 1767957445,
-    "update_time": 1767957445,
-    "_id": "2026年1月5日"
-  },
-  "健康管理计划": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "健康管理计划"
-  },
-  "监测指标": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "监测指标"
-  },
-  "监测频率": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "监测频率"
-  },
-  "监测方法": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "监测方法"
-  },
-  "目标值/范围": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "目标值/范围"
-  },
-  "数据记录与反馈机制": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "数据记录与反馈机制"
-  },
-  "标准化结构": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 2,
-    "create_time": 1767965161,
-    "update_time": 1767965161,
-    "_id": "标准化结构"
-  },
-  "目标设定": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965167,
-    "update_time": 1767965167,
-    "_id": "目标设定"
-  },
-  "行动计划": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965182,
-    "update_time": 1767965182,
-    "_id": "行动计划"
-  },
-  "监测与反馈": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965182,
-    "update_time": 1767965182,
-    "_id": "监测与反馈"
-  },
-  "支持机制": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965182,
-    "update_time": 1767965182,
-    "_id": "支持机制"
-  },
-  "风险管理": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965189,
-    "update_time": 1767965189,
-    "_id": "风险管理"
-  },
-  "45岁男性患者": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965189,
-    "update_time": 1767965189,
-    "_id": "45岁男性患者"
-  },
-  "左磺酸氨氯地平片": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965189,
-    "update_time": 1767965189,
-    "_id": "左磺酸氨氯地平片"
-  },
-  "饮食建议输入参数": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965189,
-    "update_time": 1767965189,
-    "_id": "饮食建议输入参数"
-  },
-  "运动建议输入参数": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965189,
-    "update_time": 1767965189,
-    "_id": "运动建议输入参数"
-  },
-  "智能体": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-508db58a2a7942df34569046bec9d997",
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 3,
-    "update_time": 1767970077,
-    "_id": "智能体"
-  },
-  "个性化月报": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-508db58a2a7942df34569046bec9d997"
-    ],
-    "count": 2,
-    "create_time": 1767965200,
-    "update_time": 1767965200,
-    "_id": "个性化月报"
-  },
-  "提示词": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-508db58a2a7942df34569046bec9d997",
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 3,
-    "create_time": 1767965200,
-    "update_time": 1767965200,
-    "_id": "提示词"
-  },
-  "BMI": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965200,
-    "update_time": 1767965200,
-    "_id": "BMI"
-  },
-  "血压": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 2,
-    "update_time": 1767969884,
-    "_id": "血压"
-  },
-  "原发性高血压": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965209,
-    "update_time": 1767965209,
-    "_id": "原发性高血压"
-  },
-  "生活方式干预": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 2,
-    "create_time": 1767965209,
-    "update_time": 1767965209,
-    "_id": "生活方式干预"
-  },
-  "用户健康信息": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965209,
-    "update_time": 1767965209,
-    "_id": "用户健康信息"
-  },
-  "请求参数示例": {
-    "chunk_ids": [
-      "chunk-ceb60f16f40b6c7d09158715156ee744"
-    ],
-    "count": 1,
-    "create_time": 1767965218,
-    "update_time": 1767965218,
-    "_id": "请求参数示例"
-  },
-  "健康信息": {
-    "chunk_ids": [
-      "chunk-508db58a2a7942df34569046bec9d997"
-    ],
-    "count": 1,
-    "create_time": 1767965218,
-    "update_time": 1767965218,
-    "_id": "健康信息"
-  },
-  "附件内容": {
-    "chunk_ids": [
-      "chunk-508db58a2a7942df34569046bec9d997"
-    ],
-    "count": 1,
-    "create_time": 1767965218,
-    "update_time": 1767965218,
-    "_id": "附件内容"
-  },
-  "详细输出示例": {
-    "chunk_ids": [
-      "chunk-508db58a2a7942df34569046bec9d997"
-    ],
-    "count": 1,
-    "create_time": 1767965218,
-    "update_time": 1767965218,
-    "_id": "详细输出示例"
-  },
-  "Dify工作流": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965229,
-    "update_time": 1767965229,
-    "_id": "Dify工作流"
-  },
-  "百寻智能问答+AI": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965229,
-    "update_time": 1767965229,
-    "_id": "百寻智能问答+AI"
-  },
-  "算法备案": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965229,
-    "update_time": 1767965229,
-    "_id": "算法备案"
-  },
-  "隐私协议": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965229,
-    "update_time": 1767965229,
-    "_id": "隐私协议"
-  },
-  "建友官网": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965239,
-    "update_time": 1767965239,
-    "_id": "建友官网"
-  },
-  "AI服务器": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965239,
-    "update_time": 1767965239,
-    "_id": "AI服务器"
-  },
-  "Dify服务器": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965239,
-    "update_time": 1767965239,
-    "_id": "Dify服务器"
-  },
-  "RAGFlow服务器": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965239,
-    "update_time": 1767965239,
-    "_id": "RAGFlow服务器"
-  },
-  "小季": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965248,
-    "update_time": 1767965248,
-    "_id": "小季"
-  },
-  "移动云": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 2,
-    "update_time": 1767970200,
-    "_id": "移动云"
-  },
-  "腾讯云": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 2,
-    "update_time": 1767970245,
-    "_id": "腾讯云"
-  },
-  "敏感词API": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965248,
-    "update_time": 1767965248,
-    "_id": "敏感词API"
-  },
-  "敏感词参考源码": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965263,
-    "update_time": 1767965263,
-    "_id": "敏感词参考源码"
-  },
-  "健康数据管理类APP": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965263,
-    "update_time": 1767965263,
-    "_id": "健康数据管理类APP"
-  },
-  "健康信息咨询类APP": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965263,
-    "update_time": 1767965263,
-    "_id": "健康信息咨询类APP"
-  },
-  "健康方式养成类APP": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965263,
-    "update_time": 1767965263,
-    "_id": "健康方式养成类APP"
-  },
-  "问诊类APP": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965279,
-    "update_time": 1767965279,
-    "_id": "问诊类APP"
-  },
-  "AI医生智能体": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965279,
-    "update_time": 1767965279,
-    "_id": "AI医生智能体"
-  },
-  "健康计划智能体": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965279,
-    "update_time": 1767965279,
-    "_id": "健康计划智能体"
-  },
-  "个性化健康管理方案": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965279,
-    "update_time": 1767965279,
-    "_id": "个性化健康管理方案"
-  },
-  "36.133.145.37": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965293,
-    "update_time": 1767965293,
-    "_id": "36.133.145.37"
-  },
-  "aic.baixunsz.com": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 2,
-    "update_time": 1767970233,
-    "_id": "aic.baixunsz.com"
-  },
-  "43.136.98.40": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965293,
-    "update_time": 1767965293,
-    "_id": "43.136.98.40"
-  },
-  "rag.gdzky.cn": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d",
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 3,
-    "update_time": 1767970023,
-    "_id": "rag.gdzky.cn"
-  },
-  "http://sw.baixunsz.com/sensitive/replace": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965308,
-    "update_time": 1767965308,
-    "_id": "http://sw.baixunsz.com/sensitive/replace"
-  },
-  "http://sw.baixunsz.com/sensitive/filter": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965308,
-    "update_time": 1767965308,
-    "_id": "http://sw.baixunsz.com/sensitive/filter"
-  },
-  "http://sw.baixunsz.com/sensitive/findall": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965308,
-    "update_time": 1767965308,
-    "_id": "http://sw.baixunsz.com/sensitive/findall"
-  },
-  "http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965308,
-    "update_time": 1767965308,
-    "_id": "http://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS"
-  },
-  "http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965322,
-    "update_time": 1767965322,
-    "_id": "http://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS"
-  },
-  "http://www.baixunsz.com/dn/aiprivacy.html": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965322,
-    "update_time": 1767965322,
-    "_id": "http://www.baixunsz.com/dn/aiprivacy.html"
-  },
-  "https://www.iot08.com/dn/aiprivacy.html": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965322,
-    "update_time": 1767965322,
-    "_id": "https://www.iot08.com/dn/aiprivacy.html"
-  },
-  "https://github.com/xiaoxuan6/sensitive-api": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965322,
-    "update_time": 1767965322,
-    "_id": "https://github.com/xiaoxuan6/sensitive-api"
-  },
-  "产品应用集成": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965335,
-    "update_time": 1767965335,
-    "_id": "产品应用集成"
-  },
-  "日常监测体系": {
-    "chunk_ids": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d"
-    ],
-    "count": 1,
-    "create_time": 1767965335,
-    "update_time": 1767965335,
-    "_id": "日常监测体系"
-  },
-  "健康计划": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 2,
-    "create_time": 1767969880,
-    "update_time": 1767969880,
-    "_id": "健康计划"
-  },
-  "激励总结语": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 2,
-    "create_time": 1767969880,
-    "update_time": 1767969880,
-    "_id": "激励总结语"
-  },
-  "用户打卡数据": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969880,
-    "update_time": 1767969880,
-    "_id": "用户打卡数据"
-  },
-  "关键指标总结": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969880,
-    "update_time": 1767969880,
-    "_id": "关键指标总结"
-  },
-  "详细健康指标": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969880,
-    "update_time": 1767969880,
-    "_id": "详细健康指标"
-  },
-  "血糖": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969883,
-    "update_time": 1767969883,
-    "_id": "血糖"
-  },
-  "体重": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969885,
-    "update_time": 1767969885,
-    "_id": "体重"
-  },
-  "睡眠": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969908,
-    "update_time": 1767969908,
-    "_id": "睡眠"
-  },
-  "卡路里": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969908,
-    "update_time": 1767969908,
-    "_id": "卡路里"
-  },
-  "步数": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969927,
-    "update_time": 1767969927,
-    "_id": "步数"
-  },
-  "多通道PPG 100HZ": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969927,
-    "update_time": 1767969927,
-    "_id": "多通道PPG 100HZ"
-  },
-  "单导联ECG": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969927,
-    "update_time": 1767969927,
-    "_id": "单导联ECG"
-  },
-  "人工智能中医大模型平台": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 2,
-    "create_time": 1767969927,
-    "update_time": 1767969927,
-    "_id": "人工智能中医大模型平台"
-  },
-  "中医未病健康报告": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 2,
-    "create_time": 1767969944,
-    "update_time": 1767969944,
-    "_id": "中医未病健康报告"
-  },
-  "百川智能": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 2,
-    "create_time": 1767969944,
-    "update_time": 1767969944,
-    "_id": "百川智能"
-  },
-  "Baichuan-M2-Plus": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 2,
-    "create_time": 1767969944,
-    "update_time": 1767969944,
-    "_id": "Baichuan-M2-Plus"
-  },
-  "砖瓦": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969944,
-    "update_time": 1767969944,
-    "_id": "砖瓦"
-  },
-  "加油证据": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969965,
-    "update_time": 1767969965,
-    "_id": "加油证据"
-  },
-  "小成功": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969980,
-    "update_time": 1767969980,
-    "_id": "小成功"
-  },
-  "热量缺口": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969982,
-    "update_time": 1767969982,
-    "_id": "热量缺口"
-  },
-  "示例1：全面达标，重点表扬运动": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969982,
-    "update_time": 1767969982,
-    "_id": "示例1：全面达标，重点表扬运动"
-  },
-  "示例2：某项未达标(如卡路里)，鼓励为主": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969985,
-    "update_time": 1767969985,
-    "_id": "示例2：某项未达标(如卡路里)，鼓励为主"
-  },
-  "示例3：针对减肥计划，突出热量缺口": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969985,
-    "update_time": 1767969985,
-    "_id": "示例3：针对减肥计划，突出热量缺口"
-  },
-  "示例4：针对睡眠和压力管理": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969985,
-    "update_time": 1767969985,
-    "_id": "示例4：针对睡眠和压力管理"
-  },
-  "API url": {
-    "chunk_ids": [
-      "chunk-6f413192b6712442310ab83e47795227"
-    ],
-    "count": 1,
-    "create_time": 1767969985,
-    "update_time": 1767969985,
-    "_id": "API url"
-  },
-  "Docker Compose": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 2,
-    "create_time": 1767969985,
-    "update_time": 1767969985,
-    "_id": "Docker Compose"
-  },
-  "Docker Compose.yaml": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969992,
-    "update_time": 1767969992,
-    "_id": "Docker Compose.yaml"
-  },
-  "Dify_docker": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969992,
-    "update_time": 1767969992,
-    "_id": "Dify_docker"
-  },
-  "Git Stash": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969993,
-    "update_time": 1767969993,
-    "_id": "Git Stash"
-  },
-  "Git Fetch": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969997,
-    "update_time": 1767969997,
-    "_id": "Git Fetch"
-  },
-  "Git Tag": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969997,
-    "update_time": 1767969997,
-    "_id": "Git Tag"
-  },
-  "Git Checkout": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969997,
-    "update_time": 1767969997,
-    "_id": "Git Checkout"
-  },
-  "Git Status": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767969999,
-    "update_time": 1767969999,
-    "_id": "Git Status"
-  },
-  "Git Pull": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970000,
-    "update_time": 1767970000,
-    "_id": "Git Pull"
-  },
-  "Git Stash Pop": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970001,
-    "update_time": 1767970001,
-    "_id": "Git Stash Pop"
-  },
-  "Tag 1.8.1": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970002,
-    "update_time": 1767970002,
-    "_id": "Tag 1.8.1"
-  },
-  "RAGFlow API": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970002,
-    "update_time": 1767970002,
-    "_id": "RAGFlow API"
-  },
-  "API Key": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 2,
-    "create_time": 1767970003,
-    "update_time": 1767970003,
-    "_id": "API Key"
-  },
-  "海实利": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970007,
-    "update_time": 1767970007,
-    "_id": "海实利"
-  },
-  "知识图谱": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970007,
-    "update_time": 1767970007,
-    "_id": "知识图谱"
-  },
-  "API URL": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9",
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 2,
-    "create_time": 1767970007,
-    "update_time": 1767970007,
-    "_id": "API URL"
-  },
-  "Chat ID": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970008,
-    "update_time": 1767970008,
-    "_id": "Chat ID"
-  },
-  "渔业养殖": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970011,
-    "update_time": 1767970011,
-    "_id": "渔业养殖"
-  },
-  "聊天接口": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970011,
-    "update_time": 1767970011,
-    "_id": "聊天接口"
-  },
-  "Session ID": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970011,
-    "update_time": 1767970011,
-    "_id": "Session ID"
-  },
-  "引用信息": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970011,
-    "update_time": 1767970011,
-    "_id": "引用信息"
-  },
-  "引用图片": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970015,
-    "update_time": 1767970015,
-    "_id": "引用图片"
-  },
-  "Image ID": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970015,
-    "update_time": 1767970015,
-    "_id": "Image ID"
-  },
-  "检索上下文接口": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970015,
-    "update_time": 1767970015,
-    "_id": "检索上下文接口"
-  },
-  "Dataset ID": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970015,
-    "update_time": 1767970015,
-    "_id": "Dataset ID"
-  },
-  "Document ID": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970022,
-    "update_time": 1767970022,
-    "_id": "Document ID"
-  },
-  "会话管理接口": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970022,
-    "update_time": 1767970022,
-    "_id": "会话管理接口"
-  },
-  "Infiniflow": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970022,
-    "update_time": 1767970022,
-    "_id": "Infiniflow"
-  },
-  "GitHub": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970023,
-    "update_time": 1767970023,
-    "_id": "GitHub"
-  },
-  "传染性造血器官坏死病": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970033,
-    "update_time": 1767970033,
-    "_id": "传染性造血器官坏死病"
-  },
-  "川菜馆": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970033,
-    "update_time": 1767970033,
-    "_id": "川菜馆"
-  },
-  "成都": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970033,
-    "update_time": 1767970033,
-    "_id": "成都"
-  },
-  "Docker Compose Down": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970033,
-    "update_time": 1767970033,
-    "_id": "Docker Compose Down"
-  },
-  "Docker Compose Up": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970036,
-    "update_time": 1767970036,
-    "_id": "Docker Compose Up"
-  },
-  "API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970043,
-    "update_time": 1767970043,
-    "_id": "API Key ragflow-FiNWZkZmNlYTFhNzExZjBiNGU0MDI0Mm"
-  },
-  "Chat ID f18b15f8a1a411f0b99b0242c0a89006": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970043,
-    "update_time": 1767970043,
-    "_id": "Chat ID f18b15f8a1a411f0b99b0242c0a89006"
-  },
-  "Chat ID 8a1edc92a1a411f0b0ea0242c0a89006": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970043,
-    "update_time": 1767970043,
-    "_id": "Chat ID 8a1edc92a1a411f0b0ea0242c0a89006"
-  },
-  "Session ID b06badb8a34c11f0a9d20242c0a8a006": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970045,
-    "update_time": 1767970045,
-    "_id": "Session ID b06badb8a34c11f0a9d20242c0a8a006"
-  },
-  "Dataset ID ea5142baa11511f083560242c0a89006": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970045,
-    "update_time": 1767970045,
-    "_id": "Dataset ID ea5142baa11511f083560242c0a89006"
-  },
-  "document_app.py": {
-    "chunk_ids": [
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "count": 1,
-    "create_time": 1767970051,
-    "update_time": 1767970051,
-    "_id": "document_app.py"
-  },
-  "ECG采集数据": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970051,
-    "update_time": 1767970051,
-    "_id": "ECG采集数据"
-  },
-  "手机小程序": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970051,
-    "update_time": 1767970051,
-    "_id": "手机小程序"
-  },
-  "AI健康助手": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970051,
-    "update_time": 1767970051,
-    "_id": "AI健康助手"
-  },
-  "健康计划调查问卷": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970056,
-    "update_time": 1767970056,
-    "_id": "健康计划调查问卷"
-  },
-  "食材集采数字化平台智能助手": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970059,
-    "update_time": 1767970059,
-    "_id": "食材集采数字化平台智能助手"
-  },
-  "DeepSeek": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970059,
-    "update_time": 1767970059,
-    "_id": "DeepSeek"
-  },
-  "华为云": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970063,
-    "update_time": 1767970063,
-    "_id": "华为云"
-  },
-  "阿里云百炼": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 2,
-    "create_time": 1767970063,
-    "update_time": 1767970063,
-    "_id": "阿里云百炼"
-  },
-  "docker-compose": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970063,
-    "update_time": 1767970063,
-    "_id": "docker-compose"
-  },
-  "docker": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970064,
-    "update_time": 1767970064,
-    "_id": "docker"
-  },
-  "TencentCloudADP": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970068,
-    "update_time": 1767970068,
-    "_id": "TencentCloudADP"
-  },
-  "youtu-graphrag": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970068,
-    "update_time": 1767970068,
-    "_id": "youtu-graphrag"
-  },
-  "Json在线解析": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970068,
-    "update_time": 1767970068,
-    "_id": "Json在线解析"
-  },
-  "量化": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970068,
-    "update_time": 1767970068,
-    "_id": "量化"
-  },
-  "northstar": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970073,
-    "update_time": 1767970073,
-    "_id": "northstar"
-  },
-  "cleaned_answer": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970073,
-    "update_time": 1767970073,
-    "_id": "cleaned_answer"
-  },
-  "联网搜索功能": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970073,
-    "update_time": 1767970073,
-    "_id": "联网搜索功能"
-  },
-  "Dify .env文件": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970077,
-    "update_time": 1767970077,
-    "_id": "Dify .env文件"
-  },
-  "DeepSeek-V3": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970077,
-    "update_time": 1767970077,
-    "_id": "DeepSeek-V3"
-  },
-  "DeepSeek-R1": {
-    "chunk_ids": [
-      "chunk-2309688baefacf34329b80e3d86a7260"
-    ],
-    "count": 1,
-    "create_time": 1767970077,
-    "update_time": 1767970077,
-    "_id": "DeepSeek-R1"
-  },
-  "肖总": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970082,
-    "update_time": 1767970082,
-    "_id": "肖总"
-  },
-  "Sensi.AI产品": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970082,
-    "update_time": 1767970082,
-    "_id": "Sensi.AI产品"
-  },
-  "音频传感器": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970082,
-    "update_time": 1767970082,
-    "_id": "音频传感器"
-  },
-  "惯性LSMC传感器": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970082,
-    "update_time": 1767970082,
-    "_id": "惯性LSMC传感器"
-  },
-  "毫米波雷达": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970086,
-    "update_time": 1767970086,
-    "_id": "毫米波雷达"
-  },
-  "段总": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970086,
-    "update_time": 1767970086,
-    "_id": "段总"
-  },
-  "轻量级模型": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970086,
-    "update_time": 1767970086,
-    "_id": "轻量级模型"
-  },
-  "四类意图数据集": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970086,
-    "update_time": 1767970086,
-    "_id": "四类意图数据集"
-  },
-  "意图识别模型": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970086,
-    "update_time": 1767970086,
-    "_id": "意图识别模型"
-  },
-  "Rasa框架": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970091,
-    "update_time": 1767970091,
-    "_id": "Rasa框架"
-  },
-  "运动建议生成系统": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970091,
-    "update_time": 1767970091,
-    "_id": "运动建议生成系统"
-  },
-  "可量化的指标": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f",
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 2,
-    "create_time": 1767970091,
-    "update_time": 1767970091,
-    "_id": "可量化的指标"
-  },
-  "LSM6DS3TR-C": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970092,
-    "update_time": 1767970092,
-    "_id": "LSM6DS3TR-C"
-  },
-  "设置闹钟(set_alarm)": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970095,
-    "update_time": 1767970095,
-    "_id": "设置闹钟(set_alarm)"
-  },
-  "打电话(call)": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970095,
-    "update_time": 1767970095,
-    "_id": "打电话(call)"
-  },
-  "播放音乐(play_music)": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970096,
-    "update_time": 1767970096,
-    "_id": "播放音乐(play_music)"
-  },
-  "关机(shutdown)": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970098,
-    "update_time": 1767970098,
-    "_id": "关机(shutdown)"
-  },
-  "意图识别流程": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970099,
-    "update_time": 1767970099,
-    "_id": "意图识别流程"
-  },
-  "运动建议-json-上线提示词": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970099,
-    "update_time": 1767970099,
-    "_id": "运动建议-json-上线提示词"
-  },
-  "示例JSON": {
-    "chunk_ids": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f"
-    ],
-    "count": 1,
-    "create_time": 1767970101,
-    "update_time": 1767970101,
-    "_id": "示例JSON"
-  },
-  "健康教练": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970102,
-    "update_time": 1767970102,
-    "_id": "健康教练"
-  },
-  "打卡数据": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970102,
-    "update_time": 1767970102,
-    "_id": "打卡数据"
-  },
-  "API key": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970108,
-    "update_time": 1767970108,
-    "_id": "API key"
-  },
-  "网页端体验": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970109,
-    "update_time": 1767970109,
-    "_id": "网页端体验"
-  },
-  "示例": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970110,
-    "update_time": 1767970110,
-    "_id": "示例"
-  },
-  "饮食建议": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3",
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 2,
-    "create_time": 1767970120,
-    "update_time": 1767970120,
-    "_id": "饮食建议"
-  },
-  "饮食计划": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970168,
-    "update_time": 1767970168,
-    "_id": "饮食计划"
-  },
-  "输出格式": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970183,
-    "update_time": 1767970183,
-    "_id": "输出格式"
-  },
-  "JSON对象": {
-    "chunk_ids": [
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3"
-    ],
-    "count": 1,
-    "create_time": 1767970196,
-    "update_time": 1767970196,
-    "_id": "JSON对象"
-  },
-  "API Base URL": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970196,
-    "update_time": 1767970196,
-    "_id": "API Base URL"
-  },
-  "Dify CPU服务器(移动云，旧版)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970233,
-    "update_time": 1767970233,
-    "_id": "Dify CPU服务器(移动云，旧版)"
-  },
-  "Dify Web网址(旧版)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970233,
-    "update_time": 1767970233,
-    "_id": "Dify Web网址(旧版)"
-  },
-  "启动脚本(旧版Dify)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970236,
-    "update_time": 1767970236,
-    "_id": "启动脚本(旧版Dify)"
-  },
-  "RAGFlow GPU服务器(腾讯云)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970236,
-    "update_time": 1767970236,
-    "_id": "RAGFlow GPU服务器(腾讯云)"
-  },
-  "RAGFlow Web网址": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970236,
-    "update_time": 1767970236,
-    "_id": "RAGFlow Web网址"
-  },
-  "启动命令(RAGFlow)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970239,
-    "update_time": 1767970239,
-    "_id": "启动命令(RAGFlow)"
-  },
-  "Dify CPU服务器(移动云，新版)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970239,
-    "update_time": 1767970239,
-    "_id": "Dify CPU服务器(移动云，新版)"
-  },
-  "aid.baixunsz.com": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970241,
-    "update_time": 1767970241,
-    "_id": "aid.baixunsz.com"
-  },
-  "Dify Web网址(新版)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970241,
-    "update_time": 1767970241,
-    "_id": "Dify Web网址(新版)"
-  },
-  "启动脚本(新版Dify)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970243,
-    "update_time": 1767970243,
-    "_id": "启动脚本(新版Dify)"
-  },
-  "Dify版本更新": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970243,
-    "update_time": 1767970243,
-    "_id": "Dify版本更新"
-  },
-  "ICP备案": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970245,
-    "update_time": 1767970245,
-    "_id": "ICP备案"
-  },
-  "端口(80, 8080, 443, 8443)": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970248,
-    "update_time": 1767970248,
-    "_id": "端口(80, 8080, 443, 8443)"
-  },
-  "SSL证书": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970248,
-    "update_time": 1767970248,
-    "_id": "SSL证书"
-  },
-  "域名映射": {
-    "chunk_ids": [
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c"
-    ],
-    "count": 1,
-    "create_time": 1767970248,
-    "update_time": 1767970248,
-    "_id": "域名映射"
-  },
-  "有氧运动": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970252,
-    "update_time": 1767970252,
-    "_id": "有氧运动"
-  },
-  "力量训练": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970252,
-    "update_time": 1767970252,
-    "_id": "力量训练"
-  },
-  "每日步行目标": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970252,
-    "update_time": 1767970252,
-    "_id": "每日步行目标"
-  },
-  "热身": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970256,
-    "update_time": 1767970256,
-    "_id": "热身"
-  },
-  "运动后拉伸": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970256,
-    "update_time": 1767970256,
-    "_id": "运动后拉伸"
-  },
-  "低冲击活动": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970256,
-    "update_time": 1767970256,
-    "_id": "低冲击活动"
-  },
-  "一周运动计划": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970256,
-    "update_time": 1767970256,
-    "_id": "一周运动计划"
-  },
-  "星期一": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970256,
-    "update_time": 1767970256,
-    "_id": "星期一"
-  },
-  "星期二": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970263,
-    "update_time": 1767970263,
-    "_id": "星期二"
-  },
-  "星期三": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
-    "count": 1,
-    "create_time": 1767970263,
-    "update_time": 1767970263,
-    "_id": "星期三"
-  },
-  "星期四": {
-    "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
-    ],
     "count": 1,
-    "create_time": 1767970263,
-    "update_time": 1767970263,
-    "_id": "星期四"
+    "create_time": 1768127806,
+    "update_time": 1768127806,
+    "_id": "/model"
   },
-  "星期五": {
+  "/code": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970263,
-    "update_time": 1767970263,
-    "_id": "星期五"
+    "create_time": 1768127806,
+    "update_time": 1768127806,
+    "_id": "/code"
   },
-  "星期六": {
+  "/情绪手表数据": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970265,
-    "update_time": 1767970265,
-    "_id": "星期六"
+    "create_time": 1768127806,
+    "update_time": 1768127806,
+    "_id": "/情绪手表数据"
   },
-  "星期日": {
+  "train_model.py": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970268,
-    "update_time": 1767970268,
-    "_id": "星期日"
+    "create_time": 1768127806,
+    "update_time": 1768127806,
+    "_id": "train_model.py"
   },
-  "可量化指标": {
+  "parse_txt.py": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970268,
-    "update_time": 1767970268,
-    "_id": "可量化指标"
+    "create_time": 1768127807,
+    "update_time": 1768127807,
+    "_id": "parse_txt.py"
   },
-  "初级运动者": {
+  "predict_model.py": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970268,
-    "update_time": 1767970268,
-    "_id": "初级运动者"
+    "create_time": 1768127807,
+    "update_time": 1768127807,
+    "_id": "predict_model.py"
   },
-  "深蹲": {
+  "参数a": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970271,
-    "update_time": 1767970271,
-    "_id": "深蹲"
+    "create_time": 1768127811,
+    "update_time": 1768127811,
+    "_id": "参数a"
   },
-  "俯卧撑": {
+  "affect字段": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970271,
-    "update_time": 1767970271,
-    "_id": "俯卧撑"
+    "create_time": 1768127821,
+    "update_time": 1768127821,
+    "_id": "affect字段"
   },
-  "仰卧起坐": {
+  "和顺成手表": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970271,
-    "update_time": 1767970271,
-    "_id": "仰卧起坐"
+    "create_time": 1768127821,
+    "update_time": 1768127821,
+    "_id": "和顺成手表"
   },
-  "平板支撑": {
+  "第三方情绪手表": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970274,
-    "update_time": 1767970274,
-    "_id": "平板支撑"
+    "create_time": 1768127821,
+    "update_time": 1768127821,
+    "_id": "第三方情绪手表"
   },
-  "哑铃推举": {
+  "情绪手表算法": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970274,
-    "update_time": 1767970274,
-    "_id": "哑铃推举"
+    "create_time": 1768127826,
+    "update_time": 1768127826,
+    "_id": "情绪手表算法"
   },
-  "动态拉伸": {
+  "自研情绪算法": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970274,
-    "update_time": 1767970274,
-    "_id": "动态拉伸"
+    "create_time": 1768127826,
+    "update_time": 1768127826,
+    "_id": "自研情绪算法"
   },
-  "静态拉伸": {
+  "情绪指数": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970275,
-    "update_time": 1767970275,
-    "_id": "静态拉伸"
+    "create_time": 1768127826,
+    "update_time": 1768127826,
+    "_id": "情绪指数"
   },
-  "游泳": {
+  "情绪手表算法与自研算法结果对比.xlsx": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970278,
-    "update_time": 1767970278,
-    "_id": "游泳"
+    "create_time": 1768127826,
+    "update_time": 1768127826,
+    "_id": "情绪手表算法与自研算法结果对比.xlsx"
   },
-  "骑行": {
+  "和顺成手表使用注意事项.txt": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970278,
-    "update_time": 1767970278,
-    "_id": "骑行"
+    "create_time": 1768127826,
+    "update_time": 1768127826,
+    "_id": "和顺成手表使用注意事项.txt"
   },
-  "椭圆机": {
+  "RR数据": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970278,
-    "update_time": 1767970278,
-    "_id": "椭圆机"
+    "create_time": 1768127834,
+    "update_time": 1768127834,
+    "_id": "RR数据"
   },
-  "每日应摄入卡路里": {
+  "API接口": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
     "count": 1,
-    "create_time": 1767970278,
-    "update_time": 1767970278,
-    "_id": "每日应摄入卡路里"
+    "create_time": 1768127834,
+    "update_time": 1768127834,
+    "_id": "API接口"
   },
-  "早上应摄入卡路里": {
+  "pypi.tuna.tsinghua.edu.cn": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-01801f933216cfe71c2b179bcba43ce7"
     ],
     "count": 1,
-    "create_time": 1767970282,
-    "update_time": 1767970282,
-    "_id": "早上应摄入卡路里"
+    "create_time": 1768127880,
+    "update_time": 1768127880,
+    "_id": "pypi.tuna.tsinghua.edu.cn"
   },
-  "中午应摄入卡路里": {
+  "pip": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-01801f933216cfe71c2b179bcba43ce7"
     ],
     "count": 1,
-    "create_time": 1767970282,
-    "update_time": 1767970282,
-    "_id": "中午应摄入卡路里"
+    "create_time": 1768127880,
+    "update_time": 1768127880,
+    "_id": "pip"
   },
-  "晚上应摄入卡路里": {
+  "--trusted-host": {
     "chunk_ids": [
-      "chunk-00f75f56709838e6d3ee19b75315c102"
+      "chunk-01801f933216cfe71c2b179bcba43ce7"
     ],
     "count": 1,
-    "create_time": 1767970282,
-    "update_time": 1767970282,
-    "_id": "晚上应摄入卡路里"
+    "create_time": 1768127880,
+    "update_time": 1768127880,
+    "_id": "--trusted-host"
   }
 }

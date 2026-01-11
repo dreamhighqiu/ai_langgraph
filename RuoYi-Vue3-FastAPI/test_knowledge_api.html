@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库API测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #409eff;
+            padding-bottom: 10px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #409eff;
+        }
+        button {
+            background: #409eff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #66b1ff;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 500px;
+        }
+        .success {
+            color: #67c23a;
+            font-weight: bold;
+        }
+        .error {
+            color: #f56c6c;
+            font-weight: bold;
+        }
+        .warning {
+            color: #e6a23c;
+            font-weight: bold;
+        }
+        .info {
+            color: #909399;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 知识库API测试工具</h1>
+        
+        <div class="test-section">
+            <h2>1. 测试知识库列表API</h2>
+            <p>项目ID（可选）: <input type="number" id="projectIdInput" placeholder="不填则查询所有"></p>
+            <button onclick="testKnowledgeList()">📋 获取知识库列表</button>
+            <button onclick="testKnowledgeListWithProject()">📁 按项目获取</button>
+            <div id="listResult"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>2. 测试单个知识库详情</h2>
+            <p>知识库ID: <input type="number" id="knowledgeIdInput" placeholder="输入知识库ID"></p>
+            <button onclick="testKnowledgeDetail()">📄 获取详情</button>
+            <div id="detailResult"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>3. 数据库直接查询</h2>
+            <button onclick="showSQLQuery()">📊 显示SQL查询命令</button>
+            <div id="sqlResult"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5173/dev-api';
+        const TOKEN = localStorage.getItem('Admin-Token') || '';
+
+        async function apiRequest(url, options = {}) {
+            try {
+                const response = await fetch(url, {
+                    ...options,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${TOKEN}`,
+                        ...options.headers
+                    }
+                });
+                
+                const data = await response.json();
+                console.log('API Response:', data);
+                return data;
+            } catch (error) {
+                console.error('API Error:', error);
+                throw error;
+            }
+        }
+
+        async function testKnowledgeList() {
+            const resultDiv = document.getElementById('listResult');
+            resultDiv.innerHTML = '<p class="info">⏳ 加载中...</p>';
+            
+            try {
+                const data = await apiRequest(`${API_BASE}/api/testing/knowledge/list?pageNum=1&pageSize=100&status=0`);
+                
+                if (data.code === 200) {
+                    const rows = data.rows || [];
+                    const total = data.total || 0;
+                    
+                    let html = `<p class="success">✅ 成功获取 ${total} 个知识库</p>`;
+                    html += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    
+                    if (rows.length > 0) {
+                        html += '<h3>知识库列表：</h3>';
+                        html += '<table border="1" cellpadding="10" style="width:100%; border-collapse:collapse;">';
+                        html += '<tr><th>ID</th><th>名称</th><th>项目名称</th><th>Collection</th><th>文档数</th><th>状态</th></tr>';
+                        
+                        rows.forEach(kb => {
+                            html += `<tr>
+                                <td>${kb.knowledge_id}</td>
+                                <td>${kb.knowledge_name}</td>
+                                <td>${kb.project_name || '未设置'}</td>
+                                <td>${kb.collection_name}</td>
+                                <td>${kb.file_count || 0}</td>
+                                <td>${kb.status === '0' ? '启用' : '禁用'}</td>
+                            </tr>`;
+                        });
+                        html += '</table>';
+                    } else {
+                        html += '<p class="warning">⚠️ 没有找到任何知识库</p>';
+                    }
+                    
+                    resultDiv.innerHTML = html;
+                } else {
+                    resultDiv.innerHTML = `<p class="error">❌ 错误: ${data.msg}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 请求失败: ${error.message}</p>`;
+            }
+        }
+
+        async function testKnowledgeListWithProject() {
+            const projectId = document.getElementById('projectIdInput').value;
+            if (!projectId) {
+                alert('请输入项目ID');
+                return;
+            }
+            
+            const resultDiv = document.getElementById('listResult');
+            resultDiv.innerHTML = '<p class="info">⏳ 加载中...</p>';
+            
+            try {
+                const data = await apiRequest(`${API_BASE}/api/testing/knowledge/list?pageNum=1&pageSize=100&status=0&projectId=${projectId}`);
+                
+                if (data.code === 200) {
+                    const rows = data.rows || [];
+                    const total = data.total || 0;
+                    
+                    let html = `<p class="success">✅ 项目 ${projectId} 有 ${total} 个知识库</p>`;
+                    html += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    resultDiv.innerHTML = html;
+                } else {
+                    resultDiv.innerHTML = `<p class="error">❌ 错误: ${data.msg}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 请求失败: ${error.message}</p>`;
+            }
+        }
+
+        async function testKnowledgeDetail() {
+            const knowledgeId = document.getElementById('knowledgeIdInput').value;
+            if (!knowledgeId) {
+                alert('请输入知识库ID');
+                return;
+            }
+            
+            const resultDiv = document.getElementById('detailResult');
+            resultDiv.innerHTML = '<p class="info">⏳ 加载中...</p>';
+            
+            try {
+                const data = await apiRequest(`${API_BASE}/api/testing/knowledge/${knowledgeId}`);
+                
+                if (data.code === 200) {
+                    resultDiv.innerHTML = `
+                        <p class="success">✅ 成功获取知识库详情</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `<p class="error">❌ 错误: ${data.msg}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 请求失败: ${error.message}</p>`;
+            }
+        }
+
+        function showSQLQuery() {
+            const resultDiv = document.getElementById('sqlResult');
+            resultDiv.innerHTML = `
+                <h3>📊 数据库查询命令</h3>
+                <p>请在后端服务器上执行以下SQL命令查看真实数据：</p>
+                <pre>-- 查看所有知识库
+SELECT 
+    k.knowledge_id,
+    k.knowledge_name,
+    k.collection_name,
+    k.project_id,
+    p.project_name,
+    k.file_count,
+    k.status,
+    k.query_mode,
+    k.create_time
+FROM test_knowledge k
+LEFT JOIN test_project p ON k.project_id = p.project_id
+WHERE k.del_flag = '0'
+ORDER BY k.create_time DESC;
+
+-- 查看启用的知识库
+SELECT * FROM test_knowledge 
+WHERE status = '0' AND del_flag = '0';
+
+-- 按项目查询
+SELECT * FROM test_knowledge 
+WHERE project_id = 10 AND status = '0' AND del_flag = '0';</pre>
+                
+                <h3>🔧 检查步骤</h3>
+                <ol>
+                    <li>确认Token正确: <code>${TOKEN ? '已设置' : '未设置 ⚠️'}</code></li>
+                    <li>确认后端服务运行: <code>http://localhost:9099</code></li>
+                    <li>确认数据库有数据: 执行上面的SQL</li>
+                    <li>检查浏览器控制台: F12 查看网络请求</li>
+                </ol>
+            `;
+        }
+
+        // 页面加载时自动获取知识库列表
+        window.onload = function() {
+            console.log('页面加载完成，Token:', TOKEN ? '已设置' : '未设置');
+            if (TOKEN) {
+                testKnowledgeList();
+            } else {
+                alert('请先登录系统，然后刷新此页面');
+            }
+        };
+    </script>
+</body>
+</html>
+

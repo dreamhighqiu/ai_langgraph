@@ -80,7 +80,7 @@ export function useLangGraphChat(options = {}) {
    * 发送消息（流式）
    * @param {string} content 消息内容
    */
-  async function sendMessage(content) {
+  async function sendMessage(content, options = {}) {
     if (!content?.trim() || isLoading.value) return
     
     // 如果没有 threadId，创建一个
@@ -101,7 +101,7 @@ export function useLangGraphChat(options = {}) {
     error.value = null
     
     try {
-      await streamWithHTTP(content)
+      await streamWithHTTP(content, options)
       onTestCaseCreated?.()
     } catch (e) {
       console.error('发送消息失败:', e)
@@ -122,7 +122,7 @@ export function useLangGraphChat(options = {}) {
   /**
    * 使用 HTTP SSE 进行流式通信
    */
-  async function streamWithHTTP(content) {
+  async function streamWithHTTP(content, options = {}) {
     const token = getAuthToken()
     
     // 添加 AI 消息占位
@@ -135,20 +135,30 @@ export function useLangGraphChat(options = {}) {
     }
     messages.value.push(aiMessage)
     
+    // 构建请求体
+    const requestBody = {
+      assistant_id: assistantId,
+      message: content,
+      thread_id: threadId.value,
+      project_id: projectId,
+      folder_id: folderId,
+      stream: true
+    }
+    
+    // 如果选择了知识库，添加knowledge_base_id和use_rag标志
+    if (options.knowledgeBaseId) {
+      requestBody.knowledge_base_id = options.knowledgeBaseId
+      requestBody.use_rag = true
+      console.log('📚 使用知识库进行RAG检索:', options.knowledgeBaseId)
+    }
+    
     const response = await fetch('/api/testing/ai-chat/stream', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify({
-        assistant_id: assistantId,
-        message: content,
-        thread_id: threadId.value,
-        project_id: projectId,
-        folder_id: folderId,
-        stream: true
-      })
+      body: JSON.stringify(requestBody)
     })
     
     if (!response.ok) {

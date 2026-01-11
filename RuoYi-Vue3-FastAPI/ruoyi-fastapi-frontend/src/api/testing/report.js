@@ -29,7 +29,7 @@ export function listReport(query) {
  */
 export function getReport(reportId) {
   return request({
-    url: `/testing/report/${reportId}`,
+    url: `/api/testing/report/${reportId}`,
     method: 'get'
   })
 }
@@ -40,7 +40,7 @@ export function getReport(reportId) {
  */
 export function delReport(reportIds) {
   return request({
-    url: `/testing/report/${reportIds}`,
+    url: `/api/testing/report/${reportIds}`,
     method: 'delete'
   })
 }
@@ -51,7 +51,7 @@ export function delReport(reportIds) {
  */
 export function downloadReport(reportId) {
   return request({
-    url: `/testing/report/${reportId}/download`,
+    url: `/api/testing/report/${reportId}/download`,
     method: 'get',
     responseType: 'blob'
   })
@@ -63,7 +63,7 @@ export function downloadReport(reportId) {
  */
 export function generateHtmlReport(executionId) {
   return request({
-    url: `/testing/report/generate/${executionId}`,
+    url: `/api/testing/report/generate/${executionId}`,
     method: 'post'
   })
 }
@@ -89,7 +89,7 @@ export function compareReports(data) {
  */
 export function exportReportPdf(reportId) {
   return request({
-    url: `/testing/report/${reportId}/export/pdf`,
+    url: `/api/testing/report/${reportId}/export/pdf`,
     method: 'post',
     responseType: 'blob'
   })

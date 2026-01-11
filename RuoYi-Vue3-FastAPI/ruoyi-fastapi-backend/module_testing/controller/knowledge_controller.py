@@ -137,7 +137,23 @@ async def get_knowledge_list(
         
         logger.info(f'查询知识库列表 - 结果: 共{total}条记录, 当前页{len(knowledge_list)}条')
         
-        rows = [k.model_dump() for k in knowledge_list]
+        # 添加项目名称
+        from module_testing.dao.project_dao import ProjectDAO
+        rows = []
+        for k in knowledge_list:
+            k_dict = k.model_dump()
+            # 获取项目名称
+            if k.project_id:
+                try:
+                    project = await ProjectDAO.get_by_id(db, k.project_id)
+                    k_dict['project_name'] = project.project_name if project else None
+                except Exception as e:
+                    logger.warning(f'获取项目名称失败: project_id={k.project_id}, error={e}')
+                    k_dict['project_name'] = None
+            else:
+                k_dict['project_name'] = None
+            rows.append(k_dict)
+        
         return ResponseUtil.success(rows=rows, dict_content={'total': total})
     except Exception as e:
         logger.error(f'查询知识库列表失败: {e}', exc_info=True)

@@ -489,7 +489,6 @@ class KnowledgeService:
             if not file_url:
                 # 使用传入的base_url，或从环境变量获取，或使用默认值
                 if not base_url:
-                    import os
                     base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
                 # 移除API前缀（如果有）
                 if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
@@ -503,7 +502,6 @@ class KnowledgeService:
             # 即使出错也提供后端API URL作为后备
             try:
                 if not base_url:
-                    import os
                     base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
                 if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
                     base_url = base_url.rsplit('/', 1)[0]
@@ -526,7 +524,6 @@ class KnowledgeService:
     @staticmethod
     def _get_file_type(filename: str) -> str:
         """从文件名提取文件类型"""
-        import os
         ext = os.path.splitext(filename)[1].lower()
         type_map = {
             '.pdf': 'PDF',
@@ -574,7 +571,6 @@ class KnowledgeService:
                 if not file_url:
                     # 使用传入的base_url，或从环境变量获取，或使用默认值
                     if not base_url:
-                        import os
                         base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
                     # 移除API前缀（如果有）
                     if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
@@ -589,7 +585,6 @@ class KnowledgeService:
                 # 即使出错也提供后端API URL作为后备
                 try:
                     if not base_url:
-                        import os
                         base_url = os.getenv('APP_BASE_URL') or os.getenv('VITE_APP_BASE_API', 'http://localhost:9099')
                     if base_url and ('/dev-api' in base_url or '/prod-api' in base_url):
                         base_url = base_url.rsplit('/', 1)[0]
@@ -759,7 +754,7 @@ class KnowledgeService:
         # 通过 LIGHTRAG-WORKSPACE header 传递给 anything-chat-rag，确保数据隔离
         workspace = knowledge.collection_name
         
-        logger.info(f'查询知识库: {knowledge_id}, workspace: {workspace}, query: {query[:50]}...')
+        logger.info(f'🔍 查询知识库: knowledge_id={knowledge_id}, workspace={workspace}, project_id={knowledge.project_id}, mode={mode}, query={query[:50]}...')
         
         # 调用 LightRAG 查询（使用 workspace 确保数据隔离）
         lightrag_manager = get_lightrag_manager()
@@ -770,12 +765,20 @@ class KnowledgeService:
             top_k=top_k
         )
 
+        logger.info(f'📤 LightRAG 返回结果: {type(result)}, keys={list(result.keys()) if isinstance(result, dict) else "N/A"}')
+        
         # 统一返回字段：LightRAG 返回 "response"，前端与 VO 约定使用 "answer"
         if isinstance(result, dict):
             result.setdefault('query', query)
             result.setdefault('mode', mode)
             if 'answer' not in result and 'response' in result:
                 result['answer'] = result.get('response', '')
+            
+            # 记录 references 结构
+            if 'references' in result:
+                logger.info(f'📚 参考文档数量: {len(result["references"])}')
+                if result['references']:
+                    logger.debug(f'首个参考文档结构: {list(result["references"][0].keys()) if result["references"] else "N/A"}')
         
         # 添加知识库信息
         result['knowledge_id'] = knowledge_id
@@ -783,6 +786,6 @@ class KnowledgeService:
         result['collection_name'] = workspace
         result['project_id'] = knowledge.project_id
         
-        logger.info(f'查询成功: {knowledge_id}, workspace: {workspace}')
+        logger.info(f'✅ 查询成功: knowledge_id={knowledge_id}, workspace={workspace}, project_id={knowledge.project_id}')
         
         return result

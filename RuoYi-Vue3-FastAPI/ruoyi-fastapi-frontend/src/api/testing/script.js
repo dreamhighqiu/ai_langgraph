@@ -30,7 +30,7 @@ export function listScript(query) {
  */
 export function getScript(scriptId) {
   return request({
-    url: `/testing/script/${scriptId}`,
+    url: `/api/testing/script/${scriptId}`,
     method: 'get'
   })
 }
@@ -41,7 +41,7 @@ export function getScript(scriptId) {
  */
 export function addScript(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'post',
     data: {
       project_id: data.project_id,
@@ -64,7 +64,7 @@ export function addScript(data) {
  */
 export function updateScript(data) {
   return request({
-    url: '/testing/script',
+    url: '/api/testing/script',
     method: 'put',
     data: {
       script_id: data.script_id,
@@ -88,7 +88,7 @@ export function updateScript(data) {
  */
 export function delScript(scriptIds) {
   return request({
-    url: `/testing/script/${scriptIds}`,
+    url: `/api/testing/script/${scriptIds}`,
     method: 'delete'
   })
 }
@@ -140,7 +140,7 @@ export function executeScript(data) {
  */
 export function getScriptVersions(scriptId) {
   return request({
-    url: `/testing/script/${scriptId}/versions`,
+    url: `/api/testing/script/${scriptId}/versions`,
     method: 'get'
   })
 }

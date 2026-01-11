@@ -469,6 +469,9 @@ async function loadKnowledgeBases() {
   try {
     // 导入knowledge API
     const { listKnowledge } = await import('@/api/testing/knowledge')
+    
+    console.log('🔍 开始加载知识库列表, projectId:', props.projectId)
+    
     const response = await listKnowledge({
       pageNum: 1,
       pageSize: 100,  // 获取所有启用的知识库
@@ -476,20 +479,37 @@ async function loadKnowledgeBases() {
       projectId: props.projectId  // 如果有项目ID限制
     })
     
-    knowledgeBases.value = (response.rows || []).map(kb => ({
-      id: kb.knowledge_id,
-      name: kb.knowledge_name,
-      docCount: kb.file_count || 0,
-      workspace: kb.collection_name,  // LightRAG workspace名称
-      projectId: kb.project_id,
-      projectName: kb.project_name,
-      queryMode: kb.query_mode || 'mix'
-    }))
+    console.log('📡 API响应:', response)
     
-    console.log('知识库列表加载成功:', knowledgeBases.value.length, '个知识库')
+    // 后端返回格式: {code: 200, data: {rows: [...], total: ...}}
+    // 经过axios拦截器后返回: {rows: [...], total: ...}
+    const rows = response.rows || response.data?.rows || []
+    
+    console.log('📋 原始数据行数:', rows.length)
+    
+    knowledgeBases.value = rows.map(kb => {
+      console.log('📚 处理知识库:', kb.knowledge_name, 'project:', kb.project_name)
+      return {
+        id: kb.knowledge_id,
+        name: kb.knowledge_name,
+        docCount: kb.file_count || 0,
+        workspace: kb.collection_name,  // LightRAG workspace名称
+        projectId: kb.project_id,
+        projectName: kb.project_name || '未知项目',
+        queryMode: kb.query_mode || 'mix'
+      }
+    })
+    
+    console.log('✅ 知识库列表加载成功:', knowledgeBases.value.length, '个知识库')
+    if (knowledgeBases.value.length > 0) {
+      console.log('📊 第一个知识库:', knowledgeBases.value[0])
+    } else {
+      console.warn('⚠️ 没有可用的知识库')
+      ElMessage.warning('当前项目没有可用的知识库，请先在知识库管理中创建和上传文档')
+    }
   } catch (error) {
-    console.error('加载知识库列表失败:', error)
-    ElMessage.warning('加载知识库列表失败，将无法使用RAG检索功能')
+    console.error('❌ 加载知识库列表失败:', error)
+    ElMessage.error('加载知识库列表失败: ' + (error.message || '未知错误'))
   } finally {
     knowledgeBasesLoading.value = false
   }

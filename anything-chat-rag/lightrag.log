@@ -6858,3 +6858,201 @@ Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpe
 2026-01-11 15:35:29,673 - uvicorn.access - INFO - 127.0.0.1:50564 - "GET /openapi.json HTTP/1.1" 200
 2026-01-11 15:42:21,994 - uvicorn.access - INFO - 127.0.0.1:60536 - "GET /openapi.json HTTP/1.1" 200
 2026-01-11 15:43:12,202 - uvicorn.access - INFO - 127.0.0.1:52404 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:00:22,188 - uvicorn.access - INFO - 127.0.0.1:60238 - "GET / HTTP/1.1" 307
+2026-01-11 16:00:22,197 - uvicorn.access - INFO - 127.0.0.1:60238 - "GET /webui HTTP/1.1" 307
+2026-01-11 16:00:34,972 - uvicorn.access - INFO - 127.0.0.1:57076 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2026-01-11 16:00:35,178 - uvicorn.access - INFO - 127.0.0.1:57076 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2026-01-11 16:00:37,770 - uvicorn.access - INFO - 127.0.0.1:51495 - "GET /auth-status HTTP/1.1" 200
+2026-01-11 16:00:39,993 - uvicorn.access - INFO - 127.0.0.1:51495 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:00:40,076 - uvicorn.access - INFO - 127.0.0.1:51495 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2026-01-11 16:00:40,082 - uvicorn.access - INFO - 127.0.0.1:57076 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2026-01-11 16:00:40,134 - uvicorn.access - INFO - 127.0.0.1:51495 - "GET /webui/favicon.png HTTP/1.1" 200
+2026-01-11 16:00:40,242 - uvicorn.access - INFO - 127.0.0.1:57076 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:00:46,557 - uvicorn.access - INFO - 127.0.0.1:62409 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:00:46,761 - uvicorn.access - INFO - 127.0.0.1:62409 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:00:47,207 - uvicorn.access - INFO - 127.0.0.1:62409 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+2026-01-11 16:05:13,252 - uvicorn.access - INFO - 127.0.0.1:59530 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:05:13,368 - uvicorn.access - INFO - 127.0.0.1:59530 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:05:15,287 - uvicorn.access - INFO - 127.0.0.1:59530 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:05:15,413 - uvicorn.access - INFO - 127.0.0.1:59530 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:14:00,787 - uvicorn.access - INFO - 127.0.0.1:56943 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:14:00,918 - uvicorn.access - INFO - 127.0.0.1:56943 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:14:50,566 - uvicorn.access - INFO - 127.0.0.1:51219 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 16:16:34,371 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:16:34,468 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:16:36,381 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:16:36,476 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:16:39,010 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:16:39,131 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:16:42,516 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:16:42,609 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:16:43,967 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:16:44,060 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:16:47,247 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:16:47,303 - uvicorn.access - INFO - 127.0.0.1:52310 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:18:16,149 - uvicorn.access - INFO - 127.0.0.1:63650 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:18:39,071 - uvicorn.access - INFO - 127.0.0.1:52875 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:19:10,687 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-11 16:19:10,688 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-11 16:19:14,477 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-11 16:19:14,478 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-11 16:19:14,478 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-11 16:19:14,479 - lightrag - INFO - Reranking is disabled
+2026-01-11 16:19:16,560 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-11 16:19:20,922 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
+2026-01-11 16:19:22,731 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-11 16:19:22,732 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-11 16:19:23,222 - uvicorn.error - INFO - Started server process [520076]
+2026-01-11 16:19:23,226 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-11 16:19:23,244 - lightrag - INFO - [] Process 520076 KV load full_docs with 20 records
+2026-01-11 16:19:23,252 - lightrag - INFO - [] Process 520076 KV load text_chunks with 83 records
+2026-01-11 16:19:23,257 - lightrag - INFO - [] Process 520076 KV load full_entities with 20 records
+2026-01-11 16:19:23,272 - lightrag - INFO - [] Process 520076 KV load full_relations with 20 records
+2026-01-11 16:19:23,292 - lightrag - INFO - [] Process 520076 KV load entity_chunks with 1587 records
+2026-01-11 16:19:23,306 - lightrag - INFO - [] Process 520076 KV load relation_chunks with 1573 records
+2026-01-11 16:19:23,503 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-11 16:19:23,580 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-11 16:19:23,700 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-11 16:19:23,740 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-11 16:19:23,818 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-11 16:19:23,936 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-11 16:19:23,975 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-11 16:19:24,051 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-11 16:19:24,168 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-11 16:19:24,258 - lightrag - INFO - [] Process 520076 KV load llm_response_cache with 182 records
+2026-01-11 16:19:24,268 - lightrag - INFO - [] Process 520076 doc status load doc_status with 20 records
+2026-01-11 16:19:24,274 - uvicorn.error - INFO - Application startup complete.
+2026-01-11 16:19:24,276 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-11 16:19:24,645 - uvicorn.access - INFO - 127.0.0.1:57043 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:20:12,265 - uvicorn.access - INFO - 127.0.0.1:62887 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:20:12,760 - uvicorn.access - INFO - 127.0.0.1:62887 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:20:14,664 - uvicorn.access - INFO - 127.0.0.1:62887 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:20:14,777 - uvicorn.access - INFO - 127.0.0.1:62887 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:20:45,433 - uvicorn.access - INFO - 127.0.0.1:56584 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:20:45,545 - uvicorn.access - INFO - 127.0.0.1:56584 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:23:05,749 - uvicorn.access - INFO - 127.0.0.1:51933 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:23:05,848 - uvicorn.access - INFO - 127.0.0.1:51933 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:24:43,664 - uvicorn.access - INFO - 127.0.0.1:57451 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:25:40,762 - uvicorn.access - INFO - 127.0.0.1:58007 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:34:45,547 - uvicorn.access - INFO - 127.0.0.1:62520 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 16:38:59,343 - uvicorn.access - INFO - 127.0.0.1:64632 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:38:59,463 - uvicorn.access - INFO - 127.0.0.1:64632 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:45:36,427 - uvicorn.access - INFO - 127.0.0.1:51560 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 16:46:02,476 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2026-01-11 16:46:10,191 - lightrag - INFO -  == LLM cache == saving: mix:keywords:182d1c8ed5a8880f6236ab6268d5e974
+2026-01-11 16:46:10,193 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+2026-01-11 16:46:19,171 - lightrag - INFO - Query nodes: 饮食建议, 运动建议 (top_k:10, cosine:0.2)
+2026-01-11 16:46:24,025 - lightrag - INFO - Local query: 10 entites, 12 relations
+2026-01-11 16:46:24,026 - lightrag - INFO - Query edges: AI健康管理平台, 算法备案, 服务器配置, 敏感词API, 健康计划, 测试用例 (top_k:10, cosine:0.2)
+2026-01-11 16:46:28,058 - lightrag - INFO - Global query: 16 entites, 10 relations
+2026-01-11 16:46:28,288 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 16:46:28,290 - lightrag - INFO - Raw search results: 26 entities, 22 relations, 5 vector chunks
+2026-01-11 16:46:28,308 - lightrag - INFO - After truncation: 26 entities, 22 relations
+2026-01-11 16:46:28,603 - lightrag - INFO - Selecting 10 from 10 entity-related chunks by vector similarity
+2026-01-11 16:46:28,608 - lightrag - INFO - Find no additional relations-related chunks from 22 relations
+2026-01-11 16:46:28,609 - lightrag - INFO - Round-robin merged chunks: 15 -> 10 (deduplicated 5)
+2026-01-11 16:46:28,620 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 16:46:28,640 - lightrag - INFO - Final context: 26 entities, 22 relations, 5 chunks
+2026-01-11 16:46:28,641 - lightrag - INFO - Final chunks S+F/O: E4/1 E6/2 E8/3 E1/4 E5/5
+2026-01-11 16:46:28,722 - uvicorn.access - INFO - 127.0.0.1:53706 - "POST /query/data HTTP/1.1" 200
+2026-01-11 16:54:35,359 - uvicorn.access - INFO - 127.0.0.1:63574 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:54:35,480 - uvicorn.access - INFO - 127.0.0.1:63574 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 16:58:26,343 - uvicorn.access - INFO - 127.0.0.1:59186 - "GET /docs HTTP/1.1" 200
+2026-01-11 16:58:26,456 - uvicorn.access - INFO - 127.0.0.1:59186 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:00:24,563 - uvicorn.access - INFO - 127.0.0.1:54208 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 17:05:50,154 - uvicorn.access - INFO - 127.0.0.1:63974 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 17:07:41,157 - uvicorn.access - INFO - 127.0.0.1:60758 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:07:41,273 - uvicorn.access - INFO - 127.0.0.1:60758 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:07:45,215 - uvicorn.access - INFO - 127.0.0.1:60758 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:07:45,309 - uvicorn.access - INFO - 127.0.0.1:60758 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:09:04,177 - uvicorn.access - INFO - 127.0.0.1:59378 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 17:09:05,170 - uvicorn.access - INFO - 127.0.0.1:56236 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 17:10:38,770 - uvicorn.access - INFO - 127.0.0.1:49357 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:10:48,798 - uvicorn.access - INFO - 127.0.0.1:58500 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:12:01,518 - uvicorn.access - INFO - 127.0.0.1:51828 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:12:03,534 - uvicorn.access - INFO - 127.0.0.1:51828 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:12:04,178 - uvicorn.access - INFO - 127.0.0.1:51828 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:12:15,484 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-11 17:12:15,484 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-11 17:12:19,868 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-11 17:12:19,869 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-11 17:12:19,872 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-11 17:12:19,873 - lightrag - INFO - Reranking is disabled
+2026-01-11 17:12:22,117 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-11 17:12:28,743 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
+2026-01-11 17:12:30,321 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-11 17:12:30,322 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-11 17:12:31,152 - uvicorn.error - INFO - Started server process [306104]
+2026-01-11 17:12:31,154 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-11 17:12:31,167 - lightrag - INFO - [] Process 306104 KV load full_docs with 20 records
+2026-01-11 17:12:31,177 - lightrag - INFO - [] Process 306104 KV load text_chunks with 83 records
+2026-01-11 17:12:31,180 - lightrag - INFO - [] Process 306104 KV load full_entities with 20 records
+2026-01-11 17:12:31,188 - lightrag - INFO - [] Process 306104 KV load full_relations with 20 records
+2026-01-11 17:12:31,198 - lightrag - INFO - [] Process 306104 KV load entity_chunks with 1587 records
+2026-01-11 17:12:31,212 - lightrag - INFO - [] Process 306104 KV load relation_chunks with 1573 records
+2026-01-11 17:12:31,399 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-11 17:12:31,470 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-11 17:12:31,577 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-11 17:12:31,614 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-11 17:12:31,685 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-11 17:12:31,793 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-11 17:12:31,829 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-11 17:12:31,903 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-11 17:12:32,013 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-11 17:12:32,087 - lightrag - INFO - [] Process 306104 KV load llm_response_cache with 183 records
+2026-01-11 17:12:32,091 - lightrag - INFO - [] Process 306104 doc status load doc_status with 20 records
+2026-01-11 17:12:32,093 - uvicorn.error - INFO - Application startup complete.
+2026-01-11 17:12:32,097 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-11 17:12:33,637 - uvicorn.access - INFO - 127.0.0.1:53915 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:17:52,540 - uvicorn.access - INFO - 127.0.0.1:62553 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:18:49,906 - uvicorn.access - INFO - 127.0.0.1:60838 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:29:36,664 - uvicorn.access - INFO - 127.0.0.1:50196 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:29:43,979 - uvicorn.access - INFO - 127.0.0.1:56735 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:30:59,162 - lightrag - INFO - OpenAI LLM Options: {}
+2026-01-11 17:30:59,164 - lightrag - INFO - Ollama Embedding Options: {}
+2026-01-11 17:31:01,701 - lightrag - INFO - Embedding config: binding=ollama model=qwen3-embedding:0.6b embedding_dim=1024 max_token_size=8192
+2026-01-11 17:31:01,703 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=1024, has_param=True, binding=ollama)
+2026-01-11 17:31:01,703 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-01-11 17:31:01,704 - lightrag - INFO - Reranking is disabled
+2026-01-11 17:31:02,168 - lightrag - INFO - Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
+2026-01-11 17:31:03,028 - lightrag - INFO - [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
+2026-01-11 17:31:03,398 - lightrag - INFO - RAG-Anything processor created successfully
+2026-01-11 17:31:03,399 - lightrag - INFO - RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
+2026-01-11 17:31:03,558 - uvicorn.error - INFO - Started server process [958340]
+2026-01-11 17:31:03,559 - uvicorn.error - INFO - Waiting for application startup.
+2026-01-11 17:31:03,563 - lightrag - INFO - [] Process 958340 KV load full_docs with 20 records
+2026-01-11 17:31:03,566 - lightrag - INFO - [] Process 958340 KV load text_chunks with 83 records
+2026-01-11 17:31:03,567 - lightrag - INFO - [] Process 958340 KV load full_entities with 20 records
+2026-01-11 17:31:03,569 - lightrag - INFO - [] Process 958340 KV load full_relations with 20 records
+2026-01-11 17:31:03,574 - lightrag - INFO - [] Process 958340 KV load entity_chunks with 1587 records
+2026-01-11 17:31:03,580 - lightrag - INFO - [] Process 958340 KV load relation_chunks with 1573 records
+2026-01-11 17:31:03,740 - lightrag - INFO - [] VectorDB collection 'entities' exists check: True
+2026-01-11 17:31:03,812 - lightrag - INFO - [] VectorDB Collection 'entities' compatibility validation passed
+2026-01-11 17:31:03,934 - lightrag - INFO - [] Milvus collection 'entities' initialized successfully
+2026-01-11 17:31:03,971 - lightrag - INFO - [] VectorDB collection 'relationships' exists check: True
+2026-01-11 17:31:04,046 - lightrag - INFO - [] VectorDB Collection 'relationships' compatibility validation passed
+2026-01-11 17:31:04,156 - lightrag - INFO - [] Milvus collection 'relationships' initialized successfully
+2026-01-11 17:31:04,196 - lightrag - INFO - [] VectorDB collection 'chunks' exists check: True
+2026-01-11 17:31:04,269 - lightrag - INFO - [] VectorDB Collection 'chunks' compatibility validation passed
+2026-01-11 17:31:04,380 - lightrag - INFO - [] Milvus collection 'chunks' initialized successfully
+2026-01-11 17:31:04,421 - lightrag - INFO - [] Process 958340 KV load llm_response_cache with 183 records
+2026-01-11 17:31:04,423 - lightrag - INFO - [] Process 958340 doc status load doc_status with 20 records
+2026-01-11 17:31:04,425 - uvicorn.error - INFO - Application startup complete.
+2026-01-11 17:31:04,426 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
+2026-01-11 17:31:04,799 - uvicorn.access - INFO - 127.0.0.1:54407 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:31:05,986 - uvicorn.access - INFO - 127.0.0.1:63297 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:31:06,248 - uvicorn.access - INFO - 127.0.0.1:64322 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:31:06,634 - uvicorn.access - INFO - 127.0.0.1:64322 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:31:30,657 - uvicorn.access - INFO - 127.0.0.1:54214 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:31:30,772 - uvicorn.access - INFO - 127.0.0.1:54214 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:33:01,160 - uvicorn.access - INFO - 127.0.0.1:53425 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:33:01,293 - uvicorn.access - INFO - 127.0.0.1:53425 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:48:46,205 - uvicorn.access - INFO - 127.0.0.1:50810 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:48:48,041 - uvicorn.access - INFO - 127.0.0.1:50810 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 17:48:49,883 - uvicorn.access - INFO - 127.0.0.1:50810 - "GET /docs HTTP/1.1" 200
+2026-01-11 17:48:50,626 - uvicorn.access - INFO - 127.0.0.1:50810 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:06:26,326 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET / HTTP/1.1" 307
+2026-01-11 18:06:26,337 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /webui HTTP/1.1" 307
+2026-01-11 18:06:27,337 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /auth-status HTTP/1.1" 200
+2026-01-11 18:06:27,834 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:06:28,503 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /openapi.json HTTP/1.1" 200

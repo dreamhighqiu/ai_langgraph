@@ -2,6 +2,7 @@
 知识库服务层
 """
 import logging
+import os
 import re
 from datetime import datetime
 from typing import Optional, Dict, Any, List, Tuple
@@ -223,6 +224,8 @@ class KnowledgeService:
         
         if knowledge_update.description is not None:
             update_data['description'] = knowledge_update.description
+        if knowledge_update.query_mode:
+            update_data['query_mode'] = knowledge_update.query_mode
         if knowledge_update.status:
             update_data['status'] = knowledge_update.status
         if knowledge_update.remark is not None:
@@ -405,6 +408,44 @@ class KnowledgeService:
         # 读取文件内容
         content = await file.read()
         file_size = len(content)
+
+        upload_content = content
+        upload_content_type = file.content_type or 'application/octet-stream'
+        filename = file.filename or ''
+        ext = os.path.splitext(filename)[1].lower()
+
+        # MinIO 直链预览时，浏览器通常按 UTF-8 渲染；Windows 本地 txt 常见为 GBK/ANSI，容易出现乱码
+        is_text_file = upload_content_type.startswith('text/') or ext in {
+            '.txt',
+            '.md',
+            '.csv',
+            '.json',
+            '.log',
+            '.yaml',
+            '.yml',
+        }
+        if is_text_file and upload_content:
+            decoded_text = None
+            for enc in ('utf-8', 'utf-8-sig', 'gb18030', 'gbk'):
+                try:
+                    decoded_text = upload_content.decode(enc)
+                    break
+                except UnicodeDecodeError:
+                    continue
+
+            if decoded_text is not None:
+                upload_content = decoded_text.encode('utf-8')
+                file_size = len(upload_content)
+
+                base_type = (upload_content_type or '').split(';', 1)[0].strip()
+                if base_type.startswith('text/'):
+                    upload_content_type = f'{base_type}; charset=utf-8'
+                elif ext == '.md':
+                    upload_content_type = 'text/markdown; charset=utf-8'
+                elif ext == '.json':
+                    upload_content_type = 'application/json; charset=utf-8'
+                else:
+                    upload_content_type = 'text/plain; charset=utf-8'
         
         # 上传到 MinIO
         minio_client = MinioClientManager.get_client()
@@ -413,9 +454,9 @@ class KnowledgeService:
         # MinIOClient.upload_file 方法签名: upload_file(file_content: bytes, object_name: str, content_type: str)
         # 返回: (success: bool, file_path: str) - file_path 包含完整路径（minio://bucket/path 或 local://bucket/path）
         success, file_path = minio_client.upload_file(
-            file_content=content,
+            file_content=upload_content,
             object_name=object_name,
-            content_type=file.content_type or 'application/octet-stream'
+            content_type=upload_content_type
         )
         
         if not success:
@@ -745,4 +786,3 @@ class KnowledgeService:
         logger.info(f'查询成功: {knowledge_id}, workspace: {workspace}')
         
         return result
-

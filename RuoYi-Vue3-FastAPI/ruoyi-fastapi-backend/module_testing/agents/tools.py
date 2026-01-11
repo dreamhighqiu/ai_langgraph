@@ -1141,11 +1141,24 @@ async def save_requirement_analysis_tool(
                 functional_req_data["effort_estimation"] = effort_estimation
         
         # 处理其他列表字段
-        processed_user_stories = json.dumps(user_stories, ensure_ascii=False) if user_stories else None
+        # 将 AI 扩展内容并入 functional_requirements(JSON)，避免依赖不存在的列
+        if user_stories:
+            functional_req_data["user_stories"] = user_stories
+        if risks:
+            functional_req_data["risks"] = risks
+        if recommendations:
+            functional_req_data["recommendations"] = recommendations
+        if any(v is not None for v in [quality_completeness, quality_clarity, quality_consistency, quality_testability, quality_overall]):
+            functional_req_data["quality_scores"] = {
+                "completeness": quality_completeness,
+                "clarity": quality_clarity,
+                "consistency": quality_consistency,
+                "testability": quality_testability,
+                "overall": quality_overall,
+            }
+
         processed_acceptance_criteria = json.dumps(acceptance_criteria, ensure_ascii=False) if acceptance_criteria else None
         processed_dependencies = json.dumps(dependencies, ensure_ascii=False) if dependencies else None
-        processed_risks = json.dumps(risks, ensure_ascii=False) if risks else None
-        processed_recommendations = json.dumps(recommendations, ensure_ascii=False) if recommendations else None
         
         # 构建 VO 对象
         requirement_vo = RequirementAnalysisVO(
@@ -1175,34 +1188,14 @@ async def save_requirement_analysis_tool(
                 )
                 
                 # 直接更新额外字段（user_stories, risks, recommendations等）
-                from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDAO
-                dao = RequirementAnalysisDAO()
+                from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDao
+                dao = RequirementAnalysisDao()
                 requirement_do = await dao.select_by_id(db, requirement_analysis_id)
                 if requirement_do:
-                    if processed_user_stories:
-                        requirement_do.user_stories = processed_user_stories
-                    if processed_risks:
-                        requirement_do.risks = processed_risks
-                    if processed_recommendations:
-                        requirement_do.recommendations = processed_recommendations
-                    if quality_completeness is not None:
-                        requirement_do.quality_completeness = quality_completeness
-                    if quality_clarity is not None:
-                        requirement_do.quality_clarity = quality_clarity
-                    if quality_consistency is not None:
-                        requirement_do.quality_consistency = quality_consistency
-                    if quality_testability is not None:
-                        requirement_do.quality_testability = quality_testability
-                    if quality_overall is not None:
-                        requirement_do.quality_overall = quality_overall
                     if rag_context:
                         requirement_do.rag_context = rag_context
                     if use_rag is not None:
                         requirement_do.use_rag = use_rag
-                    if mindmap_data:
-                        requirement_do.mindmap_data = json.dumps(mindmap_data, ensure_ascii=False)
-                    if mindmap_url:
-                        requirement_do.mindmap_url = mindmap_url
                     if tags:
                         requirement_do.tags = ','.join(tags) if isinstance(tags, list) else str(tags)
                     await dao.update(db, requirement_do)
@@ -1239,34 +1232,14 @@ async def save_requirement_analysis_tool(
                 )
                 
                 # 直接更新额外字段
-                from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDAO
-                dao = RequirementAnalysisDAO()
+                from module_testing.dao.requirement_analysis_dao import RequirementAnalysisDao
+                dao = RequirementAnalysisDao()
                 requirement_do = await dao.select_by_id(db, result.analysis_id)
                 if requirement_do:
-                    if processed_user_stories:
-                        requirement_do.user_stories = processed_user_stories
-                    if processed_risks:
-                        requirement_do.risks = processed_risks
-                    if processed_recommendations:
-                        requirement_do.recommendations = processed_recommendations
-                    if quality_completeness is not None:
-                        requirement_do.quality_completeness = quality_completeness
-                    if quality_clarity is not None:
-                        requirement_do.quality_clarity = quality_clarity
-                    if quality_consistency is not None:
-                        requirement_do.quality_consistency = quality_consistency
-                    if quality_testability is not None:
-                        requirement_do.quality_testability = quality_testability
-                    if quality_overall is not None:
-                        requirement_do.quality_overall = quality_overall
                     if rag_context:
                         requirement_do.rag_context = rag_context
                     if use_rag is not None:
                         requirement_do.use_rag = use_rag
-                    if mindmap_data:
-                        requirement_do.mindmap_data = json.dumps(mindmap_data, ensure_ascii=False)
-                    if mindmap_url:
-                        requirement_do.mindmap_url = mindmap_url
                     if tags:
                         requirement_do.tags = ','.join(tags) if isinstance(tags, list) else str(tags)
                     await dao.update(db, requirement_do)
@@ -1685,6 +1658,7 @@ async def generate_requirement_analysis_report_tool(
             )
             
             if report_url:
+                await db.commit()
                 logger.info(f"需求分析报告生成成功: {requirement_analysis_id}, URL: {report_url}")
                 return {
                     "success": True,

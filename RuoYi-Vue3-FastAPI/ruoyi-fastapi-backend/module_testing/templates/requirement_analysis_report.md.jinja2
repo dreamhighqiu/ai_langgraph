@@ -2,9 +2,12 @@
 
 ## 基本信息
 
-- **分析ID**: {{ analysis.analysis_id }}
-- **分析名称**: {{ analysis.analysis_name }}
+- **需求ID**: {{ analysis.requirement_id }}
+- **需求标识**: {{ analysis.requirement_identifier or '未生成' }}
+- **需求名称**: {{ analysis.requirement_name }}
 - **项目ID**: {{ analysis.project_id }}
+- **需求类型**: {{ analysis.requirement_type or 'functional' }}
+- **优先级**: {{ analysis.priority or 'medium' }}
 - **状态**: {{ analysis.status or 'draft' }}
 - **创建时间**: {{ analysis.create_time.strftime('%Y-%m-%d %H:%M:%S') if analysis.create_time else '未知' }}
 - **创建者**: {{ analysis.create_by or '未知' }}
@@ -14,9 +17,9 @@
 
 ---
 
-## 需求概述
+## 需求描述
 
-{{ analysis.executive_summary or '暂无概述' }}
+{{ analysis.description or '暂无描述' }}
 
 ---
 
@@ -173,17 +176,46 @@
 
 ## 质量评分
 
-{% if analysis.quality_overall is not none %}
-- **完整性**: {{ analysis.quality_completeness or 0 }}/100
-- **清晰度**: {{ analysis.quality_clarity or 0 }}/100
-- **一致性**: {{ analysis.quality_consistency or 0 }}/100
-- **可测试性**: {{ analysis.quality_testability or 0 }}/100
-- **总体评分**: {{ analysis.quality_overall }}/100
+{% if functional_requirements is mapping and functional_requirements.get('quality_scores') %}
+{% set qs = functional_requirements.get('quality_scores') %}
+- **完整性**: {{ qs.get('completeness', 0) }}/100
+- **清晰度**: {{ qs.get('clarity', 0) }}/100
+- **一致性**: {{ qs.get('consistency', 0) }}/100
+- **可测试性**: {{ qs.get('testability', 0) }}/100
+- **总体评分**: {{ qs.get('overall', 0) }}/100
 {% else %}
 暂无质量评分
 {% endif %}
 
 ---
+
+{% if priority_analysis %}
+## 优先级分析
+
+{% if priority_analysis is mapping %}
+{% for key, value in priority_analysis.items() %}
+- **{{ key }}**: {{ value }}
+{% endfor %}
+{% else %}
+{{ priority_analysis }}
+{% endif %}
+
+---
+{% endif %}
+
+{% if effort_estimation %}
+## 工作量评估
+
+{% if effort_estimation is mapping %}
+{% for key, value in effort_estimation.items() %}
+- **{{ key }}**: {{ value }}
+{% endfor %}
+{% else %}
+{{ effort_estimation }}
+{% endif %}
+
+---
+{% endif %}
 
 {% if analysis.use_rag %}
 ## RAG检索信息

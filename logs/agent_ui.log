@@ -9,8 +9,9 @@
  ✓ Starting...
  ✓ Ready in 5.5s
  ○ Compiling / ...
- ✓ Compiled / in 18.7s
- GET / 200 in 3421ms
- GET / 200 in 569ms
- GET / 200 in 547ms
- GET / 200 in 397ms
+ ✓ Compiled / in 19.3s
+ GET / 200 in 3160ms
+ GET / 200 in 445ms
+ GET / 200 in 461ms
+ GET / 200 in 536ms
+ GET / 200 in 626ms

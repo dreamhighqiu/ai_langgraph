@@ -53,18 +53,74 @@
               <el-icon><Close /></el-icon>
             </el-button>
           </div>
+          
+          <!-- 状态筛选 -->
+          <div class="thread-filters">
+            <el-select v-model="threadStatusFilter" placeholder="筛选状态" size="small" style="width: 100%">
+              <el-option label="全部对话" value="all">
+                <span class="filter-option">全部对话</span>
+              </el-option>
+              <el-option label="进行中" value="busy">
+                <span class="filter-option">
+                  <span class="status-dot busy"></span>
+                  进行中
+                </span>
+              </el-option>
+              <el-option label="已完成" value="idle">
+                <span class="filter-option">
+                  <span class="status-dot idle"></span>
+                  已完成
+                </span>
+              </el-option>
+              <el-option label="需要关注" value="interrupted">
+                <span class="filter-option">
+                  <span class="status-dot interrupted"></span>
+                  需要关注
+                  <el-badge v-if="interruptedCount > 0" :value="interruptedCount" class="filter-badge" />
+                </span>
+              </el-option>
+              <el-option label="错误" value="error">
+                <span class="filter-option">
+                  <span class="status-dot error"></span>
+                  错误
+                </span>
+              </el-option>
+            </el-select>
+          </div>
+          
           <div class="thread-list">
             <div
-              v-for="thread in threadList"
+              v-for="thread in filteredThreadList"
               :key="thread.id"
               :class="['thread-item', { active: thread.id === chat.threadId.value }]"
               @click="handleSelectThread(thread)"
             >
-              <div class="thread-title">{{ thread.title || '新对话' }}</div>
-              <div class="thread-time">{{ formatTime(thread.updatedAt) }}</div>
+              <div class="thread-header">
+                <span :class="['status-indicator', thread.status]"></span>
+                <div class="thread-title">{{ thread.title || '新对话' }}</div>
+                <el-dropdown trigger="click" @command="(cmd) => handleThreadAction(cmd, thread)">
+                  <el-button text size="small" class="thread-menu">
+                    <el-icon><MoreFilled /></el-icon>
+                  </el-button>
+                  <template #dropdown>
+                    <el-dropdown-menu>
+                      <el-dropdown-item command="delete">
+                        <el-icon><Delete /></el-icon>
+                        删除
+                      </el-dropdown-item>
+                    </el-dropdown-menu>
+                  </template>
+                </el-dropdown>
+              </div>
+              <div class="thread-meta">
+                <span class="thread-time">{{ formatThreadTime(thread.updatedAt) }}</span>
+                <el-tag v-if="thread.status" :type="getStatusTagType(thread.status)" size="small">
+                  {{ getStatusLabel(thread.status) }}
+                </el-tag>
+              </div>
               <el-badge v-if="thread.hasInterrupt" is-dot class="interrupt-badge" />
             </div>
-            <el-empty v-if="!threadList.length" description="暂无历史对话" :image-size="60" />
+            <el-empty v-if="!filteredThreadList.length" description="暂无对话" :image-size="60" />
           </div>
         </div>
 
@@ -183,6 +239,18 @@
 
           <!-- 输入区域 -->
           <div class="input-container">
+            <!-- 已上传文件预览 -->
+            <div v-if="uploadedFiles.length > 0" class="uploaded-files-preview">
+              <div v-for="(file, index) in uploadedFiles" :key="index" class="uploaded-file-item">
+                <el-icon class="file-icon"><Document /></el-icon>
+                <span class="file-name">{{ file.name }}</span>
+                <span class="file-size">{{ formatFileSize(file.size) }}</span>
+                <el-button text size="small" @click="removeFile(index)" class="remove-file">
+                  <el-icon><Close /></el-icon>
+                </el-button>
+              </div>
+            </div>
+            
             <el-input
               v-model="inputMessage"
               type="textarea"
@@ -194,7 +262,69 @@
             />
             <div class="input-actions">
               <div class="input-tips">
-                <el-checkbox v-model="useRag" size="small">使用知识库增强</el-checkbox>
+                <!-- 文件上传按钮 - 优化版 -->
+                <el-upload
+                  ref="uploadRef"
+                  :auto-upload="false"
+                  :show-file-list="false"
+                  :on-change="handleFileChange"
+                  :accept="acceptedFileTypes"
+                  multiple
+                  class="file-upload-btn"
+                >
+                  <el-button text size="small" class="upload-trigger">
+                    <el-icon><Paperclip /></el-icon>
+                    <span>上传文件</span>
+                  </el-button>
+                </el-upload>
+                
+                <!-- RAG知识库选择 - 优化版 -->
+                <el-select 
+                  v-model="selectedKnowledgeBase" 
+                  placeholder="选择知识库" 
+                  size="small" 
+                  clearable
+                  filterable
+                  :loading="knowledgeBasesLoading"
+                  class="knowledge-base-select"
+                >
+                  <template #prefix>
+                    <el-icon><FolderOpened /></el-icon>
+                  </template>
+                  <el-option
+                    v-for="kb in knowledgeBases"
+                    :key="kb.id"
+                    :label="kb.name"
+                    :value="kb.id"
+                    class="knowledge-base-option"
+                  >
+                    <div class="kb-option-content">
+                      <div class="kb-option-header">
+                        <el-icon class="kb-icon"><Collection /></el-icon>
+                        <span class="kb-name">{{ kb.name }}</span>
+                        <el-tag :type="getQueryModeTagType(kb.queryMode)" size="small">
+                          {{ kb.queryMode || 'mix' }}
+                        </el-tag>
+                      </div>
+                      <div class="kb-option-footer">
+                        <span class="kb-project">{{ kb.projectName || '未知项目' }}</span>
+                        <span class="kb-stats">
+                          <el-icon><Document /></el-icon>
+                          {{ kb.docCount }} 文档
+                        </span>
+                      </div>
+                    </div>
+                  </el-option>
+                  <template #empty>
+                    <div class="kb-empty">
+                      <el-icon :size="32"><FolderDelete /></el-icon>
+                      <p>暂无可用知识库</p>
+                      <el-button text type="primary" size="small" @click="goToKnowledgeManagement">
+                        去创建知识库
+                      </el-button>
+                    </div>
+                  </template>
+                </el-select>
               </div>
               <div class="input-buttons">
                 <el-button
@@ -210,7 +340,7 @@
                   type="primary"
                   :icon="Promotion"
                   @click="handleSend"
-                  :disabled="!inputMessage.trim()"
+                  :disabled="!inputMessage.trim() && uploadedFiles.length === 0"
                 >
                   发送
                 </el-button>
@@ -233,10 +363,11 @@
 
 <script setup>
 import { ref, computed, watch, nextTick, onMounted } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { 
   ChatDotRound, User, MagicStick, Edit, Promotion, VideoPause, 
-  Operation, Warning, List, Close, Document, Check, Loading, Clock
+  Operation, Warning, List, Close, Document, Check, Loading, Clock,
+  Paperclip, Delete, MoreFilled, FolderOpened, Collection, FolderDelete
 } from '@element-plus/icons-vue'
 import { marked } from 'marked'
 import { useLangGraphSDK } from '@/composables/useLangGraphSDK'
@@ -322,6 +453,54 @@ const currentFile = ref({ path: '', content: '' })
 const threadList = ref([])
 const initialPromptSent = ref(false)
 
+// 新增：文件上传相关
+const uploadedFiles = ref([])
+const uploadRef = ref(null)
+const acceptedFileTypes = '.pdf,.doc,.docx,.txt,.md,.png,.jpg,.jpeg,.gif,.xlsx,.xls,.csv'
+
+// 新增：知识库选择（真实数据）
+const selectedKnowledgeBase = ref(null)
+const knowledgeBases = ref([])
+const knowledgeBasesLoading = ref(false)
+
+// 加载真实的知识库列表
+async function loadKnowledgeBases() {
+  knowledgeBasesLoading.value = true
+  try {
+    // 导入knowledge API
+    const { listKnowledge } = await import('@/api/testing/knowledge')
+    const response = await listKnowledge({
+      pageNum: 1,
+      pageSize: 100,  // 获取所有启用的知识库
+      status: '0',  // 只获取启用的
+      projectId: props.projectId  // 如果有项目ID限制
+    })
+    
+    knowledgeBases.value = (response.rows || []).map(kb => ({
+      id: kb.knowledge_id,
+      name: kb.knowledge_name,
+      docCount: kb.file_count || 0,
+      workspace: kb.collection_name,  // LightRAG workspace名称
+      projectId: kb.project_id,
+      projectName: kb.project_name,
+      queryMode: kb.query_mode || 'mix'
+    }))
+    
+    console.log('知识库列表加载成功:', knowledgeBases.value.length, '个知识库')
+  } catch (error) {
+    console.error('加载知识库列表失败:', error)
+    ElMessage.warning('加载知识库列表失败，将无法使用RAG检索功能')
+  } finally {
+    knowledgeBasesLoading.value = false
+  }
+}
+
+// 新增：对话列表筛选
+const threadStatusFilter = ref('all')
+const interruptedCount = computed(() => {
+  return threadList.value.filter(t => t.status === 'interrupted').length
+})
+
 // 快捷提示
 const quickPrompts = computed(() => {
   const prompts = []
@@ -351,16 +530,136 @@ const quickPrompts = computed(() => {
 const fetchThreadList = async () => {
   try {
     const list = await chat.listThreads(20)
-    threadList.value = list
+    // 模拟添加状态信息（实际应从后端获取）
+    threadList.value = list.map(thread => ({
+      ...thread,
+      status: thread.hasInterrupt ? 'interrupted' : (thread.isActive ? 'busy' : 'idle')
+    }))
   } catch (e) {
     console.error('获取线程列表失败:', e)
+  }
+}
+
+// 筛选后的对话列表
+const filteredThreadList = computed(() => {
+  if (threadStatusFilter.value === 'all') {
+    return threadList.value
+  }
+  return threadList.value.filter(t => t.status === threadStatusFilter.value)
+})
+
+// 文件上传处理
+const handleFileChange = (file) => {
+  const maxSize = 10 * 1024 * 1024 // 10MB
+  if (file.size > maxSize) {
+    ElMessage.warning('文件大小不能超过10MB')
+    return
+  }
+  uploadedFiles.value.push(file)
+  ElMessage.success(`已添加文件: ${file.name}`)
+}
+
+// 移除文件
+const removeFile = (index) => {
+  const file = uploadedFiles.value[index]
+  uploadedFiles.value.splice(index, 1)
+  ElMessage.info(`已移除文件: ${file.name}`)
+}
+
+// 格式化文件大小
+const formatFileSize = (bytes) => {
+  if (bytes === 0) return '0 B'
+  const k = 1024
+  const sizes = ['B', 'KB', 'MB', 'GB']
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i]
+}
+
+// 对话操作
+const handleThreadAction = async (command, thread) => {
+  if (command === 'delete') {
+    try {
+      await ElMessageBox.confirm('确认删除此对话?', '警告', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      })
+      // 调用删除API
+      await chat.deleteThread(thread.id)
+      ElMessage.success('已删除对话')
+      await fetchThreadList()
+    } catch (e) {
+      if (e !== 'cancel') {
+        console.error('删除对话失败:', e)
+      }
+    }
+  }
+}
+
+// 状态标签类型
+const getStatusTagType = (status) => {
+  const map = {
+    idle: 'success',
+    busy: 'primary',
+    interrupted: 'warning',
+    error: 'danger'
+  }
+  return map[status] || 'info'
+}
+
+// 状态标签文本
+const getStatusLabel = (status) => {
+  const map = {
+    idle: '已完成',
+    busy: '进行中',
+    interrupted: '需要关注',
+    error: '错误'
+  }
+  return map[status] || status
+}
+
+// 获取查询模式标签类型
+const getQueryModeTagType = (mode) => {
+  const map = {
+    mix: 'success',
+    hybrid: 'primary',
+    local: 'warning',
+    global: 'info',
+    naive: '',
+    bypass: 'danger'
+  }
+  return map[mode] || ''
+}
+
+// 跳转到知识库管理
+const goToKnowledgeManagement = () => {
+  window.open('/#/testing/knowledge/index', '_blank')
+  visible.value = false
+}
+
+// 格式化对话时间
+const formatThreadTime = (timestamp) => {
+  if (!timestamp) return ''
+  const date = new Date(timestamp)
+  const now = new Date()
+  const diff = now.getTime() - date.getTime()
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  
+  if (days === 0) {
+    return date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })
+  } else if (days === 1) {
+    return '昨天'
+  } else if (days < 7) {
+    return `${days}天前`
+  } else {
+    return date.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' })
   }
 }
 
 // 发送消息
 const handleSend = async () => {
   const message = inputMessage.value.trim()
-  if (!message) return
+  if (!message && uploadedFiles.value.length === 0) return
   
   // 验证 projectId（对于需求分析和缺陷分析是必需的）
   if (requiresProjectId.value && !validProjectId.value) {
@@ -368,14 +667,37 @@ const handleSend = async () => {
     return
   }
   
+  // 构建消息内容
+  let messageContent = message
+  
+  // 如果有上传文件，添加文件信息
+  if (uploadedFiles.value.length > 0) {
+    const fileInfo = uploadedFiles.value.map(f => `[文件: ${f.name}]`).join('\n')
+    messageContent = `${fileInfo}\n\n${message}`
+  }
+  
+  // 如果选择了知识库，添加RAG标记
+  if (selectedKnowledgeBase.value) {
+    const kb = knowledgeBases.value.find(k => k.id === selectedKnowledgeBase.value)
+    messageContent = `[使用知识库: ${kb?.name}]\n\n${messageContent}`
+  }
+  
   inputMessage.value = ''
+  const files = [...uploadedFiles.value]
+  uploadedFiles.value = []
   
   try {
-    await chat.sendMessage(message)
+    // 发送消息（包含文件和RAG信息）
+    await chat.sendMessage(messageContent, {
+      files: files,
+      knowledgeBaseId: selectedKnowledgeBase.value
+    })
     scrollToBottom()
   } catch (err) {
     console.error('发送消息失败:', err)
     ElMessage.error(err.message || '发送消息失败，请检查项目ID是否正确')
+    // 恢复文件列表
+    uploadedFiles.value = files
   }
 }
 
@@ -519,6 +841,9 @@ const formatTime = (timestamp) => {
 // 监听打开
 watch(visible, async (val) => {
   if (val) {
+    // 加载知识库列表
+    await loadKnowledgeBases()
+    
     // 验证 projectId（对于需求分析和缺陷分析是必需的）
     if (requiresProjectId.value && !validProjectId.value) {
       ElMessage.warning('请先选择项目！需求分析和缺陷分析功能需要指定项目ID。')
@@ -662,6 +987,33 @@ watch(() => chat.messages.value.length, scrollToBottom)
         font-weight: 500;
       }
 
+      .thread-filters {
+        padding: 8px 12px;
+        border-bottom: 1px solid #ebeef5;
+        
+        .filter-option {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          
+          .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            
+            &.idle { background: #67c23a; }
+            &.busy { background: #409eff; }
+            &.interrupted { background: #e6a23c; }
+            &.error { background: #f56c6c; }
+          }
+          
+          .filter-badge {
+            margin-left: auto;
+          }
+        }
+      }
+
       .thread-list {
         flex: 1;
         overflow-y: auto;
@@ -673,21 +1025,61 @@ watch(() => chat.messages.value.length, scrollToBottom)
           cursor: pointer;
           position: relative;
           margin-bottom: 4px;
+          border: 1px solid transparent;
 
-          &:hover { background: #f5f7fa; }
-          &.active { background: #ecf5ff; border: 1px solid #409eff; }
+          &:hover { 
+            background: #f5f7fa;
+            .thread-menu {
+              opacity: 1;
+            }
+          }
+          &.active { background: #ecf5ff; border-color: #409eff; }
 
-          .thread-title {
-            font-size: 14px;
-            margin-bottom: 4px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+          .thread-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 6px;
+            
+            .status-indicator {
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              margin-top: 4px;
+              flex-shrink: 0;
+              
+              &.idle { background: #67c23a; }
+              &.busy { background: #409eff; }
+              &.interrupted { background: #e6a23c; }
+              &.error { background: #f56c6c; }
+            }
+            
+            .thread-title {
+              flex: 1;
+              font-size: 14px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              line-height: 1.4;
+            }
+            
+            .thread-menu {
+              opacity: 0;
+              transition: opacity 0.2s;
+              padding: 2px;
+            }
           }
 
-          .thread-time {
-            font-size: 12px;
-            color: #909399;
+          .thread-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 16px;
+            
+            .thread-time {
+              font-size: 12px;
+              color: #909399;
+            }
           }
 
           .interrupt-badge {
@@ -980,6 +1372,54 @@ watch(() => chat.messages.value.length, scrollToBottom)
     background: white;
     border-top: 1px solid #ebeef5;
 
+    .uploaded-files-preview {
+      margin-bottom: 12px;
+      padding: 8px;
+      background: #f5f7fa;
+      border-radius: 6px;
+      max-height: 120px;
+      overflow-y: auto;
+      
+      .uploaded-file-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 8px;
+        background: white;
+        border-radius: 4px;
+        margin-bottom: 4px;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        .file-icon {
+          color: #409eff;
+          font-size: 16px;
+        }
+        
+        .file-name {
+          flex: 1;
+          font-size: 13px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        
+        .file-size {
+          font-size: 12px;
+          color: #909399;
+        }
+        
+        .remove-file {
+          padding: 2px;
+          &:hover {
+            color: #f56c6c;
+          }
+        }
+      }
+    }
+
     .el-textarea {
       margin-bottom: 12px;
       :deep(.el-textarea__inner) { border-radius: 8px; resize: none; }
@@ -989,7 +1429,15 @@ watch(() => chat.messages.value.length, scrollToBottom)
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .input-tips { font-size: 12px; color: #909399; }
+      
+      .input-tips { 
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #909399;
+      }
+      
       .input-buttons { display: flex; gap: 8px; }
     }
   }
@@ -1017,5 +1465,193 @@ watch(() => chat.messages.value.length, scrollToBottom)
 @keyframes typing {
   0%, 80%, 100% { transform: scale(0); }
   40% { transform: scale(1); }
+}
+
+// 知识库选择器样式优化
+.knowledge-base-select {
+  width: 240px !important;
+  margin-left: 8px;
+  
+  :deep(.el-input__wrapper) {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 0 0 1px #409eff inset;
+    }
+  }
+  
+  :deep(.el-input__prefix) {
+    color: #409eff;
+  }
+}
+
+.knowledge-base-option {
+  height: auto !important;
+  padding: 0 !important;
+  
+  .kb-option-content {
+    padding: 10px 12px;
+    
+    .kb-option-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      
+      .kb-icon {
+        color: #409eff;
+        font-size: 16px;
+      }
+      
+      .kb-name {
+        flex: 1;
+        font-weight: 500;
+        font-size: 14px;
+        color: #303133;
+      }
+      
+      .el-tag {
+        font-size: 11px;
+        height: 20px;
+        line-height: 18px;
+        padding: 0 6px;
+        text-transform: uppercase;
+      }
+    }
+    
+    .kb-option-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #909399;
+      
+      .kb-project {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        
+        &:before {
+          content: '📁';
+          font-size: 12px;
+        }
+      }
+      
+      .kb-stats {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        
+        .el-icon {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  
+  &:hover .kb-option-content {
+    background: #f5f7fa;
+  }
+}
+
+.kb-empty {
+  text-align: center;
+  padding: 30px 20px;
+  
+  .el-icon {
+    color: #c0c4cc;
+    margin-bottom: 12px;
+  }
+  
+  p {
+    color: #909399;
+    font-size: 14px;
+    margin: 8px 0 16px;
+  }
+}
+
+// 文件上传按钮优化
+.file-upload-btn {
+  .upload-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #ecf5ff;
+      color: #409eff;
+    }
+    
+    .el-icon {
+      font-size: 14px;
+    }
+    
+    span {
+      font-size: 13px;
+    }
+  }
+}
+
+// 已上传文件预览优化
+.uploaded-files-preview {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #f5f7fa;
+  border-radius: 6px;
+  
+  .uploaded-file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    transition: all 0.2s ease;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .file-icon {
+      color: #409eff;
+      font-size: 16px;
+    }
+    
+    .file-name {
+      flex: 1;
+      font-size: 13px;
+      color: #303133;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .file-size {
+      font-size: 12px;
+      color: #909399;
+    }
+    
+    .remove-file {
+      padding: 4px;
+      
+      .el-icon {
+        font-size: 14px;
+        color: #f56c6c;
+      }
+      
+      &:hover .el-icon {
+        color: #f56c6c;
+      }
+    }
+  }
 }
 </style>

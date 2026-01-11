@@ -60,6 +60,12 @@ class TestKnowledge(Base):
         default='0',
         comment='状态：0正常 1停用'
     )
+    query_mode: Mapped[str] = mapped_column(
+        String(20),
+        nullable=False,
+        default='mix',
+        comment='RAG查询模式：local/global/hybrid/naive/mix/bypass'
+    )
     create_by: Mapped[Optional[str]] = mapped_column(
         String(64),
         nullable=True,

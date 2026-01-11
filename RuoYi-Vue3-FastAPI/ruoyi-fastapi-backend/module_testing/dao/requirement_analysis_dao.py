@@ -85,8 +85,11 @@ class RequirementAnalysisDao:
         if query_params.get('module'):
             conditions.append(RequirementAnalysisDO.module.like(f"%{query_params['module']}%"))
         
-        if query_params.get('created_by'):
-            conditions.append(RequirementAnalysisDO.created_by == query_params['created_by'])
+        # 兼容前端/历史参数 created_by
+        if query_params.get('create_by'):
+            conditions.append(RequirementAnalysisDO.create_by == str(query_params['create_by']))
+        elif query_params.get('created_by'):
+            conditions.append(RequirementAnalysisDO.create_by == str(query_params['created_by']))
 
         # 查询总数
         count_query = select(func.count()).select_from(RequirementAnalysisDO)
@@ -149,4 +152,3 @@ class RequirementAnalysisDao:
             )
         )
         return result.scalar() or 0
-

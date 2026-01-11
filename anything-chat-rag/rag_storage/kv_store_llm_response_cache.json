@@ -2290,5 +2290,25 @@
     "create_time": 1768050313,
     "update_time": 1768050313,
     "_id": "mix:keywords:acca23890da0389b0583e5ae58936bad"
+  },
+  "mix:keywords:182d1c8ed5a8880f6236ab6268d5e974": {
+    "return": "{\"high_level_keywords\": [\"AI\\u5065\\u5eb7\\u7ba1\\u7406\\u5e73\\u53f0\", \"\\u7b97\\u6cd5\\u5907\\u6848\", \"\\u670d\\u52a1\\u5668\\u914d\\u7f6e\", \"\\u654f\\u611f\\u8bcdAPI\", \"\\u5065\\u5eb7\\u8ba1\\u5212\", \"\\u6d4b\\u8bd5\\u7528\\u4f8b\"], \"low_level_keywords\": [\"\\u996e\\u98df\\u5efa\\u8bae\", \"\\u8fd0\\u52a8\\u5efa\\u8bae\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "AI健康管理平台 算法备案 服务器配置 敏感词API 健康计划 饮食建议 运动建议 测试用例",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768121170,
+    "update_time": 1768121170,
+    "_id": "mix:keywords:182d1c8ed5a8880f6236ab6268d5e974"
   }
 }

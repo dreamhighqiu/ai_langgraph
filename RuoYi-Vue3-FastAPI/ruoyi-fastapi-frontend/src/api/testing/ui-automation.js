@@ -1,13 +1,11 @@
 /**
- * UI自动化（Playwright）专用API
+ * UI自动化（Playwright）专用 API 封装
+ * 说明：统一走后端 `/api/testing/*` 前缀
  */
 import request from '@/utils/request'
 
-// ==================== UI自动化需求管理 ====================
+// ==================== 需求管理 ====================
 
-/**
- * 获取UI自动化需求分页列表
- */
 export function getUIRequirementList(query) {
   return request({
     url: '/api/testing/requirement/list',
@@ -19,19 +17,13 @@ export function getUIRequirementList(query) {
   })
 }
 
-/**
- * 获取UI自动化需求详情
- */
 export function getUIRequirement(id) {
   return request({
-    url: `/testing/requirement/${id}`,
+    url: `/api/testing/requirement/${id}`,
     method: 'get'
   })
 }
 
-/**
- * 新增UI自动化需求
- */
 export function addUIRequirement(data) {
   return request({
     url: '/api/testing/requirement',
@@ -43,9 +35,6 @@ export function addUIRequirement(data) {
   })
 }
 
-/**
- * 修改UI自动化需求
- */
 export function updateUIRequirement(data) {
   return request({
     url: '/api/testing/requirement',
@@ -54,53 +43,34 @@ export function updateUIRequirement(data) {
   })
 }
 
-/**
- * 删除UI自动化需求
- */
 export function delUIRequirement(ids) {
   return request({
-    url: '/api/testing/requirement',
-    method: 'delete',
-    data: { requirement_ids: ids }
+    url: `/api/testing/requirement/${ids}`,
+    method: 'delete'
   })
 }
 
-/**
- * AI生成Playwright UI自动化脚本
- */
-export function generatePlaywrightScript(requirementId, config) {
+export function generatePlaywrightScript(requirementId, options = {}) {
   return request({
-    url: `/testing/requirement/${requirementId}/generate`,
+    url: `/api/testing/requirement/generate/${requirementId}`,
     method: 'post',
     data: {
-      use_rag: config?.use_rag || false,
-      // Playwright特有配置
-      browser: config?.browser || 'chromium',  // chromium, firefox, webkit
-      headless: config?.headless !== false,    // 默认无头模式
-      viewport: config?.viewport || { width: 1280, height: 720 },
-      screenshot: config?.screenshot !== false, // 失败时截图
-      video: config?.video || false,           // 录制视频
-      slow_mo: config?.slow_mo || 0,          // 减慢执行速度(ms)
-      timeout: config?.timeout || 30000        // 操作超时(ms)
+      use_rag: options.use_rag !== false,
+      config: options.config || {}
     }
   })
 }
 
-/**
- * AI分析UI自动化需求
- */
-export function analyzeUIRequirement(requirementId) {
+export function analyzeUIRequirement(requirementId, analyzeType = 'feasibility') {
   return request({
-    url: `/testing/requirement/${requirementId}/analyze`,
-    method: 'post'
+    url: `/api/testing/requirement/analyze/${requirementId}`,
+    method: 'post',
+    data: { analyze_type: analyzeType }
   })
 }
 
-// ==================== UI自动化脚本管理 ====================
+// ==================== 脚本管理 ====================
 
-/**
- * 获取Playwright脚本列表
- */
 export function getPlaywrightScriptList(query) {
   return request({
     url: '/api/testing/script/list',
@@ -112,19 +82,13 @@ export function getPlaywrightScriptList(query) {
   })
 }
 
-/**
- * 获取Playwright脚本详情
- */
 export function getPlaywrightScript(id) {
   return request({
-    url: `/testing/script/${id}`,
+    url: `/api/testing/script/${id}`,
     method: 'get'
   })
 }
 
-/**
- * 新增Playwright脚本
- */
 export function addPlaywrightScript(data) {
   return request({
     url: '/api/testing/script',
@@ -136,9 +100,6 @@ export function addPlaywrightScript(data) {
   })
 }
 
-/**
- * 更新Playwright脚本
- */
 export function updatePlaywrightScript(data) {
   return request({
     url: '/api/testing/script',
@@ -147,43 +108,26 @@ export function updatePlaywrightScript(data) {
   })
 }
 
-/**
- * 删除Playwright脚本
- */
 export function delPlaywrightScript(ids) {
   return request({
-    url: '/api/testing/script',
-    method: 'delete',
-    data: { script_ids: ids }
+    url: `/api/testing/script/${ids}`,
+    method: 'delete'
   })
 }
 
-// ==================== Playwright脚本执行 ====================
-
-/**
- * 执行Playwright UI自动化测试
- */
-export function executePlaywrightScript(scriptId, config) {
+export function executePlaywrightScript(scriptId, config = {}) {
   return request({
-    url: `/testing/script/${scriptId}/execute`,
+    url: '/api/testing/script/execute',
     method: 'post',
     data: {
-      // Playwright执行配置
-      browser: config?.browser || 'chromium',
-      headless: config?.headless !== false,
-      viewport: config?.viewport,
-      screenshot: config?.screenshot !== false,
-      video: config?.video || false,
-      slow_mo: config?.slow_mo || 0,
-      timeout: config?.timeout || 30000,
-      env_vars: config?.env_vars || {}
+      script_id: scriptId,
+      config
     }
   })
 }
 
-/**
- * 获取Playwright执行记录列表
- */
+// ==================== 执行管理 ====================
+
 export function getPlaywrightExecutionList(query) {
   return request({
     url: '/api/testing/execution/list',
@@ -195,41 +139,30 @@ export function getPlaywrightExecutionList(query) {
   })
 }
 
-/**
- * 获取Playwright执行详情
- */
 export function getPlaywrightExecution(id) {
   return request({
-    url: `/testing/execution/${id}`,
+    url: `/api/testing/execution/${id}`,
     method: 'get'
   })
 }
 
-/**
- * 取消Playwright执行
- */
 export function cancelPlaywrightExecution(id) {
   return request({
-    url: `/testing/execution/${id}/cancel`,
-    method: 'post'
+    url: '/api/testing/execution/cancel',
+    method: 'post',
+    data: { execution_id: id }
   })
 }
 
-/**
- * 重试Playwright执行
- */
 export function retryPlaywrightExecution(id) {
   return request({
-    url: `/testing/execution/${id}/retry`,
+    url: `/api/testing/execution/${id}/retry`,
     method: 'post'
   })
 }
 
-// ==================== Playwright测试报告 ====================
+// ==================== 报告管理 ====================
 
-/**
- * 获取Playwright测试报告列表
- */
 export function getPlaywrightReportList(query) {
   return request({
     url: '/api/testing/report/list',
@@ -241,64 +174,31 @@ export function getPlaywrightReportList(query) {
   })
 }
 
-/**
- * 获取Playwright测试报告详情
- */
 export function getPlaywrightReport(id) {
   return request({
-    url: `/testing/report/${id}`,
+    url: `/api/testing/report/${id}`,
     method: 'get'
   })
 }
 
-/**
- * 获取测试截图列表
- */
-export function getTestScreenshots(reportId) {
-  return request({
-    url: `/testing/report/${reportId}/screenshots`,
-    method: 'get'
-  })
-}
-
-/**
- * 获取测试视频URL
- */
-export function getTestVideo(reportId) {
-  return request({
-    url: `/testing/report/${reportId}/video`,
-    method: 'get'
-  })
-}
-
-/**
- * 下载Playwright测试报告
- */
 export function downloadPlaywrightReport(id) {
   return request({
-    url: `/testing/report/${id}/download`,
+    url: `/api/testing/report/${id}/download`,
     method: 'get',
     responseType: 'blob'
   })
 }
 
-/**
- * 删除Playwright测试报告
- */
-export function delPlaywrightReport(ids) {
+export function delPlaywrightReport(id) {
   return request({
-    url: '/api/testing/report',
-    method: 'delete',
-    data: { report_ids: ids }
+    url: `/api/testing/report/${id}`,
+    method: 'delete'
   })
 }
 
-/**
- * 导出Playwright测试报告（HTML）
- */
-export function exportPlaywrightReportHtml(id) {
+export function generatePlaywrightHtmlReport(executionId) {
   return request({
-    url: `/testing/report/${id}/export/html`,
+    url: `/api/testing/report/generate/${executionId}`,
     method: 'post'
   })
 }

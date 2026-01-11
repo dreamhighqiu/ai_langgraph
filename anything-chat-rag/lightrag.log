@@ -7056,3 +7056,455 @@ Params: {'timeout': 180}, Got: Error code: 404 - {'error': {'code': 'ModelNotOpe
 2026-01-11 18:06:27,337 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /auth-status HTTP/1.1" 200
 2026-01-11 18:06:27,834 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /docs HTTP/1.1" 200
 2026-01-11 18:06:28,503 - uvicorn.access - INFO - 127.0.0.1:52748 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:13:38,013 - uvicorn.access - INFO - 127.0.0.1:55017 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:13:38,340 - uvicorn.access - INFO - 127.0.0.1:55017 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:14:52,849 - uvicorn.access - INFO - 127.0.0.1:63916 - "DELETE /documents/delete_all HTTP/1.1" 404
+2026-01-11 18:14:57,058 - uvicorn.access - INFO - 127.0.0.1:53017 - "DELETE /documents/delete_all HTTP/1.1" 404
+2026-01-11 18:15:16,607 - uvicorn.access - INFO - 127.0.0.1:52776 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 18:17:01,785 - uvicorn.access - INFO - 127.0.0.1:61611 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:17:02,109 - uvicorn.access - INFO - 127.0.0.1:61611 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:18:35,066 - lightrag - INFO - Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
+2026-01-11 18:18:39,854 - lightrag - INFO - Query nodes: 邱云霞 (top_k:5, cosine:0.2)
+2026-01-11 18:18:43,508 - lightrag - INFO - Local query: 5 entites, 94 relations
+2026-01-11 18:18:43,510 - lightrag - INFO - Query edges: 简历, 个人履历, 职业背景 (top_k:5, cosine:0.2)
+2026-01-11 18:18:45,956 - lightrag - INFO - Global query: 8 entites, 5 relations
+2026-01-11 18:18:46,132 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 18:18:46,133 - lightrag - INFO - Raw search results: 12 entities, 98 relations, 20 vector chunks
+2026-01-11 18:18:46,207 - lightrag - INFO - After truncation: 12 entities, 98 relations
+2026-01-11 18:18:46,423 - lightrag - INFO - Selecting 10 from 10 entity-related chunks by vector similarity
+2026-01-11 18:18:46,427 - lightrag - INFO - Find no additional relations-related chunks from 98 relations
+2026-01-11 18:18:46,428 - lightrag - INFO - Round-robin merged chunks: 30 -> 22 (deduplicated 8)
+2026-01-11 18:18:46,436 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 18:18:46,455 - lightrag - INFO - Final context: 12 entities, 98 relations, 20 chunks
+2026-01-11 18:18:46,456 - lightrag - INFO - Final chunks S+F/O: E2/1 E3/2 E3/3 E1/4 E2/5 E1/6 E2/7 C1/8 E3/8 C1/9 E4/9 C1/10 E1/10 C1/11 C1/12 C1/13 C1/14 C1/15 C1/16 C1/18
+2026-01-11 18:18:46,504 - lightrag - INFO - LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
+2026-01-11 18:19:22,862 - lightrag - INFO -  == LLM cache == saving: mix:query:578f2b1c607c77765dd23a82781d6506
+2026-01-11 18:29:54,902 - lightrag - INFO -  == LLM cache == saving: mix:keywords:ec2d9f7c2d6cb7252496b997fdee2e18
+2026-01-11 18:29:59,098 - lightrag - INFO - Query nodes: 邱云霞 (top_k:5, cosine:0.2)
+2026-01-11 18:30:01,753 - lightrag - INFO - Local query: 5 entites, 94 relations
+2026-01-11 18:30:01,756 - lightrag - INFO - Query edges: 个人信息, 个人资料查询 (top_k:5, cosine:0.2)
+2026-01-11 18:30:04,342 - lightrag - INFO - Global query: 10 entites, 5 relations
+2026-01-11 18:30:04,517 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 18:30:04,519 - lightrag - INFO - Raw search results: 15 entities, 99 relations, 20 vector chunks
+2026-01-11 18:30:04,549 - lightrag - INFO - After truncation: 15 entities, 99 relations
+2026-01-11 18:30:04,770 - lightrag - INFO - Selecting 15 from 15 entity-related chunks by vector similarity
+2026-01-11 18:30:04,773 - lightrag - INFO - Find no additional relations-related chunks from 99 relations
+2026-01-11 18:30:04,774 - lightrag - INFO - Round-robin merged chunks: 35 -> 27 (deduplicated 8)
+2026-01-11 18:30:04,787 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 18:30:04,819 - lightrag - INFO - Final context: 15 entities, 99 relations, 20 chunks
+2026-01-11 18:30:04,821 - lightrag - INFO - Final chunks S+F/O: E2/1 E2/2 E1/3 E3/4 E1/5 C1/6 E1/6 C1/7 E1/7 C1/8 E2/8 E1/9 C1/10 E2/10 C1/11 E2/11 C1/12 E4/12 C1/13 E1/13
+2026-01-11 18:30:25,992 - uvicorn.access - INFO - 127.0.0.1:57705 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:30:26,342 - uvicorn.access - INFO - 127.0.0.1:57705 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:30:38,467 - lightrag - INFO -  == LLM cache == saving: mix:query:2f83f18ea22f720771cfce242d05b01b
+2026-01-11 18:30:38,524 - uvicorn.access - INFO - 127.0.0.1:51487 - "POST /query HTTP/1.1" 200
+2026-01-11 18:33:23,059 - uvicorn.access - INFO - 127.0.0.1:51192 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 18:33:24,249 - uvicorn.access - INFO - 127.0.0.1:63487 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 18:34:17,535 - uvicorn.access - INFO - 127.0.0.1:61464 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:34:17,696 - uvicorn.access - INFO - 127.0.0.1:61464 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:34:39,032 - uvicorn.access - INFO - 127.0.0.1:57039 - "DELETE /documents/delete_document HTTP/1.1" 200
+2026-01-11 18:34:39,034 - lightrag - INFO - Deleting document 1/5: doc-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-11 18:34:39,034 - lightrag - INFO - Starting deletion process for document doc-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-11 18:34:39,035 - lightrag - INFO - Collected 2 LLM cache entries for document doc-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-11 18:34:39,044 - lightrag - INFO - Found 4 affected entities
+2026-01-11 18:34:39,047 - lightrag - INFO - Found 0 affected relations
+2026-01-11 18:34:39,355 - lightrag - INFO - Successfully deleted 1 chunks from storage
+2026-01-11 18:34:39,550 - lightrag - INFO - Successfully deleted 26 relations
+2026-01-11 18:34:39,744 - lightrag - INFO - Successfully deleted 29 entities
+2026-01-11 18:34:39,819 - lightrag - INFO - [] Writing graph with 1576 nodes, 1547 edges
+2026-01-11 18:34:40,047 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:34:40,048 - lightrag - INFO - Rebuilding knowledge from 7 cached chunk extractions (parallel processing)
+2026-01-11 18:34:40,049 - lightrag - INFO - Found 14 valid cache entries, 7 chunks with results
+2026-01-11 18:34:40,084 - lightrag - WARNING - chunk-d34f4f4096c5c994a4190c333cf5b57f: Complete delimiter can not be found in extraction result
+2026-01-11 18:34:40,112 - lightrag - INFO - Starting parallel rebuild of 4 entities and 0 relationships (async: 8)
+2026-01-11 18:34:49,020 - uvicorn.access - INFO - 127.0.0.1:55187 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:34:49,151 - uvicorn.access - INFO - 127.0.0.1:55187 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:34:49,405 - lightrag - INFO - Rebuild `入职体检结果` from 1 chunks
+2026-01-11 18:34:49,706 - lightrag - INFO - Rebuild `个人信息` from 1 chunks
+2026-01-11 18:34:53,373 - lightrag - INFO - Rebuild `邱云霞` from 6 chunks
+2026-01-11 18:34:53,954 - lightrag - INFO - Rebuild `上海科之锐人才咨询有限公司` from 1 chunks
+2026-01-11 18:34:53,955 - lightrag - INFO - KG rebuild completed: 4 entities and 0 relationships rebuilt successfully.
+2026-01-11 18:34:53,956 - lightrag - INFO - Successfully deleted 2 LLM cache entries for document doc-a4d91a61d9cca0476fb39d1c2fced927
+2026-01-11 18:34:54,082 - lightrag - INFO - [] Writing graph with 1576 nodes, 1547 edges
+2026-01-11 18:34:54,266 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:34:54,267 - lightrag - INFO - Document deleted 1/5: doc-a4d91a61d9cca0476fb39d1c2fced927[Offer Letter-邱云霞.pdf]
+2026-01-11 18:34:54,276 - lightrag - INFO - Successfully deleted enqueued file: Offer Letter-邱云霞.pdf
+2026-01-11 18:34:54,276 - lightrag - INFO - Deleting document 2/5: doc-7fa9816cdcac1c71d99ea4796d96fad8
+2026-01-11 18:34:54,277 - lightrag - INFO - Starting deletion process for document doc-7fa9816cdcac1c71d99ea4796d96fad8
+2026-01-11 18:34:54,290 - lightrag - INFO - Collected 2 LLM cache entries for document doc-7fa9816cdcac1c71d99ea4796d96fad8
+2026-01-11 18:34:54,293 - lightrag - INFO - Untouch entity: table_dbced379657976ac430d512f8f37828a
+2026-01-11 18:34:54,295 - lightrag - INFO - Untouch entity: image_ece4133402ba99e9c8b363142ca5d64e
+2026-01-11 18:34:54,295 - lightrag - INFO - Untouch entity: image_49a143438a1f198903eb692cb30044c8
+2026-01-11 18:34:54,296 - lightrag - INFO - Untouch entity: table_6b3ae5ed922b72ac23929509b2b4cb96
+2026-01-11 18:34:54,300 - lightrag - INFO - Untouch entity: image_41ebe201ebbf5fd533a42bb21f96c92f
+2026-01-11 18:34:54,301 - lightrag - INFO - Found 2 affected entities
+2026-01-11 18:34:54,309 - lightrag - INFO - Found 0 affected relations
+2026-01-11 18:34:54,452 - lightrag - INFO - Successfully deleted 1 chunks from storage
+2026-01-11 18:34:54,599 - lightrag - INFO - Successfully deleted 13 relations
+2026-01-11 18:34:54,743 - lightrag - INFO - Successfully deleted 11 entities
+2026-01-11 18:34:54,825 - lightrag - INFO - [] Writing graph with 1565 nodes, 1534 edges
+2026-01-11 18:34:54,922 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:34:54,923 - lightrag - INFO - Rebuilding knowledge from 5 cached chunk extractions (parallel processing)
+2026-01-11 18:34:54,924 - lightrag - INFO - Found 10 valid cache entries, 5 chunks with results
+2026-01-11 18:34:54,953 - lightrag - WARNING - chunk-d34f4f4096c5c994a4190c333cf5b57f: Complete delimiter can not be found in extraction result
+2026-01-11 18:34:54,966 - lightrag - INFO - Starting parallel rebuild of 2 entities and 0 relationships (async: 8)
+2026-01-11 18:34:59,874 - lightrag - INFO - Rebuild `机电工程系` from 1 chunks
+2026-01-11 18:35:03,110 - lightrag - INFO - Rebuild `邱云霞` from 5 chunks
+2026-01-11 18:35:03,111 - lightrag - INFO - KG rebuild completed: 2 entities and 0 relationships rebuilt successfully.
+2026-01-11 18:35:03,112 - lightrag - INFO - Successfully deleted 2 LLM cache entries for document doc-7fa9816cdcac1c71d99ea4796d96fad8
+2026-01-11 18:35:03,169 - lightrag - INFO - [] Writing graph with 1565 nodes, 1534 edges
+2026-01-11 18:35:03,289 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:03,290 - lightrag - INFO - Document deleted 2/5: doc-7fa9816cdcac1c71d99ea4796d96fad8[Scan_4级.pdf]
+2026-01-11 18:35:03,291 - lightrag - INFO - Successfully deleted input_dir file: Scan_4级.pdf
+2026-01-11 18:35:03,292 - lightrag - INFO - Deleting document 3/5: doc-d88fa0ead2a1278c43aaa1eefc2e62b3
+2026-01-11 18:35:03,292 - lightrag - INFO - Starting deletion process for document doc-d88fa0ead2a1278c43aaa1eefc2e62b3
+2026-01-11 18:35:03,292 - lightrag - INFO - Collected 14 LLM cache entries for document doc-d88fa0ead2a1278c43aaa1eefc2e62b3
+2026-01-11 18:35:03,310 - lightrag - INFO - Found 11 affected entities
+2026-01-11 18:35:03,314 - lightrag - INFO - Found 0 affected relations
+2026-01-11 18:35:03,464 - lightrag - INFO - Successfully deleted 7 chunks from storage
+2026-01-11 18:35:03,612 - lightrag - INFO - Successfully deleted 120 relations
+2026-01-11 18:35:03,763 - lightrag - INFO - Successfully deleted 160 entities
+2026-01-11 18:35:03,809 - lightrag - INFO - [] Writing graph with 1405 nodes, 1414 edges
+2026-01-11 18:35:03,933 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:03,934 - lightrag - INFO - Rebuilding knowledge from 12 cached chunk extractions (parallel processing)
+2026-01-11 18:35:03,935 - lightrag - INFO - Found 24 valid cache entries, 12 chunks with results
+2026-01-11 18:35:04,031 - lightrag - INFO - Starting parallel rebuild of 11 entities and 0 relationships (async: 8)
+2026-01-11 18:35:06,924 - uvicorn.access - INFO - 127.0.0.1:64755 - "DELETE /documents/delete_document HTTP/1.1" 200
+2026-01-11 18:35:13,543 - uvicorn.access - INFO - 127.0.0.1:64755 - "POST /documents/scan HTTP/1.1" 200
+2026-01-11 18:35:13,555 - lightrag - INFO - Found 7 files to index.
+2026-01-11 18:35:13,558 - uvicorn.access - INFO - 127.0.0.1:51092 - "POST /documents/scan HTTP/1.1" 200
+2026-01-11 18:35:13,566 - lightrag - INFO - Found 7 files to index.
+2026-01-11 18:35:13,567 - lightrag - WARNING - Skipping already processed file: Scan_05-01-2026_1441.pdf
+2026-01-11 18:35:15,074 - lightrag - WARNING - Skipping already processed file: Scan_05-01-2026_1441.pdf
+2026-01-11 18:35:15,078 - lightrag - WARNING - Skipping already processed file: 中国高等教育学位在线验证报告_邱云霞.pdf
+2026-01-11 18:35:15,079 - lightrag - WARNING - Skipping already processed file: 中国高等教育学位在线验证报告_邱云霞.pdf
+2026-01-11 18:35:15,120 - lightrag - INFO - Rebuild `rag.gdzky.cn` from 1 chunks
+2026-01-11 18:35:15,124 - lightrag - WARNING - Skipping already processed file: 教育部学历证书电子注册备案表_邱云霞 (1).pdf
+2026-01-11 18:35:15,125 - lightrag - WARNING - Skipping already processed file: 教育部学历证书电子注册备案表_邱云霞 (1).pdf
+2026-01-11 18:35:15,128 - lightrag - WARNING - Skipping already processed file: 教育部学籍在线验证报告_邱云霞.pdf
+2026-01-11 18:35:15,129 - lightrag - WARNING - Skipping already processed file: 教育部学籍在线验证报告_邱云霞.pdf
+2026-01-11 18:35:15,169 - lightrag - INFO - Rebuild `RAGFlow` from 1 chunks
+2026-01-11 18:35:15,170 - lightrag - WARNING - Skipping already processed file: 旅行日记2.pdf
+2026-01-11 18:35:15,172 - lightrag - WARNING - Skipping already processed file: 旅行日记2.pdf
+2026-01-11 18:35:15,173 - lightrag - WARNING - Skipping already processed file: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+2026-01-11 18:35:15,173 - lightrag - WARNING - Skipping already processed file: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
+2026-01-11 18:35:15,288 - lightrag - WARNING - Skipping already processed file: 邱云霞的简历.pdf
+2026-01-11 18:35:15,288 - lightrag - INFO - No files to process after filtering already processed files.
+2026-01-11 18:35:15,289 - lightrag - WARNING - Skipping already processed file: 邱云霞的简历.pdf
+2026-01-11 18:35:15,289 - lightrag - INFO - No files to process after filtering already processed files.
+2026-01-11 18:35:18,331 - uvicorn.access - INFO - 127.0.0.1:51092 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:35:18,373 - lightrag - INFO - Rebuild `正则表达式` from 3 chunks
+2026-01-11 18:35:18,390 - uvicorn.access - INFO - 127.0.0.1:51092 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:35:18,430 - lightrag - INFO - Rebuild `移动云` from 1 chunks
+2026-01-11 18:35:18,468 - lightrag - INFO - Rebuild `血压` from 1 chunks
+2026-01-11 18:35:18,511 - lightrag - INFO - Rebuild `aic.baixunsz.com` from 1 chunks
+2026-01-11 18:35:20,232 - lightrag - INFO - Rebuild `Git` from 1 chunks
+2026-01-11 18:35:20,277 - lightrag - INFO - Rebuild `智能体` from 2 chunks
+2026-01-11 18:35:20,315 - lightrag - INFO - Rebuild `腾讯云` from 1 chunks
+2026-01-11 18:35:20,610 - uvicorn.access - INFO - 127.0.0.1:50501 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:35:20,730 - uvicorn.access - INFO - 127.0.0.1:50501 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:35:20,969 - lightrag - INFO - Rebuild `用户` from 3 chunks
+2026-01-11 18:35:21,876 - lightrag - INFO - Rebuild `Dify` from 3 chunks
+2026-01-11 18:35:21,877 - lightrag - INFO - KG rebuild completed: 11 entities and 0 relationships rebuilt successfully.
+2026-01-11 18:35:21,878 - lightrag - INFO - Successfully deleted 14 LLM cache entries for document doc-d88fa0ead2a1278c43aaa1eefc2e62b3
+2026-01-11 18:35:21,943 - lightrag - INFO - [] Writing graph with 1405 nodes, 1414 edges
+2026-01-11 18:35:22,063 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:22,064 - lightrag - INFO - Document deleted 3/5: doc-d88fa0ead2a1278c43aaa1eefc2e62b3[文档.txt]
+2026-01-11 18:35:22,067 - lightrag - INFO - Successfully deleted enqueued file: 文档.txt
+2026-01-11 18:35:22,068 - lightrag - INFO - Deleting document 4/5: doc-f1fff04f1907ceef2945d91abc146ec6
+2026-01-11 18:35:22,068 - lightrag - INFO - Starting deletion process for document doc-f1fff04f1907ceef2945d91abc146ec6
+2026-01-11 18:35:22,068 - lightrag - INFO - Collected 6 LLM cache entries for document doc-f1fff04f1907ceef2945d91abc146ec6
+2026-01-11 18:35:22,077 - lightrag - INFO - Found 1 affected entities
+2026-01-11 18:35:22,081 - lightrag - INFO - Found 0 affected relations
+2026-01-11 18:35:22,224 - lightrag - INFO - Successfully deleted 3 chunks from storage
+2026-01-11 18:35:22,372 - lightrag - INFO - Successfully deleted 51 relations
+2026-01-11 18:35:22,521 - lightrag - INFO - Successfully deleted 62 entities
+2026-01-11 18:35:22,564 - lightrag - INFO - [] Writing graph with 1343 nodes, 1363 edges
+2026-01-11 18:35:22,644 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:22,645 - lightrag - INFO - Rebuilding knowledge from 2 cached chunk extractions (parallel processing)
+2026-01-11 18:35:22,645 - lightrag - INFO - Found 4 valid cache entries, 2 chunks with results
+2026-01-11 18:35:22,656 - lightrag - INFO - Starting parallel rebuild of 1 entities and 0 relationships (async: 8)
+2026-01-11 18:35:25,075 - lightrag - INFO - Rebuild `用户` from 2 chunks
+2026-01-11 18:35:25,076 - lightrag - INFO - KG rebuild completed: 1 entities and 0 relationships rebuilt successfully.
+2026-01-11 18:35:25,077 - lightrag - INFO - Successfully deleted 6 LLM cache entries for document doc-f1fff04f1907ceef2945d91abc146ec6
+2026-01-11 18:35:25,131 - lightrag - INFO - [] Writing graph with 1343 nodes, 1363 edges
+2026-01-11 18:35:25,238 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:25,239 - lightrag - INFO - Document deleted 4/5: doc-f1fff04f1907ceef2945d91abc146ec6[重要信息.txt]
+2026-01-11 18:35:25,244 - lightrag - INFO - Successfully deleted enqueued file: 重要信息.txt
+2026-01-11 18:35:25,245 - lightrag - INFO - Successfully deleted enqueued file: 重要信息_001.txt
+2026-01-11 18:35:25,246 - lightrag - INFO - Deleting document 5/5: doc-c81106b3f41c6870a8cc1644a1022194
+2026-01-11 18:35:25,247 - lightrag - INFO - Starting deletion process for document doc-c81106b3f41c6870a8cc1644a1022194
+2026-01-11 18:35:25,248 - lightrag - INFO - Collected 2 LLM cache entries for document doc-c81106b3f41c6870a8cc1644a1022194
+2026-01-11 18:35:25,252 - lightrag - INFO - Found 1 affected entities
+2026-01-11 18:35:25,255 - lightrag - INFO - Found 0 affected relations
+2026-01-11 18:35:25,401 - lightrag - INFO - Successfully deleted 1 chunks from storage
+2026-01-11 18:35:25,545 - lightrag - INFO - Successfully deleted 15 relations
+2026-01-11 18:35:25,686 - lightrag - INFO - Successfully deleted 16 entities
+2026-01-11 18:35:25,726 - lightrag - INFO - [] Writing graph with 1327 nodes, 1348 edges
+2026-01-11 18:35:25,833 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:25,834 - lightrag - INFO - Rebuilding knowledge from 1 cached chunk extractions (parallel processing)
+2026-01-11 18:35:25,834 - lightrag - INFO - Found 2 valid cache entries, 1 chunks with results
+2026-01-11 18:35:25,841 - lightrag - INFO - Starting parallel rebuild of 1 entities and 0 relationships (async: 8)
+2026-01-11 18:35:32,051 - lightrag - INFO - Rebuild `注意事项` from 1 chunks
+2026-01-11 18:35:32,052 - lightrag - INFO - KG rebuild completed: 1 entities and 0 relationships rebuilt successfully.
+2026-01-11 18:35:32,053 - lightrag - INFO - Successfully deleted 2 LLM cache entries for document doc-c81106b3f41c6870a8cc1644a1022194
+2026-01-11 18:35:32,180 - lightrag - INFO - [] Writing graph with 1327 nodes, 1348 edges
+2026-01-11 18:35:32,352 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:35:32,359 - lightrag - INFO - Document deleted 5/5: doc-c81106b3f41c6870a8cc1644a1022194[Scan_05-01-2026_1441.pdf]
+2026-01-11 18:35:32,363 - lightrag - INFO - Successfully deleted input_dir file: Scan_05-01-2026_1441.pdf
+2026-01-11 18:35:57,892 - uvicorn.access - INFO - 127.0.0.1:63449 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 18:35:57,900 - lightrag - INFO - Successfully extracted and enqueued file: Readme.md
+2026-01-11 18:35:57,902 - lightrag - INFO - Processing 1 document(s)
+2026-01-11 18:35:57,903 - lightrag - INFO - Extracting stage 1/1: Readme.md
+2026-01-11 18:35:57,903 - lightrag - INFO - Processing d-id: doc-a809c4d960fde13955c96ff4ec0f7078
+2026-01-11 18:35:59,182 - uvicorn.access - INFO - 127.0.0.1:53884 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 18:35:59,189 - lightrag - INFO - Successfully extracted and enqueued file: Python依赖包安装命令.txt
+2026-01-11 18:35:59,191 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-11 18:36:13,234 - uvicorn.access - INFO - 127.0.0.1:59052 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:36:13,357 - uvicorn.access - INFO - 127.0.0.1:59052 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:36:32,080 - lightrag - WARNING - low_level_keywords is empty
+2026-01-11 18:36:32,081 - lightrag - WARNING - high_level_keywords is empty
+2026-01-11 18:36:32,081 - lightrag - WARNING - Forced low_level_keywords to origin query: pip
+2026-01-11 18:36:34,193 - lightrag - INFO - Query nodes: pip (top_k:5, cosine:0.2)
+2026-01-11 18:36:36,215 - lightrag - INFO - Local query: 5 entites, 7 relations
+2026-01-11 18:36:36,563 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 18:36:36,565 - lightrag - INFO - Raw search results: 5 entities, 7 relations, 20 vector chunks
+2026-01-11 18:36:36,567 - lightrag - INFO - After truncation: 5 entities, 7 relations
+2026-01-11 18:36:36,777 - lightrag - INFO - Selecting 4 from 4 entity-related chunks by vector similarity
+2026-01-11 18:36:36,779 - lightrag - INFO - Find no additional relations-related chunks from 7 relations
+2026-01-11 18:36:36,779 - lightrag - INFO - Round-robin merged chunks: 24 -> 24 (deduplicated 0)
+2026-01-11 18:36:36,781 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 18:36:36,801 - lightrag - INFO - Final context: 5 entities, 7 relations, 20 chunks
+2026-01-11 18:36:36,802 - lightrag - INFO - Final chunks S+F/O: C1/1 E1/1 C1/2 E2/2 C1/3 E1/3 C1/4 E1/4 C1/5 C1/6 C1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14 C1/15 C1/16
+2026-01-11 18:36:39,549 - lightrag - INFO -  == LLM cache == saving: default:extract:030931e1cf7a8cb21874433b99eef79c
+2026-01-11 18:36:43,702 - uvicorn.access - INFO - 127.0.0.1:52932 - "GET /auth-status HTTP/1.1" 200
+2026-01-11 18:36:43,939 - uvicorn.access - INFO - 127.0.0.1:52932 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:36:44,407 - uvicorn.access - INFO - 127.0.0.1:52932 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:36:45,167 - lightrag - INFO -  == LLM cache == saving: mix:query:b28f88fca63aa744997a1c007a21c99b
+2026-01-11 18:36:45,225 - uvicorn.access - INFO - 127.0.0.1:58499 - "POST /query HTTP/1.1" 200
+2026-01-11 18:36:46,901 - lightrag - INFO -  == LLM cache == saving: default:extract:95ce247834e69641d0df98859ff7f806
+2026-01-11 18:36:46,903 - lightrag - INFO - Chunk 1 of 1 extracted 18 Ent + 13 Rel chunk-a809c4d960fde13955c96ff4ec0f7078
+2026-01-11 18:36:46,906 - lightrag - INFO - Merging stage 1/1: Readme.md
+2026-01-11 18:36:46,912 - lightrag - INFO - Phase 1: Processing 18 entities from doc-a809c4d960fde13955c96ff4ec0f7078 (async: 8)
+2026-01-11 18:37:18,637 - lightrag - INFO - Phase 2: Processing 13 relations from doc-a809c4d960fde13955c96ff4ec0f7078 (async: 8)
+2026-01-11 18:37:43,093 - lightrag - INFO - Phase 3: Updating final 18(18+0) entities and  13 relations from doc-a809c4d960fde13955c96ff4ec0f7078
+2026-01-11 18:37:43,094 - lightrag - INFO - Completed merging: 18 entities, 0 extra entities, 13 relations
+2026-01-11 18:37:43,151 - lightrag - INFO - [] Writing graph with 1345 nodes, 1361 edges
+2026-01-11 18:37:43,230 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:37:43,231 - lightrag - INFO - Completed processing file 1/1: Readme.md
+2026-01-11 18:37:43,231 - lightrag - INFO - Processing additional documents due to pending request
+2026-01-11 18:37:43,232 - lightrag - INFO - Processing 1 document(s)
+2026-01-11 18:37:43,232 - lightrag - INFO - Extracting stage 1/1: Python依赖包安装命令.txt
+2026-01-11 18:37:43,232 - lightrag - INFO - Processing d-id: doc-01801f933216cfe71c2b179bcba43ce7
+2026-01-11 18:37:55,172 - lightrag - INFO -  == LLM cache == saving: default:extract:13f247c842ed47e0d05659719d41c0a9
+2026-01-11 18:38:00,523 - lightrag - INFO -  == LLM cache == saving: default:extract:f95b706bd76138b125a5ffb7a819d090
+2026-01-11 18:38:00,523 - lightrag - INFO - Chunk 1 of 1 extracted 4 Ent + 3 Rel chunk-01801f933216cfe71c2b179bcba43ce7
+2026-01-11 18:38:00,524 - lightrag - INFO - Merging stage 1/1: Python依赖包安装命令.txt
+2026-01-11 18:38:00,524 - lightrag - INFO - Phase 1: Processing 4 entities from doc-01801f933216cfe71c2b179bcba43ce7 (async: 8)
+2026-01-11 18:38:00,525 - lightrag - INFO - Merged: `requirements.txt` | 1+1
+2026-01-11 18:38:06,844 - lightrag - INFO - Phase 2: Processing 3 relations from doc-01801f933216cfe71c2b179bcba43ce7 (async: 8)
+2026-01-11 18:38:13,395 - lightrag - INFO - Phase 3: Updating final 4(4+0) entities and  3 relations from doc-01801f933216cfe71c2b179bcba43ce7
+2026-01-11 18:38:13,396 - lightrag - INFO - Completed merging: 4 entities, 0 extra entities, 3 relations
+2026-01-11 18:38:13,456 - lightrag - INFO - [] Writing graph with 1348 nodes, 1364 edges
+2026-01-11 18:38:13,529 - lightrag - INFO - In memory DB persist to disk
+2026-01-11 18:38:13,529 - lightrag - INFO - Completed processing file 1/1: Python依赖包安装命令.txt
+2026-01-11 18:38:13,529 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-11 18:40:10,059 - lightrag - ERROR - Error /documents/upload: trainData.npy: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+2026-01-11 18:40:10,059 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+2026-01-11 18:40:10,060 - uvicorn.access - INFO - 127.0.0.1:61151 - "POST /documents/upload HTTP/1.1" 500
+2026-01-11 18:40:35,771 - lightrag - WARNING - low_level_keywords is empty
+2026-01-11 18:40:35,772 - lightrag - WARNING - high_level_keywords is empty
+2026-01-11 18:40:35,772 - lightrag - WARNING - Forced low_level_keywords to origin query: pip
+2026-01-11 18:40:37,443 - lightrag - INFO - Query nodes: pip (top_k:5, cosine:0.2)
+2026-01-11 18:40:38,958 - lightrag - INFO - Local query: 5 entites, 6 relations
+2026-01-11 18:40:39,307 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 18:40:39,307 - lightrag - INFO - Raw search results: 5 entities, 6 relations, 20 vector chunks
+2026-01-11 18:40:39,308 - lightrag - INFO - After truncation: 5 entities, 6 relations
+2026-01-11 18:40:39,518 - lightrag - INFO - Selecting 4 from 4 entity-related chunks by vector similarity
+2026-01-11 18:40:39,518 - lightrag - INFO - Find no additional relations-related chunks from 6 relations
+2026-01-11 18:40:39,518 - lightrag - INFO - Round-robin merged chunks: 24 -> 23 (deduplicated 1)
+2026-01-11 18:40:39,520 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 18:40:39,529 - lightrag - INFO - Final context: 5 entities, 6 relations, 20 chunks
+2026-01-11 18:40:39,529 - lightrag - INFO - Final chunks S+F/O: E2/1 C1/2 E1/2 C1/3 E1/3 C1/4 E1/4 C1/5 C1/6 C1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14 C1/15 C1/16 C1/17
+2026-01-11 18:40:39,549 - lightrag - INFO -  == LLM cache == Query cache hit, using cached response as query result
+2026-01-11 18:40:39,551 - uvicorn.access - INFO - 127.0.0.1:60345 - "POST /query HTTP/1.1" 200
+2026-01-11 18:42:38,565 - uvicorn.access - INFO - 127.0.0.1:52690 - "GET /auth-status HTTP/1.1" 200
+2026-01-11 18:42:38,733 - uvicorn.access - INFO - 127.0.0.1:52690 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:42:39,132 - uvicorn.access - INFO - 127.0.0.1:52690 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:42:42,585 - uvicorn.access - INFO - 127.0.0.1:52690 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:42:42,873 - uvicorn.access - INFO - 127.0.0.1:52690 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:43:32,440 - lightrag - INFO -  == LLM cache == saving: mix:keywords:0625ed7b0c9af5ce3216d78970d96c3e
+2026-01-11 18:43:34,284 - lightrag - INFO - Query nodes: pytest framework, test automation, unit testing, fixtures, assertions (top_k:5, cosine:0.2)
+2026-01-11 18:43:36,778 - lightrag - INFO - Local query: 5 entites, 32 relations
+2026-01-11 18:43:36,778 - lightrag - INFO - Query edges: pytest, Python testing, Software testing (top_k:5, cosine:0.2)
+2026-01-11 18:43:39,348 - lightrag - INFO - Global query: 8 entites, 5 relations
+2026-01-11 18:43:39,763 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 18:43:39,763 - lightrag - INFO - Raw search results: 12 entities, 36 relations, 20 vector chunks
+2026-01-11 18:43:39,767 - lightrag - INFO - After truncation: 12 entities, 36 relations
+2026-01-11 18:43:40,162 - lightrag - INFO - Selecting 24 from 24 entity-related chunks by vector similarity
+2026-01-11 18:43:40,163 - lightrag - INFO - Find no additional relations-related chunks from 36 relations
+2026-01-11 18:43:40,163 - lightrag - INFO - Round-robin merged chunks: 44 -> 36 (deduplicated 8)
+2026-01-11 18:43:40,169 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 18:43:40,199 - lightrag - INFO - Final context: 12 entities, 36 relations, 20 chunks
+2026-01-11 18:43:40,200 - lightrag - INFO - Final chunks S+F/O: E5/1 E2/2 E1/3 C1/4 E3/4 C1/5 E1/5 E3/6 E1/7 C1/8 E2/8 E2/9 E1/10 C1/11 E3/11 C1/12 E1/12 C1/13 E2/13 C1/14
+2026-01-11 18:44:15,468 - lightrag - INFO -  == LLM cache == saving: mix:query:35de59f1a4abd665b4d22c69c4da6a96
+2026-01-11 18:44:15,494 - uvicorn.access - INFO - 127.0.0.1:59527 - "POST /query HTTP/1.1" 200
+2026-01-11 18:50:33,625 - lightrag - INFO -  == LLM cache == saving: mix:keywords:e2f5528b0205e46908c056946ce2919e
+2026-01-11 18:50:37,719 - lightrag - INFO - Query nodes: Train, Date (top_k:5, cosine:0.2)
+2026-01-11 18:50:39,018 - lightrag - INFO - Local query: 5 entites, 0 relations
+2026-01-11 18:50:39,018 - lightrag - INFO - Query edges: Train date, Date information, Schedule (top_k:5, cosine:0.2)
+2026-01-11 18:50:40,627 - lightrag - INFO - Global query: 9 entites, 5 relations
+2026-01-11 18:50:40,831 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 18:50:40,832 - lightrag - INFO - Raw search results: 14 entities, 5 relations, 20 vector chunks
+2026-01-11 18:50:40,834 - lightrag - INFO - After truncation: 14 entities, 5 relations
+2026-01-11 18:50:41,085 - lightrag - INFO - Selecting 14 from 14 entity-related chunks by vector similarity
+2026-01-11 18:50:41,086 - lightrag - INFO - Find no additional relations-related chunks from 5 relations
+2026-01-11 18:50:41,086 - lightrag - INFO - Round-robin merged chunks: 34 -> 29 (deduplicated 5)
+2026-01-11 18:50:41,088 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 18:50:41,102 - lightrag - INFO - Final context: 14 entities, 5 relations, 20 chunks
+2026-01-11 18:50:41,102 - lightrag - INFO - Final chunks S+F/O: E1/1 E1/2 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E4/6 C1/7 E1/7 E2/8 C1/9 E1/9 C1/10 E2/10 C1/11 E1/11 C1/12 E1/12
+2026-01-11 18:50:49,330 - uvicorn.access - INFO - 127.0.0.1:63844 - "GET /docs HTTP/1.1" 200
+2026-01-11 18:50:49,476 - uvicorn.access - INFO - 127.0.0.1:63844 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 18:50:53,106 - lightrag - INFO -  == LLM cache == saving: mix:query:b52c72b6ee8686ca4e32d1f9f2bd86e7
+2026-01-11 18:50:53,122 - uvicorn.access - INFO - 127.0.0.1:63644 - "POST /query HTTP/1.1" 200
+2026-01-11 19:01:09,346 - lightrag - INFO -  == LLM cache == saving: mix:keywords:a494006655571a2bb5a61fc79a4079bd
+2026-01-11 19:01:12,281 - lightrag - INFO - Query nodes: Locomotive, Railway, Passenger train, Freight train (top_k:5, cosine:0.2)
+2026-01-11 19:01:14,231 - lightrag - INFO - Local query: 5 entites, 1 relations
+2026-01-11 19:01:14,232 - lightrag - INFO - Query edges: Transportation, Travel, Rail transport (top_k:5, cosine:0.2)
+2026-01-11 19:01:16,732 - lightrag - INFO - Global query: 10 entites, 5 relations
+2026-01-11 19:01:16,921 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 19:01:16,922 - lightrag - INFO - Raw search results: 15 entities, 6 relations, 20 vector chunks
+2026-01-11 19:01:16,927 - lightrag - INFO - After truncation: 15 entities, 6 relations
+2026-01-11 19:01:17,182 - lightrag - INFO - Selecting 14 from 14 entity-related chunks by vector similarity
+2026-01-11 19:01:17,185 - lightrag - INFO - Find no additional relations-related chunks from 6 relations
+2026-01-11 19:01:17,185 - lightrag - INFO - Round-robin merged chunks: 34 -> 30 (deduplicated 4)
+2026-01-11 19:01:17,190 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 19:01:17,219 - lightrag - INFO - Final context: 15 entities, 6 relations, 20 chunks
+2026-01-11 19:01:17,220 - lightrag - INFO - Final chunks S+F/O: E1/1 E1/2 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E2/6 C1/7 E2/7 C1/8 E1/8 E2/9 C1/10 E1/10 C1/11 E2/11 C1/12 E1/12
+2026-01-11 19:01:19,287 - uvicorn.access - INFO - 127.0.0.1:57567 - "GET /docs HTTP/1.1" 200
+2026-01-11 19:01:19,404 - uvicorn.access - INFO - 127.0.0.1:57567 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 19:01:23,973 - lightrag - INFO -  == LLM cache == saving: mix:query:a8cfd1fd73eaccf884b70fea52bcef32
+2026-01-11 19:01:23,989 - uvicorn.access - INFO - 127.0.0.1:57569 - "POST /query HTTP/1.1" 200
+2026-01-11 19:01:58,198 - lightrag - INFO -  == LLM cache == saving: mix:keywords:b8770223402ea9678349f0bb5a73b98c
+2026-01-11 19:02:00,429 - uvicorn.access - INFO - 127.0.0.1:61789 - "GET /docs HTTP/1.1" 200
+2026-01-11 19:02:00,494 - uvicorn.access - INFO - 127.0.0.1:55507 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 19:02:01,091 - lightrag - INFO - Query nodes: 训练数据, 测试数据, 归一化处理 (top_k:5, cosine:0.2)
+2026-01-11 19:02:04,517 - lightrag - INFO - Local query: 5 entites, 5 relations
+2026-01-11 19:02:04,518 - lightrag - INFO - Query edges: 数据存储, 模型训练, 数据预处理 (top_k:5, cosine:0.2)
+2026-01-11 19:02:07,248 - lightrag - INFO - Global query: 7 entites, 5 relations
+2026-01-11 19:02:07,432 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 19:02:07,433 - lightrag - INFO - Raw search results: 11 entities, 9 relations, 20 vector chunks
+2026-01-11 19:02:07,435 - lightrag - INFO - After truncation: 11 entities, 9 relations
+2026-01-11 19:02:07,617 - lightrag - INFO - Selecting 7 from 7 entity-related chunks by vector similarity
+2026-01-11 19:02:07,618 - lightrag - INFO - Find no additional relations-related chunks from 9 relations
+2026-01-11 19:02:07,620 - lightrag - INFO - Round-robin merged chunks: 27 -> 26 (deduplicated 1)
+2026-01-11 19:02:07,624 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 19:02:07,655 - lightrag - INFO - Final context: 11 entities, 9 relations, 20 chunks
+2026-01-11 19:02:07,656 - lightrag - INFO - Final chunks S+F/O: E5/1 C1/2 E3/2 C1/3 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E1/6 C1/7 E1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14
+2026-01-11 19:02:17,560 - lightrag - INFO -  == LLM cache == saving: mix:query:0b72d2592483177e711a44c404ee19ec
+2026-01-11 19:02:17,595 - uvicorn.access - INFO - 127.0.0.1:50504 - "POST /query HTTP/1.1" 200
+2026-01-11 19:02:42,775 - lightrag - INFO - Query nodes: 训练数据, 测试数据, 归一化处理 (top_k:5, cosine:0.2)
+2026-01-11 19:02:45,059 - lightrag - INFO - Local query: 5 entites, 5 relations
+2026-01-11 19:02:45,060 - lightrag - INFO - Query edges: 数据存储, 模型训练, 数据预处理 (top_k:5, cosine:0.2)
+2026-01-11 19:02:48,677 - lightrag - INFO - Global query: 7 entites, 5 relations
+2026-01-11 19:02:48,855 - lightrag - INFO - Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
+2026-01-11 19:02:48,855 - lightrag - INFO - Raw search results: 11 entities, 9 relations, 20 vector chunks
+2026-01-11 19:02:48,857 - lightrag - INFO - After truncation: 11 entities, 9 relations
+2026-01-11 19:02:49,036 - lightrag - INFO - Selecting 7 from 7 entity-related chunks by vector similarity
+2026-01-11 19:02:49,037 - lightrag - INFO - Find no additional relations-related chunks from 9 relations
+2026-01-11 19:02:49,037 - lightrag - INFO - Round-robin merged chunks: 27 -> 26 (deduplicated 1)
+2026-01-11 19:02:49,039 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 19:02:49,055 - lightrag - INFO - Final context: 11 entities, 9 relations, 20 chunks
+2026-01-11 19:02:49,056 - lightrag - INFO - Final chunks S+F/O: E5/1 C1/2 E3/2 C1/3 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E1/6 C1/7 E1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14
+2026-01-11 19:02:49,082 - lightrag - INFO -  == LLM cache == Query cache hit, using cached response as query result
+2026-01-11 19:02:49,082 - uvicorn.access - INFO - 127.0.0.1:60807 - "POST /query HTTP/1.1" 200
+2026-01-11 19:06:03,395 - uvicorn.access - INFO - 127.0.0.1:62895 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 19:06:03,398 - lightrag - INFO - Using RAG-Anything multimodal processing for: hrvFeature.xlsx
+2026-01-11 19:06:03,400 - lightrag - INFO - RAGAnything initialized with config:
+2026-01-11 19:06:03,400 - lightrag - INFO -   Working directory: ./rag_storage
+2026-01-11 19:06:03,401 - lightrag - INFO -   Parser: docling
+2026-01-11 19:06:03,401 - lightrag - INFO -   Parse method: auto
+2026-01-11 19:06:03,401 - lightrag - INFO -   Multimodal processing - Image: True, Table: True, Equation: True
+2026-01-11 19:06:03,401 - lightrag - INFO -   Max concurrent files: 1
+2026-01-11 19:06:03,401 - lightrag - INFO - RAG-Anything initialized with parser=docling, method=auto, multimodal=True
+2026-01-11 19:06:03,402 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx
+2026-01-11 19:06:03,402 - lightrag - INFO - Using docling parser with method: auto
+2026-01-11 19:06:03,403 - lightrag - INFO - Detected Office or HTML document, using parser for Office/HTML...
+2026-01-11 19:06:04,491 - uvicorn.access - INFO - 127.0.0.1:63691 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 19:06:04,491 - lightrag - INFO - Using RAG-Anything multimodal processing for: ppg_rawData.xlsx
+2026-01-11 19:06:04,544 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx
+2026-01-11 19:06:04,545 - lightrag - INFO - Using docling parser with method: auto
+2026-01-11 19:06:04,551 - lightrag - INFO - Detected Office or HTML document, using parser for Office/HTML...
+2026-01-11 19:06:11,510 - uvicorn.access - INFO - 127.0.0.1:51924 - "GET /docs HTTP/1.1" 200
+2026-01-11 19:06:11,627 - uvicorn.access - INFO - 127.0.0.1:51924 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 19:06:42,613 - uvicorn.access - INFO - 127.0.0.1:50207 - "GET /docs HTTP/1.1" 200
+2026-01-11 19:06:42,719 - uvicorn.access - INFO - 127.0.0.1:50207 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 19:06:44,482 - uvicorn.access - INFO - 127.0.0.1:50207 - "GET /docs HTTP/1.1" 200
+2026-01-11 19:06:44,589 - uvicorn.access - INFO - 127.0.0.1:50207 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 19:06:50,512 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx complete! Extracted 1 content blocks
+2026-01-11 19:06:50,518 - lightrag - INFO - Document parsed successfully: hrvFeature.xlsx, doc_id=doc-77a68dcbd899140c79ca1e36cc21d512, blocks=1
+2026-01-11 19:07:09,095 - lightrag - INFO - Parser 'docling' installation verified
+2026-01-11 19:07:09,095 - lightrag - INFO - Initializing parse cache for pre-provided LightRAG instance
+2026-01-11 19:07:09,099 - lightrag - INFO - [] Process 958340 KV load parse_cache with 16 records
+2026-01-11 19:07:09,100 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx complete! Extracted 1 content blocks
+2026-01-11 19:07:09,306 - lightrag - INFO - Multimodal processors initialized with context support
+2026-01-11 19:07:09,307 - lightrag - INFO - Available processors: ['image', 'table', 'equation', 'generic']
+2026-01-11 19:07:09,308 - lightrag - INFO - Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
+2026-01-11 19:07:09,308 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx (1 items)
+2026-01-11 19:07:09,308 - lightrag - INFO - Content separation complete:
+2026-01-11 19:07:09,308 - lightrag - INFO -   - Text content length: 0 characters
+2026-01-11 19:07:09,309 - lightrag - INFO -   - Multimodal items count: 1
+2026-01-11 19:07:09,309 - lightrag - INFO -   - Multimodal type distribution: {'table': 1}
+2026-01-11 19:07:09,309 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2026-01-11 19:07:09,310 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:09,310 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:09,310 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:09,311 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:09,311 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2026-01-11 19:07:11,426 - lightrag - INFO - Starting multimodal content processing...
+2026-01-11 19:07:11,427 - lightrag - INFO - Stored parsing result in cache: 768f76825f956e39b95e4233aa1f0e88
+2026-01-11 19:07:11,428 - lightrag - INFO - Document parsed successfully: ppg_rawData.xlsx, doc_id=doc-164685717f59d29b3b53aa5c25a959d0, blocks=1
+2026-01-11 19:07:11,429 - lightrag - INFO - Starting to process 1 multimodal content items
+2026-01-11 19:07:11,434 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2026-01-11 19:07:11,445 - lightrag - INFO - Multimodal chunk generation progress: 1/1 (100.0%)
+2026-01-11 19:07:11,446 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx (1 items)
+2026-01-11 19:07:11,447 - lightrag - INFO - Content separation complete:
+2026-01-11 19:07:11,448 - lightrag - INFO -   - Text content length: 0 characters
+2026-01-11 19:07:11,448 - lightrag - INFO -   - Multimodal items count: 1
+2026-01-11 19:07:11,448 - lightrag - INFO -   - Multimodal type distribution: {'table': 1}
+2026-01-11 19:07:11,448 - lightrag - INFO - Setting content source for context-aware multimodal processing...
+2026-01-11 19:07:11,448 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:11,448 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:11,448 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:11,448 - lightrag - INFO - Content source set with format: minerU
+2026-01-11 19:07:11,449 - lightrag - INFO - Content source set for context extraction (format: minerU)
+2026-01-11 19:07:11,449 - lightrag - INFO - Generated descriptions for 1/1 multimodal items using correct processors
+2026-01-11 19:07:11,852 - lightrag - INFO - Starting multimodal content processing...
+2026-01-11 19:07:11,964 - lightrag - INFO - Starting to process 1 multimodal content items
+2026-01-11 19:07:12,068 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable
+2026-01-11 19:07:12,495 - lightrag - INFO - Multimodal chunk generation progress: 1/1 (100.0%)
+2026-01-11 19:07:12,495 - lightrag - INFO - Generated descriptions for 1/1 multimodal items using correct processors
+2026-01-11 19:07:36,805 - uvicorn.access - INFO - 127.0.0.1:52884 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 19:07:36,813 - lightrag - INFO - Successfully extracted and enqueued file: parse_txt.py
+2026-01-11 19:07:36,816 - lightrag - INFO - Processing 1 document(s)
+2026-01-11 19:07:36,817 - lightrag - INFO - Extracting stage 1/1: parse_txt.py
+2026-01-11 19:07:36,817 - lightrag - INFO - Processing d-id: doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e
+2026-01-11 19:07:41,209 - uvicorn.access - INFO - 127.0.0.1:56417 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 19:07:41,223 - lightrag - INFO - Successfully extracted and enqueued file: predict_model.py
+2026-01-11 19:07:41,224 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-11 19:07:42,358 - uvicorn.access - INFO - 127.0.0.1:61399 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 19:07:42,442 - lightrag - INFO - Successfully extracted and enqueued file: test_5min.json
+2026-01-11 19:07:42,453 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-11 19:07:43,592 - uvicorn.access - INFO - 127.0.0.1:51893 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 19:07:43,605 - lightrag - INFO - Successfully extracted and enqueued file: test_1min.json
+2026-01-11 19:07:43,609 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-11 19:07:45,548 - uvicorn.access - INFO - 127.0.0.1:55334 - "GET /docs HTTP/1.1" 200
+2026-01-11 19:07:45,671 - uvicorn.access - INFO - 127.0.0.1:55334 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 19:09:08,175 - lightrag - ERROR - Error storing chunks to storage: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+2026-01-11 19:09:08,176 - lightrag - ERROR - Error in multimodal processing: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
+2026-01-11 19:09:08,177 - lightrag - WARNING - Falling back to individual multimodal processing
+2026-01-11 19:09:08,180 - lightrag - INFO - Processing item 1/1: table content
+2026-01-11 19:09:08,190 - lightrag - ERROR - Error generating table description: 'NoneType' object is not callable

@@ -75,6 +75,23 @@
           @click="checkProcessorStatus"
         >处理器状态</el-button>
       </el-col>
+      <el-col :span="1.5">
+        <el-dropdown trigger="click" @command="handleRagCommand">
+          <el-button type="info" plain icon="Link">
+            RAG工具<el-icon class="el-icon--right"><ArrowDown /></el-icon>
+          </el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item command="webui" icon="Monitor">
+                <span>RAG Web UI</span>
+              </el-dropdown-item>
+              <el-dropdown-item command="docs" icon="Document">
+                <span>API文档</span>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </el-col>
       <right-toolbar v-model:showSearch="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -396,22 +413,45 @@
       
       <div v-if="queryResult" class="query-result">
         <el-alert
-          :title="`查询模式: ${queryForm.mode} | 知识库: ${currentKnowledge?.knowledge_name}`"
+          :title="`查询模式: ${queryForm.mode} | 知识库: ${currentKnowledge?.knowledge_name} | 项目: ${queryResult.project_id ? 'project_' + queryResult.project_id : 'N/A'}`"
           type="info"
           :closable="false"
           show-icon
-        />
-        <div class="result-content" v-html="renderMarkdown(queryResult.answer)"></div>
+        >
+          <template #default>
+            <div style="margin-top: 8px; font-size: 12px; color: #606266;">
+              <el-icon><InfoFilled /></el-icon>
+              <span style="margin-left: 4px;">查询范围：仅在当前项目（{{ queryResult.project_id ? 'project_' + queryResult.project_id : 'N/A' }}）的知识库中检索</span>
+            </div>
+          </template>
+        </el-alert>
+        <div class="result-content" v-html="renderMarkdown(queryResult.answer || queryResult.response || '暂无答案')"></div>
         
         <el-divider content-position="left">参考文档</el-divider>
-        <el-table :data="queryResult.references" v-if="queryResult.references">
-          <el-table-column label="文档" prop="file_name" />
-          <el-table-column label="相关度" prop="relevance" width="100">
+        <el-table :data="queryResult.references || []" v-if="queryResult.references && queryResult.references.length > 0">
+          <el-table-column label="文档" width="300">
             <template #default="scope">
-              {{ (scope.row.relevance * 100).toFixed(1) }}%
+              {{ scope.row.file_name || scope.row.filename || scope.row.document || '未知文档' }}
+            </template>
+          </el-table-column>
+          <el-table-column label="相关度" width="100">
+            <template #default="scope">
+              <span v-if="scope.row.relevance !== undefined && scope.row.relevance !== null">
+                {{ (parseFloat(scope.row.relevance) * 100).toFixed(1) }}%
+              </span>
+              <span v-else-if="scope.row.score !== undefined && scope.row.score !== null">
+                {{ (parseFloat(scope.row.score) * 100).toFixed(1) }}%
+              </span>
+              <span v-else>--</span>
+            </template>
+          </el-table-column>
+          <el-table-column label="内容片段" show-overflow-tooltip>
+            <template #default="scope">
+              {{ scope.row.content || scope.row.text || scope.row.chunk || '无内容预览' }}
             </template>
           </el-table-column>
         </el-table>
+        <el-empty v-else description="无参考文档" :image-size="80" />
       </div>
       <el-empty v-else description="暂无查询结果" />
     </el-dialog>
@@ -462,6 +502,7 @@
 <script setup name="Knowledge">
 import { ref, reactive, onMounted, getCurrentInstance, nextTick } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { ArrowDown, InfoFilled, Search } from '@element-plus/icons-vue'
 import { marked } from 'marked'
 import {
   listKnowledge,
@@ -696,6 +737,16 @@ async function handleDelete(row) {
   }
 }
 
+/** 处理RAG工具下拉菜单 */
+function handleRagCommand(command) {
+  const ragBaseUrl = 'http://localhost:9621'
+  if (command === 'webui') {
+    window.open(`${ragBaseUrl}/webui/`, '_blank')
+  } else if (command === 'docs') {
+    window.open(`${ragBaseUrl}/docs`, '_blank')
+  }
+}
+
 /** 上传文档 */
 function handleUpload(row) {
   currentKnowledge.value = row
@@ -810,9 +861,12 @@ async function getFilesList() {
   filesLoading.value = true
   try {
     const response = await getFileList(filesQueryParams.knowledgeId, filesQueryParams)
-    filesList.value = response.rows
-    filesTotal.value = response.total
+    // 后端返回格式: {code: 200, data: {rows: [...], total: ...}}
+    filesList.value = response.data?.rows || []
+    filesTotal.value = response.data?.total || 0
+    console.log('文件列表加载成功:', filesList.value.length, '个文件')
   } catch (error) {
+    console.error('查询文件列表失败:', error)
     ElMessage.error('查询文件列表失败')
   } finally {
     filesLoading.value = false
@@ -871,15 +925,30 @@ async function executeQuery() {
   
   queryLoading.value = true
   try {
+    console.log('开始查询知识库:', {
+      knowledge_id: currentKnowledge.value.knowledge_id,
+      knowledge_name: currentKnowledge.value.knowledge_name,
+      collection_name: currentKnowledge.value.collection_name,
+      project_id: currentKnowledge.value.project_id,
+      query: queryForm.query,
+      mode: queryForm.mode,
+      top_k: queryForm.topK
+    })
+    
     const response = await queryKnowledge(currentKnowledge.value.knowledge_id, {
       query: queryForm.query,
       mode: queryForm.mode,
       top_k: queryForm.topK
     })
+    
+    console.log('查询响应:', response)
     queryResult.value = response.data
+    console.log('查询结果:', queryResult.value)
+    
     ElMessage.success('查询成功')
   } catch (error) {
-    ElMessage.error('查询失败: ' + error.message)
+    console.error('查询失败:', error)
+    ElMessage.error('查询失败: ' + (error.message || '未知错误'))
   } finally {
     queryLoading.value = false
   }

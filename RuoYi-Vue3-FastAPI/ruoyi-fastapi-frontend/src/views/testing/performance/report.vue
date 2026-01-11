@@ -273,7 +273,7 @@ function handleView(row) {
 }
 
 function handleDownload(row) {
-  window.open(`/dev-api/testing/report/${row.reportId || row.report_id}/download`, '_blank')
+  window.open(`/dev-api/api/testing/report/${row.reportId || row.report_id}/download`, '_blank')
 }
 
 function handleDelete(row) {

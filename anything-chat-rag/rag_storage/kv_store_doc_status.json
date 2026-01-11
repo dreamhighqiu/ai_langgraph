@@ -293,98 +293,84 @@
       "processing_end_time": 1767341702
     }
   },
-  "doc-a4d91a61d9cca0476fb39d1c2fced927": {
+  "doc-a809c4d960fde13955c96ff4ec0f7078": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-a4d91a61d9cca0476fb39d1c2fced927"
+      "chunk-a809c4d960fde13955c96ff4ec0f7078"
     ],
-    "content_summary": "录取通知书\n邱云霞女士，您好：\n恭喜您通过斑马技术服务（广州）有限公司的面试 ，我们将采用外包的形式与您正\n式签订劳动合同。\n一． 以下是本公司与您协议的录用条件：\n1、 职位：\n1） 您的任职职务： 高级软件测试工程师\n2） 工作及报道地点：广州黄埔区云升科学园B2栋6楼\n2、 合同条款：\n1） 合同期 ：3年\n2） 试用期： 6个月，试用期全额发薪\n3） 入职时间 ：2026/1/12\n3、 薪资：\n1）基本工资：税前23000元\n2）年终奖：工作满一年发放13 薪\n3）加班按照法定调休或者...",
-    "content_length": 561,
-    "created_at": "2026-01-09T09:29:31.868320+00:00",
-    "updated_at": "2026-01-09T09:32:16.573553+00:00",
-    "file_path": "Offer Letter-邱云霞.pdf",
-    "track_id": "upload_20260109_172853_9fb7f5ee",
+    "content_summary": "**文件说明**\n\n1.  /trainData：存储训练数据，主要用于训练模型以及对测试数据的归一化处理。\n\n    /model：存储情绪指数模型。\n\n    /code：存储情绪指数算法代码。\n\n    以上三个文件夹很重要，其中前两个不用做任何修改，直接 copy 就行。\n\n    /情绪手表数据：情绪手表小程序上的情绪指数数据，此数据主要用于与自研算法结果进行对比。\n\n2.  /code 下面有三个代码，(1) train_model.py 是我用于训练模型的代码，无需关注。(2) 运...",
+    "content_length": 769,
+    "created_at": "2026-01-11T10:35:57.896135+00:00",
+    "updated_at": "2026-01-11T10:37:43.095208+00:00",
+    "file_path": "Readme.md",
+    "track_id": "upload_20260111_183557_8c176116",
     "metadata": {
-      "processing_start_time": 1767950972,
-      "processing_end_time": 1767951136
+      "processing_start_time": 1768127757,
+      "processing_end_time": 1768127863
     }
   },
-  "doc-7fa9816cdcac1c71d99ea4796d96fad8": {
+  "doc-01801f933216cfe71c2b179bcba43ce7": {
     "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-68c1b1946824940414776d960a0b4d4c"
+      "chunk-01801f933216cfe71c2b179bcba43ce7"
     ],
-    "content_summary": "大学英语四级考试 成绩报告单\n\nR\n\nCET\n\n姓名：邱云霞\n\n学校：江西理工大学南昌校区\n\n院（系）：机电工程系\n\n准考证号：360450112104603\n\n身份证号：360428199008212245\n\n考试时间：\n\n2011年12月\n\n总分：429\n\n成绩单编号：112136045000321\n\n委托发布单位：全国大学英语网、六级考试委员会\n\n考委会网址：www.cet.edu.cn\n\n82\n\n学\n\n教育部高等教育司",
-    "content_length": 215,
-    "created_at": "2026-01-09T11:14:47.007118+00:00",
-    "updated_at": "2026-01-09T19:24:08+00:00",
-    "file_path": "Scan_4级.pdf",
-    "track_id": "insert_20260109_191447_50a30d8a",
+    "content_summary": "pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn",
+    "content_length": 116,
+    "created_at": "2026-01-11T10:35:59.185314+00:00",
+    "updated_at": "2026-01-11T10:38:13.396654+00:00",
+    "file_path": "Python依赖包安装命令.txt",
+    "track_id": "upload_20260111_183559_b3120a9c",
     "metadata": {
-      "processing_start_time": 1767957287,
-      "processing_end_time": 1767957381
-    },
-    "multimodal_processed": true
+      "processing_start_time": 1768127863,
+      "processing_end_time": 1768127893
+    }
   },
-  "doc-c81106b3f41c6870a8cc1644a1022194": {
-    "status": "processed",
+  "doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e": {
+    "status": "processing",
     "chunks_count": 1,
     "chunks_list": [
-      "chunk-f95fd1b8895ad34d800ea206260e0ea5"
+      "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
     ],
-    "content_summary": "? 身份证正反面复印件；\n\n? 学历、学位证书复印件；\n\n离职证明原件；\n\n? 入职体检报告电子件；\n\n? 本人任意银行卡复印件；\n\n三、 注意事项\n\n1、若您的个人信息不真实或入职体检结果不合格，公司将有权不予聘用。\n\n2、我们希望您能接受本邀请函，请您尽快确认并在2个工作日回复！\n\n预祝你在斑马技术服务公司工作顺利！\n\n签铭：邱霞\n\n日期：2026、1.5\n\nCAREERTEMO\n\nACANEERSEATHUACOPANY\n\n上海科之锐人才咨询有限公司 二〇二六年一月",
-    "content_length": 238,
-    "created_at": "2026-01-09T11:15:07.092018+00:00",
-    "updated_at": "2026-01-09T11:17:58.449415+00:00",
-    "file_path": "Scan_05-01-2026_1441.pdf",
-    "track_id": "insert_20260109_191507_40560ba6",
+    "content_summary": "# -*- coding: utf-8 -*-\r\nimport numpy as np\r\nimport pandas as pd\r\nimport scipy.signal as signal\r\nfrom predict_model import predict\r\nimport json\r\n\r\n#解析txt文件，得到PPG原始数据\r\ndef parse_txt(requestJson):\r\n    # 解析txt文件，提取data字段\r\n    ppg_data = []\r\n    timesta...",
+    "content_length": 3373,
+    "created_at": "2026-01-11T11:07:36.808320+00:00",
+    "updated_at": "2026-01-11T11:07:36.823560+00:00",
+    "file_path": "parse_txt.py",
+    "track_id": "upload_20260111_190736_224f3cf9",
     "metadata": {
-      "processing_start_time": 1767957382,
-      "processing_end_time": 1767957478
+      "processing_start_time": 1768129656
     }
   },
-  "doc-f1fff04f1907ceef2945d91abc146ec6": {
-    "status": "processed",
-    "chunks_count": 3,
-    "chunks_list": [
-      "chunk-e3c13875720cef2444bbacaa549d5b1d",
-      "chunk-ceb60f16f40b6c7d09158715156ee744",
-      "chunk-508db58a2a7942df34569046bec9d997"
-    ],
-    "content_summary": "一、算法备案 \r\nDify工作流 体验网址：\r\nhttp://aic.baixunsz.com:9080/chat/Y1Q7GDoNZhkrhQwS\r\nhttp://36.133.145.37:9080/chat/Y1Q7GDoNZhkrhQwS\r\n# 加在工作流回复的最后一行：以上内容由AI生成\r\n# 免责声明：本网页所有内容由百寻智能问答+AI 生成\r\n隐私协议（用于算法备案）：http://www.baixunsz.com/dn/aiprivacy.html\r\n隐私协议（用于建友官网）：h...",
-    "content_length": 3900,
-    "created_at": "2026-01-09T13:23:18.806997+00:00",
-    "updated_at": "2026-01-09T13:33:02.336003+00:00",
-    "file_path": "重要信息.txt",
-    "track_id": "upload_20260109_212318_a0951f17",
-    "metadata": {
-      "processing_start_time": 1767964998,
-      "processing_end_time": 1767965582
-    }
+  "doc-fba9cf55995b3864eb745c3dc9defb26": {
+    "status": "pending",
+    "content_summary": "# -*- coding: utf-8 -*-\r\nimport time\r\nimport numpy as np\r\nimport pandas as pd\r\nfrom sklearn.neighbors import KNeighborsRegressor\r\nfrom sklearn.preprocessing import StandardScaler\r\nimport joblib\r\nfrom hrvanalysis import remove_outliers\r\nfrom hrvanalys...",
+    "content_length": 9059,
+    "created_at": "2026-01-11T11:07:41.217983+00:00",
+    "updated_at": "2026-01-11T11:07:41.217983+00:00",
+    "file_path": "predict_model.py",
+    "track_id": "upload_20260111_190741_610675df",
+    "chunks_list": []
   },
-  "doc-d88fa0ead2a1278c43aaa1eefc2e62b3": {
-    "status": "processed",
-    "chunks_count": 7,
-    "chunks_list": [
-      "chunk-4e84c2a87f980319bb386cc588050a5f",
-      "chunk-00f75f56709838e6d3ee19b75315c102",
-      "chunk-bf198db84b05ba7e966f6a3a02b2f9f3",
-      "chunk-6f413192b6712442310ab83e47795227",
-      "chunk-2309688baefacf34329b80e3d86a7260",
-      "chunk-70b0b9f3442a156cf0ec2283cb079a6c",
-      "chunk-f730138d1d5be6aebb11d5b5f886f0e9"
-    ],
-    "content_summary": "肖总，关于上次您发的Sensi.AI产品，以及结合提供的一些资料，我们写了一个初步的实现方案（音频传感器+惯性LSMC传感器融合），现有如下核心要点需要进一步确认：\r\n1. 音频传感器识别模型，如段总那种一般是在云端实现，我们难点还是要找到轻量级模型且能嵌入设备中。\r\n2. 资料中提到的用惯性传感器（如LSM6DS3TR-C）识别跌倒，是否也要提取特征然后建模，还是这种传感器已经帮我们做好了这一步，它直接输出跌倒判断？另外，惯性传感器和您说的毫米波雷达是同一个吗？\r\n3. 目前这两个传感器（音频...",
-    "content_length": 13841,
-    "created_at": "2026-01-09T14:39:23.480985+00:00",
-    "updated_at": "2026-01-09T14:54:42.985937+00:00",
-    "file_path": "文档.txt",
-    "track_id": "upload_20260109_223923_595a85f9",
-    "metadata": {
-      "processing_start_time": 1767969563,
-      "processing_end_time": 1767970482
-    }
+  "doc-83cda2f9c9ee56f5068a89ea3d3b46b6": {
+    "status": "pending",
+    "content_summary": "{\"dataList\":[{\"data\":\"287,570,570,570,571,570,570,571,571,571,571,571,572,571,571,1192,1192,1191,1190,1188,1188,1189,1187,1187,1188,1187,1186,1185,1184,1183,1182,1181,1179,1179,1177,1176,1175,1174,1173,1173,1171,1171,1171,1171,1171,1171,1170,1170,117...",
+    "content_length": 132145,
+    "created_at": "2026-01-11T11:07:42.423214+00:00",
+    "updated_at": "2026-01-11T11:07:42.423214+00:00",
+    "file_path": "test_5min.json",
+    "track_id": "upload_20260111_190742_2bfc1726",
+    "chunks_list": []
+  },
+  "doc-0989ce40bee2370260c4b5fc538df68f": {
+    "status": "pending",
+    "content_summary": "{\"dataList\":[{\"data\":\"1342,310,310,311,311,311,311,311,312,312,313,313,314,315,316,316,629,631,632,633,636,637,638,639,640,641,641,641,643,645,1345,1347,1348,1349,1351,1353,1356,1358,1359,1360,1361,1360,1361,1363,1363,1365,1367,1368,1370,1374,1375,13...",
+    "content_length": 26964,
+    "created_at": "2026-01-11T11:07:43.597648+00:00",
+    "updated_at": "2026-01-11T11:07:43.597648+00:00",
+    "file_path": "test_1min.json",
+    "track_id": "upload_20260111_190743_478867ec",
+    "chunks_list": []
   }
 }

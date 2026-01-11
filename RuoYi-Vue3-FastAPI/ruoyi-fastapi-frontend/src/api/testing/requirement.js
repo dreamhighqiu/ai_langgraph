@@ -37,7 +37,7 @@ export function listRequirement(query) {
  */
 export function getRequirement(requirementId) {
   return request({
-    url: `/testing/requirement/${requirementId}`,
+    url: `/api/testing/requirement/${requirementId}`,
     method: 'get'
   })
 }
@@ -55,7 +55,7 @@ export function addRequirement(data) {
         ? { text: acceptance }
         : acceptance
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'post',
     data: {
       project_id: data.projectId,
@@ -84,7 +84,7 @@ export function updateRequirement(data) {
         ? { text: acceptance }
         : acceptance
   return request({
-    url: '/testing/requirement',
+    url: '/api/testing/requirement',
     method: 'put',
     data: {
       requirement_id: data.requirementId,
@@ -107,7 +107,7 @@ export function updateRequirement(data) {
  */
 export function delRequirement(requirementIds) {
   return request({
-    url: `/testing/requirement/${requirementIds}`,
+    url: `/api/testing/requirement/${requirementIds}`,
     method: 'delete'
   })
 }
@@ -121,7 +121,7 @@ export function delRequirement(requirementIds) {
  */
 export function generateScriptFromRequirement(requirementId, options = {}) {
   return request({
-    url: `/testing/requirement/generate/${requirementId}`,
+    url: `/api/testing/requirement/generate/${requirementId}`,
     method: 'post',
     data: {
       use_rag: options.useRag !== false,
@@ -137,7 +137,7 @@ export function generateScriptFromRequirement(requirementId, options = {}) {
  */
 export function analyzeRequirement(requirementId, analyzeType = 'feasibility') {
   return request({
-    url: `/testing/requirement/analyze/${requirementId}`,
+    url: `/api/testing/requirement/analyze/${requirementId}`,
     method: 'post',
     data: {
       analyze_type: analyzeType

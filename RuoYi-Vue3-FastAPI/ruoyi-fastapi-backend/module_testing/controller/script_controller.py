@@ -24,7 +24,6 @@ from module_testing.entity.vo.script_vo import (
     ScriptPageQueryModel,
 )
 from module_testing.service.script_service import ScriptService
-from module_testing.service.script_execution_service import ScriptExecutionService
 from module_admin.entity.vo.user_vo import CurrentUserModel
 from utils.log_util import logger
 from utils.response_util import ResponseUtil

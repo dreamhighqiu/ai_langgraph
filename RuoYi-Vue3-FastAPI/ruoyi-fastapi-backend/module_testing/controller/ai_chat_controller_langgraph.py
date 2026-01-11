@@ -36,6 +36,7 @@ class SendMessageRequest(BaseModel):
     project_id: Optional[int] = None
     folder_id: Optional[int] = None
     use_rag: bool = False
+    knowledge_base_id: Optional[int] = Field(None, description="知识库ID（用于RAG检索）")
     config: Optional[Dict[str, Any]] = None
     stream: bool = True
 
@@ -48,6 +49,7 @@ class StreamMessageRequest(BaseModel):
     project_id: Optional[int] = Field(None, description="项目ID")
     folder_id: Optional[int] = Field(None, description="文件夹ID")
     use_rag: bool = Field(False, description="是否使用RAG增强")
+    knowledge_base_id: Optional[int] = Field(None, description="知识库ID（用于RAG检索）")
     stream: bool = Field(True, description="是否流式响应")
 
 
@@ -208,6 +210,8 @@ async def send_message(request: SendMessageRequest):
             config['folder_id'] = request.folder_id
         if request.use_rag:
             config['use_rag'] = True
+        if request.knowledge_base_id:
+            config['knowledge_base_id'] = request.knowledge_base_id
         
         if request.stream:
             # 流式响应
@@ -289,6 +293,8 @@ async def stream_message(request: StreamMessageRequest):
             config['folder_id'] = request.folder_id
         if request.use_rag:
             config['use_rag'] = True
+        if request.knowledge_base_id:
+            config['knowledge_base_id'] = request.knowledge_base_id
         
         async def event_generator():
             """SSE 事件生成器"""
@@ -413,6 +419,8 @@ async def send_non_stream_message(request: StreamMessageRequest):
             config['folder_id'] = request.folder_id
         if request.use_rag:
             config['use_rag'] = True
+        if request.knowledge_base_id:
+            config['knowledge_base_id'] = request.knowledge_base_id
         
         # 调用 Agent
         result = await client.invoke_agent(

@@ -30,7 +30,7 @@ export function listExecution(query) {
  */
 export function getExecution(executionId) {
   return request({
-    url: `/testing/execution/${executionId}`,
+    url: `/api/testing/execution/${executionId}`,
     method: 'get'
   })
 }
@@ -56,7 +56,7 @@ export function cancelExecution(data) {
  */
 export function retryExecution(executionId) {
   return request({
-    url: `/testing/execution/${executionId}/retry`,
+    url: `/api/testing/execution/${executionId}/retry`,
     method: 'post'
   })
 }
@@ -79,7 +79,7 @@ export function getExecutionStatistics(days = 7) {
  */
 export function getExecutionLogs(executionId) {
   return request({
-    url: `/testing/execution/${executionId}/logs`,
+    url: `/api/testing/execution/${executionId}/logs`,
     method: 'get'
   })
 }
@@ -90,7 +90,7 @@ export function getExecutionLogs(executionId) {
  */
 export function getExecutionStatus(executionId) {
   return request({
-    url: `/testing/execution/${executionId}/status`,
+    url: `/api/testing/execution/${executionId}/status`,
     method: 'get'
   })
 }

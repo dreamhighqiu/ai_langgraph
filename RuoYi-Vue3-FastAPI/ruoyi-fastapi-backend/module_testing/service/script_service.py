@@ -24,6 +24,12 @@ from module_testing.entity.vo.script_vo import (
 from module_testing.storage.minio_client import get_minio_client
 from utils.log_util import logger
 from module_testing.agents.k6_runner import get_k6_runner
+from module_ui_testing.service.integration import (
+    get_agent_id_for_script_type,
+    get_requirement_type_for_script_type,
+    get_script_file_ext,
+    try_execute_ui_script,
+)
 
 
 class ScriptService:
@@ -102,7 +108,8 @@ class ScriptService:
             # 保存脚本内容到MinIO
             if model.script_content:
                 minio_client = get_minio_client()
-                file_ext = {'k6': 'js', 'playwright': 'py', 'api': 'py'}.get(model.script_type, 'txt')
+                override_ext = get_script_file_ext(model.script_type)
+                file_ext = override_ext or {'k6': 'js', 'api': 'py'}.get(model.script_type, 'txt')
                 object_path = f"scripts/{model.script_type}/project_{model.project_id}/{datetime.now().strftime('%Y%m%d_%H%M%S')}.{file_ext}"
                 
                 success, path = minio_client.upload_file(
@@ -151,12 +158,8 @@ class ScriptService:
                 }
             
             # 映射脚本类型到Agent类型
-            agent_type_map = {
-                'k6': 'k6_agent',
-                'playwright': 'ui_automation_agent',
-                'api': 'rest_api_agent'
-            }
-            agent_type = agent_type_map.get(model.script_type)
+            agent_type_map = {'k6': 'k6_agent', 'api': 'rest_api_agent'}
+            agent_type = agent_type_map.get(model.script_type) or get_agent_id_for_script_type(model.script_type)
             
             if not agent_type:
                 return {
@@ -168,7 +171,9 @@ class ScriptService:
             requirement = {
                 'requirement_id': None,
                 'requirement_name': model.script_name,
-                'requirement_type': {'k6': 'performance', 'playwright': 'ui', 'api': 'api'}.get(model.script_type, 'api'),
+                'requirement_type': {'k6': 'performance', 'api': 'api'}.get(model.script_type)
+                or get_requirement_type_for_script_type(model.script_type)
+                or 'api',
                 'description': model.prompt,
                 'acceptance_criteria': model.config or {}
             }
@@ -188,7 +193,8 @@ class ScriptService:
             
             # 保存脚本内容到MinIO
             minio_client = get_minio_client()
-            file_ext = {'k6': 'js', 'playwright': 'py', 'api': 'py'}.get(model.script_type, 'txt')
+            override_ext = get_script_file_ext(model.script_type)
+            file_ext = override_ext or {'k6': 'js', 'api': 'py'}.get(model.script_type, 'txt')
             object_path = f"scripts/{model.script_type}/project_{model.project_id}/{datetime.now().strftime('%Y%m%d_%H%M%S')}.{file_ext}"
             
             success, path = minio_client.upload_file(
@@ -268,7 +274,8 @@ class ScriptService:
                 # 更新MinIO中的脚本文件
                 if model.script_content:
                     minio_client = get_minio_client()
-                    file_ext = {'k6': 'js', 'playwright': 'py', 'api': 'py'}.get(script_type, 'txt')
+                    override_ext = get_script_file_ext(script_type)
+                    file_ext = override_ext or {'k6': 'js', 'api': 'py'}.get(script_type, 'txt')
                     object_path = f"scripts/{script_type}/project_{project_id}/{datetime.now().strftime('%Y%m%d_%H%M%S')}.{file_ext}"
                     
                     success, path = minio_client.upload_file(
@@ -389,12 +396,24 @@ class ScriptService:
             
             created_execution = await ExecutionDAO.create(db, execution)
             execution_id = created_execution.execution_id  # 提取ID
+            await db.commit()
             
+            ui_result = await try_execute_ui_script(
+                db=db,
+                execution_id=execution_id,
+                script=script,
+                execution_config=model.config,
+                executor=executor,
+            )
+            if ui_result is not None:
+                return ui_result
+
             # 保存脚本到 k6_agent workspace 并提交执行任务
             if script_type != 'k6':
                 return {
                     'success': False,
-                    'error': '当前仅支持K6性能脚本执行'
+                    'error': f'当前脚本类型[{script_type}]暂未实现执行',
+                    'execution_id': execution_id
                 }
 
             runner = get_k6_runner()

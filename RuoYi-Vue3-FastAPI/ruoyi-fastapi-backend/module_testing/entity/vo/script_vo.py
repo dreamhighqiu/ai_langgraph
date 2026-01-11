@@ -14,6 +14,8 @@ class ScriptModel(BaseModel):
     script_id: Optional[int] = Field(None, description='脚本ID')
     project_id: int = Field(..., description='项目ID')
     project_name: Optional[str] = Field(None, description='项目名称')
+    requirement_id: Optional[int] = Field(None, description='需求ID')
+    requirement_name: Optional[str] = Field(None, description='需求名称')
     script_name: str = Field(..., max_length=100, description='脚本名称')
     script_type: str = Field(..., description='脚本类型：k6/playwright/api')
     script_content: Optional[str] = Field(None, description='脚本内容')
@@ -37,6 +39,7 @@ class ScriptPageQueryModel(BaseModel):
     project_id: Optional[int] = Field(None, description='项目ID')
     script_name: Optional[str] = Field(None, description='脚本名称')
     script_type: Optional[str] = Field(None, description='脚本类型')
+    requirement_id: Optional[int] = Field(None, description='需求ID')
     status: Optional[str] = Field(None, description='状态')
     begin_time: Optional[str] = Field(None, description='开始时间')
     end_time: Optional[str] = Field(None, description='结束时间')
@@ -45,6 +48,7 @@ class ScriptPageQueryModel(BaseModel):
 class AddScriptModel(BaseModel):
     """新增脚本模型"""
     project_id: int = Field(..., description='项目ID')
+    requirement_id: Optional[int] = Field(None, description='需求ID')
     script_name: str = Field(..., max_length=100, description='脚本名称')
     script_type: str = Field(..., description='脚本类型：k6/playwright/api')
     script_content: Optional[str] = Field(None, description='脚本内容')

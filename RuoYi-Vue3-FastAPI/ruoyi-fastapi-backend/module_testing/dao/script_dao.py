@@ -8,6 +8,7 @@ from sqlalchemy import and_, func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from module_testing.entity.do.project_do import TestProject
+from module_testing.entity.do.requirement_do import TestRequirement
 from module_testing.entity.do.script_do import TestScript
 from module_testing.entity.vo.script_vo import ScriptPageQueryModel
 
@@ -32,8 +33,9 @@ class ScriptDAO:
     async def get_with_project(db: AsyncSession, script_id: int) -> Optional[dict]:
         """获取脚本及项目信息"""
         result = await db.execute(
-            select(TestScript, TestProject.project_name)
+            select(TestScript, TestProject.project_name, TestRequirement.requirement_name)
             .join(TestProject, TestScript.project_id == TestProject.project_id)
+            .join(TestRequirement, TestScript.requirement_id == TestRequirement.requirement_id, isouter=True)
             .where(
                 and_(
                     TestScript.script_id == script_id,
@@ -43,10 +45,11 @@ class ScriptDAO:
         )
         row = result.first()
         if row:
-            script, project_name = row
+            script, project_name, requirement_name = row
             return {
                 'script': script,
-                'project_name': project_name
+                'project_name': project_name,
+                'requirement_name': requirement_name,
             }
         return None
     
@@ -66,6 +69,8 @@ class ScriptDAO:
             conditions.append(TestScript.script_name.like(f'%{query.script_name}%'))
         if query.script_type:
             conditions.append(TestScript.script_type == query.script_type)
+        if query.requirement_id:
+            conditions.append(TestScript.requirement_id == query.requirement_id)
         if query.status:
             conditions.append(TestScript.status == query.status)
         if query.begin_time:
@@ -80,8 +85,9 @@ class ScriptDAO:
         
         # 查询列表(关联项目表获取项目名称)
         list_query = (
-            select(TestScript, TestProject.project_name)
+            select(TestScript, TestProject.project_name, TestRequirement.requirement_name)
             .join(TestProject, TestScript.project_id == TestProject.project_id, isouter=True)
+            .join(TestRequirement, TestScript.requirement_id == TestRequirement.requirement_id, isouter=True)
             .where(and_(*conditions))
             .order_by(TestScript.create_time.desc())
         )
@@ -94,11 +100,13 @@ class ScriptDAO:
         rows = result.all()
         
         scripts = []
-        for script, project_name in rows:
+        for script, project_name, requirement_name in rows:
             script_dict = {
                 'script_id': script.script_id,
                 'project_id': script.project_id,
                 'project_name': project_name,
+                'requirement_id': script.requirement_id,
+                'requirement_name': requirement_name,
                 'script_name': script.script_name,
                 'script_type': script.script_type,
                 'script_content': script.script_content,
@@ -203,7 +211,7 @@ class ScriptDAO:
         processed_data = {}
         for key, value in script_data.items():
             # 跳过不存在的字段
-            if key in ['tags', 'ai_generated', 'description', 'requirement_id']:
+            if key in ['tags', 'ai_generated', 'description']:
                 # 这些字段合并到config或remark中
                 continue
             

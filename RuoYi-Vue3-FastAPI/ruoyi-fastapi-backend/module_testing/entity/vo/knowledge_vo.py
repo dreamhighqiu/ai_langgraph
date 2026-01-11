@@ -19,6 +19,7 @@ class KnowledgeModel(BaseModel):
     file_count: int = Field(0, description='文件数量')
     vector_count: int = Field(0, description='向量数量')
     status: str = Field('0', description='状态：0正常 1停用')
+    query_mode: str = Field('mix', description='RAG查询模式：local/global/hybrid/naive/mix/bypass')
     create_by: Optional[str] = Field(None, description='创建者')
     create_time: Optional[datetime] = Field(None, description='创建时间')
     update_by: Optional[str] = Field(None, description='更新者')
@@ -28,19 +29,25 @@ class KnowledgeModel(BaseModel):
 
 class KnowledgeCreateModel(BaseModel):
     """创建知识库模型"""
-    project_id: int = Field(..., description='所属项目ID')
-    knowledge_name: str = Field(..., max_length=100, description='知识库名称')
+    project_id: int = Field(..., description='所属项目ID', alias='projectId')
+    knowledge_name: str = Field(..., max_length=100, description='知识库名称', alias='knowledgeName')
     description: Optional[str] = Field(None, description='知识库描述')
+    query_mode: str = Field('mix', description='RAG查询模式：local/global/hybrid/naive/mix/bypass', alias='queryMode')
     remark: Optional[str] = Field(None, description='备注')
+    
+    model_config = ConfigDict(populate_by_name=True)
 
 
 class KnowledgeUpdateModel(BaseModel):
     """更新知识库模型"""
-    knowledge_id: int = Field(..., description='知识库ID')
-    knowledge_name: Optional[str] = Field(None, max_length=100, description='知识库名称')
+    knowledge_id: int = Field(..., description='知识库ID', alias='knowledgeId')
+    knowledge_name: Optional[str] = Field(None, max_length=100, description='知识库名称', alias='knowledgeName')
     description: Optional[str] = Field(None, description='知识库描述')
+    query_mode: Optional[str] = Field(None, description='RAG查询模式：local/global/hybrid/naive/mix/bypass', alias='queryMode')
     status: Optional[str] = Field(None, description='状态')
     remark: Optional[str] = Field(None, description='备注')
+    
+    model_config = ConfigDict(populate_by_name=True)
 
 
 class KnowledgeQueryModel(BaseModel):

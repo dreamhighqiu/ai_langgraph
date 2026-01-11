@@ -50,14 +50,24 @@ class ReportTemplateService:
             # 加载模板
             template = self.env.get_template(template_name)
             
-            # 解析 JSON 字段
-            functional_requirements = self._parse_json_field(requirement.functional_requirements)
-            non_functional_requirements = self._parse_json_field(requirement.non_functional_requirements)
-            user_stories = self._parse_json_field(requirement.user_stories, default=[])
-            acceptance_criteria = self._parse_json_field(requirement.acceptance_criteria)
-            dependencies = self._parse_json_field(requirement.dependencies, default=[])
-            risks = self._parse_json_field(requirement.risks, default=[])
-            recommendations = self._parse_json_field(requirement.recommendations, default=[])
+            # 解析 JSON 字段（MySQL 表结构中多数为 TEXT，允许存 JSON 字符串）
+            functional_requirements = self._parse_json_field(getattr(requirement, "functional_requirements", None))
+            non_functional_requirements = self._parse_json_field(getattr(requirement, "non_functional_requirements", None))
+            acceptance_criteria = self._parse_json_field(getattr(requirement, "acceptance_criteria", None))
+            dependencies = self._parse_json_field(getattr(requirement, "dependencies", None), default=[])
+
+            # AI 扩展内容：优先从 functional_requirements(JSON) 中提取，避免依赖不存在的列
+            user_stories = []
+            risks = []
+            recommendations = []
+            priority_analysis = None
+            effort_estimation = None
+            if isinstance(functional_requirements, dict):
+                user_stories = functional_requirements.get("user_stories") or functional_requirements.get("userStories") or []
+                risks = functional_requirements.get("risks") or []
+                recommendations = functional_requirements.get("recommendations") or []
+                priority_analysis = functional_requirements.get("priority_analysis") or functional_requirements.get("priorityAnalysis")
+                effort_estimation = functional_requirements.get("effort_estimation") or functional_requirements.get("effortEstimation")
             
             # 渲染模板
             report_content = template.render(
@@ -69,6 +79,8 @@ class ReportTemplateService:
                 dependencies=dependencies,
                 risks=risks,
                 recommendations=recommendations,
+                priority_analysis=priority_analysis,
+                effort_estimation=effort_estimation,
                 report_time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             )
             

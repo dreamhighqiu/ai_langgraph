@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上传功能测试</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        button { margin: 10px 5px; padding: 10px 20px; cursor: pointer; border: none; border-radius: 4px; color: white; }
+        .btn-primary { background: #409eff; }
+        .btn-success { background: #67c23a; }
+        .btn-warning { background: #e6a23c; }
+        .btn-danger { background: #f56c6c; }
+        pre { background: #f5f5f5; padding: 15px; border-radius: 5px; overflow: auto; max-height: 400px; }
+        .success { color: #67c23a; }
+        .error { color: #f56c6c; }
+        .info { color: #909399; }
+        h2 { color: #303133; border-bottom: 2px solid #409eff; padding-bottom: 10px; margin-top: 30px; }
+        .step { background: #ecf5ff; border-left: 4px solid #409eff; padding: 15px; margin: 10px 0; }
+        .step-title { font-weight: bold; color: #409eff; margin-bottom: 10px; }
+        input[type="file"] { margin: 10px 0; padding: 10px; border: 1px dashed #409eff; border-radius: 4px; width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📤 上传功能完整测试</h1>
+        
+        <div class="step">
+            <div class="step-title">步骤1: 检查环境</div>
+            <button class="btn-primary" onclick="checkEnvironment()">检查环境</button>
+            <div id="envLog"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">步骤2: 测试项目列表</div>
+            <button class="btn-success" onclick="testProjects()">测试项目API</button>
+            <div id="projectLog"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">步骤3: 创建测试知识库</div>
+            <button class="btn-success" onclick="createTestKnowledge()">自动创建</button>
+            <div id="knowledgeLog"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">步骤4: 测试文件上传</div>
+            <input type="file" id="testFile" />
+            <button class="btn-warning" onclick="testUpload()">测试上传</button>
+            <div id="uploadLog"></div>
+        </div>
+        
+        <div class="step">
+            <div class="step-title">步骤5: 验证RAG集成</div>
+            <button class="btn-warning" onclick="testRAG()">测试RAG服务</button>
+            <div id="ragLog"></div>
+        </div>
+        
+        <h2>完整日志</h2>
+        <button class="btn-danger" onclick="clearLog()">清空日志</button>
+        <pre id="fullLog"></pre>
+    </div>
+    
+    <script>
+        const token = localStorage.getItem('Admin-Token');
+        const baseURL = window.location.origin;
+        let testKnowledgeId = null;
+        
+        function log(message, type = 'info', targetId = 'fullLog') {
+            const logDiv = document.getElementById(targetId);
+            const p = document.createElement('div');
+            p.className = type;
+            p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(p);
+            
+            if (targetId !== 'fullLog') {
+                log(message, type, 'fullLog');
+            }
+        }
+        
+        function clearLog() {
+            document.getElementById('fullLog').innerHTML = '';
+            document.getElementById('envLog').innerHTML = '';
+            document.getElementById('projectLog').innerHTML = '';
+            document.getElementById('knowledgeLog').innerHTML = '';
+            document.getElementById('uploadLog').innerHTML = '';
+            document.getElementById('ragLog').innerHTML = '';
+        }
+        
+        async function checkEnvironment() {
+            log('========== 环境检查 ==========', 'info', 'envLog');
+            
+            // 检查Token
+            if (token) {
+                log('✓ Token已设置', 'success', 'envLog');
+            } else {
+                log('✗ Token未设置，请先登录', 'error', 'envLog');
+                return;
+            }
+            
+            // 检查后端服务
+            try {
+                const response = await fetch(baseURL + '/api/testing/project/all?status=0', {
+                    headers: { 'Authorization': 'Bearer ' + token }
+                });
+                if (response.ok) {
+                    log('✓ 后端服务正常', 'success', 'envLog');
+                } else {
+                    log('✗ 后端服务异常: ' + response.status, 'error', 'envLog');
+                }
+            } catch (error) {
+                log('✗ 无法连接后端: ' + error.message, 'error', 'envLog');
+            }
+            
+            // 检查RAG服务
+            try {
+                const ragResponse = await fetch('http://localhost:9621/health');
+                if (ragResponse.ok) {
+                    log('✓ RAG服务正常 (localhost:9621)', 'success', 'envLog');
+                } else {
+                    log('⚠ RAG服务异常', 'error', 'envLog');
+                }
+            } catch (error) {
+                log('✗ RAG服务未启动: ' + error.message, 'error', 'envLog');
+            }
+        }
+        
+        async function testProjects() {
+            log('========== 测试项目列表 ==========', 'info', 'projectLog');
+            try {
+                const response = await fetch(baseURL + '/api/testing/project/all?status=0', {
+                    headers: { 'Authorization': 'Bearer ' + token }
+                });
+                const data = await response.json();
+                
+                if (data.code === 200 && data.data && data.data.length > 0) {
+                    log(`✓ 找到 ${data.data.length} 个项目`, 'success', 'projectLog');
+                    data.data.forEach((p, i) => {
+                        log(`  项目${i+1}: ${p.project_name} (ID: ${p.project_id})`, 'info', 'projectLog');
+                    });
+                    return data.data;
+                } else {
+                    log('✗ 没有可用项目', 'error', 'projectLog');
+                    return [];
+                }
+            } catch (error) {
+                log('✗ 测试失败: ' + error.message, 'error', 'projectLog');
+                return [];
+            }
+        }
+        
+        async function createTestKnowledge() {
+            log('========== 创建测试知识库 ==========', 'info', 'knowledgeLog');
+            
+            // 获取项目列表
+            const projects = await testProjects();
+            if (projects.length === 0) {
+                log('✗ 没有可用项目，无法创建知识库', 'error', 'knowledgeLog');
+                return;
+            }
+            
+            const project = projects[0];
+            log(`使用项目: ${project.project_name}`, 'info', 'knowledgeLog');
+            
+            // 创建知识库
+            try {
+                const response = await fetch(baseURL + '/api/testing/knowledge', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        projectId: project.project_id,
+                        knowledgeName: `测试知识库_${Date.now()}`,
+                        queryMode: 'mix',
+                        description: '自动创建的测试知识库',
+                        status: '0'
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.code === 200) {
+                    testKnowledgeId = data.data.knowledge_id;
+                    log('✓ 知识库创建成功!', 'success', 'knowledgeLog');
+                    log(`知识库ID: ${testKnowledgeId}`, 'success', 'knowledgeLog');
+                    log(`Workspace: ${data.data.collection_name}`, 'info', 'knowledgeLog');
+                } else {
+                    log('✗ 创建失败: ' + data.msg, 'error', 'knowledgeLog');
+                }
+            } catch (error) {
+                log('✗ 创建失败: ' + error.message, 'error', 'knowledgeLog');
+            }
+        }
+        
+        async function testUpload() {
+            log('========== 测试文件上传 ==========', 'info', 'uploadLog');
+            
+            if (!testKnowledgeId) {
+                log('✗ 请先创建测试知识库', 'error', 'uploadLog');
+                return;
+            }
+            
+            const fileInput = document.getElementById('testFile');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                log('✗ 请先选择文件', 'error', 'uploadLog');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            log(`准备上传: ${file.name} (${(file.size/1024).toFixed(2)} KB)`, 'info', 'uploadLog');
+            
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                const response = await fetch(
+                    baseURL + `/api/testing/knowledge/${testKnowledgeId}/files/upload`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': 'Bearer ' + token
+                        },
+                        body: formData
+                    }
+                );
+                
+                const data = await response.json();
+                if (data.code === 200) {
+                    log('✓ 文件上传成功!', 'success', 'uploadLog');
+                    log('响应: ' + JSON.stringify(data, null, 2), 'info', 'uploadLog');
+                    
+                    // 等待处理
+                    log('⏳ 正在后台处理...', 'info', 'uploadLog');
+                    setTimeout(() => checkFileStatus(data.data.file_id), 3000);
+                } else {
+                    log('✗ 上传失败: ' + data.msg, 'error', 'uploadLog');
+                }
+            } catch (error) {
+                log('✗ 上传失败: ' + error.message, 'error', 'uploadLog');
+            }
+        }
+        
+        async function checkFileStatus(fileId) {
+            log(`检查文件处理状态: ${fileId}`, 'info', 'uploadLog');
+            try {
+                const response = await fetch(
+                    baseURL + `/api/testing/knowledge/${testKnowledgeId}/files`,
+                    {
+                        headers: { 'Authorization': 'Bearer ' + token }
+                    }
+                );
+                const data = await response.json();
+                
+                if (data.code === 200 && data.rows) {
+                    const file = data.rows.find(f => f.file_id === fileId);
+                    if (file) {
+                        log(`处理状态: ${file.process_status}`, 'info', 'uploadLog');
+                        log(`向量数: ${file.vector_count || 0}`, 'info', 'uploadLog');
+                        
+                        if (file.process_status === 'completed') {
+                            log('✓ 文件处理完成!', 'success', 'uploadLog');
+                            if (file.vector_count > 0) {
+                                log('✓ 向量化成功!', 'success', 'uploadLog');
+                            }
+                        } else if (file.process_status === 'processing') {
+                            log('⏳ 还在处理中，5秒后再检查...', 'info', 'uploadLog');
+                            setTimeout(() => checkFileStatus(fileId), 5000);
+                        }
+                    }
+                }
+            } catch (error) {
+                log('✗ 检查失败: ' + error.message, 'error', 'uploadLog');
+            }
+        }
+        
+        async function testRAG() {
+            log('========== 测试RAG服务 ==========', 'info', 'ragLog');
+            
+            // 测试健康检查
+            try {
+                const healthResponse = await fetch('http://localhost:9621/health');
+                const healthData = await healthResponse.json();
+                log('✓ RAG服务健康检查通过', 'success', 'ragLog');
+                log('RAG版本: ' + JSON.stringify(healthData), 'info', 'ragLog');
+            } catch (error) {
+                log('✗ RAG服务不可用: ' + error.message, 'error', 'ragLog');
+                return;
+            }
+            
+            // 测试查询
+            if (testKnowledgeId) {
+                log('测试知识库查询...', 'info', 'ragLog');
+                try {
+                    const response = await fetch(
+                        baseURL + `/api/testing/knowledge/${testKnowledgeId}/query`,
+                        {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': 'Bearer ' + token,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                query: '测试查询',
+                                mode: 'hybrid',
+                                topK: 5
+                            })
+                        }
+                    );
+                    
+                    const data = await response.json();
+                    if (data.code === 200) {
+                        log('✓ 查询成功', 'success', 'ragLog');
+                        log('结果: ' + JSON.stringify(data.data, null, 2), 'info', 'ragLog');
+                    } else {
+                        log('查询响应: ' + data.msg, 'info', 'ragLog');
+                    }
+                } catch (error) {
+                    log('查询测试: ' + error.message, 'info', 'ragLog');
+                }
+            }
+        }
+        
+        // 页面加载时自动检查环境
+        window.onload = function() {
+            log('=== 上传功能测试工具已加载 ===', 'success', 'fullLog');
+            checkEnvironment();
+        };
+    </script>
+</body>
+</html>
+

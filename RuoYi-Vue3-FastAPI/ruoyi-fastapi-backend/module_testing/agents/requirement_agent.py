@@ -377,7 +377,49 @@ class RequirementAnalysisAgent:
             messages = [{"role": "system", "content": system_prompt}] + state["messages"]
 
             # 调用 LLM
-            response = self.llm_with_tools.invoke(messages)
+            def _has_tool_message(msgs, tool_name: str) -> bool:
+                for m in msgs:
+                    if getattr(m, "type", None) == "tool" and getattr(m, "name", None) == tool_name:
+                        return True
+                    if isinstance(m, dict) and m.get("type") == "tool" and m.get("name") == tool_name:
+                        return True
+                return False
+
+            def _last_user_text(msgs) -> str:
+                for m in reversed(msgs):
+                    if isinstance(m, dict) and m.get("role") == "user":
+                        return (m.get("content") or "").strip()
+                    if getattr(m, "type", None) in ("human", "user"):
+                        return (getattr(m, "content", "") or "").strip()
+                return ""
+
+            def _tool_succeeded(msgs, tool_name: str) -> bool:
+                for m in msgs:
+                    if getattr(m, "type", None) == "tool" and getattr(m, "name", None) == tool_name:
+                        content = getattr(m, "content", "")
+                    elif isinstance(m, dict) and m.get("type") == "tool" and m.get("name") == tool_name:
+                        content = m.get("content", "")
+                    else:
+                        continue
+
+                    # ToolNode 通常会把 dict 结果序列化成字符串；这里做轻量判定
+                    text = str(content).lower()
+                    if "\"success\": true" in text or "'success': true" in text or "success=true" in text:
+                        return True
+                return False
+
+            tool_choice = None
+            saved = _tool_succeeded(state["messages"], "save_requirement_analysis_tool")
+            parsed = _tool_succeeded(state["messages"], "parse_document_from_url")
+            last_user_text = _last_user_text(state["messages"])
+            if not saved:
+                if ("http://" in last_user_text or "https://" in last_user_text) and not parsed:
+                    tool_choice = {"type": "function", "function": {"name": "parse_document_from_url"}}
+                else:
+                    tool_choice = {"type": "function", "function": {"name": "save_requirement_analysis_tool"}}
+
+            llm = self.llm.bind_tools(self.tools, tool_choice=tool_choice) if tool_choice else self.llm_with_tools
+            response = llm.invoke(messages)
 
             return {"messages": [response]}
 
@@ -656,7 +698,48 @@ def _create_langgraph_app_for_api():
 4. 提供改进建议和优化方案
 """
         messages = [{"role": "system", "content": system_prompt}] + state["messages"]
-        response = llm_with_tools.invoke(messages)
+        def _has_tool_message(msgs, tool_name: str) -> bool:
+            for m in msgs:
+                if getattr(m, "type", None) == "tool" and getattr(m, "name", None) == tool_name:
+                    return True
+                if isinstance(m, dict) and m.get("type") == "tool" and m.get("name") == tool_name:
+                    return True
+            return False
+
+        def _last_user_text(msgs) -> str:
+            for m in reversed(msgs):
+                if isinstance(m, dict) and m.get("role") == "user":
+                    return (m.get("content") or "").strip()
+                if getattr(m, "type", None) in ("human", "user"):
+                    return (getattr(m, "content", "") or "").strip()
+            return ""
+
+        def _tool_succeeded(msgs, tool_name: str) -> bool:
+            for m in msgs:
+                if getattr(m, "type", None) == "tool" and getattr(m, "name", None) == tool_name:
+                    content = getattr(m, "content", "")
+                elif isinstance(m, dict) and m.get("type") == "tool" and m.get("name") == tool_name:
+                    content = m.get("content", "")
+                else:
+                    continue
+
+                text = str(content).lower()
+                if "\"success\": true" in text or "'success': true" in text or "success=true" in text:
+                    return True
+            return False
+
+        tool_choice = None
+        saved = _tool_succeeded(state["messages"], "save_requirement_analysis_tool")
+        parsed = _tool_succeeded(state["messages"], "parse_document_from_url")
+        last_user_text = _last_user_text(state["messages"])
+        if not saved:
+            if ("http://" in last_user_text or "https://" in last_user_text) and not parsed:
+                tool_choice = {"type": "function", "function": {"name": "parse_document_from_url"}}
+            else:
+                tool_choice = {"type": "function", "function": {"name": "save_requirement_analysis_tool"}}
+
+        llm_runner = llm.bind_tools(tools, tool_choice=tool_choice) if tool_choice else llm_with_tools
+        response = llm_runner.invoke(messages)
         return {"messages": [response]}
     
     def should_continue(state: MessagesState):

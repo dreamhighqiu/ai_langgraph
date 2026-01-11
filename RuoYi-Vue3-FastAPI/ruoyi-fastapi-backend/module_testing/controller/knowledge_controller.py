@@ -97,6 +97,32 @@ async def get_knowledge_list(
 ) -> Response:
     """查询知识库列表"""
     try:
+        # 兼容前端/历史调用的驼峰命名参数（RuoYi Vue3 默认分页参数：pageNum/pageSize）
+        qp = request.query_params
+
+        def _get_int(name: str) -> Optional[int]:
+            val = qp.get(name)
+            if val is None or val == '':
+                return None
+            try:
+                return int(val)
+            except ValueError:
+                return None
+
+        page_num = _get_int('pageNum') or page_num
+        page_size = _get_int('pageSize') or page_size
+        _project_id = _get_int('projectId')
+        if _project_id is not None:
+            project_id = _project_id
+        knowledge_name = qp.get('knowledgeName') or knowledge_name
+
+        if page_num < 1:
+            page_num = 1
+        if page_size < 1:
+            page_size = 1
+        if page_size > 100:
+            page_size = 100
+
         query = KnowledgeQueryModel(
             page_num=page_num,
             page_size=page_size,
@@ -105,11 +131,14 @@ async def get_knowledge_list(
             status=status
         )
         
+        logger.info(f'查询知识库列表 - 参数: page_num={page_num}, page_size={page_size}, project_id={project_id}, knowledge_name={knowledge_name}, status={status}')
+        
         knowledge_list, total = await KnowledgeService.get_knowledge_list(db, query)
         
-        return ResponseUtil.success(
-            data={'rows': [k.model_dump() for k in knowledge_list], 'total': total}
-        )
+        logger.info(f'查询知识库列表 - 结果: 共{total}条记录, 当前页{len(knowledge_list)}条')
+        
+        rows = [k.model_dump() for k in knowledge_list]
+        return ResponseUtil.success(rows=rows, dict_content={'total': total})
     except Exception as e:
         logger.error(f'查询知识库列表失败: {e}', exc_info=True)
         return ResponseUtil.error(msg=f'查询失败: {str(e)}')
@@ -1045,28 +1074,27 @@ async def get_processor_status(
         processor = get_processor()
         processor_running = processor is not None and processor.running if processor else False
         
-        # 统计待处理文件数量
-        async with db.begin():
-            pending_count_result = await db.execute(
-                select(func.count(TestKnowledgeFile.file_id)).where(
-                    TestKnowledgeFile.process_status == 'pending'
-                )
+        # 统计待处理文件数量（不使用begin，直接查询）
+        pending_count_result = await db.execute(
+            select(func.count(TestKnowledgeFile.file_id)).where(
+                TestKnowledgeFile.process_status == 'pending'
             )
-            pending_count = pending_count_result.scalar() or 0
-            
-            processing_count_result = await db.execute(
-                select(func.count(TestKnowledgeFile.file_id)).where(
-                    TestKnowledgeFile.process_status == 'processing'
-                )
+        )
+        pending_count = pending_count_result.scalar() or 0
+        
+        processing_count_result = await db.execute(
+            select(func.count(TestKnowledgeFile.file_id)).where(
+                TestKnowledgeFile.process_status == 'processing'
             )
-            processing_count = processing_count_result.scalar() or 0
-            
-            failed_count_result = await db.execute(
-                select(func.count(TestKnowledgeFile.file_id)).where(
-                    TestKnowledgeFile.process_status == 'failed'
-                )
+        )
+        processing_count = processing_count_result.scalar() or 0
+        
+        failed_count_result = await db.execute(
+            select(func.count(TestKnowledgeFile.file_id)).where(
+                TestKnowledgeFile.process_status == 'failed'
             )
-            failed_count = failed_count_result.scalar() or 0
+        )
+        failed_count = failed_count_result.scalar() or 0
         
         return ResponseUtil.success(data={
             'processor_running': processor_running,
@@ -1146,4 +1174,3 @@ async def get_knowledge_rag_documents(
     except Exception as e:
         logger.error(f'获取RAG文档列表失败: {e}', exc_info=True)
         return ResponseUtil.error(msg=f'查询失败: {str(e)}')
-

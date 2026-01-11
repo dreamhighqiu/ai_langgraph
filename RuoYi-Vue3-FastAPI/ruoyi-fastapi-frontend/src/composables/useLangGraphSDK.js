@@ -221,9 +221,14 @@ export function useLangGraphSDK(options = {}) {
   /**
    * 发送消息（流式响应）
    * @param {string} content 消息内容
+   * @param {Object} options 额外选项
+   * @param {Array} options.files 上传的文件列表
+   * @param {string} options.knowledgeBaseId 知识库ID
    */
-  async function sendMessage(content) {
+  async function sendMessage(content, options = {}) {
     if (!content?.trim() || isLoading.value) return
+    
+    const { files: uploadFiles = [], knowledgeBaseId = null } = options
     
     // 确保有 threadId
     if (!threadId.value) {
@@ -240,7 +245,9 @@ export function useLangGraphSDK(options = {}) {
       id: uuidv4(),
       type: 'human',
       content: content.trim(),
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      files: uploadFiles.map(f => ({ name: f.name, size: f.size })),
+      knowledgeBaseId
     }
     messages.value.push(userMessage)
     
@@ -261,13 +268,21 @@ export function useLangGraphSDK(options = {}) {
     messages.value.push(aiMessage)
     
     try {
-      // 构建输入
+      // 构建输入（包含文件和知识库信息）
       const input = {
         messages: [{
           id: uuidv4(),
           type: 'human',
           content: content.trim()
-        }]
+        }],
+        // 添加文件信息到输入
+        files: uploadFiles.length > 0 ? uploadFiles.map(f => ({
+          name: f.name,
+          size: f.size,
+          type: f.type
+        })) : undefined,
+        // 添加知识库ID
+        knowledgeBaseId: knowledgeBaseId || undefined
       }
       
       // 验证 projectId 是否有效（对于需求分析和缺陷分析，projectId 是必需的）

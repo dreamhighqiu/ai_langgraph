@@ -1,0 +1,248 @@
+"""
+UI自动化测试智能体
+
+该智能体负责根据UI测试需求自动生成Playwright测试脚本。
+支持TypeScript和JavaScript两种语言。
+
+架构参考: testing-agents-service/src/ui_automation 和 module_testing/agents/testcase_agent
+"""
+
+from dataclasses import dataclass
+from typing import Optional
+
+from langchain_core.runnables import RunnableConfig
+from langchain_openai import ChatOpenAI
+from langgraph.graph import END, START, MessagesState, StateGraph
+from langgraph.prebuilt import ToolNode
+
+from config.env import LLMConfig
+from module_ui_testing.agents.prompts import build_system_prompt
+from module_ui_testing.tools import (
+    create_playwright_executor_tool,
+    create_result_parser_tool,
+    create_script_save_tool,
+)
+from utils.log_util import logger
+
+
+@dataclass
+class UIAutomationContext:
+    """UI自动化测试上下文"""
+
+    project_id: int
+    script_type: str = "playwright"  # playwright
+
+
+class UIAutomationAgent:
+    """UI自动化测试智能体"""
+
+    def __init__(self):
+        """初始化智能体"""
+        # 初始化 LLM
+        self.llm = ChatOpenAI(
+            model=LLMConfig.llm_model_name,
+            api_key=LLMConfig.llm_api_key,
+            base_url=LLMConfig.llm_base_url,
+            temperature=LLMConfig.llm_temperature,
+            streaming=True,
+        )
+
+        # 定义工具列表
+        self.tools = [
+            create_script_save_tool(),  # 保存Playwright脚本
+            create_playwright_executor_tool(),  # 执行Playwright脚本（提示用途）
+            create_result_parser_tool(),  # 解析测试结果
+        ]
+
+        # 绑定工具到 LLM
+        self.llm_with_tools = self.llm.bind_tools(self.tools)
+
+        # 构建 LangGraph
+        self.graph = self._build_graph()
+
+        # 编译 graph
+        self.app = self.graph.compile()
+
+        logger.info("UI自动化测试智能体初始化完成")
+
+    def _build_graph(self) -> StateGraph:
+        """构建 LangGraph"""
+        workflow = StateGraph(MessagesState)
+
+        # 定义智能体节点
+        def call_model(state: MessagesState, config: RunnableConfig):
+            """调用模型"""
+            # 从配置中获取上下文
+            context = config.get("configurable", {})
+            project_id = context.get("project_id", 0)
+            script_type = context.get("script_type", "playwright")
+
+            # 构建上下文对象
+            ctx = UIAutomationContext(project_id=project_id, script_type=script_type)
+
+            # 构建系统提示词
+            system_prompt = build_system_prompt(ctx.project_id, ctx.script_type)
+
+            # 构建消息
+            messages = [{"role": "system", "content": system_prompt}] + state["messages"]
+
+            # 调用 LLM
+            response = self.llm_with_tools.invoke(messages)
+
+            return {"messages": [response]}
+
+        # 定义路由函数
+        def should_continue(state: MessagesState):
+            """判断是否继续执行"""
+            messages = state["messages"]
+            last_message = messages[-1]
+
+            # 如果有工具调用，继续执行工具
+            if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+                return "tools"
+
+            # 否则结束
+            return END
+
+        # 添加节点
+        workflow.add_node("agent", call_model)
+        workflow.add_node("tools", ToolNode(self.tools))
+
+        # 添加边
+        workflow.add_edge(START, "agent")
+        workflow.add_conditional_edges("agent", should_continue, ["tools", END])
+        workflow.add_edge("tools", "agent")
+
+        return workflow
+
+    async def generate_script(
+        self,
+        user_input: str,
+        project_id: int,
+        script_type: str = "playwright",
+        thread_id: Optional[str] = None,
+    ):
+        """
+        生成UI自动化测试脚本（流式）
+
+        Args:
+            user_input: 用户输入（测试需求描述）
+            project_id: 项目ID
+            script_type: 脚本类型（playwright）
+            thread_id: 线程ID（用于会话管理）
+        """
+        # 构建配置
+        config = {
+            "configurable": {
+                "thread_id": thread_id or "default",
+                "project_id": project_id,
+                "script_type": script_type,
+            }
+        }
+
+        # 构建输入
+        input_data = {"messages": [{"role": "user", "content": user_input}]}
+
+        # 流式执行
+        async for event in self.app.astream(input_data, config, stream_mode="values"):
+            # 获取最后一条消息
+            messages = event.get("messages", [])
+            if messages:
+                last_message = messages[-1]
+                yield last_message
+
+
+# 全局单例
+_ui_automation_agent = None
+
+
+def get_ui_automation_agent() -> UIAutomationAgent:
+    """获取UI自动化测试智能体单例"""
+    global _ui_automation_agent
+    if _ui_automation_agent is None:
+        _ui_automation_agent = UIAutomationAgent()
+    return _ui_automation_agent
+
+
+# ============================================
+# LangGraph CLI 导出 (用于 langgraph.json)
+# ============================================
+
+
+def _create_langgraph_app_for_api():
+    """
+    创建 LangGraph 应用实例（供 LangGraph API 使用）
+
+    注意：LangGraph API 会自动处理持久化，不需要自定义 checkpointer
+    """
+    from langchain_openai import ChatOpenAI
+    from langgraph.graph import END, START, MessagesState, StateGraph
+    from langgraph.prebuilt import ToolNode
+
+    from config.env import LLMConfig
+    from module_ui_testing.agents.prompts import build_system_prompt
+    from module_ui_testing.tools import (
+        create_playwright_executor_tool,
+        create_result_parser_tool,
+        create_script_save_tool,
+    )
+
+    # 初始化 LLM
+    llm = ChatOpenAI(
+        model=LLMConfig.llm_model_name,
+        api_key=LLMConfig.llm_api_key,
+        base_url=LLMConfig.llm_base_url,
+        temperature=LLMConfig.llm_temperature,
+        streaming=True,
+    )
+
+    # 定义工具列表
+    tools = [
+        create_script_save_tool(),
+        create_playwright_executor_tool(),
+        create_result_parser_tool(),
+    ]
+
+    # 绑定工具到 LLM
+    llm_with_tools = llm.bind_tools(tools)
+
+    # 构建 workflow
+    workflow = StateGraph(MessagesState)
+
+    def call_model(state: MessagesState, config):
+        """调用模型"""
+        # 从配置中获取上下文
+        ctx = config.get("configurable", {})
+        project_id = ctx.get("project_id", 0)
+        script_type = ctx.get("script_type", "playwright")
+
+        system_prompt = build_system_prompt(project_id, script_type)
+        messages = [{"role": "system", "content": system_prompt}] + state["messages"]
+        response = llm_with_tools.invoke(messages)
+        return {"messages": [response]}
+
+    def should_continue(state: MessagesState):
+        """判断是否继续执行"""
+        messages = state["messages"]
+        last_message = messages[-1]
+        if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+            return "tools"
+        return END
+
+    # 添加节点
+    workflow.add_node("agent", call_model)
+    workflow.add_node("tools", ToolNode(tools))
+
+    # 添加边
+    workflow.add_edge(START, "agent")
+    workflow.add_conditional_edges("agent", should_continue, ["tools", END])
+    workflow.add_edge("tools", "agent")
+
+    # 编译时不使用 checkpointer（LangGraph API 会自动处理）
+    return workflow.compile()
+
+
+# 导出给 LangGraph CLI 使用
+# langgraph.json 中配置: "path": "./module_ui_testing/agents/ui_automation_agent.py:agent"
+agent = _create_langgraph_app_for_api()
+

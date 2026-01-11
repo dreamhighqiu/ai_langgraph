@@ -373,3 +373,4 @@ module.exports = defineConfig({{
                         )
         for sub_suite in suite.get("suites", []) or []:
             self._collect_errors(sub_suite, errors)
+

@@ -36,6 +36,8 @@ class ExecutionPageQueryModel(BaseModel):
     page_num: int = Field(1, ge=1, description='页码')
     page_size: int = Field(10, ge=1, le=100, description='每页数量')
     script_id: Optional[int] = Field(None, description='脚本ID')
+    script_type: Optional[str] = Field(None, description='脚本类型')
+    project_id: Optional[int] = Field(None, description='项目ID')
     execution_status: Optional[str] = Field(None, description='执行状态')
     execution_type: Optional[str] = Field(None, description='执行类型')
     executor: Optional[str] = Field(None, description='执行者')

@@ -31,6 +31,8 @@ class ReportPageQueryModel(BaseModel):
     execution_id: Optional[int] = Field(None, description='执行ID')
     report_name: Optional[str] = Field(None, description='报告名称')
     report_type: Optional[str] = Field(None, description='报告类型')
+    script_type: Optional[str] = Field(None, description='脚本类型')
+    project_id: Optional[int] = Field(None, description='项目ID')
     begin_time: Optional[str] = Field(None, description='开始时间')
     end_time: Optional[str] = Field(None, description='结束时间')
 

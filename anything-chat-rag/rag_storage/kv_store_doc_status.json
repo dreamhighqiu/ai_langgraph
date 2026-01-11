@@ -328,7 +328,7 @@
     }
   },
   "doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e": {
-    "status": "processing",
+    "status": "processed",
     "chunks_count": 1,
     "chunks_list": [
       "chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e"
@@ -336,41 +336,77 @@
     "content_summary": "# -*- coding: utf-8 -*-\r\nimport numpy as np\r\nimport pandas as pd\r\nimport scipy.signal as signal\r\nfrom predict_model import predict\r\nimport json\r\n\r\n#解析txt文件，得到PPG原始数据\r\ndef parse_txt(requestJson):\r\n    # 解析txt文件，提取data字段\r\n    ppg_data = []\r\n    timesta...",
     "content_length": 3373,
     "created_at": "2026-01-11T11:07:36.808320+00:00",
-    "updated_at": "2026-01-11T11:07:36.823560+00:00",
+    "updated_at": "2026-01-11T11:18:17.487595+00:00",
     "file_path": "parse_txt.py",
     "track_id": "upload_20260111_190736_224f3cf9",
     "metadata": {
-      "processing_start_time": 1768129656
+      "processing_start_time": 1768129656,
+      "processing_end_time": 1768130297
     }
   },
   "doc-fba9cf55995b3864eb745c3dc9defb26": {
-    "status": "pending",
+    "status": "processed",
+    "chunks_count": 3,
+    "chunks_list": [
+      "chunk-139d46957ae2ad18faf0be4a67a5755c",
+      "chunk-0c6b9bc52d436bdf3a3bd09fa2b29435",
+      "chunk-28c28b6bfb03338cd097bb678b3d4bed"
+    ],
     "content_summary": "# -*- coding: utf-8 -*-\r\nimport time\r\nimport numpy as np\r\nimport pandas as pd\r\nfrom sklearn.neighbors import KNeighborsRegressor\r\nfrom sklearn.preprocessing import StandardScaler\r\nimport joblib\r\nfrom hrvanalysis import remove_outliers\r\nfrom hrvanalys...",
     "content_length": 9059,
     "created_at": "2026-01-11T11:07:41.217983+00:00",
-    "updated_at": "2026-01-11T11:07:41.217983+00:00",
+    "updated_at": "2026-01-11T12:06:24.658253+00:00",
     "file_path": "predict_model.py",
     "track_id": "upload_20260111_190741_610675df",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1768130297,
+      "processing_end_time": 1768133184
+    }
   },
   "doc-83cda2f9c9ee56f5068a89ea3d3b46b6": {
-    "status": "pending",
+    "status": "failed",
+    "error_msg": "Embedding func: Worker execution timeout after 2000s",
     "content_summary": "{\"dataList\":[{\"data\":\"287,570,570,570,571,570,570,571,571,571,571,571,572,571,571,1192,1192,1191,1190,1188,1188,1189,1187,1187,1188,1187,1186,1185,1184,1183,1182,1181,1179,1179,1177,1176,1175,1174,1173,1173,1171,1171,1171,1171,1171,1171,1170,1170,117...",
     "content_length": 132145,
     "created_at": "2026-01-11T11:07:42.423214+00:00",
-    "updated_at": "2026-01-11T11:07:42.423214+00:00",
+    "updated_at": "2026-01-11T11:51:41.451416+00:00",
     "file_path": "test_5min.json",
     "track_id": "upload_20260111_190742_2bfc1726",
+    "metadata": {
+      "processing_start_time": 1768130297,
+      "processing_end_time": 1768132301
+    },
     "chunks_list": []
   },
   "doc-0989ce40bee2370260c4b5fc538df68f": {
-    "status": "pending",
+    "status": "processed",
+    "chunks_count": 15,
+    "chunks_list": [
+      "chunk-05f780d4ca6d0d5e5b4440e2043d9e44",
+      "chunk-502447bef719690dfaf911d9ccf7593d",
+      "chunk-3450c7761460298d4487d71908766857",
+      "chunk-0c0dec85ab2cc9317d8545d78e3b12ff",
+      "chunk-c54d3481d05989580b3bc907ec8ea31b",
+      "chunk-06e376ab3c075299bb3c0eb1d17db9cd",
+      "chunk-f0d16591b23714a69f1677a098a57f0f",
+      "chunk-3f92675dde68759d74c1bb25d487d1c4",
+      "chunk-83ab84c1823105c5c8d9cf016047ee7e",
+      "chunk-80b33f0c11ecf27b8bc0626deded6819",
+      "chunk-6f98f107b6edf9f138b223711e1ba808",
+      "chunk-80e97285ff5dc03c76c343b4c509f00e",
+      "chunk-9063cefe96982cfabb2207c251ed8f8b",
+      "chunk-e6687e8da0f2e8d771804eb624eaae2f",
+      "chunk-981d1ee30730a556ec125ed91c548341"
+    ],
     "content_summary": "{\"dataList\":[{\"data\":\"1342,310,310,311,311,311,311,311,312,312,313,313,314,315,316,316,629,631,632,633,636,637,638,639,640,641,641,641,643,645,1345,1347,1348,1349,1351,1353,1356,1358,1359,1360,1361,1360,1361,1363,1363,1365,1367,1368,1370,1374,1375,13...",
     "content_length": 26964,
     "created_at": "2026-01-11T11:07:43.597648+00:00",
-    "updated_at": "2026-01-11T11:07:43.597648+00:00",
+    "updated_at": "2026-01-11T12:13:58.379683+00:00",
     "file_path": "test_1min.json",
     "track_id": "upload_20260111_190743_478867ec",
-    "chunks_list": []
+    "metadata": {
+      "processing_start_time": 1768132301,
+      "processing_end_time": 1768133638
+    }
   }
 }

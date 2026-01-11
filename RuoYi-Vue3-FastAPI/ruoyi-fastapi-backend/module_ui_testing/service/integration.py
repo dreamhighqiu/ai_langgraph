@@ -2,6 +2,11 @@
 Integration helpers to keep UI automation (Playwright) logic inside module_ui_testing.
 
 module_testing should call these helpers without embedding any Playwright/UI-specific details.
+
+这个模块提供了UI自动化测试与module_testing的集成接口，确保：
+1. UI自动化相关的代码都在module_ui_testing模块内
+2. module_testing通过这些接口调用UI自动化功能
+3. 保持模块间的清晰分离
 """
 
 from __future__ import annotations
@@ -21,6 +26,12 @@ def get_script_file_ext(script_type: str) -> Optional[str]:
     Return storage filename extension for a script type.
 
     Only UI automation related overrides are defined here.
+    
+    Args:
+        script_type: 脚本类型
+        
+    Returns:
+        文件扩展名，如果不是UI自动化脚本则返回None
     """
     if script_type == "playwright":
         return "spec.ts"
@@ -32,6 +43,12 @@ def get_agent_id_for_script_type(script_type: str) -> Optional[str]:
     Return agent id for a script type.
 
     Only UI automation related overrides are defined here.
+    
+    Args:
+        script_type: 脚本类型
+        
+    Returns:
+        Agent ID，如果不是UI自动化脚本则返回None
     """
     if script_type == "playwright":
         return "ui_automation_agent"
@@ -43,6 +60,12 @@ def get_requirement_type_for_script_type(script_type: str) -> Optional[str]:
     Return requirement_type used in prompt construction for a script type.
 
     Only UI automation related overrides are defined here.
+    
+    Args:
+        script_type: 脚本类型
+        
+    Returns:
+        需求类型，如果不是UI自动化脚本则返回None
     """
     if script_type == "playwright":
         return "ui"
@@ -60,6 +83,18 @@ async def try_execute_ui_script(
     """
     If the given script belongs to UI automation, execute it and return the result.
     Otherwise, return None.
+    
+    这是UI自动化脚本执行的统一入口，由module_testing调用。
+    
+    Args:
+        db: 数据库会话
+        execution_id: 执行ID
+        script: 测试脚本对象
+        execution_config: 执行配置（浏览器、无头模式等）
+        executor: 执行者
+        
+    Returns:
+        执行结果字典，如果不是UI自动化脚本则返回None
     """
     if script.script_type != "playwright":
         return None

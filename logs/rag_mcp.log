@@ -19,13 +19,17 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-[01/10/26 21:59:05] INFO     Starting MCP server 'LightRAG' with server.py:2618
+[01/11/26 15:36:55] INFO     Starting MCP server 'LightRAG' with server.py:2618
                              transport 'sse' on                                
                              http://0.0.0.0:8002/sse                           
-INFO:     Started server process [365012]
+INFO:     Started server process [808512]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
-INFO:     127.0.0.1:51275 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58128 - "GET /sse HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49217 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50771 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61059 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61065 - "POST /messages/?session_id=c8df5d1ca9e84100b879b7c0eb33a7f3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61072 - "POST /messages/?session_id=c8df5d1ca9e84100b879b7c0eb33a7f3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:61078 - "POST /messages/?session_id=c8df5d1ca9e84100b879b7c0eb33a7f3 HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:57179 - "GET /sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53402 - "GET /sse HTTP/1.1" 200 OK

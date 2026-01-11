@@ -74,6 +74,7 @@ const usePermissionStore = defineStore(
           children: [
             { path: 'index', component: loadView('testing/ui-automation/index'), name: 'UIAutomation', meta: { title: 'UI自动化', icon: 'monitor' } },
             { path: 'requirement', component: loadView('testing/ui-automation/requirement'), name: 'UIRequirement', meta: { title: '需求管理', icon: 'list' } },
+            { path: 'generate', component: loadView('testing/ui-automation/generate'), name: 'UIGenerate', meta: { title: '脚本生成', icon: 'magic-stick' } },
             { path: 'script', component: loadView('testing/ui-automation/script'), name: 'UIScript', meta: { title: '脚本管理', icon: 'edit' } },
             { path: 'execution', component: loadView('testing/ui-automation/execution'), name: 'UIExecution', meta: { title: '脚本执行', icon: 'play' } },
             { path: 'report', component: loadView('testing/ui-automation/report'), name: 'UIReport', meta: { title: '报告管理', icon: 'document' } }

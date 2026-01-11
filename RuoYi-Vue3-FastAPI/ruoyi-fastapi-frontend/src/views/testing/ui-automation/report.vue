@@ -61,8 +61,12 @@
 </template>
 
 <script setup name="UIAutomationReport">
-import { ref, reactive, onMounted } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ref, reactive, onMounted, watch } from 'vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
+import { useRouter } from 'vue-router'
+import { listUIReports, deleteUIReport, downloadUIReport } from '@/api/testing/uiAutomation'
+
+const router = useRouter()
 
 const loading = ref(false)
 const total = ref(0)
@@ -73,12 +77,70 @@ const queryParams = reactive({
   pageNum: 1,
   pageSize: 10,
   reportName: undefined,
-  reportType: 'ui'
+  reportType: 'ui',
+  beginTime: undefined,
+  endTime: undefined
 })
 
-function getList() {
-  reportList.value = []
-  total.value = 0
+// 监听日期范围变化
+watch(dateRange, (val) => {
+  if (val && val.length === 2) {
+    queryParams.beginTime = val[0]
+    queryParams.endTime = val[1]
+  } else {
+    queryParams.beginTime = undefined
+    queryParams.endTime = undefined
+  }
+})
+
+async function getList() {
+  loading.value = true
+  try {
+    // 处理日期范围参数
+    const params = { ...queryParams }
+    if (dateRange.value && dateRange.value.length === 2) {
+      params.beginTime = dateRange.value[0]
+      params.endTime = dateRange.value[1]
+    }
+    
+    const response = await listUIReports(params)
+    console.log('[Report] API响应:', response)
+    
+    // 后端返回格式: { code: 200, data: { rows: [...], total: ... } } 或 { code: 200, rows: [...], total: ... }
+    const data = response.data || response
+    
+    if (response.code === 200 || !response.code) {
+      reportList.value = (data.rows || data.list || []).map(item => ({
+        reportId: item.report_id || item.reportId,
+        executionId: item.execution_id || item.executionId,
+        reportName: item.report_name || item.reportName,
+        reportType: item.report_type || item.reportType,
+        scriptId: item.script_id || item.scriptId,
+        scriptName: item.script_name || item.scriptName,
+        browser: item.browser,
+        result: item.result,
+        summary: item.summary,
+        metrics: item.metrics,
+        createTime: item.create_time || item.createTime,
+        filePath: item.file_path || item.filePath,
+        fileSize: item.file_size || item.fileSize
+      }))
+      total.value = data.total || 0
+      console.log('[Report] 加载成功:', reportList.value.length, '条记录，总数:', total.value)
+    } else {
+      console.error('[Report] API返回错误:', response)
+      ElMessage.error(response.msg || '获取报告列表失败')
+      reportList.value = []
+      total.value = 0
+    }
+  } catch (error) {
+    console.error('[Report] 获取报告列表失败:', error)
+    ElMessage.error('获取报告列表失败: ' + (error.msg || error.message || '未知错误'))
+    reportList.value = []
+    total.value = 0
+  } finally {
+    loading.value = false
+  }
 }
 
 function handleQuery() {
@@ -93,15 +155,49 @@ function resetQuery() {
 }
 
 function handleView(row) {
-  ElMessage.info('查看报告详情')
+  router.push({
+    path: '/testing/ui-automation/report',
+    query: { reportId: row.reportId }
+  })
 }
 
-function handleDownload(row) {
-  ElMessage.info('下载报告')
+async function handleDownload(row) {
+  try {
+    const response = await downloadUIReport(row.reportId)
+    const blob = new Blob([response], { type: 'application/zip' })
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${row.reportName || 'report'}.zip`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    window.URL.revokeObjectURL(url)
+    ElMessage.success('下载成功')
+  } catch (error) {
+    console.error('下载报告失败:', error)
+    ElMessage.error('下载报告失败')
+  }
 }
 
 function handleDelete(row) {
-  ElMessage.info('删除报告')
+  ElMessageBox.confirm(
+    `确认删除报告"${row.reportName}"吗？此操作不可恢复。`,
+    '警告',
+    {
+      confirmButtonText: '确定删除',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }
+  ).then(async () => {
+    try {
+      await deleteUIReport(row.reportId)
+      ElMessage.success('删除成功')
+      getList()
+    } catch (error) {
+      ElMessage.error('删除失败')
+    }
+  }).catch(() => {})
 }
 
 onMounted(() => {

@@ -7677,3 +7677,215 @@ TimeoutError: Embedding func: Worker execution timeout after 2000s
 2026-01-11 20:42:34,279 - uvicorn.access - INFO - 127.0.0.1:65474 - "GET /openapi.json HTTP/1.1" 200
 2026-01-11 20:48:07,308 - uvicorn.access - INFO - 127.0.0.1:64906 - "GET /docs HTTP/1.1" 200
 2026-01-11 20:48:07,443 - uvicorn.access - INFO - 127.0.0.1:64906 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 20:55:43,652 - lightrag - ERROR - Error /documents/upload: Pasted image 20230918152638.png: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+2026-01-11 20:55:43,654 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+2026-01-11 20:55:43,655 - uvicorn.access - INFO - 127.0.0.1:49680 - "POST /documents/upload HTTP/1.1" 500
+2026-01-11 21:01:37,218 - uvicorn.access - INFO - 127.0.0.1:51087 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:01:37,409 - uvicorn.access - INFO - 127.0.0.1:51087 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:06:01,435 - uvicorn.access - INFO - 127.0.0.1:57023 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 21:06:44,772 - uvicorn.access - INFO - 127.0.0.1:50608 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 21:06:44,823 - lightrag - INFO - Successfully extracted and enqueued file: appium操作手册.md
+2026-01-11 21:06:44,835 - lightrag - INFO - Reset 1 documents from PROCESSING/FAILED to PENDING status
+2026-01-11 21:06:44,836 - lightrag - INFO - Processing 2 document(s)
+2026-01-11 21:06:44,837 - lightrag - INFO - Extracting stage 1/2: test_5min.json
+2026-01-11 21:06:44,838 - lightrag - INFO - Processing d-id: doc-83cda2f9c9ee56f5068a89ea3d3b46b6
+2026-01-11 21:06:44,838 - lightrag - INFO - Extracting stage 2/2: appium操作手册.md
+2026-01-11 21:06:44,839 - lightrag - INFO - Processing d-id: doc-79060e9f57d12580d9567716bddc6261
+2026-01-11 21:06:58,538 - uvicorn.access - INFO - 127.0.0.1:63016 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 21:06:59,538 - uvicorn.access - INFO - 127.0.0.1:65251 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:06:59,775 - uvicorn.access - INFO - 127.0.0.1:65251 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:21:47,983 - lightrag - INFO -  == LLM cache == saving: mix:keywords:201bd245d9b7d9e2f9712b9800ce69f7
+2026-01-11 21:22:18,317 - uvicorn.access - INFO - 127.0.0.1:59845 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:22:18,498 - uvicorn.access - INFO - 127.0.0.1:59845 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:22:56,284 - lightrag - INFO -  == LLM cache == saving: mix:keywords:605dec851c5787060da9fce4e4172a69
+2026-01-11 21:34:58,453 - uvicorn.access - INFO - 127.0.0.1:59509 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:34:58,761 - uvicorn.access - INFO - 127.0.0.1:59509 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:37:53,365 - uvicorn.access - INFO - 127.0.0.1:58879 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:37:53,510 - uvicorn.access - INFO - 127.0.0.1:58879 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:40:05,291 - lightrag - WARNING - Embedding func: Worker timeout for task 1975787744384_1937797.5 after 2000s
+2026-01-11 21:40:05,308 - lightrag - WARNING - Embedding func: Worker timeout for task 1975787745344_1937797.5 after 2000s
+2026-01-11 21:40:06,742 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
+    raise TimeoutError(f"{queue_name}: {str(e)}")
+TimeoutError: Embedding func: Worker execution timeout after 2000s
+
+2026-01-11 21:40:06,743 - lightrag - ERROR - Failed to extract document 1/2: test_5min.json
+2026-01-11 21:41:05,525 - lightrag - WARNING - Embedding func: Worker timeout for task 1975787744192_1937797.609 after 2000s
+2026-01-11 21:41:05,550 - lightrag - ERROR - Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
+    raise TimeoutError(f"{queue_name}: {str(e)}")
+TimeoutError: Embedding func: Worker execution timeout after 2000s
+
+2026-01-11 21:41:05,550 - lightrag - ERROR - Failed to extract document 2/2: appium操作手册.md
+2026-01-11 21:41:05,562 - lightrag - INFO - Enqueued document processing pipeline stopped
+2026-01-11 21:42:02,877 - lightrag - INFO - Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+2026-01-11 21:42:04,047 - lightrag - INFO - Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+2026-01-11 21:42:04,149 - lightrag - INFO - Query nodes: 简历, 服务器, 请求 (top_k:10, cosine:0.2)
+2026-01-11 21:42:04,256 - lightrag - INFO - Query nodes: 简历上传, 简历查看 (top_k:10, cosine:0.2)
+2026-01-11 21:42:04,363 - lightrag - INFO - Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+2026-01-11 21:42:04,469 - lightrag - INFO - Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+2026-01-11 21:42:10,095 - lightrag - INFO - Local query: 10 entites, 83 relations
+2026-01-11 21:42:10,096 - lightrag - INFO - Query edges: 简历信息, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+2026-01-11 21:42:11,406 - lightrag - INFO - Local query: 10 entites, 2 relations
+2026-01-11 21:42:11,408 - lightrag - INFO - Query edges: 简历管理, 功能缺陷, 系统功能 (top_k:10, cosine:0.2)
+2026-01-11 21:42:13,006 - lightrag - INFO - Local query: 10 entites, 18 relations
+2026-01-11 21:42:13,007 - lightrag - INFO - Query edges: 简历功能缺陷, 服务器错误, 请求失败 (top_k:10, cosine:0.2)
+2026-01-11 21:42:14,340 - lightrag - INFO - Global query: 16 entites, 10 relations
+2026-01-11 21:42:14,514 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 21:42:14,515 - lightrag - INFO - Raw search results: 24 entities, 91 relations, 5 vector chunks
+2026-01-11 21:42:14,543 - lightrag - INFO - After truncation: 24 entities, 91 relations
+2026-01-11 21:42:14,790 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-11 21:42:14,790 - lightrag - INFO - Find no additional relations-related chunks from 91 relations
+2026-01-11 21:42:14,791 - lightrag - INFO - Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+2026-01-11 21:42:14,797 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 21:42:14,802 - lightrag - INFO - Final context: 24 entities, 91 relations, 5 chunks
+2026-01-11 21:42:14,804 - lightrag - INFO - Final chunks S+F/O: E3/1 E6/2 E8/3 E2/4 E3/5
+2026-01-11 21:42:14,819 - lightrag - INFO - Global query: 19 entites, 10 relations
+2026-01-11 21:42:14,962 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 21:42:14,963 - lightrag - INFO - Raw search results: 29 entities, 12 relations, 5 vector chunks
+2026-01-11 21:42:14,966 - lightrag - INFO - After truncation: 29 entities, 12 relations
+2026-01-11 21:42:15,239 - lightrag - INFO - Selecting 19 from 19 entity-related chunks by vector similarity
+2026-01-11 21:42:15,239 - lightrag - INFO - Find no additional relations-related chunks from 12 relations
+2026-01-11 21:42:15,241 - lightrag - INFO - Round-robin merged chunks: 24 -> 19 (deduplicated 5)
+2026-01-11 21:42:15,243 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 21:42:15,245 - lightrag - INFO - Final context: 29 entities, 12 relations, 5 chunks
+2026-01-11 21:42:15,245 - lightrag - INFO - Final chunks S+F/O: E1/1 E1/2 E1/3 E1/4 E1/5
+2026-01-11 21:42:15,297 - lightrag - INFO - Global query: 16 entites, 10 relations
+2026-01-11 21:42:15,441 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 21:42:15,442 - lightrag - INFO - Raw search results: 26 entities, 28 relations, 5 vector chunks
+2026-01-11 21:42:15,446 - lightrag - INFO - After truncation: 26 entities, 28 relations
+2026-01-11 21:42:15,727 - lightrag - INFO - Selecting 21 from 21 entity-related chunks by vector similarity
+2026-01-11 21:42:15,729 - lightrag - INFO - Find no additional relations-related chunks from 28 relations
+2026-01-11 21:42:15,729 - lightrag - INFO - Round-robin merged chunks: 26 -> 24 (deduplicated 2)
+2026-01-11 21:42:15,733 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 21:42:15,736 - lightrag - INFO - Final context: 26 entities, 28 relations, 5 chunks
+2026-01-11 21:42:15,737 - lightrag - INFO - Final chunks S+F/O: C1/1 E1/1 C1/2 E7/2 C1/3
+2026-01-11 21:42:15,741 - lightrag - INFO - Local query: 10 entites, 83 relations
+2026-01-11 21:42:15,741 - lightrag - INFO - Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+2026-01-11 21:42:15,848 - lightrag - INFO - Local query: 10 entites, 83 relations
+2026-01-11 21:42:15,849 - lightrag - INFO - Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+2026-01-11 21:42:17,914 - lightrag - INFO - Local query: 10 entites, 83 relations
+2026-01-11 21:42:17,914 - lightrag - INFO - Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+2026-01-11 21:42:19,251 - uvicorn.access - INFO - 127.0.0.1:63928 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:42:19,313 - uvicorn.access - INFO - 127.0.0.1:63928 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:42:19,950 - lightrag - INFO - Global query: 15 entites, 10 relations
+2026-01-11 21:42:20,100 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 21:42:20,100 - lightrag - INFO - Raw search results: 23 entities, 90 relations, 5 vector chunks
+2026-01-11 21:42:20,108 - lightrag - INFO - After truncation: 23 entities, 90 relations
+2026-01-11 21:42:20,319 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-11 21:42:20,321 - lightrag - INFO - Find no additional relations-related chunks from 90 relations
+2026-01-11 21:42:20,321 - lightrag - INFO - Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+2026-01-11 21:42:20,326 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 21:42:20,329 - lightrag - INFO - Final context: 23 entities, 90 relations, 5 chunks
+2026-01-11 21:42:20,330 - lightrag - INFO - Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
+2026-01-11 21:42:20,335 - uvicorn.access - INFO - 127.0.0.1:55677 - "POST /query/data HTTP/1.1" 200
+2026-01-11 21:42:20,376 - lightrag - INFO - Global query: 15 entites, 10 relations
+2026-01-11 21:42:20,519 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 21:42:20,520 - lightrag - INFO - Raw search results: 23 entities, 90 relations, 5 vector chunks
+2026-01-11 21:42:20,524 - lightrag - INFO - After truncation: 23 entities, 90 relations
+2026-01-11 21:42:20,730 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-11 21:42:20,731 - lightrag - INFO - Find no additional relations-related chunks from 90 relations
+2026-01-11 21:42:20,731 - lightrag - INFO - Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+2026-01-11 21:42:20,740 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 21:42:20,744 - lightrag - INFO - Final context: 23 entities, 90 relations, 5 chunks
+2026-01-11 21:42:20,745 - lightrag - INFO - Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
+2026-01-11 21:42:20,792 - lightrag - INFO - Global query: 15 entites, 10 relations
+2026-01-11 21:42:20,932 - lightrag - INFO - Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+2026-01-11 21:42:20,934 - lightrag - INFO - Raw search results: 23 entities, 90 relations, 5 vector chunks
+2026-01-11 21:42:20,942 - lightrag - INFO - After truncation: 23 entities, 90 relations
+2026-01-11 21:42:21,117 - lightrag - INFO - Selecting 11 from 11 entity-related chunks by vector similarity
+2026-01-11 21:42:21,121 - lightrag - INFO - Find no additional relations-related chunks from 90 relations
+2026-01-11 21:42:21,121 - lightrag - INFO - Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+2026-01-11 21:42:21,128 - lightrag - WARNING - Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+2026-01-11 21:42:21,137 - lightrag - INFO - Final context: 23 entities, 90 relations, 5 chunks
+2026-01-11 21:42:21,137 - lightrag - INFO - Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
+2026-01-11 21:45:24,592 - uvicorn.access - INFO - 127.0.0.1:55766 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:45:24,710 - uvicorn.access - INFO - 127.0.0.1:55766 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:46:02,213 - uvicorn.access - INFO - 127.0.0.1:50728 - "DELETE /documents/upload_20260111_210644_44863daa HTTP/1.1" 404
+2026-01-11 21:48:53,230 - uvicorn.access - INFO - 127.0.0.1:55196 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 21:48:53,230 - lightrag - INFO - Using RAG-Anything multimodal processing for: 社保公积金追缴流程.pdf
+2026-01-11 21:48:53,231 - lightrag - INFO - Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\社保公积金追缴流程.pdf
+2026-01-11 21:48:53,232 - lightrag - INFO - Using docling parser with method: auto
+2026-01-11 21:48:53,232 - lightrag - INFO - Detected PDF file, using parser for PDF...
+2026-01-11 21:48:55,875 - uvicorn.access - INFO - 127.0.0.1:61262 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:48:55,904 - uvicorn.access - INFO - 127.0.0.1:61262 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2026-01-11 21:48:55,910 - uvicorn.access - INFO - 127.0.0.1:61262 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2026-01-11 21:48:56,036 - uvicorn.access - INFO - 127.0.0.1:61262 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:48:56,546 - uvicorn.access - INFO - 127.0.0.1:61262 - "GET /static/swagger-ui/favicon-32x32.png HTTP/1.1" 200
+2026-01-11 21:49:05,260 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /webui/assets/index-BRREmx1I.js HTTP/1.1" 200
+2026-01-11 21:49:05,294 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /webui/assets/index-C8dNBpcg.css HTTP/1.1" 200
+2026-01-11 21:49:06,099 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:06,201 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /webui/favicon.png HTTP/1.1" 200
+2026-01-11 21:49:06,344 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:49:09,174 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:09,298 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:49:10,259 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:10,400 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:49:13,533 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:13,669 - uvicorn.access - INFO - 127.0.0.1:55452 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:49:34,730 - uvicorn.access - INFO - 127.0.0.1:54030 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:34,870 - uvicorn.access - INFO - 127.0.0.1:54030 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:49:45,670 - uvicorn.access - INFO - 127.0.0.1:54030 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:45,812 - uvicorn.access - INFO - 127.0.0.1:54030 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:49:59,777 - uvicorn.access - INFO - 127.0.0.1:61908 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:49:59,880 - uvicorn.access - INFO - 127.0.0.1:61908 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:50:01,097 - uvicorn.access - INFO - 127.0.0.1:61908 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:50:01,215 - uvicorn.access - INFO - 127.0.0.1:61908 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:50:02,375 - uvicorn.access - INFO - 127.0.0.1:61908 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:50:02,520 - uvicorn.access - INFO - 127.0.0.1:61908 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:50:25,490 - uvicorn.access - INFO - 127.0.0.1:55038 - "POST /documents/upload HTTP/1.1" 200
+2026-01-11 21:50:25,517 - lightrag - INFO - Successfully extracted and enqueued file: image_server.py
+2026-01-11 21:50:25,525 - lightrag - INFO - Reset 2 documents from PROCESSING/FAILED to PENDING status
+2026-01-11 21:50:25,525 - lightrag - INFO - Processing 3 document(s)
+2026-01-11 21:50:25,527 - lightrag - INFO - Extracting stage 1/3: test_5min.json
+2026-01-11 21:50:25,527 - lightrag - INFO - Processing d-id: doc-83cda2f9c9ee56f5068a89ea3d3b46b6
+2026-01-11 21:50:25,529 - lightrag - INFO - Extracting stage 2/3: appium操作手册.md
+2026-01-11 21:50:25,529 - lightrag - INFO - Processing d-id: doc-79060e9f57d12580d9567716bddc6261
+2026-01-11 21:50:47,338 - lightrag - INFO - Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\社保公积金追缴流程.pdf complete! Extracted 27 content blocks
+2026-01-11 21:50:48,937 - lightrag - INFO - Stored parsing result in cache: 96b7e8afa1dbcbb365e7cf96298434e5
+2026-01-11 21:50:48,938 - lightrag - INFO - Document parsed successfully: 社保公积金追缴流程.pdf, doc_id=doc-42cc906799f9080cfeb341c1d75bd51b, blocks=27
+2026-01-11 21:50:48,938 - lightrag - INFO - Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\社保公积金追缴流程.pdf (27 items)
+2026-01-11 21:50:48,939 - lightrag - INFO - Content separation complete:
+2026-01-11 21:50:48,940 - lightrag - INFO -   - Text content length: 1620 characters
+2026-01-11 21:50:48,940 - lightrag - INFO -   - Multimodal items count: 0
+2026-01-11 21:50:48,940 - lightrag - INFO - Starting text content insertion into LightRAG...
+2026-01-11 21:50:48,948 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-11 21:50:48,948 - lightrag - INFO - Text content insertion complete
+2026-01-11 21:50:48,950 - lightrag - INFO - Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\社保公积金追缴流程.pdf
+2026-01-11 21:50:48,950 - lightrag - INFO - Document processing complete: 社保公积金追缴流程.pdf, doc_id=doc-42cc906799f9080cfeb341c1d75bd51b
+2026-01-11 21:50:48,950 - lightrag - INFO - RAG-Anything processing completed successfully: 社保公积金追缴流程.pdf, doc_id=doc-42cc906799f9080cfeb341c1d75bd51b
+2026-01-11 21:50:48,950 - lightrag - INFO - Another process is already processing the document queue. Request queued.
+2026-01-11 21:50:49,160 - uvicorn.access - INFO - 127.0.0.1:51441 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:50:51,640 - uvicorn.access - INFO - 127.0.0.1:51441 - "GET /openapi.json HTTP/1.1" 200
+2026-01-11 21:52:35,423 - uvicorn.access - INFO - 127.0.0.1:56338 - "GET /docs HTTP/1.1" 200
+2026-01-11 21:52:35,551 - uvicorn.access - INFO - 127.0.0.1:56338 - "GET /openapi.json HTTP/1.1" 200

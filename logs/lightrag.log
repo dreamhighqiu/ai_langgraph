@@ -802,3 +802,160 @@ INFO: Completed processing file 3/3: test_1min.json
 INFO: Enqueued document processing pipeline stopped
 INFO: 127.0.0.1:65474 - "GET /docs HTTP/1.1" 200
 INFO: 127.0.0.1:65474 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:64906 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:64906 - "GET /openapi.json HTTP/1.1" 200
+ERROR: Error /documents/upload: Pasted image 20230918152638.png: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
+    raise HTTPException(
+fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+
+INFO: 127.0.0.1:49680 - "POST /documents/upload HTTP/1.1" 500
+INFO: 127.0.0.1:51087 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:51087 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:57023 - "POST /documents/upload HTTP/1.1" 200
+INFO: 127.0.0.1:50608 - "POST /documents/upload HTTP/1.1" 200
+INFO: Successfully extracted and enqueued file: appium操作手册.md
+INFO: Reset 1 documents from PROCESSING/FAILED to PENDING status
+INFO: Processing 2 document(s)
+INFO: Extracting stage 1/2: test_5min.json
+INFO: Processing d-id: doc-83cda2f9c9ee56f5068a89ea3d3b46b6
+INFO: Extracting stage 2/2: appium操作手册.md
+INFO: Processing d-id: doc-79060e9f57d12580d9567716bddc6261
+INFO: 127.0.0.1:63016 - "POST /documents/upload HTTP/1.1" 200
+INFO: 127.0.0.1:65251 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:65251 - "GET /openapi.json HTTP/1.1" 200
+INFO:  == LLM cache == saving: mix:keywords:201bd245d9b7d9e2f9712b9800ce69f7
+INFO: 127.0.0.1:59845 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:59845 - "GET /openapi.json HTTP/1.1" 200
+INFO:  == LLM cache == saving: mix:keywords:605dec851c5787060da9fce4e4172a69
+INFO: 127.0.0.1:59509 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:59509 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:58879 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:58879 - "GET /openapi.json HTTP/1.1" 200
+WARNING: Embedding func: Worker timeout for task 1975787744384_1937797.5 after 2000s
+WARNING: Embedding func: Worker timeout for task 1975787745344_1937797.5 after 2000s
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
+    raise TimeoutError(f"{queue_name}: {str(e)}")
+TimeoutError: Embedding func: Worker execution timeout after 2000s
+
+ERROR: Failed to extract document 1/2: test_5min.json
+WARNING: Embedding func: Worker timeout for task 1975787744192_1937797.609 after 2000s
+ERROR: Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
+    return await future
+           ^^^^^^^^^^^^
+lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
+    await asyncio.gather(*first_stage_tasks)
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
+    embeddings_list = await asyncio.gather(*embedding_tasks)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
+    raise TimeoutError(f"{queue_name}: {str(e)}")
+TimeoutError: Embedding func: Worker execution timeout after 2000s
+
+ERROR: Failed to extract document 2/2: appium操作手册.md
+INFO: Enqueued document processing pipeline stopped
+INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+INFO: Query nodes: 简历, 服务器, 请求 (top_k:10, cosine:0.2)
+INFO: Query nodes: 简历上传, 简历查看 (top_k:10, cosine:0.2)
+INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 83 relations
+INFO: Query edges: 简历信息, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 2 relations
+INFO: Query edges: 简历管理, 功能缺陷, 系统功能 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 18 relations
+INFO: Query edges: 简历功能缺陷, 服务器错误, 请求失败 (top_k:10, cosine:0.2)
+INFO: Global query: 16 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 24 entities, 91 relations, 5 vector chunks
+INFO: After truncation: 24 entities, 91 relations
+INFO: Selecting 11 from 11 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 91 relations
+INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 24 entities, 91 relations, 5 chunks
+INFO: Final chunks S+F/O: E3/1 E6/2 E8/3 E2/4 E3/5
+INFO: Global query: 19 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 29 entities, 12 relations, 5 vector chunks
+INFO: After truncation: 29 entities, 12 relations
+INFO: Selecting 19 from 19 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 12 relations
+INFO: Round-robin merged chunks: 24 -> 19 (deduplicated 5)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 29 entities, 12 relations, 5 chunks
+INFO: Final chunks S+F/O: E1/1 E1/2 E1/3 E1/4 E1/5
+INFO: Global query: 16 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 26 entities, 28 relations, 5 vector chunks
+INFO: After truncation: 26 entities, 28 relations
+INFO: Selecting 21 from 21 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 28 relations
+INFO: Round-robin merged chunks: 26 -> 24 (deduplicated 2)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 26 entities, 28 relations, 5 chunks
+INFO: Final chunks S+F/O: C1/1 E1/1 C1/2 E7/2 C1/3
+INFO: Local query: 10 entites, 83 relations
+INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 83 relations
+INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+INFO: Local query: 10 entites, 83 relations
+INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
+INFO: 127.0.0.1:63928 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:63928 - "GET /openapi.json HTTP/1.1" 200
+INFO: Global query: 15 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 23 entities, 90 relations, 5 vector chunks
+INFO: After truncation: 23 entities, 90 relations
+INFO: Selecting 11 from 11 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 90 relations
+INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 23 entities, 90 relations, 5 chunks
+INFO: Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
+INFO: 127.0.0.1:55677 - "POST /query/data HTTP/1.1" 200
+INFO: Global query: 15 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 23 entities, 90 relations, 5 vector chunks
+INFO: After truncation: 23 entities, 90 relations
+INFO: Selecting 11 from 11 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 90 relations
+INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 23 entities, 90 relations, 5 chunks
+INFO: Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
+INFO: Global query: 15 entites, 10 relations
+INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Raw search results: 23 entities, 90 relations, 5 vector chunks
+INFO: After truncation: 23 entities, 90 relations
+INFO: Selecting 11 from 11 entity-related chunks by vector similarity
+INFO: Find no additional relations-related chunks from 90 relations
+INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
+WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
+INFO: Final context: 23 entities, 90 relations, 5 chunks
+INFO: Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
+INFO: 127.0.0.1:55766 - "GET /docs HTTP/1.1" 200
+INFO: 127.0.0.1:55766 - "GET /openapi.json HTTP/1.1" 200
+INFO: 127.0.0.1:50728 - "DELETE /documents/upload_20260111_210644_44863daa HTTP/1.1" 404

@@ -25,6 +25,8 @@ from module_ui_testing.entity.vo.ui_script_vo import (
     UIScriptGenerateRequest,
     UIScriptResponse,
 )
+from module_testing.entity.vo.execution_vo import ExecutionPageQueryModel
+from module_testing.entity.vo.report_vo import ReportPageQueryModel
 from module_ui_testing.service.ui_automation_service import UIAutomationService
 from utils.log_util import logger
 from utils.response_util import ResponseUtil
@@ -146,6 +148,36 @@ async def execute_ui_script(
 
 
 @ui_automation_controller.get(
+    "/executions",
+    summary="获取UI自动化执行列表",
+    response_model=PageResponseModel[UIExecutionResponse],
+    dependencies=[UserInterfaceAuthDependency("testing:execution:list")],
+)
+async def get_ui_execution_list(
+    request: Request,
+    query: Annotated[ExecutionPageQueryModel, Query()],
+    db: Annotated[AsyncSession, DBSessionDependency()],
+) -> Response:
+    """获取UI自动化执行列表"""
+    try:
+        from module_testing.dao.execution_dao import ExecutionDAO
+        
+        # 只查询 playwright 类型的执行
+        query.script_type = "playwright"
+        executions, total = await ExecutionDAO.get_list(db, query, is_page=True)
+        
+        # 转换为响应格式
+        result = {
+            "rows": executions,
+            "total": total
+        }
+        return ResponseUtil.success(dict_content=result)
+    except Exception as e:
+        logger.error(f"获取执行列表失败: {str(e)}")
+        return ResponseUtil.error(msg=f"获取失败: {str(e)}")
+
+
+@ui_automation_controller.get(
     "/executions/{execution_id}",
     summary="获取UI自动化执行详情",
     response_model=DataResponseModel[UIExecutionResponse],
@@ -169,7 +201,7 @@ async def get_ui_execution_detail(
 
 @ui_automation_controller.get(
     "/executions/{execution_id}/reports",
-    summary="获取UI自动化测试报告列表",
+    summary="获取UI自动化测试报告列表（按执行ID）",
     response_model=DataResponseModel[list[UIReportResponse]],
     dependencies=[UserInterfaceAuthDependency("testing:report:list")],
 )
@@ -178,12 +210,42 @@ async def get_ui_execution_reports(
     execution_id: Annotated[int, Path(description="执行ID")],
     db: Annotated[AsyncSession, DBSessionDependency()],
 ) -> Response:
-    """获取UI自动化测试报告列表"""
+    """获取UI自动化测试报告列表（按执行ID）"""
     try:
         result = await UIAutomationService.get_execution_reports(db, execution_id)
         return ResponseUtil.success(data=result)
     except Exception as e:
         logger.error(f"获取测试报告列表失败: {str(e)}")
+        return ResponseUtil.error(msg=f"获取失败: {str(e)}")
+
+
+@ui_automation_controller.get(
+    "/reports",
+    summary="获取UI自动化测试报告列表",
+    response_model=PageResponseModel[UIReportResponse],
+    dependencies=[UserInterfaceAuthDependency("testing:report:list")],
+)
+async def get_ui_report_list(
+    request: Request,
+    query: Annotated[ReportPageQueryModel, Query()],
+    db: Annotated[AsyncSession, DBSessionDependency()],
+) -> Response:
+    """获取UI自动化测试报告列表"""
+    try:
+        from module_testing.dao.report_dao import ReportDAO
+        
+        # 只查询 playwright 类型的报告
+        query.report_type = "playwright"
+        reports, total = await ReportDAO.get_list(db, query, is_page=True)
+        
+        # 转换为响应格式
+        result = {
+            "rows": reports,
+            "total": total
+        }
+        return ResponseUtil.success(dict_content=result)
+    except Exception as e:
+        logger.error(f"获取报告列表失败: {str(e)}")
         return ResponseUtil.error(msg=f"获取失败: {str(e)}")
 
 

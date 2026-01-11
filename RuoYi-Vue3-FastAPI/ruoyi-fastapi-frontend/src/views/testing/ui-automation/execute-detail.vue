@@ -1,192 +1,189 @@
 <template>
-  <div class="app-container execute-detail">
-    <el-page-header @back="$router.back()" content="执行UI自动化测试脚本">
-      <template #extra>
-        <el-button @click="$router.push({ path: '/testing/ui-automation', query: { tab: 'scripts' } })">
-          <el-icon><Back /></el-icon> 返回脚本列表
-        </el-button>
+  <div class="app-container">
+    <el-card>
+      <template #header>
+        <div class="card-header">
+          <span><el-icon><VideoPlay /></el-icon> 执行UI自动化测试脚本</span>
+          <el-button @click="$router.back()">
+            <el-icon><Back /></el-icon> 返回
+          </el-button>
+        </div>
       </template>
-    </el-page-header>
 
-    <el-row :gutter="20" class="mt-4">
-      <!-- 左侧：脚本信息 -->
-      <el-col :span="10">
-        <el-card shadow="hover">
-          <template #header>
-            <span><el-icon><Document /></el-icon> 脚本信息</span>
-          </template>
+      <el-row :gutter="20">
+        <!-- 左侧：脚本信息和配置 -->
+        <el-col :span="10">
+          <el-card shadow="hover">
+            <template #header>
+              <span><el-icon><Document /></el-icon> 脚本信息</span>
+            </template>
 
-          <el-descriptions v-if="scriptInfo" :column="1" border>
-            <el-descriptions-item label="脚本ID">{{ scriptInfo.scriptId }}</el-descriptions-item>
-            <el-descriptions-item label="脚本名称">{{ scriptInfo.scriptName }}</el-descriptions-item>
-            <el-descriptions-item label="项目">{{ scriptInfo.projectName }}</el-descriptions-item>
-            <el-descriptions-item label="语言">
-              <el-tag v-if="scriptInfo.language === 'typescript'" type="primary" size="small">TypeScript</el-tag>
-              <el-tag v-else type="success" size="small">JavaScript</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="默认浏览器">{{ scriptInfo.browser }}</el-descriptions-item>
-            <el-descriptions-item label="创建时间">{{ scriptInfo.createTime }}</el-descriptions-item>
-          </el-descriptions>
-
-          <el-divider content-position="left">执行配置</el-divider>
-
-          <el-form ref="executeFormRef" :model="executeForm" :rules="executeRules" label-width="120px">
-            <el-form-item label="浏览器" prop="browser">
-              <el-select v-model="executeForm.browser" placeholder="选择浏览器" style="width: 100%">
-                <el-option label="Chromium" value="chromium">
-                  <span><el-icon><ChromeFilled /></el-icon> Chromium</span>
-                </el-option>
-                <el-option label="Firefox" value="firefox">
-                  <span><el-icon><Firefox /></el-icon> Firefox</span>
-                </el-option>
-                <el-option label="WebKit" value="webkit">
-                  <span><el-icon><Apple /></el-icon> WebKit (Safari)</span>
-                </el-option>
-              </el-select>
-            </el-form-item>
-
-            <el-form-item label="无头模式">
-              <el-switch v-model="executeForm.headless" />
-              <el-tooltip effect="dark" content="无头模式下浏览器在后台运行，不显示界面" placement="top">
-                <el-icon class="ml-2"><QuestionFilled /></el-icon>
-              </el-tooltip>
-            </el-form-item>
-
-            <el-form-item label="超时时间">
-              <el-input-number
-                v-model="executeForm.timeout"
-                :min="10000"
-                :max="600000"
-                :step="10000"
-                style="width: 100%"
-              />
-              <span class="form-tip">毫秒（10000ms = 10秒）</span>
-            </el-form-item>
-
-            <el-form-item label="执行类型">
-              <el-radio-group v-model="executeForm.execution_type">
-                <el-radio value="manual">手动执行</el-radio>
-                <el-radio value="scheduled">定时执行</el-radio>
-                <el-radio value="ci">CI触发</el-radio>
-              </el-radio-group>
-            </el-form-item>
-
-            <el-form-item>
-              <el-button
-                type="primary"
-                :loading="executing"
-                @click="handleExecute"
-                style="width: 100%"
-                size="large"
-              >
-                <el-icon><VideoPlay /></el-icon>
-                {{ executing ? '执行中...' : '开始执行' }}
-              </el-button>
-            </el-form-item>
-          </el-form>
-        </el-card>
-      </el-col>
-
-      <!-- 右侧：执行状态和日志 -->
-      <el-col :span="14">
-        <el-card shadow="hover" class="result-card">
-          <template #header>
-            <div class="card-header">
-              <span>
-                <el-icon><Monitor /></el-icon> 执行状态监控
-                <el-tag v-if="executionId" type="success" class="ml-2">Execution ID: {{ executionId }}</el-tag>
-              </span>
-              <el-button v-if="completed" size="small" type="success" @click="handleViewReport">
-                <el-icon><Document /></el-icon> 查看报告
-              </el-button>
-            </div>
-          </template>
-
-          <div v-if="!executionId && !executing" class="empty-state">
-            <el-empty description="点击"开始执行"按钮开始测试">
-              <el-icon :size="100" color="#909399"><VideoCamera /></el-icon>
-            </el-empty>
-          </div>
-
-          <div v-else>
-            <!-- 执行进度 -->
-            <el-steps :active="currentStep" finish-status="success" align-center class="mb-4">
-              <el-step title="准备中" icon="Setting" />
-              <el-step title="执行中" icon="Loading" />
-              <el-step title="完成" icon="CircleCheck" />
-            </el-steps>
-
-            <!-- 执行信息 -->
-            <el-descriptions :column="2" border class="mb-4">
-              <el-descriptions-item label="执行ID">{{ executionId || '-' }}</el-descriptions-item>
-              <el-descriptions-item label="运行ID">{{ runId || '-' }}</el-descriptions-item>
-              <el-descriptions-item label="状态">
-                <el-tag :type="statusType">{{ statusText }}</el-tag>
+            <el-descriptions v-if="scriptInfo" :column="1" border>
+              <el-descriptions-item label="脚本ID">{{ scriptInfo.scriptId }}</el-descriptions-item>
+              <el-descriptions-item label="脚本名称">{{ scriptInfo.scriptName }}</el-descriptions-item>
+              <el-descriptions-item label="项目">{{ scriptInfo.projectName }}</el-descriptions-item>
+              <el-descriptions-item label="语言">
+                <el-tag v-if="scriptInfo.language === 'typescript'" type="primary" size="small">TypeScript</el-tag>
+                <el-tag v-else type="success" size="small">JavaScript</el-tag>
               </el-descriptions-item>
-              <el-descriptions-item label="执行类型">{{ executeForm.execution_type }}</el-descriptions-item>
-              <el-descriptions-item label="开始时间">{{ executionInfo.startTime || '-' }}</el-descriptions-item>
-              <el-descriptions-item label="结束时间">{{ executionInfo.endTime || '-' }}</el-descriptions-item>
-              <el-descriptions-item label="耗时" :span="2">
-                <span v-if="executionInfo.duration">{{ Math.round(executionInfo.duration / 1000) }}秒</span>
-                <span v-else>-</span>
-              </el-descriptions-item>
+              <el-descriptions-item label="默认浏览器">{{ scriptInfo.browser }}</el-descriptions-item>
+              <el-descriptions-item label="创建时间">{{ scriptInfo.createTime }}</el-descriptions-item>
             </el-descriptions>
 
-            <!-- 执行结果统计 -->
-            <div v-if="executionInfo.result" class="result-stats">
-              <el-divider content-position="left">执行结果</el-divider>
-              <el-row :gutter="16">
-                <el-col :span="6">
-                  <div class="stat-card">
-                    <div class="stat-value">{{ executionInfo.result.total || 0 }}</div>
-                    <div class="stat-label">总用例数</div>
-                  </div>
-                </el-col>
-                <el-col :span="6">
-                  <div class="stat-card success">
-                    <div class="stat-value">{{ executionInfo.result.passed || 0 }}</div>
-                    <div class="stat-label">通过</div>
-                  </div>
-                </el-col>
-                <el-col :span="6">
-                  <div class="stat-card danger">
-                    <div class="stat-value">{{ executionInfo.result.failed || 0 }}</div>
-                    <div class="stat-label">失败</div>
-                  </div>
-                </el-col>
-                <el-col :span="6">
-                  <div class="stat-card warning">
-                    <div class="stat-value">{{ executionInfo.result.skipped || 0 }}</div>
-                    <div class="stat-label">跳过</div>
-                  </div>
-                </el-col>
-              </el-row>
+            <el-divider content-position="left">执行配置</el-divider>
+
+            <el-form ref="executeFormRef" :model="executeForm" :rules="executeRules" label-width="120px">
+              <el-form-item label="浏览器" prop="browser">
+                <el-select v-model="executeForm.browser" placeholder="选择浏览器" style="width: 100%">
+                  <el-option label="Chromium" value="chromium" />
+                  <el-option label="Firefox" value="firefox" />
+                  <el-option label="WebKit" value="webkit" />
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="无头模式">
+                <el-switch v-model="executeForm.headless" />
+                <el-tooltip effect="dark" content="无头模式下浏览器在后台运行，不显示界面" placement="top">
+                  <el-icon class="ml-2"><QuestionFilled /></el-icon>
+                </el-tooltip>
+              </el-form-item>
+
+              <el-form-item label="超时时间">
+                <el-input-number
+                  v-model="executeForm.timeout"
+                  :min="10000"
+                  :max="600000"
+                  :step="10000"
+                  style="width: 100%"
+                />
+                <span class="form-tip">毫秒（10000ms = 10秒）</span>
+              </el-form-item>
+
+              <el-form-item label="执行类型">
+                <el-radio-group v-model="executeForm.executionType">
+                  <el-radio value="manual">手动执行</el-radio>
+                  <el-radio value="scheduled">定时执行</el-radio>
+                  <el-radio value="ci">CI触发</el-radio>
+                </el-radio-group>
+              </el-form-item>
+
+              <el-form-item>
+                <el-button
+                  type="primary"
+                  :loading="executing"
+                  @click="handleExecute"
+                  style="width: 100%"
+                  size="large"
+                >
+                  <el-icon><VideoPlay /></el-icon>
+                  {{ executing ? '执行中...' : '开始执行' }}
+                </el-button>
+              </el-form-item>
+            </el-form>
+          </el-card>
+        </el-col>
+
+        <!-- 右侧：执行状态和日志 -->
+        <el-col :span="14">
+          <el-card shadow="hover">
+            <template #header>
+              <div class="card-header">
+                <span>
+                  <el-icon><Monitor /></el-icon> 执行状态监控
+                  <el-tag v-if="executionId" type="success" class="ml-2">Execution ID: {{ executionId }}</el-tag>
+                </span>
+                <el-button v-if="completed" size="small" type="success" @click="handleViewReport">
+                  <el-icon><Document /></el-icon> 查看报告
+                </el-button>
+              </div>
+            </template>
+
+            <div v-if="!executionId && !executing" class="empty-state">
+              <el-empty description="点击"开始执行"按钮开始测试">
+                <el-icon :size="100" color="#909399"><VideoCamera /></el-icon>
+              </el-empty>
             </div>
 
-            <!-- 错误信息 -->
-            <div v-if="executionInfo.errorMessage" class="error-message">
-              <el-alert
-                title="执行失败"
-                type="error"
-                :description="executionInfo.errorMessage"
-                show-icon
-                :closable="false"
-              />
-            </div>
+            <div v-else>
+              <!-- 执行进度 -->
+              <el-steps :active="currentStep" finish-status="success" align-center class="mb-4">
+                <el-step title="准备中" icon="Setting" />
+                <el-step title="执行中" icon="Loading" />
+                <el-step title="完成" icon="CircleCheck" />
+              </el-steps>
 
-            <!-- 操作按钮 -->
-            <div v-if="completed" class="action-buttons">
-              <el-button type="success" @click="handleViewReport">
-                <el-icon><Document /></el-icon> 查看完整报告
-              </el-button>
-              <el-button @click="handleReExecute">
-                <el-icon><Refresh /></el-icon> 重新执行
-              </el-button>
+              <!-- 执行信息 -->
+              <el-descriptions :column="2" border class="mb-4">
+                <el-descriptions-item label="执行ID">{{ executionId || '-' }}</el-descriptions-item>
+                <el-descriptions-item label="运行ID">{{ runId || '-' }}</el-descriptions-item>
+                <el-descriptions-item label="状态">
+                  <el-tag :type="statusType">{{ statusText }}</el-tag>
+                </el-descriptions-item>
+                <el-descriptions-item label="执行类型">{{ executeForm.executionType }}</el-descriptions-item>
+                <el-descriptions-item label="开始时间">{{ executionInfo.startTime || '-' }}</el-descriptions-item>
+                <el-descriptions-item label="结束时间">{{ executionInfo.endTime || '-' }}</el-descriptions-item>
+                <el-descriptions-item label="耗时" :span="2">
+                  <span v-if="executionInfo.duration">{{ Math.round(executionInfo.duration / 1000) }}秒</span>
+                  <span v-else>-</span>
+                </el-descriptions-item>
+              </el-descriptions>
+
+              <!-- 执行结果统计 -->
+              <div v-if="executionInfo.result" class="result-stats">
+                <el-divider content-position="left">执行结果</el-divider>
+                <el-row :gutter="16">
+                  <el-col :span="6">
+                    <div class="stat-card">
+                      <div class="stat-value">{{ executionInfo.result.total || 0 }}</div>
+                      <div class="stat-label">总用例数</div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="stat-card success">
+                      <div class="stat-value">{{ executionInfo.result.passed || 0 }}</div>
+                      <div class="stat-label">通过</div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="stat-card danger">
+                      <div class="stat-value">{{ executionInfo.result.failed || 0 }}</div>
+                      <div class="stat-label">失败</div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="stat-card warning">
+                      <div class="stat-value">{{ executionInfo.result.skipped || 0 }}</div>
+                      <div class="stat-label">跳过</div>
+                    </div>
+                  </el-col>
+                </el-row>
+              </div>
+
+              <!-- 错误信息 -->
+              <div v-if="executionInfo.errorMessage" class="error-message">
+                <el-alert
+                  title="执行失败"
+                  type="error"
+                  :description="executionInfo.errorMessage"
+                  show-icon
+                  :closable="false"
+                />
+              </div>
+
+              <!-- 操作按钮 -->
+              <div v-if="completed" class="action-buttons">
+                <el-button type="success" @click="handleViewReport">
+                  <el-icon><Document /></el-icon> 查看完整报告
+                </el-button>
+                <el-button @click="handleReExecute">
+                  <el-icon><Refresh /></el-icon> 重新执行
+                </el-button>
+              </div>
             </div>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+          </el-card>
+        </el-col>
+      </el-row>
+    </el-card>
   </div>
 </template>
 
@@ -209,11 +206,11 @@ const completed = ref(false)
 const pollingTimer = ref(null)
 
 const executeForm = reactive({
-  script_id: null,
+  scriptId: null,
   browser: 'chromium',
   headless: true,
   timeout: 60000,
-  execution_type: 'manual'
+  executionType: 'manual'
 })
 
 const executeRules = {
@@ -258,11 +255,20 @@ async function loadScriptInfo() {
     return
   }
 
-  executeForm.script_id = Number(scriptId)
+  executeForm.scriptId = Number(scriptId)
 
   try {
     const response = await getUIScript(scriptId)
-    scriptInfo.value = response.data
+    const data = response.data || response
+    scriptInfo.value = {
+      scriptId: data.script_id || data.scriptId,
+      scriptName: data.script_name || data.scriptName,
+      projectId: data.project_id || data.projectId,
+      projectName: data.project_name || data.projectName,
+      language: data.language,
+      browser: data.browser,
+      createTime: data.create_time || data.createTime
+    }
     // 使用脚本默认配置
     if (scriptInfo.value.browser) {
       executeForm.browser = scriptInfo.value.browser
@@ -299,8 +305,8 @@ async function handleExecute() {
     if (response.code === 200 && response.data) {
       const data = response.data
       if (data.success) {
-        executionId.value = data.execution_id
-        runId.value = data.run_id
+        executionId.value = data.execution_id || data.executionId
+        runId.value = data.run_id || data.runId
         executionInfo.value.status = data.status || 'running'
         currentStep.value = 1
 
@@ -333,15 +339,15 @@ function startPolling() {
 
     try {
       const response = await getUIExecution(executionId.value)
-      const data = response.data
+      const data = response.data || response
 
       executionInfo.value = {
         status: data.status,
-        startTime: data.start_time,
-        endTime: data.end_time,
+        startTime: data.start_time || data.startTime,
+        endTime: data.end_time || data.endTime,
         duration: data.duration,
-        result: data.result ? JSON.parse(data.result) : null,
-        errorMessage: data.error_message
+        result: typeof data.result === 'string' ? JSON.parse(data.result) : data.result,
+        errorMessage: data.error_message || data.errorMessage
       }
 
       if (data.status === 'running') {
@@ -405,102 +411,89 @@ onUnmounted(() => {
 </script>
 
 <style scoped lang="scss">
-.execute-detail {
-  padding: 20px;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
 
-  .mt-4 {
-    margin-top: 16px;
-  }
+.ml-2 {
+  margin-left: 8px;
+}
 
-  .ml-2 {
-    margin-left: 8px;
-  }
+.mb-4 {
+  margin-bottom: 16px;
+}
 
-  .mb-4 {
-    margin-bottom: 16px;
-  }
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  color: #909399;
+}
 
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-  }
+.form-tip {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #909399;
+}
 
-  .result-card {
-    min-height: 700px;
-  }
+.result-stats {
+  margin-top: 20px;
 
-  .empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-    color: #909399;
-  }
+  .stat-card {
+    padding: 20px;
+    background: #f4f4f5;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
 
-  .form-tip {
-    margin-left: 10px;
-    font-size: 12px;
-    color: #909399;
-  }
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-  .result-stats {
-    margin-top: 20px;
+    &.success {
+      background: #f0f9ff;
+      color: #67c23a;
+    }
 
-    .stat-card {
-      padding: 20px;
-      background: #f4f4f5;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.3s;
+    &.danger {
+      background: #fef0f0;
+      color: #f56c6c;
+    }
 
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
+    &.warning {
+      background: #fdf6ec;
+      color: #e6a23c;
+    }
 
-      &.success {
-        background: #f0f9ff;
-        color: #67c23a;
-      }
+    .stat-value {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
 
-      &.danger {
-        background: #fef0f0;
-        color: #f56c6c;
-      }
-
-      &.warning {
-        background: #fdf6ec;
-        color: #e6a23c;
-      }
-
-      .stat-value {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 8px;
-      }
-
-      .stat-label {
-        font-size: 14px;
-        color: #606266;
-      }
+    .stat-label {
+      font-size: 14px;
+      color: #606266;
     }
   }
+}
 
-  .error-message {
-    margin-top: 20px;
-  }
+.error-message {
+  margin-top: 20px;
+}
 
-  .action-buttons {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #ebeef5;
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-  }
+.action-buttons {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ebeef5;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
 }
 </style>
-

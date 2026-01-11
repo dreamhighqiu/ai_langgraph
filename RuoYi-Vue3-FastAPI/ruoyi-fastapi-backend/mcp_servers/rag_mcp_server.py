@@ -15,6 +15,7 @@ RAG MCP 服务器 - 基于 LightRAG 的高级数据检索服务
 import argparse
 import os
 import json
+import logging
 from contextlib import asynccontextmanager
 from typing import Any, AsyncIterator, Optional, List, Dict, Literal
 from dotenv import load_dotenv
@@ -22,6 +23,9 @@ from dotenv import load_dotenv
 import httpx
 from fastmcp import FastMCP, Context
 from pydantic import BaseModel, Field
+
+# 配置日志
+logger = logging.getLogger(__name__)
 
 
 # ============================================================================
@@ -169,7 +173,8 @@ class LightRAGClient:
         enable_rerank: bool = True,
         include_references: bool = True,
         include_chunk_content: bool = False,
-        stream: bool = False
+        stream: bool = False,
+        workspace: Optional[str] = None
     ) -> QueryDataResponse:
         """调用 /query/data 端点进行高级数据检索
 
@@ -243,8 +248,13 @@ class LightRAGClient:
 
         client = await self._get_client()
 
+        # 添加 workspace header（如果提供）
+        headers = {}
+        if workspace:
+            headers["LIGHTRAG-WORKSPACE"] = workspace
+
         try:
-            response = await client.post("/query/data", json=request_body)
+            response = await client.post("/query/data", json=request_body, headers=headers)
             response.raise_for_status()
 
             result = response.json()
@@ -341,6 +351,7 @@ async def rag_query_data(
     hl_keywords: Optional[List[str]] = None,
     ll_keywords: Optional[List[str]] = None,
     enable_rerank: bool = True,
+    workspace: Optional[str] = None,
     ctx: Context = None
 ) -> str:
     """
@@ -375,6 +386,7 @@ async def rag_query_data(
         hl_keywords: 高级别关键词列表（可选，用于精确匹配）
         ll_keywords: 低级别关键词列表（可选，用于精确匹配）
         enable_rerank: 是否启用重排序（默认True）
+        workspace: 工作空间名称（可选，格式：project_{project_id}，用于项目数据隔离。如果不提供，将进行全局检索）
 
     📤 返回内容：
         结构化的检索结果，包含：
@@ -413,7 +425,8 @@ async def rag_query_data(
             ll_keywords=ll_keywords,
             enable_rerank=enable_rerank,
             include_references=True,
-            include_chunk_content=True
+            include_chunk_content=True,
+            workspace=workspace
         )
 
         # 构建输出
@@ -530,11 +543,24 @@ async def rag_query_data(
         return output
 
     except ValueError as e:
-        return f"❌ 参数错误：{str(e)}"
+        error_msg = str(e)
+        logger.error(f"RAG 查询参数错误: {error_msg}")
+        return f"❌ 参数错误：{error_msg}"
     except RuntimeError as e:
-        return f"❌ 服务器错误：{str(e)}"
+        error_msg = str(e)
+        logger.error(f"RAG 查询服务器错误: {error_msg}")
+        # 提取更详细的错误信息
+        if "请求失败" in error_msg or "request failed" in error_msg.lower():
+            return f"❌ 服务器错误：请求失败。请检查 LightRAG 服务是否正常运行（默认地址：http://localhost:9621），或联系管理员。详细错误：{error_msg}"
+        return f"❌ 服务器错误：{error_msg}"
+    except httpx.HTTPError as e:
+        error_msg = str(e)
+        logger.error(f"RAG 查询 HTTP 错误: {error_msg}")
+        return f"❌ 服务器连接错误：无法连接到 LightRAG 服务。请检查服务是否正常运行（默认地址：http://localhost:9621）。详细错误：{error_msg}"
     except Exception as e:
-        return f"❌ 查询失败：{str(e)}"
+        error_msg = str(e)
+        logger.error(f"RAG 查询失败: {error_msg}", exc_info=True)
+        return f"❌ 查询失败：{error_msg}"
 
 
 # @mcp.tool()

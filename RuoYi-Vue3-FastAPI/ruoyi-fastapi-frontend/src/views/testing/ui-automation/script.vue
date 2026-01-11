@@ -1,21 +1,18 @@
 <template>
   <div class="app-container">
-    <el-card class="header-card">
-      <div class="header-content">
-        <div>
-          <h2><el-icon><Document /></el-icon> Playwright UI测试脚本</h2>
-          <p class="subtitle">Playwright UI Test Scripts</p>
-        </div>
-        <el-button type="primary" @click="handleAdd" v-hasPermi="['testing:script:add']">
-          <el-icon><Plus /></el-icon> AI生成脚本
-        </el-button>
-      </div>
-    </el-card>
-
     <el-card>
+      <template #header>
+        <div class="card-header">
+          <span><el-icon><Document /></el-icon> Playwright UI测试脚本</span>
+          <el-button type="primary" @click="handleAdd" v-hasPermi="['testing:script:add']">
+            <el-icon><Plus /></el-icon> AI生成脚本
+          </el-button>
+        </div>
+      </template>
+
       <el-form :model="queryParams" ref="queryFormRef" :inline="true">
-        <el-form-item label="项目" prop="project_id">
-          <el-select v-model="queryParams.project_id" placeholder="选择项目" clearable style="width: 200px">
+        <el-form-item label="项目" prop="projectId">
+          <el-select v-model="queryParams.projectId" placeholder="选择项目" clearable style="width: 200px">
             <el-option
               v-for="project in projectList"
               :key="project.projectId"
@@ -24,9 +21,9 @@
             />
           </el-select>
         </el-form-item>
-        <el-form-item label="脚本名称" prop="script_name">
+        <el-form-item label="脚本名称" prop="scriptName">
           <el-input
-            v-model="queryParams.script_name"
+            v-model="queryParams.scriptName"
             placeholder="请输入脚本名称"
             clearable
             style="width: 200px"
@@ -113,8 +110,8 @@
       <pagination
         v-show="total > 0"
         :total="total"
-        v-model:page="queryParams.page_num"
-        v-model:limit="queryParams.page_size"
+        v-model:page="queryParams.pageNum"
+        v-model:limit="queryParams.pageSize"
         @pagination="getList"
       />
     </el-card>
@@ -126,20 +123,20 @@
       width="70%"
       top="5vh"
     >
-      <el-descriptions :column="2" border>
-        <el-descriptions-item label="脚本ID">{{ currentScript?.scriptId }}</el-descriptions-item>
-        <el-descriptions-item label="脚本名称">{{ currentScript?.scriptName }}</el-descriptions-item>
-        <el-descriptions-item label="项目">{{ currentScript?.projectName }}</el-descriptions-item>
-        <el-descriptions-item label="语言">{{ currentScript?.language }}</el-descriptions-item>
-        <el-descriptions-item label="浏览器">{{ currentScript?.browser }}</el-descriptions-item>
-        <el-descriptions-item label="版本">{{ currentScript?.version }}</el-descriptions-item>
-        <el-descriptions-item label="Agent ID">{{ currentScript?.agentId || '-' }}</el-descriptions-item>
+      <el-descriptions v-if="currentScript" :column="2" border>
+        <el-descriptions-item label="脚本ID">{{ currentScript.scriptId }}</el-descriptions-item>
+        <el-descriptions-item label="脚本名称">{{ currentScript.scriptName }}</el-descriptions-item>
+        <el-descriptions-item label="项目">{{ currentScript.projectName }}</el-descriptions-item>
+        <el-descriptions-item label="语言">{{ currentScript.language }}</el-descriptions-item>
+        <el-descriptions-item label="浏览器">{{ currentScript.browser }}</el-descriptions-item>
+        <el-descriptions-item label="版本">{{ currentScript.version }}</el-descriptions-item>
+        <el-descriptions-item label="Agent ID">{{ currentScript.agentId || '-' }}</el-descriptions-item>
         <el-descriptions-item label="使用RAG">
-          <el-tag v-if="currentScript?.useRag === '1'" type="success" size="small">是</el-tag>
+          <el-tag v-if="currentScript.useRag === '1'" type="success" size="small">是</el-tag>
           <el-tag v-else type="info" size="small">否</el-tag>
         </el-descriptions-item>
-        <el-descriptions-item label="创建时间" :span="2">{{ currentScript?.createTime }}</el-descriptions-item>
-        <el-descriptions-item label="备注" :span="2">{{ currentScript?.remark || '-' }}</el-descriptions-item>
+        <el-descriptions-item label="创建时间" :span="2">{{ currentScript.createTime }}</el-descriptions-item>
+        <el-descriptions-item label="备注" :span="2">{{ currentScript.remark || '-' }}</el-descriptions-item>
       </el-descriptions>
 
       <el-divider content-position="left">脚本内容</el-divider>
@@ -162,7 +159,7 @@ import { ref, reactive, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useRouter, useRoute } from 'vue-router'
 import { listUIScripts, getUIScript, deleteUIScript } from '@/api/testing/uiAutomation'
-import { listProject } from '@/api/testing/project'
+import { listAllProject } from '@/api/testing/project'
 
 const router = useRouter()
 const route = useRoute()
@@ -176,10 +173,10 @@ const viewDialogVisible = ref(false)
 const currentScript = ref(null)
 
 const queryParams = reactive({
-  page_num: 1,
-  page_size: 10,
-  project_id: null,
-  script_name: null,
+  pageNum: 1,
+  pageSize: 10,
+  projectId: null,
+  scriptName: null,
   browser: null,
   status: null
 })
@@ -187,8 +184,11 @@ const queryParams = reactive({
 // 加载项目列表
 async function loadProjects() {
   try {
-    const response = await listProject({ projectType: 'ui', status: '0', pageNum: 1, pageSize: 100 })
-    projectList.value = response.data?.rows || []
+    const response = await listAllProject('0')
+    projectList.value = (response.data || response.rows || []).map(item => ({
+      projectId: item.project_id || item.projectId,
+      projectName: item.project_name || item.projectName
+    }))
   } catch (error) {
     console.error('加载项目列表失败:', error)
   }
@@ -199,11 +199,36 @@ async function getList() {
   loading.value = true
   try {
     const response = await listUIScripts(queryParams)
-    scriptList.value = response.data?.rows || []
-    total.value = response.data?.total || 0
+    console.log('[Script] API响应:', response)
+    
+    // 后端返回格式: { code: 200, data: { rows: [...], total: ... } } 或 { code: 200, rows: [...], total: ... }
+    const data = response.data || response
+    
+    if (response.code === 200 || !response.code) {
+      scriptList.value = (data.rows || data.list || []).map(item => ({
+        scriptId: item.script_id || item.scriptId,
+        scriptName: item.script_name || item.scriptName,
+        projectId: item.project_id || item.projectId,
+        projectName: item.project_name || item.projectName,
+        language: item.language,
+        browser: item.browser,
+        agentId: item.agent_id || item.agentId,
+        status: item.status,
+        createTime: item.create_time || item.createTime
+      }))
+      total.value = data.total || 0
+      console.log('[Script] 加载成功:', scriptList.value.length, '条记录，总数:', total.value)
+    } else {
+      console.error('[Script] API返回错误:', response)
+      ElMessage.error(response.msg || '获取脚本列表失败')
+      scriptList.value = []
+      total.value = 0
+    }
   } catch (error) {
-    console.error('获取脚本列表失败:', error)
-    ElMessage.error('获取脚本列表失败')
+    console.error('[Script] 获取脚本列表失败:', error)
+    ElMessage.error('获取脚本列表失败: ' + (error.msg || error.message || '未知错误'))
+    scriptList.value = []
+    total.value = 0
   } finally {
     loading.value = false
   }
@@ -219,7 +244,7 @@ function tableRowClassName({ row }) {
 }
 
 function handleQuery() {
-  queryParams.page_num = 1
+  queryParams.pageNum = 1
   getList()
 }
 
@@ -237,7 +262,22 @@ function handleAdd() {
 async function handleView(row) {
   try {
     const response = await getUIScript(row.scriptId)
-    currentScript.value = response.data
+    const data = response.data || response
+    // 转换字段名
+    currentScript.value = {
+      scriptId: data.script_id || data.scriptId,
+      scriptName: data.script_name || data.scriptName,
+      projectId: data.project_id || data.projectId,
+      projectName: data.project_name || data.projectName,
+      language: data.language,
+      browser: data.browser,
+      version: data.version,
+      agentId: data.agent_id || data.agentId,
+      useRag: data.use_rag || data.useRag,
+      scriptContent: data.script_content || data.scriptContent,
+      createTime: data.create_time || data.createTime,
+      remark: data.remark
+    }
     viewDialogVisible.value = true
   } catch (error) {
     ElMessage.error('获取脚本详情失败')
@@ -280,23 +320,11 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.header-card {
-  margin-bottom: 20px;
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h2 {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 8px 0;
-    }
-    .subtitle {
-      color: #909399;
-      margin: 0;
-    }
-  }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
 }
 
 .script-name {
@@ -342,4 +370,3 @@ onMounted(() => {
   }
 }
 </style>
-

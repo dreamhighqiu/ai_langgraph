@@ -2734,5 +2734,45 @@
     "create_time": 1768133275,
     "update_time": 1768133275,
     "_id": "default:summary:39fd98afae1863cdb5cb973a7467545e"
+  },
+  "mix:keywords:201bd245d9b7d9e2f9712b9800ce69f7": {
+    "return": "{\"high_level_keywords\": [\"\\u7b80\\u5386\\u529f\\u80fd\\u7f3a\\u9677\", \"\\u670d\\u52a1\\u5668\\u9519\\u8bef\", \"\\u8bf7\\u6c42\\u5931\\u8d25\"], \"low_level_keywords\": [\"\\u7b80\\u5386\", \"\\u670d\\u52a1\\u5668\", \"\\u8bf7\\u6c42\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "简历功能缺陷 服务器错误 请求失败",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768137707,
+    "update_time": 1768137707,
+    "_id": "mix:keywords:201bd245d9b7d9e2f9712b9800ce69f7"
+  },
+  "mix:keywords:605dec851c5787060da9fce4e4172a69": {
+    "return": "{\"high_level_keywords\": [\"\\u7b80\\u5386\\u7ba1\\u7406\", \"\\u529f\\u80fd\\u7f3a\\u9677\", \"\\u7cfb\\u7edf\\u529f\\u80fd\"], \"low_level_keywords\": [\"\\u7b80\\u5386\\u4e0a\\u4f20\", \"\\u7b80\\u5386\\u67e5\\u770b\"]}",
+    "cache_type": "keywords",
+    "chunk_id": null,
+    "original_prompt": "简历上传 简历查看 简历管理功能缺陷",
+    "queryparam": {
+      "mode": "mix",
+      "response_type": "Multiple Paragraphs",
+      "top_k": 10,
+      "chunk_top_k": 5,
+      "max_entity_tokens": 6000,
+      "max_relation_tokens": 8000,
+      "max_total_tokens": 30000,
+      "user_prompt": "",
+      "enable_rerank": true
+    },
+    "create_time": 1768137776,
+    "update_time": 1768137776,
+    "_id": "mix:keywords:605dec851c5787060da9fce4e4172a69"
   }
 }

@@ -9,6 +9,7 @@ import tailwindcss from '@tailwindcss/vite'
 // TODO  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdWV1ZnPT06NzA1NWRmZDQ=
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const srcPath = path.resolve(__dirname, './src')
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }: { mode: string }) => {
@@ -18,13 +19,13 @@ export default defineConfig(({ mode }: { mode: string }) => {
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src')
-      },
-      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
-      // 确保在生产构建时也能正确解析文件
-      preserveSymlinks: false,
-      dedupe: []
+      alias: [
+        {
+          find: /^@\/(.*)$/,
+          replacement: path.resolve(srcPath, '$1')
+        }
+      ],
+      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
     },
     // base: env.VITE_BASE_URL || '/webui/',
     base: '/webui/',

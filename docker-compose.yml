@@ -270,7 +270,7 @@ services:
     environment:
       - LIGHTRAG_BASE_URL=http://lightrag:9621
       - LIGHTRAG_API_KEY=${LIGHTRAG_API_KEY:-}
-    command: python -m mcp.rag_query.server --sse --port 8002 --host 0.0.0.0
+    command: python -m mcp_servers.rag_query.server --sse --port 8002 --host 0.0.0.0
     depends_on:
       lightrag:
         condition: service_healthy
@@ -302,7 +302,7 @@ services:
       - MILVUS_DB_NAME=lightrag
       - LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage
       - EMBEDDING_HOST=http://ollama:11434
-    command: python -m mcp.rag_anything.server --sse --port 8001 --host 0.0.0.0
+    command: python -m mcp_servers.rag_anything.server --sse --port 8001 --host 0.0.0.0
     depends_on:
       milvus:
         condition: service_healthy
@@ -329,7 +329,7 @@ services:
       - pytest_data:/app/generated_tests
     env_file:
       - ./testing-agents-service/.env
-    command: python -m mcp.pytest_mcp.server --sse --port 8004 --host 0.0.0.0
+    command: python -m mcp_servers.pytest_mcp.server --sse --port 8004 --host 0.0.0.0
     depends_on:
       langgraph:
         condition: service_healthy

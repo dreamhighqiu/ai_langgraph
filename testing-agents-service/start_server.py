@@ -16,43 +16,7 @@ import importlib.util
 from pathlib import Path
 from typing import Optional
 
-# 解决命名冲突：在导入任何其他模块之前，先确保外部 mcp 包被正确导入
-# 本地的 mcp 目录会拦截已安装的 mcp 包的导入，导致 ImportError
-# 我们需要在导入任何使用 mcp 的模块之前，先强制加载外部包
-_local_mcp_dir = Path(__file__).parent / "mcp"
-if _local_mcp_dir.exists() and _local_mcp_dir.is_dir():
-    # 如果本地 mcp 模块已经在 sys.modules 中，先移除它
-    if 'mcp' in sys.modules:
-        existing_module = sys.modules['mcp']
-        if hasattr(existing_module, '__file__') and existing_module.__file__:
-            module_path = Path(existing_module.__file__).resolve()
-            if _local_mcp_dir.resolve() in module_path.parents or 'testing-agents-service' in str(module_path):
-                # 这是本地模块，需要移除
-                del sys.modules['mcp']
-                # 同时移除所有 mcp 子模块
-                keys_to_remove = [key for key in sys.modules.keys() if key.startswith('mcp.')]
-                for key in keys_to_remove:
-                    del sys.modules[key]
-    
-    # 现在强制导入已安装的外部 mcp 包
-    try:
-        spec = importlib.util.find_spec("mcp")
-        if spec and spec.origin and 'site-packages' in spec.origin:
-            # 这是已安装的包，强制导入并注册
-            external_mcp = importlib.import_module("mcp")
-            sys.modules['mcp'] = external_mcp
-            # 预加载常用的子模块
-            for submodule in ['types', 'client']:
-                try:
-                    submodule_spec = importlib.util.find_spec(f"mcp.{submodule}")
-                    if submodule_spec and submodule_spec.origin and 'site-packages' in submodule_spec.origin:
-                        submodule_obj = importlib.import_module(f"mcp.{submodule}")
-                        sys.modules[f"mcp.{submodule}"] = submodule_obj
-                except Exception:
-                    pass
-    except Exception:
-        # 如果无法导入外部包，继续（可能会在后续导入时失败，但至少不会静默失败）
-        pass
+# 注意：本地的 MCP 服务器模块已重命名为 mcp_servers，以避免与已安装的 mcp 包冲突
 
 
 def _parse_bool(value: Optional[str], default: bool) -> bool:

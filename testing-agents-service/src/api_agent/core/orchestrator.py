@@ -15,36 +15,8 @@ import importlib
 from typing import Optional, Sequence, Any, Awaitable, Callable
 from pathlib import Path
 
-# 解决命名冲突：确保从已安装的 mcp 包导入，而不是本地的 mcp 目录
-# 如果本地 mcp 模块已经在 sys.modules 中，先移除它
-_local_mcp_path = str(Path(__file__).parent.parent.parent / "mcp" / "__init__.py")
-if 'mcp' in sys.modules:
-    existing_module = sys.modules['mcp']
-    if hasattr(existing_module, '__file__') and existing_module.__file__:
-        if _local_mcp_path in existing_module.__file__ or 'testing-agents-service' in existing_module.__file__:
-            # 这是本地模块，需要移除并导入外部包
-            del sys.modules['mcp']
-            if 'mcp.types' in sys.modules:
-                del sys.modules['mcp.types']
-
-# 现在强制导入已安装的外部 mcp 包
-try:
-    spec = importlib.util.find_spec("mcp")
-    if spec and spec.origin and 'site-packages' in spec.origin:
-        # 这是已安装的包，强制导入并注册
-        external_mcp = importlib.import_module("mcp")
-        sys.modules['mcp'] = external_mcp
-        # 导入 mcp.types
-        try:
-            mcp_types = importlib.import_module("mcp.types")
-            sys.modules['mcp.types'] = mcp_types
-        except ImportError:
-            # 如果 mcp.types 不存在，尝试从 mcp 包中获取
-            if hasattr(external_mcp, 'types'):
-                sys.modules['mcp.types'] = external_mcp.types
-except Exception:
-    # 如果无法导入外部包，继续使用默认导入（可能会失败，但至少不会静默失败）
-    pass
+# 注意：本地的 MCP 服务器模块已重命名为 mcp_servers，以避免与已安装的 mcp 包冲突
+# 现在可以直接导入外部 mcp 包，不会有命名冲突
 
 from langchain.agents import AgentState
 from langchain.agents.middleware import before_model

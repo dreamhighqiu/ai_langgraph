@@ -86,10 +86,10 @@ DEBUG=false
 cd testing-agents-service
 
 # 使用 SSE 模式启动
-python -m mcp.rag_anything.server --sse --port 8001
+python -m mcp_servers.rag_anything.server --sse --port 8001
 
 # 或使用标准 MCP 模式
-python -m mcp.rag_anything.server
+python -m mcp_servers.rag_anything.server
 ```
 
 ## 📚 MCP 工具参考

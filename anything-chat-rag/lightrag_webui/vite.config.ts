@@ -3,7 +3,6 @@
 
 import { defineConfig } from 'vite'
 import path from 'path'
-import { webuiPrefix } from './src/lib/constants'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 // TODO  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdWV1ZnPT06NzA1NWRmZDQ=
@@ -17,7 +16,7 @@ export default defineConfig({
     }
   },
   // base: import.meta.env.VITE_BASE_URL || '/webui/',
-  base: webuiPrefix,
+  base: '/webui/',
   build: {
     outDir: path.resolve(__dirname, '../lightrag/api/webui'),
     emptyOutDir: true,

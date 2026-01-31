@@ -123,6 +123,56 @@ open http://localhost:3200  # Mac
 start http://localhost:3200  # Windows
 ```
 
+## 远程访问配置
+
+### LightRAG WebUI 自动地址检测
+
+前端已配置**自动检测服务器地址**，无需手动配置：
+
+```bash
+# 本地访问
+http://localhost:5173
+# 前端自动使用: http://localhost:9621
+
+# 远程访问（服务器 IP: 192.168.1.100）
+http://192.168.1.100:5173
+# 前端自动使用: http://192.168.1.100:9621 ✅
+
+# 域名访问
+http://your-domain.com:5173
+# 前端自动使用: http://your-domain.com:9621 ✅
+```
+
+### 手动指定 API 地址（可选）
+
+如果需要指定特殊的 API 地址，编辑 `.env`：
+
+```bash
+# .env
+LIGHTRAG_API_URL=http://your-server-ip:9621
+```
+
+**注意**: 大多数情况下不需要设置此变量，留空即可自动检测。
+
+### 防火墙配置
+
+确保开放必要端口：
+
+```bash
+# Ubuntu/Debian
+sudo ufw allow 2024    # Frontend
+sudo ufw allow 2025    # LangGraph API
+sudo ufw allow 5173    # LightRAG WebUI
+sudo ufw allow 9621    # LightRAG API
+
+# CentOS/RHEL
+sudo firewall-cmd --permanent --add-port=2024/tcp
+sudo firewall-cmd --permanent --add-port=2025/tcp
+sudo firewall-cmd --permanent --add-port=5173/tcp
+sudo firewall-cmd --permanent --add-port=9621/tcp
+sudo firewall-cmd --reload
+```
+
 ## 故障排查
 
 ### 服务未启动

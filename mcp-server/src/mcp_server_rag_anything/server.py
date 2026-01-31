@@ -127,7 +127,7 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[RAGAnythingContext]:
 # MCP Server Setup
 # ============================================================================
 
-mcp = FastMCP(name="但问企业级RAG", lifespan=server_lifespan)
+mcp = FastMCP(name="RAG问答", lifespan=server_lifespan)
 
 
 # ============================================================================

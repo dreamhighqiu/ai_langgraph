@@ -253,6 +253,96 @@ services:
       retries: 3
       start_period: 30s
 
+  # ========== MCP Services ==========
+
+  # RAG Query MCP Service (Port 8002)
+  rag-query-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: rag-query-mcp
+    ports:
+      - "${RAG_QUERY_MCP_PORT:-8002}:8002"
+    volumes:
+      - ./testing-agents-service:/app/testing-agents-service
+    env_file:
+      - ./testing-agents-service/.env
+    environment:
+      - LIGHTRAG_BASE_URL=http://lightrag:9621
+      - LIGHTRAG_API_KEY=${LIGHTRAG_API_KEY:-}
+    command: python -m mcp.rag_query.server --sse --port 8002 --host 0.0.0.0
+    depends_on:
+      lightrag:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ai_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/sse"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # RAG Anything MCP Service (Port 8001)
+  rag-anything-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: rag-anything-mcp
+    ports:
+      - "${RAG_ANYTHING_MCP_PORT:-8001}:8001"
+    volumes:
+      - ./testing-agents-service:/app/testing-agents-service
+      - rag_anything_data:/app/rag_storage
+    env_file:
+      - ./testing-agents-service/.env
+    environment:
+      - MILVUS_URI=http://milvus:19530
+      - MILVUS_DB_NAME=lightrag
+      - LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage
+      - EMBEDDING_HOST=http://ollama:11434
+    command: python -m mcp.rag_anything.server --sse --port 8001 --host 0.0.0.0
+    depends_on:
+      milvus:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ai_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/sse"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Pytest MCP Service (Port 8004)
+  pytest-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: pytest-mcp
+    ports:
+      - "${PYTEST_MCP_PORT:-8004}:8004"
+    volumes:
+      - ./testing-agents-service:/app/testing-agents-service
+      - pytest_data:/app/generated_tests
+    env_file:
+      - ./testing-agents-service/.env
+    command: python -m mcp.pytest_mcp.server --sse --port 8004 --host 0.0.0.0
+    depends_on:
+      langgraph:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ai_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8004/sse"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
   # LangGraph Server (Backend API - Required)
   langgraph:
     build:
@@ -274,11 +364,23 @@ services:
       - REDIS_URI=redis://:redis123456@redis:6379/0
       - LIGHTRAG_BASE_URL=http://lightrag:9621
       - MILVUS_URI=http://milvus:19530
+      - MILVUS_DB_NAME=lightrag
+      - LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage
+      # Ollama 配置（如果使用 --profile ollama）
+      - EMBEDDING_HOST=http://ollama:11434
+      # MCP 服务地址（容器内访问，使用服务名）
+      - RAG_QUERY_MCP_URL=http://rag-query-mcp:8002/sse
+      - RAG_ANYTHING_MCP_URL=http://rag-anything-mcp:8001/sse
+      - PYTEST_MCP_URL=http://pytest-mcp:8004/sse
     command: python testing-agents-service/start_server.py --host 0.0.0.0 --port 2025
     depends_on:
       redis:
         condition: service_healthy
       lightrag:
+        condition: service_healthy
+      rag-query-mcp:
+        condition: service_healthy
+      rag-anything-mcp:
         condition: service_healthy
     restart: unless-stopped
     networks:
@@ -329,6 +431,10 @@ volumes:
   langgraph_data:
     driver: local
   ollama_data:
+    driver: local
+  rag_anything_data:
+    driver: local
+  pytest_data:
     driver: local
 
 # ========== Networks ==========

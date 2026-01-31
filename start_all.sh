@@ -54,14 +54,10 @@ if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; t
     # Windows (Git Bash/MSYS2/Cygwin)
     VENV_PYTHON="$PROJECT_ROOT/.venv/Scripts/python.exe"
     VENV_BIN="$PROJECT_ROOT/.venv/Scripts"
-    MCP_VENV_PYTHON="$PROJECT_ROOT/mcp-server/.venv/Scripts/python.exe"
-    MCP_VENV_BIN="$PROJECT_ROOT/mcp-server/.venv/Scripts"
 else
     # Linux/macOS
     VENV_PYTHON="$PROJECT_ROOT/.venv/bin/python"
     VENV_BIN="$PROJECT_ROOT/.venv/bin"
-    MCP_VENV_PYTHON="$PROJECT_ROOT/mcp-server/.venv/bin/python"
-    MCP_VENV_BIN="$PROJECT_ROOT/mcp-server/.venv/bin"
     fi
 
 # =============================================================================
@@ -490,17 +486,14 @@ install_dependencies() {
     local site_packages=$("$VENV_PYTHON" -c "import site; print(site.getsitepackages()[0])")
     cat > "$site_packages/ai-langgraph.pth" << EOF
 $PROJECT_ROOT/testing-agents-service/src
-$PROJECT_ROOT/mcp-server/src
 EOF
     
-    # Ensure testing-agents-service/src 和 mcp-server/src 在 Windows 下也能正常加入 Python path
+    # Ensure testing-agents-service/src 在 Windows 下也能正常加入 Python path
     if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
         # Convert to Windows path format for .pth file
-        local mcp_path_win=$(cygpath -w "$PROJECT_ROOT/mcp-server/src" 2>/dev/null || echo "$PROJECT_ROOT/mcp-server/src")
         local testing_path_win=$(cygpath -w "$PROJECT_ROOT/testing-agents-service/src" 2>/dev/null || echo "$PROJECT_ROOT/testing-agents-service/src")
         cat > "$site_packages/ai-langgraph.pth" << EOF
 $testing_path_win
-$mcp_path_win
 EOF
     fi
     
@@ -595,14 +588,9 @@ start_mcp_server() {
     local name="MCP Server"
     local pid_file="$PID_DIR/mcp.pid"
     local log_file="$LOG_DIR/mcp.log"
-    # Prefer dedicated mcp-server venv if present
-    local mcp_python="$MCP_VENV_PYTHON"
-    local mcp_bin="$MCP_VENV_BIN"
-    if [ ! -x "$mcp_python" ]; then
-        print_warning "Dedicated MCP venv not found, fallback to root venv"
-        mcp_python="$VENV_PYTHON"
-        mcp_bin="$VENV_BIN"
-    fi
+    # Use root venv for MCP server (now part of testing-agents-service)
+    local mcp_python="$VENV_PYTHON"
+    local mcp_bin="$VENV_BIN"
     
     # Ensure port is free (MCP Server must use fixed port 8001)
     if ! ensure_port_free $port "$name"; then
@@ -612,11 +600,11 @@ start_mcp_server() {
     
     print_info "Starting $name..."
     
-    cd "$PROJECT_ROOT/mcp-server/src"
+    cd "$PROJECT_ROOT/testing-agents-service"
     export PATH="$mcp_bin:$PATH"
     export PYTHONIOENCODING=utf-8
     # Add current directory和本地 lightrag 实现到 Python path
-    export PYTHONPATH="$PROJECT_ROOT/anything-chat-rag:$PROJECT_ROOT/mcp-server/src:$PYTHONPATH"
+    export PYTHONPATH="$PROJECT_ROOT/anything-chat-rag:$PROJECT_ROOT/testing-agents-service:$PYTHONPATH"
     # Set API Key if not already set (for DeepSeek)
     if [ -z "$LLM_API_KEY" ] && [ -z "$DEEPSEEK_API_KEY" ]; then
         # Try to load from .env file if exists
@@ -629,7 +617,7 @@ start_mcp_server() {
         export LLM_API_KEY="$DEEPSEEK_API_KEY"
     fi
     # Use python -m with explicit path or direct script execution
-    nohup "$mcp_python" -m mcp_server_rag_anything.server > "$log_file" 2>&1 &
+    nohup "$mcp_python" -m mcp.rag_anything.server > "$log_file" 2>&1 &
     local pid=$!
     echo $pid > "$pid_file"
     cd "$PROJECT_ROOT"

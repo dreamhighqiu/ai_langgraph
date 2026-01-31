@@ -65,8 +65,8 @@ class MCPSettings(BaseSettings):
     # ========== RAG Query MCP (SSE) ==========
     rag_query_enabled: bool = True
     rag_query_url: str = Field(
-        default="http://127.0.0.1:8002/sse",
-        description="RAG Query MCP 服务地址"
+        default=os.getenv("RAG_QUERY_MCP_URL", "http://127.0.0.1:8002/sse"),
+        description="RAG Query MCP 服务地址（支持环境变量 RAG_QUERY_MCP_URL）"
     )
     
     def get_rag_query_config(self) -> Dict[str, Any]:
@@ -79,8 +79,8 @@ class MCPSettings(BaseSettings):
     # ========== RAG Anything MCP (SSE) ==========
     rag_anything_enabled: bool = True
     rag_anything_url: str = Field(
-        default="http://localhost:8006/sse",
-        description="RAG Anything MCP 服务地址 (新版 LightRAG HTTP MCP)"
+        default=os.getenv("RAG_ANYTHING_MCP_URL", "http://localhost:8001/sse"),
+        description="RAG Anything MCP 服务地址（支持环境变量 RAG_ANYTHING_MCP_URL，默认端口 8001）"
     )
     
     def get_rag_anything_config(self) -> Dict[str, Any]:
@@ -93,8 +93,8 @@ class MCPSettings(BaseSettings):
     # ========== Pytest MCP (SSE) ==========
     pytest_mcp_enabled: bool = True
     pytest_mcp_url: str = Field(
-        default="http://127.0.0.1:8004/sse",
-        description="Pytest MCP 服务地址"
+        default=os.getenv("PYTEST_MCP_URL", "http://127.0.0.1:8004/sse"),
+        description="Pytest MCP 服务地址（支持环境变量 PYTEST_MCP_URL）"
     )
     
     def get_pytest_mcp_config(self) -> Dict[str, Any]:

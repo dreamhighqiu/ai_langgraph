@@ -36,10 +36,11 @@
 
 ```bash
 # 进入项目目录
-cd mcp-server
+cd testing-agents-service
 
-# 安装依赖
-pip install -e .
+# 安装依赖（如果使用独立安装）
+# pip install -e .
+# 注意：MCP 服务现在集成在 testing-agents-service 中，通常不需要单独安装
 ```
 
 ### 配置
@@ -81,11 +82,14 @@ DEBUG=false
 ### 启动服务器
 
 ```bash
+# 进入 testing-agents-service 目录
+cd testing-agents-service
+
 # 使用 SSE 模式启动
-python -m mcp_server_rag_anything.server --sse --port 8001
+python -m mcp.rag_anything.server --sse --port 8001
 
 # 或使用标准 MCP 模式
-python -m mcp_server_rag_anything.server
+python -m mcp.rag_anything.server
 ```
 
 ## 📚 MCP 工具参考

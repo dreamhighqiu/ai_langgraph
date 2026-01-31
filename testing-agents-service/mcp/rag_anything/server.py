@@ -17,14 +17,14 @@ from typing import AsyncIterator, Optional
 from fastmcp import FastMCP, Context
 from dotenv import load_dotenv
 
-from mcp_server_rag_anything.config import MCSConfig
-from mcp_server_rag_anything.connector import RAGAnythingConnector
-from mcp_server_rag_anything.llm_functions import (
+from .config import MCSConfig
+from .connector import RAGAnythingConnector
+from .llm_functions import (
     create_llm_model_func,
     create_vision_model_func,
     create_embedding_func,
 )
-from mcp_server_rag_anything.tools import (
+from .tools import (
     process_document_tool,
     process_folder_tool,
     query_tool,
@@ -127,7 +127,7 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[RAGAnythingContext]:
 # MCP Server Setup
 # ============================================================================
 
-mcp = FastMCP(name="但问企业级RAG", lifespan=server_lifespan)
+mcp = FastMCP(name="RAG问答", lifespan=server_lifespan)
 
 
 # ============================================================================

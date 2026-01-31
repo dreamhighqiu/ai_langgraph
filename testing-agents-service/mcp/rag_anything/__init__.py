@@ -13,7 +13,7 @@ Features:
 - Knowledge base management
 
 Usage:
-    python -m mcp_server_rag_anything.server
+    python -m testing_agents_service.mcp.rag_anything.server
 
 Configuration:
     Set environment variables in .env file:

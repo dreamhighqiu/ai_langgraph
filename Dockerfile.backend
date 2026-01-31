@@ -3,11 +3,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies including curl for healthchecks
+# Install system dependencies including curl for healthchecks and Node.js
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv
@@ -30,10 +32,14 @@ RUN uv pip install --system -e ./anything-chat-rag
 # Copy application code
 COPY testing-agents-service/ ./testing-agents-service/
 COPY deepagents/ ./deepagents/
-COPY mcp-server/ ./mcp-server/
 
-# Set Python path (removed non-existent src directory)
-ENV PYTHONPATH=/app/testing-agents-service:/app/mcp-server/src:/app:$PYTHONPATH
+# Install automation_quality MCP service dependencies (stdio mode)
+WORKDIR /app/testing-agents-service/mcp/automation_quality
+RUN if [ -f "package.json" ]; then npm install --production; fi
+WORKDIR /app
+
+# Set Python path
+ENV PYTHONPATH=/app/testing-agents-service:/app:$PYTHONPATH
 
 # Expose only LangGraph port
 EXPOSE 2025

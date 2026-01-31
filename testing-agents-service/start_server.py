@@ -40,7 +40,10 @@ def _load_graphs() -> dict[str, str]:
 
 
 def setup_environment(port: int) -> None:
-    src_path = Path(__file__).parent / "src"
+    project_root = Path(__file__).parent
+    src_path = project_root / "src"
+    # 添加项目根目录和 src 目录到 Python 路径
+    sys.path.insert(0, str(project_root))
     sys.path.insert(0, str(src_path))
 
     env_file = Path(__file__).parent / ".env"
@@ -94,6 +97,28 @@ def main() -> None:
 
     print("Starting Simple LangGraph API Server...")
     setup_environment(args.port)
+
+    # 检查 MCP 服务状态
+    try:
+        import asyncio
+        # 确保 config 模块可以被导入
+        config_path = Path(__file__).parent / "config"
+        if config_path.exists():
+            from config.mcp_health_check import check_all_mcp_services, print_mcp_health_report
+            
+            print("\n检查 MCP 服务状态...")
+            results = asyncio.run(check_all_mcp_services())
+            print_mcp_health_report(results)
+        else:
+            print("\n[WARN] config 目录不存在，跳过 MCP 服务健康检查\n")
+    except ImportError as e:
+        print(f"\n[WARN] 无法导入 MCP 健康检查模块: {e}")
+        print("服务器将继续启动，但某些 MCP 服务可能不可用\n")
+    except Exception as e:
+        print(f"\n[WARN] MCP 服务健康检查失败: {e}")
+        import traceback
+        traceback.print_exc()
+        print("服务器将继续启动，但某些 MCP 服务可能不可用\n")
 
     print("\n" + "=" * 60)
     print(f"Server URL: http://localhost:{args.port}")

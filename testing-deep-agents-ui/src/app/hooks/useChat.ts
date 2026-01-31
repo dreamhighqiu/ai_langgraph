@@ -52,27 +52,38 @@ export function useChat({
     defaultHeaders: { "x-auth-scheme": "langsmith" },
     // Revalidate thread list when stream finishes, errors, or creates new thread
     onFinish: onHistoryRevalidate,
-    onError: onHistoryRevalidate,
+    onError: (error) => {
+      console.error("Stream error:", error);
+      onHistoryRevalidate?.();
+    },
     onCreated: onHistoryRevalidate,
     experimental_thread: thread,
   });
 
   const sendMessage = useCallback(
     (content: string) => {
+      if (!activeAssistant?.assistant_id) {
+        console.error("Cannot send message: assistant is not loaded");
+        return;
+      }
       const newMessage: Message = { id: uuidv4(), type: "human", content };
-      stream.submit(
-        { messages: [newMessage] },
-        {
-          optimisticValues: (prev) => ({
-            messages: [...(prev.messages ?? []), newMessage],
-          }),
-          config: { ...(activeAssistant?.config ?? {}), recursion_limit: 100 },
-        }
-      );
-      // Update thread list immediately when sending a message
-      onHistoryRevalidate?.();
+      try {
+        stream.submit(
+          { messages: [newMessage] },
+          {
+            optimisticValues: (prev) => ({
+              messages: [...(prev.messages ?? []), newMessage],
+            }),
+            config: { ...(activeAssistant?.config ?? {}), recursion_limit: 100 },
+          }
+        );
+        // Update thread list immediately when sending a message
+        onHistoryRevalidate?.();
+      } catch (error) {
+        console.error("Error submitting message:", error);
+      }
     },
-    [stream, activeAssistant?.config, onHistoryRevalidate]
+    [stream, activeAssistant?.assistant_id, activeAssistant?.config, onHistoryRevalidate]
   );
 
   const runSingleStep = useCallback(

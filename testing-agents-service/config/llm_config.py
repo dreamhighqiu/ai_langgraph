@@ -16,6 +16,7 @@ LLM 配置管理模块
 from typing import Optional, Literal
 from langchain.chat_models import init_chat_model
 from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_openai import ChatOpenAI
 from config.settings import settings
 
 LLMProvider = Literal["openai", "deepseek", "anthropic"]
@@ -58,29 +59,34 @@ def get_llm(
     if provider == "openai":
         model_name = model_name or settings.openai_model
         
-        # 配置参数
-        config_kwargs = {
-            "temperature": temperature,
+        # 直接使用 ChatOpenAI，确保参数正确传递
+        return ChatOpenAI(
+            model=model_name,
+            api_key=settings.openai_api_key,
+            base_url=settings.openai_base_url,
+            temperature=temperature,
             **kwargs
-        }
-        
-        # 如果配置了自定义 base_url，添加到配置中
-        if settings.openai_base_url:
-            config_kwargs["base_url"] = settings.openai_base_url
-        
-        return init_chat_model(
-            f"openai:{model_name}",
-            **config_kwargs
         )
     
     elif provider == "deepseek":
+        import os
         model_name = model_name or settings.deepseek_model
+        
+        # 确保环境变量已设置
+        if settings.deepseek_api_key:
+            os.environ["DEEPSEEK_API_KEY"] = settings.deepseek_api_key
+        if settings.deepseek_base_url:
+            os.environ["DEEPSEEK_BASE_URL"] = settings.deepseek_base_url
         
         # 配置参数
         config_kwargs = {
             "temperature": temperature,
             **kwargs
         }
+        
+        # 显式传递 API Key（如果配置了）
+        if settings.deepseek_api_key:
+            config_kwargs["api_key"] = settings.deepseek_api_key
         
         # 如果配置了自定义 base_url，添加到配置中
         if settings.deepseek_base_url:
@@ -93,10 +99,20 @@ def get_llm(
     
     elif provider == "anthropic":
         model_name = model_name or settings.anthropic_model
+        
+        # 配置参数
+        config_kwargs = {
+            "temperature": temperature,
+            **kwargs
+        }
+        
+        # 显式传递 API Key（如果配置了）
+        if settings.anthropic_api_key:
+            config_kwargs["api_key"] = settings.anthropic_api_key
+        
         return init_chat_model(
             f"anthropic:{model_name}",
-            temperature=temperature,
-            **kwargs
+            **config_kwargs
         )
     
     else:

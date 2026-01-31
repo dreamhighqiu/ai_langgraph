@@ -43,9 +43,9 @@
       "path": "./agents/testcase/agent.py:agent",
       "description": "测试用例生成专家，掌握 analyzer（需求分析）、generator（用例生成）、reviewer（用例评审）三大技能"
     },
-    "ui_agent": {
+    "ui_typescript_agent": {
       "path": "./agents/ui/agent.py:agent",
-      "description": "UI 测试自动化 Agent，使用 Playwright MCP 进行 Web 自动化测试，掌握 generator、healer、planner 技能"
+      "description": "Typescript UI 测试自动化 Agent，使用 Playwright MCP 进行 Web 自动化测试，掌握 generator、healer、planner 技能"
     },
     "ui_java_agent": {
       "path": "./agents/ui_java/agent.py:agent",

@@ -5,18 +5,22 @@ Java Playwright UI 测试自动化 Agent
 - 测试计划设计 (Planner)
 - Java 测试代码生成 (Generator)  
 - 测试失败修复 (Healer)
+- 测试用例生成 (Testcase Generator)
+- 页面变更检测 (Page Change Detector)
 
 与 TypeScript 版本 (agents/ui/agent.py) 的主要区别：
 - 生成 Java 代码（而非 TypeScript）
 - 使用 JUnit 5 测试框架
 - 应用 PageObject + Helper 设计模式
 - 遵循 Java 编码规范
+- 支持基于时间戳+URL的工作区管理
 """
 
 import os
 from contextlib import asynccontextmanager
+from datetime import datetime
 from pathlib import Path
-from typing import AsyncIterator
+from typing import AsyncIterator, Optional
 from deepagents.backends import FilesystemBackend
 from deepagents.middleware import SkillsMiddleware
 from deepagents import create_deep_agent as create_agent
@@ -27,21 +31,45 @@ from config.settings import settings
 from config.mcp_settings import mcp_settings
 from config.llm_config import get_default_llm
 
+# 引入工具模块
+from agents.ui_java.tools.workspace_manager import WorkspaceManager
+from agents.ui_java.tools.langchain_tools import (
+    get_all_tools as get_custom_tools,
+    init_workspace_manager,
+)
+
 # 初始化默认 LLM（使用统一配置）
 model = get_default_llm()
 
-# Java UI 测试工作区配置
-workspace_root = Path(settings.ui_java_workspace_root).resolve()
-workspace_backend = FilesystemBackend(root_dir=workspace_root, virtual_mode=True)
+# Java UI 测试基础工作区配置
+workspace_base_root = Path(settings.ui_java_workspace_root).resolve()
+workspace_base_root.mkdir(parents=True, exist_ok=True)
+
+# 初始化工作区管理器（供 LangChain 工具使用）
+workspace_manager = init_workspace_manager(workspace_base_root)
+
+# 默认工作区 backend（用于会话开始前）
+workspace_backend = FilesystemBackend(root_dir=workspace_base_root, virtual_mode=True)
 
 # Java UI 测试 Skills 配置
 skills_root = Path(settings.ui_java_skills_root).resolve()
 skills_backend = FilesystemBackend(root_dir=skills_root, virtual_mode=True)
 
-# 创建技能中间件 - 加载 planner, generator, healer skills
+# 创建技能中间件 - 加载所有 skills
+# - planner: 测试规划
+# - generator: Java 代码生成
+# - healer: 测试修复
+# - testcase_generator: 测试用例生成器（新增）
+# - page_change_detector: 页面变更检测器（新增）
 skills_middleware = SkillsMiddleware(
     backend=skills_backend,
-    sources=["/agent_skills/planner/", "/agent_skills/generator/", "/agent_skills/healer/"]
+    sources=[
+        "/agent_skills/planner/",
+        "/agent_skills/generator/",
+        "/agent_skills/healer/",
+        "/agent_skills/testcase_generator/",
+        "/agent_skills/page_change_detector/"
+    ]
 )
 
 # Agent 系统提示词 - 针对 Java Playwright 优化
@@ -49,11 +77,13 @@ SYSTEM_PROMPT = """你是一位专业的 Java Playwright UI 测试自动化专�
 
 ## 核心职责
 
-你专注于三个关键领域的测试自动化：
+你专注于五个关键领域的测试自动化：
 
 1. **测试规划 (Planner)**: 分析 Web 应用并创建全面的测试计划，覆盖正向流程、边界情况和错误场景
 2. **测试生成 (Generator)**: 根据测试计划生成健壮、可靠的 Java Playwright 测试代码，遵循最佳实践
 3. **测试修复 (Healer)**: 调试并修复失败的测试，识别根本原因，更新选择器，提高测试可靠性
+4. **测试用例生成 (Testcase Generator)**: 基于测试计划生成 Excel 格式的功能测试用例，支持 UI 测试和全量测试两种模式
+5. **页面变更检测 (Page Change Detector)**: 检测页面元素定位器变化，生成前后对比报告和更新后的 Page 类
 
 ## 技术栈
 
@@ -134,6 +164,13 @@ assertTrue(condition, "Error message");
 - **结构化**: 按功能模块组织测试场景，标注优先级（P0/P1/P2/P3）
 - **全面覆盖**: 包括正向场景、边界值、错误处理、权限验证等
 
+### 测试用例生成阶段
+- **双模式输出**: 
+  - **UI 测试用例**: 用于生成 Java 自动化代码，包含定位器信息
+  - **全量测试用例**: 供测试团队执行，包含功能、边界、异常、安全等测试
+- **Excel 格式**: 标准化的 Excel 模板，便于团队协作
+- **可追溯**: 用例 ID 与测试计划对应，便于维护
+
 ### 代码生成阶段
 - **实时执行**: 实际执行操作并记录，而非猜测
 - **遵循规范**: 严格按照 Java 编码规范和项目风格
@@ -149,6 +186,45 @@ assertTrue(condition, "Error message");
   - 分析时序和竞态条件
 - **根本原因**: 找出问题的真正原因，而非仅修复表面症状
 - **迭代改进**: 一次修复一个问题，每次修复后重新测试，记录推理过程
+
+### 页面变更检测阶段（使用 Playwright MCP）
+- **MCP 获取元素**: 使用 `browser_navigate` 打开页面，使用 `browser_snapshot` 获取所有可见元素
+- **智能对比**: 将 MCP 获取的元素与旧 PageObject 类对比，识别变更的定位器
+- **可视化报告**: 生成 HTML 格式的前后对比报告，高亮显示变更
+- **自动生成 PageObject**: 基于最新页面元素生成全新的 Page 类代码，标注变更位置
+- **一键修复**: 支持批量更新变动的定位器，旧方法标记为 @Deprecated
+
+### 工作区管理（重要！）
+**在开始任何页面分析前，必须先调用 `create_session_workspace` 工具创建工作区！**
+
+- **工具**: `create_session_workspace(url)` - 传入目标 URL 创建独立工作区
+- **命名格式**: `{page_name}_{YYYYMMDD}_{HHMMSS}`（如 `dashboard_20260131_143025`）
+- **目录结构**:
+  ```
+  workspace/dashboard_20260131_143025/
+  ├── pageobjects/    # PageObject 类文件
+  ├── testcases/      # 测试代码文件
+  ├── reports/        # 变更检测报告
+  ├── excel/          # 测试用例 Excel
+  └── helpers/        # Helper 类文件
+  ```
+- **便于管理**: 不同对话的文件分开存放，方便追溯和维护
+
+### 可用的自定义工具
+除了 Playwright MCP 工具外，你还可以使用以下自定义工具：
+
+1. **工作区管理**:
+   - `create_session_workspace(url)` - 创建会话工作区（必须在开始时调用！）
+   - `get_current_workspace()` - 获取当前工作区信息
+   - `save_file_to_workspace(content, filename, subdir)` - 保存文件到工作区
+
+2. **页面变更检测**:
+   - `detect_locator_changes(old_page_code, snapshot_elements, url)` - 检测定位器变更
+   - `parse_page_object(java_code)` - 解析 PageObject 代码
+
+3. **测试用例生成**:
+   - `generate_test_cases_from_plan(test_plan, output_type)` - 从测试计划生成测试用例
+   - `export_testcases_to_excel(testcases_json, filename)` - 导出测试用例到 Excel
 
 ## Playwright 最佳实践
 
@@ -267,13 +343,19 @@ async def make_agent() -> AsyncIterator[Pregel]:
     # 使用 async with 保持 session 存活
     async with client.session("playwright-test") as session:
         # 在 session 中加载 Playwright MCP tools
-        tools = await load_mcp_tools(session)
+        mcp_tools = await load_mcp_tools(session)
+        
+        # 加载自定义 Python 工具（工作区管理、页面变更检测、测试用例生成等）
+        custom_tools = get_custom_tools()
+        
+        # 合并所有工具
+        all_tools = mcp_tools + custom_tools
 
         # 创建 Deep Agent
         # 注意: tools 和 system_prompt 是位置参数
         agent = create_agent(
             model=model,
-            tools=tools,
+            tools=all_tools,
             system_prompt=SYSTEM_PROMPT,
             middleware=[skills_middleware],
             backend=workspace_backend,

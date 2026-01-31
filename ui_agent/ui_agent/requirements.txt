@@ -1,0 +1,11 @@
+﻿openai
+playwright
+PyYAML
+langchain
+langchain-mcp-adapters
+httpx
+deepagents
+openpyxl
+xmind-sdk
+langgraph
+langchain==1.2.7

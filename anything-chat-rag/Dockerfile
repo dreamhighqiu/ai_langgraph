@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir --timeout=300 uv || \
 
 # Copy dependency files first for better caching
 COPY requirements.txt ./
-COPY pyproject.toml setup.py MANIFEST.in* ./
+COPY setup.py ./
 
 # Copy source code
 COPY lightrag/ ./lightrag/

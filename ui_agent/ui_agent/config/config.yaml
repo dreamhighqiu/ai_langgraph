@@ -1,0 +1,43 @@
+analysis:
+  mode: "mcp"
+
+playwright:
+  headless: false
+  timeout: 60000
+
+openai:
+  api_key: "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"
+  model: "gpt-5.2"
+  base_url: "https://us.api.openai.com/v1"
+
+automation:
+  workspace_root: "."
+  playwright_binary: "npx"
+  playwright_args:
+    - "playwright"
+    - "test"
+  scripts_dir: "/playwright_scripts/tests"
+  results_dir: "/playwright_results"
+  reports_dir: "/playwright_reports"
+  base64_images_dir: "/base64_images"
+  java_suites_dir: "/playwright_java"
+  default_browser: "chromium"
+  default_headless: true
+  default_timeout: 30000
+
+auth:
+  enabled: false
+  method: "storage"
+  login_url: ""
+  storage_state: "./auth_state.json"
+  auto_login: true
+  login_timeout: 120000
+  login_wait_until: "domcontentloaded"
+  wait_after_login: 3000
+  form:
+    username: ""
+    password: ""
+    username_selector: "input[name='username']"
+    password_selector: "input[name='password']"
+    submit_selector: "button[type='submit']"
+    success_selector: ""

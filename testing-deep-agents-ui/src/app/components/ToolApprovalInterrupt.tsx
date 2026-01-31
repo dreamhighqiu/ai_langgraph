@@ -1,10 +1,10 @@
 
-// @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEd0T1FRPT06YWJiOTZlMWQ=
+// NOTE  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEd0T1FRPT06YWJiOTZlMWQ=
 
 "use client";
 // TODO  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEd0T1FRPT06YWJiOTZlMWQ=
 
-import { useState } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { AlertCircle, Check, X, Pencil } from "lucide-react";
@@ -20,30 +20,29 @@ interface ToolApprovalInterruptProps {
 }
 // NOTE  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZEd0T1FRPT06YWJiOTZlMWQ=
 
-export function ToolApprovalInterrupt({
+export const ToolApprovalInterrupt = React.memo<ToolApprovalInterruptProps>(({
   actionRequest,
   reviewConfig,
   onResume,
   isLoading,
-}: ToolApprovalInterruptProps) {
+}) => {
   const [rejectionMessage, setRejectionMessage] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editedArgs, setEditedArgs] = useState<Record<string, unknown>>({});
   const [showRejectionInput, setShowRejectionInput] = useState(false);
 
-  const allowedDecisions = reviewConfig?.allowedDecisions ?? [
-    "approve",
-    "reject",
-    "edit",
-  ];
+  const allowedDecisions = useMemo(() => 
+    reviewConfig?.allowedDecisions ?? ["approve", "reject", "edit"],
+    [reviewConfig?.allowedDecisions]
+  );
 
-  const handleApprove = () => {
+  const handleApprove = useCallback(() => {
     onResume({
       decisions: [{ type: "approve" }],
     });
-  };
+  }, [onResume]);
 
-  const handleReject = () => {
+  const handleReject = useCallback(() => {
     if (showRejectionInput) {
       onResume({
         decisions: [
@@ -56,9 +55,9 @@ export function ToolApprovalInterrupt({
     } else {
       setShowRejectionInput(true);
     }
-  };
+  }, [showRejectionInput, rejectionMessage, onResume]);
 
-  const handleRejectConfirm = () => {
+  const handleRejectConfirm = useCallback(() => {
     onResume({
       decisions: [
         {
@@ -67,9 +66,9 @@ export function ToolApprovalInterrupt({
         },
       ],
     });
-  };
+  }, [rejectionMessage, onResume]);
 
-  const handleEdit = () => {
+  const handleEdit = useCallback(() => {
     if (isEditing) {
       onResume({
         decisions: [
@@ -85,20 +84,20 @@ export function ToolApprovalInterrupt({
       setIsEditing(false);
       setEditedArgs({});
     }
-  };
+  }, [isEditing, actionRequest.name, editedArgs, onResume]);
 
-  const startEditing = () => {
+  const startEditing = useCallback(() => {
     setIsEditing(true);
     setEditedArgs(JSON.parse(JSON.stringify(actionRequest.args)));
     setShowRejectionInput(false);
-  };
+  }, [actionRequest.args]);
 
-  const cancelEditing = () => {
+  const cancelEditing = useCallback(() => {
     setIsEditing(false);
     setEditedArgs({});
-  };
+  }, []);
 
-  const updateEditedArg = (key: string, value: string) => {
+  const updateEditedArg = useCallback((key: string, value: string) => {
     try {
       const parsedValue =
         value.trim().startsWith("{") || value.trim().startsWith("[")
@@ -108,7 +107,12 @@ export function ToolApprovalInterrupt({
     } catch {
       setEditedArgs((prev) => ({ ...prev, [key]: value }));
     }
-  };
+  }, []);
+  
+  const handleCancelRejection = useCallback(() => {
+    setShowRejectionInput(false);
+    setRejectionMessage("");
+  }, []);
 
   return (
     <div className="w-full rounded-md border border-border bg-muted/30 p-4">
@@ -229,10 +233,7 @@ export function ToolApprovalInterrupt({
             <Button
               variant="outline"
               size="sm"
-              onClick={() => {
-                setShowRejectionInput(false);
-                setRejectionMessage("");
-              }}
+              onClick={handleCancelRejection}
               disabled={isLoading}
             >
               取消
@@ -290,4 +291,6 @@ export function ToolApprovalInterrupt({
       </div>
     </div>
   );
-}
+});
+
+ToolApprovalInterrupt.displayName = "ToolApprovalInterrupt";

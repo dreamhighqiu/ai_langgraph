@@ -217,9 +217,18 @@ class TestCaseGenerator:
         return cases
     
     def _parse_plan_content(self, content: str) -> List[Dict]:
-        """解析测试计划内容"""
+        """
+        解析测试计划内容 - 支持多种格式
+        
+        支持的格式:
+        1. ### 1. 场景标题（P0）
+        2. **场景1.1：场景描述**
+        3. - 步骤1
+           - 步骤2
+        """
         scenarios = []
         current_scenario = None
+        current_section_priority = 'P1'
         
         lines = content.split('\n')
         i = 0
@@ -227,96 +236,185 @@ class TestCaseGenerator:
         while i < len(lines):
             line = lines[i].strip()
             
-            # 匹配场景标题 (## 或 ### 开头)
-            if line.startswith('## ') or line.startswith('### '):
-                if current_scenario:
+            # 提取行中的优先级
+            priority_match = re.search(r'[（(]?(P[0-3])[）)]?', line, re.IGNORECASE)
+            line_priority = priority_match.group(1).upper() if priority_match else None
+            
+            # 匹配大标题 (### 1. xxx) - 用于获取优先级区域
+            if line.startswith('### ') and re.match(r'###\s*\d+\.?\s*', line):
+                if line_priority:
+                    current_section_priority = line_priority
+                # 继续处理，这可能也是一个场景
+            
+            # 匹配场景标题 - 多种格式
+            # 格式1: ### 1. 页面加载和基本UI验证（P0）
+            # 格式2: **场景1.1：页面正常加载**
+            # 格式3: ## 场景名称
+            scenario_match = None
+            scenario_name = None
+            
+            # 格式1: ### 开头的章节标题
+            if line.startswith('### '):
+                title = re.sub(r'^###\s*', '', line)
+                # 移除优先级标记
+                title = re.sub(r'[（(]P[0-3][）)]', '', title).strip()
+                match = re.match(r'(\d+\.?\d*)\s*[.、]?\s*(.+)', title)
+                if match:
+                    scenario_name = match.group(2).strip()
+                else:
+                    scenario_name = title
+                scenario_match = True
+            
+            # 格式2: **场景x.x：xxx** 或 **场景x.x: xxx**
+            elif line.startswith('**') and ('场景' in line or '用例' in line):
+                # 提取场景名称
+                match = re.match(r'\*\*场景[\d.]+[：:]\s*(.+?)\*\*', line)
+                if match:
+                    scenario_name = match.group(1).strip()
+                    scenario_match = True
+                else:
+                    # 尝试另一种格式
+                    match = re.match(r'\*\*(.+?)\*\*', line)
+                    if match:
+                        scenario_name = match.group(1).strip()
+                        scenario_match = True
+            
+            # 格式3: ## 开头
+            elif line.startswith('## ') and not any(kw in line for kw in ['测试目标', '测试范围', '测试环境', '测试优先级', '测试数据', '风险', '备注', '周期', '标准']):
+                title = re.sub(r'^##\s*', '', line)
+                title = re.sub(r'[（(]P[0-3][）)]', '', title).strip()
+                match = re.match(r'(\d+\.?\d*)\s*[.、]?\s*(.+)', title)
+                if match:
+                    scenario_name = match.group(2).strip()
+                else:
+                    scenario_name = title
+                scenario_match = True
+            
+            if scenario_match and scenario_name:
+                # 保存之前的场景
+                if current_scenario and current_scenario.get('steps'):
                     scenarios.append(current_scenario)
                 
-                title = re.sub(r'^#+\s*', '', line)
-                # 提取场景编号和名称
-                match = re.match(r'(\d+\.?\d*)\s*(.+)', title)
-                if match:
-                    scenario_id = match.group(1)
-                    scenario_name = match.group(2)
-                else:
-                    scenario_id = str(len(scenarios) + 1)
-                    scenario_name = title
-                
                 current_scenario = {
-                    'id': scenario_id,
+                    'id': str(len(scenarios) + 1),
                     'name': scenario_name,
                     'preconditions': [],
                     'steps': [],
                     'expected': '',
-                    'priority': 'P1',
+                    'priority': line_priority or current_section_priority,
                     'type': 'functional'
                 }
-            
-            # 匹配前置条件
-            elif current_scenario and ('前置条件' in line or 'precondition' in line.lower()):
-                # 获取后续的列表项
-                i += 1
-                while i < len(lines) and lines[i].strip().startswith('-'):
-                    cond = lines[i].strip().lstrip('- ').strip()
-                    current_scenario['preconditions'].append(cond)
-                    i += 1
-                continue
-            
-            # 匹配测试步骤
-            elif current_scenario and ('步骤' in line or 'steps' in line.lower()):
+                
+                # 收集后续的列表项作为步骤
                 i += 1
                 step_order = 1
                 while i < len(lines):
                     step_line = lines[i].strip()
-                    # 匹配数字开头的步骤
-                    step_match = re.match(r'(\d+)\.\s*(.+)', step_line)
-                    if step_match:
-                        step_text = step_match.group(2)
-                        current_scenario['steps'].append({
-                            'order': step_order,
-                            'action': step_text,
-                            'expected': ''
-                        })
-                        step_order += 1
-                        i += 1
-                    elif step_line.startswith('-'):
-                        # 也支持列表格式的步骤
-                        step_text = step_line.lstrip('- ').strip()
-                        current_scenario['steps'].append({
-                            'order': step_order,
-                            'action': step_text,
-                            'expected': ''
-                        })
-                        step_order += 1
-                        i += 1
-                    else:
+                    
+                    # 遇到新场景或新章节时停止
+                    if step_line.startswith('### ') or step_line.startswith('## ') or step_line.startswith('**场景') or step_line.startswith('**用例'):
+                        i -= 1  # 回退让外层循环处理
                         break
-                continue
-            
-            # 匹配预期结果
-            elif current_scenario and ('预期' in line or 'expected' in line.lower()):
-                # 获取预期结果内容
-                if ':' in line or '：' in line:
-                    expected = re.split(r'[:：]', line, 1)[1].strip()
-                    current_scenario['expected'] = expected
-                else:
+                    
+                    # 空行跳过
+                    if not step_line:
+                        i += 1
+                        continue
+                    
+                    # 匹配 - 开头的列表项
+                    if step_line.startswith('- '):
+                        step_text = step_line[2:].strip()
+                        
+                        # 分析步骤内容，尝试分离操作和预期
+                        action, expected = self._parse_step_text(step_text)
+                        
+                        current_scenario['steps'].append({
+                            'order': step_order,
+                            'action': action,
+                            'expected': expected
+                        })
+                        step_order += 1
+                    
+                    # 匹配数字开头的步骤
+                    elif re.match(r'^\d+[.、]\s*', step_line):
+                        step_text = re.sub(r'^\d+[.、]\s*', '', step_line)
+                        action, expected = self._parse_step_text(step_text)
+                        
+                        current_scenario['steps'].append({
+                            'order': step_order,
+                            'action': action,
+                            'expected': expected
+                        })
+                        step_order += 1
+                    
                     i += 1
-                    if i < len(lines):
-                        current_scenario['expected'] = lines[i].strip().lstrip('- ').strip()
-            
-            # 匹配优先级
-            elif current_scenario and ('优先级' in line or 'priority' in line.lower()):
-                match = re.search(r'P[0-3]', line, re.IGNORECASE)
-                if match:
-                    current_scenario['priority'] = match.group().upper()
+                
+                # 如果没有解析到步骤，但场景有描述，生成默认步骤
+                if not current_scenario['steps'] and scenario_name:
+                    current_scenario['steps'].append({
+                        'order': 1,
+                        'action': f"执行{scenario_name}测试",
+                        'expected': f"{scenario_name}功能正常"
+                    })
+                    current_scenario['expected'] = f"{scenario_name}功能正常"
+                
+                continue
             
             i += 1
         
         # 添加最后一个场景
-        if current_scenario:
+        if current_scenario and current_scenario.get('steps'):
             scenarios.append(current_scenario)
         
         return scenarios
+    
+    def _parse_step_text(self, text: str) -> tuple:
+        """
+        解析步骤文本，分离操作和预期结果
+        
+        常见格式:
+        - 访问 xxx -> 页面加载
+        - 验证 xxx 显示正确
+        - 点击 xxx，验证跳转到 yyy
+        """
+        action = text
+        expected = ""
+        
+        # 格式: xxx -> yyy
+        if ' -> ' in text:
+            parts = text.split(' -> ', 1)
+            action = parts[0].strip()
+            expected = parts[1].strip()
+        
+        # 格式: xxx，验证 yyy
+        elif '，验证' in text:
+            parts = text.split('，验证', 1)
+            action = parts[0].strip()
+            expected = '验证' + parts[1].strip()
+        
+        # 格式: xxx, 验证 yyy
+        elif ', 验证' in text or ',验证' in text:
+            parts = re.split(r',\s*验证', text, 1)
+            action = parts[0].strip()
+            expected = '验证' + parts[1].strip() if len(parts) > 1 else ''
+        
+        # 以"验证"开头的文本，操作本身就包含预期
+        elif text.startswith('验证'):
+            action = text
+            expected = text  # 验证语句本身就是预期
+        
+        # 其他情况尝试从内容推断预期
+        else:
+            if '显示' in text or '可见' in text or '正确' in text:
+                expected = text
+            elif '跳转' in text:
+                expected = '页面跳转成功'
+            elif '点击' in text:
+                expected = '点击响应正常'
+            elif '输入' in text:
+                expected = '输入成功'
+        
+        return action, expected
     
     def _generate_scenario_cases(
         self,
@@ -327,6 +425,23 @@ class TestCaseGenerator:
         """为单个场景生成测试用例"""
         cases = []
         
+        # 从步骤中提取预期结果（如果场景级别没有设置）
+        steps = scenario.get('steps', [])
+        scenario_expected = scenario.get('expected', '')
+        
+        # 如果没有场景级预期结果，从最后一个步骤的预期中获取
+        if not scenario_expected and steps:
+            last_step_expected = steps[-1].get('expected', '')
+            if last_step_expected:
+                scenario_expected = last_step_expected
+            else:
+                # 尝试从所有步骤合成预期
+                expected_list = [s.get('expected', '') for s in steps if s.get('expected')]
+                if expected_list:
+                    scenario_expected = expected_list[-1]  # 使用最后一个有效预期
+                else:
+                    scenario_expected = f"{scenario['name']}功能正常"
+        
         # 主功能测试
         main_case = self._create_case(
             module=module_name,
@@ -334,8 +449,8 @@ class TestCaseGenerator:
             priority=self._parse_priority(scenario.get('priority', 'P1')),
             test_type=TestType.FUNCTIONAL,
             preconditions=scenario.get('preconditions', []),
-            steps=scenario.get('steps', []),
-            expected=scenario.get('expected', '功能正常'),
+            steps=steps,
+            expected=scenario_expected,
             tags=['functional', 'smoke'] if scenario.get('priority') == 'P0' else ['functional'],
             url=url
         )

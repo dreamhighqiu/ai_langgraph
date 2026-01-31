@@ -2,12 +2,20 @@
 
 基于测试计划生成结构化的功能测试用例，输出 Excel 格式，支持 UI 测试和全量测试两种模式。
 
+## 核心原则
+
+**AI 负责理解，Tools 负责执行！**
+
+- **AI 的职责**: 理解测试计划内容，智能提取测试场景、步骤、预期结果，构造结构化数据
+- **Tools 的职责**: 接收 AI 构造的数据，执行固定的导出操作（Excel、保存文件）
+
+**禁止使用硬编码解析器！** AI 本身就能理解任何格式的测试计划。
+
 ## 核心职责
 
-1. **分析测试计划**: 解析测试计划文档，提取测试场景和步骤
-2. **生成功能测试用例**: 输出用于 UI 自动化的功能测试用例
-3. **生成全量测试用例**: 输出包含所有类型（功能、边界、异常、安全等）的完整测试用例
-4. **Excel 导出**: 将测试用例导出为标准 Excel 格式
+1. **理解测试计划**: AI 阅读并理解测试计划文档，提取测试场景和步骤
+2. **智能构造数据**: AI 将理解的内容转换为结构化的测试用例 JSON
+3. **调用导出工具**: 使用 `save_test_cases_data` 和 `export_testcases_to_excel` 工具导出
 
 ## 输出类型
 
@@ -50,43 +58,110 @@
 ## 使用流程
 
 ```
-1. 输入测试计划（Markdown 或结构化数据）
+1. AI 阅读测试计划（Markdown 格式）
      ↓
-2. 分析测试场景和步骤
+2. AI 理解并提取测试场景、步骤、预期结果
      ↓
-3. 生成测试用例数据结构
+3. AI 构造测试用例 JSON 数据
      ↓
-4. 导出 UI 测试用例 Excel
+4. 调用 save_test_cases_data(test_cases, module_name)
      ↓
-5. 导出全量测试用例 Excel
+5. 调用 export_testcases_to_excel(testcases_json) 导出 Excel
      ↓
-6. 可选：基于 UI 测试用例生成 Java 代码
+6. 可选：生成 Java 代码（使用 generator skill）
 ```
+
+## AI 构造测试用例数据
+
+### 测试用例 JSON 结构
+
+AI 应该构造如下格式的 JSON 数组：
+
+```json
+[
+    {
+        "id": "TC_MODULE_001",
+        "module": "模块名称",
+        "title": "测试场景标题",
+        "priority": "P0",
+        "type": "functional",
+        "preconditions": ["前置条件1", "前置条件2"],
+        "steps_detail": [
+            {
+                "order": 1,
+                "action": "打开目标页面",
+                "expected": "页面加载成功",
+                "locator": "browser_navigate 获取的定位器",
+                "data": "测试数据（可选）"
+            },
+            {
+                "order": 2,
+                "action": "在搜索框输入关键词",
+                "expected": "关键词显示在输入框中",
+                "locator": "#search-input",
+                "data": "测试自动化"
+            }
+        ],
+        "expected_result": "整体预期结果",
+        "tags": ["smoke", "functional"],
+        "test_data": {
+            "keyword": "测试自动化",
+            "expected_count": 10
+        },
+        "url": "https://example.com"
+    }
+]
+```
+
+### 字段说明
+
+| 字段 | 必填 | 说明 |
+|------|------|------|
+| id | ✅ | 唯一标识，格式: TC_模块_序号 |
+| module | ✅ | 所属模块 |
+| title | ✅ | 测试场景标题 |
+| priority | ✅ | 优先级: P0/P1/P2/P3 |
+| type | ✅ | 类型: functional/ui/boundary/negative/security |
+| steps_detail | ✅ | 步骤数组，每步包含 order, action, expected |
+| expected_result | ✅ | 整体预期结果 |
+| preconditions | 可选 | 前置条件数组 |
+| tags | 可选 | 标签数组 |
+| test_data | 可选 | 测试数据对象 |
+| locator | 可选 | Playwright 定位器（从 browser_snapshot 获取） |
+| url | 可选 | 测试页面 URL |
+
+### 优先级定义
+
+- **P0**: 阻塞级 - 核心功能，必须通过
+- **P1**: 高优先级 - 重要功能
+- **P2**: 中优先级 - 一般功能
+- **P3**: 低优先级 - 边缘功能
+
+### 测试类型定义
+
+- **functional**: 功能测试
+- **ui**: UI 测试
+- **smoke**: 冒烟测试
+- **boundary**: 边界值测试
+- **negative**: 异常/负向测试
+- **security**: 安全测试
 
 ## 工具调用
 
-### 1. 解析测试计划
+### 1. 保存测试用例数据
 ```python
-parse_test_plan(
-    plan_path: str,           # 测试计划文件路径
-    module_name: str          # 模块名称
-) -> TestPlanData
+save_test_cases_data(
+    test_cases: str,    # AI 构造的 JSON 数组
+    module_name: str    # 模块名称
+) -> str  # 返回保存结果
 ```
 
-### 2. 生成测试用例
+### 2. 导出 Excel
 ```python
-generate_test_cases(
-    plan_data: TestPlanData,  # 测试计划数据
-    mode: str = "ui"          # "ui" 或 "all"
-) -> List[TestCase]
-```
-
-### 3. 导出 Excel
-```python
-export_to_excel(
-    test_cases: List[TestCase],
-    output_path: str,
-    mode: str = "ui"          # "ui" 或 "all"
+export_testcases_to_excel(
+    testcases_json: str,  # save_test_cases_data 的返回值
+    filename: str = "",   # 可选，默认自动生成
+    module_name: str = "" # 模块名称
 ) -> str  # 返回文件路径
 ```
 

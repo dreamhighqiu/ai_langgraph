@@ -4,19 +4,31 @@
 "use client";
 // TODO  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZURoU1l3PT06YzA0ZjNiYmY=
 
-import React, { useMemo, useCallback, useState, useEffect } from "react";
+import React, { useMemo, useCallback, useState, useEffect, Suspense, lazy } from "react";
 import { FileText, Copy, Download, Edit, Save, X, Loader2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { toast } from "sonner";
 import { MarkdownContent } from "@/app/components/MarkdownContent";
 import type { FileItem } from "@/app/types/types";
 import useSWRMutation from "swr/mutation";
+
+// 懒加载代码高亮组件
+const SyntaxHighlighter = lazy(() =>
+  import("react-syntax-highlighter").then((mod) => ({
+    default: mod.Prism,
+  }))
+);
+
+// 懒加载主题
+let cachedTheme: any = null;
+const loadOneDarkTheme = () =>
+  import("react-syntax-highlighter/dist/esm/styles/prism").then(
+    (mod) => mod.oneDark
+  );
 
 const LANGUAGE_MAP: Record<string, string> = {
   js: "javascript",
@@ -54,6 +66,58 @@ const LANGUAGE_MAP: Record<string, string> = {
   makefile: "makefile",
 };
 // FIXME  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZURoU1l3PT06YzA0ZjNiYmY=
+
+// 代码高亮占位符
+const CodePlaceholder = ({ children }: { children: string }) => (
+  <pre className="rounded-md bg-slate-800 p-4 text-sm text-slate-100 overflow-x-auto">
+    <code>{children}</code>
+  </pre>
+);
+
+// 懒加载的代码高亮组件
+const LazyCodeHighlighter = React.memo(
+  ({ language, content }: { language: string; content: string }) => {
+    const [theme, setTheme] = useState<any>(cachedTheme);
+
+    useEffect(() => {
+      if (!cachedTheme) {
+        loadOneDarkTheme().then((t) => {
+          cachedTheme = t;
+          setTheme(t);
+        });
+      }
+    }, []);
+
+    if (!theme) {
+      return <CodePlaceholder>{content}</CodePlaceholder>;
+    }
+
+    return (
+      <Suspense fallback={<CodePlaceholder>{content}</CodePlaceholder>}>
+        <SyntaxHighlighter
+          language={language}
+          style={theme}
+          customStyle={{
+            margin: 0,
+            borderRadius: "0.5rem",
+            fontSize: "0.875rem",
+          }}
+          showLineNumbers
+          wrapLines={true}
+          lineProps={{
+            style: {
+              whiteSpace: "pre-wrap",
+            },
+          }}
+        >
+          {content}
+        </SyntaxHighlighter>
+      </Suspense>
+    );
+  }
+);
+
+LazyCodeHighlighter.displayName = "LazyCodeHighlighter";
 
 export const FileViewDialog = React.memo<{
   file: FileItem | null;
@@ -99,6 +163,7 @@ export const FileViewDialog = React.memo<{
   const handleCopy = useCallback(() => {
     if (fileContent) {
       navigator.clipboard.writeText(fileContent);
+      toast.success("已复制到剪贴板");
     }
   }, [fileContent]);
 
@@ -137,6 +202,10 @@ export const FileViewDialog = React.memo<{
       !fileName.includes(" ")
     );
   }, [fileName]);
+
+  const handleTriggerUpdate = useCallback(() => {
+    fileUpdate.trigger();
+  }, [fileUpdate]);
 
   return (
     <Dialog
@@ -225,24 +294,10 @@ export const FileViewDialog = React.memo<{
                       <MarkdownContent content={fileContent} />
                     </div>
                   ) : (
-                    <SyntaxHighlighter
+                    <LazyCodeHighlighter
                       language={language}
-                      style={oneDark}
-                      customStyle={{
-                        margin: 0,
-                        borderRadius: "0.5rem",
-                        fontSize: "0.875rem",
-                      }}
-                      showLineNumbers
-                      wrapLines={true}
-                      lineProps={{
-                        style: {
-                          whiteSpace: "pre-wrap",
-                        },
-                      }}
-                    >
-                      {fileContent}
-                    </SyntaxHighlighter>
+                      content={fileContent}
+                    />
                   )
                 ) : (
                   <div className="flex items-center justify-center p-12">
@@ -269,7 +324,7 @@ export const FileViewDialog = React.memo<{
               取消
             </Button>
             <Button
-              onClick={() => fileUpdate.trigger()}
+              onClick={handleTriggerUpdate}
               size="sm"
               disabled={
                 fileUpdate.isMutating ||

@@ -18,6 +18,23 @@ export interface ThreadItem {
 // NOTE  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VjJwWGJnPT06YzBlMTY4ZmI=
 
 const DEFAULT_PAGE_SIZE = 20;
+
+// 缓存 client 实例，避免每次请求都创建新实例
+const clientCache = new Map<string, Client>();
+
+function getOrCreateClient(deploymentUrl: string, apiKey: string): Client {
+  const cacheKey = `${deploymentUrl}::${apiKey}`;
+  let client = clientCache.get(cacheKey);
+  if (!client) {
+    client = new Client({
+      apiUrl: deploymentUrl,
+      defaultHeaders: apiKey ? { "X-Api-Key": apiKey } : {},
+    });
+    clientCache.set(cacheKey, client);
+  }
+  return client;
+}
+
 // FIXME  My80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VjJwWGJnPT06YzBlMTY4ZmI=
 
 export function useThreads(props: {
@@ -69,10 +86,8 @@ export function useThreads(props: {
       apiKey: string;
       status?: Thread["status"];
     }) => {
-      const client = new Client({
-        apiUrl: deploymentUrl,
-        defaultHeaders: apiKey ? { "X-Api-Key": apiKey } : {},
-      });
+      // 使用缓存的 client 实例
+      const client = getOrCreateClient(deploymentUrl, apiKey);
 
       // Check if assistantId is a UUID (deployed) or graph name (local)
       const isUUID =
@@ -98,7 +113,7 @@ export function useThreads(props: {
         try {
           if (thread.values && typeof thread.values === "object") {
             const values = thread.values as any;
-            const firstHumanMessage = values.messages.find(
+            const firstHumanMessage = values.messages?.find(
               (m: any) => m.type === "human"
             );
             if (firstHumanMessage?.content) {
@@ -108,7 +123,7 @@ export function useThreads(props: {
                   : firstHumanMessage.content[0]?.text || "";
               title = content.slice(0, 50) + (content.length > 50 ? "..." : "");
             }
-            const firstAiMessage = values.messages.find(
+            const firstAiMessage = values.messages?.find(
               (m: any) => m.type === "ai"
             );
             if (firstAiMessage?.content) {
@@ -135,8 +150,14 @@ export function useThreads(props: {
       });
     },
     {
-      revalidateFirstPage: true,
-      revalidateOnFocus: true,
+      // 性能优化配置
+      revalidateFirstPage: false, // 不自动刷新第一页，减少请求
+      revalidateOnFocus: false,   // 切换窗口时不自动刷新
+      revalidateOnReconnect: false, // 重连时不自动刷新
+      dedupingInterval: 5000,     // 5秒内重复请求会被忽略
+      errorRetryCount: 2,         // 错误重试次数
+      errorRetryInterval: 3000,   // 错误重试间隔
+      keepPreviousData: true,     // 保留旧数据直到新数据加载完成
     }
   );
 }

@@ -5,6 +5,7 @@
 """
 
 import re
+import json
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
@@ -13,6 +14,9 @@ from urllib.parse import urlparse
 
 class WorkspaceManager:
     """工作区管理器 - 基于时间戳 + URL 创建独立工作目录"""
+    
+    # 会话状态文件名
+    SESSION_STATE_FILE = ".workspace_session.json"
     
     def __init__(self, base_root: Path):
         """
@@ -25,6 +29,47 @@ class WorkspaceManager:
         self.base_root.mkdir(parents=True, exist_ok=True)
         self._current_workspace: Optional[Path] = None
         self._current_url: Optional[str] = None
+        
+        # 尝试恢复上次会话
+        self._load_session_state()
+    
+    def _load_session_state(self):
+        """加载会话状态（用于跨请求保持工作区）"""
+        state_file = self.base_root / self.SESSION_STATE_FILE
+        if state_file.exists():
+            try:
+                state = json.loads(state_file.read_text(encoding='utf-8'))
+                workspace_path = Path(state.get('workspace', ''))
+                if workspace_path.exists():
+                    self._current_workspace = workspace_path
+                    self._current_url = state.get('url', '')
+            except Exception:
+                pass  # 忽略加载错误
+    
+    def _save_session_state(self):
+        """保存会话状态"""
+        if self._current_workspace:
+            state = {
+                'workspace': str(self._current_workspace),
+                'url': self._current_url or '',
+                'updated_at': datetime.now().isoformat()
+            }
+            state_file = self.base_root / self.SESSION_STATE_FILE
+            try:
+                state_file.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')
+            except Exception:
+                pass  # 忽略保存错误
+    
+    def clear_session(self):
+        """清除会话状态（用于开始全新对话）"""
+        self._current_workspace = None
+        self._current_url = None
+        state_file = self.base_root / self.SESSION_STATE_FILE
+        if state_file.exists():
+            try:
+                state_file.unlink()
+            except Exception:
+                pass
     
     @staticmethod
     def extract_page_name(url: str) -> str:
@@ -35,15 +80,15 @@ class WorkspaceManager:
             url: 页面 URL
         
         Returns:
-            页面名称（URL 最后一段路径）
+            页面名称（URL 最后一段路径或域名）
         
         Examples:
             >>> WorkspaceManager.extract_page_name("https://chat.deepseek.com/dashboard")
             "dashboard"
-            >>> WorkspaceManager.extract_page_name("https://example.com/users/profile")
-            "profile"
+            >>> WorkspaceManager.extract_page_name("https://github.com/user/repo")
+            "repo"
             >>> WorkspaceManager.extract_page_name("https://example.com/")
-            "home"
+            "example"
         """
         if not url:
             return "unknown"
@@ -53,17 +98,27 @@ class WorkspaceManager:
             path = parsed.path.strip('/')
             
             if not path:
-                # 根路径
-                return "home"
+                # 根路径 - 使用域名的第一部分
+                hostname = parsed.hostname or "unknown"
+                # 移除 www. 前缀和 .com/.org 等后缀
+                name = hostname.split('.')[0]
+                if name == 'www' and len(hostname.split('.')) > 1:
+                    name = hostname.split('.')[1]
+                return name if name else "home"
             
             # 获取最后一段路径
             segments = path.split('/')
             last_segment = segments[-1] if segments else "home"
             
-            # 清理特殊字符
-            clean_name = re.sub(r'[^\w\-]', '_', last_segment)
+            # 清理特殊字符，保留字母数字和连字符
+            clean_name = re.sub(r'[^\w\-]', '-', last_segment)
+            # 移除连续的连字符
+            clean_name = re.sub(r'-+', '-', clean_name).strip('-')
             
-            # 确保名称有效
+            # 确保名称有效且长度合理
+            if len(clean_name) > 50:
+                clean_name = clean_name[:50]
+            
             return clean_name if clean_name else "page"
             
         except Exception:
@@ -111,11 +166,9 @@ class WorkspaceManager:
         workspace_path.mkdir(parents=True, exist_ok=True)
         
         # 创建子目录结构
-        (workspace_path / "pageobjects").mkdir(exist_ok=True)
-        (workspace_path / "testcases").mkdir(exist_ok=True)
-        (workspace_path / "reports").mkdir(exist_ok=True)
-        (workspace_path / "excel").mkdir(exist_ok=True)
-        (workspace_path / "helpers").mkdir(exist_ok=True)
+        subdirs = ["pageobjects", "testcases", "reports", "excel", "helpers"]
+        for subdir in subdirs:
+            (workspace_path / subdir).mkdir(exist_ok=True)
         
         # 创建 README
         readme_content = f"""# 工作区: {workspace_name}
@@ -129,8 +182,8 @@ class WorkspaceManager:
 ```
 {workspace_name}/
 ├── pageobjects/    # Page Object 类文件
-├── testcases/      # 测试用例 Excel 文件
-├── reports/        # 变更检测报告
+├── testcases/      # 测试用例文件
+├── reports/        # 测试计划和报告
 ├── excel/          # 导出的 Excel 文件
 ├── helpers/        # Helper 类文件
 └── README.md       # 本文件
@@ -140,13 +193,16 @@ class WorkspaceManager:
 此目录由 UI Java Agent 自动生成，包含：
 1. Java PageObject 类
 2. 测试用例 Excel
-3. 页面变更检测报告
+3. 测试计划和变更检测报告
 4. Helper 工具类
 """
         (workspace_path / "README.md").write_text(readme_content, encoding='utf-8')
         
         self._current_workspace = workspace_path
         self._current_url = url
+        
+        # 保存会话状态
+        self._save_session_state()
         
         return workspace_path
     
@@ -163,10 +219,27 @@ class WorkspaceManager:
         Returns:
             工作区目录路径
         """
-        if self._current_workspace and self._current_url == url:
+        # 标准化 URL 比较（移除末尾斜杠）
+        normalized_url = url.rstrip('/')
+        current_normalized = (self._current_url or '').rstrip('/')
+        
+        if self._current_workspace and self._current_workspace.exists() and current_normalized == normalized_url:
             return self._current_workspace
         
         return self.create_workspace(url)
+    
+    def set_current_workspace(self, workspace_path: Path, url: str = ""):
+        """
+        手动设置当前工作区
+        
+        Args:
+            workspace_path: 工作区路径
+            url: 关联的 URL
+        """
+        if workspace_path.exists():
+            self._current_workspace = workspace_path
+            self._current_url = url
+            self._save_session_state()
     
     @property
     def current_workspace(self) -> Optional[Path]:
@@ -174,38 +247,53 @@ class WorkspaceManager:
         return self._current_workspace
     
     @property
+    def current_url(self) -> Optional[str]:
+        """获取当前 URL"""
+        return self._current_url
+    
+    @property
     def pageobjects_dir(self) -> Optional[Path]:
         """获取 PageObject 目录"""
         if self._current_workspace:
-            return self._current_workspace / "pageobjects"
+            path = self._current_workspace / "pageobjects"
+            path.mkdir(exist_ok=True)
+            return path
         return None
     
     @property
     def testcases_dir(self) -> Optional[Path]:
         """获取测试用例目录"""
         if self._current_workspace:
-            return self._current_workspace / "testcases"
+            path = self._current_workspace / "testcases"
+            path.mkdir(exist_ok=True)
+            return path
         return None
     
     @property
     def reports_dir(self) -> Optional[Path]:
         """获取报告目录"""
         if self._current_workspace:
-            return self._current_workspace / "reports"
+            path = self._current_workspace / "reports"
+            path.mkdir(exist_ok=True)
+            return path
         return None
     
     @property
     def excel_dir(self) -> Optional[Path]:
         """获取 Excel 目录"""
         if self._current_workspace:
-            return self._current_workspace / "excel"
+            path = self._current_workspace / "excel"
+            path.mkdir(exist_ok=True)
+            return path
         return None
     
     @property
     def helpers_dir(self) -> Optional[Path]:
         """获取 Helper 目录"""
         if self._current_workspace:
-            return self._current_workspace / "helpers"
+            path = self._current_workspace / "helpers"
+            path.mkdir(exist_ok=True)
+            return path
         return None
     
     def list_workspaces(self) -> list:
@@ -239,7 +327,29 @@ class WorkspaceManager:
             workspaces = [w for w in workspaces if w['name'].startswith(page_name)]
         
         if workspaces:
-            return Path(workspaces[0]['path'])
+            latest = Path(workspaces[0]['path'])
+            # 自动设置为当前工作区
+            self._current_workspace = latest
+            self._save_session_state()
+            return latest
+        return None
+    
+    def use_workspace(self, workspace_name: str) -> Optional[Path]:
+        """
+        切换到指定工作区
+        
+        Args:
+            workspace_name: 工作区名称或部分名称
+        
+        Returns:
+            工作区路径，如果找到的话
+        """
+        for ws in self.list_workspaces():
+            if workspace_name in ws['name']:
+                workspace_path = Path(ws['path'])
+                self._current_workspace = workspace_path
+                self._save_session_state()
+                return workspace_path
         return None
 
 
@@ -272,9 +382,8 @@ def get_workspace_path(base_root: str, url: str, subdir: str = None) -> Path:
         目录路径
     """
     manager = WorkspaceManager(Path(base_root))
-    workspace = manager.create_workspace(url)
+    workspace = manager.get_or_create_workspace(url)
     
     if subdir:
         return workspace / subdir
     return workspace
-

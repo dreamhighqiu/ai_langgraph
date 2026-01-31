@@ -197,34 +197,116 @@ assertTrue(condition, "Error message");
 ### 工作区管理（重要！）
 **在开始任何页面分析前，必须先调用 `create_session_workspace` 工具创建工作区！**
 
-- **工具**: `create_session_workspace(url)` - 传入目标 URL 创建独立工作区
+关键规则：
+1. **每次对话只需创建一次工作区** - 如果已经为同一 URL 创建过工作区，工具会返回现有工作区
+2. **所有文件必须保存到工作区** - 使用 `save_file_to_workspace` 工具保存文件
+3. **先创建工作区，再生成文件** - 确保按正确顺序操作
+
+- **工具**: `create_session_workspace(url)` - 传入目标 URL 创建或获取工作区
 - **命名格式**: `{page_name}_{YYYYMMDD}_{HHMMSS}`（如 `dashboard_20260131_143025`）
 - **目录结构**:
   ```
   workspace/dashboard_20260131_143025/
   ├── pageobjects/    # PageObject 类文件
-  ├── testcases/      # 测试代码文件
-  ├── reports/        # 变更检测报告
+  ├── testcases/      # 测试用例文件
+  ├── reports/        # 测试计划和报告
   ├── excel/          # 测试用例 Excel
   └── helpers/        # Helper 类文件
   ```
-- **便于管理**: 不同对话的文件分开存放，方便追溯和维护
+- **便于管理**: 同一对话的所有文件都保存在同一个工作区目录下
 
 ### 可用的自定义工具
 除了 Playwright MCP 工具外，你还可以使用以下自定义工具：
 
 1. **工作区管理**:
-   - `create_session_workspace(url)` - 创建会话工作区（必须在开始时调用！）
+   - `create_session_workspace(url)` - 创建或获取会话工作区（每次对话开始时调用一次！）
    - `get_current_workspace()` - 获取当前工作区信息
-   - `save_file_to_workspace(content, filename, subdir)` - 保存文件到工作区
+   - `save_file_to_workspace(filename, content, subdir)` - 保存文件到工作区
+     - **filename**: 必填！文件名（含扩展名），如 `LoginPage.java`, `TestPlan.md`
+     - **content**: 必填！文件的完整内容
+     - **subdir**: 子目录名，可选值: `pageobjects`, `testcases`, `reports`, `excel`, `helpers`
 
 2. **页面变更检测**:
    - `detect_locator_changes(old_page_code, snapshot_elements, url)` - 检测定位器变更
    - `parse_page_object(java_code)` - 解析 PageObject 代码
 
-3. **测试用例生成**:
-   - `generate_test_cases_from_plan(test_plan, output_type)` - 从测试计划生成测试用例
-   - `export_testcases_to_excel(testcases_json, filename)` - 导出测试用例到 Excel
+3. **测试用例导出**（AI 负责理解测试计划并构造数据，工具负责导出）:
+   - `save_test_cases_data(test_cases, module_name)` - 保存 AI 构造的测试用例数据
+   - `export_testcases_to_excel(testcases_json, filename, module_name)` - 导出测试用例到 Excel
+   
+   **重要**: AI 应该直接理解测试计划内容，智能提取测试场景、步骤、预期结果，然后构造 JSON 数据传给工具。
+   不要依赖硬编码的解析器！
+
+**重要提示**：`save_file_to_workspace` 必须同时提供 filename 和 content 两个参数！
+
+## Java 代码生成流程（Skills + AI + Playwright MCP）
+
+**生成 Java 代码时，必须使用 Playwright MCP 工具获取真实页面元素，然后参考 references 目录下的示例代码智能生成！**
+
+### 完整流程（生成多个文件）：
+
+1. **创建工作区**: `create_session_workspace(url)`
+
+2. **获取页面元素**（使用 Playwright MCP）:
+   - `browser_navigate` - 打开目标页面
+   - `browser_snapshot` - 获取所有可见元素和定位器
+
+3. **生成并保存 PageObject 类**:
+   - 参考 `agent_skills/generator/references/java/pageobject/DeviceInventoryPage.java`
+   - 包含从 `browser_snapshot` 获取的真实定位器
+   - 保存: `save_file_to_workspace(filename="XxxPage.java", content=代码, subdir="pageobjects")`
+
+4. **生成并保存 Helper 类**:
+   - 参考 `agent_skills/generator/references/java/helper/UsersHelper.java`
+   - 封装业务操作方法
+   - 保存: `save_file_to_workspace(filename="XxxHelper.java", content=代码, subdir="helpers")`
+
+5. **生成并保存 Test 类**:
+   - 参考 `agent_skills/generator/references/java/testcase/DeviceInventoryPageTest.java`
+   - 使用 PageObject 和 Helper
+   - 保存: `save_file_to_workspace(filename="XxxTest.java", content=代码, subdir="testcases")`
+
+6. **导出 Excel 测试用例**:
+   - `generate_test_cases_from_plan()` 生成用例数据
+   - `export_testcases_to_excel()` 导出 Excel
+
+### 代码生成要求：
+
+- **PageObject 类**: 继承 CommonPage，包含页面特有的定位器（使用 `browser_snapshot` 获取的真实选择器）
+- **Helper 类**: 封装多步骤业务操作，使用 PageObject 访问元素
+- **Test 类**: 继承 Hook，使用 `helperContext` 和 `pagesContext`，每个测试方法对应一个测试用例
+
+### 示例代码结构：
+
+```java
+// 1. PageObject: BaiduHomePage.java
+public class BaiduHomePage extends CommonPage {
+    public final Locator searchInput;  // 来自 browser_snapshot
+    public final Locator searchButton;
+    
+    public BaiduHomePage(Page page) {
+        super(page);
+        this.searchInput = page.locator("#kw");  // 真实定位器
+        this.searchButton = page.locator("#su");
+    }
+}
+
+// 2. Helper: BaiduHelper.java  
+public class BaiduHelper {
+    public void performSearch(String keyword) {
+        // 封装搜索操作
+    }
+}
+
+// 3. Test: BaiduSearchTest.java
+@ExtendWith(ReportPortalExtension.class)
+class BaiduSearchTest extends Hook {
+    @Test
+    @Tag("smoke")
+    void testBasicSearch() {
+        // 使用 helper 执行测试
+    }
+}
 
 ## Playwright 最佳实践
 

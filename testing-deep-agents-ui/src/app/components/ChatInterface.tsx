@@ -66,6 +66,101 @@ const getStatusIcon = (status: TodoItem["status"], className?: string) => {
   }
 };
 
+// 优化：将消息处理逻辑抽离成独立函数，便于 useMemo 优化
+function processMessages(messages: Message[], interrupt: any) {
+  const messageMap = new Map<
+    string,
+    { message: Message; toolCalls: ToolCall[] }
+  >();
+
+  for (const message of messages) {
+    if (message.type === "ai") {
+      const toolCallsInMessage: Array<{
+        id?: string;
+        function?: { name?: string; arguments?: unknown };
+        name?: string;
+        type?: string;
+        args?: unknown;
+        input?: unknown;
+      }> = [];
+
+      if (
+        message.additional_kwargs?.tool_calls &&
+        Array.isArray(message.additional_kwargs.tool_calls)
+      ) {
+        toolCallsInMessage.push(...message.additional_kwargs.tool_calls);
+      } else if (message.tool_calls && Array.isArray(message.tool_calls)) {
+        for (const toolCall of message.tool_calls) {
+          if (toolCall.name !== "") {
+            toolCallsInMessage.push(toolCall);
+          }
+        }
+      } else if (Array.isArray(message.content)) {
+        for (const block of message.content) {
+          if ((block as { type?: string }).type === "tool_use") {
+            toolCallsInMessage.push(block);
+          }
+        }
+      }
+
+      const toolCallsWithStatus = toolCallsInMessage.map((toolCall) => {
+        const name =
+          toolCall.function?.name ||
+          toolCall.name ||
+          toolCall.type ||
+          "unknown";
+        const args =
+          toolCall.function?.arguments ||
+          toolCall.args ||
+          toolCall.input ||
+          {};
+        return {
+          id: toolCall.id || `tool-${Math.random()}`,
+          name,
+          args,
+          status: interrupt ? "interrupted" : ("pending" as const),
+        } as ToolCall;
+      });
+
+      messageMap.set(message.id!, {
+        message,
+        toolCalls: toolCallsWithStatus,
+      });
+    } else if (message.type === "tool") {
+      const toolCallId = message.tool_call_id;
+      if (!toolCallId) continue;
+
+      for (const [, data] of messageMap) {
+        const toolCallIndex = data.toolCalls.findIndex(
+          (tc: ToolCall) => tc.id === toolCallId
+        );
+        if (toolCallIndex !== -1) {
+          data.toolCalls[toolCallIndex] = {
+            ...data.toolCalls[toolCallIndex],
+            status: "completed" as const,
+            result: extractStringFromMessageContent(message),
+          };
+          break;
+        }
+      }
+    } else if (message.type === "human") {
+      messageMap.set(message.id!, {
+        message,
+        toolCalls: [],
+      });
+    }
+  }
+
+  const processedArray = Array.from(messageMap.values());
+  return processedArray.map((data, index) => {
+    const prevMessage = index > 0 ? processedArray[index - 1].message : null;
+    return {
+      ...data,
+      showAvatar: data.message.type !== prevMessage?.type,
+    };
+  });
+}
+
 export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
   const [metaOpen, setMetaOpen] = useState<"tasks" | "files" | null>(null);
   const tasksContainerRef = useRef<HTMLDivElement | null>(null);
@@ -115,116 +210,22 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
     [handleSubmit, submitDisabled]
   );
 
-  // TODO: can we make this part of the hook?
+  // 优化：使用稳定的消息数组长度作为额外的依赖
+  // 只有当消息数量变化或 interrupt 变化时才重新计算
+  const messagesLength = messages.length;
   const processedMessages = useMemo(() => {
-    /*
-     1. Loop through all messages
-     2. For each AI message, add the AI message, and any tool calls to the messageMap
-     3. For each tool message, find the corresponding tool call in the messageMap and update the status and output
-    */
-    const messageMap = new Map<
-      string,
-      { message: Message; toolCalls: ToolCall[] }
-    >();
-    messages.forEach((message: Message) => {
-      if (message.type === "ai") {
-        const toolCallsInMessage: Array<{
-          id?: string;
-          function?: { name?: string; arguments?: unknown };
-          name?: string;
-          type?: string;
-          args?: unknown;
-          input?: unknown;
-        }> = [];
-        if (
-          message.additional_kwargs?.tool_calls &&
-          Array.isArray(message.additional_kwargs.tool_calls)
-        ) {
-          toolCallsInMessage.push(...message.additional_kwargs.tool_calls);
-        } else if (message.tool_calls && Array.isArray(message.tool_calls)) {
-          toolCallsInMessage.push(
-            ...message.tool_calls.filter(
-              (toolCall: { name?: string }) => toolCall.name !== ""
-            )
-          );
-        } else if (Array.isArray(message.content)) {
-          const toolUseBlocks = message.content.filter(
-            (block: { type?: string }) => block.type === "tool_use"
-          );
-          toolCallsInMessage.push(...toolUseBlocks);
-        }
-        const toolCallsWithStatus = toolCallsInMessage.map(
-          (toolCall: {
-            id?: string;
-            function?: { name?: string; arguments?: unknown };
-            name?: string;
-            type?: string;
-            args?: unknown;
-            input?: unknown;
-          }) => {
-            const name =
-              toolCall.function?.name ||
-              toolCall.name ||
-              toolCall.type ||
-              "unknown";
-            const args =
-              toolCall.function?.arguments ||
-              toolCall.args ||
-              toolCall.input ||
-              {};
-            return {
-              id: toolCall.id || `tool-${Math.random()}`,
-              name,
-              args,
-              status: interrupt ? "interrupted" : ("pending" as const),
-            } as ToolCall;
-          }
-        );
-        messageMap.set(message.id!, {
-          message,
-          toolCalls: toolCallsWithStatus,
-        });
-      } else if (message.type === "tool") {
-        const toolCallId = message.tool_call_id;
-        if (!toolCallId) {
-          return;
-        }
-        for (const [, data] of messageMap.entries()) {
-          const toolCallIndex = data.toolCalls.findIndex(
-            (tc: ToolCall) => tc.id === toolCallId
-          );
-          if (toolCallIndex === -1) {
-            continue;
-          }
-          data.toolCalls[toolCallIndex] = {
-            ...data.toolCalls[toolCallIndex],
-            status: "completed" as const,
-            result: extractStringFromMessageContent(message),
-          };
-          break;
-        }
-      } else if (message.type === "human") {
-        messageMap.set(message.id!, {
-          message,
-          toolCalls: [],
-        });
-      }
-    });
-    const processedArray = Array.from(messageMap.values());
-    return processedArray.map((data, index) => {
-      const prevMessage = index > 0 ? processedArray[index - 1].message : null;
-      return {
-        ...data,
-        showAvatar: data.message.type !== prevMessage?.type,
-      };
-    });
-  }, [messages, interrupt]);
+    return processMessages(messages, interrupt);
+  }, [messagesLength, interrupt]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const groupedTodos = {
-    in_progress: todos.filter((t) => t.status === "in_progress"),
-    pending: todos.filter((t) => t.status === "pending"),
-    completed: todos.filter((t) => t.status === "completed"),
-  };
+  // 优化：缓存 groupedTodos 计算
+  const groupedTodos = useMemo(
+    () => ({
+      in_progress: todos.filter((t) => t.status === "in_progress"),
+      pending: todos.filter((t) => t.status === "pending"),
+      completed: todos.filter((t) => t.status === "completed"),
+    }),
+    [todos]
+  );
 
   const hasTasks = todos.length > 0;
   const hasFiles = Object.keys(files).length > 0;
@@ -245,6 +246,19 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
       reviewConfigs.map((rc: ReviewConfig) => [rc.actionName, rc])
     );
   }, [interrupt]);
+
+  // 优化：缓存 meta open toggle 函数
+  const toggleTasks = useCallback(() => {
+    setMetaOpen((prev) => (prev === "tasks" ? null : "tasks"));
+  }, []);
+
+  const toggleFiles = useCallback(() => {
+    setMetaOpen((prev) => (prev === "files" ? null : "files"));
+  }, []);
+
+  const closeMeta = useCallback(() => {
+    setMetaOpen(null);
+  }, []);
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
@@ -308,20 +322,20 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                     );
 
                     const totalTasks = todos.length;
-                    const remainingTasks =
-                      totalTasks - groupedTodos.pending.length;
-                    const isCompleted = totalTasks === remainingTasks;
+                    const completedTasks = groupedTodos.completed.length;
+                    
+                    // 正确的完成判断：只有当所有任务都是 completed 状态时才算完成
+                    // 必须同时满足：有任务、没有进行中的、没有待处理的
+                    const isCompleted = totalTasks > 0 && 
+                      groupedTodos.in_progress.length === 0 && 
+                      groupedTodos.pending.length === 0;
 
                     const tasksTrigger = (() => {
                       if (!hasTasks) return null;
                       return (
                         <button
                           type="button"
-                          onClick={() =>
-                            setMetaOpen((prev) =>
-                              prev === "tasks" ? null : "tasks"
-                            )
-                          }
+                          onClick={toggleTasks}
                           className="grid w-full cursor-pointer grid-cols-[auto_auto_1fr] items-center gap-3 px-[18px] py-3 text-left"
                           aria-expanded={metaOpen === "tasks"}
                         >
@@ -352,8 +366,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                                   className="ml-[1px] min-w-0 truncate text-sm"
                                 >
                                   任务{" "}
-                                  {totalTasks - groupedTodos.pending.length} / {" "}
-                                  {totalTasks}
+                                  {completedTasks} / {totalTasks}
                                 </span>,
                                 <span
                                   key="content"
@@ -374,8 +387,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                                 key="label"
                                 className="ml-[1px] min-w-0 truncate text-sm"
                               >
-                                任务 {totalTasks - groupedTodos.pending.length}{" "}
-                                / {totalTasks}
+                                任务 {completedTasks} / {totalTasks}
                               </span>,
                             ];
                           })()}
@@ -388,11 +400,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                       return (
                         <button
                           type="button"
-                          onClick={() =>
-                            setMetaOpen((prev) =>
-                              prev === "files" ? null : "files"
-                            )
-                          }
+                          onClick={toggleFiles}
                           className="flex flex-shrink-0 cursor-pointer items-center gap-2 px-[18px] py-3 text-left text-sm"
                           aria-expanded={metaOpen === "files"}
                         >
@@ -422,11 +430,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                       <button
                         type="button"
                         className="py-3 pr-4 first:pl-[18px] aria-expanded:font-semibold"
-                        onClick={() =>
-                          setMetaOpen((prev) =>
-                            prev === "tasks" ? null : "tasks"
-                          )
-                        }
+                        onClick={toggleTasks}
                         aria-expanded={metaOpen === "tasks"}
                       >
                         任务
@@ -436,11 +440,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                       <button
                         type="button"
                         className="inline-flex items-center gap-2 py-3 pr-4 first:pl-[18px] aria-expanded:font-semibold"
-                        onClick={() =>
-                          setMetaOpen((prev) =>
-                            prev === "files" ? null : "files"
-                          )
-                        }
+                        onClick={toggleFiles}
                         aria-expanded={metaOpen === "files"}
                       >
                         文件 (状态)
@@ -452,7 +452,7 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
                     <button
                       aria-label="Close"
                       className="flex-1"
-                      onClick={() => setMetaOpen(null)}
+                      onClick={closeMeta}
                     />
                   </div>
                   <div
@@ -512,10 +512,16 @@ export const ChatInterface = React.memo<ChatInterfaceProps>(({ assistant }) => {
             <textarea
               ref={textareaRef}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => !isLoading && setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder={isLoading ? "🔄 智能体运行中，请稍候..." : "💬 输入您的消息，按 Enter 发送..."}
-              className="font-inherit field-sizing-content flex-1 resize-none border-0 bg-transparent px-5 pb-4 pt-5 text-sm leading-7 text-slate-700 outline-none placeholder:text-slate-400 dark:text-slate-200 dark:placeholder:text-slate-500"
+              disabled={isLoading}
+              placeholder={isLoading ? "⏳ 任务执行中，请点击「停止」按钮后再发送新指令..." : "💬 输入您的消息，按 Enter 发送..."}
+              className={cn(
+                "font-inherit field-sizing-content flex-1 resize-none border-0 bg-transparent px-5 pb-4 pt-5 text-sm leading-7 outline-none",
+                isLoading 
+                  ? "cursor-not-allowed text-slate-400 placeholder:text-amber-500 dark:text-slate-500 dark:placeholder:text-amber-400" 
+                  : "text-slate-700 placeholder:text-slate-400 dark:text-slate-200 dark:placeholder:text-slate-500"
+              )}
               rows={1}
             />
             <div className="flex justify-between gap-2 p-3">

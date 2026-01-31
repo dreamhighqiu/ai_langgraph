@@ -9,7 +9,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useCallback, Suspense, useRef } from "react";
 import { useQueryState } from "nuqs";
 import { getConfig, saveConfig, StandaloneConfig, DEFAULT_CONFIG, getDefaultGraphs } from "@/lib/config";
 import { ConfigDialog } from "@/app/components/ConfigDialog";
@@ -25,6 +25,31 @@ import {
 import { ThreadList } from "@/app/components/ThreadList";
 import { ChatProvider } from "@/providers/ChatProvider";
 import { ChatInterface } from "@/app/components/ChatInterface";
+
+// 防抖函数 - 用于减少频繁的线程列表刷新
+function useDebouncedCallback<T extends (...args: any[]) => void>(
+  callback: T,
+  delay: number
+): T {
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const callbackRef = useRef(callback);
+
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
+  return useCallback(
+    ((...args: Parameters<T>) => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      timeoutRef.current = setTimeout(() => {
+        callbackRef.current(...args);
+      }, delay);
+    }) as T,
+    [delay]
+  );
+}
 
 interface HomePageInnerProps {
   config: StandaloneConfig;
@@ -53,6 +78,12 @@ function HomePageInner({
   const [mutateThreads, setMutateThreads] = useState<(() => void) | null>(null);
   const [interruptCount, setInterruptCount] = useState(0);
   const [assistant, setAssistant] = useState<Assistant | null>(null);
+
+  // 优化：使用防抖来减少线程列表刷新频率
+  // 500ms 内的多次调用只会执行最后一次
+  const debouncedMutateThreads = useDebouncedCallback(() => {
+    mutateThreads?.();
+  }, 500);
 
   const fetchAssistant = useCallback(async () => {
     const isUUID =
@@ -248,7 +279,7 @@ function HomePageInner({
             >
               <ChatProvider
                 activeAssistant={assistant}
-                onHistoryRevalidate={() => mutateThreads?.()}
+                onHistoryRevalidate={debouncedMutateThreads}
               >
                 <ChatInterface assistant={assistant} />
               </ChatProvider>

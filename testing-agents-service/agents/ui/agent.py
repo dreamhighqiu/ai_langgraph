@@ -10,6 +10,7 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.pregel import Pregel
 from config.settings import settings
+from config.mcp_settings import mcp_settings
 
 import os
 model_name = os.getenv("OPENAI_MODEL", "gpt-4o")
@@ -141,14 +142,10 @@ async def make_agent() -> AsyncIterator[Pregel]:
     - session 在 agent 生命周期内保持活跃
     - 退出时自动清理资源
     """
+    # 使用统一的 MCP 配置
     client = MultiServerMCPClient(
         {
-            "ui": {
-                "transport": "stdio",
-                "command": r"cmd",
-                "args": ["/c", f"cd {settings.ui_mcp_root} & ",
-                         "npx", "playwright", "run-test-mcp-server"],
-            }
+            "ui": mcp_settings.get_playwright_mcp_config()
         }
     )
 

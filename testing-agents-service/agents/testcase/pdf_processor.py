@@ -9,7 +9,7 @@ import hashlib
 import time
 from typing import Optional
 
-from app.config.settings import settings
+from config.settings import settings
 
 logger = logging.getLogger(__name__)
 

@@ -1,5 +1,4 @@
 
-
 import asyncio
 import os
 from contextlib import asynccontextmanager
@@ -11,29 +10,9 @@ from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.pregel import Pregel
-#
-# client = MultiServerMCPClient(
-#     {
-#         "midscene-web": {
-#             "transport": "stdio",
-#             "command": "npx",
-#             "args": ["-y", "@midscene/web-bridge-mcp"],
-#             "env": {
-#                 "MIDSCENE_MODEL_BASE_URL": "https://ark.cn-beijing.volces.com/api/v3",
-#                 "MIDSCENE_MODEL_API_KEY": "sk-a7299a7df2904fe69c24a2ca98e8dca4",
-#                 "MIDSCENE_MODEL_NAME": "doubao-seed-1-8-251215",
-#                 "MIDSCENE_MODEL_FAMILY": "doubao-vision",
-#                 "MCP_SERVER_REQUEST_TIMEOUT": "600000"
-#             }
-#         }
-#     }
-# )
+from config.mcp_settings import mcp_settings
+
 os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
-# model = init_chat_model("deepseek:deepseek-chat")
-#
-# tools = asyncio.run(client.get_tools())
-# print(tools)
-# agent = create_deep_agent(model=model, tools=tools)
 
 # type: ignore  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U25SRWJnPT06N2M3NThmYjQ=
 
@@ -47,20 +26,10 @@ async def make_agent() -> AsyncIterator[Pregel]:
     - 退出时自动清理资源
     """
 
+    # 使用统一的 MCP 配置
     client = MultiServerMCPClient(
         {
-            "midscene-web": {
-                "transport": "stdio",
-                "command": "npx",
-                "args": ["-y", "@midscene/web-bridge-mcp"],
-                "env": {
-                    "MIDSCENE_MODEL_BASE_URL": "https://ark.cn-beijing.volces.com/api/v3",
-                    "MIDSCENE_MODEL_API_KEY": "sk-a7299a7df2904fe69c24a2ca98e8dca4",
-                    "MIDSCENE_MODEL_NAME": "doubao-seed-1-8-251215",
-                    "MIDSCENE_MODEL_FAMILY": "doubao-vision",
-                    "MCP_SERVER_REQUEST_TIMEOUT": "600000"
-                }
-            }
+            "midscene-web": mcp_settings.get_midscene_mcp_config()
         }
     )
 

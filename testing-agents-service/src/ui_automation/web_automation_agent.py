@@ -47,6 +47,7 @@ from ui_automation.run_storage import build_run_layout, get_current_run_id
 from ui_automation.tools.executor import create_playwright_executor_tool
 from ui_automation.tools.report import create_result_parser_tool
 from ui_automation.tools.script_generator import create_script_save_tool
+from config.mcp_settings import mcp_settings
 
 
 # Base64 数据的正则匹配模式
@@ -171,15 +172,16 @@ def create_ui_automation_agent(
     # 收集所有工具
     all_tools = []
 
-    # 1. 加载 Chrome MCP 工具
-    chrome_url = chrome_mcp_url or config.chrome_mcp_url
+    # 1. 加载 Chrome MCP 工具（使用统一的 MCP 配置）
     chrome_tools = []
     try:
+        # 支持参数覆盖，优先使用传入的 URL
+        chrome_config = mcp_settings.get_chrome_mcp_config()
+        if chrome_mcp_url:
+            chrome_config["url"] = chrome_mcp_url
+        
         chrome_client = MultiServerMCPClient({
-            "midscene-web": {
-                "transport": config.chrome_mcp_transport,
-                "url": chrome_url,
-            }
+            "midscene-web": chrome_config
         })
         chrome_tools = asyncio.run(chrome_client.get_tools())
         logger.info(f"Successfully loaded {len(chrome_tools)} Chrome MCP tools")

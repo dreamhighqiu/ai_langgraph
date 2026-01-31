@@ -1,8 +1,0 @@
-[ToolRegistry] Skipping D:\yunxia\ai_langgraph\testing-agents-service\mcp\automation_quality\src\tools\api\prompts\generation-prompts.js: Not a class/function export
-[ToolRegistry] Skipping D:\yunxia\ai_langgraph\testing-agents-service\mcp\automation_quality\src\tools\api\prompts\healing-prompts.js: Not a class/function export
-[ToolRegistry] Skipping D:\yunxia\ai_langgraph\testing-agents-service\mcp\automation_quality\src\tools\api\prompts\orchestrator.js: No tool definition found
-[ToolRegistry] Skipping D:\yunxia\ai_langgraph\testing-agents-service\mcp\automation_quality\src\tools\api\prompts\validation-rules.js: Not a class/function export
-[Tools] Tool system initialized successfully:
-[Tools] - Total tools: 7
-[Automation Quality MCP] Tool system initialized with 7 tools
-[Automation Quality MCP] Server started. Waiting for input on stdin.

@@ -670,21 +670,17 @@ async def parse_document_from_url(
 async def get_rag_tools() -> list:
     """获取RAG MCP工具.
 
-    Args:
-        config: K6配置，默认使用DEFAULT_CONFIG
-
     Returns:
         RAG工具列表
     """
 
     try:
         from langchain_mcp_adapters.client import MultiServerMCPClient
+        from config.mcp_settings import mcp_settings
 
+        # 使用统一的 MCP 配置
         client = MultiServerMCPClient({
-            "rag-server": {
-                "url": "http://127.0.0.1:8002/sse",
-                "transport": "sse",
-            }
+            "rag-server": mcp_settings.get_rag_query_config()
         })
 
         tools = await client.get_tools()

@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 189, in _run_module_as_main
-  File "<frozen runpy>", line 112, in _get_module_details
-  File "D:\yunxia\ai_langgraph\testing-agents-service\mcp\rag_query\__init__.py", line 11, in <module>
-    from .server import mcp, main
-  File "D:\yunxia\ai_langgraph\testing-agents-service\mcp\rag_query\server.py", line 21, in <module>
-    from dotenv import load_dotenv
-ModuleNotFoundError: No module named 'dotenv'

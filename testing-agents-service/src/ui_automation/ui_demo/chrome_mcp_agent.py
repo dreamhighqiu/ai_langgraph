@@ -14,6 +14,7 @@ from langgraph.pregel import Pregel
 from langgraph.runtime import Runtime
 
 from ui_automation.config import DEFAULT_CONFIG
+from config.mcp_settings import mcp_settings
 
 system_prompt = """
 ## 角色
@@ -264,12 +265,10 @@ def check_message_limit(state: AgentState, runtime: Runtime) -> dict[str, Any] |
 
 @asynccontextmanager
 async def make_agent() -> AsyncIterator[Pregel]:
+    # 使用统一的 MCP 配置
     client = MultiServerMCPClient(
         {
-            "chrome-mcp-web": {
-                "transport": DEFAULT_CONFIG.chrome_mcp_transport,
-                "url": DEFAULT_CONFIG.chrome_mcp_url,
-            }
+            "chrome-mcp-web": mcp_settings.get_chrome_mcp_config()
         }
     )
 

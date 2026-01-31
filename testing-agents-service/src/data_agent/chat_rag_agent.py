@@ -10,6 +10,7 @@ import os
 from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from config.mcp_settings import mcp_settings
 
 logger = logging.getLogger(__name__)
 
@@ -20,14 +21,17 @@ llm = init_chat_model("deepseek:deepseek-chat")
 
 def _load_mcp_tools():
     """Load MCP tools; return empty list if servers are down."""
-    rag_mcp_url = os.environ.get("RAG_MCP_URL")  # legacy RAG MCP (optional)
-    anything_rag_url = os.environ.get("ANYTHING_RAG_MCP_URL", "http://localhost:8006/sse")  # new LightRAG HTTP MCP
     try:
+        # 使用统一的 MCP 配置
         servers = {
-            "anything-rag-mcp": {"url": anything_rag_url, "transport": "sse"},
+            "anything-rag-mcp": mcp_settings.get_rag_anything_config(),
         }
-        if rag_mcp_url:
-            servers["rag-server"] = {"url": rag_mcp_url, "transport": "sse"}
+        
+        # 如果 RAG Query 服务也启用，添加到服务器列表
+        if mcp_settings.rag_query_enabled:
+            rag_mcp_url = os.environ.get("RAG_MCP_URL")  # 允许环境变量覆盖
+            if rag_mcp_url:
+                servers["rag-server"] = {"url": rag_mcp_url, "transport": "sse"}
 
         client = MultiServerMCPClient(servers)
         tools = asyncio.run(client.get_tools())

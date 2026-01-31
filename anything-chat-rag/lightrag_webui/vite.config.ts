@@ -20,7 +20,8 @@ export default defineConfig(({ mode }: { mode: string }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src')
-      }
+      },
+      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
     },
     // base: env.VITE_BASE_URL || '/webui/',
     base: '/webui/',

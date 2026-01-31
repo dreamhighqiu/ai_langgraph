@@ -9,7 +9,6 @@ import tailwindcss from '@tailwindcss/vite'
 // TODO  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdWV1ZnPT06NzA1NWRmZDQ=
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const srcPath = path.resolve(__dirname, './src')
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }: { mode: string }) => {
@@ -19,13 +18,9 @@ export default defineConfig(({ mode }: { mode: string }) => {
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
-      alias: [
-        {
-          find: /^@\/(.*)$/,
-          replacement: path.resolve(srcPath, '$1')
-        }
-      ],
-      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
+      alias: {
+        '@': path.resolve(__dirname, './src')
+      }
     },
     // base: env.VITE_BASE_URL || '/webui/',
     base: '/webui/',
@@ -46,6 +41,8 @@ export default defineConfig(({ mode }: { mode: string }) => {
       }
     },
     server: {
+      host: '0.0.0.0',
+      port: 5173,
       proxy: env.VITE_API_PROXY === 'true' && env.VITE_API_ENDPOINTS ?
         Object.fromEntries(
           env.VITE_API_ENDPOINTS.split(',').map((endpoint: string) => [

@@ -5,8 +5,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 // Import extensions first to ensure global side effects are loaded
-// Load KaTeX mhchem extension globally (moved from lib/extensions.ts to avoid build issues)
-import 'katex/contrib/mhchem'
+import '@/lib/extensions'
 import AppRouter from './AppRouter'
 import './i18n.ts';
 import 'katex/dist/katex.min.css';

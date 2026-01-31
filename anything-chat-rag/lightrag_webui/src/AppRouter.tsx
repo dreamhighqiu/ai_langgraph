@@ -1,7 +1,7 @@
 
 // @ts-expect-error  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VGxaeVVnPT06MmYzMzE0MjE=
 
-import '@/lib/extensions'; // Import all global extensions
+import './lib/extensions'; // Import all global extensions
 import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useAuthStore } from '@/stores/state'

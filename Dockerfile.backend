@@ -49,7 +49,6 @@ COPY requirements.txt ./
 COPY anything-chat-rag/pyproject.toml anything-chat-rag/setup.py ./anything-chat-rag/
 COPY anything-chat-rag/lightrag ./anything-chat-rag/lightrag/
 COPY anything-chat-rag/raganything ./anything-chat-rag/raganything/
-COPY anything-chat-rag/MANIFEST.in ./anything-chat-rag/
 
 # Install Python dependencies (with retry and timeout)
 # 优先使用 pip，避免 uv 可能的卡顿问题

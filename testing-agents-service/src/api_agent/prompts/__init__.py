@@ -1,0 +1,28 @@
+"""
+提示词模块
+
+定义Agent系统提示词和模板。
+"""
+
+
+# type: ignore  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZDFWUE1nPT06MTUxYWM3MDM=
+
+from api_agent.prompts.templates import (
+    # 主Agent提示词
+    ORCHESTRATOR_SYSTEM_PROMPT,
+    # 子Agent提示词
+    PLANNER_SYSTEM_PROMPT,
+    GENERATOR_SYSTEM_PROMPT,
+    EXECUTOR_SYSTEM_PROMPT,
+    ANALYZER_SYSTEM_PROMPT,
+)
+
+__all__ = [
+    "ORCHESTRATOR_SYSTEM_PROMPT",
+    "PLANNER_SYSTEM_PROMPT",
+    "GENERATOR_SYSTEM_PROMPT",
+    "EXECUTOR_SYSTEM_PROMPT",
+    "ANALYZER_SYSTEM_PROMPT",
+]
+
+# type: ignore  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZDFWUE1nPT06MTUxYWM3MDM=

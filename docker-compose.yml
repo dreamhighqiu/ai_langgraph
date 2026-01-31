@@ -138,7 +138,7 @@ services:
     profiles:
       - full
 
-  # MySQL Database (Required for future extensions)
+  # MySQL Database (Optional - for future extensions)
   mysql:
     image: mysql:8.4.3
     container_name: mysql
@@ -166,6 +166,33 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
+    profiles:
+      - full
+
+  # ========== AI/LLM Services ==========
+
+  # Ollama (Optional - Local LLM)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+    restart: unless-stopped
+    networks:
+      - ai_network
+    profiles:
+      - ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
   # ========== Application Services ==========
 
@@ -180,16 +207,14 @@ services:
     volumes:
       - lightrag_data:/app/rag_storage
       - ./anything-chat-rag/inputs:/app/inputs
+    env_file:
+      - ./anything-chat-rag/.env
     environment:
-      - LIGHTRAG_BASE_URL=http://lightrag:9621
-      - MILVUS_URI=milvus:19530
-      - MILVUS_DB_NAME=lightrag
+      # Docker 内部网络地址覆盖 (保持不变)
+      - MILVUS_URI=http://milvus:19530
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - REDIS_PASSWORD=redis123456
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
-      - OPENAI_BASE_URL=${OPENAI_BASE_URL:-https://us.api.openai.com/v1}
     depends_on:
       milvus:
         condition: service_healthy
@@ -213,16 +238,20 @@ services:
     container_name: lightrag-webui
     ports:
       - "5173:5173"
-    environment:
-      # 可选：指定 API 地址（用于特殊端口或域名）
-      # 留空则自动检测：使用 window.location.hostname:9621
-      - VITE_API_BASE_URL=${LIGHTRAG_API_URL:-}
+    env_file:
+      - ./anything-chat-rag/.env
     depends_on:
       lightrag:
         condition: service_healthy
     restart: unless-stopped
     networks:
       - ai_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   # LangGraph Server (Backend API - Required)
   langgraph:
@@ -236,20 +265,21 @@ services:
       - ./testing-agents-service:/app/testing-agents-service
       - ./deepagents:/app/deepagents
       - langgraph_data:/app/data
+    env_file:
+      - ./testing-agents-service/.env
     environment:
+      # Docker 内部网络地址覆盖 (保持不变)
       - LANGGRAPH_PORT=2025
       - LANGGRAPH_HOST=0.0.0.0
-      - DATABASE_URI=sqlite:///langgraph.db
       - REDIS_URI=redis://:redis123456@redis:6379/0
       - LIGHTRAG_BASE_URL=http://lightrag:9621
-      - MILVUS_URI=milvus:19530
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
-      - OPENAI_BASE_URL=${OPENAI_BASE_URL:-https://us.api.openai.com/v1}
+      - MILVUS_URI=http://milvus:19530
     command: python testing-agents-service/start_server.py --host 0.0.0.0 --port 2025
     depends_on:
-      - redis
-      - lightrag
+      redis:
+        condition: service_healthy
+      lightrag:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - ai_network
@@ -268,9 +298,10 @@ services:
     container_name: frontend-ui
     ports:
       - "3200:3200"
+    env_file:
+      - ./testing-agents-service/.env
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_LANGGRAPH_URL=http://localhost:2025
     depends_on:
       langgraph:
         condition: service_healthy
@@ -295,6 +326,8 @@ volumes:
   lightrag_data:
     driver: local
   langgraph_data:
+    driver: local
+  ollama_data:
     driver: local
 
 # ========== Networks ==========

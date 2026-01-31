@@ -5,18 +5,16 @@ anything-rag-mcp (new HTTP wrapper).
 
 import asyncio
 import logging
-import os
 
 from langchain.agents import create_agent
-from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from config.mcp_settings import mcp_settings
+from config.llm_config import get_llm_model
 
 logger = logging.getLogger(__name__)
 
-# Demo key; override via environment in real usage.
-os.environ.setdefault("DEEPSEEK_API_KEY", "sk-0292e5a35e064f6f86169a20e39f0749")
-llm = init_chat_model("deepseek:deepseek-chat")
+# 使用统一的 LLM 配置（从 settings.py 读取）
+llm = get_llm_model()
 
 
 def _load_mcp_tools():

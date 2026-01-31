@@ -8,20 +8,16 @@
 
 # pragma: no cover  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YlVOa1ZRPT06NjE3NDQyYzM=
 
-import os
 from dataclasses import dataclass
 
 from langchain.agents import create_agent
 from langchain.agents.middleware import ModelRequest, dynamic_prompt
-from langchain.chat_models import init_chat_model
 
 from agents.tools import TESTCASE_TOOLS
+from config.llm_config import get_llm_model
 
-# 配置 DeepSeek API
-os.environ["DEEPSEEK_API_KEY"] = "sk-8fd3aa4adc4446f4b483c1181dd4fa58"
-import os
-model_name = os.getenv("OPENAI_MODEL", "gpt-4o")
-llm = init_chat_model(f"openai:{model_name}")
+# 使用统一的 LLM 配置
+llm = get_llm_model()
 
 # pragma: no cover  MS80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YlVOa1ZRPT06NjE3NDQyYzM=
 

@@ -84,9 +84,10 @@ class DocumentParsingMiddleware(AgentMiddleware):
             llm = init_chat_model("doubao:doubao-vision", api_key=self.doubao_api_key)
             parsed_content = await self._parse_image_async(document_url)
         else:
-            # 使用默认的 DeepSeek 模型处理 PDF 等文档
-            logger.info("使用 DeepSeek 模型处理文档")
-            llm = init_chat_model("deepseek:deepseek-chat")
+            # 使用默认的 LLM 模型处理 PDF 等文档（通过统一配置）
+            logger.info("使用统一 LLM 配置处理文档")
+            from config.llm_config import get_llm_model
+            llm = get_llm_model()
 
             # 根据文件类型选择解析方法
             if document_type == "application/pdf":

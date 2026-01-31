@@ -2,14 +2,14 @@
 
 import asyncio
 import os
-from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from deepagents import create_deep_agent as create_agent
 from config.mcp_settings import mcp_settings
+from config.llm_config import get_llm
 # pylint: disable  MC8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2ZDNnMmVnPT06OWQ4NmJmNzg=
 
-os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
-model = init_chat_model("deepseek:deepseek-chat")
+# 初始化 DeepSeek 模型（此 Agent 专用 DeepSeek）
+model = get_llm(provider="deepseek", model_name="deepseek-chat")
 # DeepSeek chat has a 131072 token context window; set the profile so the deepagents
 # summarization middleware can trim history before we hit the hard limit.
 model.profile = {"max_input_tokens": 131072}

@@ -9,17 +9,17 @@ This supervisor coordinates two specialized sub-agents:
 import asyncio
 import os
 from langchain.agents import create_agent
-from langchain.chat_models import init_chat_model
 from langchain.tools import tool
 from dotenv import load_dotenv
+from config.llm_config import get_llm
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2U0c1NmFBPT06YmUwMTc5YTk=
 
 from data_agent.chat_rag_agent import agent as rag_agent
 from data_agent.data_import_agent import agent as import_agent
 
-# Initialize LLM for supervisor
+# Initialize LLM for supervisor（使用 DeepSeek）
 load_dotenv()
-llm = init_chat_model("deepseek:deepseek-chat")
+llm = get_llm(provider="deepseek", model_name="deepseek-chat")
 async def test():
     pass
 

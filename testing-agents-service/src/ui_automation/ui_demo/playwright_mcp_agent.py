@@ -1,19 +1,16 @@
 
 import asyncio
-import os
 from contextlib import asynccontextmanager
 from typing import AsyncIterator
 
 from deepagents import create_deep_agent
-from langchain.chat_models import init_chat_model
 from langchain_core.runnables import RunnableConfig
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.pregel import Pregel
 from config.mcp_settings import mcp_settings
+from config.llm_config import get_llm_model
 # noqa  MC80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VjJKWWNBPT06ZGEzZGJmNDg=
-
-os.environ["DEEPSEEK_API_KEY"] = "sk-0292e5a35e064f6f86169a20e39f0749"
 
 # 定义系统提示词
 SYSTEM_PROMPT = """你是一个专业的Web自动化测试助手，可以使用Playwright来控制浏览器完成各种任务。
@@ -70,7 +67,8 @@ async def make_agent() -> AsyncIterator[Pregel]:
         tools = await load_mcp_tools(session)
 # type: ignore  Mi80OmFIVnBZMlhwZ3JIa3VwSHBuSjQ2VjJKWWNBPT06ZGEzZGJmNDg=
 
-        model = init_chat_model("deepseek:deepseek-chat")
+        # 使用统一的 LLM 配置
+        model = get_llm_model()
 
         # 创建 agent (注意: tools 和 instructions 是位置参数)
         agent = create_deep_agent(

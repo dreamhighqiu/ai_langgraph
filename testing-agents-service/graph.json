@@ -27,10 +27,6 @@
       "path": "./src/ui_automation/ui_demo/playwright_mcp_agent.py:agent",
       "description": "Playwright MCP 演示 Agent，使用 @playwright/mcp 进行浏览器自动化"
     },
-    "chrome_mcp_agent": {
-      "path": "./src/ui_automation/ui_demo/chrome_mcp_agent.py:agent",
-      "description": "Chrome MCP 演示 Agent，使用 chrome-mcp 实现浏览器自动化与Excalidraw绘图"
-    },
     "chat_rag_agent": {
       "path": "./src/data_agent/chat_rag_agent.py:agent",
       "description": "聊天 RAG Agent，基于 RAG 知识库回答问题"
@@ -50,6 +46,10 @@
     "ui_agent": {
       "path": "./agents/ui/agent.py:agent",
       "description": "UI 测试自动化 Agent，使用 Playwright MCP 进行 Web 自动化测试，掌握 generator、healer、planner 技能"
+    },
+    "ui_java_agent": {
+      "path": "./agents/ui_java/agent.py:agent",
+      "description": "Java Playwright UI 测试自动化 Agent，生成 Java + JUnit 5 测试代码，掌握 planner（测试规划）、generator（Java代码生成）、healer（测试修复）三大技能"
     }
   },
   "env": ".env",

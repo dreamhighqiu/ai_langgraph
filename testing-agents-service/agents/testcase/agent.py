@@ -12,16 +12,14 @@ from dataclasses import dataclass
 
 from deepagents.backends import FilesystemBackend
 from deepagents.middleware import SkillsMiddleware
-from langchain.chat_models import init_chat_model
 from deepagents import create_deep_agent as create_agent
 
 from config.settings import settings
+from config.llm_config import get_default_llm
 from agents.testcase.tools import TESTCASE_TOOLS
-import os
 
-# 从环境变量读取模型配置
-model_name = os.getenv("OPENAI_MODEL", "gpt-4o")
-model = init_chat_model(f"openai:{model_name}")
+# 初始化默认 LLM（使用统一配置）
+model = get_default_llm()
 
 skills_root = Path(settings.testcase_skills_root).resolve()
 skills_backend = FilesystemBackend(root_dir=skills_root, virtual_mode=True)

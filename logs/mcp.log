@@ -1,5 +1,5 @@
 <frozen runpy>:128: RuntimeWarning: 'mcp_server_rag_anything.server' found in sys.modules after import of package 'mcp_server_rag_anything', but prior to execution of 'mcp_server_rag_anything.server'; this may result in unpredictable behaviour
-2026-01-31 11:19:27,502 - __main__ - INFO - Starting server on 0.0.0.0:8001
+2026-01-31 11:58:57,692 - __main__ - INFO - Starting server on 0.0.0.0:8001
 
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -22,22 +22,21 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 
 
-2026-01-31 11:19:27,521 - __main__ - INFO - Starting RAG Anything MCP Server...
-2026-01-31 11:19:27,522 - __main__ - INFO - Configuration loaded
-2026-01-31 11:19:27,522 - __main__ - INFO -   LLM Provider: deepseek
-2026-01-31 11:19:27,523 - __main__ - INFO -   LLM Model: deepseek-chat
-2026-01-31 11:19:27,523 - __main__ - INFO -   LLM API Key: ***0749
-2026-01-31 11:19:27,523 - __main__ - INFO -   RAG Parser: docling
-2026-01-31 11:19:27,523 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
-2026-01-31 11:19:27,523 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
-2026-01-31 11:19:27,523 - __main__ - INFO - Creating LLM model function...
-2026-01-31 11:19:27,523 - __main__ - INFO - Creating vision model function...
-2026-01-31 11:19:27,523 - __main__ - INFO - Creating embedding function...
-2026-01-31 11:19:27,523 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
-2026-01-31 11:19:27,523 - __main__ - INFO - Creating RAGAnything connector...
-2026-01-31 11:19:27,523 - __main__ - INFO - Initializing RAGAnything...
-2026-01-31 11:19:27,523 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
-INFO: Created working directory: ../../anything-chat-rag/rag_storage
+2026-01-31 11:58:57,749 - __main__ - INFO - Starting RAG Anything MCP Server...
+2026-01-31 11:58:57,752 - __main__ - INFO - Configuration loaded
+2026-01-31 11:58:57,752 - __main__ - INFO -   LLM Provider: deepseek
+2026-01-31 11:58:57,752 - __main__ - INFO -   LLM Model: deepseek-chat
+2026-01-31 11:58:57,752 - __main__ - INFO -   LLM API Key: ***0749
+2026-01-31 11:58:57,752 - __main__ - INFO -   RAG Parser: docling
+2026-01-31 11:58:57,753 - __main__ - INFO -   Working Dir: ../../anything-chat-rag/rag_storage
+2026-01-31 11:58:57,753 - __main__ - INFO -   Storage Env -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag
+2026-01-31 11:58:57,753 - __main__ - INFO - Creating LLM model function...
+2026-01-31 11:58:57,753 - __main__ - INFO - Creating vision model function...
+2026-01-31 11:58:57,753 - __main__ - INFO - Creating embedding function...
+2026-01-31 11:58:57,753 - mcp_server_rag_anything.llm_functions - INFO - Embedding function created: qwen3-embedding:0.6b (dim=1024)
+2026-01-31 11:58:57,753 - __main__ - INFO - Creating RAGAnything connector...
+2026-01-31 11:58:57,753 - __main__ - INFO - Initializing RAGAnything...
+2026-01-31 11:58:57,753 - mcp_server_rag_anything.connector - INFO - LightRAG storage config -> LIGHTRAG_VECTOR_STORAGE=MilvusVectorDBStorage, MILVUS_URI=http://47.110.95.246:19530, MILVUS_DB_NAME=lightrag, working_dir=../../anything-chat-rag/rag_storage
 INFO: RAGAnything initialized with config:
 INFO:   Working directory: ../../anything-chat-rag/rag_storage
 INFO:   Parser: docling
@@ -47,12 +46,12 @@ INFO:   Max concurrent files: 2
 INFO: Parser 'docling' installation verified
 INFO: Initializing LightRAG with parameters: {'working_dir': '../../anything-chat-rag/rag_storage', 'vector_storage': 'MilvusVectorDBStorage'}
 INFO: [] Created new empty graph file: ../../anything-chat-rag/rag_storage\graph_chunk_entity_relation.graphml
-INFO: [] Process 28548 KV load full_docs with 0 records
-INFO: [] Process 28548 KV load text_chunks with 0 records
-INFO: [] Process 28548 KV load full_entities with 0 records
-INFO: [] Process 28548 KV load full_relations with 0 records
-INFO: [] Process 28548 KV load entity_chunks with 0 records
-INFO: [] Process 28548 KV load relation_chunks with 0 records
+INFO: [] Process 24220 KV load full_docs with 0 records
+INFO: [] Process 24220 KV load text_chunks with 0 records
+INFO: [] Process 24220 KV load full_entities with 0 records
+INFO: [] Process 24220 KV load full_relations with 0 records
+INFO: [] Process 24220 KV load entity_chunks with 0 records
+INFO: [] Process 24220 KV load relation_chunks with 0 records
 ERROR: [] Failed to initialize Milvus collection 'entities': <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
 ERROR: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
 Traceback (most recent call last):
@@ -77,9 +76,9 @@ Traceback (most recent call last):
   File "D:\yunxia\ai_langgraph\mcp-server\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 224, in _wait_for_channel_ready
     raise MilvusException(
 pymilvus.exceptions.MilvusException: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
-2026-01-31 11:21:11,058 - mcp_server_rag_anything.connector - ERROR - Failed to initialize LightRAG: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
-2026-01-31 11:21:11,058 - __main__ - ERROR - Failed to initialize: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
-2026-01-31 11:21:11,058 - __main__ - ERROR - Error during server lifecycle: Initialization failed: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
+2026-01-31 11:59:43,526 - mcp_server_rag_anything.connector - ERROR - Failed to initialize LightRAG: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
+2026-01-31 11:59:43,526 - __main__ - ERROR - Failed to initialize: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
+2026-01-31 11:59:43,526 - __main__ - ERROR - Error during server lifecycle: Initialization failed: Failed to initialize LightRAG instance: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
 Traceback (most recent call last):
   File "D:\yunxia\ai_langgraph\mcp-server\src\mcp_server_rag_anything\server.py", line 108, in server_lifespan
     raise RuntimeError(f"Initialization failed: {error_msg}")

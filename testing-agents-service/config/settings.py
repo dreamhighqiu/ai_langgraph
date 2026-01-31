@@ -42,15 +42,17 @@ class Settings(BaseSettings):
     # 默认 LLM 提供商（openai, deepseek, anthropic）
     default_llm_provider: str = "openai"
 
+    # API 配置
+    api_prefix: str = "/api/v2"  # API 路径前缀
 
     # 接口测试工作目录配置
     api_workspace_root: str = "agents/api/workspace"
-    api_mcp_root: str = "mcp/api"
+    api_mcp_root: str = "mcp_servers/api"
     api_skills_root: str = "agents/api/agent_skills"
 
     # UI 测试工作目录配置 (TypeScript/Playwright)
     ui_workspace_root: str = "agents/ui/workspace"
-    ui_mcp_root: str = "mcp/ui"
+    ui_mcp_root: str = "mcp_servers/ui"
     ui_skills_root: str = "agents/ui/agent_skills"
 
     # UI Java 测试工作目录配置 (Java/Playwright)

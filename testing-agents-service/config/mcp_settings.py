@@ -45,7 +45,7 @@ class MCPSettings(BaseSettings):
     @property
     def automation_quality_server_path(self) -> str:
         """automation_quality MCP 服务器脚本路径"""
-        return str(get_project_root() / "mcp" / "automation_quality" / "mcpServer.js")
+        return str(get_project_root() / "mcp_servers" / "automation_quality" / "mcpServer.js")
     
     def get_automation_quality_config(self, api_only: bool = False) -> Dict[str, Any]:
         """获取 automation_quality MCP 配置"""

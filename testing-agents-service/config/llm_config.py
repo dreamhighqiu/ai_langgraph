@@ -179,3 +179,20 @@ def init_default_model() -> BaseChatModel:
     """
     return get_default_llm()
 
+
+def get_llm_model(temperature: float = 0.0, **kwargs) -> BaseChatModel:
+    """
+    获取 LLM 模型实例（get_default_llm 的别名，向后兼容）
+    
+    Args:
+        temperature: 温度参数，默认 0.0（确定性输出）
+        **kwargs: 传递给 init_chat_model 的其他参数
+    
+    Returns:
+        BaseChatModel: 初始化好的 LLM 实例
+    
+    Examples:
+        >>> model = get_llm_model()
+        >>> model = get_llm_model(temperature=0.7)
+    """
+    return get_default_llm(temperature=temperature, **kwargs)

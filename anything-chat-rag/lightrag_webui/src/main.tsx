@@ -4,6 +4,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+// Import extensions first to ensure global side effects are loaded
+import './lib/extensions'
 import AppRouter from './AppRouter'
 import './i18n.ts';
 import 'katex/dist/katex.min.css';

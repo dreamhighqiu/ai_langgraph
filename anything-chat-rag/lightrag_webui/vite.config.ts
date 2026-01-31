@@ -21,7 +21,10 @@ export default defineConfig(({ mode }: { mode: string }) => {
       alias: {
         '@': path.resolve(__dirname, './src')
       },
-      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json']
+      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
+      // 确保在生产构建时也能正确解析文件
+      preserveSymlinks: false,
+      dedupe: []
     },
     // base: env.VITE_BASE_URL || '/webui/',
     base: '/webui/',

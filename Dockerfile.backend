@@ -67,7 +67,7 @@ COPY testing-agents-service/ ./testing-agents-service/
 COPY deepagents/ ./deepagents/
 
 # Install automation_quality MCP service dependencies (stdio mode)
-WORKDIR /app/testing-agents-service/mcp/automation_quality
+WORKDIR /app/testing-agents-service/mcp_servers/automation_quality
 RUN if [ -f "package.json" ]; then \
         npm config set registry https://registry.npmmirror.com || true; \
         npm install --production || \

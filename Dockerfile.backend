@@ -3,14 +3,37 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Configure Debian mirror for better network access (use Aliyun mirror in China)
+# Try multiple methods to ensure compatibility with different Debian versions
+RUN if [ -f /etc/apt/sources.list.d/debian.sources ]; then \
+        sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources; \
+    elif [ -f /etc/apt/sources.list ]; then \
+        sed -i 's|http://deb.debian.org|http://mirrors.aliyun.com|g' /etc/apt/sources.list || \
+        sed -i 's|https://deb.debian.org|https://mirrors.aliyun.com|g' /etc/apt/sources.list || true; \
+    fi
+
 # Install system dependencies including curl for healthchecks and Node.js
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
-    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs \
+    ca-certificates \
+    gnupg \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js (try multiple methods for reliability)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get update && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/* || \
+    (echo "Node.js 通过 apt 安装失败，尝试直接下载..." && \
+     curl -fsSL https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.xz -o /tmp/node.tar.xz && \
+     tar -xJf /tmp/node.tar.xz -C /usr/local --strip-components=1 && \
+     rm /tmp/node.tar.xz && \
+     ln -sf /usr/local/bin/node /usr/bin/node && \
+     ln -sf /usr/local/bin/npm /usr/bin/npm && \
+     ln -sf /usr/local/bin/npx /usr/bin/npx) || \
+    (echo "警告: Node.js 安装失败，如果不需要 stdio MCP 服务可以继续" && true)
 
 # Install uv
 RUN pip install --no-cache-dir uv
@@ -35,7 +58,11 @@ COPY deepagents/ ./deepagents/
 
 # Install automation_quality MCP service dependencies (stdio mode)
 WORKDIR /app/testing-agents-service/mcp/automation_quality
-RUN if [ -f "package.json" ]; then npm install --production; fi
+RUN if [ -f "package.json" ]; then \
+        npm config set registry https://registry.npmmirror.com || true; \
+        npm install --production || \
+        (npm config set registry https://registry.npmjs.org && npm install --production); \
+    fi
 WORKDIR /app
 
 # Set Python path

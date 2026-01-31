@@ -3,11 +3,16 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Configure Debian mirror for better network access (use Aliyun mirror in China)
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources 2>/dev/null || \
+    sed -i 's|http://deb.debian.org|http://mirrors.aliyun.com|g' /etc/apt/sources.list 2>/dev/null || true
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv for faster package installation

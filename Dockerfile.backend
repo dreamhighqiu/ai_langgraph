@@ -35,8 +35,14 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
      ln -sf /usr/local/bin/npx /usr/bin/npx) || \
     (echo "警告: Node.js 安装失败，如果不需要 stdio MCP 服务可以继续" && true)
 
-# Install uv
-RUN pip install --no-cache-dir uv
+# Configure pip to use mirror and increase timeout
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip config set global.timeout 300 && \
+    pip config set global.retries 5
+
+# Install uv for faster package installation
+RUN pip install --no-cache-dir --timeout=300 uv || \
+    (pip install --no-cache-dir --timeout=300 -i https://mirrors.aliyun.com/pypi/simple/ uv)
 
 # Copy dependency files
 COPY requirements.txt ./
@@ -45,9 +51,11 @@ COPY anything-chat-rag/lightrag ./anything-chat-rag/lightrag/
 COPY anything-chat-rag/raganything ./anything-chat-rag/raganything/
 COPY anything-chat-rag/MANIFEST.in ./anything-chat-rag/
 
-# Install Python dependencies
+# Install Python dependencies (with retry and timeout)
 RUN uv pip install --system --only-binary :all: -r requirements.txt || \
-    uv pip install --system -r requirements.txt
+    uv pip install --system -r requirements.txt || \
+    (pip install --timeout=300 --retries=5 -r requirements.txt) || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt)
 
 # Install LightRAG in editable mode
 RUN uv pip install --system -e ./anything-chat-rag

@@ -29,9 +29,7 @@ def _load_mcp_tools():
         
         # 如果 RAG Query 服务也启用，添加到服务器列表
         if mcp_settings.rag_query_enabled:
-            rag_mcp_url = os.environ.get("RAG_MCP_URL")  # 允许环境变量覆盖
-            if rag_mcp_url:
-                servers["rag-server"] = {"url": rag_mcp_url, "transport": "sse"}
+            servers["rag-query-mcp"] = mcp_settings.get_rag_query_config()
 
         client = MultiServerMCPClient(servers)
         tools = asyncio.run(client.get_tools())

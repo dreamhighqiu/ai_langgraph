@@ -374,21 +374,18 @@ class APITestOrchestrator:
         # 生成会话ID
         self.session_id = str(uuid.uuid4())
         
-        # 配置MCP服务器
-        mcp_servers = {
-            "pytest_generator": {
-                "url": self.config.mcp_servers.pytest_generator_url,
-                "transport": "sse",
-            },
-            "test_executor": {
-                "url": self.config.mcp_servers.test_executor_url,
-                "transport": "sse",
-            },
-            "rag_server": {
-                "url": self.config.mcp_servers.rag_server_url,
-                "transport": "sse",
-            },
-        }
+        # 配置MCP服务器（使用统一的 mcp_settings）
+        from config.mcp_settings import mcp_settings
+        
+        mcp_servers = {}
+        
+        # Pytest MCP 服务（合并了 pytest_generator 和 test_executor）
+        if mcp_settings.pytest_mcp_enabled:
+            mcp_servers["pytest-mcp"] = mcp_settings.get_pytest_mcp_config()
+        
+        # RAG Query MCP 服务
+        if mcp_settings.rag_query_enabled:
+            mcp_servers["rag-query-mcp"] = mcp_settings.get_rag_query_config()
         
         # 创建MCP客户端，使用拦截器规范化内容格式
         # DeepSeek API 不支持内容块列表格式，需要将其转换为纯字符串

@@ -15,8 +15,14 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
+# Configure pip to use mirror and increase timeout
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
+    pip config set global.timeout 300 && \
+    pip config set global.retries 5
+
 # Install uv for faster package installation
-RUN pip install --no-cache-dir uv
+RUN pip install --no-cache-dir --timeout=300 uv || \
+    (pip install --no-cache-dir --timeout=300 -i https://mirrors.aliyun.com/pypi/simple/ uv)
 
 # Copy dependency files first for better caching
 COPY requirements.txt ./
@@ -26,11 +32,15 @@ COPY pyproject.toml setup.py MANIFEST.in* ./
 COPY lightrag/ ./lightrag/
 COPY raganything/ ./raganything/
 
-# Install Python dependencies
-RUN uv pip install --system -r requirements.txt || pip install -r requirements.txt
+# Install Python dependencies (with retry and timeout)
+RUN uv pip install --system -r requirements.txt || \
+    (pip install --timeout=300 --retries=5 -r requirements.txt) || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt)
 
 # Install the package in editable mode
-RUN uv pip install --system -e . || pip install -e .
+RUN uv pip install --system -e . || \
+    (pip install --timeout=300 --retries=5 -e .) || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -e .)
 
 # Create directories
 RUN mkdir -p /app/inputs /app/rag_storage

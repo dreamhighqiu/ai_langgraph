@@ -1,5 +1,5 @@
 # Backend Dockerfile for LangGraph Service
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
@@ -52,13 +52,16 @@ COPY anything-chat-rag/raganything ./anything-chat-rag/raganything/
 COPY anything-chat-rag/MANIFEST.in ./anything-chat-rag/
 
 # Install Python dependencies (with retry and timeout)
-RUN uv pip install --system --only-binary :all: -r requirements.txt || \
-    uv pip install --system -r requirements.txt || \
-    (pip install --timeout=300 --retries=5 -r requirements.txt) || \
-    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt)
+# 优先使用 pip，避免 uv 可能的卡顿问题
+RUN pip install --timeout=300 --retries=5 -r requirements.txt || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt) || \
+    (echo "尝试使用 uv..." && uv pip install --system -r requirements.txt)
 
-# Install LightRAG in editable mode
-RUN uv pip install --system -e ./anything-chat-rag
+# Install LightRAG in editable mode (with retry and timeout)
+# 优先使用 pip，避免 uv 可能的卡顿问题
+RUN pip install --timeout=300 --retries=5 -e ./anything-chat-rag || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -e ./anything-chat-rag) || \
+    (echo "尝试使用 uv..." && uv pip install --system -e ./anything-chat-rag)
 
 # Copy application code
 COPY testing-agents-service/ ./testing-agents-service/

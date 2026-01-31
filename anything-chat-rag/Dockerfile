@@ -1,5 +1,5 @@
 # LightRAG Server Dockerfile
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
@@ -33,14 +33,16 @@ COPY lightrag/ ./lightrag/
 COPY raganything/ ./raganything/
 
 # Install Python dependencies (with retry and timeout)
-RUN uv pip install --system -r requirements.txt || \
-    (pip install --timeout=300 --retries=5 -r requirements.txt) || \
-    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt)
+# 使用 pip 直接安装，避免 uv 可能的卡顿问题
+RUN pip install --timeout=300 --retries=5 -r requirements.txt || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt) || \
+    (echo "尝试使用 uv..." && uv pip install --system -r requirements.txt)
 
 # Install the package in editable mode
-RUN uv pip install --system -e . || \
-    (pip install --timeout=300 --retries=5 -e .) || \
-    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -e .)
+# 优先使用 pip，避免 uv 可能的卡顿问题
+RUN pip install --timeout=300 --retries=5 -e . || \
+    (pip install --timeout=300 --retries=5 -i https://mirrors.aliyun.com/pypi/simple/ -e .) || \
+    (echo "尝试使用 uv..." && uv pip install --system -e .)
 
 # Create directories
 RUN mkdir -p /app/inputs /app/rag_storage

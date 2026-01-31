@@ -10,9 +10,7 @@
 #   3. Anything RAG MCP (LightRAG HTTP)     - http://localhost:8006/sse
 #   4. API Agent MCP Servers                - http://localhost:8002-8005
 #      - RAG MCP Server                     - http://localhost:8002/sse
-#      - Login MCP Server                   - http://localhost:8003/sse
-#      - Test Executor MCP Server           - http://localhost:8004/sse
-#      - Pytest Generator MCP Server        - http://localhost:8005/sse
+#      - Pytest MCP Server                  - http://localhost:8004/sse
 #      - Automation Quality MCP Server      - stdio mode (no HTTP)
 #   5. LangGraph Server (Agent Backend)     - http://localhost:2025
 #   6. AI Platform Backend (Main Backend)   - http://localhost:9999
@@ -690,11 +688,9 @@ start_anything_rag_mcp() {
 }
 
 start_api_agent_mcp_servers() {
-    # testing-agents-service 目录已从两级变为一级，这里统一使用新的路径
-    # 旧: $PROJECT_ROOT/testing-agents-service/testing-agents-service/src
-    # 新: $PROJECT_ROOT/testing-agents-service/src
-    local src_dir="$PROJECT_ROOT/testing-agents-service/src"
-    local services_dir="$src_dir/api_agent/mcp_servers"
+    # MCP 服务器已统一到 testing-agents-service/mcp/ 目录
+    local mcp_dir="$PROJECT_ROOT/testing-agents-service/mcp"
+    local src_dir="$PROJECT_ROOT/testing-agents-service"
     
     print_info "Starting API Agent MCP Servers..."
     local any_failed=false
@@ -725,10 +721,8 @@ start_api_agent_mcp_servers() {
         any_failed=true
     else
         print_info "Starting $rag_name on port $rag_port..."
-        # Run from project root with PYTHONPATH set (export already done above)
-        cd "$PROJECT_ROOT"
-        # Ensure PYTHONPATH is set for this command
-        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m api_agent.mcp_servers.rag_mcp_server --port $rag_port > "$rag_log_file" 2>&1 &
+        cd "$PROJECT_ROOT/testing-agents-service"
+        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m mcp.rag_query.server --port $rag_port > "$rag_log_file" 2>&1 &
         local rag_pid=$!
         echo $rag_pid > "$rag_pid_file"
         
@@ -743,103 +737,44 @@ start_api_agent_mcp_servers() {
             print_error "$rag_name failed to start, check log: $rag_log_file"
             any_failed=true
         fi
+        cd "$PROJECT_ROOT"
     fi
     
-    # Start Login MCP Server (port 8003)
-    local login_port=8003
-    local login_name="Login MCP Server"
-    local login_pid_file="$PID_DIR/login_mcp.pid"
-    local login_log_file="$LOG_DIR/login_mcp.log"
+    # Start Pytest MCP Server (port 8004) - 合并了 pytest_generator 和 test_executor
+    local pytest_port=8004
+    local pytest_name="Pytest MCP Server"
+    local pytest_pid_file="$PID_DIR/pytest_mcp.pid"
+    local pytest_log_file="$LOG_DIR/pytest_mcp.log"
     
-    if ! ensure_port_free $login_port "$login_name"; then
-        print_warning "Port $login_port is occupied, skipping $login_name"
+    if ! ensure_port_free $pytest_port "$pytest_name"; then
+        print_warning "Port $pytest_port is occupied, skipping $pytest_name"
         any_failed=true
     else
-        print_info "Starting $login_name on port $login_port..."
-        # Run from project root with PYTHONPATH set
-        cd "$PROJECT_ROOT"
-        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m api_agent.mcp_servers.login_mcp_server --port $login_port > "$login_log_file" 2>&1 &
-        local login_pid=$!
-        echo $login_pid > "$login_pid_file"
+        print_info "Starting $pytest_name on port $pytest_port..."
+        cd "$PROJECT_ROOT/testing-agents-service"
+        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m mcp.pytest_mcp.server --port $pytest_port > "$pytest_log_file" 2>&1 &
+        local pytest_pid=$!
+        echo $pytest_pid > "$pytest_pid_file"
         
-        if wait_for_http_any "$login_name" 60 3 "http://127.0.0.1:$login_port/sse"; then
-            local real_pid="$(get_pid_by_port "$login_port")"
+        if wait_for_http_any "$pytest_name" 60 3 "http://127.0.0.1:$pytest_port/sse"; then
+            local real_pid="$(get_pid_by_port "$pytest_port")"
             if [ -n "$real_pid" ]; then
-                login_pid="$real_pid"
-                echo "$login_pid" > "$login_pid_file"
+                pytest_pid="$real_pid"
+                echo "$pytest_pid" > "$pytest_pid_file"
             fi
-            print_success "$login_name started (PID: $login_pid, Port: $login_port)"
+            print_success "$pytest_name started (PID: $pytest_pid, Port: $pytest_port)"
         else
-            print_error "$login_name failed to start, check log: $login_log_file"
+            print_error "$pytest_name failed to start, check log: $pytest_log_file"
             any_failed=true
         fi
-    fi
-    
-    # Start Pytest Generator MCP Server (port 8005 - changed from 8003 to avoid conflict)
-    local pytest_gen_port=8005
-    local pytest_gen_name="Pytest Generator MCP Server"
-    local pytest_gen_pid_file="$PID_DIR/pytest_generator_mcp.pid"
-    local pytest_gen_log_file="$LOG_DIR/pytest_generator_mcp.log"
-    
-    if ! ensure_port_free $pytest_gen_port "$pytest_gen_name"; then
-        print_warning "Port $pytest_gen_port is occupied, skipping $pytest_gen_name"
-        any_failed=true
-    else
-        print_info "Starting $pytest_gen_name on port $pytest_gen_port..."
-        # Run from project root with PYTHONPATH set
         cd "$PROJECT_ROOT"
-        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m api_agent.mcp_servers.pytest_generator --port $pytest_gen_port > "$pytest_gen_log_file" 2>&1 &
-        local pytest_gen_pid=$!
-        echo $pytest_gen_pid > "$pytest_gen_pid_file"
-        
-        if wait_for_http_any "$pytest_gen_name" 60 3 "http://127.0.0.1:$pytest_gen_port/sse"; then
-            local real_pid="$(get_pid_by_port "$pytest_gen_port")"
-            if [ -n "$real_pid" ]; then
-                pytest_gen_pid="$real_pid"
-                echo "$pytest_gen_pid" > "$pytest_gen_pid_file"
-            fi
-            print_success "$pytest_gen_name started (PID: $pytest_gen_pid, Port: $pytest_gen_port)"
-        else
-            print_error "$pytest_gen_name failed to start, check log: $pytest_gen_log_file"
-            any_failed=true
-        fi
-    fi
-    
-    # Start Test Executor MCP Server (port 8004)
-    local executor_port=8004
-    local executor_name="Test Executor MCP Server"
-    local executor_pid_file="$PID_DIR/test_executor_mcp.pid"
-    local executor_log_file="$LOG_DIR/test_executor_mcp.log"
-    
-    if ! ensure_port_free $executor_port "$executor_name"; then
-        print_warning "Port $executor_port is occupied, skipping $executor_name"
-        any_failed=true
-    else
-        print_info "Starting $executor_name on port $executor_port..."
-        # Run from project root with PYTHONPATH set
-        cd "$PROJECT_ROOT"
-        PYTHONPATH="$src_dir:$PYTHONPATH" nohup "$VENV_PYTHON" -m api_agent.mcp_servers.test_executor --port $executor_port > "$executor_log_file" 2>&1 &
-        local executor_pid=$!
-        echo $executor_pid > "$executor_pid_file"
-        
-        if wait_for_http_any "$executor_name" 60 3 "http://127.0.0.1:$executor_port/sse"; then
-            local real_pid="$(get_pid_by_port "$executor_port")"
-            if [ -n "$real_pid" ]; then
-                executor_pid="$real_pid"
-                echo "$executor_pid" > "$executor_pid_file"
-            fi
-            print_success "$executor_name started (PID: $executor_pid, Port: $executor_port)"
-        else
-            print_error "$executor_name failed to start, check log: $executor_log_file"
-            any_failed=true
-        fi
     fi
     
     # Start Automation Quality MCP Server (Node.js stdio mode, no port needed)
     local automation_mcp_name="Automation Quality MCP Server"
     local automation_mcp_pid_file="$PID_DIR/automation_quality_mcp.pid"
     local automation_mcp_log_file="$LOG_DIR/automation_quality_mcp.log"
-    local automation_mcp_dir="$services_dir/automation-quality-mcp"
+    local automation_mcp_dir="$mcp_dir/automation_quality"
     
     if [ ! -d "$automation_mcp_dir" ]; then
         print_warning "$automation_mcp_name directory not found, skipping"
@@ -855,12 +790,14 @@ start_api_agent_mcp_servers() {
         fi
     fi
     
-    if [ -d "$automation_mcp_dir/node_modules" ]; then
+    if [ -d "$automation_mcp_dir/node_modules" ] || [ -f "$automation_mcp_dir/mcpServer.js" ]; then
         print_info "Starting $automation_mcp_name (stdio mode)..."
         cd "$automation_mcp_dir"
+        # Install dependencies if not present
+        if [ ! -d "node_modules" ] && [ -f "package.json" ]; then
+            npm install 2>&1 | head -20
+        fi
         # Automation Quality MCP uses stdio mode, not SSE, so no port check needed
-        # It will be used via stdio by LangGraph when needed
-        # We can start it in the background for monitoring, but it won't listen on a port
         nohup node mcpServer.js > "$automation_mcp_log_file" 2>&1 &
         local automation_mcp_pid=$!
         echo $automation_mcp_pid > "$automation_mcp_pid_file"
@@ -896,16 +833,16 @@ start_langgraph_server() {
     
     print_info "Starting $name..."
     
-    # Install Node.js dependencies for automation-quality-mcp if needed
-    # 目录已扁平化为 testing-agents-service/src
-    local automation_mcp_dir="$PROJECT_ROOT/testing-agents-service/src/api_agent/mcp_servers/automation-quality-mcp"
+    # Install Node.js dependencies for automation_quality MCP if needed
+    # MCP 服务器已统一到 testing-agents-service/mcp/ 目录
+    local automation_mcp_dir="$PROJECT_ROOT/testing-agents-service/mcp/automation_quality"
     if [ -d "$automation_mcp_dir" ] && [ ! -d "$automation_mcp_dir/node_modules" ]; then
-        print_info "Installing Node.js dependencies for automation-quality-mcp..."
+        print_info "Installing Node.js dependencies for automation_quality MCP..."
         cd "$automation_mcp_dir"
         if command -v npm &> /dev/null; then
             npm install 2>&1 | head -20
         else
-            print_warning "npm not found, automation-quality-mcp may not work"
+            print_warning "npm not found, automation_quality MCP may not work"
         fi
         cd "$PROJECT_ROOT"
     fi
@@ -1071,9 +1008,7 @@ stop_all() {
     stop_service "Agent UI" "$PID_DIR/agent_ui.pid" 3200
     stop_service "LangGraph Server" "$PID_DIR/langgraph.pid" "${LANGGRAPH_PORT:-2025}"
     stop_service "Automation Quality MCP Server" "$PID_DIR/automation_quality_mcp.pid"
-    stop_service "Test Executor MCP Server" "$PID_DIR/test_executor_mcp.pid" 8004
-    stop_service "Pytest Generator MCP Server" "$PID_DIR/pytest_generator_mcp.pid" 8005
-    stop_service "Login MCP Server" "$PID_DIR/login_mcp.pid" 8003
+    stop_service "Pytest MCP Server" "$PID_DIR/pytest_mcp.pid" 8004
     stop_service "RAG MCP Server" "$PID_DIR/rag_mcp.pid" 8002
     stop_service "Anything RAG MCP Server" "$PID_DIR/anything_rag_mcp.pid" 8006
     stop_service "MCP Server" "$PID_DIR/mcp.pid" 8001
@@ -1154,12 +1089,8 @@ show_status() {
         "http://127.0.0.1:8006/sse"
     show_one_status "RAG MCP Server" 8002 "$PID_DIR/rag_mcp.pid" \
         "http://127.0.0.1:8002/sse"
-    show_one_status "Login MCP Server" 8003 "$PID_DIR/login_mcp.pid" \
-        "http://127.0.0.1:8003/sse"
-    show_one_status "Test Executor MCP Server" 8004 "$PID_DIR/test_executor_mcp.pid" \
+    show_one_status "Pytest MCP Server" 8004 "$PID_DIR/pytest_mcp.pid" \
         "http://127.0.0.1:8004/sse"
-    show_one_status "Pytest Generator MCP Server" 8005 "$PID_DIR/pytest_generator_mcp.pid" \
-        "http://127.0.0.1:8005/sse"
     show_one_status "LangGraph Server" "$lg_port" "$PID_DIR/langgraph.pid" \
         "http://127.0.0.1:${lg_port}/ok"
     show_one_status "Agent UI" 3200 "$PID_DIR/agent_ui.pid" \
@@ -1192,9 +1123,7 @@ restart_service() {
             ;;
         api-agent-mcp)
             stop_service "Automation Quality MCP Server" "$PID_DIR/automation_quality_mcp.pid"
-            stop_service "Test Executor MCP Server" "$PID_DIR/test_executor_mcp.pid" 8004
-            stop_service "Pytest Generator MCP Server" "$PID_DIR/pytest_generator_mcp.pid" 8005
-            stop_service "Login MCP Server" "$PID_DIR/login_mcp.pid" 8003
+            stop_service "Pytest MCP Server" "$PID_DIR/pytest_mcp.pid" 8004
             stop_service "RAG MCP Server" "$PID_DIR/rag_mcp.pid" 8002
             start_api_agent_mcp_servers
             ;;
@@ -1274,9 +1203,7 @@ stop_single_service() {
             ;;
         api-agent-mcp)
             stop_service "Automation Quality MCP Server" "$PID_DIR/automation_quality_mcp.pid"
-            stop_service "Test Executor MCP Server" "$PID_DIR/test_executor_mcp.pid" 8004
-            stop_service "Pytest Generator MCP Server" "$PID_DIR/pytest_generator_mcp.pid" 8005
-            stop_service "Login MCP Server" "$PID_DIR/login_mcp.pid" 8003
+            stop_service "Pytest MCP Server" "$PID_DIR/pytest_mcp.pid" 8004
             stop_service "RAG MCP Server" "$PID_DIR/rag_mcp.pid" 8002
             ;;
         langgraph)
@@ -1488,9 +1415,7 @@ main() {
     print_access_url "MCP Server" "http://127.0.0.1:8001/sse"
     print_access_url "Anything RAG MCP" "http://127.0.0.1:8006/sse"
     print_access_url "RAG MCP Server" "http://127.0.0.1:8002/sse"
-    print_access_url "Login MCP Server" "http://127.0.0.1:8003/sse"
-    print_access_url "Test Executor MCP" "http://127.0.0.1:8004/sse"
-    print_access_url "Pytest Generator MCP" "http://127.0.0.1:8005/sse"
+    print_access_url "Pytest MCP Server" "http://127.0.0.1:8004/sse"
     printf "  %-26s %s\n" "Automation Quality MCP" "stdio mode (no HTTP)"
     print_access_url "LangGraph API" "http://127.0.0.1:${LANGGRAPH_PORT:-2025}/docs"
     print_access_url "LangGraph Studio" "http://127.0.0.1:${LANGGRAPH_PORT:-2025}/ui"

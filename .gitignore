@@ -1,26 +1,26 @@
-# IDE 配置
+# IDE Configuration
 .idea/
 .vscode/
 *.iws
 *.iml
 *.ipr
 
-# Python 虚拟环境
+# Python Virtual Environments
 _venv/
 venv/
 .venv/
 env/
 ENV/
 
-# 环境变量文件（敏感信息）
-# .env
-# .env.local
-# .env.development.local
-# .env.test.local
-# .env.production.local
-# 注意：.env.example 应该被提交到仓库，作为配置模板
+# Environment Variables (Sensitive Info)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Note: .env.example should be committed as configuration template
 
-# Node.js 依赖
+# Node.js
 node_modules/
 pnpm-lock.yaml
 npm-debug.log*
@@ -30,21 +30,13 @@ yarn-error.log*
 # Next.js
 .next/
 next-env.d.ts
+out/
 
-# 构建输出
+# Build Output
 dist/
 build/
 *.tgz
 *.tar.gz
-
-# Vite
-web/.vite
-web/.vite-cache
-web/.pnpm-store
-
-# 文档和日志
-Log.md
-# documents/  # 如果不需要上传文档数据，取消注释
 
 # Python
 __pycache__/
@@ -67,11 +59,11 @@ wheels/
 *.egg
 MANIFEST
 
-# 系统文件
+# System Files
 .DS_Store
 Thumbs.db
 
-# 备份文件
+# Backup Files
 *.backup
 *.bak
 *.swp
@@ -81,28 +73,46 @@ Thumbs.db
 # LangGraph API
 .langgraph_api/
 
-**/node_modules
-**/dist
-**/.venv
+# LightRAG Data
+lightrag.log
+rag_storage/
+parser_output/
 
-ai-test-management/.runtime/
+# Testing Artifacts
+generated_tests/
+test-results/
+playwright-report/
+playwright_reports/
+playwright_results/
+screenshot_*.png
 
-# UI automation runtime artifacts
+# UI Automation Runtime
 testing-agents-service/.ui_automation/
-testing-agents-service/playwright_reports/
-testing-agents-service/playwright_results/
 testing-agents-service/playwright_scripts/.run_configs/
 testing-agents-service/playwright_scripts/test-results/
-testing-agents-service/playwright_scripts/screenshot_*.png
-testing-agents-service/playwright_scripts/tests/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9]_[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].spec.ts
-testing-agents-service/playwright_scripts/tests/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_[0-9][0-9][0-9][0-9][0-9][0-9]_[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].spec.js
+testing-agents-service/playwright_scripts/tests/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_*.spec.ts
+testing-agents-service/playwright_scripts/tests/*_[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]_*.spec.js
 
-# Git 子项目（使用 submodule 管理）
-#  如果需要作为 submodule，先忽略，然后使用 git submodule add
-#jmeter/
+# Docker
+.dockerignore
 
+# Logs
+logs/
+*.log
+
+# Personal/Sensitive Files (Add specific patterns if needed)
+**/inputs/**/邱云霞*
+**/inputs/**/*简历*
+**/inputs/**/*学历*
+**/inputs/**/*学籍*
+**/inputs/**/*社保*
+
+# Project-specific
 data/
 debug/
-docs/
-文档收集/
-*.md
+ai-test-management/.runtime/
+
+# Examples and Tests (Optional - uncomment if not needed)
+# example/
+# reproduce/
+# tests/

@@ -3,10 +3,6 @@
     "."
   ],
   "graphs": {
-    "k6_agent": {
-      "path": "./src/k6_agent/main.py:agent",
-      "description": "K6 性能测试 Agent，用于生成和执行 K6 性能测试脚本"
-    },
     "rest_api_agent": {
       "path": "./src/api_agent/rest_api_agent.py:agent",
       "description": "REST API 测试 Agent，使用 automation-quality-mcp 进行 API 自动化测试"
@@ -42,6 +38,18 @@
     "data_import_agent": {
       "path": "./src/data_agent/data_import_agent.py:agent",
       "description": "数据导入 Agent，用于爬取和导入 API 文档到 RAG 知识库"
+    },
+    "api_agent": {
+      "path": "./agents/api/agent.py:agent",
+      "description": "API 自动化测试专家，掌握 planner（测试规划）、generator（代码生成）、healer（测试修复）三大技能"
+    },
+    "testcase_agent": {
+      "path": "./agents/testcase/agent.py:agent",
+      "description": "测试用例生成专家，掌握 analyzer（需求分析）、generator（用例生成）、reviewer（用例评审）三大技能"
+    },
+    "ui_agent": {
+      "path": "./agents/ui/agent.py:agent",
+      "description": "UI 测试自动化 Agent，使用 Playwright MCP 进行 Web 自动化测试，掌握 generator、healer、planner 技能"
     }
   },
   "env": ".env",

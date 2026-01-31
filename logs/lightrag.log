@@ -82,880 +82,109 @@ INFO: Send embedding dimension: False by env var (dimensions=1024, has_param=Tru
 INFO: Embedding max_token_size: 8192 (from ollama provider default)
 INFO: Reranking is disabled
 INFO: Vision model initialized: doubao-seed-1-6-vision-250815 using openai provider
-INFO: [] Loaded graph from D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml with 1605 nodes, 1573 edges
+INFO: [] Created new empty graph file: D:\yunxia\ai_langgraph\anything-chat-rag\rag_storage\graph_chunk_entity_relation.graphml
 INFO: RAG-Anything processor created successfully
 INFO: RAG-Anything multimodal processing enabled with parser=docling with vision model doubao-seed-1-6-vision-250815
-INFO: Started server process [958340]
+INFO: Started server process [18228]
 INFO: Waiting for application startup.
-INFO: [] Process 958340 KV load full_docs with 20 records
-INFO: [] Process 958340 KV load text_chunks with 83 records
-INFO: [] Process 958340 KV load full_entities with 20 records
-INFO: [] Process 958340 KV load full_relations with 20 records
-INFO: [] Process 958340 KV load entity_chunks with 1587 records
-INFO: [] Process 958340 KV load relation_chunks with 1573 records
-INFO: [] VectorDB collection 'entities' exists check: True
-INFO: [] VectorDB Collection 'entities' compatibility validation passed
-INFO: [] Milvus collection 'entities' initialized successfully
-INFO: [] VectorDB collection 'relationships' exists check: True
-INFO: [] VectorDB Collection 'relationships' compatibility validation passed
-INFO: [] Milvus collection 'relationships' initialized successfully
-INFO: [] VectorDB collection 'chunks' exists check: True
-INFO: [] VectorDB Collection 'chunks' compatibility validation passed
-INFO: [] Milvus collection 'chunks' initialized successfully
-INFO: [] Process 958340 KV load llm_response_cache with 183 records
-INFO: [] Process 958340 doc status load doc_status with 20 records
-INFO: Application startup complete.
-INFO: Uvicorn running on http://0.0.0.0:9621 (Press CTRL+C to quit)
-INFO: 127.0.0.1:54407 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:63297 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:64322 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:64322 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:54214 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:54214 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:53425 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:53425 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:50810 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50810 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:50810 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50810 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:52748 - "GET / HTTP/1.1" 307
-INFO: 127.0.0.1:52748 - "GET /webui HTTP/1.1" 307
-INFO: 127.0.0.1:52748 - "GET /auth-status HTTP/1.1" 200
-INFO: 127.0.0.1:52748 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:52748 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:55017 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55017 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:63916 - "DELETE /documents/delete_all HTTP/1.1" 404
-INFO: 127.0.0.1:53017 - "DELETE /documents/delete_all HTTP/1.1" 404
-INFO: 127.0.0.1:52776 - "POST /documents/upload HTTP/1.1" 200
-INFO: 127.0.0.1:61611 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:61611 - "GET /openapi.json HTTP/1.1" 200
-INFO: Embedding func: 8 new workers initialized (Timeouts: Func: 1000s, Worker: 2000s, Health Check: 2015s)
-INFO: Query nodes: 邱云霞 (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 94 relations
-INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:5, cosine:0.2)
-INFO: Global query: 8 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 12 entities, 98 relations, 20 vector chunks
-INFO: After truncation: 12 entities, 98 relations
-INFO: Selecting 10 from 10 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 98 relations
-INFO: Round-robin merged chunks: 30 -> 22 (deduplicated 8)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 12 entities, 98 relations, 20 chunks
-INFO: Final chunks S+F/O: E2/1 E3/2 E3/3 E1/4 E2/5 E1/6 E2/7 C1/8 E3/8 C1/9 E4/9 C1/10 E1/10 C1/11 C1/12 C1/13 C1/14 C1/15 C1/16 C1/18
-INFO: LLM func: 4 new workers initialized (Timeouts: Func: 180s, Worker: 360s, Health Check: 375s)
-INFO:  == LLM cache == saving: mix:query:578f2b1c607c77765dd23a82781d6506
-INFO:  == LLM cache == saving: mix:keywords:ec2d9f7c2d6cb7252496b997fdee2e18
-INFO: Query nodes: 邱云霞 (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 94 relations
-INFO: Query edges: 个人信息, 个人资料查询 (top_k:5, cosine:0.2)
-INFO: Global query: 10 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 15 entities, 99 relations, 20 vector chunks
-INFO: After truncation: 15 entities, 99 relations
-INFO: Selecting 15 from 15 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 99 relations
-INFO: Round-robin merged chunks: 35 -> 27 (deduplicated 8)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 15 entities, 99 relations, 20 chunks
-INFO: Final chunks S+F/O: E2/1 E2/2 E1/3 E3/4 E1/5 C1/6 E1/6 C1/7 E1/7 C1/8 E2/8 E1/9 C1/10 E2/10 C1/11 E2/11 C1/12 E4/12 C1/13 E1/13
-INFO: 127.0.0.1:57705 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:57705 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:query:2f83f18ea22f720771cfce242d05b01b
-INFO: 127.0.0.1:51487 - "POST /query HTTP/1.1" 200
-INFO: 127.0.0.1:51192 - "POST /documents/upload HTTP/1.1" 200
-INFO: 127.0.0.1:63487 - "POST /documents/upload HTTP/1.1" 200
-INFO: 127.0.0.1:61464 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:61464 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:57039 - "DELETE /documents/delete_document HTTP/1.1" 200
-INFO: Deleting document 1/5: doc-a4d91a61d9cca0476fb39d1c2fced927
-INFO: Starting deletion process for document doc-a4d91a61d9cca0476fb39d1c2fced927
-INFO: Collected 2 LLM cache entries for document doc-a4d91a61d9cca0476fb39d1c2fced927
-INFO: Found 4 affected entities
-INFO: Found 0 affected relations
-INFO: Successfully deleted 1 chunks from storage
-INFO: Successfully deleted 26 relations
-INFO: Successfully deleted 29 entities
-INFO: [] Writing graph with 1576 nodes, 1547 edges
-INFO: In memory DB persist to disk
-INFO: Rebuilding knowledge from 7 cached chunk extractions (parallel processing)
-INFO: Found 14 valid cache entries, 7 chunks with results
-WARNING: chunk-d34f4f4096c5c994a4190c333cf5b57f: Complete delimiter can not be found in extraction result
-INFO: Starting parallel rebuild of 4 entities and 0 relationships (async: 8)
-INFO: 127.0.0.1:55187 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55187 - "GET /openapi.json HTTP/1.1" 200
-INFO: Rebuild `入职体检结果` from 1 chunks
-INFO: Rebuild `个人信息` from 1 chunks
-INFO: Rebuild `邱云霞` from 6 chunks
-INFO: Rebuild `上海科之锐人才咨询有限公司` from 1 chunks
-INFO: KG rebuild completed: 4 entities and 0 relationships rebuilt successfully.
-INFO: Successfully deleted 2 LLM cache entries for document doc-a4d91a61d9cca0476fb39d1c2fced927
-INFO: [] Writing graph with 1576 nodes, 1547 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 1/5: doc-a4d91a61d9cca0476fb39d1c2fced927[Offer Letter-邱云霞.pdf]
-INFO: Successfully deleted enqueued file: Offer Letter-邱云霞.pdf
-INFO: Deleting document 2/5: doc-7fa9816cdcac1c71d99ea4796d96fad8
-INFO: Starting deletion process for document doc-7fa9816cdcac1c71d99ea4796d96fad8
-INFO: Collected 2 LLM cache entries for document doc-7fa9816cdcac1c71d99ea4796d96fad8
-INFO: Untouch entity: table_dbced379657976ac430d512f8f37828a
-INFO: Untouch entity: image_ece4133402ba99e9c8b363142ca5d64e
-INFO: Untouch entity: image_49a143438a1f198903eb692cb30044c8
-INFO: Untouch entity: table_6b3ae5ed922b72ac23929509b2b4cb96
-INFO: Untouch entity: image_41ebe201ebbf5fd533a42bb21f96c92f
-INFO: Found 2 affected entities
-INFO: Found 0 affected relations
-INFO: Successfully deleted 1 chunks from storage
-INFO: Successfully deleted 13 relations
-INFO: Successfully deleted 11 entities
-INFO: [] Writing graph with 1565 nodes, 1534 edges
-INFO: In memory DB persist to disk
-INFO: Rebuilding knowledge from 5 cached chunk extractions (parallel processing)
-INFO: Found 10 valid cache entries, 5 chunks with results
-WARNING: chunk-d34f4f4096c5c994a4190c333cf5b57f: Complete delimiter can not be found in extraction result
-INFO: Starting parallel rebuild of 2 entities and 0 relationships (async: 8)
-INFO: Rebuild `机电工程系` from 1 chunks
-INFO: Rebuild `邱云霞` from 5 chunks
-INFO: KG rebuild completed: 2 entities and 0 relationships rebuilt successfully.
-INFO: Successfully deleted 2 LLM cache entries for document doc-7fa9816cdcac1c71d99ea4796d96fad8
-INFO: [] Writing graph with 1565 nodes, 1534 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 2/5: doc-7fa9816cdcac1c71d99ea4796d96fad8[Scan_4级.pdf]
-INFO: Successfully deleted input_dir file: Scan_4级.pdf
-INFO: Deleting document 3/5: doc-d88fa0ead2a1278c43aaa1eefc2e62b3
-INFO: Starting deletion process for document doc-d88fa0ead2a1278c43aaa1eefc2e62b3
-INFO: Collected 14 LLM cache entries for document doc-d88fa0ead2a1278c43aaa1eefc2e62b3
-INFO: Found 11 affected entities
-INFO: Found 0 affected relations
-INFO: Successfully deleted 7 chunks from storage
-INFO: Successfully deleted 120 relations
-INFO: Successfully deleted 160 entities
-INFO: [] Writing graph with 1405 nodes, 1414 edges
-INFO: In memory DB persist to disk
-INFO: Rebuilding knowledge from 12 cached chunk extractions (parallel processing)
-INFO: Found 24 valid cache entries, 12 chunks with results
-INFO: Starting parallel rebuild of 11 entities and 0 relationships (async: 8)
-INFO: 127.0.0.1:64755 - "DELETE /documents/delete_document HTTP/1.1" 200
-INFO: 127.0.0.1:64755 - "POST /documents/scan HTTP/1.1" 200
-INFO: Found 7 files to index.
-INFO: 127.0.0.1:51092 - "POST /documents/scan HTTP/1.1" 200
-INFO: Found 7 files to index.
-WARNING: Skipping already processed file: Scan_05-01-2026_1441.pdf
-WARNING: Skipping already processed file: Scan_05-01-2026_1441.pdf
-WARNING: Skipping already processed file: 中国高等教育学位在线验证报告_邱云霞.pdf
-WARNING: Skipping already processed file: 中国高等教育学位在线验证报告_邱云霞.pdf
-INFO: Rebuild `rag.gdzky.cn` from 1 chunks
-WARNING: Skipping already processed file: 教育部学历证书电子注册备案表_邱云霞 (1).pdf
-WARNING: Skipping already processed file: 教育部学历证书电子注册备案表_邱云霞 (1).pdf
-WARNING: Skipping already processed file: 教育部学籍在线验证报告_邱云霞.pdf
-WARNING: Skipping already processed file: 教育部学籍在线验证报告_邱云霞.pdf
-INFO: Rebuild `RAGFlow` from 1 chunks
-WARNING: Skipping already processed file: 旅行日记2.pdf
-WARNING: Skipping already processed file: 旅行日记2.pdf
-WARNING: Skipping already processed file: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
-WARNING: Skipping already processed file: 邱云霞的简历-测开、自动化、全栈测试工程师 (1).pdf
-WARNING: Skipping already processed file: 邱云霞的简历.pdf
-INFO: No files to process after filtering already processed files.
-WARNING: Skipping already processed file: 邱云霞的简历.pdf
-INFO: No files to process after filtering already processed files.
-INFO: 127.0.0.1:51092 - "GET /docs HTTP/1.1" 200
-INFO: Rebuild `正则表达式` from 3 chunks
-INFO: 127.0.0.1:51092 - "GET /openapi.json HTTP/1.1" 200
-INFO: Rebuild `移动云` from 1 chunks
-INFO: Rebuild `血压` from 1 chunks
-INFO: Rebuild `aic.baixunsz.com` from 1 chunks
-INFO: Rebuild `Git` from 1 chunks
-INFO: Rebuild `智能体` from 2 chunks
-INFO: Rebuild `腾讯云` from 1 chunks
-INFO: 127.0.0.1:50501 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50501 - "GET /openapi.json HTTP/1.1" 200
-INFO: Rebuild `用户` from 3 chunks
-INFO: Rebuild `Dify` from 3 chunks
-INFO: KG rebuild completed: 11 entities and 0 relationships rebuilt successfully.
-INFO: Successfully deleted 14 LLM cache entries for document doc-d88fa0ead2a1278c43aaa1eefc2e62b3
-INFO: [] Writing graph with 1405 nodes, 1414 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 3/5: doc-d88fa0ead2a1278c43aaa1eefc2e62b3[文档.txt]
-INFO: Successfully deleted enqueued file: 文档.txt
-INFO: Deleting document 4/5: doc-f1fff04f1907ceef2945d91abc146ec6
-INFO: Starting deletion process for document doc-f1fff04f1907ceef2945d91abc146ec6
-INFO: Collected 6 LLM cache entries for document doc-f1fff04f1907ceef2945d91abc146ec6
-INFO: Found 1 affected entities
-INFO: Found 0 affected relations
-INFO: Successfully deleted 3 chunks from storage
-INFO: Successfully deleted 51 relations
-INFO: Successfully deleted 62 entities
-INFO: [] Writing graph with 1343 nodes, 1363 edges
-INFO: In memory DB persist to disk
-INFO: Rebuilding knowledge from 2 cached chunk extractions (parallel processing)
-INFO: Found 4 valid cache entries, 2 chunks with results
-INFO: Starting parallel rebuild of 1 entities and 0 relationships (async: 8)
-INFO: Rebuild `用户` from 2 chunks
-INFO: KG rebuild completed: 1 entities and 0 relationships rebuilt successfully.
-INFO: Successfully deleted 6 LLM cache entries for document doc-f1fff04f1907ceef2945d91abc146ec6
-INFO: [] Writing graph with 1343 nodes, 1363 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 4/5: doc-f1fff04f1907ceef2945d91abc146ec6[重要信息.txt]
-INFO: Successfully deleted enqueued file: 重要信息.txt
-INFO: Successfully deleted enqueued file: 重要信息_001.txt
-INFO: Deleting document 5/5: doc-c81106b3f41c6870a8cc1644a1022194
-INFO: Starting deletion process for document doc-c81106b3f41c6870a8cc1644a1022194
-INFO: Collected 2 LLM cache entries for document doc-c81106b3f41c6870a8cc1644a1022194
-INFO: Found 1 affected entities
-INFO: Found 0 affected relations
-INFO: Successfully deleted 1 chunks from storage
-INFO: Successfully deleted 15 relations
-INFO: Successfully deleted 16 entities
-INFO: [] Writing graph with 1327 nodes, 1348 edges
-INFO: In memory DB persist to disk
-INFO: Rebuilding knowledge from 1 cached chunk extractions (parallel processing)
-INFO: Found 2 valid cache entries, 1 chunks with results
-INFO: Starting parallel rebuild of 1 entities and 0 relationships (async: 8)
-INFO: Rebuild `注意事项` from 1 chunks
-INFO: KG rebuild completed: 1 entities and 0 relationships rebuilt successfully.
-INFO: Successfully deleted 2 LLM cache entries for document doc-c81106b3f41c6870a8cc1644a1022194
-INFO: [] Writing graph with 1327 nodes, 1348 edges
-INFO: In memory DB persist to disk
-INFO: Document deleted 5/5: doc-c81106b3f41c6870a8cc1644a1022194[Scan_05-01-2026_1441.pdf]
-INFO: Successfully deleted input_dir file: Scan_05-01-2026_1441.pdf
-INFO: 127.0.0.1:63449 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: Readme.md
-INFO: Processing 1 document(s)
-INFO: Extracting stage 1/1: Readme.md
-INFO: Processing d-id: doc-a809c4d960fde13955c96ff4ec0f7078
-INFO: 127.0.0.1:53884 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: Python依赖包安装命令.txt
-INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:59052 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:59052 - "GET /openapi.json HTTP/1.1" 200
-WARNING: low_level_keywords is empty
-WARNING: high_level_keywords is empty
-WARNING: Forced low_level_keywords to origin query: pip
-INFO: Query nodes: pip (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 7 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 5 entities, 7 relations, 20 vector chunks
-INFO: After truncation: 5 entities, 7 relations
-INFO: Selecting 4 from 4 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 7 relations
-INFO: Round-robin merged chunks: 24 -> 24 (deduplicated 0)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 5 entities, 7 relations, 20 chunks
-INFO: Final chunks S+F/O: C1/1 E1/1 C1/2 E2/2 C1/3 E1/3 C1/4 E1/4 C1/5 C1/6 C1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14 C1/15 C1/16
-INFO:  == LLM cache == saving: default:extract:030931e1cf7a8cb21874433b99eef79c
-INFO: 127.0.0.1:52932 - "GET /auth-status HTTP/1.1" 200
-INFO: 127.0.0.1:52932 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:52932 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:query:b28f88fca63aa744997a1c007a21c99b
-INFO: 127.0.0.1:58499 - "POST /query HTTP/1.1" 200
-INFO:  == LLM cache == saving: default:extract:95ce247834e69641d0df98859ff7f806
-INFO: Chunk 1 of 1 extracted 18 Ent + 13 Rel chunk-a809c4d960fde13955c96ff4ec0f7078
-INFO: Merging stage 1/1: Readme.md
-INFO: Phase 1: Processing 18 entities from doc-a809c4d960fde13955c96ff4ec0f7078 (async: 8)
-INFO: Phase 2: Processing 13 relations from doc-a809c4d960fde13955c96ff4ec0f7078 (async: 8)
-INFO: Phase 3: Updating final 18(18+0) entities and  13 relations from doc-a809c4d960fde13955c96ff4ec0f7078
-INFO: Completed merging: 18 entities, 0 extra entities, 13 relations
-INFO: [] Writing graph with 1345 nodes, 1361 edges
-INFO: In memory DB persist to disk
-INFO: Completed processing file 1/1: Readme.md
-INFO: Processing additional documents due to pending request
-INFO: Processing 1 document(s)
-INFO: Extracting stage 1/1: Python依赖包安装命令.txt
-INFO: Processing d-id: doc-01801f933216cfe71c2b179bcba43ce7
-INFO:  == LLM cache == saving: default:extract:13f247c842ed47e0d05659719d41c0a9
-INFO:  == LLM cache == saving: default:extract:f95b706bd76138b125a5ffb7a819d090
-INFO: Chunk 1 of 1 extracted 4 Ent + 3 Rel chunk-01801f933216cfe71c2b179bcba43ce7
-INFO: Merging stage 1/1: Python依赖包安装命令.txt
-INFO: Phase 1: Processing 4 entities from doc-01801f933216cfe71c2b179bcba43ce7 (async: 8)
-INFO: Merged: `requirements.txt` | 1+1
-INFO: Phase 2: Processing 3 relations from doc-01801f933216cfe71c2b179bcba43ce7 (async: 8)
-INFO: Phase 3: Updating final 4(4+0) entities and  3 relations from doc-01801f933216cfe71c2b179bcba43ce7
-INFO: Completed merging: 4 entities, 0 extra entities, 3 relations
-INFO: [] Writing graph with 1348 nodes, 1364 edges
-INFO: In memory DB persist to disk
-INFO: Completed processing file 1/1: Python依赖包安装命令.txt
-INFO: Enqueued document processing pipeline stopped
-ERROR: Error /documents/upload: trainData.npy: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
+INFO: [] Process 18228 KV load full_docs with 0 records
+INFO: [] Process 18228 KV load text_chunks with 0 records
+INFO: [] Process 18228 KV load full_entities with 0 records
+INFO: [] Process 18228 KV load full_relations with 0 records
+INFO: [] Process 18228 KV load entity_chunks with 0 records
+INFO: [] Process 18228 KV load relation_chunks with 0 records
+ERROR: [] Failed to initialize Milvus collection 'entities': <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
 ERROR: Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
-    raise HTTPException(
-fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
-
-INFO: 127.0.0.1:61151 - "POST /documents/upload HTTP/1.1" 500
-WARNING: low_level_keywords is empty
-WARNING: high_level_keywords is empty
-WARNING: Forced low_level_keywords to origin query: pip
-INFO: Query nodes: pip (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 6 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 5 entities, 6 relations, 20 vector chunks
-INFO: After truncation: 5 entities, 6 relations
-INFO: Selecting 4 from 4 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 6 relations
-INFO: Round-robin merged chunks: 24 -> 23 (deduplicated 1)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 5 entities, 6 relations, 20 chunks
-INFO: Final chunks S+F/O: E2/1 C1/2 E1/2 C1/3 E1/3 C1/4 E1/4 C1/5 C1/6 C1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14 C1/15 C1/16 C1/17
-INFO:  == LLM cache == Query cache hit, using cached response as query result
-INFO: 127.0.0.1:60345 - "POST /query HTTP/1.1" 200
-INFO: 127.0.0.1:52690 - "GET /auth-status HTTP/1.1" 200
-INFO: 127.0.0.1:52690 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:52690 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:52690 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:52690 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:0625ed7b0c9af5ce3216d78970d96c3e
-INFO: Query nodes: pytest framework, test automation, unit testing, fixtures, assertions (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 32 relations
-INFO: Query edges: pytest, Python testing, Software testing (top_k:5, cosine:0.2)
-INFO: Global query: 8 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 12 entities, 36 relations, 20 vector chunks
-INFO: After truncation: 12 entities, 36 relations
-INFO: Selecting 24 from 24 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 36 relations
-INFO: Round-robin merged chunks: 44 -> 36 (deduplicated 8)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 12 entities, 36 relations, 20 chunks
-INFO: Final chunks S+F/O: E5/1 E2/2 E1/3 C1/4 E3/4 C1/5 E1/5 E3/6 E1/7 C1/8 E2/8 E2/9 E1/10 C1/11 E3/11 C1/12 E1/12 C1/13 E2/13 C1/14
-INFO:  == LLM cache == saving: mix:query:35de59f1a4abd665b4d22c69c4da6a96
-INFO: 127.0.0.1:59527 - "POST /query HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:e2f5528b0205e46908c056946ce2919e
-INFO: Query nodes: Train, Date (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 0 relations
-INFO: Query edges: Train date, Date information, Schedule (top_k:5, cosine:0.2)
-INFO: Global query: 9 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 14 entities, 5 relations, 20 vector chunks
-INFO: After truncation: 14 entities, 5 relations
-INFO: Selecting 14 from 14 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 5 relations
-INFO: Round-robin merged chunks: 34 -> 29 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 14 entities, 5 relations, 20 chunks
-INFO: Final chunks S+F/O: E1/1 E1/2 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E4/6 C1/7 E1/7 E2/8 C1/9 E1/9 C1/10 E2/10 C1/11 E1/11 C1/12 E1/12
-INFO: 127.0.0.1:63844 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:63844 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:query:b52c72b6ee8686ca4e32d1f9f2bd86e7
-INFO: 127.0.0.1:63644 - "POST /query HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:a494006655571a2bb5a61fc79a4079bd
-INFO: Query nodes: Locomotive, Railway, Passenger train, Freight train (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 1 relations
-INFO: Query edges: Transportation, Travel, Rail transport (top_k:5, cosine:0.2)
-INFO: Global query: 10 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 15 entities, 6 relations, 20 vector chunks
-INFO: After truncation: 15 entities, 6 relations
-INFO: Selecting 14 from 14 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 6 relations
-INFO: Round-robin merged chunks: 34 -> 30 (deduplicated 4)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 15 entities, 6 relations, 20 chunks
-INFO: Final chunks S+F/O: E1/1 E1/2 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E2/6 C1/7 E2/7 C1/8 E1/8 E2/9 C1/10 E1/10 C1/11 E2/11 C1/12 E1/12
-INFO: 127.0.0.1:57567 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:57567 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:query:a8cfd1fd73eaccf884b70fea52bcef32
-INFO: 127.0.0.1:57569 - "POST /query HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:b8770223402ea9678349f0bb5a73b98c
-INFO: 127.0.0.1:61789 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55507 - "GET /openapi.json HTTP/1.1" 200
-INFO: Query nodes: 训练数据, 测试数据, 归一化处理 (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 5 relations
-INFO: Query edges: 数据存储, 模型训练, 数据预处理 (top_k:5, cosine:0.2)
-INFO: Global query: 7 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 11 entities, 9 relations, 20 vector chunks
-INFO: After truncation: 11 entities, 9 relations
-INFO: Selecting 7 from 7 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 9 relations
-INFO: Round-robin merged chunks: 27 -> 26 (deduplicated 1)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 11 entities, 9 relations, 20 chunks
-INFO: Final chunks S+F/O: E5/1 C1/2 E3/2 C1/3 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E1/6 C1/7 E1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14
-INFO:  == LLM cache == saving: mix:query:0b72d2592483177e711a44c404ee19ec
-INFO: 127.0.0.1:50504 - "POST /query HTTP/1.1" 200
-INFO: Query nodes: 训练数据, 测试数据, 归一化处理 (top_k:5, cosine:0.2)
-INFO: Local query: 5 entites, 5 relations
-INFO: Query edges: 数据存储, 模型训练, 数据预处理 (top_k:5, cosine:0.2)
-INFO: Global query: 7 entites, 5 relations
-INFO: Naive query: 20 chunks (chunk_top_k:20 cosine:0.2)
-INFO: Raw search results: 11 entities, 9 relations, 20 vector chunks
-INFO: After truncation: 11 entities, 9 relations
-INFO: Selecting 7 from 7 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 9 relations
-INFO: Round-robin merged chunks: 27 -> 26 (deduplicated 1)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 11 entities, 9 relations, 20 chunks
-INFO: Final chunks S+F/O: E5/1 C1/2 E3/2 C1/3 E1/3 C1/4 E1/4 C1/5 E1/5 C1/6 E1/6 C1/7 E1/7 C1/8 C1/9 C1/10 C1/11 C1/12 C1/13 C1/14
-INFO:  == LLM cache == Query cache hit, using cached response as query result
-INFO: 127.0.0.1:60807 - "POST /query HTTP/1.1" 200
-INFO: 127.0.0.1:62895 - "POST /documents/upload HTTP/1.1" 200
-INFO: Using RAG-Anything multimodal processing for: hrvFeature.xlsx
-INFO: RAGAnything initialized with config:
-INFO:   Working directory: ./rag_storage
-INFO:   Parser: docling
-INFO:   Parse method: auto
-INFO:   Multimodal processing - Image: True, Table: True, Equation: True
-INFO:   Max concurrent files: 1
-INFO: RAG-Anything initialized with parser=docling, method=auto, multimodal=True
-INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx
-INFO: Using docling parser with method: auto
-INFO: Detected Office or HTML document, using parser for Office/HTML...
-INFO: 127.0.0.1:63691 - "POST /documents/upload HTTP/1.1" 200
-INFO: Using RAG-Anything multimodal processing for: ppg_rawData.xlsx
-INFO: Starting document parsing: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx
-INFO: Using docling parser with method: auto
-INFO: Detected Office or HTML document, using parser for Office/HTML...
-INFO: 127.0.0.1:51924 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:51924 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:50207 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50207 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:50207 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50207 - "GET /openapi.json HTTP/1.1" 200
-INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx complete! Extracted 1 content blocks
-INFO: Document parsed successfully: hrvFeature.xlsx, doc_id=doc-77a68dcbd899140c79ca1e36cc21d512, blocks=1
-INFO: Parser 'docling' installation verified
-INFO: Initializing parse cache for pre-provided LightRAG instance
-INFO: [] Process 958340 KV load parse_cache with 16 records
-INFO: Parsing D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx complete! Extracted 1 content blocks
-INFO: Multimodal processors initialized with context support
-INFO: Available processors: ['image', 'table', 'equation', 'generic']
-INFO: Context configuration: ContextConfig(context_window=1, context_mode='page', max_context_tokens=2000, include_headers=True, include_captions=True, filter_content_types=['text'])
-INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx (1 items)
-INFO: Content separation complete:
-INFO:   - Text content length: 0 characters
-INFO:   - Multimodal items count: 1
-INFO:   - Multimodal type distribution: {'table': 1}
-INFO: Setting content source for context-aware multimodal processing...
-INFO: Content source set with format: minerU
-INFO: Content source set with format: minerU
-INFO: Content source set with format: minerU
-INFO: Content source set with format: minerU
-INFO: Content source set for context extraction (format: minerU)
-INFO: Starting multimodal content processing...
-INFO: Stored parsing result in cache: 768f76825f956e39b95e4233aa1f0e88
-INFO: Document parsed successfully: ppg_rawData.xlsx, doc_id=doc-164685717f59d29b3b53aa5c25a959d0, blocks=1
-INFO: Starting to process 1 multimodal content items
-ERROR: Error generating table description: 'NoneType' object is not callable
-INFO: Multimodal chunk generation progress: 1/1 (100.0%)
-INFO: Starting direct content list insertion for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx (1 items)
-INFO: Content separation complete:
-INFO:   - Text content length: 0 characters
-INFO:   - Multimodal items count: 1
-INFO:   - Multimodal type distribution: {'table': 1}
-INFO: Setting content source for context-aware multimodal processing...
-INFO: Content source set with format: minerU
-INFO: Content source set with format: minerU
-INFO: Content source set with format: minerU
-INFO: Content source set with format: minerU
-INFO: Content source set for context extraction (format: minerU)
-INFO: Generated descriptions for 1/1 multimodal items using correct processors
-INFO: Starting multimodal content processing...
-INFO: Starting to process 1 multimodal content items
-ERROR: Error generating table description: 'NoneType' object is not callable
-INFO: Multimodal chunk generation progress: 1/1 (100.0%)
-INFO: Generated descriptions for 1/1 multimodal items using correct processors
-INFO: 127.0.0.1:52884 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: parse_txt.py
-INFO: Processing 1 document(s)
-INFO: Extracting stage 1/1: parse_txt.py
-INFO: Processing d-id: doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e
-INFO: 127.0.0.1:56417 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: predict_model.py
-INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:61399 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: test_5min.json
-INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:51893 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: test_1min.json
-INFO: Another process is already processing the document queue. Request queued.
-INFO: 127.0.0.1:55334 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55334 - "GET /openapi.json HTTP/1.1" 200
-2026-01-11 19:09:08,175 [ERROR][handler]: RPC error: [upsert_rows], <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>, <Time:{'RPC start': '2026-01-11 19:09:07.903139', 'RPC error': '2026-01-11 19:09:08.161903'}>
-Traceback:
-Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 263, in handler
-    return func(*args, **kwargs)
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\starlette\routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\ProgramData\miniconda3\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
            ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 322, in handler
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 196, in handler
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 153, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\ProgramData\miniconda3\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 153, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\ProgramData\miniconda3\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 153, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\ProgramData\miniconda3\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\fastapi\routing.py", line 153, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\ProgramData\miniconda3\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\lightrag_server.py", line 360, in lifespan
+    await rag.initialize_storages()
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 702, in initialize_storages
+    await storage.initialize()
+  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 999, in initialize
+    self._client = MilvusClient(
+                   ~~~~~~~~~~~~^
+        uri=os.environ.get(
+        ^^^^^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        ),
+        ^^
+    )
+    ^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\milvus_client\milvus_client.py", line 76, in __init__
+    self._using = create_connection(
+                  ~~~~~~~~~~~~~~~~~^
+        uri, token, self._db_name, user=user, password=password, timeout=timeout, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\milvus_client\_utils.py", line 56, in create_connection
+    connections.connect(
+    ~~~~~~~~~~~~~~~~~~~^
+        using,
+        ^^^^^^
+    ...<7 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\orm\connections.py", line 437, in connect
+    connect_milvus(**kwargs, user=user, password=password, token=token, db_name=db_name)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\orm\connections.py", line 391, in connect_milvus
     raise e from e
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 166, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 946, in upsert_rows
-    check_status(response.status)
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\utils.py", line 66, in check_status
-    raise MilvusException(status.code, status.reason, status.error_code)
-pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
- (decorators.py:267)
-ERROR: Error storing chunks to storage: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
-ERROR: Error in multimodal processing: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
-WARNING: Falling back to individual multimodal processing
-INFO: Processing item 1/1: table content
-ERROR: Error generating table description: 'NoneType' object is not callable
-INFO: 127.0.0.1:50802 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:50802 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: default:extract:2fa22593f60af704833bf0fcb636bd18
-INFO:  == LLM cache == saving: default:extract:d74be80bca3349a84fbfb0291f0b09fe
-INFO: Chunk 1 of 1 extracted 26 Ent + 22 Rel chunk-b69e9dd1cf3f6c79c30b6e77a43c4c2e
-INFO: Merging stage 1/1: parse_txt.py
-INFO: Phase 1: Processing 26 entities from doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e (async: 8)
-2026-01-11 19:14:31,818 [ERROR][handler]: RPC error: [upsert_rows], <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>, <Time:{'RPC start': '2026-01-11 19:14:31.521654', 'RPC error': '2026-01-11 19:14:31.818883'}>
-Traceback:
-Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 263, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 322, in handler
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 196, in handler
-    raise e from e
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 166, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 946, in upsert_rows
-    check_status(response.status)
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\utils.py", line 66, in check_status
-    raise MilvusException(status.code, status.reason, status.error_code)
-pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
- (decorators.py:267)
-ERROR: Error processing table content: <MilvusException: (code=1100, message=the length (945547) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
-ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-INFO: Individual multimodal content processing complete
-INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\hrvFeature.xlsx
-INFO: Document processing complete: hrvFeature.xlsx, doc_id=doc-77a68dcbd899140c79ca1e36cc21d512
-INFO: RAG-Anything processing completed successfully: hrvFeature.xlsx, doc_id=doc-77a68dcbd899140c79ca1e36cc21d512
-INFO: Another process is already processing the document queue. Request queued.
-2026-01-11 19:16:19,211 [ERROR][handler]: RPC error: [upsert_rows], <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>, <Time:{'RPC start': '2026-01-11 19:16:15.673986', 'RPC error': '2026-01-11 19:16:19.210442'}>
-Traceback:
-Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 263, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 322, in handler
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 196, in handler
-    raise e from e
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\decorators.py", line 166, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 946, in upsert_rows
-    check_status(response.status)
-  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\utils.py", line 66, in check_status
-    raise MilvusException(status.code, status.reason, status.error_code)
-pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
- (decorators.py:267)
-ERROR: Error storing chunks to storage: <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
-ERROR: Error in multimodal processing: <MilvusException: (code=1100, message=the length (26489667) of dynamic field exceeds max length (65536): invalid parameter[expected=valid length dynamic field][actual=length exceeds max length])>
-WARNING: Falling back to individual multimodal processing
-INFO: Processing item 1/1: table content
-ERROR: Error generating table description: 'NoneType' object is not callable
-INFO: 127.0.0.1:52163 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:63922 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:63922 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:63922 - "GET /openapi.json HTTP/1.1" 200
-INFO: Merged: `data` | 1+1
-ERROR: Error in ollama_embed: do embedding request: Post "http://127.0.0.1:35857/embedding": EOF (status code: 400)
-ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
-ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
-ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
-ERROR: Embedding func: Error in decorated function for task 1975782409024_1931216.187: do embedding request: Post "http://127.0.0.1:35857/embedding": EOF (status code: 400)
-ERROR: Embedding func: Error in decorated function for task 1975757895232_1931218.843: llama runner process no longer running: -1 (status code: 400)
-ERROR: Embedding func: Error in decorated function for task 1975713846592_1931219.781: llama runner process no longer running: -1 (status code: 400)
-ERROR: Embedding func: Error in decorated function for task 1975721434688_1931217.156: llama runner process no longer running: -1 (status code: 400)
-WARNING: VDB entity_upsert attempt 1 failed for rri_num: do embedding request: Post "http://127.0.0.1:35857/embedding": EOF (status code: 400), retrying...
-WARNING: VDB entity_upsert attempt 1 failed for file_path: llama runner process no longer running: -1 (status code: 400), retrying...
-WARNING: VDB entity_upsert attempt 1 failed for data: llama runner process no longer running: -1 (status code: 400), retrying...
-WARNING: VDB entity_upsert attempt 1 failed for __main__: llama runner process no longer running: -1 (status code: 400), retrying...
-ERROR: Error in ollama_embed: llama runner process no longer running: -1 (status code: 400)
-ERROR: Embedding func: Error in decorated function for task 1975760191104_1931178.843: llama runner process no longer running: -1 (status code: 400)
-ERROR: Error processing table content: llama runner process no longer running: -1 (status code: 400)
-ERROR: Error processing multimodal content: not enough values to unpack (expected 3, got 2)
-INFO: Individual multimodal content processing complete
-INFO: Content list insertion complete for: D:\yunxia\ai_langgraph\anything-chat-rag\inputs\ppg_rawData.xlsx
-INFO: Document processing complete: ppg_rawData.xlsx, doc_id=doc-164685717f59d29b3b53aa5c25a959d0
-INFO: RAG-Anything processing completed successfully: ppg_rawData.xlsx, doc_id=doc-164685717f59d29b3b53aa5c25a959d0
-INFO: Another process is already processing the document queue. Request queued.
-INFO: Phase 2: Processing 22 relations from doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e (async: 8)
-INFO: Phase 3: Updating final 26(26+0) entities and  22 relations from doc-b69e9dd1cf3f6c79c30b6e77a43c4c2e
-INFO: Completed merging: 26 entities, 0 extra entities, 22 relations
-INFO: [] Writing graph with 1373 nodes, 1386 edges
-INFO: In memory DB persist to disk
-INFO: Completed processing file 1/1: parse_txt.py
-INFO: Processing additional documents due to pending request
-INFO: Processing 3 document(s)
-INFO: Extracting stage 1/3: predict_model.py
-INFO: Processing d-id: doc-fba9cf55995b3864eb745c3dc9defb26
-INFO: Extracting stage 2/3: test_5min.json
-INFO: Processing d-id: doc-83cda2f9c9ee56f5068a89ea3d3b46b6
-INFO:  == LLM cache == saving: default:extract:c98b5f00c63a9b666df0fe3be5e7a0d1
-INFO:  == LLM cache == saving: default:extract:d2811f1b52c8b1292925118054eb703c
-INFO: Chunk 1 of 3 extracted 14 Ent + 10 Rel chunk-28c28b6bfb03338cd097bb678b3d4bed
-INFO:  == LLM cache == saving: default:extract:ed7f8eb10e42bbb48e83d983aad35ed5
-INFO:  == LLM cache == saving: default:extract:f0cea1fe7b9ee82122c1e606d937aaff
-INFO:  == LLM cache == saving: default:extract:1cf937e692f186f950be55b8a6c12683
-INFO: Chunk 2 of 3 extracted 42 Ent + 20 Rel chunk-139d46957ae2ad18faf0be4a67a5755c
-INFO:  == LLM cache == saving: default:extract:051100380b4fc972c028d967d22d3653
-INFO: Chunk 3 of 3 extracted 37 Ent + 36 Rel chunk-0c6b9bc52d436bdf3a3bd09fa2b29435
-INFO: Merging stage 1/3: predict_model.py
-INFO: Phase 1: Processing 89 entities from doc-fba9cf55995b3864eb745c3dc9defb26 (async: 8)
-WARNING: Embedding func: Worker timeout for task 1975787273472_1931290.281 after 2000s
-WARNING: Embedding func: Worker timeout for task 1975787271936_1931290.281 after 2000s
-WARNING: Embedding func: Worker timeout for task 1975787272896_1931290.281 after 2000s
-ERROR: Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
-    return await future
-           ^^^^^^^^^^^^
-lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\orm\connections.py", line 385, in connect_milvus
+    gh._wait_for_channel_ready(timeout=timeout)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\yunxia\ai_langgraph\.venv\Lib\site-packages\pymilvus\client\grpc_handler.py", line 228, in _wait_for_channel_ready
+    raise MilvusException(
+    ...<2 lines>...
+    ) from e
+pymilvus.exceptions.MilvusException: <MilvusException: (code=2, message=Fail connecting to server on 47.110.95.246:19530, illegal connection params or server unavailable)>
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
-    await asyncio.gather(*first_stage_tasks)
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
-    embeddings_list = await asyncio.gather(*embedding_tasks)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
-    raise TimeoutError(f"{queue_name}: {str(e)}")
-TimeoutError: Embedding func: Worker execution timeout after 2000s
-
-ERROR: Failed to extract document 2/3: test_5min.json
-INFO: Extracting stage 3/3: test_1min.json
-INFO: Processing d-id: doc-0989ce40bee2370260c4b5fc538df68f
-INFO: Merged: `RRIdata` | 1+1
-INFO: Merged: `RRI` | 1+2
-INFO:  == LLM cache == saving: default:extract:84a33b18dadb32f15c752563dd5c9c7c
-INFO:  == LLM cache == saving: default:extract:8875c2df7a1b167e95896c06b7642f23
-INFO:  == LLM cache == saving: default:extract:9c0b39d7cf5b251230e4f3e8eb14dba1
-INFO:  == LLM cache == saving: default:extract:e31cfa52a5a42fc213819f2c0cda3004
-INFO:  == LLM cache == saving: default:extract:cc831c928fa58aa99c1f08328b98626b
-INFO:  == LLM cache == saving: default:extract:9be1f890c9d13d825627dc0d744ffdb8
-INFO: Chunk 1 of 15 extracted 2 Ent + 0 Rel chunk-502447bef719690dfaf911d9ccf7593d
-INFO: Chunk 2 of 15 extracted 2 Ent + 1 Rel chunk-05f780d4ca6d0d5e5b4440e2043d9e44
-INFO:  == LLM cache == saving: default:extract:0e0d823cb7663f335da463dab78cfbd9
-INFO: Chunk 3 of 15 extracted 3 Ent + 2 Rel chunk-3450c7761460298d4487d71908766857
-INFO:  == LLM cache == saving: default:extract:e81db2ff2827eb9b0c8772c9d57823bf
-INFO: Chunk 4 of 15 extracted 8 Ent + 4 Rel chunk-0c0dec85ab2cc9317d8545d78e3b12ff
-INFO: Merged: `Python` | 1+1
-INFO:  == LLM cache == saving: default:extract:e0a092671eee4b7e6520574e36b9f873
-INFO:  == LLM cache == saving: default:extract:b9b48aecce9e0f7f9ecf38ff27e3645d
-INFO:  == LLM cache == saving: default:extract:a8ee461e98f10a47c0e6e177d82be2d0
-INFO: Merged: `predict函数` | 1+1
-INFO: Merged: `DataFrame` | 1+1
-INFO:  == LLM cache == saving: default:extract:8e6fad99cf6308d1421b2f3a099312cd
-INFO: Chunk 5 of 15 extracted 9 Ent + 9 Rel chunk-3f92675dde68759d74c1bb25d487d1c4
-INFO:  == LLM cache == saving: default:extract:44267d064d4265ccd9ccc1a2f70d46d0
-INFO: Chunk 6 of 15 extracted 9 Ent + 9 Rel chunk-f0d16591b23714a69f1677a098a57f0f
-INFO: Merged: `rri_num` | 1+1
-INFO:  == LLM cache == saving: default:extract:72d93c7f467b9f8d19753b235a48732f
-INFO:  == LLM cache == saving: default:extract:985bae96c9392f11685b3401fcbc2c72
-INFO:  == LLM cache == saving: default:extract:743795b53af563b996f6fb997d292991
-INFO: Chunk 7 of 15 extracted 26 Ent + 0 Rel chunk-c54d3481d05989580b3bc907ec8ea31b
-INFO: Phase 2: Processing 66 relations from doc-fba9cf55995b3864eb745c3dc9defb26 (async: 8)
-INFO:  == LLM cache == saving: default:extract:1eca7e6fe5e5ed1993798465fdc23420
-INFO: Chunk 8 of 15 extracted 2 Ent + 0 Rel chunk-80b33f0c11ecf27b8bc0626deded6819
-INFO:  == LLM cache == saving: default:extract:27df696c1cded9c25e3712484db1bdc5
-INFO:  == LLM cache == saving: default:extract:7ddec5dde2478c62832103232a29d489
-INFO:  == LLM cache == saving: default:extract:383d6375fcedb79925057d5bded19b53
-INFO: Chunk 9 of 15 extracted 4 Ent + 3 Rel chunk-80e97285ff5dc03c76c343b4c509f00e
-INFO:  == LLM cache == saving: default:extract:d0f037b1cc2ae9a00b686f40d257ce6a
-INFO:  == LLM cache == saving: default:extract:c30b1cf342717c42f128f038177c4256
-INFO:  == LLM cache == saving: default:extract:c3e1dddcd372b154d72c63c2c88936e4
-INFO: Chunk 10 of 15 extracted 11 Ent + 9 Rel chunk-6f98f107b6edf9f138b223711e1ba808
-INFO: Chunk 11 of 15 extracted 31 Ent + 0 Rel chunk-83ab84c1823105c5c8d9cf016047ee7e
-INFO:  == LLM cache == saving: default:extract:b6ddb0e9d87f36c84b90e6596a5d1f91
-INFO:  == LLM cache == saving: default:extract:b6c58f7820cc530f757daebf43d06d77
-WARNING: chunk-06e376ab3c075299bb3c0eb1d17db9cd: Complete delimiter can not be found in extraction result
-WARNING: chunk-06e376ab3c075299bb3c0eb1d17db9cd: LLM output format error; found 2/5 fields on REALTION `1402`~`N/A`
-INFO:  == LLM cache == saving: default:extract:14c0fccd9837fe0efc0773e320df31c1
-INFO: Chunk 12 of 15 extracted 5 Ent + 4 Rel chunk-981d1ee30730a556ec125ed91c548341
-INFO:  == LLM cache == saving: default:extract:3fa83fd8aaa04ad624951a06099dde6b
-INFO: Chunk 13 of 15 extracted 59 Ent + 57 Rel chunk-06e376ab3c075299bb3c0eb1d17db9cd
-INFO:  == LLM cache == saving: default:extract:ca04facaed8aa31dcdc154b81029d9ca
-INFO: Chunk 14 of 15 extracted 47 Ent + 0 Rel chunk-9063cefe96982cfabb2207c251ed8f8b
-INFO: Merged: `predict函数`~`rri_num` | 1+1
-INFO: Phase 3: Updating final 91(89+2) entities and  66 relations from doc-fba9cf55995b3864eb745c3dc9defb26
-INFO: Completed merging: 89 entities, 2 extra entities, 66 relations
-INFO: [] Writing graph with 1458 nodes, 1451 edges
-INFO: In memory DB persist to disk
-INFO: Completed processing file 1/3: predict_model.py
-INFO:  == LLM cache == saving: default:extract:2eb51a876403ed3d203a12025b702a87
-WARNING: chunk-e6687e8da0f2e8d771804eb624eaae2f: Complete delimiter can not be found in extraction result
-WARNING: chunk-e6687e8da0f2e8d771804eb624eaae2f: LLM output format error; found 3/4 feilds on ENTITY `1613` @ `Data`
-INFO:  == LLM cache == saving: default:extract:5a855954ca1d08ffe137148c43651e6b
-INFO: Chunk 15 of 15 extracted 146 Ent + 0 Rel chunk-e6687e8da0f2e8d771804eb624eaae2f
-INFO: Merging stage 3/3: test_1min.json
-INFO: Phase 1: Processing 211 entities from doc-0989ce40bee2370260c4b5fc538df68f (async: 8)
-INFO:  == LLM cache == saving: default:summary:39fd98afae1863cdb5cb973a7467545e
-INFO: LLMmrg: `数据序列` | 0+11
-INFO: Phase 2: Processing 79 relations from doc-0989ce40bee2370260c4b5fc538df68f (async: 8)
-INFO: Phase 3: Updating final 211(211+0) entities and  79 relations from doc-0989ce40bee2370260c4b5fc538df68f
-INFO: Completed merging: 211 entities, 0 extra entities, 79 relations
-INFO: [] Writing graph with 1669 nodes, 1530 edges
-INFO: In memory DB persist to disk
-INFO: Completed processing file 3/3: test_1min.json
-INFO: Enqueued document processing pipeline stopped
-INFO: 127.0.0.1:65474 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:65474 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:64906 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:64906 - "GET /openapi.json HTTP/1.1" 200
-ERROR: Error /documents/upload: Pasted image 20230918152638.png: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
-ERROR: Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\api\routers\document_routes.py", line 2335, in upload_to_input_dir
-    raise HTTPException(
-fastapi.exceptions.HTTPException: 400: Unsupported file type. Supported types: ('.txt', '.md', '.pdf', '.docx', '.pptx', '.xlsx', '.rtf', '.odt', '.tex', '.epub', '.html', '.htm', '.csv', '.json', '.xml', '.yaml', '.yml', '.log', '.conf', '.ini', '.properties', '.sql', '.bat', '.sh', '.c', '.cpp', '.py', '.java', '.js', '.ts', '.swift', '.go', '.rb', '.php', '.css', '.scss', '.less')
-
-INFO: 127.0.0.1:49680 - "POST /documents/upload HTTP/1.1" 500
-INFO: 127.0.0.1:51087 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:51087 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:57023 - "POST /documents/upload HTTP/1.1" 200
-INFO: 127.0.0.1:50608 - "POST /documents/upload HTTP/1.1" 200
-INFO: Successfully extracted and enqueued file: appium操作手册.md
-INFO: Reset 1 documents from PROCESSING/FAILED to PENDING status
-INFO: Processing 2 document(s)
-INFO: Extracting stage 1/2: test_5min.json
-INFO: Processing d-id: doc-83cda2f9c9ee56f5068a89ea3d3b46b6
-INFO: Extracting stage 2/2: appium操作手册.md
-INFO: Processing d-id: doc-79060e9f57d12580d9567716bddc6261
-INFO: 127.0.0.1:63016 - "POST /documents/upload HTTP/1.1" 200
-INFO: 127.0.0.1:65251 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:65251 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:201bd245d9b7d9e2f9712b9800ce69f7
-INFO: 127.0.0.1:59845 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:59845 - "GET /openapi.json HTTP/1.1" 200
-INFO:  == LLM cache == saving: mix:keywords:605dec851c5787060da9fce4e4172a69
-INFO: 127.0.0.1:59509 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:59509 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:58879 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:58879 - "GET /openapi.json HTTP/1.1" 200
-WARNING: Embedding func: Worker timeout for task 1975787744384_1937797.5 after 2000s
-WARNING: Embedding func: Worker timeout for task 1975787745344_1937797.5 after 2000s
-ERROR: Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
-    return await future
-           ^^^^^^^^^^^^
-lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
-    await asyncio.gather(*first_stage_tasks)
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
-    embeddings_list = await asyncio.gather(*embedding_tasks)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
-    raise TimeoutError(f"{queue_name}: {str(e)}")
-TimeoutError: Embedding func: Worker execution timeout after 2000s
-
-ERROR: Failed to extract document 1/2: test_5min.json
-WARNING: Embedding func: Worker timeout for task 1975787744192_1937797.609 after 2000s
-ERROR: Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 968, in wait_func
-    return await future
-           ^^^^^^^^^^^^
-lightrag.utils.WorkerTimeoutError: Worker execution timeout after 2000s
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\lightrag.py", line 1892, in process_document
-    await asyncio.gather(*first_stage_tasks)
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\kg\milvus_impl.py", line 1068, in upsert
-    embeddings_list = await asyncio.gather(*embedding_tasks)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\yunxia\ai_langgraph\anything-chat-rag\lightrag\utils.py", line 994, in wait_func
-    raise TimeoutError(f"{queue_name}: {str(e)}")
-TimeoutError: Embedding func: Worker execution timeout after 2000s
-
-ERROR: Failed to extract document 2/2: appium操作手册.md
-INFO: Enqueued document processing pipeline stopped
-INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
-INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
-INFO: Query nodes: 简历, 服务器, 请求 (top_k:10, cosine:0.2)
-INFO: Query nodes: 简历上传, 简历查看 (top_k:10, cosine:0.2)
-INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
-INFO: Query nodes: 邱云霞 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 83 relations
-INFO: Query edges: 简历信息, 个人履历, 职业背景 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 2 relations
-INFO: Query edges: 简历管理, 功能缺陷, 系统功能 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 18 relations
-INFO: Query edges: 简历功能缺陷, 服务器错误, 请求失败 (top_k:10, cosine:0.2)
-INFO: Global query: 16 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 24 entities, 91 relations, 5 vector chunks
-INFO: After truncation: 24 entities, 91 relations
-INFO: Selecting 11 from 11 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 91 relations
-INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 24 entities, 91 relations, 5 chunks
-INFO: Final chunks S+F/O: E3/1 E6/2 E8/3 E2/4 E3/5
-INFO: Global query: 19 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 29 entities, 12 relations, 5 vector chunks
-INFO: After truncation: 29 entities, 12 relations
-INFO: Selecting 19 from 19 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 12 relations
-INFO: Round-robin merged chunks: 24 -> 19 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 29 entities, 12 relations, 5 chunks
-INFO: Final chunks S+F/O: E1/1 E1/2 E1/3 E1/4 E1/5
-INFO: Global query: 16 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 26 entities, 28 relations, 5 vector chunks
-INFO: After truncation: 26 entities, 28 relations
-INFO: Selecting 21 from 21 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 28 relations
-INFO: Round-robin merged chunks: 26 -> 24 (deduplicated 2)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 26 entities, 28 relations, 5 chunks
-INFO: Final chunks S+F/O: C1/1 E1/1 C1/2 E7/2 C1/3
-INFO: Local query: 10 entites, 83 relations
-INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 83 relations
-INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
-INFO: Local query: 10 entites, 83 relations
-INFO: Query edges: 简历, 个人履历, 职业背景 (top_k:10, cosine:0.2)
-INFO: 127.0.0.1:63928 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:63928 - "GET /openapi.json HTTP/1.1" 200
-INFO: Global query: 15 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 23 entities, 90 relations, 5 vector chunks
-INFO: After truncation: 23 entities, 90 relations
-INFO: Selecting 11 from 11 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 90 relations
-INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 23 entities, 90 relations, 5 chunks
-INFO: Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
-INFO: 127.0.0.1:55677 - "POST /query/data HTTP/1.1" 200
-INFO: Global query: 15 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 23 entities, 90 relations, 5 vector chunks
-INFO: After truncation: 23 entities, 90 relations
-INFO: Selecting 11 from 11 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 90 relations
-INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 23 entities, 90 relations, 5 chunks
-INFO: Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
-INFO: Global query: 15 entites, 10 relations
-INFO: Naive query: 5 chunks (chunk_top_k:5 cosine:0.2)
-INFO: Raw search results: 23 entities, 90 relations, 5 vector chunks
-INFO: After truncation: 23 entities, 90 relations
-INFO: Selecting 11 from 11 entity-related chunks by vector similarity
-INFO: Find no additional relations-related chunks from 90 relations
-INFO: Round-robin merged chunks: 16 -> 11 (deduplicated 5)
-WARNING: Rerank is enabled but no rerank model is configured. Please set up a rerank model or set enable_rerank=False in query parameters.
-INFO: Final context: 23 entities, 90 relations, 5 chunks
-INFO: Final chunks S+F/O: E3/1 E8/2 E6/3 E2/4 E4/5
-INFO: 127.0.0.1:55766 - "GET /docs HTTP/1.1" 200
-INFO: 127.0.0.1:55766 - "GET /openapi.json HTTP/1.1" 200
-INFO: 127.0.0.1:50728 - "DELETE /documents/upload_20260111_210644_44863daa HTTP/1.1" 404
+ERROR: Application startup failed. Exiting.
+[33m
+================================================================================[0m
+[33mWARNING: Frontend Source Code Has Been Updated[0m
+[33m================================================================================[0m
+[33mThe frontend source code is newer than the current build.[0m
+[33mThis might happen after 'git pull' or manual code changes.
+[0m
+[36mRecommended: Rebuild the frontend to use the latest changes:[0m
+[36m    cd lightrag_webui[0m
+[36m    bun install --frozen-lockfile[0m
+[36m    bun run build[0m
+[36m    cd ..[0m
+[33m
+The server will continue with the current build.[0m
+[33m================================================================================
+[0m
+Starting Uvicorn server in single-process mode on 0.0.0.0:9621

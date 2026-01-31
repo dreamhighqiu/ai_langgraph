@@ -1,0 +1,47 @@
+# Backend Dockerfile for LangGraph Service
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies including curl for healthchecks
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install uv
+RUN pip install --no-cache-dir uv
+
+# Copy dependency files
+COPY requirements.txt ./
+COPY anything-chat-rag/pyproject.toml anything-chat-rag/setup.py ./anything-chat-rag/
+COPY anything-chat-rag/lightrag ./anything-chat-rag/lightrag/
+COPY anything-chat-rag/raganything ./anything-chat-rag/raganything/
+COPY anything-chat-rag/MANIFEST.in ./anything-chat-rag/
+
+# Install Python dependencies
+RUN uv pip install --system --only-binary :all: -r requirements.txt || \
+    uv pip install --system -r requirements.txt
+
+# Install LightRAG in editable mode
+RUN uv pip install --system -e ./anything-chat-rag
+
+# Copy application code
+COPY testing-agents-service/ ./testing-agents-service/
+COPY deepagents/ ./deepagents/
+COPY mcp-server/ ./mcp-server/
+
+# Set Python path (removed non-existent src directory)
+ENV PYTHONPATH=/app/testing-agents-service:/app/mcp-server/src:/app:$PYTHONPATH
+
+# Expose only LangGraph port
+EXPOSE 2025
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:2025/ok || exit 1
+
+# Default command
+CMD ["python", "testing-agents-service/start_server.py", "--host", "0.0.0.0", "--port", "2025"]
+

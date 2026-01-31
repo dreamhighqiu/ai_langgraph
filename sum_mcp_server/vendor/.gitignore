@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-
-# Optional: populated by vendorize scripts for standalone bundles.
-lightrag/
-
-# Node deps (install on deploy host)
-automation-quality-mcp/node_modules/

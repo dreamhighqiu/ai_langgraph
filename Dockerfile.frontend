@@ -1,0 +1,62 @@
+# Frontend Dockerfile for Next.js UI
+FROM node:20-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+WORKDIR /app
+
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
+# Copy package files
+COPY testing-deep-agents-ui/package.json testing-deep-agents-ui/yarn.lock* testing-deep-agents-ui/package-lock.json* ./
+
+# Install dependencies
+RUN if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then npm ci; \
+    else npm install; \
+    fi
+
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY testing-deep-agents-ui/ ./
+
+# Set environment variables for build
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Build Next.js
+RUN npm run build
+
+# Production image
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy built application
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3200
+
+ENV PORT=3200
+ENV HOSTNAME="0.0.0.0"
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:3200/ || exit 1
+
+CMD ["node", "server.js"]
+

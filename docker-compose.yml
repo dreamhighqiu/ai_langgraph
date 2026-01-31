@@ -8,7 +8,7 @@ services:
     image: redis:7.4-alpine
     container_name: redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes --requirepass redis123456 --maxmemory 512mb --maxmemory-policy allkeys-lru
@@ -143,7 +143,7 @@ services:
     image: mysql:8.4.3
     container_name: mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
@@ -302,6 +302,7 @@ services:
       - ./testing-agents-service/.env
     environment:
       - NODE_ENV=production
+      - NEXT_PUBLIC_LANGGRAPH_URL=http://localhost:2025
     depends_on:
       langgraph:
         condition: service_healthy

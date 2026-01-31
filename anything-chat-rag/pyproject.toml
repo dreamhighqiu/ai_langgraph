@@ -1,0 +1,23 @@
+[project]
+name = "lightrag-hku"
+version = "2.0.0"
+description = "LightRAG and RAGAnything - Advanced RAG framework with knowledge graph"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "LightRAG Team" }
+]
+keywords = ["rag", "lightrag", "raganything", "knowledge-graph", "llm"]
+
+dependencies = []  # Dependencies are managed in the root pyproject.toml
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lightrag*", "raganything*"]
+exclude = ["tests*", "docs*", "examples*"]
+

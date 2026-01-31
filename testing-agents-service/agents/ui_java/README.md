@@ -172,7 +172,7 @@
 cd testing-agents-service
 
 # 启动 LangGraph 开发服务器
-langgraph dev
+python start_server.py
 
 # Agent 将在以下端点可用：
 # http://localhost:2025/ui_java_agent

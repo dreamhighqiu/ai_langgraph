@@ -3,7 +3,7 @@
 
 import { defineConfig } from 'vite'
 import path from 'path'
-import { webuiPrefix } from '@/lib/constants'
+import { webuiPrefix } from './src/lib/constants'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 // TODO  MS8yOmFIVnBZMlhwZ3JIa3VwSHBuSjQ2YVdWV1ZnPT06NzA1NWRmZDQ=

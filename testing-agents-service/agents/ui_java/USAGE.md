@@ -22,7 +22,7 @@ Java UI 测试 Agent 已在 LangGraph 中注册为 `ui_java_agent`：
 ```bash
 # 启动 LangGraph 服务器
 cd testing-agents-service
-langgraph dev
+python start_server.py
 
 # Agent 将在以下端点可用：
 # http://localhost:2025/ui_java_agent
@@ -397,7 +397,7 @@ test_java_ui:
   stage: test
   script:
     # 1. 启动 LangGraph 服务
-    - langgraph dev &
+    - python start_server.py &
     
     # 2. 调用 Agent 生成测试
     - curl -X POST http://localhost:2025/ui_java_agent/invoke \
